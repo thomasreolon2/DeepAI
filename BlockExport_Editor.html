@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlockJas</title>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script src="/js/blockly/storage.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <script src="/js/blockly/brython.js"></script>
+  <script src="/js/blockly/brython_stdlib.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
+  <!--  Blockly 자체의 설정과 관련된 파일 -->
+  <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
+  <script src="/js/blockly/blockly_compressed.js"></script>
+  <script src="/js/blockly/javascript_compressed.js"></script>
+  <script src="/js/blockly/python_compressed.js"></script>
+  <script src="/js/blockly/blocks_compressed.js"></script>
+  <!--미리 정의되어 있는 기본 블록에 대한 설정을 모두 담고 있음.-->
+
+  <script src="/js/blockly/test.js"></script> <!-- Prolog 블록 -->
+  <script src="/js/blockly/test_gen.js"></script>
+
+  <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지 -->
+  <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
+  <script src="/js/blockly/tau-prolog.js"></script> <!-- tau Prolog 추가 -->
+
+  <!-- codemirror 추가 -->
+  <script src="/js/codemirror/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="/js/codemirror/lib/codemirror.css">
+  <script src="/js/codemirror/mode/javascript/javascript.js"></script>
+  <script src="/js/codemirror/mode/python/python.js"></script>
+  <!-- codemirror 추가 -->
+
+  <!-- codemirror 스타일 지정 -->
+  <link rel="stylesheet" href="./js/codemirror/theme/oceanic-next.css">
+  <!-- codemirror 스타일 지정 -->
+
+  <!-- cdoemirror 자동 완성 기능 -->
+  <script src="./js/codemirror/addon/hint/show-hint.js"></script>
+  <script src="./js/codemirror/addon/hint/javascript-hint.js"></script>
+  <script src="./js/codemirror/addon/hint/anyword-hint.js"></script>
+  <link rel="stylesheet" href="./js/codemirror/addon/hint/show-hint.css">
+  <!-- cdoemirror 자동 완성 기능 -->
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    canvas {
+      background-color: white;
+      border: 1px solid black
+    }
+
+    .btn {
+      margin: 10px;
+    }
+
+    .file {
+      margin: 10px;
+    }
+
+    .form-control {
+      height: 50%;
+    }
+
+    div {
+      overflow: hidden;
+      height: auto;
+    }
+
+    .canvas {
+      margin-left: 10px;
+    }
+
+    #jsCodeEditor {
+      position: absolute;
+      width: 100%;
+    }
+
+    #pyCodeEditor {
+      position: relative;
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body onload="">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="d-flex flex-wrap text-white">
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="demoWorkspace.clear();"
+          value="Clear Workspace" />
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="saveBlock();"
+          value="Save Block" />
+        <div class="input-group col-md-6 mt-2 btn-sm custom-file">
+          <input type="file" id="file" class="custom-file-input" accept="text/xml"
+            onchange="loadBlock();this.value=null;return false;">
+          <label class="custom-file-label" for="file">Choose file</label>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap text-white ml-5">
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="runButton()"
+          value="Run Code" />
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="clear_result();"
+          value="Clear Result" />
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="file_save();"
+          value="Export Code" />
+        <select id="display_select" class="form-control col-md-3">
+          <option value="javascript">javascript</option>
+          <option value="python">python</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row" style="height: 90vh;">
+      <div id="blocklyDiv" class="col-md-6"></div>
+      <!-- code mirror -->
+      <div class="col-md-6">
+        <div style="position: relative;">
+          <dive id="jsCodeEditor"></dive>
+          <dive id="pyCodeEditor"></dive>
+        </div>
+        </textarea>
+        <textarea id="exeArea" class="form-control" readonly></textarea>
+      </div>
+    </div>
+
+    <input id="btn_canvas" type="button" class="btn btn-outline-secondary btn-sm" onClick="canvas_power();"
+      value="그림판 활성화" />
+    <a id="download" download="image.png"><button type="button" id="btn_save" class="btn btn-outline-secondary btn-sm"
+        onClick="canvas_save()" style="visibility: hidden;">그림
+        저장</button></a>
+    <input type="file" id="btn_upload" name="btn_upload" style="display: none;" />
+    <div class="row">
+      <!-- canvas -->
+      <canvas id="canvas" class="canvas" width="500" height="500" style="display: none;">
+      </canvas>
+    </div>
+  </div>
+
+  <!-- Toolbox 정의 -->
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display: none">
+    <category name="논리" colour="%{BKY_LOGIC_HUE}">
+      <lock type="controls_if">
+        </block>
+        <block type="logic_compare"></block>
+        <block type="logic_operation"></block>
+        <block type="logic_negate"></block>
+        <block type="logic_boolean"></block>
+        <block type="logic_null"></block>
+        <block type="logic_ternary"></block>
+    </category>
+    <category name="반복" colour="%{BKY_LOOPS_HUE}">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_whileUntil"></block>
+      <block type="controls_for">
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="controls_forEach"></block>
+      <block type="controls_flow_statements"></block>
+    </category>
+    <category name="연산" colour="%{BKY_MATH_HUE}">
+      <block type="math_number">
+        <field name="NUM">123</field>
+      </block>
+      <block type="math_arithmetic">
+        <value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_single">
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">9</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_trig">
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">45</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constant"></block>
+      <block type="math_number_property">
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_round">
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">3.1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_on_list"></block>
+      <block type="math_modulo">
+        <value name="DIVIDEND">
+          <shadow type="math_number">
+            <field name="NUM">64</field>
+          </shadow>
+        </value>
+        <value name="DIVISOR">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constrain">
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+        <value name="LOW">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="HIGH">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_random_float"></block>
+      <block type="math_atan2">
+        <value name="X">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="Y">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+    </category>
+    <category name="문자" colour="%{BKY_TEXTS_HUE}">
+      <block type="text"></block>
+      <block type="text_join"></block>
+      <block type="text_append">
+        <value name="TEXT">
+          <shadow type="text"></shadow>
+        </value>
+      </block>
+      <block type="text_length">
+        <value name="VALUE">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="text_isEmpty">
+        <value name="VALUE">
+          <shadow type="text">
+            <field name="TEXT"></field>
+          </shadow>
+        </value>
+      </block>
+      <block type="text_indexOf">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">{textVariable}</field>
+          </block>
+        </value>
+        <value name="FIND">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="text_charAt">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">{textVariable}</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_getSubstring">
+        <value name="STRING">
+          <block type="variables_get">
+            <field name="VAR">{textVariable}</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_changeCase">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="text_trim">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="text_print">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="text_prompt_ext">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+    </category>
+    <category name="배열" colour="%{BKY_LISTS_HUE}">
+      <block type="lists_create_with">
+        <mutation items="0"></mutation>
+      </block>
+      <block type="lists_create_with"></block>
+      <block type="lists_repeat">
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">5</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="lists_length"></block>
+      <block type="lists_isEmpty"></block>
+      <block type="lists_indexOf">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">{listVariable}</field>
+          </block>
+        </value>
+      </block>
+      <block type="lists_getIndex">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">{listVariable}</field>
+          </block>
+        </value>
+      </block>
+      <block type="lists_setIndex">
+        <value name="LIST">
+          <block type="variables_get">
+            <field name="VAR">{listVariable}</field>
+          </block>
+        </value>
+      </block>
+      <block type="lists_getSublist">
+        <value name="LIST">
+          <block type="variables_get">
+            <field name="VAR">{listVariable}</field>
+          </block>
+        </value>
+      </block>
+      <block type="lists_split">
+        <value name="DELIM">
+          <shadow type="text">
+            <field name="TEXT">,</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="lists_sort"></block>
+    </category>
+    <category name="색상"" colour=" %{BKY_COLOUR_HUE}">
+      <block type="colour_picker"></block>
+      <block type="colour_random"></block>
+      <block type="colour_rgb">
+        <value name="RED">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <value name="GREEN">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+        <value name="BLUE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="colour_blend">
+        <value name="COLOUR1">
+          <shadow type="colour_picker">
+            <field name="COLOUR">#ff0000</field>
+          </shadow>
+        </value>
+        <value name="COLOUR2">
+          <shadow type="colour_picker">
+            <field name="COLOUR">#3333ff</field>
+          </shadow>
+        </value>
+        <value name="RATIO">
+          <shadow type="math_number">
+            <field name="NUM">0.5</field>
+          </shadow>
+        </value>
+      </block>
+    </category>
+
+    <!-- 커스텀 블록 -->
+    <sep></sep>
+    <category name="변수" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+    <category name="함수" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+    <sep></sep>
+    <!-- <category name="Linear Regression">
+      <block type="np_array"></block>
+      <block type="sequential"></block>
+      <block type="dense"></block>
+      <block type="compile"></block>
+      <block type="fit"></block>
+      <block type="prediction"></block>
+    </category>
+
+    <category name="Logistic Regression">
+      <block type="load_x_data"></block>
+      <block type="load_y_data"></block>
+      <block type="split_data"></block>
+      <block type="show_shape"></block>
+      <block type="sequential"></block>
+      <block type="evaluate"></block>
+      <block type="dense"></block>
+      <block type="compile"></block>
+      <block type="fit"></block>
+      <block type="prediction"></block>
+    </category>-->
+
+    <!--2020-07-02-->
+    <!--<category name="Emotion" colour="%{BKY_VARIABLES_HUE}">-->
+    <!-- Lee Jin Hyung -->
+    <!--
+      <block type="readcsv"></block>
+      <block type="token"></block>
+      <block type="tokenfit"></block>
+      <block type="tokensquences"></block>
+      <block type="wordindex"></block>
+      <block type="padsequences"></block>
+      <block type="separate"></block>
+      <block type="keras_embedding"></block>
+      <block type="keras_lstm"></block>
+      <block type="keras_dropout"></block>-->
+    <!-- Jo Cheon Woo -->
+    <!--<block type="array_change"></block>
+      <block type="onehotencoder"></block>
+      <block type="onehotencoder_fit"></block>
+      <block type="enc_transform"></block>
+      <block type="model_predict"></block>
+      <block type="enc_inverse"></block>-->
+
+    <!--tensorji 선형회귀-->
+    <category name="선형회귀" colour="%{BKY_VARIABLES_HUE}">
+      <block type="callback"></block>
+      <block type="sequential"></block>
+      <block type="dense"></block>
+      <block type="compile"></block>
+      <block type="fit"></block>
+      <block type="predict"></block>
+      <block type="list"></block>
+    </category>
+    <category name="손글씨 예측" colour="%{BKY_VARIABLES_HUE}">
+      <block type="csv"></block>
+      <block type="callback"></block>
+      <block type="async"></block>
+      <block type="data"></block>
+      <block type="sequential"></block>
+      <block type="add"></block>
+      <block type="addn"></block>
+      <block type="compile"></block>
+      <block type="fit"></block>
+      <block type="console"></block>
+      <block type="feturelenght"></block>
+      <block type="predict"></block>
+      <block type="covid"></block>
+      <block type="aaaa"></block>
+    </category>
+    <category name="prolog" colour="%{BKY_VARIABLES_HUE}">
+      <block type="prolog_list">
+        <value name="bar">
+          <block type="funktor"></block>
+        </value>
+      </block>
+      <block type="Rule">
+        <value name="Fact">
+          <block type="prolog_list">
+            <value name="bar">
+              <block type="funktor"></block>
+            </value>
+          </block>
+        </value>
+        <value name="Rumpf">
+          <block type="rumpf"></block>
+        </value>
+      </block>
+      <block type="abfrage">
+        <value name="NAME">
+          <block type="separate"></block>
+        </value>
+      </block>
+      <block type="separate"></block>
+      <block type="constant"></block>
+      <block type="funktor"></block>
+      <block type="rumpf"></block>
+
+
+    </category>
+    <!-- 크롤링 -->
+    <category name="크롤링" colour="%{BKY_LOGIC_HUE}">
+      <block type="user_script"></block>
+      <block type="script"></block>
+    </category>
+    <!-- 크롤링 -->
+  </xml>
+
+  </xml>
+  <!-- code mirror -->
+  <script>
+    var jsEditor = CodeMirror(document.getElementById("jsCodeEditor"), {
+      mode: "javascript",
+      //   value: "codemirror",
+      theme: "oceanic-next",
+      inputStyle: "contenteditable",
+      // readOnly: true,
+      lineNumbers: true,
+      extraKeys: {
+        "Ctrl-Space": "autocomplete"
+      },
+      //   spellcheck: true,   autocorrect: true,
+    });
+
+    var pyEditor = CodeMirror(document.getElementById("pyCodeEditor"), {
+      mode: "python",
+      //   value: "codemirror",
+      theme: "oceanic-next",
+      inputStyle: "contenteditable",
+      // readOnly: true,
+      lineNumbers: true,
+      extraKeys: {
+        "Ctrl-Space": "autocomplete"
+      },
+      //   spellcheck: true,   autocorrect: true,
+    });
+  </script>
+  <script id="jsScript" type="application/javascript">
+    // var codeArea = document.getElementById("textArea"); // 코드 나타나는 부분 
+    var codeArea = jsEditor.getValue();
+
+    var demoWorkspace = Blockly.inject(                 // 블록이 나타나는 부분 
+      "blocklyDiv",
+      {
+        toolbox: document.getElementById("toolbox"),    // 툴박스  보이기 
+        grid:                                           // 그리드 보이기 
+        {
+          spacing: 0,
+          length: 3,
+          colour: '#ccc',
+          snap: true
+        },
+        zoom:                                           // 줌 기능 
+        {
+          controls: true,
+          wheel: true,
+          startScale: 1.0,
+          maxScale: 3,
+          minScale: 0.3,
+          scaleSpeed: 1.2
+        },
+        trashcan: true,                                  // 휴지통
+        /*theme: {
+          'blockStyles': {
+            "list_blocks": {
+              "colourPrimary": "#4a148c",
+              "colourSecondary": "#AD7BE9",
+              "colourTertiary": "#CDB6E9"
+            }
+          },
+          'categoryStyles': {
+            "list_category": {
+              "colour": "#4a148c"
+            }
+          },
+          'componentStyles': {
+            'toolboxBackgroundColour': '#848484', // toolbox background
+            'toolboxForegroundColour': '#fff',
+            'flyoutBackgroundColour': '#D8D8D8', // toolbox color
+          }
+        }*/
+      }
+    );
+
+    // 생성될 코드에 대해 선택하는 부분       
+    var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);   // 자바 스크립트 선택 
+    // var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);     // 파이썬 선택 
+
+    var delCount = 0;
+    var fileState = 0;
+    var fileName = "";
+
+    // ==================================
+    // 블록 저장하기 
+    //===================================  
+    function saveBlock() {
+      var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
+      var p_xml = Blockly.Xml.domToPrettyText(xml);
+      var fileObject = new File([p_xml], "blocks.xml");
+      saveAs(fileObject);
+    }
+
+    // ==================================
+    // 블록 불러오기 
+    //===================================  
+    function loadBlock() {
+      var reader = new FileReader();
+      var files = document.getElementById("file").files;
+      var file = files[0];
+      if (file) {
+        reader.onload = function (e) {
+          var xml = reader.result;
+          var dom = Blockly.Xml.textToDom(xml);
+          Blockly.Xml.appendDomToWorkspace(dom, demoWorkspace);
+          fileName = file.name;
+          var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+          var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
+
+          jsEditor.getValue() = jsCode;
+          pyEditor.getValue() = pyCode;
+        };
+        reader.readAsText(file);
+      }
+    }
+
+    // ==================================
+    // 코드 갱신하기 
+    //===================================  
+    function codeUpdate(event) {
+      var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
+
+      jsEditor.setValue(jsCode);
+      pyEditor.setValue(pyCode);
+    }
+
+    // ==================================
+    // 결과 지우기 
+    //===================================  
+    function clear_result() {
+      document.getElementById("exeArea").value = "";
+    }
+
+    // ==================================
+    // 파일로 저장하기 
+    //===================================  
+    function file_save() {
+      var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      //var code = Blockly.Python.workspaceToCode(demoWorkspace);
+      var blobObject = new Blob([code]);
+      saveAs(blobObject, "download.js");
+      //saveAs(blobObject, "download.py");
+    }
+
+    // ==================================
+    // 블록을 선택했을 때 
+    //=================================== 
+    function whenSelected(event) {
+      if (event.type == Blockly.Events.CREATE) {
+        var block = demoWorkspace.getBlockById(event.blockId);
+        console.log('블록이 선택됨1');
+        // showDescription(block.helpUrl);
+      }
+      if (event.type == Blockly.Events.UI && event.element === "click") {
+        var block = demoWorkspace.getBlockById(event.blockId);
+        // showDescription(block.helpUrl);
+        if ('file_upload' == block.type) {
+          openTextfFile();
+        }
+      }
+    }
+    demoWorkspace.addChangeListener(codeUpdate);
+    demoWorkspace.addChangeListener(whenSelected);
+  </script>
+
+  <!-- <script id="pyScript" type="text/python"> -->
+  <script>
+    function runButton() {
+      Blockly.JavaScript.addReservedWords('code');
+      //var code = document.getElementById('textArea').value;
+      var code = jsEditor.getValue();
+      try {
+        //var v = eval(code); // 기존 코드
+        document.getElementById('exeArea').innerHTML = eval(code);
+      } catch (e) {
+        //alert(e); // 기존코드 
+        document.getElementById('exeArea').innerHTML = e;
+      }
+    };
+    function openTextFile() {
+      var input = document.createElement("input");
+      input.type = "file";
+      input.accept = ".csv"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+      input.onchange = function (event) {
+        processFile(event.target.files[0]);
+        var data = sessionStorage.getItem('file');
+        var rows = data.split('\n');
+        var fileArray = new Array();
+        rows[0] = rows[0].replace('\r', '');
+        // rows
+        for (var i = 1; i < rows.length; i++) {
+          var fileObject = new Object();
+          cols = rows[i].split(',');
+          // header
+          for (var j = 0; j < cols.length; j++) {
+            var value = cols[j];
+            var name = rows[0].split(',')[j] // hedaer name
+            fileObject[name] = Number(value); // value
+          }
+          fileArray.push(fileObject);
+        }
+        // session save
+        sessionStorage.setItem('csv_data', JSON.stringify(fileArray));
+        // load
+        var tmp = JSON.parse(sessionStorage.getItem('csv_data'));
+        // map
+        var x = tmp.map(s => s.x);
+
+        // test
+        console.log(tmp);
+      };
+
+      input.click();
+    }
+    function processFile(file) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var fileResult = reader.result;
+        var val = sessionStorage.setItem('file', fileResult);
+      };
+      reader.readAsText(file, /* optional */ "cp949");
+    }
+
+    /** 그래프 */
+    const metrics = ['loss', 'val_loss', 'acc', 'val_acc']
+    const container = {
+      name: 'Model Training',
+      styles: {
+        height: '1000px'
+      }
+    };
+
+    async function saveModel(model) {
+      model.save('localstorage://my-model');
+      alert('완료되었습니다.');
+    }
+
+    // canvas 활성화 & 비활성화
+    function canvas_power() {
+      var canvasState = $("#canvas")[0];
+      var btnSave = $("#btn_save")[0];
+      if (canvasState.style.display == "" || canvasState.style.display == "none") {
+        canvasState.style.display = "block";
+        $("#btn_save")[0].style.visibility = "visible";
+        $("#btn_canvas").val("그림판 비활성화");
+      } else {
+        canvasState.style.display = "none";
+        $("#btn_save")[0].style.visibility = "hidden";
+        $("#btn_canvas").val("그림판 활성화");
+      }
+    }
+
+    const alphaPixel = []
+    function canvas_save() {
+      var download = $("#download")[0];
+      var canvas = $("#canvas")[0];
+      var c = document.getElementById("canvas");
+      var ctx = c.getContext("2d");
+      console.log(ctx);
+      var pixel = ctx.getImageData(0, 0, 28, 28).data;
+      for (i = 3, idx = 0; i < pixel.length; i += 4) {
+        alphaPixel[idx] = pixel[i];
+        idx++;
+      }
+      console.log(alphaPixel);
+    }
+    /*
+    * 코드미러 화면 전환(python&javascript)
+    */
+    $("#display_select").change(function () {
+      var selectName = $(this).find(":selected").val();
+      var pyEditor = $("#pyCodeEditor");
+      var jsEditor = $("#jsCodeEditor");
+
+      if (selectName == "javascript") {
+        jsEditor.css("visibility", "visible");
+        pyEditor.css("visibility", "hidden");
+      } else if (selectName == "python") {
+        pyEditor.css("visibility", "visible");
+        jsEditor.css("visibility", "hidden");
+      }
+    });
+
+  </script>
+  <script src="/js/utils/canvas.js"></script> <!-- 그림판 -->
+</body>
+
+</html>

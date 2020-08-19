@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Blockly Demo : 큐티뽀짝 지현이&지뇽이&천우의 두근두근 새드&업셋 테스트</title>
+    <script src="/js/blockly/storage.js"></script>
+    <script src="/js/blockly/blockly_compressed.js"></script>
+    <script src="/js/blockly/javascript_compressed.js"></script>
+    <script src="/js/blockly/python_compressed.js"></script>
+    <script src="/js/blockly/blocks_compressed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="/js/blockly/test.js"></script>
+    <script src="/js/blockly/test_gen.js"></script>
+    <script src="/js/blockly/brython.js"></script>
+    <script src="/js/blockly/brython_stdlib.js"></script>
+    <script src="/js/blockly/msg/js/ko.js"></script>
+    <script src = " https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest "></script>
+    <script src = " https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis "> </script>
+    <!--tensorjs vis 형상정의-->
+    <script>
+        const metrics = ['loss', 'val_loss', 'acc', 'val_acc']
+        const container = { 
+             name: 'Model Training', 
+             styles: { 
+                  height: '1000px' 
+             }};
+    </script>
+    <style>
+        body {
+            background-color: #fff;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            font-weight: normal;
+            font-size: 140%;
+        }
+
+        .dropdown-button {
+            background-color: #ffffff;
+            padding: 8px;
+            font-size: 15px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 70px;
+            padding: 8px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 8px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #CD853F;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-button {
+            background-color: #CD853F;
+        }
+    </style>
+</head>
+
+<body onload="brython()">
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <p>해당 Demo는 Blockly Javascript를 테스트해보는 페이지입니다.</p>
+    <!-- 결과 출력 창-->
+
+    <!-- 비어있는 Workspace div 생성 -->
+    <div id="blocklyDiv" align="left" style="display:inline-block;height: 500px; width: 900px;"></div>
+    <!-- Real Time Generation이 가능한 Text Area 생성 -->
+    <textarea id="textArea" align="right"
+        style="display:inline-block;margin:0px 20px 0px;resize:none;height: 500px; width:30%;"></textarea>
+
+    <br>
+    <br>
+    <!--
+  <textarea id="test" readonly
+    style="display:inline-block;margin:0px 20px 0px;resize:none;height: 150px; width:90%;"></textarea>-->
+
+    <!-- Toolbox 정의 -->
+    <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+        <category name="logic" colour="%{BKY_LOGIC_HUE}">
+            <block type="controls_if"></block>
+            <block type="logic_compare"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_negate"></block>
+            <block type="logic_boolean"></block>
+            <block type="logic_null"></block>
+            <block type="logic_ternary"></block>
+        </category>
+        <category name="loops" colour="%{BKY_LOOPS_HUE}">
+            <block type="controls_repeat_ext">
+                <value name="TIMES">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_whileUntil"></block>
+            <block type="controls_for">
+                <value name="FROM">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+                <value name="BY">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="controls_forEach"></block>
+            <block type="controls_flow_statements"></block>
+        </category>
+        <category name="math" colour="%{BKY_MATH_HUE}">
+            <block type="math_number">
+                <field name="NUM">123</field>
+            </block>
+            <block type="math_arithmetic">
+                <value name="A">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="B">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_single">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">9</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_trig">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">45</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_constant"></block>
+            <block type="math_number_property">
+                <value name="NUMBER_TO_CHECK">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_round">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">3.1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_on_list"></block>
+            <block type="math_modulo">
+                <value name="DIVIDEND">
+                    <shadow type="math_number">
+                        <field name="NUM">64</field>
+                    </shadow>
+                </value>
+                <value name="DIVISOR">
+                    <shadow type="math_number">
+                        <field name="NUM">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_constrain">
+                <value name="VALUE">
+                    <shadow type="math_number">
+                        <field name="NUM">50</field>
+                    </shadow>
+                </value>
+                <value name="LOW">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="HIGH">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_random_int">
+                <value name="FROM">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TO">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="math_random_float"></block>
+            <block type="math_atan2">
+                <value name="X">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="Y">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="text" colour="%{BKY_TEXTS_HUE}">
+            <block type="text"></block>
+            <block type="text_join"></block>
+            <block type="text_append">
+                <value name="TEXT">
+                    <shadow type="text"></shadow>
+                </value>
+            </block>
+            <block type="text_length">
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_isEmpty">
+                <value name="VALUE">
+                    <shadow type="text">
+                        <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_indexOf">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">{textVariable}</field>
+                    </block>
+                </value>
+                <value name="FIND">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_charAt">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">{textVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="text_getSubstring">
+                <value name="STRING">
+                    <block type="variables_get">
+                        <field name="VAR">{textVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="text_changeCase">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_trim">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_print">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="text_prompt_ext">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">abc</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="lists" colour="%{BKY_LISTS_HUE}">
+            <block type="lists_create_with">
+                <mutation items="0"></mutation>
+            </block>
+            <block type="lists_create_with"></block>
+            <block type="lists_repeat">
+                <value name="NUM">
+                    <shadow type="math_number">
+                        <field name="NUM">5</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_length"></block>
+            <block type="lists_isEmpty"></block>
+            <block type="lists_indexOf">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">{listVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_getIndex">
+                <value name="VALUE">
+                    <block type="variables_get">
+                        <field name="VAR">{listVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_setIndex">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">{listVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_getSublist">
+                <value name="LIST">
+                    <block type="variables_get">
+                        <field name="VAR">{listVariable}</field>
+                    </block>
+                </value>
+            </block>
+            <block type="lists_split">
+                <value name="DELIM">
+                    <shadow type="text">
+                        <field name="TEXT">,</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="lists_sort"></block>
+        </category>
+        <category name="colour" colour="%{BKY_COLOUR_HUE}">
+            <block type="colour_picker"></block>
+            <block type="colour_random"></block>
+            <block type="colour_rgb">
+                <value name="RED">
+                    <shadow type="math_number">
+                        <field name="NUM">100</field>
+                    </shadow>
+                </value>
+                <value name="GREEN">
+                    <shadow type="math_number">
+                        <field name="NUM">50</field>
+                    </shadow>
+                </value>
+                <value name="BLUE">
+                    <shadow type="math_number">
+                        <field name="NUM">0</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="colour_blend">
+                <value name="COLOUR1">
+                    <shadow type="colour_picker">
+                        <field name="COLOUR">#ff0000</field>
+                    </shadow>
+                </value>
+                <value name="COLOUR2">
+                    <shadow type="colour_picker">
+                        <field name="COLOUR">#3333ff</field>
+                    </shadow>
+                </value>
+                <value name="RATIO">
+                    <shadow type="math_number">
+                        <field name="NUM">0.5</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+
+        <!-- 커스텀 블록 -->
+        <sep></sep>
+        <category name="variables" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+        <category name="functions" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+        <sep></sep>
+        <category name="Linear Regression">
+            <block type="np_array"></block>
+            <block type="sequential"></block>
+            <block type="dense"></block>
+            <block type="compile"></block>
+            <block type="fit"></block>
+            <block type="prediction"></block>
+        </category>
+
+        <category name="Logistic Regression">
+            <block type="load_x_data"></block>
+            <block type="load_y_data"></block>
+            <block type="split_data"></block>
+            <block type="show_shape"></block>
+            <block type="sequential"></block>
+            <block type="evaluate"></block>
+            <block type="dense"></block>
+            <block type="compile"></block>
+            <block type="fit"></block>
+            <block type="prediction"></block>
+        </category>
+
+        <!--2020-07-02-->
+        <category name="Emotion" colour="%{BKY_VARIABLES_HUE}">
+            <!-- Lee Jin Hyung -->
+            <block type="readcsv"></block>
+            <block type="token"></block>
+            <block type="tokenfit"></block>
+            <block type="tokensquences"></block>
+            <block type="wordindex"></block>
+            <block type="padsequences"></block>
+            <block type="separate"></block>
+            <block type="keras_embedding"></block>
+            <block type="keras_lstm"></block>
+            <block type="keras_dropout"></block>
+            <!-- Jo Cheon Woo -->
+            <block type="array_change"></block>
+            <block type="onehotencoder"></block>
+            <block type="onehotencoder_fit"></block>
+            <block type="enc_transform"></block>
+            <block type="model_predict"></block>
+            <block type="enc_inverse"></block>
+        </category>
+        <category name="JsTest" colour="%{BKY_VARIABLES_HUE}">
+            <block type="js_test"></block>
+        </category>
+        <category name="Test" colour="%{BKY_VARIABLES_HUE}">
+            <block type="fakt"></block>
+            <block type="set_fakt"></block>
+            <block type="set_Rule"></block>
+            <block type="rule_fakt"></block>
+        </category>
+        <!--tensorji 선형회귀-->
+        <category name="Tensor JS" colour="%{BKY_VARIABLES_HUE}">
+            <block type="callback"></block>
+            <block type="sequential"></block>
+            <block type="dense"></block>
+            <block type="compile"></block>
+            <block type="fit"></block>
+            <block type="predict"></block>
+            <block type="list"></block>
+
+
+
+        
+        </category>
+
+    </xml>
+
+
+    <script>
+        var codeArea = document.getElementById('textArea');
+
+        // 빈 Workspace div에 툴박스 삽입 
+        // 추후 블록을 저장하거나 코드를 Generate할 때 해당 변수가 중요한 역할을 함.
+        var demoWorkspace = Blockly.inject('blocklyDiv',
+            {
+                media: '../../js/blockly/media/',
+                toolbox: document.getElementById('toolbox'),
+                zoom: {
+                    controls: true,
+                    wheel: true,
+                    startScale: 1.0,
+                    maxScale: 3,
+                    minScale: 0.3,
+                    scaleSpeed: 1.2
+                }
+            });
+
+        // 초기 Workspace에 표시될 블록 세트
+        //Blockly.Xml.domToWorkspace(document.getElementById('testBlocks'), demoWorkspace);
+
+        // 실시간 코드 생성기
+        function codeGenerator(event) {
+            var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+            document.getElementById('textArea').value = code;
+        }
+        demoWorkspace.addChangeListener(codeGenerator); // 이벤트 리스너
+
+        // 기존 Blockly의 Javascript 코드를 실행
+        /*
+        function runCode() {
+          // Generate JavaScript code and run it.
+          window.LoopTrap = 1000;
+          Blockly.JavaScript.INFINITE_LOOP_TRAP =
+            'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+          var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+          Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+          try {
+            eval(code);
+          } catch (e) {
+            alert(e);
+          }
+        } */
+    </script>
+    </div>
+
+    <!-- Tensorflow JS 테스트 코드
+        동기 함수 사용하여 get_output 태그 동적 변경 커스텀 예제
+        *****************************************************
+        *                                                   *
+        * 테스트 해보려면 하단의 모델 생성 코드 그대로 붙여 넣어서 실행 *
+        *                                                   *
+        *****************************************************
+    <script>
+        // 동기함수 시작
+        async function createModel() {
+            var pred = null; // 예측을 담을 변수
+
+            // 단순선형회귀 모델 생성
+            const model = tf.sequential();
+            model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
+
+            model.compile({ loss: 'meanSquaredError', optimizer: 'sgd' });
+
+            // 학습 데이터 설정
+            const xs = tf.tensor2d([1, 2, 3, 4, 5], [5, 1]);
+            const ys = tf.tensor2d([2, 4, 6, 8, 10], [5, 1]);
+
+            // await로 동기화, 모델 학습
+            await model.fit(xs, ys, { epochs: 100 }).then(() => {
+                // Use the model to do inference on a data point the model hasn't seen before:
+                pred = model.predict(tf.tensor2d([10], [1, 1]));
+                // Open the browser devtools to see the output
+            });
+
+            // InnerHTML로 동적 변경
+            document.getElementById('get_output').innerHTML = pred;
+        }
+
+        createModel();
+    </script>
+    -->
+
+    <script>
+        // 코드 실행, exec 사용, innerHTML로 get_output 동적 변경
+        // exec 사용 X, 혹여 추후 클라우드 혹은 LMS 사용 시에는 보안 취약함. 대체 가능한 방법 찾아볼 것.
+        $('#runCode').click(function () {
+            Blockly.JavaScript.addReservedWords('code');
+            var code = $('textArea').val();
+            try {
+                //var v = eval(code); // 기존 코드
+                document.getElementById('get_output').innerHTML = eval(code);
+            } catch (e) {
+                //alert(e); // 기존코드
+                document.getElementById('get_output').innerHTML = e;
+            }
+        });
+
+        /* 기존 ajax 실행 부분 Deprecated.
+        // 코드 실행 with Ajax
+        $('#runCode').click(function () {
+            Blockly.JavaScript.addReservedWords('code');
+            var code = $('textArea').val();
+            try {
+                var v = eval(code);
+                document.getElementById('get_output').innerHTML = v;
+                //Ajax GET Method TEST
+
+                $.ajax({
+                    url: '/code_run',
+                    dataType: 'json',
+                    type: 'GET',
+                    data: { data: v },
+                    success: function (result) {
+                        if (result) {
+                            $('#get_output').html(result.result);
+                        }
+                    }
+                });
+
+            } catch (e) {
+                alert(e);
+            }
+        });
+        */
+    </script>
+</body>
+
+</html>
