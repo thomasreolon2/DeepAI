@@ -686,10 +686,13 @@
     //===================================  
     function codeUpdate(event) {
       var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-      var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
-
       jsEditor.setValue(jsCode);
-      pyEditor.setValue(pyCode);
+      try {
+        var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
+        pyEditor.setValue(pyCode);
+      } catch (e) {
+        console.log('Python 코드가 매핑되어 있지 않습니다. Error : ' + e);
+      }
     }
 
     // ==================================
