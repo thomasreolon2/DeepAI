@@ -91,28 +91,26 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="d-flex flex-wrap text-white">
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="demoWorkspace.clear();"
-          value="Clear Workspace" />
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="saveBlock();"
-          value="Save Block" />
-        <div class="input-group col-md-6 mt-2 btn-sm custom-file">
+      <div class="d-flex flex-wrap text-white" style="width: 50%;">
+        <div class="input-group col-md-4 ml-3 mt-2 btn-sm custom-file">
           <input type="file" id="file" class="custom-file-input" accept="text/xml"
             onchange="loadBlock();this.value=null;return false;">
-          <label class="custom-file-label" for="file">Choose file</label>
+          <label class="custom-file-label" for="file">파일열기</label>
         </div>
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="demoWorkspace.clear();"
+          value="블록 지우기" />
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="saveBlock();"
+          value="블록 저장" />
       </div>
-      <div class="d-flex flex-wrap text-white ml-5">
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="runButton()"
-          value="Run Code" />
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="clear_result();"
-          value="Clear Result" />
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="file_save();"
-          value="Export Code" />
-        <select id="display_select" class="form-control col-md-3">
+      <div class="d-flex flex-wrap text-white" style="width: 50%;">
+        <select id="display_select" class="form-control col-md-3 mt-2 ml-3">
           <option value="javascript">javascript</option>
           <option value="python">python</option>
         </select>
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="runButton()" value="실행" />
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="clear_result();"
+          value="결과 지우기" />
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="file_save();" value="코드저장" />
       </div>
     </div>
 
@@ -672,10 +670,13 @@
           Blockly.Xml.appendDomToWorkspace(dom, demoWorkspace);
           fileName = file.name;
           var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-          var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
-
           jsEditor.getValue() = jsCode;
-          pyEditor.getValue() = pyCode;
+          try {
+            var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
+            pyEditor.setValue(pyCode);
+          } catch (e) {
+            console.log('Python 코드가 매핑되어 있지 않습니다. Error : ' + e);
+          }
         };
         reader.readAsText(file);
       }
@@ -734,17 +735,16 @@
     demoWorkspace.addChangeListener(whenSelected);
   </script>
 
-  <!-- <script id="pyScript" type="text/python"> -->
+  <!-- ==================================
+  ====== 블록 실행
+  ===================================-->
   <script>
     function runButton() {
       Blockly.JavaScript.addReservedWords('code');
-      //var code = document.getElementById('textArea').value;
       var code = jsEditor.getValue();
       try {
-        //var v = eval(code); // 기존 코드
         document.getElementById('exeArea').innerHTML = eval(code);
       } catch (e) {
-        //alert(e); // 기존코드 
         document.getElementById('exeArea').innerHTML = e;
       }
     };
