@@ -1,0 +1,24 @@
+#sidebar {
+    background: white;
+    width: 600px;
+    height: 100%;
+    top: 0;
+    right: -600px;
+    position: fixed;
+    z-index: 1;
+    border: solid;
+    border-color: gray;
+    box-shadow:  5px 5px 10px black, 0 0 15px gray
+  }
+  #sidebar > button {
+    background:white;
+    position: absolute;
+    top: 0px;
+    right: 600px;
+    width: 70px;
+    height: 45px;
+    border: none;
+    color: white;
+    border: solid;
+    border-color: gray;  
+  }

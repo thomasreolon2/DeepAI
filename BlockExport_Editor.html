@@ -26,6 +26,9 @@
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
   <script src="/js/blockly/tau-prolog.js"></script> <!-- tau Prolog 추가 -->
 
+  <!--numjs-->
+  <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
+
   <!-- codemirror 추가 -->
   <script src="/js/codemirror/lib/codemirror.js"></script>
   <link rel="stylesheet" href="/js/codemirror/lib/codemirror.css">
@@ -44,10 +47,20 @@
   <link rel="stylesheet" href="./js/codemirror/addon/hint/show-hint.css">
   <!-- cdoemirror 자동 완성 기능 -->
 
+ <!--jquery-->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+  <!--css-->
+  <link rel="stylesheet" href="css\sidebar.css">
+
   <style type="text/css">
     canvas {
       background-color: white;
@@ -88,6 +101,12 @@
 </head>
 
 <body onload="">
+  <!--sidebar-->
+  <div>
+    <aside id="sidebar">
+      <button><span class="btn_t" style="color:black">그래프</span></button>
+    </aside>
+  </div>
 
   <div class="container-fluid">
     <div class="row">
@@ -123,7 +142,7 @@
           <dive id="pyCodeEditor"></dive>
         </div>
         </textarea>
-        <textarea id="exeArea" class="form-control" readonly></textarea>
+        <textarea id="exeArea" class="form-control" readonly style="height: 70px;"></textarea>
       </div>
     </div>
 
@@ -449,117 +468,142 @@
       </block>
     </category>
 
-    <!-- 커스텀 블록 -->
-    <sep></sep>
-    <category name="변수" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-    <category name="함수" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
-    <sep></sep>
-    <!-- <category name="Linear Regression">
-      <block type="np_array"></block>
-      <block type="sequential"></block>
-      <block type="dense"></block>
-      <block type="compile"></block>
-      <block type="fit"></block>
-      <block type="prediction"></block>
-    </category>
-
-    <category name="Logistic Regression">
-      <block type="load_x_data"></block>
-      <block type="load_y_data"></block>
-      <block type="split_data"></block>
-      <block type="show_shape"></block>
-      <block type="sequential"></block>
-      <block type="evaluate"></block>
-      <block type="dense"></block>
-      <block type="compile"></block>
-      <block type="fit"></block>
-      <block type="prediction"></block>
-    </category>-->
-
-    <!--2020-07-02-->
-    <!--<category name="Emotion" colour="%{BKY_VARIABLES_HUE}">-->
-    <!-- Lee Jin Hyung -->
-    <!--
-      <block type="readcsv"></block>
-      <block type="token"></block>
-      <block type="tokenfit"></block>
-      <block type="tokensquences"></block>
-      <block type="wordindex"></block>
-      <block type="padsequences"></block>
-      <block type="separate"></block>
-      <block type="keras_embedding"></block>
-      <block type="keras_lstm"></block>
-      <block type="keras_dropout"></block>-->
-    <!-- Jo Cheon Woo -->
-    <!--<block type="array_change"></block>
-      <block type="onehotencoder"></block>
-      <block type="onehotencoder_fit"></block>
-      <block type="enc_transform"></block>
-      <block type="model_predict"></block>
-      <block type="enc_inverse"></block>-->
-
-    <!--tensorji 선형회귀-->
-    <category name="선형회귀" colour="%{BKY_VARIABLES_HUE}">
-      <block type="callback"></block>
-      <block type="sequential"></block>
-      <block type="dense"></block>
-      <block type="compile"></block>
-      <block type="fit"></block>
-      <block type="predict"></block>
-      <block type="list"></block>
-    </category>
-    <category name="손글씨 예측" colour="%{BKY_VARIABLES_HUE}">
-      <block type="csv"></block>
-      <block type="callback"></block>
-      <block type="async"></block>
-      <block type="data"></block>
-      <block type="sequential"></block>
-      <block type="add"></block>
-      <block type="addn"></block>
-      <block type="compile"></block>
-      <block type="fit"></block>
-      <block type="console"></block>
-      <block type="feturelenght"></block>
-      <block type="predict"></block>
-      <block type="covid"></block>
-      <block type="aaaa"></block>
-    </category>
-    <category name="prolog" colour="%{BKY_VARIABLES_HUE}">
-      <block type="prolog_list">
-        <value name="bar">
-          <block type="funktor"></block>
-        </value>
-      </block>
-      <block type="Rule">
-        <value name="Fact">
-          <block type="prolog_list">
-            <value name="bar">
-              <block type="funktor"></block>
-            </value>
-          </block>
-        </value>
-        <value name="Rumpf">
-          <block type="rumpf"></block>
-        </value>
-      </block>
-      <block type="abfrage">
-        <value name="NAME">
-          <block type="separate"></block>
-        </value>
-      </block>
-      <block type="separate"></block>
-      <block type="constant"></block>
-      <block type="funktor"></block>
-      <block type="rumpf"></block>
-
-
-    </category>
-    <!-- 크롤링 -->
-    <category name="크롤링" colour="%{BKY_LOGIC_HUE}">
-      <block type="user_script"></block>
-      <block type="script"></block>
-    </category>
-    <!-- 크롤링 -->
+     <!-- 커스텀 블록 -->
+     <sep></sep>
+     <category name="변수" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+     <category name="함수" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+     <sep></sep>
+     <!-- <category name="Linear Regression">
+       <block type="np_array"></block>
+       <block type="sequential"></block>
+       <block type="dense"></block>
+       <block type="compile"></block>
+       <block type="fit"></block>
+       <block type="prediction"></block>
+     </category>
+ 
+     <category name="Logistic Regression">
+       <block type="load_x_data"></block>
+       <block type="load_y_data"></block>
+       <block type="split_data"></block>
+       <block type="show_shape"></block>
+       <block type="sequential"></block>
+       <block type="evaluate"></block>
+       <block type="dense"></block>
+       <block type="compile"></block>
+       <block type="fit"></block>
+       <block type="prediction"></block>
+     </category>-->
+ 
+     <!--2020-07-02-->
+     <!--<category name="Emotion" colour="%{BKY_VARIABLES_HUE}">-->
+     <!-- Lee Jin Hyung -->
+     <!--
+       <block type="readcsv"></block>
+       <block type="token"></block>
+       <block type="tokenfit"></block>
+       <block type="tokensquences"></block>
+       <block type="wordindex"></block>
+       <block type="padsequences"></block>
+       <block type="separate"></block>
+       <block type="keras_embedding"></block>
+       <block type="keras_lstm"></block>
+       <block type="keras_dropout"></block>-->
+     <!-- Jo Cheon Woo -->
+     <!--<block type="array_change"></block>
+       <block type="onehotencoder"></block>
+       <block type="onehotencoder_fit"></block>
+       <block type="enc_transform"></block>
+       <block type="model_predict"></block>
+       <block type="enc_inverse"></block>-->
+ 
+     <!--tensorji 선형회귀-->
+     <!-- <category name="선형회귀" colour="%{BKY_VARIABLES_HUE}">
+       <block type="callback"></block>
+       <block type="sequential"></block>
+       <block type="dense"></block>
+       <block type="compile"></block>
+       <block type="fit"></block>
+       <block type="predict"></block>
+       <block type="list"></block>
+     </category>
+     <category name="손글씨 예측" colour="%{BKY_VARIABLES_HUE}">
+       <block type="csv"></block>
+       <block type="callback"></block>
+       <block type="async"></block>
+       <block type="data"></block>
+       <block type="sequential"></block> 
+       <block type="add"></block>
+       <block type="addn"></block>
+       <block type="compile"></block>
+       <block type="fit"></block>
+       <block type="console"></block>
+       <block type="feturelenght"></block>
+       <block type="predict"></block>
+       <block type="covid"></block>
+       <block type="aaaa"></block>
+     </category> 
+     <category name="prolog" colour="%{BKY_VARIABLES_HUE}">
+       <block type="prolog_list">
+         <value name="bar">
+           <block type="funktor"></block>
+         </value>
+       </block>
+       <block type="Rule">
+         <value name="Fact">
+           <block type="prolog_list_rule">
+             <value name="bar">
+               <block type="funktor"></block>
+             </value>
+           </block>
+         </value>
+         <value name="Rumpf">
+           <block type="rumpf"></block>
+         </value>
+       </block>
+       <block type="abfrage">
+         <value name="NAME">
+           <block type="separate"></block>
+         </value>
+       </block>
+       <block type="separate"></block>
+       <block type="constant"></block>
+       <block type="funktor"></block>
+       <block type="rumpf"></block> -->
+ 
+ 
+     <!-- </category> -->
+     <!-- 크롤링 -->
+     <!-- <category name="크롤링" colour="%{BKY_LOGIC_HUE}"> -->
+     <!-- <block type="user_script"></block> -->
+     <!-- <block type="script"></block> -->
+     <!-- </category> -->
+     <!-- 크롤링 -->
+ 
+ 
+     <!-- <category name="데이터 전처리" colour="%{BKY_VARIABLES_HUE}"> -->
+     <!-- <block type="file_upload"></block> -->
+     <!-- </category> -->
+ 
+ 
+     <!--numjs-->
+     <category name="JS배열" colour="%{BKY_LOGIC_HUE}">
+       <block type="nj_array"></block>
+       <block type="nj_sum"></block>
+       <block type="nj_multiply"></block>
+       <block type="nj_substract"></block>
+       <block type="nj_add"></block>
+       <block type="nj_divide"></block>
+       <block type="nj_shape"></block>
+ 
+     </category>
+     <category name="선형회귀" colour="%{BKY_LOGIC_HUE}">
+       <block type="js_hypothesis"></block>
+       <block type="js_cost"></block>
+       <block type="js_gradient_w"></block>
+       <block type="js_gradient_b"></block>
+ 
+     </category>
   </xml>
 
   </xml>
@@ -852,6 +896,23 @@
       }
     });
 
+    //사이드바
+    $(function () {
+      var duration = 300;
+
+      var $side = $('#sidebar');
+      var $sidebt = $side.find('button').on('click', function () {
+        $side.toggleClass('open');
+
+        if ($side.hasClass('open')) {
+          $side.stop(true).animate({ right: '0px' }, duration);
+          $sidebt.find('span').text('X');
+        } else {
+          $side.stop(true).animate({ right: '-600px' }, duration);
+          $sidebt.find('span').text('그래프');
+        };
+      });
+    });
   </script>
   <script src="/js/utils/canvas.js"></script> <!-- 그림판 -->
 </body>

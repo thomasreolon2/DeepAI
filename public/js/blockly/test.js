@@ -1677,7 +1677,440 @@ Blockly.defineBlocksWithJsonArray(
 );
 
 
-
+/////////////////////prolog/////////////////////////
+Blockly.Blocks['prolog_list'] = {
+  init: function () {
+    this.appendValueInput("bar")
+      .setCheck(null)
+      .appendField("Fact");
+    this.appendStatementInput("content")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, "Array");
+    // this.setNextStatement(true, null);
+    this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['prolog_list_rule'] = {
+  init: function () {
+    this.appendValueInput("bar")
+      .setCheck(null)
+      .appendField("Fact");
+    this.appendStatementInput("content")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, "Array");
+    // this.setNextStatement(true, null);
+    this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['constant'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("constant")
+      .appendField(new Blockly.FieldTextInput(""), "NAME");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(135);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['info_block_statement'] = {
+  init: function () {
+    this.setEnabled(true);
+    this.setColour('#8e904d');
+    this.setPreviousStatement(true);
+    this.setNextStatement(false);
+    this.appendDummyInput();
+  }
+};
+Blockly.Blocks['funktor'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("Funktor")
+      .appendField(new Blockly.FieldTextInput(""), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(135);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['rumpf'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("Rumpf")
+      .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "seperate");
+    this.appendStatementInput("NAME")
+      .setCheck(null);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, "Array");
+    this.setColour(190);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['Rule'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("       Rule");
+    this.appendStatementInput("Fact")
+      .setCheck(null);
+    this.appendStatementInput("Rumpf")
+      .setCheck(null);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, "Array");
+    this.setColour(190);
+    this.setTooltip("Ein einfacher Fakt, welches aus einer Relation und einem oder mehreren Termen besteht.");
+    this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
+  }
+};
+Blockly.Blocks['abfrage'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("Abfrage | Active")
+      .appendField(new Blockly.FieldCheckbox("false"), "active");
+    this.appendStatementInput("NAME")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, "Array");
+    this.setColour(100);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['separate'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("AND | OR 설정")
+      .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "separate");
+    this.appendStatementInput("NAME")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, "Array");
+    this.setColour(100);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+////////////////////////////////////////////numjs////////////////////////////////////
+Blockly.Blocks['nj_array'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("배열 생성")
+      .appendField(new Blockly.FieldTextInput("ex)1,2,3,4"), "array");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['nj_sum'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("배열 합계->");
+    this.appendValueInput("ar1")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['nj_multiply'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("배열 곱->");
+    this.appendValueInput("ar1")
+      .setCheck(null);
+    this.appendDummyInput()
+      .appendField("*");
+    this.appendValueInput("ar2")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['nj_substract'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("배열 뺄셈->");
+    this.appendValueInput("ar1")
+      .setCheck(null);
+    this.appendDummyInput()
+      .appendField("-");
+    this.appendValueInput("ar2")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['nj_add'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("배열 덧셈->");
+    this.appendValueInput("ar1")
+      .setCheck(null);
+    this.appendDummyInput()
+      .appendField("+");
+    this.appendValueInput("ar2")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['nj_divide'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("배열 나누기->");
+    this.appendValueInput("ar1")
+      .setCheck(null);
+    this.appendDummyInput()
+      .appendField("/");
+    this.appendValueInput("ar2")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['nj_shape'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("배열 형태");
+    this.appendValueInput("ar1")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(120);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['js_hypothesis'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("추측 값 ->");
+    this.appendValueInput("X")
+      .setCheck(null)
+      .appendField("X");
+    this.appendDummyInput()
+      .appendField("*");
+    this.appendValueInput("W")
+      .setCheck(null)
+      .appendField("W");
+    this.appendDummyInput()
+      .appendField("+");
+    this.appendValueInput("b")
+      .setCheck(null)
+      .appendField("b");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['js_cost'] = {
+  init: function () {
+    this.appendValueInput("hypothesis")
+      .setCheck(null)
+      .appendField("손실 값 ->")
+      .appendField("합계 ( 추측값 ");
+    this.appendValueInput("y_train")
+      .setCheck(null)
+      .appendField("-")
+      .appendField("Y 값");
+    this.appendDummyInput()
+      .appendField(" ** ")
+      .appendField(new Blockly.FieldTextInput("제곱 값 "), "mul");
+    this.appendValueInput("len")
+      .setCheck(null)
+      .appendField(" / ")
+      .appendField("길이");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['js_gradient_w'] = {
+  init: function () {
+    this.appendValueInput("w")
+      .setCheck(null)
+      .appendField("가중치 기울기 값 ->")
+      .appendField("합계 (( 가중치");
+    this.appendValueInput("X")
+      .setCheck(null)
+      .appendField("*")
+      .appendField("X 값");
+    this.appendValueInput("Y")
+      .setCheck(null)
+      .appendField("-")
+      .appendField("Y 값");
+    this.appendValueInput("b")
+      .setCheck(null)
+      .appendField("+")
+      .appendField("편향값");
+    this.appendValueInput("mul")
+      .setCheck(null)
+      .appendField(") *");
+    this.appendValueInput("x2")
+      .setCheck(null)
+      .appendField("*")
+      .appendField("X값");
+    this.appendValueInput("len")
+      .setCheck(null)
+      .appendField(" / ")
+      .appendField("길이");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['js_gradient_b'] = {
+  init: function () {
+    this.appendValueInput("w")
+      .setCheck(null)
+      .appendField("편향 기울기 값 ->")
+      .appendField("합계 (( 가중치");
+    this.appendValueInput("X")
+      .setCheck(null)
+      .appendField("*")
+      .appendField("X 값");
+    this.appendValueInput("Y")
+      .setCheck(null)
+      .appendField("-")
+      .appendField("Y 값");
+    this.appendValueInput("b")
+      .setCheck(null)
+      .appendField("+")
+      .appendField("편향값");
+    this.appendValueInput("mul")
+      .setCheck(null)
+      .appendField(") *");
+    this.appendValueInput("len")
+      .setCheck(null)
+      .appendField(")  / ")
+      .appendField("길이");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['insert'] = {
+  init: function () {
+    this.appendValueInput("val")
+      .setCheck(null);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([["+=", "+="], ["-=", "-="], ["*=", "*="], ["/=", "/="]]), "sep");
+    this.appendValueInput("value")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['console'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("콘솔 출력 : ");
+    this.appendValueInput("value")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(160);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['for_c'] = {
+  init: function () {
+    this.appendValueInput("val")
+      .setCheck(null)
+      .appendField("변수");
+    this.appendValueInput("s_val")
+      .setCheck(null)
+      .appendField("를 초기값:");
+    this.appendValueInput("e_val")
+      .setCheck(null)
+      .appendField("부터 종료값 :");
+    this.appendDummyInput()
+      .appendField("까지");
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([[">", ">"], ["<", "<"], ["==", "=="], ["<=", "<="], [">=", ">="]]), "NAME")
+      .appendField("다음 조건이 만족할 때 까지 ");
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldTextInput(""), "int")
+      .appendField("만큼 ");
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([["증가", "+="], ["감소", "-="], ["곱", "*="], ["나누기", "/="]]), "math")
+      .appendField("하면서 반복");
+    this.appendStatementInput("NAME")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(120);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['if_c'] = {
+  init: function () {
+    this.appendValueInput("val")
+      .setCheck(null)
+      .appendField("만약");
+    this.appendValueInput("val2")
+      .setCheck(null)
+      .appendField("와");
+    this.appendDummyInput()
+      .appendField("가")
+      .appendField(new Blockly.FieldDropdown([["같다면", "=="], ["다르다면", "!="]]), "sep");
+    this.appendStatementInput("NAME")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
 
 
 

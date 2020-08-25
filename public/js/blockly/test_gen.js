@@ -548,3 +548,239 @@ Blockly.JavaScript['separate'] = function(block) {
   }
   return code;
 };
+// prolog
+Blockly.JavaScript['prolog_list'] = function (block) {
+  var code = '', statements_content, value_bar;
+  var value_bar = Blockly.JavaScript.valueToCode(block, 'bar', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_content = Blockly.JavaScript.statementToCode(block, 'content');
+  //TODO: Assemble JavaScript into code variable.
+  var elements = new Array();
+  var split = statements_content.trim().split(',');
+
+  for (var i = 0; i < split.length - 1; i++) {
+    elements.push(split[i]);
+  }
+  if (value_bar === '') return '';
+  code += value_bar + '('
+  code += elements.join(',')
+  code += ').';
+  return code;
+};
+Blockly.JavaScript['prolog_list_rule'] = function (block) {
+  var code = '', statements_content, value_bar;
+  var value_bar = Blockly.JavaScript.valueToCode(block, 'bar', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_content = Blockly.JavaScript.statementToCode(block, 'content');
+  //TODO: Assemble JavaScript into code variable.
+  var elements = new Array();
+  var split = statements_content.trim().split(',');
+
+  for (var i = 0; i < split.length - 1; i++) {
+    elements.push(split[i]);
+  }
+  if (value_bar === '') return '';
+  code += value_bar + '('
+  code += elements.join(',')
+  code += ')';
+  return code;
+};
+Blockly.JavaScript['constant'] = function (block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = text_name + ",";
+  return code;
+};
+Blockly.JavaScript['info_block_statement'] = function (block) {
+  return '';
+};
+Blockly.JavaScript['funktor'] = function (block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = text_name;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['rumpf'] = function (block) {
+  var dropdown_seperate = block.getFieldValue('seperate');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var elements = new Array();
+  var split = statements_name.trim().split('.');
+  // TODO: Assemble JavaScript into code variable.
+  for (var i = 0; i < split.length - 1; i++) {
+    elements.push(split[i]);
+  }
+  var code = '', dropdown_seperate, statements_name;
+  if (dropdown_seperate == 'and') {
+    code = elements.join(',') + '.';
+  }
+  if (dropdown_seperate == 'or') {
+    code = elements.join(';') + '.';
+  }
+  return code.trim();
+};
+Blockly.JavaScript['Rule'] = function (block) {
+  var statements_fact = Blockly.JavaScript.statementToCode(block, 'Fact');
+  var statements_rumpf = Blockly.JavaScript.statementToCode(block, 'Rumpf');
+  // TODO: Assemble JavaScript into code variable.
+  var code = statements_fact + ':-' + statements_rumpf;
+  return code.trim();
+};
+Blockly.JavaScript['abfrage'] = function (block) {
+  var checkbox_active = block.getFieldValue('active');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  if (checkbox_active.toString() == 'TRUE') {
+    code = statements_name;
+  }
+
+  return code.trim();
+};
+Blockly.JavaScript['separate'] = function (block) {
+  var dropdown_separate = block.getFieldValue('separate');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var code = '';
+  // TODO: Assemble JavaScript into code variable.
+  // if(dropdown_separate=='and'){
+  //   code='?'+statements_name;
+  // }
+  // if(dropdown_separate=='or'){
+  //   code='-'+statements_name;
+  // }
+  code = statements_name;
+  return code.trim();
+};
+//////////////////////////////////////numjs///////////////////////////////////////
+Blockly.JavaScript['nj_array'] = function (block) {
+  var text_array = block.getFieldValue('array');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'nj.array([' + text_array + '])';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['nj_sum'] = function (block) {
+  var value_ar1 = Blockly.JavaScript.valueToCode(block, 'ar1', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'nj.sum(' + value_ar1 + ')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['nj_multiply'] = function (block) {
+  var value_ar1 = Blockly.JavaScript.valueToCode(block, 'ar1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_ar2 = Blockly.JavaScript.valueToCode(block, 'ar2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_ar1 + '.multiply(' + value_ar2 + ')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['nj_substract'] = function (block) {
+  var value_ar1 = Blockly.JavaScript.valueToCode(block, 'ar1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_ar2 = Blockly.JavaScript.valueToCode(block, 'ar2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_ar1 + '.subtract(' + value_ar2 + ')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['nj_add'] = function (block) {
+  var value_ar1 = Blockly.JavaScript.valueToCode(block, 'ar1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_ar2 = Blockly.JavaScript.valueToCode(block, 'ar2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_ar1 + '.add(' + value_ar2 + ')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE]
+};
+Blockly.JavaScript['nj_divide'] = function (block) {
+  var value_ar1 = Blockly.JavaScript.valueToCode(block, 'ar1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_ar2 = Blockly.JavaScript.valueToCode(block, 'ar2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_ar1 + '.divide(' + value_ar2 + ')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE]
+};
+Blockly.JavaScript['nj_shape'] = function (block) {
+  var value_ar1 = Blockly.JavaScript.valueToCode(block, 'ar1', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_ar1 + '.shape'
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC]
+};
+Blockly.JavaScript['js_hypothesis'] = function (block) {
+  var value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_w = Blockly.JavaScript.valueToCode(block, 'W', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '(' + value_x + '.multiply(' + value_w + ')).add(' + value_b + ')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC]
+};
+Blockly.JavaScript['js_cost'] = function (block) {
+  var value_hypothesis = Blockly.JavaScript.valueToCode(block, 'hypothesis', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y_train = Blockly.JavaScript.valueToCode(block, 'y_train', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_mul = block.getFieldValue('mul');
+  var value_len = Blockly.JavaScript.valueToCode(block, 'len', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'nj.sum((' + value_hypothesis + '.subtract(' + value_y_train + ')).pow(' + text_mul + '))/' + value_len;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['js_gradient_w'] = function (block) {
+  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_mul = Blockly.JavaScript.valueToCode(block, 'mul', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_len = Blockly.JavaScript.valueToCode(block, 'len', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'nj.sum(((((' + value_x + '.multiply(' + value_w + ')).subtract(' + value_y + ')).add(' + value_b + ')).multiply(' + value_mul + ')).multiply(' + value_x2 + '))/' + value_len;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['js_gradient_b'] = function (block) {
+  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_mul = Blockly.JavaScript.valueToCode(block, 'mul', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_len = Blockly.JavaScript.valueToCode(block, 'len', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'nj.sum((((' + value_x + '.multiply(' + value_w + ')).subtract(' + value_y + ')).add(' + value_b + ')).multiply(' + value_mul + '))/' + value_len;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['insert'] = function (block) {
+  var value_val = Blockly.JavaScript.valueToCode(block, 'val', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_sep = block.getFieldValue('sep');
+  var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_val + dropdown_sep + value_value + ';\n';
+  return code;
+};
+Blockly.JavaScript['console'] = function (block) {
+  var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'console.log(' + value_value + ');\n';
+  return code;
+};
+
+
+Blockly.JavaScript['for_c'] = function (block) {
+  var value_val = Blockly.JavaScript.valueToCode(block, 'val', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_s_val = Blockly.JavaScript.valueToCode(block, 's_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_e_val = Blockly.JavaScript.valueToCode(block, 'e_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('NAME');
+  var text_int = block.getFieldValue('int');
+  var dropdown_math = block.getFieldValue('math');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'for(' + value_val + '=' + value_s_val + ';' + value_val + dropdown_name + value_e_val + ';' + value_val + dropdown_math + text_int + '){\n' + statements_name + '\n}\n'
+  return code;
+};
+Blockly.JavaScript['if_c'] = function (block) {
+  var value_val = Blockly.JavaScript.valueToCode(block, 'val', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val2 = Blockly.JavaScript.valueToCode(block, 'val2', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_sep = block.getFieldValue('sep');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'if(' + value_val + dropdown_sep + value_val2 + '){\n' + statements_name + '\n}\n';
+  return code;
+};
