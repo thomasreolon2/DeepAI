@@ -934,7 +934,7 @@ Blockly.defineBlocksWithJsonArray(
       "tooltip": "",
       "helpUrl": ""
     },
-   {
+    {
       "type": "async",
       "message0": "async function :  %1 %2 %3",
       "args0": [
@@ -1222,7 +1222,7 @@ Blockly.defineBlocksWithJsonArray(
       "colour": 230,
       "tooltip": "",
       "helpUrl": ""
-    }, 
+    },
     {
       "type": "predict",
       "message0": "학습된 모델로 예측-> 모델 :  %1",
@@ -1385,60 +1385,60 @@ Blockly.defineBlocksWithJsonArray(
       "tooltip": "",
       "helpUrl": ""
     },
-// 클롤링 부분 
-{
-  "type": "user_script",
-  "message0": "%1 : 크롤링 = 검색어 :  %2 %3 개수: %4 %5",
-  "args0": [
+    // 클롤링 부분 
     {
-      "type": "input_value",
-      "name": "Script_Name",
-      "check": "String"
+      "type": "user_script",
+      "message0": "%1 : 크롤링 = 검색어 :  %2 %3 개수: %4 %5",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "Script_Name",
+          "check": "String"
+        },
+        {
+          "type": "input_dummy"
+        },
+        {
+          "type": "input_value",
+          "name": "Word",
+          "check": "String"
+        },
+        {
+          "type": "input_dummy"
+        },
+        {
+          "type": "input_value",
+          "name": "Count",
+          "check": "Number"
+        }
+      ],
+      "inputsInline": true,
+      "nextStatement": null,
+      "colour": 345,
+      "tooltip": "",
+      "helpUrl": ""
     },
     {
-      "type": "input_dummy"
-    }, 
-    {
-      "type": "input_value",
-      "name": "Word",
-      "check": "String" 
+      "type": "script",
+      "message0": "%1 : 크롤링 하고 저장 ",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "NAME"
+        }
+      ],
+      "inputsInline": true,
+      "previousStatement": null,
+      "colour": 345,
+      "tooltip": "",
+      "helpUrl": ""
     },
-    {
-      "type": "input_dummy"
-    },
-    { 
-      "type": "input_value",
-      "name": "Count",
-      "check": "Number"
-    }
-  ],
-  "inputsInline": true,
-  "nextStatement": null,
-  "colour": 345,
-  "tooltip": "",
-  "helpUrl": ""
-},
-{
-  "type": "script",
-  "message0": "%1 : 크롤링 하고 저장 ",
-  "args0": [
-    {
-      "type": "input_value",
-      "name": "NAME"
-    }
-  ],
-  "inputsInline": true,
-  "previousStatement": null,
-  "colour": 345,
-  "tooltip": "",
-  "helpUrl": ""
-},
-// 클롤링 부분 
-////////////////////////////////////////////////////////////////
+    // 클롤링 부분 
+    ////////////////////////////////////////////////////////////////
 
 
 
-   
+
   ]
 );
 
@@ -1547,12 +1547,12 @@ Blockly.defineBlocksWithJsonArray(
 );
 /////////////////////prolog/////////////////////////
 Blockly.Blocks['prolog_list'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("bar")
-        .setCheck(null)
-        .appendField("Fact");
+      .setCheck(null)
+      .appendField("Fact");
     this.appendStatementInput("content")
-        .setCheck(null);
+      .setCheck(null);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, "Array");
@@ -1563,98 +1563,98 @@ Blockly.Blocks['prolog_list'] = {
   }
 };
 Blockly.Blocks['constant'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("constant")
-        .appendField(new Blockly.FieldTextInput(""), "NAME");
+      .appendField("constant")
+      .appendField(new Blockly.FieldTextInput(""), "NAME");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(135);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['info_block_statement'] = {
   init: function () {
-      this.setEnabled(true);
-      this.setColour('#8e904d');
-      this.setPreviousStatement(true);
-      this.setNextStatement(false);
-      this.appendDummyInput();
+    this.setEnabled(true);
+    this.setColour('#8e904d');
+    this.setPreviousStatement(true);
+    this.setNextStatement(false);
+    this.appendDummyInput();
   }
 };
 Blockly.Blocks['funktor'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("Funktor")
-        .appendField(new Blockly.FieldTextInput(""), "NAME");
+      .appendField("Funktor")
+      .appendField(new Blockly.FieldTextInput(""), "NAME");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(135);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['rumpf'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("Rumpf")
-        .appendField(new Blockly.FieldDropdown([["and","and"], ["or","or"]]), "seperate");
+      .appendField("Rumpf")
+      .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "seperate");
     this.appendStatementInput("NAME")
-        .setCheck(null);
+      .setCheck(null);
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, "Array");
     this.setColour(190);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['Rule'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("       Rule");
+      .appendField("       Rule");
     this.appendStatementInput("Fact")
-        .setCheck(null);
+      .setCheck(null);
     this.appendStatementInput("Rumpf")
-        .setCheck(null);
+      .setCheck(null);
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, "Array");
     this.setColour(190);
- this.setTooltip("Ein einfacher Fakt, welches aus einer Relation und einem oder mehreren Termen besteht.");
- this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
+    this.setTooltip("Ein einfacher Fakt, welches aus einer Relation und einem oder mehreren Termen besteht.");
+    this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
   }
 };
 Blockly.Blocks['abfrage'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("Abfrage | Active")
-        .appendField(new Blockly.FieldCheckbox("false"), "active");
+      .appendField("Abfrage | Active")
+      .appendField(new Blockly.FieldCheckbox("false"), "active");
     this.appendStatementInput("NAME")
-        .setCheck(null);
+      .setCheck(null);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, "Array");
     this.setColour(100);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['separate'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("AND | OR 설정")
-        .appendField(new Blockly.FieldDropdown([["and","and"], ["or","or"]]), "separate");
+      .appendField("AND | OR 설정")
+      .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "separate");
     this.appendStatementInput("NAME")
-        .setCheck(null);
+      .setCheck(null);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, "Array");
     this.setColour(100);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 /** file upload */

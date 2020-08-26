@@ -5,7 +5,7 @@
     top: 0;
     right: -600px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     border: solid;
     border-color: gray;
     box-shadow:  5px 5px 10px black, 0 0 15px gray
@@ -21,4 +21,8 @@
     color: white;
     border: solid;
     border-color: gray;  
+  }
+  #graph1{
+    height:25%;
+    z-index: 3;
   }

@@ -47,7 +47,7 @@
   <link rel="stylesheet" href="./js/codemirror/addon/hint/show-hint.css">
   <!-- cdoemirror 자동 완성 기능 -->
 
- <!--jquery-->
+  <!--jquery-->
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -105,6 +105,10 @@
   <div>
     <aside id="sidebar">
       <button><span class="btn_t" style="color:black">그래프</span></button>
+      <div id=graph1></div>
+      <div id=graph2 style="height: 300px;"></div>
+      <div id=graph3 style="height: 300px;"></div>
+
     </aside>
   </div>
 
@@ -162,16 +166,16 @@
   <!-- Toolbox 정의 -->
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display: none">
     <category name="논리" colour="%{BKY_LOGIC_HUE}">
-      <lock type="controls_if">
-        </block>
-        <block type="logic_compare"></block>
-        <block type="logic_operation"></block>
-        <block type="logic_negate"></block>
-        <block type="logic_boolean"></block>
-        <block type="logic_null"></block>
-        <block type="logic_ternary"></block>
+      <block type="if_c"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_null"></block>
+      <block type="logic_ternary"></block>
     </category>
     <category name="반복" colour="%{BKY_LOOPS_HUE}">
+      <block type="for_c"></block>
       <block type="controls_repeat_ext">
         <value name="TIMES">
           <shadow type="math_number">
@@ -429,7 +433,7 @@
       </block>
       <block type="lists_sort"></block>
     </category>
-    <category name="색상"" colour=" %{BKY_COLOUR_HUE}">
+    <category name="색상" colour=" %{BKY_COLOUR_HUE}">
       <block type="colour_picker"></block>
       <block type="colour_random"></block>
       <block type="colour_rgb">
@@ -468,12 +472,15 @@
       </block>
     </category>
 
-     <!-- 커스텀 블록 -->
-     <sep></sep>
-     <category name="변수" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-     <category name="함수" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
-     <sep></sep>
-     <!-- <category name="Linear Regression">
+    <!-- 커스텀 블록 -->
+    <sep></sep>
+    <category name="변수" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+    <category name="함수" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
+      <block type="async"></block>
+
+    </category>
+    <sep></sep>
+    <!-- <category name="Linear Regression">
        <block type="np_array"></block>
        <block type="sequential"></block>
        <block type="dense"></block>
@@ -494,11 +501,11 @@
        <block type="fit"></block>
        <block type="prediction"></block>
      </category>-->
- 
-     <!--2020-07-02-->
-     <!--<category name="Emotion" colour="%{BKY_VARIABLES_HUE}">-->
-     <!-- Lee Jin Hyung -->
-     <!--
+
+    <!--2020-07-02-->
+    <!--<category name="Emotion" colour="%{BKY_VARIABLES_HUE}">-->
+    <!-- Lee Jin Hyung -->
+    <!--
        <block type="readcsv"></block>
        <block type="token"></block>
        <block type="tokenfit"></block>
@@ -509,16 +516,16 @@
        <block type="keras_embedding"></block>
        <block type="keras_lstm"></block>
        <block type="keras_dropout"></block>-->
-     <!-- Jo Cheon Woo -->
-     <!--<block type="array_change"></block>
+    <!-- Jo Cheon Woo -->
+    <!--<block type="array_change"></block>
        <block type="onehotencoder"></block>
        <block type="onehotencoder_fit"></block>
        <block type="enc_transform"></block>
        <block type="model_predict"></block>
        <block type="enc_inverse"></block>-->
- 
-     <!--tensorji 선형회귀-->
-     <!-- <category name="선형회귀" colour="%{BKY_VARIABLES_HUE}">
+
+    <!--tensorji 선형회귀-->
+    <!-- <category name="선형회귀" colour="%{BKY_VARIABLES_HUE}">
        <block type="callback"></block>
        <block type="sequential"></block>
        <block type="dense"></block>
@@ -570,40 +577,50 @@
        <block type="constant"></block>
        <block type="funktor"></block>
        <block type="rumpf"></block> -->
- 
- 
-     <!-- </category> -->
-     <!-- 크롤링 -->
-     <!-- <category name="크롤링" colour="%{BKY_LOGIC_HUE}"> -->
-     <!-- <block type="user_script"></block> -->
-     <!-- <block type="script"></block> -->
-     <!-- </category> -->
-     <!-- 크롤링 -->
- 
- 
-     <!-- <category name="데이터 전처리" colour="%{BKY_VARIABLES_HUE}"> -->
-     <!-- <block type="file_upload"></block> -->
-     <!-- </category> -->
- 
- 
-     <!--numjs-->
-     <category name="JS배열" colour="%{BKY_LOGIC_HUE}">
-       <block type="nj_array"></block>
-       <block type="nj_sum"></block>
-       <block type="nj_multiply"></block>
-       <block type="nj_substract"></block>
-       <block type="nj_add"></block>
-       <block type="nj_divide"></block>
-       <block type="nj_shape"></block>
- 
-     </category>
-     <category name="선형회귀" colour="%{BKY_LOGIC_HUE}">
-       <block type="js_hypothesis"></block>
-       <block type="js_cost"></block>
-       <block type="js_gradient_w"></block>
-       <block type="js_gradient_b"></block>
- 
-     </category>
+
+
+    <!-- </category> -->
+    <!-- 크롤링 -->
+    <!-- <category name="크롤링" colour="%{BKY_LOGIC_HUE}"> -->
+    <!-- <block type="user_script"></block> -->
+    <!-- <block type="script"></block> -->
+    <!-- </category> -->
+    <!-- 크롤링 -->
+
+
+    <!-- <category name="데이터 전처리" colour="%{BKY_VARIABLES_HUE}"> -->
+    <!-- <block type="file_upload"></block> -->
+    <!-- </category> -->
+
+
+    <!--numjs-->
+    <category name="JS배열" colour="%{BKY_LOGIC_HUE}">
+      <block type="nj_array"></block>
+      <block type="nj_sum"></block>
+      <block type="nj_multiply"></block>
+      <block type="nj_substract"></block>
+      <block type="nj_add"></block>
+      <block type="nj_divide"></block>
+      <block type="nj_shape"></block>
+
+    </category>
+    <category name="기계학습" colour="%{BKY_LOGIC_HUE}">
+      <block type="sequential"></block>
+      <block type="add"></block>
+      <block type="addn"></block>
+      <block type="compile"></block>
+      <block type="fit"></block>
+
+
+    </category>
+
+    <category name="선형회귀" colour="%{BKY_LOGIC_HUE}">
+      <block type="js_hypothesis"></block>
+      <block type="js_cost"></block>
+      <block type="js_gradient_w"></block>
+      <block type="js_gradient_b"></block>
+
+    </category>
   </xml>
 
   </xml>
@@ -912,6 +929,28 @@
           $sidebt.find('span').text('그래프');
         };
       });
+    });
+
+    TESTER = document.getElementById('graph1');
+    Plotly.newPlot(TESTER, [{
+      x: [1, 2, 3, 4, 5],
+      y: [1, 2, 4, 8, 16]
+    }], {
+      margin: { t: 0 }
+    });
+    TESTER = document.getElementById('graph2');
+    Plotly.newPlot(TESTER, [{
+      x: [1, 2, 3, 4, 5],
+      y: [1, 2, 4, 8, 16]
+    }], {
+      margin: { t: 0 }
+    });
+    TESTER = document.getElementById('graph3');
+    Plotly.newPlot(TESTER, [{
+      x: [1, 2, 3, 4, 5],
+      y: [1, 2, 4, 8, 16]
+    }], {
+      margin: { t: 0 }
     });
   </script>
   <script src="/js/utils/canvas.js"></script> <!-- 그림판 -->
