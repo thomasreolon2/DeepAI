@@ -790,3 +790,12 @@ Blockly.JavaScript['printc'] = function(block) {
   var code = 'printc('+value_content+');\n';
   return code;
 };
+Blockly.JavaScript['lrgraph'] = function(block) {
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_w = Blockly.JavaScript.valueToCode(block, 'w', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'LRgraph('+value_x+','+value_y+','+value_w+','+value_b+');';
+  return code;
+};

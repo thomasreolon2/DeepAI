@@ -2127,6 +2127,30 @@ Blockly.Blocks['printc'] = {
  this.setHelpUrl("");
   }
 };
+Blockly.Blocks['lrgraph'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("선형회귀 그래프 출력->");
+    this.appendValueInput("x")
+        .setCheck(null)
+        .appendField("X 값 :");
+    this.appendValueInput("y")
+        .setCheck(null)
+        .appendField("Y 값 :");
+    this.appendValueInput("w")
+        .setCheck(null)
+        .appendField("가중치 값 :");
+    this.appendValueInput("b")
+        .setCheck(null)
+        .appendField("편향 값 :");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(160);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
 // /** file upload */
 // Blockly.Blocks['file_upload'] = {

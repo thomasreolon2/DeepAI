@@ -25,7 +25,8 @@
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
   <script src="/js/blockly/tau-prolog.js"></script> <!-- tau Prolog 추가 -->
-
+  <!--plotly cdn-->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
   <!--numjs-->
   <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
 
@@ -101,13 +102,14 @@
 </head>
 
 <body onload="">
-  <!--sidebar-->
+  <!--사이드바-->
   <div>
     <aside id="sidebar">
       <button><span class="btn_t" style="color:black">그래프</span></button>
-      <div id=graph1></div>
+      <div id=graph></div>
+      <!-- <div id=graph1 style="height: 300px;"></div>
       <div id=graph2 style="height: 300px;"></div>
-      <div id=graph3 style="height: 300px;"></div>
+      <div id=graph3 style="height: 300px;"></div> -->
 
     </aside>
   </div>
@@ -607,22 +609,31 @@
 
     </category>
     <category name="머신러닝" colour="%{BKY_LOGIC_HUE}">
-      <block type="sequential"></block>
-      <block type="add"></block>
-      <block type="addn"></block>
-      <block type="compile"></block>
-      <block type="fit"></block>
+      <category name="머신러닝 모델">
+        <block type="sequential"></block>
+        <block type="add"></block>
+        <block type="addn"></block>
+        <block type="compile"></block>
+        <block type="fit"></block>
+      </category>
+      <category name="선형회귀">
+        <category name="선형회귀 연산">
+          <block type="js_hypothesis"></block>
+          <block type="js_cost"></block>
+          <block type="js_gradient_w"></block>
+          <block type="js_gradient_b"></block>
+        </category>
+        <category name="선형회귀 그래프">
+          <block type="lrgraph"></block>
 
+        </category>
 
+      </category>
+      <category name="로지스틱회귀">
+      </category>
     </category>
 
-    <category name="선형회귀 연산" colour="%{BKY_LOGIC_HUE}">
-      <block type="js_hypothesis"></block>
-      <block type="js_cost"></block>
-      <block type="js_gradient_w"></block>
-      <block type="js_gradient_b"></block>
 
-    </category>
   </xml>
 
   </xml>
@@ -933,33 +944,69 @@
       });
     });
 
-    TESTER = document.getElementById('graph1');
-    Plotly.newPlot(TESTER, [{
-      x: [1, 2, 3, 4, 5],
-      y: [1, 2, 4, 8, 16]
-    }], {
-      margin: { t: 0 }
-    });
-    TESTER = document.getElementById('graph2');
-    Plotly.newPlot(TESTER, [{
-      x: [1, 2, 3, 4, 5],
-      y: [1, 2, 4, 8, 16]
-    }], {
-      margin: { t: 0 }
-    });
-    TESTER = document.getElementById('graph3');
-    Plotly.newPlot(TESTER, [{
-      x: [1, 2, 3, 4, 5],
-      y: [1, 2, 4, 8, 16]
-    }], {
-      margin: { t: 0 }
-    });
+    // TESTER = document.getElementById('graph1');
+    // Plotly.newPlot(TESTER, [{
+    //   x: [1, 2, 3, 4, 5],
+    //   y: [1, 2, 4, 8, 16]
+    // }], {
+    //   margin: { t: 0 }
+    // });
+    // TESTER = document.getElementById('graph2');
+    // Plotly.newPlot(TESTER, [{
+    //   x: [1, 2, 3, 4, 5],
+    //   y: [1, 2, 4, 8, 16]
+    // }], {
+    //   margin: { t: 0 }
+    // });
+    // TESTER = document.getElementById('graph3');
+    // Plotly.newPlot(TESTER, [{
+    //   x: [1, 2, 3, 4, 5],
+    //   y: [1, 2, 4, 8, 16]
+    // }], {
+    //   margin: { t: 0 }
+    // });
 
 
     ///화면에 찍기 프린트
-    function printc(x){
-      var savetext= $('#exeArea').val();
-    $('#exeArea').val(savetext+x+'\n');
+    function printc(x) {
+      var savetext = $('#exeArea').val();
+      $('#exeArea').val(savetext + x + '\n');
+    }
+
+    //선형회귀 그래프
+    function LRgraph(x, y, w, b) {
+      var xa = new Array();
+      var ya = new Array();
+      var ba = new Array();
+      for (var i = 0; i < x.shape; i++) {
+        xa.push(x.get(i));
+        ya.push(y.get(i));
+        pred = (x.get(i) * w + b)
+        ba.push(pred);
+      }
+      var data = {
+        x: xa,
+        y: ya,
+        mode: 'markers',
+        type: 'scatter'
+      };
+
+      var prediction = {
+        x: xa,
+        y: ba,
+        mode: 'lines',
+        type: 'scatter'
+      }; var layout = {
+        autosize: true
+
+      };
+      var layout = {
+        autosize: true
+      };
+
+      var datax = [data, prediction];
+
+      Plotly.newPlot('graph', datax, layout);
     }
   </script>
   <script src="/js/utils/canvas.js"></script> <!-- 그림판 -->
