@@ -2113,6 +2113,20 @@ Blockly.Blocks['if_c'] = {
 };
 
 
+Blockly.Blocks['printc'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("결과 출력 ");
+    this.appendValueInput("content")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(160);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
 // /** file upload */
 // Blockly.Blocks['file_upload'] = {

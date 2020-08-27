@@ -146,7 +146,7 @@
           <dive id="pyCodeEditor"></dive>
         </div>
         </textarea>
-        <textarea id="exeArea" class="form-control" readonly style="height: 70px;"></textarea>
+        <textarea id="exeArea" class="form-control" readonly style="height: 180px;"></textarea>
       </div>
     </div>
 
@@ -307,6 +307,8 @@
     </category>
     <category name="문자" colour="%{BKY_TEXTS_HUE}">
       <block type="text"></block>
+      <!-- <block type="textc"></block> -->
+      <block type="printc"></block>
       <block type="text_join"></block>
       <block type="text_append">
         <value name="TEXT">
@@ -594,7 +596,7 @@
 
 
     <!--numjs-->
-    <category name="JS배열" colour="%{BKY_LOGIC_HUE}">
+    <category name="수치배열" colour="%{BKY_LOGIC_HUE}">
       <block type="nj_array"></block>
       <block type="nj_sum"></block>
       <block type="nj_multiply"></block>
@@ -604,7 +606,7 @@
       <block type="nj_shape"></block>
 
     </category>
-    <category name="기계학습" colour="%{BKY_LOGIC_HUE}">
+    <category name="머신러닝" colour="%{BKY_LOGIC_HUE}">
       <block type="sequential"></block>
       <block type="add"></block>
       <block type="addn"></block>
@@ -614,7 +616,7 @@
 
     </category>
 
-    <category name="선형회귀" colour="%{BKY_LOGIC_HUE}">
+    <category name="선형회귀 연산" colour="%{BKY_LOGIC_HUE}">
       <block type="js_hypothesis"></block>
       <block type="js_cost"></block>
       <block type="js_gradient_w"></block>
@@ -952,6 +954,13 @@
     }], {
       margin: { t: 0 }
     });
+
+
+    ///화면에 찍기 프린트
+    function printc(x){
+      var savetext= $('#exeArea').val();
+    $('#exeArea').val(savetext+x+'\n');
+    }
   </script>
   <script src="/js/utils/canvas.js"></script> <!-- 그림판 -->
 </body>

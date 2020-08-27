@@ -784,3 +784,9 @@ Blockly.JavaScript['if_c'] = function (block) {
   var code = 'if(' + value_val + dropdown_sep + value_val2 + '){\n' + statements_name + '\n}\n';
   return code;
 };
+Blockly.JavaScript['printc'] = function(block) {
+  var value_content = Blockly.JavaScript.valueToCode(block, 'content', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'printc('+value_content+');\n';
+  return code;
+};
