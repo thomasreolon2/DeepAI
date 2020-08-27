@@ -62,6 +62,8 @@
   <!--css-->
   <link rel="stylesheet" href="css\sidebar.css">
 
+  <!-- table -->
+  <link rel="stylesheet" href="/css/table_custom.css">
   <style type="text/css">
     canvas {
       background-color: white;
@@ -110,7 +112,17 @@
       <!-- <div id=graph1 style="height: 300px;"></div>
       <div id=graph2 style="height: 300px;"></div>
       <div id=graph3 style="height: 300px;"></div> -->
-
+    </aside>
+    <!-- Test중임 확인하고 코드 정리해야함. -->
+    <aside id="sidebar" class="csv_view" style="margin-top: 60px;">
+      <button><span class="btn_t" style="color:black">csv</span></button>
+      <div class="table_scroll">
+        <table class="table table-striped">
+          <thead id="tblhead"></thead>
+          <tbody id="tblshow"></tbody>
+        </table>
+      </div>
+    </aside>
     </aside>
   </div>
 
@@ -830,42 +842,51 @@
       var input = document.createElement("input");
       input.type = "file";
       input.accept = ".csv"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
-      input.onchange = function (event) {
-        processFile(event.target.files[0]);
-        var data = sessionStorage.getItem('file');
-        var rows = data.split('\n');
-        var fileArray = new Array();
-        rows[0] = rows[0].replace('\r', '');
-        // rows
-        for (var i = 1; i < rows.length; i++) {
-          var fileObject = new Object();
-          cols = rows[i].split(',');
-          // header
-          for (var j = 0; j < cols.length; j++) {
-            var value = cols[j];
-            var name = rows[0].split(',')[j] // hedaer name
-            fileObject[name] = Number(value); // value
-          }
-          fileArray.push(fileObject);
-          // 파일이름 set
-          var block = demoWorkspace.getBlockById(blockId);
-          var bId = Blockly.mainWorkspace.getBlockById(blockId)
-          block.setFieldValue(this.value, 'file');
+      input.onchange = function (e) {
+        $("#tblshow").empty();
+        $("#tblhead").empty();
+        // 파일이름 set
+        var block = demoWorkspace.getBlockById(blockId);
+        var bId = Blockly.mainWorkspace.getBlockById(blockId)
+        block.setFieldValue(this.value, 'file');
+        var fileArray = new Array(); // csv to json?
+        if (e.target.files != undefined) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var csvval = e.target.result.split("\n");
+            var csvvalue = csvval[0].split(",");
+            var inputrad = "";
+            // csv view! header 
+            var objRow = document.all["tblhead"].insertRow();
+            for (var i = 0; i < csvvalue.length; i++) {
+              var temp = csvvalue[i];
+              var objCell = objRow.insertCell();
+              objCell.innerHTML = "<td>" + temp + "</td>";
+            }
+            csvval[0] = csvval[0].replace('\r', '');
+            // row
+            var cnt = (csvval.length < 100) ? csvval.length : 100;
+            for (var i = 1; i < cnt; i++) {
+              var cols = csvval[i].split(',');
+              var fileObject = new Object();
+              var temp = csvval[i];
+              var objRow = document.all["tblhead"].insertRow(); // csv view! 
+              for (var j = 0; j < cols.length; j++) {
+                var value = cols[j];
+                var name = csvval[0].split(',')[j] // hedaer name
+                var objCell = objRow.insertCell(); // csv view! 
+                objCell.innerHTML = "<td>" + value + "</td>"; // csv view! 
+                fileObject[name] = Number(value); // value
+              }
+              fileArray.push(fileObject);
+            }
+          };
+          reader.readAsText(e.target.files.item(0));
         }
-
-        // session save
-        sessionStorage.setItem('csv_data', JSON.stringify(fileArray));
-        // load
-        var tmp = JSON.parse(sessionStorage.getItem('csv_data'));
-        // map
-        var x = tmp.map(s => s.x);
-        // test
-        console.log(tmp);
-        // 파일명
-        // var tempJsEditor = jsEditor.getValue();
-        // var tempPyEditor = pyEditor.getValue();
-        // jsEditor.setValue(tempJsEditor + "\n" + input.value);
-        // pyEditor.setValue(tempPyEditor + "\n" + input.value);
+        // sessionStorage.setItem('csv_data', JSON.stringify(fileArray));
+        // var tmp = JSON.parse(sessionStorage.getItem('csv_data'));
+        // // map
+        // var x = tmp.map(s => s.x);
       };
 
       input.click();
@@ -953,6 +974,19 @@
         } else {
           $side.stop(true).animate({ right: '-600px' }, duration);
           $sidebt.find('span').text('그래프');
+        };
+      });
+      // Test중임 확인하고 코드 정리해야함.
+      var $side = $('.csv_view');
+      var $sidebt = $side.find('button').on('click', function () {
+        $side.toggleClass('open');
+
+        if ($side.hasClass('open')) {
+          $side.stop(true).animate({ right: '0px' }, duration);
+          $sidebt.find('span').text('X');
+        } else {
+          $side.stop(true).animate({ right: '-600px' }, duration);
+          $sidebt.find('span').text('csv');
         };
       });
     });
