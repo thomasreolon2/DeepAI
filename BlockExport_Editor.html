@@ -632,7 +632,9 @@
       <category name="로지스틱회귀">
       </category>
     </category>
-
+    <category name="test" colour="%{BKY_LOGIC_HUE}">
+      <block type="file_open"></block>
+    </category>
 
   </xml>
 
@@ -800,8 +802,10 @@
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
         // showDescription(block.helpUrl);
-        if ('file_upload' == block.type) {
-          openTextfFile();
+        if ('file_open' == block.type) {
+          openTextFile(event.blockId);
+          // var bId = Blockly.mainWorkspace.getBlockById(event.block_id)
+          // block.setFieldValue('aaa', 'file');
         }
       }
     }
@@ -822,7 +826,7 @@
         document.getElementById('exeArea').innerHTML = e;
       }
     };
-    function openTextFile() {
+    function openTextFile(blockId) {
       var input = document.createElement("input");
       input.type = "file";
       input.accept = ".csv"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
@@ -843,16 +847,25 @@
             fileObject[name] = Number(value); // value
           }
           fileArray.push(fileObject);
+          // 파일이름 set
+          var block = demoWorkspace.getBlockById(blockId);
+          var bId = Blockly.mainWorkspace.getBlockById(blockId)
+          block.setFieldValue(this.value, 'file');
         }
+
         // session save
         sessionStorage.setItem('csv_data', JSON.stringify(fileArray));
         // load
         var tmp = JSON.parse(sessionStorage.getItem('csv_data'));
         // map
         var x = tmp.map(s => s.x);
-
         // test
         console.log(tmp);
+        // 파일명
+        // var tempJsEditor = jsEditor.getValue();
+        // var tempPyEditor = pyEditor.getValue();
+        // jsEditor.setValue(tempJsEditor + "\n" + input.value);
+        // pyEditor.setValue(tempPyEditor + "\n" + input.value);
       };
 
       input.click();

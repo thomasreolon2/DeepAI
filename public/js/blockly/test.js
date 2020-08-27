@@ -1533,18 +1533,28 @@ Blockly.defineBlocksWithJsonArray(
   ]
 );
 
-Blockly.defineBlocksWithJsonArray(
-  [
-    {
-      "type": "file_open",
-      "message0": "File Open",
-      "nextStatement": null,
-      "colour": 230,
-      "tooltip": "",
-      "helpUrl": ""
-    }
-  ]
-);
+// Blockly.defineBlocksWithJsonArray(
+//   [
+//     {
+//       "type": "file_open",
+//       "message0": "File Open",
+//       "nextStatement": null,
+//       "colour": 230,
+//       "tooltip": "",
+//       "helpUrl": ""
+//     }
+//   ]
+// );
+Blockly.Blocks['file_open'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("File Open")
+      .appendField(new Blockly.FieldTextInput(""), "file");
+    this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
 /////////////////////prolog/////////////////////////
 Blockly.Blocks['prolog_list'] = {
   init: function () {
