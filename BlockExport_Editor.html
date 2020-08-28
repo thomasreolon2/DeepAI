@@ -29,7 +29,8 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
   <!--numjs-->
   <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
-
+  <!--Mathjs-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.2.0/math.min.js"></script>
   <!-- codemirror 추가 -->
   <script src="/js/codemirror/lib/codemirror.js"></script>
   <link rel="stylesheet" href="/js/codemirror/lib/codemirror.css">
@@ -1033,14 +1034,16 @@
         x: xa,
         y: ya,
         mode: 'markers',
-        type: 'scatter'
+        type: 'scatter',
+        name: 'data'
       };
 
       var prediction = {
         x: xa,
         y: ba,
         mode: 'lines',
-        type: 'scatter'
+        type: 'scatter',
+        name: 'prediction'
       }; var layout = {
         autosize: true
 
