@@ -318,19 +318,36 @@ Blockly.JavaScript['file_upload'] = function (block) {
 ////////////////////////////////////////////////////////////////
 //mnist for js
 ///////////////////////////////////////////////////////////////
-Blockly.JavaScript['csv'] = function (block) {
+Blockly.JavaScript['csv'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_label = block.getFieldValue('label');
+  // TODO: Assemble JavaScript into code variable.
+  var code =value_var+'= tf.data.csv('+value_name+', {columnConfigs: {'+text_label+': {isLabel: true}} });\n';
+  return code;
+};
+Blockly.JavaScript['csv2'] = function (block) {
   var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_option = block.getFieldValue('OPTIONS');
   var file = block.getFieldValue('csv_url');
   // // TODO: Assemble JavaScript into code variable.
   var code = value_var + " = " + file + ";";
-
+  // toNumber(file, dropdown_option);
   return code;
 };
 
-function toNumber(value) {
-  for (var i = 0; i < value.length; i++) {
+function toNumber(obj, yLabel) {
+  var key = Object.getOwnPropertyNames(obj[0]); // key 값 추출
 
+  for (var i = 0; i <= key.length; i++) {
+    for (var j = 0; j < obj.length; j++) {
+      var value = obj[j][key[i]];
+      if (key[i] == yLabel) { // key 값이 설정한 yLabel과 같다면
+        break;
+      } else {
+        // string to number
+      }
+    }
   }
 }
 

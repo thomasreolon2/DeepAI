@@ -909,40 +909,40 @@ Blockly.defineBlocksWithJsonArray(
     ////////////////////////////////////////////////////////////////
     //mnist for js
     ///////////////////////////////////////////////////////////////
-    // {
-    //   "type": "csv",
-    //   "message0": "CSV 파일 불러오기 ->  %1 CSV URL :  %2 %3 라벨로 지정할 컬럼명 :  %4",
-    //   "args0": [
-    //     {
-    //       "type": "input_value",
-    //       "name": "var"
-    //     },
-    //     {
-    //       "type": "input_dummy",
-    //       "name": "file",
-    //       "text": "CSV URL : "
-    //     },
-    //     {
-    //       "type": "field_input",
-    //       "name": "csv_url",
-    //       "text": ""
-    //     },
-    //     {
-    //       "type": "field_dropdown",
-    //       "name": "header",
-    //       "options":
-    //         [
-    //           ["option", "option1"],
-    //         ]
-    //     }
-    //   ],
-    //   "inputsInline": true,
-    //   "previousStatement": null,
-    //   "nextStatement": null,
-    //   "colour": 65,
-    //   "tooltip": "",
-    //   "helpUrl": ""
-    // },
+    {
+      "type": "csv",
+      "message0": "CSV 파일 불러오기 ->  %1 CSV URL :  %2 %3 라벨로 지정할 컬럼명 :  %4",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "var"
+        },
+        {
+          "type": "input_dummy",
+          "name": "file",
+          "text": "CSV URL : "
+        },
+        {
+          "type": "field_input",
+          "name": "csv_url",
+          "text": ""
+        },
+        {
+          "type": "field_dropdown",
+          "name": "header",
+          "options":
+            [
+              ["option", "option1"],
+            ]
+        }
+      ],
+      "inputsInline": true,
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 65,
+      "tooltip": "",
+      "helpUrl": ""
+    },
     {
       "type": "async",
       "message0": "async function :  %1 %2 %3",
@@ -2223,12 +2223,8 @@ Blockly.Blocks['mrlbgradient'] = {
     this.setHelpUrl("");
   }
 };
-//       "type": "field_input",
-//       "name": "csv_url",
-//       "text": ""
-//     },
 
-Blockly.Blocks['csv'] = {
+Blockly.Blocks['csv2'] = {
   init: function () {
     var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
     this.appendValueInput("var")
