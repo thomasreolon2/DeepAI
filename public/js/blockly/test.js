@@ -1928,17 +1928,17 @@ Blockly.Blocks['js_hypothesis'] = {
       .appendField("추측 값 ->");
     this.appendValueInput("X")
       .setCheck(null)
-      .appendField("X");
+      .appendField("X 값");
     this.appendDummyInput()
       .appendField("*");
     this.appendValueInput("W")
       .setCheck(null)
-      .appendField("W");
+      .appendField("가중치 값");
     this.appendDummyInput()
       .appendField("+");
     this.appendValueInput("b")
       .setCheck(null)
-      .appendField("b");
+      .appendField("편향 값");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
@@ -1962,7 +1962,7 @@ Blockly.Blocks['js_cost'] = {
     this.appendValueInput("len")
       .setCheck(null)
       .appendField(" / ")
-      .appendField("길이");
+      .appendField("크기");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
@@ -1998,7 +1998,7 @@ Blockly.Blocks['js_gradient_w'] = {
     this.appendValueInput("len")
       .setCheck(null)
       .appendField(" / ")
-      .appendField("길이");
+      .appendField("크기");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
@@ -2023,14 +2023,14 @@ Blockly.Blocks['js_gradient_b'] = {
     this.appendValueInput("b")
       .setCheck(null)
       .appendField("+")
-      .appendField("편향값");
+      .appendField("편향 값");
     this.appendValueInput("mul")
       .setCheck(null)
       .appendField(") *");
     this.appendValueInput("len")
       .setCheck(null)
       .appendField(")  / ")
-      .appendField("길이");
+      .appendField("크기");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
@@ -2161,6 +2161,83 @@ Blockly.Blocks['lrgraph'] = {
  this.setHelpUrl("");
   }
 };
+//////////////////////////다중선형회귀numjs////////////////////////
+Blockly.Blocks['mlrhypothesis'] = {
+  init: function() {
+    this.appendValueInput("w1")
+        .setCheck(null)
+        .appendField("추측 값->  가중치1");
+    this.appendValueInput("x1")
+        .setCheck(null)
+        .appendField("* X1 값");
+    this.appendValueInput("w2")
+        .setCheck(null)
+        .appendField("+ 가중치2");
+    this.appendValueInput("x2")
+        .setCheck(null)
+        .appendField("* X2 값");
+    this.appendValueInput("b")
+        .setCheck(null)
+        .appendField("+ 편향 값");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['mrlcost'] = {
+  init: function() {
+    this.appendValueInput("y")
+        .setCheck(null)
+        .appendField("손실값 -> Y ");
+    this.appendValueInput("hypothesis")
+        .setCheck(null)
+        .appendField("- hypothesis");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['mrlwgradient'] = {
+  init: function() {
+    this.appendValueInput("lenght")
+        .setCheck(null)
+        .appendField("가중치 기울기 값 -> -( 1 / X 크기");
+    this.appendValueInput("x")
+        .setCheck(null)
+        .appendField(") * 합계 ( X 값");
+    this.appendValueInput("cost")
+        .setCheck(null)
+        .appendField("* 손실 값)");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['mrlbgradient'] = {
+  init: function() {
+    this.appendValueInput("lenght")
+        .setCheck(null)
+        .appendField("편향 기울기 값 -> -( 1 / X 크기");
+    this.appendValueInput("cost")
+        .setCheck(null)
+        .appendField(") * 합계 ( 손실 값");
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
 
 // /** file upload */
 // Blockly.Blocks['file_upload'] = {

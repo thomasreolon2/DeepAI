@@ -631,15 +631,21 @@
 
       </category>
       <category name="선형회귀">
-        <category name="선형회귀 연산">
+        <category name="단순 선형회귀 연산">
           <block type="js_hypothesis"></block>
           <block type="js_cost"></block>
           <block type="js_gradient_w"></block>
           <block type="js_gradient_b"></block>
         </category>
+        <category name="다중 선형회귀 연산">
+          <block type="mlrhypothesis"></block>
+          <block type="mrlcost"></block>
+          <block type="mrlwgradient"></block>
+          <block type="mrlbgradient"></block>
+
+        </category>
         <category name="선형회귀 그래프">
           <block type="lrgraph"></block>
-
         </category>
 
       </category>
@@ -974,7 +980,7 @@
           $side.stop(true).animate({ right: '0px' }, duration);
           $sidebt.find('span').text('X');
         } else {
-          $side.stop(true).animate({ right: '-600px' }, duration);
+          $side.stop(true).animate({ right: '-900px' }, duration);
           $sidebt.find('span').text('그래프');
         };
       });
@@ -987,7 +993,7 @@
           $side.stop(true).animate({ right: '0px' }, duration);
           $sidebt.find('span').text('X');
         } else {
-          $side.stop(true).animate({ right: '-600px' }, duration);
+          $side.stop(true).animate({ right: '-900px' }, duration);
           $sidebt.find('span').text('csv');
         };
       });

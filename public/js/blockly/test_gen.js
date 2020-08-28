@@ -805,3 +805,42 @@ Blockly.JavaScript['lrgraph'] = function (block) {
   var code = 'LRgraph(' + value_x + ',' + value_y + ',' + value_w + ',' + value_b + ');';
   return code;
 };
+
+
+//////////////////////////다중선형회귀numjs////////////////////////
+Blockly.JavaScript['mlrhypothesis'] = function(block) {
+  var value_w1 = Blockly.JavaScript.valueToCode(block, 'w1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_w2 = Blockly.JavaScript.valueToCode(block, 'w2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '(('+value_x1+'.multiply('+value_w1+')).add('+value_x2+'.multiply('+value_w2+'))).add('+value_b+')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['mrlcost'] = function(block) {
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_hypothesis = Blockly.JavaScript.valueToCode(block, 'hypothesis', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_y+'.subtract('+value_hypothesis+')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['mrlwgradient'] = function(block) {
+  var value_lenght = Blockly.JavaScript.valueToCode(block, 'lenght', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_cost = Blockly.JavaScript.valueToCode(block, 'cost', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '-(1/'+value_lenght+')*(nj.sum('+value_x+'.multiply('+value_cost+')))';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['mrlbgradient'] = function(block) {
+  var value_lenght = Blockly.JavaScript.valueToCode(block, 'lenght', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_cost = Blockly.JavaScript.valueToCode(block, 'cost', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '-('+value_lenght+')*nj.sum('+value_cost+')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
