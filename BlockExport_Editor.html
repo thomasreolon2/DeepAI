@@ -814,7 +814,8 @@
       }
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
-        if ('csv' == block.type) {
+        if ('csv2' == block.type) {
+          console.log("click!!!!!!!!!!!!!!!!!!!!");
           openTextFile(event.blockId);
         }
       }
@@ -885,7 +886,7 @@
           };
           reader.readAsText(e.target.files.item(0));
         }
-        sessionStorage.setItem('csv_data', JSON.stringify(fileArray));
+        // sessionStorage.setItem('csv_data', JSON.stringify(fileArray));
         // var tmp = JSON.parse(sessionStorage.getItem('csv_data'));
         // // map
         // var x = tmp.map(s => s.x);

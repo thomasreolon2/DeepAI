@@ -2227,16 +2227,19 @@ Blockly.Blocks['mrlbgradient'] = {
 Blockly.Blocks['csv2'] = {
   init: function () {
     var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
-    this.appendValueInput("var")
-      .setCheck(null)
-      .appendField("VAR : ");
     this.appendDummyInput()
       .appendField("CSV : ");
     this.appendDummyInput()
       .appendField(new Blockly.FieldTextInput("default"), "csv_url");
+    this.appendValueInput("var_x")
+      .setCheck(null)
+      .appendField("X : ");
     this.appendDummyInput()
       .appendField('라벨로 지정할 컬럼명 : ')
       .appendField(dropdown, 'OPTIONS');
+    this.appendValueInput("var_y")
+      .setCheck(null)
+      .appendField("Y : ");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     // this.setOutput(true, null);

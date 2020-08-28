@@ -185,7 +185,6 @@ Blockly.JavaScript['keras_dropout'] = function (block) {
   return code;
 };
 
-
 /**
  * 2020-07-02
  * Jo Cheon Woo
@@ -318,38 +317,60 @@ Blockly.JavaScript['file_upload'] = function (block) {
 ////////////////////////////////////////////////////////////////
 //mnist for js
 ///////////////////////////////////////////////////////////////
-Blockly.JavaScript['csv'] = function(block) {
+Blockly.JavaScript['csv'] = function (block) {
   var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   var text_label = block.getFieldValue('label');
   // TODO: Assemble JavaScript into code variable.
-  var code =value_var+'= tf.data.csv('+value_name+', {columnConfigs: {'+text_label+': {isLabel: true}} });\n';
+  var code = value_var + '= tf.data.csv(' + value_name + ', {columnConfigs: {' + text_label + ': {isLabel: true}} });\n';
   return code;
 };
 Blockly.JavaScript['csv2'] = function (block) {
-  var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
+  var valX = Blockly.JavaScript.valueToCode(block, 'var_x', Blockly.JavaScript.ORDER_ATOMIC);
+  var valY = Blockly.JavaScript.valueToCode(block, 'var_x', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_option = block.getFieldValue('OPTIONS');
+
   var file = block.getFieldValue('csv_url');
-  // // TODO: Assemble JavaScript into code variable.
-  var code = value_var + " = " + file + ";";
-  // toNumber(file, dropdown_option);
-  return code;
-};
+  // x, y
+  var x_train, y_train;
+  try {
+    if (dropdown_option == "OPTION-1") {
+      return "";
+    }
+    file = JSON.parse(file);
+    // key 값만 추출
+    var key = Object.getOwnPropertyNames(file[0]);
+    // 2차원 배열 array
+    x_train = new Array(file.length - 1);
+    y_train = new Array(file.length - 1);
 
-function toNumber(obj, yLabel) {
-  var key = Object.getOwnPropertyNames(obj[0]); // key 값 추출
-
-  for (var i = 0; i <= key.length; i++) {
-    for (var j = 0; j < obj.length; j++) {
-      var value = obj[j][key[i]];
-      if (key[i] == yLabel) { // key 값이 설정한 yLabel과 같다면
-        break;
-      } else {
-        // string to number
+    for (var i = 0; i < x_train.length; i++) {
+      x_train[i] = new Array(key.length - 1); // 1개는 Y Label
+    }
+    // 값 세팅
+    for (var i = 0; i < x_train.length; i++) {
+      for (var j = 0; j < key.length; j++) {
+        var keyName = key[j]; // key 값
+        if (keyName.trim() == dropdown_option.trim()) { // key값이 Y Label로 설정한 이름과 같다면.
+          y_train[i] = Number(file[i][keyName]);
+        } else {
+          x_train[i][j] = Number(file[i][keyName]); // value
+        }
       }
     }
+    // console.log(x_train);
+    // console.log(typeof (x_train) + ", " + x_train.length + " , " + x_train[0].length);
+    // console.log('****** y_train : \n' + y_train);
+  } catch (e) {
+    console.log(e);
   }
-}
+  var obj = x_train.map(x => Object.assign({}, x));
+  var code = valX + " = " + x_train + ";";
+  // console.log(Object.values(obj)); // object->value
+  console.log(x_train);
+  sessionStorage.setItem("x_train", x_train);
+  return code;
+};
 
 Blockly.JavaScript['async'] = function (block) {
   var text_name = block.getFieldValue('NAME');
