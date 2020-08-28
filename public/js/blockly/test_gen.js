@@ -95,18 +95,6 @@ Blockly.JavaScript['evaluate'] = function (block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
-
-Blockly.JavaScript['file_open'] = function (block) {
-  // TODO: Assemble Python into code variable.
-  var fileName = block.getFieldValue('file');
-  // TODO: Assemble JavaScript into code variable.
-  var code = "";
-  if (fileName != "") {
-    code = '// file : ' + fileName;
-  }
-  // TODO: Change ORDER_NONE to the correct strength.
-  return code;
-};
 /**
  * 2020-07-02
  * Lee Jin Hyung
@@ -332,10 +320,10 @@ Blockly.JavaScript['file_upload'] = function (block) {
 ///////////////////////////////////////////////////////////////
 Blockly.JavaScript['csv'] = function (block) {
   var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var fileName = block.getFieldValue('csv_url');
   var text_label = block.getFieldValue('label');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_var + '= tf.data.csv(' + value_name + ', {columnConfigs: {' + text_label + ': {isLabel: true}} });\n';
+  var code = value_var + '= tf.data.csv(' + fileName + ', {columnConfigs: {' + text_label + ': {isLabel: true}} });\n';
   return code;
 };
 Blockly.JavaScript['async'] = function (block) {
@@ -808,39 +796,39 @@ Blockly.JavaScript['lrgraph'] = function (block) {
 
 
 //////////////////////////다중선형회귀numjs////////////////////////
-Blockly.JavaScript['mlrhypothesis'] = function(block) {
+Blockly.JavaScript['mlrhypothesis'] = function (block) {
   var value_w1 = Blockly.JavaScript.valueToCode(block, 'w1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_x1 = Blockly.JavaScript.valueToCode(block, 'x1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_w2 = Blockly.JavaScript.valueToCode(block, 'w2', Blockly.JavaScript.ORDER_ATOMIC);
   var value_x2 = Blockly.JavaScript.valueToCode(block, 'x2', Blockly.JavaScript.ORDER_ATOMIC);
   var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '(('+value_x1+'.multiply('+value_w1+')).add('+value_x2+'.multiply('+value_w2+'))).add('+value_b+')';
+  var code = '((' + value_x1 + '.multiply(' + value_w1 + ')).add(' + value_x2 + '.multiply(' + value_w2 + '))).add(' + value_b + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
-Blockly.JavaScript['mrlcost'] = function(block) {
+Blockly.JavaScript['mrlcost'] = function (block) {
   var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
   var value_hypothesis = Blockly.JavaScript.valueToCode(block, 'hypothesis', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = value_y+'.subtract('+value_hypothesis+')';
+  var code = value_y + '.subtract(' + value_hypothesis + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
-Blockly.JavaScript['mrlwgradient'] = function(block) {
+Blockly.JavaScript['mrlwgradient'] = function (block) {
   var value_lenght = Blockly.JavaScript.valueToCode(block, 'lenght', Blockly.JavaScript.ORDER_ATOMIC);
   var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
   var value_cost = Blockly.JavaScript.valueToCode(block, 'cost', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '-(1/'+value_lenght+')*(nj.sum('+value_x+'.multiply('+value_cost+')))';
+  var code = '-(1/' + value_lenght + ')*(nj.sum(' + value_x + '.multiply(' + value_cost + ')))';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
-Blockly.JavaScript['mrlbgradient'] = function(block) {
+Blockly.JavaScript['mrlbgradient'] = function (block) {
   var value_lenght = Blockly.JavaScript.valueToCode(block, 'lenght', Blockly.JavaScript.ORDER_ATOMIC);
   var value_cost = Blockly.JavaScript.valueToCode(block, 'cost', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '-('+value_lenght+')*nj.sum('+value_cost+')';
+  var code = '-(' + value_lenght + ')*nj.sum(' + value_cost + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };

@@ -911,15 +911,21 @@ Blockly.defineBlocksWithJsonArray(
     ///////////////////////////////////////////////////////////////
     {
       "type": "csv",
-      "message0": "CSV 파일 불러오기 ->  %1 CSV URL :  %2 라벨로 지정할 컬럼명 :  %3",
+      "message0": "CSV 파일 불러오기 ->  %1 CSV URL :  %2 %3 라벨로 지정할 컬럼명 :  %4",
       "args0": [
         {
           "type": "input_value",
           "name": "var"
         },
         {
-          "type": "input_value",
-          "name": "NAME"
+          "type": "input_dummy",
+          "name": "file",
+          "text": "CSV URL : "
+        },
+        {
+          "type": "field_input",
+          "name": "csv_url",
+          "text": ""
         },
         {
           "type": "field_input",
@@ -1533,28 +1539,6 @@ Blockly.defineBlocksWithJsonArray(
   ]
 );
 
-// Blockly.defineBlocksWithJsonArray(
-//   [
-//     {
-//       "type": "file_open",
-//       "message0": "File Open",
-//       "nextStatement": null,
-//       "colour": 230,
-//       "tooltip": "",
-//       "helpUrl": ""
-//     }
-//   ]
-// );
-Blockly.Blocks['file_open'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("File Open")
-      .appendField(new Blockly.FieldTextInput(""), "file");
-    this.setColour(230);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
 /////////////////////prolog/////////////////////////
 Blockly.Blocks['prolog_list'] = {
   init: function () {
@@ -2124,116 +2108,116 @@ Blockly.Blocks['if_c'] = {
 
 
 Blockly.Blocks['printc'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("결과 출력 ");
+      .appendField("결과 출력 ");
     this.appendValueInput("content")
-        .setCheck(null);
+      .setCheck(null);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(160);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['lrgraph'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
-        .appendField("선형회귀 그래프 출력->");
+      .appendField("선형회귀 그래프 출력->");
     this.appendValueInput("x")
-        .setCheck(null)
-        .appendField("X 값 :");
+      .setCheck(null)
+      .appendField("X 값 :");
     this.appendValueInput("y")
-        .setCheck(null)
-        .appendField("Y 값 :");
+      .setCheck(null)
+      .appendField("Y 값 :");
     this.appendValueInput("w")
-        .setCheck(null)
-        .appendField("가중치 값 :");
+      .setCheck(null)
+      .appendField("가중치 값 :");
     this.appendValueInput("b")
-        .setCheck(null)
-        .appendField("편향 값 :");
+      .setCheck(null)
+      .appendField("편향 값 :");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(160);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 //////////////////////////다중선형회귀numjs////////////////////////
 Blockly.Blocks['mlrhypothesis'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("w1")
-        .setCheck(null)
-        .appendField("추측 값->  가중치1");
+      .setCheck(null)
+      .appendField("추측 값->  가중치1");
     this.appendValueInput("x1")
-        .setCheck(null)
-        .appendField("* X1 값");
+      .setCheck(null)
+      .appendField("* X1 값");
     this.appendValueInput("w2")
-        .setCheck(null)
-        .appendField("+ 가중치2");
+      .setCheck(null)
+      .appendField("+ 가중치2");
     this.appendValueInput("x2")
-        .setCheck(null)
-        .appendField("* X2 값");
+      .setCheck(null)
+      .appendField("* X2 값");
     this.appendValueInput("b")
-        .setCheck(null)
-        .appendField("+ 편향 값");
+      .setCheck(null)
+      .appendField("+ 편향 값");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['mrlcost'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("y")
-        .setCheck(null)
-        .appendField("손실값 -> Y ");
+      .setCheck(null)
+      .appendField("손실값 -> Y ");
     this.appendValueInput("hypothesis")
-        .setCheck(null)
-        .appendField("- hypothesis");
+      .setCheck(null)
+      .appendField("- hypothesis");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['mrlwgradient'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("lenght")
-        .setCheck(null)
-        .appendField("가중치 기울기 값 -> -( 1 / X 크기");
+      .setCheck(null)
+      .appendField("가중치 기울기 값 -> -( 1 / X 크기");
     this.appendValueInput("x")
-        .setCheck(null)
-        .appendField(") * 합계 ( X 값");
+      .setCheck(null)
+      .appendField(") * 합계 ( X 값");
     this.appendValueInput("cost")
-        .setCheck(null)
-        .appendField("* 손실 값)");
+      .setCheck(null)
+      .appendField("* 손실 값)");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['mrlbgradient'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("lenght")
-        .setCheck(null)
-        .appendField("편향 기울기 값 -> -( 1 / X 크기");
+      .setCheck(null)
+      .appendField("편향 기울기 값 -> -( 1 / X 크기");
     this.appendValueInput("cost")
-        .setCheck(null)
-        .appendField(") * 합계 ( 손실 값");
+      .setCheck(null)
+      .appendField(") * 합계 ( 손실 값");
     this.appendDummyInput()
-        .appendField(")");
+      .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 

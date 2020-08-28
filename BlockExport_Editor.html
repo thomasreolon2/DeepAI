@@ -112,17 +112,12 @@
       <!-- <div id=graph1 style="height: 300px;"></div>
       <div id=graph2 style="height: 300px;"></div>
       <div id=graph3 style="height: 300px;"></div> -->
-    </aside>
-    <!-- Test중임 확인하고 코드 정리해야함. -->
-    <aside id="sidebar" class="csv_view" style="margin-top: 60px;">
-      <button><span class="btn_t" style="color:black">csv</span></button>
       <div class="table_scroll">
-        <table class="table table-striped">
+        <table class="table table-sm">
           <thead id="tblhead"></thead>
           <tbody id="tblshow"></tbody>
         </table>
       </div>
-    </aside>
     </aside>
   </div>
 
@@ -627,7 +622,12 @@
         <block type="addn"></block>
         <block type="compile"></block>
         <block type="fit"></block>
-        <block type="csv"></block>
+        <block type="csv">
+          <value name="test">
+            <block type="file_open"></block>
+          </value>
+        </block>
+
 
       </category>
       <category name="선형회귀">
@@ -652,10 +652,6 @@
       <category name="로지스틱회귀">
       </category>
     </category>
-    <category name="test" colour="%{BKY_LOGIC_HUE}">
-      <block type="file_open"></block>
-    </category>
-
   </xml>
 
   </xml>
@@ -817,15 +813,11 @@
       if (event.type == Blockly.Events.CREATE) {
         var block = demoWorkspace.getBlockById(event.blockId);
         console.log('블록이 선택됨1');
-        // showDescription(block.helpUrl);
       }
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
-        // showDescription(block.helpUrl);
-        if ('file_open' == block.type) {
+        if ('csv' == block.type) {
           openTextFile(event.blockId);
-          // var bId = Blockly.mainWorkspace.getBlockById(event.block_id)
-          // block.setFieldValue('aaa', 'file');
         }
       }
     }
@@ -856,7 +848,10 @@
         // 파일이름 set
         var block = demoWorkspace.getBlockById(blockId);
         var bId = Blockly.mainWorkspace.getBlockById(blockId)
-        block.setFieldValue(this.value, 'file');
+        block.setFieldValue(this.value, 'csv_url'); // csv_url -> field_input ID
+        // block.setFieldValue('test1', 'option1');
+        //test 
+        block.getElementById
         var fileArray = new Array(); // csv to json?
         if (e.target.files != undefined) {
           var reader = new FileReader();
@@ -869,7 +864,7 @@
             for (var i = 0; i < csvvalue.length; i++) {
               var temp = csvvalue[i];
               var objCell = objRow.insertCell();
-              objCell.innerHTML = "<td>" + temp + "</td>";
+              objCell.innerHTML = "<th>" + temp + "</th>";
             }
             csvval[0] = csvval[0].replace('\r', '');
             // row
@@ -982,19 +977,6 @@
         } else {
           $side.stop(true).animate({ right: '-900px' }, duration);
           $sidebt.find('span').text('그래프');
-        };
-      });
-      // Test중임 확인하고 코드 정리해야함.
-      var $side = $('.csv_view');
-      var $sidebt = $side.find('button').on('click', function () {
-        $side.toggleClass('open');
-
-        if ($side.hasClass('open')) {
-          $side.stop(true).animate({ right: '0px' }, duration);
-          $sidebt.find('span').text('X');
-        } else {
-          $side.stop(true).animate({ right: '-900px' }, duration);
-          $sidebt.find('span').text('csv');
         };
       });
     });

@@ -3,8 +3,19 @@ table {
   border: 1px solid #444444;
 }
 
-th,
-td {
+.fixed_top {
+  display:inline-table;
+  position:absolute;
+  top:0;
+  width:calc(100% - 17px);
+  background:#eef7ff;
+}
+.fixed_top th {
+  border-top:1px solid #dedede;
+  border-bottom:1px solid #dedede;
+}
+
+th, td {
   border: 1px solid #444444;
   width: 100%;
 }
