@@ -2255,6 +2255,59 @@ var dynamicDropdownOptions_ = [];
 function addOptions(text) {
   dynamicDropdownOptions_.push([text, text]);
 }
+
+Blockly.Blocks['nget'] = {
+  init: function() {
+    this.appendValueInput("Ar")
+        .setCheck(null)
+        .appendField("배열 요소 찾기-> 배열 :");
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("위치 :");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['mexp'] = {
+  init: function() {
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("지수함수-> ")
+        .appendField(new Blockly.FieldDropdown([["양수","+"], ["음수","-"], ["option","OPTIONNAME"]]), "sep");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['logicgraph'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("선형회귀 그래프 출력->");
+    this.appendValueInput("x")
+      .setCheck(null)
+      .appendField("X 값 :");
+    this.appendValueInput("y")
+      .setCheck(null)
+      .appendField("Y 값 :");
+    this.appendValueInput("w")
+      .setCheck(null)
+      .appendField("가중치 값 :");
+    this.appendValueInput("b")
+      .setCheck(null)
+      .appendField("편향 값 :");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(160);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
   //       "type": "field_input",
   //       "name": "csv_url",
   //       "text": ""
