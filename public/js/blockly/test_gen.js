@@ -320,12 +320,20 @@ Blockly.JavaScript['file_upload'] = function (block) {
 ///////////////////////////////////////////////////////////////
 Blockly.JavaScript['csv'] = function (block) {
   var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
-  var fileName = block.getFieldValue('csv_url');
-  var text_label = block.getFieldValue('label');
-  // TODO: Assemble JavaScript into code variable.
-  var code = value_var + '= tf.data.csv(' + fileName + ', {columnConfigs: {' + text_label + ': {isLabel: true}} });\n';
+  var dropdown_option = block.getFieldValue('OPTIONS');
+  var file = block.getFieldValue('csv_url');
+  // // TODO: Assemble JavaScript into code variable.
+  var code = value_var + " = " + file + ";";
+
   return code;
 };
+
+function toNumber(value) {
+  for (var i = 0; i < value.length; i++) {
+
+  }
+}
+
 Blockly.JavaScript['async'] = function (block) {
   var text_name = block.getFieldValue('NAME');
   var statements_async = Blockly.JavaScript.statementToCode(block, 'async');

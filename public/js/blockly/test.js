@@ -909,37 +909,40 @@ Blockly.defineBlocksWithJsonArray(
     ////////////////////////////////////////////////////////////////
     //mnist for js
     ///////////////////////////////////////////////////////////////
-    {
-      "type": "csv",
-      "message0": "CSV 파일 불러오기 ->  %1 CSV URL :  %2 %3 라벨로 지정할 컬럼명 :  %4",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "var"
-        },
-        {
-          "type": "input_dummy",
-          "name": "file",
-          "text": "CSV URL : "
-        },
-        {
-          "type": "field_input",
-          "name": "csv_url",
-          "text": ""
-        },
-        {
-          "type": "field_input",
-          "name": "label",
-          "text": ""
-        }
-      ],
-      "inputsInline": true,
-      "previousStatement": null,
-      "nextStatement": null,
-      "colour": 65,
-      "tooltip": "",
-      "helpUrl": ""
-    },
+    // {
+    //   "type": "csv",
+    //   "message0": "CSV 파일 불러오기 ->  %1 CSV URL :  %2 %3 라벨로 지정할 컬럼명 :  %4",
+    //   "args0": [
+    //     {
+    //       "type": "input_value",
+    //       "name": "var"
+    //     },
+    //     {
+    //       "type": "input_dummy",
+    //       "name": "file",
+    //       "text": "CSV URL : "
+    //     },
+    //     {
+    //       "type": "field_input",
+    //       "name": "csv_url",
+    //       "text": ""
+    //     },
+    //     {
+    //       "type": "field_dropdown",
+    //       "name": "header",
+    //       "options":
+    //         [
+    //           ["option", "option1"],
+    //         ]
+    //     }
+    //   ],
+    //   "inputsInline": true,
+    //   "previousStatement": null,
+    //   "nextStatement": null,
+    //   "colour": 65,
+    //   "tooltip": "",
+    //   "helpUrl": ""
+    // },
     {
       "type": "async",
       "message0": "async function :  %1 %2 %3",
@@ -2220,8 +2223,46 @@ Blockly.Blocks['mrlbgradient'] = {
     this.setHelpUrl("");
   }
 };
+//       "type": "field_input",
+//       "name": "csv_url",
+//       "text": ""
+//     },
 
-
+Blockly.Blocks['csv'] = {
+  init: function () {
+    var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
+    this.appendValueInput("var")
+      .setCheck(null)
+      .appendField("VAR : ");
+    this.appendDummyInput()
+      .appendField("CSV : ");
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldTextInput("default"), "csv_url");
+    this.appendDummyInput()
+      .appendField('라벨로 지정할 컬럼명 : ')
+      .appendField(dropdown, 'OPTIONS');
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    // this.setOutput(true, null);
+    this.setColour(20);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  },
+  dynamicOptions: function () {
+    if (!dynamicDropdownOptions_.length) {
+      return [['선택하세요.', 'OPTION-1']];
+    }
+    return dynamicDropdownOptions_;
+  }
+};
+var dynamicDropdownOptions_ = [];
+function addOptions(text) {
+  dynamicDropdownOptions_.push([text, text]);
+}
+  //       "type": "field_input",
+  //       "name": "csv_url",
+  //       "text": ""
+  //     },
 
 // /** file upload */
 // Blockly.Blocks['file_upload'] = {

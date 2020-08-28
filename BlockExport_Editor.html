@@ -845,13 +845,7 @@
       input.onchange = function (e) {
         $("#tblshow").empty();
         $("#tblhead").empty();
-        // 파일이름 set
-        var block = demoWorkspace.getBlockById(blockId);
-        var bId = Blockly.mainWorkspace.getBlockById(blockId)
-        block.setFieldValue("'" + this.value + "'", 'csv_url'); // csv_url -> field_input ID
-        // block.setFieldValue('test1', 'option1');
-        //test 
-        block.getElementById
+        ///////////////////////////////////////////
         var fileArray = new Array(); // csv to json?
         if (e.target.files != undefined) {
           var reader = new FileReader();
@@ -865,11 +859,14 @@
               var temp = csvvalue[i];
               var objCell = objRow.insertCell();
               objCell.innerHTML = "<th>" + temp + "</th>";
+              // dropdown append
+              addOptions(temp);
             }
             csvval[0] = csvval[0].replace('\r', '');
             // row
-            var cnt = (csvval.length < 100) ? csvval.length : 100;
+            var cnt = (csvval.length < 2000) ? csvval.length : 2000;
             for (var i = 1; i < cnt; i++) {
+              csvval[i] = csvval[i].replace('\r', '');
               var cols = csvval[i].split(',');
               var fileObject = new Object();
               var temp = csvval[i];
@@ -879,14 +876,18 @@
                 var name = csvval[0].split(',')[j] // hedaer name
                 var objCell = objRow.insertCell(); // csv view! 
                 objCell.innerHTML = "<td>" + value + "</td>"; // csv view! 
-                fileObject[name] = Number(value); // value
+                fileObject[name] = value; // value
               }
               fileArray.push(fileObject);
             }
+            // 파일 set
+            var block = demoWorkspace.getBlockById(blockId);
+            var bId = Blockly.mainWorkspace.getBlockById(blockId)
+            block.setFieldValue(JSON.stringify(fileArray), 'csv_url'); // csv_url -> field_input ID
           };
           reader.readAsText(e.target.files.item(0));
         }
-        // sessionStorage.setItem('csv_data', JSON.stringify(fileArray));
+        sessionStorage.setItem('csv_data', JSON.stringify(fileArray));
         // var tmp = JSON.parse(sessionStorage.getItem('csv_data'));
         // // map
         // var x = tmp.map(s => s.x);
@@ -894,6 +895,13 @@
 
       input.click();
     }
+    function addToolboxButtonCallbacks() {
+      workspace.registerButtonCallback(
+        'addDynamicOption', Blockly.TestBlocks.addDynamicDropdownOption_);
+      workspace.registerButtonCallback(
+        'removeDynamicOption', Blockly.TestBlocks.removeDynamicDropdownOption_);
+    }
+
     function processFile(file) {
       var reader = new FileReader();
       reader.onload = function () {
