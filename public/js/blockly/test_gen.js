@@ -335,32 +335,32 @@ Blockly.JavaScript['csv2'] = function (block) {
   var x_train, y_train;
   try {
     if (dropdown_option == "OPTION-1") {
-      return "";
-    }
-    file = JSON.parse(file);
-    // key 값만 추출
-    var key = Object.getOwnPropertyNames(file[0]);
-    // 2차원 배열 array
-    x_train = new Array(file.length - 1);
-    y_train = new Array(file.length - 1);
+      file = JSON.parse(file);
+      // key 값만 추출
+      var key = Object.getOwnPropertyNames(file[0]);
+      // 2차원 배열 array
+      x_train = new Array(file.length - 1);
+      y_train = new Array(file.length - 1);
 
-    for (var i = 0; i < x_train.length; i++) {
-      x_train[i] = new Array(key.length - 1); // 1개는 Y Label
-    }
-    // 값 세팅
-    for (var i = 0; i < x_train.length; i++) {
-      for (var j = 0; j < key.length; j++) {
-        var keyName = key[j]; // key 값
-        if (keyName.trim() == dropdown_option.trim()) { // key값이 Y Label로 설정한 이름과 같다면.
-          y_train[i] = Number(file[i][keyName]);
-        } else {
-          x_train[i][j] = Number(file[i][keyName]); // value
+      for (var i = 0; i < x_train.length; i++) {
+        x_train[i] = new Array(key.length - 1); // 1개는 Y Label
+      }
+      // 값 세팅
+      for (var i = 0; i < x_train.length; i++) {
+        for (var j = 0; j < key.length; j++) {
+          var keyName = key[j]; // key 값
+          if (keyName.trim() == dropdown_option.trim()) { // key값이 Y Label로 설정한 이름과 같다면.
+            y_train[i] = Number(file[i][keyName]);
+          } else {
+            x_train[i][j] = Number(file[i][keyName]); // value
+          }
         }
       }
     }
     // console.log(x_train);
     // console.log(typeof (x_train) + ", " + x_train.length + " , " + x_train[0].length);
     // console.log('****** y_train : \n' + y_train);
+
   } catch (e) {
     console.log(e);
   }
@@ -878,19 +878,19 @@ Blockly.JavaScript['mrlbgradient'] = function (block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
-Blockly.JavaScript['mexp'] = function(block) {
+Blockly.JavaScript['mexp'] = function (block) {
   var dropdown_sep = block.getFieldValue('sep');
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = 'Math.exp('+dropdown_sep+value_name+')';
+  var code = 'Math.exp(' + dropdown_sep + value_name + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
-Blockly.JavaScript['nget'] = function(block) {
+Blockly.JavaScript['nget'] = function (block) {
   var value_ar = Blockly.JavaScript.valueToCode(block, 'Ar', Blockly.JavaScript.ORDER_ATOMIC);
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = value_ar+'.get('+value_name+')';
+  var code = value_ar + '.get(' + value_name + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
