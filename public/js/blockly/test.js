@@ -911,29 +911,20 @@ Blockly.defineBlocksWithJsonArray(
     ///////////////////////////////////////////////////////////////
     {
       "type": "csv",
-      "message0": "CSV 파일 불러오기 ->  %1 CSV URL :  %2 %3 라벨로 지정할 컬럼명 :  %4",
+      "message0": "CSV 파일 불러오기 ->  %1 CSV URL :  %2 라벨로 지정할 컬럼명 :  %3",
       "args0": [
         {
           "type": "input_value",
           "name": "var"
         },
         {
-          "type": "input_dummy",
-          "name": "file",
-          "text": "CSV URL : "
+          "type": "input_value",
+          "name": "NAME"
         },
         {
           "type": "field_input",
-          "name": "csv_url",
+          "name": "label",
           "text": ""
-        },
-        {
-          "type": "field_dropdown",
-          "name": "header",
-          "options":
-            [
-              ["option", "option1"],
-            ]
         }
       ],
       "inputsInline": true,
@@ -1542,138 +1533,18 @@ Blockly.defineBlocksWithJsonArray(
   ]
 );
 
-/////////////////////prolog/////////////////////////
-Blockly.Blocks['prolog_list'] = {
-  init: function () {
-    this.appendValueInput("bar")
-      .setCheck(null)
-      .appendField("Fact");
-    this.appendStatementInput("content")
-      .setCheck(null);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, "Array");
-    // this.setNextStatement(true, null);
-    this.setColour(230);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['constant'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("constant")
-      .appendField(new Blockly.FieldTextInput(""), "NAME");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(135);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['info_block_statement'] = {
-  init: function () {
-    this.setEnabled(true);
-    this.setColour('#8e904d');
-    this.setPreviousStatement(true);
-    this.setNextStatement(false);
-    this.appendDummyInput();
-  }
-};
-Blockly.Blocks['funktor'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("Funktor")
-      .appendField(new Blockly.FieldTextInput(""), "NAME");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(135);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['rumpf'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("Rumpf")
-      .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "seperate");
-    this.appendStatementInput("NAME")
-      .setCheck(null);
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, "Array");
-    this.setColour(190);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['Rule'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("       Rule");
-    this.appendStatementInput("Fact")
-      .setCheck(null);
-    this.appendStatementInput("Rumpf")
-      .setCheck(null);
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, "Array");
-    this.setColour(190);
-    this.setTooltip("Ein einfacher Fakt, welches aus einer Relation und einem oder mehreren Termen besteht.");
-    this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
-  }
-};
-Blockly.Blocks['abfrage'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("Abfrage | Active")
-      .appendField(new Blockly.FieldCheckbox("false"), "active");
-    this.appendStatementInput("NAME")
-      .setCheck(null);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, "Array");
-    this.setColour(100);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['separate'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("AND | OR 설정")
-      .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "separate");
-    this.appendStatementInput("NAME")
-      .setCheck(null);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, "Array");
-    this.setColour(100);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-/** file upload */
 Blockly.defineBlocksWithJsonArray(
-  [{
-    "type": "file_upload",
-    "message0": "변수 : %1 파일 업로드 ",
-    "args0": [
-      {
-        "type": "input_value",
-        "name": "NAME"
-      }
-    ],
-    "output": null,
-    "colour": 230,
-    "tooltip": "",
-    "helpUrl": ""
-  }
+  [
+    {
+      "type": "file_open",
+      "message0": "File Open",
+      "nextStatement": null,
+      "colour": 230,
+      "tooltip": "",
+      "helpUrl": ""
+    }
   ]
 );
-
-
 /////////////////////prolog/////////////////////////
 Blockly.Blocks['prolog_list'] = {
   init: function () {
@@ -1806,11 +1677,12 @@ Blockly.Blocks['separate'] = {
 Blockly.Blocks['nj_array'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Numeric/N1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("배열 생성")
       .appendField(new Blockly.FieldTextInput("ex)1,2,3,4"), "array");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(120);
+    this.setColour(80);
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1818,12 +1690,13 @@ Blockly.Blocks['nj_array'] = {
 Blockly.Blocks['nj_sum'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Numeric/N2-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("배열 합계->");
     this.appendValueInput("ar1")
       .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(120);
+    this.setColour(80);
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1831,6 +1704,7 @@ Blockly.Blocks['nj_sum'] = {
 Blockly.Blocks['nj_multiply'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Numeric/N3-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("배열 곱->");
     this.appendValueInput("ar1")
       .setCheck(null);
@@ -1840,7 +1714,7 @@ Blockly.Blocks['nj_multiply'] = {
       .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(120);
+    this.setColour(80);
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1848,6 +1722,7 @@ Blockly.Blocks['nj_multiply'] = {
 Blockly.Blocks['nj_substract'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Numeric/N4-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("배열 뺄셈->");
     this.appendValueInput("ar1")
       .setCheck(null);
@@ -1857,7 +1732,7 @@ Blockly.Blocks['nj_substract'] = {
       .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(120);
+    this.setColour(80);
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1865,6 +1740,7 @@ Blockly.Blocks['nj_substract'] = {
 Blockly.Blocks['nj_add'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Numeric/N5-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("배열 덧셈->");
     this.appendValueInput("ar1")
       .setCheck(null);
@@ -1874,7 +1750,7 @@ Blockly.Blocks['nj_add'] = {
       .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(120);
+    this.setColour(80);
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1882,6 +1758,7 @@ Blockly.Blocks['nj_add'] = {
 Blockly.Blocks['nj_divide'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Numeric/N6-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("배열 나누기->");
     this.appendValueInput("ar1")
       .setCheck(null);
@@ -1891,7 +1768,7 @@ Blockly.Blocks['nj_divide'] = {
       .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(120);
+    this.setColour(80);
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1899,12 +1776,13 @@ Blockly.Blocks['nj_divide'] = {
 Blockly.Blocks['nj_shape'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Numeric/N7-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("배열 형태");
     this.appendValueInput("ar1")
       .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(120);
+    this.setColour(80);
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1915,17 +1793,17 @@ Blockly.Blocks['js_hypothesis'] = {
       .appendField("추측 값 ->");
     this.appendValueInput("X")
       .setCheck(null)
-      .appendField("X 값");
+      .appendField("X");
     this.appendDummyInput()
       .appendField("*");
     this.appendValueInput("W")
       .setCheck(null)
-      .appendField("가중치 값");
+      .appendField("W");
     this.appendDummyInput()
       .appendField("+");
     this.appendValueInput("b")
       .setCheck(null)
-      .appendField("편향 값");
+      .appendField("b");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
@@ -1949,7 +1827,7 @@ Blockly.Blocks['js_cost'] = {
     this.appendValueInput("len")
       .setCheck(null)
       .appendField(" / ")
-      .appendField("크기");
+      .appendField("길이");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
@@ -1985,7 +1863,7 @@ Blockly.Blocks['js_gradient_w'] = {
     this.appendValueInput("len")
       .setCheck(null)
       .appendField(" / ")
-      .appendField("크기");
+      .appendField("길이");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
@@ -2010,14 +1888,14 @@ Blockly.Blocks['js_gradient_b'] = {
     this.appendValueInput("b")
       .setCheck(null)
       .appendField("+")
-      .appendField("편향 값");
+      .appendField("편향값");
     this.appendValueInput("mul")
       .setCheck(null)
       .appendField(") *");
     this.appendValueInput("len")
       .setCheck(null)
       .appendField(")  / ")
-      .appendField("크기");
+      .appendField("길이");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(65);
@@ -2044,6 +1922,7 @@ Blockly.Blocks['insert'] = {
 Blockly.Blocks['console'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/ST13-logo-black.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("콘솔 출력 : ");
     this.appendValueInput("value")
       .setCheck(null);
@@ -2059,6 +1938,7 @@ Blockly.Blocks['for_c'] = {
   init: function () {
     this.appendValueInput("val")
       .setCheck(null)
+      .appendField(new Blockly.FieldImage("/img/Repeat/R1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("변수");
     this.appendValueInput("s_val")
       .setCheck(null)
@@ -2089,6 +1969,8 @@ Blockly.Blocks['for_c'] = {
 };
 Blockly.Blocks['if_c'] = {
   init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Logic/L1-logo.png", 25, 25, { alt: "*", flipRtl: "FALSE" }));
     this.appendValueInput("val")
       .setCheck(null)
       .appendField("만약");
@@ -2108,7 +1990,19 @@ Blockly.Blocks['if_c'] = {
     this.setHelpUrl("");
   }
 };
-
+Blockly.Blocks['test'] = {
+  init: function () {
+    this.appendValueInput("NAME")
+      .setCheck(null)
+      .appendField("제이름은 : ");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
 
 Blockly.Blocks['printc'] = {
   init: function () {
@@ -2124,6 +2018,7 @@ Blockly.Blocks['printc'] = {
     this.setHelpUrl("");
   }
 };
+
 Blockly.Blocks['lrgraph'] = {
   init: function () {
     this.appendDummyInput()
@@ -2148,6 +2043,7 @@ Blockly.Blocks['lrgraph'] = {
     this.setHelpUrl("");
   }
 };
+
 //////////////////////////다중선형회귀numjs////////////////////////
 Blockly.Blocks['mlrhypothesis'] = {
   init: function () {
@@ -2224,6 +2120,7 @@ Blockly.Blocks['mrlbgradient'] = {
   }
 };
 
+////////////////////////// csv upload ////////////////////////
 Blockly.Blocks['csv2'] = {
   init: function () {
     var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
@@ -2260,31 +2157,31 @@ function addOptions(text) {
 }
 
 Blockly.Blocks['nget'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("Ar")
-        .setCheck(null)
-        .appendField("배열 요소 찾기-> 배열 :");
+      .setCheck(null)
+      .appendField("배열 요소 찾기-> 배열 :");
     this.appendValueInput("NAME")
-        .setCheck(null)
-        .appendField("위치 :");
+      .setCheck(null)
+      .appendField("위치 :");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(120);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['mexp'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("NAME")
-        .setCheck(null)
-        .appendField("지수함수-> ")
-        .appendField(new Blockly.FieldDropdown([["양수","+"], ["음수","-"], ["option","OPTIONNAME"]]), "sep");
+      .setCheck(null)
+      .appendField("지수함수-> ")
+      .appendField(new Blockly.FieldDropdown([["양수", "+"], ["음수", "-"], ["option", "OPTIONNAME"]]), "sep");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 Blockly.Blocks['logicgraph'] = {
@@ -2311,10 +2208,6 @@ Blockly.Blocks['logicgraph'] = {
     this.setHelpUrl("");
   }
 };
-  //       "type": "field_input",
-  //       "name": "csv_url",
-  //       "text": ""
-  //     },
 
 // /** file upload */
 // Blockly.Blocks['file_upload'] = {

@@ -12,6 +12,7 @@
   <script src="/js/blockly/brython_stdlib.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
   <!--  Blockly 자체의 설정과 관련된 파일 -->
+
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script>
   <script src="/js/blockly/javascript_compressed.js"></script>
@@ -25,12 +26,13 @@
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
   <script src="/js/blockly/tau-prolog.js"></script> <!-- tau Prolog 추가 -->
+
   <!--plotly cdn-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
+
   <!--numjs-->
   <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
-  <!--Mathjs-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/7.2.0/math.min.js"></script>
+
   <!-- codemirror 추가 -->
   <script src="/js/codemirror/lib/codemirror.js"></script>
   <link rel="stylesheet" href="/js/codemirror/lib/codemirror.css">
@@ -50,15 +52,16 @@
   <!-- cdoemirror 자동 완성 기능 -->
 
   <!--jquery-->
-
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+  <!-- canvas -->
+  <script src="./js/canvas.js"></script>
 
   <!--css-->
   <link rel="stylesheet" href="css\sidebar.css">
@@ -84,7 +87,7 @@
     }
 
     div {
-      overflow: hidden;
+      /*overflow: hidden; 이거 끄니까 코드미러 넘버링나옴 */
       height: auto;
     }
 
@@ -104,7 +107,10 @@
   </style>
 </head>
 
+<!-- onload : body가 떳을때 작동되는 js입력 -->
+
 <body onload="">
+
   <!--사이드바-->
   <div>
     <aside id="sidebar">
@@ -123,43 +129,133 @@
   </div>
 
   <div class="container-fluid">
-    <div class="row">
-      <div class="d-flex flex-wrap text-white" style="width: 50%;">
+
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+      <!-- a -->
+      <a class="navbar-brand pl-2" href="#"><img src="logo2.png" /></a>
+
+      <!-- 왼쪽 구역-->
+      <div class="d-flex flex-wrap text-white ml-3" style="width: 50%;">
+
+        <!-- 파일 열기 -->
         <div class="input-group col-md-4 ml-3 mt-2 btn-sm custom-file">
           <input type="file" id="file" class="custom-file-input" accept="text/xml"
-            onchange="loadBlock();this.value=null;return false;">
-          <label class="custom-file-label" for="file">파일열기</label>
+            onchange="loadBlock(); this.value=null;return false;">
+          <label class="custom-file-label mr-1" for="file">파일열기</label>
         </div>
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="demoWorkspace.clear();"
+
+        <!-- 블록 지우기 -->
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="demoWorkspace.clear();"
           value="블록 지우기" />
+
+        <!-- 블록 저장 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="saveBlock();"
           value="블록 저장" />
+
+        <!-- 블록 색깔 + 배경색 -->
+        <select id="themeChanger" name="theme" onchange="changeTheme()" class="form-control col-md-3 mt-2 ml-3">
+          <option value="classic">Classic</option>
+          <option value="modern">Modern</option>
+          <option value="dark">Dark</option>
+          <option value="high_contrast">High Contrast</option>
+          <option value="deuteranopia">Deuteranopia/Protanopia</option>
+          <option value="tritanopia">Tritanopia</option>
+          <option value="zelos">Zelos</option>
+        </select>
+
       </div>
+
+      <!-- 오른쪽 구역 -->
       <div class="d-flex flex-wrap text-white" style="width: 50%;">
+
+        <!-- display -->
         <select id="display_select" class="form-control col-md-3 mt-2 ml-3">
           <option value="javascript">javascript</option>
           <option value="python">python</option>
         </select>
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="runButton()" value="실행" />
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="clear_result();"
+
+        <!-- 실행 버튼 -->
+        <input id="button" type="button" class="btn btn-outline-success btn-sm mr-1" onClick="runButton()" value="실행" />
+
+        <!-- 결과 버튼 -->
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="clear_result();"
           value="결과 지우기" />
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="file_save();" value="코드저장" />
-      </div>
-    </div>
 
-    <div class="row" style="height: 90vh;">
-      <div id="blocklyDiv" class="col-md-6"></div>
-      <!-- code mirror -->
-      <div class="col-md-6">
-        <div style="position: relative;">
-          <dive id="jsCodeEditor"></dive>
-          <dive id="pyCodeEditor"></dive>
+        <!-- 저장 버튼 -->
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="file_save();"
+          value="코드저장" />
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal"
+          data-target="#staticBackdrop">그림판</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">그림판</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <!-- canvas -->
+                <canvas id="canvas" class="canvas" width="300" height="300"></canvas>
+
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary mr-1" data-dismiss="modal">취소</button>
+                <!-- reset button -->
+                <form>
+                  <input type="button" id="reset" class="btn btn-danger mr-1" value="다시 그리기">
+                </form>
+                <a id="download" download="image.png"><button type="button" class="btn btn-primary"
+                    onClick="canvas_save()">그림 저장</button></a>
+                <input type="file" id="btn_upload" name="btn_upload" style="display: none;" />
+              </div>
+            </div>
+          </div>
+        </div> <!-- 모달 -->
+      </div> <!-- 오른쪽 구역 -->
+    </nav>
+
+    <!-- 하단 내용 -->
+    <div class="row" style="height: 100vh;">
+
+      <!-- 블럭 나오는 부분(왼쪽) -->
+      <div id="blocklyDiv" class="col-md-6" style="height: 90vh;"></div>
+
+
+      <!-- 오른쪽 -->
+      <div class="col-md-6 my-2">
+        <div class="card mb-6 my-3 shadow-sm">
+          <div class="text-white bg-dark">
+            <h5 class="my-1 mx-1">코드</h5>
+          </div>
+          <div style="position:relative; " style="height: 80vh;">
+            <dive id="jsCodeEditor"></dive>
+            <dive id="pyCodeEditor"></dive>
+          </div>
         </div>
-        </textarea>
-        <textarea id="exeArea" class="form-control" readonly style="height: 180px;"></textarea>
-      </div>
-    </div>
 
+        <!-- console -->
+        <div class="card mb-6 mt-6 shadow-sm">
+          <div class="text-white bg-dark">
+            <h5 class="my-1 mx-1">콘솔</h5>
+          </div>
+          </textarea>
+          <textarea id="exeArea" class="form-control" readonly style="height: 10vh;"></textarea>
+        </div>
+      </div> <!-- 오른쪽 -->
+    </div> <!-- 하단 -->
+
+    <!-- 그림판 
     <input id="btn_canvas" type="button" class="btn btn-outline-secondary btn-sm" onClick="canvas_power();"
       value="그림판 활성화" />
     <a id="download" download="image.png"><button type="button" id="btn_save" class="btn btn-outline-secondary btn-sm"
@@ -167,15 +263,16 @@
         저장</button></a>
     <input type="file" id="btn_upload" name="btn_upload" style="display: none;" />
     <div class="row">
-      <!-- canvas -->
+      <!-- canvas 
       <canvas id="canvas" class="canvas" width="500" height="500" style="display: none;">
       </canvas>
     </div>
-  </div>
+      -->
+  </div> <!-- container -->
 
   <!-- Toolbox 정의 -->
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display: none">
-    <category name="논리" colour="%{BKY_LOGIC_HUE}">
+    <category name="논리 (Logic)" colour="%{BKY_LOGIC_HUE}">
       <block type="if_c"></block>
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
@@ -184,7 +281,7 @@
       <block type="logic_null"></block>
       <block type="logic_ternary"></block>
     </category>
-    <category name="반복" colour="%{BKY_LOOPS_HUE}">
+    <category name="반복 (Repeat)" colour="%{BKY_LOOPS_HUE}">
       <block type="for_c"></block>
       <block type="controls_repeat_ext">
         <value name="TIMES">
@@ -214,12 +311,10 @@
       <block type="controls_forEach"></block>
       <block type="controls_flow_statements"></block>
     </category>
-    <category name="연산" colour="%{BKY_MATH_HUE}">
-      <block type="mexp"></block>
+    <category name="연산 (Operation)" colour="%{BKY_MATH_HUE}">
       <block type="math_number">
         <field name="NUM">123</field>
       </block>
-      <block type="insert"></block>
       <block type="math_arithmetic">
         <value name="A">
           <shadow type="math_number">
@@ -317,10 +412,10 @@
         </value>
       </block>
     </category>
-    <category name="문자" colour="%{BKY_TEXTS_HUE}">
+    <category name="문자 (Text)" colour="%{BKY_TEXTS_HUE}">
       <block type="text"></block>
       <!-- <block type="textc"></block> -->
-      <block type="printc"></block>
+      <block type="text_print"></block>
       <block type="text_join"></block>
       <block type="text_append">
         <value name="TEXT">
@@ -396,7 +491,7 @@
         </value>
       </block>
     </category>
-    <category name="배열" colour="%{BKY_LISTS_HUE}">
+    <category name="배열 (Array)" colour="%{BKY_LISTS_HUE}">
       <block type="lists_create_with">
         <mutation items="0"></mutation>
       </block>
@@ -488,9 +583,9 @@
 
     <!-- 커스텀 블록 -->
     <sep></sep>
-    <category name="변수" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-    <category name="함수" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
-      <block type="async"></block>
+    <category name="변수 (Variable)" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+    <category name="함수 (Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
+
 
     </category>
     <sep></sep>
@@ -608,7 +703,7 @@
 
 
     <!--numjs-->
-    <category name="수치배열" colour="%{BKY_LOGIC_HUE}">
+    <category name="수치배열 (Numeric)" colour="%{BKY_LOGIC_HUE}">
       <block type="nj_array"></block>
       <block type="nj_sum"></block>
       <block type="nj_multiply"></block>
@@ -617,7 +712,6 @@
       <block type="nj_divide"></block>
       <block type="nj_shape"></block>
       <block type="nget"></block>
-
 
     </category>
     <category name="머신러닝" colour="%{BKY_LOGIC_HUE}">
@@ -629,7 +723,6 @@
         <block type="fit"></block>
         <block type="csv"></block>
         <block type="csv2"></block>
-
 
       </category>
       <category name="선형회귀">
@@ -651,10 +744,11 @@
         </category>
 
       </category>
-      <category name="로지스틱회귀 그래프">
+      <category name="로지스틱회귀">
         <block type="logicgraph"></block>
       </category>
     </category>
+
   </xml>
 
   </xml>
@@ -730,7 +824,9 @@
             'flyoutBackgroundColour': '#D8D8D8', // toolbox color
           }
         }*/
+        renderer: "zelos"
       }
+
     );
 
     // 생성될 코드에 대해 선택하는 부분       
@@ -899,13 +995,6 @@
 
       input.click();
     }
-    function addToolboxButtonCallbacks() {
-      workspace.registerButtonCallback(
-        'addDynamicOption', Blockly.TestBlocks.addDynamicDropdownOption_);
-      workspace.registerButtonCallback(
-        'removeDynamicOption', Blockly.TestBlocks.removeDynamicDropdownOption_);
-    }
-
     function processFile(file) {
       var reader = new FileReader();
       reader.onload = function () {
@@ -1015,6 +1104,31 @@
     //   margin: { t: 0 }
     // });
 
+    //테마변경  
+    function changeTheme() {
+      var theme = document.getElementById('themeChanger');
+
+      if (theme.value === "dark") {
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Dark);
+      } else if (theme.value === "high_contrast") {
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.HighContrast);
+      } else if (theme.value === "deuteranopia") {
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Deuteranopia);
+      } else if (theme.value === "tritanopia") {
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Tritanopia);
+      } else if (theme.value === "modern") {
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Modern);
+      } else if (theme.value === "zelos") {
+        Blockly.getMainWorkspace().setTheme(Blockly.Themes.Zelos);
+      } else {
+        var testTheme = getTestTheme(theme.value);
+        if (testTheme) {
+          Blockly.getMainWorkspace().setTheme(testTheme);
+        } else {
+          Blockly.getMainWorkspace().setTheme(Blockly.Themes.Classic);
+        }
+      }
+    }
 
     ///화면에 찍기 프린트
     function printc(x) {
@@ -1037,16 +1151,14 @@
         x: xa,
         y: ya,
         mode: 'markers',
-        type: 'scatter',
-        name: 'data'
+        type: 'scatter'
       };
 
       var prediction = {
         x: xa,
         y: ba,
         mode: 'lines',
-        type: 'scatter',
-        name: 'prediction'
+        type: 'scatter'
       }; var layout = {
         autosize: true
 
@@ -1059,50 +1171,8 @@
 
       Plotly.newPlot('graph', datax, layout);
     }
-    //로지스틱 그래프
-    function Logisticgraph(x, y, w, b) {
-      var xa = new Array();
-      var ya = new Array();
-      var ba = new Array();
-      function sigmoida(ax) {
-        value = 1 / (1 + (Math.exp(-ax)));
-        return value;
-      }
-      for (var i = 0; i < x.shape; i++) {
-        xa.push(x.get(i));
-        ya.push(y.get(i));
-        pred = sigmoida((x.get(i) * w + b));
-        ba.push(pred);
-      }
-      var data = {
-        x: xa,
-        y: ya,
-        mode: 'markers',
-        type: 'scatter',
-        name: 'data'
-      };
-
-      var prediction = {
-        x: xa,
-        y: ba,
-        mode: 'lines',
-        type: 'scatter',
-        name: 'prediction'
-      }; var layout = {
-        autosize: true
-
-      };
-      var layout = {
-        autosize: true
-      };
-
-      var datax = [data, prediction];
-
-      Plotly.newPlot('graph', datax, layout);
-    }
-
   </script>
-  <script src="/js/utils/canvas.js"></script> <!-- 그림판 -->
+  <!-- <script src="/js/utils/canvas.js"></script> <!-- 그림판 -->
 </body>
 
 </html>
