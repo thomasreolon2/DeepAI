@@ -112,8 +112,8 @@
       <div id=graph></div>
       <!-- <div id=graph1 style="height: 300px;"></div>
       <div id=graph2 style="height: 300px;"></div>
-      <div id=graph3 style="height: 300px;"></div>
-      <div class="table_scroll"> -->
+      <div id=graph3 style="height: 300px;"></div>-->
+      <div class="table_scroll">
         <table class="table table-sm">
           <thead id="tblhead"></thead>
           <tbody id="tblshow"></tbody>
@@ -1067,7 +1067,7 @@
       function sigmoida(ax) {
         value = 1 / (1 + (Math.exp(-ax)));
         return value;
-      } 
+      }
       for (var i = 0; i < x.shape; i++) {
         xa.push(x.get(i));
         ya.push(y.get(i));
@@ -1100,7 +1100,7 @@
 
       Plotly.newPlot('graph', datax, layout);
     }
-   
+
   </script>
   <script src="/js/utils/canvas.js"></script> <!-- 그림판 -->
 </body>

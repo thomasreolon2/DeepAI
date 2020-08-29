@@ -327,14 +327,16 @@ Blockly.JavaScript['csv'] = function (block) {
 };
 Blockly.JavaScript['csv2'] = function (block) {
   var valX = Blockly.JavaScript.valueToCode(block, 'var_x', Blockly.JavaScript.ORDER_ATOMIC);
-  var valY = Blockly.JavaScript.valueToCode(block, 'var_x', Blockly.JavaScript.ORDER_ATOMIC);
+  var valY = Blockly.JavaScript.valueToCode(block, 'var_y', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_option = block.getFieldValue('OPTIONS');
 
   var file = block.getFieldValue('csv_url');
   // x, y
   var x_train, y_train;
+  var x = "";
+  var y = "";
   try {
-    if (dropdown_option == "OPTION-1") {
+    if (dropdown_option != "OPTION-1") {
       file = JSON.parse(file);
       // key 값만 추출
       var key = Object.getOwnPropertyNames(file[0]);
@@ -355,20 +357,14 @@ Blockly.JavaScript['csv2'] = function (block) {
             x_train[i][j] = Number(file[i][keyName]); // value
           }
         }
+        x = x + "[" + x_train[i] + "],";
       }
+      y = "[" + y_train + "]";
     }
-    // console.log(x_train);
-    // console.log(typeof (x_train) + ", " + x_train.length + " , " + x_train[0].length);
-    // console.log('****** y_train : \n' + y_train);
-
   } catch (e) {
     console.log(e);
   }
-  var obj = x_train.map(x => Object.assign({}, x));
-  var code = valX + " = " + x_train + ";";
-  // console.log(Object.values(obj)); // object->value
-  console.log(x_train);
-  sessionStorage.setItem("x_train", x_train);
+  var code = valX + " = [" + x + "];\n" + valY + " = " + y + ";";
   return code;
 };
 
