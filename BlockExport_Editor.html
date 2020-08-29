@@ -68,7 +68,8 @@
 
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  
+  <script src="./js/utils/plotly.js"></script>
+
   <!-- table -->
   <link rel="stylesheet" href="/css/table_custom.css">
   <style type="text/css">
@@ -122,15 +123,10 @@
       <!-- <div id=graph1 style="height: 300px;"></div>
       <div id=graph2 style="height: 300px;"></div>
       <div id=graph3 style="height: 300px;"></div>-->
-      <div class="table_scroll">
-        <table class="table table-sm">
-          <thead id="tblhead"></thead>
-          <tbody id="tblshow"></tbody>
-        </table>
+      <div id="csv_show">
       </div>
     </aside>
   </div>
-
   <div class="container-fluid">
 
     <!-- nav -->
@@ -752,8 +748,8 @@
       <category name="머신러닝-심화">
         <block type="covid"></block>
 
-     
-    </category>
+
+      </category>
 
   </xml>
 
@@ -959,13 +955,10 @@
             var csvvalue = csvval[0].split(",");
             var inputrad = "";
             // csv view! header 
-            var objRow = document.all["tblhead"].insertRow();
             for (var i = 0; i < csvvalue.length; i++) {
-              var temp = csvvalue[i];
-              var objCell = objRow.insertCell();
-              objCell.innerHTML = "<th>" + temp + "</th>";
+              var header = csvvalue[i];
               // dropdown append
-              addOptions(temp);
+              addOptions(header);
             }
             csvval[0] = csvval[0].replace('\r', '');
             // row
@@ -974,17 +967,15 @@
               csvval[i] = csvval[i].replace('\r', '');
               var cols = csvval[i].split(',');
               var fileObject = new Object();
-              var temp = csvval[i];
-              var objRow = document.all["tblhead"].insertRow(); // csv view! 
               for (var j = 0; j < cols.length; j++) {
                 var value = cols[j];
                 var name = csvval[0].split(',')[j] // hedaer name
-                var objCell = objRow.insertCell(); // csv view! 
-                objCell.innerHTML = "<td>" + value + "</td>"; // csv view! 
                 fileObject[name] = value; // value
+                // table body add
               }
               fileArray.push(fileObject);
             }
+            create_table($("#csv_show")[0], JSON.stringify(fileArray));
             // // 파일 set
             var block = demoWorkspace.getBlockById(blockId);
             var bId = Blockly.mainWorkspace.getBlockById(blockId)
@@ -1180,7 +1171,7 @@
       function sigmoida(ax) {
         value = 1 / (1 + (Math.exp(-ax)));
         return value;
-      } 
+      }
       for (var i = 0; i < x.shape; i++) {
         xa.push(x.get(i));
         ya.push(y.get(i));
@@ -1213,7 +1204,7 @@
 
       Plotly.newPlot('graph', datax, layout);
     }
-   
+
   </script>
   <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
 </body>
