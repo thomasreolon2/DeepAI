@@ -2172,7 +2172,7 @@ Blockly.Blocks['nget'] = {
       .appendField("위치 :");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(120);
+    this.setColour(80);
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -2193,7 +2193,7 @@ Blockly.Blocks['mexp'] = {
 Blockly.Blocks['logicgraph'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("선형회귀 그래프 출력->");
+      .appendField("로지스틱 회귀 그래프 출력->");
     this.appendValueInput("x")
       .setCheck(null)
       .appendField("X 값 :");
@@ -2215,6 +2215,58 @@ Blockly.Blocks['logicgraph'] = {
   }
 };
 
+Blockly.Blocks['mltensorjs'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("머신러닝 모델  만들기");
+    this.appendDummyInput();
+    this.appendValueInput("model")
+        .setCheck(null)
+        .appendField("모델명 설정 : ");
+    this.appendValueInput("xdata")
+        .setCheck(null)
+        .appendField("학습 데이터 설정 : ");
+    this.appendValueInput("ydata")
+        .setCheck(null)
+        .appendField("목표 값 설정 : ");
+    this.appendValueInput("inputshape")
+        .setCheck(null)
+        .appendField("입력데이터 형태 : ");
+    this.appendDummyInput()
+        .appendField("모델 종류 : ")
+        .appendField("-> ")
+        .appendField(new Blockly.FieldDropdown([["선형회귀","linear"], ["로지스틱회귀","logistic"]]), "activation");
+    this.appendValueInput("epochs")
+        .setCheck(null)
+        .appendField("학습 반복 횟수 설정 : ");
+    this.appendDummyInput();
+    this.appendDummyInput()
+        .appendField("학습 완료 후 : ");
+    this.appendStatementInput("NAME")
+        .setCheck(null);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(20);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['prediction'] = {
+  init: function() {
+    this.appendValueInput("model")
+        .setCheck(null)
+        .appendField("예측-> 모델 :");
+    this.appendDummyInput()
+        .appendField("값 : ")
+        .appendField(new Blockly.FieldTextInput("0"), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(20);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 // /** file upload */
 // Blockly.Blocks['file_upload'] = {
 //   /**

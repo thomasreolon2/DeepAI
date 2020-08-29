@@ -171,7 +171,7 @@
       <div class="d-flex flex-wrap text-white" style="width: 50%;">
 
         <!-- display -->
-        <select id="display_select" class="form-control col-md-3 mt-2 ml-3">
+        <select id="display_select" class="form-control col-md-6 mt-2 ml-3">
           <option value="javascript">javascript</option>
           <option value="python">python</option>
         </select>
@@ -263,7 +263,7 @@
         저장</button></a>
     <input type="file" id="btn_upload" name="btn_upload" style="display: none;" />
     <div class="row">
-      <!-- canvas 
+       canvas 
       <canvas id="canvas" class="canvas" width="500" height="500" style="display: none;">
       </canvas>
     </div>
@@ -411,6 +411,7 @@
           </shadow>
         </value>
       </block>
+      <block type="mexp"></block>
     </category>
     <category name="문자 (Text)" colour="%{BKY_TEXTS_HUE}">
       <block type="text"></block>
@@ -490,6 +491,8 @@
           </shadow>
         </value>
       </block>
+      <block type="printc"></block>
+
     </category>
     <category name="배열 (Array)" colour="%{BKY_LISTS_HUE}">
       <block type="lists_create_with">
@@ -642,6 +645,12 @@
        <block type="fit"></block>
        <block type="predict"></block>
        <block type="list"></block>
+        <block type="sequential"></block>
+        <block type="add"></block>
+        <block type="addn"></block>
+        <block type="compile"></block>
+        <block type="fit"></block>
+        <block type="csv"></block>
      </category>
      <category name="손글씨 예측" colour="%{BKY_VARIABLES_HUE}">
        <block type="csv"></block>
@@ -715,38 +724,26 @@
 
     </category>
     <category name="머신러닝" colour="%{BKY_LOGIC_HUE}">
-      <category name="머신러닝 모델">
-        <block type="sequential"></block>
-        <block type="add"></block>
-        <block type="addn"></block>
-        <block type="compile"></block>
-        <block type="fit"></block>
-        <block type="csv"></block>
+      <category name="머신러닝-기초">
         <block type="csv2"></block>
-
-      </category>
-      <category name="선형회귀">
-        <category name="단순 선형회귀 연산">
-          <block type="js_hypothesis"></block>
-          <block type="js_cost"></block>
-          <block type="js_gradient_w"></block>
-          <block type="js_gradient_b"></block>
-        </category>
-        <category name="다중 선형회귀 연산">
-          <block type="mlrhypothesis"></block>
-          <block type="mrlcost"></block>
-          <block type="mrlwgradient"></block>
-          <block type="mrlbgradient"></block>
-
-        </category>
-        <category name="선형회귀 그래프">
-          <block type="lrgraph"></block>
-        </category>
-
-      </category>
-      <category name="로지스틱회귀">
+        <block type="mltensorjs"></block>
+        <block type="prediction"></block>
+        <block type="js_hypothesis"></block>
+        <block type="js_cost"></block>
+        <block type="js_gradient_w"></block>
+        <block type="js_gradient_b"></block>
+        <block type="mlrhypothesis"></block>
+        <block type="mrlcost"></block>
+        <block type="mrlwgradient"></block>
+        <block type="mrlbgradient"></block>
+        <block type="lrgraph"></block>
         <block type="logicgraph"></block>
+
       </category>
+      <category name="머신러닝-심화">
+        <block type="covid"></block>
+
+     
     </category>
 
   </xml>
@@ -1171,8 +1168,50 @@
 
       Plotly.newPlot('graph', datax, layout);
     }
+    //로지스틱 그래프
+    function Logisticgraph(x, y, w, b) {
+      var xa = new Array();
+      var ya = new Array();
+      var ba = new Array();
+      function sigmoida(ax) {
+        value = 1 / (1 + (Math.exp(-ax)));
+        return value;
+      } 
+      for (var i = 0; i < x.shape; i++) {
+        xa.push(x.get(i));
+        ya.push(y.get(i));
+        pred = sigmoida((x.get(i) * w + b));
+        ba.push(pred);
+      }
+      var data = {
+        x: xa,
+        y: ya,
+        mode: 'markers',
+        type: 'scatter',
+        name: 'data'
+      };
+
+      var prediction = {
+        x: xa,
+        y: ba,
+        mode: 'lines',
+        type: 'scatter',
+        name: 'prediction'
+      }; var layout = {
+        autosize: true
+
+      };
+      var layout = {
+        autosize: true
+      };
+
+      var datax = [data, prediction];
+
+      Plotly.newPlot('graph', datax, layout);
+    }
+   
   </script>
-  <!-- <script src="/js/utils/canvas.js"></script> <!-- 그림판 -->
+  <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
 </body>
 
 </html>
