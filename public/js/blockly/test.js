@@ -1787,122 +1787,6 @@ Blockly.Blocks['nj_shape'] = {
     this.setHelpUrl("");
   }
 };
-Blockly.Blocks['js_hypothesis'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("추측 값 ->");
-    this.appendValueInput("X")
-      .setCheck(null)
-      .appendField("X");
-    this.appendDummyInput()
-      .appendField("*");
-    this.appendValueInput("W")
-      .setCheck(null)
-      .appendField("W");
-    this.appendDummyInput()
-      .appendField("+");
-    this.appendValueInput("b")
-      .setCheck(null)
-      .appendField("b");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(65);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['js_cost'] = {
-  init: function () {
-    this.appendValueInput("hypothesis")
-      .setCheck(null)
-      .appendField("손실 값 ->")
-      .appendField("합계 ( 추측값 ");
-    this.appendValueInput("y_train")
-      .setCheck(null)
-      .appendField("-")
-      .appendField("Y 값");
-    this.appendDummyInput()
-      .appendField(" ** ")
-      .appendField(new Blockly.FieldTextInput("제곱 값 "), "mul");
-    this.appendValueInput("len")
-      .setCheck(null)
-      .appendField(" / ")
-      .appendField("길이");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(65);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['js_gradient_w'] = {
-  init: function () {
-    this.appendValueInput("w")
-      .setCheck(null)
-      .appendField("가중치 기울기 값 ->")
-      .appendField("합계 (( 가중치");
-    this.appendValueInput("X")
-      .setCheck(null)
-      .appendField("*")
-      .appendField("X 값");
-    this.appendValueInput("Y")
-      .setCheck(null)
-      .appendField("-")
-      .appendField("Y 값");
-    this.appendValueInput("b")
-      .setCheck(null)
-      .appendField("+")
-      .appendField("편향값");
-    this.appendValueInput("mul")
-      .setCheck(null)
-      .appendField(") *");
-    this.appendValueInput("x2")
-      .setCheck(null)
-      .appendField("*")
-      .appendField("X값");
-    this.appendValueInput("len")
-      .setCheck(null)
-      .appendField(" / ")
-      .appendField("길이");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(65);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['js_gradient_b'] = {
-  init: function () {
-    this.appendValueInput("w")
-      .setCheck(null)
-      .appendField("편향 기울기 값 ->")
-      .appendField("합계 (( 가중치");
-    this.appendValueInput("X")
-      .setCheck(null)
-      .appendField("*")
-      .appendField("X 값");
-    this.appendValueInput("Y")
-      .setCheck(null)
-      .appendField("-")
-      .appendField("Y 값");
-    this.appendValueInput("b")
-      .setCheck(null)
-      .appendField("+")
-      .appendField("편향값");
-    this.appendValueInput("mul")
-      .setCheck(null)
-      .appendField(") *");
-    this.appendValueInput("len")
-      .setCheck(null)
-      .appendField(")  / ")
-      .appendField("길이");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(65);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
 Blockly.Blocks['insert'] = {
   init: function () {
     this.appendValueInput("val")
@@ -2007,6 +1891,7 @@ Blockly.Blocks['test'] = {
 Blockly.Blocks['printc'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Text/T13-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("결과 출력 ");
     this.appendValueInput("content")
       .setCheck(null);
@@ -2022,7 +1907,8 @@ Blockly.Blocks['printc'] = {
 Blockly.Blocks['lrgraph'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("선형회귀 그래프 출력->");
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M12-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+      .appendField("선형회귀 그수프 출력->");
     this.appendValueInput("x")
       .setCheck(null)
       .appendField("X 값 :");
@@ -2044,9 +1930,226 @@ Blockly.Blocks['lrgraph'] = {
   }
 };
 
-//////////////////////////다중선형회귀numjs////////////////////////
+
+////////////////////////// 다중선형회귀numjs////////////////////////
+////////////////////////// csv upload ////////////////////////
+var dynamicDropdownOptions_ = [];
+function addOptions(text) {
+  dynamicDropdownOptions_.push([text, text]);
+}
+function removeOptions() {
+  dynamicDropdownOptions_ = [];
+}
+Blockly.Blocks['csv2'] = {
+  init: function () {
+    var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+      .appendField(new Blockly.FieldTextInput("default"), "csv_url");
+    this.appendDummyInput()
+      .appendField('X : ')
+      .appendField(new Blockly.FieldVariable("xData"), "var_x")
+      .appendField('Y : ')
+      .appendField(new Blockly.FieldVariable("yData"), "var_y")
+    this.appendDummyInput()
+      .appendField('라벨로 지정할 컬럼명 : ')
+      .appendField(dropdown, 'OPTIONS');
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(20);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  },
+  dynamicOptions: function () {
+    if (!dynamicDropdownOptions_.length) {
+      return [['선택하세요.', 'OPTION-1']];
+    }
+    return dynamicDropdownOptions_;
+  }
+};
+
+Blockly.Blocks['mltensorjs'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M2-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+      .appendField("머신러닝 모델  만들기");
+    this.appendDummyInput();
+    this.appendValueInput("model")
+      .setCheck(null)
+      .appendField("모델명 설정 : ");
+    this.appendValueInput("xdata")
+      .setCheck(null)
+      .appendField("학습 데이터 설정 : ");
+    this.appendValueInput("ydata")
+      .setCheck(null)
+      .appendField("목표 값 설정 : ");
+    this.appendValueInput("inputshape")
+      .setCheck(null)
+      .appendField("입력데이터 형태 : ");
+    this.appendDummyInput()
+      .appendField("모델 종류 : ")
+      .appendField("-> ")
+      .appendField(new Blockly.FieldDropdown([["선형회귀", "linear"], ["로지스틱회귀", "logistic"]]), "activation");
+    this.appendValueInput("epochs")
+      .setCheck(null)
+      .appendField("학습 반복 횟수 설정 : ");
+    this.appendDummyInput();
+    this.appendDummyInput()
+      .appendField("학습 완료 후 : ");
+    this.appendStatementInput("NAME")
+      .setCheck(null);
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(20);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['prediction'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M3-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+    this.appendValueInput("model")
+      .setCheck(null)
+      .appendField("예측-> 모델 :");
+    this.appendDummyInput()
+      .appendField("값 : ")
+      .appendField(new Blockly.FieldTextInput("0"), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(20);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['js_hypothesis'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M4-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+      .appendField("추측 값 ->");
+    this.appendValueInput("X")
+      .setCheck(null)
+      .appendField("X");
+    this.appendDummyInput()
+      .appendField("*");
+    this.appendValueInput("W")
+      .setCheck(null)
+      .appendField("W");
+    this.appendDummyInput()
+      .appendField("+");
+    this.appendValueInput("b")
+      .setCheck(null)
+      .appendField("b");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['js_cost'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M5-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+    this.appendValueInput("hypothesis")
+      .setCheck(null)
+      .appendField("손실 값 ->")
+      .appendField("합계 ( 추측값 ");
+    this.appendValueInput("y_train")
+      .setCheck(null)
+      .appendField("-")
+      .appendField("Y 값");
+    this.appendDummyInput()
+      .appendField(" ** ")
+      .appendField(new Blockly.FieldTextInput("제곱 값 "), "mul");
+    this.appendValueInput("len")
+      .setCheck(null)
+      .appendField(" / ")
+      .appendField("길이");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['js_gradient_w'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M6-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+    this.appendValueInput("w")
+      .setCheck(null)
+      .appendField("가중치 기울기 값 ->")
+      .appendField("합계 (( 가중치");
+    this.appendValueInput("X")
+      .setCheck(null)
+      .appendField("*")
+      .appendField("X 값");
+    this.appendValueInput("Y")
+      .setCheck(null)
+      .appendField("-")
+      .appendField("Y 값");
+    this.appendValueInput("b")
+      .setCheck(null)
+      .appendField("+")
+      .appendField("편향값");
+    this.appendValueInput("mul")
+      .setCheck(null)
+      .appendField(") *");
+    this.appendValueInput("x2")
+      .setCheck(null)
+      .appendField("*")
+      .appendField("X값");
+    this.appendValueInput("len")
+      .setCheck(null)
+      .appendField(" / ")
+      .appendField("길이");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['js_gradient_b'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M7-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+    this.appendValueInput("w")
+      .setCheck(null)
+      .appendField("편향 기울기 값 ->")
+      .appendField("합계 (( 가중치");
+    this.appendValueInput("X")
+      .setCheck(null)
+      .appendField("*")
+      .appendField("X 값");
+    this.appendValueInput("Y")
+      .setCheck(null)
+      .appendField("-")
+      .appendField("Y 값");
+    this.appendValueInput("b")
+      .setCheck(null)
+      .appendField("+")
+      .appendField("편향값");
+    this.appendValueInput("mul")
+      .setCheck(null)
+      .appendField(") *");
+    this.appendValueInput("len")
+      .setCheck(null)
+      .appendField(")  / ")
+      .appendField("길이");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(65);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
 Blockly.Blocks['mlrhypothesis'] = {
   init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M8-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
     this.appendValueInput("w1")
       .setCheck(null)
       .appendField("추측 값->  가중치1");
@@ -2071,6 +2174,8 @@ Blockly.Blocks['mlrhypothesis'] = {
 };
 Blockly.Blocks['mrlcost'] = {
   init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M9-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
     this.appendValueInput("y")
       .setCheck(null)
       .appendField("손실값 -> Y ");
@@ -2086,6 +2191,8 @@ Blockly.Blocks['mrlcost'] = {
 };
 Blockly.Blocks['mrlwgradient'] = {
   init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M10-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
     this.appendValueInput("lenght")
       .setCheck(null)
       .appendField("가중치 기울기 값 -> -( 1 / X 크기");
@@ -2104,6 +2211,8 @@ Blockly.Blocks['mrlwgradient'] = {
 };
 Blockly.Blocks['mrlbgradient'] = {
   init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M11-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
     this.appendValueInput("lenght")
       .setCheck(null)
       .appendField("편향 기울기 값 -> -( 1 / X 크기");
@@ -2120,43 +2229,10 @@ Blockly.Blocks['mrlbgradient'] = {
   }
 };
 
-////////////////////////// csv upload ////////////////////////
-Blockly.Blocks['csv2'] = {
-  init: function () {
-    var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldTextInput("default"), "csv_url");
-    this.appendDummyInput()
-      .appendField('X : ')
-      .appendField(new Blockly.FieldVariable("xData"), "var_x")
-      .appendField('Y : ')
-      .appendField(new Blockly.FieldVariable("yData"), "var_y")
-    this.appendDummyInput()
-      .appendField('라벨로 지정할 컬럼명 : ')
-      .appendField(dropdown, 'OPTIONS');
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(20);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  },
-  dynamicOptions: function () {
-    if (!dynamicDropdownOptions_.length) {
-      return [['선택하세요.', 'OPTION-1']];
-    }
-    return dynamicDropdownOptions_;
-  }
-};
-var dynamicDropdownOptions_ = [];
-function addOptions(text) {
-  dynamicDropdownOptions_.push([text, text]);
-}
-function removeOptions() {
-  dynamicDropdownOptions_ = [];
-}
-
 Blockly.Blocks['nget'] = {
   init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Numeric/N8-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
     this.appendValueInput("Ar")
       .setCheck(null)
       .appendField("배열 요소 찾기-> 배열 :");
@@ -2172,6 +2248,8 @@ Blockly.Blocks['nget'] = {
 };
 Blockly.Blocks['mexp'] = {
   init: function () {
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Operation/O14-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
     this.appendValueInput("NAME")
       .setCheck(null)
       .appendField("지수함수-> ")
@@ -2186,6 +2264,7 @@ Blockly.Blocks['mexp'] = {
 Blockly.Blocks['logicgraph'] = {
   init: function () {
     this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M13-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("로지스틱 회귀 그래프 출력->");
     this.appendValueInput("x")
       .setCheck(null)
@@ -2205,59 +2284,6 @@ Blockly.Blocks['logicgraph'] = {
     this.setColour(160);
     this.setTooltip("");
     this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['mltensorjs'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("머신러닝 모델  만들기");
-    this.appendDummyInput();
-    this.appendValueInput("model")
-        .setCheck(null)
-        .appendField("모델명 설정 : ");
-    this.appendValueInput("xdata")
-        .setCheck(null)
-        .appendField("학습 데이터 설정 : ");
-    this.appendValueInput("ydata")
-        .setCheck(null)
-        .appendField("목표 값 설정 : ");
-    this.appendValueInput("inputshape")
-        .setCheck(null)
-        .appendField("입력데이터 형태 : ");
-    this.appendDummyInput()
-        .appendField("모델 종류 : ")
-        .appendField("-> ")
-        .appendField(new Blockly.FieldDropdown([["선형회귀","linear"], ["로지스틱회귀","logistic"]]), "activation");
-    this.appendValueInput("epochs")
-        .setCheck(null)
-        .appendField("학습 반복 횟수 설정 : ");
-    this.appendDummyInput();
-    this.appendDummyInput()
-        .appendField("학습 완료 후 : ");
-    this.appendStatementInput("NAME")
-        .setCheck(null);
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(20);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['prediction'] = {
-  init: function() {
-    this.appendValueInput("model")
-        .setCheck(null)
-        .appendField("예측-> 모델 :");
-    this.appendDummyInput()
-        .appendField("값 : ")
-        .appendField(new Blockly.FieldTextInput("0"), "NAME");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(20);
- this.setTooltip("");
- this.setHelpUrl("");
   }
 };
 // /** file upload */
