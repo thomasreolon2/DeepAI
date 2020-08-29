@@ -916,7 +916,6 @@
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
         if ('csv2' == block.type) {
-          console.log("click!!!!!!!!!!!!!!!!!!!!");
           openTextFile(event.blockId);
         }
       }
@@ -980,10 +979,11 @@
               }
               fileArray.push(fileObject);
             }
-            // 파일 set
+            // // 파일 set
             var block = demoWorkspace.getBlockById(blockId);
             var bId = Blockly.mainWorkspace.getBlockById(blockId)
             block.setFieldValue(JSON.stringify(fileArray), 'csv_url'); // csv_url -> field_input ID
+            // setCsvData(JSON.stringify(fileArray));
           };
           reader.readAsText(e.target.files.item(0));
         }

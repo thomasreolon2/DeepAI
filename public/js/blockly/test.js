@@ -2121,25 +2121,28 @@ Blockly.Blocks['mrlbgradient'] = {
 };
 
 ////////////////////////// csv upload ////////////////////////
+var csvData = "";
+function setCsvData(data) {
+  csvData = data;
+}
+function getCsvData() {
+  return csvData;
+}
 Blockly.Blocks['csv2'] = {
   init: function () {
     var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
     this.appendDummyInput()
-      .appendField("CSV : ");
-    this.appendDummyInput()
       .appendField(new Blockly.FieldTextInput("default"), "csv_url");
-    this.appendValueInput("var_x")
-      .setCheck(null)
-      .appendField("X : ");
+    this.appendDummyInput()
+      .appendField('X : ')
+      .appendField(new Blockly.FieldVariable("xData"), "var_x")
+      .appendField('Y : ')
+      .appendField(new Blockly.FieldVariable("yData"), "var_y")
     this.appendDummyInput()
       .appendField('라벨로 지정할 컬럼명 : ')
       .appendField(dropdown, 'OPTIONS');
-    this.appendValueInput("var_y")
-      .setCheck(null)
-      .appendField("Y : ");
-    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
-    // this.setOutput(true, null);
+    this.setNextStatement(true, null);
     this.setColour(20);
     this.setTooltip("");
     this.setHelpUrl("");
@@ -2154,6 +2157,9 @@ Blockly.Blocks['csv2'] = {
 var dynamicDropdownOptions_ = [];
 function addOptions(text) {
   dynamicDropdownOptions_.push([text, text]);
+}
+function removeOptions() {
+  dynamicDropdownOptions_ = [];
 }
 
 Blockly.Blocks['nget'] = {

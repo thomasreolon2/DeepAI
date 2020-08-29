@@ -326,15 +326,18 @@ Blockly.JavaScript['csv'] = function (block) {
   return code;
 };
 Blockly.JavaScript['csv2'] = function (block) {
-  var valX = Blockly.JavaScript.valueToCode(block, 'var_x', Blockly.JavaScript.ORDER_ATOMIC);
-  var valY = Blockly.JavaScript.valueToCode(block, 'var_y', Blockly.JavaScript.ORDER_ATOMIC);
-  var dropdown_option = block.getFieldValue('OPTIONS');
+  // var valX = Blockly.JavaScript.valueToCode(block, 'var_x', Blockly.JavaScript.ORDER_ATOMIC);
+  // var valY = Blockly.JavaScript.valueToCode(block, 'var_y', Blockly.JavaScript.ORDER_ATOMIC);
+  var valX = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('var_x'), Blockly.Variables.NAME_TYPE);
+  var valY = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('var_y'), Blockly.Variables.NAME_TYPE);
 
+  var dropdown_option = block.getFieldValue('OPTIONS');
   var file = block.getFieldValue('csv_url');
   // x, y
   var x_train, y_train;
   var x = "";
   var y = "";
+  // var file = getCsvData();
   try {
     if (dropdown_option != "OPTION-1") {
       file = JSON.parse(file);
@@ -360,11 +363,12 @@ Blockly.JavaScript['csv2'] = function (block) {
         x = x + "[" + x_train[i] + "],";
       }
       y = "[" + y_train + "]";
+      // setCsvData("");
     }
   } catch (e) {
     console.log(e);
   }
-  var code = valX + " = [" + x + "];\n" + valY + " = " + y + ";";
+  var code = valX + " = tf.tensor2d([" + x + "]);\n" + valY + " = tf.tensor1d(" + y + ");";
   return code;
 };
 
