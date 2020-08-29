@@ -365,7 +365,7 @@ Blockly.JavaScript['csv2'] = function (block) {
   } catch (e) {
     console.log(e);
   }
-  var code = valX + " = tf.tensor2d([" + x + "]);\n" + valY + " = tf.tensor1d(" + y + ");";
+  var code = valX + " = tf.tensor2d([" + x + "]);\n" + valY + " = tf.tensor1d(" + y + ");\n";
   return code;
 };
 
@@ -927,6 +927,20 @@ Blockly.JavaScript['prediction'] = function (block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = value_model+".predict(tf.tensor([["+text_name+"]]))";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['tfarraylen'] = function(block) {
+  var value_array = Blockly.JavaScript.valueToCode(block, 'array', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_option = block.getFieldValue('option');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  if(dropdown_option=='0'){
+    code=value_array+'.shape[0]'
+  }
+  else if(dropdown_option=='1'){
+    code=value_array+'.shape[1]'
+  }
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

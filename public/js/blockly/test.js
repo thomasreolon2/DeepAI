@@ -2293,7 +2293,21 @@ Blockly.Blocks['logicgraph'] = {
     this.setHelpUrl("");
   }
 };
-
+Blockly.Blocks['tfarraylen'] = {
+  init: function() {
+    this.appendValueInput("array")
+        .setCheck(null)
+        .appendField("텐서 배열 ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["행","0"], ["열","1"]]), "option")
+        .appendField("의 길이");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(260);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 // /** file upload */
 // Blockly.Blocks['file_upload'] = {
 //   /**
