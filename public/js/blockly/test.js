@@ -2006,6 +2006,7 @@ Blockly.Blocks['mltensorjs'] = {
     this.setHelpUrl("");
   }
 };
+
 Blockly.Blocks['prediction'] = {
   init: function () {
     this.appendDummyInput()
