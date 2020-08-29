@@ -2246,6 +2246,21 @@ Blockly.Blocks['mltensorjs'] = {
  this.setHelpUrl("");
   }
 };
+Blockly.Blocks['prediction'] = {
+  init: function() {
+    this.appendValueInput("model")
+        .setCheck(null)
+        .appendField("예측-> 모델 :");
+    this.appendDummyInput()
+        .appendField("값 : ")
+        .appendField(new Blockly.FieldTextInput("0"), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(20);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 // /** file upload */
 // Blockly.Blocks['file_upload'] = {
 //   /**
