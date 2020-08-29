@@ -916,10 +916,10 @@ Blockly.JavaScript['mltensorjs'] = function(block) {
   var code = ' ';
   if(dropdown_activation=='linear'){
 
-    code="async function run() {\n"+value_model+"= (tf.sequential());\n"+value_model+".add(tf.layers.dense({inputShape:"+value_inputshape+",units:1,activation:'linear'}));\n"+value_model+".compile({optimizer: 'sgd',loss: 'meanSquaredError',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn "+value_model+".fit("+value_xdata+", "+value_ydata+",{\nepochs:"+value_epochs+",\ncallbacks:callback});\n};\nrun().then(() =>"+statements_name+")";
+    code="async function run() {\n"+value_model+"= (tf.sequential());\n"+value_model+".add(tf.layers.dense({inputShape:"+value_inputshape+",units:1,activation:'linear'}));\n"+value_model+".compile({optimizer: 'sgd',loss: 'meanSquaredError',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn "+value_model+".fit("+value_xdata+", "+value_ydata+",{\nepochs:"+value_epochs+",\nbatchSize:64,\ncallbacks:callback});\n};\nrun().then(() =>"+statements_name+");";
   }
   else if( dropdown_activation=='logistic'){
-    code="async function run() {\n"+value_model+"= (tf.sequential());\n"+value_model+".add(tf.layers.dense({inputShape:"+value_inputshape+",units:1,activation:'sigmoid'}));\n"+value_model+".compile({optimizer: 'sgd',loss: 'binaryCrossEntropy',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn "+value_model+".fit("+value_xdata+", "+value_ydata+",{\nepochs:"+value_epochs+",\ncallbacks:callback});\n};\nrun().then(() =>"+statements_name+")";
+    code="async function run() {\n"+value_model+"= (tf.sequential());\n"+value_model+".add(tf.layers.dense({inputShape:"+value_inputshape+",units:1,activation:'sigmoid'}));\n"+value_model+".compile({optimizer: 'sgd',loss: 'binaryCrossEntropy',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn "+value_model+".fit("+value_xdata+", "+value_ydata+",{\nepochs:"+value_epochs+",\nbatchSize:64,callbacks:callback});\n};\nrun().then(() =>"+statements_name+");";
   }
   return code;
 };
@@ -927,7 +927,7 @@ Blockly.JavaScript['prediction'] = function(block) {
   var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_model+".predict(tf.tensor(["+text_name+"]))\n";
+  var code = value_model+".predict(tf.tensor(["+text_name+"]))";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
