@@ -1976,26 +1976,32 @@ Blockly.Blocks['mltensorjs'] = {
     this.appendDummyInput();
     this.appendValueInput("model")
       .setCheck(null)
-      .appendField("모델명 설정 : ");
+      .appendField("모델명 설정");
     this.appendValueInput("xdata")
       .setCheck(null)
-      .appendField("학습 데이터 설정 : ");
+      .appendField("학습 데이터 설정");
     this.appendValueInput("ydata")
       .setCheck(null)
-      .appendField("목표 값 설정 : ");
+      .appendField("목표 값 설정");
     this.appendValueInput("inputshape")
       .setCheck(null)
-      .appendField("입력데이터 형태 : ");
+      .appendField("입력데이터 형태");
     this.appendDummyInput()
-      .appendField("모델 종류 : ")
+      .appendField("모델 종류")
       .appendField("-> ")
       .appendField(new Blockly.FieldDropdown([["선형회귀", "linear"], ["로지스틱회귀", "logistic"]]), "activation");
+    this.appendValueInput("learnlate")
+      .setCheck(null)
+      .appendField("학습률 설정");
     this.appendValueInput("epochs")
       .setCheck(null)
-      .appendField("학습 반복 횟수 설정 : ");
+      .appendField("학습 반복 획수 설정");
+    this.appendValueInput("batch")
+      .setCheck(null)
+      .appendField("배치 사이즈 설정");
     this.appendDummyInput();
     this.appendDummyInput()
-      .appendField("학습 완료 후 : ");
+      .appendField("학습 완료 후");
     this.appendStatementInput("NAME")
       .setCheck(null);
     this.setInputsInline(false);
@@ -2285,65 +2291,6 @@ Blockly.Blocks['logicgraph'] = {
     this.setColour(160);
     this.setTooltip("");
     this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['mltensorjs'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("머신러닝 모델  만들기");
-    this.appendDummyInput();
-    this.appendValueInput("model")
-        .setCheck(null)
-        .appendField("모델명 설정");
-    this.appendValueInput("xdata")
-        .setCheck(null)
-        .appendField("학습 데이터 설정");
-    this.appendValueInput("ydata")
-        .setCheck(null)
-        .appendField("목표 값 설정");
-    this.appendValueInput("inputshape")
-        .setCheck(null)
-        .appendField("입력데이터 형태");
-    this.appendDummyInput()
-        .appendField("모델 종류")
-        .appendField("-> ")
-        .appendField(new Blockly.FieldDropdown([["선형회귀","linear"], ["로지스틱회귀","logistic"]]), "activation");
-    this.appendValueInput("learnlate")
-        .setCheck(null)
-        .appendField("학습률 설정");
-    this.appendValueInput("epochs")
-        .setCheck(null)
-        .appendField("학습 반복 획수 설정");
-    this.appendValueInput("batch")
-        .setCheck(null)
-        .appendField("배치 사이즈 설정");
-    this.appendDummyInput();
-    this.appendDummyInput()
-        .appendField("학습 완료 후");
-    this.appendStatementInput("NAME")
-        .setCheck(null);
-    this.setInputsInline(false);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(20);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-Blockly.Blocks['prediction'] = {
-  init: function() {
-    this.appendValueInput("model")
-        .setCheck(null)
-        .appendField("예측-> 모델 :");
-    this.appendDummyInput()
-        .appendField("값 : ")
-        .appendField(new Blockly.FieldTextInput("0"), "NAME");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(20);
- this.setTooltip("");
- this.setHelpUrl("");
   }
 };
 
