@@ -2121,13 +2121,6 @@ Blockly.Blocks['mrlbgradient'] = {
 };
 
 ////////////////////////// csv upload ////////////////////////
-var csvData = "";
-function setCsvData(data) {
-  csvData = data;
-}
-function getCsvData() {
-  return csvData;
-}
 Blockly.Blocks['csv2'] = {
   init: function () {
     var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);

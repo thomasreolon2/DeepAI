@@ -326,18 +326,14 @@ Blockly.JavaScript['csv'] = function (block) {
   return code;
 };
 Blockly.JavaScript['csv2'] = function (block) {
-  // var valX = Blockly.JavaScript.valueToCode(block, 'var_x', Blockly.JavaScript.ORDER_ATOMIC);
-  // var valY = Blockly.JavaScript.valueToCode(block, 'var_y', Blockly.JavaScript.ORDER_ATOMIC);
   var valX = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('var_x'), Blockly.Variables.NAME_TYPE);
   var valY = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('var_y'), Blockly.Variables.NAME_TYPE);
-
   var dropdown_option = block.getFieldValue('OPTIONS');
   var file = block.getFieldValue('csv_url');
   // x, y
   var x_train, y_train;
   var x = "";
   var y = "";
-  // var file = getCsvData();
   try {
     if (dropdown_option != "OPTION-1") {
       file = JSON.parse(file);
@@ -351,19 +347,20 @@ Blockly.JavaScript['csv2'] = function (block) {
         x_train[i] = new Array(key.length - 1); // 1개는 Y Label
       }
       // 값 세팅
+      var tempIdx = 0;
       for (var i = 0; i < x_train.length; i++) {
         for (var j = 0; j < key.length; j++) {
           var keyName = key[j]; // key 값
           if (keyName.trim() == dropdown_option.trim()) { // key값이 Y Label로 설정한 이름과 같다면.
             y_train[i] = Number(file[i][keyName]);
           } else {
-            x_train[i][j] = Number(file[i][keyName]); // value
+            x_train[i][tempIdx++] = Number(file[i][keyName]); // value
           }
         }
+        tempIdx = 0;
         x = x + "[" + x_train[i] + "],";
       }
       y = "[" + y_train + "]";
-      // setCsvData("");
     }
   } catch (e) {
     console.log(e);
@@ -904,7 +901,7 @@ Blockly.JavaScript['logicgraph'] = function (block) {
   var code = 'Logisticgraph(' + value_x + ',' + value_y + ',' + value_w + ',' + value_b + ');';
   return code;
 };
-Blockly.JavaScript['mltensorjs'] = function(block) {
+Blockly.JavaScript['mltensorjs'] = function (block) {
   var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
   var value_xdata = Blockly.JavaScript.valueToCode(block, 'xdata', Blockly.JavaScript.ORDER_ATOMIC);
   var value_ydata = Blockly.JavaScript.valueToCode(block, 'ydata', Blockly.JavaScript.ORDER_ATOMIC);
@@ -914,20 +911,20 @@ Blockly.JavaScript['mltensorjs'] = function(block) {
   var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = ' ';
-  if(dropdown_activation=='linear'){
+  if (dropdown_activation == 'linear') {
 
-    code="async function run() {\n"+value_model+"= (tf.sequential());\n"+value_model+".add(tf.layers.dense({inputShape:"+value_inputshape+",units:1,activation:'linear'}));\n"+value_model+".compile({optimizer: 'sgd',loss: 'meanSquaredError',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn "+value_model+".fit("+value_xdata+", "+value_ydata+",{\nepochs:"+value_epochs+",\ncallbacks:callback});\n};\nrun().then(() =>"+statements_name+")";
+    code = "async function run() {\n" + value_model + "= (tf.sequential());\n" + value_model + ".add(tf.layers.dense({inputShape:" + value_inputshape + ",units:1,activation:'linear'}));\n" + value_model + ".compile({optimizer: 'sgd',loss: 'meanSquaredError',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn " + value_model + ".fit(" + value_xdata + ", " + value_ydata + ",{\nepochs:" + value_epochs + ",\ncallbacks:callback});\n};\nrun().then(() =>" + statements_name + ")";
   }
-  else if( dropdown_activation=='logistic'){
-    code="async function run() {\n"+value_model+"= (tf.sequential());\n"+value_model+".add(tf.layers.dense({inputShape:"+value_inputshape+",units:1,activation:'sigmoid'}));\n"+value_model+".compile({optimizer: 'sgd',loss: 'binaryCrossEntropy',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn "+value_model+".fit("+value_xdata+", "+value_ydata+",{\nepochs:"+value_epochs+",\ncallbacks:callback});\n};\nrun().then(() =>"+statements_name+")";
+  else if (dropdown_activation == 'logistic') {
+    code = "async function run() {\n" + value_model + "= (tf.sequential());\n" + value_model + ".add(tf.layers.dense({inputShape:" + value_inputshape + ",units:1,activation:'sigmoid'}));\n" + value_model + ".compile({optimizer: 'sgd',loss: 'binaryCrossEntropy',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn " + value_model + ".fit(" + value_xdata + ", " + value_ydata + ",{\nepochs:" + value_epochs + ",\ncallbacks:callback});\n};\nrun().then(() =>" + statements_name + ")";
   }
   return code;
 };
-Blockly.JavaScript['prediction'] = function(block) {
+Blockly.JavaScript['prediction'] = function (block) {
   var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_model+".predict(tf.tensor(["+text_name+"]))\n";
+  var code = value_model + ".predict(tf.tensor([" + text_name + "]))\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
