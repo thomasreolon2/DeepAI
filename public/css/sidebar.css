@@ -14,13 +14,11 @@
     background:white;
     position: absolute;
     top: 0px;
-    right: 900px;
+    right: 910px;
     width: 70px;
     height: 45px;
-    border: none;
-    color: white;
-    border: solid;
-    border-color: gray;  
+    color: rgb(128, 128, 128);
+    border : solid;
   }
   #graph1{
     height:25%;

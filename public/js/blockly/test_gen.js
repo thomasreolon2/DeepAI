@@ -369,6 +369,7 @@ Blockly.JavaScript['csv2'] = function (block) {
   return code;
 };
 
+
 Blockly.JavaScript['async'] = function (block) {
   var text_name = block.getFieldValue('NAME');
   var statements_async = Blockly.JavaScript.statementToCode(block, 'async');
@@ -918,7 +919,7 @@ Blockly.JavaScript['mltensorjs'] = function(block) {
     code="async function run() {\n"+value_model+"= (tf.sequential());\n"+value_model+".add(tf.layers.dense({inputShape:"+value_inputshape+",units:1,activation:'linear'}));\n"+value_model+".compile({optimizer: tf.train.sgd("+value_learnlate+"),loss: 'meanSquaredError',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn "+value_model+".fit("+value_xdata+", "+value_ydata+",{\nepochs:"+value_epochs+",\nbatchSize:"+value_batch+",\ncallbacks:callback});\n};\nrun().then(() =>"+statements_name+");";
   }
   else if( dropdown_activation=='logistic'){
-    code="async function run() {\n"+value_model+"= (tf.sequential());\n"+value_model+".add(tf.layers.dense({inputShape:"+value_inputshape+",units:1,activation:'sigmoid'}));\n"+value_model+".compile({optimizer: tf.train.sgd("+value_learnlate+"),loss: 'binaryCrossEntropy',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn "+value_model+".fit("+value_xdata+", "+value_ydata+",{\nepochs:"+value_epochs+",\nbatchSize:"+value_batch+",callbacks:callback});\n};\nrun().then(() =>"+statements_name+");";
+    code="async function run() {\n"+value_model+"= (tf.sequential());\n"+value_model+".add(tf.layers.dense({inputShape:"+value_inputshape+",units:1,activation:'sigmoid'}));\n"+value_model+".compile({optimizer: tf.train.adam("+value_learnlate+"),loss: 'binaryCrossentropy',metrics: ['accuracy']});\ncallback = (tfvis.show.fitCallbacks(container,metrics));\nreturn "+value_model+".fit("+value_xdata+", "+value_ydata+",{\nepochs:"+value_epochs+",\nbatchSize:"+value_batch+",callbacks:callback});\n};\nrun().then(() =>"+statements_name+");";
   }
   return code; 
 };
