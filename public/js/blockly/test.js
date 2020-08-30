@@ -1990,7 +1990,7 @@ Blockly.Blocks['mltensorjs'] = {
     this.appendDummyInput()
       .appendField("모델 종류")
       .appendField("-> ")
-      .appendField(new Blockly.FieldDropdown([["선형회귀", "linear"], ["로지스틱회귀", "logistic"]]), "activation");
+      .appendField(new Blockly.FieldDropdown([["선형회귀", "linear"], ["로지스틱회귀", "logistic"], ["소프트맥스", "softmax"]]), "activation");
     this.appendValueInput("learnlate")
       .setCheck(null)
       .appendField("학습률 설정");
