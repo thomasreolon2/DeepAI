@@ -2172,9 +2172,9 @@ Blockly.Themes.Classic.defaultBlockStyles = {
   hat_blocks: { colourPrimary: "330", hat: "cap" },
 };
 Blockly.Themes.Classic.categoryStyles = {
-  colour_category: { colour: "20" },
-  list_category: { colour: "260" },
-  logic_category: { colour: "210" },
+  colour_category: { colour: "#289AFF" },
+  list_category: { colour: "#FF8200" },
+  logic_category: { colour: "#0032EA" },
   loop_category: { colour: "120" },
   math_category: { colour: "230" },
   procedure_category: { colour: "290" },
