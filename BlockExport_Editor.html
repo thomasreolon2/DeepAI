@@ -254,7 +254,6 @@
         </div>
       </div> <!-- 오른쪽 -->
     </div> <!-- 하단 -->
-
   </div> <!-- container -->
 
   <!-- Toolbox 정의 -->
@@ -782,6 +781,7 @@
       //   spellcheck: true,   autocorrect: true,
     });
   </script>
+
   <script id="jsScript" type="application/javascript">
     // var codeArea = document.getElementById("textArea"); // 코드 나타나는 부분 
     var codeArea = jsEditor.getValue();
@@ -930,6 +930,7 @@
   ====== 블록 실행
   ===================================-->
   <script>
+    // 실행 버튼
     function runButton() {
       Blockly.JavaScript.addReservedWords('code');
       var code = jsEditor.getValue();
@@ -939,6 +940,7 @@
         document.getElementById('exeArea').innerHTML = e;
       }
     };
+    
     function openTextFile(blockId) {
       var input = document.createElement("input");
       input.type = "file";
@@ -996,7 +998,7 @@
       reader.readAsText(file, /* optional */ "cp949");
     }
 
-    /** 그래프 */
+    /* 그래프 */
     const metrics = ['loss', 'val_loss', 'acc', 'val_acc']
     const container = {
       name: 'Model Training',
@@ -1011,7 +1013,7 @@
     }
 
     // canvas 활성화 & 비활성화
-    function canvas_power() {
+    /*function canvas_power() {
       var canvasState = $("#canvas")[0];
       var btnSave = $("#btn_save")[0];
       if (canvasState.style.display == "" || canvasState.style.display == "none") {
@@ -1024,7 +1026,9 @@
         $("#btn_canvas").val("그림판 활성화");
       }
     }
+    */
 
+    // canvas 저장하기
     const alphaPixel = []
     function canvas_save() {
       var download = $("#download")[0];
@@ -1039,6 +1043,7 @@
       }
       console.log(alphaPixel);
     }
+
     /*
     * 코드미러 화면 전환(python&javascript)
     */
@@ -1096,8 +1101,8 @@
     //   margin: { t: 0 }
     // });
 
-    //테마변경  
-    function changeTheme() {
+    // 테마변경  
+    /*unction changeTheme() {
       var theme = document.getElementById('themeChanger');
 
       if (theme.value === "dark") {
@@ -1121,14 +1126,14 @@
         }
       }
     }
-
-    ///화면에 찍기 프린트
+    */
+    // 화면에 찍기 프린트
     function printc(x) {
       var savetext = $('#exeArea').val();
       $('#exeArea').val(savetext + x + '\n');
     }
 
-    //선형회귀 그래프
+    // 선형회귀 그래프
     function LRgraph(x, y, w, b) {
       var xa = new Array();
       var ya = new Array();
@@ -1163,7 +1168,7 @@
 
       Plotly.newPlot('graph', datax, layout);
     }
-    //로지스틱 그래프
+    // 로지스틱 그래프
     function Logisticgraph(x, y, w, b) {
       var xa = new Array();
       var ya = new Array();
