@@ -1846,7 +1846,7 @@ Blockly.Blocks['for_c'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour("#8200FC");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1869,7 +1869,7 @@ Blockly.Blocks['if_c'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(210);
+    this.setColour("#0032EA");
     this.setTooltip("");
     this.setHelpUrl("");
   }
