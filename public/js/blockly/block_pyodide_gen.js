@@ -82,6 +82,49 @@ Blockly.Python['csv2'] = function (block) {
   var code = "np.array([" + value + "]);\n";
   return code;
 };
+Blockly.Python['csv3'] = function (block) {
+  var valX = Blockly.Python.variableDB_.getName(block.getFieldValue('var_x'), Blockly.Variables.NAME_TYPE);
+  var valY = Blockly.Python.variableDB_.getName(block.getFieldValue('var_y'), Blockly.Variables.NAME_TYPE);
+  var dropdown_option = block.getFieldValue('OPTIONS');
+  var file = block.getFieldValue('csv_url');
+  // x, y
+  var x_train, y_train;
+  var x = "";
+  var y = "";
+  try {
+    if (dropdown_option != "OPTION-1") {
+      file = JSON.parse(file);
+      // key 값만 추출
+      var key = Object.getOwnPropertyNames(file[0]);
+      // 2차원 배열 array
+      x_train = new Array(file.length - 1);
+      y_train = new Array(file.length - 1);
+
+      for (var i = 0; i < x_train.length; i++) {
+        x_train[i] = new Array(key.length - 1); // 1개는 Y Label
+      }
+      // 값 세팅
+      var tempIdx = 0;
+      for (var i = 0; i < x_train.length; i++) {
+        for (var j = 0; j < key.length; j++) {
+          var keyName = key[j]; // key 값
+          if (keyName.trim() == dropdown_option.trim()) { // key값이 Y Label로 설정한 이름과 같다면.
+            y_train[i] = Number(file[i][keyName]);
+          } else {
+            x_train[i][tempIdx++] = Number(file[i][keyName]); // value
+          }
+        }
+        tempIdx = 0;
+        x = x + "[" + x_train[i] + "],";
+      }
+      y = "[" + y_train + "]";
+    }
+  } catch (e) {
+    console.log(e);
+  }
+  var code = valX + " = tf.tensor2d([" + x + "]);\n" + valY + " = tf.tensor1d(" + y + ");\n";
+  return code;
+};
 
 Blockly.Python['scikit_learn'] = function (block) {
   var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
@@ -93,13 +136,14 @@ Blockly.Python['scikit_learn'] = function (block) {
   return code;
 };
 
-
-
-
-
-
-
-
+Blockly.Python['csvdataframe_J'] = function(block) {
+  var value_pd = Blockly.Python.valueToCode(block, 'pd', Blockly.Python.ORDER_ATOMIC);
+  var value_csv = Blockly.Python.valueToCode(block, 'csv', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_pd+'.DataFrame('+value_csv+')\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
 
 
 

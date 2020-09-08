@@ -112,7 +112,40 @@ Blockly.Blocks['csv2'] = {
     this.setHelpUrl("");
   }
 };
-
+var dynamicDropdownOptions_ = [];
+function addOptions(text) {
+  dynamicDropdownOptions_.push([text, text]);
+}
+function removeOptions() {
+  dynamicDropdownOptions_ = [];
+}
+Blockly.Blocks['csv3'] = {
+  init: function () {
+    var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+      .appendField(new Blockly.FieldTextInput("default"), "csv_url");
+    this.appendDummyInput()
+      .appendField('X : ')
+      .appendField(new Blockly.FieldVariable("xData"), "var_x")
+      .appendField('Y : ')
+      .appendField(new Blockly.FieldVariable("yData"), "var_y")
+    this.appendDummyInput()
+      .appendField('라벨로 지정할 컬럼명 : ')
+      .appendField(dropdown, 'OPTIONS');
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(20);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  },
+  dynamicOptions: function () {
+    if (!dynamicDropdownOptions_.length) {
+      return [['선택하세요.', 'OPTION-1']];
+    }
+    return dynamicDropdownOptions_;
+  }
+};
 Blockly.Blocks['scikit_learn'] = {
   init: function () {
     this.appendValueInput("model")
@@ -137,8 +170,22 @@ Blockly.Blocks['scikit_learn'] = {
     this.setHelpUrl("");
   }
 };
-
-
+Blockly.Blocks['csvdataframe_J'] = {
+    init: function() {
+      this.appendValueInput("pd")
+          .setCheck(null)
+          .appendField("데이터 프레임 생성");
+      this.appendValueInput("csv")
+          .setCheck(null)
+          .appendField("CSV 읽기");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  
 
 
 
