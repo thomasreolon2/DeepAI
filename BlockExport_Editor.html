@@ -35,9 +35,7 @@
   <!-- <script src="/js/blockly/test.js"></script>
   <script src="/js/blockly/test_gen.js"></script>  -->
 
-  <!-- 파이썬 기본블록-->
-  <script src="/js/blockly/blcok_python_basic.js"></script> 
-  <script src="/js/blockly/block_python_basic_gen.js"></script> 
+
 
 <!-- 데이타 사이언스 블록 -->
 <script src="/js/blockly/python_gen.js"></script>  
@@ -664,56 +662,16 @@
       <block type="lrgraph"></block>
       <block type="logicgraph"></block>
       <block type="array_get"></block>
-      <block type="csv2"></block>
+      <block type="csv3"></block>
       <!-- <block type="csv3"></block> -->
       <block type="scikit_learn"></block>
-      <block type="csvdataframe_J">
-        <value name="pd">
-          <block type="variables_get">
-            <field name="VAR">pd</field>
-          </block>
-        </value>
-        <value name="csv">
-          <block type="csv2"></block>
-        </value>
-      </block>
     </category>
 
 
      <!--  데이타 사이언스 //  2020 - 09 - 07  LMS--> 
      <category name="데이터 사이언스" colour="%{BKY_LOOPS_HUE}">  
 
-      <!-- 기본 블록 2020 - 09 - 07 찬영 -->
-      <!-- 새 블록  딕셔너리 -->
-      <category name="Python Test" colour="%{BKY_LOOPS_HUE}">
-      <!-- 새 블록  딕셔너리 -->
-      <block type="dict">
-      <value name="DICT">
-      </value>
-      </block>
-     <!-- 집합 -->
-      <block type="set">
-      <value name="SET">
-      </value>
-      </block>
-      <!-- 튜플 -->
-      <block type="tuple">
-      <value name = "tuple">
-      </value>
-      </block>
-  
-      <!-- 집합선택 -->
-      <block type="set_menu">
-      <value name = "set_menu">
-      </value>
-      </block>
-
-      <!-- 딕셔너리 선택 -->
-      <block type="dic_menu">
-      <value name = "dic_menu">
-      </value>
-      </block>
-    </category>
+      
 
       <!-- LMS -->
       <!-- 라이브러리 임포트  -->
@@ -761,6 +719,16 @@
           </block>
         </value>
       </block>
+      <block type="csvdataframe_J">
+        <value name="pd">
+          <block type="variables_get">
+            <field name="VAR">pd</field>
+          </block>
+        </value>
+        <value name="csv">
+          <block type="csv2"></block>
+        </value>
+      </block>
       <block type="load_csv">
         <value name="pan_lod_var">
           <block type="variables_get">
@@ -794,6 +762,7 @@
       <!-- <block type="image_list"></block> -->
     </category>
   </category>    
+  
   <!-- ************************* -->
   <!-- 2020-09-07, Pandas Blocks -->
   <!-- ************************* -->
@@ -811,7 +780,37 @@
      </category>   
 
 
-
+<!-- 기본 블록 2020 - 09 - 07 찬영 -->
+      <!-- 새 블록  딕셔너리 -->
+      <category name="Python Test" colour="%{BKY_LOOPS_HUE}">
+        <!-- 새 블록  딕셔너리 -->
+        <block type="dict">
+        <value name="DICT">
+        </value>
+        </block>
+       <!-- 집합 -->
+        <block type="set">
+        <value name="SET">
+        </value>
+        </block>
+        <!-- 튜플 -->
+        <block type="tuple">
+        <value name = "tuple">
+        </value>
+        </block>
+    
+        <!-- 집합선택 -->
+        <block type="set_menu">
+        <value name = "set_menu">
+        </value>
+        </block>
+  
+        <!-- 딕셔너리 선택 -->
+        <block type="dic_menu">
+        <value name = "dic_menu">
+        </value>
+        </block>
+      </category>
 
   </xml>
 
