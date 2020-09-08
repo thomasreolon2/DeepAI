@@ -6,7 +6,7 @@ function create_table(div, csv) {
     var value = new Array(header.length);
 
     for (var i = 0; i < header.length; i++) {
-        value[i] = new Array(csvData.length - 1);
+        value[i] = new Array(csvData.length);
     }
 
     for (var i = 0; i < header.length; i++) {
