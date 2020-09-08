@@ -14,7 +14,7 @@
   <!--  Blockly 자체의 설정과 관련된 파일 -->
   <!--pyodide-->
   <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
-
+ 
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script>
   <script src="/js/blockly/javascript_compressed.js"></script>
@@ -35,11 +35,14 @@
   <!-- <script src="/js/blockly/test.js"></script>
   <script src="/js/blockly/test_gen.js"></script>  -->
 
+  <!-- 파이썬 기본블록-->
+  <script src="/js/blockly/blcok_python_basic.js"></script> 
+  <script src="/js/blockly/block_python_basic_gen.js"></script> 
 
-  <!-- numpy 블록 -->
-  <script src="/js/blockly/python_gen.js"></script>
-  <script src="/js/blockly/dataS_.js"></script>
-  <!-- numpy 블록 -->
+<!-- 데이타 사이언스 블록 -->
+<script src="/js/blockly/python_gen.js"></script>  
+<script src="/js/blockly/python_T.js"></script>
+<!-- 데이타 사이언스 블록 --> 
 
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -84,18 +87,22 @@
   <!--css-->
   <link rel="stylesheet" href="css\sidebar.css">
 
+  <script>
+    DL_Gra = 0;
+  </script>  
+
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/utils/plotly.js"></script>
+
   <script>
     languagePluginLoader.then(() => {
-      pyodide
-        .loadPackage(['pandas', 'numpy','scikit-learn'])
-        .then(() => {
-          console.log('pandas,numpy 로딩완료')
+          pyodide.loadPackage(['pandas','numpy','matplotlib','scikit-learn']).then(() => {
+          console.log('pyodide 라이브러리 로딩완료');  
         });
-    });
-  </script>
+    });   
+  </script> 
+
   <!-- table -->
   <link rel="stylesheet" href="/css/table_custom.css">
   <style type="text/css">
@@ -139,7 +146,7 @@
 </head>
 
 <!-- onload : body가 떳을때 작동되는 js입력 -->
-
+ 
 <body onload="">
 
   <!--사이드바-->
@@ -147,9 +154,9 @@
     <aside id="sidebar">
       <button class="btn  btn-sm"><span>그래프</span></button>
       <div id=graph></div>
-      <!-- <div id=graph1 style="height: 300px;"></div>
-      <div id=graph2 style="height: 300px;"></div>
-      <div id=graph3 style="height: 300px;"></div>-->
+      <div id=graph1 style="height: 300px; width: 900px;"><img id="pyplotfigure"/></div>
+      <!-- <div id=graph2 style="height: 300px;"></div> 
+      <div id=graph3 style="height: 300px;"></div>-->   
       <div id="csv_show">
       </div>
     </aside>
@@ -670,42 +677,83 @@
           <block type="csv2"></block>
         </value>
       </block>
-
-
-
     </category>
 
-    <!--  numpy //  2020 - 09 - 04  -->
-    <category name="데이터 사이언스" colour="%{BKY_LOOPS_HUE}">
-      <category name="Numpy 기본 연산" colour="%{BKY_LOOPS_HUE}">
-        <!-- <block type="variable"></block>  변수 생성  -->
-        <!-- <block type="variable_name"></block> 다른 변수에 넣기   -->
-        <block type="print"></block> <!-- 결과 print  -->
-        <block type="create_arry"></block> <!-- 배열 생성  -->
-        <block type="arry_mul"></block> <!-- 배열 곱 -->
-        <block type="arry_div"></block> <!-- 배열 나누셈 -->
-        <block type="arry_plus"></block> <!-- 배열 합 -->
-        <block type="arry_minus"></block> <!-- 배열 빼기 -->
-      </category>
-      <!-- numpy 함수들 -->
-      <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">
-        <block type="np_array"></block> <!-- numpy.arry  -->
-        <block type="numpy_zeros"></block> <!-- zeros 0으로 채우기 -->
-        <block type="numpy_full"></block> <!-- full 배열을 해당 숫자로 채우기  -->
-        <block type="numpy_eye"></block> <!-- eye 배열을 대각선 1로 채우기   -->
-        <block type="numpy_max"></block> <!-- max 최대값 찾기  -->
-        <block type="numpy_min"></block> <!-- min 최소값 찾기  -->
-        <block type="numpy_shape"></block> <!-- shape 행렬 차원 반환  -->
-        <block type="numpy_reshape"></block> <!-- reshape 행렬 차원 변환  -->
-        <block type="numpy_random_rand"></block> <!--  random. randn or randint 무작위 숫자 생성     -->
-        <block type="numpy_exp"></block> <!--  exp 지수     -->
-      </category>
-    </category>
-    <!-- 데이터 사이언스  -->
 
+     <!--  데이타 사이언스 //  2020 - 09 - 07  LMS--> 
+     <category name="데이터 사이언스" colour="%{BKY_LOOPS_HUE}">  
+
+      <!-- 기본 블록 2020 - 09 - 07 찬영 -->
+      <!-- 새 블록  딕셔너리 -->
+      <category name="Python Test" colour="%{BKY_LOOPS_HUE}">
+      <!-- 새 블록  딕셔너리 -->
+      <block type="dict">
+      <value name="DICT">
+      </value>
+      </block>
+     <!-- 집합 -->
+      <block type="set">
+      <value name="SET">
+      </value>
+      </block>
+      <!-- 튜플 -->
+      <block type="tuple">
+      <value name = "tuple">
+      </value>
+      </block>
+  
+      <!-- 집합선택 -->
+      <block type="set_menu">
+      <value name = "set_menu">
+      </value>
+      </block>
+
+      <!-- 딕셔너리 선택 -->
+      <block type="dic_menu">
+      <value name = "dic_menu">
+      </value>
+      </block>
+    </category>
+
+      <!-- LMS -->
+      <!-- 라이브러리 임포트  -->
+      <category name="라이브러리 임포트" colour="%{BKY_LOOPS_HUE}">   
+       <block type="lib_import_a"></block>  <!--  라이브러리 전체 임포트      -->
+       <block type="lib_import"></block>  <!--  단순 임포트      --> 
+       <block type="lib_import_as"></block>    <!--   임포트  as    -->      
+       <block type="lib_import_from"></block>    <!--   from import    -->     
+       </category>
+
+     <!-- numpy 부분  -->
+     <category name="Numpy 기본 연산" colour="%{BKY_LOOPS_HUE}">  
+     <!-- <block type="variable"></block>  변수 생성  --> 
+     <!-- <block type="variable_name"></block> 다른 변수에 넣기   -->
+        <block type="print"></block> <!-- 결과 print  -->  
+        <block type="create_arry"></block> <!-- 배열 생성  -->   
+        <block type="arry_mul"></block> <!-- 배열 곱 -->  
+        <block type="arry_div"></block> <!-- 배열 나누셈 -->     
+        <block type="arry_plus"></block> <!-- 배열 합 --> 
+        <block type="arry_minus"></block> <!-- 배열 빼기 -->  
+     </category>
+     <!-- numpy 함수들 -->   
+      <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">  
+         <block type="np_array"></block> <!-- numpy.arry  -->   
+         <block type="numpy_zeros"></block>   <!-- zeros 0으로 채우기 -->   
+         <block type="numpy_full"></block>     <!-- full 배열을 해당 숫자로 채우기  --> 
+         <block type="numpy_eye"></block>  <!-- eye 배열을 대각선 1로 채우기   --> 
+         <block type="numpy_max"></block>  <!-- max 최대값 찾기  --> 
+         <block type="numpy_min"></block>  <!-- min 최소값 찾기  --> 
+         <block type="numpy_shape"></block>  <!-- shape 행렬 차원 반환  -->   
+         <block type="numpy_reshape"></block>  <!-- reshape 행렬 차원 변환  -->  
+         <block type="numpy_random_rand"></block>  <!--  random. randn or randint 무작위 숫자 생성     -->    
+         <block type="numpy_exp"></block>  <!--  exp 지수     -->    
+      </category>  
+
+    <!-- ************************* -->
     <!-- 2020-09-07, Pandas Blocks -->
-    <!-- 2020-09-05 양승국 수정-->
-    <category name="Pandas" colour="%{BKY_LOGIC_HUE}">
+    <!-- 2020-09-05 양승국 수정--> 
+    <!-- ************************* -->
+    <category name="Pandas 함수" colour="%{BKY_LOGIC_HUE}">
       <block type="csv_library">
         <value name="pan_lib_var">
           <block type="variables_get">
@@ -745,39 +793,23 @@
       </block>
       <!-- <block type="image_list"></block> -->
     </category>
+  </category>    
+  <!-- ************************* -->
+  <!-- 2020-09-07, Pandas Blocks -->
+  <!-- ************************* -->
 
-    <category name="Python Test">
-      <!-- 새 블록  딕셔너리 -->
-      <block type="dict">
-        <value name="DICT">
-        </value>
-      </block>
-      <!-- 집합 -->
-      <block type="set">
-        <value name="SET">
-        </value>
-      </block>
-      <!-- 튜플 -->
-      <block type="tuple">
-        <value name="tuple">
-        </value>
-      </block>
+      <!--   데이타 사이언스 //  2020 - 09 - 07  LMS  -->
+      <!-- 시각화 부분  --> 
+      <category name="시각화 하기 " colour="%{BKY_LOOPS_HUE}">  
+       <block type="matplotlib_main"></block>  <!--  matplot1 시각화 틀    -->          
+       <block type="matplotlib_pre_graph"></block>  <!--  matplot2 시각화 준비      --> 
+       <block type="matplotlib_graph_end"></block>  <!--  matplot3 시각화 하기      -->    
+       <!-- 아래는 준비중  -->
+       <block type="load_csv"></block>  <!--  csv 로드     --> 
+       <block type="linearregression_c"></block>  <!-- 사이킷런 리니어 로드     --> 
+       <block type="linearregression_train"></block>  <!-- 사이킷런 train     --> 
+     </category>   
 
-      <!-- 집합선택 -->
-      <block type="set_menu">
-        <value name="set_menu">
-        </value>
-      </block>
-
-      <!-- 딕셔너리 선택 -->
-      <block type="dic_menu">
-        <value name="dic_menu">
-        </value>
-      </block>
-      <block type="for_python">
-        <value name="for_python"></value>
-      </block>
-    </category>
 
 
 
@@ -977,30 +1009,23 @@
   <script>
     // 실행 버튼
     function runButton() {
-      Blockly
-        .Python
-        .addReservedWords('code');
+      Blockly.Python.addReservedWords('code'); 
       var code = pyEditor.getValue();
-      Blockly
-        .JavaScript
-        .addReservedWords('code2');
+ 
+      Blockly.JavaScript.addReservedWords('code2');
       var code2 = jsEditor.getValue();
-      async function runcode() {
-        languagePluginLoader.then(() => {
-          try {
-            pyodide.runPython(code);
-          } catch (e) {
-            document
-              .getElementById('exeArea')
-              .innerHTML = e;
-          }
-        });
 
+      async function runcode() { 
+             languagePluginLoader.then(() => {   
+             try {  pyodide.runPython(code);  }   
+             catch (e) {  document.getElementById('exeArea').innerHTML = e; }});  
+
+            languagePluginLoader.then(await function () {    
+            if( DL_Gra == "chcked"){  document.getElementById("pyplotfigure").src=pyodide.globals.img_str  }  });     
       };
+    
       runcode().then(() => {
-        document
-          .getElementById('exeArea')
-          .innerHTML = eval(code2);
+        document.getElementById('exeArea').innerHTML = eval(code2);      
       });
 
     };
