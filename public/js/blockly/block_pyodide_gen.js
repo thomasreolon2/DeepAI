@@ -79,8 +79,8 @@ Blockly.Python['csv2'] = function (block) {
   } catch (e) {
     console.log(e);
   }
-  var code = "np.array([" + value + "]);\n";
-  return code;
+  var code = "[" + value + "]";
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['csv3'] = function (block) {
   var valX = Blockly.Python.variableDB_.getName(block.getFieldValue('var_x'), Blockly.Variables.NAME_TYPE);
