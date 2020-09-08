@@ -1,3 +1,4 @@
+
 Blockly.Python['printc'] = function (block) {
   var value_content = Blockly.Python.valueToCode(block, 'content', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
@@ -58,6 +59,7 @@ Blockly.Python['csv2'] = function (block) {
   // x, y
   var x_train;
   var value = "";
+  var columns = "[";
   try {
     file = JSON.parse(file);
     // key 값만 추출
@@ -68,19 +70,28 @@ Blockly.Python['csv2'] = function (block) {
     for (var i = 0; i < x_train.length; i++) {
       x_train[i] = new Array(key.length);
     }
+    for (var i = 0; i < key.length; i++) {
+      columns = columns + "'" + key[i] + "'";
+      if (i != key.length - 1) {
+        columns = columns + ",";
+      }
+    }
     // 값 세팅
     for (var i = 0; i < x_train.length; i++) {
       for (var j = 0; j < key.length; j++) {
         var keyName = key[j]; // key 값
         x_train[i][j] = Number(file[i][keyName]); // value
       }
-      value = value + "[" + x_train[i] + "],";
+      value = value + "[" + x_train[i] + "]";
+      if (i != x_train.length - 1) {
+        value = value + ",";
+      }
     }
   } catch (e) {
     console.log(e);
   }
-  var code = "np.array([" + value + "]);\n";
-  return code;
+  var code = "[" + value + "], columns=" + columns + "]";
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['csv3'] = function (block) {
   var valX = Blockly.Python.variableDB_.getName(block.getFieldValue('var_x'), Blockly.Variables.NAME_TYPE);
@@ -136,11 +147,11 @@ Blockly.Python['scikit_learn'] = function (block) {
   return code;
 };
 
-Blockly.Python['csvdataframe_J'] = function(block) {
+Blockly.Python['csvdataframe_J'] = function (block) {
   var value_pd = Blockly.Python.valueToCode(block, 'pd', Blockly.Python.ORDER_ATOMIC);
   var value_csv = Blockly.Python.valueToCode(block, 'csv', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_pd+'.DataFrame('+value_csv+')\n';
+  var code = value_pd + '.DataFrame(' + value_csv + ')\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
