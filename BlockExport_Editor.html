@@ -12,6 +12,8 @@
   <script src="/js/blockly/brython_stdlib.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
   <!--  Blockly 자체의 설정과 관련된 파일 -->
+  <!--pyodide-->
+  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
 
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script>
@@ -19,9 +21,25 @@
   <script src="/js/blockly/python_compressed.js"></script>
   <script src="/js/blockly/blocks_compressed.js"></script>
   <!--미리 정의되어 있는 기본 블록에 대한 설정을 모두 담고 있음.-->
+  <script src="/js/blockly/block_pyodide.js"></script>
+  <!-- pyodide 블록 -->
+  <script src="/js/blockly/block_pyodide_gen.js"></script>
+  <script src="/js/blockly/block_pyodide_gen_javascript.js"></script>
+  <!-- pyodide 블록 -->
 
-  <script src="/js/blockly/test.js"></script> <!-- Prolog 블록 -->
-  <script src="/js/blockly/test_gen.js"></script>
+  <!-- Pandas 블록 -->
+  <script src="/js/blockly/block_pandas.js"></script>
+  <script src="/js/blockly/block_pandas_gen.js"></script>
+  <!-- Pandas 블록 -->
+
+  <!-- <script src="/js/blockly/test.js"></script>
+  <script src="/js/blockly/test_gen.js"></script>  -->
+
+
+  <!-- numpy 블록 -->
+  <script src="/js/blockly/python_gen.js"></script>
+  <script src="/js/blockly/dataS_.js"></script>
+  <!-- numpy 블록 -->
 
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -69,7 +87,15 @@
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/utils/plotly.js"></script>
-
+  <script>
+    languagePluginLoader.then(() => {
+      pyodide
+        .loadPackage(['pandas', 'numpy','scikit-learn'])
+        .then(() => {
+          console.log('pandas,numpy 로딩완료')
+        });
+    });
+  </script>
   <!-- table -->
   <link rel="stylesheet" href="/css/table_custom.css">
   <style type="text/css">
@@ -99,12 +125,12 @@
       margin-left: 10px;
     }
 
-    #jsCodeEditor {
+    #pyCodeEditor {
       position: absolute;
       width: 100%;
     }
 
-    #pyCodeEditor {
+    #jsCodeEditor {
       position: relative;
       visibility: hidden;
     }
@@ -154,17 +180,53 @@
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="saveBlock();"
           value="블록 저장" />
 
-        <!-- 블록 색깔 + 배경색 -->
-        <select id="themeChanger" name="theme" onchange="changeTheme()" class="form-control col-md-3 mt-2 ml-3">
-          <option value="classic">Classic</option>
-          <option value="modern">Modern</option>
-          <option value="dark">Dark</option>
-          <option value="high_contrast">High Contrast</option>
-          <option value="deuteranopia">Deuteranopia/Protanopia</option>
-          <option value="tritanopia">Tritanopia</option>
-          <option value="zelos">Zelos</option>
-        </select>
+        <!-- 블록 탭 -->
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary mr-0" id="visibleBlock">블럭</button>
+          <button type="button" class="btn btn-secondary mr-0" id="visibleAll">블럭+코드</button>
+          <button type="button" class="btn btn-secondary mr-0" id="visibleCode">코드</button>
+        </div>
 
+        <!-- 탭들 display -->
+        <script>
+          // 블럭만 보이기
+          $('#visibleBlock').click(function () {
+            $('#codeDiv').css({
+              'display': "none"
+            });
+            $('#blocklyDiv').css({
+              'display': "block",
+            });
+            // svg width 100%
+            $('.blocklySvg').attr('width', '100%');
+            $('#blocklyDiv').attr('class', 'col-md-12');
+            // Blockly 리사이즈
+            Blockly.svgResize(demoWorkspace);
+          });
+
+          // 전부 보이기
+          $('#visibleAll').click(function () {
+            $('#blocklyDiv').css({
+              'display': "block",
+            });
+            $('#codeDiv').css({
+              'display': "block"
+            });
+            $('#blocklyDiv').attr('class', 'col-md-6');
+            // Blockly 리사이즈
+            Blockly.svgResize(demoWorkspace);
+          });
+
+          // 코드만 보이기
+          $('#visibleCode').click(function () {
+            $('#blocklyDiv').css({
+              'display': "none"
+            });
+            $('#codeDiv').css({
+              'display': "block"
+            });
+          })
+        </script>
       </div>
 
       <!-- 오른쪽 구역 -->
@@ -172,8 +234,8 @@
 
         <!-- display -->
         <select id="display_select" class="form-control col-md-4 mt-2 ml-3">
-          <option value="javascript">javascript</option>
           <option value="python">python</option>
+          <option value="javascript">javascript</option>
         </select>
 
         <!-- 실행 버튼 -->
@@ -233,14 +295,15 @@
 
 
       <!-- 오른쪽 -->
-      <div class="col-md-6 my-2">
-        <div class="card mb-6 my-3 shadow-sm">
+
+      <div id="codeDiv" class="col">
+        <div class="card shadow-sm">
           <div class="text-white bg-dark">
             <h5 class="my-1 mx-1">코드</h5>
           </div>
           <div style="position:relative; " style="height: 80vh;">
-            <dive id="jsCodeEditor"></dive>
             <dive id="pyCodeEditor"></dive>
+            <dive id="jsCodeEditor"></dive>
           </div>
         </div>
 
@@ -259,7 +322,7 @@
   <!-- Toolbox 정의 -->
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display: none">
     <category name="논리 (Logic)" colour="%{BKY_LOGIC_HUE}">
-      <block type="if_c"></block>
+      <!-- <block type="if_c"></block> -->
       <block type="logic_compare"></block>
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>
@@ -268,7 +331,7 @@
       <block type="logic_ternary"></block>
     </category>
     <category name="반복 (Repeat)" colour="%{BKY_LOOPS_HUE}">
-      <block type="for_c"></block>
+      <!-- <block type="for_c"></block> -->
       <block type="controls_repeat_ext">
         <value name="TIMES">
           <shadow type="math_number">
@@ -397,7 +460,7 @@
           </shadow>
         </value>
       </block>
-      <block type="mexp"></block>
+      <!-- <block type="mexp"></block> -->
     </category>
     <category name="문자 (Text)" colour="%{BKY_TEXTS_HUE}">
       <block type="text"></block>
@@ -477,7 +540,7 @@
           </shadow>
         </value>
       </block>
-      <block type="printc"></block>
+      <!-- <block type="printc"></block> -->
 
     </category>
     <category name="배열 (Array)" colour="%{BKY_LISTS_HUE}">
@@ -529,8 +592,8 @@
           </shadow>
         </value>
       </block>
-      <block type="lists_sort"></block>
-      <block type="tfarraylen"></block>
+      <!-- <block type="lists_sort"></block>
+      <block type="tfarraylen"></block> -->
 
     </category>
     <!-- <category name="색상" colour=" %{BKY_COLOUR_HUE}">
@@ -576,179 +639,135 @@
     <sep></sep>
     <category name="변수 (Variable)" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="함수 (Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
-
+      <block type="printc"></block>
+      <block type="nj_array"></block>
+      <block type="forp"></block>
+      <block type="sump"></block>
 
     </category>
     <sep></sep>
-    <!-- <category name="Linear Regression">
-       <block type="np_array"></block>
-       <block type="sequential"></block>
-       <block type="dense"></block>
-       <block type="compile"></block>
-       <block type="fit"></block>
-       <block type="prediction"></block>
-     </category>
- 
-     <category name="Logistic Regression">
-       <block type="load_x_data"></block>
-       <block type="load_y_data"></block>
-       <block type="split_data"></block>
-       <block type="show_shape"></block>
-       <block type="sequential"></block>
-       <block type="evaluate"></block>
-       <block type="dense"></block>
-       <block type="compile"></block>
-       <block type="fit"></block>
-       <block type="prediction"></block>
-     </category>-->
-
-    <!--2020-07-02-->
-    <!--<category name="Emotion" colour="%{BKY_VARIABLES_HUE}">-->
-    <!-- Lee Jin Hyung -->
-    <!--
-       <block type="readcsv"></block>
-       <block type="token"></block>
-       <block type="tokenfit"></block>
-       <block type="tokensquences"></block>
-       <block type="wordindex"></block>
-       <block type="padsequences"></block>
-       <block type="separate"></block>
-       <block type="keras_embedding"></block>
-       <block type="keras_lstm"></block>
-       <block type="keras_dropout"></block>-->
-    <!-- Jo Cheon Woo -->
-    <!--<block type="array_change"></block>
-       <block type="onehotencoder"></block>
-       <block type="onehotencoder_fit"></block>
-       <block type="enc_transform"></block>
-       <block type="model_predict"></block>
-       <block type="enc_inverse"></block>-->
-
-    <!--tensorji 선형회귀-->
-    <!-- <category name="선형회귀" colour="%{BKY_VARIABLES_HUE}">
-       <block type="callback"></block>
-       <block type="sequential"></block>
-       <block type="dense"></block>
-       <block type="compile"></block>
-       <block type="fit"></block>
-       <block type="predict"></block>
-       <block type="list"></block>
-        <block type="sequential"></block>
-        <block type="add"></block>
-        <block type="addn"></block>
-        <block type="compile"></block>
-        <block type="fit"></block>
-        <block type="csv"></block>
-     </category>
-     <category name="손글씨 예측" colour="%{BKY_VARIABLES_HUE}">
-       <block type="csv"></block>
-       <block type="callback"></block>
-       <block type="async"></block>
-       <block type="data"></block>
-       <block type="sequential"></block> 
-       <block type="add"></block>
-       <block type="addn"></block>
-       <block type="compile"></block>
-       <block type="fit"></block>
-       <block type="console"></block>
-       <block type="feturelenght"></block>
-       <block type="predict"></block>
-       <block type="covid"></block>
-       <block type="aaaa"></block>
-     </category> 
-     <category name="prolog" colour="%{BKY_VARIABLES_HUE}">
-       <block type="prolog_list">
-         <value name="bar">
-           <block type="funktor"></block>
-         </value>
-       </block>
-       <block type="Rule">
-         <value name="Fact">
-           <block type="prolog_list_rule">
-             <value name="bar">
-               <block type="funktor"></block>
-             </value>
-           </block>
-         </value>
-         <value name="Rumpf">
-           <block type="rumpf"></block>
-         </value>
-       </block>
-       <block type="abfrage">
-         <value name="NAME">
-           <block type="separate"></block>
-         </value>
-       </block>
-       <block type="separate"></block>
-       <block type="constant"></block>
-       <block type="funktor"></block>
-       <block type="rumpf"></block> -->
 
 
-    <!-- </category> -->
-    <!-- 크롤링 -->
-    <!-- <category name="크롤링" colour="%{BKY_LOGIC_HUE}"> -->
-    <!-- <block type="user_script"></block> -->
-    <!-- <block type="script"></block> -->
-    <!-- </category> -->
-    <!-- 크롤링 -->
-
-
-    <!-- <category name="데이터 전처리" colour="%{BKY_VARIABLES_HUE}"> -->
-    <!-- <block type="file_upload"></block> -->
-    <!-- </category> -->
-
-
-    <!--numjs-->
-    <category name="수치배열 (Numeric)" colour="%{BKY_LOGIC_HUE}">
+    <!--pyodide_test-->
+    <category name="pyodide_test" colour="%{BKY_VARIABLES_HUE}">
+      <block type="printc"></block>
       <block type="nj_array"></block>
-      <block type="nj_sum"></block>
-      <block type="nj_multiply"></block>
-      <block type="nj_substract"></block>
-      <block type="nj_add"></block>
-      <block type="nj_divide"></block>
-      <block type="nj_shape"></block>
-      <block type="nget"></block>
+      <block type="forp"></block>
+      <block type="sump"></block>
+      <block type="lrgraph"></block>
+      <block type="logicgraph"></block>
+      <block type="array_get"></block>
+      <block type="csv2"></block>
+      <block type="scikit_learn"></block>
+
 
     </category>
-    <category name="머신러닝" colour="%{BKY_LOGIC_HUE}">
-      <category name="머신러닝-기초">
-        <block type="csv2"></block>
-        <block type="mltensorjs">
-          <value name="learnlate">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-          <value name="epochs">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-          <value name="batch">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="prediction"></block>
-        <block type="js_hypothesis"></block>
-        <block type="js_cost"></block>
-        <block type="js_gradient_w"></block>
-        <block type="js_gradient_b"></block>
-        <block type="mlrhypothesis"></block>
-        <block type="mrlcost"></block>
-        <block type="mrlwgradient"></block>
-        <block type="mrlbgradient"></block>
-        <block type="lrgraph"></block>
-        <block type="logicgraph"></block>
 
+    <!--  numpy //  2020 - 09 - 04  -->
+    <category name="데이터 사이언스" colour="%{BKY_LOOPS_HUE}">
+      <category name="Numpy 기본 연산" colour="%{BKY_LOOPS_HUE}">
+        <!-- <block type="variable"></block>  변수 생성  -->
+        <!-- <block type="variable_name"></block> 다른 변수에 넣기   -->
+        <block type="print"></block> <!-- 결과 print  -->
+        <block type="create_arry"></block> <!-- 배열 생성  -->
+        <block type="arry_mul"></block> <!-- 배열 곱 -->
+        <block type="arry_div"></block> <!-- 배열 나누셈 -->
+        <block type="arry_plus"></block> <!-- 배열 합 -->
+        <block type="arry_minus"></block> <!-- 배열 빼기 -->
       </category>
-      <category name="머신러닝-심화">
-        <block type="covid"></block>
-
-
+      <!-- numpy 함수들 -->
+      <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">
+        <block type="np_array"></block> <!-- numpy.arry  -->
+        <block type="numpy_zeros"></block> <!-- zeros 0으로 채우기 -->
+        <block type="numpy_full"></block> <!-- full 배열을 해당 숫자로 채우기  -->
+        <block type="numpy_eye"></block> <!-- eye 배열을 대각선 1로 채우기   -->
+        <block type="numpy_max"></block> <!-- max 최대값 찾기  -->
+        <block type="numpy_min"></block> <!-- min 최소값 찾기  -->
+        <block type="numpy_shape"></block> <!-- shape 행렬 차원 반환  -->
+        <block type="numpy_reshape"></block> <!-- reshape 행렬 차원 변환  -->
+        <block type="numpy_random_rand"></block> <!--  random. randn or randint 무작위 숫자 생성     -->
+        <block type="numpy_exp"></block> <!--  exp 지수     -->
       </category>
+    </category>
+    <!-- 데이터 사이언스  -->
+
+    <!-- 2020-09-07, Pandas Blocks -->
+    <!-- 2020-09-05 양승국 수정-->
+    <category name="Pandas" colour="%{BKY_LOGIC_HUE}">
+      <block type="csv_library">
+        <value name="pan_lib_var">
+          <block type="variables_get">
+            <field name="VAR">pd</field>
+          </block>
+        </value>
+      </block>
+      <block type="load_csv">
+        <value name="pan_lod_var">
+          <block type="variables_get">
+            <field name="VAR">pd</field>
+          </block>
+        </value>
+      </block>
+      <block type="fill_null_data"></block>
+      <block type="pyo_lib"></block>
+      <block type="pandas_print"></block>
+      <block type="normal"></block>
+      <block type="select_row_delete"></block>
+      <block type="select_column_delete"></block>
+      <!-- <block type="save_image"></block> -->
+      <block type="list"></block>
+      <block type="header"></block>
+      <block type="select_row_list"></block>
+      <block type="select_column_list"></block>
+      <block type="select_row_column_value"></block>
+      <block type="row_count"></block>
+      <block type="column_count"></block>
+      <!-- 2020-09-06 양승국 -->
+      <block type="pandas_datalist"></block>
+      <block type="pandas_dataframe">
+        <value name="lib">
+          <block type="variables_get">
+            <field name="VAR">pd</field>
+          </block>
+        </value>
+      </block>
+      <!-- <block type="image_list"></block> -->
+    </category>
+
+    <!-- <category name="Python Test"> -->
+      <!-- 새 블록  딕셔너리 -->
+      <!-- <block type="dict">
+        <value name="DICT">
+        </value>
+      </block> -->
+      <!-- 집합 -->
+      <!-- <block type="set">
+        <value name="SET">
+        </value>
+      </block> -->
+      <!-- 튜플 -->
+      <!-- <block type="tuple">
+        <value name="tuple">
+        </value>
+      </block> -->
+
+      <!-- 집합선택 -->
+      <!-- <block type="set_menu">
+        <value name="set_menu">
+        </value>
+      </block> -->
+
+      <!-- 딕셔너리 선택 -->
+      <!-- <block type="dic_menu">
+        <value name="dic_menu">
+        </value>
+      </block>
+      <block type="for_python">
+        <value name="for_python"></value>
+      </block>
+    </category>
+ -->
+
 
   </xml>
 
@@ -786,54 +805,53 @@
     // var codeArea = document.getElementById("textArea"); // 코드 나타나는 부분 
     var codeArea = jsEditor.getValue();
 
-    var demoWorkspace = Blockly.inject(                 // 블록이 나타나는 부분 
-      "blocklyDiv",
+    var demoWorkspace = Blockly.inject( // 블록이 나타나는 부분 
+      "blocklyDiv", {
+      toolbox: document.getElementById("toolbox"), // 툴박스  보이기 
+      grid: // 그리드 보이기 
       {
-        toolbox: document.getElementById("toolbox"),    // 툴박스  보이기 
-        grid:                                           // 그리드 보이기 
-        {
-          spacing: 0,
-          length: 3,
-          colour: '#ccc',
-          snap: true
-        },
-        zoom:                                           // 줌 기능 
-        {
-          controls: true,
-          wheel: true,
-          startScale: 1.0,
-          maxScale: 3,
-          minScale: 0.3,
-          scaleSpeed: 1.2
-        },
-        trashcan: true,                                  // 휴지통
-        /*theme: {
-          'blockStyles': {
-            "list_blocks": {
-              "colourPrimary": "#4a148c",
-              "colourSecondary": "#AD7BE9",
-              "colourTertiary": "#CDB6E9"
-            }
-          },
-          'categoryStyles': {
-            "list_category": {
-              "colour": "#4a148c"
-            }
-          },
-          'componentStyles': {
-            'toolboxBackgroundColour': '#848484', // toolbox background
-            'toolboxForegroundColour': '#fff',
-            'flyoutBackgroundColour': '#D8D8D8', // toolbox color
+        spacing: 0,
+        length: 3,
+        colour: '#ccc',
+        snap: true
+      },
+      zoom: // 줌 기능 
+      {
+        controls: true,
+        wheel: true,
+        startScale: 1.0,
+        maxScale: 3,
+        minScale: 0.3,
+        scaleSpeed: 1.2
+      },
+      trashcan: true, // 휴지통
+      /*theme: {
+        'blockStyles': {
+          "list_blocks": {
+            "colourPrimary": "#4a148c",
+            "colourSecondary": "#AD7BE9",
+            "colourTertiary": "#CDB6E9"
           }
-        }*/
-        renderer: "zelos"
-      }
+        },
+        'categoryStyles': {
+          "list_category": {
+            "colour": "#4a148c"
+          }
+        },
+        'componentStyles': {
+          'toolboxBackgroundColour': '#848484', // toolbox background
+          'toolboxForegroundColour': '#fff',
+          'flyoutBackgroundColour': '#D8D8D8', // toolbox color
+        }
+      }*/
+      renderer: "zelos"
+    }
 
     );
 
     // 생성될 코드에 대해 선택하는 부분       
-    var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);   // 자바 스크립트 선택 
-    // var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);     // 파이썬 선택 
+    var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace); // 자바 스크립트 선택 
+    var pyCode = Blockly.Python.workspaceToCode(demoWorkspace); // 파이썬 선택 
 
     var delCount = 0;
     var fileState = 0;
@@ -862,13 +880,19 @@
           var dom = Blockly.Xml.textToDom(xml);
           Blockly.Xml.appendDomToWorkspace(dom, demoWorkspace);
           fileName = file.name;
-          var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-          jsEditor.getValue() = jsCode;
+
           try {
             var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
             pyEditor.setValue(pyCode);
           } catch (e) {
-            console.log('Python 코드가 매핑되어 있지 않습니다. Error : ' + e);
+            console.log('python 코드가 매핑되어 있지 않습니다. Error : ' + e);
+          }
+          try {
+            var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+            jsEditor.getValue() = jsCode;
+
+          } catch (e) {
+            console.log('java script 코드가 매핑되어 있지 않습니다. Error : ' + e);
           }
         };
         reader.readAsText(file);
@@ -879,14 +903,23 @@
     // 코드 갱신하기 
     //===================================  
     function codeUpdate(event) {
-      var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-      jsEditor.setValue(jsCode);
-      try {
-        var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
-        pyEditor.setValue(pyCode);
-      } catch (e) {
-        console.log('Python 코드가 매핑되어 있지 않습니다. Error : ' + e);
-      }
+      async function coderun() {
+        try {
+          var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
+          pyEditor.setValue(pyCode);
+        } catch (e) {
+          console.log('python 코드가 매핑되어 있지 않습니다. Error : ' + e);
+        }
+      } coderun().then(() => {
+        try {
+          var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+          jsEditor.setValue(jsCode);
+        } catch (e) {
+          console.log('java script 코드가 매핑되어 있지 않습니다. Error : ' + e);
+        }
+      });
+
+
     }
 
     // ==================================
@@ -900,9 +933,9 @@
     // 파일로 저장하기 
     //===================================  
     function file_save() {
-      var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-      //var code = Blockly.Python.workspaceToCode(demoWorkspace);
-      var blobObject = new Blob([code]);
+      var code_java = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      var code_python = Blockly.Python.workspaceToCode(demoWorkspace);
+      var blobObject = new Blob([code_python, code_java]);
       saveAs(blobObject, "download.js");
       //saveAs(blobObject, "download.py");
     }
@@ -932,15 +965,35 @@
   <script>
     // 실행 버튼
     function runButton() {
-      Blockly.JavaScript.addReservedWords('code');
-      var code = jsEditor.getValue();
-      try {
-        document.getElementById('exeArea').innerHTML = eval(code);
-      } catch (e) {
-        document.getElementById('exeArea').innerHTML = e;
-      }
+      Blockly
+        .Python
+        .addReservedWords('code');
+      var code = pyEditor.getValue();
+      Blockly
+        .JavaScript
+        .addReservedWords('code2');
+      var code2 = jsEditor.getValue();
+      async function runcode() {
+        languagePluginLoader.then(() => {
+          try {
+            pyodide.runPython(code);
+          } catch (e) {
+            document
+              .getElementById('exeArea')
+              .innerHTML = e;
+          }
+        });
+
+      };
+      runcode().then(() => {
+        document
+          .getElementById('exeArea')
+          .innerHTML = eval(code2);
+      });
+
     };
-    
+
+
     function openTextFile(blockId) {
       var input = document.createElement("input");
       input.type = "file";
@@ -989,6 +1042,7 @@
 
       input.click();
     }
+
     function processFile(file) {
       var reader = new FileReader();
       reader.onload = function () {
@@ -1030,6 +1084,7 @@
 
     // canvas 저장하기
     const alphaPixel = []
+
     function canvas_save() {
       var download = $("#download")[0];
       var canvas = $("#canvas")[0];
@@ -1045,8 +1100,8 @@
     }
 
     /*
-    * 코드미러 화면 전환(python&javascript)
-    */
+     * 코드미러 화면 전환(python&javascript)
+     */
     $("#display_select").change(function () {
       var selectName = $(this).find(":selected").val();
       var pyEditor = $("#pyCodeEditor");
@@ -1070,10 +1125,14 @@
         $side.toggleClass('open');
 
         if ($side.hasClass('open')) {
-          $side.stop(true).animate({ right: '0px' }, duration);
+          $side.stop(true).animate({
+            right: '0px'
+          }, duration);
           $sidebt.find('span').text('X');
         } else {
-          $side.stop(true).animate({ right: '-900px' }, duration);
+          $side.stop(true).animate({
+            right: '-900px'
+          }, duration);
           $sidebt.find('span').text('그래프');
         };
       });
@@ -1135,28 +1194,29 @@
 
     // 선형회귀 그래프
     function LRgraph(x, y, w, b) {
-      var xa = new Array();
-      var ya = new Array();
       var ba = new Array();
-      for (var i = 0; i < x.shape; i++) {
-        xa.push(x.get(i));
-        ya.push(y.get(i));
-        pred = (x.get(i) * w + b)
-        ba.push(pred);
+      for (var i = 0; i < x.length; i++) {
+        console.log("w : " + w);
+        console.log(x[i] * w + b);
+        ba.push(x[i] * w + b);
       }
+      console.log("ba : " + ba);
+
+
       var data = {
-        x: xa,
-        y: ya,
+        x: x,
+        y: y,
         mode: 'markers',
         type: 'scatter'
       };
 
       var prediction = {
-        x: xa,
+        x: x,
         y: ba,
         mode: 'lines',
         type: 'scatter'
-      }; var layout = {
+      };
+      var layout = {
         autosize: true
 
       };
@@ -1170,34 +1230,33 @@
     }
     // 로지스틱 그래프
     function Logisticgraph(x, y, w, b) {
-      var xa = new Array();
-      var ya = new Array();
-      var ba = new Array();
+      var ba=new Array();
       function sigmoida(ax) {
         value = 1 / (1 + (Math.exp(-ax)));
         return value;
       }
-      for (var i = 0; i < x.shape; i++) {
-        xa.push(x.get(i));
-        ya.push(y.get(i));
-        pred = sigmoida((x.get(i) * w + b));
+      for (var i = 0; i < x.length; i++) {
+
+        pred = sigmoida((x[i] * w + b));
         ba.push(pred);
       }
+      console.log(ba);
       var data = {
-        x: xa,
-        y: ya,
+        x: x,
+        y: y,
         mode: 'markers',
         type: 'scatter',
         name: 'data'
       };
 
       var prediction = {
-        x: xa,
+        x: x,
         y: ba,
         mode: 'lines',
         type: 'scatter',
         name: 'prediction'
-      }; var layout = {
+      };
+      var layout = {
         autosize: true
 
       };
@@ -1209,7 +1268,6 @@
 
       Plotly.newPlot('graph', datax, layout);
     }
-
   </script>
   <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
 </body>
