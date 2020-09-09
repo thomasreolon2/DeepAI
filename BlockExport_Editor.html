@@ -685,7 +685,7 @@
        <block type="lib_import_as"></block>    <!--   임포트  as    -->      
        <block type="lib_import_from"></block>    <!--   from import    -->     
        </category>
-
+ 
      <!-- numpy 부분  -->
      <category name="Numpy 기본 연산" colour="%{BKY_LOOPS_HUE}">  
      <!-- <block type="variable"></block>  변수 생성  --> 
@@ -765,23 +765,26 @@
       </block>
       <!-- <block type="image_list"></block> -->
     </category>
+
+
+    <!--   데이타 사이언스 //  2020 - 09 - 07  LMS  -->
+      <!-- 시각화 부분  --> 
+      <category name="시각화 하기 " colour="%{BKY_LOOPS_HUE}">  
+        <block type="matplotlib_main"></block>  <!--  matplot1 시각화 틀    -->          
+        <block type="matplotlib_pre_graph"></block>  <!--  matplot2 시각화 준비      --> 
+        <block type="matplotlib_graph_end"></block>  <!--  matplot3 시각화 하기      -->    
+        <!-- 아래는 준비중  -->
+        <block type="load_csv"></block>  <!--  csv 로드     --> 
+        <block type="linearregression_c"></block>  <!-- 사이킷런 리니어 로드     --> 
+        <block type="linearregression_train"></block>  <!-- 사이킷런 train     --> 
+      </category>   
   </category>    
   
   <!-- ************************* -->
   <!-- 2020-09-07, Pandas Blocks -->
   <!-- ************************* -->
 
-      <!--   데이타 사이언스 //  2020 - 09 - 07  LMS  -->
-      <!-- 시각화 부분  --> 
-      <category name="시각화 하기 " colour="%{BKY_LOOPS_HUE}">  
-       <block type="matplotlib_main"></block>  <!--  matplot1 시각화 틀    -->          
-       <block type="matplotlib_pre_graph"></block>  <!--  matplot2 시각화 준비      --> 
-       <block type="matplotlib_graph_end"></block>  <!--  matplot3 시각화 하기      -->    
-       <!-- 아래는 준비중  -->
-       <block type="load_csv"></block>  <!--  csv 로드     --> 
-       <block type="linearregression_c"></block>  <!-- 사이킷런 리니어 로드     --> 
-       <block type="linearregression_train"></block>  <!-- 사이킷런 train     --> 
-     </category>   
+  
 
 
 <!-- 기본 블록 2020 - 09 - 07 찬영 -->
