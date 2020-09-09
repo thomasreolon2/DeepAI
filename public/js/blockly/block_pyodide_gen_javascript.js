@@ -37,3 +37,17 @@ Blockly.JavaScript['printc'] = function (block) {
     var code = 'Logisticgraph(' + value_x + ',' + value_y + ',' + value_w + ',' + value_b + ');';
     return code;
   };
+  Blockly.JavaScript['csv_library'] = function(block) {
+    var value_name = Blockly.JavaScript.valueToCode(block, 'pan_lib_var', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = "\n";
+    return code;
+  };
+  Blockly.JavaScript['labelencoder'] = function(block) {
+    var value_df = Blockly.JavaScript.valueToCode(block, 'df', Blockly.JavaScript.ORDER_ATOMIC);
+    var text_column = block.getFieldValue('column');
+    // TODO: Assemble Python into code variable.
+    var code = "from sklearn.preprocessing import LabelEncoder\nLabel_enc = LabelEncoder()\n"+value_df+"['"+text_column+"'] = Label_enc.fit_transform("+value_df+"['"+text_column+"'])\n";
+    return code;
+  };
+  

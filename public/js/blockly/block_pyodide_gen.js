@@ -84,6 +84,9 @@ Blockly.Python['csv2'] = function (block) {
         if(Number(data)*0!=0) {
           data = "'"+data+"'";
         }
+        if(Number(data)==" ") {
+          data = "None";
+        }
         x_train[i][j] = data; // value
       }
       value = value + "[" + x_train[i] + "]";
@@ -160,9 +163,14 @@ Blockly.Python['csvdataframe_J'] = function (block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
-
-
-
+///////////////////데이터전처리 라벨링 20200909 이진형///////////////
+Blockly.Python['labelencoder'] = function(block) {
+  var value_df = Blockly.Python.valueToCode(block, 'df', Blockly.Python.ORDER_ATOMIC);
+  var text_column = block.getFieldValue('column');
+  // TODO: Assemble Python into code variable.
+  var code = "from sklearn.preprocessing import LabelEncoder\nLabel_enc = LabelEncoder()\n"+value_df+"['"+text_column+"'] = Label_enc.fit_transform("+value_df+"['"+text_column+"'])\n";
+  return code;
+};
 
 
 

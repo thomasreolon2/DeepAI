@@ -189,8 +189,26 @@ Blockly.Blocks['csvdataframe_J'] = {
    this.setHelpUrl("");
     }
   };
-  
-
+  /////////////////////////////////데이터전처리 라벨링//////////////////////20200909 이진형
+  Blockly.Blocks['labelencoder'] = {
+    init: function() {
+      this.appendValueInput("df")
+          .setCheck(null)
+          .appendField("데이터 프레임 :");
+      this.appendDummyInput()
+          .appendField("  ")
+          .appendField(new Blockly.FieldTextInput("컬럼명"), "column")
+          .appendField("  ");
+      this.appendDummyInput()
+          .appendField("데이터 라벨링 ");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 
 

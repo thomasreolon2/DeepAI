@@ -3,28 +3,28 @@
 ////////////////////////////////////////////////////////////////////
 
 Blockly.Python['csv_library'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'pan_lib_var', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'pan_lib_var', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = "import pandas as" + " "  + value_name.replace("'"," ")+ "\n";
   return code;
 };
 
 Blockly.Python['load_csv'] = function(block) {
-  var value_var = Blockly.JavaScript.valueToCode(block, 'pan_lod_var', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_load = Blockly.JavaScript.valueToCode(block, 'LOAD', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
+  var value_var = Blockly.Python.valueToCode(block, 'pan_lod_var', Blockly.Python.ORDER_ATOMIC);
+  var value_load = Blockly.Python.valueToCode(block, 'LOAD', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript Python code variable.
   // var code =  value_var +'.read_csv(' + value_load + ')';
   var code = value_var+'.read_csv(pyodide.open_url('+value_load+'))';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
 Blockly.Python['fill_null_data'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'DATA', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = value_name + '.fillna(' + value_name +'.' + dropdown_name + ')';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['pyo_lib'] = function(block) {

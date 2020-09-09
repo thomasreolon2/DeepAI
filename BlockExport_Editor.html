@@ -666,6 +666,7 @@
       <block type="logicgraph"></block>
       <block type="array_get"></block>
       <block type="csv3"></block>
+      <block type="labelencoder"></block>
       <!-- <block type="csv3"></block> -->
       <block type="scikit_learn"></block>
     </category>
@@ -1003,7 +1004,10 @@
         var block = demoWorkspace.getBlockById(event.blockId);
         if ('csv2' == block.type) {
           openTextFile(event.blockId);
-        } 
+        }
+        if ('csv3' == block.type) {
+          openTextFile(event.blockId);
+        }  
 
         if ('data_csv_read'== block.type){ 
           Show_csv(); 
