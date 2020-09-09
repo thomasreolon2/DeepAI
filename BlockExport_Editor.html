@@ -1050,6 +1050,7 @@
             // csv view! header 
             for (var i = 0; i < csvvalue.length; i++) {
               var header = csvvalue[i];
+              addOptions(header);
             }
             csvval[0] = csvval[0].replace('\r', '');
             // row

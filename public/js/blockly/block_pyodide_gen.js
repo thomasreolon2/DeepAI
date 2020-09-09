@@ -127,13 +127,13 @@ Blockly.Python['csv3'] = function (block) {
         }
         tempIdx = 0;
         x = x + "[" + x_train[i] + "],";
-        y = y+"[" + y_train[i] + "],";
       }
+      y = "[" + y_train + "]";
     }
   } catch (e) {
     console.log(e);
   }
-  var code = valX + " = np.array([" + x + "]);\n" + valY + " = np.array([" + y + "]);\n";
+  var code = valX + " = tf.tensor2d([" + x + "]);\n" + valY + " = tf.tensor1d(" + y + ");\n";
   return code;
 };
 
