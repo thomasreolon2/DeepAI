@@ -148,7 +148,7 @@
 <!-- onload : body가 떳을때 작동되는 js입력 -->
 <body>
   
-  <!--사이드바-->
+  <!-- 그래프 사이드바 -->
   <div>
     <aside id="sidebar">
       <button class="btn  btn-sm"><span>그래프</span></button>
@@ -160,8 +160,8 @@
       </div>
     </aside>
   </div>
-  <div class="container-fluid">
 
+  <div class="container-fluid">
     <!-- nav -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #f4f6ff;">
 
@@ -998,9 +998,6 @@
         if ('csv2' == block.type) {
           openTextFile(event.blockId);
         }
-        if ('csv3' == block.type) {
-          openTextFile(event.blockId);
-        }
       }
     }
     demoWorkspace.addChangeListener(codeUpdate);
@@ -1225,6 +1222,7 @@
         }
       }
     }
+    
     */
     // 화면에 찍기 프린트
     function printc(x) {
@@ -1242,20 +1240,20 @@
       }
       console.log("ba : " + ba);
 
-
       var data = {
         x: x,
         y: y,
         mode: 'markers',
         type: 'scatter'
       };
-
+ 
       var prediction = {
         x: x,
         y: ba,
         mode: 'lines',
         type: 'scatter'
       };
+
       var layout = {
         autosize: true
 
