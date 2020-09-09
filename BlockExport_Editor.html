@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Block_pyodide</title>
+  <title>BlockJas</title>
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="/js/blockly/storage.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
@@ -12,6 +12,7 @@
   <script src="/js/blockly/brython_stdlib.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
   <!--  Blockly 자체의 설정과 관련된 파일 -->
+  
   <!--pyodide-->
   <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
  
@@ -95,12 +96,13 @@
 
   <script>
     languagePluginLoader.then(() => {
-          pyodide.loadPackage(['pandas','numpy','matplotlib','scikit-learn']).then(() => {  
+          pyodide.loadPackage(['pandas','numpy','matplotlib','scikit-learn']).then(() => {
           console.log('pyodide 라이브러리 로딩완료');  
+          $("#loading").hide();
         });
     });   
   </script> 
-
+  
   <!-- table -->
   <link rel="stylesheet" href="/css/table_custom.css">
   <style type="text/css">
@@ -144,9 +146,8 @@
 </head>
 
 <!-- onload : body가 떳을때 작동되는 js입력 -->
- 
-<body onload="">
-
+<body>
+  
   <!--사이드바-->
   <div>
     <aside id="sidebar">
@@ -815,6 +816,7 @@
   </xml>
 
   </xml>
+  
   <!-- code mirror -->
   <script>
     var jsEditor = CodeMirror(document.getElementById("jsCodeEditor"), {
@@ -994,9 +996,6 @@
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
         if ('csv2' == block.type) {
-          openTextFile(event.blockId);
-        }
-        if ('csv3' == block.type) {
           openTextFile(event.blockId);
         }
       }
@@ -1308,5 +1307,37 @@
   </script>
   <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
 </body>
+<script>
+  $(window).on('load', function () {
+       
+ 
+  });
+ </script>
+ <style>
+ /* 홈페이지 로딩 */
+ #loading {
+    width: 100%;   
+    height: 100%;   
+    top: 0px;
+    left: 0px;
+    position: fixed;   
+    display: block;   
+    opacity: 0.7;   
+    background-color: #fff;   
+    z-index: 99;   
+    text-align: center; }  
+      
+    #loading-image {   
+    position: absolute;   
+    top: 35%;   
+    left: 45%;  
+    z-index: 100; } 
 
+ </style>
+<!-- 홈페이지 로딩 -->
+<div id="loading">
+  <div id="loading-image">
+    <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object>
+  </div>
+</div>
 </html>
