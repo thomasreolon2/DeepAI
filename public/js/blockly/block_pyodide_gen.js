@@ -80,7 +80,7 @@ Blockly.Python['csv2'] = function (block) {
     for (var i = 0; i < x_train.length; i++) {
       for (var j = 0; j < key.length; j++) {
         var keyName = key[j]; // key 값
-        x_train[i][j] = Number(file[i][keyName]); // value
+        x_train[i][j] = file[i][keyName]; // value
       }
       value = value + "[" + x_train[i] + "]";
       if (i != x_train.length - 1) {
@@ -119,10 +119,11 @@ Blockly.Python['csv3'] = function (block) {
       for (var i = 0; i < x_train.length; i++) {
         for (var j = 0; j < key.length; j++) {
           var keyName = key[j]; // key 값
+          var data = file[i][keyName];
           if (keyName.trim() == dropdown_option.trim()) { // key값이 Y Label로 설정한 이름과 같다면.
-            y_train[i] = Number(file[i][keyName]);
+            y_train[i] = file[i][keyName];
           } else {
-            x_train[i][tempIdx++] = Number(file[i][keyName]); // value
+            x_train[i][tempIdx++] = file[i][keyName]; // value
           }
         }
         tempIdx = 0;
