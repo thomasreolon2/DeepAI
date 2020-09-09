@@ -67,7 +67,7 @@ Blockly.Python['csv2'] = function (block) {
     // 2차원 배열 array
     x_train = new Array(file.length);
 
-    for (var i = 0; i < x_train.length; i++) {
+    for (var i = 0; i < x_train.length-1; i++) {
       x_train[i] = new Array(key.length);
     }
     for (var i = 0; i < key.length; i++) {
@@ -77,7 +77,7 @@ Blockly.Python['csv2'] = function (block) {
       }
     }
     // 값 세팅
-    for (var i = 0; i < x_train.length; i++) {
+    for (var i = 0; i < x_train.length-1; i++) {
       for (var j = 0; j < key.length; j++) {
         var keyName = key[j]; // key 값
         x_train[i][j] = Number(file[i][keyName]); // value
@@ -127,13 +127,14 @@ Blockly.Python['csv3'] = function (block) {
         }
         tempIdx = 0;
         x = x + "[" + x_train[i] + "],";
+        y = y+"[" + y_train[i] + "],";
       }
-      y = "[" + y_train + "]";
+     
     }
   } catch (e) {
     console.log(e);
   }
-  var code = valX + " = tf.tensor2d([" + x + "]);\n" + valY + " = tf.tensor1d(" + y + ");\n";
+  var code = valX + " = np.array([" + x + "]);\n" + valY + " = np.array([" + y + "]);\n";
   return code;
 };
 
