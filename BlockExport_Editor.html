@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BlockJas</title>
+  <title>Block_pyodide</title>
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="/js/blockly/storage.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
@@ -95,7 +95,7 @@
 
   <script>
     languagePluginLoader.then(() => {
-          pyodide.loadPackage(['pandas','numpy','matplotlib','scikit-learn']).then(() => {
+          pyodide.loadPackage(['pandas','numpy','matplotlib','scikit-learn']).then(() => {  
           console.log('pyodide 라이브러리 로딩완료');  
         });
     });   
@@ -994,6 +994,9 @@
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
         if ('csv2' == block.type) {
+          openTextFile(event.blockId);
+        }
+        if ('csv3' == block.type) {
           openTextFile(event.blockId);
         }
       }

@@ -146,6 +146,10 @@ Blockly.Blocks['csv3'] = {
     return dynamicDropdownOptions_;
   }
 };
+
+
+
+
 Blockly.Blocks['scikit_learn'] = {
   init: function () {
     this.appendValueInput("model")
@@ -155,7 +159,7 @@ Blockly.Blocks['scikit_learn'] = {
     this.appendDummyInput()
       .appendField("모델 종류 : ");
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([["선형회귀", "LinearRegression()"], ["로지스틱회귀", "LogisticRegression()"], ["결정트리", "Nomal"]]), "cate");
+      .appendField(new Blockly.FieldDropdown([["선형회귀", "LinearRegression"], ["로지스틱회귀", "LogisticRegression"], ["결정트리", "Nomal"]]), "cate");
     this.appendValueInput("x")
       .setCheck(null)
       .appendField(" 학습 데이터 :");
