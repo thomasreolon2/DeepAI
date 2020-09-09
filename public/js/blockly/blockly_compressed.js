@@ -2156,18 +2156,18 @@ Blockly.Theme.defineTheme = function (a, b) {
   return c;
 };
 
-//COLUR CHANGE
+// 블럭 색 변경
 Blockly.Themes = {};
 Blockly.Themes.Classic = {};
 Blockly.Themes.Classic.defaultBlockStyles = {
   colour_blocks: { colourPrimary: "#289AFF" },
-  list_blocks: { colourPrimary: "#FF8200" },
-  logic_blocks: { colourPrimary: "#0032EA" },
-  loop_blocks: { colourPrimary: "#8200FC" },
-  math_blocks: { colourPrimary: "#CC47AD" },
+  list_blocks: { colourPrimary: "#9966FF" },//
+  logic_blocks: { colourPrimary: "#4C97FF" },//
+  loop_blocks: { colourPrimary: "#FFAB19" },//
+  math_blocks: { colourPrimary: "#59C059" },//
   procedure_blocks: { colourPrimary: "#41CDCD" },
   text_blocks: { colourPrimary: "#FFD732" },
-  variable_blocks: { colourPrimary: "#369F36" },
+  variable_blocks: { colourPrimary: "#FF8C1A" },//
   variable_dynamic_blocks: { colourPrimary: "310" },
   hat_blocks: { colourPrimary: "330", hat: "cap" },
 };

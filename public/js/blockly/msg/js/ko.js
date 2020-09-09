@@ -423,11 +423,12 @@ Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_
 Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 
-Blockly.Msg["MATH_HUE"] = "CC47AD";
-Blockly.Msg["LOOPS_HUE"] = "8200FC";
-Blockly.Msg["LISTS_HUE"] = "FF8200";
-Blockly.Msg["LOGIC_HUE"] = "0032EA";
-Blockly.Msg["VARIABLES_HUE"] = "369F36";
+// 카테고리 색 변경
+Blockly.Msg["MATH_HUE"] = "59C059";//
+Blockly.Msg["LOOPS_HUE"] = "FFAB19";//
+Blockly.Msg["LISTS_HUE"] = "9966FF";//
+Blockly.Msg["LOGIC_HUE"] = "4C97FF";//
+Blockly.Msg["VARIABLES_HUE"] = "FF8C1A";//
 Blockly.Msg["TEXTS_HUE"] = "FFD732";
 Blockly.Msg["PROCEDURES_HUE"] = "41CDCD";
 Blockly.Msg["COLOUR_HUE"] = "289AFF";
