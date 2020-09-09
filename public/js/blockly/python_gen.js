@@ -1,5 +1,21 @@
    //  2020-09-07
 
+//csv 파일 읽기
+Blockly.Python['data_csv_read'] = function(block) {
+  var value_data_csv_read_val = Blockly.Python.valueToCode(block, 'Data_csv_read_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code; 
+    
+  if(testing_1 != 0){  
+    code = `${value_data_csv_read_val} = open("${testing_1}", 'r')\n`; 
+  }else{
+    code = `${value_data_csv_read_val} = open(" ", 'r')\n`;   
+  }  
+ 
+  console.log("testing_1",testing_1); 
+  return code;     
+}; 
+
 
   // 라이브러리 전체 
   Blockly.Python['lib_import_a'] = function(block) {

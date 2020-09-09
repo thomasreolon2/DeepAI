@@ -87,7 +87,9 @@
   <link rel="stylesheet" href="css\sidebar.css">
 
   <script>
-    DL_Gra = 0;
+    var Data_process_on =0;   
+    var DL_Gra = 0;
+    var testing_1 = 0; 
   </script>  
 
   <!-- plotly -->
@@ -95,10 +97,10 @@
   <script src="./js/utils/plotly.js"></script>
 
   <script>
-    languagePluginLoader.then(() => {
+    languagePluginLoader.then(() => { 
           pyodide.loadPackage(['pandas','numpy','matplotlib','scikit-learn']).then(() => {
           console.log('pyodide 라이브러리 로딩완료');  
-          $("#loading").hide(); // 로딩 끝나면 로딩 창 없앰
+          // $("#loading").hide(); // 로딩 끝나면 로딩 창 없앰 
         });
     });   
   </script> 
@@ -677,6 +679,7 @@
       <!-- LMS -->
       <!-- 라이브러리 임포트  -->
       <category name="라이브러리 임포트" colour="%{BKY_LOOPS_HUE}">   
+       <block type="data_csv_read"></block>  <!--  csv 읽기      -->
        <block type="lib_import_a"></block>  <!--  라이브러리 전체 임포트      -->
        <block type="lib_import"></block>  <!--  단순 임포트      --> 
        <block type="lib_import_as"></block>    <!--   임포트  as    -->      
@@ -997,7 +1000,12 @@
         var block = demoWorkspace.getBlockById(event.blockId);
         if ('csv2' == block.type) {
           openTextFile(event.blockId);
+        } 
+
+        if ('data_csv_read'== block.type){ 
+          Show_csv(); 
         }
+
       }
     }
     demoWorkspace.addChangeListener(codeUpdate);
@@ -1306,7 +1314,164 @@
 
       Plotly.newPlot('graph', datax, layout);
     }
+
+
+    
+// **************************************
+// ********   파일 열기     **********//
+// **************************************//   
+async function Show_csv(test) {    
+
+var Show_CSV_Data_S = await Data_process();
+
+     
+console.log("Show_csv : Load_csv\n",Show_CSV_Data_S);     
+
+var rows = Show_CSV_Data_S.split(/\r\n|\n/);   
+var cols = Show_CSV_Data_S.split(/\r\n|\n/)[0].split(/,/);  
+
+   
+
+var Get_CSV_DATA = Array.from(Array(cols.length), () => new Array((rows.length)-1)); 
+for (var i = 0; i < (rows.length)-1; i++) {          
+    for (var j = 0; j < cols.length; j++) {        
+    test = rows[i].split(/,/)[j];           
+    Get_CSV_DATA[j][i] = test;            
+    }   
+}   
+var rows_leng = rows.length;
+var cols_leng = cols.length;
+
+draw_table(Get_CSV_DATA,rows_leng,cols);
+
+ 
+test = Get_CSV_DATA;
+console.log("test",test);  
+return test;   
+}   
+
+
+function draw_table(Get_CSV_DATA){ 
+
+
+// console.log("final_data",Final_Data[0]);
+// console.log("F_cols",F_cols);
+// console.log("F_lows",F_lows);
+
+ 
+  //--------------------------------- data 속성 ---------------------------// 
+  var data = [
+        {
+            type: 'table',  
+
+            //--------------헤더 설정 ---------------// 
+            // header:{
+           
+            //     values: [["<b>EXPENSES</b>"], ["<b>Q1</b>"],["<b>Q2</b>"], ["<b>Q3</b>"], ["<b>Q4</b>"]], 
+                
+            //     function(Table_Chart){
+            //         for (var j = 0; j < Table_Chart[0].length; j++) {   //테이블 요소만 가져오기 
+            //            [Table_Chart[j][0]] 
+            //            }
+            //   },
+                
+            //     align: "center",
+            //     line: {
+            //         width: 1,
+            //         color: 'black'
+            //     },
+            //     fill: {
+            //         color: "grey"
+            //     },
+            //     font: {
+            //         family: "Arial",
+            //         size: 12,
+            //         color: "white"
+            //     } 
+            // },
+            //--------------헤더 설정 ---------------//
+
+            cells: {
+                values: Get_CSV_DATA,
+                align: "center",
+                line: {
+                    color: "black",
+                    width: 1 
+
+                },
+                font: {
+                    family: "Arial", 
+                    size: 11,
+                    color: ["black"] 
+                }
+            } 
+        } 
+    ]
+ 
+   
+      var title = "테이블 확인 하기 "
+      var graph = "graph1"
+   
+
+
+    var layout = {
+       
+      title: title
+      
+    }
+//--------------------------------- data 속성 ---------------------------//
+    Plotly.newPlot(graph, data,layout);  
+  } 
+
+
+
+// **************************************
+// ********   파일 열기     **********//
+// **************************************//
+function Data_process() {   
+
+     return new Promise(function (resolve,rejcet) {
+
+     
+    var Show_CSV_Data = document.createElement("input"); 
+    Show_CSV_Data.setAttribute("id","Data_S_read_CSV");
+    Show_CSV_Data.type = "file";       
+    Show_CSV_Data.accept = ".csv";   //loadFile    
+    Show_CSV_Data.onchange =  function (event) {   
+      
+      if(event.target.files != undefined){
+        var file_result = event.target.files; 
+       // console.log("fitle_result",file_result); 
+       testing_1 =  event.target.files[0].name; 
+      
+        var reader = new FileReader();
+        reader.onload =  function (e) {   //들어오기전에 먼저 실행됨  
+        var fileResult = e.target.result; 
+         
+
+        resolve(fileResult);  
+ 
+         
+      };     
+    }
+      
+      reader.readAsText(event.target.files[0], /* optional */ "euc-kr"); 
+     // testing_1 = document.getElementById('Data_S_read_CSV').value;
+    }
+    
+    Show_CSV_Data.click(); 
+
+    
+     }); 
+    
+    }
+
+
+
+
+
   </script>
+
   <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
 </body>
 
@@ -1331,10 +1496,10 @@
     z-index: 100; } 
  </style>
 <!-- 홈페이지 로딩 -->
-<div id="loading">
-  <div id="loading-image">
+<!-- <div id="loading">
+  <div id="loading-image"> -->
     <!-- 약 30 초 정도면 차라리 프로그레스바를 쓰거나 xx를 불러오는 중입니다. 표시해주는게 나을지도 모름-->
-    <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object>
-  </div>
-</div>
-</html>
+    <!-- <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
+   </div>
+</div> -->
+</html> 

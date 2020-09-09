@@ -1,5 +1,22 @@
 Blockly.defineBlocksWithJsonArray(
     [
+  //csv 파일 읽기
+  {
+    "type": "data_csv_read",
+    "message0": "변수 : %1 CSV 파일 읽기",
+    "args0": [
+      { 
+        "type": "input_value",
+        "name": "Data_csv_read_val"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 230,
+    "tooltip": "",
+    "helpUrl": ""
+  },
   // 라이브러리 임포트 전체  
   {
     "type": "lib_import_a",
