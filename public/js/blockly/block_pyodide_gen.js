@@ -67,7 +67,7 @@ Blockly.Python['csv2'] = function (block) {
     // 2차원 배열 array
     x_train = new Array(file.length);
 
-    for (var i = 0; i < x_train.length-1; i++) {
+    for (var i = 0; i < x_train.length - 1; i++) {
       x_train[i] = new Array(key.length);
     }
     for (var i = 0; i < key.length; i++) {
@@ -77,12 +77,14 @@ Blockly.Python['csv2'] = function (block) {
       }
     }
     // 값 세팅
-    for (var i = 0; i < x_train.length-1; i++) {
+    for (var i = 0; i < x_train.length - 1; i++) {
       for (var j = 0; j < key.length; j++) {
         var keyName = key[j]; // key 값
         var data = file[i][keyName];
-        console.log('type : ' + Object.prototype.toString.call(data));
-        x_train[i][j] = file[i][keyName]; // value
+        if(Number(data)*0!=0) {
+          data = "'"+data+"'";
+        }
+        x_train[i][j] = data; // value
       }
       value = value + "[" + x_train[i] + "]";
       if (i != x_train.length - 1) {
@@ -90,7 +92,7 @@ Blockly.Python['csv2'] = function (block) {
       }
     }
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
   var code = "[" + value + "], columns=" + columns + "]";
   return [code, Blockly.Python.ORDER_ATOMIC];
@@ -129,9 +131,9 @@ Blockly.Python['csv3'] = function (block) {
         }
         tempIdx = 0;
         x = x + "[" + x_train[i] + "],";
-        y = y+"[" + y_train[i] + "],";
+        y = y + "[" + y_train[i] + "],";
       }
-     
+
     }
   } catch (e) {
     console.log(e);
