@@ -10,6 +10,7 @@
     border-color: gray;
     box-shadow:  5px 5px 10px black, 0 0 15px gray
   }
+  /*
   #sidebar > button {
     background:white;
     position: absolute;
@@ -19,7 +20,7 @@
     height: 45px;
     color: rgb(128, 128, 128);
     border : solid;
-  }
+  }*/
   #graph1{
     height:25%;
     z-index: 3;

@@ -153,7 +153,13 @@
   <!-- 그래프 사이드바 -->
   <div>
     <aside id="sidebar">
-      <button class="btn  btn-sm"><span>그래프</span></button>
+      <!-- 그래프 사이드바 닫기 버튼 -->
+      <div style="position:relative; float:left; padding:20px; z-index: 100;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="sidebar_toggle();">
+          <span aria-hidden="true">&times;</span>
+        </button>  
+      </div>
+      
       <div id=graph></div>
       <div id=graph1 style="height: 500px; width: 900px;"><img id="pyplotfigure"/></div>
       <!-- <div id=graph2 style="height: 300px;"></div> 
@@ -292,6 +298,10 @@
             </div>
           </div>
         </div> <!-- 모달 -->
+
+        <!-- 그래프 버튼 -->
+        <input id="sidebar_button" type="button" class="btn btn-outline-secondary btn-sm mr-1" value="그래프" onclick="sidebar_toggle()"/>
+
       </div> <!-- 오른쪽 구역 -->
     </nav>
 
@@ -1182,11 +1192,13 @@
       }
     });
 
-    //사이드바
+    /*
+    //사이드바_old
     $(function () {
       var duration = 300;
 
       var $side = $('#sidebar');
+      // #sidebar 버튼 클릭시
       var $sidebt = $side.find('button').on('click', function () {
         $side.toggleClass('open');
 
@@ -1203,7 +1215,25 @@
         };
       });
     });
+    */
+    function sidebar_toggle() {
+        
+        var duration = 300;
+        var $side = $('#sidebar');
 
+        $side.toggleClass('open');
+
+        if ($side.hasClass('open')) {
+          $side.stop(true).animate({
+            right: '0px'
+          }, duration);
+          //$sidebt.find('span').text('X');
+        } else {
+          $side.stop(true).animate({
+            right: '-900px'
+          }, duration);
+        };
+    };
     // TESTER = document.getElementById('graph1');
     // Plotly.newPlot(TESTER, [{
     //   x: [1, 2, 3, 4, 5],
