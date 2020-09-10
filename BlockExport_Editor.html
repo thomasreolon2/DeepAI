@@ -89,7 +89,6 @@
   <script>
     var Data_process_on =0;   
     var DL_Gra = 0;
-    var testing_1 = 0; 
   </script>  
 
   <!-- plotly -->
@@ -1009,9 +1008,9 @@
           openTextFile(event.blockId);
         }  
 
-        if ('data_csv_read'== block.type){ 
-          Show_csv(); 
-        }
+        // if ('data_csv_read'== block.type){ 
+        //   Show_csv();    
+        // }
 
       }
     }
@@ -1035,12 +1034,18 @@
              languagePluginLoader.then(() => {   
              try {  pyodide.runPython(code);  }   
              catch (e) {  document.getElementById('exeArea').innerHTML = e; }});  
-
+ 
             languagePluginLoader.then(await function () {    
-            if( DL_Gra == "chcked"){  document.getElementById("pyplotfigure").src=pyodide.globals.img_str  }  });     
-      };
-    
-      runcode().then(() => {
+            if( DL_Gra == "chcked"){  document.getElementById("pyplotfigure").src=pyodide.globals.img_str  }  });   
+
+
+            var Get_VI_DATA = pyEditor.getValue(); 
+            console.log("Get_VI_DATA_first",Get_VI_DATA); 
+
+     
+          };  
+        
+      runcode().then(() => { 
         document.getElementById('exeArea').innerHTML = eval(code2);      
       });
 
@@ -1239,7 +1244,7 @@
     }
 
     */
-    // 화면에 찍기 프린트
+    // 화면에 찍기 프린트 
     function printc(x) {
       var savetext = $('#exeArea').val();
       $('#exeArea').val(savetext + x + '\n');
@@ -1258,9 +1263,9 @@
       var data = {
         x: x,
         y: y,
-        mode: 'markers',
-        type: 'scatter'
-      };
+        mode: 'markers', 
+        type: 'scatter' 
+      }; 
  
       var prediction = {
         x: x,
@@ -1449,7 +1454,7 @@ function Data_process() {
       if(event.target.files != undefined){
         var file_result = event.target.files; 
        // console.log("fitle_result",file_result); 
-       testing_1 =  event.target.files[0].name; 
+      //  testing_1 =  event.target.files[0].name; 
       
         var reader = new FileReader();
         reader.onload =  function (e) {   //들어오기전에 먼저 실행됨  
@@ -1503,10 +1508,10 @@ function Data_process() {
     z-index: 100; } 
  </style>
 <!-- 홈페이지 로딩 -->
-<div id="loading">
-  <div id="loading-image">
+<!-- <div id="loading">
+  <div id="loading-image"> -->
     <!-- 약 30 초 정도면 차라리 프로그레스바를 쓰거나 xx를 불러오는 중입니다. 표시해주는게 나을지도 모름-->
-    <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
+    <!-- <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
    </div>
-</div>
-</html> 
+</div> -->
+</html>  
