@@ -2,7 +2,7 @@
 
 //csv 파일 읽기
 Blockly.JavaScript['data_csv_read'] = function(block) {
-  var value_data_csv_read_val = Blockly.Python.valueToCode(block, 'Data_csv_read_val', Blockly.Python.ORDER_ATOMIC);
+  var value_data_csv_read_val = Blockly.JavaScript.valueToCode(block, 'Data_csv_read_val', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'draw_table(' + value_data_csv_read_val + ')\n';  
   return code;     

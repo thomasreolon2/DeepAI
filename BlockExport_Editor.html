@@ -89,6 +89,7 @@
   <script>
     var Data_process_on =0;   
     var DL_Gra = 0;
+    var testing_1 = 0; 
   </script>  
 
   <!-- plotly -->
@@ -154,7 +155,7 @@
     <aside id="sidebar">
       <button class="btn  btn-sm"><span>그래프</span></button>
       <div id=graph></div>
-      <div id=graph1 style="height: 300px; width: 900px;"><img id="pyplotfigure"/></div>
+      <div id=graph1 style="height: 500px; width: 900px;"><img id="pyplotfigure"/></div>
       <!-- <div id=graph2 style="height: 300px;"></div> 
       <div id=graph3 style="height: 300px;"></div>-->   
       <div id="csv_show">
@@ -666,6 +667,13 @@
       <block type="array_get"></block>
       <block type="csv3"></block>
       <block type="labelencoder"></block>
+      <block type="import_lib">
+        <value name="var">
+          <block type="variables_get">
+            <field name="VAR"></field>
+          </block>
+        </value>
+      </block>
       <!-- <block type="csv3"></block> -->
       <block type="scikit_learn"></block>
     </category>
@@ -1006,6 +1014,7 @@
         var block = demoWorkspace.getBlockById(event.blockId);
         console.log('블록이 선택됨1');
       }
+   
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
         if ('csv2' == block.type) {
@@ -1015,10 +1024,9 @@
           openTextFile(event.blockId);
         }  
 
-        // if ('data_csv_read'== block.type){ 
-        //   Show_csv();    
-        // }
-
+        if ('data_csv_read'== block.type){ 
+          Show_csv(); 
+        }
       }
     }
     demoWorkspace.addChangeListener(codeUpdate);
@@ -1041,18 +1049,12 @@
              languagePluginLoader.then(() => {   
              try {  pyodide.runPython(code);  }   
              catch (e) {  document.getElementById('exeArea').innerHTML = e; }});  
- 
+
             languagePluginLoader.then(await function () {    
-            if( DL_Gra == "chcked"){  document.getElementById("pyplotfigure").src=pyodide.globals.img_str  }  });   
-
-
-            var Get_VI_DATA = pyEditor.getValue(); 
-            console.log("Get_VI_DATA_first",Get_VI_DATA); 
-
-     
-          };  
-        
-      runcode().then(() => { 
+            if( DL_Gra == "chcked"){  document.getElementById("pyplotfigure").src=pyodide.globals.img_str  }  });     
+      };
+    
+      runcode().then(() => {
         document.getElementById('exeArea').innerHTML = eval(code2);      
       });
 
@@ -1249,9 +1251,10 @@
         }
       }
     }
-
+  
     */
-    // 화면에 찍기 프린트 
+   
+    // 화면에 찍기 프린트
     function printc(x) {
       var savetext = $('#exeArea').val();
       $('#exeArea').val(savetext + x + '\n');
@@ -1270,9 +1273,9 @@
       var data = {
         x: x,
         y: y,
-        mode: 'markers', 
-        type: 'scatter' 
-      }; 
+        mode: 'markers',
+        type: 'scatter'
+      };
  
       var prediction = {
         x: x,
@@ -1291,7 +1294,7 @@
 
       var datax = [data, prediction];
 
-      Plotly.newPlot('graph', datax, layout);
+      Plotly.newPlot('graph1', datax, layout);
     }
     // 로지스틱 그래프
     function Logisticgraph(x, y, w, b) {
@@ -1331,10 +1334,13 @@
 
       var datax = [data, prediction];
 
-      Plotly.newPlot('graph', datax, layout);
+      Plotly.newPlot('graph1', datax, layout);
     }
 
-
+    function draw(x){
+      var savetext = $('#exeArea').val();
+      $('#exeArea').val(savetext + x + '\n');   
+     }
     
 // **************************************
 // ********   파일 열기     **********//
@@ -1461,7 +1467,7 @@ function Data_process() {
       if(event.target.files != undefined){
         var file_result = event.target.files; 
        // console.log("fitle_result",file_result); 
-      //  testing_1 =  event.target.files[0].name; 
+       testing_1 =  event.target.files[0].name; 
       
         var reader = new FileReader();
         reader.onload =  function (e) {   //들어오기전에 먼저 실행됨  
@@ -1521,5 +1527,6 @@ function Data_process() {
     <!-- <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
    </div>
 </div> -->
-</html>  
+
+</html> 
 
