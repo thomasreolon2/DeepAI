@@ -4,11 +4,10 @@
 Blockly.JavaScript['data_csv_read'] = function(block) {
   var value_data_csv_read_val = Blockly.Python.valueToCode(block, 'Data_csv_read_val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'draw_table(' + value_data_csv_read_val + ')\n'; 
-  
+  var code = 'draw_table(' + value_data_csv_read_val + ')\n';  
   return code;     
 };  
-
+ 
  
   // 라이브러리 전체 
   Blockly.Python['lib_import_a'] = function(block) {
