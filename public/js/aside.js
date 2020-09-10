@@ -1,3 +1,4 @@
+// aside 열고 닫기 토글
 function sidebar_toggle() {
         
     var duration = 300;
@@ -17,7 +18,12 @@ function sidebar_toggle() {
     };
 };
 
+// aside 내부 clear
+function sidebar_clear() {
+    $('#graph1').empty();
+};
 /*
+
     //사이드바_old
     $(function () {
       var duration = 300;
