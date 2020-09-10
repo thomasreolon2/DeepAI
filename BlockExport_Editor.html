@@ -157,12 +157,12 @@
   <div>
     <aside id="sidebar">
       <!-- 그래프 사이드바 닫기 버튼 -->
-      <div style="position:relative; float:left; padding:20px; z-index: 100;">
+      <div class="sidebar">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="sidebar_toggle();">
           <span aria-hidden="true">&times;</span>
         </button>  
-        <button class="btn btn-outline-secondary btn-sm" onclick="sidebar_clear();" value="clear">
-        </button> 
+        <button class="btn btn-outline-secondary btn-sm" onclick="sidebar_clear();" >clear</button>
+        
       </div>
       
       <div id=graph></div>
@@ -269,7 +269,7 @@
           value="코드저장" />
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal"
+        <button type="button" class="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal"
           data-target="#staticBackdrop">그림판</button>
 
         <!-- Modal -->
@@ -305,7 +305,7 @@
         </div> <!-- 모달 -->
 
         <!-- 그래프 버튼 -->
-        <input id="sidebar_button" type="button" class="btn btn-outline-secondary btn-sm mr-1" value="그래프" onclick="sidebar_toggle()"/>
+        <input id="sidebar_button" type="button" class="btn btn-outline-secondary btn-sm" value="그래프" onclick="sidebar_toggle()"/>
 
       </div> <!-- 오른쪽 구역 -->
     </nav>

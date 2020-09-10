@@ -10,6 +10,13 @@
     border-color: gray;
     box-shadow:  5px 5px 10px black, 0 0 15px gray
   }
+
+  .sidebar{
+    position:relative;
+    float:left; 
+    padding:20px;
+    z-index: 100;
+  }
   /*
   #sidebar > button {
     background:white;
