@@ -224,6 +224,23 @@ Blockly.Python['set_menu'] = function (block) {
 };
 
 
+
+
+//////////////테이블그리기 파이썬 코드 
+Blockly.Python['data_csv_read'] = function(block) {
+    var value_data_csv_read_val = Blockly.Python.valueToCode(block, 'Data_csv_read_val', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '';  
+    return code;     
+  };  
+   
+
+
+
+
+
+
+
 // 새 튜플
 Blockly.Python['tuple'] = function (block) {
     // Create a list with any number of elements of any type.
