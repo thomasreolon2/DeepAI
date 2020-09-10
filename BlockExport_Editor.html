@@ -98,9 +98,9 @@
 
   <script>
     languagePluginLoader.then(() => { 
-          pyodide.loadPackage(['pandas','numpy','matplotlib','scikit-learn']).then(() => {
+          pyodide.loadPackage(['pandas','numpy','matplotlib']).then(() => {//,'scikit-learn'
           console.log('pyodide 라이브러리 로딩완료');  
-          $("#loading").hide(); // 로딩 끝나면 로딩 창 없앰 
+          // $("#loading").hide(); // 로딩 끝나면 로딩 창 없앰 
         });
     });   
   </script> 
@@ -1503,10 +1503,10 @@ function Data_process() {
     z-index: 100; } 
  </style>
 <!-- 홈페이지 로딩 -->
-<div id="loading">
-  <div id="loading-image">
+<!-- <div id="loading">
+  <div id="loading-image"> -->
     <!-- 약 30 초 정도면 차라리 프로그레스바를 쓰거나 xx를 불러오는 중입니다. 표시해주는게 나을지도 모름-->
-    <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
+    <!-- <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
    </div>
-</div>
+</div> -->
 </html> 
