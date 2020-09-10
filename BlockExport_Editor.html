@@ -155,7 +155,7 @@
     <aside id="sidebar">
       <button class="btn  btn-sm"><span>그래프</span></button>
       <div id=graph></div>
-      <div id=graph1 style="height: 300px; width: 900px;"><img id="pyplotfigure"/></div>
+      <div id=graph1 style="height: 500px; width: 900px;"><img id="pyplotfigure"/></div>
       <!-- <div id=graph2 style="height: 300px;"></div> 
       <div id=graph3 style="height: 300px;"></div>-->   
       <div id="csv_show">
@@ -667,6 +667,13 @@
       <block type="array_get"></block>
       <block type="csv3"></block>
       <block type="labelencoder"></block>
+      <block type="import_lib">
+        <value name="var">
+          <block type="variables_get">
+            <field name="VAR"></field>
+          </block>
+        </value>
+      </block>
       <!-- <block type="csv3"></block> -->
       <block type="scikit_learn"></block>
     </category>
@@ -1000,6 +1007,7 @@
         var block = demoWorkspace.getBlockById(event.blockId);
         console.log('블록이 선택됨1');
       }
+   
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
         if ('csv2' == block.type) {
@@ -1012,7 +1020,6 @@
         if ('data_csv_read'== block.type){ 
           Show_csv(); 
         }
-
       }
     }
     demoWorkspace.addChangeListener(codeUpdate);
@@ -1237,8 +1244,9 @@
         }
       }
     }
-
+  
     */
+   
     // 화면에 찍기 프린트
     function printc(x) {
       var savetext = $('#exeArea').val();
@@ -1279,7 +1287,7 @@
 
       var datax = [data, prediction];
 
-      Plotly.newPlot('graph', datax, layout);
+      Plotly.newPlot('graph1', datax, layout);
     }
     // 로지스틱 그래프
     function Logisticgraph(x, y, w, b) {
@@ -1319,10 +1327,13 @@
 
       var datax = [data, prediction];
 
-      Plotly.newPlot('graph', datax, layout);
+      Plotly.newPlot('graph1', datax, layout);
     }
 
-
+    function draw(x){
+      var savetext = $('#exeArea').val();
+      $('#exeArea').val(savetext + x + '\n');   
+     }
     
 // **************************************
 // ********   파일 열기     **********//
