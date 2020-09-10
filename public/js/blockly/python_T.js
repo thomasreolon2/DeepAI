@@ -3,7 +3,7 @@ Blockly.defineBlocksWithJsonArray(
   //csv 파일 읽기
   {
     "type": "data_csv_read",
-    "message0": "변수 : %1 CSV 파일 읽기",
+    "message0": "변수 : %1 테이블로 시각화 하기 ",
     "args0": [
       { 
         "type": "input_value",
