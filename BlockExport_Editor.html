@@ -174,28 +174,28 @@
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #f4f6ff;">
 
       <!-- a -->
-      <a class="navbar-brand pl-2" href="#"><img src="logo2-2.png" /></a>
+      <a class="navbar-brand" href="#"><img src="logo2-2.png" /></a>
 
       <!-- 왼쪽 구역-->
-      <div class="d-flex flex-wrap text-white ml-3" style="width: 50%;">
+      <div class="d-flex flex-wrap text-white" style="width: 40%;">
 
         <!-- 파일 열기 -->
-        <div class="input-group col-md-4 ml-3 mt-2 btn-sm custom-file">
+        <div class="input-group col-md-3 ml-3 mt-2 btn-sm custom-file">
           <input type="file" id="file" class="custom-file-input" accept="text/xml"
             onchange="loadBlock(); this.value=null;return false;">
           <label class="custom-file-label mr-1" for="file">파일열기</label>
         </div>
 
         <!-- 블록 지우기 -->
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="demoWorkspace.clear();"
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-0" onClick="demoWorkspace.clear();"
           value="블록 지우기" />
 
         <!-- 블록 저장 -->
-        <input id="button" type="button" class="btn btn-outline-secondary btn-sm" onClick="saveBlock();"
+        <input id="button" type="button" class="btn btn-outline-secondary btn-sm " onClick="saveBlock();"
           value="블록 저장" />
 
         <!-- 블록 탭 -->
-        <div class="btn-group" role="group" aria-label="Basic example">
+        <div class="btn-group" role="group">
           <button type="button" class="btn btn-secondary mr-0" id="visibleBlock">블럭</button>
           <button type="button" class="btn btn-secondary mr-0" id="visibleAll">블럭+코드</button>
           <button type="button" class="btn btn-secondary mr-0" id="visibleCode">코드</button>
@@ -247,7 +247,7 @@
       <div class="d-flex flex-wrap text-white" style="width: 50%;">
 
         <!-- display -->
-        <select id="display_select" class="form-control col-md-2 mt-2 ml-3">
+        <select id="display_select" class="form-control col-md-2 mt-2 ml-1">
           <option value="python">python</option>
           <option value="javascript">javascript</option>
         </select>

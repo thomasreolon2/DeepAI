@@ -13,9 +13,15 @@
 
   .sidebar{
     position:relative;
+    width: 50%;
     float:left; 
-    padding:20px;
-    z-index: 100;
+    padding:10px;
+    /* 배경색 및 밑선
+    background-color:#F4F6FF;
+    border-bottom: solid;
+    border-color: #CED4DA;
+    */
+    z-index: 2;
   }
   /*
   #sidebar > button {
