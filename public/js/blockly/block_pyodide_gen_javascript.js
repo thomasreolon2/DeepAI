@@ -47,7 +47,7 @@ Blockly.JavaScript['printc'] = function (block) {
     var value_df = Blockly.JavaScript.valueToCode(block, 'df', Blockly.JavaScript.ORDER_ATOMIC);
     var text_column = block.getFieldValue('column');
     // TODO: Assemble Python into code variable.
-    var code = "from sklearn.preprocessing import LabelEncoder\nLabel_enc = LabelEncoder()\n"+value_df+"['"+text_column+"'] = Label_enc.fit_transform("+value_df+"['"+text_column+"'])\n";
+    var code = "";
     return code;
   };
   
