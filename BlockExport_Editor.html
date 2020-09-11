@@ -733,10 +733,8 @@
         <block type="numpy_random_rand"></block> <!--  random. randn or randint 무작위 숫자 생성     -->
         <block type="numpy_exp"></block> <!--  exp 지수     -->
       </category>
-
       <!-- ************************* -->
       <!-- 2020-09-07, Pandas Blocks -->
-      <!-- 2020-09-05 양승국 수정-->
       <!-- ************************* -->
       <category name="Pandas 함수" colour="%{BKY_LOGIC_HUE}">
         <block type="csv_library">
@@ -746,6 +744,7 @@
             </block>
           </value>
         </block>
+        <block type="pyo_lib"></block>
         <block type="csvdataframe_J">
           <value name="pd">
             <block type="variables_get">
@@ -763,20 +762,6 @@
             </block>
           </value>
         </block>
-        <block type="fill_null_data"></block>
-        <block type="pyo_lib"></block>
-        <block type="pandas_print"></block>
-        <block type="normal"></block>
-        <block type="select_row_delete"></block>
-        <block type="select_column_delete"></block>
-        <!-- <block type="save_image"></block> -->
-        <block type="list"></block>
-        <block type="header"></block>
-        <block type="select_row_list"></block>
-        <block type="select_column_list"></block>
-        <block type="select_row_column_value"></block>
-        <block type="row_count"></block>
-        <block type="column_count"></block>
         <!-- 2020-09-09 양승국 -->
         <block type="pandas_datalist"></block>
         <block type="pandas_dataframe">
@@ -793,9 +778,32 @@
         <block type="createColumn"></block>
         <!-- 2020-09-09 양승국-->
         <block type="pandas_conversion"></block>
+        <block type="fill_null_data"></block>
+        <!-- 2020-09-10 양승국-->
+        <block type="pandas_mis_del"></block>
+        <block type="select_row_column_value">
+          <value name="select_row_locate">
+            <block type="selec_value_all"></block>
+          </value>
+          <value name="select_column_locate">
+            <block type="selec_value_all"></block>
+          </value>
+        </block>
+        <block type="selec_value_all"></block>
+
+        <block type="pandas_print"></block>
+        <block type="normal"></block>
+        <block type="select_row_delete"></block>
+        <block type="select_column_delete"></block>
+        <!-- <block type="save_image"></block> -->
+        <block type="list"></block>
+        <block type="header"></block>
+        <block type="select_row_list"></block>
+        <block type="select_column_list"></block>
+        <block type="row_count"></block>
+        <block type="column_count"></block>
         <!-- <block type="image_list"></block> -->
       </category>
-
 
       <!--   데이타 사이언스 //  2020 - 09 - 07  LMS  -->
       <!-- 시각화 부분  -->
@@ -810,77 +818,7 @@
       </category>
     </category>
 
-    <!-- ************************* -->
-    <!-- 2020-09-07, Pandas Blocks -->
-    <!-- ************************* -->
-    <category name="Pandas 함수" colour="%{BKY_LOGIC_HUE}">
-      <block type="csv_library">
-        <value name="pan_lib_var">
-          <block type="variables_get">
-            <field name="VAR">pd</field>
-          </block>
-        </value>
-      </block>
-      <block type="pyo_lib"></block>
-      <block type="csvdataframe_J">
-        <value name="pd">
-          <block type="variables_get">
-            <field name="VAR">pd</field>
-          </block>
-        </value>
-        <value name="csv">
-          <block type="csv2"></block>
-        </value>
-      </block>
-      <block type="load_csv">
-        <value name="pan_lod_var">
-          <block type="variables_get">
-            <field name="VAR">pd</field>
-          </block>
-        </value>
-      </block>
-      <!-- 2020-09-09 양승국 -->
-      <block type="pandas_datalist"></block>
-      <block type="pandas_dataframe">
-        <value name="lib">
-          <block type="variables_get">
-            <field name="VAR">pd</field>
-          </block>
-        </value>
-        <value name="col1">
-          <block type="createColumn"></block>
-        </value>
-      </block>
-      <!-- 20.09.09 이성주-->
-      <block type="createColumn"></block>  
-      <!-- 2020-09-09 양승국-->
-      <block type="pandas_conversion"></block> 
-      <block type="fill_null_data"></block>
-      <!-- 2020-09-10 양승국-->
-      <block type="pandas_mis_del"></block>
-      <block type="select_row_column_value">
-        <value name="select_row_locate">
-          <block type="selec_value_all"></block>
-        </value>
-        <value name="select_column_locate">
-          <block type="selec_value_all"></block>
-        </value>
-      </block>
-      <block type="selec_value_all"></block>
 
-      <block type="pandas_print"></block>
-      <block type="normal"></block>
-      <block type="select_row_delete"></block>
-      <block type="select_column_delete"></block>
-      <!-- <block type="save_image"></block> -->
-      <block type="list"></block>
-      <block type="header"></block>
-      <block type="select_row_list"></block>
-      <block type="select_column_list"></block>
-      <block type="row_count"></block>
-      <block type="column_count"></block>     
-      <!-- <block type="image_list"></block> -->
-    </category>
 
 
 
