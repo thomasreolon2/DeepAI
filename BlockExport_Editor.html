@@ -15,7 +15,7 @@
   <!--test-->
   <!--pyodide-->
   <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
- 
+
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script>
   <script src="/js/blockly/javascript_compressed.js"></script>
@@ -33,15 +33,19 @@
   <script src="/js/blockly/block_pandas_gen.js"></script>
   <!-- Pandas 블록 -->
 
+  <!-- Decision Tree 테스트 -->
+  <script src="/js/blockly/block_decisionTree_test.js"></script>
+  <script src="/js/blockly/block_decisionTree_test_gen.js"></script>
+
   <!-- <script src="/js/blockly/test.js"></script>
   <script src="/js/blockly/test_gen.js"></script>  -->
 
 
 
-<!-- 데이타 사이언스 블록 -->
-<script src="/js/blockly/python_gen.js"></script>  
-<script src="/js/blockly/python_T.js"></script>
-<!-- 데이타 사이언스 블록 --> 
+  <!-- 데이타 사이언스 블록 -->
+  <script src="/js/blockly/python_gen.js"></script>
+  <script src="/js/blockly/python_T.js"></script>
+  <!-- 데이타 사이언스 블록 -->
 
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -82,32 +86,31 @@
 
   <!-- canvas -->
   <script src="./js/canvas.js"></script>
-  
+
   <!-- 그래프 aside -->
   <script src="./js/aside.js"></script>
 
   <!--css-->
   <link rel="stylesheet" href="css\sidebar.css">
-
   <script>
-    var Data_process_on =0;   
+    var Data_process_on = 0;
     var DL_Gra = 0;
     var testing_1 = 0; 
-  </script>  
+  </script>
 
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/utils/plotly.js"></script>
 
   <script>
-    languagePluginLoader.then(() => { 
-          pyodide.loadPackage(['pandas','numpy','matplotlib','scikit-learn']).then(() => {     //
-          console.log('pyodide 라이브러리 로딩완료');  
-          // $("#loading").hide(); // 로딩 끝나면 로딩 창 없앰 
-        });
+    languagePluginLoader.then(() => {
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn']).then(() => {     //
+        console.log('pyodide 라이브러리 로딩완료');
+        // $("#loading").hide(); // 로딩 끝나면 로딩 창 없앰 
+      });
     });   
-  </script> 
-  
+  </script>
+
   <!-- table -->
   <link rel="stylesheet" href="/css/table_custom.css">
   <style type="text/css">
@@ -151,23 +154,24 @@
 </head>
 
 <!-- onload : body가 떳을때 작동되는 js입력 -->
+
 <body>
-  
+
   <!-- 그래프 사이드바 -->
-    <aside id="sidebar">
-      <!-- 그래프 사이드바 닫기 버튼 -->
-      <div class="sidebar">
-        <button class="btn btn-outline-primary btn-sm mr-1" onclick="sidebar_toggle();" >닫기</button>
-        <button class="btn btn-outline-danger btn-sm" onclick="sidebar_clear();" >지우기</button>    
-      </div>
-      
-      <div id=graph></div>
-      <div id=graph1 style="height: 500px; width: 900px;"><img id="pyplotfigure"/></div>
-      <!-- <div id=graph2 style="height: 300px;"></div> 
-      <div id=graph3 style="height: 300px;"></div>-->   
-      <div id="csv_show">
-      </div>
-    </aside>
+  <aside id="sidebar">
+    <!-- 그래프 사이드바 닫기 버튼 -->
+    <div class="sidebar">
+      <button class="btn btn-outline-primary btn-sm mr-1" onclick="sidebar_toggle();">닫기</button>
+      <button class="btn btn-outline-danger btn-sm" onclick="sidebar_clear();">지우기</button>
+    </div>
+
+    <div id=graph></div>
+    <div id=graph1 style="height: 500px; width: 900px;"><img id="pyplotfigure" /></div>
+    <!-- <div id=graph2 style="height: 300px;"></div> 
+      <div id=graph3 style="height: 300px;"></div>-->
+    <div id="csv_show">
+    </div>
+  </aside>
 
   <div class="container-fluid">
     <!-- nav -->
@@ -300,7 +304,8 @@
         </div> <!-- 모달 -->
 
         <!-- 그래프 버튼 -->
-        <input id="sidebar_button" type="button" class="btn btn-outline-primary btn-sm" value="그래프" onclick="sidebar_toggle()"/>
+        <input id="sidebar_button" type="button" class="btn btn-outline-primary btn-sm" value="그래프"
+          onclick="sidebar_toggle()" />
 
       </div> <!-- 오른쪽 구역 -->
     </nav>
@@ -689,49 +694,124 @@
     </category>
 
 
-     <!--  데이타 사이언스 //  2020 - 09 - 07  LMS--> 
-     <category name="데이터 사이언스" colour="%{BKY_LOOPS_HUE}">  
+    <!--  데이타 사이언스 //  2020 - 09 - 07  LMS-->
+    <category name="데이터 사이언스" colour="%{BKY_LOOPS_HUE}">
 
-      
+
 
       <!-- LMS -->
       <!-- 라이브러리 임포트  -->
-      <category name="라이브러리 임포트" colour="%{BKY_LOOPS_HUE}">   
-       <block type="data_csv_read"></block>  <!--  csv 읽기      -->
-       <block type="lib_import_a"></block>  <!--  라이브러리 전체 임포트      -->
-       <block type="lib_import"></block>  <!--  단순 임포트      --> 
-       <block type="lib_import_as"></block>    <!--   임포트  as    -->      
-       <block type="lib_import_from"></block>    <!--   from import    -->     
-       </category>
- 
-     <!-- numpy 부분  -->
-     <category name="Numpy 기본 연산" colour="%{BKY_LOOPS_HUE}">  
-     <!-- <block type="variable"></block>  변수 생성  --> 
-     <!-- <block type="variable_name"></block> 다른 변수에 넣기   -->
-        <block type="print"></block> <!-- 결과 print  -->  
-        <block type="create_arry"></block> <!-- 배열 생성  -->   
-        <block type="arry_mul"></block> <!-- 배열 곱 -->  
-        <block type="arry_div"></block> <!-- 배열 나누셈 -->     
-        <block type="arry_plus"></block> <!-- 배열 합 --> 
-        <block type="arry_minus"></block> <!-- 배열 빼기 -->  
-     </category>
-     <!-- numpy 함수들 -->   
-      <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">  
-         <block type="np_array"></block> <!-- numpy.arry  -->   
-         <block type="numpy_zeros"></block>   <!-- zeros 0으로 채우기 -->   
-         <block type="numpy_full"></block>     <!-- full 배열을 해당 숫자로 채우기  --> 
-         <block type="numpy_eye"></block>  <!-- eye 배열을 대각선 1로 채우기   --> 
-         <block type="numpy_max"></block>  <!-- max 최대값 찾기  --> 
-         <block type="numpy_min"></block>  <!-- min 최소값 찾기  --> 
-         <block type="numpy_shape"></block>  <!-- shape 행렬 차원 반환  -->   
-         <block type="numpy_reshape"></block>  <!-- reshape 행렬 차원 변환  -->  
-         <block type="numpy_random_rand"></block>  <!--  random. randn or randint 무작위 숫자 생성     -->    
-         <block type="numpy_exp"></block>  <!--  exp 지수     -->    
-      </category>  
+      <category name="라이브러리 임포트" colour="%{BKY_LOOPS_HUE}">
+        <block type="data_csv_read"></block> <!--  csv 읽기      -->
+        <block type="lib_import_a"></block> <!--  라이브러리 전체 임포트      -->
+        <block type="lib_import"></block> <!--  단순 임포트      -->
+        <block type="lib_import_as"></block> <!--   임포트  as    -->
+        <block type="lib_import_from"></block> <!--   from import    -->
+      </category>
+
+      <!-- numpy 부분  -->
+      <category name="Numpy 기본 연산" colour="%{BKY_LOOPS_HUE}">
+        <!-- <block type="variable"></block>  변수 생성  -->
+        <!-- <block type="variable_name"></block> 다른 변수에 넣기   -->
+        <block type="print"></block> <!-- 결과 print  -->
+        <block type="create_arry"></block> <!-- 배열 생성  -->
+        <block type="arry_mul"></block> <!-- 배열 곱 -->
+        <block type="arry_div"></block> <!-- 배열 나누셈 -->
+        <block type="arry_plus"></block> <!-- 배열 합 -->
+        <block type="arry_minus"></block> <!-- 배열 빼기 -->
+      </category>
+      <!-- numpy 함수들 -->
+      <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">
+        <block type="np_array"></block> <!-- numpy.arry  -->
+        <block type="numpy_zeros"></block> <!-- zeros 0으로 채우기 -->
+        <block type="numpy_full"></block> <!-- full 배열을 해당 숫자로 채우기  -->
+        <block type="numpy_eye"></block> <!-- eye 배열을 대각선 1로 채우기   -->
+        <block type="numpy_max"></block> <!-- max 최대값 찾기  -->
+        <block type="numpy_min"></block> <!-- min 최소값 찾기  -->
+        <block type="numpy_shape"></block> <!-- shape 행렬 차원 반환  -->
+        <block type="numpy_reshape"></block> <!-- reshape 행렬 차원 변환  -->
+        <block type="numpy_random_rand"></block> <!--  random. randn or randint 무작위 숫자 생성     -->
+        <block type="numpy_exp"></block> <!--  exp 지수     -->
+      </category>
+
+      <!-- ************************* -->
+      <!-- 2020-09-07, Pandas Blocks -->
+      <!-- 2020-09-05 양승국 수정-->
+      <!-- ************************* -->
+      <category name="Pandas 함수" colour="%{BKY_LOGIC_HUE}">
+        <block type="csv_library">
+          <value name="pan_lib_var">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+        </block>
+        <block type="csvdataframe_J">
+          <value name="pd">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+          <value name="csv">
+            <block type="csv2"></block>
+          </value>
+        </block>
+        <block type="load_csv">
+          <value name="pan_lod_var">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+        </block>
+        <block type="fill_null_data"></block>
+        <block type="pyo_lib"></block>
+        <block type="pandas_print"></block>
+        <block type="normal"></block>
+        <block type="select_row_delete"></block>
+        <block type="select_column_delete"></block>
+        <!-- <block type="save_image"></block> -->
+        <block type="list"></block>
+        <block type="header"></block>
+        <block type="select_row_list"></block>
+        <block type="select_column_list"></block>
+        <block type="select_row_column_value"></block>
+        <block type="row_count"></block>
+        <block type="column_count"></block>
+        <!-- 2020-09-09 양승국 -->
+        <block type="pandas_datalist"></block>
+        <block type="pandas_dataframe">
+          <value name="lib">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+          <value name="col1">
+            <block type="createColumn"></block>
+          </value>
+        </block>
+        <!-- 20.09.09 이성주-->
+        <block type="createColumn"></block>
+        <!-- 2020-09-09 양승국-->
+        <block type="pandas_conversion"></block>
+        <!-- <block type="image_list"></block> -->
+      </category>
+
+
+      <!--   데이타 사이언스 //  2020 - 09 - 07  LMS  -->
+      <!-- 시각화 부분  -->
+      <category name="시각화 하기 " colour="%{BKY_LOOPS_HUE}">
+        <block type="matplotlib_main"></block> <!--  matplot1 시각화 틀    -->
+        <block type="matplotlib_pre_graph"></block> <!--  matplot2 시각화 준비      -->
+        <block type="matplotlib_graph_end"></block> <!--  matplot3 시각화 하기      -->
+        <!-- 아래는 준비중  -->
+        <block type="load_csv"></block> <!--  csv 로드     -->
+        <block type="linearregression_c"></block> <!-- 사이킷런 리니어 로드     -->
+        <block type="linearregression_train"></block> <!-- 사이킷런 train     -->
+      </category>
+    </category>
 
     <!-- ************************* -->
     <!-- 2020-09-07, Pandas Blocks -->
-    <!-- 2020-09-05 양승국 수정--> 
     <!-- ************************* -->
     <category name="Pandas 함수" colour="%{BKY_LOGIC_HUE}">
       <block type="csv_library">
@@ -803,62 +883,48 @@
     </category>
 
 
-    <!--   데이타 사이언스 //  2020 - 09 - 07  LMS  -->
-      <!-- 시각화 부분  --> 
-      <category name="시각화 하기 " colour="%{BKY_LOOPS_HUE}">  
-        <block type="matplotlib_main"></block>  <!--  matplot1 시각화 틀    -->          
-        <block type="matplotlib_pre_graph"></block>  <!--  matplot2 시각화 준비      --> 
-        <block type="matplotlib_graph_end"></block>  <!--  matplot3 시각화 하기      -->    
-        <!-- 아래는 준비중  -->
-        <block type="load_csv"></block>  <!--  csv 로드     --> 
-        <block type="linearregression_c"></block>  <!-- 사이킷런 리니어 로드     --> 
-        <block type="linearregression_train"></block>  <!-- 사이킷런 train     --> 
-      </category>   
-  </category>    
-  
-  <!-- ************************* -->
-  <!-- 2020-09-07, Pandas Blocks -->
-  <!-- ************************* -->
 
-  
-
-
-<!-- 기본 블록 2020 - 09 - 07 찬영 -->
+    <!-- 기본 블록 2020 - 09 - 07 찬영 -->
+    <!-- 새 블록  딕셔너리 -->
+    <category name="Python Test" colour="%{BKY_LOOPS_HUE}">
       <!-- 새 블록  딕셔너리 -->
-      <category name="Python Test" colour="%{BKY_LOOPS_HUE}">
-        <!-- 새 블록  딕셔너리 -->
-        <block type="dict">
+      <block type="dict">
         <value name="DICT">
         </value>
-        </block>
-       <!-- 집합 -->
-        <block type="set">
+      </block>
+      <!-- 집합 -->
+      <block type="set">
         <value name="SET">
         </value>
-        </block>
-        <!-- 튜플 -->
-        <block type="tuple">
-        <value name = "tuple">
+      </block>
+      <!-- 튜플 -->
+      <block type="tuple">
+        <value name="tuple">
         </value>
-        </block>
-    
-        <!-- 집합선택 -->
-        <block type="set_menu">
-        <value name = "set_menu">
+      </block>
+
+      <!-- 집합선택 -->
+      <block type="set_menu">
+        <value name="set_menu">
         </value>
-        </block>
-  
-        <!-- 딕셔너리 선택 -->
-        <block type="dic_menu">
-        <value name = "dic_menu">
+      </block>
+
+      <!-- 딕셔너리 선택 -->
+      <block type="dic_menu">
+        <value name="dic_menu">
         </value>
-        </block>
-      </category>
+      </block>
+    </category>
+
+    <category name="Decision Tree 테스트">
+      <block type="train_test_split">
+      </block>
+    </category>
 
   </xml>
 
   </xml>
-  
+
   <!-- code mirror -->
   <script>
     var jsEditor = CodeMirror(document.getElementById("jsCodeEditor"), {
@@ -1035,7 +1101,7 @@
         var block = demoWorkspace.getBlockById(event.blockId);
         console.log('블록이 선택됨1');
       }
-   
+
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
         if ('csv2' == block.type) {
@@ -1043,10 +1109,10 @@
         }
         if ('csv3' == block.type) {
           openTextFile(event.blockId);
-        }  
+        }
 
-        if ('data_csv_read'== block.type){ 
-          Show_csv(); 
+        if ('data_csv_read' == block.type) {
+          Show_csv();
         }
       }
     }
@@ -1060,23 +1126,25 @@
   <script>
     // 실행 버튼
     function runButton() {
-      Blockly.Python.addReservedWords('code'); 
+      Blockly.Python.addReservedWords('code');
       var code = pyEditor.getValue();
- 
+
       Blockly.JavaScript.addReservedWords('code2');
       var code2 = jsEditor.getValue();
 
-      async function runcode() { 
-             languagePluginLoader.then(() => {   
-             try {  pyodide.runPython(code);  }   
-             catch (e) {  document.getElementById('exeArea').innerHTML = e; }});  
+      async function runcode() {
+        languagePluginLoader.then(() => {
+          try { pyodide.runPython(code); }
+          catch (e) { document.getElementById('exeArea').innerHTML = e; }
+        });
 
-            languagePluginLoader.then(await function () {    
-            if( DL_Gra == "chcked"){  document.getElementById("pyplotfigure").src=pyodide.globals.img_str  }  });     
+        languagePluginLoader.then(await function () {
+          if (DL_Gra == "chcked") { document.getElementById("pyplotfigure").src = pyodide.globals.img_str }
+        });
       };
-    
+
       runcode().then(() => {
-        document.getElementById('exeArea').innerHTML = eval(code2);      
+        document.getElementById('exeArea').innerHTML = eval(code2);
       });
 
     };
@@ -1098,7 +1166,7 @@
             var csvvalue = csvval[0].split(",");
             var inputrad = "";
             // csv view! header 
-            for (var i = 0; i < csvvalue.length-1; i++) {
+            for (var i = 0; i < csvvalue.length - 1; i++) {
               var header = csvvalue[i];
               addOptions(header);
             }
@@ -1252,7 +1320,7 @@
     }
   
     */
-   
+
     // 화면에 찍기 프린트
     function printc(x) {
       var savetext = $('#exeArea').val();
@@ -1275,7 +1343,7 @@
         mode: 'markers',
         type: 'scatter'
       };
- 
+
       var prediction = {
         x: x,
         y: ba,
@@ -1297,7 +1365,7 @@
     }
     // 로지스틱 그래프
     function Logisticgraph(x, y, w, b) {
-      var ba=new Array();
+      var ba = new Array();
       function sigmoida(ax) {
         value = 1 / (1 + (Math.exp(-ax)));
         return value;
@@ -1336,158 +1404,158 @@
       Plotly.newPlot('graph1', datax, layout);
     }
 
-    function draw(x){
+    function draw(x) {
       var savetext = $('#exeArea').val();
-      $('#exeArea').val(savetext + x + '\n');   
-     }
-    
-// **************************************
-// ********   파일 열기     **********//
-// **************************************//   
-async function Show_csv(test) {    
+      $('#exeArea').val(savetext + x + '\n');
+    }
 
-var Show_CSV_Data_S = await Data_process();
+    // **************************************
+    // ********   파일 열기     **********//
+    // **************************************//   
+    async function Show_csv(test) {
 
-     
-console.log("Show_csv : Load_csv\n",Show_CSV_Data_S);     
-
-var rows = Show_CSV_Data_S.split(/\r\n|\n/);   
-var cols = Show_CSV_Data_S.split(/\r\n|\n/)[0].split(/,/);  
-
-   
-
-var Get_CSV_DATA = Array.from(Array(cols.length), () => new Array((rows.length)-1)); 
-for (var i = 0; i < (rows.length)-1; i++) {          
-    for (var j = 0; j < cols.length; j++) {        
-    test = rows[i].split(/,/)[j];           
-    Get_CSV_DATA[j][i] = test;            
-    }   
-}   
-var rows_leng = rows.length;
-var cols_leng = cols.length;
-
-draw_table(Get_CSV_DATA,rows_leng,cols);
-
- 
-test = Get_CSV_DATA;
-console.log("test",test);  
-return test;   
-}   
+      var Show_CSV_Data_S = await Data_process();
 
 
-function draw_table(Get_CSV_DATA){ 
+      console.log("Show_csv : Load_csv\n", Show_CSV_Data_S);
+
+      var rows = Show_CSV_Data_S.split(/\r\n|\n/);
+      var cols = Show_CSV_Data_S.split(/\r\n|\n/)[0].split(/,/);
 
 
-// console.log("final_data",Final_Data[0]);
-// console.log("F_cols",F_cols);
-// console.log("F_lows",F_lows);
 
- 
-  //--------------------------------- data 속성 ---------------------------// 
-  var data = [
+      var Get_CSV_DATA = Array.from(Array(cols.length), () => new Array((rows.length) - 1));
+      for (var i = 0; i < (rows.length) - 1; i++) {
+        for (var j = 0; j < cols.length; j++) {
+          test = rows[i].split(/,/)[j];
+          Get_CSV_DATA[j][i] = test;
+        }
+      }
+      var rows_leng = rows.length;
+      var cols_leng = cols.length;
+
+      draw_table(Get_CSV_DATA, rows_leng, cols);
+
+
+      test = Get_CSV_DATA;
+      console.log("test", test);
+      return test;
+    }
+
+
+    function draw_table(Get_CSV_DATA) {
+
+
+      // console.log("final_data",Final_Data[0]);
+      // console.log("F_cols",F_cols);
+      // console.log("F_lows",F_lows);
+
+
+      //--------------------------------- data 속성 ---------------------------// 
+      var data = [
         {
-            type: 'table',  
+          type: 'table',
 
-            //--------------헤더 설정 ---------------// 
-             header:{
-           
+          //--------------헤더 설정 ---------------// 
+          header: {
+
             //     values: [["<b>EXPENSES</b>"], ["<b>Q1</b>"],["<b>Q2</b>"], ["<b>Q3</b>"], ["<b>Q4</b>"]], 
-                
+
             //     function(Table_Chart){
             //         for (var j = 0; j < Table_Chart[0].length; j++) {   //테이블 요소만 가져오기 
             //            [Table_Chart[j][0]] 
             //            }
             //   },
-                
+
             //     align: "center",
-                line: {
-                    width: 1,
-                    color: 'black'  
-                }, 
-                fill: {
-                    color: "grey"
-                },
-                font: {
-                    family: "Arial",
-                    size: 12,
-                    color: "white"
-                } 
+            line: {
+              width: 1,
+              color: 'black'
             },
-            //--------------헤더 설정 ---------------//
+            fill: {
+              color: "grey"
+            },
+            font: {
+              family: "Arial",
+              size: 12,
+              color: "white"
+            }
+          },
+          //--------------헤더 설정 ---------------//
 
-            cells: {
-                values: Get_CSV_DATA,
-                align: "center",
-                line: {
-                    color: "black",
-                    width: 1 
+          cells: {
+            values: Get_CSV_DATA,
+            align: "center",
+            line: {
+              color: "black",
+              width: 1
 
-                },
-                font: {
-                    family: "Arial", 
-                    size: 11,
-                    color: ["black"] 
-                }
-            } 
-        } 
-    ]
- 
-   
+            },
+            font: {
+              family: "Arial",
+              size: 11,
+              color: ["black"]
+            }
+          }
+        }
+      ]
+
+
       var title = "테이블 확인 하기 "
       var graph = "graph1"
-   
 
 
-    var layout = {
-       
-      title: title
-      
+
+      var layout = {
+
+        title: title
+
+      }
+      //--------------------------------- data 속성 ---------------------------//
+      Plotly.newPlot(graph, data, layout);
     }
-//--------------------------------- data 속성 ---------------------------//
-    Plotly.newPlot(graph, data,layout);  
-  } 
 
 
 
-// **************************************
-// ********   파일 열기     **********//
-// **************************************//
-function Data_process() {   
+    // **************************************
+    // ********   파일 열기     **********//
+    // **************************************//
+    function Data_process() {
 
-     return new Promise(function (resolve,rejcet) {
+      return new Promise(function (resolve, rejcet) {
 
-     
-    var Show_CSV_Data = document.createElement("input"); 
-    Show_CSV_Data.setAttribute("id","Data_S_read_CSV");
-    Show_CSV_Data.type = "file";       
-    Show_CSV_Data.accept = ".csv";   //loadFile    
-    Show_CSV_Data.onchange =  function (event) {   
-      
-      if(event.target.files != undefined){
-        var file_result = event.target.files; 
-       // console.log("fitle_result",file_result); 
-       testing_1 =  event.target.files[0].name; 
-      
-        var reader = new FileReader();
-        reader.onload =  function (e) {   //들어오기전에 먼저 실행됨  
-        var fileResult = e.target.result; 
-         
 
-        resolve(fileResult);  
- 
-         
-      };     
-    }
-      
-      reader.readAsText(event.target.files[0], /* optional */ "euc-kr"); 
-     // testing_1 = document.getElementById('Data_S_read_CSV').value;
-    }
-    
-    Show_CSV_Data.click(); 
+        var Show_CSV_Data = document.createElement("input");
+        Show_CSV_Data.setAttribute("id", "Data_S_read_CSV");
+        Show_CSV_Data.type = "file";
+        Show_CSV_Data.accept = ".csv";   //loadFile    
+        Show_CSV_Data.onchange = function (event) {
 
-    
-     }); 
-    
+          if (event.target.files != undefined) {
+            var file_result = event.target.files;
+            // console.log("fitle_result",file_result); 
+            testing_1 = event.target.files[0].name;
+
+            var reader = new FileReader();
+            reader.onload = function (e) {   //들어오기전에 먼저 실행됨  
+              var fileResult = e.target.result;
+
+
+              resolve(fileResult);
+
+
+            };
+          }
+
+          reader.readAsText(event.target.files[0], /* optional */ "euc-kr");
+          // testing_1 = document.getElementById('Data_S_read_CSV').value;
+        }
+
+        Show_CSV_Data.click();
+
+
+      });
+
     }
 
 
@@ -1500,32 +1568,33 @@ function Data_process() {
 </body>
 
 <style>
-/* 홈페이지 로딩 */
+  /* 홈페이지 로딩 */
   #loading {
-    width: 100%;   
-    height: 100%;   
+    width: 100%;
+    height: 100%;
     top: 0px;
     left: 0px;
-    position: fixed;   
-    display: block;   
-    opacity: 0.7;   
-    background-color: #fff;   
-    z-index: 99;   
-    text-align: center; }  
-      
-    #loading-image {   
-    position: absolute;   
-    top: 35%;   
-    left: 45%;  
-    z-index: 100; } 
- </style>
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+  }
+
+  #loading-image {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    z-index: 100;
+  }
+</style>
 <!-- 홈페이지 로딩 -->
 <!-- <div id="loading">
   <div id="loading-image"> -->
-    <!-- 약 30 초 정도면 차라리 프로그레스바를 쓰거나 xx를 불러오는 중입니다. 표시해주는게 나을지도 모름-->
-    <!-- <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
+<!-- 약 30 초 정도면 차라리 프로그레스바를 쓰거나 xx를 불러오는 중입니다. 표시해주는게 나을지도 모름-->
+<!-- <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
    </div>
 </div> -->
 
-</html> 
-
+</html>
