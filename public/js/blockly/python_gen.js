@@ -4,7 +4,7 @@
 Blockly.JavaScript['data_csv_read'] = function(block) {
   var value_data_csv_read_val = Blockly.JavaScript.valueToCode(block, 'Data_csv_read_val', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'draw_table(' + value_data_csv_read_val + ')\n';  
+  var code = "af=pyodide.pyimport('af');\ndraw_table(af)\n";
   return code;     
 };  
  

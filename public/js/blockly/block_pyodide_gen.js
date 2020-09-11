@@ -50,7 +50,7 @@ Blockly.Python['array_get'] = function (block) {
     var value_array = Blockly.Python.valueToCode(block, 'array', Blockly.Python.ORDER_ATOMIC);
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = value_array + '[' + value_name + ']';
+    var code = value_array + '[[' + value_name + ']]';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
 };
@@ -230,7 +230,7 @@ Blockly.Python['set_menu'] = function (block) {
 Blockly.Python['data_csv_read'] = function(block) {
     var value_data_csv_read_val = Blockly.Python.valueToCode(block, 'Data_csv_read_val', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '';  
+    var code = 'af = '+value_data_csv_read_val+'.values.tolist()\n';  
     return code;     
   };  
    
