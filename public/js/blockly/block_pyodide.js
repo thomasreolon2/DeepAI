@@ -159,8 +159,8 @@ Blockly.Blocks['scikit_learn'] = {
                 "결정트리", "Nomal"
             ]
         ]), "cate");
-        this.appendValueInput("x").setCheck(null).appendField(" 학습 데이터 :");
-        this.appendValueInput("y").setCheck(null).appendField("정답 데이터 :");
+        this.appendDummyInput().appendField(" 학습 데이터 :").appendField(new Blockly.FieldVariable("xData"), "x");
+        this.appendDummyInput().appendField(" 정답 데이터 :").appendField(new Blockly.FieldVariable("yData"), "y");
         this.setInputsInline(false);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

@@ -148,8 +148,8 @@ Blockly.Python['csv3'] = function (block) {
 Blockly.Python['scikit_learn'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var dropdown_cate = block.getFieldValue('cate');
-    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
-    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    var value_x = Blockly.Python.variableDB_.getName(block.getFieldValue('x'), Blockly.Variables.NAME_TYPE);
+    var value_y = Blockly.Python.variableDB_.getName(block.getFieldValue('y'), Blockly.Variables.NAME_TYPE);
     // TODO: Assemble Python into code variable.
     var code = 'from sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import ' + dropdown_cate + '\n' + value_model + '=' + dropdown_cate + '()\n' + value_model + '.fit(' + value_x + ',' + value_y + ')\n';
     return code;
@@ -180,12 +180,15 @@ Blockly.Python['import_lib'] = function (block) {
     switch (dropdown_lib) {
         case "numpy": 
             code = "import numpy as "+value_var;
+            Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"np");
             break;
         case "pandas": 
             code = "import pandas as "+value_var;
+            Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"pd");
             break;
         case "matplotlib.pyplot": 
             code = "import matplotlib.pyplot as "+value_var;
+            Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"plt");
             break;
     }
     
