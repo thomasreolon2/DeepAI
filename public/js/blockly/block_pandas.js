@@ -34,6 +34,7 @@ Blockly.Blocks['load_csv'] = {
   }
 };
 
+//2020-09-10 양승국 블록수정
 Blockly.Blocks['fill_null_data'] = {
   init: function() {
     this.appendValueInput("DATA")
@@ -41,7 +42,7 @@ Blockly.Blocks['fill_null_data'] = {
     this.appendDummyInput()
         .appendField("의 결측치를");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["삭제","dropna()"], ["최댓값","max()"], ["최솟값","min()"], ["중간값","median()"], ["평균값","mean()"], ["0값","fillna(0)"]]), "NAME");
+        .appendField(new Blockly.FieldDropdown([["최댓값","max()"], ["최솟값","min()"], ["중간값","median()"], ["평균값","mean()"], ["0값","fillna(0)"]]), "NAME");
     this.appendDummyInput()
         .appendField("로 채우기");
     this.setInputsInline(true);
@@ -80,15 +81,14 @@ Blockly.Blocks['pandas_print'] = {
   }
 };
 
+//2020-09-10 양승국 블록수정
 // 정규화 
 Blockly.Blocks['normal'] = {
   init: function() {
     this.appendValueInput("Normalization_data")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("을(를)")
-        .appendField(new Blockly.FieldDropdown([["정규화",""], ["평균화","OPTIONNAME"]]), "normal")
-        .appendField("하기");
+        .appendField("을(를) 정규화하기")
     this.setInputsInline(true);
     this.setOutput(true,null);
     this.setColour(230);
@@ -284,21 +284,18 @@ Blockly.Blocks['select_column_list'] = {
 };
 
 //몇번째 행 몇번쨰 열값
-
+//2020-09-10 양승국 블록수정
 Blockly.Blocks['select_row_column_value'] = {
   init: function() {
-    this.appendValueInput("select_value")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField("의");
+    this.appendValueInput("select_data")
+        .setCheck(null)
+        .appendField("데이터 :");
     this.appendValueInput("select_row_locate")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField("번째 행,");
+        .setCheck(null)
+        .appendField("행 범위 :");
     this.appendValueInput("select_column_locate")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField("번째 열 값");
+        .setCheck(null)
+        .appendField("열 범위 :");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);
@@ -611,6 +608,36 @@ Blockly.Blocks['pandas_conversion'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//2020-09-10 양승국 
+Blockly.Blocks['pandas_mis_del'] = {
+  init: function() {
+    this.appendValueInput("DATA")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField("의 결측치가 있는");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["행삭제",".dropna()"], ["열삭제",".dropna(axis = 1)"]]), "DEL_NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//2020-09-10 양승국 블록추가
+Blockly.Blocks['selec_value_all'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("전체범위");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
     this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");

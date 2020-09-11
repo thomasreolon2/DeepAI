@@ -741,6 +741,7 @@
           </block>
         </value>
       </block>
+      <block type="pyo_lib"></block>
       <block type="csvdataframe_J">
         <value name="pd">
           <block type="variables_get">
@@ -758,20 +759,6 @@
           </block>
         </value>
       </block>
-      <block type="fill_null_data"></block>
-      <block type="pyo_lib"></block>
-      <block type="pandas_print"></block>
-      <block type="normal"></block>
-      <block type="select_row_delete"></block>
-      <block type="select_column_delete"></block>
-      <!-- <block type="save_image"></block> -->
-      <block type="list"></block>
-      <block type="header"></block>
-      <block type="select_row_list"></block>
-      <block type="select_column_list"></block>
-      <block type="select_row_column_value"></block>
-      <block type="row_count"></block>
-      <block type="column_count"></block>
       <!-- 2020-09-09 양승국 -->
       <block type="pandas_datalist"></block>
       <block type="pandas_dataframe">
@@ -785,9 +772,33 @@
         </value>
       </block>
       <!-- 20.09.09 이성주-->
-      <block type="createColumn"></block>
+      <block type="createColumn"></block>  
       <!-- 2020-09-09 양승국-->
-      <block type="pandas_conversion"></block>      
+      <block type="pandas_conversion"></block> 
+      <block type="fill_null_data"></block>
+      <!-- 2020-09-10 양승국-->
+      <block type="pandas_mis_del"></block>
+      <block type="select_row_column_value">
+        <value name="select_row_locate">
+          <block type="selec_value_all"></block>
+        </value>
+        <value name="select_column_locate">
+          <block type="selec_value_all"></block>
+        </value>
+      </block>
+      <block type="selec_value_all"></block>
+
+      <block type="pandas_print"></block>
+      <block type="normal"></block>
+      <block type="select_row_delete"></block>
+      <block type="select_column_delete"></block>
+      <!-- <block type="save_image"></block> -->
+      <block type="list"></block>
+      <block type="header"></block>
+      <block type="select_row_list"></block>
+      <block type="select_column_list"></block>
+      <block type="row_count"></block>
+      <block type="column_count"></block>     
       <!-- <block type="image_list"></block> -->
     </category>
 

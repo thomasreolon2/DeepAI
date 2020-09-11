@@ -41,9 +41,9 @@ Blockly.Python['pandas_print'] = function(block) {
 };
 
 // 정규화
+//2020-09-10 양승국 수정
 Blockly.Python['normal'] = function(block) {  
   var value_normalization_data = Blockly.Python.valueToCode(block, 'Normalization_data', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_normal = block.getFieldValue('normal');
   // TODO: Assemble Python into code variable.
   var code = '(' + value_normalization_data +'-' + value_normalization_data +'.mean()) / '+ value_normalization_data+ 
   '.std()'+'\n';
@@ -57,6 +57,7 @@ Blockly.Python['deletehead'] = function(block) {
   return code;
 };
 
+//2020-09-10 양승국 return수정
 Blockly.Python['select_row_delete'] = function(block) {
   var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
   var value_select_row = Blockly.Python.valueToCode(block, 'select_row', Blockly.Python.ORDER_ATOMIC);
@@ -208,6 +209,24 @@ Blockly.Python['pandas_conversion'] = function(block) {
   var code = value_pa_frm +'.loc[' + value_pa_frm + '['+ value_pa_cul +'] ==' + value_pa_data +', ' + value_pa_cul 
               + '] = ' + value_pa_chidata + ';\n';
   return code;
+};
+
+//2020-09-10 양승국
+Blockly.Python['pandas_mis_del'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('DEL_NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_name + dropdown_name;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+//2020-09-10 양승국 추가
+Blockly.Python['selec_value_all'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = ':';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 ////////////////////////////////////////////////////////////////////
