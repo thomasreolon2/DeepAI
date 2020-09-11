@@ -135,8 +135,9 @@ Blockly.Python['select_column_list'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+//2020-09-11 양승국 코드수정
 Blockly.Python['select_row_column_value'] = function(block) {
-  var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
+  var value_select_value = Blockly.Python.valueToCode(block, 'select_data', Blockly.Python.ORDER_ATOMIC);
   var value_select_row_locate = Blockly.Python.valueToCode(block, 'select_row_locate', Blockly.Python.ORDER_ATOMIC);
   var value_select_column_locate = Blockly.Python.valueToCode(block, 'select_column_locate', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
