@@ -265,6 +265,7 @@ Blockly.Blocks['select_row_list'] = {
 };
 
 //열 리스트
+//2020-09-13 양승국 수정
 Blockly.Blocks['select_column_list'] = {
   init: function() {
     this.appendValueInput("select_value")
@@ -274,7 +275,7 @@ Blockly.Blocks['select_column_list'] = {
     this.appendValueInput("select_column_locate")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("번째 열 리스트");
+        .appendField("번째 열 리스트(컬럼명)");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);
@@ -636,6 +637,22 @@ Blockly.Blocks['selec_value_all'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("전체범위");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//2020-09-13 양승국 블록추가
+Blockly.Blocks['iloc_range'] = {
+  init: function() {
+    this.appendValueInput("start_col_num")
+        .setCheck(null);
+    this.appendValueInput("end_col_num")
+        .setCheck(null)
+        .appendField(":");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);

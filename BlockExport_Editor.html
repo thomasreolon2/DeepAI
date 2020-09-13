@@ -108,7 +108,7 @@
       pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn']).then(() => {     //
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image").hide(); // 로딩 끝나면 로딩 창 없앰 
-        $("#runButton").css({'display':"block"}); // 로딩 끝나면 실행버튼 보이게 함
+        $("#runButton").css({'display':"block"});
       });
     });   
   </script>
@@ -903,6 +903,7 @@
           </value>
         </block>
         <block type="selec_value_all"></block>
+        <block type="iloc_range"></block>
 
         <block type="pandas_print"></block>
         <block type="normal"></block>
@@ -953,6 +954,11 @@
       </category>
       <!-- # 시각화 부분 #  -->
     </category>
+
+
+
+
+
 
     <!-- 기본 블록 2020 - 09 - 07 찬영 -->
     <!-- 새 블록  딕셔너리 -->
@@ -1645,5 +1651,14 @@
     padding-right: 2vh;
     height: 30px;
   }
+ 
 </style>
+<!-- 홈페이지 로딩 
+<div id="loading">
+  <div id="loading-image">
+<!-- 약 30 초 정도면 차라리 프로그레스바를 쓰거나 xx를 불러오는 중입니다. 표시해주는게 나을지도 모름
+   <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
+   </div>
+</div>
+-->
 </html>

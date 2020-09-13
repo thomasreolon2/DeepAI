@@ -230,6 +230,16 @@ Blockly.Python['selec_value_all'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+//2020-09-13 양승국 추가
+Blockly.Python['iloc_range'] = function(block) {
+  var value_start_col_num = Blockly.Python.valueToCode(block, 'start_col_num', Blockly.Python.ORDER_ATOMIC);
+  var value_end_col_num = Blockly.Python.valueToCode(block, 'end_col_num', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_start_col_num + ':' + value_end_col_num;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
 ////////////////////////////////////////////////////////////////////
 // Pandas 2학년 파트 끝
 ////////////////////////////////////////////////////////////////////
