@@ -106,7 +106,8 @@
     languagePluginLoader.then(() => {
       pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn']).then(() => {     //
         console.log('pyodide 라이브러리 로딩완료');
-        // $("#loading").hide(); // 로딩 끝나면 로딩 창 없앰 
+        $("#loading_image").hide(); // 로딩 끝나면 로딩 창 없앰 
+        $("#runButton").css({'display':"block"});
       });
     });   
   </script>
@@ -258,8 +259,9 @@
         </select>
 
         <!-- 실행 버튼 -->
-        <input id="button" type="button" class="btn btn-outline-success btn-sm mr-1" onClick="runButton()" value="실행" />
-
+        <input id="runButton" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;" onClick="runButton()" value="실행" />
+        <!-- 실행 로딩 중 -->
+        <div id="loading_image"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div>
         <!-- 결과 버튼 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="clear_result();"
           value="결과 지우기" />
@@ -319,7 +321,6 @@
 
 
       <!-- 오른쪽 -->
-
       <div id="codeDiv" class="col">
         <div class="card shadow-sm">
           <div class="text-white bg-dark">
@@ -1507,33 +1508,21 @@
 </body>
 
 <style>
-  /* 홈페이지 로딩 */
-  #loading {
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    position: fixed;
-    display: block;
-    opacity: 0.7;
-    background-color: #fff;
-    z-index: 99;
-    text-align: center;
+  #loading_image {
+    position: relative;
+    padding-top:1.5vh;
+    padding-left:3vh;
+    padding-right: 2vh;
+    height: 30px;
   }
-
-  #loading-image {
-    position: absolute;
-    top: 35%;
-    left: 45%;
-    z-index: 100;
-  }
+ 
 </style>
-<!-- 홈페이지 로딩 -->
-<!-- <div id="loading">
-  <div id="loading-image"> -->
-<!-- 약 30 초 정도면 차라리 프로그레스바를 쓰거나 xx를 불러오는 중입니다. 표시해주는게 나을지도 모름-->
-<!-- <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
+<!-- 홈페이지 로딩 
+<div id="loading">
+  <div id="loading-image">
+<!-- 약 30 초 정도면 차라리 프로그레스바를 쓰거나 xx를 불러오는 중입니다. 표시해주는게 나을지도 모름
+   <object type="image/svg+xml" data="Rolling-1s-200px.svg" ></object> 
    </div>
-</div> -->
-
+</div>
+-->
 </html>
