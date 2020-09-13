@@ -237,7 +237,7 @@ Blockly.Python['iloc_range'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = value_start_col_num + ':' + value_end_col_num;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 ////////////////////////////////////////////////////////////////////
