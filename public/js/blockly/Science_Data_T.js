@@ -1,56 +1,31 @@
 Blockly.defineBlocksWithJsonArray(
     [
-  //csv 파일 읽기
-  {
-    "type": "data_csv_read",
-    "message0": "변수 : %1 테이블로 시각화 하기 ",
-    "args0": [
-      { 
-        "type": "input_value",
-        "name": "Data_csv_read_val"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": 230,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  // 라이브러리 임포트 전체  
-  {
-    "type": "lib_import_a",
-    "message0": "( 라이브러리 임포트 ) %1 %2  :  from 여부 %3",
-    "args0": [
+   // pandas, numpy, tuple  시각화   
+   {
+    "type": "val_vi",
+    "message0": "데이터  : %1 %2 시각화",
+    "args0": [ 
       {
         "type": "field_dropdown",
-        "name": "Lib_import_select",
-        "options": [
-          [
-            "numpy",
-            "Lib_import_nump"
+        "name": "Val_VI_Option",
+        "options": [ 
+          [ 
+            "Pandas",
+            "Val_VI_Pandas"
           ],
           [
-            "pandas",
-            "Lib_import_panda"
+            "Numpy",
+            "Val_VI_Numpy"
           ],
           [
-            "matplotlib",
-            "Lib_import_matplotlib"
-          ],
-          [
-            "scikit-learn",
-            "Lib_import_scikit"
+            "Tuple",
+            "Val_VI_Tuple"
           ]
         ]
       },
       {
-        "type": "input_dummy"
-      },
-      { 
-        "type": "field_checkbox",
-        "name": "Lib_check_from",
-        "checked": false
+        "type": "input_value",
+        "name": "Val_VI_Val"
       }
     ],
     "inputsInline": true,
@@ -60,6 +35,131 @@ Blockly.defineBlocksWithJsonArray(
     "tooltip": "",
     "helpUrl": ""
   },
+  // 라이브러리 임포트 전체 새로운 것
+  {
+    "type": "lib_import_a",
+    "message0": "( 라이브러리 임포트 ) %1 as %2",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "lib_import_a_option",
+        "options": [
+          [
+            "Numpy",
+            "lib_import_numpy"
+          ],
+          [
+            "Pandas",
+            "lib_import_pandas"
+          ],
+          [
+            "Matplotlib",
+            "lib_import_Matplotlib"
+          ],
+          [
+            "io",
+            "lib_import_io"
+          ],
+          [
+            "base64",
+            "lib_import_base64"
+          ]
+        ]
+      },
+      {
+        "type": "input_value",
+        "name": "lib_import_a_val"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 125,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+//라이브러리 임포트 사이킷런 
+{
+  "type": "lib_import_sklearn",
+  "message0": "( 사이킷런 임포트 ) from %1 import %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "lib_from_a_option",
+      "options": [
+        [
+          "sklearn",
+          "lib_from_sklearn_sklearn"
+        ],
+        [
+          "sklearn.model_selection",
+          "lib_from_sklearn_model_selection"
+        ],
+        [
+          "sklearn.linear_model",
+          "lib_from_linear_model"
+        ],
+        [
+          "sklearn.naive_bayes",
+          "lib_from_naive_bayes"
+        ],
+        [
+          "sklearn.ensemble",
+          "lib_from_ensemble"
+        ]
+      ]
+    },
+    {
+      "type": "field_dropdown",
+      "name": "lib_import_a_option",
+      "options": [
+        [
+          "datasets",
+          "lib_import_sklearn_ datasets"
+        ],
+        [
+          "make_classification",
+          "lib_import_sklearn_ make_classification"
+        ],
+        [
+          "train_test_split",
+          "lib_import_sklearn_ train_test_split"
+        ],
+        [
+          "LinearRegression",
+          "lib_import_sklearn_LinearRegression"
+        ],
+        [
+          "LogisticRegression",
+          "lib_import_sklearn_LogisticRegression"
+        ],
+        [
+          "GaussianNB",
+          "lib_import_sklearn_GaussianNB"
+        ],
+        [
+          "svm",
+          "lib_import_svm"
+        ],
+        [
+          "tree",
+          "lib_import_tree"
+        ],
+        [
+          "RandomForestClassifier",
+          "lib_import_RandomForestClassifier"
+        ]
+      ]
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 125,
+  "tooltip": "",
+  "helpUrl": ""
+},  
+
   // 라이브러리 단일 임포트 부분    
   {
     "type": "lib_import",
@@ -123,9 +223,9 @@ Blockly.defineBlocksWithJsonArray(
   },
   
   //print 하기   
-  {
+  { 
     "type": "print",
-    "message0": "print %1 %2",
+    "message0": "print %1 %2", 
     "args0": [ 
       {
         "type": "input_dummy"
@@ -142,22 +242,7 @@ Blockly.defineBlocksWithJsonArray(
     "tooltip": "",
     "helpUrl": ""
   },
-  //numpy
-  {
-    "type": "import_numpy",
-    "message0": "%1",
-    "args0": [
-      {
-        "type": "field_input",
-        "name": "Import_numpy_n",
-        "text": "numpy"
-      }
-    ],
-    "output": null,
-    "colour": 125,
-    "tooltip": "",
-    "helpUrl": ""
-  },
+
   //배열 생성
   {
     "type": "create_arry",
@@ -272,37 +357,45 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
     // 배열 np.arry 
-  { 
-    "type": "np_array",
-    "message0": "np.arry %1 %2",
-    "args0": [
-      {
-        "type": "input_dummy"
-      },
-      { 
-        "type": "input_value",
-        "name": "np_array_input"
-      }
-    ],
-    "inputsInline": true,
-    "output": null,
-    "colour": 125,
-    "tooltip": "",
-    "helpUrl": ""
-  }, 
+    {
+      "type": "np_array",
+      "message0": "%1 np.arry ( 넘파이 배열 ) %2",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "np_array_lib_val"
+        },
+        {
+          "type": "input_value",
+          "name": "np_array_val"
+        }
+      ],
+      "inputsInline": true,
+      "output": null,
+      "colour": 125,
+      "tooltip": "",
+      "helpUrl": ""
+    }, 
   // numpy 함수 zeros
   {
     "type": "numpy_zeros",
-    "message0": "np.zeros %1 , dtype 사용여부(정수) %2",
+    "message0": "%1 np.zeros ( %2 , %3  ) dtype 사용여부(정수)  %4",
     "args0": [
       {
-        "type": "field_input",
-        "name": "Numpy_zeros_num", 
-        "text": "" 
+        "type": "input_value",
+        "name": "numpy_zeros_lib_val"
       },
-      {  
-        "type": "field_checkbox",  
-        "name": "Numpy_zeros_check_dtype", 
+      {
+        "type": "input_value",
+        "name": "numpy_zeros_num_1"
+      },
+      {
+        "type": "input_value",
+        "name": "numpy_zeros_num_2"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "numpy_zeros_check_dtype",
         "checked": false
       }
     ],
@@ -315,17 +408,23 @@ Blockly.defineBlocksWithJsonArray(
   // np.full 배열 생성 및 , 채워질 값 
   {
     "type": "numpy_full",
-    "message0": "np.full ( 배열 생성 ) %1 채워질 값 %2",
+    "message0": "%1 np.full (( %2 , %3 ), 채워질 값: %4 )",
     "args0": [
       {
-        "type": "field_input",
-        "name": "Numpy_full_pre_val",
-        "text": ""
+        "type": "input_value",
+        "name": "numpy_full_lib_val" 
       },
       {
-        "type": "field_input",
-        "name": "Numpy_full_next_val",
-        "text": ""
+        "type": "input_value",
+        "name": "numpy_full_num_1"
+      },
+      {
+        "type": "input_value", 
+        "name": "numpy_full_num_2"
+      },
+      {
+        "type": "input_value",
+        "name": "numpy_full_input"
       }
     ],
     "inputsInline": true,
@@ -337,12 +436,19 @@ Blockly.defineBlocksWithJsonArray(
   // eye 함수 대각선으로 1채우기 
   {
     "type": "numpy_eye",
-    "message0": "np.eye ( 배열 대각선 1 로 채우기 ) -> 배열생성 : %1",
+    "message0": "%1 np.eye ( %2 , 인덱스 위치 = %3 )",
     "args0": [
-      { 
-        "type": "field_input", 
-        "name": "Numpy_eye_arry",
-        "text": ""
+      {
+        "type": "input_value",
+        "name": "numpy_eye_lib_val"
+      },
+      {
+        "type": "input_value",
+        "name": "numpy_eye_num"
+      },
+      {
+        "type": "input_value",
+        "name": "numpy_eye_index"
       }
     ],
     "inputsInline": true,
@@ -351,56 +457,56 @@ Blockly.defineBlocksWithJsonArray(
     "tooltip": "",
     "helpUrl": ""
   },
-  // 최대값 찾기 
+  // np.max_min  최대 값,최소 값 찾기 
   {
-    "type": "numpy_max",
-    "message0": "max ( 최대 값 찾기 )  %1",
-    "args0": [ 
-      {
-        "type": "field_input", 
-        "name": "Numpy_max_arry",
-        "text": ""
-      }
-    ],
-    "inputsInline": true, 
-    "previousStatement": null, 
-    "nextStatement": null,
-    "colour": 125,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  //최소 값 찾기 
-  {
-    "type": "numpy_min",
-    "message0": "np.min ( 최소 값 찾기 ) %1",
+    "type": "numpy_max_min",
+    "message0": "%1 np.  %2 ( %3 )",
     "args0": [
       {
-        "type": "field_input",
-        "name": "Numpy_min_arry", 
-        "text": ""
+        "type": "input_value",
+        "name": "numpy_max_min_lib_val"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "numpy_max_min_option",
+        "options": [
+          [
+            "max",
+            "numpy_max"
+          ],
+          [
+            "min",
+            "numpy_min"
+          ]
+        ]
+      },
+      {
+        "type": "input_value",
+        "name": "numpy_max_min_val"
       }
     ],
     "inputsInline": true,
-    "previousStatement": null, 
-    "nextStatement": null,
+    "output": null,
     "colour": 125,
     "tooltip": "",
     "helpUrl": ""
   },
-  //shape 행열 차원 반환 
+  //np.shape  
   {
     "type": "numpy_shape",
-    "message0": "변수이름 : %1 .shape ( 행렬 차원 반환) ",
+    "message0": "%1 np.shape( 행렬 차원 반환   %2 )",
     "args0": [
       {
-        "type": "field_input", 
-        "name": "Numpy_shape", 
-        "text": ""
+        "type": "input_value", 
+        "name": "numpy_shape_lib_val"
+      },
+      {
+        "type": "input_value",
+        "name": "numpy_shape_num"
       }
     ],
     "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
+    "output": null,
     "colour": 125,
     "tooltip": "",
     "helpUrl": ""
@@ -408,85 +514,100 @@ Blockly.defineBlocksWithJsonArray(
   // reshpae 행렬 차원 변경 
   {
     "type": "numpy_reshape",
-    "message0": "변수이름 : %1 .reshape ( 행렬 차원 변경)   값 : %2",
+    "message0": "%1 np.reshape ( 행렬 차원 변경   %2 , %3 )",
     "args0": [
       {
-        "type": "field_input",
-        "name": "Numpy_reshape_vari",
-        "text": ""
+        "type": "input_value",
+        "name": "numpy_reshape_lib_val"
       },
       {
-        "type": "field_input",
-        "name": "Numpy_reshape_array",
-        "text": ""
+        "type": "input_value",
+        "name": "numpy_reshape_num1"
+      },
+      {
+        "type": "input_value",
+        "name": "numpy_reshape_num2"
       }
+    ],
+    "inputsInline": true,
+    "output": null,
+    "colour": 125,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
+  {
+    "type": "numpy_random_rand",
+    "message0": "%1 np.random.   %2 [ 정규분포 | 정수 ] 난수 생성 (   %3 , %4 )",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "numpy_random_rand_lib_val"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "numpy_random_rand_option",
+        "options": [
+          [
+            "randn",
+            "numpy_random_rand_randn"
+          ],
+          [
+            "randint",
+            "numpy_random_rand_randint"
+          ]
+        ]
+      },
+      {
+        "type": "input_value",
+        "name": "numpy_random_rand_num1"
+      },
+      {
+        "type": "input_value",
+        "name": "numpy_random_rand_num2"
+      }
+    ],
+    "inputsInline": true,
+    "output": null,
+    "colour": 125,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+    // 지수 exp
+    {
+      "type": "numpy_exp",
+      "message0": "%1 np.exp (   %2 )",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "numpy_exp_lib_val"
+        },
+        {
+          "type": "input_value",
+          "name": "numpy_exp_num"
+        }
+      ],
+      "inputsInline": true,
+      "output": null,
+      "colour": 125,
+      "tooltip": "",
+      "helpUrl": ""
+    },  
+  //matplot1 
+  {
+    "type": "matplotlib_main",
+    "message0": "%1 시각화 틀",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "matplotlib_main_lib_val"
+      } 
     ],
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
     "colour": 125,
     "tooltip": "",
-    "helpUrl": ""
-  }, 
-  // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
-  {
-      "type": "numpy_random_rand",
-      "message0": "np.random ( randn : 정규분포 난수 , randint :정수 난수)   값 : %1 %2",
-      "args0": [
-        {
-          "type": "field_dropdown",
-          "name": "Numpy_Get_random",  
-          "options": [
-            [
-              "randn",
-              "Numpy_random_randn"
-            ],
-            [
-              "randint",
-              "Numpy_random_randint"
-            ]
-          ]
-        },
-        {
-          "type": "field_input",
-          "name": "Numpy_random_rand_array",
-          "text": ""
-        }
-      ],
-      "inputsInline": true, 
-      "output": null,
-      "colour": 125,
-      "tooltip": "", 
-      "helpUrl": ""
-    },
-    // 지수 exp
-    { 
-      "type": "numpy_exp",
-      "message0": " %1 np.exp ( 지수 함수 ) %2", 
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        { 
-          "type": "input_value",
-          "name": "Numpy_exp_val"
-        }
-      ],
-      "inputsInline": true, 
-      "output": null,
-      "colour": 125,
-      "tooltip": "",
-      "helpUrl": ""
-    },
-  //matplot1 
-  {
-    "type": "matplotlib_main",
-    "message0": "시각화 틀 ",
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": 125,
-    "tooltip": "", 
     "helpUrl": ""
   }, 
   //matplot2 
@@ -594,7 +715,13 @@ Blockly.defineBlocksWithJsonArray(
   //matplot3 
   {
     "type": "matplotlib_graph_end",
-    "message0": "시각화 하기 ",
+    "message0": "%1 시각화 하기",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "matplotlib_graph_end_lib_val"
+      }
+    ],
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
@@ -634,7 +761,7 @@ Blockly.defineBlocksWithJsonArray(
       }
     ],
     "inputsInline": true,
-    "previousStatement": null,
+    "previousStatement": null, 
     "nextStatement": null,
     "colour": 125,
     "tooltip": "",

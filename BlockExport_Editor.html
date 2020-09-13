@@ -41,16 +41,17 @@
   <script src="/js/blockly/test_gen.js"></script>  -->
 
 
-
+ 
   <!-- 데이타 사이언스 블록 -->
-  <script src="/js/blockly/python_gen.js"></script>
-  <script src="/js/blockly/python_T.js"></script>
+  <script src="/js/blockly/Science_Data_T.js"></script> 
+  <script src="/js/blockly/Science_Data_Gen.js"></script>  
+  <script src="/js/blockly/Science_Data_Js.js"></script>
   <!-- 데이타 사이언스 블록 -->
-
+ 
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
   <script src="/js/blockly/tau-prolog.js"></script> <!-- tau Prolog 추가 -->
-
+ 
   <!--plotly cdn-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
 
@@ -696,48 +697,158 @@
     </category>
 
 
-    <!--  데이타 사이언스 //  2020 - 09 - 07  LMS-->
+    <!-- #####################################################################################################  -->
+    <!-- ******************************   데이타 사이언스 //  2020 - 09 - 07     ******************************* -->
+    <!-- #####################################################################################################  -->
     <category name="데이터 사이언스" colour="%{BKY_LOOPS_HUE}">
 
-
-
       <!-- LMS -->
-      <!-- 라이브러리 임포트  -->
+      <!-- # 라이브러리 임포트 #  -->
       <category name="라이브러리 임포트" colour="%{BKY_LOOPS_HUE}">
-        <block type="data_csv_read"></block> <!--  csv 읽기      -->
-        <block type="lib_import_a"></block> <!--  라이브러리 전체 임포트      -->
-        <block type="lib_import"></block> <!--  단순 임포트      -->
-        <block type="lib_import_as"></block> <!--   임포트  as    -->
-        <block type="lib_import_from"></block> <!--   from import    -->
-      </category>
+        
+        <!--  pandas, numpy , tuble 시각화      --> 
+        <block type="val_vi"></block>   
+        <!--  pandas, numpy , tuble 시각화      -->  
 
-      <!-- numpy 부분  -->
+        <!--  import    -->
+        <block type="lib_import_a"> 
+          <value name="lib_import_a_val"> 
+            <block type="variables_get"> 
+              <field name="VAR">np</field>
+            </block>  
+          </value>
+        </block>                 
+        <!--  import    -->  
+
+        <!--  import sklearn  -->
+        <block type="lib_import_sklearn"></block> 
+        <!--  import sklearn  -->
+ 
+        <!--  import    -->
+        <block type="lib_import"></block> 
+        <!--  import    -->
+
+        <!--   import  as    --> 
+        <block type="lib_import_as"></block>
+        <!--   import  as    -->
+
+        <!--   from import    -->
+        <block type="lib_import_from"></block>
+        <!--   from import    --> 
+      </category> 
+      <!-- # 라이브러리 임포트 #  -->
+
+      <!-- # numpy operation #  -->
       <category name="Numpy 기본 연산" colour="%{BKY_LOOPS_HUE}">
         <!-- <block type="variable"></block>  변수 생성  -->
         <!-- <block type="variable_name"></block> 다른 변수에 넣기   -->
-        <block type="print"></block> <!-- 결과 print  -->
+        <block type="print"></block> <!-- 결과 print  --> 
         <block type="create_arry"></block> <!-- 배열 생성  -->
         <block type="arry_mul"></block> <!-- 배열 곱 -->
         <block type="arry_div"></block> <!-- 배열 나누셈 -->
         <block type="arry_plus"></block> <!-- 배열 합 -->
         <block type="arry_minus"></block> <!-- 배열 빼기 -->
       </category>
-      <!-- numpy 함수들 -->
+      <!-- # numpy operation #  --> 
+
+      <!-- # numpy function # -->
       <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">
-        <block type="np_array"></block> <!-- numpy.arry  -->
-        <block type="numpy_zeros"></block> <!-- zeros 0으로 채우기 -->
-        <block type="numpy_full"></block> <!-- full 배열을 해당 숫자로 채우기  -->
-        <block type="numpy_eye"></block> <!-- eye 배열을 대각선 1로 채우기   -->
-        <block type="numpy_max"></block> <!-- max 최대값 찾기  -->
-        <block type="numpy_min"></block> <!-- min 최소값 찾기  -->
-        <block type="numpy_shape"></block> <!-- shape 행렬 차원 반환  -->
-        <block type="numpy_reshape"></block> <!-- reshape 행렬 차원 변환  -->
-        <block type="numpy_random_rand"></block> <!--  random. randn or randint 무작위 숫자 생성     -->
-        <block type="numpy_exp"></block> <!--  exp 지수     -->
+        <!-- numpy.arry  -->
+        <block type="np_array"> 
+          <value name="np_array_lib_val"> 
+            <block type="variables_get">
+              <field name="VAR">np</field>
+            </block>  
+          </value> 
+        </block>   
+        <!-- numpy.arry  -->     
+
+        <!-- numpy.zeros -->
+        <block type="numpy_zeros"> 
+          <value name="numpy_zeros_lib_val">
+            <block type="variables_get">
+              <field name="VAR">np</field>
+            </block>   
+          </value> 
+        </block>   
+        <!-- numpy.zeros --> 
+ 
+        <!-- numpy.full  -->
+        <block type="numpy_full">  
+          <value name="numpy_full_lib_val">
+            <block type="variables_get">
+              <field name="VAR">np</field>   
+            </block>   
+          </value> 
+        </block>  
+        <!-- numpy.full  -->
+
+        <!-- np.eye   -->
+        <block type="numpy_eye"> 
+          <value name="numpy_eye_lib_val">
+            <block type="variables_get">
+              <field name="VAR">np</field> 
+            </block>   
+          </value> 
+        </block>   
+        <!-- np.eye   -->
+
+        <!-- np.max_min  -->  
+        <block type="numpy_max_min"> 
+          <value name="numpy_max_min_lib_val">
+            <block type="variables_get">
+              <field name="VAR">np</field> 
+            </block>   
+          </value> 
+        </block> 
+        <!-- np.max_min  -->
+         
+        <!-- np.shape  -->
+        <block type="numpy_shape">
+          <value name="numpy_shape_lib_val">
+            <block type="variables_get">
+              <field name="VAR">np</field> 
+            </block>   
+          </value> 
+        </block> 
+        <!-- np.shape  -->
+         
+        <!-- np.reshape  -->
+        <block type="numpy_reshape"> 
+          <value name="numpy_reshape_lib_val">
+            <block type="variables_get">
+              <field name="VAR">np</field> 
+            </block>   
+          </value> 
+        </block>  
+        <!-- np.reshape  --> 
+
+        <!--  random. randn or randint   -->
+        <block type="numpy_random_rand">
+          <value name="numpy_random_rand_lib_val">
+            <block type="variables_get">
+              <field name="VAR">np</field>  
+            </block>   
+          </value> 
+        </block> 
+        <!--  random. randn or randint   --> 
+
+        <!--  np.exp  -->
+        <block type="numpy_exp">
+          <value name="numpy_exp_lib_val"> 
+            <block type="variables_get">
+              <field name="VAR">np</field>  
+            </block>   
+          </value> 
+        </block> 
+        <!--  np.exp  -->
       </category>
-      <!-- ************************* -->
-      <!-- 2020-09-07, Pandas Blocks -->
-      <!-- ************************* -->
+
+
+
+      <!-- ************************************************** ************************* *************************  -->
+      <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
+      <!-- ************************************************** ************************* *************************  -->
       <category name="Pandas 함수" colour="%{BKY_LOGIC_HUE}">
         <block type="csv_library">
           <value name="pan_lib_var">
@@ -806,19 +917,43 @@
         <block type="column_count"></block>
         <!-- <block type="image_list"></block> -->
       </category>
+      <!-- ************************************************** ************************* *************************  -->
+      <!-- ***************************************  Pandas Blocks end  ******************************************  -->
+      <!-- ************************************************** ************************* *************************  -->
 
-      <!--   데이타 사이언스 //  2020 - 09 - 07  LMS  -->
-      <!-- 시각화 부분  -->
+
+      
+      <!-- # 시각화 부분 #  -->
       <category name="시각화 하기 " colour="%{BKY_LOOPS_HUE}">
-        <block type="matplotlib_main"></block> <!--  matplot1 시각화 틀    -->
+        <!--  matplot1 시각화 틀    -->
+          <block type="matplotlib_main">
+            <value name="matplotlib_main_lib_val">
+              <block type="variables_get">
+                <field name="VAR">plt</field>   
+              </block>    
+            </value>  
+          </block>   
+        <!--  matplot1 시각화 틀    -->
+         
         <block type="matplotlib_pre_graph"></block> <!--  matplot2 시각화 준비      -->
-        <block type="matplotlib_graph_end"></block> <!--  matplot3 시각화 하기      -->
+
+        <!--  matplot3 시각화 하기      -->
+        <block type="matplotlib_graph_end">
+          <value name="matplotlib_graph_end_lib_val">
+            <block type="variables_get">
+              <field name="VAR">plt</field>   
+            </block>    
+          </value> 
+        </block> 
+        <!--  matplot3 시각화 하기      -->
         <!-- 아래는 준비중  -->
         <block type="load_csv"></block> <!--  csv 로드     -->
         <block type="linearregression_c"></block> <!-- 사이킷런 리니어 로드     -->
         <block type="linearregression_train"></block> <!-- 사이킷런 train     -->
       </category>
+      <!-- # 시각화 부분 #  -->
     </category>
+
 
 
 
