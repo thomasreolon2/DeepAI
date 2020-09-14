@@ -83,8 +83,8 @@ Blockly.defineBlocksWithJsonArray(
   },
 //라이브러리 임포트 사이킷런 
 {
-  "type": "lib_import_sklearn",
-  "message0": "( 사이킷런 임포트 ) from %1 import %2",
+  "type": "lib_import_sklearn", 
+  "message0": "임시 ( 사이킷런 임포트  ) from %1 import %2",
   "args0": [
     {
       "type": "field_dropdown",
@@ -736,7 +736,7 @@ Blockly.defineBlocksWithJsonArray(
   //선형 회귀 생성 
   {
     "type": "linearregression_c",
-    "message0": "선형 회귀 생성",
+    "message0": "[임시]선형 회귀 생성",
     "inputsInline": true,
     "output": null,
     "colour": 125,
@@ -746,7 +746,7 @@ Blockly.defineBlocksWithJsonArray(
   //모델 훈련 
   {
     "type": "linearregression_train",
-    "message0": "변수 : %1 .fit 모델 훈련 -> X : %2 Y : %3", 
+    "message0": "[임시]변수 : %1 .fit 모델 훈련 -> X : %2 Y : %3", 
     "args0": [
       {
         "type": "input_value",

@@ -712,21 +712,6 @@
           </block>  
           <!--  import np,np,plt,io,base64  -->
 
-         <!--  import sklearn  --> 
-         <block type="lib_import_sklearn"></block> 
-         <!--  import sklearn  -->
-  
-         <!--  import    -->
-         <!-- <block type="lib_import"></block>  -->
-         <!--  import    -->
- 
-         <!--   import  as    --> 
-         <block type="lib_import_as"></block>
-         <!--   import  as    -->
- 
-         <!--   from import    -->
-         <block type="lib_import_from"></block>
-         <!--   from import    --> 
 
         <!-- numpy.arry  -->
         <block type="np_array"> 
@@ -821,7 +806,24 @@
           </value> 
         </block> 
         <!--  np.exp  -->
+
+         <!--  import sklearn  -->   
+         <block type="lib_import_sklearn"></block> 
+         <!--  import sklearn  -->
+  
+         <!--  import 편의성 제공   -->
+         <!-- <block type="lib_import"></block>  -->
+         <!--  import    -->
+ 
+         <!--   import  as 편의성 제공  --> 
+         <!-- <block type="lib_import_as"></block> -->
+         <!--   import  as    -->
+  
+         <!--   from import 편의성 제공   --> 
+         <!-- <block type="lib_import_from"></block> -->
+         <!--   from import    -->  
       </category>
+
       <!-- ************************************************** ************************* *************************  -->
       <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
       <!-- ************************************************** ************************* *************************  -->
@@ -931,7 +933,6 @@
         </block> 
         <!--  matplot3 시각화 하기      -->
         <!-- 아래는 준비중  -->
-        <block type="load_csv"></block> <!--  csv 로드     -->
         <block type="linearregression_c"></block> <!-- 사이킷런 리니어 로드     -->
         <block type="linearregression_train"></block> <!-- 사이킷런 train     -->
       </category>

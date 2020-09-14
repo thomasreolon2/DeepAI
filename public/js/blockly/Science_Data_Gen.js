@@ -42,7 +42,6 @@ Blockly.Python['val_vi'] = function(block) {
               Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_import_libs_val).getId(),"np");
               break;   
             
-        
           case "lib_import_pandas" : 
               code = `import pandas as ${value_import_libs_val}\n`;   
               Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_import_libs_val).getId(),"pd");
