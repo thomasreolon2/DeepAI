@@ -179,7 +179,7 @@ Blockly.defineBlocksWithJsonArray(
     "colour": 125,
     "tooltip": "",
     "helpUrl": ""
-  },
+  }, 
   // 라이브러리  임포트 as
   { 
     "type": "lib_import_as",
