@@ -687,13 +687,6 @@
       <block type="array_get"></block>
       <block type="csv3"></block>
       <block type="labelencoder"></block>
-      <block type="import_lib">
-        <value name="var">
-          <block type="variables_get">
-            <field name="VAR"></field>
-          </block>
-        </value>
-      </block>
       <!-- <block type="csv3"></block> -->
       <block type="scikit_learn"></block>
     </category>
@@ -702,59 +695,16 @@
     <!-- #####################################################################################################  -->
     <!-- ******************************   데이타 사이언스 //  2020 - 09 - 07     ******************************* -->
     <!-- #####################################################################################################  -->
-    <category name="데이터 사이언스" colour="%{BKY_LOOPS_HUE}">
-
-      <!-- LMS -->
-      <!-- # 라이브러리 임포트 #  -->
-      <category name="라이브러리 임포트" colour="%{BKY_LOOPS_HUE}">
-        
-        <!--  pandas, numpy , tuble 시각화      --> 
-        <block type="val_vi"></block>   
-        <!--  pandas, numpy , tuble 시각화      -->  
-
-        <!--  import    -->
-        <block type="lib_import_a"> 
-          <value name="lib_import_a_val"> 
-            <block type="variables_get"> 
-              <field name="VAR">np</field>
-            </block>  
-          </value>
-        </block>                 
-        <!--  import    -->  
-
-        <!--  import sklearn  -->
-        <block type="lib_import_sklearn"></block> 
-        <!--  import sklearn  -->
- 
-        <!--  import    -->
-        <block type="lib_import"></block> 
-        <!--  import    -->
-
-        <!--   import  as    --> 
-        <block type="lib_import_as"></block>
-        <!--   import  as    -->
-
-        <!--   from import    -->
-        <block type="lib_import_from"></block>
-        <!--   from import    --> 
-      </category> 
-      <!-- # 라이브러리 임포트 #  -->
-
-      <!-- # numpy operation #  -->
-      <category name="Numpy 기본 연산" colour="%{BKY_LOOPS_HUE}">
-        <!-- <block type="variable"></block>  변수 생성  -->
-        <!-- <block type="variable_name"></block> 다른 변수에 넣기   -->
-        <block type="print"></block> <!-- 결과 print  --> 
-        <block type="create_arry"></block> <!-- 배열 생성  -->
-        <block type="arry_mul"></block> <!-- 배열 곱 -->
-        <block type="arry_div"></block> <!-- 배열 나누셈 -->
-        <block type="arry_plus"></block> <!-- 배열 합 -->
-        <block type="arry_minus"></block> <!-- 배열 빼기 -->
-      </category>
-      <!-- # numpy operation #  --> 
-
-      <!-- # numpy function # -->
+    <category name="데이터 사이언스"  colour="%{BKY_LOOPS_HUE}">
+    <!-- # numpy function # -->
       <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">
+        <block type="import_lib">
+          <value name="var">
+            <block type="variables_get">
+              <field name="VAR"></field>
+            </block>
+          </value>
+        </block>
         <!-- numpy.arry  -->
         <block type="np_array"> 
           <value name="np_array_lib_val"> 
@@ -762,6 +712,10 @@
               <field name="VAR">np</field>
             </block>  
           </value> 
+          <value name="np_array_val">
+            <block type="create_arry">
+            </block>
+          </value>
         </block>   
         <!-- numpy.arry  -->     
 
@@ -845,13 +799,17 @@
         </block> 
         <!--  np.exp  -->
       </category>
-
-
-
       <!-- ************************************************** ************************* *************************  -->
       <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
       <!-- ************************************************** ************************* *************************  -->
       <category name="Pandas 함수" colour="%{BKY_LOGIC_HUE}">
+        <block type="import_lib">
+          <value name="var">
+            <block type="variables_get">
+              <field name="VAR"></field>
+            </block>
+          </value>
+        </block>
         <block type="csv_library">
           <value name="pan_lib_var">
             <block type="variables_get">
@@ -923,11 +881,11 @@
       <!-- ************************************************** ************************* *************************  -->
       <!-- ***************************************  Pandas Blocks end  ******************************************  -->
       <!-- ************************************************** ************************* *************************  -->
-
-
-      
+  
       <!-- # 시각화 부분 #  -->
       <category name="시각화 하기 " colour="%{BKY_LOOPS_HUE}">
+        <block type="val_vi"></block>   
+
         <!--  matplot1 시각화 틀    -->
           <block type="matplotlib_main">
             <value name="matplotlib_main_lib_val">
