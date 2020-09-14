@@ -22,7 +22,7 @@ const options = {
 
 
 var app = express();
-var server = require('https').createServer(options, app);
+var server = require('http').createServer(options, app);
 var io = require('socket.io')(server);// http server를 socket.io server로 upgrade 
  
 app.set("view engine", "ejs"); 
