@@ -7,14 +7,14 @@ Blockly.JavaScript['val_vi'] = function(block) {
     return code;       
   };  
 
-  //라이브러리 전체 새로운 것    
-    Blockly.Python['lib_import_a'] = function(block) {
-      var dropdown_lib_import_a_option = block.getFieldValue('lib_import_a_option');
-      var value_lib_import_a_val = Blockly.Python.valueToCode(block, 'lib_import_a_val', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
+  //라이브러리 전체 새로운 것       
+  Blockly.JavaScript['import_libs'] = function(block) {
+    var dropdown_import_libss = block.getFieldValue('import_libss');
+    var value_import_libs_val = Blockly.JavaScript.valueToCode(block, 'import_libs_val', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
     var code = ' ';
     return code;
-    }; 
+  };
     
     //라이브러리 임포트 사이킷런 
     Blockly.JavaScript['lib_import_sklearn'] = function(block) {

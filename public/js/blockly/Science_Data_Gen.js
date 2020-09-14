@@ -25,39 +25,50 @@ Blockly.Python['val_vi'] = function(block) {
     return code;      
   }; 
   
+
+
   
   
   //라이브러리 전체 새로운 것   
-  Blockly.Python['lib_import_a'] = function(block) {
-    var dropdown_lib_import_a_option = block.getFieldValue('lib_import_a_option');
-    var value_lib_import_a_val = Blockly.Python.valueToCode(block, 'lib_import_a_val', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code ;
-    switch (dropdown_lib_import_a_option){
-      case "lib_import_numpy" : 
-      code = `import numpy as ${value_lib_import_a_val}\n`;    
-      break;      
-  
-      case "lib_import_pandas" :
-      code = `import pandas as ${value_lib_import_a_val}\n`;   
-      break;  
+    Blockly.Python['import_libs'] = function(block) {
+      var dropdown_import_libss = block.getFieldValue('import_libss');
+      var value_import_libs_val = Blockly.Python.valueToCode(block, 'import_libs_val', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
+      var code ;
+
+      switch (dropdown_import_libss){    
+          case "lib_import_numpy" : 
+              code = `import numpy as ${value_import_libs_val}\n`;     
+              Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_import_libs_val).getId(),"np");
+              break;   
+            
+        
+          case "lib_import_pandas" : 
+              code = `import pandas as ${value_import_libs_val}\n`;   
+              Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_import_libs_val).getId(),"pd");
+              break;  
+            
+          case "lib_import_Matplotlib" :
+              code = `import matplotlib as ${value_import_libs_val}\n`;   
+              Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_import_libs_val).getId(),"plt");
+              break;
+      
+          case "lib_import_io" :   
+              code = 'import io\n';             
+              break;   
        
-      case "lib_import_Matplotlib" :
-      code = `import matplotlib as ${value_lib_import_a_val}\n`;   
-      break;
-  
-      case "lib_import_io" :  
-      code = `import io\n`;             
-      break;   
-  
-      case "lib_import_base64" : 
-      code = `import base64\n`;           
-      break; 
-  
-      default : 
-      break; 
-    }  
-    return code;}; 
+          case "lib_import_base64" : 
+              code = 'import base64\n';           
+              break; 
+      
+          default : 
+          break;  
+        }  
+
+      return code;
+    };
+   
+    
     
     //라이브러리 임포트 사이킷런 
     Blockly.Python['lib_import_sklearn'] = function(block) {

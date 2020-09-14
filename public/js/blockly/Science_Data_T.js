@@ -33,16 +33,16 @@ Blockly.defineBlocksWithJsonArray(
     "nextStatement": null,
     "colour": 125,
     "tooltip": "",
-    "helpUrl": ""
+    "helpUrl": "" 
   },
   // 라이브러리 임포트 전체 새로운 것
   {
-    "type": "lib_import_a",
-    "message0": "( 라이브러리 임포트 ) %1 as %2",
+    "type": "import_libs",
+    "message0": "( 라이브러리 임포트 ) %1 as %2 %3",
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "lib_import_a_option",
+        "name": "import_libss",
         "options": [
           [
             "Numpy",
@@ -67,8 +67,11 @@ Blockly.defineBlocksWithJsonArray(
         ]
       },
       {
+        "type": "input_dummy"
+      },
+      {
         "type": "input_value",
-        "name": "lib_import_a_val"
+        "name": "import_libs_val"
       }
     ],
     "inputsInline": true,

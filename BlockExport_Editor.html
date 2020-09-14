@@ -699,14 +699,35 @@
     <!-- #####################################################################################################  -->
     <category name="데이터 사이언스"  colour="%{BKY_LOOPS_HUE}">
     <!-- # numpy function # -->
+
       <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">
-        <block type="import_lib">
-          <value name="var">
-            <block type="variables_get">
-              <field name="VAR"></field>
-            </block>
-          </value>
-        </block>
+
+           <!--  import np,np,plt,io,base64  --> 
+           <block type="import_libs">
+            <value name="import_libs_val"> 
+              <block type="variables_get">     
+                <field name="VAR"></field>   
+              </block> 
+            </value> 
+          </block>  
+          <!--  import np,np,plt,io,base64  -->
+
+         <!--  import sklearn  --> 
+         <block type="lib_import_sklearn"></block> 
+         <!--  import sklearn  -->
+  
+         <!--  import    -->
+         <!-- <block type="lib_import"></block>  -->
+         <!--  import    -->
+ 
+         <!--   import  as    --> 
+         <block type="lib_import_as"></block>
+         <!--   import  as    -->
+ 
+         <!--   from import    -->
+         <block type="lib_import_from"></block>
+         <!--   from import    --> 
+
         <!-- numpy.arry  -->
         <block type="np_array"> 
           <value name="np_array_lib_val"> 
@@ -1289,7 +1310,7 @@
         alphaPixel[idx] = pixel[i];
         idx++;
       }
-      console.log(alphaPixel);
+      console.log(alphaPixel); 
     }
 
     /*

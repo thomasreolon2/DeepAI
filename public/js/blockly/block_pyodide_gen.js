@@ -175,15 +175,15 @@ Blockly.Python['labelencoder'] = function (block) {
 Blockly.Python['import_lib'] = function (block) {
     var dropdown_lib = block.getFieldValue('lib');
     var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
+    // TODO: Assemble Python into code variable. 
     var code = '';
-    switch (dropdown_lib) {
+    switch (dropdown_lib) {  
         case "numpy": 
             code = "import numpy as "+value_var;
             Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"np");
             break;
         case "pandas": 
-            code = "import pandas as "+value_var;
+            code = "import pandas as "+value_var; 
             Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"pd");
             break;
         case "matplotlib.pyplot": 
