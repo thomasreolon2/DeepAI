@@ -152,6 +152,17 @@ Blockly.JavaScript['val_vi'] = function(block) {
     return [code, Blockly.JavaScript.ORDER_NONE];
   }; 
 
+  //np.append
+  Blockly.JavaScript['np_append'] = function(block) { 
+    var value_np_append_lib_var = Blockly.JavaScript.valueToCode(block, 'np_append_lib_var', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_np_append_num1 = Blockly.JavaScript.valueToCode(block, 'np_append_num1', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_np_append_num2 = Blockly.JavaScript.valueToCode(block, 'np_append_num2', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = ' ';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };
+ 
   //matplotlib 1
   Blockly.JavaScript['matplotlib_main'] = function(block) {
     var value_matplotlib_main_lib_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_lib_val', Blockly.JavaScript.ORDER_ATOMIC);

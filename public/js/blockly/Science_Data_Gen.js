@@ -352,21 +352,8 @@ Blockly.Python['val_vi'] = function(block) {
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.Python.ORDER_NONE];
     };
-   
-   // random.randn or randint  표준정규 분포에 따른 무작위 숫자 생성 또는 정수 난수 
-  //  Blockly.Python['numpy_random_rand'] = function(block) {
-  //     var dropdown_numpy_get_random = block.getFieldValue('Numpy_Get_random');
-  //     var text_numpy_random_rand_array = block.getFieldValue('Numpy_random_rand_array');
-  //     // TODO: Assemble Python into code variable.
-  //     var code; 
-  //     if(dropdown_numpy_get_random == 'Numpy_random_randn'){
-  //          code = `np.random.randn(${text_numpy_random_rand_array})`;    
-  //     }else if (dropdown_numpy_get_random == 'Numpy_random_randint'){
-  //          code = `np.random.randint(${text_numpy_random_rand_array})`;    
-  //     } 
-  //     return [code, Blockly.Python.ORDER_NONE];  
-  //   };   
-  
+
+  //np.randn or randint
     Blockly.Python['numpy_random_rand'] = function(block) {
       var value_numpy_random_rand_lib_val = Blockly.Python.valueToCode(block, 'numpy_random_rand_lib_val', Blockly.Python.ORDER_ATOMIC);
       var dropdown_numpy_random_rand_option = block.getFieldValue('numpy_random_rand_option');
@@ -392,6 +379,17 @@ Blockly.Python['val_vi'] = function(block) {
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.Python.ORDER_NONE];
     };
+
+    //np.append
+    Blockly.Python['np_append'] = function(block) {
+      var value_np_append_lib_var = Blockly.Python.valueToCode(block, 'np_append_lib_var', Blockly.Python.ORDER_ATOMIC);
+      var value_np_append_num1 = Blockly.Python.valueToCode(block, 'np_append_num1', Blockly.Python.ORDER_ATOMIC);
+      var value_np_append_num2 = Blockly.Python.valueToCode(block, 'np_append_num2', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
+      var code = `${value_np_append_lib_var}.append(${value_np_append_num1},${value_np_append_num2})\n`;  
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.Python.ORDER_NONE];
+    }; 
   
    
     //matplot1 
@@ -399,7 +397,7 @@ Blockly.Python['val_vi'] = function(block) {
       var value_matplotlib_main_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_main_lib_val', Blockly.Python.ORDER_ATOMIC);
       // TODO: Assemble Python into code variable. 
       var code =`fig = ${value_matplotlib_main_lib_val}.figure()  
-  fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5))\n`; 
+fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5))\n`; 
       return code;
     };
     
@@ -419,10 +417,10 @@ Blockly.Python['val_vi'] = function(block) {
      
       case "matplotlib_screen" : 
         matplot_lo =`fig, ax_lst = plt.subplots(1,1, figsize=(8,6))
-  ax_lst`;  
+ax_lst`;  
         break;
    2
-      case "matplotlib_num_1" :
+      case "matplotlib_num_1" : 
       matplot_lo =  "ax_lst[0][0]"; 
       break;
   
@@ -508,10 +506,10 @@ Blockly.Python['val_vi'] = function(block) {
     var value_matplotlib_graph_end_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_graph_end_lib_val', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code =`${value_matplotlib_graph_end_lib_val}.show() 
-  buf = io.BytesIO()      
-  fig.savefig(buf, format='png')   
-  buf.seek(0)
-  img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8')\n`;
+buf = io.BytesIO()      
+fig.savefig(buf, format='png')   
+buf.seek(0)
+img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8')\n`;
       return code;
   }; 
       

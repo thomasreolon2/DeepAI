@@ -800,12 +800,22 @@
         <!--  np.exp  -->
         <block type="numpy_exp">
           <value name="numpy_exp_lib_val"> 
-            <block type="variables_get">
+            <block type="variables_get"> 
               <field name="VAR">np</field>  
             </block>   
           </value> 
         </block> 
         <!--  np.exp  -->
+
+        <!-- np.append -->
+        <block type = "np_append">
+          <value name="np_append_lib_var"> 
+            <block type="variables_get">
+              <field name="VAR">np</field>  
+            </block>   
+          </value> 
+        </block>
+        <!-- np.append -->
 
          <!--  import sklearn  -->   
          <block type="lib_import_sklearn"></block> 

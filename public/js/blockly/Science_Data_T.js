@@ -595,7 +595,31 @@ Blockly.defineBlocksWithJsonArray(
       "colour": 125,
       "tooltip": "",
       "helpUrl": ""
-    },  
+    }, 
+    //np.append
+    {
+      "type": "np_append",
+      "message0": "%1 np.append ( 요소 추가 ) ( %2 , %3  )",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "np_append_lib_var"
+        },
+        {
+          "type": "input_value",
+          "name": "np_append_num1"
+        },
+        {
+          "type": "input_value",
+          "name": "np_append_num2"
+        }
+      ],
+      "inputsInline": true,
+      "output": null,
+      "colour": 125,
+      "tooltip": "",
+      "helpUrl": ""
+    }, 
   //matplot1 
   {
     "type": "matplotlib_main",
