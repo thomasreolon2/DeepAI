@@ -19,7 +19,7 @@
   <script src="http://inhatc.iptime.org:4518/pyodide.js"></script>
 
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
-  <script src="/js/blockly/blockly_compressed.js"></script>
+  <script src="/js/blockly/blockly_compressed.js"></script> 
   <script src="/js/blockly/javascript_compressed.js"></script>
   <script src="/js/blockly/python_compressed.js"></script>
   <script src="/js/blockly/blocks_compressed.js"></script>
@@ -46,7 +46,7 @@
   <!-- <script type="text/javascript">
     window.languagePluginUrl = "https://pyodide-cdn2.iodide.io/v0.15.0/full/";
   </script>
-  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>  -->
+  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>   -->
   <!-- 임시 --> 
   
 
@@ -104,7 +104,7 @@
   <link rel="stylesheet" href="css\sidebar.css">
   <script>
     var Data_process_on = 0;
-    var DL_Gra = 0;
+    var DL_Gra = 0; 
     var testing_1 = 0; 
   </script>
 
@@ -114,16 +114,16 @@
 
   <script> 
     languagePluginLoader.then(() => {
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib']).then(() => {     // , 'scikit-learn'
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib','scikit-learn']).then(() => {     // , 'scikit-learn'
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image").hide(); // 로딩 끝나면 로딩 창 없앰 
         $("#runButton").css({'display':"block"}); 
       });
     });   
   </script>
-
+ 
   <!-- table -->
-  <link rel="stylesheet" href="/css/table_custom.css">
+  <link rel="stylesheet" href="/css/table_custom.css"> 
   <style type="text/css">
     canvas {
       background-color: white;
@@ -1527,14 +1527,15 @@
     function draw_table(Get_CSV_DATA) {
 
      var NPTD_Data = Array.from(Array(Get_CSV_DATA[0].length), () => new Array(Get_CSV_DATA.length)); 
-    
+      
       for(var i = 0; i < Get_CSV_DATA.length;  i++){ 
         for(var j = 0; j < Get_CSV_DATA[0].length; j++){ 
-          NPTD_Data[j][i] = Get_CSV_DATA[i][j] ;
-        }     
-      } 
-    
+          NPTD_Data[j][i] = Get_CSV_DATA[i][j] ; 
+        }       
+      }    
 
+      var NPTD_Data_Header = Array.from(Array(NPTD_Data.length), () => new Array(NPTD_Data[0].length)); 
+      
 
       //--------------------------------- data 속성 ---------------------------// 
       var data = [

@@ -5,7 +5,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = "PN_Visualization = pyodide.pyimport('PN_Visualization');\ndraw_table(PN_Visualization)\n"; 
     return code;       
-  };  
+  };   
 
   //라이브러리 전체 새로운 것       
   Blockly.JavaScript['import_libs'] = function(block) {
@@ -15,6 +15,8 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var code = ' ';
     return code;
   };
+
+  
     
     //라이브러리 임포트 사이킷런 
     Blockly.JavaScript['lib_import_sklearn'] = function(block) {
@@ -169,10 +171,25 @@ Blockly.JavaScript['val_vi'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     var code = ' ';
     return code;   
-  };
+  }; 
 
   //matplot2 수정
-  Blockly.JavaScript['matplotlib_pre_graph'] = function(block) { 
+  // Blockly.JavaScript['matplotlib_pre_graph'] = function(block) { 
+  //   var value_matplotlib_pre_graph_lib_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_pre_graph_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
+  //   var dropdown_matplotlib_num_location = block.getFieldValue('matplotlib_num_location');
+  //   var text_matplotlib_user_xy = block.getFieldValue('matplotlib_user_xy');
+  //   var dropdown_matplotlib_graph_select = block.getFieldValue('matplotlib_graph_select');
+  //   var text_matplotlib_pre_graph_title = block.getFieldValue('matplotlib_pre_graph_Title');
+  //   var text_matplotlib_pre_graph_xlable = block.getFieldValue('matplotlib_pre_graph_Xlable');
+  //   var text_matplotlib_pre_graph_ylable = block.getFieldValue('matplotlib_pre_graph_Ylable');
+  //   var checkbox_matplotlib_line_ox = block.getFieldValue('matplotlib_line_OX') == 'TRUE';
+  //   var dropdown_matplotlib_line_select = block.getFieldValue('matplotlib_line_select');
+  //   // TODO: Assemble JavaScript into code variable.
+  //   var code = ' ';
+  //   return code;
+  // };
+
+  Blockly.JavaScript['matplotlib_pre_graph'] = function(block) {
     var value_matplotlib_pre_graph_lib_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_pre_graph_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
     var dropdown_matplotlib_num_location = block.getFieldValue('matplotlib_num_location');
     var text_matplotlib_user_xy = block.getFieldValue('matplotlib_user_xy');
@@ -180,6 +197,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var text_matplotlib_pre_graph_title = block.getFieldValue('matplotlib_pre_graph_Title');
     var text_matplotlib_pre_graph_xlable = block.getFieldValue('matplotlib_pre_graph_Xlable');
     var text_matplotlib_pre_graph_ylable = block.getFieldValue('matplotlib_pre_graph_Ylable');
+    var text_matplotlib_pre_label = block.getFieldValue('matplotlib_pre_label');
     var checkbox_matplotlib_line_ox = block.getFieldValue('matplotlib_line_OX') == 'TRUE';
     var dropdown_matplotlib_line_select = block.getFieldValue('matplotlib_line_select');
     // TODO: Assemble JavaScript into code variable.

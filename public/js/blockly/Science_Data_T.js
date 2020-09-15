@@ -742,7 +742,7 @@ Blockly.defineBlocksWithJsonArray(
   //matplot2 수정
   {
     "type": "matplotlib_pre_graph",
-    "message0": "시각화 준비 :  %1 %2 | ( X , Y ) 값 : %3 | 그래프 : %4 | 제목 : %5 | Xlable : %6 | Ylable : %7 | 형태( 선 그래프만 해당 ), 사용 여부 : %8 %9",
+    "message0": "시각화 준비 :  %1 %2 | ( X , Y ) 값 : %3 | 그래프 : %4 | 제목 : %5 | Xlable : %6 | Ylable : %7 | 라벨 명 : %8 | 형태( 선 그래프만 해당 ), 사용 여부 : %9 %10",
     "args0": [
       {
         "type": "input_value",
@@ -825,6 +825,11 @@ Blockly.defineBlocksWithJsonArray(
         "text": ""
       },
       {
+        "type": "field_input",
+        "name": "matplotlib_pre_label",
+        "text": ""
+      },
+      {
         "type": "field_checkbox",
         "name": "matplotlib_line_OX",
         "checked": false
@@ -842,7 +847,7 @@ Blockly.defineBlocksWithJsonArray(
             "matplotlib_line_2"
           ],
           [
-            "점_선", 
+            "점_선",
             "matplotlib_line_3"
           ],
           [
@@ -859,7 +864,6 @@ Blockly.defineBlocksWithJsonArray(
     "tooltip": "",
     "helpUrl": ""
   },
-  
   //matplot3 
   {
     "type": "matplotlib_graph_end",
