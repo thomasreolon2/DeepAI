@@ -1251,20 +1251,25 @@ Blockly.Python.text_charAt = function (a) {
       Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_MEMBER) ||
       "''";
   switch (b) {
+    // 첫번째 문자 찾기
     case "FIRST":
       return [c + "[0]", Blockly.Python.ORDER_MEMBER];
+    // 마지막 문자 찾기
     case "LAST":
       return [c + "[-1]", Blockly.Python.ORDER_MEMBER];
+    // 첫번째부터 문자 찾기
     case "FROM_START":
       return (
         (a = Blockly.Python.getAdjustedInt(a, "AT")),
         [c + "[" + a + "]", Blockly.Python.ORDER_MEMBER]
       );
+    // 마지막부터 문자 찾기
     case "FROM_END":
       return (
         (a = Blockly.Python.getAdjustedInt(a, "AT", 1, !0)),
         [c + "[" + a + "]", Blockly.Python.ORDER_MEMBER]
       );
+    // 랜덤한 문자 찾기
     case "RANDOM":
       return (
         (Blockly.Python.definitions_.import_random = "import random"),
