@@ -58,3 +58,20 @@ Blockly.JavaScript['printc'] = function (block) {
     
     return code;
 };
+Blockly.JavaScript['model_predict'] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_data = block.getFieldValue('data');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['scikit_learn'] = function (block) {
+  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_cate = block.getFieldValue('cate');
+  var value_x = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('x'), Blockly.Variables.NAME_TYPE);
+  var value_y = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('y'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code="\n";
+  return code;
+};
