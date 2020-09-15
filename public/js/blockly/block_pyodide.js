@@ -161,7 +161,6 @@ Blockly.Blocks['scikit_learn'] = {
         ]), "cate");
         this.appendDummyInput().appendField(" 학습 데이터 :").appendField(new Blockly.FieldVariable("xData"), "x");
         this.appendDummyInput().appendField(" 정답 데이터 :").appendField(new Blockly.FieldVariable("yData"), "y");
-        this.setInputsInline(false);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(230);
@@ -220,7 +219,20 @@ Blockly.Blocks['import_lib'] = {
     }
 };
 
-
+Blockly.Blocks['model_predict'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("모델 ");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("데이터"), "data");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 // ////////////////////////////////////python basic block
 // 딕셔너리(구버전)
 Blockly.Blocks['create_dict'] = {

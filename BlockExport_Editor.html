@@ -14,9 +14,9 @@
   <!--  Blockly 자체의 설정과 관련된 파일 -->
   <!--test-->
   <!-- pyodide -->
-      <!-- <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script> -->
+      <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
  
-  <script src="http://inhatc.iptime.org:4518/pyodide.js"></script>
+  <!-- <script src="http://inhatc.iptime.org:4518/pyodide.js"></script> -->
 
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script>
@@ -114,7 +114,7 @@
 
   <script> 
     languagePluginLoader.then(() => {
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib']).then(() => {     // , 'scikit-learn'
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn']).then(() => {     // 
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image").hide(); // 로딩 끝나면 로딩 창 없앰 
         $("#runButton").css({'display':"block"}); 
@@ -698,8 +698,9 @@
       <block type="labelencoder"></block>
       <!-- <block type="csv3"></block> -->
       <block type="scikit_learn"></block>
-      <block type="train_test_split">
-      </block>
+      <block type="train_test_split"></block>
+      <block type="model_predict"></block>
+
     </category>
 
 
