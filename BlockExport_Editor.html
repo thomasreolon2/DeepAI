@@ -25,6 +25,7 @@
   <script src="/js/blockly/blocks_compressed.js"></script>
   <!--미리 정의되어 있는 기본 블록에 대한 설정을 모두 담고 있음.-->
   <script src="/js/blockly/block_pyodide.js"></script>
+
   <!-- pyodide 블록 -->
   <script src="/js/blockly/block_pyodide_gen.js"></script>
   <script src="/js/blockly/block_pyodide_gen_javascript.js"></script>
@@ -402,6 +403,7 @@
       <block type="math_number">
         <field name="NUM">123</field>
       </block>
+      <!-- 연산블럭 -->
       <block type="math_arithmetic">
         <value name="A">
           <shadow type="math_number">
@@ -414,6 +416,7 @@
           </shadow>
         </value>
       </block>
+
       <block type="math_single">
         <value name="NUM">
           <shadow type="math_number">
@@ -444,6 +447,8 @@
         </value>
       </block>
       <block type="math_on_list"></block>
+
+      <!-- 나머지연산 
       <block type="math_modulo">
         <value name="DIVIDEND">
           <shadow type="math_number">
@@ -456,6 +461,7 @@
           </shadow>
         </value>
       </block>
+      -->
       <block type="math_constrain">
         <value name="VALUE">
           <shadow type="math_number">

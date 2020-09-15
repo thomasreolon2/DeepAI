@@ -454,6 +454,7 @@ Blockly.JavaScript.math_arithmetic = function (a) {
             MINUS: [" - ", Blockly.JavaScript.ORDER_SUBTRACTION],
             MULTIPLY: [" * ", Blockly.JavaScript.ORDER_MULTIPLICATION],
             DIVIDE: [" / ", Blockly.JavaScript.ORDER_DIVISION],
+            REMAINDER: [" % ", Blockly.JavaScript.ORDER_MULTIPLICATIVE],
             POWER: [null, Blockly.JavaScript.ORDER_COMMA]
         } [a.getFieldValue("OP")],
         c = b[0];
