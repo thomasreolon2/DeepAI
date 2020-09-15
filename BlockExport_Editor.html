@@ -13,10 +13,10 @@
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
   <!--  Blockly 자체의 설정과 관련된 파일 -->
   <!--test-->
-  <!--pyodide
+  <!-- pyodide -->
       <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
-  -->
-  <script src="http://inhatc.iptime.org:4518/pyodide.js"></script>
+ 
+  <!-- <script src="http://inhatc.iptime.org:4518/pyodide.js"></script> -->
 
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script>
@@ -687,7 +687,7 @@
 
 
     <!--pyodide_test-->
-    <category name="pyodide_test" colour="%{BKY_VARIABLES_HUE}">
+    <category name="머신러닝" colour="%{BKY_VARIABLES_HUE}">
       <block type="printc"></block>
       <block type="nj_array"></block>
       <block type="forp"></block>
@@ -699,6 +699,8 @@
       <block type="labelencoder"></block>
       <!-- <block type="csv3"></block> -->
       <block type="scikit_learn"></block>
+      <block type="train_test_split">
+      </block>
     </category>
 
 
@@ -1002,10 +1004,7 @@
       </block>
     </category>
 
-    <category name="Decision Tree 테스트">
-      <block type="train_test_split">
-      </block>
-    </category>
+
 
   </xml>
 
@@ -1259,7 +1258,7 @@
             csvval[0] = csvval[0].replace('\r', '');
             // row
             var cnt = (csvval.length < 2000) ? csvval.length : 2000;
-            for (var i = 1; i < cnt; i++) {
+            for (var i = 1; i < cnt-1; i++) {
               csvval[i] = csvval[i].replace('\r', '');
               var cols = csvval[i].split(',');
               var fileObject = new Object();

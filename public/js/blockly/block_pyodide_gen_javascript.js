@@ -50,4 +50,11 @@ Blockly.JavaScript['printc'] = function (block) {
     var code = "";
     return code;
   };
-  
+  Blockly.JavaScript['import_lib'] = function (block) {
+    var dropdown_lib = block.getFieldValue('lib');
+    var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable. 
+    var code = '\n';
+    
+    return code;
+};
