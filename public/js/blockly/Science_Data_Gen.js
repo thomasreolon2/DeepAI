@@ -7,7 +7,7 @@ Blockly.Python['val_vi'] = function(block) {
     var code;
     switch(dropdown_val_vi_option){ 
       case "Val_VI_Pandas" :  
-      code = `PN_Visualization = ${value_val_vi_val}.values.tolist()\n`;       
+      code = `PN_Visualization = ${value_val_vi_val}.values.tolist()\n`;        
       break;
     
       case "Val_VI_Numpy" :  
@@ -38,18 +38,15 @@ Blockly.Python['val_vi'] = function(block) {
 
       switch (dropdown_import_libss){    
           case "lib_import_numpy" : 
-              code = `import numpy as ${value_import_libs_val}\n`;     
-              Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_import_libs_val).getId(),"np");
+              code = `import numpy as ${value_import_libs_val}\n`;      
               break;   
             
           case "lib_import_pandas" : 
               code = `import pandas as ${value_import_libs_val}\n`;   
-              Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_import_libs_val).getId(),"pd");
               break;  
             
           case "lib_import_Matplotlib" :
               code = `import matplotlib as ${value_import_libs_val}\n`;   
-              Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_import_libs_val).getId(),"plt");
               break;
       
           case "lib_import_io" :   
@@ -239,11 +236,10 @@ Blockly.Python['val_vi'] = function(block) {
       return code;
     }; 
   
-  
-    ///////////////////////////////////////////////////////////////////
-    //numpy 함수들 아래로 ----->
-    ///////////////////////////////////////////////////////////////////
-  
+    // #####################################################################################################  //
+    // ******************************            numpy 함수들 아래로           ******************************* //
+    // #####################################################################################################  //
+ 
      // np.arry  
     Blockly.Python['np_array'] = function(block) {
       var value_np_array_lib_val = Blockly.Python.valueToCode(block, 'np_array_lib_val', Blockly.Python.ORDER_ATOMIC);
@@ -402,10 +398,113 @@ fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5))\n`;
     };
     
   //matplot2  
+//   Blockly.Python['matplotlib_pre_graph'] = function(block) {
+//     var dropdown_matplotlib_num_location = block.getFieldValue('matplotlib_num_location');
+//     var text_matplotlib_user_xy  = block.getFieldValue('matplotlib_user_xy');
+//     var dropdown_matplotlib_graph_select = block.getFieldValue('matplotlib_graph_select');
+//     var checkbox_matplotlib_line_ox = block.getFieldValue('matplotlib_line_OX') == 'TRUE';
+//     var dropdown_matplotlib_line_select = block.getFieldValue('matplotlib_line_select');
+//     // TODO: Assemble Python into code variable.
+//     DL_Gra = "chcked"; 
+//     var matplot_lo ; 
+//     var matplot_graph; 
+//     var matplot_line; 
+//     switch(dropdown_matplotlib_num_location){ 
+     
+//       case "matplotlib_screen" : 
+//         matplot_lo =`fig, ax_lst = plt.subplots(1,1, figsize=(8,6))
+// ax_lst`;  
+//         break;
+   
+//       case "matplotlib_num_1" : 
+//       matplot_lo =  "ax_lst[0][0]"; 
+//       break;
+  
+//       case "matplotlib_num_2" : 
+//       matplot_lo =  "ax_lst[0][1]"; 
+//       break;
+  
+//       case "matplotlib_num_3" :
+//       matplot_lo = "ax_lst[1][0]"; 
+//       break;   
+  
+//       case "matplotlib_num_4" :
+//       matplot_lo =  "ax_lst[1][1]";  
+//       break;
+  
+//       default:
+//       break;
+//     }
+  
+//     switch(dropdown_matplotlib_graph_select){ 
+//       case "matplotlib_line" :
+//       matplot_graph =  "plot"; 
+//       break;
+  
+//       case "matplotlib_scatter" :
+//       matplot_graph =  "scatter"; 
+//       break;
+   
+//       case "matplotlib_bar" :
+//       matplot_graph = "bar";  
+//       break;  
+  
+//       case "matplotlib_error_bar" :  
+//       matplot_graph =  "errorbar";   
+//       break;
+  
+//       case "matplotlib_box" :  
+//       matplot_graph =  "boxplot";   
+//       break;
+  
+//       case "matplotlib_histogram" :  
+//       matplot_graph =  "hist";    
+//       break;  
+  
+//       default:  
+//       break;
+//     } 
+  
+//     switch(dropdown_matplotlib_line_select){ 
+//       case "matplotlib_line_1" :
+//       matplot_line =  "ro-"; 
+//       break;
+  
+//       case "matplotlib_line_2" :
+//       matplot_line =  "bo";
+//       break;
+  
+//       case "matplotlib_line_3" :
+//       matplot_line = "bo--"; 
+//       break;  
+   
+//       case "matplotlib_line_4" :  
+//       matplot_line =  "kx";   
+//       break;
+  
+//       default:  
+//       break;  
+//     } 
+//   var code ; 
+//   if(checkbox_matplotlib_line_ox == true){
+//      code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy } ,'${matplot_line}' )\n`;
+//   } else if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){ 
+//     code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3 )\n`;  
+//   }else{
+//      code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy } )\n`;      
+//   }   
+//         return code;                 
+//   };  
+  
+  //matplot2 업데이트 
   Blockly.Python['matplotlib_pre_graph'] = function(block) {
+    var value_matplotlib_pre_graph_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_lib_val', Blockly.Python.ORDER_ATOMIC);
     var dropdown_matplotlib_num_location = block.getFieldValue('matplotlib_num_location');
-    var text_matplotlib_user_xy  = block.getFieldValue('matplotlib_user_xy');
+    var text_matplotlib_user_xy = block.getFieldValue('matplotlib_user_xy');
     var dropdown_matplotlib_graph_select = block.getFieldValue('matplotlib_graph_select');
+    var text_matplotlib_pre_graph_title = block.getFieldValue('matplotlib_pre_graph_Title');
+    var text_matplotlib_pre_graph_xlable = block.getFieldValue('matplotlib_pre_graph_Xlable');
+    var text_matplotlib_pre_graph_ylable = block.getFieldValue('matplotlib_pre_graph_Ylable');
     var checkbox_matplotlib_line_ox = block.getFieldValue('matplotlib_line_OX') == 'TRUE';
     var dropdown_matplotlib_line_select = block.getFieldValue('matplotlib_line_select');
     // TODO: Assemble Python into code variable.
@@ -413,27 +512,27 @@ fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5))\n`;
     var matplot_lo ; 
     var matplot_graph; 
     var matplot_line; 
+
     switch(dropdown_matplotlib_num_location){ 
-     
       case "matplotlib_screen" : 
-        matplot_lo =`fig, ax_lst = plt.subplots(1,1, figsize=(8,6))
+      matplot_lo =`fig, ax_lst = plt.subplots(1,1, figsize=(8,6))
 ax_lst`;  
-        break;
+        break; 
    2
       case "matplotlib_num_1" : 
-      matplot_lo =  "ax_lst[0][0]"; 
+      matplot_lo =  `ax_lst[0][0]`; 
       break;
   
       case "matplotlib_num_2" : 
-      matplot_lo =  "ax_lst[0][1]"; 
+      matplot_lo =  `ax_lst[0][1]`; 
       break;
   
       case "matplotlib_num_3" :
-      matplot_lo = "ax_lst[1][0]"; 
+      matplot_lo = `ax_lst[1][0]`; 
       break;   
   
       case "matplotlib_num_4" :
-      matplot_lo =  "ax_lst[1][1]";  
+      matplot_lo =  `ax_lst[1][1]`;  
       break;
   
       default:
@@ -446,7 +545,7 @@ ax_lst`;
       break;
   
       case "matplotlib_scatter" :
-      matplot_graph =  "scatter"; 
+      matplot_graph =  "scatter";  
       break;
    
       case "matplotlib_bar" :
@@ -495,11 +594,45 @@ ax_lst`;
   } else if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){ 
     code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3 )\n`;  
   }else{
-     code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy } )\n`;      
+     code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy } )\n`;       
   }   
-        return code;                 
-  };  
-   
+
+  switch(dropdown_matplotlib_num_location){ 
+    case "matplotlib_screen" : 
+    code =  code.concat(`\nax_lst.set_title(${text_matplotlib_pre_graph_title})
+ax_lst.xlabel(${text_matplotlib_pre_graph_xlable})
+ax_lst.ylabel(${text_matplotlib_pre_graph_ylable})\n`); 
+    break; 
+
+    case "matplotlib_num_1" : 
+    code =  code.concat(`\nax_lst[0][0].set_title(${text_matplotlib_pre_graph_title})
+ax_lst[0][0].xlabel(${text_matplotlib_pre_graph_xlable})
+ax_lst[0][0].ylabel(${text_matplotlib_pre_graph_ylable})\n`); 
+    break;
+ 
+    case "matplotlib_num_2" : 
+    code =  code.concat(`\nax_lst[0][1].set_title(${text_matplotlib_pre_graph_title})
+ax_lst[0][1].xlabel(${text_matplotlib_pre_graph_xlable})
+ax_lst[0][1].ylabel(${text_matplotlib_pre_graph_ylable})\n`); 
+    break;
+
+    case "matplotlib_num_3" :
+    code =  code.concat(`\nax_lst[0][0].set_title(${text_matplotlib_pre_graph_title})
+ax_lst[1][0].xlabel(${text_matplotlib_pre_graph_xlable})
+ax_lst[1][0].ylabel(${text_matplotlib_pre_graph_ylable})\n`); 
+          break;  
+
+    case "matplotlib_num_4" :
+    code =  code.concat(`\nax_lst[0][0].set_title(${text_matplotlib_pre_graph_title})
+ax_lst[1][1].xlabel(${text_matplotlib_pre_graph_xlable})
+ax_lst[1][1].ylabel(${text_matplotlib_pre_graph_ylable})\n`); 
+          break;
+ 
+    default:
+    break;
+  }
+        return code;   
+  };
   
   //matplot3 
   Blockly.Python['matplotlib_graph_end'] = function(block) {

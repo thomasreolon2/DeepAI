@@ -42,6 +42,14 @@
   <!-- <script src="/js/blockly/test.js"></script>
   <script src="/js/blockly/test_gen.js"></script>  -->
 
+  <!-- 임시 -->
+  <script type="text/javascript">
+    // set the pyodide files URL (packages.json, pyodide.asm.data etc)
+    window.languagePluginUrl = "https://pyodide-cdn2.iodide.io/v0.15.0/full/";
+  </script>
+  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script> 
+  <!-- 임시 --> 
+  
 
  
   <!-- 데이타 사이언스 블록 -->
@@ -103,14 +111,14 @@
 
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="./js/utils/plotly.js"></script>
+  <script src="./js/utils/plotly.js"></script> 
 
-  <script>
+  <script> 
     languagePluginLoader.then(() => {
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn']).then(() => {     //
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib']).then(() => {     // , 'scikit-learn'
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image").hide(); // 로딩 끝나면 로딩 창 없앰 
-        $("#runButton").css({'display':"block"});
+        $("#runButton").css({'display':"block"}); 
       });
     });   
   </script>
@@ -198,7 +206,7 @@
         <!-- 블록 지우기 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-0" onClick="demoWorkspace.clear();"
           value="블록 지우기" />
-
+ 
         <!-- 블록 저장 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm " onClick="saveBlock();"
           value="블록 저장" />
@@ -214,7 +222,7 @@
         <script>
           // 블럭만 보이기
           $('#visibleBlock').click(function () {
-            $('#codeDiv').css({
+            $('#codeDiv').css({ 
               'display': "none"
             });
             $('#blocklyDiv').css({
@@ -262,13 +270,13 @@
         </select>
 
         <!-- 실행 버튼 -->
-        <input id="runButton" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;" onClick="runButton()" value="실행" />
+        <input id="runButton" type="button" class="btn btn-outline-success btn-sm mr-1"  onClick="runButton()" value="실행" />  <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
         <!-- 실행 로딩 중 -->
         <div id="loading_image"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div>
         <!-- 결과 버튼 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="clear_result();"
           value="결과 지우기" />
-
+ 
         <!-- 저장 버튼 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="file_save();"
           value="코드저장" />
@@ -706,7 +714,7 @@
            <block type="import_libs">
             <value name="import_libs_val"> 
               <block type="variables_get">     
-                <field name="VAR"></field>   
+                <field name="VAR">np</field>   
               </block> 
             </value> 
           </block>  
@@ -716,7 +724,7 @@
         <!-- numpy.arry  -->
         <block type="np_array"> 
           <value name="np_array_lib_val"> 
-            <block type="variables_get">
+            <block type="variables_get"> 
               <field name="VAR">np</field>
             </block>  
           </value> 
@@ -931,11 +939,19 @@
           </block>   
         <!--  matplot1 시각화 틀    -->
          
-        <block type="matplotlib_pre_graph"></block> <!--  matplot2 시각화 준비      -->
+        <!--  matplot2 시각화 준비      -->
+        <block type="matplotlib_pre_graph">
+          <value name="matplotlib_pre_graph_lib_val">
+            <block type="variables_get">
+              <field name="VAR">plt</field>    
+            </block>    
+          </value>  
+        </block> 
+        <!--  matplot2 시각화 준비      -->
 
         <!--  matplot3 시각화 하기      -->
         <block type="matplotlib_graph_end">
-          <value name="matplotlib_graph_end_lib_val">
+          <value name="matplotlib_graph_end_lib_val"> 
             <block type="variables_get">
               <field name="VAR">plt</field>   
             </block>    
@@ -1506,19 +1522,20 @@
 
       draw_table(Get_CSV_DATA, rows_leng, cols);
 
-
-      test = Get_CSV_DATA;
-      console.log("test", test);
       return test;
     }
 
 
     function draw_table(Get_CSV_DATA) {
 
-
-      // console.log("final_data",Final_Data[0]);
-      // console.log("F_cols",F_cols);
-      // console.log("F_lows",F_lows);
+     var NPTD_Data = Array.from(Array(Get_CSV_DATA[0].length), () => new Array(Get_CSV_DATA.length)); 
+    
+      for(var i = 0; i < Get_CSV_DATA.length;  i++){ 
+        for(var j = 0; j < Get_CSV_DATA[0].length; j++){ 
+          NPTD_Data[j][i] = Get_CSV_DATA[i][j] ;
+        }     
+      } 
+    
 
 
       //--------------------------------- data 속성 ---------------------------// 
@@ -1554,7 +1571,7 @@
           //--------------헤더 설정 ---------------//
 
           cells: {
-            values: Get_CSV_DATA,
+            values: NPTD_Data,
             align: "center",
             line: {
               color: "black",
@@ -1564,7 +1581,7 @@
             font: {
               family: "Arial",
               size: 11,
-              color: ["black"]
+              color: ["black"] 
             }
           }
         }
@@ -1594,7 +1611,6 @@
 
       return new Promise(function (resolve, rejcet) {
 
-
         var Show_CSV_Data = document.createElement("input");
         Show_CSV_Data.setAttribute("id", "Data_S_read_CSV");
         Show_CSV_Data.type = "file";
@@ -1610,22 +1626,16 @@
             reader.onload = function (e) {   //들어오기전에 먼저 실행됨  
               var fileResult = e.target.result;
 
-
               resolve(fileResult);
-
-
             };
           }
-
           reader.readAsText(event.target.files[0], /* optional */ "euc-kr");
           // testing_1 = document.getElementById('Data_S_read_CSV').value;
         }
 
         Show_CSV_Data.click();
 
-
       });
-
     }
 
 
@@ -1639,12 +1649,12 @@
 
 <style>
   #loading_image {
-    position: relative;
+    position: relative; 
     padding-top:1.5vh;
     padding-left:3vh;
     padding-right: 2vh;
     height: 30px;
   }
- 
 </style>
+
 </html>
