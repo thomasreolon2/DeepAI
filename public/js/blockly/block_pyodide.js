@@ -290,6 +290,7 @@ Blockly.Blocks['model_score'] = {
           .appendField("테스트 정답 데이터 :");
       this.setInputsInline(true);
       this.setColour(230);
+      this.setOutput(true, null);
    this.setTooltip("");
    this.setHelpUrl("");
     }
