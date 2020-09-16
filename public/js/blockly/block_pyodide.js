@@ -987,3 +987,41 @@ Blockly.Blocks['list_index'] = {
    this.setHelpUrl("");
     }
   };
+
+  // list_count
+  Blockly.Blocks['list_count'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("count = list :");
+      this.appendValueInput("LIST")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("value :");
+      this.appendValueInput("VALUE")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // list_extend
+  Blockly.Blocks['list_extend'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("extend list :");
+      this.appendValueInput("LIST1")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("list : ");
+      this.appendValueInput("LIST2")
+          .setCheck(null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

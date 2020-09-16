@@ -1524,3 +1524,22 @@ Blockly.Python['list_remove'] = function(block) {
   var code = value_list+'.remove('+value_value+')\n';
   return code;
 };
+
+// count
+Blockly.Python['list_count'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list+'.count('+value_value+')\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+// extend
+Blockly.Python['list_extend'] = function(block) {
+  var value_list1 = Blockly.Python.valueToCode(block, 'LIST1', Blockly.Python.ORDER_ATOMIC);
+  var value_list2 = Blockly.Python.valueToCode(block, 'LIST2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list1+'.extend('+value_list2+')\n';
+  return code;
+};
