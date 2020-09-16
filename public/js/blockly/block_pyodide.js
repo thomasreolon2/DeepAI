@@ -219,6 +219,26 @@ Blockly.Blocks['import_lib'] = {
     }
 };
 
+Blockly.Blocks['import_dataset'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("데이터셋 불러오기 ->")
+          .appendField(new Blockly.FieldDropdown([["보스턴 집 값 데이터 ","load_boston"], ["손글씨 데이터","load_digits"], ["당뇨병 데이터","load_diabetes"], ["붓꽃 데이터","load_iris"], ["와인 품질 데이터","load_wine"]]), "dataset_name");
+      this.appendValueInput("x_data")
+          .setCheck(null)
+          .appendField("특성 데이터:");
+      this.appendValueInput("y_data")
+          .setCheck(null)
+          .appendField("정답 데이터");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
 Blockly.Blocks['train_test_split'] = {
     init: function() {
       this.appendValueInput("x_data")

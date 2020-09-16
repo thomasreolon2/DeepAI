@@ -198,6 +198,15 @@ Blockly.Python['import_lib'] = function (block) {
     return code;
 };
 
+Blockly.Python['import_dataset'] = function(block) {
+    var dropdown_dataset_name = block.getFieldValue('dataset_name');
+    var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
+    var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' +value_x_data + ' = ' + dropdown_dataset_name +'().data\n' + value_y_data + ' = ' + dropdown_dataset_name + '().target\n';
+    return code;
+  };
+
 Blockly.Python['train_test_split'] = function(block) {
     var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
     var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
