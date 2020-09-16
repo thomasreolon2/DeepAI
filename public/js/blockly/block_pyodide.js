@@ -751,14 +751,10 @@ Blockly.Blocks['sklearn_mlp'] = {
   // kMeans
 Blockly.Blocks['k_means'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField("모델 선택")
-          .appendField(new Blockly.FieldVariable("model"), "model")
-          .appendField(" 데이터 : ")
-          .appendField(new Blockly.FieldVariable("data"), "data")
-          .appendField("그룹 개수 ").appendField(new Blockly.FieldTextInput("ex)1,2,3,4"), "cnt")
-          .appendField("라벨 : ")
-          .appendField(new Blockly.FieldVariable("label"), "label");
+        this.appendValueInput("model").setCheck(null).appendField("모델 :");
+        this.appendValueInput("data").setCheck(null).appendField("데이터 :");
+        this.appendDummyInput().appendField("그룹 개수 ").appendField(new Blockly.FieldTextInput("ex)1,2,3,4"), "cnt")
+        this.appendValueInput("label").setCheck(null).appendField("라벨 :");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
