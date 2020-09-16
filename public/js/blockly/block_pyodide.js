@@ -729,7 +729,7 @@ Blockly.Blocks['for_range'] = {
 // 사이킷런 MLP 블록 
 Blockly.Blocks['sklearn_mlp'] = {
     init: function() {
-      this.appendValueInput("sklearn_mlp_lib_val")
+      this.appendValueInput("sklearn_mlp_lib_val") 
           .setCheck(null)
           .appendField("변수명 :");
       this.appendDummyInput()
@@ -754,6 +754,7 @@ Blockly.Blocks['sklearn_mlp'] = {
    this.setHelpUrl("");
     } 
   };
+
 
   //MLP fit
 Blockly.Blocks['sklearn_mlp_fit'] = {

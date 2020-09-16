@@ -55,6 +55,15 @@ Blockly.JavaScript['val_vi'] = function(block) {
     return code;
   };  
 
+  //데이터 CSV로 저장
+   Blockly.JavaScript['data_to_csv'] = function(block) {
+    var value_data_to_csv_dataval = Blockly.JavaScript.valueToCode(block, 'Data_To_CSV_DataVal', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_data_to_csv_name = Blockly.JavaScript.valueToCode(block, 'Data_To_CSV_name', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = `value_data_to_csv_dataval = pyodide.pyimport('value_data_to_csv_dataval');\nvalue_data_to_csv_name = pyodide.pyimport('value_data_to_csv_name');\nexportToCsv(value_data_to_csv_dataval,value_data_to_csv_name) `;
+    return code;
+  };
+
    // np.arry  
    Blockly.JavaScript['np_array'] = function(block) {
     var value_np_array_lib_val = Blockly.Python.valueToCode(block, 'np_array_lib_val', Blockly.Python.ORDER_ATOMIC);

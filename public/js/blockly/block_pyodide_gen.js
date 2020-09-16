@@ -385,10 +385,10 @@ Blockly.Python['sklearn_mlp'] = function(block) {
     var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random_state');
     // TODO: Assemble Python into code variable.
     var get_sklearn_mlp_activation;
-    var get_sklearn_mlp_optimizer;
+    var get_sklearn_mlp_optimizer; 
 
     switch(dropdown_sklearn_mlp_activation_option){ 
-        case "sklearn_MLP_activation _identity" :  
+        case "sklearn_MLP_activation_identity" :  
         get_sklearn_mlp_activation = `identity`;        
         break;
       
@@ -405,12 +405,12 @@ Blockly.Python['sklearn_mlp'] = function(block) {
         break;
      
         default: 
-        break;  
+        break;   
       }   
       
       switch(dropdown_sklearn_mlp_optimizer_option){ 
         case "sklearn_MLP_Optimizer_Lbfgs" :  
-        get_sklearn_mlp_optimizer = `Lbfgs`;        
+        get_sklearn_mlp_optimizer = `lbfgs`;         
         break;
       
         case "sklearn_MLP_Optimizer_SGD" :  
@@ -424,19 +424,20 @@ Blockly.Python['sklearn_mlp'] = function(block) {
       
         default: 
         break; 
-      }
+      } 
+ 
 
-
-    var code = `from sklearn.neural_network import MLPClassifier
-${value_sklearn_mlp_lib_val} = MLPClassifier( hidden_layer_sizes = (${text_sklearn_mlp_hidden_layer_sizes_}),
+    var code = `from sklearn.neural_network import MLPClassifier\n
+${value_sklearn_mlp_lib_val} = MLPClassifier( 
+hidden_layer_sizes = (${text_sklearn_mlp_hidden_layer_sizes_}),
 activation = '${get_sklearn_mlp_activation}',
 solver = '${get_sklearn_mlp_optimizer}',
 learning_rate_init = ${text_sklearn_mlp_learning_rate}, 
 max_iter = ${text_sklearn_mlp_max_iter}, 
 random_state = ${text_sklearn_mlp_random_state} )\n`; 
     // TODO: Change ORDER_NONE to the correct strength. 
-    return [code, Blockly.Python.ORDER_NONE];  
-  };
+    return code;  
+  }; 
 
 
   //MLP fit 

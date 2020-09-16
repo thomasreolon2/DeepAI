@@ -88,14 +88,14 @@ Blockly.Python['val_vi'] = function(block) {
       sklearn_from = `sklearn.linear_model`;               
       break;   
   
-      case "lib_from_linear_model" : 
-      sklearn_from = `sklearn.linear_model`;           
-      break; 
-  
+      case "lib_from_neural_network_model" :  
+      sklearn_from = `sklearn.neural_network`;           
+      break;  
+       
       case "lib_from_naive_bayes" : 
       sklearn_from = `sklearn.naive_bayes`;           
       break;   
-  
+       
       case "lib_from_ensemble" : 
       sklearn_from = `sklearn.ensemble`;           
       break; 
@@ -105,9 +105,7 @@ Blockly.Python['val_vi'] = function(block) {
     }  
   
     switch (dropdown_lib_import_a_option){
-      case "lib_import_sklearn_ datasets" : 
-      sklearn_import = `datasets`;    
-      break;      
+         
   
       case "lib_import_sklearn_ make_classification" :
       sklearn_import = `make_classification`;     
@@ -123,6 +121,10 @@ Blockly.Python['val_vi'] = function(block) {
   
       case "lib_import_sklearn_LogisticRegression" : 
       sklearn_import = `LogisticRegression`;           
+      break;   
+
+      case "lib_import_sklearn_MLPClassifier" :  
+      sklearn_import = `MLPClassifier`;           
       break;   
   
       case "lib_import_sklearn_GaussianNB" : 
@@ -175,6 +177,18 @@ Blockly.Python['val_vi'] = function(block) {
     var code =`from ${text_lib_import_name_from} import ${text_lib_import2}\n`;   
     return code;
   };  
+
+  //데이터 CSV로 저장
+  Blockly.Python['data_to_csv'] = function(block) {
+    var value_data_to_csv_dataval = Blockly.Python.valueToCode(block, 'Data_To_CSV_DataVal', Blockly.Python.ORDER_ATOMIC);
+    var value_data_to_csv_name = Blockly.Python.valueToCode(block, 'Data_To_CSV_name', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+  var code = `value_data_to_csv_dataval = ${value_data_to_csv_dataval} #값 저장용
+value_data_to_csv_name = ${value_data_to_csv_name} #값 저장용
+${value_data_to_csv_dataval}.to_csv("${value_data_to_csv_name}")\n`; 
+    return code; //변수명,데이터 ;
+    return code;
+  };
     
   
   //print 하기

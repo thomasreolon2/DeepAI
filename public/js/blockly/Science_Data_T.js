@@ -103,6 +103,10 @@ Blockly.defineBlocksWithJsonArray(
           "lib_from_linear_model"
         ],
         [
+          "sklearn.neural_network",
+          "lib_from_neural_network_model"
+        ],
+        [
           "sklearn.naive_bayes",
           "lib_from_naive_bayes"
         ],
@@ -117,14 +121,6 @@ Blockly.defineBlocksWithJsonArray(
       "name": "lib_import_a_option",
       "options": [
         [
-          "datasets",
-          "lib_import_sklearn_ datasets"
-        ],
-        [
-          "make_classification",
-          "lib_import_sklearn_ make_classification"
-        ],
-        [
           "train_test_split",
           "lib_import_sklearn_ train_test_split"
         ],
@@ -136,6 +132,14 @@ Blockly.defineBlocksWithJsonArray(
           "LogisticRegression",
           "lib_import_sklearn_LogisticRegression"
         ],
+        [
+          "make_classification",
+          "lib_import_sklearn_ make_classification"
+        ], 
+        [
+          "MLPClassifier",
+          "lib_import_sklearn_MLPClassifier"
+        ], 
         [
           "GaussianNB",
           "lib_import_sklearn_GaussianNB"
@@ -162,6 +166,30 @@ Blockly.defineBlocksWithJsonArray(
   "tooltip": "",
   "helpUrl": ""
 },  
+//CSV 파일로 저장  
+{
+  "type": "data_to_csv",
+  "message0": "%1 .to_csv ( %2 %3 )",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "Data_To_CSV_DataVal"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "Data_To_CSV_name"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 125,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
   // 라이브러리 단일 임포트 부분    
   {
@@ -212,8 +240,8 @@ Blockly.defineBlocksWithJsonArray(
         "name": "Lib_import_name_from",
         "text": ""
       },
-      {
-        "type": "field_input",
+      { 
+        "type": "field_input",  
         "name": "Lib_import2",
         "text": ""
       }
@@ -344,7 +372,7 @@ Blockly.defineBlocksWithJsonArray(
         "type": "input_dummy"
       },
       {
-        "type": "input_value",
+        "type": "input_value", 
         "name": "Arry_Minus_first"
       },
       {
@@ -362,7 +390,7 @@ Blockly.defineBlocksWithJsonArray(
     // 배열 np.arry 
     {
       "type": "np_array",
-      "message0": "%1 np.arry ( 넘파이 배열 ) %2",
+      "message0": "%1 .arry ( 넘파이 배열 ) %2",
       "args0": [
         {
           "type": "input_value",
@@ -382,7 +410,7 @@ Blockly.defineBlocksWithJsonArray(
   // numpy 함수 zeros
   {
     "type": "numpy_zeros",
-    "message0": "%1 np.zeros ( %2 , %3  ) dtype 사용여부(정수)  %4",
+    "message0": "%1 .zeros ( %2 , %3  ) dtype 사용여부(정수)  %4",
     "args0": [
       {
         "type": "input_value",
@@ -411,7 +439,7 @@ Blockly.defineBlocksWithJsonArray(
   // np.full 배열 생성 및 , 채워질 값 
   {
     "type": "numpy_full",
-    "message0": "%1 np.full (( %2 , %3 ), 채워질 값: %4 )",
+    "message0": "%1 .full (( %2 , %3 ), 채워질 값: %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -439,7 +467,7 @@ Blockly.defineBlocksWithJsonArray(
   // eye 함수 대각선으로 1채우기 
   {
     "type": "numpy_eye",
-    "message0": "%1 np.eye ( %2 , 인덱스 위치 = %3 )",
+    "message0": "%1 .eye ( %2 , 인덱스 위치 = %3 )",
     "args0": [
       {
         "type": "input_value",
@@ -463,7 +491,7 @@ Blockly.defineBlocksWithJsonArray(
   // np.max_min  최대 값,최소 값 찾기 
   {
     "type": "numpy_max_min",
-    "message0": "%1 np.  %2 ( %3 )",
+    "message0": "%1 .  %2 ( %3 )",
     "args0": [
       {
         "type": "input_value",
@@ -497,7 +525,7 @@ Blockly.defineBlocksWithJsonArray(
   //np.shape  
   {
     "type": "numpy_shape",
-    "message0": "%1 np.shape( 행렬 차원 반환   %2 )",
+    "message0": "%1 .shape( 행렬 차원 반환   %2 )",
     "args0": [
       {
         "type": "input_value", 
@@ -517,7 +545,7 @@ Blockly.defineBlocksWithJsonArray(
   // reshpae 행렬 차원 변경 
   {
     "type": "numpy_reshape",
-    "message0": "%1 np.reshape ( 행렬 차원 변경   %2 , %3 )",
+    "message0": "%1 .reshape ( 행렬 차원 변경   %2 , %3 )",
     "args0": [
       {
         "type": "input_value",
@@ -541,7 +569,7 @@ Blockly.defineBlocksWithJsonArray(
   // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
   {
     "type": "numpy_random_rand",
-    "message0": "%1 np.random.   %2 [ 정규분포 | 정수 ] 난수 생성 (   %3 , %4 )",
+    "message0": "%1 .random.   %2 [ 정규분포 | 정수 ] 난수 생성 (   %3 , %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -579,8 +607,8 @@ Blockly.defineBlocksWithJsonArray(
     // 지수 exp
     {
       "type": "numpy_exp",
-      "message0": "%1 np.exp (   %2 )",
-      "args0": [
+      "message0": "%1 .exp (   %2 )",
+      "args0": [ 
         {
           "type": "input_value",
           "name": "numpy_exp_lib_val"
@@ -599,7 +627,7 @@ Blockly.defineBlocksWithJsonArray(
     //np.append
     {
       "type": "np_append",
-      "message0": "%1 np.append ( 요소 추가 ) ( %2 , %3  )",
+      "message0": "%1 .append ( 요소 추가 ) ( %2 , %3  )",
       "args0": [
         {
           "type": "input_value",

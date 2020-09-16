@@ -14,10 +14,10 @@
   <!--  Blockly 자체의 설정과 관련된 파일 -->
   <!--test-->
   <!-- pyodide -->
-      <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+      <!-- <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script> -->
  
   <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
-
+ 
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script> 
   <script src="/js/blockly/javascript_compressed.js"></script>
@@ -40,10 +40,10 @@
   <script src="/js/blockly/test_gen.js"></script>  -->
 
   <!-- 임시 -->
-  <!-- <script type="text/javascript">
+  <script type="text/javascript">
     window.languagePluginUrl = "https://pyodide-cdn2.iodide.io/v0.15.0/full/";
   </script>
-  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>   -->
+  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>  
   <!-- 임시 --> 
   
 
@@ -111,7 +111,7 @@
 
   <script> 
     languagePluginLoader.then(() => {
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib','scikit-learn']).then(() => {     // , 'scikit-learn'
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib']).then(() => {     // , 'scikit-learn'
 
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image").hide(); // 로딩 끝나면 로딩 창 없앰 
@@ -267,9 +267,9 @@
         </select>
 
         <!-- 실행 버튼 -->
-        <input id="runButton" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;" onClick="runButton()" value="실행" />  <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
+        <input id="runButton" type="button" class="btn btn-outline-success btn-sm mr-1"  onClick="runButton()" value="실행" />  <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
         <!-- 실행 로딩 중 -->
-        <div id="loading_image"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div>
+        <!-- <div id="loading_image"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div> -->
         <!-- 결과 버튼 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="clear_result();"
           value="결과 지우기" />
@@ -733,6 +733,7 @@
           </block>  
           <!--  import np,np,plt,io,base64  -->
 
+          <block type="data_to_csv"></block>
 
         <!-- numpy.arry  -->
         <block type="np_array"> 
@@ -823,7 +824,7 @@
           <value name="numpy_exp_lib_val"> 
             <block type="variables_get"> 
               <field name="VAR">np</field>  
-            </block>   
+            </block>    
           </value> 
         </block> 
         <!--  np.exp  -->
@@ -891,6 +892,7 @@
             </block>
           </value>
         </block>
+
         <!-- 2020-09-09 양승국 -->
         <block type="pandas_datalist"></block>
         <block type="pandas_dataframe">
@@ -921,7 +923,7 @@
         <block type="selec_value_all"></block>
         <block type="iloc_range"></block>
 
-        <block type="pandas_print"></block>
+        <!-- <block type="pandas_print"></block> -->
         <block type="normal"></block>
         <block type="select_row_delete"></block>
         <block type="select_column_delete"></block>
@@ -931,7 +933,7 @@
         <block type="select_row_list"></block>
         <block type="select_column_list"></block>
         <block type="row_count"></block>
-        <block type="column_count"></block>
+        <!-- <block type="column_count"></block> -->
         <!-- <block type="image_list"></block> -->
       </category>
       <!-- ************************************************** ************************* *************************  -->
@@ -1641,13 +1643,82 @@
 
 
 
+function exportToCsv(filename, rows) {
+
+
+    var processRow = function (row) {
+
+        var finalVal = '';
+
+        for (var j = 0; j < row.length; j++) {
+
+            var innerValue = row[j] === null ? '' : row[j].toString();
+
+            if (row[j] instanceof Date) {
+                innerValue = row[j].toLocaleString();
+            };
+
+            var result = innerValue.replace(/"/g, '""');
+
+            if (result.search(/("|,|\n)/g) >= 0) 
+                result = '"' + result + '"';
+            
+            if (j > 0) 
+                finalVal += ',';
+                finalVal += result;
+        }
+
+        return finalVal + '\n';
+    };
+
+    var csvFile = '';
+
+    for (var i = 0; i < rows.length; i++) {
+        csvFile += processRow(rows[i]);
+    }
+
+
+    var blob = new Blob([csvFile], {type: 'text/csv;charset=utf-8;'});
+
+    if (navigator.msSaveBlob) { // IE 10+
+        navigator.msSaveBlob(blob, filename);
+    } else {
+        var link = document.create
+        Element("a");
+
+        if (link.download !== undefined) { // feature detection
+
+            // Browsers that support HTML5 download attribute
+
+            var url = URL.createObjectURL(blob);
+
+            link.setAttribute("href", url);
+            link.setAttribute("download", filename);
+            link.style.visibility = 'hidden';
+
+            document.body.appendChild(link);
+
+            link.click();
+
+            document.body.removeChild(link);
+
+        }
+
+    }
+
+}
+
+
+
+
+
 
   </script>
 
   <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
 </body>
 
-<style>
+<!-- <style>
   #loading_image {
     position: relative; 
     padding-top:1.5vh;
@@ -1655,6 +1726,6 @@
     padding-right: 2vh;
     height: 30px;
   }
-</style>
+</style> -->
 
 </html>
