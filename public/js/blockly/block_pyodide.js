@@ -808,3 +808,67 @@ this.setTooltip("");
 this.setHelpUrl("");
 }
 };
+
+// int 형 변환
+Blockly.Blocks['conver_int'] = {
+init: function() {
+    this.appendValueInput("VALUE")
+        .setCheck(null)
+        .appendField("int (");
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+this.setTooltip("");
+this.setHelpUrl("");
+}
+};
+
+// float 형 변환
+Blockly.Blocks['conver_float'] = {
+init: function() {
+    this.appendValueInput("VALUE")
+        .setCheck(null)
+        .appendField("float (");
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+this.setTooltip("");
+this.setHelpUrl("");
+}
+};
+
+// str 형 변환
+Blockly.Blocks['conver_str'] = {
+init: function() {
+    this.appendValueInput("VALUE")
+        .setCheck(null)
+        .appendField("str (");
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+this.setTooltip("");
+this.setHelpUrl("");
+}
+};
+
+// bool 형 변환
+Blockly.Blocks['conver_bool'] = {
+init: function() {
+    this.appendValueInput("VALUE")
+        .setCheck(null)
+        .appendField("bool (");
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+this.setTooltip("");
+this.setHelpUrl("");
+}
+};
