@@ -14,7 +14,7 @@
   <!--  Blockly 자체의 설정과 관련된 파일 -->
   <!--test-->
   <!-- pyodide -->
-      <!-- <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script> -->
+      <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
  
   <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
  
@@ -22,7 +22,7 @@
   <script src="/js/blockly/blockly_compressed.js"></script> 
   <script src="/js/blockly/javascript_compressed.js"></script>
   <script src="/js/blockly/python_compressed.js"></script>
-  <script src="/js/blockly/blocks_compressed.js"></script>
+  <script src="/js/blockly/blocks_compressed.js"></script> 
   <!--미리 정의되어 있는 기본 블록에 대한 설정을 모두 담고 있음.-->
   <script src="/js/blockly/block_pyodide.js"></script>
 
@@ -40,10 +40,10 @@
   <script src="/js/blockly/test_gen.js"></script>  -->
 
   <!-- 임시 -->
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     window.languagePluginUrl = "https://pyodide-cdn2.iodide.io/v0.15.0/full/";
   </script>
-  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>  
+  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>   -->
   <!-- 임시 --> 
   
 
@@ -267,9 +267,9 @@
         </select>
 
         <!-- 실행 버튼 -->
-        <input id="runButton" type="button" class="btn btn-outline-success btn-sm mr-1"  onClick="runButton()" value="실행" />  <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
+        <input id="runButton" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;" onClick="runButton()" value="실행" />  <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
         <!-- 실행 로딩 중 -->
-        <!-- <div id="loading_image"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div> -->
+        <div id="loading_image"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div>
         <!-- 결과 버튼 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="clear_result();"
           value="결과 지우기" />
@@ -1749,7 +1749,7 @@ function exportToCsv(filename, rows) {
   <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
 </body>
 
-<!-- <style>
+<style>
   #loading_image {
     position: relative; 
     padding-top:1.5vh;
@@ -1757,6 +1757,6 @@ function exportToCsv(filename, rows) {
     padding-right: 2vh;
     height: 30px;
   }
-</style> -->
+</style>
 
 </html>
