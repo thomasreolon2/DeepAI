@@ -136,8 +136,12 @@ Blockly.Python['csv3'] = function (block) {
                     }
                 }
                 tempIdx = 0;
-                x = x + "[" + x_train[i] + "],";
-                y = y + "[" + y_train[i] + "],";
+                x = x + "[" + x_train[i] + "]";
+                y = y + "[" + y_train[i] + "]";
+                if (i != x_train.length - 1) {
+                    x = x + ",";
+                    y = y + ",";
+                }
             }
 
         }
