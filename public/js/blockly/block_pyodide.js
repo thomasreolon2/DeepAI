@@ -764,3 +764,18 @@ Blockly.Blocks['k_means'] = {
    this.setHelpUrl("");
     }
   };
+
+// return 블럭
+Blockly.Blocks['py_return'] = {
+init: function() {
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("return");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+this.setTooltip("");
+this.setHelpUrl("");
+}
+};

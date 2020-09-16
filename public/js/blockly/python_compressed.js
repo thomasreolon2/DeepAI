@@ -1431,3 +1431,10 @@ Blockly.Python.variables_set = function (a) {
 Blockly.Python.variablesDynamic = {};
 Blockly.Python.variables_get_dynamic = Blockly.Python.variables_get;
 Blockly.Python.variables_set_dynamic = Blockly.Python.variables_set;
+
+Blockly.Python['py_return'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = "return "+value_name;
+  return code;
+};
