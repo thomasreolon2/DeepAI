@@ -243,7 +243,7 @@ Blockly.Blocks['train_test_split'] = {
     init: function() {
       this.appendValueInput("x_data")
           .setCheck(null)
-          .appendField("활용할 학습 데이터 :");
+          .appendField("활용할 특성 데이터 :");
       this.appendValueInput("y_data")
           .setCheck(null)
           .appendField("활용할 정답 데이터 :");
@@ -290,6 +290,7 @@ Blockly.Blocks['model_score'] = {
           .appendField("테스트 정답 데이터 :");
       this.setInputsInline(true);
       this.setColour(230);
+      this.setOutput(true, null);
    this.setTooltip("");
    this.setHelpUrl("");
     }
