@@ -90,3 +90,28 @@ Blockly.JavaScript['sklearn_mlp'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+
+// 사이킷런 MLP 블록 
+Blockly.JavaScript['sklearn_mlp'] = function(block) {
+  var value_sklearn_mlp_lib_val = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_sklearn_mlp_hidden_layer_sizes_ = block.getFieldValue('sklearn_mlp_hidden_layer_sizes ');
+  var dropdown_sklearn_mlp_activation_option = block.getFieldValue('sklearn_mlp_activation_Option');
+  var dropdown_sklearn_mlp_optimizer_option = block.getFieldValue('sklearn_MLP_Optimizer_Option');
+  var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning_rate');
+  var text_sklearn_mlp_max_iter = block.getFieldValue('sklearn_MLP_Max_iter');
+  var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random_state');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' '; 
+  return code;
+};
+  
+//MLP fit
+Blockly.JavaScript['sklearn_mlp_fit'] = function(block) {
+  var value_sklearn_mlp_fit_lib_var = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_lib_var', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_sklearn_mlp_fit_x = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_sklearn_mlp_fit_y = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' ';
+  return code; 
+}; 
