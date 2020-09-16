@@ -509,11 +509,13 @@
     <category name="문자 (Text)" colour="%{BKY_TEXTS_HUE}">
       <block type="text"></block>
       <block type="text_join"></block>
+      <!--
       <block type="text_append">
         <value name="TEXT">
           <shadow type="text"></shadow>
         </value>
       </block>
+      -->
       <block type="text_length">
         <value name="VALUE">
           <shadow type="text">
@@ -575,9 +577,12 @@
           </shadow>
         </value>
       </block>
+      
       <!-- print -->
       <block type="printc"></block>
     </category>
+
+    <!-- list -->
     <category name="배열 (Array)" colour="%{BKY_LISTS_HUE}">
       <block type="lists_create_with">
         <mutation items="0"></mutation>
@@ -627,8 +632,8 @@
           </shadow>
         </value>
       </block>
-      <!-- <block type="lists_sort"></block>
-      <block type="tfarraylen"></block> -->
+      <!-- <block type="lists_sort"></block> -->
+      <!-- <block type="tfarraylen"></block>  -->
       <block type="sump"></block>
        <!-- 새 블록  딕셔너리 -->
        <block type="dict">
@@ -658,7 +663,33 @@
         </value>
       </block>
 
+      <!-- append -->
+      <block type="list_append"></block>
+
+      <!-- append -->
+      <block type="list_sort"></block>
+
+      <!-- reserve -->
+      <block type="list_reverse"></block>
+
+      <!-- index -->
+      <block type="list_index"></block>
+
+      <!-- insert -->
+      <block type="list_insert"></block>
+
+      <!-- remove -->
+      <block type="list_remove"></block>
+
+      <!-- count -->
+      <block type="list_count"></block>
+
+      <!-- extend -->
+      <block type="list_extend"></block>
+
+      <!-- return -->
       <block type="py_return"></block>
+
     </category>
     <!-- <category name="색상" colour=" %{BKY_COLOUR_HUE}">
       <block type="colour_picker"></block>

@@ -1026,6 +1026,7 @@ Blockly.Blocks.loops = {};
 Blockly.Constants.Loops = {};
 Blockly.Constants.Loops.HUE = 120;
 Blockly.defineBlocksWithJsonArray([
+  // 파이썬 for 문
   {
     "type": "py_for",
     "message0": "for each item %1 in list %2 : %3 %4",

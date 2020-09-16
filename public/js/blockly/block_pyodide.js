@@ -873,3 +873,156 @@ this.setTooltip("");
 this.setHelpUrl("");
 }
 };
+
+// list_append
+Blockly.Blocks['list_append'] = {
+init: function() {
+    this.appendValueInput("LIST")
+        .setCheck(null)
+        .appendField("to list");
+    this.appendValueInput("value")
+        .setCheck(null)
+        .appendField("append (");
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// list_sort
+Blockly.Blocks['list_sort'] = {
+init: function() {
+    this.appendDummyInput()
+        .appendField("list sort");
+    this.appendValueInput("LIST")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+this.setTooltip("");
+this.setHelpUrl("");
+}
+};
+
+// list_reverse
+Blockly.Blocks['list_reverse'] = {
+init: function() {
+    this.appendDummyInput()
+        .appendField("list reverse");
+    this.appendValueInput("LIST")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+this.setTooltip("");
+this.setHelpUrl("");
+}
+};
+
+// list_index
+Blockly.Blocks['list_index'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("list");
+      this.appendValueInput("LIST")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("index :");
+      this.appendValueInput("INDEX")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // list_insert
+  Blockly.Blocks['list_insert'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("insert = list :");
+      this.appendValueInput("LIST")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("index : ");
+      this.appendValueInput("INDEX")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("value :");
+      this.appendValueInput("VALUE")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // list_remove
+  Blockly.Blocks['list_remove'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("remove = list :");
+      this.appendValueInput("LIST")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("value :");
+      this.appendValueInput("VALUE")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // list_count
+  Blockly.Blocks['list_count'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("count = list :");
+      this.appendValueInput("LIST")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("value :");
+      this.appendValueInput("VALUE")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // list_extend
+  Blockly.Blocks['list_extend'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("extend list :");
+      this.appendValueInput("LIST1")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("list : ");
+      this.appendValueInput("LIST2")
+          .setCheck(null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
