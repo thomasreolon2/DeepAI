@@ -1027,6 +1027,33 @@ Blockly.Constants.Loops = {};
 Blockly.Constants.Loops.HUE = 120;
 Blockly.defineBlocksWithJsonArray([
   {
+    "type": "py_for",
+    "message0": "for each item %1 in list %2 : %3 %4",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "item"
+      },
+      {
+        "type": "input_value",
+        "name": "list"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "value"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 230,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
     type: "controls_repeat_ext",
     message0: "%{BKY_CONTROLS_REPEAT_TITLE}",
     args0: [
