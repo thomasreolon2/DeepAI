@@ -702,3 +702,28 @@ Blockly.Blocks['for_range'] = {
         this.setHelpUrl("");
     }
 };
+
+// 사이킷런 MLP 블록 
+Blockly.Blocks['sklearn_mlp'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(" MLP 분류기 (")
+          .appendField("은닉층 개수 :")
+          .appendField(new Blockly.FieldTextInput(""), "sklearn_MLP_hidden_size")
+          .appendField("활성화 함수 :")
+          .appendField(new Blockly.FieldDropdown([["Identity","sklearn_MLP_activation _identity"], ["Logistic","sklearn_MLP_activation_logistic"], ["Tanh","sklearn_MLP_activation_tanh"], ["Relu","sklearn_MLP_activation_relu"]]), "sklearn_MLP_activation _Option")
+          .appendField("최적화 함수 :")
+          .appendField(new Blockly.FieldDropdown([["Lbfgs","sklearn_MLP_Optimizer_Lbfgs"], ["SGD","sklearn_MLP_Optimizer_SGD"], ["Adam","sklearn_MLP_Optimizer_Adam"]]), "sklearn_MLP_Optimizer_Option")
+          .appendField("Max iter :")
+          .appendField(new Blockly.FieldTextInput(""), "sklearn_MLP_Max iter")
+          .appendField("학습률 :")
+          .appendField(new Blockly.FieldTextInput(""), "sklearn_MLP_learning rate")
+          .appendField("random state :")
+          .appendField(new Blockly.FieldTextInput(""), "sklearn_MLP_random state");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230); 
+   this.setTooltip("");
+   this.setHelpUrl("");
+    } 
+  };  

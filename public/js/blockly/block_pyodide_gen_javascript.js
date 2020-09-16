@@ -75,3 +75,18 @@ Blockly.JavaScript['scikit_learn'] = function (block) {
   var code="\n";
   return code;
 };
+
+
+// 사이킷런 MLP 블록 
+Blockly.JavaScript['sklearn_mlp'] = function(block) { 
+  var text_sklearn_mlp_hidden_size = block.getFieldValue('sklearn_MLP_hidden_size');
+  var dropdown_sklearn_mlp_activation__option = block.getFieldValue('sklearn_MLP_activation _Option');
+  var dropdown_sklearn_mlp_optimizer_option = block.getFieldValue('sklearn_MLP_Optimizer_Option');
+  var text_sklearn_mlp_max_iter = block.getFieldValue('sklearn_MLP_Max iter');
+  var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning rate');
+  var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random state');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' ';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};

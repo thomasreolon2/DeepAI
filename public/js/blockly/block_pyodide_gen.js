@@ -359,3 +359,67 @@ Blockly.Python['for_range'] = function (block) {
     var code = 'range(' + range1 + ')';
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+
+// 사이킷런 MLP 블록
+Blockly.Python['sklearn_mlp'] = function(block) {
+    var text_sklearn_mlp_hidden_size = block.getFieldValue('sklearn_MLP_hidden_size');
+    var dropdown_sklearn_mlp_activation__option = block.getFieldValue('sklearn_MLP_activation _Option');
+    var dropdown_sklearn_mlp_optimizer_option = block.getFieldValue('sklearn_MLP_Optimizer_Option');
+    var text_sklearn_mlp_max_iter = block.getFieldValue('sklearn_MLP_Max iter');
+    var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning rate');
+    var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random state');
+    // TODO: Assemble Python into code variable.
+    var get_sklearn_mlp_activation;
+    var get_sklearn_mlp_optimizer;
+
+    switch(dropdown_sklearn_mlp_activation__option){ 
+        case "sklearn_MLP_activation _identity" :  
+        get_sklearn_mlp_activation = `Identity`;        
+        break;
+      
+        case "sklearn_MLP_activation_logistic" :  
+        get_sklearn_mlp_activation = `Logistic`;           
+        break;
+    
+        case "sklearn_MLP_activation_tanh" :   
+        get_sklearn_mlp_activation = `Tanh`;            
+        break;
+
+        case "sklearn_MLP_activation_relu" :   
+        get_sklearn_mlp_activation = `Relu`;            
+        break;
+     
+        default: 
+        break; 
+      }   
+      
+      switch(dropdown_sklearn_mlp_optimizer_option){ 
+        case "sklearn_MLP_Optimizer_Lbfgs" :  
+        get_sklearn_mlp_optimizer = `Lbfgs`;        
+        break;
+      
+        case "sklearn_MLP_Optimizer_SGD" :  
+        get_sklearn_mlp_optimizer = `SGD`;           
+        break;
+    
+        case "sklearn_MLP_Optimizer_Adam" :   
+        get_sklearn_mlp_optimizer = `Adam`;            
+        break;
+
+      
+        default: 
+        break; 
+      }
+
+
+    var code = `hidden_layer_sizes = (${text_sklearn_mlp_hidden_size})
+activation = ${get_sklearn_mlp_activation}
+solver = ${get_sklearn_mlp_optimizer}
+learning_rate_init = ${text_sklearn_mlp_learning_rate}
+max_iter = ${text_sklearn_mlp_max_iter}
+random_state = ${text_sklearn_mlp_random_state}\n`; 
+    // TODO: Change ORDER_NONE to the correct strength. 
+    return [code, Blockly.Python.ORDER_NONE]; 
+  };
+ 
