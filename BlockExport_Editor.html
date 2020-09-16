@@ -354,8 +354,8 @@
 
   <!-- Toolbox 정의 -->
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display: none">
+    <category name="변수 (Variable)" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="논리 (Logic)" colour="%{BKY_LOGIC_HUE}">
-      <!-- <block type="if_c"></block> -->
       <block type="controls_if"></block> <!-- if -->
       <block type="controls_ifelse"></block><!-- if_else -->
       <block type="logic_compare"></block>
@@ -363,10 +363,12 @@
       <block type="logic_negate"></block>
       <block type="logic_boolean"></block>
       <block type="logic_null"></block>
-      <block type="logic_ternary"></block>
+      <!-- <block type="logic_ternary"></block> 이거 뭐임? -->
     </category>
     <category name="반복 (Repeat)" colour="%{BKY_LOOPS_HUE}">
-      <!-- <block type="for_c"></block> -->
+      <!-- for 문 -->
+      <block type="py_for"></block>
+      <!-- 카운트 있는 for문-->
       <block type="controls_repeat_ext">
         <value name="TIMES">
           <shadow type="math_number">
@@ -374,22 +376,18 @@
           </shadow>
         </value>
       </block>
+      <!-- while 문 -->
       <block type="controls_whileUntil"></block>
+      <!-- for 문 ?-->
       <block type="controls_for">
         <value name="FROM">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
+ 
         </value>
         <value name="TO">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
+
         </value>
         <value name="BY">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
+
         </value>
       </block>
       <block type="controls_forEach"></block>
@@ -445,21 +443,6 @@
         </value>
       </block>
       <block type="math_on_list"></block>
-
-      <!-- 나머지연산 
-      <block type="math_modulo">
-        <value name="DIVIDEND">
-          <shadow type="math_number">
-            <field name="NUM">64</field>
-          </shadow>
-        </value>
-        <value name="DIVISOR">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
-      </block>
-      -->
       <block type="math_constrain">
         <value name="VALUE">
           <shadow type="math_number">
@@ -503,12 +486,18 @@
         </value>
       </block>
       <!-- <block type="mexp"></block> -->
-
     </category>
+
+    <!-- 형 변환 -->
+    <category name="형변환 (Conversion)" colour="%{BKY_MATH_HUE}">
+      <block type="conver_int">
+          <value name="VALUE"></value>
+      </block>
+    </category>
+
+    <!-- 문자 -->
     <category name="문자 (Text)" colour="%{BKY_TEXTS_HUE}">
       <block type="text"></block>
-      <!-- <block type="textc"></block> -->
-      <!-- <block type="text_print"></block> -->
       <block type="text_join"></block>
       <block type="text_append">
         <value name="TEXT">
@@ -524,7 +513,7 @@
       </block>
       <block type="text_isEmpty">
         <value name="VALUE">
-          <shadow type="text">
+          <shadow type="text">dic
             <field name="TEXT"></field>
           </shadow>
         </value>
@@ -576,6 +565,7 @@
           </shadow>
         </value>
       </block>
+      <!-- print -->
       <block type="printc"></block>
     </category>
     <category name="배열 (Array)" colour="%{BKY_LISTS_HUE}">
@@ -699,7 +689,7 @@
 
     <!-- 커스텀 블록 -->
     <sep></sep>
-    <category name="변수 (Variable)" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+    
     <category name="함수 (Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
       <block type="printc"></block>
       <block type="nj_array"></block>
@@ -920,6 +910,7 @@
         <block type="selec_value_all"></block>
         <block type="iloc_range"></block>
 
+        <block type="pandas_print"></block>
         <block type="normal"></block>
         <block type="select_row_delete"></block>
         <block type="select_column_delete"></block>
@@ -929,6 +920,7 @@
         <block type="select_row_list"></block>
         <block type="select_column_list"></block>
         <block type="row_count"></block>
+        <block type="column_count"></block>
         <!-- <block type="image_list"></block> -->
       </category>
       <!-- ************************************************** ************************* *************************  -->
