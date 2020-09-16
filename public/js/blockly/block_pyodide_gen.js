@@ -413,13 +413,14 @@ Blockly.Python['sklearn_mlp'] = function(block) {
       }
 
 
-    var code = `MLPClassifier( hidden_layer_sizes = (${text_sklearn_mlp_hidden_size})
+    var code = `from sklearn.neural_network import MLPClassifier
+MLPClassifier( hidden_layer_sizes = (${text_sklearn_mlp_hidden_size})
 activation = ${get_sklearn_mlp_activation}
 solver = ${get_sklearn_mlp_optimizer}
-learning_rate_init = ${text_sklearn_mlp_learning_rate}
+learning_rate_init = ${text_sklearn_mlp_learning_rate} 
 max_iter = ${text_sklearn_mlp_max_iter}
 random_state = ${text_sklearn_mlp_random_state} )\n`; 
     // TODO: Change ORDER_NONE to the correct strength. 
     return [code, Blockly.Python.ORDER_NONE]; 
   };
- 
+  
