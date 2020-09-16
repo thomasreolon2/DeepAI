@@ -198,6 +198,15 @@ Blockly.Python['import_lib'] = function (block) {
     return code;
 };
 
+Blockly.Python['model_score'] = function(block) {
+    var value_model_name = Blockly.Python.valueToCode(block, 'model_name', Blockly.Python.ORDER_ATOMIC);
+    var value_x_test = Blockly.Python.valueToCode(block, 'x_test', Blockly.Python.ORDER_ATOMIC);
+    var value_y_test = Blockly.Python.valueToCode(block, 'y_test', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_model_name + '.score(' + value_x_test + ', '+ value_y_test + ')\n';
+    return code;
+  };
+
 Blockly.Python['model_predict'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
     var text_data = block.getFieldValue('data');

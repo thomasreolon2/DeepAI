@@ -156,7 +156,7 @@ Blockly.Blocks['scikit_learn'] = {
                 "로지스틱회귀", "LogisticRegression"
             ],
             [
-                "결정트리", "Nomal"
+                "결정트리", "DecisionTreeClassifier"
             ]
         ]), "cate");
         this.appendDummyInput().appendField(" 학습 데이터 :").appendField(new Blockly.FieldVariable("xData"), "x");
@@ -218,6 +218,24 @@ Blockly.Blocks['import_lib'] = {
         this.setHelpUrl("");
     }
 };
+
+Blockly.Blocks['model_score'] = {
+    init: function() {
+      this.appendValueInput("model_name")
+          .setCheck(null)
+          .appendField("모델 평가 -> 모델명 :");
+      this.appendValueInput("x_test")
+          .setCheck(null)
+          .appendField("테스트 특성 데이터 :");
+      this.appendValueInput("y_test")
+          .setCheck(null)
+          .appendField("테스트 정답 데이터 :");
+      this.setInputsInline(true);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 Blockly.Blocks['model_predict'] = {
     init: function() {
