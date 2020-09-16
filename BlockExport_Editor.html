@@ -394,6 +394,8 @@
       </block>
       <block type="controls_forEach"></block>
       <block type="controls_flow_statements"></block>
+      <block type="forp"></block>
+
     </category>
     <category name="연산 (Operation)" colour="%{BKY_MATH_HUE}">
       <block type="math_number">
@@ -501,6 +503,7 @@
         </value>
       </block>
       <!-- <block type="mexp"></block> -->
+
     </category>
     <category name="문자 (Text)" colour="%{BKY_TEXTS_HUE}">
       <block type="text"></block>
@@ -573,8 +576,7 @@
           </shadow>
         </value>
       </block>
-      <!-- <block type="printc"></block> -->
-
+      <block type="printc"></block>
     </category>
     <category name="배열 (Array)" colour="%{BKY_LISTS_HUE}">
       <block type="lists_create_with">
@@ -627,6 +629,7 @@
       </block>
       <!-- <block type="lists_sort"></block>
       <block type="tfarraylen"></block> -->
+      <block type="sump"></block>
 
     </category>
     <!-- <category name="색상" colour=" %{BKY_COLOUR_HUE}">
@@ -683,24 +686,19 @@
 
     <!--pyodide_test-->
     <category name="머신러닝" colour="%{BKY_VARIABLES_HUE}">
-      <block type="printc"></block>
-      <block type="nj_array"></block>
-      <block type="forp"></block>
-      <block type="sump"></block>
-      <block type="lrgraph"></block>
-      <block type="logicgraph"></block>
-      <block type="array_get"></block>
+      <block type="import_dataset"></block>
+      <!-- <block type="array_get"></block> -->
       <block type="csv3"></block>
       <block type="labelencoder"></block>
       <!-- <block type="csv3"></block> -->
-      <block type="scikit_learn"></block>
       <block type="train_test_split"></block>
-      <block type="import_dataset"></block>
+      <block type="scikit_learn"></block>
+      <block type="k_means"></block>
       <block type="model_score"></block>
       <block type="sklearn_mlp"></block> <!-- 사이킷런 MLP 블록  -->
       <block type="model_predict"></block>
-      <block type="k_means"></block>
-
+      <block type="lrgraph"></block>
+      <block type="logicgraph"></block>
     </category>
 
 
