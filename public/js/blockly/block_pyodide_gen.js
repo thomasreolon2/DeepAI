@@ -433,3 +433,14 @@ random_state = ${text_sklearn_mlp_random_state} )\n`;
     return [code, Blockly.Python.ORDER_NONE]; 
   };
   
+  // kMeans
+Blockly.Python['k_means'] = function (block) {
+    var variable_model = Blockly.Python.variableDB_.getName(block.getFieldValue('model'), Blockly.Variables.NAME_TYPE);
+    var variable_data = Blockly.Python.variableDB_.getName(block.getFieldValue('data'), Blockly.Variables.NAME_TYPE);
+    var variable_label = Blockly.Python.variableDB_.getName(block.getFieldValue('label'), Blockly.Variables.NAME_TYPE);
+    var cnt = block.getFieldValue('cnt');
+    // TODO: Assemble Python into code variable.
+    var lib = "from sklearn import datasets\n" + "from sklearn.cluster import KMeans\n";
+    var code = lib + "iris=datasets.load_iris()\n" + "samples = iris.data\n" + "model = KMeans(n_clusters = " + cnt + ")\n" + "model.fit(samples)\n" + "labels = model.predict(samples)\n";
+    return code;
+};
