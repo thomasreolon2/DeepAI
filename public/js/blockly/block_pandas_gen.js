@@ -18,11 +18,12 @@ Blockly.Python['load_csv'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+//2020-09-16 양승국 수정
 Blockly.Python['fill_null_data'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_name + '.fillna(' + value_name +'.' + dropdown_name + ')';
+  var code = value_name + '.fillna(' + value_name  + dropdown_name + ')';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -30,13 +31,6 @@ Blockly.Python['fill_null_data'] = function(block) {
 Blockly.Python['pyo_lib'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = 'import pyodide \n';
-  return code;
-};
-
-Blockly.Python['pandas_print'] = function(block) {
-  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = 'print(' + value_name + ')\n';
   return code;
 };
 
@@ -145,17 +139,12 @@ Blockly.Python['select_row_column_value'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+//2020-09-16 양승국 수정
 Blockly.Python['row_count'] = function(block) {
   var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('count');
   // TODO: Assemble Python into code variable.
-  var code = value_select_value + '.shape[0]\n';
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-Blockly.Python['column_count'] = function(block) {
-  var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = value_select_value + '.shape[1]\n';
+  var code = value_select_value + dropdown_name;
   return [code, Blockly.Python.ORDER_NONE];
 };
 

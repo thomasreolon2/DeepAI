@@ -34,7 +34,7 @@ Blockly.Blocks['load_csv'] = {
   }
 };
 
-//2020-09-10 양승국 블록수정
+//2020-09-16 양승국 블록수정
 Blockly.Blocks['fill_null_data'] = {
   init: function() {
     this.appendValueInput("DATA")
@@ -42,7 +42,7 @@ Blockly.Blocks['fill_null_data'] = {
     this.appendDummyInput()
         .appendField("의 결측치를");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["최댓값","max()"], ["최솟값","min()"], ["중간값","median()"], ["평균값","mean()"], ["0값","fillna(0)"]]), "NAME");
+        .appendField(new Blockly.FieldDropdown([["최댓값",".max()"], ["최솟값",".min()"], ["중간값",".median()"], ["평균값",".mean()"], ["0값","0"]]), "NAME");
     this.appendDummyInput()
         .appendField("로 채우기");
     this.setInputsInline(true);
@@ -57,21 +57,6 @@ Blockly.Blocks['pyo_lib'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("pyodide라이브러리");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['pandas_print'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("판다스 출력 : ");
-    this.appendValueInput("NAME")
-        .setCheck(null);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -306,12 +291,13 @@ Blockly.Blocks['select_row_column_value'] = {
 };
 
 //행 개수
+//2020-09-16 양승국 블록 수정
 Blockly.Blocks['row_count'] = {
   init: function() {
     this.appendValueInput("select_value")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("의 행 개수");
+        .appendField(new Blockly.FieldDropdown([["의 행 개수",".shape[0]"], ["의 열 개수",".shape[1]"]]), "count");        
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);
@@ -320,20 +306,6 @@ Blockly.Blocks['row_count'] = {
   }
 };
 
-//열 개수
-Blockly.Blocks['column_count'] = {
-  init: function() {
-    this.appendValueInput("select_value")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField("의 열 개수");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 // 이미지 리스트
 // Blockly.Blocks['image_list'] = {
