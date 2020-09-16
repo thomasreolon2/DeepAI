@@ -235,19 +235,15 @@ Blockly.Python['model_score'] = function(block) {
     return code;
   };
 
-Blockly.Python['model_predict'] = function(block) {
+
+  Blockly.Python['model_predict'] = function(block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    var text_data = block.getFieldValue('data');
     // TODO: Assemble Python into code variable.
-    var code = value_name+".predict([["+text_data+"]])";
+    var code = value_model+".predict("+value_name+")";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];
   };
-
-
-
-
-
 
 
 

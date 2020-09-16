@@ -24,36 +24,36 @@
   
   
 //   //라이브러리 전체 새로운 것   
-//   Blockly.Python['lib_import_a'] = function(block) {
-//     var dropdown_lib_import_a_option = block.getFieldValue('lib_import_a_option');
-//     var value_lib_import_a_val = Blockly.Python.valueToCode(block, 'lib_import_a_val', Blockly.Python.ORDER_ATOMIC);
-//     // TODO: Assemble Python into code variable.
-//     var code ;
-//     switch (dropdown_lib_import_a_option){
-//       case "lib_import_numpy" : 
-//       code = `import numpy as ${value_lib_import_a_val}\n`;    
-//       break;      
+  // Blockly.Python['lib_import_a'] = function(block) {
+  //   var dropdown_lib_import_a_option = block.getFieldValue('lib_import_a_option');
+  //   var value_lib_import_a_val = Blockly.Python.valueToCode(block, 'lib_import_a_val', Blockly.Python.ORDER_ATOMIC);
+  //   // TODO: Assemble Python into code variable.
+  //   var code ;
+  //   switch (dropdown_lib_import_a_option){
+  //     case "lib_import_numpy" : 
+  //     code = `import numpy as ${value_lib_import_a_val}\n`;    
+  //     break;      
   
-//       case "lib_import_pandas" :
-//       code = `import pandas as ${value_lib_import_a_val}\n`;   
-//       break;  
+  //     case "lib_import_pandas" :
+  //     code = `import pandas as ${value_lib_import_a_val}\n`;   
+  //     break;  
        
-//       case "lib_import_Matplotlib" :
-//       code = `import matplotlib as ${value_lib_import_a_val}\n`;   
-//       break;
+  //     case "lib_import_Matplotlib" :
+  //     code = `import matplotlib as ${value_lib_import_a_val}\n`;   
+  //     break;
   
-//       case "lib_import_io" :  
-//       code = `import io\n`;             
-//       break;   
+  //     case "lib_import_io" :  
+  //     code = `import io\n`;             
+  //     break;   
   
-//       case "lib_import_base64" : 
-//       code = `import base64\n`;           
-//       break; 
+  //     case "lib_import_base64" : 
+  //     code = `import base64\n`;           
+  //     break; 
   
-//       default : 
-//       break; 
-//     }  
-//     return code;}; 
+  //     default : 
+  //     break; 
+  //   }  
+  //   return code;}; 
     
 //     //라이브러리 임포트 사이킷런 
 //     Blockly.Python['lib_import_sklearn'] = function(block) {

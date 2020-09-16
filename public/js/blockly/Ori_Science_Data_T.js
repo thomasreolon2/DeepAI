@@ -1,4 +1,4 @@
-// Blockly.defineBlocksWithJsonArray(
+Blockly.defineBlocksWithJsonArray(
 //     [
 //    // pandas, numpy, tuple  시각화   
 //    {
@@ -73,7 +73,8 @@
 //     "colour": 125,
 //     "tooltip": "",
 //     "helpUrl": ""
-//   },
+//   }
+// );
 // //라이브러리 임포트 사이킷런 
 // {
 //   "type": "lib_import_sklearn",

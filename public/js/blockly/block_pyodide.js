@@ -296,13 +296,14 @@ Blockly.Blocks['model_score'] = {
     }
   };
 
-Blockly.Blocks['model_predict'] = {
+  Blockly.Blocks['model_predict'] = {
     init: function() {
+      this.appendValueInput("model")
+          .setCheck(null)
+          .appendField("예측 모델 : ");
       this.appendValueInput("NAME")
           .setCheck(null)
-          .appendField("모델 ");
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldTextInput("데이터"), "data");
+          .appendField("값 : ");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour(230);
