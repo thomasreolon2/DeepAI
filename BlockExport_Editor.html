@@ -388,11 +388,15 @@
       -->
       <!-- while 문 -->
       <block type="controls_whileUntil"></block>
-      <!--
-      <block type="controls_forEach"></block>
-      <block type="controls_flow_statements"></block>
-      <block type="forp"></block>
-        -->
+      <block type="increase">
+
+        <value name="NUMBER">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+        </value>
+      </block>
+      <block type="break_block"></block>
     </category>
     <category name="연산 (Operation)" colour="%{BKY_MATH_HUE}">
       <block type="math_number">
@@ -585,10 +589,13 @@
 
     <!-- list -->
     <category name="배열 (Array)" colour="%{BKY_LISTS_HUE}">
+      <!-- 리스트 생성 -->
+      <block type="lists_create_with"></block>
+      <!-- 비어있는 리스트 생성 -->
       <block type="lists_create_with">
         <mutation items="0"></mutation>
       </block>
-      <block type="lists_create_with"></block>
+      <!-- 같은 내용을 n번 넣어 리스트 생성 -->
       <block type="lists_repeat">
         <value name="NUM">
           <shadow type="math_number">
@@ -596,9 +603,11 @@
           </shadow>
         </value>
       </block>
+      <!-- 리스트의 길이 -->
       <block type="lists_length"></block>
+      <!-- 리스트가 비어있는지 확인 -->
       <block type="lists_isEmpty"></block>
-      <block type="lists_indexOf">
+       <block type="lists_indexOf">
         <value name="VALUE">
           <block type="variables_get">
             <field name="VAR">{listVariable}</field>
@@ -625,7 +634,7 @@
             <field name="VAR">{listVariable}</field>
           </block>
         </value>
-      </block>
+      </block> 
       
       <!-- <block type="tfarraylen"></block>  -->
       <block type="sump"></block>

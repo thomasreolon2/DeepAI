@@ -1050,6 +1050,38 @@ Blockly.Blocks['list_index'] = {
     }
   };
 
+  // increase 등등
+  Blockly.Blocks['increase'] = {
+    init: function() {
+      this.appendValueInput("VALUE")
+          .setCheck(null)
+          .appendField(new Blockly.FieldDropdown([["raise","OPTIONNAME"], ["modulo","OPTIONNAME"], ["divide","OPTIONNAME"], ["multiply","OPTIONNAME"], ["decrease","OPTIONNAME"], ["increase","OPTIONNAME"]]), "NAME");
+      this.appendDummyInput()
+          .appendField("to");
+      this.appendValueInput("NUMBER")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  //
+  Blockly.Blocks['break_block'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("break");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  
   // 결측치 조회
   Blockly.Blocks['missing_value_inquiry'] = {
     init: function() {

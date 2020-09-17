@@ -886,3 +886,10 @@ Blockly.JavaScript['text_replace'] = function(block) {
     var code = '\n';
     return code;
   };
+
+// break
+Blockly.JavaScript['break_block'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
