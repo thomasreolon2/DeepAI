@@ -935,8 +935,6 @@
             <block type="createColumn"></block>
           </value>
         </block>
-        <!-- 20.09.09 이성주-->
-        <block type="createColumn"></block>
         <!-- 2020-09-09 양승국-->
         <block type="pandas_conversion"></block>
         <block type="fill_null_data"></block>
@@ -963,6 +961,26 @@
         <block type="select_row_list"></block>
         <block type="select_column_list"></block>
         <block type="row_count"></block>
+        <!-- 2020-09-16 양승국-->
+        <block type="nm"></block>
+        <block type="pandas_series">
+          <value name="lvar">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+          <value name="ser_data">
+            <block type="pandas_series_data"></block>
+          </value>
+        </block>
+        <block type="pandas_series_data"></block>
+        <block type="pandas_concat">
+          <value name="pa_val">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+        </block>
         <!-- <block type="column_count"></block> -->
         <!-- <block type="image_list"></block> -->
       </category>

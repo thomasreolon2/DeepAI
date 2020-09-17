@@ -229,6 +229,43 @@ Blockly.Python['iloc_range'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+
+//2020-09-16 양승국 추가
+Blockly.Python['nm'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  var value_anymore = Blockly.Python.valueToCode(block, 'anymore', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_data + "=" + value_anymore + '\n';
+  return code;
+};
+
+//2020-09-16 양승국 추가
+Blockly.Python['pandas_series'] = function(block) {
+  var value_lvar = Blockly.Python.valueToCode(block, 'lvar', Blockly.Python.ORDER_ATOMIC);
+  var value_ser_data = Blockly.Python.valueToCode(block, 'ser_data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_lvar + '.Series(' + value_ser_data +')\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+//2020-09-16 양승국 추가
+Blockly.Python['pandas_series_data'] = function(a) {
+  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
+    return ["{" + b.join(", ") + "}", Blockly.Python.ORDER_ATOMIC]
+  
+};
+
+//2020-09-16 양승국 추가
+Blockly.Python['pandas_concat'] = function(block) {
+  var value_pa_val = Blockly.Python.valueToCode(block, 'pa_val', Blockly.Python.ORDER_ATOMIC);
+  var value_set_series = Blockly.Python.valueToCode(block, 'set_series', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_pa_val + '.concat(' + value_set_series +')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
 ////////////////////////////////////////////////////////////////////
 // Pandas 2학년 파트 끝
 ////////////////////////////////////////////////////////////////////
