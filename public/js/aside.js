@@ -20,7 +20,8 @@ function sidebar_toggle() {
 
 // aside 내부 clear
 function sidebar_clear() {
-    $('#graph1').empty();
+    //$('#graph1').empty(); 기존 그래프 초기화
+    $('#pyplotfigure').attr('src','');
 };
 /*
 
