@@ -1049,3 +1049,28 @@ Blockly.Blocks['list_index'] = {
    this.setHelpUrl("");
     }
   };
+
+  // 결측치 조회
+  Blockly.Blocks['missing_value_inquiry'] = {
+    init: function() {
+      this.appendValueInput("data").setCheck(null)
+      this.appendDummyInput().appendField("결측치 조회하기");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  // 통계 정보 조회
+  Blockly.Blocks['stats_inquiry'] = {
+    init: function() {
+      this.appendValueInput("data").setCheck(null)
+      this.appendDummyInput().appendField("통계 정보 조회하기");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
