@@ -1525,6 +1525,15 @@ Blockly.Python['list_remove'] = function(block) {
   return code;
 };
 
+// pop
+Blockly.Python['list_pop'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list+'.pop('+value_value+')\n';
+  return code;
+};
+
 // count
 Blockly.Python['list_count'] = function(block) {
   var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
@@ -1564,9 +1573,3 @@ Blockly.Python['increase'] = function(block) {
   return code;
 };
 
-// break;
-Blockly.Python['break_block'] = function(block) {
-  // TODO: Assemble Python into code variable.
-  var code = 'break\n';
-  return code;
-};

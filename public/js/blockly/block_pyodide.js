@@ -989,6 +989,26 @@ Blockly.Blocks['list_index'] = {
     }
   };
 
+  // list_pop
+  Blockly.Blocks['list_pop'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("pop = list :");
+      this.appendValueInput("LIST")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("value :");
+      this.appendValueInput("VALUE")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
   // list_count
   Blockly.Blocks['list_count'] = {
     init: function() {
@@ -1081,7 +1101,7 @@ Blockly.Blocks['list_index'] = {
    this.setHelpUrl("");
     }
   };
-  
+
   // 결측치 조회
   Blockly.Blocks['missing_value_inquiry'] = {
     init: function() {
