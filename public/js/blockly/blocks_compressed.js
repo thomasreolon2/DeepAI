@@ -2634,6 +2634,7 @@ Blockly.Blocks.text_count = {
     });
   },
 };
+/*
 Blockly.Blocks.text_replace = {
   init: function () {
     this.jsonInit({
@@ -2651,6 +2652,7 @@ Blockly.Blocks.text_replace = {
     });
   },
 };
+*/
 Blockly.Blocks.text_reverse = {
   init: function () {
     this.jsonInit({
