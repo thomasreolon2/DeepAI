@@ -633,9 +633,20 @@
       
       <!-- <block type="tfarraylen"></block>  -->
       <block type="sump"></block>
-       <!-- 새 블록  딕셔너리 -->
-       <block type="dict">
+       
+      <!-- 튜플 -->
+      <block type="tuple">
+        <value name="tuple">
+        </value>
+      </block>
+      <!-- 새 블록  딕셔너리 -->
+      <block type="dict">
         <value name="DICT">
+        </value>
+      </block>
+      <!-- 딕셔너리 선택 -->
+      <block type="dic_menu">
+        <value name="dic_menu">
         </value>
       </block>
       <!-- 집합 -->
@@ -643,21 +654,9 @@
         <value name="SET">
         </value>
       </block>
-      <!-- 튜플 -->
-      <block type="tuple">
-        <value name="tuple">
-        </value>
-      </block>
-
       <!-- 집합선택 -->
       <block type="set_menu">
         <value name="set_menu">
-        </value>
-      </block>
-
-      <!-- 딕셔너리 선택 -->
-      <block type="dic_menu">
-        <value name="dic_menu">
         </value>
       </block>
 
@@ -1050,7 +1049,7 @@
       inputStyle: "contenteditable",
       // readOnly: true,
       lineNumbers: true,
-      lineWrapping: true, 
+      lineWrapping: true, // 자동 줄바꿈 설정
       extraKeys: {
         "Ctrl-Space": "autocomplete"
       },
@@ -1064,7 +1063,7 @@
       inputStyle: "contenteditable",
       // readOnly: true,
       lineNumbers: true,
-      lineWrapping: true, 
+      lineWrapping: true, // 자동 줄바꿈 설정
       extraKeys: {
         "Ctrl-Space": "autocomplete"
       },
