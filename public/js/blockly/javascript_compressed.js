@@ -875,3 +875,14 @@ Blockly.JavaScript.variables_set = function (a) {
 Blockly.JavaScript.variablesDynamic = {};
 Blockly.JavaScript.variables_get_dynamic = Blockly.JavaScript.variables_get;
 Blockly.JavaScript.variables_set_dynamic = Blockly.JavaScript.variables_set;
+
+
+// text_replace
+Blockly.JavaScript['text_replace'] = function(block) {
+    var value_text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_a = Blockly.JavaScript.valueToCode(block, 'A', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_b = Blockly.JavaScript.valueToCode(block, 'B', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };

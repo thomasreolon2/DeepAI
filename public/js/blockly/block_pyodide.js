@@ -1026,3 +1026,26 @@ Blockly.Blocks['list_index'] = {
    this.setHelpUrl("");
     }
   };
+
+  // text_replace
+  Blockly.Blocks['text_replace'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("replace = text :");
+      this.appendValueInput("TEXT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("바뀔문자 :");
+      this.appendValueInput("A")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("바꿀문자 :");
+      this.appendValueInput("B")
+          .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
