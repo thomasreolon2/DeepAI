@@ -1272,10 +1272,10 @@
           try { pyodide.runPython(code); }
           catch (e) { document.getElementById('exeArea').innerHTML = e; }
         });
-
-        languagePluginLoader.then(await function () {
-          if (DL_Gra == "chcked") { document.getElementById("pyplotfigure").src = pyodide.globals.img_str; DL_Gra = 0; }
-        });
+        // 명성이형 그래프 추가(일단 주석처리)
+        // languagePluginLoader.then(await function () {
+        //   if (DL_Gra == "chcked") { document.getElementById("pyplotfigure").src = pyodide.globals.img_str;}
+        // });
       };
  
       runcode().then(() => {

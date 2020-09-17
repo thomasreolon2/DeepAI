@@ -222,6 +222,6 @@ Blockly.JavaScript['val_vi'] = function(block) {
   Blockly.JavaScript['matplotlib_graph_end'] = function(block) {
     var value_matplotlib_graph_end_lib_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_graph_end_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code ='document.getElementById("pyplotfigure").src = pyodide.globals.img_str;';
     return code;
   };  
