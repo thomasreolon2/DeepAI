@@ -329,7 +329,7 @@
 
 
       <!-- 오른쪽 -->
-      <div id="codeDiv" class="col">
+      <div id="codeDiv" class="col-md-4">
         <div class="card shadow-sm">
           <div class="text-white bg-dark">
             <h5 class="my-1 mx-1">코드</h5>
@@ -398,7 +398,7 @@
     </category>
     <category name="연산 (Operation)" colour="%{BKY_MATH_HUE}">
       <block type="math_number">
-        <field name="NUM">123</field>
+        <field name="NUM">0</field>
       </block>
       <!-- 연산블럭 -->
       <block type="math_arithmetic">
@@ -421,29 +421,17 @@
           </shadow>
         </value>
       </block>
-      <block type="math_trig">
-        <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">45</field>
-          </shadow>
-        </value>
-      </block>
+      <!-- 사인, 코사인 -->
+      <block type="math_trig"></block>
+      <!-- 파이 등-->
       <block type="math_constant"></block>
-      <block type="math_number_property">
-        <value name="NUMBER_TO_CHECK">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="math_round">
-        <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">3.1</field>
-          </shadow>
-        </value>
-      </block>
+      <!-- 짝수, 홀수 등 판단 -->
+      <block type="math_number_property"></block>
+      <!-- 반올림 -->
+      <block type="math_round"></block>
+      <!-- sum, 최소, 최대값 등-->
       <block type="math_on_list"></block>
+      <!-- 이건 뭔지 모르겠음 -->
       <block type="math_constrain">
         <value name="VALUE">
           <shadow type="math_number">
@@ -461,6 +449,7 @@
           </shadow>
         </value>
       </block>
+      <!-- 랜덤 정수 -->
       <block type="math_random_int">
         <value name="FROM">
           <shadow type="math_number">
@@ -473,6 +462,7 @@
           </shadow>
         </value>
       </block>
+      <!-- 랜덤 실수 -->
       <block type="math_random_float"></block>
       <block type="math_atan2">
         <value name="X">
@@ -516,6 +506,7 @@
         </value>
       </block>
       -->
+      <!-- len -->
       <block type="text_length">
         <value name="VALUE">
           <shadow type="text">
@@ -523,6 +514,7 @@
           </shadow>
         </value>
       </block>
+      <!-- empty?? -->
       <block type="text_isEmpty">
         <value name="VALUE">
           <shadow type="text">dic
@@ -530,6 +522,7 @@
           </shadow>
         </value>
       </block>
+      <!-- find-->
       <block type="text_indexOf">
         <value name="VALUE">
           <block type="variables_get">
@@ -542,6 +535,7 @@
           </shadow>
         </value>
       </block>
+      <!-- a[0] -->
       <block type="text_charAt">
         <value name="VALUE">
           <block type="variables_get">
@@ -549,6 +543,7 @@
           </block>
         </value>
       </block>
+      <!-- a[ :0] -->
       <block type="text_getSubstring">
         <value name="STRING">
           <block type="variables_get">
@@ -556,6 +551,7 @@
           </block>
         </value>
       </block>
+      <!-- upper, lower -->
       <block type="text_changeCase">
         <value name="TEXT">
           <shadow type="text">
@@ -563,6 +559,7 @@
           </shadow>
         </value>
       </block>
+      <!-- trim -->
       <block type="text_trim">
         <value name="TEXT">
           <shadow type="text">
@@ -570,6 +567,7 @@
           </shadow>
         </value>
       </block>
+      <!-- ?? -->
       <block type="text_prompt_ext">
         <value name="TEXT">
           <shadow type="text">
@@ -577,7 +575,14 @@
           </shadow>
         </value>
       </block>
-      
+      <!-- split -->
+      <block type="lists_split">
+        <value name="DELIM">
+          <shadow type="text">
+            <field name="TEXT">,</field>
+          </shadow>
+        </value>
+      </block>
       <!-- print -->
       <block type="printc"></block>
     </category>
@@ -625,14 +630,7 @@
           </block>
         </value>
       </block>
-      <block type="lists_split">
-        <value name="DELIM">
-          <shadow type="text">
-            <field name="TEXT">,</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- <block type="lists_sort"></block> -->
+      
       <!-- <block type="tfarraylen"></block>  -->
       <block type="sump"></block>
        <!-- 새 블록  딕셔너리 -->
@@ -1052,6 +1050,7 @@
       inputStyle: "contenteditable",
       // readOnly: true,
       lineNumbers: true,
+      lineWrapping: true, 
       extraKeys: {
         "Ctrl-Space": "autocomplete"
       },
@@ -1065,6 +1064,7 @@
       inputStyle: "contenteditable",
       // readOnly: true,
       lineNumbers: true,
+      lineWrapping: true, 
       extraKeys: {
         "Ctrl-Space": "autocomplete"
       },
