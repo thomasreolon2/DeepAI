@@ -1440,7 +1440,7 @@ Blockly.Python['py_return'] = function(block) {
   return code;
 };
 
-// 형 변환
+// 타입 생성
 Blockly.Python['conver_int'] = function(block) {
   var value_VALUE = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.

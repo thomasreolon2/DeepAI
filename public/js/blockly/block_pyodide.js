@@ -810,7 +810,7 @@ Blockly.Blocks['k_means'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_LOOPS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }

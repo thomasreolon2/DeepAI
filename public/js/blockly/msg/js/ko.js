@@ -433,3 +433,4 @@ Blockly.Msg["TEXTS_HUE"] = "FFD732";
 Blockly.Msg["PROCEDURES_HUE"] = "41CDCD";
 Blockly.Msg["COLOUR_HUE"] = "289AFF";
 Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310";
+Blockly.Msg["ABC_HUE"] = "FFFFFF";//
