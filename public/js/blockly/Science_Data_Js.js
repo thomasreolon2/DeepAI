@@ -56,13 +56,17 @@ Blockly.JavaScript['val_vi'] = function(block) {
   };  
 
   //데이터 CSV로 저장
-   Blockly.JavaScript['data_to_csv'] = function(block) {
-    var value_data_to_csv_dataval = Blockly.JavaScript.valueToCode(block, 'Data_To_CSV_DataVal', Blockly.JavaScript.ORDER_ATOMIC);
-    var value_data_to_csv_name = Blockly.JavaScript.valueToCode(block, 'Data_To_CSV_name', Blockly.JavaScript.ORDER_ATOMIC);
+  Blockly.JavaScript['data_to_csv'] = function(block) {
+    var value_value_data_to_csv_dataval = Blockly.JavaScript.valueToCode(block, 'value_data_to_csv_dataval', Blockly.JavaScript.ORDER_ATOMIC);
+    var text_value_value_data_to_csv_name = block.getFieldValue('value_value_data_to_csv_name');
     // TODO: Assemble JavaScript into code variable.
-    var code = `value_data_to_csv_dataval = pyodide.pyimport('value_data_to_csv_dataval');\nvalue_data_to_csv_name = pyodide.pyimport('value_data_to_csv_name');\nexportToCsv(value_data_to_csv_dataval,value_data_to_csv_name) `;
-    return code;
-  };
+    var testing = block.getFieldValue('value_value_data_to_csv_name');  
+  
+    //text_value_value_data_to_csv_name = text_value_value_data_to_csv_name.slice(1,-1); 
+    var code = `var_1 = pyodide.pyimport('var_1');\nexportToCsv('${testing}.csv',var_1); `; //${text_value_value_data_to_csv_name}.csv,   
+    return code;    
+  }; 
+  
 
    // np.arry  
    Blockly.JavaScript['np_array'] = function(block) {

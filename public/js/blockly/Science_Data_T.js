@@ -169,18 +169,16 @@ Blockly.defineBlocksWithJsonArray(
 //CSV 파일로 저장  
 {
   "type": "data_to_csv",
-  "message0": "%1 .to_csv ( %2 %3 )",
+  "message0": "%1 .to_csv ( %2  )",
   "args0": [
     {
       "type": "input_value",
-      "name": "Data_To_CSV_DataVal"
+      "name": "value_data_to_csv_dataval"
     },
     {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_value",
-      "name": "Data_To_CSV_name"
+      "type": "field_input",
+      "name": "value_value_data_to_csv_name",
+      "text": ""
     }
   ],
   "inputsInline": true,
@@ -189,7 +187,7 @@ Blockly.defineBlocksWithJsonArray(
   "colour": 125,
   "tooltip": "",
   "helpUrl": ""
-},
+}, 
 
   // 라이브러리 단일 임포트 부분    
   {

@@ -180,14 +180,14 @@ Blockly.Python['val_vi'] = function(block) {
 
   //데이터 CSV로 저장
   Blockly.Python['data_to_csv'] = function(block) {
-    var value_data_to_csv_dataval = Blockly.Python.valueToCode(block, 'Data_To_CSV_DataVal', Blockly.Python.ORDER_ATOMIC);
-    var value_data_to_csv_name = Blockly.Python.valueToCode(block, 'Data_To_CSV_name', Blockly.Python.ORDER_ATOMIC);
+    var value_value_data_to_csv_dataval = Blockly.Python.valueToCode(block, 'value_data_to_csv_dataval', Blockly.Python.ORDER_ATOMIC);
+    var text_value_value_data_to_csv_name = block.getFieldValue('value_value_data_to_csv_name');
     // TODO: Assemble Python into code variable.
-  var code = `value_data_to_csv_dataval = ${value_data_to_csv_dataval} #값 저장용
-value_data_to_csv_name = ${value_data_to_csv_name} #값 저장용
-${value_data_to_csv_dataval}.to_csv("${value_data_to_csv_name}")\n`; 
-    return code; //변수명,데이터 ;
-    return code;
+ 
+    var code = `var_1 = ${value_value_data_to_csv_dataval}
+val_2 = '${text_value_value_data_to_csv_name}' 
+${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}');\n`;//val_2 = '${text_value_value_data_to_csv_name}'\n`; 
+    return code;  
   };
     
   

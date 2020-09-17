@@ -111,7 +111,7 @@
 
   <script> 
     languagePluginLoader.then(() => {
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib' , 'scikit-learn']).then(() => {     // , 'scikit-learn'
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib' ]).then(() => {     // , 'scikit-learn'
 
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image").hide(); // 로딩 끝나면 로딩 창 없앰 
@@ -1258,10 +1258,10 @@
         });
 
         languagePluginLoader.then(await function () {
-          if (DL_Gra == "chcked") { document.getElementById("pyplotfigure").src = pyodide.globals.img_str }
+          if (DL_Gra == "chcked") { document.getElementById("pyplotfigure").src = pyodide.globals.img_str; DL_Gra = 0; }
         });
       };
-
+ 
       runcode().then(() => {
         document.getElementById('exeArea').innerHTML = eval(code2);
       });
@@ -1675,69 +1675,50 @@
 
 
 
-function exportToCsv(filename, rows) {
+  
+    function exportToCsv(filename, rows) {
+ 
+ console.log("fileName_check",fileName);
+ console.log("rows_check",rows);
 
+   var processRow = function (row) {
+       var finalVal = '';
+       for (var j = 0; j < row.length; j++) {
+           var innerValue = row[j] === null ? '' : row[j].toString();
+           if (row[j] instanceof Date) {
+               innerValue = row[j].toLocaleString();
+           };
+           var result = innerValue.replace(/"/g, '""');
+           if (result.search(/("|,|\n)/g) >= 0)
+               result = '"' + result + '"';
+           if (j > 0)
+               finalVal += ','; 
+           finalVal += result;
+       }
+       return finalVal + '\n';
+   }; 
 
-    var processRow = function (row) {
+   var csvFile = '';
+   for (var i = 0; i < rows.length; i++) {
+       csvFile += processRow(rows[i]);
+   } 
 
-        var finalVal = '';
-
-        for (var j = 0; j < row.length; j++) {
-
-            var innerValue = row[j] === null ? '' : row[j].toString();
-
-            if (row[j] instanceof Date) {
-                innerValue = row[j].toLocaleString();
-            };
-
-            var result = innerValue.replace(/"/g, '""');
-
-            if (result.search(/("|,|\n)/g) >= 0) 
-                result = '"' + result + '"';
-            
-            if (j > 0) 
-                finalVal += ',';
-                finalVal += result;
-        }
-
-        return finalVal + '\n';
-    };
-
-    var csvFile = '';
-
-    for (var i = 0; i < rows.length; i++) {
-        csvFile += processRow(rows[i]);
-    }
-
-
-    var blob = new Blob([csvFile], {type: 'text/csv;charset=utf-8;'});
-
-    if (navigator.msSaveBlob) { // IE 10+
-        navigator.msSaveBlob(blob, filename);
-    } else {
-        var link = document.create
-        Element("a");
-
-        if (link.download !== undefined) { // feature detection
-
-            // Browsers that support HTML5 download attribute
-
-            var url = URL.createObjectURL(blob);
-
-            link.setAttribute("href", url);
-            link.setAttribute("download", filename);
-            link.style.visibility = 'hidden';
-
-            document.body.appendChild(link);
-
-            link.click();
-
-            document.body.removeChild(link);
-
-        }
-
-    }
-
+   var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
+   if (navigator.msSaveBlob) { // IE 10+  
+       navigator.msSaveBlob(blob, filename);
+   } else {
+       var link = document.createElement("a");
+       if (link.download !== undefined) { // feature detection
+           // Browsers that support HTML5 download attribute
+           var url = URL.createObjectURL(blob);
+           link.setAttribute("href", url);
+           link.setAttribute("download", filename);
+           link.style.visibility = 'hidden'; 
+           document.body.appendChild(link);
+           link.click();
+           document.body.removeChild(link);
+       }
+   } 
 }
 
 
