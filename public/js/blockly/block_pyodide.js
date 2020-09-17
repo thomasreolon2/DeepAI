@@ -794,7 +794,27 @@ Blockly.Blocks['k_means'] = {
    this.setHelpUrl("");
     }
   };
-
+  // for
+  Blockly.Blocks['py_for'] = {
+    init: function() {
+      this.appendValueInput("item")
+          .setCheck(null)
+          .appendField("for each item");
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("in list");
+      this.appendDummyInput()
+          .appendField(":");
+      this.appendStatementInput("value")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 // return 블럭
 Blockly.Blocks['py_return'] = {
 init: function() {

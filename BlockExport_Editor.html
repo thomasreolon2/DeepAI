@@ -375,17 +375,7 @@
     </category>
     <category name="반복 (Repeat)" colour="%{BKY_LOOPS_HUE}">
       <!-- for 문 -->
-      <block type="py_for"></block>
-
-      <!-- 카운트 있는 for문
-      <block type="controls_repeat_ext">
-        <value name="TIMES">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
-      </block>
-      -->
+      <block type="for"></block>
       <!-- while 문 -->
       <block type="controls_whileUntil"></block>
       <block type="increase">
@@ -397,6 +387,7 @@
         </value>
       </block>
       <block type="break_block"></block>
+
     </category>
     <category name="연산 (Operation)" colour="%{BKY_MATH_HUE}">
       <block type="math_number">
@@ -698,53 +689,11 @@
       <block type="py_return"></block>
 
     </category>
-    <!-- <category name="색상" colour=" %{BKY_COLOUR_HUE}">
-      <block type="colour_picker"></block>
-      <block type="colour_random"></block>
-      <block type="colour_rgb">
-        <value name="RED">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
-          </shadow>
-        </value>
-        <value name="GREEN">
-          <shadow type="math_number">
-            <field name="NUM">50</field>
-          </shadow>
-        </value>
-        <value name="BLUE">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="colour_blend">
-        <value name="COLOUR1">
-          <shadow type="colour_picker">
-            <field name="COLOUR">#ff0000</field>
-          </shadow>
-        </value>
-        <value name="COLOUR2">
-          <shadow type="colour_picker">
-            <field name="COLOUR">#3333ff</field>
-          </shadow>
-        </value>
-        <value name="RATIO">
-          <shadow type="math_number">
-            <field name="NUM">0.5</field>
-          </shadow>
-        </value>
-      </block>
-    </category> -->
-
+    
     <!-- 커스텀 블록 -->
     <sep></sep>
     
     <category name="함수 (Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
-      <block type="printc"></block>
-      <block type="nj_array"></block>
-      <block type="forp"></block>
-      <block type="sump"></block>
       
     </category>
     <sep></sep>
