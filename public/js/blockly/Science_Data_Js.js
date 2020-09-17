@@ -63,8 +63,8 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var testing = block.getFieldValue('value_value_data_to_csv_name');  
   
     //text_value_value_data_to_csv_name = text_value_value_data_to_csv_name.slice(1,-1); 
-    var code = `var_1 = pyodide.pyimport('var_1');\nexportToCsv('${testing}.csv',var_1); `; //${text_value_value_data_to_csv_name}.csv,   
-    return code;    
+    var code = `data_to_csv_value = pyodide.pyimport('data_to_csv_value');\nexportToCsv('${testing}.csv',data_to_csv_value); `; //${text_value_value_data_to_csv_name}.csv,   
+    return code;      
   }; 
   
 
