@@ -169,7 +169,7 @@ Blockly.defineBlocksWithJsonArray(
 //CSV 파일로 저장  
 {
   "type": "data_to_csv",
-  "message0": "%1 .to_csv ( %2  )",
+  "message0": "CSV파일로 저장 %1 .to_csv ( %2  )",
   "args0": [
     {
       "type": "input_value",

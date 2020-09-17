@@ -184,12 +184,11 @@ Blockly.Python['val_vi'] = function(block) {
     var text_value_value_data_to_csv_name = block.getFieldValue('value_value_data_to_csv_name');
     // TODO: Assemble Python into code variable.
  
-    var code = `var_1 = ${value_value_data_to_csv_dataval}
-val_2 = '${text_value_value_data_to_csv_name}' 
+    var code = `data_to_csv_value = ${value_value_data_to_csv_dataval}
 ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}');\n`;//val_2 = '${text_value_value_data_to_csv_name}'\n`; 
     return code;  
   };
-    
+     
   
   //print 하기
     Blockly.Python['print'] = function(block) {
