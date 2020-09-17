@@ -181,6 +181,7 @@
     </div>
 
     <div id=graph></div>
+
     <div id=graph1 style="height: 500px; width: 900px;"><img id="pyplotfigure" /></div>
     <!-- <div id=graph2 style="height: 300px;"></div> 
       <div id=graph3 style="height: 300px;"></div>-->
@@ -1306,7 +1307,7 @@
             var csvval = e.target.result.split("\n");
             var csvvalue = csvval[0].split(",");
             var inputrad = "";
-            // csv view! header 
+            // csv view! header 1
             for (var i = 0; i < csvvalue.length; i++) {
               var header = csvvalue[i];
               addOptions(header);
