@@ -183,38 +183,37 @@ Blockly.Python['val_vi'] = function(block) {
     var value_value_data_to_csv_dataval = Blockly.Python.valueToCode(block, 'value_data_to_csv_dataval', Blockly.Python.ORDER_ATOMIC);
     var text_value_value_data_to_csv_name = block.getFieldValue('value_value_data_to_csv_name');
     // TODO: Assemble Python into code variable.
- 
-    var code = `data_to_csv_value = ${value_value_data_to_csv_dataval}
+  
+    var code = `data_to_csv_value = ${value_value_data_to_csv_dataval}\n
 ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}');\n`;//val_2 = '${text_value_value_data_to_csv_name}'\n`; 
     return code;  
   };
      
   //.list 데이터 리스트 변환 
-  Blockly.Python['data_conversion'] = function(block) { 
+  Blockly.Python['data_conversion'] = function(block) {
     var value_data_conversion_var = Blockly.Python.valueToCode(block, 'Data_Conversion_var', Blockly.Python.ORDER_ATOMIC);
-    var dropdown_data_conversion_option = block.getFieldValue('Data_Conversion_Option'); 
-    // TODO: Assemble Python into code variable. 
+    var dropdown_data_conversion_option = block.getFieldValue('Data_Conversion_Option');
+    // TODO: Assemble Python into code variable.
     var code ;
     switch (dropdown_data_conversion_option){
       case "Data_Conversion_Option_Pandas" :
-      code = `${value_data_conversion_var}.values.tolist()`;
-      break;   
+      code = `${value_data_conversion_var}.values.tolist()\n`;
+      break;    
 
-      case "Data_Conversion_Option_Numpy" :
-      code = `${value_data_conversion_var}.tolist()`;
+      case "Data_Conversion_Option_Numpy" : 
+      code = `${value_data_conversion_var}.tolist()\n`;
       break;   
 
       case "Data_Conversion_Option_Tuple" : 
-      code = `list(${value_data_conversion_var}=)`;
+      code = `list(${value_data_conversion_var}=)\n`;
       break;   
-
+ 
       case "Data_Conversion_Option_Dictionary" :
-      code = `${value_data_conversion_var}.values()`;
+      code = `${value_data_conversion_var}.values()\n`;
       break;   
 
     } 
-
-    return code;
+    return [code, Blockly.Python.ORDER_NONE];
   };
   
   //print 하기
