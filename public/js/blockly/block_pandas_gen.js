@@ -35,14 +35,15 @@ Blockly.Python['pyo_lib'] = function(block) {
 };
 
 // 정규화
-//2020-09-10 양승국 수정
-Blockly.Python['normal'] = function(block) {  
+//2020-09-18 양승국 수정
+Blockly.Python['normal'] = function(block) {
   var value_normalization_data = Blockly.Python.valueToCode(block, 'Normalization_data', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '(' + value_normalization_data +'-' + value_normalization_data +'.mean()) / '+ value_normalization_data+ 
-  '.std()'+'\n';
-  return [code, Blockly.Python.ORDER_NONE];
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_normalization_data + '["' + text_name + '"]' + '=' + value_normalization_data + '["' + text_name + '"]' + '-' + value_normalization_data + '["' + text_name + '"]' + '.mean()' + '/' + value_normalization_data + '["' + text_name + '"]' + '.std()' +'\n';
+  return code;
 };
+
 // 헤더 삭제하기
 Blockly.Python['deletehead'] = function(block) {
   var value_delete_header = Blockly.Python.valueToCode(block, 'delete_header', Blockly.Python.ORDER_ATOMIC);
@@ -164,11 +165,19 @@ Blockly.Python['count_label'] = function(block) {
 
 //2020-09-06 양승국
 //2020-09-09 이성주
-Blockly.Python['pandas_datalist'] = function(a) {
-  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
-    return ['list(zip('+ b.join(", ") +'))', Blockly.Python.ORDER_ATOMIC]
-  
+//2020-09-18 양승국 수정
+Blockly.Python['pandas_datalist'] = function(block) {
+  var value_frm_var = Blockly.Python.valueToCode(block, 'frm_var', Blockly.Python.ORDER_ATOMIC);
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble Python into code variable.
+  var code = value_frm_var + ' = list(zip( ' + text_name + '));\n';
+  return code;
 };
+// Blockly.Python['pandas_datalist'] = function(a) {
+//   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
+//     return ['list(zip('+ b.join(", ") +'))', Blockly.Python.ORDER_ATOMIC]
+  
+// };
 
 //2020-09-06 양승국
 //2020-09-09 이성주
