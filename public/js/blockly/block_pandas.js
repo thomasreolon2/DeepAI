@@ -1,6 +1,9 @@
 ///////////////////////////////////////////////////////
 // 2020-09-03, Pandas Blocks 2학년 파트
 ///////////////////////////////////////////////////////
+
+var pandas_color = 230;
+
 Blockly.Blocks['csv_library'] = {
   init: function() {
     this.appendDummyInput()
@@ -11,7 +14,7 @@ Blockly.Blocks['csv_library'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -28,7 +31,7 @@ Blockly.Blocks['load_csv'] = {
         .appendField("csv파일 가져오기 : ");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -47,7 +50,7 @@ Blockly.Blocks['fill_null_data'] = {
         .appendField("로 채우기");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -60,7 +63,7 @@ Blockly.Blocks['pyo_lib'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -76,7 +79,7 @@ Blockly.Blocks['normal'] = {
         .appendField("을(를) 정규화하기")
     this.setInputsInline(true);
     this.setOutput(true,null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -92,7 +95,7 @@ Blockly.Blocks['deletehead'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -112,7 +115,7 @@ Blockly.Blocks['select_row_delete'] = {
         .appendField("번째 행 삭제");
     this.setInputsInline(true);
     this.setOutput(true,null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -131,7 +134,7 @@ Blockly.Blocks['select_column_delete'] = {
         .appendField(" 열 삭제(컬럼명)");
     this.setInputsInline(true);
     this.setOutput(true,null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -151,7 +154,7 @@ Blockly.Blocks['leave_row_data'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -171,7 +174,7 @@ Blockly.Blocks['leave_column_data'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -187,7 +190,7 @@ Blockly.Blocks['save_data'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -208,7 +211,7 @@ Blockly.Blocks['list'] = {
         .appendField("리스트");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -224,7 +227,7 @@ Blockly.Blocks['header'] = {
         .appendField("의 헤더");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -243,7 +246,7 @@ Blockly.Blocks['select_row_list'] = {
         .appendField("번째 행 리스트");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -263,7 +266,7 @@ Blockly.Blocks['select_column_list'] = {
         .appendField("번째 열 리스트(컬럼명)");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -284,7 +287,7 @@ Blockly.Blocks['select_row_column_value'] = {
         .appendField("열 범위 :");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -300,7 +303,7 @@ Blockly.Blocks['row_count'] = {
         .appendField(new Blockly.FieldDropdown([["의 행 개수",".shape[0]"], ["의 열 개수",".shape[1]"]]), "count");        
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -315,7 +318,7 @@ Blockly.Blocks['row_count'] = {
 //     this.appendDummyInput()
 //         .appendField("이미지 리스트");
 //     this.setInputsInline(true);
-//     this.setColour(230);
+//     this.setColour(pandas_color);
 //  this.setTooltip("");
 //  this.setHelpUrl("");
 //   }
@@ -330,7 +333,7 @@ Blockly.Blocks['count_label'] = {
         .appendField("라벨 개수");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -351,7 +354,7 @@ Blockly.Blocks['pandas_dataframe'] = {
         .appendField("컬럼명 :");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
   this.setTooltip("");
   this.setHelpUrl("");
   }
@@ -367,7 +370,7 @@ Blockly.Blocks.pandas_datalist = {
     this.setOutput(!0, "Array");
     this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
-    this.setColour(230);
+    this.setColour(pandas_color);
   },
   mutationToDom: function () {
     var a = Blockly.utils.xml.createElement("mutation");
@@ -442,7 +445,7 @@ Blockly.Blocks.lists_create_with_container = {
     );
     this.appendStatementInput("STACK");
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
-    this.setColour(230);
+    this.setColour(pandas_color);
     this.contextMenu = !1;
   },
 };
@@ -455,7 +458,7 @@ Blockly.Blocks.lists_create_with_item = {
     this.setPreviousStatement(!0);
     this.setNextStatement(!0);
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
-    this.setColour(230);
+    this.setColour(pandas_color);
     this.contextMenu = !1;
   },
 };
@@ -470,7 +473,7 @@ Blockly.Blocks.createColumn = {
     this.setOutput(!0, "Array");
     this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
-    this.setColour(230);
+    this.setColour(pandas_color);
   },
   mutationToDom: function () {
     var a = Blockly.utils.xml.createElement("mutation");
@@ -545,7 +548,7 @@ Blockly.Blocks.lists_create_with_container = {
     );
     this.appendStatementInput("STACK");
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
-    this.setColour(230);
+    this.setColour(pandas_color);
     this.contextMenu = !1;
   },
 };
@@ -558,7 +561,7 @@ Blockly.Blocks.lists_create_with_item = {
     this.setPreviousStatement(!0);
     this.setNextStatement(!0);
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
-    this.setColour(230);
+    this.setColour(pandas_color);
     this.contextMenu = !1;
   },
 };
@@ -581,7 +584,7 @@ Blockly.Blocks['pandas_conversion'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -598,7 +601,7 @@ Blockly.Blocks['pandas_mis_del'] = {
         .appendField(new Blockly.FieldDropdown([["행삭제",".dropna()"], ["열삭제",".dropna(axis = 1)"]]), "DEL_NAME");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -611,7 +614,7 @@ Blockly.Blocks['selec_value_all'] = {
         .appendField("전체범위");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -627,7 +630,7 @@ Blockly.Blocks['iloc_range'] = {
         .appendField(":");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -644,7 +647,7 @@ Blockly.Blocks['nm'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -660,7 +663,7 @@ Blockly.Blocks['pandas_series'] = {
         .appendField(".Series");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -675,7 +678,7 @@ Blockly.Blocks.pandas_series_data = {
     this.setOutput(!0, "Array");
     this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
-    this.setColour(230);
+    this.setColour(pandas_color);
   },
   mutationToDom: function () {
     var a = Blockly.utils.xml.createElement("mutation");
@@ -750,7 +753,7 @@ Blockly.Blocks.lists_create_with_container = {
     );
     this.appendStatementInput("STACK");
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
-    this.setColour(230);
+    this.setColour(pandas_color);
     this.contextMenu = !1;
   },
 };
@@ -763,7 +766,7 @@ Blockly.Blocks.lists_create_with_item = {
     this.setPreviousStatement(!0);
     this.setNextStatement(!0);
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
-    this.setColour(230);
+    this.setColour(pandas_color);
     this.contextMenu = !1;
   },
 };
@@ -777,9 +780,64 @@ Blockly.Blocks['pandas_concat'] = {
     this.appendValueInput("set_series")
         .setCheck(null)
         .appendField("넣을 시리즈 :");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["행에 추가",", axis = 0"], ["열에 추가",", axis = 1"]]), "PLEUS_NAME");        
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//2020-09-17 양승국 블록추가
+Blockly.Blocks['pandas_merge'] = {
+  init: function() {
+    this.appendValueInput("pan_lib")
+        .setCheck(null)
+        .appendField("판다스라이브러리 :");
+    this.appendValueInput("plus_data1")
+        .setCheck(null)
+        .appendField("합칠 데이터프레임 :");
+    this.appendValueInput("plus_data2")
+        .setCheck(null)
+    this.appendValueInput("connet_way")
+        .setCheck(null)
+        .appendField("합칠 방식 :");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//2020-09-17 양승국 블록추가
+Blockly.Blocks['pandas_merge_oncol'] = {
+  init: function() {
+    this.appendValueInput("pan_merge_col")
+        .setCheck(null)
+        .appendField("(공통된컬럼있을때)합칠 컬럼명 :");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//2020-09-17 양승국 블록추가
+Blockly.Blocks['pandas_merge_lron'] = {
+  init: function() {
+    this.appendValueInput("left_on")
+        .setCheck(null)
+        .appendField("(공통컬럼없을때) 왼쪽 컬럼 :");
+    this.appendValueInput("right_on")
+        .setCheck(null)
+        .appendField("오른쪽 컬럼 :");        
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
