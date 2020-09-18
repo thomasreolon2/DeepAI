@@ -424,13 +424,19 @@ Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 
 // 카테고리 색 변경
-Blockly.Msg["MATH_HUE"] = "59C059";//
-Blockly.Msg["LOOPS_HUE"] = "FFAB19";//
-Blockly.Msg["LISTS_HUE"] = "9966FF";//
-Blockly.Msg["LOGIC_HUE"] = "4C97FF";//
-Blockly.Msg["VARIABLES_HUE"] = "FF8C1A";//
-Blockly.Msg["TEXTS_HUE"] = "FFD732";
-Blockly.Msg["PROCEDURES_HUE"] = "41CDCD";
-Blockly.Msg["COLOUR_HUE"] = "289AFF";
-Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310";
-Blockly.Msg["ABC_HUE"] = "FFFFFF";//
+Blockly.Msg["VARIABLES_HUE"] = "4C97FF";// 변수
+Blockly.Msg["LOGIC_HUE"] = "FFD500";// 논리
+Blockly.Msg["LOOPS_HUE"] = "FFAB19"; // 반복
+
+Blockly.Msg["MATH_HUE"] = "9966FF"; // 연산
+Blockly.Msg["TEXTS_HUE"] = "D65CD6"; // 문자
+Blockly.Msg["LISTS_HUE"] = "ff8c1a"; // 배열
+// 커스텀 색상
+Blockly.Msg["CONVERSION_HUE"] = "4CBFE6"; // 형변환
+Blockly.Msg["ABC_HUE"] = "ff8c1a"; // 데이터 사이언스
+Blockly.Msg["ABC_HUE"] = "40bf4a"; // 
+Blockly.Msg["ABC_HUE"] = "ff6680"; // 
+// 안쓰는 커테고리
+Blockly.Msg["PROCEDURES_HUE"] = "41CDCD"; // ?
+Blockly.Msg["COLOUR_HUE"] = "289AFF"; // color
+Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310"; //?
