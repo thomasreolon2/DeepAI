@@ -2160,16 +2160,17 @@ Blockly.Theme.defineTheme = function (a, b) {
 Blockly.Themes = {};
 Blockly.Themes.Classic = {};
 Blockly.Themes.Classic.defaultBlockStyles = {
-  colour_blocks: { colourPrimary: "#289AFF" },
-  list_blocks: { colourPrimary: "#9966FF" },//
-  logic_blocks: { colourPrimary: "#4C97FF" },//
-  loop_blocks: { colourPrimary: "#FFAB19" },//
-  math_blocks: { colourPrimary: "#59C059" },//
-  procedure_blocks: { colourPrimary: "#41CDCD" },
-  text_blocks: { colourPrimary: "#FFD732" },
-  variable_blocks: { colourPrimary: "#FF8C1A" },//
-  variable_dynamic_blocks: { colourPrimary: "310" },
-  hat_blocks: { colourPrimary: "330", hat: "cap" },
+  colour_blocks: { colourPrimary: "#289AFF" }, // color
+  list_blocks: { colourPrimary: "#ff8c1a" }, // 배열
+  logic_blocks: { colourPrimary: "#FFD500" },// 논리
+  loop_blocks: { colourPrimary: "#FFAB19" },// 반복
+  math_blocks: { colourPrimary: "#9966FF" },// 연산
+  procedure_blocks: { colourPrimary: "#41CDCD" }, // ?
+  text_blocks: { colourPrimary: "#D65CD6" }, // 문자
+  variable_blocks: { colourPrimary: "#4C97FF" },// 변수
+  conversion_blocks: { colourPrimary: "#4CBFE6" },// 형변환
+  variable_dynamic_blocks: { colourPrimary: "310" }, // ?
+  hat_blocks: { colourPrimary: "330", hat: "cap" }, // ?
 };
 Blockly.Themes.Classic.categoryStyles = {
   colour_category: { colour: "#289AFF" },

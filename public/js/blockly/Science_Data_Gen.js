@@ -189,6 +189,33 @@ ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}'
     return code;  
   };
      
+  //.list 데이터 리스트 변환 
+  Blockly.Python['data_conversion'] = function(block) { 
+    var value_data_conversion_var = Blockly.Python.valueToCode(block, 'Data_Conversion_var', Blockly.Python.ORDER_ATOMIC);
+    var dropdown_data_conversion_option = block.getFieldValue('Data_Conversion_Option'); 
+    // TODO: Assemble Python into code variable. 
+    var code ;
+    switch (dropdown_data_conversion_option){
+      case "Data_Conversion_Option_Pandas" :
+      code = `${value_data_conversion_var}.values.tolist()`;
+      break;   
+
+      case "Data_Conversion_Option_Numpy" :
+      code = `${value_data_conversion_var}.tolist()`;
+      break;   
+
+      case "Data_Conversion_Option_Tuple" : 
+      code = `list(${value_data_conversion_var}=)`;
+      break;   
+
+      case "Data_Conversion_Option_Dictionary" :
+      code = `${value_data_conversion_var}.values()`;
+      break;   
+
+    } 
+
+    return code;
+  };
   
   //print 하기
     Blockly.Python['print'] = function(block) {

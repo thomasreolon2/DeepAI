@@ -8,7 +8,7 @@ Blockly.Blocks['printc'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(160);
+        this.setColour("%{BKY_TEXTS_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -815,6 +815,39 @@ Blockly.Blocks['k_means'] = {
    this.setHelpUrl("");
     }
   };
+
+  // increase 등등
+  Blockly.Blocks['increase'] = {
+    init: function() {
+      this.appendValueInput("VALUE")
+          .setCheck(null)
+          .appendField(new Blockly.FieldDropdown([["raise","OPTIONNAME"], ["modulo","OPTIONNAME"], ["divide","OPTIONNAME"], ["multiply","OPTIONNAME"], ["decrease","OPTIONNAME"], ["increase","OPTIONNAME"]]), "NAME");
+      this.appendDummyInput()
+          .appendField("to");
+      this.appendValueInput("NUMBER")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LOOPS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  //
+  Blockly.Blocks['break_block'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("break");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LOOPS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
 // return 블럭
 Blockly.Blocks['py_return'] = {
 init: function() {
@@ -840,7 +873,7 @@ init: function() {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour("%{BKY_CONVERSION_HUE}");
 this.setTooltip("");
 this.setHelpUrl("");
 }
@@ -856,7 +889,7 @@ init: function() {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour("%{BKY_CONVERSION_HUE}");
 this.setTooltip("");
 this.setHelpUrl("");
 }
@@ -872,7 +905,7 @@ init: function() {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour("%{BKY_CONVERSION_HUE}");
 this.setTooltip("");
 this.setHelpUrl("");
 }
@@ -888,7 +921,7 @@ init: function() {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour("%{BKY_CONVERSION_HUE}");
 this.setTooltip("");
 this.setHelpUrl("");
 }
@@ -1090,38 +1123,7 @@ Blockly.Blocks['list_index'] = {
     }
   };
 
-  // increase 등등
-  Blockly.Blocks['increase'] = {
-    init: function() {
-      this.appendValueInput("VALUE")
-          .setCheck(null)
-          .appendField(new Blockly.FieldDropdown([["raise","OPTIONNAME"], ["modulo","OPTIONNAME"], ["divide","OPTIONNAME"], ["multiply","OPTIONNAME"], ["decrease","OPTIONNAME"], ["increase","OPTIONNAME"]]), "NAME");
-      this.appendDummyInput()
-          .appendField("to");
-      this.appendValueInput("NUMBER")
-          .setCheck(null);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
-  //
-  Blockly.Blocks['break_block'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("break");
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
+  
   // 결측치 조회
   Blockly.Blocks['missing_value_inquiry'] = {
     init: function() {
