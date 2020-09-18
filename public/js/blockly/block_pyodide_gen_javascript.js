@@ -102,3 +102,20 @@ Blockly.JavaScript['sklearn_mlp_fit'] = function(block) {
   var code = '\n';
   return code; 
 }; 
+Blockly.JavaScript['import_dataset'] = function(block) {
+  var dropdown_dataset_name = block.getFieldValue('dataset_name');
+  var value_x_data = Blockly.JavaScript.valueToCode(block, 'x_data', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y_data = Blockly.JavaScript.valueToCode(block, 'y_data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code =value_x_data+"=pyodide.pyimport('"+value_x_data+"');\n"+value_y_data+"=pyodide.pyimport('"+value_y_data+"');\n";
+  return code;
+};
+Blockly.JavaScript['scikit_learn'] = function (block) {
+  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_cate = block.getFieldValue('cate');
+  var value_x = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('x'), Blockly.Variables.NAME_TYPE);
+  var value_y = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('y'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code= value_model+"=pyodide.pyimport('"+value_model+"');\n"
+  return code;
+};
