@@ -1491,13 +1491,7 @@ Blockly.Python['list_sort_reverse'] = function(block) {
   return code;
 };
 
-// reverse
-Blockly.Python['list_reverse'] = function(block) {
-  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = value_list+'.reverse()\n';
-  return code;
-};
+
 
 // index
 Blockly.Python['list_index'] = function(block) {
@@ -1516,6 +1510,16 @@ Blockly.Python['list_insert'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = value_list+'.insert('+value_index+', '+value_value+')\n';
   return code;
+};
+
+Blockly.Python['list_remove_pop_count_extend'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list+'.'+dropdown_name+'('+value_value+')\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 // remove

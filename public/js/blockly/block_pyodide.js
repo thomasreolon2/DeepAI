@@ -1007,58 +1007,22 @@ Blockly.Blocks['list_index'] = {
    this.setHelpUrl("");
     }
   };
-
-  // list_remove
-  Blockly.Blocks['list_remove'] = {
+  // 리스트 삭제, 끄집어내기, 요소의개수, 확장
+  Blockly.Blocks['list_remove_pop_count_extend'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("remove = list :");
+          .appendField("리스트")
+          .appendField(new Blockly.FieldDropdown([["확장","extend"], ["요소의개수","count"], ["끄집어내기","pop"], ["요소삭제","remove"]]), "NAME")
+          .appendField("->")
+          .appendField("(리스트");
       this.appendValueInput("LIST")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("value :");
+          .appendField(", 요소");
       this.appendValueInput("VALUE")
           .setCheck(null);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_COLLECTION_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
-  // list_pop
-  Blockly.Blocks['list_pop'] = {
-    init: function() {
       this.appendDummyInput()
-          .appendField("pop = list :");
-      this.appendValueInput("LIST")
-          .setCheck(null);
-      this.appendDummyInput()
-          .appendField("value :");
-      this.appendValueInput("VALUE")
-          .setCheck(null);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_COLLECTION_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
-  // list_count
-  Blockly.Blocks['list_count'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("count = list :");
-      this.appendValueInput("LIST")
-          .setCheck(null);
-      this.appendDummyInput()
-          .appendField("value :");
-      this.appendValueInput("VALUE")
-          .setCheck(null);
+          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_COLLECTION_HUE}");
@@ -1067,26 +1031,6 @@ Blockly.Blocks['list_index'] = {
     }
   };
 
-  // list_extend
-  Blockly.Blocks['list_extend'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("extend list :");
-      this.appendValueInput("LIST1")
-          .setCheck(null);
-      this.appendDummyInput()
-          .appendField("list : ");
-      this.appendValueInput("LIST2")
-          .setCheck(null);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_COLLECTION_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
-  // text_replace
   // text_replace
   Blockly.Blocks['text_replace'] = {
     init: function() {
