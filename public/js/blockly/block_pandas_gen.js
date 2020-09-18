@@ -301,3 +301,18 @@ Blockly.Python['pandas_merge_lron'] = function(block) {
 ////////////////////////////////////////////////////////////////////
 // Pandas 2학년 파트 끝
 ////////////////////////////////////////////////////////////////////
+
+// 결측치 조회
+Blockly.Python['missing_value_inquiry'] = function(block) {
+  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = "pd.DataFrame(" + variable_data + ').isnull().sum()\n';
+  return code;
+};
+// 통계 정보 조회
+Blockly.Python['stats_inquiry'] = function(block) {
+  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = "pd.DataFrame(" + variable_data + ').describe()\n';
+  return code;
+};
