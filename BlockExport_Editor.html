@@ -111,21 +111,21 @@
 
   <script> 
     languagePluginLoader.then(() => {
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib' , 'scikit-learn']).then(() => {     // , 'scikit-learn'
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn']).then(() => {     // , 'scikit-learn'
 
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image1").hide(); // 로딩 끝나면 로딩 창 없앰 
         $("#runButton1").css({'display':"block"}); 
         $("#loading_image2").hide(); // 로딩 끝나면 로딩 창 없앰 
         $("#runButton2").css({'display':"inline"}); 
-      });
+      }); 
     });   
   </script>
  
   <!-- table -->
   <link rel="stylesheet" href="/css/table_custom.css"> 
   <style type="text/css">
-    canvas {
+    canvas { 
       background-color: white;
       border: 1px solid black
     }
@@ -138,7 +138,7 @@
       margin: 10px;
     }
 
-    .form-control {
+    .form-control { 
       height: 50%;
     }
 
@@ -710,17 +710,23 @@
 
       <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">
 
-           <!--  import np,np,plt,io,base64  --> 
-           <block type="import_libs">
+        <!--  import np,np,plt,io,base64  --> 
+        <block type="import_libs">
             <value name="import_libs_val"> 
               <block type="variables_get">     
                 <field name="VAR">np</field>   
               </block> 
             </value> 
-          </block>  
-          <!--  import np,np,plt,io,base64  -->
+        </block>  
+        <!--  import np,np,plt,io,base64  -->
 
-          <block type="data_to_csv"></block>
+        <!-- csv 저장   -->
+        <block type="data_to_csv"></block>
+        <!-- csv 저장   -->
+
+        <!-- .to_list 데이터 형 변환   -->
+        <block type="data_conversion"></block>
+        <!-- .to_list 데이터 형 변환   -->
 
         <!-- numpy.arry  -->
         <block type="np_array"> 

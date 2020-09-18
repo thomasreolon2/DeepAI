@@ -51,8 +51,8 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var text_lib_import_name_from = block.getFieldValue('Lib_import_name_from');
     var text_lib_import2 = block.getFieldValue('Lib_import2');
     // TODO: Assemble Python into code variable.
-    var code =' ';   
-    return code;
+    var code =' ';    
+    return code;   
   };  
 
   //데이터 CSV로 저장
@@ -64,9 +64,16 @@ Blockly.JavaScript['val_vi'] = function(block) {
   
     //text_value_value_data_to_csv_name = text_value_value_data_to_csv_name.slice(1,-1); 
     var code = `data_to_csv_value = pyodide.pyimport('data_to_csv_value');\nexportToCsv('${testing}.csv',data_to_csv_value); `; //${text_value_value_data_to_csv_name}.csv,   
-    return code;      
+    return code;       
   }; 
-  
+   // .list 데이터 리스트 변환 
+  Blockly.JavaScript['data_conversion'] = function(block) {
+    var value_data_conversion_var = Blockly.JavaScript.valueToCode(block, 'Data_Conversion_var', Blockly.JavaScript.ORDER_ATOMIC);
+    var dropdown_data_conversion_option = block.getFieldValue('Data_Conversion_Option');
+    // TODO: Assemble JavaScript into code variable.
+    var code = ' ';
+    return code;  
+  };
 
    // np.arry  
    Blockly.JavaScript['np_array'] = function(block) {

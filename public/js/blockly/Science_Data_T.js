@@ -187,8 +187,45 @@ Blockly.defineBlocksWithJsonArray(
   "colour": 125,
   "tooltip": "",
   "helpUrl": ""
-}, 
-
+},  
+//.list 데이터 리스트 변환
+{
+  "type": "data_conversion",
+  "message0": "%1 .tolist( 리스트 변환 : %2  )",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "Data_Conversion_var"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "Data_Conversion_Option",
+      "options": [
+        [
+          "Pandas",
+          "Data_Conversion_Option_Pandas"
+        ],
+        [
+          "Numpy",
+          "Data_Conversion_Option_Numpy"
+        ],
+        [
+          "Tuple",
+          "Data_Conversion_Option_Tuple"
+        ],
+        [
+          "Dictionary",
+          "Data_Conversion_Option_Dictionary"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 125,
+  "tooltip": "",
+  "helpUrl": ""
+},
   // 라이브러리 단일 임포트 부분    
   {
     "type": "lib_import",
