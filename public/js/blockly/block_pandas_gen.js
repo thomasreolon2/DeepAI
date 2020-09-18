@@ -18,14 +18,14 @@ Blockly.Python['load_csv'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-//2020-09-16 양승국 수정
+//2020-09-19 양승국 수정
 Blockly.Python['fill_null_data'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_name + '.fillna(' + value_name  + dropdown_name + ')';
+  var code = value_name + '=' +  value_name + '.fillna(' + value_name  + dropdown_name + ')';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Python['pyo_lib'] = function(block) {
@@ -130,14 +130,14 @@ Blockly.Python['select_column_list'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-//2020-09-11 양승국 코드수정
+//2020-09-19 양승국 코드수정
 Blockly.Python['select_row_column_value'] = function(block) {
   var value_select_value = Blockly.Python.valueToCode(block, 'select_data', Blockly.Python.ORDER_ATOMIC);
   var value_select_row_locate = Blockly.Python.valueToCode(block, 'select_row_locate', Blockly.Python.ORDER_ATOMIC);
   var value_select_column_locate = Blockly.Python.valueToCode(block, 'select_column_locate', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_select_value + '.iloc[' + value_select_row_locate +','+ value_select_column_locate +']\n';
-  return [code, Blockly.Python.ORDER_NONE];
+  var code = value_select_value + '=' + value_select_value + '.iloc[' + value_select_row_locate +','+ value_select_column_locate +']\n';
+  return code;
 };
 
 //2020-09-16 양승국 수정
@@ -173,21 +173,19 @@ Blockly.Python['pandas_datalist'] = function(block) {
   var code = value_frm_var + ' = list(zip( ' + text_name + '));\n';
   return code;
 };
-// Blockly.Python['pandas_datalist'] = function(a) {
-//   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
-//     return ['list(zip('+ b.join(", ") +'))', Blockly.Python.ORDER_ATOMIC]
-  
-// };
 
 //2020-09-06 양승국
 //2020-09-09 이성주
+//2020-09-19 양승국
 Blockly.Python['pandas_dataframe'] = function(block) {
+  var value_df_va = Blockly.Python.valueToCode(block, 'df_va', Blockly.Python.ORDER_ATOMIC);
   var value_lib = Blockly.Python.valueToCode(block, 'lib', Blockly.Python.ORDER_ATOMIC);
   var value_lst = Blockly.Python.valueToCode(block, 'lst', Blockly.Python.ORDER_ATOMIC);
-  var value_col1 = Blockly.Python.valueToCode(block, 'col1', Blockly.Python.ORDER_ATOMIC);
-  var code = value_lib + '.'+ 'DataFrame(data = ' + value_lst + value_col1 + ')';
+  var text_name = block.getFieldValue('col_name');
+
+  var code = value_df_va + '=' + value_lib + '.'+ 'DataFrame(data = ' + value_lst + ', columns =[' + text_name + '])\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return code;
 };
 
 //20.09.09 이성주 - 컬럼 블록 추가
@@ -198,7 +196,7 @@ Blockly.Python['createColumn'] = function(a) {
   
 };
 
-//2020-09-09 양승국
+//2020-09-19 양승국
 Blockly.Python['pandas_conversion'] = function(block) {
   var value_pa_frm = Blockly.Python.valueToCode(block, 'pa_frm', Blockly.Python.ORDER_ATOMIC);
   var value_pa_cul = Blockly.Python.valueToCode(block, 'pa_cul', Blockly.Python.ORDER_ATOMIC);
@@ -210,14 +208,14 @@ Blockly.Python['pandas_conversion'] = function(block) {
   return code;
 };
 
-//2020-09-10 양승국
+//2020-09-19 양승국 수정
 Blockly.Python['pandas_mis_del'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('DEL_NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_name + dropdown_name;
+  var code = value_name + '=' + value_name + dropdown_name;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 //2020-09-10 양승국 추가
