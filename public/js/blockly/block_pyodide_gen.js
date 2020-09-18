@@ -232,7 +232,7 @@ Blockly.Python['model_score'] = function(block) {
     var value_y_test = Blockly.Python.valueToCode(block, 'y_test', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = value_model_name + '.score(' + value_x_test + ', '+ value_y_test + ')\n';
-    return code;
+    return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
 
