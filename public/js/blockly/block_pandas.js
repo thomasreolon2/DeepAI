@@ -846,3 +846,28 @@ Blockly.Blocks['pandas_merge_lron'] = {
 /////////////////////////////////////////////////////////////
 // Pandas 2학년 파트 끝
 /////////////////////////////////////////////////////////////
+
+ // 결측치 조회
+ Blockly.Blocks['missing_value_inquiry'] = {
+  init: function() {
+    this.appendValueInput("data").setCheck(null)
+    this.appendDummyInput().appendField("결측치 조회하기");
+    this.setColour(230);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+// 통계 정보 조회
+Blockly.Blocks['stats_inquiry'] = {
+  init: function() {
+    this.appendValueInput("data").setCheck(null)
+    this.appendDummyInput().appendField("통계 정보 조회하기");
+    this.setColour(230);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

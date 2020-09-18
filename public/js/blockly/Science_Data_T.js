@@ -185,13 +185,13 @@ Blockly.defineBlocksWithJsonArray(
   "previousStatement": null,
   "nextStatement": null,
   "colour": 125,
-  "tooltip": "",
+  "tooltip": "", 
   "helpUrl": ""
 },  
 //.list 데이터 리스트 변환
 {
   "type": "data_conversion",
-  "message0": "%1 .tolist( 리스트 변환 : %2  )",
+  "message0": "%1 .tolist( 리스트 변환 :    %2 )",
   "args0": [
     {
       "type": "input_value",
@@ -220,12 +220,11 @@ Blockly.defineBlocksWithJsonArray(
       ]
     }
   ],
-  "previousStatement": null,
-  "nextStatement": null,
+  "output": null,
   "colour": 125,
   "tooltip": "",
   "helpUrl": ""
-},
+}, 
   // 라이브러리 단일 임포트 부분    
   {
     "type": "lib_import",

@@ -462,6 +462,7 @@ Blockly.Python['k_means'] = function (block) {
     return code;
 };
 
+
 // 결측치 조회
 Blockly.Python['missing_value_inquiry'] = function(block) {
     var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);

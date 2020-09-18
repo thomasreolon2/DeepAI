@@ -1123,7 +1123,7 @@ Blockly.Blocks['list_index'] = {
     }
   };
 
-  
+
   // 결측치 조회
   Blockly.Blocks['missing_value_inquiry'] = {
     init: function() {
