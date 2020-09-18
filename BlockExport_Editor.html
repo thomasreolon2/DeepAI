@@ -892,12 +892,10 @@
         <!-- <block type="pandas_print"></block> -->
         <block type="normal"></block>
         <block type="select_row_delete"></block>
-        <block type="select_column_delete"></block>
         <!-- <block type="save_image"></block> -->
         <block type="list"></block>
         <block type="header"></block>
         <block type="select_row_list"></block>
-        <block type="select_column_list"></block>
         <block type="row_count"></block>
         <!-- 2020-09-16 양승국-->
         <block type="nm"></block>
@@ -911,16 +909,24 @@
             <block type="pandas_series_data"></block>
           </value>
         </block>
-        <block type="pandas_series_data"></block>
         <block type="pandas_concat">
-          <value name="pa_val">
+          <value name="cat_val">
             <block type="variables_get">
               <field name="VAR">pd</field>
             </block>
           </value>
         </block>
         <!-- 2020-09-17 양승국 블록추가 -->
-        <block type="pandas_merge"></block>
+        <block type="pandas_merge">
+          <value name="pan_lib">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+          <value name="connet_way">
+            <block type="pandas_merge_oncol"></block>
+          </value>
+        </block>
         <block type="pandas_merge_oncol"></block>
         <block type="pandas_merge_lron"></block>
 

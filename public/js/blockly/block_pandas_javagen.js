@@ -61,6 +61,66 @@ Blockly.JavaScript['select_row_delete'] = function(block) {
   var code = '...;\n';
   return code;
 };
+
+Blockly.JavaScript['list'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['header'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['select_row_list'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['row_count'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['nm'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['pandas_series'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['pandas_concat'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['pandas_merge'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['pandas_merge_oncol'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['pandas_merge_lron'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
 // ////////////////////////////////////////////////////////////////////
 // // Pandas 2학년 파트 끝
 // ////////////////////////////////////////////////////////////////////

@@ -106,39 +106,22 @@ Blockly.Blocks['deletehead'] = {
 };
 
 // 특정 행 삭제
-//2020-09-05-양승국 수정
+//2020-09-19-양승국 수정
 Blockly.Blocks['select_row_delete'] = {
   init: function() {
-    this.appendValueInput("select_value")
-        .setCheck(null);
+    this.appendValueInput("select_data")
+        .setCheck(null)
+        .appendField("행열삭제 데이터 :");
+    this.appendValueInput("select_drop")
+        .setCheck(null)
+        .appendField("(삭제할거 :");
     this.appendDummyInput()
-        .appendField("의");
-    this.appendValueInput("select_row")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField("번째 행 삭제");
+        .appendField("(삭제방향 :")
+        .appendField(new Blockly.FieldDropdown([["행삭제",", axis = 0"], ["열삭제",", axis = 1"]]), "srd_NAME")
+        .appendField(")");
     this.setInputsInline(true);
-    this.setOutput(true,null);
-    this.setColour(pandas_color);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-// 특정 열 삭제하기
-//2020-09-19 양승국 수정
-Blockly.Blocks['select_column_delete'] = {
-  init: function() {
-    this.appendValueInput("select_value")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField("의");
-    this.appendValueInput("select_column")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField(" 열 삭제(컬럼명)");
-    this.setInputsInline(true);
-    this.setOutput(true,null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -207,15 +190,21 @@ Blockly.Blocks['save_data'] = {
 
 
 
-//리스트 
+//리스트
+//2020-09-19 양승국 
 Blockly.Blocks['list'] = {
   init: function() {
-    this.appendValueInput("select_value")
-        .setCheck(null);
+    this.appendValueInput("input_data")
+        .setCheck(null)
+        .appendField("[리스트화] 담을 변수 :");
+    this.appendValueInput("out_data")
+        .setCheck(null)
+        .appendField("(변화시킬 데이터 :");
     this.appendDummyInput()
-        .appendField("리스트");
+        .appendField(")");        
     this.setInputsInline(true);
-    this.setOutput(true, null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -226,12 +215,17 @@ Blockly.Blocks['list'] = {
 
 Blockly.Blocks['header'] = {
   init: function() {
-    this.appendValueInput("select_value")
-        .setCheck(null);
+    this.appendValueInput("header_input_var")
+        .setCheck(null)
+        .appendField("[헤더블록] 담을 변수 :");    
+    this.appendValueInput("header_output_var")
+        .setCheck(null)
+        .appendField("(변환 시킬 데이터 :");    
     this.appendDummyInput()
-        .appendField("의 헤더");
+        .appendField(")");
     this.setInputsInline(true);
-    this.setOutput(true, null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -239,36 +233,19 @@ Blockly.Blocks['header'] = {
 };
 
 // 행 리스트
+//2020-09-19 양승국
 Blockly.Blocks['select_row_list'] = {
-  init: function() {
-    this.appendValueInput("select_value")
-        .setCheck(null);
+  init: function() {  
+    this.appendValueInput("list_data")
+        .setCheck(null)
+        .appendField("[리스트] 데이터 :");        
+    this.appendValueInput("list_val")
+        .setCheck(null)
+        .appendField("(인덱스나컬럼명 :");
     this.appendDummyInput()
-        .appendField("의");
-    this.appendValueInput("select_row_locate")
-        .setCheck(null);
+        .appendField(new Blockly.FieldDropdown([["행 리스트","1"], ["열 리스트","2"]]), "srd_NAME");
     this.appendDummyInput()
-        .appendField("번째 행 리스트");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(pandas_color);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-//열 리스트
-//2020-09-13 양승국 수정
-Blockly.Blocks['select_column_list'] = {
-  init: function() {
-    this.appendValueInput("select_value")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField("의");
-    this.appendValueInput("select_column_locate")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField("번째 열 리스트(컬럼명)");
+        .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);
@@ -301,15 +278,20 @@ Blockly.Blocks['select_row_column_value'] = {
 };
 
 //행 개수
-//2020-09-16 양승국 블록 수정
+//2020-09-19 양승국 블록 수정
 Blockly.Blocks['row_count'] = {
   init: function() {
     this.appendValueInput("select_value")
-        .setCheck(null);
+        .setCheck(null)
+        .appendField("[행열개수] 데이터 :");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["의 행 개수",".shape[0]"], ["의 열 개수",".shape[1]"]]), "count");        
+        .appendField("(행열지정 :")
+        .appendField(new Blockly.FieldDropdown([["행",".shape[0]"], ["열",".shape[1]"]]), "count");   
+    this.appendDummyInput()
+        .appendField(")");            
     this.setInputsInline(true);
-    this.setOutput(true, null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -584,16 +566,23 @@ Blockly.Blocks['nm'] = {
   }
 };
 
-//2020-09-16 양승국 블록추가
+//2020-09-19 양승국
 Blockly.Blocks['pandas_series'] = {
   init: function() {
+    this.appendValueInput("ser_var")
+        .setCheck(null)
+        .appendField("[시리즈블록] 넣을변수 :");
     this.appendValueInput("lvar")
-        .setCheck(null);
+        .setCheck(null)
+        .appendField(", ");
     this.appendValueInput("ser_data")
         .setCheck(null)
-        .appendField(".Series");
+        .appendField("(넣을 데이터 :");
+    this.appendDummyInput()
+        .appendField(")");   
     this.setInputsInline(true);
-    this.setOutput(true, null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -702,41 +691,57 @@ Blockly.Blocks.lists_create_with_item = {
   },
 };
 
-//2020-09-16 양승국 블록추가
+//2020-09-19 양승국 수정
 Blockly.Blocks['pandas_concat'] = {
   init: function() {
-    this.appendValueInput("pa_val")
+    this.appendValueInput("cat_vl")
         .setCheck(null)
-        .appendField("라이브러리 변수 :");
-    this.appendValueInput("set_series")
+        .appendField("[concat연결]  넣을변수:");
+    this.appendValueInput("cat_val")
         .setCheck(null)
-        .appendField("넣을 시리즈 :");
+        .appendField(", ");
+    this.appendValueInput("data1")
+        .setCheck(null)
+        .appendField("(데이터1 :");
+    this.appendValueInput("data2")
+        .setCheck(null)
+        .appendField("데이터2 :");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["행에 추가",", axis = 0"], ["열에 추가",", axis = 1"]]), "PLEUS_NAME");        
+        .appendField(new Blockly.FieldDropdown([["행에 추가",", axis = 0"], ["열에 추가",", axis = 1"]]), "PLEUS_NAME");    
+    this.appendDummyInput()
+        .appendField(")");            
     this.setInputsInline(true);
-    this.setOutput(true, null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
 };
 
-//2020-09-17 양승국 블록추가
+//2020-09-19 양승국 블록추가
 Blockly.Blocks['pandas_merge'] = {
   init: function() {
+    this.appendValueInput("mer_var")
+    .setCheck(null)
+    .appendField("[merge블록] 넣은변수:");
     this.appendValueInput("pan_lib")
         .setCheck(null)
-        .appendField("판다스라이브러리 :");
+        .appendField(", ");
     this.appendValueInput("plus_data1")
         .setCheck(null)
-        .appendField("합칠 데이터프레임 :");
+        .appendField("(데이터1 :");
     this.appendValueInput("plus_data2")
         .setCheck(null)
+        .appendField("데이터2 :");
     this.appendValueInput("connet_way")
         .setCheck(null)
-        .appendField("합칠 방식 :");
+        .appendField("합칠방식 :");
+    this.appendDummyInput()
+        .appendField(")");  
     this.setInputsInline(true);
-    this.setOutput(true, null);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -746,9 +751,9 @@ Blockly.Blocks['pandas_merge'] = {
 //2020-09-17 양승국 블록추가
 Blockly.Blocks['pandas_merge_oncol'] = {
   init: function() {
-    this.appendValueInput("pan_merge_col")
-        .setCheck(null)
-        .appendField("(공통된컬럼있을때)합칠 컬럼명 :");
+    this.appendDummyInput()
+        .appendField("(공통된컬럼있을때)합칠 컬럼명 :")
+        .appendField(new Blockly.FieldTextInput("default"), "mer_NAME");    
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);
@@ -759,13 +764,13 @@ Blockly.Blocks['pandas_merge_oncol'] = {
 
 //2020-09-17 양승국 블록추가
 Blockly.Blocks['pandas_merge_lron'] = {
-  init: function() {
-    this.appendValueInput("left_on")
-        .setCheck(null)
-        .appendField("(공통컬럼없을때) 왼쪽 컬럼 :");
-    this.appendValueInput("right_on")
-        .setCheck(null)
-        .appendField("오른쪽 컬럼 :");        
+  init: function() {  
+    this.appendDummyInput()
+    .appendField("(공통컬럼없을때) 왼쪽 컬럼 :")
+        .appendField(new Blockly.FieldTextInput("default"), "mer_LNAME");   
+    this.appendDummyInput()
+        .appendField("오른쪽 컬럼 :")
+        .appendField(new Blockly.FieldTextInput("default"), "mer_RNAME");           
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);
@@ -783,7 +788,7 @@ Blockly.Blocks['pandas_merge_lron'] = {
   init: function() {
     this.appendValueInput("data").setCheck(null)
     this.appendDummyInput().appendField("결측치 조회하기");
-    this.setColour(230);
+    this.setColour(pandas_color);
     this.setInputsInline(true);
     this.setOutput(true, null);
  this.setTooltip("");
@@ -795,7 +800,7 @@ Blockly.Blocks['stats_inquiry'] = {
   init: function() {
     this.appendValueInput("data").setCheck(null)
     this.appendDummyInput().appendField("통계 정보 조회하기");
-    this.setColour(230);
+    this.setColour(pandas_color);
     this.setInputsInline(true);
     this.setOutput(true, null);
  this.setTooltip("");
