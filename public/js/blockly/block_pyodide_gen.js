@@ -476,3 +476,13 @@ Blockly.Python['missing_value_inquiry'] = function(block) {
     var code = "pd.DataFrame(" + variable_data + ').describe()\n';
     return code;
   };
+  Blockly.Python['vis_tree'] = function(block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
+    var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
+    var text_s = block.getFieldValue('s');
+    var text_e = block.getFieldValue('e');
+    // TODO: Assemble Python into code variable.
+    var code = '#트리그래프\n';
+    return code;
+  };

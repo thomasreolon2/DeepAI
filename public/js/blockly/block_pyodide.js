@@ -1148,3 +1148,26 @@ Blockly.Blocks['list_index'] = {
    this.setHelpUrl("");
     }
   };
+  Blockly.Blocks['vis_tree'] = {
+    init: function() {
+      this.appendValueInput("model")
+          .setCheck(null)
+          .appendField(" 결정트리 그래프) 모델:");
+      this.appendValueInput("x_data")
+          .setCheck(null)
+          .appendField("Xdata: ");
+      this.appendValueInput("y_data")
+          .setCheck(null)
+          .appendField("Ydata: ");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("컬럼 위치1"), "s");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("컬럼 위치2"), "e");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
