@@ -83,7 +83,7 @@ Blockly.Blocks['normal'] = {
         .appendField(new Blockly.FieldTextInput("default"), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -385,7 +385,7 @@ Blockly.Blocks['pandas_datalist'] = {
         .appendField(")");    
         this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
   }
