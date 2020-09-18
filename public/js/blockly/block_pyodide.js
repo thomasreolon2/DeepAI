@@ -319,7 +319,7 @@ Blockly.Blocks['create_dict'] = {
         this.appendValueInput("dict2").setCheck(null);
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_TUPLE_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -568,7 +568,7 @@ Blockly.Blocks['tuple'] = {
    */
     init: function () {
         this.appendDummyInput().appendField("튜플");
-        this.setColour(230);
+        this.setColour("%{BKY_TUPLE_HUE}");
         this.updateShape_();
         this.setOutput(true, null);
         this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
@@ -933,16 +933,16 @@ Blockly.Blocks['list_append'] = {
 init: function() {
     this.appendValueInput("LIST")
         .setCheck(null)
-        .appendField("to list");
+        .appendField("리스트 요소추가 -> 리스트");
     this.appendValueInput("value")
         .setCheck(null)
-        .appendField("append (");
+        .appendField("추가내용 (");
     this.appendDummyInput()
         .appendField(")");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour("%{BKY_COLLECTION_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
     }
@@ -958,7 +958,7 @@ init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour("%{BKY_COLLECTION_HUE}");
 this.setTooltip("");
 this.setHelpUrl("");
 }
@@ -974,7 +974,7 @@ init: function() {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour("%{BKY_COLLECTION_HUE}");
 this.setTooltip("");
 this.setHelpUrl("");
 }
@@ -993,7 +993,7 @@ Blockly.Blocks['list_index'] = {
           .setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_COLLECTION_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1017,7 +1017,7 @@ Blockly.Blocks['list_index'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_COLLECTION_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1037,7 +1037,7 @@ Blockly.Blocks['list_index'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_COLLECTION_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1057,7 +1057,7 @@ Blockly.Blocks['list_index'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_COLLECTION_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1076,7 +1076,7 @@ Blockly.Blocks['list_index'] = {
           .setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_COLLECTION_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1095,30 +1095,33 @@ Blockly.Blocks['list_index'] = {
           .setCheck(null);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_COLLECTION_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
   };
 
   // text_replace
+  // text_replace
   Blockly.Blocks['text_replace'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("replace = text :");
+          .appendField("문자열변경 -> 변수 ");
       this.appendValueInput("TEXT")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("바뀔문자 :");
+          .appendField("( 기존");
       this.appendValueInput("A")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("바꿀문자 :");
+          .appendField(", 변경");
       this.appendValueInput("B")
           .setCheck(null);
+          this.appendDummyInput()
+          .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-      this.setColour("%{BKY_TEXTS_HUE}");
+      this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
     }
