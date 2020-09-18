@@ -1483,12 +1483,14 @@ Blockly.Python['list_append'] = function(block) {
 };
 
 // sort
-Blockly.Python['list_sort'] = function(block) {
+Blockly.Python['list_sort_reverse'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
   var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_list+'.sort()\n';
+  var code = value_list+'.'+dropdown_name+'()\n';
   return code;
 };
+
 // reverse
 Blockly.Python['list_reverse'] = function(block) {
   var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);

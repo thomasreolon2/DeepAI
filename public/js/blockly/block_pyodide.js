@@ -948,37 +948,22 @@ init: function() {
     }
 };
 
-// list_sort
-Blockly.Blocks['list_sort'] = {
-init: function() {
-    this.appendDummyInput()
-        .appendField("list sort");
-    this.appendValueInput("LIST")
-        .setCheck(null);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_COLLECTION_HUE}");
-this.setTooltip("");
-this.setHelpUrl("");
-}
-};
+// 리스트 정렬, 뒤집기
+Blockly.Blocks['list_sort_reverse'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("리스트")
+          .appendField(new Blockly.FieldDropdown([["뒤집기","reverse"], ["정렬","sort"]]), "NAME");
+      this.appendValueInput("LIST")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_COLLECTION_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
-// list_reverse
-Blockly.Blocks['list_reverse'] = {
-init: function() {
-    this.appendDummyInput()
-        .appendField("list reverse");
-    this.appendValueInput("LIST")
-        .setCheck(null);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_COLLECTION_HUE}");
-this.setTooltip("");
-this.setHelpUrl("");
-}
-};
 
 // list_index
 Blockly.Blocks['list_index'] = {
