@@ -794,15 +794,17 @@ Blockly.Blocks['k_means'] = {
    this.setHelpUrl("");
     }
   };
-  // for
-  Blockly.Blocks['py_for'] = {
+ // for
+ Blockly.Blocks['py_for'] = {
     init: function() {
+        this.appendDummyInput()
+        .appendField("반복문");
       this.appendValueInput("item")
           .setCheck(null)
-          .appendField("for each item");
+          .appendField("변수");
       this.appendValueInput("NAME")
           .setCheck(null)
-          .appendField("in list");
+          .appendField("리스트");
       this.appendDummyInput()
           .appendField(":");
       this.appendStatementInput("value")
@@ -815,7 +817,6 @@ Blockly.Blocks['k_means'] = {
    this.setHelpUrl("");
     }
   };
-
   // increase 등등
   Blockly.Blocks['increase'] = {
     init: function() {

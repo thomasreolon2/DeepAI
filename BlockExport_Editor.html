@@ -469,11 +469,7 @@
           </shadow>
         </value>
       </block>
-      <!-- <block type="mexp"></block> -->
-    </category>
-
-    <!-- 형 변환 -->
-    <category name="형변환 (Conversion)" colour="%{BKY_CONVERSION_HUE}">
+      <!-- 형변환 
       <block type="conver_int">
         <value name="VALUE"></value>
       </block>
@@ -486,6 +482,7 @@
       <block type="conver_bool">
         <value name="VALUE"></value>
       </block>
+      -->
     </category>
 
     <!-- 문자 -->
@@ -579,7 +576,7 @@
     </category>
 
     <!-- list -->
-    <category name="배열 (Array)" colour="%{BKY_LISTS_HUE}">
+    <category name="컬렉션 (Collection)" colour="%{BKY_LISTS_HUE}">
       <!-- 리스트 생성 -->
       <block type="lists_create_with"></block>
       <!-- 비어있는 리스트 생성 -->
@@ -705,10 +702,10 @@
     <!-- #####################################################################################################  -->
     <!-- ******************************   데이타 사이언스 //  2020 - 09 - 07     ******************************* -->
     <!-- #####################################################################################################  -->
-    <category name="데이터 사이언스"  colour="%{BKY_LOOPS_HUE}">
+    <category name="데이터 사이언스"  colour="%{BKY_DATASCIENCE_HUE}">
     <!-- # numpy function # -->
 
-      <category name="Numpy 함수" colour="%{BKY_LOOPS_HUE}">
+      <category name="Numpy 함수" colour="%{BKY_NUMPY_HUE}">
 
         <!--  import np,np,plt,io,base64  --> 
         <block type="import_libs">
@@ -852,7 +849,7 @@
       <!-- ************************************************** ************************* *************************  -->
       <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
       <!-- ************************************************** ************************* *************************  -->
-      <category name="Pandas 함수" colour="%{BKY_LOGIC_HUE}">
+      <category name="Pandas 함수" colour="%{BKY_PANDAS_HUE}">
         <block type="import_lib">
           <value name="var">
             <block type="variables_get">
@@ -952,7 +949,7 @@
       <!-- ************************************************** ************************* *************************  -->
   
       <!-- # 시각화 부분 #  -->
-      <category name="시각화 하기 " colour="%{BKY_LOOPS_HUE}">
+      <category name="시각화 하기 " colour="%{BKY_VISUAL_HUE}">
         <block type="val_vi"></block>   
 
         <!--  matplot1 시각화 틀    -->
@@ -992,7 +989,7 @@
     </category>
 
 
-    <category name="머신러닝" colour="%{BKY_VARIABLES_HUE}">
+    <category name="머신러닝" colour="%{BKY_ML_HUE}">
       <block type="import_dataset"></block>
       <!-- <block type="array_get"></block> -->
       <block type="csv3"></block>
@@ -1014,7 +1011,7 @@
 
     <!-- 기본 블록 2020 - 09 - 07 찬영 -->
     <!-- 새 블록  딕셔너리 -->
-    <category name="딥러닝" colour="%{BKY_LOOPS_HUE}">
+    <category name="딥러닝" colour="%{BKY_DL_HUE}">
      
     </category>
 
