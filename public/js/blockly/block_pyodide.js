@@ -840,7 +840,7 @@ Blockly.Blocks['k_means'] = {
   Blockly.Blocks['break_block'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("break");
+          .appendField("정지");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour("%{BKY_LOOPS_HUE}");
@@ -1118,7 +1118,7 @@ Blockly.Blocks['list_index'] = {
           .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_TEXTS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }

@@ -168,7 +168,7 @@ Blockly.Msg["LISTS_SPLIT_LIST_FROM_TEXT"] = "텍스트에서 목록 만들기";
 Blockly.Msg["LISTS_SPLIT_TEXT_FROM_LIST"] = "목록에서 텍스트 만들기";
 Blockly.Msg["LISTS_SPLIT_TOOLTIP_JOIN"] = "구분 기호로 구분하여 텍스트 목록을 하나의 텍스트에 병합합니다.";
 Blockly.Msg["LISTS_SPLIT_TOOLTIP_SPLIT"] = "각 속보, 텍스트의 목록들에서 텍스트를 분할합니다.";
-Blockly.Msg["LISTS_SPLIT_WITH_DELIMITER"] = "분리와";
+Blockly.Msg["LISTS_SPLIT_WITH_DELIMITER"] = "분리";
 Blockly.Msg["LOGIC_BOOLEAN_FALSE"] = "거짓";
 Blockly.Msg["LOGIC_BOOLEAN_HELPURL"] = "https://ko.wikipedia.org/wiki/%EC%A7%84%EB%A6%BF%EA%B0%92";
 Blockly.Msg["LOGIC_BOOLEAN_TOOLTIP"] = "참 혹은 거짓 모두 반환합니다.";
@@ -424,27 +424,25 @@ Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 
 // 카테고리 색 변경
-Blockly.Msg["VARIABLES_HUE"] = "FA393B";// 변수
-Blockly.Msg["LOGIC_HUE"] = "FAD23C";// 논리
-Blockly.Msg["LOOPS_HUE"] = "39FA6F"; // 반복
+Blockly.Msg["VARIABLES_HUE"] = "4C97FF";// 변수
+Blockly.Msg["LOGIC_HUE"] = "9966FF";// 논리
+Blockly.Msg["LOOPS_HUE"] = "D65CD6"; // 반복
 
-Blockly.Msg["MATH_HUE"] = "394BFA"; // 연산
-Blockly.Msg["TEXTS_HUE"] = "F450FA"; // 문자
+Blockly.Msg["MATH_HUE"] = "FFCE38"; // 연산
+Blockly.Msg["TEXTS_HUE"] = "FFAB19"; // 문자
 
-Blockly.Msg["COLLECTION_HUE"] = "FAF65A"; // 컬렉션
-Blockly.Msg["LISTS_HUE"] = "FAB152"; // 리스트
-Blockly.Msg["DICT_HUE"] = "FAF65A"; // 딕셔너리
-Blockly.Msg["SET_HUE"] = "FAF65A"; // 집합
-Blockly.Msg["TUPLE_HUE"] = "FAF65A"; // 튜플
+Blockly.Msg["COLLECTION_HUE"] = "4CBFE6"; // 컬렉션
+Blockly.Msg["LISTS_HUE"] = "40BF4A"; // 리스트
+Blockly.Msg["DICT_HUE"] = "FF8C1A"; // 딕셔너리
+Blockly.Msg["SET_HUE"] = "FF6680"; // 집합
+Blockly.Msg["TUPLE_HUE"] = "593AE8"; // 튜플
 
 // 커스텀 색상
-
-Blockly.Msg["NUMPY_HUE"] = "A652FA"; // 넘파이
-Blockly.Msg["PANDAS_HUE"] = "FA8955"; // 판다스
-Blockly.Msg["VISUAL_HUE"] = "F8FA52"; // 시각화
-Blockly.Msg["ML_HUE"] = "9D5AFA"; // 머신러닝
-Blockly.Msg["DL_HUE"] = "FA875C"; // 딥러닝
-
+Blockly.Msg["NUMPY_HUE"] = "472BFF"; // 넘파이
+Blockly.Msg["PANDAS_HUE"] = "FF3D98"; // 판다스
+Blockly.Msg["VISUAL_HUE"] = "E8BE38"; // 시각화
+Blockly.Msg["ML_HUE"] = "E85938"; // 머신러닝
+Blockly.Msg["DL_HUE"] = "5AE88A"; // 딥러닝
 
 // 안쓰는 커테고리
 Blockly.Msg["PROCEDURES_HUE"] = "41CDCD"; // ?
