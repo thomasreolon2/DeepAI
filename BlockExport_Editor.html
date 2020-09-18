@@ -1298,11 +1298,11 @@
             var bId = Blockly.mainWorkspace.getBlockById(blockId)
             block.setFieldValue(JSON.stringify(fileArray), 'csv_url'); // csv_url -> field_input ID
           };
-          reader.readAsText(e.target.files.item(0));
-        }
+          reader.readAsText(e.target.files.item(0), /* optional */ "euc-kr"); 
+        } 
       };
 
-      input.click();
+      input.click(); 
     }
 
     function processFile(file) {
