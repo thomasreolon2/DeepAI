@@ -350,6 +350,21 @@ Blockly.Blocks['pandas_dataframe'] = {
     this.setHelpUrl("");
   }
 };
+//2020-09-19 양승국 수정
+Blockly.Blocks['csvdataframe_J'] = {
+  init: function () {
+      this.appendValueInput("input_var").setCheck(null).appendField("[데이터프레임생성] 담을변수");
+      this.appendValueInput("pd").setCheck(null).appendField(", ");
+      this.appendValueInput("csv").setCheck(null).appendField("(CSV 읽기");
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_PANDAS_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
 
 //2020-09-09 이성주 pandas_datalist 확장블록 추가
 //2020-09-19 양승국 블록 수정
