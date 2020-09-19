@@ -2253,7 +2253,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text",
     message0: "%1 %2",
     args0: [
-      {"type": "field_image","src": "/img/Text/T1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Text/T3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "field_input", name: "TEXT", text: "" },
     ],
     output: "String",
@@ -2286,7 +2286,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_join",
     message0: "%1",
     args0:[
-      {"type": "field_image","src": "/img/Text/T3-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Text/T4-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
     ],
     output: "String",
     style: "text_blocks",
@@ -2504,7 +2504,7 @@ Blockly.Blocks.text_trim = {
     this.setStyle("text_blocks");
     this.appendValueInput("TEXT")
       .setCheck("String")
-      .appendField(new Blockly.FieldImage("/img/Text/T11-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+      .appendField(new Blockly.FieldImage("/img/Text/T12-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField(new Blockly.FieldDropdown(a), "MODE");
     this.setOutput(!0, "String");
     this.setTooltip(Blockly.Msg.TEXT_TRIM_TOOLTIP);
