@@ -4,7 +4,7 @@ Blockly.defineBlocksWithJsonArray(
   // 라이브러리 임포트 전체 새로운 것
   {
     "type": "import_libs",
-    "message0": "[ 라이브러리 임포트 ] %1 별칭 : %2 %3",
+    "message0": "[ 라이브러리 임포트 ] %1 별칭  %2 %3",
     "args0": [
       {
         "type": "field_dropdown",
@@ -135,7 +135,7 @@ Blockly.defineBlocksWithJsonArray(
 //CSV 파일로 저장  
 {
   "type": "data_to_csv",
-  "message0": "[ CSV 파일로 저장 ] 변수 : %1 ( 저장할 파일 이름  %2  )", 
+  "message0": "[ CSV 파일로 저장 ] 변수  %1 ( 저장할 파일 이름  %2  )", 
   "args0": [
     {
       "type": "input_value",
@@ -157,7 +157,7 @@ Blockly.defineBlocksWithJsonArray(
 //.list 데이터 리스트 변환
 {
   "type": "data_conversion",
-  "message0": "[ 리스트로 변환 ] 변수 : %1 변환할 데이터 형식 :   %2 )",
+  "message0": "[ 리스트로 변환 ] 변수  %1 변환할 데이터 형식    %2 )",
   "args0": [
     {
       "type": "input_value",
@@ -411,7 +411,7 @@ Blockly.defineBlocksWithJsonArray(
   // numpy 함수 zeros
   { 
     "type": "numpy_zeros",
-    "message0": " [ 0 배열 생성 ] %1  ( 행: %2 열: %3  ) dtype 사용여부 (정수 : %4)",
+    "message0": " [ 0 배열 생성 ] %1  ( 행 %2 열 %3  ) dtype 사용여부 (정수  %4)",
     "args0": [
       {
         "type": "input_value",
@@ -440,7 +440,7 @@ Blockly.defineBlocksWithJsonArray(
   // np.full 배열 생성 및 , 채워질 값 
   {
     "type": "numpy_full",
-    "message0": "[ 입력값 배열 생성 ] %1  (( 행 : %2 열 : %3 ) 채워질 값: %4 )",
+    "message0": "[ 입력값 배열 생성 ] %1  (( 행  %2 열  %3 ) 채워질 값 %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -468,7 +468,7 @@ Blockly.defineBlocksWithJsonArray(
   // eye 함수 대각선으로 1채우기 
   {
     "type": "numpy_eye",
-    "message0": "[ 대각선 1로 배열 생성 ]%1  ( 행,열 : %2 , 인덱스 위치 : %3 )",
+    "message0": "[ 대각선 1로 배열 생성 ]%1  ( 행,열  %2 , 인덱스 위치  %3 )",
     "args0": [
       {
         "type": "input_value",
@@ -492,7 +492,7 @@ Blockly.defineBlocksWithJsonArray(
   // np.max_min  최대 값,최소 값 찾기 
   {
     "type": "numpy_max_min",
-    "message0": "[ 최대,최소 값 찾기 ] %1 %2 %3 ( 변수 : %4 )",
+    "message0": "[ 최대,최소 값 찾기 ] %1 %2 %3 ( 변수  %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -529,7 +529,7 @@ Blockly.defineBlocksWithJsonArray(
   //np.shape  
   {
     "type": "numpy_shape",
-    "message0": "[ 행렬 차원 반환 ] %1 %2 변수 : %3",
+    "message0": "[ 행렬 차원 반환 ] %1 %2 변수  %3",
     "args0": [
       {
         "type": "input_dummy"
@@ -552,7 +552,7 @@ Blockly.defineBlocksWithJsonArray(
   // reshpae 행렬 차원 변경 
   {
     "type": "numpy_reshape",
-    "message0": "[ 넘파이 데이터 구조 변경 ] 변수 : %1  (   1차원 : %2 2차원 : %3 )",
+    "message0": "[ 넘파이 데이터 구조 변경 ] 변수  %1  (   1차원  %2 2차원  %3 )",
     "args0": [
       {
         "type": "input_value",
@@ -576,7 +576,7 @@ Blockly.defineBlocksWithJsonArray(
   // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
   {
     "type": "numpy_random_rand",
-    "message0": "[ 난수 생성 ] %1 타입 :  %2  (  행 : %3 열 : %4 )",
+    "message0": "[ 난수 생성 ] %1 타입   %2  (  행  %3 열  %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -614,7 +614,7 @@ Blockly.defineBlocksWithJsonArray(
     // 지수 exp
     {
       "type": "numpy_exp",
-      "message0": "[ 자연 상수 제곱] %1 ( 변수 :  %2 )",
+      "message0": "[ 자연 상수 제곱] %1 ( 변수   %2 )",
       "args0": [ 
         {
           "type": "input_value",
@@ -634,7 +634,7 @@ Blockly.defineBlocksWithJsonArray(
     //np.append
     {
       "type": "np_append",
-      "message0": "[ 배열에 값 추가 ] %1 ( 변수 또는 배열  : %2  %3  )",
+      "message0": "[ 배열에 값 추가 ] %1 ( 변수 또는 배열   %2  %3  )",
       "args0": [
         {
           "type": "input_value",
@@ -658,7 +658,7 @@ Blockly.defineBlocksWithJsonArray(
     // pandas, numpy, tuple  시각화   
    {
     "type": "val_vi",
-    "message0": "[ 형변환 테이블 출력 ]  : %1 변수 : %2 ",
+    "message0": "[ 형변환 테이블 출력 ]   %1 변수  %2 ",
     "args0": [ 
       {
         "type": "field_dropdown",

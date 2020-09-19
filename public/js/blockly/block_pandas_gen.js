@@ -304,6 +304,34 @@ Blockly.Python['pandas_merge_lron'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+//20. 09. 19 이성주
+////GroupBy 추가
+Blockly.Python['groupby_series'] = function(block) {
+  var value_series_or_dataframe = Blockly.Python.valueToCode(block, 'Series_or_Dataframe', Blockly.Python.ORDER_ATOMIC);
+  var value_colname = Blockly.Python.valueToCode(block, 'colName', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_function = block.getFieldValue('function');
+  // TODO: Assemble Python into code variable.
+  var code = value_series_or_dataframe + '.groupby(' + value_colname + ')' +dropdown_function;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+//2020-09-19 이성주
+Blockly.Python['groupby_dataFrame'] = function(block) {
+  var value_series_or_dataframe = Blockly.Python.valueToCode(block, 'Series_or_Dataframe', Blockly.Python.ORDER_ATOMIC);
+  var value_colname = Blockly.Python.valueToCode(block, 'colName', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_function = block.getFieldValue('function');
+  // TODO: Assemble Python into code variable.
+  var code = value_series_or_dataframe + '.groupby(' + value_colname + ')' +dropdown_function;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+ //2020-09-19 이성주
+Blockly.Python['groupby_series_'] = function(a) {
+  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
+    return ['['+ b.join(", ") +']', Blockly.Python.ORDER_ATOMIC]
+  
+};
+
 ////////////////////////////////////////////////////////////////////
 // Pandas 2학년 파트 끝
 ////////////////////////////////////////////////////////////////////

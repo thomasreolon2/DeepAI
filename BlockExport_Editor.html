@@ -221,6 +221,11 @@
           <button type="button" class="btn btn-secondary mr-0" id="visibleCode">코드</button>
         </div>
 
+        <!-- 데이터 셋 불러오기  -->
+        <!-- <input id="datasets_load" type="button" class="" onClick="datasets_load_lms();"
+          value="데이터셋 불러오기" /> -->
+        <!-- 데이터 셋 불러오기  -->
+
         <!-- 탭들 display -->
         <script>
           // 블럭만 보이기
@@ -893,7 +898,18 @@
         </block>
         <block type="pandas_merge_oncol"></block>
         <block type="pandas_merge_lron"></block>
+        <block type="groupby_series">
+          <value name="colName">
+            <block type="groupby_series_"></block>
+          </value>
+        </block>
+        <block type="groupby_dataFrame">
+          <value name="colName">
+            <block type="groupby_series_"></block>
+          </value>
+        </block>
 
+        
         <!-- <block type="column_count"></block> -->
         <!-- <block type="image_list"></block> -->
         <block type="missing_value_inquiry"></block>
@@ -1524,8 +1540,9 @@
 
       return test;
     }
-
-
+    // **************************************
+    // ********   테이블 그리기      **********//
+    // **************************************//  
     function draw_table(Get_CSV_DATA) {
 
      var NPTD_Data = Array.from(Array(Get_CSV_DATA[0].length), () => new Array(Get_CSV_DATA.length)); 
@@ -1640,7 +1657,20 @@
     }
 
 
+    // **************************************
+    // ********  데이터셋_불러오기     **********//
+    // **************************************//  
+    function datasets_load_lms(){
+//       <a href="www.naver.com" 
+//           onMouseOver="window.status='';return true"; 
+//           onclick="window.status='';return true"; 
+//           onfocus="window.status='';return true"; 
+// > 
+// <img id="tab01" src="../images/main/tab_01_01.gif"> 
+//  </a> 
 
+
+    }
 
   
     function exportToCsv(filename, rows) {
