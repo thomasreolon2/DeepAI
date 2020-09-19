@@ -40,9 +40,9 @@ Blockly.Blocks['fill_null_data'] = {
   init: function () {
     this.appendValueInput("DATA")
       .setCheck(null)
-      .appendField("[결측치채우기] 데이터");
+      .appendField("[결측치삽입] 프레임");
     this.appendDummyInput()
-        .appendField("(방법")
+        .appendField("(")
         .appendField(new Blockly.FieldDropdown([["최댓값",".max()"], ["최솟값",".min()"], ["중간값",".median()"], ["평균값",".mean()"], ["0값","0"]]), "NAME")
         .appendField(")");
     this.setPreviousStatement(true, null);
@@ -72,9 +72,9 @@ Blockly.Blocks['normal'] = {
   init: function () {
     this.appendValueInput("Normalization_data")
       .setCheck(null)
-      .appendField("[Standard Scaler] 데이터");
+      .appendField("[표준스케일] 프레임");
     this.appendDummyInput()
-        .appendField("(컬럼명")
+        .appendField("(")
         .appendField(new Blockly.FieldTextInput("컬럼명"), "NAME")
         .appendField(")");
     this.setPreviousStatement(true, null);
@@ -107,12 +107,11 @@ Blockly.Blocks['select_row_delete'] = {
   init: function () {
     this.appendValueInput("select_data")
       .setCheck(null)
-      .appendField("[행열삭제] 데이터");
+      .appendField("[행열삭제] 프레임");
     this.appendValueInput("select_drop")
         .setCheck(null)
         .appendField("(삭제(컬럼/인덱스)");
     this.appendDummyInput()
-      .appendField("(삭제방향")
       .appendField(new Blockly.FieldDropdown([["행삭제", ", axis = 0"], ["열삭제", ", axis = 1"]]), "srd_NAME")
       .appendField(")");
     this.setInputsInline(true);
@@ -234,12 +233,12 @@ Blockly.Blocks['select_row_list'] = {
   init: function () {
     this.appendValueInput("list_data")
       .setCheck(null)
-      .appendField("[리스트] 데이터");
-    this.appendValueInput("list_val")
-        .setCheck(null)
-        .appendField("(인덱스/컬럼명");
+      .appendField("[행렬추출] 프레임");
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([["행 리스트", "1"], ["열 리스트", "2"]]), "srd_NAME");
+        .appendField("(인덱스/컬럼명")
+        .appendField(new Blockly.FieldTextInput("행(인덱스)열(컬럼명)"), "list_val");        
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([["행", "1"], ["열", "2"]]), "srd_NAME");
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);
@@ -256,13 +255,13 @@ Blockly.Blocks['select_row_column_value'] = {
   init: function () {
     this.appendValueInput("select_data")
       .setCheck(null)
-      .appendField("[데이터범위지정] 데이터");
+      .appendField("[범위설정] 프레임");
     this.appendValueInput("select_row_locate")
       .setCheck(null)
-      .appendField("(행 범위");
+      .appendField("(행");
     this.appendValueInput("select_column_locate")
       .setCheck(null)
-      .appendField("열 범위")
+      .appendField("열")
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);
@@ -279,9 +278,9 @@ Blockly.Blocks['row_count'] = {
   init: function () {
     this.appendValueInput("select_value")
       .setCheck(null)
-      .appendField("[행열개수] 데이터");
+      .appendField("[행열크기]  프레임");
     this.appendDummyInput()
-      .appendField("(행열지정")
+      .appendField("(")
       .appendField(new Blockly.FieldDropdown([["행", ".shape[0]"], ["열", ".shape[1]"]]), "count");
     this.appendDummyInput()
       .appendField(")");
@@ -488,13 +487,13 @@ Blockly.Blocks['pandas_conversion'] = {
   init: function () {
     this.appendValueInput("pa_frm")
         .setCheck(null)
-        .appendField("[데이터일괄치환] 변경프레임");
+        .appendField("[일괄변경] 프레임");
     this.appendValueInput("pa_cul")
       .setCheck(null)
       .appendField("(컬럼명");
     this.appendValueInput("pa_data")
         .setCheck(null)
-        .appendField("치환데이터");
+        .appendField("원본데이터");
     this.appendValueInput("pa_chidata")
         .setCheck(null)
         .appendField("변경데이터")
@@ -512,11 +511,11 @@ Blockly.Blocks['pandas_conversion'] = {
 //2020-09-19 양승국 
 Blockly.Blocks['pandas_mis_del'] = {
   init: function () {
-    this.appendValueInput("DATA")
+    this.appendValueInput("DATA_del")
       .setCheck(null)
-      .appendField("[결측치삭제] 데이터");
+      .appendField("[결측치삭제] 프레임");
     this.appendDummyInput()
-      .appendField("(삭제방향")
+      .appendField("(")
       .appendField(new Blockly.FieldDropdown([["행삭제", ".dropna()"], ["열삭제", ".dropna(axis = 1)"]]), "DEL_NAME")
       .appendField(")");
     this.setPreviousStatement(true, null);
@@ -543,11 +542,12 @@ Blockly.Blocks['selec_value_all'] = {
 //2020-09-13 양승국 블록추가
 Blockly.Blocks['iloc_range'] = {
   init: function () {
-    this.appendValueInput("start_col_num")
-      .setCheck(null);
-    this.appendValueInput("end_col_num")
-      .setCheck(null)
-      .appendField(":");
+    this.appendDummyInput()
+        .appendField("부분범위")    
+        .appendField(new Blockly.FieldTextInput("0"), "st_range");   
+    this.appendDummyInput()
+        .appendField(":")
+        .appendField(new Blockly.FieldTextInput("2"), "ed_range")
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);
@@ -573,18 +573,15 @@ Blockly.Blocks['nm'] = {
   }
 };
 
-//2020-09-19 양승국
+//2020-09-20 양승국
 Blockly.Blocks['pandas_series'] = {
   init: function () {
     this.appendValueInput("ser_var")
         .setCheck(null)
-        .appendField("[시리즈블록] 변수");
-    this.appendValueInput("lvar")
-      .setCheck(null)
-      .appendField(", ");
+        .appendField("[시리즈생성] 변수");
     this.appendValueInput("ser_data")
         .setCheck(null)
-        .appendField("(데이터");
+        .appendField("(");
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);
@@ -666,7 +663,7 @@ Blockly.Blocks.pandas_series_data = {
     for (var a = 0; a < this.itemCount_; a++)
       if (!this.getInput("ADD" + a)) {
         var b = this.appendValueInput("ADD" + a).setAlign(Blockly.ALIGN_RIGHT);
-        0 == a && b.appendField("Series 생성");
+        0 == a && b.appendField("데이터");
 
       }
     for (; this.getInput("ADD" + a);) this.removeInput("ADD" + a), a++;
@@ -698,15 +695,12 @@ Blockly.Blocks.lists_create_with_item = {
   },
 };
 
-//2020-09-19 양승국 수정
+//2020-09-20 양승국 수정
 Blockly.Blocks['pandas_concat'] = {
   init: function () {
     this.appendValueInput("cat_vl")
         .setCheck(null)
-        .appendField("[concat연결] 변수");
-    this.appendValueInput("cat_val")
-      .setCheck(null)
-      .appendField(", ");
+        .appendField("[시리즈concat] 변수");
     this.appendValueInput("data1")
       .setCheck(null)
       .appendField("(데이터1");
@@ -726,15 +720,12 @@ Blockly.Blocks['pandas_concat'] = {
   }
 };
 
-//2020-09-19 양승국 블록추가
+//2020-09-20 양승국 블록추가
 Blockly.Blocks['pandas_merge'] = {
   init: function () {
     this.appendValueInput("mer_var")
         .setCheck(null)
-        .appendField("[merge블록] 변수");
-    this.appendValueInput("pan_lib")
-        .setCheck(null)
-        .appendField(", ");
+        .appendField("[시리즈merge] 변수");
     this.appendValueInput("plus_data1")
         .setCheck(null)
         .appendField("(데이터1");
@@ -759,7 +750,7 @@ Blockly.Blocks['pandas_merge'] = {
 Blockly.Blocks['pandas_merge_oncol'] = {
   init: function () {
     this.appendDummyInput()
-        .appendField("(공통컬럼O) 컬럼명")
+        .appendField("[공통컬럼O] 컬럼명")
         .appendField(new Blockly.FieldTextInput("컬럼명"), "mer_NAME");    
     this.setInputsInline(true);
     this.setOutput(true, null);
@@ -773,7 +764,7 @@ Blockly.Blocks['pandas_merge_oncol'] = {
 Blockly.Blocks['pandas_merge_lron'] = {
   init: function () {
     this.appendDummyInput()
-        .appendField("(공통컬럼X) 왼쪽 컬럼")
+        .appendField("[공통컬럼X] 왼쪽 컬럼")
         .appendField(new Blockly.FieldTextInput("컬럼명"), "mer_LNAME");   
     this.appendDummyInput()
         .appendField("오른쪽 컬럼")
@@ -792,7 +783,7 @@ Blockly.Blocks['groupby_series'] = {
   init: function () {
     this.appendValueInput("Series_or_Dataframe")
       .setCheck(null)
-      .appendField("[Series그룹화] 통계량 측정열");
+      .appendField("[시리즈그룹화] 통계량 측정열");
     this.appendDummyInput()
       .appendField("(");
     this.appendValueInput("colName")
@@ -813,7 +804,7 @@ Blockly.Blocks['groupby_dataFrame'] = {
   init: function () {
     this.appendValueInput("Series_or_Dataframe")
       .setCheck(null)
-      .appendField("[DataFrame그룹화] 데이터프레임");
+      .appendField("[프레임그룹화] 데이터프레임");
     this.appendDummyInput()
       .appendField("(");
     this.appendValueInput("colName")
@@ -944,8 +935,8 @@ Blockly.Blocks.lists_create_with_item = {
 // 결측치 조회
 Blockly.Blocks['missing_value_inquiry'] = {
   init: function () {
-    this.appendValueInput("data").setCheck(null)
     this.appendDummyInput().appendField("[결측치 조회]");
+    this.appendValueInput("mis_data").setCheck(null)
     this.setColour(pandas_color);
     this.setInputsInline(true);
     this.setOutput(true, null);
@@ -956,8 +947,8 @@ Blockly.Blocks['missing_value_inquiry'] = {
 // 통계 정보 조회
 Blockly.Blocks['stats_inquiry'] = {
   init: function () {
-    this.appendValueInput("data").setCheck(null)
     this.appendDummyInput().appendField("[통계 정보 조회]");
+    this.appendValueInput("inq_data").setCheck(null)
     this.setColour(pandas_color);
     this.setInputsInline(true);
     this.setOutput(true, null);

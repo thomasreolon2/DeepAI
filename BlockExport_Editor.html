@@ -847,8 +847,13 @@
       <!-- ************************************************** ************************* *************************  -->
       <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
       <!-- ************************************************** ************************* *************************  -->
+<<<<<<< Updated upstream
       <!-- 2020-09-20 양승국 수정-->
       <category name="판다스 (Pandas)" colour="%{BKY_PANDAS_HUE}">
+=======
+      <!-- 2020-09-20 양승국 판다스 전체수정-->
+      <category name="판다스 " colour="%{BKY_PANDAS_HUE}">
+>>>>>>> Stashed changes
         <!-- <block type="import_lib">
           <value name="var">
             <block type="variables_get">
@@ -893,11 +898,34 @@
           </value>
         </block>
         <!-- 2020-09-09 양승국-->
-        <block type="pandas_conversion"></block>
-        <block type="fill_null_data"></block>
+        <block type="pandas_conversion">
+          <value name="pa_frm">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+        <block type="fill_null_data">
+          <value name="DATA">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
         <!-- 2020-09-10 양승국-->
-        <block type="pandas_mis_del"></block>
+        <block type="pandas_mis_del">
+          <value name="DATA_del">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
         <block type="select_row_column_value">
+          <value name="select_data">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
           <value name="select_row_locate">
             <block type="selec_value_all"></block>
           </value>
@@ -909,19 +937,43 @@
         <block type="iloc_range"></block>
 
         <!-- <block type="pandas_print"></block> -->
-        <block type="normal"></block>
-        <block type="select_row_delete"></block>
-        <!-- <block type="save_image"></block> -->
-        <block type="list"></block>
-        <block type="header"></block>
-        <block type="select_row_list"></block>
-        <block type="row_count"></block>
-        <!-- 2020-09-16 양승국-->
-        <block type="nm"></block>
-        <block type="pandas_series">
-          <value name="lvar">
+        <block type="normal">
+          <value name="Normalization_data">
             <block type="variables_get">
-              <field name="VAR">pd</field>
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+        <block type="select_row_delete">
+          <value name="select_data">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+        <!-- <block type="save_image"></block> -->
+        <!-- <block type="list"></block> -->
+        <!-- <block type="header"></block> -->
+        <block type="select_row_list">
+          <value name="list_data">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+        <block type="row_count">
+          <value name="select_value">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+        <!-- 2020-09-16 양승국-->
+        <!-- <block type="nm"></block> -->
+        <block type="pandas_series">
+          <value name="ser_var">
+            <block type="variables_get">
+              <field name="VAR">ds</field>
             </block>
           </value>
           <value name="ser_data">
@@ -929,17 +981,17 @@
           </value>
         </block>
         <block type="pandas_concat">
-          <value name="cat_val">
+          <value name="cat_vl">
             <block type="variables_get">
-              <field name="VAR">pd</field>
+              <field name="VAR">ds</field>
             </block>
           </value>
         </block>
         <!-- 2020-09-17 양승국 블록추가 -->
         <block type="pandas_merge">
-          <value name="pan_lib">
+          <value name="mer_var">
             <block type="variables_get">
-              <field name="VAR">pd</field>
+              <field name="VAR">ds</field>
             </block>
           </value>
           <value name="connet_way">
@@ -962,8 +1014,20 @@
         
         <!-- <block type="column_count"></block> -->
         <!-- <block type="image_list"></block> -->
-        <block type="missing_value_inquiry"></block>
-        <block type="stats_inquiry"></block>
+        <block type="missing_value_inquiry">
+          <value name="mis_data">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+        </block>
+        <block type="stats_inquiry">
+          <value name="inq_data">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+        </block>
         <block type="array_select">
           <value name="array_var">
             <block type="variables_get">
