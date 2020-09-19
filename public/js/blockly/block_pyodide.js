@@ -261,10 +261,10 @@ Blockly.Blocks['train_test_split'] = {
             .appendField("X_train");
         this.appendValueInput("x_test")
             .setCheck(null)
-            .appendField("Y_train");
+            .appendField("X_test");
         this.appendValueInput("y_train")
             .setCheck(null)
-            .appendField("X_test");
+            .appendField("Y_train");
         this.appendValueInput("y_test")
             .setCheck(null)
             .appendField("Y_test");
@@ -1192,3 +1192,14 @@ Blockly.Blocks['vis_tree'] = {
         this.setHelpUrl("");
     }
 };
+Blockly.Blocks['input'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("데이터 입력");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
