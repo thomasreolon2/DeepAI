@@ -857,6 +857,7 @@
       <!-- ************************************************** ************************* *************************  -->
       <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
       <!-- ************************************************** ************************* *************************  -->
+      <!-- 2020-09-20 양승국 수정-->
       <category name="판다스 " colour="%{BKY_PANDAS_HUE}">
         <!-- <block type="import_lib">
           <value name="var">
@@ -865,18 +866,12 @@
             </block>
           </value>
         </block> -->
-        <block type="csv_library">
-          <value name="pan_lib_var">
-            <block type="variables_get">
-              <field name="VAR">pd</field>
-            </block>
-          </value>
-        </block>
+        <block type="csv_library"></block>
         <!-- <block type="pyo_lib"></block> -->
         <block type="csvdataframe_J">
-          <value name="pd">
+          <value name="input_var">
             <block type="variables_get">
-              <field name="VAR">pd</field>
+              <field name="VAR">df</field>
             </block>
           </value>
           <value name="csv">
@@ -886,14 +881,24 @@
 
         <!-- 2020-09-09 양승국 -->
         <block type="pandas_datalist">
+          <value name="frm_var">
+            <block type="variables_get">
+              <field name="VAR">LST</field>
+            </block>
+          </value>
           <value name="data_lst">
             <block type="createColumn"></block>
           </value> 
         </block>
         <block type="pandas_dataframe">
-          <value name="lib">
+          <value name="df_va">
             <block type="variables_get">
-              <field name="VAR">pd</field>
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="lst">
+            <block type="variables_get">
+              <field name="VAR">LST</field>
             </block>
           </value>
         </block>

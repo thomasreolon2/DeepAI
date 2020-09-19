@@ -8,9 +8,7 @@ var pandas_color = "%{BKY_PANDAS_HUE}";
 Blockly.Blocks['csv_library'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("[Pandas 라이브러리 임포트]");
-    this.appendValueInput("pan_lib_var")
-      .setCheck(null)
+        .appendField("[Pandas 라이브러리 임포트]");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -332,10 +330,8 @@ Blockly.Blocks['pandas_dataframe'] = {
   init: function () {
     this.appendValueInput("df_va")
         .setCheck(null)
-        .appendField("[데이터프레임 생성]")
+        .appendField("[zip프레임]")
         .appendField("변수");
-    this.appendValueInput("lib")
-      .setCheck(null)
     this.appendValueInput("lst")
       .setCheck(null)
       .appendField("(zip리스트");
@@ -353,9 +349,8 @@ Blockly.Blocks['pandas_dataframe'] = {
 //2020-09-19 양승국 수정
 Blockly.Blocks['csvdataframe_J'] = {
   init: function () {
-      this.appendValueInput("input_var").setCheck(null).appendField("[데이터프레임생성] 담을변수");
-      this.appendValueInput("pd").setCheck(null).appendField(", ");
-      this.appendValueInput("csv").setCheck(null).appendField("(CSV 읽기");
+      this.appendValueInput("input_var").setCheck(null).appendField("[CSV프레임] 변수");
+      this.appendValueInput("csv").setCheck(null).appendField("(");
       this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
@@ -375,7 +370,7 @@ Blockly.Blocks['pandas_datalist'] = {
         .appendField("[zip리스트] 변수");
     this.appendValueInput("data_lst")
       .setCheck(null)
-      .appendField("(리스트 데이터")
+      .appendField("(")
     this.appendDummyInput()
       .appendField(")");
     this.setPreviousStatement(true, null);
