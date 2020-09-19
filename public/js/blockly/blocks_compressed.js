@@ -2344,10 +2344,11 @@ Blockly.defineBlocksWithJsonArray([
   },
   {
     type: "text_isEmpty",
-    message0: "%{BKY_TEXT_ISEMPTY_TITLE}",
     args0: [
       {"type": "field_image","src": "/img/Text/T6-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
+    message0: "%{BKY_TEXT_ISEMPTY_TITLE}",
+    
     output: "Boolean",
     style: "text_blocks",
     tooltip: "%{BKY_TEXT_ISEMPTY_TOOLTIP}",
