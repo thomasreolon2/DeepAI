@@ -14,9 +14,9 @@
   <!--  Blockly 자체의 설정과 관련된 파일 -->
   <!--test-->
   <!-- pyodide -->
-      <!-- <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script> -->
+      <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
  
-  <script src="http://inhatc.iptime.org:4519/pyodide.js"></script> 
+  <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
  
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script> 
@@ -1069,16 +1069,28 @@
     <category name="사이킷 런" colour="%{BKY_ML_HUE}">
       <category name="데이터셋" colour="%{BKY_ML_HUE}">
         <block type="import_dataset"></block>
+        <block type="fetch_openml"></block>
         <block type="csv3"></block>
       </category>
       <category name="앙상블" colour="%{BKY_ML_HUE}">
       </category>
       <category name="신경망" colour="%{BKY_ML_HUE}">
         <block type="sklearn_mlp"></block> <!-- 사이킷런 MLP 블록  -->
-
+        <!-- <block type="make_mlp_classifier"></block>
+        <block type="make_mlp_regressor"></block> -->
+        <block type="mlp_classifier"></block>
+        <block type="mlp_regressor"></block>
       </category>
       <category name="선형모델" colour="%{BKY_ML_HUE}">
-        <block type="scikit_learn"></block>
+        <!-- <block type="scikit_learn"></block> -->
+        <block type="logistic_regression"></block>
+        <block type="logistic_regression_cv"></block>
+        <block type="perceptron"></block>
+        <block type="ridge_classifier"></block>
+        <block type="sgd_classifier"></block>
+        <block type="linear_regression"></block>
+        <block type="ridge"></block>
+        <block type="sgd_regressor"></block>
       </category>
       <category name="서포트 벡터 머신" colour="%{BKY_ML_HUE}">
       
@@ -1088,7 +1100,8 @@
         <block type="train_test_split"></block>
 
       </category>
-      <category name="메트릭스" colour="%{BKY_ML_HUE}">
+      <category name="메트릭스" colour="%{BKY_ML_HUE}"> 
+        <block type="import_scikit"></block>
         <block type="model_score"></block>
         <block type="model_predict"></block>
       </category>
