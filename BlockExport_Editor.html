@@ -898,7 +898,18 @@
         </block>
         <block type="pandas_merge_oncol"></block>
         <block type="pandas_merge_lron"></block>
+        <block type="groupby_series">
+          <value name="colName">
+            <block type="groupby_series_"></block>
+          </value>
+        </block>
+        <block type="groupby_dataFrame">
+          <value name="colName">
+            <block type="groupby_series_"></block>
+          </value>
+        </block>
 
+        
         <!-- <block type="column_count"></block> -->
         <!-- <block type="image_list"></block> -->
         <block type="missing_value_inquiry"></block>
