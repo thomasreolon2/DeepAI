@@ -162,16 +162,6 @@ Blockly.Python['scikit_learn'] = function (block) {
     return code;
 };
 
-//2020-09-19 양승국 수정
-Blockly.Python['csvdataframe_J'] = function (block) {
-    var value_input_var = Blockly.Python.valueToCode(block, 'input_var', Blockly.Python.ORDER_ATOMIC);
-    var value_pd = Blockly.Python.valueToCode(block, 'pd', Blockly.Python.ORDER_ATOMIC);
-    var value_csv = Blockly.Python.valueToCode(block, 'csv', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = value_input_var + '=' + value_pd + '.DataFrame(' + value_csv + ')\n';
-    // TODO: Change ORDER_NONE to the correct strength.
-    return code;
-};
 // /////////////////데이터전처리 라벨링 20200909 이진형///////////////
 Blockly.Python['labelencoder'] = function (block) {
     var value_df = Blockly.Python.valueToCode(block, 'df', Blockly.Python.ORDER_ATOMIC);

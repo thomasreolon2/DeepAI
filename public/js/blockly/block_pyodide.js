@@ -170,21 +170,7 @@ Blockly.Blocks['scikit_learn'] = {
         this.setHelpUrl("");
     }
 };
-//2020-09-19 양승국 수정
-Blockly.Blocks['csvdataframe_J'] = {
-    init: function () {
-        this.appendValueInput("input_var").setCheck(null).appendField("[데이터프레임생성] 담을변수");
-        this.appendValueInput("pd").setCheck(null).appendField(", ");
-        this.appendValueInput("csv").setCheck(null).appendField("(CSV 읽기");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_PANDAS_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
 // ///////////////////////////////데이터전처리 라벨링//////////////////////20200909 이진형
 Blockly.Blocks['labelencoder'] = {
     init: function () {
@@ -883,6 +869,7 @@ Blockly.Blocks['k_means'] = {
 // for
 Blockly.Blocks['py_for'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R1-logo.png",25,23, {alt:"*", flipRtl:"FALSE"}));
         this.appendDummyInput()
             .appendField("반복문");
         this.appendValueInput("item")
@@ -906,8 +893,10 @@ Blockly.Blocks['py_for'] = {
 // increase 등등
 Blockly.Blocks['increase'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R3-logo.png",25,23, {alt:"*", flipRtl:"FALSE"}));
         this.appendValueInput("VALUE")
             .setCheck(null)
+            
             .appendField(new Blockly.FieldDropdown([["raise", "OPTIONNAME"], ["modulo", "OPTIONNAME"], ["divide", "OPTIONNAME"], ["multiply", "OPTIONNAME"], ["decrease", "OPTIONNAME"], ["increase", "OPTIONNAME"]]), "NAME");
         this.appendDummyInput()
             .appendField("to");
@@ -925,6 +914,7 @@ Blockly.Blocks['increase'] = {
 //
 Blockly.Blocks['break_block'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R4-logo.png",25,23, {alt:"*", flipRtl:"FALSE"}));
         this.appendDummyInput()
             .appendField("정지");
         this.setPreviousStatement(true, null);

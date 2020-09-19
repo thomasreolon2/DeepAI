@@ -827,44 +827,6 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   
-  //선형 회귀 생성 
-  {
-    "type": "linearregression_c",
-    "message0": "[임시]선형 회귀 생성",
-    "inputsInline": true,
-    "output": null,
-    "colour": 125,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  //모델 훈련 
-  {
-    "type": "linearregression_train",
-    "message0": "[임시]변수 : %1 .fit 모델 훈련 -> X : %2 Y : %3", 
-    "args0": [
-      {
-        "type": "input_value",
-        "name": "LinearRegression_val"
-      },
-      {
-        "type": "field_input",
-        "name": "LinearRegression_X",
-        "text": ""
-      },
-      { 
-        "type": "field_input",
-        "name": "LinearRegression_Y",
-        "text": ""
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null, 
-    "nextStatement": null,
-    "colour": 125,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  
   
   
   ]

@@ -52,11 +52,11 @@ app.get("/test", function (req, res) { // postTest라는 주소로 POST요청이
 
 
    
-app.get('/show_csv', function (req, res) {  //csv 파일 읽기 
-  res.sendFile(__dirname + "/show_csv.html");
-});      
+app.get('/datasets_load_lms', function (req, res) {  //csv 파일 읽기 
+  res.sendFile(__dirname + "/datasets_load_lms.html"); 
+});       
 
-app.get('/show_chart', function (req, res) {  //차트 보기 
+app.get('/show_chart', function (req, res) {  //차트 보기  
   res.sendFile(__dirname + "/show_chart.html");
 });   
  

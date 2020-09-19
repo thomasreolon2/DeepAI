@@ -15,6 +15,13 @@ Blockly.JavaScript['val_vi'] = function(block) {
     return code;
   };
 
+  //라이브러리 임포트    
+  Blockly.JavaScript['numpy_library'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = "\n";
+    return code;
+  };
+
   
     
     //라이브러리 임포트 사이킷런 
@@ -23,7 +30,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
       var dropdown_lib_import_a_option = block.getFieldValue('lib_import_a_option');
       // TODO: Assemble Python into code variable.
     
-      var code = ' ';
+      var code = '\n';
     return code;
     };
    
@@ -32,7 +39,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     Blockly.JavaScript['lib_import'] = function(block) { 
       var text_lib_import_name = block.getFieldValue('Lib_import_name'); 
       // TODO: Assemble Python into code variable. 
-      var code = ' ';
+      var code = "\n";
       return code;
     }; 
   
@@ -41,7 +48,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
       var text_lib_import_name_1 = block.getFieldValue('Lib_import_name_1');
       var text_lib_import_name_second = block.getFieldValue('Lib_import_name_second');  
       // TODO: Assemble Python into code variable.
-      var code = ' ';
+      var code = "\n";
       return code;
     };  
    
@@ -70,7 +77,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_data_conversion_var = Blockly.JavaScript.valueToCode(block, 'Data_Conversion_var', Blockly.JavaScript.ORDER_ATOMIC);
     var dropdown_data_conversion_option = block.getFieldValue('Data_Conversion_Option');
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     return code;  
   };
 
@@ -79,7 +86,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_np_array_lib_val = Blockly.Python.valueToCode(block, 'np_array_lib_val', Blockly.Python.ORDER_ATOMIC);
     var value_np_array_val = Blockly.Python.valueToCode(block, 'np_array_val', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = ' ';  
+    var code = "\n";  
     // TODO: Change ORDER_NONE to the correct strength. 
     return [code, Blockly.Python.ORDER_NONE];   
   }; 
@@ -91,7 +98,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_numpy_zeros_num_2 = Blockly.Python.valueToCode(block, 'numpy_zeros_num_2', Blockly.Python.ORDER_ATOMIC);
     var checkbox_numpy_zeros_check_dtype = block.getFieldValue('numpy_zeros_check_dtype') == 'TRUE';
     // TODO: Assemble Python into code variable.
-    var code = ' ';
+    var code = "\n";
     return [code, Blockly.Python.ORDER_NONE];
   };
 
@@ -102,7 +109,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_numpy_full_num_2 = Blockly.Python.valueToCode(block, 'numpy_full_num_2', Blockly.Python.ORDER_ATOMIC);
     var value_numpy_full_input = Blockly.Python.valueToCode(block, 'numpy_full_input', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = ' ';  
+    var code = "\n";  
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];  
   };
@@ -114,7 +121,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_numpy_eye_num = Blockly.JavaScript.valueToCode(block, 'numpy_eye_num', Blockly.JavaScript.ORDER_ATOMIC);
     var value_numpy_eye_index = Blockly.JavaScript.valueToCode(block, 'numpy_eye_index', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength. 
     return [code, Blockly.JavaScript.ORDER_NONE];
   };  
@@ -125,7 +132,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var dropdown_numpy_max_min_option = block.getFieldValue('numpy_max_min_option');
     var value_numpy_max_min_val = Blockly.JavaScript.valueToCode(block, 'numpy_max_min_val', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
@@ -135,7 +142,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_numpy_shape_lib_val = Blockly.JavaScript.valueToCode(block, 'numpy_shape_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
     var value_numpy_shape_num = Blockly.JavaScript.valueToCode(block, 'numpy_shape_num', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
@@ -146,7 +153,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_numpy_reshape_num1 = Blockly.JavaScript.valueToCode(block, 'numpy_reshape_num1', Blockly.JavaScript.ORDER_ATOMIC);
     var value_numpy_reshape_num2 = Blockly.JavaScript.valueToCode(block, 'numpy_reshape_num2', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   }; 
@@ -158,7 +165,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_numpy_random_rand_num1 = Blockly.JavaScript.valueToCode(block, 'numpy_random_rand_num1', Blockly.JavaScript.ORDER_ATOMIC);
     var value_numpy_random_rand_num2 = Blockly.JavaScript.valueToCode(block, 'numpy_random_rand_num2', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   }; 
@@ -168,7 +175,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_numpy_exp_lib_val = Blockly.JavaScript.valueToCode(block, 'numpy_exp_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
     var value_numpy_exp_num = Blockly.JavaScript.valueToCode(block, 'numpy_exp_num', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength. 
     return [code, Blockly.JavaScript.ORDER_NONE];
   }; 
@@ -179,7 +186,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_np_append_num1 = Blockly.JavaScript.valueToCode(block, 'np_append_num1', Blockly.JavaScript.ORDER_ATOMIC);
     var value_np_append_num2 = Blockly.JavaScript.valueToCode(block, 'np_append_num2', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
@@ -188,7 +195,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
   // Blockly.JavaScript['matplotlib_main'] = function(block) {
   //   var value_matplotlib_main_lib_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
   //   // TODO: Assemble JavaScript into code variable.
-  //   var code = ' ';
+  //   var code = "\n";
   //   return code;   
   // }; 
 
@@ -199,7 +206,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_matplotlib_main_screen_size_width = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_screen_size_width', Blockly.JavaScript.ORDER_ATOMIC);
     var value_matplotlib_main_screen_size_height = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_screen_size_height', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     return code;
   };
 
@@ -215,7 +222,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var text_matplotlib_pre_graph_ylable = block.getFieldValue('matplotlib_pre_graph_Ylable');
     var text_matplotlib_pre_legend = block.getFieldValue('matplotlib_pre_legend');
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "\n";
     return code; 
   };
 
@@ -226,3 +233,12 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var code ='document.getElementById("pyplotfigure").src = pyodide.globals.img_str;';
     return code;
   };  
+
+  Blockly.JavaScript['visualization_library'] = function(block) {
+    var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var libImportIo = "import io\n";
+    var libImportBase64 = "import base64\n";
+    var code = "\n";
+    return code;
+  };

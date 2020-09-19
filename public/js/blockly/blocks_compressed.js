@@ -642,7 +642,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "logic_boolean",
     message0: "%1 %2",
     args0: [
-      {"type": "field_image","src": "/img/Logic/L5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Logic/L7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       {
         type: "field_dropdown",
         name: "BOOL",
@@ -689,7 +689,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "logic_compare",
     message0: "%1 %2 %3 %4",
     args0: [
-      {"type": "field_image","src": "/img/Logic/L2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Logic/L3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "A" },
       {
         type: "field_dropdown",
@@ -716,7 +716,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "logic_operation",
     message0: "%1",
     args0: [
-      {"type": "field_image","src": "/img/Logic/L3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Logic/L4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
     ],
     message1: "%1 %2 %3",
     args1: [
@@ -741,7 +741,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "logic_negate",
     message0: "%{BKY_LOGIC_NEGATE_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Logic/L4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Logic/L5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "BOOL", check: "Boolean" },
     ],
     output: "Boolean",
@@ -1055,12 +1055,13 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
     helpUrl: "%{BKY_CONTROLS_REPEAT_HELPURL}",
   },
+  // while문
   {
     type: "controls_whileUntil",
     message0: "%1 %2 %3",
     args0: [
       
-      {"type": "field_image","src": "/img/Repeat/R3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       {
         type: "field_dropdown",
         name: "MODE",
@@ -1476,7 +1477,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "math_constrain",
     message0: "%{BKY_MATH_CONSTRAIN_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Operation/O10-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Operation/O9-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: "Number" },
       { type: "input_value", name: "LOW", check: "Number" },
       { type: "input_value", name: "HIGH", check: "Number" },
@@ -1491,7 +1492,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "math_random_int",
     message0: "%{BKY_MATH_RANDOM_INT_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Operation/O11-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Operation/O10-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
       { type: "input_value", name: "FROM", check: "Number" },
       { type: "input_value", name: "TO", check: "Number" },
     ],
@@ -1505,7 +1506,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "math_random_float",
     message0: "%{BKY_MATH_RANDOM_FLOAT_TITLE_RANDOM}",
     args0: [
-      {"type": "field_image","src": "/img/Operation/O12-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Operation/O11-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
     ],
     output: "Number",
     style: "math_blocks",
@@ -1516,7 +1517,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "math_atan2",
     message0: "%{BKY_MATH_ATAN2_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Operation/O13-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Operation/O12-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
       { type: "input_value", name: "X", check: "Number" },
       { type: "input_value", name: "Y", check: "Number" },
     ],

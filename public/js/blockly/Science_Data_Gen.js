@@ -570,22 +570,6 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
       return code;
   }; 
       
-  // 테스트 용도 선형 회귀 생성   
-  Blockly.Python['linearregression_c'] = function(block) { 
-    // TODO: Assemble Python into code variable.
-    var code = 'LinearRegression()\n'; 
-    // TODO: Change ORDER_NONE to the correct strength. 
-    return [code, Blockly.Python.ORDER_NONE];
-  }; 
-  //모델 훈련 
-  Blockly.Python['linearregression_train'] = function(block) {
-    var value_linearregression_val = Blockly.Python.valueToCode(block, 'LinearRegression_val', Blockly.Python.ORDER_ATOMIC);
-    var text_linearregression_x = block.getFieldValue('LinearRegression_X');
-    var text_linearregression_y = block.getFieldValue('LinearRegression_Y');
-    // TODO: Assemble Python into code variable.
-    var code =`${value_linearregression_val}.fit( ${text_linearregression_x },${text_linearregression_y } )\n`;   
-    return code;
-  };   
 
   //라이브러리 임포트    
   Blockly.Python['visualization_library'] = function(block) {

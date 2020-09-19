@@ -47,14 +47,14 @@ Blockly.JavaScript['printc'] = function (block) {
     var value_df = Blockly.JavaScript.valueToCode(block, 'df', Blockly.JavaScript.ORDER_ATOMIC);
     var text_column = block.getFieldValue('column');
     // TODO: Assemble Python into code variable.
-    var code = "";
+    var code = "\n";
     return code;
   };
   Blockly.JavaScript['import_lib'] = function (block) {
     var dropdown_lib = block.getFieldValue('lib');
     var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable. 
-    var code = '\n';
+    var code = "\n";
     
     return code;
 };
@@ -62,7 +62,7 @@ Blockly.JavaScript['model_predict'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   var text_data = block.getFieldValue('data');
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
+  var code = "\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -88,7 +88,7 @@ Blockly.JavaScript['sklearn_mlp'] = function(block) {
   var value_sklearn_mlp_fit_x = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.JavaScript.ORDER_ATOMIC);
   var value_sklearn_mlp_fit_y = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = ' ';
+  var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -138,3 +138,29 @@ Blockly.JavaScript['input'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+Blockly.JavaScript['csv3'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+}
+
+Blockly.JavaScript['train_test_split'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+}
+
+Blockly.JavaScript['k_means'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+}
+
+Blockly.JavaScript['model_score'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+}
+
+
