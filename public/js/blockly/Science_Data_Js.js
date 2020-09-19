@@ -200,7 +200,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var value_matplotlib_main_screen_size_width = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_screen_size_width', Blockly.JavaScript.ORDER_ATOMIC);
     var value_matplotlib_main_screen_size_height = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_screen_size_height', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var code = ' ';
     return code;
   };
 
@@ -232,7 +232,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var text_matplotlib_pre_legend = block.getFieldValue('matplotlib_pre_legend');
     // TODO: Assemble JavaScript into code variable.
     var code = ' ';
-    return code;
+    return code; 
   };
 
  //matplot3
