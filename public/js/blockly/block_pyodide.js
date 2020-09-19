@@ -1175,7 +1175,7 @@ Blockly.Blocks['vis_tree'] = {
         this.appendValueInput("x_data")
             .setCheck(null)
             .appendField("X_data");
-        this.appendValueInput("Y_data")
+        this.appendValueInput("y_data")
             .setCheck(null)
             .appendField("Ydata: ");
         this.appendDummyInput()
