@@ -1,6 +1,6 @@
 Blockly.Blocks['printc'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T13-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField("결과 출력 ");
@@ -1110,6 +1110,7 @@ Blockly.Blocks['list_remove_pop_count_extend'] = {
 // text_replace
 Blockly.Blocks['text_replace'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/13-logo.png",25,23, {alt:"*", flipRtl:"FALSE"}));
         this.appendDummyInput()
             .appendField("문자열변경 -> 변수 ");
         this.appendValueInput("TEXT")
@@ -1126,7 +1127,7 @@ Blockly.Blocks['text_replace'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_TEXTS_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }

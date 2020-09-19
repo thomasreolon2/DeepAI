@@ -174,6 +174,12 @@ Blockly.JavaScript['groupby_series_'] = function (block) {
   return code;
 };
 
+Blockly.JavaScript['createColumn'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
 // ////////////////////////////////////////////////////////////////////
 // // Pandas 2학년 파트 끝
 // ////////////////////////////////////////////////////////////////////
