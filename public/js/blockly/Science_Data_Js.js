@@ -7,12 +7,11 @@ Blockly.JavaScript['val_vi'] = function(block) {
     return code;       
   };   
 
-  //라이브러리 전체 새로운 것       
-  Blockly.JavaScript['import_libs'] = function(block) {
-    var dropdown_import_libss = block.getFieldValue('import_libss');
-    var value_import_libs_val = Blockly.JavaScript.valueToCode(block, 'import_libs_val', Blockly.JavaScript.ORDER_ATOMIC);
+  //라이브러리 임포트    
+  Blockly.Python['numpy_library'] = function(block) {
+    var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = ' ';
+    var code = "import numpy as" + " "  + value_name.replace("'"," ")+ "\n";
     return code;
   };
 

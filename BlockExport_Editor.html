@@ -52,7 +52,7 @@
   <script src="/js/blockly/Science_Data_T.js"></script> 
   <script src="/js/blockly/Science_Data_Gen.js"></script>  
   <script src="/js/blockly/Science_Data_Js.js"></script>
-  <!-- 데이타 사이언스 블록 -->  
+  <!-- 데이타 사이언스 블록 -->   
  
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지, 카테고리 색상 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -671,13 +671,13 @@
       <category name="넘파이" colour="%{BKY_NUMPY_HUE}">
 
         <!--  import np,np,plt,io,base64  --> 
-        <block type="import_libs">
-            <value name="import_libs_val"> 
-              <block type="variables_get">     
-                <field name="VAR">np</field>   
-              </block> 
-            </value> 
-        </block>  
+        <block type="numpy_library">
+          <value name="lib_var">
+            <block type="variables_get">
+              <field name="VAR">np</field>
+            </block>
+          </value>
+        </block>
         <!--  import np,np,plt,io,base64  -->
 
         <!-- csv 저장   -->
@@ -921,8 +921,14 @@
   
       <!-- # 시각화 부분 #  -->
       <category name="시각화 " colour="%{BKY_VISUAL_HUE}">
+        <block type="visualization_library">
+          <value name="lib_var">
+            <block type="variables_get">
+              <field name="VAR">plt</field>
+            </block>
+          </value>
+        </block>
         <block type="val_vi"></block>   
-
         <!--  matplot1 시각화 틀    -->
           <block type="matplotlib_main">
             <value name="matplotlib_main_lib_val">
