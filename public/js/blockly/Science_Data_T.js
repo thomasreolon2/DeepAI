@@ -144,7 +144,7 @@ Blockly.defineBlocksWithJsonArray(
     {
       "type": "field_input",
       "name": "value_value_data_to_csv_name",
-      "text": ""
+      "text": " 저장할 파일 이름 "
     }
   ],
   "inputsInline": true,
@@ -379,7 +379,7 @@ Blockly.defineBlocksWithJsonArray(
       {
         "type": "field_input", 
         "name": "Create_arry_val",
-        "text": ""
+        "text": "ex) 1,2,3,4"
       }
     ],
     "inputsInline": true,
@@ -411,7 +411,7 @@ Blockly.defineBlocksWithJsonArray(
   // numpy 함수 zeros
   { 
     "type": "numpy_zeros",
-    "message0": " [ 0 배열 생성 ] %1  ( 행 %2 열 %3  ) dtype 사용여부 (정수  %4)",
+    "message0": " [ 0 배열 생성 ] %1  ( 행 %2 , 열 %3  ) dtype 사용여부 (정수  %4)",
     "args0": [
       {
         "type": "input_value",
@@ -440,7 +440,7 @@ Blockly.defineBlocksWithJsonArray(
   // np.full 배열 생성 및 , 채워질 값 
   {
     "type": "numpy_full",
-    "message0": "[ 입력값 배열 생성 ] %1  (( 행  %2 열  %3 ) 채워질 값 %4 )",
+    "message0": "[ 입력값 배열 생성 ] %1  (( 행  %2 , 열  %3 ) 채워질 값 %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -576,7 +576,7 @@ Blockly.defineBlocksWithJsonArray(
   // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
   {
     "type": "numpy_random_rand",
-    "message0": "[ 난수 생성 ] %1 타입   %2  (  행  %3 열  %4 )",
+    "message0": "[ 난수 생성 ] %1 타입   %2  (  행  %3,  열  %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -634,7 +634,7 @@ Blockly.defineBlocksWithJsonArray(
     //np.append
     {
       "type": "np_append",
-      "message0": "[ 배열에 값 추가 ] %1 ( 변수 또는 배열   %2  %3  )",
+      "message0": "[ 배열에 값 추가 ] %1 ( 변수 또는 배열   %2 ,  %3  )",
       "args0": [
         {
           "type": "input_value",
@@ -687,7 +687,7 @@ Blockly.defineBlocksWithJsonArray(
     "previousStatement": null,
     "nextStatement": null,
     "colour": 125,
-    "tooltip": "",
+    "tooltip": "", 
     "helpUrl": "" 
   },
   //matplot1 
@@ -749,7 +749,7 @@ Blockly.defineBlocksWithJsonArray(
       {
         "type": "field_input",
         "name": "matplotlib_user_xy",
-        "text": "" 
+        "text": "변수명 -> ex) aa,bb" 
       },
       {
         "type": "field_dropdown",

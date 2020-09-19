@@ -530,7 +530,7 @@ fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(${value_matplotlib_main_
       break;
     } 
   
-  var code ;  
+  var code ;   
   if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){ 
     code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`;  
   }else if(DL_Gra == "graph_1_1" ){
