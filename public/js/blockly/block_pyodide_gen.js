@@ -594,7 +594,6 @@ Blockly.Python['AP'] = function (block) {
 
 
 
-
 // 신경망 MLPClassifier
 Blockly.Python['mlp_classifier'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);

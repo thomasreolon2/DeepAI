@@ -1193,79 +1193,164 @@ Blockly.Blocks['input'] = {
         this.setHelpUrl("");
     }
 };
-Blockly.Blocks['precision'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("[정밀도 계산] ");
-        this.appendValueInput("yt")
-            .setCheck(null)
-            .appendField("Y_true");
-        this.appendValueInput("yp")
-            .setCheck(null)
-            .appendField("Y_pred");
-        this.appendDummyInput()
-            .appendField("평균 ")
-            .appendField(new Blockly.FieldDropdown([["None", "None"], ["macro", "macro"], ["micro", "micro"], ["weighted", "weighted"]]), "aver");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
+Blockly.Blocks['fetch_openml'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[openml 데이터셋] ")
+          .appendField(new Blockly.FieldDropdown([["타이타닉","titanic"], ["집 값","house_price"], ["Mnist","mnist_784"]]), "NAME");
+      this.appendValueInput("x")
+          .setCheck(null)
+          .appendField("X_data");
+      this.appendValueInput("y")
+          .setCheck(null)
+          .appendField("Y_data");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
     }
-};
+  };
 
-Blockly.Blocks['mae'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("[평균 절대 오차] ");
-        this.appendValueInput("yt")
-            .setCheck(null)
-            .appendField("Y_true");
-        this.appendValueInput("yp")
-            .setCheck(null)
-            .appendField("Y_pred");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
+  Blockly.Blocks['import_scikit'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[메트릭스 라이브러리 임포트] ")
+          .appendField(new Blockly.FieldDropdown([["정확도","accuracy_score"], ["AUC","metrics"], ["AP","average_precision_score"], ["정밀도","precision_score"], ["MAE","mean_absolute_error"], ["MSE","mean_squared_error"], ["Median","median_absolute_error"]]), "metrics");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
     }
-};
+  };
+  Blockly.Blocks['acc_score'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[분류 정확도] ");
+      this.appendValueInput("yt")
+          .setCheck(null)
+          .appendField("Y_true");
+      this.appendValueInput("yp")
+          .setCheck(null)
+          .appendField("Y_pred");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['AUC'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[AUC 계산] ");
+      this.appendValueInput("yt")
+          .setCheck(null)
+          .appendField("X 축");
+      this.appendValueInput("yp")
+          .setCheck(null)
+          .appendField("Y 축");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['AP'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[AP 계산] ");
+      this.appendValueInput("yt")
+          .setCheck(null)
+          .appendField("Y_true");
+      this.appendValueInput("yp")
+          .setCheck(null)
+          .appendField("Y_score");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['precision'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[정밀도 계산] ");
+      this.appendValueInput("yt")
+          .setCheck(null)
+          .appendField("Y_true");
+      this.appendValueInput("yp")
+          .setCheck(null)
+          .appendField("Y_pred");
+      this.appendDummyInput()
+          .appendField("평균 ")
+          .appendField(new Blockly.FieldDropdown([["None","None"], ["macro","macro"], ["micro","micro"], ["weighted","weighted"]]), "aver");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
-Blockly.Blocks['mse'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("[평균 제곱 오차] ");
-        this.appendValueInput("yt")
-            .setCheck(null)
-            .appendField("Y_true");
-        this.appendValueInput("yp")
-            .setCheck(null)
-            .appendField("Y_pred");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
+  Blockly.Blocks['mae'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[평균 절대 오차] ");
+      this.appendValueInput("yt")
+          .setCheck(null)
+          .appendField("Y_true");
+      this.appendValueInput("yp")
+          .setCheck(null)
+          .appendField("Y_pred");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
     }
-};
-Blockly.Blocks['median'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("[절대 오차 중앙값] ");
-        this.appendValueInput("yt")
-            .setCheck(null)
-            .appendField("Y_true");
-        this.appendValueInput("yp")
-            .setCheck(null)
-            .appendField("Y_pred");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
+  };
+  
+  Blockly.Blocks['mse'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[평균 제곱 오차] ");
+      this.appendValueInput("yt")
+          .setCheck(null)
+          .appendField("Y_true");
+      this.appendValueInput("yp")
+          .setCheck(null)
+          .appendField("Y_pred");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
     }
-};
+  };
+  Blockly.Blocks['median'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[절대 오차 중앙값] ");
+      this.appendValueInput("yt")
+          .setCheck(null)
+          .appendField("Y_true");
+      this.appendValueInput("yp")
+          .setCheck(null)
+          .appendField("Y_pred");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
 
 
 
