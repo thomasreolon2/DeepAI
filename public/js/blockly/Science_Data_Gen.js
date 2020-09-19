@@ -443,9 +443,13 @@ ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}'
       var value_matplotlib_main_screen_size_width = Blockly.Python.valueToCode(block, 'matplotlib_main_screen_size_width', Blockly.Python.ORDER_ATOMIC);
       var value_matplotlib_main_screen_size_height = Blockly.Python.valueToCode(block, 'matplotlib_main_screen_size_height', Blockly.Python.ORDER_ATOMIC);
       // TODO: Assemble Python into code variable.
+    //  var test1 =  Blockly.getMainWorkspace().getDisplayText_(value_matplotlib_main_cols);
+    //  var test2 =  Blockly.getMainWorkspace().getDisplayText_(value_matplotlib_main_rows);
+    
+      if(value_matplotlib_main_cols == 1 && value_matplotlib_main_rows == 1){   DL_Gra = "graph_1_1";  } else{DL_Gra = 0;}  
       var code =`fig = ${value_matplotlib_main_lib_val}.figure()   
 fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_rows}, figsize=(${value_matplotlib_main_screen_size_width},${value_matplotlib_main_screen_size_height}) , constrained_layout=True)\n`; 
-       return code;
+       return code;   
     };   
     
   //matplot2 _updated_final 
@@ -641,15 +645,23 @@ fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(${value_matplotlib_main_
   var code ; 
   if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){ 
     code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )\n`;  
+  }else if(DL_Gra == "graph_1_1" ){
+     code =`ax_lst.${matplot_graph}( ${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )\n`;       
   }else{
-     code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}( ${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )\n`;       
-  }        
+    code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}( ${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )\n`;    
+  } 
  
+ if(DL_Gra == "graph_1_1"){
+  code =  code.concat(`\nax_lst.set_title("${text_matplotlib_pre_graph_title}")
+ax_lst.set_xlabel("${text_matplotlib_pre_graph_xlable}")
+ax_lst.set_ylabel("${text_matplotlib_pre_graph_ylable}")
+ax_lst.legend(loc='best')\n`);  
+ }else{ 
   code =  code.concat(`\nax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}")
 ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
 ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}")
 ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`);  
-  
+}
  return code;
 };
   
