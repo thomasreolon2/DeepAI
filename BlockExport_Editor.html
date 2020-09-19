@@ -1073,10 +1073,21 @@
       </category>
       <category name="신경망" colour="%{BKY_ML_HUE}">
         <block type="sklearn_mlp"></block> <!-- 사이킷런 MLP 블록  -->
-
+        <!-- <block type="make_mlp_classifier"></block>
+        <block type="make_mlp_regressor"></block> -->
+        <block type="mlp_classifier"></block>
+        <block type="mlp_regressor"></block>
       </category>
       <category name="선형모델" colour="%{BKY_ML_HUE}">
-        <block type="scikit_learn"></block>
+        <!-- <block type="scikit_learn"></block> -->
+        <block type="logistic_regression"></block>
+        <block type="logistic_regression_cv"></block>
+        <block type="perceptron"></block>
+        <block type="ridge_classifier"></block>
+        <block type="sgd_classifier"></block>
+        <block type="linear_regression"></block>
+        <block type="ridge"></block>
+        <block type="sgd_regressor"></block>
       </category>
       <category name="서포트 벡터 머신" colour="%{BKY_ML_HUE}">
       

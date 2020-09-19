@@ -91,7 +91,7 @@ Blockly.Python['csv2'] = function (block) {
                 //     data = "0";
                 // }
                 x_train[i][j] = data; // value
-            }value = value + "[" + x_train[i] + "]";
+            } value = value + "[" + x_train[i] + "]";
             if (i != x_train.length - 1) {
                 value = value + ",";
             }
@@ -190,20 +190,20 @@ Blockly.Python['labelencoder'] = function (block) {
 //             Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"plt");
 //             break;
 //     }
-    
+
 //     return code;
 // };
 
-Blockly.Python['import_dataset'] = function(block) {
+Blockly.Python['import_dataset'] = function (block) {
     var dropdown_dataset_name = block.getFieldValue('dataset_name');
     var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
     var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' +value_x_data + ' = ' + dropdown_dataset_name +'().data\n' + value_y_data + ' = ' + dropdown_dataset_name + '().target\n';
+    var code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data + ' = ' + dropdown_dataset_name + '().data\n' + value_y_data + ' = ' + dropdown_dataset_name + '().target\n';
     return code;
-  };
+};
 
-Blockly.Python['train_test_split'] = function(block) {
+Blockly.Python['train_test_split'] = function (block) {
     var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
     var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
     var value_x_train = Blockly.Python.valueToCode(block, 'x_train', Blockly.Python.ORDER_ATOMIC);
@@ -214,10 +214,10 @@ Blockly.Python['train_test_split'] = function(block) {
     var dropdown_shuffle = block.getFieldValue('shuffle');
     var text_seed = block.getFieldValue('seed');
     // TODO: Assemble Python into code variable.
-    var code = 'from sklearn.model_selection import train_test_split\n' + value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split('+value_x_data+','+value_y_data+','+'test_size='+text_test_size+', shuffle='+dropdown_shuffle+', random_state='+text_seed+')\n';
+    var code = 'from sklearn.model_selection import train_test_split\n' + value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split(' + value_x_data + ',' + value_y_data + ',' + 'test_size=' + text_test_size + ', shuffle=' + dropdown_shuffle + ', random_state=' + text_seed + ')\n';
     return code;
-  };
-  Blockly.Python['jin_train_test_split'] = function(block) {
+};
+Blockly.Python['jin_train_test_split'] = function (block) {
     var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
     var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
     var value_x_train = Blockly.Python.valueToCode(block, 'x_train', Blockly.Python.ORDER_ATOMIC);
@@ -228,28 +228,28 @@ Blockly.Python['train_test_split'] = function(block) {
     var dropdown_shuffle = block.getFieldValue('shuffle');
     var text_seed = block.getFieldValue('seed');
     // TODO: Assemble Python into code variable.
-    var code = 'from sklearn.model_selection import train_test_split\n' + value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split('+value_x_data+','+value_y_data+','+'test_size='+text_test_size+', shuffle='+dropdown_shuffle+', random_state='+text_seed+')\n';
+    var code = 'from sklearn.model_selection import train_test_split\n' + value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split(' + value_x_data + ',' + value_y_data + ',' + 'test_size=' + text_test_size + ', shuffle=' + dropdown_shuffle + ', random_state=' + text_seed + ')\n';
     return code;
-  };
+};
 
-Blockly.Python['model_score'] = function(block) {
+Blockly.Python['model_score'] = function (block) {
     var value_model_name = Blockly.Python.valueToCode(block, 'model_name', Blockly.Python.ORDER_ATOMIC);
     var value_x_test = Blockly.Python.valueToCode(block, 'x_test', Blockly.Python.ORDER_ATOMIC);
     var value_y_test = Blockly.Python.valueToCode(block, 'y_test', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = value_model_name + '.score(' + value_x_test + ', '+ value_y_test + ')\n';
+    var code = value_model_name + '.score(' + value_x_test + ', ' + value_y_test + ')\n';
     return [code, Blockly.Python.ORDER_ATOMIC];
-  };
+};
 
 
-  Blockly.Python['model_predict'] = function(block) {
+Blockly.Python['model_predict'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = value_model+".predict("+value_name+")";
+    var code = value_model + ".predict(" + value_name + ")";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];
-  };
+};
 
 
 
@@ -292,13 +292,13 @@ Blockly.Python['set_menu'] = function (block) {
 
 
 //////////////테이블그리기 파이썬 코드 
-Blockly.Python['data_csv_read'] = function(block) {
+Blockly.Python['data_csv_read'] = function (block) {
     var value_data_csv_read_val = Blockly.Python.valueToCode(block, 'Data_csv_read_val', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = 'af = '+value_data_csv_read_val+'.values.tolist()\n';  
-    return code;     
-  };  
-   
+    var code = 'af = ' + value_data_csv_read_val + '.values.tolist()\n';
+    return code;
+};
+
 
 
 
@@ -378,10 +378,10 @@ Blockly.Python['for_range'] = function (block) {
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
- 
+
 
 // 사이킷런 MLP 블록
-Blockly.Python['sklearn_mlp'] = function(block) {
+Blockly.Python['sklearn_mlp'] = function (block) {
     var value_sklearn_mlp_lib_val = Blockly.Python.valueToCode(block, 'sklearn_mlp_lib_val', Blockly.Python.ORDER_ATOMIC);
     var text_sklearn_mlp_hidden_layer_sizes_ = block.getFieldValue('sklearn_mlp_hidden_layer_sizes ');
     var dropdown_sklearn_mlp_activation_option = block.getFieldValue('sklearn_mlp_activation_Option');
@@ -392,50 +392,50 @@ Blockly.Python['sklearn_mlp'] = function(block) {
     var value_sklearn_mlp_fit_x = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.Python.ORDER_ATOMIC);
     var value_sklearn_mlp_fit_y = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.Python.ORDER_ATOMIC);
 
-    
+
     // TODO: Assemble Python into code variable.
     var get_sklearn_mlp_activation;
-    var get_sklearn_mlp_optimizer; 
+    var get_sklearn_mlp_optimizer;
 
-    switch(dropdown_sklearn_mlp_activation_option){ 
-        case "sklearn_MLP_activation_identity" :  
-        get_sklearn_mlp_activation = `identity`;        
-        break;
-      
-        case "sklearn_MLP_activation_logistic" :  
-        get_sklearn_mlp_activation = `logistic`;           
-        break;
-    
-        case "sklearn_MLP_activation_tanh" :   
-        get_sklearn_mlp_activation = `tanh`;            
-        break;
+    switch (dropdown_sklearn_mlp_activation_option) {
+        case "sklearn_MLP_activation_identity":
+            get_sklearn_mlp_activation = `identity`;
+            break;
 
-        case "sklearn_MLP_activation_relu" :   
-        get_sklearn_mlp_activation = `relu`;            
-        break;
-     
-        default: 
-        break;   
-      }   
-      
-      switch(dropdown_sklearn_mlp_optimizer_option){ 
-        case "sklearn_MLP_Optimizer_Lbfgs" :  
-        get_sklearn_mlp_optimizer = `lbfgs`;         
-        break;
-      
-        case "sklearn_MLP_Optimizer_SGD" :  
-        get_sklearn_mlp_optimizer = `sgd`;           
-        break;
-    
-        case "sklearn_MLP_Optimizer_Adam" :   
-        get_sklearn_mlp_optimizer = `adam`;            
-        break;
+        case "sklearn_MLP_activation_logistic":
+            get_sklearn_mlp_activation = `logistic`;
+            break;
 
-      
-        default: 
-        break; 
-      } 
- 
+        case "sklearn_MLP_activation_tanh":
+            get_sklearn_mlp_activation = `tanh`;
+            break;
+
+        case "sklearn_MLP_activation_relu":
+            get_sklearn_mlp_activation = `relu`;
+            break;
+
+        default:
+            break;
+    }
+
+    switch (dropdown_sklearn_mlp_optimizer_option) {
+        case "sklearn_MLP_Optimizer_Lbfgs":
+            get_sklearn_mlp_optimizer = `lbfgs`;
+            break;
+
+        case "sklearn_MLP_Optimizer_SGD":
+            get_sklearn_mlp_optimizer = `sgd`;
+            break;
+
+        case "sklearn_MLP_Optimizer_Adam":
+            get_sklearn_mlp_optimizer = `adam`;
+            break;
+
+
+        default:
+            break;
+    }
+
 
     var code = `from sklearn.neural_network import MLPClassifier\n
 ${value_sklearn_mlp_lib_val} = MLPClassifier( 
@@ -445,10 +445,10 @@ solver = '${get_sklearn_mlp_optimizer}',
 learning_rate_init = ${text_sklearn_mlp_learning_rate}, 
 max_iter = ${text_sklearn_mlp_max_iter}, 
 random_state = ${text_sklearn_mlp_random_state} )
-${value_sklearn_mlp_lib_val}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_fit_y})\n`; 
+${value_sklearn_mlp_lib_val}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_fit_y})\n`;
     // TODO: Change ORDER_NONE to the correct strength. 
-    return code;  
-  }; 
+    return code;
+};
 
 
 //   //MLP fit 
@@ -460,8 +460,8 @@ ${value_sklearn_mlp_lib_val}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_
 //     var code = `${value_sklearn_mlp_fit_lib_var}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_fit_y})\n`;
 //     return code;
 //   }; 
-   
-  // kMeans
+
+// kMeans
 Blockly.Python['k_means'] = function (block) {
     var variable_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
@@ -469,11 +469,11 @@ Blockly.Python['k_means'] = function (block) {
     var cnt = block.getFieldValue('cnt');
     // TODO: Assemble Python into code variable.
     var lib = "from sklearn.cluster import KMeans\n";
-    var code = lib + variable_model+" = KMeans(n_clusters = " + cnt + ")\n" + variable_model+".fit("+variable_data+")\n";
+    var code = lib + variable_model + " = KMeans(n_clusters = " + cnt + ")\n" + variable_model + ".fit(" + variable_data + ")\n";
     return code;
 };
 
-  Blockly.Python['vis_tree'] = function(block) {
+Blockly.Python['vis_tree'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
     var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
@@ -482,11 +482,109 @@ Blockly.Python['k_means'] = function (block) {
     // TODO: Assemble Python into code variable.
     var code = '#트리그래프\n';
     return code;
-  };
+};
 
-  Blockly.Python['input'] = function(block) {
+Blockly.Python['input'] = function (block) {
     // TODO: Assemble Python into code variable.
     var code = 'input()';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];
-  };
+};
+
+// 신경망 MLPClassifier
+Blockly.Python['mlp_classifier'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_numSeed = block.getFieldValue('numSeed');
+    var text_numEpochs = block.getFieldValue('numEpochs');
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+Blockly.Python['mlp_regressor'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_numSeed = block.getFieldValue('numSeed');
+    var text_numEpochs = block.getFieldValue('numEpochs');
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+// 선형모델
+Blockly.Python['logistic_regression'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_numSeed = block.getFieldValue('numSeed');
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+Blockly.Python['logistic_regression_cv'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_numCv = block.getFieldValue('numCv');
+    var text_numState = block.getFieldValue('numState');
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+Blockly.Python['perceptron'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_numTol = block.getFieldValue('numTol');
+    var text_numState = block.getFieldValue('numState');
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+Blockly.Python['ridge_classifier'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+Blockly.Python['sgd_classifier'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_numEpochs = block.getFieldValue('numEpochs');
+    var text_numTol = block.getFieldValue('numTol');
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+Blockly.Python['linear_regression'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+Blockly.Python['ridge'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_numAlpha = block.getFieldValue('numAlpha');
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+Blockly.Python['sgd_regressor'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_numEpochs = block.getFieldValue('numEpochs');
+    var text_numTol = block.getFieldValue('numTol');
+    var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
+    var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+};
+
