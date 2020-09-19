@@ -351,3 +351,16 @@ Blockly.Python['stats_inquiry'] = function(block) {
   var code = "pd.DataFrame(" + variable_data + ').describe()\n';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+// array
+Blockly.Python['array_select'] = function(block) {
+  // Create a list with any number of elements of any type.
+  var value_name = Blockly.Python.valueToCode(block, 'array_var', Blockly.Python.ORDER_ATOMIC);
+  var elements = new Array(block.itemCount_);
+  for (var i = 0; i < block.itemCount_; i++) {
+    elements[i] = Blockly.Python.valueToCode(block, 'ADD' + i,
+        Blockly.Python.ORDER_NONE) || 'None';
+    // elements[i] = block.getFieldValue('ADD' + i) || 'None';
+  }
+  var code = value_name+'[' + elements.join('][') + ']';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
