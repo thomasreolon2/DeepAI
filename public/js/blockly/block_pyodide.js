@@ -35,17 +35,17 @@ Blockly.Blocks['forp'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_COLLECTION_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
 };
 Blockly.Blocks['sump'] = {
     init: function () {
-        this.appendValueInput("i").setCheck(null).appendField("배열 합계");
+        this.appendValueInput("i").setCheck(null).appendField("리스트 합계");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_COLLECTION_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -63,7 +63,7 @@ Blockly.Blocks['lrgraph'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(160);
+        this.setColour("%{BKY_VISUAL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -93,7 +93,7 @@ Blockly.Blocks['logicgraph'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(160);
+        this.setColour("%{BKY_VISUAL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -367,7 +367,7 @@ Blockly.Blocks['dict'] = {
    */
     init: function () {
         this.appendDummyInput().appendField("딕셔너리");
-        this.setColour(230);
+        this.setColour("%{BKY_DICT_HUE}");
         this.updateShape_();
         this.setOutput(true, null);
         this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
@@ -503,7 +503,7 @@ Blockly.Blocks['dict_create_with_container'] = { /**
         this.appendStatementInput('STACK');
         this.setTooltip(Blockly.Msg['LISTS_CREATE_WITH_CONTAINER_TOOLTIP']);
         this.contextMenu = false;
-        this.setColour(230);
+        this.setColour("%{BKY_DICT_HUE}");
     }
 };
 
@@ -543,7 +543,7 @@ Blockly.Blocks['dic_menu'] = {
         this.appendDummyInput().appendField("값2");
         this.appendValueInput("dic3")
         this.setInputsInline(true);
-        this.setColour(230);
+        this.setColour("%{BKY_DICT_HUE}");
         this.setOutput(true, null);
         this.setTooltip("");
         this.setHelpUrl("");
@@ -558,7 +558,7 @@ Blockly.Blocks['set'] = {
         this.appendValueInput("SET").setCheck(null);
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SET_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -590,7 +590,7 @@ Blockly.Blocks['set_menu'] = {
         this.appendValueInput("SET2").setCheck(null).appendField("집합 선택: (A and B), 값 변경: (집합A and 바꿀값)");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SET_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1004,25 +1004,6 @@ Blockly.Blocks['conver_bool'] = {
     }
 };
 
-// list_append
-Blockly.Blocks['list_append'] = {
-    init: function () {
-        this.appendValueInput("LIST")
-            .setCheck(null)
-            .appendField("리스트 요소추가 -> 리스트");
-        this.appendValueInput("value")
-            .setCheck(null)
-            .appendField("추가내용 (");
-        this.appendDummyInput()
-            .appendField(")");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_COLLECTION_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
 // 리스트 정렬, 뒤집기
 Blockly.Blocks['list_sort_reverse'] = {
@@ -1045,11 +1026,11 @@ Blockly.Blocks['list_sort_reverse'] = {
 Blockly.Blocks['list_index'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("list");
+            .appendField("인덱스찾기 -> 리스트");
         this.appendValueInput("LIST")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField("index :");
+            .appendField("인덱스");
         this.appendValueInput("INDEX")
             .setCheck(null);
         this.setInputsInline(true);
@@ -1064,17 +1045,19 @@ Blockly.Blocks['list_index'] = {
 Blockly.Blocks['list_insert'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("insert = list :");
+            .appendField("삽입 -> 리스트");
         this.appendValueInput("LIST")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField("index : ");
+            .appendField("(인덱스");
         this.appendValueInput("INDEX")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField("value :");
+            .appendField(", 변수");
         this.appendValueInput("VALUE")
             .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1088,7 +1071,7 @@ Blockly.Blocks['list_remove_pop_count_extend'] = {
     init: function () {
         this.appendDummyInput()
             .appendField("리스트")
-            .appendField(new Blockly.FieldDropdown([["확장", "extend"], ["요소의개수", "count"], ["끄집어내기", "pop"], ["요소삭제", "remove"]]), "NAME")
+            .appendField(new Blockly.FieldDropdown([["확장", "extend"], ["요소의개수", "count"], ["끄집어내기", "pop"], ["요소삭제", "remove"], ["요소추가", "append"]]), "NAME")
             .appendField("->")
             .appendField("(리스트");
         this.appendValueInput("LIST")
@@ -1110,7 +1093,7 @@ Blockly.Blocks['list_remove_pop_count_extend'] = {
 // text_replace
 Blockly.Blocks['text_replace'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/13-logo.png",25,23, {alt:"*", flipRtl:"FALSE"}));
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T13-logo.png",25,23, {alt:"*", flipRtl:"FALSE"}));
         this.appendDummyInput()
             .appendField("문자열변경 -> 변수 ");
         this.appendValueInput("TEXT")
@@ -1178,7 +1161,7 @@ Blockly.Blocks['vis_tree'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_VISUAL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }

@@ -686,7 +686,7 @@ Blockly.defineBlocksWithJsonArray(
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": "%{BKY_VISUAL_HUE}",
     "tooltip": "", 
     "helpUrl": "" 
   },
@@ -722,7 +722,7 @@ Blockly.defineBlocksWithJsonArray(
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": "%{BKY_VISUAL_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
@@ -805,7 +805,7 @@ Blockly.defineBlocksWithJsonArray(
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": "%{BKY_VISUAL_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },  
@@ -822,7 +822,7 @@ Blockly.defineBlocksWithJsonArray(
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": "%{BKY_VISUAL_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
@@ -855,7 +855,7 @@ Blockly.defineBlocksWithJsonArray(
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_NUMPY_HUE}");
+      this.setColour("%{BKY_VISUAL_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
