@@ -12,7 +12,7 @@ Blockly.Python['val_vi'] = function(block) {
     
       case "Val_VI_Numpy" :  
       code = `PN_Visualization = ${value_val_vi_val}.tolist()\n`;          
-      break;
+      break; 
   
       case "Val_VI_Tuple" :   
       code = `PN_Visualization = list(${value_val_vi_val})\n`;          
