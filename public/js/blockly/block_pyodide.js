@@ -1193,6 +1193,83 @@ Blockly.Blocks['input'] = {
         this.setHelpUrl("");
     }
 };
+Blockly.Blocks['precision'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[정밀도 계산] ");
+        this.appendValueInput("yt")
+            .setCheck(null)
+            .appendField("Y_true");
+        this.appendValueInput("yp")
+            .setCheck(null)
+            .appendField("Y_pred");
+        this.appendDummyInput()
+            .appendField("평균 ")
+            .appendField(new Blockly.FieldDropdown([["None", "None"], ["macro", "macro"], ["micro", "micro"], ["weighted", "weighted"]]), "aver");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['mae'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[평균 절대 오차] ");
+        this.appendValueInput("yt")
+            .setCheck(null)
+            .appendField("Y_true");
+        this.appendValueInput("yp")
+            .setCheck(null)
+            .appendField("Y_pred");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['mse'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[평균 제곱 오차] ");
+        this.appendValueInput("yt")
+            .setCheck(null)
+            .appendField("Y_true");
+        this.appendValueInput("yp")
+            .setCheck(null)
+            .appendField("Y_pred");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['median'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[절대 오차 중앙값] ");
+        this.appendValueInput("yt")
+            .setCheck(null)
+            .appendField("Y_true");
+        this.appendValueInput("yp")
+            .setCheck(null)
+            .appendField("Y_pred");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+
+
+
 
 ////////////////////////////// 신경망 //////////////////////////////
 Blockly.Blocks['mlp_classifier'] = {

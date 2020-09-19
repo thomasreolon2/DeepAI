@@ -164,3 +164,84 @@ Blockly.JavaScript['model_score'] = function (block) {
 }
 
 
+Blockly.JavaScript['input'] = function (block) {
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['fetch_openml'] = function (block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+  return code;
+};
+Blockly.JavaScript['import_scikit'] = function (block) {
+  var dropdown_metrics = block.getFieldValue('metrics');
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+
+  return code;
+};
+
+Blockly.JavaScript['acc_score'] = function(block) {
+  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['AUC'] = function(block) {
+  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['AP'] = function(block) {
+  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['precision'] = function(block) {
+  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_aver = block.getFieldValue('aver');
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['mae'] = function(block) {
+  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['mse'] = function(block) {
+  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['median'] = function(block) {
+  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code="\n"
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
