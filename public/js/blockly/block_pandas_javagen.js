@@ -158,3 +158,17 @@ Blockly.JavaScript['groupby_series_'] = function(block) {
 // ////////////////////////////////////////////////////////////////////
 // // Pandas 2학년 파트 끝
 // ////////////////////////////////////////////////////////////////////
+
+// array
+  Blockly.JavaScript['array_select'] = function(block) {
+  // Create a list with any number of elements of any type.
+  var value_name = Blockly.JavaScript.valueToCode(block, 'array_var', Blockly.JavaScript.ORDER_ATOMIC);
+  var elements = new Array(block.itemCount_);
+  for (var i = 0; i < block.itemCount_; i++) {
+    elements[i] = Blockly.JavaScript.valueToCode(block, 'ADD' + i,
+        Blockly.JavaScript.ORDER_COMMA) || 'null';
+    // elements[i] = block.getFieldValue('ADD' + i);
+  }
+  var code = value_name+'[' + elements.join('][') + ']';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

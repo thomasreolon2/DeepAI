@@ -34,6 +34,7 @@
   <!-- Pandas 블록 -->
   <script src="/js/blockly/block_pandas.js"></script>
   <script src="/js/blockly/block_pandas_gen.js"></script>
+  <script src="/js/blockly/block_pandas_javagen.js"></script>
   <!-- Pandas 블록 -->
 
   <!-- <script src="/js/blockly/test.js"></script>
@@ -968,6 +969,13 @@
         <!-- <block type="image_list"></block> -->
         <block type="missing_value_inquiry"></block>
         <block type="stats_inquiry"></block>
+        <block type="array_select">
+          <value name="array_var">
+            <block type="variables_get">
+              <field name="VAR">array</field>
+            </block>
+          </value>
+        </block>
       </category>
       <!-- ************************************************** ************************* *************************  -->
       <!-- ***************************************  Pandas Blocks end  ******************************************  -->
