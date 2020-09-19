@@ -121,6 +121,19 @@ Blockly.JavaScript['pandas_merge_lron'] = function(block) {
   var code = '...;\n';
   return code;
 };
+
+Blockly.JavaScript['missing_value_inquiry'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['stats_inquiry'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
 // ////////////////////////////////////////////////////////////////////
 // // Pandas 2학년 파트 끝
 // ////////////////////////////////////////////////////////////////////
