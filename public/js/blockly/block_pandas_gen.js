@@ -40,7 +40,7 @@ Blockly.Python['normal'] = function(block) {
   var value_normalization_data = Blockly.Python.valueToCode(block, 'Normalization_data', Blockly.Python.ORDER_ATOMIC);
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_normalization_data + '["' + text_name + '"]' + '=' + value_normalization_data + '["' + text_name + '"]' + '-' + value_normalization_data + '["' + text_name + '"]' + '.mean()' + '/' + value_normalization_data + '["' + text_name + '"]' + '.std()' +'\n';
+  var code = value_normalization_data + '["' + text_name + '"]' + '=(' + value_normalization_data + '["' + text_name + '"]' + '-' + value_normalization_data + '["' + text_name + '"]' + '.mean())' + '/' + value_normalization_data + '["' + text_name + '"]' + '.std()' +'\n';
   return code;
 };
 
@@ -136,8 +136,8 @@ Blockly.Python['select_row_column_value'] = function(block) {
   var value_select_row_locate = Blockly.Python.valueToCode(block, 'select_row_locate', Blockly.Python.ORDER_ATOMIC);
   var value_select_column_locate = Blockly.Python.valueToCode(block, 'select_column_locate', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_select_value + '=' + value_select_value + '.iloc[' + value_select_row_locate +','+ value_select_column_locate +']\n';
-  return code;
+  var code = value_select_value + '.iloc[' + value_select_row_locate +','+ value_select_column_locate +']\n';
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 //2020-09-19 양승국 수정

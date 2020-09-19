@@ -74,7 +74,7 @@ Blockly.Blocks['normal'] = {
   init: function() {
     this.appendValueInput("Normalization_data")
         .setCheck(null)
-        .appendField("[정규화블록] 데이터");
+        .appendField("[Standard Scaler] 데이터");
     this.appendDummyInput()
         .appendField("(컬럼명")
         .appendField(new Blockly.FieldTextInput("default"), "NAME")
@@ -267,8 +267,8 @@ Blockly.Blocks['select_row_column_value'] = {
         .appendField("열 범위")
     this.appendDummyInput()
         .appendField(")");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
     this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
