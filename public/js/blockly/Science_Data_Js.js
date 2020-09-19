@@ -226,3 +226,12 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var code ='document.getElementById("pyplotfigure").src = pyodide.globals.img_str;';
     return code;
   };  
+
+  Blockly.JavaScript['visualization_library'] = function(block) {
+    var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var libImportIo = "import io\n";
+    var libImportBase64 = "import base64\n";
+    var code = " ";
+    return code;
+  };

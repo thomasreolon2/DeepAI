@@ -224,8 +224,8 @@
 
         <!-- 데이터 셋 불러오기  -->
         <!-- <input id="datasets_load" type="button" class="" onClick="datasets_load_lms();"
-          value="데이터셋 불러오기" /> -->
-        <!-- 데이터 셋 불러오기  -->
+        value="데이터셋 불러오기" /> -->
+        <!-- 데이터 셋 불러오기  --> 
 
         <!-- 탭들 display -->
         <script>
@@ -1055,8 +1055,7 @@
         <block type="vis_tree"></block>
         <!--  matplot3 시각화 하기      -->
         <!-- 아래는 준비중  -->
-        <block type="linearregression_c"></block> <!-- 사이킷런 리니어 로드     -->
-        <block type="linearregression_train"></block> <!-- 사이킷런 train     -->
+        
       </category>
    
       <!-- # 시각화 부분 #  -->
@@ -1730,7 +1729,14 @@
     // **************************************
     // ********  데이터셋_불러오기     **********//
     // **************************************//  
-    function datasets_load_lms(){
+
+  //팝업창 열기 블록 
+  function datasets_load_lms() { 
+    window.open("http://localhost:8000/datasets_load_lms", "a", 
+       "width=600, height=500, left=100, top=50, directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=no,resizable=no,"); 
+    }
+
+  
 //       <a href="www.naver.com" 
 //           onMouseOver="window.status='';return true"; 
 //           onclick="window.status='';return true"; 
@@ -1740,8 +1746,7 @@
 //  </a> 
 
 
-    }
-
+    
   
     function exportToCsv(filename, rows) {
  

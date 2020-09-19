@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head> 
+
+   <body>
+    
+    <!-- <div id="tester" style="width: 600px; height: 250px;"></div>     -->
+    <!-- <div id="myDiv" style="width: 400px; height: 400px;"></div> -->
+    <input type="file" id="file_input" name="file-input" accept=".csv, .json" onchange="loadFile(this);" />   
+    <div id="myDiv2" style="width: 550px; height: 400px;"></div>
+      
+      
+     
+    <script>
+     function loadFile(sender){       
+        var reader = new FileReader();
+        reader.onload = function(sender){
+          var data = sender.target.result;
+         // console.log(data.length); 
+ 
+          var rows = data.split(/\r\n|\n/); //행 개수 얻기  # 엔터 또는 줄넘김  
+          var cols = data.split(/\r\n|\n/)[0].split(/,/);  //열 개수 얻기  #, 로 구분 
+         console.log("rows",rows.length);
+         console.log("cols",cols.length);  
+             
+         
+         var Table_Chart  = new Array(cols.length);
+            for (var i = 0; i < Table_Chart.length; i++) {
+              Table_Chart[i] = new Array(rows.length); 
+                  } 
+  
+ 
+       // var Table_Chart =[[],[]];  //데이터가 들어갈 2차원 배열 만들기
+       
+
+          for (var i = 0; i < rows.length; i++) {   //j 가 열 ,i 가 행 
+               for (var j = 0; j < cols.length; j ++) { //12개 들어오고  
+              
+                 test = rows[i].split(/,/)[j];  //각행의 데이터를 쪼개기  
+                 //console.log(test);    
+     
+                  //  if (test == "undefined" || test == null || test == "" ){ 
+                  //     // window.alert(`잘못된 데이터 확인 : ${i} : 행, ${j} : 열  `,Table_Chart[j][i]) ;
+                  //      console.log(` 잘못된 데이터 : ${i} : 행, ${j} : 열 `,Table_Chart[j][i]);       
+  
+                  //   }else{    
+                  //     Table_Chart[j][i] = test;   
+                  //  //   console.log("Table_Chart : ",Table_Chart[j][i]);       
+                  //   }
+
+                 
+                  Table_Chart[j][i] = test;     
+                }     
+          }         
+
+         // console.log("t1",Table_Chart[2].length);  //Table_Chart[0]은 첫번째 열, Table_Chart[1]은 2번째 열
+ 
+        
+         draw_table(Table_Chart,rows,cols);  
+        }  
+         reader.readAsText(sender.files[0]); 
+      }
+  
+ 
+
+ 
+    //**************************************// 
+    //********    테이블 그리기    **********// 
+    //**************************************//
+function draw_table(Table_Chart,rows,cols) { 
+ 
+ 
+    
+ 
+//console.log("table:",Table_Chart);  
+//console.log("갯수 :",Table_Chart.length); 
+//console.log("위치 구하기 :",Table_Chart[1][4]); 
+   
+    
+    //값지정 
+    //var values=[[],[]];
+    values = Table_Chart; 
+    var values  = new Array(cols.lengthh);
+            for (var i = 0; i < Table_Chart.length; i++) { 
+              values[i] = new Array(rows.length); 
+                  }
+  
+ console.log("values:",values[0].length);
+    values = Table_Chart; 
+     
+     
+  
+
+  
+
+  //--------------------------------- data 속성 ---------------------------//
+    var data = [
+        {
+            type: 'table',  
+
+            //--------------헤더 설정 ---------------//
+            // header:{
+           
+            //     values: [["<b>EXPENSES</b>"], ["<b>Q1</b>"],["<b>Q2</b>"], ["<b>Q3</b>"], ["<b>Q4</b>"]], 
+                
+            //     function(Table_Chart){
+            //         for (var j = 0; j < Table_Chart[0].length; j++) {   //테이블 요소만 가져오기 
+            //            [Table_Chart[j][0]] 
+            //            }
+            //   },
+                
+            //     align: "center",
+            //     line: {
+            //         width: 1,
+            //         color: 'black'
+            //     },
+            //     fill: {
+            //         color: "grey"
+            //     },
+            //     font: {
+            //         family: "Arial",
+            //         size: 12,
+            //         color: "white"
+            //     }
+            // },
+            //--------------헤더 설정 ---------------//
+
+            cells: {
+                values: values,
+                align: "center",
+                line: {
+                    color: "black",
+                    width: 1
+                },
+                font: {
+                    family: "Arial", 
+                    size: 11,
+                    color: ["black"]
+                }
+            } 
+        } 
+    ]
+//--------------------------------- data 속성 ---------------------------//
+
+    Plotly.newPlot('myDiv2', data); 
+    
+
+}
+
+    </script> 
+
+    
+  </body>
+</html>
