@@ -15,6 +15,13 @@ Blockly.JavaScript['val_vi'] = function(block) {
     return code;
   };
 
+  //라이브러리 임포트    
+  Blockly.JavaScript['numpy_library'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = "\n";
+    return code;
+  };
+
   
     
     //라이브러리 임포트 사이킷런 
