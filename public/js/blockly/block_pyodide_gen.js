@@ -530,30 +530,30 @@ Blockly.Python['import_scikit'] = function (block) {
     return code;
 };
 
-Blockly.Python['acc_score'] = function(block) {
+Blockly.Python['acc_score'] = function (block) {
     var value_yt = Blockly.Python.valueToCode(block, 'yt', Blockly.Python.ORDER_ATOMIC);
     var value_yp = Blockly.Python.valueToCode(block, 'yp', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = 'accuracy_score('+value_yt+','+value_yp+')';
+    var code = 'accuracy_score(' + value_yt + ',' + value_yp + ')';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];
-  };
-  Blockly.Python['AUC'] = function(block) {
+};
+Blockly.Python['AUC'] = function (block) {
     var value_yt = Blockly.Python.valueToCode(block, 'yt', Blockly.Python.ORDER_ATOMIC);
     var value_yp = Blockly.Python.valueToCode(block, 'yp', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = 'metrics.auc('+value_yt+','+value_yp+')';
+    var code = 'metrics.auc(' + value_yt + ',' + value_yp + ')';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];
-  };
-  Blockly.Python['AP'] = function(block) {
+};
+Blockly.Python['AP'] = function (block) {
     var value_yt = Blockly.Python.valueToCode(block, 'yt', Blockly.Python.ORDER_ATOMIC);
     var value_yp = Blockly.Python.valueToCode(block, 'yp', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = 'average_precision_score('+value_yt+','+value_yp+')';
+    var code = 'average_precision_score(' + value_yt + ',' + value_yp + ')';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];
-  };
+};
 
 
 // 신경망 MLPClassifier
@@ -564,8 +564,8 @@ Blockly.Python['mlp_classifier'] = function (block) {
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var code = value_model + " = MLPClassifier(random_state = " + text_numSeed + ", max_iter = "+text_numEpochs+").fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['mlp_regressor'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
@@ -574,8 +574,8 @@ Blockly.Python['mlp_regressor'] = function (block) {
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var code = value_model + " = MLPRegressor(random_state = " + text_numSeed + ", max_iter = "+text_numEpochs+").fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 // 선형모델
 Blockly.Python['logistic_regression'] = function (block) {
@@ -584,54 +584,56 @@ Blockly.Python['logistic_regression'] = function (block) {
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var importLib = "from sklearn.linear_model import LogisticRegression" + "\n";
+    var code = value_model + " = LogisticRegression(random_state = " + text_numSeed + ").fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['logistic_regression_cv'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var text_numCv = block.getFieldValue('numCv');
-    var text_numState = block.getFieldValue('numState');
+    var text_numSeed = block.getFieldValue('numSeed');
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var importLib = "from sklearn.linear_model import LogisticRegressionCV" + "\n";
+    var code = value_model + " = LogisticRegressionCV(cv=" + text_numCv + ", random_state = " + text_numSeed + ").fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['perceptron'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_numTol = block.getFieldValue('numTol');
-    var text_numState = block.getFieldValue('numState');
+    var text_numSeed = block.getFieldValue('numSeed');
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var importLib = "from sklearn.linear_model import Perceptron" + "\n";
+    var code = value_model + " = Perceptron(tol = 1e-3, random_state = " + text_numSeed + ").fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['ridge_classifier'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var importLib = "from sklearn.linear_model import RidgeClassifier" + "\n";
+    var code = value_model + " = RidgeClassifier().fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['sgd_classifier'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var text_numEpochs = block.getFieldValue('numEpochs');
-    var text_numTol = block.getFieldValue('numTol');
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var code = value_model + " = make_pipeline(StandardScaler(), SGDClassifier(max_iter = " + text_numEpochs + ", tol = 1e-3)).fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['linear_regression'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var code = value_model + " = LinearRegression().fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['ridge'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
@@ -639,8 +641,8 @@ Blockly.Python['ridge'] = function (block) {
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var code = value_model + " = Ridge(alpha = " + text_numAlpha + ").fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['sgd_regressor'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
@@ -649,7 +651,7 @@ Blockly.Python['sgd_regressor'] = function (block) {
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
+    var code = value_model + " = make_pipeline(StandardScaler(), SGDRegressor(max_iter = " + text_numEpochs + ", tol = 1e-3)).fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
