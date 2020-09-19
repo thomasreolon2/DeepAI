@@ -227,6 +227,20 @@ Blockly.Python['train_test_split'] = function(block) {
     var code = 'from sklearn.model_selection import train_test_split\n' + value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split('+value_x_data+','+value_y_data+','+'test_size='+text_test_size+', shuffle='+dropdown_shuffle+', random_state='+text_seed+')\n';
     return code;
   };
+  Blockly.Python['jin_train_test_split'] = function(block) {
+    var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
+    var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
+    var value_x_train = Blockly.Python.valueToCode(block, 'x_train', Blockly.Python.ORDER_ATOMIC);
+    var value_x_test = Blockly.Python.valueToCode(block, 'x_test', Blockly.Python.ORDER_ATOMIC);
+    var value_y_train = Blockly.Python.valueToCode(block, 'y_train', Blockly.Python.ORDER_ATOMIC);
+    var value_y_test = Blockly.Python.valueToCode(block, 'y_test', Blockly.Python.ORDER_ATOMIC);
+    var text_test_size = block.getFieldValue('test_size');
+    var dropdown_shuffle = block.getFieldValue('shuffle');
+    var text_seed = block.getFieldValue('seed');
+    // TODO: Assemble Python into code variable.
+    var code = 'from sklearn.model_selection import train_test_split\n' + value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split('+value_x_data+','+value_y_data+','+'test_size='+text_test_size+', shuffle='+dropdown_shuffle+', random_state='+text_seed+')\n';
+    return code;
+  };
 
 Blockly.Python['model_score'] = function(block) {
     var value_model_name = Blockly.Python.valueToCode(block, 'model_name', Blockly.Python.ORDER_ATOMIC);
@@ -385,6 +399,10 @@ Blockly.Python['sklearn_mlp'] = function(block) {
     var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning_rate');
     var text_sklearn_mlp_max_iter = block.getFieldValue('sklearn_MLP_Max_iter');
     var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random_state');
+    var value_sklearn_mlp_fit_x = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.Python.ORDER_ATOMIC);
+    var value_sklearn_mlp_fit_y = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.Python.ORDER_ATOMIC);
+
+    
     // TODO: Assemble Python into code variable.
     var get_sklearn_mlp_activation;
     var get_sklearn_mlp_optimizer; 
@@ -436,21 +454,22 @@ activation = '${get_sklearn_mlp_activation}',
 solver = '${get_sklearn_mlp_optimizer}',
 learning_rate_init = ${text_sklearn_mlp_learning_rate}, 
 max_iter = ${text_sklearn_mlp_max_iter}, 
-random_state = ${text_sklearn_mlp_random_state} )\n`; 
+random_state = ${text_sklearn_mlp_random_state} )
+${value_sklearn_mlp_lib_val}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_fit_y})\n`; 
     // TODO: Change ORDER_NONE to the correct strength. 
     return code;  
   }; 
 
 
-  //MLP fit 
-  Blockly.Python['sklearn_mlp_fit'] = function(block) {
-    var value_sklearn_mlp_fit_lib_var = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_lib_var', Blockly.Python.ORDER_ATOMIC);
-    var value_sklearn_mlp_fit_x = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.Python.ORDER_ATOMIC);
-    var value_sklearn_mlp_fit_y = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = `${value_sklearn_mlp_fit_lib_var}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_fit_y})\n`;
-    return code;
-  }; 
+//   //MLP fit 
+//   Blockly.Python['sklearn_mlp_fit'] = function(block) {
+//     var value_sklearn_mlp_fit_lib_var = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_lib_var', Blockly.Python.ORDER_ATOMIC);
+//     var value_sklearn_mlp_fit_x = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.Python.ORDER_ATOMIC);
+//     var value_sklearn_mlp_fit_y = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.Python.ORDER_ATOMIC);
+//     // TODO: Assemble Python into code variable.
+//     var code = `${value_sklearn_mlp_fit_lib_var}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_fit_y})\n`;
+//     return code;
+//   }; 
    
   // kMeans
 Blockly.Python['k_means'] = function (block) {
@@ -460,7 +479,7 @@ Blockly.Python['k_means'] = function (block) {
     var cnt = block.getFieldValue('cnt');
     // TODO: Assemble Python into code variable.
     var lib = "from sklearn.cluster import KMeans\n";
-    var code = lib + variable_model+" = KMeans(n_clusters = " + cnt + ")\n" + variable_model+".fit("+variable_data+")\n" + variable_label+" = "+variable_model+".predict("+variable_data+")\n";
+    var code = lib + variable_model+" = KMeans(n_clusters = " + cnt + ")\n" + variable_model+".fit("+variable_data+")\n";
     return code;
 };
 
