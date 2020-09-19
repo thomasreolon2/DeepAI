@@ -117,8 +117,8 @@ Blockly.Python['select_row_list'] = function (block) {
   var value_list_val = Blockly.Python.valueToCode(block, 'list_val', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('srd_NAME');
   // TODO: Assemble Python into code variable.
-  if (dropdown_name == 1) var code = value_list_data + '.loc[' + value_list_val + ']\n';
-  else if (dropdown_name == 2) var code = value_list_data + '.[' + value_list_val + ']\n';
+  if (dropdown_name == 1) var code =  value_list_data + '.loc[' + value_list_val + ']\n';
+  else if (dropdown_name == 2) var code =  value_list_data + '[' + value_list_val + ']\n';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -196,10 +196,8 @@ Blockly.Python['csvdataframe_J'] = function (block) {
 
 //20.09.09 이성주 - 컬럼 블록 추가
 Blockly.Python['createColumn'] = function (a) {
-
   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
-  return [', columns = [' + b.join(", ") + ']', Blockly.Python.ORDER_ATOMIC]
-
+    return [b.join(", "), Blockly.Python.ORDER_ATOMIC]
 };
 
 //2020-09-19 양승국
