@@ -340,15 +340,41 @@ ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}'
     };  
     
     //np.max_min 
+    // Blockly.Python['numpy_max_min'] = function(block) {
+    //   var value_numpy_max_min_lib_val = Blockly.JavaScript.valueToCode(block, 'numpy_max_min_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
+    //   var dropdown_numpy_max_min_option = block.getFieldValue('numpy_max_min_option');
+    //   var value_numpy_max_min_val = Blockly.JavaScript.valueToCode(block, 'numpy_max_min_val', Blockly.JavaScript.ORDER_ATOMIC);
+    //   // TODO: Assemble JavaScript into code variable.
+    //   var code;
+    //   var numpy_max_min_value;
+  
+    //   switch (dropdown_numpy_max_min_option){
+    //     case "numpy_max" :  
+    //     numpy_max_min_value = 'max';    
+    //     break;       
+         
+    //     case "numpy_min" : 
+    //     numpy_max_min_value = 'min';      
+    //     break;    
+    
+    //     default :  
+    //     break;  
+    //   } ; 
+  
+    //   code =  `${value_numpy_max_min_lib_val}.${numpy_max_min_value}(${value_numpy_max_min_val})\n`;     
+  
+    //   return [code, Blockly.JavaScript.ORDER_NONE];
+    // }; 
+    
     Blockly.Python['numpy_max_min'] = function(block) {
-      var value_numpy_max_min_lib_val = Blockly.JavaScript.valueToCode(block, 'numpy_max_min_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
+      var value_numpy_max_min_lib_val = Blockly.Python.valueToCode(block, 'numpy_max_min_lib_val', Blockly.Python.ORDER_ATOMIC);
       var dropdown_numpy_max_min_option = block.getFieldValue('numpy_max_min_option');
-      var value_numpy_max_min_val = Blockly.JavaScript.valueToCode(block, 'numpy_max_min_val', Blockly.JavaScript.ORDER_ATOMIC);
-      // TODO: Assemble JavaScript into code variable.
+      var value_numpy_max_min_val = Blockly.Python.valueToCode(block, 'numpy_max_min_val', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
       var code;
       var numpy_max_min_value;
   
-      switch (dropdown_numpy_max_min_option){
+      switch (dropdown_numpy_max_min_option){ 
         case "numpy_max" :  
         numpy_max_min_value = 'max';    
         break;       
@@ -361,19 +387,26 @@ ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}'
         break;  
       } ; 
   
-      code =  `${value_numpy_max_min_lib_val}.${numpy_max_min_value}(${value_numpy_max_min_val})\n`;     
-  
-      return [code, Blockly.JavaScript.ORDER_NONE];
-    }; 
+      code =  `${value_numpy_max_min_lib_val}.${numpy_max_min_value}(${value_numpy_max_min_val})\n`; 
+      return [code, Blockly.Python.ORDER_NONE];
+    };
   
     //np.shape 행렬 차원 반환 
+    // Blockly.Python['numpy_shape'] = function(block) {
+    //   var value_numpy_shape_lib_val = Blockly.JavaScript.valueToCode(block, 'numpy_shape_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
+    //   var value_numpy_shape_num = Blockly.JavaScript.valueToCode(block, 'numpy_shape_num', Blockly.JavaScript.ORDER_ATOMIC);
+    //   // TODO: Assemble JavaScript into code variable.
+    //   var code = `${value_numpy_shape_lib_val}.shape(${value_numpy_shape_num})\n`;     
+    //   // TODO: Change ORDER_NONE to the correct strength.
+    //   return [code, Blockly.JavaScript.ORDER_NONE]; 
+    // };
     Blockly.Python['numpy_shape'] = function(block) {
-      var value_numpy_shape_lib_val = Blockly.JavaScript.valueToCode(block, 'numpy_shape_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
-      var value_numpy_shape_num = Blockly.JavaScript.valueToCode(block, 'numpy_shape_num', Blockly.JavaScript.ORDER_ATOMIC);
-      // TODO: Assemble JavaScript into code variable.
+      var value_numpy_shape_lib_val = Blockly.Python.valueToCode(block, 'numpy_shape_lib_val', Blockly.Python.ORDER_ATOMIC);
+      var value_numpy_shape_num = Blockly.Python.valueToCode(block, 'numpy_shape_num', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
       var code = `${value_numpy_shape_lib_val}.shape(${value_numpy_shape_num})\n`;     
       // TODO: Change ORDER_NONE to the correct strength.
-      return [code, Blockly.JavaScript.ORDER_NONE]; 
+      return [code, Blockly.Python.ORDER_NONE];
     };
   
      
