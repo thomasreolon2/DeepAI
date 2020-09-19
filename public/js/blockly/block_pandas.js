@@ -288,8 +288,7 @@ Blockly.Blocks['row_count'] = {
     this.appendDummyInput()
         .appendField(")");            
     this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setOutput(true, null);
     this.setColour(pandas_color);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -359,9 +358,10 @@ Blockly.Blocks['pandas_datalist'] = {
     this.appendValueInput("frm_var")
         .setCheck(null)
         .appendField("[zip리스트] 담을 변수");
-    this.appendDummyInput()
+    this.appendValueInput("data_lst")
+        .setCheck(null)
         .appendField("(리스트 데이터")
-        .appendField(new Blockly.FieldTextInput("default"), "NAME")
+    this.appendDummyInput()
         .appendField(")");    
         this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

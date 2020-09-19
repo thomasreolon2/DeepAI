@@ -492,6 +492,8 @@
 
     <!-- 문자 -->
     <category name="문자 (Text)" colour="%{BKY_TEXTS_HUE}">
+      <block type="printc"></block>
+      <block type="input"></block>
       <block type="text"></block>
       <block type="text_join"></block>
       <!--
@@ -577,7 +579,7 @@
         </value>
       </block>
       <!-- print -->
-      <block type="printc"></block>
+      
     </category>
 
     <!-- list -->
@@ -834,7 +836,11 @@
         </block>
 
         <!-- 2020-09-09 양승국 -->
-        <block type="pandas_datalist"></block>
+        <block type="pandas_datalist">
+          <value name="data_lst">
+            <block type="lists_create_with"></block>
+          </value> 
+        </block>
         <block type="pandas_dataframe">
           <value name="lib">
             <block type="variables_get">

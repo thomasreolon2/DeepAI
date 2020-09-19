@@ -146,7 +146,7 @@ Blockly.Python['row_count'] = function(block) {
   var dropdown_name = block.getFieldValue('count');
   // TODO: Assemble Python into code variable.
   var code = value_select_value + dropdown_name + '\n';
-  return code;
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 // Blockly.Python['image_list'] = function(block) {
@@ -166,9 +166,9 @@ Blockly.Python['count_label'] = function(block) {
 //2020-09-18 양승국 수정
 Blockly.Python['pandas_datalist'] = function(block) {
   var value_frm_var = Blockly.Python.valueToCode(block, 'frm_var', Blockly.Python.ORDER_ATOMIC);
-  var text_name = block.getFieldValue('NAME');
+  var value_data_lst = Blockly.Python.valueToCode(block, 'data_lst', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_frm_var + ' = list(zip( ' + text_name + '));\n';
+  var code = value_frm_var + ' = list(zip( ' + value_data_lst + '));\n';
   return code;
 };
 
