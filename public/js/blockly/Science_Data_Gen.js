@@ -428,114 +428,27 @@ ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}'
   
    
     //matplot1 
+//     Blockly.Python['matplotlib_main'] = function(block) {
+//       var value_matplotlib_main_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_main_lib_val', Blockly.Python.ORDER_ATOMIC);
+//       // TODO: Assemble Python into code variable. 
+//       var code =`fig = ${value_matplotlib_main_lib_val}.figure()   
+// fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5) , constrained_layout=True)\n`; 
+//       return code;
+//     };
+
     Blockly.Python['matplotlib_main'] = function(block) {
       var value_matplotlib_main_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_main_lib_val', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable. 
+      var value_matplotlib_main_cols = Blockly.Python.valueToCode(block, 'matplotlib_main_cols', Blockly.Python.ORDER_ATOMIC);
+      var value_matplotlib_main_rows = Blockly.Python.valueToCode(block, 'matplotlib_main_rows', Blockly.Python.ORDER_ATOMIC);
+      var value_matplotlib_main_screen_size_width = Blockly.Python.valueToCode(block, 'matplotlib_main_screen_size_width', Blockly.Python.ORDER_ATOMIC);
+      var value_matplotlib_main_screen_size_height = Blockly.Python.valueToCode(block, 'matplotlib_main_screen_size_height', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
       var code =`fig = ${value_matplotlib_main_lib_val}.figure()   
-fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5) , constrained_layout=True)\n`; 
-      return code;
-    };
+fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_rows}, figsize=(${value_matplotlib_main_screen_size_width},${value_matplotlib_main_screen_size_height}) , constrained_layout=True)\n`; 
+       return code;
+    };   
     
-  //matplot2  
-//   Blockly.Python['matplotlib_pre_graph'] = function(block) {
-//     var dropdown_matplotlib_num_location = block.getFieldValue('matplotlib_num_location');
-//     var text_matplotlib_user_xy  = block.getFieldValue('matplotlib_user_xy');
-//     var dropdown_matplotlib_graph_select = block.getFieldValue('matplotlib_graph_select');
-//     var checkbox_matplotlib_line_ox = block.getFieldValue('matplotlib_line_OX') == 'TRUE';
-//     var dropdown_matplotlib_line_select = block.getFieldValue('matplotlib_line_select');
-//     // TODO: Assemble Python into code variable.
-//     DL_Gra = "chcked"; 
-//     var matplot_lo ; 
-//     var matplot_graph; 
-//     var matplot_line; 
-//     switch(dropdown_matplotlib_num_location){ 
-     
-//       case "matplotlib_screen" : 
-//         matplot_lo =`fig, ax_lst = plt.subplots(1,1, figsize=(8,6))
-// ax_lst`;  
-//         break;
-   
-//       case "matplotlib_num_1" : 
-//       matplot_lo =  "ax_lst[0][0]"; 
-//       break;
-  
-//       case "matplotlib_num_2" : 
-//       matplot_lo =  "ax_lst[0][1]"; 
-//       break;
-  
-//       case "matplotlib_num_3" :
-//       matplot_lo = "ax_lst[1][0]"; 
-//       break;   
-  
-//       case "matplotlib_num_4" :
-//       matplot_lo =  "ax_lst[1][1]";  
-//       break;
-  
-//       default:
-//       break;
-//     }
-  
-//     switch(dropdown_matplotlib_graph_select){ 
-//       case "matplotlib_line" :
-//       matplot_graph =  "plot"; 
-//       break;
-  
-//       case "matplotlib_scatter" :
-//       matplot_graph =  "scatter"; 
-//       break;
-   
-//       case "matplotlib_bar" :
-//       matplot_graph = "bar";  
-//       break;  
-  
-//       case "matplotlib_error_bar" :  
-//       matplot_graph =  "errorbar";   
-//       break;
-  
-//       case "matplotlib_box" :  
-//       matplot_graph =  "boxplot";   
-//       break;
-  
-//       case "matplotlib_histogram" :  
-//       matplot_graph =  "hist";    
-//       break;  
-  
-//       default:  
-//       break;
-//     } 
-  
-//     switch(dropdown_matplotlib_line_select){ 
-//       case "matplotlib_line_1" :
-//       matplot_line =  "ro-"; 
-//       break;
-  
-//       case "matplotlib_line_2" :
-//       matplot_line =  "bo";
-//       break;
-  
-//       case "matplotlib_line_3" :
-//       matplot_line = "bo--"; 
-//       break;  
-   
-//       case "matplotlib_line_4" :  
-//       matplot_line =  "kx";   
-//       break;
-  
-//       default:  
-//       break;  
-//     } 
-//   var code ; 
-//   if(checkbox_matplotlib_line_ox == true){
-//      code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy } ,'${matplot_line}' )\n`;
-//   } else if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){ 
-//     code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3 )\n`;  
-//   }else{
-//      code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy } )\n`;      
-//   }   
-//         return code;                 
-//   };  
-  
-  //matplot2 업데이트 
+  //matplot2 _updated_final 
 //   Blockly.Python['matplotlib_pre_graph'] = function(block) {
 //     var value_matplotlib_pre_graph_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_lib_val', Blockly.Python.ORDER_ATOMIC);
 //     var dropdown_matplotlib_num_location = block.getFieldValue('matplotlib_num_location');
@@ -544,10 +457,11 @@ fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5) , co
 //     var text_matplotlib_pre_graph_title = block.getFieldValue('matplotlib_pre_graph_Title');
 //     var text_matplotlib_pre_graph_xlable = block.getFieldValue('matplotlib_pre_graph_Xlable');
 //     var text_matplotlib_pre_graph_ylable = block.getFieldValue('matplotlib_pre_graph_Ylable');
+//     var text_matplotlib_pre_label = block.getFieldValue('matplotlib_pre_label');
 //     var checkbox_matplotlib_line_ox = block.getFieldValue('matplotlib_line_OX') == 'TRUE';
 //     var dropdown_matplotlib_line_select = block.getFieldValue('matplotlib_line_select');
 //     // TODO: Assemble Python into code variable.
-//     DL_Gra = "chcked"; 
+//     DL_Gra = "chcked";  
 //     var matplot_lo ; 
 //     var matplot_graph; 
 //     var matplot_line; 
@@ -629,12 +543,12 @@ fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5) , co
 //     } 
 //   var code ; 
 //   if(checkbox_matplotlib_line_ox == true){
-//      code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy } ,'${matplot_line}', label = " ")\n`;
+//      code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy } ,'${matplot_line}', label = "${text_matplotlib_pre_label}")\n`;
 //   } else if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){ 
-//     code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3, label = " " )\n`;  
+//     code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_label}" )\n`;  
 //   }else{
-//      code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy }, label = " " )\n`;       
-//   }   
+//      code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_label}" )\n`;       
+//   }    
 
 
 //   switch(dropdown_matplotlib_num_location){ 
@@ -680,58 +594,29 @@ fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5) , co
 //         return code;   
 //   };
 
-  //matplot2 _updated_final 
   Blockly.Python['matplotlib_pre_graph'] = function(block) {
     var value_matplotlib_pre_graph_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_lib_val', Blockly.Python.ORDER_ATOMIC);
-    var dropdown_matplotlib_num_location = block.getFieldValue('matplotlib_num_location');
+    var value_matplotlib_pre_graph_location1 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location1', Blockly.Python.ORDER_ATOMIC);
+    var value_matplotlib_pre_graph_location2 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location2', Blockly.Python.ORDER_ATOMIC);
     var text_matplotlib_user_xy = block.getFieldValue('matplotlib_user_xy');
     var dropdown_matplotlib_graph_select = block.getFieldValue('matplotlib_graph_select');
     var text_matplotlib_pre_graph_title = block.getFieldValue('matplotlib_pre_graph_Title');
     var text_matplotlib_pre_graph_xlable = block.getFieldValue('matplotlib_pre_graph_Xlable');
     var text_matplotlib_pre_graph_ylable = block.getFieldValue('matplotlib_pre_graph_Ylable');
-    var text_matplotlib_pre_label = block.getFieldValue('matplotlib_pre_label');
-    var checkbox_matplotlib_line_ox = block.getFieldValue('matplotlib_line_OX') == 'TRUE';
-    var dropdown_matplotlib_line_select = block.getFieldValue('matplotlib_line_select');
+    var text_matplotlib_pre_legend = block.getFieldValue('matplotlib_pre_legend');
     // TODO: Assemble Python into code variable.
-    DL_Gra = "chcked";  
     var matplot_lo ; 
     var matplot_graph; 
     var matplot_line; 
-
-    switch(dropdown_matplotlib_num_location){ 
-      case "matplotlib_screen" : 
-      matplot_lo =`fig, ax_lst = ${value_matplotlib_pre_graph_lib_val}.subplots(1,1, figsize=(8,6) , constrained_layout=True)
-ax_lst`;  
-        break;   
-   2
-      case "matplotlib_num_1" :  
-      matplot_lo =  `ax_lst[0][0]`; 
-      break;
-  
-      case "matplotlib_num_2" :  
-      matplot_lo =  `ax_lst[0][1]`; 
-      break;
-  
-      case "matplotlib_num_3" :
-      matplot_lo = `ax_lst[1][0]`; 
-      break;   
-  
-      case "matplotlib_num_4" :
-      matplot_lo =  `ax_lst[1][1]`;  
-      break;
-  
-      default:
-      break;
-    }
   
     switch(dropdown_matplotlib_graph_select){ 
-      case "matplotlib_line" :
+      case "matplotlib_line" : 
       matplot_graph =  "plot"; 
       break;
   
       case "matplotlib_scatter" :
       matplot_graph =  "scatter";  
-      break;
+      break; 
    
       case "matplotlib_bar" :
       matplot_graph = "bar";  
@@ -753,78 +638,20 @@ ax_lst`;
       break;
     } 
   
-    switch(dropdown_matplotlib_line_select){ 
-      case "matplotlib_line_1" :
-      matplot_line =  "ro-"; 
-      break;
-  
-      case "matplotlib_line_2" :
-      matplot_line =  "bo";
-      break;
-  
-      case "matplotlib_line_3" :
-      matplot_line = "bo--"; 
-      break;  
-   
-      case "matplotlib_line_4" :  
-      matplot_line =  "kx";   
-      break;
-  
-      default:  
-      break;  
-    } 
   var code ; 
-  if(checkbox_matplotlib_line_ox == true){
-     code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy } ,'${matplot_line}', label = "${text_matplotlib_pre_label}")\n`;
-  } else if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){ 
-    code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_label}" )\n`;  
+  if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){ 
+    code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )\n`;  
   }else{
-     code =`${matplot_lo}.${matplot_graph}( ${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_label}" )\n`;       
-  }    
-
-
-  switch(dropdown_matplotlib_num_location){ 
-    case "matplotlib_screen" : 
-    code =  code.concat(`\nax_lst.set_title("${text_matplotlib_pre_graph_title}")
-ax_lst.set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax_lst.set_ylabel("${text_matplotlib_pre_graph_ylable}")
-ax_lst.legend(loc='best')\n`); 
-    break; 
+     code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}( ${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )\n`;       
+  }        
  
-    case "matplotlib_num_1" : 
-    code =  code.concat(`\nax_lst[0][0].set_title("${text_matplotlib_pre_graph_title}")
-ax_lst[0][0].set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax_lst[0][0].set_ylabel("${text_matplotlib_pre_graph_ylable}")
-ax_lst[0][0].legend(loc='best')\n`);  
-    break;
- 
-    case "matplotlib_num_2" : 
-    code =  code.concat(`\nax_lst[0][1].set_title("${text_matplotlib_pre_graph_title}")
-ax_lst[0][1].set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax_lst[0][1].set_ylabel("${text_matplotlib_pre_graph_ylable}")
-ax_lst[0][1].legend(loc='best')\n`); 
-    break;
-
-    case "matplotlib_num_3" :
-    code =  code.concat(`\nax_lst[0][0].set_title("${text_matplotlib_pre_graph_title}")
-ax_lst[1][0].set_xlabel("${text_matplotlib_pre_graph_xlable}") 
-ax_lst[1][0].set_ylabel("${text_matplotlib_pre_graph_ylable}")
-ax_lst[1][0].legend(loc='best')\n`);  
-          break;  
-
-    case "matplotlib_num_4" :
-    code =  code.concat(`\nax_lst[0][0].set_title("${text_matplotlib_pre_graph_title}")
-ax_lst[1][1].set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax_lst[1][1].set_ylabel("${text_matplotlib_pre_graph_ylable}")
-ax_lst[1][1].legend(loc='best')\n`);  
-          break;
+  code =  code.concat(`\nax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}")
+ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
+ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}")
+ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`);  
   
-    default:
-    break;
-  }
- 
-        return code;   
-  };
+ return code;
+};
   
   //matplot3 
   Blockly.Python['matplotlib_graph_end'] = function(block) {

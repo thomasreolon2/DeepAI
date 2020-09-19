@@ -683,114 +683,48 @@ Blockly.defineBlocksWithJsonArray(
       "helpUrl": ""
     }, 
   //matplot1 
+  // {
+  //   "type": "matplotlib_main",
+  //   "message0": "%1 시각화 틀",
+  //   "args0": [
+  //     {
+  //       "type": "input_value",
+  //       "name": "matplotlib_main_lib_val"
+  //     } 
+  //   ],
+  //   "inputsInline": true,
+  //   "previousStatement": null,
+  //   "nextStatement": null,
+  //   "colour": 125,
+  //   "tooltip": "",
+  //   "helpUrl": ""
+  // }, 
   {
     "type": "matplotlib_main",
-    "message0": "%1 시각화 틀",
+    "message0": "[ 그래프 크기 설정 ] %1 %2 ( 분할 : %3 , %4 크기 : %5 , %6 )",
     "args0": [
+      {
+        "type": "input_dummy"
+      },
       {
         "type": "input_value",
         "name": "matplotlib_main_lib_val"
-      } 
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": 125,
-    "tooltip": "",
-    "helpUrl": ""
-  }, 
-  //matplot2 
-  {
-    "type": "matplotlib_pre_graph",
-    "message0": "시각화 준비 %1  |   ( X , Y ) 값 : %2  |  그래프 종류 : %3  |  형태 (선 그래프만 해당) 사용 여부: %4 %5",
-    "args0": [
+      }, 
       {
-        "type": "field_dropdown",
-        "name": "matplotlib_num_location",
-        "options": [
-          [
-            "전체 표시",
-            "matplotlib_screen"
-          ],
-          [
-            "1번_표시",
-            "matplotlib_num_1"
-          ],
-          [
-            "2번_표시",
-            "matplotlib_num_2"
-          ],
-          [
-            "3번_표시",
-            "matplotlib_num_3"
-          ],
-          [
-            "4번_표시",
-            "matplotlib_num_4"
-          ]
-        ]
+        "type": "input_value",
+        "name": "matplotlib_main_cols"
       },
       {
-        "type": "field_input",
-        "name": "matplotlib_user_xy",
-        "text": ""
+        "type": "input_value",
+        "name": "matplotlib_main_rows"
       },
       {
-        "type": "field_dropdown",
-        "name": "matplotlib_graph_select",
-        "options": [
-          [
-            "선_그래프",
-            "matplotlib_line"
-          ],
-          [
-            "Scatter_그래프",
-            "matplotlib_scatter"
-          ],
-          [
-            "막대_그래프",
-            "matplotlib_bar"
-          ],
-          [
-            "에러_바",
-            "matplotlib_error_bar"
-          ],
-          [
-            "박스_그래프",
-            "matplotlib_box"
-          ],
-          [
-            "히스토그램",
-            "matplotlib_histogram"
-          ]
-        ]
+        "type": "input_value",
+        "name": "matplotlib_main_screen_size_width"
       },
       {
-        "type": "field_checkbox",
-        "name": "matplotlib_line_OX",
-        "checked": false
-      },
-      {
-        "type": "field_dropdown",
-        "name": "matplotlib_line_select",
-        "options": [
-          [
-            "선",
-            "matplotlib_line_1"
-          ],
-          [
-            "점",
-            "matplotlib_line_2"
-          ],
-          [
-            "점_선",
-            "matplotlib_line_3"
-          ], 
-          [
-            "x_표시",
-            "matplotlib_line_4"
-          ]
-        ]
+        "type": "input_value",
+        "name": "matplotlib_main_screen_size_height"
       }
     ],
     "inputsInline": true,
@@ -800,46 +734,154 @@ Blockly.defineBlocksWithJsonArray(
     "tooltip": "",
     "helpUrl": ""
   },
-
   //matplot2 수정
+  // {
+  //   "type": "matplotlib_pre_graph",
+  //   "message0": "시각화 준비 :  %1 %2 | ( X , Y ) 값 : %3 | 그래프 : %4 | 제목 : %5 | Xlable : %6 | Ylable : %7 | 라벨 명 : %8 | 형태( 선 그래프만 해당 ), 사용 여부 : %9 %10",
+  //   "args0": [
+  //     {
+  //       "type": "input_value",
+  //       "name": "matplotlib_pre_graph_lib_val"
+  //     },
+  //     {
+  //       "type": "field_dropdown",
+  //       "name": "matplotlib_num_location",
+  //       "options": [
+  //         [
+  //           "전체 표시",
+  //           "matplotlib_screen"
+  //         ],
+  //         [
+  //           "1번_표시",
+  //           "matplotlib_num_1"
+  //         ],
+  //         [
+  //           "2번_표시",
+  //           "matplotlib_num_2"
+  //         ],
+  //         [
+  //           "3번_표시",
+  //           "matplotlib_num_3"
+  //         ],
+  //         [
+  //           "4번_표시",
+  //           "matplotlib_num_4"
+  //         ]
+  //       ]
+  //     },
+  //     {
+  //       "type": "field_input",
+  //       "name": "matplotlib_user_xy",
+  //       "text": ""
+  //     },
+  //     {
+  //       "type": "field_dropdown",
+  //       "name": "matplotlib_graph_select",
+  //       "options": [
+  //         [
+  //           "선_그래프",
+  //           "matplotlib_line"
+  //         ],
+  //         [
+  //           "Scatter_그래프",
+  //           "matplotlib_scatter"
+  //         ],
+  //         [
+  //           "막대_그래프",
+  //           "matplotlib_bar"
+  //         ],
+  //         [
+  //           "에러_바",
+  //           "matplotlib_error_bar"
+  //         ],
+  //         [
+  //           "박스_그래프",
+  //           "matplotlib_box"
+  //         ],
+  //         [
+  //           "히스토그램",
+  //           "matplotlib_histogram"
+  //         ]
+  //       ]
+  //     },
+  //     {
+  //       "type": "field_input",
+  //       "name": "matplotlib_pre_graph_Title",
+  //       "text": ""
+  //     },
+  //     {
+  //       "type": "field_input",
+  //       "name": "matplotlib_pre_graph_Xlable",
+  //       "text": ""
+  //     },
+  //     {
+  //       "type": "field_input",
+  //       "name": "matplotlib_pre_graph_Ylable",
+  //       "text": ""
+  //     },
+  //     {
+  //       "type": "field_input",
+  //       "name": "matplotlib_pre_label",
+  //       "text": ""
+  //     },
+  //     {
+  //       "type": "field_checkbox",
+  //       "name": "matplotlib_line_OX",
+  //       "checked": false
+  //     },
+  //     {
+  //       "type": "field_dropdown",
+  //       "name": "matplotlib_line_select",
+  //       "options": [
+  //         [
+  //           "선",
+  //           "matplotlib_line_1"
+  //         ],
+  //         [
+  //           "점",
+  //           "matplotlib_line_2"
+  //         ],
+  //         [
+  //           "점_선",
+  //           "matplotlib_line_3"
+  //         ],
+  //         [
+  //           "x_표시",
+  //           "matplotlib_line_4"
+  //         ]
+  //       ]
+  //     }
+  //   ],
+  //   "inputsInline": true,
+  //   "previousStatement": null,
+  //   "nextStatement": null,
+  //   "colour": 125,
+  //   "tooltip": "",
+  //   "helpUrl": ""
+  // },
   {
     "type": "matplotlib_pre_graph",
-    "message0": "시각화 준비 :  %1 %2 | ( X , Y ) 값 : %3 | 그래프 : %4 | 제목 : %5 | Xlable : %6 | Ylable : %7 | 라벨 명 : %8 | 형태( 선 그래프만 해당 ), 사용 여부 : %9 %10",
+    "message0": "[ 그래프 설정 ] :  %1 좌표 : [ %2 ][ %3 %4 ] ( X , Y ) 값 : %5 그래프 종류 : %6 제목 : %7 X축 : %8 Y축 : %9 범례 : %10",
     "args0": [
       {
         "type": "input_value",
         "name": "matplotlib_pre_graph_lib_val"
       },
       {
-        "type": "field_dropdown",
-        "name": "matplotlib_num_location",
-        "options": [
-          [
-            "전체 표시",
-            "matplotlib_screen"
-          ],
-          [
-            "1번_표시",
-            "matplotlib_num_1"
-          ],
-          [
-            "2번_표시",
-            "matplotlib_num_2"
-          ],
-          [
-            "3번_표시",
-            "matplotlib_num_3"
-          ],
-          [
-            "4번_표시",
-            "matplotlib_num_4"
-          ]
-        ]
+        "type": "input_value",
+        "name": "matplotlib_pre_graph_location1"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_graph_location2"
       },
       {
         "type": "field_input",
         "name": "matplotlib_user_xy",
-        "text": ""
+        "text": "" 
       },
       {
         "type": "field_dropdown",
@@ -888,35 +930,8 @@ Blockly.defineBlocksWithJsonArray(
       },
       {
         "type": "field_input",
-        "name": "matplotlib_pre_label",
+        "name": "matplotlib_pre_legend",
         "text": ""
-      },
-      {
-        "type": "field_checkbox",
-        "name": "matplotlib_line_OX",
-        "checked": false
-      },
-      {
-        "type": "field_dropdown",
-        "name": "matplotlib_line_select",
-        "options": [
-          [
-            "선",
-            "matplotlib_line_1"
-          ],
-          [
-            "점",
-            "matplotlib_line_2"
-          ],
-          [
-            "점_선",
-            "matplotlib_line_3"
-          ],
-          [
-            "x_표시",
-            "matplotlib_line_4"
-          ]
-        ]
       }
     ],
     "inputsInline": true,
@@ -925,11 +940,11 @@ Blockly.defineBlocksWithJsonArray(
     "colour": 125,
     "tooltip": "",
     "helpUrl": ""
-  },
+  },  
   //matplot3 
   {
     "type": "matplotlib_graph_end",
-    "message0": "%1 시각화 하기",
+    "message0": " [ 그래프 그리기 ] %1",
     "args0": [
       {
         "type": "input_value",

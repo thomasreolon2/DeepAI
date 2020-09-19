@@ -950,16 +950,47 @@
                 <field name="VAR">plt</field>   
               </block>    
             </value>  
+            <value name="matplotlib_main_cols">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+            <value name="matplotlib_main_rows">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+            <value name="matplotlib_main_screen_size_width">
+              <shadow type="math_number">
+                <field name="NUM">8</field>
+              </shadow>
+            </value>
+            <value name="matplotlib_main_screen_size_height">
+              <shadow type="math_number">
+                <field name="NUM">6</field>
+              </shadow> 
+            </value>
           </block>   
         <!--  matplot1 시각화 틀    -->
-         
+    
+ 
         <!--  matplot2 시각화 준비      -->
         <block type="matplotlib_pre_graph">
           <value name="matplotlib_pre_graph_lib_val">
             <block type="variables_get">
               <field name="VAR">plt</field>    
             </block>    
-          </value>  
+          </value> 
+          <value name="matplotlib_pre_graph_location1">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow> 
+          </value>
+          <value name="matplotlib_pre_graph_location2">
+            <shadow type="math_number">
+              <field name="NUM">0</field> 
+            </shadow> 
+          </value> 
         </block> 
         <!--  matplot2 시각화 준비      -->
 
