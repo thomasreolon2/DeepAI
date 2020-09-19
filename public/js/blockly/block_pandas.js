@@ -8,7 +8,7 @@ var pandas_color = "%{BKY_PANDAS_HUE}";
 Blockly.Blocks['csv_library'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[Pandas라이브러리]");
+        .appendField("[Pandas 라이브러리 임포트]");
     this.appendValueInput("pan_lib_var")
         .setCheck(null)      
     this.setInputsInline(true);

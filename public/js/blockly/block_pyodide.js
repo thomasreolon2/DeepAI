@@ -168,13 +168,17 @@ Blockly.Blocks['scikit_learn'] = {
         this.setHelpUrl("");
     }
 };
+//2020-09-19 양승국 수정
 Blockly.Blocks['csvdataframe_J'] = {
     init: function () {
-        this.appendValueInput("pd").setCheck(null).appendField("데이터 프레임 생성");
-        this.appendValueInput("csv").setCheck(null).appendField("CSV 읽기");
+        this.appendValueInput("input_var").setCheck(null).appendField("[데이터프레임생성] 담을변수");
+        this.appendValueInput("pd").setCheck(null).appendField(", ");
+        this.appendValueInput("csv").setCheck(null).appendField("(CSV 읽기");
+        this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour(230);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_PANDAS_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -194,30 +198,30 @@ Blockly.Blocks['labelencoder'] = {
     }
 };
 // /////////////////////라이브러리 추가블록////////////////////////20200910 이진형
-Blockly.Blocks['import_lib'] = {
-    init: function () {
-        this.appendDummyInput().appendField("라이브러리 추가  ").appendField("라이브러리 선택  : ");
-        this.appendDummyInput().appendField(new Blockly.FieldDropdown([
-            [
-                "넘파이", "numpy"
-            ],
-            [
-                "판다스", "pandas"
-            ],
-            [
-                "그래프", "matplotlib.pyplot"
-            ]
-        ]), "lib");
+// Blockly.Blocks['import_lib'] = {
+//     init: function () {
+//         this.appendDummyInput().appendField("라이브러리 추가  ").appendField("라이브러리 선택  : ");
+//         this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+//             [
+//                 "넘파이", "numpy"
+//             ],
+//             [
+//                 "판다스", "pandas"
+//             ],
+//             [
+//                 "그래프", "matplotlib.pyplot"
+//             ]
+//         ]), "lib");
         
-        this.appendValueInput("var").setCheck(null).appendField(" 라이브러리 변수 :");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+//         this.appendValueInput("var").setCheck(null).appendField(" 라이브러리 변수 :");
+//         this.setInputsInline(true);
+//         this.setPreviousStatement(true, null);
+//         this.setNextStatement(true, null);
+//         this.setColour(230);
+//         this.setTooltip("");
+//         this.setHelpUrl("");
+//     }
+// };
 
 Blockly.Blocks['import_dataset'] = {
     init: function() {

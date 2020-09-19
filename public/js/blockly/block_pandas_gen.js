@@ -314,5 +314,5 @@ Blockly.Python['stats_inquiry'] = function(block) {
   var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = "pd.DataFrame(" + variable_data + ').describe()\n';
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
