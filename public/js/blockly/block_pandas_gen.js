@@ -306,7 +306,7 @@ Blockly.Python['pandas_merge_lron'] = function(block) {
 Blockly.Python['missing_value_inquiry'] = function(block) {
   var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = "pd.DataFrame(" + variable_data + ').isnull().sum()\n';
+  var code = "pd.DataFrame(" + variable_data + '.isnull().sum())\n';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 // 통계 정보 조회
