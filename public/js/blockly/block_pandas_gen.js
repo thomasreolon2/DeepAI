@@ -5,7 +5,7 @@
 Blockly.Python['csv_library'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'pan_lib_var', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = "import pandas as" + " " + value_name.replace("'", " ") + "\n";
+  var code = "import pandas as pd\n";
   return code;
 };
 
@@ -175,10 +175,9 @@ Blockly.Python['pandas_datalist'] = function (block) {
 //2020-09-19 양승국
 Blockly.Python['pandas_dataframe'] = function (block) {
   var value_df_va = Blockly.Python.valueToCode(block, 'df_va', Blockly.Python.ORDER_ATOMIC);
-  var value_lib = Blockly.Python.valueToCode(block, 'lib', Blockly.Python.ORDER_ATOMIC);
   var value_lst = Blockly.Python.valueToCode(block, 'lst', Blockly.Python.ORDER_ATOMIC);
   var text_name = block.getFieldValue('col_name');
-  var code = value_df_va + '=' + value_lib + '.' + 'DataFrame(data = ' + value_lst + ', columns =[' + text_name + '])\n';
+  var code = value_df_va + ' = ' + 'pd.DataFrame(data = ' + value_lst + ', columns =[' + text_name + '])\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -186,10 +185,9 @@ Blockly.Python['pandas_dataframe'] = function (block) {
 //2020-09-19 양승국 수정
 Blockly.Python['csvdataframe_J'] = function (block) {
   var value_input_var = Blockly.Python.valueToCode(block, 'input_var', Blockly.Python.ORDER_ATOMIC);
-  var value_pd = Blockly.Python.valueToCode(block, 'pd', Blockly.Python.ORDER_ATOMIC);
   var value_csv = Blockly.Python.valueToCode(block, 'csv', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_input_var + '=' + value_pd + '.DataFrame(' + value_csv + ')\n';
+  var code = value_input_var + ' = ' + 'pd.DataFrame(' + value_csv + ')\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
