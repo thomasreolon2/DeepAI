@@ -555,6 +555,45 @@ Blockly.Python['acc_score'] = function(block) {
     return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
+  Blockly.Python['precision'] = function(block) {
+    var value_yt = Blockly.Python.valueToCode(block, 'yt', Blockly.Python.ORDER_ATOMIC);
+    var value_yp = Blockly.Python.valueToCode(block, 'yp', Blockly.Python.ORDER_ATOMIC);
+    var dropdown_aver = block.getFieldValue('aver');
+    // TODO: Assemble Python into code variable.
+    var code = "precision_score("+value_yt+","+value_yp+", average='"+dropdown_aver+"')";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+  Blockly.Python['mae'] = function(block) {
+    var value_yt = Blockly.Python.valueToCode(block, 'yt', Blockly.Python.ORDER_ATOMIC);
+    var value_yp = Blockly.Python.valueToCode(block, 'yp', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = 'mean_absolute_error('+value_yt+','+value_yp+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+  Blockly.Python['mse'] = function(block) {
+    var value_yt = Blockly.Python.valueToCode(block, 'yt', Blockly.Python.ORDER_ATOMIC);
+    var value_yp = Blockly.Python.valueToCode(block, 'yp', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = 'mean_squared_error('+value_yt+','+value_yp+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+  Blockly.Python['median'] = function(block) {
+    var value_yt = Blockly.Python.valueToCode(block, 'yt', Blockly.Python.ORDER_ATOMIC);
+    var value_yp = Blockly.Python.valueToCode(block, 'yp', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = 'median_absolute_error('+value_yt+','+value_yp+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+
+
+
+
+
+
 
 // 신경망 MLPClassifier
 Blockly.Python['mlp_classifier'] = function (block) {
