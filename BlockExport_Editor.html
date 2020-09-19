@@ -693,7 +693,7 @@
     <category name="데이터 사이언스"  colour="%{BKY_DATASCIENCE_HUE}">
     <!-- # numpy function # -->
 
-      <category name="Numpy 함수" colour="%{BKY_NUMPY_HUE}">
+      <category name="넘파이" colour="%{BKY_NUMPY_HUE}">
 
         <!--  import np,np,plt,io,base64  --> 
         <block type="import_libs">
@@ -778,13 +778,7 @@
         <!-- np.shape  -->
          
         <!-- np.reshape  -->
-        <block type="numpy_reshape"> 
-          <value name="numpy_reshape_lib_val">
-            <block type="variables_get">
-              <field name="VAR">np</field> 
-            </block>   
-          </value> 
-        </block>  
+        <block type="numpy_reshape"> </block>  
         <!-- np.reshape  --> 
 
         <!--  random. randn or randint   -->
@@ -837,14 +831,14 @@
       <!-- ************************************************** ************************* *************************  -->
       <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
       <!-- ************************************************** ************************* *************************  -->
-      <category name="Pandas 함수" colour="%{BKY_PANDAS_HUE}">
-        <block type="import_lib">
+      <category name="판다스 " colour="%{BKY_PANDAS_HUE}">
+        <!-- <block type="import_lib">
           <value name="var">
             <block type="variables_get">
               <field name="VAR"></field>
             </block>
           </value>
-        </block>
+        </block> -->
         <block type="csv_library">
           <value name="pan_lib_var">
             <block type="variables_get">
@@ -852,7 +846,7 @@
             </block>
           </value>
         </block>
-        <block type="pyo_lib"></block>
+        <!-- <block type="pyo_lib"></block> -->
         <block type="csvdataframe_J">
           <value name="pd">
             <block type="variables_get">
@@ -940,7 +934,7 @@
       <!-- ************************************************** ************************* *************************  -->
   
       <!-- # 시각화 부분 #  -->
-      <category name="시각화 하기 " colour="%{BKY_VISUAL_HUE}">
+      <category name="시각화 " colour="%{BKY_VISUAL_HUE}">
         <block type="val_vi"></block>   
 
         <!--  matplot1 시각화 틀    -->

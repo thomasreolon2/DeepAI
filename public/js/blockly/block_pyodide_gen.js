@@ -162,13 +162,15 @@ Blockly.Python['scikit_learn'] = function (block) {
     return code;
 };
 
+//2020-09-19 양승국 수정
 Blockly.Python['csvdataframe_J'] = function (block) {
+    var value_input_var = Blockly.Python.valueToCode(block, 'input_var', Blockly.Python.ORDER_ATOMIC);
     var value_pd = Blockly.Python.valueToCode(block, 'pd', Blockly.Python.ORDER_ATOMIC);
     var value_csv = Blockly.Python.valueToCode(block, 'csv', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = value_pd + '.DataFrame(' + value_csv + ')\n';
+    var code = value_input_var + '=' + value_pd + '.DataFrame(' + value_csv + ')\n';
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_ATOMIC];
+    return code;
 };
 // /////////////////데이터전처리 라벨링 20200909 이진형///////////////
 Blockly.Python['labelencoder'] = function (block) {
@@ -179,28 +181,28 @@ Blockly.Python['labelencoder'] = function (block) {
     return code;
 };
 // /////////////////////라이브러리 추가블록////////////////////////20200910 이진형
-Blockly.Python['import_lib'] = function (block) {
-    var dropdown_lib = block.getFieldValue('lib');
-    var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable. 
-    var code = '';
-    switch (dropdown_lib) {  
-        case "numpy": 
-            code = "import numpy as "+value_var;
-            Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"np");
-            break;
-        case "pandas": 
-            code = "import pandas as "+value_var; 
-            Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"pd");
-            break;
-        case "matplotlib.pyplot": 
-            code = "import matplotlib.pyplot as "+value_var;
-            Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"plt");
-            break;
-    }
+// Blockly.Python['import_lib'] = function (block) {
+//     var dropdown_lib = block.getFieldValue('lib');
+//     var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
+//     // TODO: Assemble Python into code variable. 
+//     var code = '';
+//     switch (dropdown_lib) {  
+//         case "numpy": 
+//             code = "import numpy as "+value_var;
+//             Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"np");
+//             break;
+//         case "pandas": 
+//             code = "import pandas as "+value_var; 
+//             Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"pd");
+//             break;
+//         case "matplotlib.pyplot": 
+//             code = "import matplotlib.pyplot as "+value_var;
+//             Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"plt");
+//             break;
+//     }
     
-    return code;
-};
+//     return code;
+// };
 
 Blockly.Python['import_dataset'] = function(block) {
     var dropdown_dataset_name = block.getFieldValue('dataset_name');
@@ -462,21 +464,6 @@ Blockly.Python['k_means'] = function (block) {
     return code;
 };
 
-
-// 결측치 조회
-Blockly.Python['missing_value_inquiry'] = function(block) {
-    var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = "pd.DataFrame(" + variable_data + ').isnull().sum()\n';
-    return [code, Blockly.Python.ORDER_ATOMIC];
-  };
-// 통계 정보 조회
-  Blockly.Python['stats_inquiry'] = function(block) {
-    var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = "pd.DataFrame(" + variable_data + ').describe()\n';
-    return [code, Blockly.Python.ORDER_ATOMIC];
-  };
   Blockly.Python['vis_tree'] = function(block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
