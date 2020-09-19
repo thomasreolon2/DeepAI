@@ -883,6 +883,7 @@ Blockly.Blocks['k_means'] = {
 // for
 Blockly.Blocks['py_for'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R1-logo.png",25,23, {alt:"*", flipRtl:"FALSE"}));
         this.appendDummyInput()
             .appendField("반복문");
         this.appendValueInput("item")
@@ -906,8 +907,10 @@ Blockly.Blocks['py_for'] = {
 // increase 등등
 Blockly.Blocks['increase'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R3-logo.png",25,23, {alt:"*", flipRtl:"FALSE"}));
         this.appendValueInput("VALUE")
             .setCheck(null)
+            
             .appendField(new Blockly.FieldDropdown([["raise", "OPTIONNAME"], ["modulo", "OPTIONNAME"], ["divide", "OPTIONNAME"], ["multiply", "OPTIONNAME"], ["decrease", "OPTIONNAME"], ["increase", "OPTIONNAME"]]), "NAME");
         this.appendDummyInput()
             .appendField("to");
@@ -925,6 +928,7 @@ Blockly.Blocks['increase'] = {
 //
 Blockly.Blocks['break_block'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R4-logo.png",25,23, {alt:"*", flipRtl:"FALSE"}));
         this.appendDummyInput()
             .appendField("정지");
         this.setPreviousStatement(true, null);
