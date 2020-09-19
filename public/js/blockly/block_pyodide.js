@@ -55,11 +55,11 @@ Blockly.Blocks['lrgraph'] = {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Machine_Learning/M12-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("선형회귀 그래프 출력->");
-        this.appendValueInput("x").setCheck(null).appendField("X 값 :");
-        this.appendValueInput("y").setCheck(null).appendField("Y 값 :");
-        this.appendValueInput("w").setCheck(null).appendField("가중치 값 :");
-        this.appendValueInput("b").setCheck(null).appendField("편향 값 :");
+        })).appendField("[선형회귀 그래프 출력]");
+        this.appendValueInput("x").setCheck(null).appendField("X_data");
+        this.appendValueInput("y").setCheck(null).appendField("Y_data");
+        this.appendValueInput("w").setCheck(null).appendField("가중치");
+        this.appendValueInput("b").setCheck(null).appendField("편향");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -85,11 +85,11 @@ Blockly.Blocks['logicgraph'] = {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Machine_Learning/M13-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("로지스틱 회귀 그래프 출력->");
-        this.appendValueInput("x").setCheck(null).appendField("X 값 :");
-        this.appendValueInput("y").setCheck(null).appendField("Y 값 :");
-        this.appendValueInput("w").setCheck(null).appendField("가중치 값 :");
-        this.appendValueInput("b").setCheck(null).appendField("편향 값 :");
+        })).appendField("[로지스틱 회귀 그래프 출력]");
+        this.appendValueInput("x").setCheck(null).appendField("X_data");
+        this.appendValueInput("y").setCheck(null).appendField("Y_data");
+        this.appendValueInput("w").setCheck(null).appendField("가중치");
+        this.appendValueInput("b").setCheck(null).appendField("편향");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -191,7 +191,7 @@ Blockly.Blocks['labelencoder'] = {
         this.appendDummyInput().appendField("[데이터 라벨 인코딩] ");
         this.appendValueInput("df").setCheck(null).appendField("데이터");
         this.appendDummyInput().appendField("컬럼설정");
-        this.appendDummyInput().appendField("  ").appendField(new Blockly.FieldTextInput("컬럼명"), "column").appendField("  ");
+        this.appendDummyInput().appendField("").appendField(new Blockly.FieldTextInput("컬럼명"), "column").appendField("  ");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1182,7 +1182,8 @@ Blockly.Blocks['vis_tree'] = {
             .appendField("X축 컬럼위치")
             .appendField(new Blockly.FieldTextInput("1"), "s");
         this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput("Y축 컬럼위치"), "e");
+           .appendField("Y축 컬럼위치")
+            .appendField(new Blockly.FieldTextInput("2"), "e");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1191,3 +1192,14 @@ Blockly.Blocks['vis_tree'] = {
         this.setHelpUrl("");
     }
 };
+Blockly.Blocks['input'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("데이터 입력");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

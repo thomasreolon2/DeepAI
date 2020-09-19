@@ -493,3 +493,10 @@ Blockly.Python['k_means'] = function (block) {
     var code = '#트리그래프\n';
     return code;
   };
+
+  Blockly.Python['input'] = function(block) {
+    // TODO: Assemble Python into code variable.
+    var code = 'input()';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };

@@ -52,7 +52,7 @@
   <script src="/js/blockly/Science_Data_T.js"></script> 
   <script src="/js/blockly/Science_Data_Gen.js"></script>  
   <script src="/js/blockly/Science_Data_Js.js"></script>
-  <!-- 데이타 사이언스 블록 -->  
+  <!-- 데이타 사이언스 블록 -->   
  
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지, 카테고리 색상 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -492,6 +492,8 @@
 
     <!-- 문자 -->
     <category name="문자 (Text)" colour="%{BKY_TEXTS_HUE}">
+      <block type="printc"></block>
+      <block type="input"></block>
       <block type="text"></block>
       <block type="text_join"></block>
       <!--
@@ -577,7 +579,7 @@
         </value>
       </block>
       <!-- print -->
-      <block type="printc"></block>
+      
     </category>
 
     <!-- list -->
@@ -992,11 +994,15 @@
             </block>    
           </value> 
         </block> 
+        <block type="lrgraph"></block>
+        <block type="logicgraph"></block>
+        <block type="vis_tree"></block>
         <!--  matplot3 시각화 하기      -->
         <!-- 아래는 준비중  -->
         <block type="linearregression_c"></block> <!-- 사이킷런 리니어 로드     -->
         <block type="linearregression_train"></block> <!-- 사이킷런 train     -->
       </category>
+   
       <!-- # 시각화 부분 #  -->
     </category>
 
@@ -1014,9 +1020,7 @@
       <block type="sklearn_mlp"></block> <!-- 사이킷런 MLP 블록  -->
       <!-- <block type="sklearn_mlp_fit"></block> -->
       <block type="model_predict"></block>
-      <block type="lrgraph"></block>
-      <block type="logicgraph"></block>
-      <block type="vis_tree"></block>
+
     </category>
 
 

@@ -693,7 +693,7 @@ Blockly.defineBlocksWithJsonArray(
   //matplot1 
   {
     "type": "matplotlib_main",
-    "message0": "[ 그래프 크기 설정 ] %1 %2 ( 분할 : %3 , %4 크기 : %5 , %6 )",
+    "message0": "[ 그래프 크기 설정 ] %1 %2 ( 분할  %3 , %4 크기  %5 , %6 )",
     "args0": [
       {
         "type": "input_dummy"
@@ -729,7 +729,7 @@ Blockly.defineBlocksWithJsonArray(
   //matplot2 수정
   {
     "type": "matplotlib_pre_graph",
-    "message0": "[ 그래프 설정 ] :  %1 좌표 : [ %2 ][ %3 %4 ] ( X , Y ) 값 : %5 그래프 종류 : %6 제목 : %7 X축 : %8 Y축 : %9 범례 : %10",
+    "message0": "[ 그래프 설정 ]   %1 좌표  [ %2 ][ %3 %4 ] ( X , Y ) 값  %5 그래프 종류  %6 제목  %7 X축  %8 Y축  %9 범례  %10",
     "args0": [
       {
         "type": "input_value",
