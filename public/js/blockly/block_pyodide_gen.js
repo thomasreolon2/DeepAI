@@ -385,6 +385,10 @@ Blockly.Python['sklearn_mlp'] = function(block) {
     var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning_rate');
     var text_sklearn_mlp_max_iter = block.getFieldValue('sklearn_MLP_Max_iter');
     var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random_state');
+    var value_sklearn_mlp_fit_x = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.Python.ORDER_ATOMIC);
+    var value_sklearn_mlp_fit_y = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.Python.ORDER_ATOMIC);
+
+    
     // TODO: Assemble Python into code variable.
     var get_sklearn_mlp_activation;
     var get_sklearn_mlp_optimizer; 
@@ -436,21 +440,22 @@ activation = '${get_sklearn_mlp_activation}',
 solver = '${get_sklearn_mlp_optimizer}',
 learning_rate_init = ${text_sklearn_mlp_learning_rate}, 
 max_iter = ${text_sklearn_mlp_max_iter}, 
-random_state = ${text_sklearn_mlp_random_state} )\n`; 
+random_state = ${text_sklearn_mlp_random_state} )
+${value_sklearn_mlp_lib_val}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_fit_y})\n`; 
     // TODO: Change ORDER_NONE to the correct strength. 
     return code;  
   }; 
 
 
-  //MLP fit 
-  Blockly.Python['sklearn_mlp_fit'] = function(block) {
-    var value_sklearn_mlp_fit_lib_var = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_lib_var', Blockly.Python.ORDER_ATOMIC);
-    var value_sklearn_mlp_fit_x = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.Python.ORDER_ATOMIC);
-    var value_sklearn_mlp_fit_y = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = `${value_sklearn_mlp_fit_lib_var}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_fit_y})\n`;
-    return code;
-  }; 
+//   //MLP fit 
+//   Blockly.Python['sklearn_mlp_fit'] = function(block) {
+//     var value_sklearn_mlp_fit_lib_var = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_lib_var', Blockly.Python.ORDER_ATOMIC);
+//     var value_sklearn_mlp_fit_x = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.Python.ORDER_ATOMIC);
+//     var value_sklearn_mlp_fit_y = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.Python.ORDER_ATOMIC);
+//     // TODO: Assemble Python into code variable.
+//     var code = `${value_sklearn_mlp_fit_lib_var}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_fit_y})\n`;
+//     return code;
+//   }; 
    
   // kMeans
 Blockly.Python['k_means'] = function (block) {

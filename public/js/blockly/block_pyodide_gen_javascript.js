@@ -85,6 +85,8 @@ Blockly.JavaScript['sklearn_mlp'] = function(block) {
   var text_sklearn_mlp_max_iter = block.getFieldValue('sklearn_MLP_Max iter');
   var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning rate');
   var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random state');
+  var value_sklearn_mlp_fit_x = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_sklearn_mlp_fit_y = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = ' ';
   // TODO: Change ORDER_NONE to the correct strength.
@@ -94,14 +96,14 @@ Blockly.JavaScript['sklearn_mlp'] = function(block) {
 
   
 //MLP fit
-Blockly.JavaScript['sklearn_mlp_fit'] = function(block) {
-  var value_sklearn_mlp_fit_lib_var = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_lib_var', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_sklearn_mlp_fit_x = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_sklearn_mlp_fit_y = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code; 
-}; 
+// Blockly.JavaScript['sklearn_mlp_fit'] = function(block) {
+//   var value_sklearn_mlp_fit_lib_var = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_lib_var', Blockly.JavaScript.ORDER_ATOMIC);
+//   var value_sklearn_mlp_fit_x = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.JavaScript.ORDER_ATOMIC);
+//   var value_sklearn_mlp_fit_y = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.JavaScript.ORDER_ATOMIC);
+//   // TODO: Assemble JavaScript into code variable.
+//   var code = '\n';
+//   return code; 
+// }; 
 Blockly.JavaScript['import_dataset'] = function(block) {
   var dropdown_dataset_name = block.getFieldValue('dataset_name');
   var value_x_data = Blockly.JavaScript.valueToCode(block, 'x_data', Blockly.JavaScript.ORDER_ATOMIC);
