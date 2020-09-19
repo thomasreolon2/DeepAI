@@ -2,51 +2,51 @@ Blockly.defineBlocksWithJsonArray(
     [
    
   // 라이브러리 임포트 전체 새로운 것
-  {
-    "type": "import_libs",
-    "message0": "[ 라이브러리 임포트 ] %1 별칭  %2 %3",
-    "args0": [
-      {
-        "type": "field_dropdown",
-        "name": "import_libss",
-        "options": [
-          [
-            "Numpy",
-            "lib_import_numpy"
-          ],
-          [
-            "Pandas",
-            "lib_import_pandas"
-          ],
-          [
-            "Matplotlib",
-            "lib_import_Matplotlib"
-          ],
-          [
-            "io",
-            "lib_import_io"
-          ],
-          [
-            "base64",
-            "lib_import_base64"
-          ]
-        ]
-      },
-      {
-        "type": "input_dummy"
-      },
-      {
-        "type": "input_value",
-        "name": "import_libs_val"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": 125,
-    "tooltip": "",
-    "helpUrl": ""
-  },
+  // {
+  //   "type": "import_libs",
+  //   "message0": "[ 라이브러리 임포트 ] %1 별칭  %2 %3",
+  //   "args0": [
+  //     {
+  //       "type": "field_dropdown",
+  //       "name": "import_libss",
+  //       "options": [
+  //         [
+  //           "Numpy",
+  //           "lib_import_numpy"
+  //         ],
+  //         [
+  //           "Pandas",
+  //           "lib_import_pandas"
+  //         ],
+  //         [
+  //           "Matplotlib",
+  //           "lib_import_Matplotlib"
+  //         ],
+  //         [
+  //           "io",
+  //           "lib_import_io"
+  //         ],
+  //         [
+  //           "base64",
+  //           "lib_import_base64"
+  //         ]
+  //       ]
+  //     },
+  //     {
+  //       "type": "input_dummy"
+  //     },
+  //     {
+  //       "type": "input_value",
+  //       "name": "import_libs_val"
+  //     }
+  //   ],
+  //   "inputsInline": true,
+  //   "previousStatement": null,
+  //   "nextStatement": null,
+  //   "colour": 125,
+  //   "tooltip": "",
+  //   "helpUrl": ""
+  // },
 //라이브러리 임포트 사이킷런 
 {
   "type": "lib_import_sklearn", 
@@ -869,3 +869,32 @@ Blockly.defineBlocksWithJsonArray(
   
   ]
   ); 
+  Blockly.Blocks['numpy_library'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[Numpy 라이브러리 임포트]");
+      this.appendValueInput("lib_var")
+          .setCheck(null)      
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(125);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['visualization_library'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[시각화 라이브러리 임포트]");
+      this.appendValueInput("lib_var")
+          .setCheck(null)      
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(125);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
