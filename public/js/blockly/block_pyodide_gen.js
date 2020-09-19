@@ -181,28 +181,28 @@ Blockly.Python['labelencoder'] = function (block) {
     return code;
 };
 // /////////////////////라이브러리 추가블록////////////////////////20200910 이진형
-Blockly.Python['import_lib'] = function (block) {
-    var dropdown_lib = block.getFieldValue('lib');
-    var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable. 
-    var code = '';
-    switch (dropdown_lib) {  
-        case "numpy": 
-            code = "import numpy as "+value_var;
-            Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"np");
-            break;
-        case "pandas": 
-            code = "import pandas as "+value_var; 
-            Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"pd");
-            break;
-        case "matplotlib.pyplot": 
-            code = "import matplotlib.pyplot as "+value_var;
-            Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"plt");
-            break;
-    }
+// Blockly.Python['import_lib'] = function (block) {
+//     var dropdown_lib = block.getFieldValue('lib');
+//     var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
+//     // TODO: Assemble Python into code variable. 
+//     var code = '';
+//     switch (dropdown_lib) {  
+//         case "numpy": 
+//             code = "import numpy as "+value_var;
+//             Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"np");
+//             break;
+//         case "pandas": 
+//             code = "import pandas as "+value_var; 
+//             Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"pd");
+//             break;
+//         case "matplotlib.pyplot": 
+//             code = "import matplotlib.pyplot as "+value_var;
+//             Blockly.getMainWorkspace().renameVariableById(Blockly.getMainWorkspace().getVariable(value_var).getId(),"plt");
+//             break;
+//     }
     
-    return code;
-};
+//     return code;
+// };
 
 Blockly.Python['import_dataset'] = function(block) {
     var dropdown_dataset_name = block.getFieldValue('dataset_name');

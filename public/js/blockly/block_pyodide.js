@@ -198,30 +198,30 @@ Blockly.Blocks['labelencoder'] = {
     }
 };
 // /////////////////////라이브러리 추가블록////////////////////////20200910 이진형
-Blockly.Blocks['import_lib'] = {
-    init: function () {
-        this.appendDummyInput().appendField("라이브러리 추가  ").appendField("라이브러리 선택  : ");
-        this.appendDummyInput().appendField(new Blockly.FieldDropdown([
-            [
-                "넘파이", "numpy"
-            ],
-            [
-                "판다스", "pandas"
-            ],
-            [
-                "그래프", "matplotlib.pyplot"
-            ]
-        ]), "lib");
+// Blockly.Blocks['import_lib'] = {
+//     init: function () {
+//         this.appendDummyInput().appendField("라이브러리 추가  ").appendField("라이브러리 선택  : ");
+//         this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+//             [
+//                 "넘파이", "numpy"
+//             ],
+//             [
+//                 "판다스", "pandas"
+//             ],
+//             [
+//                 "그래프", "matplotlib.pyplot"
+//             ]
+//         ]), "lib");
         
-        this.appendValueInput("var").setCheck(null).appendField(" 라이브러리 변수 :");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+//         this.appendValueInput("var").setCheck(null).appendField(" 라이브러리 변수 :");
+//         this.setInputsInline(true);
+//         this.setPreviousStatement(true, null);
+//         this.setNextStatement(true, null);
+//         this.setColour(230);
+//         this.setTooltip("");
+//         this.setHelpUrl("");
+//     }
+// };
 
 Blockly.Blocks['import_dataset'] = {
     init: function() {
