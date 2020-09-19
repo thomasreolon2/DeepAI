@@ -261,10 +261,10 @@ Blockly.Blocks['train_test_split'] = {
             .appendField("X_train");
         this.appendValueInput("x_test")
             .setCheck(null)
-            .appendField("Y_train");
+            .appendField("X_test");
         this.appendValueInput("y_train")
             .setCheck(null)
-            .appendField("X_test");
+            .appendField("Y_train");
         this.appendValueInput("y_test")
             .setCheck(null)
             .appendField("Y_test");
