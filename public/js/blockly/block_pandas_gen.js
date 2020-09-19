@@ -18,14 +18,14 @@ Blockly.Python['load_csv'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-//2020-09-16 양승국 수정
+//2020-09-19 양승국 수정
 Blockly.Python['fill_null_data'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_name + '.fillna(' + value_name  + dropdown_name + ')';
+  var code = value_name + '=' +  value_name + '.fillna(' + value_name  + dropdown_name + ')';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Python['pyo_lib'] = function(block) {
@@ -35,14 +35,15 @@ Blockly.Python['pyo_lib'] = function(block) {
 };
 
 // 정규화
-//2020-09-10 양승국 수정
+//2020-09-19 양승국 수정
 Blockly.Python['normal'] = function(block) {  
   var value_normalization_data = Blockly.Python.valueToCode(block, 'Normalization_data', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '(' + value_normalization_data +'-' + value_normalization_data +'.mean()) / '+ value_normalization_data+ 
-  '.std()'+'\n';
-  return [code, Blockly.Python.ORDER_NONE];
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = value_normalization_data + '["' + text_name + '"]' + '=' + value_normalization_data + '["' + text_name + '"]' + '-' + value_normalization_data + '["' + text_name + '"]' + '.mean()' + '/' + value_normalization_data + '["' + text_name + '"]' + '.std()' +'\n';
+  return code;
 };
+
 // 헤더 삭제하기
 Blockly.Python['deletehead'] = function(block) {
   var value_delete_header = Blockly.Python.valueToCode(block, 'delete_header', Blockly.Python.ORDER_ATOMIC);
@@ -51,21 +52,14 @@ Blockly.Python['deletehead'] = function(block) {
   return code;
 };
 
-//2020-09-10 양승국 return수정
+//2020-09-19 양승국 수정
 Blockly.Python['select_row_delete'] = function(block) {
-  var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
-  var value_select_row = Blockly.Python.valueToCode(block, 'select_row', Blockly.Python.ORDER_ATOMIC);
+  var value_select_data = Blockly.Python.valueToCode(block, 'select_data', Blockly.Python.ORDER_ATOMIC);
+  var value_select_drop = Blockly.Python.valueToCode(block, 'select_drop', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('srd_NAME');
   // TODO: Assemble Python into code variable.
-  var code = value_select_value + '.drop([' + value_select_value + '.index[' + value_select_row + ']])\n';
-  return [code, Blockly.Python.ORDER_NONE];
-};
-// 원하는 열 삭제
-Blockly.Python['select_column_delete'] = function(block) {
-  var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
-  var value_select_column = Blockly.Python.valueToCode(block, 'select_column', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code =  value_select_value + '.drop(' + value_select_column +', axis =1)'+ '\n';
-  return [code, Blockly.Python.ORDER_NONE];;
+  var code = value_select_data + '=' + value_select_data + '.drop(' + value_select_drop + dropdown_name + ')\n';
+  return code;
 };
 
 Blockly.Python['leave_row_data'] = function(block) {
@@ -99,25 +93,32 @@ Blockly.Python['save_data'] = function(block) {
 //   return code;
 // };
 
+//2020-09-19 양승국
 Blockly.Python['list'] = function(block) {
-  var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
+  var value_input_data = Blockly.Python.valueToCode(block, 'input_data', Blockly.Python.ORDER_ATOMIC);
+  var value_out_data = Blockly.Python.valueToCode(block, 'out_data', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_select_value + '.values.tolist()\n';
-  return [code, Blockly.Python.ORDER_NONE];
+  var code = value_input_data + '=' + value_out_data + '.values.tolist()\n';
+  return code;
 };
 
+//2020-09-19 양승국
 Blockly.Python['header'] = function(block) {
-  var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
+  var value_inv = Blockly.Python.valueToCode(block, 'header_input_var', Blockly.Python.ORDER_ATOMIC);
+  var value_hov = Blockly.Python.valueToCode(block, 'header_output_var', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'list(' + value_select_value +'.columns.values)\n';
-  return [code, Blockly.Python.ORDER_NONE];
+  var code = value_inv + '=' + 'list(' + value_hov +'.columns.values)\n';
+  return code;
 };
 
+//2020-09-19 양승국
 Blockly.Python['select_row_list'] = function(block) {
-  var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
-  var value_select_row_locate = Blockly.Python.valueToCode(block, 'select_row_locate', Blockly.Python.ORDER_ATOMIC);
+  var value_list_data = Blockly.Python.valueToCode(block, 'list_data', Blockly.Python.ORDER_ATOMIC);
+  var value_list_val = Blockly.Python.valueToCode(block, 'list_val', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('srd_NAME');
   // TODO: Assemble Python into code variable.
-  var code = value_select_value +'.loc[' + value_select_row_locate + ']\n';
+  if (dropdown_name == 1) var code =  value_list_data + '.loc[' + value_list_val + ']\n';
+  else if (dropdown_name == 2) var code =  value_list_data + '.[' + value_list_val + ']\n';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -129,23 +130,23 @@ Blockly.Python['select_column_list'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-//2020-09-11 양승국 코드수정
+//2020-09-19 양승국 코드수정
 Blockly.Python['select_row_column_value'] = function(block) {
   var value_select_value = Blockly.Python.valueToCode(block, 'select_data', Blockly.Python.ORDER_ATOMIC);
   var value_select_row_locate = Blockly.Python.valueToCode(block, 'select_row_locate', Blockly.Python.ORDER_ATOMIC);
   var value_select_column_locate = Blockly.Python.valueToCode(block, 'select_column_locate', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_select_value + '.iloc[' + value_select_row_locate +','+ value_select_column_locate +']\n';
-  return [code, Blockly.Python.ORDER_NONE];
+  var code = value_select_value + '=' + value_select_value + '.iloc[' + value_select_row_locate +','+ value_select_column_locate +']\n';
+  return code;
 };
 
-//2020-09-16 양승국 수정
+//2020-09-19 양승국 수정
 Blockly.Python['row_count'] = function(block) {
   var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('count');
   // TODO: Assemble Python into code variable.
-  var code = value_select_value + dropdown_name;
-  return [code, Blockly.Python.ORDER_NONE];
+  var code = value_select_value + dropdown_name + '\n';
+  return code;
 };
 
 // Blockly.Python['image_list'] = function(block) {
@@ -162,23 +163,24 @@ Blockly.Python['count_label'] = function(block) {
   return code;
 };
 
-//2020-09-06 양승국
-//2020-09-09 이성주
-Blockly.Python['pandas_datalist'] = function(a) {
-  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
-    return ['list(zip('+ b.join(", ") +'))', Blockly.Python.ORDER_ATOMIC]
-  
+//2020-09-18 양승국 수정
+Blockly.Python['pandas_datalist'] = function(block) {
+  var value_frm_var = Blockly.Python.valueToCode(block, 'frm_var', Blockly.Python.ORDER_ATOMIC);
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble Python into code variable.
+  var code = value_frm_var + ' = list(zip( ' + text_name + '));\n';
+  return code;
 };
 
-//2020-09-06 양승국
-//2020-09-09 이성주
+//2020-09-19 양승국
 Blockly.Python['pandas_dataframe'] = function(block) {
+  var value_df_va = Blockly.Python.valueToCode(block, 'df_va', Blockly.Python.ORDER_ATOMIC);
   var value_lib = Blockly.Python.valueToCode(block, 'lib', Blockly.Python.ORDER_ATOMIC);
   var value_lst = Blockly.Python.valueToCode(block, 'lst', Blockly.Python.ORDER_ATOMIC);
-  var value_col1 = Blockly.Python.valueToCode(block, 'col1', Blockly.Python.ORDER_ATOMIC);
-  var code = value_lib + '.'+ 'DataFrame(data = ' + value_lst + value_col1 + ')';
+  var text_name = block.getFieldValue('col_name');
+  var code = value_df_va + '=' + value_lib + '.'+ 'DataFrame(data = ' + value_lst + ', columns =[' + text_name + '])\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return code;
 };
 
 //20.09.09 이성주 - 컬럼 블록 추가
@@ -189,7 +191,7 @@ Blockly.Python['createColumn'] = function(a) {
   
 };
 
-//2020-09-09 양승국
+//2020-09-19 양승국
 Blockly.Python['pandas_conversion'] = function(block) {
   var value_pa_frm = Blockly.Python.valueToCode(block, 'pa_frm', Blockly.Python.ORDER_ATOMIC);
   var value_pa_cul = Blockly.Python.valueToCode(block, 'pa_cul', Blockly.Python.ORDER_ATOMIC);
@@ -201,14 +203,14 @@ Blockly.Python['pandas_conversion'] = function(block) {
   return code;
 };
 
-//2020-09-10 양승국
+//2020-09-19 양승국 수정
 Blockly.Python['pandas_mis_del'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('DEL_NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_name + dropdown_name;
+  var code = value_name + '=' + value_name + dropdown_name;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 //2020-09-10 양승국 추가
@@ -239,14 +241,15 @@ Blockly.Python['nm'] = function(block) {
   return code;
 };
 
-//2020-09-16 양승국 추가
+//2020-09-19 양승국 
 Blockly.Python['pandas_series'] = function(block) {
+  var value_ser_var = Blockly.Python.valueToCode(block, 'ser_var', Blockly.Python.ORDER_ATOMIC);
   var value_lvar = Blockly.Python.valueToCode(block, 'lvar', Blockly.Python.ORDER_ATOMIC);
   var value_ser_data = Blockly.Python.valueToCode(block, 'ser_data', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_lvar + '.Series(' + value_ser_data +')\n';
+  var code = value_ser_var + '=' + value_lvar + '.Series(' + value_ser_data +')\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return code;
 };
 
 //2020-09-16 양승국 추가
@@ -256,46 +259,49 @@ Blockly.Python['pandas_series_data'] = function(a) {
   
 };
 
-//2020-09-16 양승국 추가
+//2020-09-19 양승국 추가
 Blockly.Python['pandas_concat'] = function(block) {
-  var value_pa_val = Blockly.Python.valueToCode(block, 'pa_val', Blockly.Python.ORDER_ATOMIC);
-  var value_set_series = Blockly.Python.valueToCode(block, 'set_series', Blockly.Python.ORDER_ATOMIC);
+  var value_cat_vl = Blockly.Python.valueToCode(block, 'cat_vl', Blockly.Python.ORDER_ATOMIC);
+  var value_cat_val = Blockly.Python.valueToCode(block, 'cat_val', Blockly.Python.ORDER_ATOMIC);
+  var value_data1 = Blockly.Python.valueToCode(block, 'data1', Blockly.Python.ORDER_ATOMIC);
+  var value_data2 = Blockly.Python.valueToCode(block, 'data2', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('PLEUS_NAME');
   // TODO: Assemble Python into code variable.
-  var code = value_pa_val + '.concat(' + value_set_series + dropdown_name +')';
+  var code = value_cat_vl + '=' + value_cat_val + '.concat([' + value_data1 + value_data2 + ']' + dropdown_name +')\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return code;
 };
 
-//2020-09-17 양승국 추가
+//2020-09-19 양승국 추가
 Blockly.Python['pandas_merge'] = function(block) {
+  var value_mer_var = Blockly.Python.valueToCode(block, 'mer_var', Blockly.Python.ORDER_ATOMIC);
   var value_pan_lib = Blockly.Python.valueToCode(block, 'pan_lib', Blockly.Python.ORDER_ATOMIC);
   var value_plus_data1 = Blockly.Python.valueToCode(block, 'plus_data1', Blockly.Python.ORDER_ATOMIC);
   var value_plus_data2 = Blockly.Python.valueToCode(block, 'plus_data2', Blockly.Python.ORDER_ATOMIC);
   var value_connet_way = Blockly.Python.valueToCode(block, 'connet_way', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_pan_lib + '.merge('+ value_plus_data1 + ', ' + value_plus_data2 + ', ' + value_connet_way +')';
+  var code = value_mer_var + '=' + value_pan_lib + '.merge('+ value_plus_data1 + ', ' + value_plus_data2 + ', ' + value_connet_way +')';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return code;
 };
 
-//2020-09-17 양승국 추가
+//2020-09-19 양승국 추가
 Blockly.Python['pandas_merge_oncol'] = function(block) {
-  var value_pan_merge_col = Blockly.Python.valueToCode(block, 'pan_merge_col', Blockly.Python.ORDER_ATOMIC);
+  var text_name = block.getFieldValue('mer_NAME');
   // TODO: Assemble Python into code variable.
-  var code = 'on='+ value_pan_merge_col ;
+  var code = 'on="'+ text_name + '"';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-//2020-09-17 양승국 추가
+//2020-09-19 양승국 추가
 Blockly.Python['pandas_merge_lron'] = function(block) {
-  var value_left_on = Blockly.Python.valueToCode(block, 'left_on', Blockly.Python.ORDER_ATOMIC);
-  var value_right_on = Blockly.Python.valueToCode(block, 'right_on', Blockly.Python.ORDER_ATOMIC);
+  var text_mer_LNAME = block.getFieldValue('mer_LNAME');
+  var text_mer_RNAME = block.getFieldValue('mer_RNAME');
   // TODO: Assemble Python into code variable.
-  var code = 'left_on='+ value_left_on + ', right_on=' + value_right_on;
+  var code = 'left_on="'+ text_mer_LNAME + '" , right_on="' + text_mer_RNAME + '"';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 ////////////////////////////////////////////////////////////////////
@@ -306,7 +312,8 @@ Blockly.Python['pandas_merge_lron'] = function(block) {
 Blockly.Python['missing_value_inquiry'] = function(block) {
   var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = "pd.DataFrame(" + variable_data + ').isnull().sum()\n';
+;
+  var code = "pd.DataFrame(" + variable_data + '.isnull().sum())\n';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 // 통계 정보 조회

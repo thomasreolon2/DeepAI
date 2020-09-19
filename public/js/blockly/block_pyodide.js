@@ -245,34 +245,36 @@ Blockly.Blocks['import_dataset'] = {
 
 Blockly.Blocks['train_test_split'] = {
     init: function() {
+        this.appendDummyInput()
+          .appendField("[데이터 분리] ")
       this.appendValueInput("x_data")
           .setCheck(null)
-          .appendField("활용할 특성 데이터 :");
+          .appendField("X_Data ");
       this.appendValueInput("y_data")
           .setCheck(null)
-          .appendField("활용할 정답 데이터 :");
+          .appendField("Y_Data ");
       this.appendValueInput("x_train")
           .setCheck(null)
-          .appendField("학습 특성 데이터 :");
+          .appendField("X_train ");
       this.appendValueInput("x_test")
           .setCheck(null)
-          .appendField("테스트 특성 데이터 :");
+          .appendField("Y_train");
       this.appendValueInput("y_train")
           .setCheck(null)
-          .appendField("학습 정답 데이터 :");
+          .appendField("X_test ");
       this.appendValueInput("y_test")
           .setCheck(null)
-          .appendField("테스트 정답 데이터 :");
+          .appendField("Y_test ");
       this.appendDummyInput()
-          .appendField("테스트 사이즈 : ")
+          .appendField("Test Size ")
           .appendField(new Blockly.FieldTextInput("0.2"), "test_size");
       this.appendDummyInput()
-          .appendField("데이터 섞기 :")
+          .appendField("Data Shuffle ")
           .appendField(new Blockly.FieldDropdown([["예","True"], ["아니오","False"]]), "shuffle");
       this.appendDummyInput()
-          .appendField("Seed 값 : ")
+          .appendField("Seed ")
           .appendField(new Blockly.FieldTextInput("0"), "seed");
-      this.setInputsInline(false);
+      this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
