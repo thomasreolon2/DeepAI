@@ -780,7 +780,7 @@ Blockly.Blocks['sklearn_mlp'] = {
           .appendField("Seed :")
           .appendField(new Blockly.FieldTextInput("0"), "sklearn_MLP_random_state");
       this.appendValueInput("sklearn_mlp_fit_X")
-          .setCheck(null)
+          .setCheck(null) 
           .appendField("fit ( X :");
       this.appendValueInput("sklearn_mlp_fit_Y")
           .setCheck(null)
