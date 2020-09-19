@@ -1192,3 +1192,14 @@ Blockly.Blocks['vis_tree'] = {
         this.setHelpUrl("");
     }
 };
+Blockly.Blocks['input'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("데이터 입력");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
