@@ -1,44 +1,10 @@
 Blockly.defineBlocksWithJsonArray(
     [
-   // pandas, numpy, tuple  시각화   
-   {
-    "type": "val_vi",
-    "message0": "데이터  : %1 %2 시각화",
-    "args0": [ 
-      {
-        "type": "field_dropdown",
-        "name": "Val_VI_Option",
-        "options": [ 
-          [ 
-            "Pandas",
-            "Val_VI_Pandas"
-          ],
-          [
-            "Numpy",
-            "Val_VI_Numpy"
-          ],
-          [
-            "Tuple",
-            "Val_VI_Tuple"
-          ]
-        ]
-      },
-      {
-        "type": "input_value",
-        "name": "Val_VI_Val"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour": 125,
-    "tooltip": "",
-    "helpUrl": "" 
-  },
+   
   // 라이브러리 임포트 전체 새로운 것
   {
     "type": "import_libs",
-    "message0": "( 라이브러리 임포트 ) %1 as %2 %3",
+    "message0": "[ 라이브러리 임포트 ] %1 별칭 : %2 %3",
     "args0": [
       {
         "type": "field_dropdown",
@@ -84,7 +50,7 @@ Blockly.defineBlocksWithJsonArray(
 //라이브러리 임포트 사이킷런 
 {
   "type": "lib_import_sklearn", 
-  "message0": "임시 ( 사이킷런 임포트  ) from %1 import %2",
+  "message0": "[ 사이킷런 임포트 ]  %1 에서  %2 포함",
   "args0": [
     {
       "type": "field_dropdown",
@@ -169,7 +135,7 @@ Blockly.defineBlocksWithJsonArray(
 //CSV 파일로 저장  
 {
   "type": "data_to_csv",
-  "message0": "CSV파일로 저장 %1 .to_csv ( %2  )",
+  "message0": "[ CSV 파일로 저장 ] 변수 : %1 ( 저장할 파일 이름  %2  )", 
   "args0": [
     {
       "type": "input_value",
@@ -191,7 +157,7 @@ Blockly.defineBlocksWithJsonArray(
 //.list 데이터 리스트 변환
 {
   "type": "data_conversion",
-  "message0": "%1 .tolist( 리스트 변환 :    %2 )",
+  "message0": "[ 리스트로 변환 ] 변수 : %1 변환할 데이터 형식 :   %2 )",
   "args0": [
     {
       "type": "input_value",
@@ -308,23 +274,6 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
 
-  //배열 생성
-  {
-    "type": "create_arry",
-    "message0": "배열 생성 %1",
-    "args0": [  
-      {
-        "type": "field_input", 
-        "name": "Create_arry_val",
-        "text": ""
-      }
-    ],
-    "inputsInline": true,
-    "output": null,
-    "colour": 125,
-    "tooltip": "",
-    "helpUrl": ""
-  },
   //배열 곱 
   {
     "type": "arry_mul",
@@ -421,10 +370,28 @@ Blockly.defineBlocksWithJsonArray(
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //배열 생성
+  {
+    "type": "create_arry",
+    "message0": "[ 배열 값 ] %1", 
+    "args0": [  
+      {
+        "type": "field_input", 
+        "name": "Create_arry_val",
+        "text": ""
+      }
+    ],
+    "inputsInline": true,
+    "output": null,
+    "colour": 125,
+    "tooltip": "",
+    "helpUrl": ""
+  },
     // 배열 np.arry 
     {
       "type": "np_array",
-      "message0": "%1 .arry ( 넘파이 배열 ) %2",
+      "message0": "[ 넘파이 배열 생성 ]%1  %2",
       "args0": [
         {
           "type": "input_value",
@@ -442,9 +409,9 @@ Blockly.defineBlocksWithJsonArray(
       "helpUrl": ""
     }, 
   // numpy 함수 zeros
-  {
+  { 
     "type": "numpy_zeros",
-    "message0": "%1 .zeros ( %2 , %3  ) dtype 사용여부(정수)  %4",
+    "message0": " [ 0 배열 생성 ] %1  ( 행: %2 열: %3  ) dtype 사용여부 (정수 : %4)",
     "args0": [
       {
         "type": "input_value",
@@ -473,7 +440,7 @@ Blockly.defineBlocksWithJsonArray(
   // np.full 배열 생성 및 , 채워질 값 
   {
     "type": "numpy_full",
-    "message0": "%1 .full (( %2 , %3 ), 채워질 값: %4 )",
+    "message0": "[ 입력값 배열 생성 ] %1  (( 행 : %2 열 : %3 ) 채워질 값: %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -501,7 +468,7 @@ Blockly.defineBlocksWithJsonArray(
   // eye 함수 대각선으로 1채우기 
   {
     "type": "numpy_eye",
-    "message0": "%1 .eye ( %2 , 인덱스 위치 = %3 )",
+    "message0": "[ 대각선 1로 배열 생성 ]%1  ( 행,열 : %2 , 인덱스 위치 : %3 )",
     "args0": [
       {
         "type": "input_value",
@@ -512,7 +479,7 @@ Blockly.defineBlocksWithJsonArray(
         "name": "numpy_eye_num"
       },
       {
-        "type": "input_value",
+        "type": "input_value", 
         "name": "numpy_eye_index"
       }
     ],
@@ -579,7 +546,7 @@ Blockly.defineBlocksWithJsonArray(
   // reshpae 행렬 차원 변경 
   {
     "type": "numpy_reshape",
-    "message0": "%1 .reshape ( 행렬 차원 변경   %2 , %3 )",
+    "message0": "[ 넘파이 데이터 구조 변경 ] 변수 : %1  (   1차원 : %2 2차원 : %3 )",
     "args0": [
       {
         "type": "input_value",
@@ -603,7 +570,7 @@ Blockly.defineBlocksWithJsonArray(
   // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
   {
     "type": "numpy_random_rand",
-    "message0": "%1 .random.   %2 [ 정규분포 | 정수 ] 난수 생성 (   %3 , %4 )",
+    "message0": "[ 난수 생성 ] %1 타입 :  %2  (  행 : %3 열 : %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -641,7 +608,7 @@ Blockly.defineBlocksWithJsonArray(
     // 지수 exp
     {
       "type": "numpy_exp",
-      "message0": "%1 .exp (   %2 )",
+      "message0": "[ 자연 상수 제곱] %1 ( 변수 :  %2 )",
       "args0": [ 
         {
           "type": "input_value",
@@ -661,7 +628,7 @@ Blockly.defineBlocksWithJsonArray(
     //np.append
     {
       "type": "np_append",
-      "message0": "%1 .append ( 요소 추가 ) ( %2 , %3  )",
+      "message0": "[ 배열에 값 추가 ] %1 ( 변수 또는 배열  : %2  %3  )",
       "args0": [
         {
           "type": "input_value",
@@ -682,23 +649,42 @@ Blockly.defineBlocksWithJsonArray(
       "tooltip": "",
       "helpUrl": ""
     }, 
+    // pandas, numpy, tuple  시각화   
+   {
+    "type": "val_vi",
+    "message0": "[ 형변환 테이블 출력 ]  : %1 변수 : %2 ",
+    "args0": [ 
+      {
+        "type": "field_dropdown",
+        "name": "Val_VI_Option",
+        "options": [ 
+          [ 
+            "Pandas",
+            "Val_VI_Pandas"
+          ],
+          [
+            "Numpy",
+            "Val_VI_Numpy"
+          ],
+          [
+            "Tuple",
+            "Val_VI_Tuple"
+          ]
+        ]
+      },
+      {
+        "type": "input_value",
+        "name": "Val_VI_Val"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 125,
+    "tooltip": "",
+    "helpUrl": "" 
+  },
   //matplot1 
-  // {
-  //   "type": "matplotlib_main",
-  //   "message0": "%1 시각화 틀",
-  //   "args0": [
-  //     {
-  //       "type": "input_value",
-  //       "name": "matplotlib_main_lib_val"
-  //     } 
-  //   ],
-  //   "inputsInline": true,
-  //   "previousStatement": null,
-  //   "nextStatement": null,
-  //   "colour": 125,
-  //   "tooltip": "",
-  //   "helpUrl": ""
-  // }, 
   {
     "type": "matplotlib_main",
     "message0": "[ 그래프 크기 설정 ] %1 %2 ( 분할 : %3 , %4 크기 : %5 , %6 )",
@@ -735,130 +721,6 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
   //matplot2 수정
-  // {
-  //   "type": "matplotlib_pre_graph",
-  //   "message0": "시각화 준비 :  %1 %2 | ( X , Y ) 값 : %3 | 그래프 : %4 | 제목 : %5 | Xlable : %6 | Ylable : %7 | 라벨 명 : %8 | 형태( 선 그래프만 해당 ), 사용 여부 : %9 %10",
-  //   "args0": [
-  //     {
-  //       "type": "input_value",
-  //       "name": "matplotlib_pre_graph_lib_val"
-  //     },
-  //     {
-  //       "type": "field_dropdown",
-  //       "name": "matplotlib_num_location",
-  //       "options": [
-  //         [
-  //           "전체 표시",
-  //           "matplotlib_screen"
-  //         ],
-  //         [
-  //           "1번_표시",
-  //           "matplotlib_num_1"
-  //         ],
-  //         [
-  //           "2번_표시",
-  //           "matplotlib_num_2"
-  //         ],
-  //         [
-  //           "3번_표시",
-  //           "matplotlib_num_3"
-  //         ],
-  //         [
-  //           "4번_표시",
-  //           "matplotlib_num_4"
-  //         ]
-  //       ]
-  //     },
-  //     {
-  //       "type": "field_input",
-  //       "name": "matplotlib_user_xy",
-  //       "text": ""
-  //     },
-  //     {
-  //       "type": "field_dropdown",
-  //       "name": "matplotlib_graph_select",
-  //       "options": [
-  //         [
-  //           "선_그래프",
-  //           "matplotlib_line"
-  //         ],
-  //         [
-  //           "Scatter_그래프",
-  //           "matplotlib_scatter"
-  //         ],
-  //         [
-  //           "막대_그래프",
-  //           "matplotlib_bar"
-  //         ],
-  //         [
-  //           "에러_바",
-  //           "matplotlib_error_bar"
-  //         ],
-  //         [
-  //           "박스_그래프",
-  //           "matplotlib_box"
-  //         ],
-  //         [
-  //           "히스토그램",
-  //           "matplotlib_histogram"
-  //         ]
-  //       ]
-  //     },
-  //     {
-  //       "type": "field_input",
-  //       "name": "matplotlib_pre_graph_Title",
-  //       "text": ""
-  //     },
-  //     {
-  //       "type": "field_input",
-  //       "name": "matplotlib_pre_graph_Xlable",
-  //       "text": ""
-  //     },
-  //     {
-  //       "type": "field_input",
-  //       "name": "matplotlib_pre_graph_Ylable",
-  //       "text": ""
-  //     },
-  //     {
-  //       "type": "field_input",
-  //       "name": "matplotlib_pre_label",
-  //       "text": ""
-  //     },
-  //     {
-  //       "type": "field_checkbox",
-  //       "name": "matplotlib_line_OX",
-  //       "checked": false
-  //     },
-  //     {
-  //       "type": "field_dropdown",
-  //       "name": "matplotlib_line_select",
-  //       "options": [
-  //         [
-  //           "선",
-  //           "matplotlib_line_1"
-  //         ],
-  //         [
-  //           "점",
-  //           "matplotlib_line_2"
-  //         ],
-  //         [
-  //           "점_선",
-  //           "matplotlib_line_3"
-  //         ],
-  //         [
-  //           "x_표시",
-  //           "matplotlib_line_4"
-  //         ]
-  //       ]
-  //     }
-  //   ],
-  //   "inputsInline": true,
-  //   "previousStatement": null,
-  //   "nextStatement": null,
-  //   "colour": 125,
-  //   "tooltip": "",
-  //   "helpUrl": ""
-  // },
   {
     "type": "matplotlib_pre_graph",
     "message0": "[ 그래프 설정 ] :  %1 좌표 : [ %2 ][ %3 %4 ] ( X , Y ) 값 : %5 그래프 종류 : %6 제목 : %7 X축 : %8 Y축 : %9 범례 : %10",
@@ -944,7 +806,7 @@ Blockly.defineBlocksWithJsonArray(
   //matplot3 
   {
     "type": "matplotlib_graph_end",
-    "message0": " [ 그래프 그리기 ] %1",
+    "message0": " [ 그래프 출력 ] %1",
     "args0": [
       {
         "type": "input_value",

@@ -778,13 +778,7 @@
         <!-- np.shape  -->
          
         <!-- np.reshape  -->
-        <block type="numpy_reshape"> 
-          <value name="numpy_reshape_lib_val">
-            <block type="variables_get">
-              <field name="VAR">np</field> 
-            </block>   
-          </value> 
-        </block>  
+        <block type="numpy_reshape"> </block>  
         <!-- np.reshape  --> 
 
         <!--  random. randn or randint   -->
@@ -852,7 +846,7 @@
             </block>
           </value>
         </block>
-        <block type="pyo_lib"></block>
+        <!-- <block type="pyo_lib"></block> -->
         <block type="csvdataframe_J">
           <value name="pd">
             <block type="variables_get">

@@ -168,13 +168,17 @@ Blockly.Blocks['scikit_learn'] = {
         this.setHelpUrl("");
     }
 };
+//2020-09-19 양승국 수정
 Blockly.Blocks['csvdataframe_J'] = {
     init: function () {
-        this.appendValueInput("pd").setCheck(null).appendField("데이터 프레임 생성");
-        this.appendValueInput("csv").setCheck(null).appendField("CSV 읽기");
+        this.appendValueInput("input_var").setCheck(null).appendField("[데이터프레임생성] 담을변수");
+        this.appendValueInput("pd").setCheck(null).appendField(", ");
+        this.appendValueInput("csv").setCheck(null).appendField("(CSV 읽기");
+        this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour(230);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_PANDAS_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
