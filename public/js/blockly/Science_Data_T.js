@@ -492,7 +492,7 @@ Blockly.defineBlocksWithJsonArray(
   // np.max_min  최대 값,최소 값 찾기 
   {
     "type": "numpy_max_min",
-    "message0": "%1 .  %2 ( %3 )",
+    "message0": "[ 최대,최소 값 찾기 ] %1 %2 %3 ( 변수 : %4 )",
     "args0": [
       {
         "type": "input_value",
@@ -513,6 +513,9 @@ Blockly.defineBlocksWithJsonArray(
         ]
       },
       {
+        "type": "input_dummy"
+      },
+      {
         "type": "input_value",
         "name": "numpy_max_min_val"
       }
@@ -526,10 +529,13 @@ Blockly.defineBlocksWithJsonArray(
   //np.shape  
   {
     "type": "numpy_shape",
-    "message0": "%1 .shape( 행렬 차원 반환   %2 )",
+    "message0": "[ 행렬 차원 반환 ] %1 %2 변수 : %3",
     "args0": [
       {
-        "type": "input_value", 
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
         "name": "numpy_shape_lib_val"
       },
       {

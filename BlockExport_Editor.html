@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>block_pyodide</title>
+  <title>D.I.Y</title>
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="/js/blockly/storage.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
@@ -595,36 +595,6 @@
       <block type="lists_length"></block>
       <!-- 리스트가 비어있는지 확인 -->
       <block type="lists_isEmpty"></block>
-
-
-      <!-- <block type="lists_indexOf">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">{listVariable}</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_getIndex">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">{listVariable}</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_setIndex">
-        <value name="LIST">
-          <block type="variables_get">
-            <field name="VAR">{listVariable}</field>
-          </block>
-        </value>
-      </block>
-      <block type="lists_getSublist">
-        <value name="LIST">
-          <block type="variables_get">
-            <field name="VAR">{listVariable}</field>
-          </block>
-        </value>
-      </block>  -->
       
       <!-- <block type="tfarraylen"></block>  -->
       <block type="sump"></block>
@@ -693,7 +663,7 @@
     <category name="데이터 사이언스"  colour="%{BKY_DATASCIENCE_HUE}">
     <!-- # numpy function # -->
 
-      <category name="Numpy 함수" colour="%{BKY_NUMPY_HUE}">
+      <category name="넘파이" colour="%{BKY_NUMPY_HUE}">
 
         <!--  import np,np,plt,io,base64  --> 
         <block type="import_libs">
@@ -831,14 +801,14 @@
       <!-- ************************************************** ************************* *************************  -->
       <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
       <!-- ************************************************** ************************* *************************  -->
-      <category name="Pandas 함수" colour="%{BKY_PANDAS_HUE}">
-        <block type="import_lib">
+      <category name="판다스 " colour="%{BKY_PANDAS_HUE}">
+        <!-- <block type="import_lib">
           <value name="var">
             <block type="variables_get">
               <field name="VAR"></field>
             </block>
           </value>
-        </block>
+        </block> -->
         <block type="csv_library">
           <value name="pan_lib_var">
             <block type="variables_get">
@@ -934,7 +904,7 @@
       <!-- ************************************************** ************************* *************************  -->
   
       <!-- # 시각화 부분 #  -->
-      <category name="시각화 하기 " colour="%{BKY_VISUAL_HUE}">
+      <category name="시각화 " colour="%{BKY_VISUAL_HUE}">
         <block type="val_vi"></block>   
 
         <!--  matplot1 시각화 틀    -->
