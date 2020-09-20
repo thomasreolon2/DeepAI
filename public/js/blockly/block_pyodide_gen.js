@@ -167,7 +167,7 @@ Blockly.Python['labelencoder'] = function (block) {
     var value_df = Blockly.Python.valueToCode(block, 'df', Blockly.Python.ORDER_ATOMIC);
     var text_column = block.getFieldValue('column');
     // TODO: Assemble Python into code variable.
-    var code = "from sklearn.preprocessing import LabelEncoder\nLabel_enc = LabelEncoder()\n" + value_df + "['" + text_column + "'] = Label_enc.fit_transform(" + value_df + "['" + text_column + "'])\n";
+    var code = "Label_enc = LabelEncoder()\n" + value_df + "['" + text_column + "'] = Label_enc.fit_transform(" + value_df + "['" + text_column + "'])\n";
     return code;
 };
 // /////////////////////라이브러리 추가블록////////////////////////20200910 이진형
