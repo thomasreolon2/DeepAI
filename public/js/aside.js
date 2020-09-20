@@ -21,7 +21,7 @@ function sidebar_toggle() {
 // 지우기(상단지우기)
 function csv_clear() {
   $("#graph1").remove(); 
-  $("#csv_show").before("<div id='graph1' style='height:'500px'; width:'900';><img id='pyplotfigure' /></div>")
+  $("#csv_show").before("<div id='graph1' style=\"height:500px; width:900;\"><img id='pyplotfigure' /></div>");
   // $('#csv_show').empty(); // 초기화
 };
 
@@ -29,7 +29,7 @@ function csv_clear() {
 function sidebar_clear() {
     //$('#graph1').empty(); 기존 그래프 초기화
     $("#graph1").remove(); 
-    $("#csv_show").before("<div id='graph1' style='height:'500px'; width:'900';><img id='pyplotfigure' /></div>")
+    $("#csv_show").before("<div id='graph1' style=\"height:500px; width:900;\"><img id='pyplotfigure' /></div>");
     $("#csv_show").remove(); 
     $("#graph1").after("<div id='csv_show'></div>");
 };
