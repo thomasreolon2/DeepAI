@@ -1217,7 +1217,7 @@ Blockly.Blocks['import_scikit'] = {
     init: function () {
         this.appendDummyInput()
             .appendField("[메트릭스 라이브러리 임포트] ")
-            .appendField(new Blockly.FieldDropdown([["정확도", "accuracy_score"], ["AUC", "metrics"], ["AP", "average_precision_score"], ["정밀도", "precision_score"], ["MAE", "mean_absolute_error"], ["MSE", "mean_squared_error"], ["Median", "median_absolute_error"]]), "metrics");
+            .appendField(new Blockly.FieldDropdown([["정확도", "accuracy_score"], ["AUC", "metrics"], ["AP", "average_precision_score"], ["PRC", "precision_score"], ["MAE", "mean_absolute_error"], ["MSE", "mean_squared_error"], ["Median", "median_absolute_error"]]), "metrics");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1280,7 +1280,7 @@ Blockly.Blocks['AP'] = {
 Blockly.Blocks['precision'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[정밀도 계산] ");
+            .appendField("[PRC 계산] ");
         this.appendValueInput("yt")
             .setCheck(null)
             .appendField("Y_true");
@@ -1301,7 +1301,7 @@ Blockly.Blocks['precision'] = {
 Blockly.Blocks['mae'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[평균 절대 오차] ");
+            .appendField("[MAE 계산(Mean)] ");
         this.appendValueInput("yt")
             .setCheck(null)
             .appendField("Y_true");
@@ -1319,7 +1319,7 @@ Blockly.Blocks['mae'] = {
 Blockly.Blocks['mse'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[평균 제곱 오차] ");
+            .appendField("[MSE 계산] ");
         this.appendValueInput("yt")
             .setCheck(null)
             .appendField("Y_true");
@@ -1336,7 +1336,7 @@ Blockly.Blocks['mse'] = {
 Blockly.Blocks['median'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[절대 오차 중앙값] ");
+            .appendField("[MSE 계산(Median)] ");
         this.appendValueInput("yt")
             .setCheck(null)
             .appendField("Y_true");

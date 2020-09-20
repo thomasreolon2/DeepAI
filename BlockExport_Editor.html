@@ -648,12 +648,10 @@
     </category>
 
     <!-- 커스텀 블록 -->
-    <sep></sep>
 
     <category name="함수 (Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
 
     </category>
-    <sep></sep>
 
     <!--pyodide_test-->
 
@@ -1088,11 +1086,11 @@
 
 
     </category>
-    <category name="과학파이 (Scipy)" colour="%{BKY_DL_HUE}">
+    <category name="사이파이 (Scipy)" colour="%{BKY_DL_HUE}">
     </category>
     <!-- # 시각화 부분 #  -->
 
-    <category name="사이킷런 (Sklearn)" colour="%{BKY_ML_HUE}">
+    <category name="사이킷런 (Scikitlearn)" colour="%{BKY_ML_HUE}">
       <category name="데이터셋 (Dataset)" colour="%{BKY_ML_HUE}">
         <block type="import_dataset"></block>
         <block type="fetch_openml"></block>
@@ -1114,12 +1112,23 @@
         <block type="sgd_classifier"></block>
         <block type="perceptron"></block>
       </category>
+      <category name="KNN (Neighbors)" colour="%{BKY_ML_HUE}">
+        <block type="import_kmeans"></block>
+        <block type="k_means"></block>
+      </category>
+      <category name="결정트리 (Decisiontree)" colour="%{BKY_ML_HUE}">
+      </category>
+      <category name="서포트 벡터 머신 (SVM)" colour="%{BKY_ML_HUE}">
+      </category>
+      
+      <category name="앙상블 (Esemble)" colour="%{BKY_ML_HUE}">
+      </category>
       <category name="메트릭스 (Metrics)" colour="%{BKY_ML_HUE}">
+        <block type="import_scikit"></block>
         <block type="model_fit"></block>
         <block type="kmeans_fit"></block>
         <block type="model_score"></block>
         <block type="model_predict"></block>
-        <block type="import_scikit"></block>
         <block type="acc_score"></block>
         <block type="AUC"></block>
         <block type="AP"></block>
@@ -1136,14 +1145,7 @@
         <block type="mlp_classifier"></block>
         <block type="mlp_regressor"></block>
       </category>
-      <category name="KNN (Neighbors)" colour="%{BKY_ML_HUE}">
-        <block type="import_kmeans"></block>
-        <block type="k_means"></block>
-      </category>
-      <category name="앙상블 (Esemble)" colour="%{BKY_ML_HUE}">
-      </category>
-      <category name="서포트 벡터 머신 (SVM)" colour="%{BKY_ML_HUE}">
-      </category>
+ 
 
 
       <!-- <block type="array_get"></block> -->
