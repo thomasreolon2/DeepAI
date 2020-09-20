@@ -836,7 +836,7 @@ Blockly.Python['curve_fit'] = function(block) {
   Blockly.Python['intercept'] = function(block) {
     var value_intercept = Blockly.Python.valueToCode(block, 'intercept', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = value_coef+'.intercept_';
+    var code = value_intercept+'.intercept_';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
   };
