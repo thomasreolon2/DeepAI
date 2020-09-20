@@ -665,6 +665,12 @@ Blockly.Python['ridge'] = function (block) {
     var code = value_model + " = Ridge(alpha = " + text_numAlpha + ")\n";
     return code;
 };
+Blockly.Python['bayesian_ridge'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_model + " = BayesianRidge()" + "\n";
+    return code;
+};
 Blockly.Python['sgd_regressor'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var text_numEpochs = block.getFieldValue('numEpochs');
@@ -683,7 +689,12 @@ Blockly.Python['import_mlp'] = function (block) {
 Blockly.Python['import_linear'] = function (block) {
     var dropdown_lib = block.getFieldValue('lib');
     // TODO: Assemble Python into code variable.
-    var code = 'from sklearn.linear_model import ' + dropdown_lib + "\n";
+    var code = "";
+    if (dropdown_lib == "linear_model") {
+        code = 'from sklearn import linear_model' + "\n";
+    } else {
+        code = 'from sklearn.linear_model import ' + dropdown_lib + "\n";
+    }
     return code;
 };
 Blockly.Python['import_kmeans'] = function (block) {
