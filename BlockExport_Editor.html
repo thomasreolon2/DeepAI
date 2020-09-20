@@ -18,7 +18,7 @@
 
   <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
 
-  <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
+  <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->  
   <script src="/js/blockly/blockly_compressed.js"></script>
   <script src="/js/blockly/javascript_compressed.js"></script>
   <script src="/js/blockly/python_compressed.js"></script>
@@ -53,7 +53,7 @@
   <script src="/js/blockly/Science_Data_T.js"></script>
   <script src="/js/blockly/Science_Data_Gen.js"></script>
   <script src="/js/blockly/Science_Data_Js.js"></script>
-
+  
   <!-- 데이타 사이언스 블록 -->
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지, 카테고리 색상 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -63,13 +63,13 @@
   <script src="/js/blockly/blocks_neighbors.js"></script>
   <script src="/js/blockly/blocks_neighbors_gen.js"></script>
   <script src="/js/blockly/blocks_neighbors_java.js"></script>
-
+  
   <!-- api 블록 -->
   <script src="/js/blockly/block_api.js"></script>
   <script src="/js/blockly/block_api_gen.js"></script>
   <script src="/js/blockly/block_api_gen_javascript.js"></script>
   <!-- api 블록 -->
-
+  
   <!--plotly cdn-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
 
@@ -375,7 +375,7 @@
             <h5 class="my-1 mx-1">콘솔</h5>
           </div>
           </textarea>
-          <textarea id="exeArea" class="form-control" readonly style="height: 20vh;"></textarea>
+          <textarea id="exeArea" class="form-control" readonly style="height: 10vh;"></textarea>
         </div>
       </div> <!-- 오른쪽 -->
     </div> <!-- 하단 -->
@@ -492,7 +492,7 @@
           </shadow>
         </value>
       </block>
-      <!-- 형변환  -->
+       <!-- 형변환  -->
       <block type="conver_int">
         <value name="VALUE"></value>
       </block>
@@ -505,7 +505,7 @@
       <block type="conver_bool">
         <value name="VALUE"></value>
       </block>
-
+      
     </category>
 
     <!-- 문자 -->
@@ -647,7 +647,6 @@
         <value name="set_menu">
         </value>
       </block>
-      <!-- 배열 합계 -->
       <block type="sump"></block>
       <!-- sort,reverse -->
       <block type="list_sort_reverse"></block>
@@ -683,7 +682,7 @@
 
     </category>
 
-    <!--pyodide_test-->
+    <!--pyodide_test--> 
 
     <sep></sep>
 
@@ -694,11 +693,11 @@
     <!-- # numpy function # -->
 
 
-    <category name="넘파이 (Numpy)" colour="%{BKY_NUMPY_HUE}">
-
+      <category name="넘파이 (Numpy)" colour="%{BKY_NUMPY_HUE}">
+   
       <!-- import numpy as np -->
       <block type="numpy_library"></block>
-      <!-- import numpy as np -->
+       <!-- import numpy as np -->
 
       <!-- CSV 저장 -->
       <block type="data_to_csv"></block>
@@ -708,7 +707,7 @@
       <block type="data_conversion"></block>
       <!-- data_conversion -->
 
-      <!-- numpy_concatenate -->
+      <!-- numpy_concatenate --> 
       <block type="np_concatenate"></block>
       <!-- numpy_concatenate -->
 
@@ -746,7 +745,7 @@
       <!-- np.shape  -->
 
       <!-- np.reshape  -->
-      <block type="numpy_reshape"> </block>
+      <block type="numpy_reshape"> </block> 
       <!-- np.reshape  -->
 
       <!-- np.reshape  -->
@@ -906,13 +905,6 @@
       <block type="iloc_range"></block>
 
       <!-- <block type="pandas_print"></block> -->
-      <block type="normal">
-        <value name="Normalization_data">
-          <block type="variables_get">
-            <field name="VAR">df</field>
-          </block>
-        </value>
-      </block>
       <block type="select_row_delete">
         <value name="select_data">
           <block type="variables_get">
@@ -993,14 +985,14 @@
       <block type="missing_value_inquiry">
         <value name="mis_data">
           <block type="variables_get">
-            <field name="VAR">DF</field>
+            <field name="VAR">pd</field>
           </block>
         </value>
       </block>
       <block type="stats_inquiry">
         <value name="inq_data">
           <block type="variables_get">
-            <field name="VAR">DF</field>
+            <field name="VAR">pd</field>
           </block>
         </value>
       </block>
@@ -1102,13 +1094,19 @@
         <block type="labelencoder"></block>
         <block type="train_test_split"></block>
         <block type="polynomialfeatures"></block>
+        <block type="normal">
+          <value name="Normalization_data">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
         <block type="onehotencoder"></block>
-      </category>
+     </category>
 
       <category name="선형모델 (Linear_model)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_linear"></block>
-        <!-- <block type="scikit_learn"></block> -->
-        <!--지현이가 만든거 여기에 잠들다.-->
+        <!-- <block type="scikit_learn"></block> --><!--지현이가 만든거 여기에 잠들다.-->
         <block type="linear_regression"></block>
         <block type="sgd_regressor"></block>
         <block type="ridge"></block>
@@ -1139,10 +1137,10 @@
         <block type="sklearn_svm"></block>
         <block type="linearsvc"></block>
         <block type="linearsvr"></block>
-
-
+        
+        
       </category>
-
+      
       <category name="앙상블 (Esemble)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="sklearn_ensemble"></block>
         <block type="adaboostclassifier"></block>
@@ -1151,9 +1149,9 @@
         <block type="gradientboostingregressor"></block>
         <block type="randomforestclassifier"></block>
         <block type="randomforestregressor"></block>
-
+        
       </category>
-
+      
       <category name="메트릭스 (Metrics)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_scikit"></block>
         <block type="model_fit"></block>
@@ -1177,7 +1175,7 @@
       </category>
       <category name="신경망 (Neural_network)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_mlp"></block>
-        <block type="sklearn_mlp"></block>
+        <block type="sklearn_mlp"></block> 
         <!-- 사이킷런 MLP 블록  -->
         <!-- <block type="make_mlp_classifier"></block>
         <block type="make_mlp_regressor"></block> -->
@@ -1186,7 +1184,7 @@
         <block type="bernoullirbm"></block>
 
       </category>
-
+ 
 
 
       <!-- <block type="array_get"></block> -->
@@ -1229,7 +1227,7 @@
       <block type="separate"></block>
       <block type="constant"></block>
       <block type="funktor"></block>
-      <block type="rumpf"></block>
+      <block type="rumpf"></block> 
     </category>
 
 
