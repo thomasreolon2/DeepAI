@@ -532,7 +532,7 @@
                                       </block>
                                     </statement>
                                     <next>
-                                      <block type="printc" id="GIV6`%g`pAO$/M1Go2jt">
+                                      <block type="" id="GIV6`%g`pAO$/M1Go2jt">
                                         <value name="content">
                                           <block type="math_arithmetic" id="kd{hV#5fnJFaNx3WLbqr">
                                             <field name="OP">ADD</field>

@@ -2,7 +2,7 @@
 Blockly.JavaScript['knn_import'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
     // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var code = '\n';
     return code;
   };
   //KNeighborsClassifier 블럭 함수
@@ -11,7 +11,7 @@ Blockly.JavaScript['knn_import'] = function(block) {
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var code = '\n';
     return code;
   };
 
@@ -20,7 +20,7 @@ Blockly.JavaScript['knn_import'] = function(block) {
     var value_value = Blockly.JavaScript.valueToCode(block, 'value', Blockly.JavaScript.ORDER_ATOMIC);
     var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = '...;\n';
+    var code = '\n';
     return code;
   };
 
@@ -30,7 +30,7 @@ Blockly.JavaScript['knn_import'] = function(block) {
     var value_value1 = Blockly.JavaScript.valueToCode(block, 'value1', Blockly.JavaScript.ORDER_ATOMIC);
     var dropdown_name = block.getFieldValue('NAME');
     // TODO: Assemble JavaScript into code variable.
-    var code = '...';
+    var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
@@ -42,7 +42,7 @@ Blockly.JavaScript['knn_import'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
     var dropdown_name = block.getFieldValue('NAME');
     // TODO: Assemble JavaScript into code variable.
-    var code = '...';
+    var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
