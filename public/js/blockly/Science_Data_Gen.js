@@ -1,4 +1,209 @@
 //  2020-09-07
+//넘파이 라이브러리 
+Blockly.Python['numpy_library'] = function(block) {
+  // TODO: Assemble Python into code variable. 
+  var code = 'import numpy as np';
+  return code;
+};
+
+//데이터 CSV로 저장
+Blockly.Python['data_to_csv'] = function(block) {
+  var value_value_data_to_csv_dataval = Blockly.Python.valueToCode(block, 'value_data_to_csv_dataval', Blockly.Python.ORDER_ATOMIC);
+  var text_value_value_data_to_csv_name = block.getFieldValue('value_value_data_to_csv_name');
+  // TODO: Assemble Python into code variable.
+
+  var code = `data_to_csv_value = ${value_value_data_to_csv_dataval}\n
+${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}');\n`;//val_2 = '${text_value_value_data_to_csv_name}'\n`; 
+  return code;  
+};
+
+// 배열 생성 
+Blockly.Python['create_arry'] = function(block) { 
+  var text_create_arry_val = block.getFieldValue('Create_arry_val'); 
+  // TODO: Assemble JavaScript into code variable. 
+  var code = `[${text_create_arry_val}]`;     
+  // TODO: Change ORDER_NONE to the correct strength.  
+  return [code, Blockly.JavaScript.ORDER_NONE];
+}; 
+
+// np.arry   
+    Blockly.Python['np_array'] = function(block) {
+      var value_np_array_val = Blockly.Python.valueToCode(block, 'np_array_val', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
+      var code = `np.array${value_np_array_val}\n`;   
+      // TODO: Change ORDER_NONE to the correct strength. 
+      return [code, Blockly.Python.ORDER_NONE];   
+    };
+
+    //numpy 함수 zeros 배열생성,   
+    Blockly.Python['numpy_zeros'] = function(block) {
+      var text_numpy_zeros_num_1 = block.getFieldValue('numpy_zeros_num_1');
+      var text_numpy_zeros_num_2 = block.getFieldValue('numpy_zeros_num_2');
+      var dropdown_numpy_zeros_option = block.getFieldValue('numpy_zeros_Option');
+      // TODO: Assemble Python into code variable.
+      switch(dropdown_numpy_zeros_option){ 
+        case "numpy_zeros_Option_float":
+        code = `np.zeros((${text_numpy_zeros_num_1},${text_numpy_zeros_num_2}))`;
+        break;
+
+        case "numpy_zeros_Option_int":
+        code = `np.zeros((${text_numpy_zeros_num_1},${text_numpy_zeros_num_2}), dtype= int)`;
+        break;
+        
+        default:
+        break;
+      }
+      return code;
+    }; 
+
+ // full 배열 생성 , 채워질 값  
+    Blockly.Python['numpy_full'] = function(block) {
+      var text_numpy_full_rows = block.getFieldValue('numpy_full_rows');
+      var text_numpy_full_cols = block.getFieldValue('numpy_full_cols');
+      var text_numpy_full_num = block.getFieldValue('numpy_full_num');
+      // TODO: Assemble Python into code variable.
+      var code = `np.full((${text_numpy_full_rows},${text_numpy_full_cols}),${text_numpy_full_num})`;  
+      return code;
+    };
+    
+    // eye 배열생성 과 동시에, 대각선 1로 채우기
+    Blockly.Python['numpy_eye'] = function(block) {
+      var text_numpy_eye_num = block.getFieldValue('numpy_eye_num');
+      // TODO: Assemble Python into code variable.
+      code =  `np.eye(${text_numpy_eye_num})`;    
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+    
+
+    //np.max_min 
+    Blockly.Python['numpy_max_min'] = function(block) {
+      var dropdown_numpy_max_min_option = block.getFieldValue('numpy_max_min_option');
+      var value_numpy_max_min_val = Blockly.Python.valueToCode(block, 'numpy_max_min_val', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
+      var code;
+      var numpy_max_min_value;
+  
+      switch (dropdown_numpy_max_min_option){ 
+        case "numpy_max" :  
+        numpy_max_min_value = 'max';    
+        break;       
+         
+        case "numpy_min" : 
+        numpy_max_min_value = 'min';      
+        break;    
+    
+        default :  
+        break;   
+      } ; 
+  
+      code =  `np.${numpy_max_min_value}(${value_numpy_max_min_val})\n`; 
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+    
+    
+    //np.shape 행렬 차원 반환 
+    Blockly.Python['numpy_shape'] = function(block) {
+      var value_numpy_shape_num = Blockly.Python.valueToCode(block, 'numpy_shape_num', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
+      var code = `np.shape(${value_numpy_shape_num})\n`;     
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.Python.ORDER_NONE];
+    }; 
+
+     // reshape 행렬 차원 변경 
+    Blockly.Python['numpy_reshape'] = function(block) {
+      var value_numpy_reshape_val = Blockly.Python.valueToCode(block, 'numpy_reshape_val', Blockly.Python.ORDER_ATOMIC);
+      var text_numpy_reshape_struct = block.getFieldValue('numpy_reshape_struct');
+      // TODO: Assemble Python into code variable.
+      var code = `${value_numpy_reshape_val}.reshape(${text_numpy_reshape_struct})\n`;    
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+
+    // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
+    Blockly.Python['numpy_random_rand'] = function(block) {
+      var dropdown_numpy_random_rand_option = block.getFieldValue('numpy_random_rand_Option');
+      var text_numpy_random_randn_rows = block.getFieldValue('numpy_random_randn_rows');
+      var text_numpy_random_randn_cols = block.getFieldValue('numpy_random_randn_cols');
+      // TODO: Assemble Python into code variable.
+      var code ; 
+
+      switch (dropdown_numpy_random_rand_option){
+        case "numpy_random_randn":
+        code = `np.random.randn(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        break;
+
+        case "numpy_random_randint":
+        code = `np.random.randint(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        break;
+
+        case "numpy_random_rand":
+        code = `np.random.randn(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        break;
+
+        case "numpy_random_sample":
+        code = `np.random_sample(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        break; 
+
+        case "numpy_random_choice":
+        code = `np.random.choice(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        break;
+ 
+        case "numpy_random_seed":
+        code = `np.random.seed(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        break;
+
+        default: 
+        break;
+
+        
+      }
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+
+    // exp 지수    
+    Blockly.Python['numpy_exp'] = function(block) { 
+      var value_numpy_exp_num = Blockly.Python.valueToCode(block, 'numpy_exp_num', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
+      var code = `np.exp(${value_numpy_exp_num})\n`;    
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.Python.ORDER_NONE];
+    }; 
+
+    
+    //np.append etc
+    Blockly.Python['np_arry_change'] = function(block) {
+      var dropdown_np_arry_change_option = block.getFieldValue('np_arry_change_Option');
+      var text_np_arry_change_var = block.getFieldValue('np_arry_change_var');
+      var text_np_arry_change_value = block.getFieldValue('np_arry_change_value');
+      // TODO: Assemble Python into code variable.
+      var code ;
+      switch(dropdown_np_arry_change_option){ 
+        case "np_arry_change_append" :
+        code = `np.append(${text_np_arry_change_var},${text_np_arry_change_value})\n`;  
+        break;
+ 
+        case "np_arry_change_extend" : 
+        code = `np.extend(${text_np_arry_change_var},${text_np_arry_change_value})\n`;  
+        break;
+
+        case "np_arry_change_insert" :
+        code = `np.insert(${text_np_arry_change_var},${text_np_arry_change_value})\n`;  
+        break;
+
+        case "np_arry_change_delete" :
+        code = `np.delete(${text_np_arry_change_var},${text_np_arry_change_value})\n`;  
+        break;
+
+        default:
+        break;
+      } 
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.Python.ORDER_NONE];
+    };
+    
 // pandas, numpy, tuple 시각화
 Blockly.Python['val_vi'] = function(block) {
     var dropdown_val_vi_option = block.getFieldValue('Val_VI_Option');
@@ -178,17 +383,7 @@ Blockly.Python['val_vi'] = function(block) {
     return code;
   };  
 
-  //데이터 CSV로 저장
-  Blockly.Python['data_to_csv'] = function(block) {
-    var value_value_data_to_csv_dataval = Blockly.Python.valueToCode(block, 'value_data_to_csv_dataval', Blockly.Python.ORDER_ATOMIC);
-    var text_value_value_data_to_csv_name = block.getFieldValue('value_value_data_to_csv_name');
-    // TODO: Assemble Python into code variable.
   
-    var code = `data_to_csv_value = ${value_value_data_to_csv_dataval}\n
-${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}');\n`;//val_2 = '${text_value_value_data_to_csv_name}'\n`; 
-    return code;  
-  };
-     
   //.list 데이터 리스트 변환 
   Blockly.Python['data_conversion'] = function(block) {
     var value_data_conversion_var = Blockly.Python.valueToCode(block, 'Data_Conversion_var', Blockly.Python.ORDER_ATOMIC);
@@ -217,258 +412,11 @@ ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}'
   };
   
   //print 하기
-    Blockly.Python['print'] = function(block) {
-      var value_print_value = Blockly.Python.valueToCode(block, 'print_value', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      value_print_value = value_print_value;//.slice(1,-1);
-      var code = `print(${value_print_value})\n`;      
-      return code;       
-    };    
-    
-   
-    // 배열 생성 
-    Blockly.Python['create_arry'] = function(block) { 
-      var text_create_arry_val = block.getFieldValue('Create_arry_val'); 
-      // TODO: Assemble JavaScript into code variable. 
-      var code = `[${text_create_arry_val}]`;     
-      // TODO: Change ORDER_NONE to the correct strength.  
-      return [code, Blockly.JavaScript.ORDER_NONE];
-    }; 
-  
-  
-    //배열 곱 
-    Blockly.Python['arry_mul'] = function(block) {
-      var value_arry_mul_first = Blockly.JavaScript.valueToCode(block, 'Arry_mul_first', Blockly.JavaScript.ORDER_ATOMIC);
-      var value_arry_mul_second = Blockly.JavaScript.valueToCode(block, 'Arry_mul_second', Blockly.JavaScript.ORDER_ATOMIC);
-     
-      var code = `${value_arry_mul_first} * ${value_arry_mul_second}\n`; 
-      return code; 
-    };  
-         
-  //배열 나누기
-    Blockly.Python['arry_div'] = function(block) {
-      var value_arry_div_first = Blockly.JavaScript.valueToCode(block, 'Arry_div_first', Blockly.JavaScript.ORDER_ATOMIC);
-      var value_arry_div_second = Blockly.JavaScript.valueToCode(block, 'Arry_div_second', Blockly.JavaScript.ORDER_ATOMIC);
-      // TODO: Assemble JavaScript into code variable.
-      var code = `${value_arry_div_first} / ${value_arry_div_second}\n`;
-      // TODO: Change ORDER_NONE to the correct strength.
-      return code;  
-    }; 
-  
-    //배열 합
-    Blockly.Python['arry_plus'] = function(block) {
-      var value_arry_plus_first = Blockly.JavaScript.valueToCode(block, 'Arry_plus_first', Blockly.JavaScript.ORDER_ATOMIC);
-      var value_arry_plus_second = Blockly.JavaScript.valueToCode(block, 'Arry_plus_second', Blockly.JavaScript.ORDER_ATOMIC);
-      // TODO: Assemble JavaScript into code variable.
-      var code =`${value_arry_plus_first} + ${value_arry_plus_second}\n`;
-      // TODO: Change ORDER_NONE to the correct strength.
-      return code;
-    };
-     
-    //배열 뺴기
-    Blockly.Python['arry_minus'] = function(block) {
-      var value_arry_minus_first = Blockly.JavaScript.valueToCode(block, 'Arry_Minus_first', Blockly.JavaScript.ORDER_ATOMIC);
-      var value_arry_minus_second = Blockly.JavaScript.valueToCode(block, 'Arry_Minus_second', Blockly.JavaScript.ORDER_ATOMIC);
-      // TODO: Assemble JavaScript into code variable.
-      var code = `${value_arry_minus_first} / ${value_arry_minus_second}\n`;
-      // TODO: Change ORDER_NONE to the correct strength.
-      return code;
-    }; 
-  
-    // #####################################################################################################  //
-    // ******************************            numpy 함수들 아래로           ******************************* //
-    // #####################################################################################################  //
- 
-     // np.arry  
-    Blockly.Python['np_array'] = function(block) {
-      var value_np_array_lib_val = Blockly.Python.valueToCode(block, 'np_array_lib_val', Blockly.Python.ORDER_ATOMIC);
-      var value_np_array_val = Blockly.Python.valueToCode(block, 'np_array_val', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      var code = `${value_np_array_lib_val}.array${value_np_array_val}`;  
-      // TODO: Change ORDER_NONE to the correct strength. 
-      return [code, Blockly.Python.ORDER_NONE];   
-    }; 
-   
-   
-    //numpy 함수 zeros 배열생성,   
-    Blockly.Python['numpy_zeros'] = function(block) {
-      var value_numpy_zeros_lib_val = Blockly.Python.valueToCode(block, 'numpy_zeros_lib_val', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_zeros_num_1 = Blockly.Python.valueToCode(block, 'numpy_zeros_num_1', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_zeros_num_2 = Blockly.Python.valueToCode(block, 'numpy_zeros_num_2', Blockly.Python.ORDER_ATOMIC);
-      var checkbox_numpy_zeros_check_dtype = block.getFieldValue('numpy_zeros_check_dtype') == 'TRUE';
-      // TODO: Assemble Python into code variable.
-      var code ;  
-      if( checkbox_numpy_zeros_check_dtype == false ){  
-          code = `${value_numpy_zeros_lib_val}.zeros((${value_numpy_zeros_num_1},${value_numpy_zeros_num_2}))`;   
-      }else{  
-        code = `${value_numpy_zeros_lib_val}.zeros((${value_numpy_zeros_num_1},${value_numpy_zeros_num_2}), dtype= int)`; 
-      } 
-   
-      // TODO: Change ORDER_NONE to the correct strength.  
-      return [code, Blockly.Python.ORDER_NONE];
-    };
-     
-   
-    // full 배열 생성 , 채워질 값  
-    Blockly.Python['numpy_full'] = function(block) { 
-      var value_numpy_zeros_lib_val = Blockly.Python.valueToCode(block, 'numpy_full_lib_val', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_full_num_1 = Blockly.Python.valueToCode(block, 'numpy_full_num_1', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_full_num_2 = Blockly.Python.valueToCode(block, 'numpy_full_num_2', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_full_input = Blockly.Python.valueToCode(block, 'numpy_full_input', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      var code = `${value_numpy_zeros_lib_val}.full((${value_numpy_full_num_1},${value_numpy_full_num_2}),${value_numpy_full_input})`;  
-      // TODO: Change ORDER_NONE to the correct strength.
-      return [code, Blockly.Python.ORDER_NONE]; 
-    };
-  
-   
-   
-    // eye 배열생성 과 동시에, 대각선 1로 채우기
-    Blockly.Python['numpy_eye'] = function(block) {
-      var value_numpy_eye_lib_val = Blockly.Python.valueToCode(block, 'numpy_eye_lib_val', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_eye_num = Blockly.Python.valueToCode(block, 'numpy_eye_num', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_eye_index = Blockly.Python.valueToCode(block, 'numpy_eye_index', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      var code;
-      if(value_numpy_eye_index != ''){   
-        code =  `${value_numpy_eye_lib_val}.eye(${value_numpy_eye_num} , k = ${value_numpy_eye_index} )`;
-      }else{
-        code =  `${value_numpy_eye_lib_val}.eye(${value_numpy_eye_num})`;    
-      } 
-      // TODO: Change ORDER_NONE to the correct strength.
-      return [code, Blockly.Python.ORDER_NONE];  
-    };  
-    
-    //np.max_min 
-    // Blockly.Python['numpy_max_min'] = function(block) {
-    //   var value_numpy_max_min_lib_val = Blockly.JavaScript.valueToCode(block, 'numpy_max_min_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
-    //   var dropdown_numpy_max_min_option = block.getFieldValue('numpy_max_min_option');
-    //   var value_numpy_max_min_val = Blockly.JavaScript.valueToCode(block, 'numpy_max_min_val', Blockly.JavaScript.ORDER_ATOMIC);
-    //   // TODO: Assemble JavaScript into code variable.
-    //   var code;
-    //   var numpy_max_min_value;
-  
-    //   switch (dropdown_numpy_max_min_option){
-    //     case "numpy_max" :  
-    //     numpy_max_min_value = 'max';    
-    //     break;       
-         
-    //     case "numpy_min" : 
-    //     numpy_max_min_value = 'min';      
-    //     break;    
-    
-    //     default :  
-    //     break;  
-    //   } ; 
-  
-    //   code =  `${value_numpy_max_min_lib_val}.${numpy_max_min_value}(${value_numpy_max_min_val})\n`;     
-  
-    //   return [code, Blockly.JavaScript.ORDER_NONE];
-    // }; 
-    
-    Blockly.Python['numpy_max_min'] = function(block) {
-      var value_numpy_max_min_lib_val = Blockly.Python.valueToCode(block, 'numpy_max_min_lib_val', Blockly.Python.ORDER_ATOMIC);
-      var dropdown_numpy_max_min_option = block.getFieldValue('numpy_max_min_option');
-      var value_numpy_max_min_val = Blockly.Python.valueToCode(block, 'numpy_max_min_val', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      var code;
-      var numpy_max_min_value;
-  
-      switch (dropdown_numpy_max_min_option){ 
-        case "numpy_max" :  
-        numpy_max_min_value = 'max';    
-        break;       
-         
-        case "numpy_min" : 
-        numpy_max_min_value = 'min';      
-        break;    
-    
-        default :  
-        break;  
-      } ; 
-  
-      code =  `${value_numpy_max_min_lib_val}.${numpy_max_min_value}(${value_numpy_max_min_val})\n`; 
-      return [code, Blockly.Python.ORDER_NONE];
-    };
-  
-    //np.shape 행렬 차원 반환 
-    // Blockly.Python['numpy_shape'] = function(block) {
-    //   var value_numpy_shape_lib_val = Blockly.JavaScript.valueToCode(block, 'numpy_shape_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
-    //   var value_numpy_shape_num = Blockly.JavaScript.valueToCode(block, 'numpy_shape_num', Blockly.JavaScript.ORDER_ATOMIC);
-    //   // TODO: Assemble JavaScript into code variable.
-    //   var code = `${value_numpy_shape_lib_val}.shape(${value_numpy_shape_num})\n`;     
-    //   // TODO: Change ORDER_NONE to the correct strength.
-    //   return [code, Blockly.JavaScript.ORDER_NONE]; 
-    // };
-    Blockly.Python['numpy_shape'] = function(block) {
-      var value_numpy_shape_lib_val = Blockly.Python.valueToCode(block, 'numpy_shape_lib_val', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_shape_num = Blockly.Python.valueToCode(block, 'numpy_shape_num', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      var code = `${value_numpy_shape_lib_val}.shape(${value_numpy_shape_num})\n`;     
-      // TODO: Change ORDER_NONE to the correct strength.
-      return [code, Blockly.Python.ORDER_NONE];
-    };
-  
-     
-    // reshape 행렬 차원 변경 
-    Blockly.Python['numpy_reshape'] = function(block) {
-      var value_numpy_reshape_lib_val = Blockly.Python.valueToCode(block, 'numpy_reshape_lib_val', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_reshape_num1 = Blockly.Python.valueToCode(block, 'numpy_reshape_num1', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_reshape_num2 = Blockly.Python.valueToCode(block, 'numpy_reshape_num2', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      var code = `${value_numpy_reshape_lib_val}.reshape(${value_numpy_reshape_num1},${value_numpy_reshape_num2})\n`;    
-      // TODO: Change ORDER_NONE to the correct strength.
-      return [code, Blockly.Python.ORDER_NONE];
-    };
-
-  //np.randn or randint
-    Blockly.Python['numpy_random_rand'] = function(block) {
-      var value_numpy_random_rand_lib_val = Blockly.Python.valueToCode(block, 'numpy_random_rand_lib_val', Blockly.Python.ORDER_ATOMIC);
-      var dropdown_numpy_random_rand_option = block.getFieldValue('numpy_random_rand_option');
-      var value_numpy_random_rand_num1 = Blockly.Python.valueToCode(block, 'numpy_random_rand_num1', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_random_rand_num2 = Blockly.Python.valueToCode(block, 'numpy_random_rand_num2', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      var code;  
-      if(dropdown_numpy_random_rand_option == 'numpy_random_rand_randn'){ 
-           code = `${value_numpy_random_rand_lib_val}.random.randn(${value_numpy_random_rand_num1},${value_numpy_random_rand_num2})\n`;    
-      }else if (dropdown_numpy_random_rand_option == 'numpy_random_rand_randint'){
-           code = `${value_numpy_random_rand_lib_val}.random.randint(${value_numpy_random_rand_num1},${value_numpy_random_rand_num2})\n`;    
-      } 
-      return [code, Blockly.Python.ORDER_NONE];
-    };
+    Blockly.Python['print'] =
   
     
-    // exp 지수    
-    Blockly.Python['numpy_exp'] = function(block) { 
-      var value_numpy_exp_lib_val = Blockly.Python.valueToCode(block, 'numpy_exp_lib_val', Blockly.Python.ORDER_ATOMIC);
-      var value_numpy_exp_num = Blockly.Python.valueToCode(block, 'numpy_exp_num', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      var code = `${value_numpy_exp_lib_val}.exp(${value_numpy_exp_num})\n`;    
-      // TODO: Change ORDER_NONE to the correct strength.
-      return [code, Blockly.Python.ORDER_NONE];
-    };
-
-    //np.append
-    Blockly.Python['np_append'] = function(block) {
-      var value_np_append_lib_var = Blockly.Python.valueToCode(block, 'np_append_lib_var', Blockly.Python.ORDER_ATOMIC);
-      var value_np_append_num1 = Blockly.Python.valueToCode(block, 'np_append_num1', Blockly.Python.ORDER_ATOMIC);
-      var value_np_append_num2 = Blockly.Python.valueToCode(block, 'np_append_num2', Blockly.Python.ORDER_ATOMIC);
-      // TODO: Assemble Python into code variable.
-      var code = `${value_np_append_lib_var}.append(${value_np_append_num1},${value_np_append_num2})\n`;  
-      // TODO: Change ORDER_NONE to the correct strength.
-      return [code, Blockly.Python.ORDER_NONE];
-    }; 
-  
    
     //matplot1 
-//     Blockly.Python['matplotlib_main'] = function(block) {
-//       var value_matplotlib_main_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_main_lib_val', Blockly.Python.ORDER_ATOMIC);
-//       // TODO: Assemble Python into code variable. 
-//       var code =`fig = ${value_matplotlib_main_lib_val}.figure()   
-// fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(2, 2, figsize=(8,5) , constrained_layout=True)\n`; 
-//       return code;
-//     };
-
     Blockly.Python['matplotlib_main'] = function(block) {
       var value_matplotlib_main_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_main_lib_val', Blockly.Python.ORDER_ATOMIC);
       var value_matplotlib_main_cols = Blockly.Python.valueToCode(block, 'matplotlib_main_cols', Blockly.Python.ORDER_ATOMIC);

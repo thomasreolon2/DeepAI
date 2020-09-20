@@ -663,15 +663,9 @@
 
       <category name="넘파이 (Numpy)" colour="%{BKY_NUMPY_HUE}">
 
-        <!--  import np,np,plt,io,base64  --> 
-        <block type="numpy_library">
-          <value name="lib_var">
-            <block type="variables_get">
-              <field name="VAR">np</field>
-            </block>
-          </value>
-        </block>
-        <!--  import np,np,plt,io,base64  -->
+        <!--  import np  --> 
+        <block type="numpy_library"></block>
+        <!--  import np -->
 
         <!-- csv 저장   -->
         <block type="data_to_csv"></block>
@@ -683,11 +677,6 @@
 
         <!-- numpy.arry  -->
         <block type="np_array"> 
-          <value name="np_array_lib_val"> 
-            <block type="variables_get"> 
-              <field name="VAR">np</field>
-            </block>  
-          </value> 
           <value name="np_array_val">
             <block type="create_arry">
             </block>
@@ -696,92 +685,26 @@
         <!-- numpy.arry  -->     
 
         <!-- numpy.zeros -->
-        <block type="numpy_zeros"> 
-          <value name="numpy_zeros_lib_val">
-            <block type="variables_get">
-              <field name="VAR">np</field>
-            </block>   
-          </value> 
-
-          <value name="numpy_zeros_num_1">
-            <shadow type="math_number">
-              <field name="NUM">2</field> 
-            </shadow> 
-          </value> 
-
-          <value name="numpy_zeros_num_2"> 
-            <shadow type="math_number">
-              <field name="NUM">2</field> 
-            </shadow> 
-          </value>  
-        </block>   
+        <block type="numpy_zeros"></block>   
         <!-- numpy.zeros --> 
  
         <!-- numpy.full  -->
-        <block type="numpy_full">  
-          <value name="numpy_full_lib_val">
-            <block type="variables_get">
-              <field name="VAR">np</field>   
-            </block>   
-          </value> 
-
-          <value name="numpy_full_num_1"> 
-            <shadow type="math_number">
-              <field name="NUM">2</field> 
-            </shadow> 
-          </value>  
-
-          <value name="numpy_full_num_2"> 
-            <shadow type="math_number">
-              <field name="NUM">2</field> 
-            </shadow> 
-          </value>  
-
-          <value name="numpy_full_input"> 
-            <shadow type="math_number">
-              <field name="NUM">45</field> 
-            </shadow> 
-          </value>  
-        </block>  
+        <block type="numpy_full"> </block>  
         <!-- numpy.full  -->
 
         <!-- np.eye   -->
-        <block type="numpy_eye"> 
-          <value name="numpy_eye_lib_val">
-            <block type="variables_get">
-              <field name="VAR">np</field> 
-            </block>   
-          </value> 
-
-          <value name="numpy_eye_index"> 
-            <shadow type="math_number">
-              <field name="NUM">0</field> 
-            </shadow> 
-          </value> 
-        </block>   
+        <block type="numpy_eye"></block>   
         <!-- np.eye   -->
 
         <!-- np.max_min  -->  
-        <block type="numpy_max_min"> 
-          <value name="numpy_max_min_lib_val">
-            <block type="variables_get">
-              <field name="VAR">np</field> 
-            </block>   
-          </value> 
-        </block> 
+        <block type="numpy_max_min"></block> 
         <!-- np.max_min  -->
          
         <!-- np.shape  -->
-        <block type="numpy_shape">
-          <value name="numpy_shape_lib_val">
-            <block type="variables_get">
-              <field name="VAR">np</field> 
-            </block>   
-          </value> 
-        </block> 
+        <block type="numpy_shape"></block> 
         <!-- np.shape  -->
          
-        <!-- np.reshape  -->
+        <!-- np.reshape  --> 
         <block type="numpy_reshape"> </block>  
         <!-- np.reshape  --> 
 
@@ -808,23 +731,11 @@
         <!--  random. randn or randint   --> 
 
         <!--  np.exp  -->
-        <block type="numpy_exp">
-          <value name="numpy_exp_lib_val"> 
-            <block type="variables_get"> 
-              <field name="VAR">np</field>  
-            </block>    
-          </value> 
-        </block> 
+        <block type="numpy_exp"></block> 
         <!--  np.exp  -->
 
         <!-- np.append -->
-        <block type = "np_append">
-          <value name="np_append_lib_var"> 
-            <block type="variables_get">
-              <field name="VAR">np</field>  
-            </block>   
-          </value> 
-        </block>
+        <block type = "np_arry_change"></block>
         <!-- np.append -->
 
          <!--  import sklearn  -->   

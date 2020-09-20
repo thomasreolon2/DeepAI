@@ -1,6 +1,110 @@
 Blockly.defineBlocksWithJsonArray(
     [
-   
+    {
+        "type": "numpy_library",
+        "message0": "[Numpy 라이브러리 임포트]",
+        "inputsInline": true,
+        "previousStatement": null, 
+        "nextStatement": null,
+        "colour": 125,
+        "tooltip": "",
+        "helpUrl": ""
+      },
+
+
+//CSV 파일로 저장   
+{
+  "type": "data_to_csv",
+  "message0": "[ CSV 파일로 저장 ] 변수  %1 (  %2  )", 
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "value_data_to_csv_dataval" 
+    },
+    {
+      "type": "field_input",
+      "name": "value_value_data_to_csv_name",
+      "text": " 파일 이름 "
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 125,
+  "tooltip": "", 
+  "helpUrl": ""
+},
+
+//.list 데이터 리스트 변환
+{
+  "type": "data_conversion",
+  "message0": "[ 리스트 변환 ] 변수  %1  데이터 형식    %2 )",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "Data_Conversion_var"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "Data_Conversion_Option",
+      "options": [
+        [
+          "Pandas",
+          "Data_Conversion_Option_Pandas"
+        ],
+        [
+          "Numpy",
+          "Data_Conversion_Option_Numpy"
+        ],
+        [
+          "Tuple",
+          "Data_Conversion_Option_Tuple"
+        ],
+        [
+          "Dictionary",
+          "Data_Conversion_Option_Dictionary"
+        ]
+      ]
+    }
+  ],
+  "output": null,
+  "colour": 125, 
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+//배열 생성
+{
+  "type": "create_arry",
+  "message0": "[ 배열 값 ] %1", 
+  "args0": [  
+    {
+      "type": "field_input", 
+      "name": "Create_arry_val",
+      "text": "ex) 1,2,3,4"
+    }
+  ],
+  "inputsInline": true,
+  "output": null,
+  "colour": 125,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ // 배열 np.arry 
+ {
+  "type": "np_array",
+  "message0": "[ 넘파이 배열  ]  %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "np_array_val"
+    }
+  ],
+  "inputsInline": true,
+  "output": null,
+  "colour": 125,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
   // 라이브러리 임포트 전체 새로운 것
   // {
   //   "type": "import_libs",
@@ -47,6 +151,7 @@ Blockly.defineBlocksWithJsonArray(
   //   "tooltip": "",
   //   "helpUrl": ""
   // },
+
 //라이브러리 임포트 사이킷런 
 {
   "type": "lib_import_sklearn", 
@@ -132,65 +237,7 @@ Blockly.defineBlocksWithJsonArray(
   "tooltip": "",
   "helpUrl": ""
 },  
-//CSV 파일로 저장  
-{
-  "type": "data_to_csv",
-  "message0": "[ CSV 파일로 저장 ] 변수  %1 ( 저장할 파일 이름  %2  )", 
-  "args0": [
-    {
-      "type": "input_value",
-      "name": "value_data_to_csv_dataval"
-    },
-    {
-      "type": "field_input",
-      "name": "value_value_data_to_csv_name",
-      "text": " 저장할 파일 이름 "
-    }
-  ],
-  "inputsInline": true,
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": "%{BKY_NUMPY_HUE}",
-  "tooltip": "", 
-  "helpUrl": ""
-},  
-//.list 데이터 리스트 변환
-{
-  "type": "data_conversion",
-  "message0": "[ 리스트로 변환 ] 변수  %1 변환할 데이터 형식    %2 )",
-  "args0": [
-    {
-      "type": "input_value",
-      "name": "Data_Conversion_var"
-    },
-    {
-      "type": "field_dropdown",
-      "name": "Data_Conversion_Option",
-      "options": [
-        [
-          "Pandas",
-          "Data_Conversion_Option_Pandas"
-        ],
-        [
-          "Numpy",
-          "Data_Conversion_Option_Numpy"
-        ],
-        [
-          "Tuple",
-          "Data_Conversion_Option_Tuple"
-        ],
-        [
-          "Dictionary",
-          "Data_Conversion_Option_Dictionary"
-        ]
-      ]
-    }
-  ],
-  "output": null,
-  "colour": "%{BKY_NUMPY_HUE}",
-  "tooltip": "",
-  "helpUrl": ""
-}, 
+  
   // 라이브러리 단일 임포트 부분    
   {
     "type": "lib_import",
@@ -274,230 +321,93 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
 
-  //배열 곱 
-  {
-    "type": "arry_mul",
-    "message0": "배열 곱 %1 %2 * %3",
-    "args0": [
-      {
-        "type": "input_dummy"
-      },
-      {
-        "type": "input_value",
-        "name": "Arry_mul_first"
-      },
-      { 
-        "type": "input_value",
-        "name": "Arry_mul_second"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null, 
-    "colour": "%{BKY_NUMPY_HUE}",
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  // 배열 나누기 
-  { 
-    "type": "arry_div",
-    "message0": "배열 나누기 %1 %2 / %3",
-    "args0": [
-      {
-        "type": "input_dummy"
-      },
-      {
-        "type": "input_value",
-        "name": "Arry_div_first"
-      },
-      {
-        "type": "input_value",
-        "name": "Arry_div_second"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null, 
-    "colour": "%{BKY_NUMPY_HUE}",
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  //배열 합
-  {
-    "type": "arry_plus",
-    "message0": "배열 합 %1 %2 + %3",
-    "args0": [
-      {
-        "type": "input_dummy"
-      },
-      {
-        "type": "input_value",
-        "name": "Arry_plus_first"
-      },
-      {
-        "type": "input_value",
-        "name": "Arry_plus_second"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null, 
-    "colour": "%{BKY_NUMPY_HUE}",
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  //배열 뺴기
-  {
-    "type": "arry_minus",
-    "message0": "배열 빼기 %1 %2 - %3",
-    "args0": [
-      {
-        "type": "input_dummy"
-      },
-      {
-        "type": "input_value", 
-        "name": "Arry_Minus_first"
-      },
-      {
-        "type": "input_value",
-        "name": "Arry_Minus_second"
-      }
-    ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null, 
-    "colour": "%{BKY_NUMPY_HUE}",
-    "tooltip": "",
-    "helpUrl": ""
-  },
-
-  //배열 생성
-  {
-    "type": "create_arry",
-    "message0": "[ 배열 값 ] %1", 
-    "args0": [  
-      {
-        "type": "field_input", 
-        "name": "Create_arry_val",
-        "text": "ex) 1,2,3,4"
-      }
-    ],
-    "inputsInline": true,
-    "output": null,
-    "colour": "%{BKY_NUMPY_HUE}",
-    "tooltip": "",
-    "helpUrl": ""
-  },
-    // 배열 np.arry 
-    {
-      "type": "np_array",
-      "message0": "[ 넘파이 배열 생성 ]%1  %2",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "np_array_lib_val"
-        },
-        {
-          "type": "input_value",
-          "name": "np_array_val"
-        }
-      ],
-      "inputsInline": true,
-      "output": null,
-      "colour": "%{BKY_NUMPY_HUE}",
-      "tooltip": "",
-      "helpUrl": ""
-    }, 
+   
   // numpy 함수 zeros
-  { 
+  {
     "type": "numpy_zeros",
-    "message0": " [ 0 배열 생성 ] %1  ( 행 %2 , 열 %3  ) dtype 사용여부 (정수  %4)",
+    "message0": "[ 0 배열  ] ( %1 , %2 ) %3",
     "args0": [
       {
-        "type": "input_value",
-        "name": "numpy_zeros_lib_val"
+        "type": "field_input",
+        "name": "numpy_zeros_num_1",
+        "text": "행"
       },
       {
-        "type": "input_value",
-        "name": "numpy_zeros_num_1"
+        "type": "field_input",
+        "name": "numpy_zeros_num_2",
+        "text": "열"
       },
       {
-        "type": "input_value",
-        "name": "numpy_zeros_num_2"
-      },
-      {
-        "type": "field_checkbox",
-        "name": "numpy_zeros_check_dtype",
-        "checked": false
+        "type": "field_dropdown",
+        "name": "numpy_zeros_Option",
+        "options": [
+          [
+            "Float",
+            "numpy_zeros_Option_float"
+          ],
+          [
+            "Int",
+            "numpy_zeros_Option_int"
+          ]
+        ]
       }
     ],
     "inputsInline": true,
     "output": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": 125,
     "tooltip": "",
     "helpUrl": ""
-  },
+  }, 
   // np.full 배열 생성 및 , 채워질 값 
   {
     "type": "numpy_full",
-    "message0": "[ 입력값 배열 생성 ] %1  (( 행  %2 , 열  %3 ) 채워질 값 %4 )",
+    "message0": "[ 배열 생성 ] (( %1 , %2 ) 값 %3 )",
     "args0": [
       {
-        "type": "input_value",
-        "name": "numpy_full_lib_val" 
+        "type": "field_input",
+        "name": "numpy_full_rows",
+        "text": "행"
       },
       {
-        "type": "input_value",
-        "name": "numpy_full_num_1"
+        "type": "field_input",
+        "name": "numpy_full_cols",
+        "text": "열"
       },
       {
-        "type": "input_value", 
-        "name": "numpy_full_num_2"
-      },
-      {
-        "type": "input_value",
-        "name": "numpy_full_input"
+        "type": "field_input",
+        "name": "numpy_full_num",
+        "text": "5"
       }
     ],
     "inputsInline": true,
     "output": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": 125,
     "tooltip": "",
     "helpUrl": ""
-  },
+  }, 
   // eye 함수 대각선으로 1채우기 
   {
     "type": "numpy_eye",
-    "message0": "[ 대각선 1로 배열 생성 ]%1  ( 행,열  %2 , 인덱스 위치  %3 )",
+    "message0": "[ 대각선 1로 배열  ] ( %1 )",
     "args0": [
       {
-        "type": "input_value",
-        "name": "numpy_eye_lib_val"
-      },
-      {
-        "type": "input_value",
-        "name": "numpy_eye_num"
-      },
-      {
-        "type": "input_value", 
-        "name": "numpy_eye_index"
+        "type": "field_input",
+        "name": "numpy_eye_num",
+        "text": "크기"
       }
-    ],
+    ], 
     "inputsInline": true,
     "output": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": 125,
     "tooltip": "",
     "helpUrl": ""
   },
+  
   // np.max_min  최대 값,최소 값 찾기 
   {
     "type": "numpy_max_min",
-    "message0": "[ 최대,최소 값 찾기 ] %1 %2 %3 ( 변수  %4 )",
+    "message0": "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )",
     "args0": [
-      {
-        "type": "input_value",
-        "name": "numpy_max_min_lib_val"
-      },
       {
         "type": "field_dropdown",
         "name": "numpy_max_min_option",
@@ -522,21 +432,17 @@ Blockly.defineBlocksWithJsonArray(
     ],
     "inputsInline": true,
     "output": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": 125,
     "tooltip": "",
     "helpUrl": ""
   },
   //np.shape  
   {
     "type": "numpy_shape",
-    "message0": "[ 행렬 차원 반환 ] %1 %2 변수  %3",
+    "message0": "[ 행렬 차원 ] %1 변수  %2",
     "args0": [
       {
         "type": "input_dummy"
-      },
-      {
-        "type": "input_value",
-        "name": "numpy_shape_lib_val"
       },
       {
         "type": "input_value",
@@ -545,81 +451,91 @@ Blockly.defineBlocksWithJsonArray(
     ],
     "inputsInline": true,
     "output": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": 125,
     "tooltip": "",
     "helpUrl": ""
   },
   // reshpae 행렬 차원 변경 
   {
     "type": "numpy_reshape",
-    "message0": "[ 넘파이 데이터 구조 변경 ] 변수  %1  (   1차원  %2 2차원  %3 )",
+    "message0": "[ 행렬 차원 변경 ] 원본 %1 %2 변경 차원 %3",
     "args0": [
       {
-        "type": "input_value",
-        "name": "numpy_reshape_lib_val"
+        "type": "input_dummy"
       },
       {
         "type": "input_value",
-        "name": "numpy_reshape_num1"
+        "name": "numpy_reshape_val"
       },
       {
-        "type": "input_value",
-        "name": "numpy_reshape_num2"
+        "type": "field_input",
+        "name": "numpy_reshape_struct",
+        "text": "ex)4,5,5"
       }
     ],
     "inputsInline": true,
     "output": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": 125,
     "tooltip": "",
     "helpUrl": ""
   },
   // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
   {
     "type": "numpy_random_rand",
-    "message0": "[ 난수 생성 ] %1 타입   %2  (  행  %3,  열  %4 )",
+    "message0": "[ 랜덤 행렬 ] %1 (  %2 ,  %3 )",
     "args0": [
       {
-        "type": "input_value",
-        "name": "numpy_random_rand_lib_val"
-      },
-      {
         "type": "field_dropdown",
-        "name": "numpy_random_rand_option",
+        "name": "numpy_random_rand_Option",
         "options": [
           [
-            "randn",
-            "numpy_random_rand_randn"
+            "정규분포",
+            "numpy_random_randn"
           ],
           [
-            "randint",
-            "numpy_random_rand_randint"
+            "정수",
+            "numpy_random_randint"
+          ],
+          [
+            "균일분포",
+            "numpy_random_rand"
+          ],
+          [
+            "Sample",
+            "numpy_random_sample"
+          ],
+          [
+            "Choice",
+            "numpy_random_choice"
+          ],
+          [
+            "Seed",
+            "numpy_random_seed"
           ]
         ]
       },
       {
-        "type": "input_value",
-        "name": "numpy_random_rand_num1"
+        "type": "field_input",
+        "name": "numpy_random_randn_rows",
+        "text": ""
       },
       {
-        "type": "input_value",
-        "name": "numpy_random_rand_num2"
+        "type": "field_input",
+        "name": "numpy_random_randn_cols",
+        "text": ""
       }
     ],
     "inputsInline": true,
     "output": null,
-    "colour": "%{BKY_NUMPY_HUE}",
+    "colour": 125,
     "tooltip": "",
     "helpUrl": ""
   },
     // 지수 exp
     {
       "type": "numpy_exp",
-      "message0": "[ 자연 상수 제곱] %1 ( 변수   %2 )",
+      "message0": "[ 자연 상수 제곱]  ( 변수   %1 )",
       "args0": [ 
-        {
-          "type": "input_value",
-          "name": "numpy_exp_lib_val"
-        },
         {
           "type": "input_value",
           "name": "numpy_exp_num"
@@ -627,34 +543,54 @@ Blockly.defineBlocksWithJsonArray(
       ],
       "inputsInline": true,
       "output": null,
-      "colour": "%{BKY_NUMPY_HUE}",
+      "colour": 125,
       "tooltip": "",
       "helpUrl": ""
     }, 
-    //np.append
+    //np.append etc
     {
-      "type": "np_append",
-      "message0": "[ 배열에 값 추가 ] %1 ( 변수 또는 배열   %2 ,  %3  )",
+      "type": "np_arry_change",
+      "message0": "[ 값 변경  ] %1 ( %2 , %3 )",
       "args0": [
         {
-          "type": "input_value",
-          "name": "np_append_lib_var"
+          "type": "field_dropdown",
+          "name": "np_arry_change_Option",
+          "options": [
+            [
+              "append",
+              "np_arry_change_append"
+            ],
+            [
+              "extend",
+              "np_arry_change_extend"
+            ],
+            [
+              "insert",
+              "np_arry_change_insert"
+            ],
+            [
+              "delete",
+              "np_arry_change_delete"
+            ]
+          ]
         },
         {
-          "type": "input_value",
-          "name": "np_append_num1"
+          "type": "field_input",
+          "name": "np_arry_change_var",
+          "text": "원본"
         },
         {
-          "type": "input_value",
-          "name": "np_append_num2"
+          "type": "field_input",
+          "name": "np_arry_change_value",
+          "text": "값"
         }
       ],
       "inputsInline": true,
       "output": null,
-      "colour": "%{BKY_NUMPY_HUE}",
+      "colour": 125,
       "tooltip": "",
       "helpUrl": ""
-    }, 
+    },
     // pandas, numpy, tuple  시각화   
    {
     "type": "val_vi",
@@ -831,27 +767,12 @@ Blockly.defineBlocksWithJsonArray(
   
   ]
   ); 
-  Blockly.Blocks['numpy_library'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("[Numpy 라이브러리 임포트]");
-      this.appendValueInput("lib_var")
-          .setCheck(null)      
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_NUMPY_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
+  
 
   Blockly.Blocks['visualization_library'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("[시각화 라이브러리 임포트]");
-      this.appendValueInput("lib_var")
-          .setCheck(null)      
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
