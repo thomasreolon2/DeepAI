@@ -69,7 +69,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "lists_repeat",
     message0: "%{BKY_LISTS_REPEAT_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Array/A3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/C3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "ITEM" },
       { type: "input_value", name: "NUM", check: "Number" },
     ],
@@ -92,7 +92,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "lists_isEmpty",
     message0: "%{BKY_LISTS_ISEMPTY_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Array/A5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/C5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Boolean",
     style: "list_blocks",
@@ -103,7 +103,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "lists_length",
     message0: "%{BKY_LISTS_LENGTH_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Array/A4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/C4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Number",
     style: "list_blocks",
@@ -174,14 +174,14 @@ Blockly.Blocks.lists_create_with = {
       : this.itemCount_ ||
         this.getInput("EMPTY") ||
         this.appendDummyInput("EMPTY")
-            .appendField(new Blockly.FieldImage("/img/Array/A1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+            .appendField(new Blockly.FieldImage("/img/Collection/C2-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
             .appendField(
             Blockly.Msg.LISTS_CREATE_EMPTY_TITLE
             );
     for (var a = 0; a < this.itemCount_; a++)
       if (!this.getInput("ADD" + a)) {
         var b = this.appendValueInput("ADD" + a).setAlign(Blockly.ALIGN_RIGHT);
-        0 == a && b.appendField(new Blockly.FieldImage("/img/Array/A2-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+        0 == a && b.appendField(new Blockly.FieldImage("/img/Collection/C1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
                    .appendField(Blockly.Msg.LISTS_CREATE_WITH_INPUT_WITH);
       }
     for (; this.getInput("ADD" + a); ) this.removeInput("ADD" + a), a++;
@@ -597,7 +597,7 @@ Blockly.Blocks.lists_split = {
     this.setHelpUrl(Blockly.Msg.LISTS_SPLIT_HELPURL);
     this.setStyle("list_blocks");
     this.appendValueInput("INPUT").setCheck("String")
-        .appendField(new Blockly.FieldImage("/img/Array/A10-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage("/img/Collection/C6-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
         .appendField(b, "MODE");
     this.appendValueInput("DELIM")
       .setCheck("String")
