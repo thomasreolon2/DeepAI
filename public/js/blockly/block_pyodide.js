@@ -1547,7 +1547,7 @@ Blockly.Blocks['import_linear'] = {
     init: function () {
         this.appendDummyInput()
             .appendField("[임포트] 선형모델 ")
-            .appendField(new Blockly.FieldDropdown([["선형회귀 모델", "LinearRegression"], ["SGD 예측기", "SGDRegressor"], ["Ridge 예측기", "Ridge"], ["로지스틱 회귀 모델", "LogisticRegression"], ["로지스틱 회귀 CV모델", "LogisticRegressionCV"], ["Ridge 분류기", "RidgeClassifier"], ["베이지안 모델","linear_model"], ["SGD 분류기", "SGDClassifier"],["퍼셉트론 모델", "Perceptron"]]), "lib");
+            .appendField(new Blockly.FieldDropdown([["선형회귀 모델", "LinearRegression"], ["SGD 예측기", "SGDRegressor"], ["Ridge 예측기", "Ridge"], ["로지스틱 회귀 모델", "LogisticRegression"], ["로지스틱 회귀 CV모델", "LogisticRegressionCV"], ["Ridge 분류기", "RidgeClassifier"], ["베이지안 모델","BayesianRidge"], ["SGD 분류기", "SGDClassifier"],["퍼셉트론 모델", "Perceptron"]]), "lib");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1830,5 +1830,168 @@ Blockly.Blocks['sivalidation'] = {
       this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ////////////////////프롤로그 임시
+  Blockly.Blocks['prolog_list'] = {
+    init: function () {
+      this.appendValueInput("bar")
+        .setCheck(null)
+        .appendField("[사실]");
+      this.appendStatementInput("content")
+        .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      // this.setNextStatement(true, null);
+      this.setColour(230);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['prolog_list_rule'] = {
+    init: function () {
+      this.appendValueInput("bar")
+        .setCheck(null)
+        .appendField("Fact");
+      this.appendStatementInput("content")
+        .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      // this.setNextStatement(true, null);
+      this.setColour(230);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['constant'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[상수]")
+        .appendField(new Blockly.FieldTextInput(""), "NAME");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(135);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['info_block_statement'] = {
+    init: function () {
+      this.setEnabled(true);
+      this.setColour('#8e904d');
+      this.setPreviousStatement(true);
+      this.setNextStatement(false);
+      this.appendDummyInput();
+    }
+  };
+  Blockly.Blocks['funktor'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[함수]")
+        .appendField(new Blockly.FieldTextInput(""), "NAME");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(135);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['rumpf'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("Rumpf")
+        .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "seperate");
+      this.appendStatementInput("NAME")
+        .setCheck(null);
+      this.setInputsInline(false);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      this.setColour(190);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['Rule'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[규칙]");
+      this.appendStatementInput("Fact")
+        .setCheck(null);
+      this.appendStatementInput("Rumpf")
+        .setCheck(null);
+      this.setInputsInline(false);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      this.setColour(190);
+      this.setTooltip("Ein einfacher Fakt, welches aus einer Relation und einem oder mehreren Termen besteht.");
+      this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
+    }
+  };
+  Blockly.Blocks['abfrage'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[Abfrage] | 활성")
+        .appendField(new Blockly.FieldCheckbox("false"), "active");
+      this.appendStatementInput("NAME")
+        .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      this.setColour(100);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['separate'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[AND | OR 설정]")
+        .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "separate");
+      this.appendStatementInput("NAME")
+        .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      this.setColour(100);
+      this.setTooltip("");
+      this.setHelpUrl("");
     }
   };

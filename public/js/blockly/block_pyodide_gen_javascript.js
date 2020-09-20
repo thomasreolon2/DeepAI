@@ -427,3 +427,225 @@ Blockly.JavaScript['intercept'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////프롤로그 임시
+Blockly.JavaScript['prolog_list'] = function (block) {
+  var code = '', statements_content, value_bar;
+  var value_bar = Blockly.JavaScript.valueToCode(block, 'bar', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_content = Blockly.JavaScript.statementToCode(block, 'content');
+  //TODO: Assemble JavaScript into code variable.
+  var elements = new Array();
+  var split = statements_content.trim().split(',');
+
+  for (var i = 0; i < split.length - 1; i++) {
+    elements.push(split[i]);
+  }
+  if (value_bar === '') return '';
+  code += value_bar + '('
+  code += elements.join(',')
+  code += ').';
+  return code;
+};
+
+Blockly.JavaScript['constant'] = function (block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = text_name + ",";
+  return code;
+};
+Blockly.JavaScript['info_block_statement'] = function (block) {
+  return '';
+};
+Blockly.JavaScript['funktor'] = function (block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = text_name;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['rumpf'] = function (block) {
+  var dropdown_seperate = block.getFieldValue('seperate');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var elements = new Array();
+  var split = statements_name.trim().split(',');
+  // TODO: Assemble JavaScript into code variable.
+  for (var i = 0; i < split.length - 1; i++) {
+    elements.push(split[i]);
+  }
+  var code = '', dropdown_seperate, statements_name;
+  if (dropdown_seperate == 'and') {
+    code = elements.join(',') + '.';
+  }
+  if (dropdown_seperate == 'or') {
+    code = elements.join(';') + '.';
+  }
+  return code;
+};
+Blockly.JavaScript['Rule'] = function (block) {
+  var statements_fact = Blockly.JavaScript.statementToCode(block, 'Fact');
+  var statements_rumpf = Blockly.JavaScript.statementToCode(block, 'Rumpf');
+  // TODO: Assemble JavaScript into code variable.
+  var code = statements_fact + ':-' + statements_rumpf;
+  return code;
+};
+Blockly.JavaScript['abfrage'] = function (block) {
+  var checkbox_active = block.getFieldValue('active');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  if (checkbox_active.toString() == 'TRUE') {
+    code = statements_name;
+  }
+
+  return code;
+};
+Blockly.JavaScript['separate'] = function (block) {
+  var dropdown_separate = block.getFieldValue('separate');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var code = '';
+  // TODO: Assemble JavaScript into code variable.
+  if (dropdown_separate == 'and') {
+    code = '?' + statements_name;
+  }
+  if (dropdown_separate == 'or') {
+    code = '-' + statements_name;
+  }
+  return code;
+};
+// prolog
+Blockly.JavaScript['prolog_list'] = function (block) {
+  var code = '', statements_content, value_bar;
+  var value_bar = Blockly.JavaScript.valueToCode(block, 'bar', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_content = Blockly.JavaScript.statementToCode(block, 'content');
+  //TODO: Assemble JavaScript into code variable.
+  var elements = new Array();
+  var split = statements_content.trim().split(',');
+
+  for (var i = 0; i < split.length - 1; i++) {
+    elements.push(split[i]);
+  }
+  if (value_bar === '') return '';
+  code += value_bar + '('
+  code += elements.join(',')
+  code += ').';
+  return code;
+};
+Blockly.JavaScript['prolog_list_rule'] = function (block) {
+  var code = '', statements_content, value_bar;
+  var value_bar = Blockly.JavaScript.valueToCode(block, 'bar', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_content = Blockly.JavaScript.statementToCode(block, 'content');
+  //TODO: Assemble JavaScript into code variable.
+  var elements = new Array();
+  var split = statements_content.trim().split(',');
+
+  for (var i = 0; i < split.length - 1; i++) {
+    elements.push(split[i]);
+  }
+  if (value_bar === '') return '';
+  code += value_bar + '('
+  code += elements.join(',')
+  code += ')';
+  return code;
+};
+Blockly.JavaScript['constant'] = function (block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = text_name + ",";
+  return code;
+};
+Blockly.JavaScript['info_block_statement'] = function (block) {
+  return '';
+};
+Blockly.JavaScript['funktor'] = function (block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = text_name;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['rumpf'] = function (block) {
+  var dropdown_seperate = block.getFieldValue('seperate');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var elements = new Array();
+  var split = statements_name.trim().split('.');
+  // TODO: Assemble JavaScript into code variable.
+  for (var i = 0; i < split.length - 1; i++) {
+    elements.push(split[i]);
+  }
+  var code = '', dropdown_seperate, statements_name;
+  if (dropdown_seperate == 'and') {
+    code = elements.join(',') + '.';
+  }
+  if (dropdown_seperate == 'or') {
+    code = elements.join(';') + '.';
+  }
+  return code.trim();
+};
+Blockly.JavaScript['Rule'] = function (block) {
+  var statements_fact = Blockly.JavaScript.statementToCode(block, 'Fact');
+  var statements_rumpf = Blockly.JavaScript.statementToCode(block, 'Rumpf');
+  // TODO: Assemble JavaScript into code variable.
+  var code = statements_fact + ':-' + statements_rumpf;
+  return code.trim();
+};
+Blockly.JavaScript['abfrage'] = function (block) {
+  var checkbox_active = block.getFieldValue('active');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  if (checkbox_active.toString() == 'TRUE') {
+    code = statements_name;
+  }
+
+  return code.trim();
+};
+Blockly.JavaScript['separate'] = function (block) {
+  var dropdown_separate = block.getFieldValue('separate');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var code = '';
+  // TODO: Assemble JavaScript into code variable.
+  // if(dropdown_separate=='and'){
+  //   code='?'+statements_name;
+  // }
+  // if(dropdown_separate=='or'){
+  //   code='-'+statements_name;
+  // }
+  code = statements_name;
+  return code.trim();
+};
