@@ -56,7 +56,6 @@ Blockly.Blocks['knn_import'] = {
   };
   
 
-  // KNeighborsTransformer 블록 함수
   Blockly.Blocks['kneighborstransformer_function'] = {
     init: function() {
       this.appendDummyInput()
@@ -70,7 +69,7 @@ Blockly.Blocks['knn_import'] = {
           .setCheck(null);
       this.appendDummyInput()
           .appendField("모드")
-          .appendField(new Blockly.FieldDropdown([["distance","distance"], ["connectivity","connectivity"]]), "NAME");
+          .appendField(new Blockly.FieldDropdown([["Distance","Distance"], ["Connectivity","Connectivity"]]), "NAME");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -80,8 +79,9 @@ Blockly.Blocks['knn_import'] = {
     }
   };
 
-  //kneighbors_graph 블록 함수
-  Blockly.Blocks['kneighbors_graph_function'] = {
+
+   //kneighbors_graph 블록 함수
+   Blockly.Blocks['kneighbors_graph_function'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("[KNeighbors 그래프]")
@@ -94,7 +94,7 @@ Blockly.Blocks['knn_import'] = {
           .setCheck(null);
       this.appendDummyInput()
           .appendField("모드")
-          .appendField(new Blockly.FieldDropdown([["distance","distance"], ["connectivity","connectivity"]]), "NAME");
+          .appendField(new Blockly.FieldDropdown([["Distance","Distance"], ["Connectivity","Connectivity"]]), "NAME");
       this.appendDummyInput()
           .appendField("포함시키기")
           .appendField(new Blockly.FieldDropdown([["True","True"], ["False","False"], ["Auto","Auto"]]), "NAME");
