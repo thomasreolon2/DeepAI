@@ -428,7 +428,7 @@ Blockly.Msg["VARIABLES_HUE"] = "4C97FF";// 변수
 Blockly.Msg["LOGIC_HUE"] = "9966FF";// 논리
 Blockly.Msg["LOOPS_HUE"] = "D65CD6"; // 반복
 
-Blockly.Msg["MATH_HUE"] = "FFD196"; // 연산
+Blockly.Msg["MATH_HUE"] = "E8754D"; // 연산
 Blockly.Msg["TEXTS_HUE"] = "FFAB19"; // 문자
 
 Blockly.Msg["COLLECTION_HUE"] = "4CBFE6"; // 컬렉션
