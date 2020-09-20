@@ -1492,7 +1492,7 @@
             csvval[0] = csvval[0].replace('\r', '');
             // row
             var cnt = (csvval.length < 2000) ? csvval.length : 2000;
-            for (var i = 1; i < cnt; i++) {
+            for (var i = 1; i < cnt-1; i++) {
               csvval[i] = csvval[i].replace('\r', '');
               var cols = csvval[i].split(',');
               var fileObject = new Object();
@@ -1766,6 +1766,7 @@
       for (var i = 0; i < Get_CSV_DATA.length; i++) {
         for (var j = 0; j < Get_CSV_DATA[0].length; j++) {
           NPTD_Data[j][i] = Get_CSV_DATA[i][j];
+          console.log(NPTD_Data[j][0]);
         }
       }
 
