@@ -2164,7 +2164,7 @@ Blockly.Themes.Classic.defaultBlockStyles = {
   list_blocks: { colourPrimary: "#ff8c1a" }, // 배열
   logic_blocks: { colourPrimary: "#9966FF" },// 논리
   loop_blocks: { colourPrimary: "#D65CD6" },// 반복
-  math_blocks: { colourPrimary: "#FFCE38" },// 연산
+  math_blocks: { colourPrimary: "#E8754D" },// 연산
   procedure_blocks: { colourPrimary: "#41CDCD" }, // ?
   text_blocks: { colourPrimary: "#FFAB19" }, // 문자
   variable_blocks: { colourPrimary: "#4C97FF" },// 변수

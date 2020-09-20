@@ -8,7 +8,7 @@ var pandas_color = "%{BKY_PANDAS_HUE}";
 Blockly.Blocks['csv_library'] = {
   init: function () {
     this.appendDummyInput()
-        .appendField("[Pandas 라이브러리]");
+        .appendField("[ 임포트 ] pandas를 pd로");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -955,6 +955,28 @@ Blockly.Blocks['pandas_concat'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+//2020-09-21 양승국 추가 array[None, sasd]
+Blockly.Blocks['pan_aray'] = {
+  init: function () {
+    this.appendValueInput("aray_array")
+        .setCheck(null)
+        .appendField("[인데스 가져오기] 배열");
+    this.appendValueInput("ary_a1")
+        .setCheck(null)
+        .appendField("[");
+    this.appendValueInput("ary_a2")
+        .setCheck(null)
+        .appendField(",");
+    this.appendDummyInput()
+        .appendField("]");
+    this.setColour(pandas_color);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
     this.setTooltip("");
     this.setHelpUrl("");
   }

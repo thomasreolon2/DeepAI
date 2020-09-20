@@ -2541,7 +2541,7 @@ Blockly.Blocks.text_prompt_ext = {
       b.updateType_(a);
     });
     this.appendValueInput("TEXT")
-        .appendField(new Blockly.FieldImage("/img/Text/T12-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage("/img/Text/T14-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
         .appendField(a, "TYPE");
         
     this.setOutput(!0, "String");
@@ -2597,6 +2597,7 @@ Blockly.Blocks.text_count = {
     this.jsonInit({
       message0: Blockly.Msg.TEXT_COUNT_MESSAGE0,
       args0: [
+        {"type": "field_image","src": "/img/Text/T11-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
         { type: "input_value", name: "SUB", check: "String" },
         { type: "input_value", name: "TEXT", check: "String" },
       ],

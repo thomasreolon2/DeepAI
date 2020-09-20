@@ -274,3 +274,13 @@ Blockly.JavaScript['array_select'] = function (block) {
   var code = value_name + '[' + elements.join('][') + ']';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+//2020-09-21 양승국 추가 array[None, sasd]
+Blockly.JavaScript['pan_aray'] = function (block) {
+  var variable_aray_array = Blockly.JavaScript.valueToCode(block, 'aray_array', Blockly.JavaScript.ORDER_ATOMIC);
+  var variable_ary_a1 = Blockly.JavaScript.valueToCode(block, 'ary_a1', Blockly.JavaScript.ORDER_ATOMIC);
+  var variable_ary_a2 = Blockly.JavaScript.valueToCode(block, 'ary_a2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_aray_array + '[' + variable_ary_a1 + ',' +variable_ary_a2 + ']\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
