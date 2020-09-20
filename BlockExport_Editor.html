@@ -1086,7 +1086,7 @@
 
       <category name="선형모델 (Linear_model)" colour="%{BKY_ML_HUE}">
         <block type="import_linear"></block>
-        <block type="scikit_learn"></block>
+        <!-- <block type="scikit_learn"></block> --><!--지현이가 만든거 여기에 잠들다.-->
         <block type="linear_regression"></block>
         <block type="sgd_regressor"></block>
         <block type="ridge"></block>
@@ -1096,6 +1096,8 @@
         <block type="ridge_classifier"></block>
         <block type="sgd_classifier"></block>
         <block type="perceptron"></block>
+        <block type="coef"></block>
+        <block type="intercept"></block>
       </category>
       <category name="KNN (Neighbors)" colour="%{BKY_ML_HUE}">
         <block type="import_kmeans"></block>
@@ -1107,6 +1109,8 @@
         <block type="kneighbors_graph_function"></block>
       </category>
       <category name="결정트리 (Decisiontree)" colour="%{BKY_ML_HUE}">
+        <block type="import_tree"></block>
+        <block type="decision"></block>
       </category>
       <category name="서포트 벡터 머신 (SVM)" colour="%{BKY_ML_HUE}">
         <block type="sklearn_svm"></block>
@@ -1170,7 +1174,12 @@
     </category>
     <!-- 기본 블록 2020 - 09 - 07 찬영 -->
     <!-- 새 블록  딕셔너리 -->
-
+    <category name="데이터사이언스 (Data_Science)" colour="%{BKY_ML_HUE}">
+    </category>
+    <category name="머신러닝 (Machine_Learning)" colour="%{BKY_ML_HUE}">
+    </category>
+    <category name="딥러닝 (Deep_Learning)" colour="%{BKY_ML_HUE}">
+    </category>
 
 
 

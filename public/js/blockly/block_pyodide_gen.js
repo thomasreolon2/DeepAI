@@ -816,3 +816,32 @@ Blockly.Python['curve_fit'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
   };
+  Blockly.Python['import_tree'] = function(block) {
+    var dropdown_tree = block.getFieldValue('tree');
+    // TODO: Assemble Python into code variable.
+    var code = 'from sklearn.tree import'+dropdown_tree+'\n';
+    return code;
+  };
+
+  Blockly.Python['decision'] = function(block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_dept = block.getFieldValue('dept');
+    var text_seed = block.getFieldValue('seed');
+    // TODO: Assemble Python into code variable.
+    var code = value_model+'= DecisionTreeClassifier(max_depth='+text_dept+',random_state='+text_seed+')\n';
+    return code;
+  };
+  Blockly.Python['coef'] = function(block) {
+    var value_coef = Blockly.Python.valueToCode(block, 'coef', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_coef+'.coef_';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+  Blockly.Python['intercept'] = function(block) {
+    var value_intercept = Blockly.Python.valueToCode(block, 'intercept', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_coef+'.intercept_';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
