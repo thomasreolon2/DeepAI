@@ -700,22 +700,24 @@ Blockly.Blocks.lists_create_with_item = {
   },
 };
 
-//2020-09-20 양승국 수정
-Blockly.Blocks['pandas_concat'] = {
+//2020-09-20 양승국 추가
+Blockly.Blocks['pandas_plus'] = {
   init: function () {
-    this.appendValueInput("cat_vl")
+    this.appendValueInput("pl_v")
         .setCheck(null)
-        .appendField("[시리즈concat] 변수");
-    this.appendValueInput("data1")
-      .setCheck(null)
-      .appendField("(데이터1");
-    this.appendValueInput("data2")
-      .setCheck(null)
-      .appendField("데이터2");
+        .appendField("[열추가] 변수");
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([["행에 추가", ", axis = 0"], ["열에 추가", ", axis = 1"]]), "PLEUS_NAME");
+        .appendField("(추가컬럼")
+        .appendField(new Blockly.FieldTextInput("컬럼명"), "crt_col")
     this.appendDummyInput()
-      .appendField(")");
+        .appendField("데이터1")
+        .appendField(new Blockly.FieldTextInput("0"), "fr_col")
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["+", "+"], ["-", "-"], ["/", "/"],["*", "*"]]), "dat_fu")
+    this.appendDummyInput()
+        .appendField("데이터2")
+        .appendField(new Blockly.FieldTextInput("1"), "se_col")  
+        .appendField(")");  
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -931,6 +933,31 @@ Blockly.Blocks.lists_create_with_item = {
     this.setColour(pandas_color);
     this.contextMenu = !1;
   },
+};
+
+//2020-09-20 양승국 수정
+Blockly.Blocks['pandas_concat'] = {
+  init: function () {
+    this.appendValueInput("cat_vl")
+        .setCheck(null)
+        .appendField("[시리즈concat] 변수");
+    this.appendValueInput("data1")
+      .setCheck(null)
+      .appendField("(데이터1");
+    this.appendValueInput("data2")
+      .setCheck(null)
+      .appendField("데이터2");
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([["행에 추가", ", axis = 0"], ["열에 추가", ", axis = 1"]]), "PLEUS_NAME");
+    this.appendDummyInput()
+      .appendField(")");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
 };
 
 /////////////////////////////////////////////////////////////

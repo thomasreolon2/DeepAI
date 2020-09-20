@@ -246,6 +246,17 @@ Blockly.JavaScript['createColumn'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
 };
 
+Blockly.JavaScript['pandas_plus'] = function (block) {
+  var value_pl_v = Blockly.JavaScript.valueToCode(block, 'pl_v', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_crt_col = block.getFieldValue('crt_col');
+  var text_fr_col = block.getFieldValue('fr_col');
+  var dropdown_function = block.getFieldValue('dat_fu');
+  var text_se_col = block.getFieldValue('se_col');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
 // ////////////////////////////////////////////////////////////////////
 // // Pandas 2학년 파트 끝
 // ////////////////////////////////////////////////////////////////////

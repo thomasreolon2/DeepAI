@@ -67,7 +67,7 @@ Blockly.Python['csv2'] = function (block) {
         // 2차원 배열 array
         x_train = new Array(file.length);
 
-        for (var i = 0; i < x_train.length - 1; i++) {
+        for (var i = 0; i < x_train.length; i++) {
             x_train[i] = new Array(key.length);
         }
         for (var i = 0; i < key.length; i++) {
@@ -77,7 +77,8 @@ Blockly.Python['csv2'] = function (block) {
             }
         }
         // 값 세팅
-        for (var i = 0; i < x_train.length - 1; i++) {
+        console.log(file.length);
+        for (var i = 0; i < x_train.length; i++) {
             for (var j = 0; j < key.length; j++) {
                 var keyName = key[j]; // key 값
                 var data = file[i][keyName];

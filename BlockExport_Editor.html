@@ -900,6 +900,13 @@
           </block>
         </value>
       </block>
+      <block type="pandas_plus">
+        <value name="pl_v">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+      </block>
       <block type="row_count">
         <value name="select_value">
           <block type="variables_get">
@@ -1378,7 +1385,7 @@
             csvval[0] = csvval[0].replace('\r', '');
             // row
             var cnt = (csvval.length < 2000) ? csvval.length : 2000;
-            for (var i = 1; i < cnt - 1; i++) {
+            for (var i = 1; i < cnt; i++) {
               csvval[i] = csvval[i].replace('\r', '');
               var cols = csvval[i].split(',');
               var fileObject = new Object();
@@ -1824,6 +1831,16 @@
           link.click();
           document.body.removeChild(link);
         }
+      }
+    }
+
+   function Check_matplotlib_user_input(a,b){
+      if(a == 1 && b == 1){
+        DL_Gra = "graph_both_1";
+      }else if (a == 1 || b == 1){
+        DL_Gra = "graph_or_1";
+      }else{
+        DL_Gra = 0;
       }
     }
 
