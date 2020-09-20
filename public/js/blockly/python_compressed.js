@@ -1440,7 +1440,7 @@ Blockly.Python['py_return'] = function(block) {
   return code;
 };
 
-// 타입 생성
+// 타입 생성, 형 변환
 Blockly.Python['conver_int'] = function(block) {
   var value_VALUE = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
@@ -1522,42 +1522,6 @@ Blockly.Python['list_remove_pop_count_extend'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-// remove
-Blockly.Python['list_remove'] = function(block) {
-  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
-  var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = value_list+'.remove('+value_value+')\n';
-  return code;
-};
-
-// pop
-Blockly.Python['list_pop'] = function(block) {
-  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
-  var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = value_list+'.pop('+value_value+')\n';
-  return code;
-};
-
-// count
-Blockly.Python['list_count'] = function(block) {
-  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
-  var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = value_list+'.count('+value_value+')\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-// extend
-Blockly.Python['list_extend'] = function(block) {
-  var value_list1 = Blockly.Python.valueToCode(block, 'LIST1', Blockly.Python.ORDER_ATOMIC);
-  var value_list2 = Blockly.Python.valueToCode(block, 'LIST2', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = value_list1+'.extend('+value_list2+')\n';
-  return code;
-};
 
 // text_replace
 Blockly.Python['text_replace'] = function(block) {
@@ -1594,4 +1558,11 @@ Blockly.Python['range2'] = function(block) {
   var code = 'range(len('+value_value1+'))';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
+};
+
+// 정지
+Blockly.Python['break_block'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'break\n';
+  return code;
 };
