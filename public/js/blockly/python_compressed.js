@@ -587,7 +587,7 @@ Blockly.Python['py_for'] = function(block) {
   var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var statements_value = Blockly.Python.statementToCode(block, 'value');
   // TODO: Assemble Python into code variable.
-  var code = 'for '+value_item+' in '+value_list+' : \n\t '+statements_value;
+  var code = 'for '+value_item+' in '+value_list+' :\n '+statements_value;
   return code;
 };
 
@@ -1575,7 +1575,7 @@ Blockly.Python['increase'] = function(block) {
   var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
   var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = value_number+dropdown_name+value_value+'\n';
   return code;
 };
 
