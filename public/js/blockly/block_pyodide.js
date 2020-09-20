@@ -1361,7 +1361,7 @@ Blockly.Blocks['mlp_classifier'] = {
         this.appendDummyInput()
             .appendField("Seed")
             .appendField(new Blockly.FieldTextInput("1"), "numSeed")
-            .appendField("epochs")
+            .appendField("Epochs")
             .appendField(new Blockly.FieldTextInput("300"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1380,7 +1380,7 @@ Blockly.Blocks['mlp_regressor'] = {
         this.appendDummyInput()
             .appendField("Seed")
             .appendField(new Blockly.FieldTextInput("1"), "numSeed")
-            .appendField("epochs")
+            .appendField("Epochs")
             .appendField(new Blockly.FieldTextInput("500"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1698,7 +1698,7 @@ Blockly.Blocks['sivalidation'] = {
           .appendField(" 배치사이즈")
           .appendField(new Blockly.FieldTextInput("10"), "batch");
       this.appendDummyInput()
-          .appendField(" epochs")
+          .appendField(" Epochs")
           .appendField(new Blockly.FieldTextInput("10"), "epochs");
       this.appendDummyInput()
           .appendField(" Seed")
