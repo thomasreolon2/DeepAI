@@ -53,8 +53,8 @@
   <script src="/js/blockly/Science_Data_T.js"></script>
   <script src="/js/blockly/Science_Data_Gen.js"></script>
   <script src="/js/blockly/Science_Data_Js.js"></script>
+  
   <!-- 데이타 사이언스 블록 -->
-
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지, 카테고리 색상 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
   <script src="/js/blockly/tau-prolog.js"></script> <!-- tau Prolog 추가 -->
@@ -63,6 +63,12 @@
   <script src="/js/blockly/blocks_neighbors.js"></script>
   <script src="/js/blockly/blocks_neighbors_gen.js"></script>
   <script src="/js/blockly/blocks_neighbors_java.js"></script>
+  
+  <!-- api 블록 -->
+  <script src="/js/blockly/block_api.js"></script>
+  <script src="/js/blockly/block_api_gen.js"></script>
+  <script src="/js/blockly/block_api_gen_javascript.js"></script>
+  <!-- api 블록 -->
   
   <!--plotly cdn-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
@@ -1061,9 +1067,19 @@
         <block type="fetch_openml"></block>
         <block type="csv3"></block>
       </category>
+
       <category name="전처리 (Preprocessing)" colour="%{BKY_ML_HUE}">
         <block type="labelencoder"></block>
-      </category>
+        <block type="train_test_split"></block>
+
+        <block type="sklearn.preprocessing"></block>
+        <block type="polynomialfeatures"></block>
+        <block type="onehotencoder"></block>
+        <block type="standardscaler"></block>
+        <block type="labelencoder"></block>
+        
+     </category>
+
       <category name="선형모델 (Linear_model)" colour="%{BKY_ML_HUE}">
         <block type="import_linear"></block>
         <block type="scikit_learn"></block>
@@ -1089,10 +1105,24 @@
       <category name="결정트리 (Decisiontree)" colour="%{BKY_ML_HUE}">
       </category>
       <category name="서포트 벡터 머신 (SVM)" colour="%{BKY_ML_HUE}">
+        <block type="sklearn_svm"></block>
+        <block type="linearsvc"></block>
+        <block type="linearsvr"></block>
+        
+        
       </category>
       
       <category name="앙상블 (Esemble)" colour="%{BKY_ML_HUE}">
+        <block type="sklearn_ensemble"></block>
+        <block type="adaboostclassifier"></block>
+        <block type="adaboostregressor"></block>
+        <block type="gradientboostingclassifier"></block>
+        <block type="gradientboostingregressor"></block>
+        <block type="randomforestclassifier"></block>
+        <block type="randomforestregressor"></block>
+        
       </category>
+      
       <category name="메트릭스 (Metrics)" colour="%{BKY_ML_HUE}">
         <block type="import_scikit"></block>
         <block type="model_fit"></block>
