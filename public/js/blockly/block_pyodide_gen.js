@@ -77,7 +77,6 @@ Blockly.Python['csv2'] = function (block) {
             }
         }
         // 값 세팅
-        console.log(file.length);
         for (var i = 0; i < x_train.length; i++) {
             for (var j = 0; j < key.length; j++) {
                 var keyName = key[j]; // key 값
