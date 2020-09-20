@@ -18,7 +18,14 @@ function sidebar_toggle() {
     };
 };
 
-// aside 내부 clear
+// 지우기(상단지우기)
+function csv_clear() {
+  $("#graph1").remove(); 
+  $("#csv_show").before("<div id='graph1'><img id='pyplotfigure' /></div>")
+  // $('#csv_show').empty(); // 초기화
+};
+
+// 전체초기화
 function sidebar_clear() {
     //$('#graph1').empty(); 기존 그래프 초기화
     $('#pyplotfigure').attr('src','');
@@ -26,12 +33,7 @@ function sidebar_clear() {
     $("#graph1").after("<div id='csv_show'></div>");
 };
 
-// aside 내부 clear
-function csv_clear() {
-  $("#csv_show").remove(); 
-  $("#graph1").after("<div id='csv_show'></div>");
-  // $('#csv_show').empty(); // 초기화
-};
+
 /*
 
     //사이드바_old
