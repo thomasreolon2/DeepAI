@@ -58,9 +58,11 @@ Blockly.JavaScript['np_array'] = function(block) {
 
 //np.arange  
 Blockly.JavaScript['np_arrange'] = function(block) {
-  var text_np_arrange_value = block.getFieldValue('np_arrange_value');
+  var text_np_arrange_value1 = block.getFieldValue('np_arrange_value1');
+  var text_np_arrange_value2 = block.getFieldValue('np_arrange_value2');
+  var text_np_arrange_value3 = block.getFieldValue('np_arrange_value3');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...';
+  var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };

@@ -1,8 +1,9 @@
 Blockly.defineBlocksWithJsonArray(
     [
+//numpy 라이브러리 임포트
     {
         "type": "numpy_library",
-        "message0": "[Numpy 라이브러리 임포트]",
+        "message0": "[ 임포트 ] numpy를 np로",
         "inputsInline": true,
         "previousStatement": null, 
         "nextStatement": null,
@@ -126,17 +127,27 @@ Blockly.defineBlocksWithJsonArray(
   "colour": 125,
   "tooltip": "",
   "helpUrl": ""
-}, 
+},  
 //np.arange 
 {
   "type": "np_arrange",
-  "message0": "[ 규칙 배열  ] %1",
+  "message0": "[ 정렬 값 배열  ] %1 , %2 , %3",
   "args0": [
     {
       "type": "field_input",
-      "name": "np_arrange_value",
+      "name": "np_arrange_value1",
       "text": "값"
-    }
+    },
+    {
+      "type": "field_input",
+      "name": "np_arrange_value2",
+      "text": "값"
+    },
+    {
+      "type": "field_input",
+      "name": "np_arrange_value3",
+      "text": "값"
+    },
   ],
   "inputsInline": true,
   "output": null,
@@ -394,13 +405,13 @@ Blockly.defineBlocksWithJsonArray(
     "inputsInline": true,
     "output": null,
     "colour": 125,
-    "tooltip": "",
+    "tooltip": "", 
     "helpUrl": ""
   }, 
   // np.full 배열 생성 및 , 채워질 값 
   {
     "type": "numpy_full",
-    "message0": "[ 배열 생성 ] (( %1 , %2 ) 값 %3 )",
+    "message0": "[ 동일 값 생성 ] (( %1 , %2 ) 값 %3 )",
     "args0": [
       {
         "type": "field_input",
@@ -415,7 +426,7 @@ Blockly.defineBlocksWithJsonArray(
       {
         "type": "field_input",
         "name": "numpy_full_num",
-        "text": "5"
+        "text": "0"
       }
     ],
     "inputsInline": true,
@@ -725,7 +736,7 @@ Blockly.defineBlocksWithJsonArray(
   Blockly.Blocks['visualization_library'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[시각화 라이브러리 임포트]");
+          .appendField("[ 임포트 ] matplotlib를 plt로 ");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
