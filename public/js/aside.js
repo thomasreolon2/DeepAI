@@ -22,6 +22,15 @@ function sidebar_toggle() {
 function sidebar_clear() {
     //$('#graph1').empty(); 기존 그래프 초기화
     $('#pyplotfigure').attr('src','');
+    $("#csv_show").remove(); 
+    $("#graph1").after("<div id='csv_show'></div>");
+};
+
+// aside 내부 clear
+function csv_clear() {
+  $("#csv_show").remove(); 
+  $("#graph1").after("<div id='csv_show'></div>");
+  // $('#csv_show').empty(); // 초기화
 };
 /*
 
