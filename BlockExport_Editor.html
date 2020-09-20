@@ -18,7 +18,7 @@
 
   <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
 
-  <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->  
+  <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script>
   <script src="/js/blockly/javascript_compressed.js"></script>
   <script src="/js/blockly/python_compressed.js"></script>
@@ -53,7 +53,7 @@
   <script src="/js/blockly/Science_Data_T.js"></script>
   <script src="/js/blockly/Science_Data_Gen.js"></script>
   <script src="/js/blockly/Science_Data_Js.js"></script>
-  
+
   <!-- 데이타 사이언스 블록 -->
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지, 카테고리 색상 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -63,13 +63,13 @@
   <script src="/js/blockly/blocks_neighbors.js"></script>
   <script src="/js/blockly/blocks_neighbors_gen.js"></script>
   <script src="/js/blockly/blocks_neighbors_java.js"></script>
-  
+
   <!-- api 블록 -->
   <script src="/js/blockly/block_api.js"></script>
   <script src="/js/blockly/block_api_gen.js"></script>
   <script src="/js/blockly/block_api_gen_javascript.js"></script>
   <!-- api 블록 -->
-  
+
   <!--plotly cdn-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
 
@@ -492,7 +492,7 @@
           </shadow>
         </value>
       </block>
-       <!-- 형변환  -->
+      <!-- 형변환  -->
       <block type="conver_int">
         <value name="VALUE"></value>
       </block>
@@ -505,7 +505,7 @@
       <block type="conver_bool">
         <value name="VALUE"></value>
       </block>
-      
+
     </category>
 
     <!-- 문자 -->
@@ -671,7 +671,7 @@
 
     </category>
 
-    <!--pyodide_test--> 
+    <!--pyodide_test-->
 
     <sep></sep>
 
@@ -682,11 +682,11 @@
     <!-- # numpy function # -->
 
 
-      <category name="넘파이 (Numpy)" colour="%{BKY_NUMPY_HUE}">
-   
+    <category name="넘파이 (Numpy)" colour="%{BKY_NUMPY_HUE}">
+
       <!-- import numpy as np -->
       <block type="numpy_library"></block>
-       <!-- import numpy as np -->
+      <!-- import numpy as np -->
 
       <!-- CSV 저장 -->
       <block type="data_to_csv"></block>
@@ -696,7 +696,7 @@
       <block type="data_conversion"></block>
       <!-- data_conversion -->
 
-      <!-- numpy_concatenate --> 
+      <!-- numpy_concatenate -->
       <block type="np_concatenate"></block>
       <!-- numpy_concatenate -->
 
@@ -734,7 +734,7 @@
       <!-- np.shape  -->
 
       <!-- np.reshape  -->
-      <block type="numpy_reshape"> </block> 
+      <block type="numpy_reshape"> </block>
       <!-- np.reshape  -->
 
       <!-- np.reshape  -->
@@ -1097,11 +1097,12 @@
           </value>
         </block>
         <block type="onehotencoder"></block>
-     </category>
+      </category>
 
       <category name="선형모델 (Linear_model)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_linear"></block>
-        <!-- <block type="scikit_learn"></block> --><!--지현이가 만든거 여기에 잠들다.-->
+        <!-- <block type="scikit_learn"></block> -->
+        <!--지현이가 만든거 여기에 잠들다.-->
         <block type="linear_regression"></block>
         <block type="sgd_regressor"></block>
         <block type="ridge"></block>
@@ -1132,10 +1133,10 @@
         <block type="sklearn_svm"></block>
         <block type="linearsvc"></block>
         <block type="linearsvr"></block>
-        
-        
+
+
       </category>
-      
+
       <category name="앙상블 (Esemble)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="sklearn_ensemble"></block>
         <block type="adaboostclassifier"></block>
@@ -1144,9 +1145,9 @@
         <block type="gradientboostingregressor"></block>
         <block type="randomforestclassifier"></block>
         <block type="randomforestregressor"></block>
-        
+
       </category>
-      
+
       <category name="메트릭스 (Metrics)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_scikit"></block>
         <block type="model_fit"></block>
@@ -1170,7 +1171,7 @@
       </category>
       <category name="신경망 (Neural_network)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_mlp"></block>
-        <block type="sklearn_mlp"></block> 
+        <block type="sklearn_mlp"></block>
         <!-- 사이킷런 MLP 블록  -->
         <!-- <block type="make_mlp_classifier"></block>
         <block type="make_mlp_regressor"></block> -->
@@ -1179,7 +1180,7 @@
         <block type="bernoullirbm"></block>
 
       </category>
- 
+
 
 
       <!-- <block type="array_get"></block> -->
@@ -1222,7 +1223,7 @@
       <block type="separate"></block>
       <block type="constant"></block>
       <block type="funktor"></block>
-      <block type="rumpf"></block> 
+      <block type="rumpf"></block>
     </category>
 
 
@@ -1605,7 +1606,6 @@
     // 테마변경  
     /*unction changeTheme() {
       var theme = document.getElementById('themeChanger');
-
       if (theme.value === "dark") {
         Blockly.getMainWorkspace().setTheme(Blockly.Themes.Dark);
       } else if (theme.value === "high_contrast") {
@@ -1750,7 +1750,7 @@
     // **************************************
     // ********   테이블 그리기      **********//
     // **************************************//  
-    function draw_table(Get_CSV_DATA) {
+    function draw_table(Get_CSV_DATA, header) {
 
       var NPTD_Data = Array.from(Array(Get_CSV_DATA[0].length), () => new Array(Get_CSV_DATA.length));
 
@@ -1770,7 +1770,7 @@
 
           //--------------헤더 설정 ---------------// 
           header: {
-
+            values: header,
             //     values: [["<b>EXPENSES</b>"], ["<b>Q1</b>"],["<b>Q2</b>"], ["<b>Q3</b>"], ["<b>Q4</b>"]], 
 
             //     function(Table_Chart){
@@ -1931,12 +1931,12 @@
       }
     }
 
-   function Check_matplotlib_user_input(a,b){
-      if(a == 1 && b == 1){
+    function Check_matplotlib_user_input(a, b) {
+      if (a == 1 && b == 1) {
         DL_Gra = "graph_both_1";
-      }else if (a == 1 || b == 1){
+      } else if (a == 1 || b == 1) {
         DL_Gra = "graph_or_1";
-      }else{
+      } else {
         DL_Gra = 0;
       }
     }

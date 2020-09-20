@@ -246,7 +246,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
   var dropdown_val_vi_option = block.getFieldValue('Val_VI_Option');
   var value_val_vi_val = Blockly.Python.valueToCode(block, 'Val_VI_Val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = "PN_Visualization = pyodide.pyimport('PN_Visualization');\ndraw_table(PN_Visualization)\n"; 
+  var code = "PN_Visualization = pyodide.pyimport('PN_Visualization');\nPN_Visualization2 = pyodide.pyimport('PN_Visualization2');\ndraw_table(PN_Visualization, PN_Visualization2);\n"; 
   return code;       
 };    
  

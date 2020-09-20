@@ -459,7 +459,7 @@ Blockly.Python['val_vi'] = function(block) {
   var code;
   switch(dropdown_val_vi_option){ 
     case "Val_VI_Pandas" :  
-    code = `PN_Visualization = ${value_val_vi_val}.values.tolist()\n`;        
+    code = `PN_Visualization = ${value_val_vi_val}.values.tolist()\nPN_Visualization2 = ${value_val_vi_val}.columns\n`;        
     break;
   
     case "Val_VI_Numpy" :  
