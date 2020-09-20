@@ -701,7 +701,8 @@ Blockly.defineBlocksWithJsonArray(
         // }
       ],
       "inputsInline": true,
-      "output": null,
+      "previousStatement": null,
+      "nextStatement": null,
       "colour": "%{BKY_NUMPY_HUE}",
       "tooltip": "",
       "helpUrl": ""
