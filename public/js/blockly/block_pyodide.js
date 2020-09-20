@@ -41,8 +41,13 @@ Blockly.Blocks['forp'] = {
         this.setHelpUrl("");
     }
 };
+
 Blockly.Blocks['sump'] = {
     init: function () {
+        
+this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+    alt: "*",
+    flipRtl: "FALSE"}));
         this.appendValueInput("i").setCheck(null).appendField("배열 합계");
         this.setInputsInline(true);
         this.setOutput(true, null);
@@ -367,6 +372,9 @@ Blockly.Blocks['dict'] = {
    * @this {Blockly.Block}
    */
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C8-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
         this.appendDummyInput().appendField("딕셔너리");
         this.setColour("%{BKY_DICT_HUE}");
         this.updateShape_();
@@ -511,6 +519,10 @@ Blockly.Blocks['dict_create_with_container'] = { /**
 // 딕셔너리 옵션 블록
 Blockly.Blocks['dic_menu'] = {
     init: function () {
+        
+this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C9-logo.png", 25, 23, {
+    alt: "*",
+    flipRtl: "FALSE"}));
         this.appendDummyInput().appendField("딕셔너리 옵션").appendField(new Blockly.FieldDropdown([
             [
                 "값선택", "selectvalues"
@@ -555,6 +567,10 @@ Blockly.Blocks['dic_menu'] = {
 // 집합
 Blockly.Blocks['set'] = {
     init: function () {
+        
+this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C10-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
         this.appendDummyInput().appendField("집합");
         this.appendValueInput("SET").setCheck(null);
         this.setInputsInline(true);
@@ -568,6 +584,10 @@ Blockly.Blocks['set'] = {
 // 집합 선택
 Blockly.Blocks['set_menu'] = {
     init: function () {
+        
+this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C11-logo.png", 25, 23, {
+    alt: "*",
+    flipRtl: "FALSE"}));
         this.appendValueInput("SET1").setCheck(null).appendField(new Blockly.FieldDropdown([
             [
                 "합집합", "union"
@@ -602,6 +622,9 @@ Blockly.Blocks['tuple'] = {
    * @this {Blockly.Block}
    */
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C7-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
         this.appendDummyInput().appendField("튜플");
         this.setColour("%{BKY_TUPLE_HUE}");
         this.updateShape_();
@@ -1025,6 +1048,10 @@ Blockly.Blocks['list_append'] = {
 // 리스트 정렬, 뒤집기
 Blockly.Blocks['list_sort_reverse'] = {
     init: function () {
+        
+this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C13-logo.png", 25, 23, {
+    alt: "*",
+    flipRtl: "FALSE"}));
         this.appendDummyInput()
             .appendField("리스트")
             .appendField(new Blockly.FieldDropdown([["뒤집기", "reverse"], ["정렬", "sort"]]), "NAME");
@@ -1042,6 +1069,10 @@ Blockly.Blocks['list_sort_reverse'] = {
 // list_index
 Blockly.Blocks['list_index'] = {
     init: function () {
+        
+this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C14-logo.png", 25, 23, {
+    alt: "*",
+    flipRtl: "FALSE"}));
         this.appendDummyInput()
             .appendField("리스트에서 값찾기 -> ");
         this.appendValueInput("LIST")
@@ -1063,6 +1094,10 @@ Blockly.Blocks['list_index'] = {
 // list_insert
 Blockly.Blocks['list_insert'] = {
     init: function () {
+        
+this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C15-logo.png", 25, 23, {
+    alt: "*",
+    flipRtl: "FALSE"}));
         this.appendDummyInput()
             .appendField("리스트삽입 -> 리스트");
         this.appendValueInput("LIST")
@@ -1088,6 +1123,10 @@ Blockly.Blocks['list_insert'] = {
 // 리스트 삭제, 끄집어내기, 요소의개수, 확장
 Blockly.Blocks['list_remove_pop_count_extend'] = {
     init: function () {
+        
+this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C16-logo.png", 25, 23, {
+    alt: "*",
+    flipRtl: "FALSE"}));
         this.appendDummyInput()
             .appendField("리스트")
             .appendField(new Blockly.FieldDropdown([["확장", "extend"], ["요소의개수", "count"], ["끄집어내기", "pop"], ["요소삭제", "remove"]]), "NAME")

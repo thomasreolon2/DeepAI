@@ -337,7 +337,7 @@ Blockly.Msg["TEXT_CHARAT_TAIL"] = "";
 Blockly.Msg["TEXT_CHARAT_TITLE"] = "%1 텍스트 %2 %3에서";
 Blockly.Msg["TEXT_CHARAT_TOOLTIP"] = "특정 번째 위치에서, 문자를 얻어내 돌려줍니다.";
 Blockly.Msg["TEXT_COUNT_HELPURL"] = "https://github.com/google/blockly/wiki/Text#counting-substrings";
-Blockly.Msg["TEXT_COUNT_MESSAGE0"] = "문자 개수 세기-> 텍스트 %2 문자 %1";
+Blockly.Msg["TEXT_COUNT_MESSAGE0"] = "%1 문자 개수 세기-> 텍스트 %3 문자 %2";
 Blockly.Msg["TEXT_COUNT_TOOLTIP"] = "다른 어떤 텍스트에서 어떤 텍스트가 나타난 횟수를 셉니다.";
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TOOLTIP"] = "텍스트에 항목을 추가합니다.";
 Blockly.Msg["TEXT_CREATE_JOIN_TITLE_JOIN"] = "가입";
@@ -428,7 +428,7 @@ Blockly.Msg["VARIABLES_HUE"] = "4C97FF";// 변수
 Blockly.Msg["LOGIC_HUE"] = "9966FF";// 논리
 Blockly.Msg["LOOPS_HUE"] = "D65CD6"; // 반복
 
-Blockly.Msg["MATH_HUE"] = "FFCE38"; // 연산
+Blockly.Msg["MATH_HUE"] = "FFD196"; // 연산
 Blockly.Msg["TEXTS_HUE"] = "FFAB19"; // 문자
 
 Blockly.Msg["COLLECTION_HUE"] = "4CBFE6"; // 컬렉션
