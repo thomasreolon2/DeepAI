@@ -1179,7 +1179,7 @@ this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C16-
     flipRtl: "FALSE"}));
         this.appendDummyInput()
             .appendField("리스트")
-            .appendField(new Blockly.FieldDropdown([["확장", "extend"], ["요소의개수", "count"], ["끄집어내기", "pop"], ["요소삭제", "remove"]]), "NAME")
+            .appendField(new Blockly.FieldDropdown([["확장", "extend"], ["요소의개수", "count"], ["끄집어내기", "pop"], ["요소삭제", "remove"],["요소추가", "append"]]), "NAME")
             .appendField("->")
             .appendField("(리스트");
         this.appendValueInput("LIST")
