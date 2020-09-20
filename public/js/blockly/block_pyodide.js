@@ -35,7 +35,7 @@ Blockly.Blocks['forp'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_COLLECTION_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -45,7 +45,7 @@ Blockly.Blocks['sump'] = {
         this.appendValueInput("i").setCheck(null).appendField("배열 합계");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_COLLECTION_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -558,7 +558,7 @@ Blockly.Blocks['set'] = {
         this.appendValueInput("SET").setCheck(null);
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SET_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -590,7 +590,7 @@ Blockly.Blocks['set_menu'] = {
         this.appendValueInput("SET2").setCheck(null).appendField("집합 선택: (A and B), 값 변경: (집합A and 바꿀값)");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SET_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -921,12 +921,12 @@ Blockly.Blocks['break_block'] = {
     }
 };
 
-// return 블럭
+// return 블럭, 반환
 Blockly.Blocks['py_return'] = {
     init: function () {
         this.appendValueInput("NAME")
             .setCheck(null)
-            .appendField("return");
+            .appendField("반환");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1041,13 +1041,15 @@ Blockly.Blocks['list_sort_reverse'] = {
 Blockly.Blocks['list_index'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("list");
+            .appendField("리스트에서 값찾기 -> ");
         this.appendValueInput("LIST")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField("index :");
+            .appendField("(인덱스");
         this.appendValueInput("INDEX")
             .setCheck(null);
+            this.appendDummyInput()
+            .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_COLLECTION_HUE}");
@@ -1060,17 +1062,19 @@ Blockly.Blocks['list_index'] = {
 Blockly.Blocks['list_insert'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("insert = list :");
+            .appendField("리스트삽입 -> 리스트");
         this.appendValueInput("LIST")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField("index : ");
+            .appendField("(인덱스");
         this.appendValueInput("INDEX")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField("value :");
+            .appendField(", 값");
         this.appendValueInput("VALUE")
             .setCheck(null);
+            this.appendDummyInput()
+            .appendField(")");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
