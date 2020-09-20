@@ -875,7 +875,7 @@ Blockly.Blocks['py_for'] = {
         this.appendValueInput("item")
             .setCheck(null)
             .appendField("변수");
-        this.appendValueInput("NAME")
+        this.appendValueInput("list")
             .setCheck(null)
             .appendField("리스트");
         this.appendDummyInput()
