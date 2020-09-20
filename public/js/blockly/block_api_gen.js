@@ -88,6 +88,13 @@ Blockly.Python['sklearn_ensemble'] = function(block) {
   };
 
   ///////////////////////////// 전처리
+  Blockly.Python['sklearn.preprocessing'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    // TODO: Assemble Python into code variable.
+    var code = 'from sklearn.preprocessing import ' + dropdown_name + '\n';
+    return code;
+  };
+
   Blockly.Python['polynomialfeatures'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
     var interaction_only = block.getFieldValue('NAME');
