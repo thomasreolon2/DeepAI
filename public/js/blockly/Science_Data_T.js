@@ -894,8 +894,9 @@ Blockly.defineBlocksWithJsonArray(
   //결과 출력
   {
     "type": "print_output_var",
-    "message0": "[  결과 출력 ]  %1 %2",
-    "args0": [
+    "message0": "[ %1 결과 출력 ]  %2 %3",
+    
+    "args0": [{"type": "field_image","src": "/img/Collection/C17-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},﻿
       { 
         
         "type": "input_value",
