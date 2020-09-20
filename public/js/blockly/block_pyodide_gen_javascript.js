@@ -439,7 +439,14 @@ Blockly.JavaScript['tree_text'] = function(block) {
 
 
 
-
+Blockly.JavaScript['py_for'] = function(block) {
+  var value_item = Blockly.JavaScript.valueToCode(block, 'item', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_value = Blockly.JavaScript.statementToCode(block, 'value');
+  // TODO: Assemble Python into code variable.
+  var code = '\n';
+  return code;
+};
 
 
 
