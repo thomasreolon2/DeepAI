@@ -1200,6 +1200,9 @@ this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C16-
 
 Blockly.Blocks['add_string'] = {
     init: function() {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T15-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
       this.appendValueInput("NAME")
           .setCheck(null);
       this.appendValueInput("NAME2")

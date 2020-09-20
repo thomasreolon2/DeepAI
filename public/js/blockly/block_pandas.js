@@ -1023,7 +1023,7 @@ Blockly.Blocks['array_select'] = {
     this.itemCount_ = 1;
     this.updateShape_();
     this.setOutput(true, 'Array');
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_COLLECTION_HUE}");
     this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
     this.setTooltip(Blockly.Msg['LISTS_CREATE_WITH_TOOLTIP']);
     this.setInputsInline(true);
