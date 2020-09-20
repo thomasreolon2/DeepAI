@@ -43,7 +43,7 @@ Blockly.Blocks['fill_null_data'] = {
       .appendField("[결측치삽입] 프레임");
     this.appendDummyInput()
       .appendField("(")
-      .appendField(new Blockly.FieldDropdown([["최댓값", ".max()"], ["최솟값", ".min()"], ["중간값", ".median()"], ["평균값", ".mean()"], ["0값", "0"]]), "NAME")
+      .appendField(new Blockly.FieldDropdown([["최댓값", "1"], ["최솟값", "2"], ["중간값", "3"], ["평균값", "4"], ["0값", "5"]]), "NAME")
       .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
