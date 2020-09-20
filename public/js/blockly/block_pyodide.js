@@ -1427,7 +1427,7 @@ Blockly.Blocks['logistic_regression_cv'] = {
             .appendField("교차검증 횟수")
             .appendField(new Blockly.FieldTextInput("5"), "numCv")
             .appendField("seed")
-            .appendField(new Blockly.FieldTextInput("0"), "numState")
+            .appendField(new Blockly.FieldTextInput("0"), "numSeed")
         this.appendValueInput("X_train")
             .appendField(" X_train");
         this.appendValueInput("Y_train")
@@ -1447,7 +1447,7 @@ Blockly.Blocks['perceptron'] = {
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
             .appendField("seed")
-            .appendField(new Blockly.FieldTextInput("0"), "numState")
+            .appendField(new Blockly.FieldTextInput("0"), "numSeed")
         this.appendValueInput("X_train")
             .appendField(" X_train");
         this.appendValueInput("Y_train")
@@ -1546,6 +1546,34 @@ Blockly.Blocks['sgd_regressor'] = {
             .appendField(" X_train");
         this.appendValueInput("Y_train")
             .appendField("Y_train");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+// MLP 라이브러리 임포트
+Blockly.Blocks['import_mlp'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[MLP 라이브러리 임포트] ")
+            .appendField(new Blockly.FieldDropdown([["MLP분류기", "MLPClassifier"], ["MLP예측기", "MLPRegressor"]]), "lib");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+// 선형모델 라이브러리 임포트
+Blockly.Blocks['import_linear'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[선형모델 라이브러리 임포트] ")
+            .appendField(new Blockly.FieldDropdown([["로지스틱 회귀 모델", "LogisticRegression"], ["로지스틱 회귀 CV모델", "LogisticRegressionCV"], ["퍼셉트론 모델", "Perceptron"], ["Ridge 분류기", "RidgeClassifier"], ["SGD 분류기", "SGDClassifier"], ["선형회귀 모델", "LinearRegression"], ["Ridge 예측기", "Ridge"], ["SGD 예측기","SGDRegressor"]]),  "lib");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
