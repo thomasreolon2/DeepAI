@@ -928,7 +928,7 @@ Blockly.Blocks['increase'] = {
 //
 Blockly.Blocks['break_block'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R4-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }));
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R6-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }));
         this.appendDummyInput()
             .appendField("정지");
         this.setPreviousStatement(true, null);
@@ -1035,6 +1035,9 @@ Blockly.Blocks['conver_bool'] = {
 // for range(범위)
 Blockly.Blocks['range1'] = {
     init: function() {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R4-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
       this.appendDummyInput()
           .appendField("범위(");
       this.appendValueInput("VALUE1")
@@ -1055,6 +1058,9 @@ Blockly.Blocks['range1'] = {
 
   Blockly.Blocks['range2'] = {
     init: function() {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R5-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
       this.appendDummyInput()
           .appendField("범위(길이(");
       this.appendValueInput("VALUE1")
