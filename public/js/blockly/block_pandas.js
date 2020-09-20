@@ -1017,6 +1017,9 @@ Blockly.Blocks['array_select'] = {
    * @this {Blockly.Block}
    */
   init: function () {
+    this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C18-logo.png", 25, 23, {
+      alt: "*",
+      flipRtl: "FALSE"}));
     this.appendDummyInput().appendField("[인덱스 가져오기]")
     this.appendValueInput("array_var").setCheck(null).appendField("배열");
     this.setHelpUrl(Blockly.Msg['LISTS_CREATE_WITH_HELPURL']);

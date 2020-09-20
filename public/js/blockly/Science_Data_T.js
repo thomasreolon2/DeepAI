@@ -897,6 +897,7 @@ Blockly.defineBlocksWithJsonArray(
     "message0": "[  결과 출력 ]  %1 %2",
     "args0": [
       { 
+        
         "type": "input_value",
         "name": "print_output_var1"
       },
