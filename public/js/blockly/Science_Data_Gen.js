@@ -17,6 +17,34 @@ ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}'
   return code;  
 };
 
+  //.list 데이터 리스트 변환 
+  Blockly.Python['data_conversion'] = function(block) {
+    var value_data_conversion_var = Blockly.Python.valueToCode(block, 'Data_Conversion_var', Blockly.Python.ORDER_ATOMIC);
+    var dropdown_data_conversion_option = block.getFieldValue('Data_Conversion_Option');
+    // TODO: Assemble Python into code variable.
+    var code ;
+    switch (dropdown_data_conversion_option){
+      case "Data_Conversion_Option_Pandas" :
+      code = `${value_data_conversion_var}.values.tolist()\n`;
+      break;    
+
+      case "Data_Conversion_Option_Numpy" : 
+      code = `${value_data_conversion_var}.tolist()\n`;
+      break;   
+
+      case "Data_Conversion_Option_Tuple" : 
+      code = `list(${value_data_conversion_var}=)\n`;
+      break;   
+ 
+      case "Data_Conversion_Option_Dictionary" :
+      code = `${value_data_conversion_var}.values()\n`;
+      break;   
+
+    } 
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+  
+
 // 배열 생성 
 Blockly.Python['create_arry'] = function(block) { 
   var text_create_arry_val = block.getFieldValue('Create_arry_val'); 
@@ -204,34 +232,6 @@ Blockly.Python['create_arry'] = function(block) {
       return [code, Blockly.Python.ORDER_NONE];
     };
     
-// pandas, numpy, tuple 시각화
-Blockly.Python['val_vi'] = function(block) {
-    var dropdown_val_vi_option = block.getFieldValue('Val_VI_Option');
-    var value_val_vi_val = Blockly.Python.valueToCode(block, 'Val_VI_Val', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code;
-    switch(dropdown_val_vi_option){ 
-      case "Val_VI_Pandas" :  
-      code = `PN_Visualization = ${value_val_vi_val}.values.tolist()\n`;        
-      break;
-    
-      case "Val_VI_Numpy" :  
-      code = `PN_Visualization = ${value_val_vi_val}.tolist()\n`;          
-      break; 
-  
-      case "Val_VI_Tuple" :   
-      code = `PN_Visualization = list(${value_val_vi_val})\n`;          
-      break;
-   
-      default: 
-      break; 
-    }    
-   
-    return code;      
-  }; 
-  
-
-
   
   
   //라이브러리 전체 새로운 것   
@@ -271,7 +271,7 @@ Blockly.Python['val_vi'] = function(block) {
    
     
     
-    //라이브러리 임포트 사이킷런 
+    //라이브러리 임포트 사이킷런  
     Blockly.Python['lib_import_sklearn'] = function(block) {
       var dropdown_lib_from_a_option = block.getFieldValue('lib_from_a_option');
       var dropdown_lib_import_a_option = block.getFieldValue('lib_import_a_option');
@@ -384,41 +384,39 @@ Blockly.Python['val_vi'] = function(block) {
   };  
 
   
-  //.list 데이터 리스트 변환 
-  Blockly.Python['data_conversion'] = function(block) {
-    var value_data_conversion_var = Blockly.Python.valueToCode(block, 'Data_Conversion_var', Blockly.Python.ORDER_ATOMIC);
-    var dropdown_data_conversion_option = block.getFieldValue('Data_Conversion_Option');
-    // TODO: Assemble Python into code variable.
-    var code ;
-    switch (dropdown_data_conversion_option){
-      case "Data_Conversion_Option_Pandas" :
-      code = `${value_data_conversion_var}.values.tolist()\n`;
-      break;    
-
-      case "Data_Conversion_Option_Numpy" : 
-      code = `${value_data_conversion_var}.tolist()\n`;
-      break;   
-
-      case "Data_Conversion_Option_Tuple" : 
-      code = `list(${value_data_conversion_var}=)\n`;
-      break;   
- 
-      case "Data_Conversion_Option_Dictionary" :
-      code = `${value_data_conversion_var}.values()\n`;
-      break;   
-
-    } 
-    return [code, Blockly.Python.ORDER_NONE];
-  };
-  
   //print 하기
     Blockly.Python['print'] =
   
     
+// pandas, numpy, tuple 시각화
+Blockly.Python['val_vi'] = function(block) {
+  var dropdown_val_vi_option = block.getFieldValue('Val_VI_Option');
+  var value_val_vi_val = Blockly.Python.valueToCode(block, 'Val_VI_Val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code;
+  switch(dropdown_val_vi_option){ 
+    case "Val_VI_Pandas" :  
+    code = `PN_Visualization = ${value_val_vi_val}.values.tolist()\n`;        
+    break;
+  
+    case "Val_VI_Numpy" :  
+    code = `PN_Visualization = ${value_val_vi_val}.tolist()\n`;          
+    break; 
+
+    case "Val_VI_Tuple" :   
+    code = `PN_Visualization = list(${value_val_vi_val})\n`;          
+    break;
+ 
+    default: 
+    break; 
+  }    
+ 
+  return code;      
+}; 
+    
    
     //matplot1 
     Blockly.Python['matplotlib_main'] = function(block) {
-      var value_matplotlib_main_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_main_lib_val', Blockly.Python.ORDER_ATOMIC);
       var value_matplotlib_main_cols = Blockly.Python.valueToCode(block, 'matplotlib_main_cols', Blockly.Python.ORDER_ATOMIC);
       var value_matplotlib_main_rows = Blockly.Python.valueToCode(block, 'matplotlib_main_rows', Blockly.Python.ORDER_ATOMIC);
       var value_matplotlib_main_screen_size_width = Blockly.Python.valueToCode(block, 'matplotlib_main_screen_size_width', Blockly.Python.ORDER_ATOMIC);
@@ -428,14 +426,13 @@ Blockly.Python['val_vi'] = function(block) {
     //  var test2 =  Blockly.getMainWorkspace().getDisplayText_(value_matplotlib_main_rows);
     
       if(value_matplotlib_main_cols == 1 && value_matplotlib_main_rows == 1){   DL_Gra = "graph_1_1";  } else{DL_Gra = 0;}  
-      var code =`fig = ${value_matplotlib_main_lib_val}.figure()   
-fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_rows}, figsize=(${value_matplotlib_main_screen_size_width},${value_matplotlib_main_screen_size_height}) , constrained_layout=True)\n`; 
+      var code =`fig = plt.figure()   
+fig, ax_lst = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_rows}, figsize=(8,6) , constrained_layout=True)\n`; 
        return code;   
     };   
     
   //matplot2 _updated_final 
   Blockly.Python['matplotlib_pre_graph'] = function(block) {
-    var value_matplotlib_pre_graph_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_lib_val', Blockly.Python.ORDER_ATOMIC);
     var value_matplotlib_pre_graph_location1 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location1', Blockly.Python.ORDER_ATOMIC);
     var value_matplotlib_pre_graph_location2 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location2', Blockly.Python.ORDER_ATOMIC);
     var text_matplotlib_user_xy = block.getFieldValue('matplotlib_user_xy');
@@ -476,13 +473,17 @@ fig, ax_lst = ${value_matplotlib_main_lib_val}.subplots(${value_matplotlib_main_
   
       default:  
       break;
-    } 
+    }  
   
   var code ;   
   if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){ 
     code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}( ${text_matplotlib_user_xy },fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`;  
-  }else if(DL_Gra == "graph_1_1" ){
+  }else if(DL_Gra == "graph_1_1" ){ 
+    if(dropdown_matplotlib_graph_select == "matplotlib_scatter"){
+      code =`ax_lst.${matplot_graph}( ${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}",c = )`;  
+    }else{
      code =`ax_lst.${matplot_graph}( ${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )`;       
+    }
   }else{
     if(dropdown_matplotlib_graph_select == "matplotlib_box" ){
       code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}( ${text_matplotlib_user_xy } )`;   
@@ -508,9 +509,8 @@ ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_loc
   
   //matplot3 
   Blockly.Python['matplotlib_graph_end'] = function(block) {
-    var value_matplotlib_graph_end_lib_val = Blockly.Python.valueToCode(block, 'matplotlib_graph_end_lib_val', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code =`${value_matplotlib_graph_end_lib_val}.show() 
+    var code =`plt.show() 
 buf = io.BytesIO()      
 fig.savefig(buf, format='png')   
 buf.seek(0)

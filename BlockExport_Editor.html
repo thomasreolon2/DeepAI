@@ -758,13 +758,10 @@
       <!-- ************************************************** ************************* *************************  -->
       <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
       <!-- ************************************************** ************************* *************************  -->
-<<<<<<< Updated upstream
       <!-- 2020-09-20 양승국 수정-->
       <category name="판다스 (Pandas)" colour="%{BKY_PANDAS_HUE}">
-=======
       <!-- 2020-09-20 양승국 판다스 전체수정-->
       <category name="판다스 " colour="%{BKY_PANDAS_HUE}">
->>>>>>> Stashed changes
         <!-- <block type="import_lib">
           <value name="var">
             <block type="variables_get">
@@ -776,7 +773,7 @@
         <!-- <block type="pyo_lib"></block> -->
         <block type="csvdataframe_J">
           <value name="input_var">
-            <block type="variables_get">
+            <block type="variables_get"> 
               <field name="VAR">df</field>
             </block>
           </value>
@@ -964,30 +961,16 @@
         <block type="val_vi"></block>   
         <!--  matplot1 시각화 틀    -->
           <block type="matplotlib_main">
-            <value name="matplotlib_main_lib_val">
-              <block type="variables_get">
-                <field name="VAR">plt</field>   
-              </block>    
-            </value>  
             <value name="matplotlib_main_cols">
               <shadow type="math_number">
                 <field name="NUM">2</field>
-              </shadow>
+              </shadow> 
             </value>
+
             <value name="matplotlib_main_rows">
               <shadow type="math_number">
                 <field name="NUM">2</field>
               </shadow>
-            </value>
-            <value name="matplotlib_main_screen_size_width">
-              <shadow type="math_number">
-                <field name="NUM">8</field>
-              </shadow>
-            </value>
-            <value name="matplotlib_main_screen_size_height">
-              <shadow type="math_number">
-                <field name="NUM">6</field>
-              </shadow> 
             </value>
           </block>   
         <!--  matplot1 시각화 틀    -->
@@ -1014,18 +997,15 @@
         <!--  matplot2 시각화 준비      -->
 
         <!--  matplot3 시각화 하기      -->
-        <block type="matplotlib_graph_end">
-          <value name="matplotlib_graph_end_lib_val"> 
-            <block type="variables_get">
-              <field name="VAR">plt</field>   
-            </block>    
-          </value> 
-        </block> 
+        <block type="matplotlib_graph_end"></block> 
+        <!--  matplot3 시각화 하기      -->
+
+        <!--  사이킷런 시각화 하기      -->
         <block type="lrgraph"></block>
         <block type="logicgraph"></block>
         <block type="vis_tree"></block>
-        <!--  matplot3 시각화 하기      -->
-        <!-- 아래는 준비중  -->
+        <!--  사이킷런 시각화 하기      -->
+       
         
       </category>
       <category name="과학파이 (Scipy)" colour="%{BKY_DL_HUE}">

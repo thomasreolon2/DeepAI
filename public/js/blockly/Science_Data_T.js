@@ -594,7 +594,7 @@ Blockly.defineBlocksWithJsonArray(
     // pandas, numpy, tuple  시각화   
    {
     "type": "val_vi",
-    "message0": "[ 형변환 테이블 출력 ]   %1 변수  %2 ",
+    "message0": "[ 테이블 형식 출력 ]   %1 변수  %2 ",
     "args0": [ 
       {
         "type": "field_dropdown",
@@ -629,14 +629,10 @@ Blockly.defineBlocksWithJsonArray(
   //matplot1 
   {
     "type": "matplotlib_main",
-    "message0": "[ 그래프 크기 설정 ] %1 %2 ( 분할  %3 , %4 크기  %5 , %6 )",
+    "message0": "[ 그래프 갯수 설정 ]  %1 ( 분할  %2 , %3  )",
     "args0": [
       {
         "type": "input_dummy"
-      },
-      {
-        "type": "input_value",
-        "name": "matplotlib_main_lib_val"
       }, 
       {
         "type": "input_value",
@@ -646,14 +642,6 @@ Blockly.defineBlocksWithJsonArray(
         "type": "input_value",
         "name": "matplotlib_main_rows"
       },
-      {
-        "type": "input_value",
-        "name": "matplotlib_main_screen_size_width"
-      },
-      {
-        "type": "input_value",
-        "name": "matplotlib_main_screen_size_height"
-      }
     ],
     "inputsInline": true,
     "previousStatement": null,
@@ -665,12 +653,8 @@ Blockly.defineBlocksWithJsonArray(
   //matplot2 수정
   {
     "type": "matplotlib_pre_graph",
-    "message0": "[ 그래프 설정 ]   %1 좌표  [ %2 ][ %3 %4 ] ( X , Y ) 값  %5 그래프 종류  %6 제목  %7 X축  %8 Y축  %9 범례  %10",
+    "message0": "[ 그래프 출력 설정 ]    좌표  [ %1 ][ %2 %3 ] ( X , Y ) 값  %4 그래프 종류  %5 제목  %6 X축  %7 Y축  %8 범례  %9",
     "args0": [
-      {
-        "type": "input_value",
-        "name": "matplotlib_pre_graph_lib_val"
-      },
       {
         "type": "input_value",
         "name": "matplotlib_pre_graph_location1"
@@ -748,12 +732,9 @@ Blockly.defineBlocksWithJsonArray(
   //matplot3 
   {
     "type": "matplotlib_graph_end",
-    "message0": " [ 그래프 출력 ] %1",
+    "message0": " [ 그래프 출력 ] ",
     "args0": [
-      {
-        "type": "input_value",
-        "name": "matplotlib_graph_end_lib_val"
-      }
+      
     ],
     "inputsInline": true,
     "previousStatement": null,

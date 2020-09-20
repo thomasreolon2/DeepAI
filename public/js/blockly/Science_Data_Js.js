@@ -140,17 +140,7 @@ Blockly.JavaScript['np_array'] = function(block) {
   };
 
 
-// pandas, numpy 시각화 
-Blockly.JavaScript['val_vi'] = function(block) {
-    var dropdown_val_vi_option = block.getFieldValue('Val_VI_Option');
-    var value_val_vi_val = Blockly.Python.valueToCode(block, 'Val_VI_Val', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = "PN_Visualization = pyodide.pyimport('PN_Visualization');\ndraw_table(PN_Visualization)\n"; 
-    return code;       
-  };   
 
-
-  
     
     //라이브러리 임포트 사이킷런 
     Blockly.JavaScript['lib_import_sklearn'] = function(block) {
@@ -190,26 +180,18 @@ Blockly.JavaScript['val_vi'] = function(block) {
   };  
 
   
-
-   
-
-
-
- 
   
- 
-
+// pandas, numpy 시각화 
+Blockly.JavaScript['val_vi'] = function(block) {
+  var dropdown_val_vi_option = block.getFieldValue('Val_VI_Option');
+  var value_val_vi_val = Blockly.Python.valueToCode(block, 'Val_VI_Val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = "PN_Visualization = pyodide.pyimport('PN_Visualization');\ndraw_table(PN_Visualization)\n"; 
+  return code;       
+};    
  
   //matplotlib 1
-  // Blockly.JavaScript['matplotlib_main'] = function(block) {
-  //   var value_matplotlib_main_lib_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
-  //   // TODO: Assemble JavaScript into code variable.
-  //   var code = "\n";
-  //   return code;   
-  // }; 
-
   Blockly.JavaScript['matplotlib_main'] = function(block) {
-    var value_matplotlib_main_lib_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
     var value_matplotlib_main_cols = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_cols', Blockly.JavaScript.ORDER_ATOMIC);
     var value_matplotlib_main_rows = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_rows', Blockly.JavaScript.ORDER_ATOMIC);
     var value_matplotlib_main_screen_size_width = Blockly.JavaScript.valueToCode(block, 'matplotlib_main_screen_size_width', Blockly.JavaScript.ORDER_ATOMIC);
@@ -218,10 +200,9 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var code = "\n";
     return code;
   };
-
+ 
   //matplot2 수정
   Blockly.JavaScript['matplotlib_pre_graph'] = function(block) {
-    var value_matplotlib_pre_graph_lib_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_pre_graph_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
     var value_matplotlib_pre_graph_location1 = Blockly.JavaScript.valueToCode(block, 'matplotlib_pre_graph_location1', Blockly.JavaScript.ORDER_ATOMIC);
     var value_matplotlib_pre_graph_location2 = Blockly.JavaScript.valueToCode(block, 'matplotlib_pre_graph_location2', Blockly.JavaScript.ORDER_ATOMIC);
     var text_matplotlib_user_xy = block.getFieldValue('matplotlib_user_xy');
@@ -236,8 +217,7 @@ Blockly.JavaScript['val_vi'] = function(block) {
   };
 
  //matplot3
-  Blockly.JavaScript['matplotlib_graph_end'] = function(block) {
-    var value_matplotlib_graph_end_lib_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_graph_end_lib_val', Blockly.JavaScript.ORDER_ATOMIC);
+  Blockly.JavaScript['matplotlib_graph_end'] = function(block) { 
     // TODO: Assemble JavaScript into code variable.
     var code ='document.getElementById("pyplotfigure").src = pyodide.globals.img_str;';
     return code;
