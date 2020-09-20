@@ -18,7 +18,7 @@ Blockly.JavaScript['pandas_datalist'] = function(block) {
   var value_frm_var = Blockly.JavaScript.valueToCode(block, 'frm_var', Blockly.JavaScript.ORDER_ATOMIC);
   var value_data_lst = Blockly.JavaScript.valueToCode(block, 'data_lst', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -27,7 +27,7 @@ Blockly.JavaScript['csvdataframe_J'] = function (block) {
   var value_input_var = Blockly.JavaScript.valueToCode(block, 'input_var', Blockly.JavaScript.ORDER_ATOMIC);
   var value_csv = Blockly.JavaScript.valueToCode(block, 'csv', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '\asdasdsdsa';
+  var code = '\n';
   return code; 
 };
 
@@ -68,8 +68,8 @@ Blockly.JavaScript['pandas_mis_del'] = function (block) {
 
 Blockly.JavaScript['selec_value_all'] = function (block) {
   // TODO: Assemble Python into code variable.
-  var code = '\n';
-  return code;
+  var code = ':';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['iloc_range'] = function (block) {
@@ -155,6 +155,14 @@ Blockly.JavaScript['pandas_series'] = function (block) {
   return code;
 };
 
+Blockly.JavaScript['pandas_series_data'] = function (block) {
+  var value_ser_var = Blockly.JavaScript.valueToCode(block, 'ser_var', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_ser_data = Blockly.JavaScript.valueToCode(block, 'ser_data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
 Blockly.JavaScript['pandas_concat'] = function (block) {
   var value_cat_vl = Blockly.JavaScript.valueToCode(block, 'cat_vl', Blockly.JavaScript.ORDER_ATOMIC);
   var value_data1 = Blockly.JavaScript.valueToCode(block, 'data1', Blockly.JavaScript.ORDER_ATOMIC);
@@ -178,8 +186,8 @@ Blockly.JavaScript['pandas_merge'] = function (block) {
 Blockly.JavaScript['pandas_merge_oncol'] = function (block) {
   var text_name = block.getFieldValue('mer_NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
+  var code = '...\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['pandas_merge_lron'] = function (block) {
@@ -187,7 +195,7 @@ Blockly.JavaScript['pandas_merge_lron'] = function (block) {
   var text_mer_RNAME = block.getFieldValue('mer_RNAME');
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
-  return code;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['missing_value_inquiry'] = function (block) {
@@ -221,7 +229,7 @@ Blockly.JavaScript['groupby_dataFrame'] = function (block) {
   var dropdown_function = block.getFieldValue('function');
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
-  return code;
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
@@ -229,14 +237,13 @@ Blockly.JavaScript['groupby_series_'] = function (block) {
   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
-  return code;
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['createColumn'] = function (block) {
   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
+    return [b.join(", "), Blockly.JavaScript.ORDER_ATOMIC]
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
 };
 
 // ////////////////////////////////////////////////////////////////////

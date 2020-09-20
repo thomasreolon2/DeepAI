@@ -348,9 +348,14 @@ Blockly.Blocks['pandas_dataframe'] = {
 //2020-09-19 양승국 수정
 Blockly.Blocks['csvdataframe_J'] = {
   init: function () {
-      this.appendValueInput("input_var").setCheck(null).appendField("[CSV프레임] 변수");
-      this.appendValueInput("csv").setCheck(null).appendField("(");
-      this.appendDummyInput().appendField(")");
+      this.appendValueInput("input_var")
+          .setCheck(null)
+          .appendField("[CSV프레임] 변수");
+      this.appendValueInput("csv")
+          .setCheck(null)
+          .appendField("(");
+      this.appendDummyInput()
+          .appendField(")");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
