@@ -857,7 +857,6 @@ Blockly.Blocks['k_means'] = {
     init: function () {
         this.appendDummyInput().appendField("[KMeans 모델 생성] ");
         this.appendValueInput("model").setCheck(null).appendField("모델");
-        this.appendValueInput("data").setCheck(null).appendField("데이터");
         this.appendDummyInput().appendField("그룹 개수 ").appendField(new Blockly.FieldTextInput(""), "cnt");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -875,7 +874,7 @@ Blockly.Blocks['py_for'] = {
         this.appendValueInput("item")
             .setCheck(null)
             .appendField("변수");
-        this.appendValueInput("NAME")
+        this.appendValueInput("list")
             .setCheck(null)
             .appendField("리스트");
         this.appendDummyInput()
@@ -1362,7 +1361,6 @@ Blockly.Blocks['mlp_classifier'] = {
             .appendField(new Blockly.FieldTextInput("1"), "numSeed")
             .appendField("epochs")
             .appendField(new Blockly.FieldTextInput("300"), "numEpochs");
-
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1382,7 +1380,6 @@ Blockly.Blocks['mlp_regressor'] = {
             .appendField(new Blockly.FieldTextInput("1"), "numSeed")
             .appendField("epochs")
             .appendField(new Blockly.FieldTextInput("500"), "numEpochs");
-
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1399,8 +1396,7 @@ Blockly.Blocks['logistic_regression'] = {
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
             .appendField("seed")
-            .appendField(new Blockly.FieldTextInput("0"), "numSeed")
-
+            .appendField(new Blockly.FieldTextInput("0"), "numSeed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1418,8 +1414,7 @@ Blockly.Blocks['logistic_regression_cv'] = {
             .appendField("교차검증 횟수")
             .appendField(new Blockly.FieldTextInput("5"), "numCv")
             .appendField("seed")
-            .appendField(new Blockly.FieldTextInput("0"), "numSeed")
-
+            .appendField(new Blockly.FieldTextInput("0"), "numSeed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1435,8 +1430,7 @@ Blockly.Blocks['perceptron'] = {
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
             .appendField("seed")
-            .appendField(new Blockly.FieldTextInput("0"), "numSeed")
-
+            .appendField(new Blockly.FieldTextInput("0"), "numSeed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1450,7 +1444,6 @@ Blockly.Blocks['ridge_classifier'] = {
         this.appendDummyInput()
             .appendField("[Ridge 분류기]");
         this.appendValueInput("model").setCheck(null).appendField("모델");
-
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1466,8 +1459,7 @@ Blockly.Blocks['sgd_classifier'] = {
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
             .appendField("epochs")
-            .appendField(new Blockly.FieldTextInput("1000"), "numEpochs")
-
+            .appendField(new Blockly.FieldTextInput("1000"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1481,7 +1473,6 @@ Blockly.Blocks['linear_regression'] = {
         this.appendDummyInput()
             .appendField("[선형회귀 모델]");
         this.appendValueInput("model").setCheck(null).appendField("모델");
-
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1497,8 +1488,20 @@ Blockly.Blocks['ridge'] = {
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
             .appendField("alpha")
-            .appendField(new Blockly.FieldTextInput("1.0"), "numAlpha")
-
+            .appendField(new Blockly.FieldTextInput("1.0"), "numAlpha");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['bayesian_ridge'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[베이지안 모델]");
+        this.appendValueInput("model").setCheck(null).appendField("모델");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1514,8 +1517,7 @@ Blockly.Blocks['sgd_regressor'] = {
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
             .appendField("epochs")
-            .appendField(new Blockly.FieldTextInput("1000"), "numEpochs")
-
+            .appendField(new Blockly.FieldTextInput("1000"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1543,7 +1545,7 @@ Blockly.Blocks['import_linear'] = {
     init: function () {
         this.appendDummyInput()
             .appendField("[선형모델 라이브러리 임포트] ")
-            .appendField(new Blockly.FieldDropdown([["로지스틱 회귀 모델", "LogisticRegression"], ["로지스틱 회귀 CV모델", "LogisticRegressionCV"], ["퍼셉트론 모델", "Perceptron"], ["Ridge 분류기", "RidgeClassifier"], ["SGD 분류기", "SGDClassifier"], ["선형회귀 모델", "LinearRegression"], ["Ridge 예측기", "Ridge"], ["SGD 예측기", "SGDRegressor"]]), "lib");
+            .appendField(new Blockly.FieldDropdown([["선형회귀 모델", "LinearRegression"], ["SGD 예측기", "SGDRegressor"], ["Ridge 예측기", "Ridge"], ["로지스틱 회귀 모델", "LogisticRegression"], ["로지스틱 회귀 CV모델", "LogisticRegressionCV"], ["Ridge 분류기", "RidgeClassifier"], ["베이지안 모델","linear_model"], ["SGD 분류기", "SGDClassifier"],["퍼셉트론 모델", "Perceptron"]]), "lib");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1556,7 +1558,7 @@ Blockly.Blocks['import_linear'] = {
 Blockly.Blocks['import_kmeans'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[Kmeans 라이브러리 임포트] ")
+            .appendField("[Kmeans 라이브러리 임포트] ");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1569,7 +1571,7 @@ Blockly.Blocks['import_kmeans'] = {
 Blockly.Blocks['model_fit'] = {
     init: function () {
         this.appendValueInput("model")
-            .appendField("[모델 학습] 모델")
+            .appendField("[모델 학습] 모델");
         this.appendValueInput("X_train")
             .appendField(" X_train");
         this.appendValueInput("Y_train")
@@ -1585,7 +1587,7 @@ Blockly.Blocks['model_fit'] = {
 Blockly.Blocks['kmeans_fit'] = {
     init: function () {
         this.appendValueInput("model")
-            .appendField("[KMeans 모델 학습] 모델")
+            .appendField("[KMeans 모델 학습] 모델");
         this.appendValueInput("X_train")
             .appendField(" X_train");
         this.setInputsInline(true);

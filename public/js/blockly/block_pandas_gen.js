@@ -52,13 +52,14 @@ Blockly.Python['deletehead'] = function (block) {
   return code;
 };
 
-//2020-09-19 양승국 수정
+//2020-09-20 양승국 수정 columns = df_covid.colums[[1,2,3,4]]
 Blockly.Python['select_row_delete'] = function (block) {
   var value_select_data = Blockly.Python.valueToCode(block, 'select_data', Blockly.Python.ORDER_ATOMIC);
-  var value_select_drop = Blockly.Python.valueToCode(block, 'select_drop', Blockly.Python.ORDER_ATOMIC);
+  var value_select_drop = block.getFieldValue('select_drop');
   var dropdown_name = block.getFieldValue('srd_NAME');
   // TODO: Assemble Python into code variable.
-  var code = value_select_data + '=' + value_select_data + '.drop(' + value_select_drop + dropdown_name + ')\n';
+  if(dropdown_name == 1) var code = value_select_data + '=' + value_select_data + '.drop([' + value_select_drop + '], axis = 0' + ')\n';
+  else if(dropdown_name == 2) var code = value_select_data + '=' + value_select_data + '.drop(' + 'columns = ' + value_select_data +'.columns[[' + value_select_drop + ']], axis = 1)\n';
   return code;
 };
 
@@ -117,8 +118,8 @@ Blockly.Python['select_row_list'] = function (block) {
   var text_name = block.getFieldValue('list_val');
   var dropdown_name = block.getFieldValue('srd_NAME');
   // TODO: Assemble Python into code variable.
-  if (dropdown_name == 1) var code =  value_list_data + '.loc[' + text_name + ']\n';
-  else if (dropdown_name == 2) var code =  value_list_data + '[' + text_name + ']\n';
+  if (dropdown_name == 1) var code =  value_list_data + '.loc[[' + text_name + ']]\n';
+  else if (dropdown_name == 2) var code =  value_list_data + '[' + value_list_data +'.columns[[' + text_name + ']]]';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
