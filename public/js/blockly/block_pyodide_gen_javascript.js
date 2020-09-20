@@ -399,3 +399,17 @@ Blockly.JavaScript['quad'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+Blockly.JavaScript['import_tree'] = function(block) {
+  var dropdown_tree = block.getFieldValue('tree');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+Blockly.JavaScript['decision'] = function(block) {
+  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_dept = block.getFieldValue('dept');
+  var text_seed = block.getFieldValue('seed');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};

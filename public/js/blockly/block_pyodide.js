@@ -1354,7 +1354,7 @@ Blockly.Blocks['mlp_classifier'] = {
             .appendField("[MLP 분류기]");
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
-            .appendField("seed")
+            .appendField("Seed")
             .appendField(new Blockly.FieldTextInput("1"), "numSeed")
             .appendField("epochs")
             .appendField(new Blockly.FieldTextInput("300"), "numEpochs");
@@ -1373,7 +1373,7 @@ Blockly.Blocks['mlp_regressor'] = {
             .appendField("[MLP 예측기]");
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
-            .appendField("seed")
+            .appendField("Seed")
             .appendField(new Blockly.FieldTextInput("1"), "numSeed")
             .appendField("epochs")
             .appendField(new Blockly.FieldTextInput("500"), "numEpochs");
@@ -1392,7 +1392,7 @@ Blockly.Blocks['logistic_regression'] = {
             .appendField("[로지스틱 회귀 모델]");
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
-            .appendField("seed")
+            .appendField("Seed")
             .appendField(new Blockly.FieldTextInput("0"), "numSeed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1410,7 +1410,7 @@ Blockly.Blocks['logistic_regression_cv'] = {
         this.appendDummyInput()
             .appendField("교차검증 횟수")
             .appendField(new Blockly.FieldTextInput("5"), "numCv")
-            .appendField("seed")
+            .appendField("Seed")
             .appendField(new Blockly.FieldTextInput("0"), "numSeed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1426,7 +1426,7 @@ Blockly.Blocks['perceptron'] = {
             .appendField("[퍼셉트론 모델]");
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
-            .appendField("seed")
+            .appendField("Seed")
             .appendField(new Blockly.FieldTextInput("0"), "numSeed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1455,7 +1455,7 @@ Blockly.Blocks['sgd_classifier'] = {
             .appendField("[SGD 분류기]");
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
-            .appendField("epochs")
+            .appendField("Epochs")
             .appendField(new Blockly.FieldTextInput("1000"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1484,7 +1484,7 @@ Blockly.Blocks['ridge'] = {
             .appendField("[Ridge 예측기]");
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
-            .appendField("alpha")
+            .appendField("Alpha")
             .appendField(new Blockly.FieldTextInput("1.0"), "numAlpha");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1513,7 +1513,7 @@ Blockly.Blocks['sgd_regressor'] = {
             .appendField("[SGD 예측기]");
         this.appendValueInput("model").setCheck(null).appendField("모델");
         this.appendDummyInput()
-            .appendField("epochs")
+            .appendField("Epochs")
             .appendField(new Blockly.FieldTextInput("1000"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1723,7 +1723,7 @@ Blockly.Blocks['sivalidation'] = {
     init: function() {
       this.appendValueInput("fun")
           .setCheck(null)
-          .appendField("[curve_fit] 함수");
+          .appendField("[Curve_Fit] 함수");
       this.appendValueInput("x")
           .setCheck(null)
           .appendField("X_data");
@@ -1758,7 +1758,7 @@ Blockly.Blocks['sivalidation'] = {
     init: function() {
       this.appendValueInput("x")
           .setCheck(null)
-          .appendField("[quad] 함수");
+          .appendField("[Quad] 함수");
       this.appendDummyInput()
           .appendField(new Blockly.FieldTextInput("0"), "s");
       this.appendDummyInput()
@@ -1770,3 +1770,37 @@ Blockly.Blocks['sivalidation'] = {
    this.setHelpUrl("");
     }
   };
+
+  Blockly.Blocks['import_tree'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[임포트] 결정트리")
+          .appendField(new Blockly.FieldDropdown([["Decisiontree","DecisionTreeClassifier"]]), "tree");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['decision'] = {
+    init: function() {
+      this.appendValueInput("model")
+          .setCheck(null)
+          .appendField("[결정트리 모델] 모델");
+      this.appendValueInput("depth")
+          .setCheck(null)
+          .appendField("깊이");
+      this.appendValueInput("seed")
+          .setCheck(null)
+          .appendField("Seed");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  
