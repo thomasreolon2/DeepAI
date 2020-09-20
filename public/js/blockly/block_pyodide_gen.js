@@ -719,42 +719,42 @@ Blockly.Python['kmeans_fit'] = function (block) {
     return code;
 };
 
-Blockly.Python['sivalidation'] = function(block) {
+Blockly.Python['sivalidation'] = function (block) {
     var dropdown_vali = block.getFieldValue('vali');
     var value_em = Blockly.Python.valueToCode(block, 'em', Blockly.Python.ORDER_ATOMIC);
     var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
     var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
     var text_cv = block.getFieldValue('cv');
     // TODO: Assemble Python into code variable.
-    var code = dropdown_vali+'('+value_em+', '+value_x+', '+value_y+', cv='+text_cv+')\n';
+    var code = dropdown_vali + '(' + value_em + ', ' + value_x + ', ' + value_y + ', cv=' + text_cv + ')\n';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
-  };
-  Blockly.Python['import_sivalidation'] = function(block) {
+};
+Blockly.Python['import_sivalidation'] = function (block) {
     var dropdown_vali = block.getFieldValue('vali');
     // TODO: Assemble Python into code variable.
-    var code = 'from sklearn.model_selection import '+dropdown_vali;
+    var code = 'from sklearn.model_selection import ' + dropdown_vali;
     return code;
-  };
-  Blockly.Python['kfold'] = function(block) {
+};
+Blockly.Python['kfold'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var text_name = block.getFieldValue('NAME');
     var dropdown_shuffle = block.getFieldValue('shuffle');
     var text_seed = block.getFieldValue('seed');
     // TODO: Assemble Python into code variable.
-    var code =value_model+'= KFold(n_splits='+text_name+',shuffle='+dropdown_shuffle+',random_state='+text_seed+')\n';
+    var code = value_model + '= KFold(n_splits=' + text_name + ',shuffle=' + dropdown_shuffle + ',random_state=' + text_seed + ')\n';
     return code;
-  };
-  Blockly.Python['stratifiedkfold'] = function(block) {
+};
+Blockly.Python['stratifiedkfold'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var text_name = block.getFieldValue('NAME');
     var dropdown_shuffle = block.getFieldValue('shuffle');
     var text_seed = block.getFieldValue('seed');
     // TODO: Assemble Python into code variable.
-    var code =value_model+'= KFold(n_splits='+text_name+',shuffle='+dropdown_shuffle+',random_state='+text_seed+')\n';
+    var code = value_model + '= KFold(n_splits=' + text_name + ',shuffle=' + dropdown_shuffle + ',random_state=' + text_seed + ')\n';
     return code;
-  };
-  Blockly.Python['bernoullirbm'] = function(block) {
+};
+Blockly.Python['bernoullirbm'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var text_hi = block.getFieldValue('hi');
     var text_lr = block.getFieldValue('lr');
@@ -762,6 +762,57 @@ Blockly.Python['sivalidation'] = function(block) {
     var text_epochs = block.getFieldValue('epochs');
     var text_seed = block.getFieldValue('seed');
     // TODO: Assemble Python into code variable.
-    var code =value_model+'= BernoulliRBM(n_components='+text_hi+',learning_rate='+text_lr+',batch_size='+text_batch+' ,n_iter = '+text_epochs+',random_state = '+text_seed+')\n';
+    var code = value_model + '= BernoulliRBM(n_components=' + text_hi + ',learning_rate=' + text_lr + ',batch_size=' + text_batch + ' ,n_iter = ' + text_epochs + ',random_state = ' + text_seed + ')\n';
     return code;
+};
+Blockly.Python['import_scipy'] = function (block) {
+    var dropdown_scipy = block.getFieldValue('scipy');
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    switch (dropdown_scipy) {
+        case "curve_fit":
+            code = "from scipy.optimize import curve_fit";
+            break;
+        case "interp1d":
+            code = "from scipy.interpolate import interp1d";
+            break;
+        case "UnivariateSpline":
+            code = "from scipy.interpolate import UnivariateSpline";
+            break;
+        case "quad":
+            code = "from scipy.integrate import quad";
+            break;
+        case "trapz":
+            code = "from scipy.integrate import trapz";
+            break;
+    }
+
+    return code;
+};
+Blockly.Python['curve_fit'] = function(block) {
+    var value_fun = Blockly.Python.valueToCode(block, 'fun', Blockly.Python.ORDER_ATOMIC);
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code ='curve_fit('+value_fun+', '+value_x+', '+value_y+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+  Blockly.Python['univariatespline'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    var text_s = block.getFieldValue('s');
+    // TODO: Assemble Python into code variable.
+    var code = 'UnivariateSpline('+value_x+', '+value_y+', s='+text_s+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+  Blockly.Python['quad'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var text_s = block.getFieldValue('s');
+    var text_e = block.getFieldValue('e');
+    // TODO: Assemble Python into code variable.
+    var code = 'quad('+value_x+', '+text_s+', '+text_e+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
   };

@@ -1706,3 +1706,67 @@ Blockly.Blocks['sivalidation'] = {
    this.setHelpUrl("");
     }
   };
+  Blockly.Blocks['import_scipy'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[임포트] 사이파이")
+          .appendField(new Blockly.FieldDropdown([["curve_fit","curve_fit"], ["interp1d","interp1d"], ["UnivariateSpline","UnivariateSpline"], ["quad","quad"], ["trapz","trapz"]]), "scipy");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['curve_fit'] = {
+    init: function() {
+      this.appendValueInput("fun")
+          .setCheck(null)
+          .appendField("[curve_fit] 함수");
+      this.appendValueInput("x")
+          .setCheck(null)
+          .appendField("X_data");
+      this.appendValueInput("y")
+          .setCheck(null)
+          .appendField("Y_data");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['univariatespline'] = {
+    init: function() {
+      this.appendValueInput("x")
+          .setCheck(null)
+          .appendField("[UnivariateSpline] X_data");
+      this.appendValueInput("y")
+          .setCheck(null)
+          .appendField("Y_data");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("1"), "s");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['quad'] = {
+    init: function() {
+      this.appendValueInput("x")
+          .setCheck(null)
+          .appendField("[quad] 함수");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("0"), "s");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("1000"), "e");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
