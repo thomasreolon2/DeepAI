@@ -1032,6 +1032,43 @@ Blockly.Blocks['conver_bool'] = {
     }
 };
 
+// for range(범위)
+Blockly.Blocks['range1'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("범위(");
+      this.appendValueInput("VALUE1")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(",");
+      this.appendValueInput("VALUE2")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_LOOPS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['range2'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("범위(길이(");
+      this.appendValueInput("VALUE1")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_LOOPS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
 // list_append
 Blockly.Blocks['list_append'] = {
     init: function () {

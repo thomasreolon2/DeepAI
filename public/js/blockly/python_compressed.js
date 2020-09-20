@@ -1566,7 +1566,7 @@ Blockly.Python['text_replace'] = function(block) {
   var value_b = Blockly.Python.valueToCode(block, 'B', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = value_text+'.replace('+value_a+','+value_b+')\n';
-  return [code,Blockly.Python.ORDER_NONE];;
+  return [code,Blockly.Python.ORDER_NONE];
 };
 
 // increase
@@ -1579,3 +1579,19 @@ Blockly.Python['increase'] = function(block) {
   return code;
 };
 
+Blockly.Python['range1'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'VALUE1', Blockly.Python.ORDER_ATOMIC);
+  var value_value2 = Blockly.Python.valueToCode(block, 'VALUE2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'range('+value_value1+','+value_value2+')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['range2'] = function(block) {
+  var value_value1 = Blockly.Python.valueToCode(block, 'VALUE1', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'range(len('+value_value1+'))';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
