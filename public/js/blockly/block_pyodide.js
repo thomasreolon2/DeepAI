@@ -1888,7 +1888,7 @@ Blockly.Blocks['sivalidation'] = {
     init: function () {
       this.appendValueInput("bar")
         .setCheck(null)
-        .appendField("[Fact]");
+        .appendField("[사실]");
       this.appendStatementInput("content")
         .setCheck(null);
       this.setInputsInline(true);
