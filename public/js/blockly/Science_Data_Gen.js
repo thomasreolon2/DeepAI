@@ -496,7 +496,7 @@ Blockly.Python['val_vi'] = function(block) {
       // if(value_matplotlib_main_cols == 1 || value_matplotlib_main_rows == 1){   DL_Gra = "graph_or_1";  } else{ DL_Gra = 0; } 
    //   if((DL_Gra !=  "graph_or_1") && (DL_Gra !=  "graph_both_1")){   DL_Gra = 0;  }  
 
-      testing(value_matplotlib_main_cols,value_matplotlib_main_rows);  
+      Check_matplotlib_user_input(value_matplotlib_main_cols,value_matplotlib_main_rows);  
 
 
       console.log("check_value_matplotlib_main_cols",DL_Gra); 
@@ -556,7 +556,7 @@ fig, ax_lst = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_mai
   }else if(DL_Gra == "graph_both_1"){
     code =`ax_lst.${matplot_graph}( `;  
   }else{
-    code =`ax_lst[${value_matplotlib_pre_graph_location1}].[${value_matplotlib_pre_graph_location2}]${matplot_graph}(` ;  
+    code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}(` ;  
   }
 
 
