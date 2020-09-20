@@ -69,7 +69,7 @@ Blockly.Python['create_arry'] = function(block) {
 Blockly.Python['np_array'] = function(block) {
   var value_np_array_val = Blockly.Python.valueToCode(block, 'np_array_val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `np.array${value_np_array_val}\n`;   
+  var code = `np.array(${value_np_array_val})\n`;   
   // TODO: Change ORDER_NONE to the correct strength. 
   return [code, Blockly.Python.ORDER_NONE];   
 };
