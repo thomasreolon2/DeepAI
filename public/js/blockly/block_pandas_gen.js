@@ -273,7 +273,7 @@ Blockly.Python['pandas_concat'] = function (block) {
   var value_data2 = Blockly.Python.valueToCode(block, 'data2', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('PLEUS_NAME');
   // TODO: Assemble Python into code variable.
-  var code = value_cat_vl + '=' + 'pd.concat([' + value_data1 + value_data2 + ']' + dropdown_name + ')\n';
+  var code = value_cat_vl + '=' + 'pd.concat([' + value_data1 + ',' + value_data2 + ']' + dropdown_name + ')\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -335,6 +335,19 @@ Blockly.Python['groupby_series_'] = function (a) {
   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
   return ['[' + b.join(", ") + ']', Blockly.Python.ORDER_ATOMIC]
 
+};
+
+//2020-09-20 양승국 추가
+Blockly.Python['pandas_plus'] = function (block) {
+  var value_pl_v = Blockly.Python.valueToCode(block, 'pl_v', Blockly.Python.ORDER_ATOMIC);
+  var text_crt_col = block.getFieldValue('crt_col');
+  var text_fr_col = block.getFieldValue('fr_col');
+  var dropdown_function = block.getFieldValue('dat_fu');
+  var text_se_col = block.getFieldValue('se_col');
+  // TODO: Assemble Python into code variable.
+  var code = value_pl_v + '["'+ text_crt_col +'"] = ' + value_pl_v + '["' + text_fr_col + '"]' + dropdown_function +  value_pl_v + '["' + text_se_col + '"]\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
 };
 
 ////////////////////////////////////////////////////////////////////
