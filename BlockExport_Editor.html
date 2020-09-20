@@ -375,7 +375,7 @@
             <h5 class="my-1 mx-1">콘솔</h5>
           </div>
           </textarea>
-          <textarea id="exeArea" class="form-control" readonly style="height: 10vh;"></textarea>
+          <textarea id="exeArea" class="form-control" readonly style="height: 20vh;"></textarea>
         </div>
       </div> <!-- 오른쪽 -->
     </div> <!-- 하단 -->
@@ -644,6 +644,7 @@
         <value name="set_menu">
         </value>
       </block>
+      <!-- 배열 합계 -->
       <block type="sump"></block>
       <!-- sort,reverse -->
       <block type="list_sort_reverse"></block>
@@ -894,6 +895,13 @@
       <block type="iloc_range"></block>
 
       <!-- <block type="pandas_print"></block> -->
+      <block type="normal">
+        <value name="Normalization_data">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+      </block>
       <block type="select_row_delete">
         <value name="select_data">
           <block type="variables_get">
@@ -1085,18 +1093,15 @@
       </category>
 
       <category name="전처리 (Preprocessing)" colour="%{BKY_SCIKITLEARN_HUE}">
-        <block type="sklearn.preprocessing"></block>
         <block type="labelencoder"></block>
         <block type="train_test_split"></block>
+
+        <block type="sklearn.preprocessing"></block>
         <block type="polynomialfeatures"></block>
-        <block type="normal">
-          <value name="Normalization_data">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-        </block>
         <block type="onehotencoder"></block>
+        <block type="standardscaler"></block>
+        <block type="labelencoder"></block>
+        
      </category>
 
       <category name="선형모델 (Linear_model)" colour="%{BKY_SCIKITLEARN_HUE}">
