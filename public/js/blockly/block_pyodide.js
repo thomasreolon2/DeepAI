@@ -946,7 +946,7 @@ Blockly.Blocks['conver_int'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour("%{BKY_CONVERSION_HUE}");
+        this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -962,7 +962,7 @@ Blockly.Blocks['conver_float'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour("%{BKY_CONVERSION_HUE}");
+        this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -978,7 +978,7 @@ Blockly.Blocks['conver_str'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour("%{BKY_CONVERSION_HUE}");
+        this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -994,7 +994,7 @@ Blockly.Blocks['conver_bool'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour("%{BKY_CONVERSION_HUE}");
+        this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");
     }
