@@ -70,7 +70,7 @@ Blockly.JavaScript['sklearn_ensemble'] = function(block) {
   Blockly.JavaScript['polynomialfeatures'] = function(block) {
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = '...';
+    var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
@@ -94,7 +94,7 @@ Blockly.JavaScript['sklearn_ensemble'] = function(block) {
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME2', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = '...';
+    var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
@@ -103,7 +103,7 @@ Blockly.JavaScript['sklearn_ensemble'] = function(block) {
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME2', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = '...';
+    var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
@@ -119,7 +119,7 @@ Blockly.JavaScript['sklearn_ensemble'] = function(block) {
     var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
     var interaction_only = block.getFieldValue('NAME');
     // TODO: Assemble JavaScript into code variable.
-    var code = '...';
+    var code = '\n';
     return code;
   };
 
@@ -131,9 +131,9 @@ Blockly.JavaScript['sklearn_ensemble'] = function(block) {
     return code;
   };
 
-  Blockly.JavaScript['standardscaler'] = function(block) {
-    var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
+  // Blockly.JavaScript['standardscaler'] = function(block) {
+  //   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  //   // TODO: Assemble JavaScript into code variable.
+  //   var code = '\n';
+  //   return code;
+  // };

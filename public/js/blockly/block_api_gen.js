@@ -111,12 +111,12 @@ Blockly.Python['sklearn_ensemble'] = function(block) {
     return code;
   };
 
-  Blockly.Python['standardscaler'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = value_name + ' = StandardScaler()\n';
-    return code;
-  };
+  // Blockly.Python['standardscaler'] = function(block) {
+  //   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  //   // TODO: Assemble Python into code variable.
+  //   var code = value_name + ' = StandardScaler()\n';
+  //   return code;
+  // };
 
   // Blockly.Python['labelencoder'] = function(block) {
   //   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);

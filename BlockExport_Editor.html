@@ -894,13 +894,6 @@
       <block type="iloc_range"></block>
 
       <!-- <block type="pandas_print"></block> -->
-      <block type="normal">
-        <value name="Normalization_data">
-          <block type="variables_get">
-            <field name="VAR">df</field>
-          </block>
-        </value>
-      </block>
       <block type="select_row_delete">
         <value name="select_data">
           <block type="variables_get">
@@ -1096,9 +1089,14 @@
         <block type="labelencoder"></block>
         <block type="train_test_split"></block>
         <block type="polynomialfeatures"></block>
+        <block type="normal">
+          <value name="Normalization_data">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
         <block type="onehotencoder"></block>
-        <block type="standardscaler"></block>
-        
      </category>
 
       <category name="선형모델 (Linear_model)" colour="%{BKY_SCIKITLEARN_HUE}">
