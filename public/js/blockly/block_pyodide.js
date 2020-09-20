@@ -1888,7 +1888,7 @@ Blockly.Blocks['sivalidation'] = {
     init: function () {
       this.appendValueInput("bar")
         .setCheck(null)
-        .appendField("Fact");
+        .appendField("[Fact]");
       this.appendStatementInput("content")
         .setCheck(null);
       this.setInputsInline(true);
@@ -1937,7 +1937,7 @@ Blockly.Blocks['sivalidation'] = {
   Blockly.Blocks['rumpf'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("Rumpf")
+        .appendField("[Rumpf]")
         .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "seperate");
       this.appendStatementInput("NAME")
         .setCheck(null);
