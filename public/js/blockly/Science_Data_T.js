@@ -131,23 +131,14 @@ Blockly.defineBlocksWithJsonArray(
 //np.arange 
 {
   "type": "np_arrange",
-  "message0": "[ 정렬 값 배열  ] %1 , %2 , %3",
+  "message0": "[ 정렬 값 배열  ] %1 ",
   "args0": [
     {
       "type": "field_input",
       "name": "np_arrange_value1",
       "text": "값"
     },
-    {
-      "type": "field_input",
-      "name": "np_arrange_value2",
-      "text": "값"
-    },
-    {
-      "type": "field_input",
-      "name": "np_arrange_value3",
-      "text": "값"
-    },
+   
   ],
   "inputsInline": true,
   "output": null,
@@ -694,7 +685,7 @@ Blockly.defineBlocksWithJsonArray(
       "inputsInline": true,
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 125,
+      "colour": "%{BKY_NUMPY_HUE}",
       "tooltip": "",
       "helpUrl": ""
     },
