@@ -288,16 +288,16 @@ Blockly.Blocks['sklearn.preprocessing'] = {
     }
   };
 
-  Blockly.Blocks['labelencoder'] = {
-    init: function() {
-      this.appendValueInput("NAME")
-          .setCheck(null)
-          .appendField("[수치화] 모델");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
+  // Blockly.Blocks['labelencoder'] = {
+  //   init: function() {
+  //     this.appendValueInput("NAME")
+  //         .setCheck(null)
+  //         .appendField("[수치화] 모델");
+  //     this.setInputsInline(true);
+  //     this.setPreviousStatement(true, null);
+  //     this.setNextStatement(true, null);
+  //     this.setColour("%{BKY_SCIKITLEARN_HUE}");
+  //  this.setTooltip("");
+  //  this.setHelpUrl("");
+  //   }
+  // };
