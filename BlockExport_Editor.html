@@ -123,7 +123,7 @@
 
   <script>
     languagePluginLoader.then(() => {
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn']).then(() => {     // , 'scikit-learn'
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib']).then(() => {     // , 'scikit-learn'
 
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image1").hide(); // 로딩 끝나면 로딩 창 없앰 
@@ -1092,10 +1092,9 @@
       </category>
 
       <category name="전처리 (Preprocessing)" colour="%{BKY_SCIKITLEARN_HUE}">
+        <block type="sklearn.preprocessing"></block>
         <block type="labelencoder"></block>
         <block type="train_test_split"></block>
-
-        <block type="sklearn.preprocessing"></block>
         <block type="polynomialfeatures"></block>
         <block type="onehotencoder"></block>
         <block type="standardscaler"></block>

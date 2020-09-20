@@ -174,7 +174,7 @@ Blockly.JavaScript['np_arrange'] = function(block) {
     var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
-  };
+  }; 
   //np.append etc
   Blockly.JavaScript['np_arry_change'] = function(block) {
     var dropdown_np_arry_change_option = block.getFieldValue('np_arry_change_Option');
@@ -182,8 +182,7 @@ Blockly.JavaScript['np_arrange'] = function(block) {
     var value_np_arry_change_value = Blockly.JavaScript.valueToCode(block, 'np_arry_change_value', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE];
+    return code;
   };
 
   //np.prod

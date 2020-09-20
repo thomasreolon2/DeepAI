@@ -356,7 +356,7 @@ Blockly.Python['pan_aray'] = function (block) {
   var variable_ary_a1 = Blockly.Python.valueToCode(block, 'ary_a1', Blockly.Python.ORDER_ATOMIC);
   var variable_ary_a2 = Blockly.Python.valueToCode(block, 'ary_a2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = variable_aray_array + '[' + variable_ary_a1 + ',' + variable_ary_a2 + ']\n';
+  var code = variable_aray_array + '[' + variable_ary_a1 + ',' + variable_ary_a2 + ']';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
