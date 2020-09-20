@@ -664,6 +664,13 @@
 
       <!-- 결과 출력 -->
       <block type="print_output_var"></block>
+      <block type="array_select">
+        <value name="array_var">
+          <block type="variables_get">
+            <field name="VAR">array</field>
+          </block>
+        </value>
+      </block>
     </category>
 
     <!-- 커스텀 블록 -->
@@ -993,13 +1000,7 @@
           </block>
         </value>
       </block>
-      <block type="array_select">
-        <value name="array_var">
-          <block type="variables_get">
-            <field name="VAR">array</field>
-          </block>
-        </value>
-      </block>
+      
       <!-- <block type="pan_aray">
         <value name="aray_array">
           <block type="variables_get">
