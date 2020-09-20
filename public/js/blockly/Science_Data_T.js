@@ -72,6 +72,28 @@ Blockly.defineBlocksWithJsonArray(
   "tooltip": "",
   "helpUrl": ""
 }, 
+//np.concatenate
+{
+  "type": "np_concatenate",
+  "message0": "[ 배열 연결 ] ((   %1 , %2 ))",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "np_concatenate_var1",
+      "text": "값"
+    },
+    {
+      "type": "field_input",
+      "name": "np_concatenate_var2",
+      "text": "값"
+    }
+  ],
+  "inputsInline": true,
+  "output": null,
+  "colour": 125,
+  "tooltip": "",
+  "helpUrl": ""
+},
 //배열 생성
 {
   "type": "create_arry",
@@ -105,6 +127,23 @@ Blockly.defineBlocksWithJsonArray(
   "tooltip": "",
   "helpUrl": ""
 }, 
+//np.arange 
+{
+  "type": "np_arrange",
+  "message0": "[ 규칙 배열  ] %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "np_arrange_value",
+      "text": "값"
+    }
+  ],
+  "inputsInline": true,
+  "output": null,
+  "colour": 125,
+  "tooltip": "",
+  "helpUrl": ""
+},
   // 라이브러리 임포트 전체 새로운 것
   // {
   //   "type": "import_libs",
@@ -478,6 +517,25 @@ Blockly.defineBlocksWithJsonArray(
     "colour": 125,
     "tooltip": "",
     "helpUrl": ""
+  }, 
+  //np.flatten
+  {
+    "type": "np_flatten",
+    "message0": "[ 행렬 1차원 변경 ] 변수 %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "np_flatten_var"
+      }
+    ],
+    "inputsInline": true,
+    "output": null,
+    "colour": 125,
+    "tooltip": "",
+    "helpUrl": ""
   },
   // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
   {
@@ -547,6 +605,42 @@ Blockly.defineBlocksWithJsonArray(
       "tooltip": "",
       "helpUrl": ""
     }, 
+    //np.mean
+    {
+      "type": "np_mean",
+      "message0": "[ 평균  ] 변수 %1 %2",
+      "args0": [
+        {
+          "type": "input_dummy"
+        },
+        {
+          "type": "input_value",
+          "name": "np_mean_var"
+        }
+      ],
+      "inputsInline": true,
+      "output": null,
+      "colour": 125,
+      "tooltip": "",
+      "helpUrl": ""
+    },
+    //np.diff
+    {
+      "type": "np_diff_",
+      "message0": "[ 차분 ]  %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "np_diff_var_value",
+          "text": "값"
+        }
+      ],
+      "inputsInline": true,
+      "output": null,
+      "colour": 125,
+      "tooltip": "",
+      "helpUrl": ""
+    },
     //np.append etc
     {
       "type": "np_arry_change",
@@ -591,6 +685,55 @@ Blockly.defineBlocksWithJsonArray(
       "tooltip": "",
       "helpUrl": ""
     },
+    //np.prod
+    {
+      "type": "np_prod",
+      "message0": "[ 요소의 곱 ]  %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "np_prod_var",
+          "text": "값"
+        }
+      ],
+      "inputsInline": true,
+      "output": null,
+      "colour": 125,
+      "tooltip": "",
+      "helpUrl": ""
+    },
+    //np.fft
+    {
+      "type": "np_fft_fft",
+      "message0": "[ 푸리에 변환 ] 값 %1 %2",
+      "args0": [
+        {
+          "type": "input_dummy"
+        },
+        {
+          "type": "input_value",
+          "name": "np_fft_fft_var"
+        }
+      ],
+      "inputsInline": true,
+      "output": null,
+      "colour": 125,
+      "tooltip": "",
+      "helpUrl": ""
+    },
+    
+  Blockly.Blocks['visualization_library'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[시각화 라이브러리 임포트]");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  },
     // pandas, numpy, tuple  시각화   
    {
     "type": "val_vi",
@@ -629,11 +772,11 @@ Blockly.defineBlocksWithJsonArray(
   //matplot1 
   {
     "type": "matplotlib_main",
-    "message0": "[ 그래프 갯수 설정 ]  %1 ( 분할  %2 , %3  )",
+    "message0": "[ 그래프 갯수 설정 ]  %1 ( %2 , %3  )",
     "args0": [
       {
         "type": "input_dummy"
-      }, 
+      },  
       {
         "type": "input_value",
         "name": "matplotlib_main_cols"
@@ -749,16 +892,3 @@ Blockly.defineBlocksWithJsonArray(
   ]
   ); 
   
-
-  Blockly.Blocks['visualization_library'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("[시각화 라이브러리 임포트]");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_VISUAL_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };

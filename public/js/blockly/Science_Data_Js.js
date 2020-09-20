@@ -27,6 +27,16 @@ Blockly.JavaScript['data_conversion'] = function(block) {
   return code;  
 };
 
+//np.concatenate
+Blockly.JavaScript['np_concatenate'] = function(block) {
+  var text_np_concatenate_var1 = block.getFieldValue('np_concatenate_var1');
+  var text_np_concatenate_var2 = block.getFieldValue('np_concatenate_var2');
+  // TODO: Assemble JavaScript into code variable.
+  var code = "\n";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 
 // 배열 생성 
 Blockly.JavaScript['create_arry'] = function(block) { 
@@ -45,6 +55,15 @@ Blockly.JavaScript['np_array'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength. 
   return [code, Blockly.Python.ORDER_NONE];   
 }; 
+
+//np.arange  
+Blockly.JavaScript['np_arrange'] = function(block) {
+  var text_np_arrange_value = block.getFieldValue('np_arrange_value');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
 
   //numpy 함수 zeros 배열생성,   
   Blockly.JavaScript['numpy_zeros'] = function(block) {
@@ -93,13 +112,22 @@ Blockly.JavaScript['np_array'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE]; 
+    return [code, Blockly.JavaScript.ORDER_NONE];  
   };
 
   // reshpae 행렬 차원 변경 
   Blockly.JavaScript['numpy_reshape'] = function(block) {
     var value_numpy_reshape_val = Blockly.JavaScript.valueToCode(block, 'numpy_reshape_val', Blockly.JavaScript.ORDER_ATOMIC);
     var text_numpy_reshape_struct = block.getFieldValue('numpy_reshape_struct');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };
+  
+  //np.flatten 
+  Blockly.JavaScript['np_flatten'] = function(block) {
+    var value_np_flatten_var = Blockly.JavaScript.valueToCode(block, 'np_flatten_var', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
@@ -128,6 +156,23 @@ Blockly.JavaScript['np_array'] = function(block) {
     return [code, Blockly.JavaScript.ORDER_NONE];
   }; 
 
+  //np.mean
+  Blockly.JavaScript['np_mean'] = function(block) {
+    var value_np_mean_var = Blockly.JavaScript.valueToCode(block, 'np_mean_var', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = "\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };
+
+  //np.diff
+  Blockly.JavaScript['np_diff_'] = function(block) {
+    var text_np_diff_var_value = block.getFieldValue('np_diff_var_value');
+    // TODO: Assemble JavaScript into code variable.
+    var code = "\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };
   //np.append etc
   Blockly.JavaScript['np_arry_change'] = function(block) {
     var dropdown_np_arry_change_option = block.getFieldValue('np_arry_change_Option');
@@ -139,6 +184,22 @@ Blockly.JavaScript['np_array'] = function(block) {
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
 
+  //np.prod
+  Blockly.JavaScript['np_prod'] = function(block) {
+    var text_np_prod_var = block.getFieldValue('np_prod_var');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };
+  //np.fft
+  Blockly.JavaScript['np_fft_fft'] = function(block) {
+    var value_np_fft_fft_var = Blockly.JavaScript.valueToCode(block, 'np_fft_fft_var', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };
 
 
     
