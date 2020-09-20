@@ -708,12 +708,12 @@ Blockly.Python['model_fit'] = function (block) {
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = value_model + ".fit(" + variable_x_train + ", " + variable_y_train + ")" + "\n";
-    return [code, Blockly.Python.ORDER_ATOMIC];
+    return code;
 };
 Blockly.Python['kmeans_fit'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = value_model + ".fit(" + variable_x_train + ")" + "\n";
-    return [code, Blockly.Python.ORDER_ATOMIC];
+    return code;
 };

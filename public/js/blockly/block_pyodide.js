@@ -1574,7 +1574,8 @@ Blockly.Blocks['model_fit'] = {
         this.appendValueInput("Y_train")
             .appendField("Y_train");
         this.setInputsInline(true);
-        this.setOutput(true, null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");
@@ -1588,7 +1589,8 @@ Blockly.Blocks['kmeans_fit'] = {
         this.appendValueInput("X_train")
             .appendField(" X_train");
         this.setInputsInline(true);
-        this.setOutput(true, null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");
