@@ -1170,3 +1170,40 @@ Blockly.Blocks['df_sort'] = {
     this.setHelpUrl("");
   }
 };
+
+// 컬럼명 조회
+Blockly.Blocks['df_columns'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[컬럼명 추출]");
+    this.appendValueInput("data").setCheck(null)
+    this.setColour(pandas_color);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+// 인덱스 조회
+Blockly.Blocks['df_index'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[인덱스 추출]");
+    this.appendValueInput("data").setCheck(null)
+    this.setColour(pandas_color);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+// 데이터 조회
+Blockly.Blocks['df_values'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[데이터 추출]");
+    this.appendValueInput("data").setCheck(null)
+    this.setColour(pandas_color);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};

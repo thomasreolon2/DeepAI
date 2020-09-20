@@ -410,3 +410,25 @@ Blockly.Python['df_sort'] = function (block) {
   var code = variable_data + ".sort_values(by=['" + text_columns + "']," + "ascending=" + dropdown_ascending + ")\n";
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+// 컬럼명 조회
+Blockly.Python['df_columns'] = function (block) {
+  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_data + ".columns" + "\n";
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+// 인덱스 조회
+Blockly.Python['df_index'] = function (block) {
+  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_data + ".index" + "\n";
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+// 데이터 조회
+Blockly.Python['df_values'] = function (block) {
+  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_data + ".values" + "\n";
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

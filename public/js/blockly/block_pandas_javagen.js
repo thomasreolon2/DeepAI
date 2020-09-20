@@ -295,3 +295,19 @@ Blockly.JavaScript['df_sort'] = function (block) {
   var code = '\n';
   return code;
 };
+
+// 컬럼명 조회
+Blockly.JavaScript['df_columns'] = function (block) {
+  var code = '\n';
+  return code;
+};
+// 인덱스 조회
+Blockly.JavaScript['df_index'] = function (block) {
+  var code = '\n';
+  return code;
+};
+// 데이터 조회
+Blockly.JavaScript['df_values'] = function (block) {
+  var code = '\n';
+  return code;
+};
