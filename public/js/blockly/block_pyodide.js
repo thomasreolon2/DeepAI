@@ -857,7 +857,6 @@ Blockly.Blocks['k_means'] = {
     init: function () {
         this.appendDummyInput().appendField("[KMeans 모델 생성] ");
         this.appendValueInput("model").setCheck(null).appendField("모델");
-        this.appendValueInput("data").setCheck(null).appendField("데이터");
         this.appendDummyInput().appendField("그룹 개수 ").appendField(new Blockly.FieldTextInput(""), "cnt");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
