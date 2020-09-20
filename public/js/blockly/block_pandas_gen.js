@@ -23,7 +23,11 @@ Blockly.Python['fill_null_data'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_name + '=' + value_name + '.fillna(' + value_name + dropdown_name + ')\n';
+  if (dropdown_name == 1) var code = value_name + '=' + value_name + '.fillna(' + value_name + '.max())\n';
+  else if (dropdown_name == 2) var code = value_name + '=' + value_name + '.fillna(' + value_name + '.min())\n';
+  else if (dropdown_name == 3) var code = value_name + '=' + value_name + '.fillna(' + value_name + '.median())\n';
+  else if (dropdown_name == 4) var code = value_name + '=' + value_name + '.fillna(' + value_name + '.mean())\n';
+  else if (dropdown_name == 5) var code = value_name + '=' + value_name + '.fillna(0)\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
