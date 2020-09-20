@@ -1514,7 +1514,7 @@ Blockly.Python['list_insert'] = function(block) {
   var code = value_list+'.insert('+value_index+', '+value_value+')\n';
   return code;
 };
-
+/*
 Blockly.Python['list_remove_pop_count_extend'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
@@ -1524,7 +1524,15 @@ Blockly.Python['list_remove_pop_count_extend'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
-
+*/
+Blockly.Python['list_remove_pop_count_extend'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list+'.'+dropdown_name+'('+value_value+')\n';
+  return code;
+};
 
 // text_replace
 Blockly.Python['text_replace'] = function(block) {
