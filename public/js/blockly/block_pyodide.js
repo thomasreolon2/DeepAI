@@ -1,9 +1,10 @@
 Blockly.Blocks['printc'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T13-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("결과 출력 ");
+        }))
+            .appendField("결과 출력 ");
         this.appendValueInput("content").setCheck(null);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1111,6 +1112,9 @@ Blockly.Blocks['list_remove_pop_count_extend'] = {
 // text_replace
 Blockly.Blocks['text_replace'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T13-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
         this.appendDummyInput()
             .appendField("문자열변경 -> 변수 ");
         this.appendValueInput("TEXT")
@@ -1185,6 +1189,10 @@ Blockly.Blocks['vis_tree'] = {
 };
 Blockly.Blocks['input'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T2-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        }));
         this.appendDummyInput()
             .appendField("데이터 입력");
         this.setInputsInline(true);
@@ -1361,7 +1369,7 @@ Blockly.Blocks['mlp_classifier'] = {
         this.appendDummyInput()
             .appendField("Seed")
             .appendField(new Blockly.FieldTextInput("1"), "numSeed")
-            .appendField("epochs")
+            .appendField("Epochs")
             .appendField(new Blockly.FieldTextInput("300"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1380,7 +1388,7 @@ Blockly.Blocks['mlp_regressor'] = {
         this.appendDummyInput()
             .appendField("Seed")
             .appendField(new Blockly.FieldTextInput("1"), "numSeed")
-            .appendField("epochs")
+            .appendField("Epochs")
             .appendField(new Blockly.FieldTextInput("500"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1698,7 +1706,7 @@ Blockly.Blocks['sivalidation'] = {
           .appendField(" 배치사이즈")
           .appendField(new Blockly.FieldTextInput("10"), "batch");
       this.appendDummyInput()
-          .appendField(" epochs")
+          .appendField(" Epochs")
           .appendField(new Blockly.FieldTextInput("10"), "epochs");
       this.appendDummyInput()
           .appendField(" Seed")
@@ -1830,5 +1838,168 @@ Blockly.Blocks['sivalidation'] = {
       this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
+    }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ////////////////////프롤로그 임시
+  Blockly.Blocks['prolog_list'] = {
+    init: function () {
+      this.appendValueInput("bar")
+        .setCheck(null)
+        .appendField("[사실]");
+      this.appendStatementInput("content")
+        .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      // this.setNextStatement(true, null);
+      this.setColour(230);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['prolog_list_rule'] = {
+    init: function () {
+      this.appendValueInput("bar")
+        .setCheck(null)
+        .appendField("[사실]");
+      this.appendStatementInput("content")
+        .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      // this.setNextStatement(true, null);
+      this.setColour(230);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['constant'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[상수]")
+        .appendField(new Blockly.FieldTextInput(""), "NAME");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(135);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['info_block_statement'] = {
+    init: function () {
+      this.setEnabled(true);
+      this.setColour('#8e904d');
+      this.setPreviousStatement(true);
+      this.setNextStatement(false);
+      this.appendDummyInput();
+    }
+  };
+  Blockly.Blocks['funktor'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[함수]")
+        .appendField(new Blockly.FieldTextInput(""), "NAME");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(135);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['rumpf'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[Rumpf]")
+        .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "seperate");
+      this.appendStatementInput("NAME")
+        .setCheck(null);
+      this.setInputsInline(false);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      this.setColour(190);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['Rule'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[규칙]");
+      this.appendStatementInput("Fact")
+        .setCheck(null);
+      this.appendStatementInput("Rumpf")
+        .setCheck(null);
+      this.setInputsInline(false);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      this.setColour(190);
+      this.setTooltip("Ein einfacher Fakt, welches aus einer Relation und einem oder mehreren Termen besteht.");
+      this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
+    }
+  };
+  Blockly.Blocks['abfrage'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[Abfrage] | 활성")
+        .appendField(new Blockly.FieldCheckbox("false"), "active");
+      this.appendStatementInput("NAME")
+        .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      this.setColour(100);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['separate'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("[AND | OR 설정]")
+        .appendField(new Blockly.FieldDropdown([["and", "and"], ["or", "or"]]), "separate");
+      this.appendStatementInput("NAME")
+        .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, "Array");
+      this.setColour(100);
+      this.setTooltip("");
+      this.setHelpUrl("");
     }
   };

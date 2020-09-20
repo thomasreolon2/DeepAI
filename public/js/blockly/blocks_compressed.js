@@ -2541,7 +2541,7 @@ Blockly.Blocks.text_prompt_ext = {
       b.updateType_(a);
     });
     this.appendValueInput("TEXT")
-        .appendField(new Blockly.FieldImage("/img/Text/T12-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage("/img/Text/T14-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
         .appendField(a, "TYPE");
         
     this.setOutput(!0, "String");

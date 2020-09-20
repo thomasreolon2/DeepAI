@@ -178,8 +178,8 @@ Blockly.JavaScript['np_arrange'] = function(block) {
   //np.append etc
   Blockly.JavaScript['np_arry_change'] = function(block) {
     var dropdown_np_arry_change_option = block.getFieldValue('np_arry_change_Option');
-    var text_np_arry_change_var = block.getFieldValue('np_arry_change_var');
-    var text_np_arry_change_value = block.getFieldValue('np_arry_change_value');
+    var value_np_arry_change_var = Blockly.JavaScript.valueToCode(block, 'np_arry_change_var', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_np_arry_change_value = Blockly.JavaScript.valueToCode(block, 'np_arry_change_value', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
