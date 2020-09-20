@@ -47,7 +47,7 @@ ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}'
 
 
 //np.concatenate
-Blockly.JavaScript['np_concatenate'] = function(block) {
+Blockly.Python['np_concatenate'] = function(block) {
   var text_np_concatenate_var1 = block.getFieldValue('np_concatenate_var1');
   var text_np_concatenate_var2 = block.getFieldValue('np_concatenate_var2');
   // TODO: Assemble JavaScript into code variable.
