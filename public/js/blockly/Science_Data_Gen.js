@@ -463,11 +463,11 @@ Blockly.Python['val_vi'] = function(block) {
     break;
   
     case "Val_VI_Numpy" :  
-    code = `PN_Visualization = ${value_val_vi_val}.tolist()\n`;          
+    code = `PN_Visualization = ${value_val_vi_val}.tolist()\nPN_Visualization2 = ""\n`;     
     break; 
 
     case "Val_VI_Tuple" :   
-    code = `PN_Visualization = list(${value_val_vi_val})\n`;          
+    code = `PN_Visualization = list(${value_val_vi_val})\nPN_Visualization2 = ""\n`;          
     break;
  
     default: 
