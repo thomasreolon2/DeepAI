@@ -907,6 +907,28 @@ Blockly.defineBlocksWithJsonArray(
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //결과 출력
+  {
+    "type": "print_output_var",
+    "message0": "[  결과 출력 ]  %1 %2",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "print_output_var1"
+      },
+      {
+        "type": "input_value",
+        "name": "print_output_var2"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 125,
+    "tooltip": "",
+    "helpUrl": ""
+  },
   
   
   
