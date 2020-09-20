@@ -930,7 +930,7 @@ Blockly.Blocks['py_return'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_MATH_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -941,12 +941,12 @@ Blockly.Blocks['conver_int'] = {
     init: function () {
         this.appendValueInput("VALUE")
             .setCheck(null)
-            .appendField("int (");
+            .appendField("정수형 (");
         this.appendDummyInput()
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_MATH_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -957,12 +957,12 @@ Blockly.Blocks['conver_float'] = {
     init: function () {
         this.appendValueInput("VALUE")
             .setCheck(null)
-            .appendField("float (");
+            .appendField("실수형 (");
         this.appendDummyInput()
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_MATH_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -973,12 +973,12 @@ Blockly.Blocks['conver_str'] = {
     init: function () {
         this.appendValueInput("VALUE")
             .setCheck(null)
-            .appendField("str (");
+            .appendField("문자형 (");
         this.appendDummyInput()
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_MATH_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -989,12 +989,12 @@ Blockly.Blocks['conver_bool'] = {
     init: function () {
         this.appendValueInput("VALUE")
             .setCheck(null)
-            .appendField("bool (");
+            .appendField("불 자료형 (");
         this.appendDummyInput()
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_MATH_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
