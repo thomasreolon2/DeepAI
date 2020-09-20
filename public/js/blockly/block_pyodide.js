@@ -1875,7 +1875,19 @@ Blockly.Blocks['sivalidation'] = {
   };
 
 
-
+  Blockly.Blocks['tree_text'] = {
+    init: function() {
+      this.appendValueInput("trr")
+          .setCheck(null)
+          .appendField("[결정트리 시각화] 모델");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 
 

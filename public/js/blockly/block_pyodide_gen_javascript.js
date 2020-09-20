@@ -427,6 +427,13 @@ Blockly.JavaScript['intercept'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+Blockly.JavaScript['tree_text'] = function(block) {
+  var value_trr = Blockly.JavaScript.valueToCode(block, 'trr', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 
+'pyodide.runPython(`\nimport numpy as np\nfrom sklearn.tree import DecisionTreeClassifier\nestimator='+value_trr+'\nn_nodes = estimator.tree_.node_count\nchildren_left = estimator.tree_.children_left\nchildren_right = estimator.tree_.children_right\nfeature = estimator.tree_.feature\nthreshold = estimator.tree_.threshold\nnode_depth = np.zeros(shape=n_nodes, dtype=np.int64)\nis_leaves = np.zeros(shape=n_nodes, dtype=bool)\nstack = [(0, -1)]\nwhile len(stack) > 0:\n\tnode_id, parent_depth = stack.pop()\n\tnode_depth[node_id] = parent_depth + 1\n\tif (children_left[node_id] != children_right[node_id]):\n\t\tstack.append((children_left[node_id], parent_depth + 1))\n\t\tstack.append((children_right[node_id], parent_depth + 1))\n\telse:\n\t\tis_leaves[node_id] = True\nprint("이진 트리 구조에는 ", n_nodes, "개의 노드가 있으며 다음과 같은 트리 구조입니다.")\nfor i in range(n_nodes):\n\tif is_leaves[i]:\n\t\tprint("%snode=%s leaf node." % (node_depth[i] * "\t", i))\n\telse:\n\t\tprint("%snode=%s test node: go to node %s if X[:, %s] <= %s else to node %s."% (node_depth[i] * "\t", i, children_left[i], feature[i], threshold[i], children_right[i],))\nprint()`);\nn_nodes=pyodide.pyimport("n_nodes");\nnode_depth=pyodide.pyimport("node_depth");\nis_leaves=pyodide.pyimport("is_leaves");\nchildren_left=pyodide.pyimport("children_left");\nfeature=pyodide.pyimport("feature");\nthreshold=pyodide.pyimport("threshold");\nchildren_right=pyodide.pyimport("children_right");\nfor(var i=0; i<=n_nodes; i++){\n\tif(is_leaves[i]==true){\n\tprintc(node_depth[i]+"\t"+"node = "+ i +"leaf node.");\n}\n\telse{\n\t\tprintc(node_depth[i]+"\t test node: go to node"+children_left[i]+"if X[:,"+feature[i]+"] <="+threshold[i]+" else to node "+children_right[i]);\n\t}\n}';
+  return code;
+};
 
 
 

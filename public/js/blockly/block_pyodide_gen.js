@@ -840,3 +840,9 @@ Blockly.Python['curve_fit'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
   };
+  Blockly.Python['tree_text'] = function(block) {
+    var value_trr = Blockly.Python.valueToCode(block, 'trr', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '#결정트리시각화\n';
+    return code;
+  };
