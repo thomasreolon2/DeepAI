@@ -45,7 +45,7 @@ ${value_value_data_to_csv_dataval}.to_csv('${text_value_value_data_to_csv_name}'
   };
   
 
-
+ 
 //np.concatenate
 Blockly.Python['np_concatenate'] = function(block) {
   var text_np_concatenate_var1 = block.getFieldValue('np_concatenate_var1');
@@ -252,25 +252,26 @@ Blockly.Python['np_arrange'] = function(block) {
     //np.append etc
     Blockly.Python['np_arry_change'] = function(block) {
       var dropdown_np_arry_change_option = block.getFieldValue('np_arry_change_Option');
-      var text_np_arry_change_var = block.getFieldValue('np_arry_change_var');
-      var text_np_arry_change_value = block.getFieldValue('np_arry_change_value');
+      var value_np_arry_change_var = Blockly.JavaScript.valueToCode(block, 'np_arry_change_var', Blockly.JavaScript.ORDER_ATOMIC);
+      var value_np_arry_change_value = Blockly.JavaScript.valueToCode(block, 'np_arry_change_value', Blockly.JavaScript.ORDER_ATOMIC);
+      
       // TODO: Assemble Python into code variable.
       var code ;
       switch(dropdown_np_arry_change_option){ 
         case "np_arry_change_append" :
-        code = `np.append(${text_np_arry_change_var},${text_np_arry_change_value})\n`;  
+        code = `np.append(${value_np_arry_change_var},${value_np_arry_change_value})\n`;  
         break;
  
         case "np_arry_change_extend" : 
-        code = `np.extend(${text_np_arry_change_var},${text_np_arry_change_value})\n`;  
+        code = `np.extend(${value_np_arry_change_var},${value_np_arry_change_value})\n`;  
         break;
 
         case "np_arry_change_insert" :
-        code = `np.insert(${text_np_arry_change_var},${text_np_arry_change_value})\n`;  
+        code = `np.insert(${value_np_arry_change_var},${value_np_arry_change_value})\n`;  
         break;
 
         case "np_arry_change_delete" :
-        code = `np.delete(${text_np_arry_change_var},${text_np_arry_change_value})\n`;  
+        code = `np.delete(${value_np_arry_change_var},${value_np_arry_change_value})\n`;  
         break;
 
         default:
@@ -279,7 +280,7 @@ Blockly.Python['np_arrange'] = function(block) {
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.Python.ORDER_NONE];
     };
-
+ 
     //np.prod
     Blockly.Python['np_prod'] = function(block) {
       var text_np_prod_var = block.getFieldValue('np_prod_var');

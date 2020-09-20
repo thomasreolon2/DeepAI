@@ -679,16 +679,26 @@ Blockly.defineBlocksWithJsonArray(
             ]
           ]
         },
+        //아래로 수정
         {
-          "type": "field_input",
-          "name": "np_arry_change_var",
-          "text": "원본"
+          "type": "input_value",
+          "name": "np_arry_change_var"
         },
         {
-          "type": "field_input",
-          "name": "np_arry_change_value",
-          "text": "값"
-        }
+          "type": "input_value",
+          "name": "np_arry_change_value"
+        },
+        //기존 
+        // {
+        //   "type": "field_input",
+        //   "name": "np_arry_change_var",
+        //   "text": "원본"
+        // },
+        // {
+        //   "type": "field_input",
+        //   "name": "np_arry_change_value",
+        //   "text": "값"
+        // }
       ],
       "inputsInline": true,
       "output": null,
