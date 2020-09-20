@@ -413,3 +413,17 @@ Blockly.JavaScript['decision'] = function(block) {
   var code = '\n';
   return code;
 };
+Blockly.JavaScript['coef'] = function(block) {
+  var value_coef = Blockly.JavaScript.valueToCode(block, 'coef', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['intercept'] = function(block) {
+  var value_intercept = Blockly.JavaScript.valueToCode(block, 'intercept', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};

@@ -1807,4 +1807,27 @@ Blockly.Blocks['sivalidation'] = {
    this.setHelpUrl("");
     }
   };
-  
+  Blockly.Blocks['coef'] = {
+    init: function() {
+      this.appendValueInput("coef")
+          .setCheck(null)
+          .appendField("[계수 추출] 모델");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['intercept'] = {
+    init: function() {
+      this.appendValueInput("intercept")
+          .setCheck(null)
+          .appendField("[절펀 추출] 모델");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
