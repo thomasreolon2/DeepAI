@@ -1051,7 +1051,6 @@
       </category>
       <category name="전처리 (Preprocessing)" colour="%{BKY_ML_HUE}">
         <block type="labelencoder"></block>
-        <block type="train_test_split"></block>
       </category>
       <category name="선형모델 (Linear_model)" colour="%{BKY_ML_HUE}">
         <block type="import_linear"></block>
@@ -1091,6 +1090,13 @@
         <block type="mse"></block>
         <block type="median"></block>
       </category>
+      <category name="셀렉션 (Selection)" colour="%{BKY_ML_HUE}">
+        <block type="import_sivalidation"></block>
+        <block type="kfold"></block>
+        <block type="stratifiedkfold"></block>
+        <block type="train_test_split"></block>
+        <block type="sivalidation"></block>
+      </category>
       <category name="신경망 (Neural_network)" colour="%{BKY_ML_HUE}">
         <block type="import_mlp"></block>
         <block type="sklearn_mlp"></block> 
@@ -1099,6 +1105,8 @@
         <block type="make_mlp_regressor"></block> -->
         <block type="mlp_classifier"></block>
         <block type="mlp_regressor"></block>
+        <block type="bernoullirbm"></block>
+
       </category>
  
 

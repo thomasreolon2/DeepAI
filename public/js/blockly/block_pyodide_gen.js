@@ -214,7 +214,7 @@ Blockly.Python['train_test_split'] = function (block) {
     var dropdown_shuffle = block.getFieldValue('shuffle');
     var text_seed = block.getFieldValue('seed');
     // TODO: Assemble Python into code variable.
-    var code = 'from sklearn.model_selection import train_test_split\n' + value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split(' + value_x_data + ',' + value_y_data + ',' + 'test_size=' + text_test_size + ', shuffle=' + dropdown_shuffle + ', random_state=' + text_seed + ')\n';
+    var code = value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split(' + value_x_data + ',' + value_y_data + ',' + 'test_size=' + text_test_size + ', shuffle=' + dropdown_shuffle + ', random_state=' + text_seed + ')\n';
     return code;
 };
 Blockly.Python['jin_train_test_split'] = function (block) {
@@ -437,7 +437,7 @@ Blockly.Python['sklearn_mlp'] = function (block) {
     }
 
 
-    var code = `from sklearn.neural_network import MLPClassifier\n
+    var code = `
 ${value_sklearn_mlp_lib_val} = MLPClassifier( 
 hidden_layer_sizes = (${text_sklearn_mlp_hidden_layer_sizes_}),
 activation = '${get_sklearn_mlp_activation}',
@@ -717,3 +717,50 @@ Blockly.Python['kmeans_fit'] = function (block) {
     var code = value_model + ".fit(" + variable_x_train + ")" + "\n";
     return code;
 };
+
+Blockly.Python['sivalidation'] = function(block) {
+    var dropdown_vali = block.getFieldValue('vali');
+    var value_em = Blockly.Python.valueToCode(block, 'em', Blockly.Python.ORDER_ATOMIC);
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    var text_cv = block.getFieldValue('cv');
+    // TODO: Assemble Python into code variable.
+    var code = dropdown_vali+'('+value_em+', '+value_x+', '+value_y+', cv='+text_cv+')\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+  Blockly.Python['import_sivalidation'] = function(block) {
+    var dropdown_vali = block.getFieldValue('vali');
+    // TODO: Assemble Python into code variable.
+    var code = 'from sklearn.model_selection import '+dropdown_vali;
+    return code;
+  };
+  Blockly.Python['kfold'] = function(block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_name = block.getFieldValue('NAME');
+    var dropdown_shuffle = block.getFieldValue('shuffle');
+    var text_seed = block.getFieldValue('seed');
+    // TODO: Assemble Python into code variable.
+    var code =value_model+'= KFold(n_splits='+text_name+',shuffle='+dropdown_shuffle+',random_state='+text_seed+')\n';
+    return code;
+  };
+  Blockly.Python['stratifiedkfold'] = function(block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_name = block.getFieldValue('NAME');
+    var dropdown_shuffle = block.getFieldValue('shuffle');
+    var text_seed = block.getFieldValue('seed');
+    // TODO: Assemble Python into code variable.
+    var code =value_model+'= KFold(n_splits='+text_name+',shuffle='+dropdown_shuffle+',random_state='+text_seed+')\n';
+    return code;
+  };
+  Blockly.Python['bernoullirbm'] = function(block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_hi = block.getFieldValue('hi');
+    var text_lr = block.getFieldValue('lr');
+    var text_batch = block.getFieldValue('batch');
+    var text_epochs = block.getFieldValue('epochs');
+    var text_seed = block.getFieldValue('seed');
+    // TODO: Assemble Python into code variable.
+    var code =value_model+'= BernoulliRBM(n_components='+text_hi+',learning_rate='+text_lr+',batch_size='+text_batch+' ,n_iter = '+text_epochs+',random_state = '+text_seed+')\n';
+    return code;
+  };

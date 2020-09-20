@@ -1527,8 +1527,8 @@ Blockly.Blocks['sgd_regressor'] = {
 Blockly.Blocks['import_mlp'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[임포트] MLP ")
-            .appendField(new Blockly.FieldDropdown([["MLP분류기", "MLPClassifier"], ["MLP예측기", "MLPRegressor"]]), "lib");
+            .appendField("[임포트] 신경망 ")
+            .appendField(new Blockly.FieldDropdown([["MLP분류기", "MLPClassifier"], ["MLP예측기", "MLPRegressor"], ["BernoulliRBM", "BernoulliRBM"]]), "lib");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1596,3 +1596,113 @@ Blockly.Blocks['kmeans_fit'] = {
         this.setHelpUrl("");
     }
 };
+
+Blockly.Blocks['sivalidation'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[모델 검증] 검증기")
+          .appendField(new Blockly.FieldDropdown([["교차검증","cross_validate"], ["교차추정값","cross_val_predict"], ["교차검증 점수","cross_val_score"], ["학습곡선","learning_curve"], ["순열교차검증","permutation_test_score"], ["검증곡선","validation_curve"]]), "vali");
+      this.appendValueInput("em")
+          .setCheck(null)
+          .appendField("estimator");
+      this.appendValueInput("x")
+          .setCheck(null)
+          .appendField("X_data");
+      this.appendValueInput("y")
+          .setCheck(null)
+          .appendField("Y_data");
+      this.appendDummyInput()
+          .appendField("교차검증 횟수")
+          .appendField(new Blockly.FieldTextInput("3"), "cv");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['import_sivalidation'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[임포트] 셀렉션")
+          .appendField(new Blockly.FieldDropdown([["KFold","KFold"],["StratifiedKFold","StratifiedKFold"], ["train_test_split","train_test_split"], ["교차검증 점수","cross_val_score"], ["학습곡선","learning_curve"], ["순열교차검증","permutation_test_score"], ["검증곡선","validation_curve"]]), "vali");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['kfold'] = {
+    init: function() {
+      this.appendValueInput("model")
+          .setCheck(null)
+          .appendField("[KFold] 모델");
+      this.appendDummyInput()
+          .appendField("Splits")
+          .appendField(new Blockly.FieldTextInput("default"), "NAME");
+      this.appendDummyInput()
+          .appendField("Data Shuffle")
+          .appendField(new Blockly.FieldDropdown([["예","True"], ["아니요","False"]]), "shuffle");
+      this.appendDummyInput()
+          .appendField("Seed")
+          .appendField(new Blockly.FieldTextInput("None"), "seed");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['stratifiedkfold'] = {
+    init: function() {
+      this.appendValueInput("model")
+          .setCheck(null)
+          .appendField("[KFold] 모델");
+      this.appendDummyInput()
+          .appendField("Splits")
+          .appendField(new Blockly.FieldTextInput("default"), "NAME");
+      this.appendDummyInput()
+          .appendField("Data Shuffle")
+          .appendField(new Blockly.FieldDropdown([["예","True"], ["아니요","False"]]), "shuffle");
+      this.appendDummyInput()
+          .appendField("Seed")
+          .appendField(new Blockly.FieldTextInput("None"), "seed");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['bernoullirbm'] = {
+    init: function() {
+      this.appendValueInput("model")
+          .setCheck(null)
+          .appendField("[BernoulliRBM] 모델");
+      this.appendDummyInput()
+          .appendField("은닉층 개수")
+          .appendField(new Blockly.FieldTextInput("2"), "hi");
+      this.appendDummyInput()
+          .appendField(" 학습률")
+          .appendField(new Blockly.FieldTextInput("0.1"), "lr");
+      this.appendDummyInput()
+          .appendField(" 배치사이즈")
+          .appendField(new Blockly.FieldTextInput("10"), "batch");
+      this.appendDummyInput()
+          .appendField(" epochs")
+          .appendField(new Blockly.FieldTextInput("10"), "epochs");
+      this.appendDummyInput()
+          .appendField(" Seed")
+          .appendField(new Blockly.FieldTextInput("None"), "seed");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
