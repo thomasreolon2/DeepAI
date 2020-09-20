@@ -1,7 +1,7 @@
 Blockly.Blocks['sklearn_ensemble'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[앙상블 라이브러리 임포트]")
+          .appendField("[임포트] 앙상블")
           .appendField(new Blockly.FieldDropdown([["AdaBoost분류","AdaBoostClassifier"], ["AdaBoost회귀","AdaBoostRegressor"], ["GradientBoosting분류","GradientBoostingClassifier"], ["GradientBoosting회귀","GradientBoostingRegressor"], ["결정트리 분류","RandomForestClassifier"], ["결정트리 회귀","RandomForestRegressor"]]), "NAME");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -15,7 +15,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
     init: function() {
       this.appendValueInput("NAME")
           .setCheck(null)
-          .appendField("[adaboost분류] 모델");
+          .appendField("[Adaboost분류] 모델");
       this.appendValueInput("NAME2")
           .setCheck(null)
           .appendField("추정자 최대 수");
@@ -35,7 +35,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
     init: function() {
       this.appendValueInput("NAME")
           .setCheck(null)
-          .appendField("[adaboost회귀] 모델");
+          .appendField("[Adaboost회귀] 모델");
       this.appendValueInput("NAME2")
           .setCheck(null)
           .appendField("추정자 최대 수");
@@ -129,8 +129,8 @@ Blockly.Blocks['sklearn_ensemble'] = {
 Blockly.Blocks['sklearn.preprocessing'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[전처리 라이브러리 임포트] ")
-          .appendField(new Blockly.FieldDropdown([["PolynomialFeatures","PolynomialFeatures"], ["LabelEncoder","LabelEncoder"], ["OneHotEncoder","OneHotEncoder"], ["StandardScaler","StandardScaler"], ["scale","scale"]]), "NAME");
+          .appendField("[임포트] 전처리 ")
+          .appendField(new Blockly.FieldDropdown([["PolynomialFeatures","PolynomialFeatures"], ["LabelEncoder","LabelEncoder"], ["OneHotEncoder","OneHotEncoder"], ["StandardScaler","StandardScaler"], ["Scale","scale"]]), "NAME");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(230);
@@ -176,7 +176,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
   Blockly.Blocks['sklearn_svm'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[SVM 라이브러리 임포트] ")
+          .appendField("[임포트] SVM")
           .appendField(new Blockly.FieldDropdown([["선형SVC","LinearSVC"], ["선형SVR","LinearSVR"]]), "NAME");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
