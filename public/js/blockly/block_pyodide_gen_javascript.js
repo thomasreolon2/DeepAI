@@ -76,7 +76,12 @@ Blockly.JavaScript['scikit_learn'] = function (block) {
   return code;
 };
 
-
+Blockly.JavaScript['csv2'] = function (block) {
+  var file = block.getFieldValue('csv_url');
+  
+  var code = "\n";
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
 // 사이킷런 MLP 블록 
 Blockly.JavaScript['sklearn_mlp'] = function(block) { 
   var text_sklearn_mlp_hidden_size = block.getFieldValue('sklearn_MLP_hidden_size');

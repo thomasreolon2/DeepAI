@@ -188,7 +188,7 @@ Blockly.Python['csvdataframe_J'] = function (block) {
   var value_input_var = Blockly.Python.valueToCode(block, 'input_var', Blockly.Python.ORDER_ATOMIC);
   var value_csv = Blockly.Python.valueToCode(block, 'csv', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_input_var + ' = ' + 'pd.DataFrame(' + value_csv + ')\n';
+  var code = value_input_var + ' = pd.DataFrame(' + value_csv + ')\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
