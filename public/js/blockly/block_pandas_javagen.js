@@ -14,7 +14,7 @@ Blockly.JavaScript['pyo_lib'] = function (block) {
   return code;
 };
 
-Blockly.JavaScript['pandas_datalist'] = function(block) {
+Blockly.JavaScript['pandas_datalist'] = function (block) {
   var value_frm_var = Blockly.JavaScript.valueToCode(block, 'frm_var', Blockly.JavaScript.ORDER_ATOMIC);
   var value_data_lst = Blockly.JavaScript.valueToCode(block, 'data_lst', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
@@ -28,7 +28,7 @@ Blockly.JavaScript['csvdataframe_J'] = function (block) {
   var value_csv = Blockly.JavaScript.valueToCode(block, 'csv', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
-  return code; 
+  return code;
 };
 
 Blockly.JavaScript['pandas_dataframe'] = function (block) {
@@ -67,7 +67,7 @@ Blockly.JavaScript['pandas_mis_del'] = function (block) {
 };
 
 Blockly.JavaScript['selec_value_all'] = function (block) {
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = ':';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
@@ -75,7 +75,7 @@ Blockly.JavaScript['selec_value_all'] = function (block) {
 Blockly.JavaScript['iloc_range'] = function (block) {
   var text_st_range = block.getFieldValue('st_range');
   var text_ed_range = block.getFieldValue('ed_range');
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   return code;
 };
@@ -186,7 +186,7 @@ Blockly.JavaScript['pandas_merge'] = function (block) {
 Blockly.JavaScript['pandas_merge_oncol'] = function (block) {
   var text_name = block.getFieldValue('mer_NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...\n';
+  var code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -234,15 +234,15 @@ Blockly.JavaScript['groupby_dataFrame'] = function (block) {
 
 
 Blockly.JavaScript['groupby_series_'] = function (block) {
-  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
+  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.JavaScript.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 Blockly.JavaScript['createColumn'] = function (block) {
-  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
-    return [b.join(", "), Blockly.JavaScript.ORDER_ATOMIC]
+  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.JavaScript.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
+  return [b.join(", "), Blockly.JavaScript.ORDER_ATOMIC]
   // TODO: Assemble JavaScript into code variable.
 };
 
@@ -280,7 +280,18 @@ Blockly.JavaScript['pan_aray'] = function (block) {
   var variable_aray_array = Blockly.JavaScript.valueToCode(block, 'aray_array', Blockly.JavaScript.ORDER_ATOMIC);
   var variable_ary_a1 = Blockly.JavaScript.valueToCode(block, 'ary_a1', Blockly.JavaScript.ORDER_ATOMIC);
   var variable_ary_a2 = Blockly.JavaScript.valueToCode(block, 'ary_a2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = variable_aray_array + '[' + variable_ary_a1 + ',' +variable_ary_a2 + ']\n';
+  // TODO: Assemble JavaScript into code variable.
+  var code = variable_aray_array + '[' + variable_ary_a1 + ',' + variable_ary_a2 + ']\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+// 상관관계 조회
+Blockly.JavaScript['corr_inquiry'] = function (block) {
+  var code = '\n';
+  return code;
+};
+
+// 데이터 정렬
+Blockly.JavaScript['df_sort'] = function (block) {
+  var code = '\n';
+  return code;
 };

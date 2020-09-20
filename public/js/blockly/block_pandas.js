@@ -960,27 +960,27 @@ Blockly.Blocks['pandas_concat'] = {
   }
 };
 
-//2020-09-21 양승국 추가 array[None, sasd]
-Blockly.Blocks['pan_aray'] = {
-  init: function () {
-    this.appendValueInput("aray_array")
-        .setCheck(null)
-        .appendField("[인데스 가져오기] 배열");
-    this.appendValueInput("ary_a1")
-        .setCheck(null)
-        .appendField("[");
-    this.appendValueInput("ary_a2")
-        .setCheck(null)
-        .appendField(",");
-    this.appendDummyInput()
-        .appendField("]");
-    this.setColour(pandas_color);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
+// //2020-09-21 양승국 추가 array[None, sasd]
+// Blockly.Blocks['pan_aray'] = {
+//   init: function () {
+//     this.appendValueInput("aray_array")
+//         .setCheck(null)
+//         .appendField("[인데스 가져오기] 배열");
+//     this.appendValueInput("ary_a1")
+//         .setCheck(null)
+//         .appendField("[");
+//     this.appendValueInput("ary_a2")
+//         .setCheck(null)
+//         .appendField(",");
+//     this.appendDummyInput()
+//         .appendField("]");
+//     this.setColour(pandas_color);
+//     this.setInputsInline(true);
+//     this.setOutput(true, null);
+//     this.setTooltip("");
+//     this.setHelpUrl("");
+//   }
+// };
 
 /////////////////////////////////////////////////////////////
 // Pandas 2학년 파트 끝
@@ -1137,5 +1137,35 @@ Blockly.Blocks['array_select'] = {
       this.removeInput('ADD' + i);
       i++;
     }
+  }
+};
+// 상관관계 조회
+Blockly.Blocks['corr_inquiry'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[상관관계 조회]");
+    this.appendValueInput("data").setCheck(null)
+    this.setColour(pandas_color);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+// 상관관계 조회
+Blockly.Blocks['df_sort'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[데이터 정렬]");
+    this.appendValueInput("data").setCheck(null)
+    this.appendDummyInput()
+        .appendField("컬럼명 ")
+        .appendField(new Blockly.FieldTextInput(""), "columns");   
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["True","True"], ["False","False"]]), "ascending");
+    this.setColour(pandas_color);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
