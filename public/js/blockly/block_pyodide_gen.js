@@ -657,7 +657,7 @@ Blockly.Python['sgd_classifier'] = function (block) {
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = value_model + " = make_pipeline(StandardScaler(), SGDClassifier(max_iter = " + text_numEpochs + ", tol = 1e-3)).fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    var code = value_model + " = SGDClassifier(max_iter = " + text_numEpochs + ", tol = 1e-3).fit(" + variable_x_train + ", " + variable_y_train + ")\n";
     return code;
 };
 Blockly.Python['linear_regression'] = function (block) {
@@ -684,7 +684,18 @@ Blockly.Python['sgd_regressor'] = function (block) {
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = value_model + " = make_pipeline(StandardScaler(), SGDRegressor(max_iter = " + text_numEpochs + ", tol = 1e-3)).fit(" + variable_x_train + ", " + variable_y_train + ")\n";
+    var code = value_model + " = SGDRegressor(max_iter = " + text_numEpochs + ", tol = 1e-3).fit(" + variable_x_train + ", " + variable_y_train + ")\n";
     return code;
 };
-
+Blockly.Python['import_mlp'] = function (block) {
+    var dropdown_lib = block.getFieldValue('lib');
+    // TODO: Assemble Python into code variable.
+    var code = 'from sklearn.neural_network import ' + dropdown_lib + "\n";
+    return code;
+};
+Blockly.Python['import_linear'] = function (block) {
+    var dropdown_lib = block.getFieldValue('lib');
+    // TODO: Assemble Python into code variable.
+    var code = 'from sklearn.linear_model import ' + dropdown_lib + "\n";
+    return code;
+};
