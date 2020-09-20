@@ -294,3 +294,13 @@ Blockly.JavaScript['val_vi'] = function(block) {
     var code = "\n";
     return code;
   };
+
+
+  //결과 출력
+  Blockly.JavaScript['print_output_var'] = function(block) {
+    var value_print_output_var1 = Blockly.JavaScript.valueToCode(block, 'print_output_var1', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_print_output_var2 = Blockly.JavaScript.valueToCode(block, 'print_output_var2', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
