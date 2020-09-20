@@ -589,7 +589,7 @@ Blockly.Python['py_for'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = 'for '+value_item+' in '+value_list+' :\n'+statements_value;
 
-  var code = 'for'+value_item+' in'+value_list+' :\n'+statements_value;
+  var code = 'for '+value_item+' in '+value_list+ ' :\n'+statements_value;
 
   return code;
 };
