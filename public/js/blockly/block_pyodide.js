@@ -893,14 +893,11 @@ Blockly.Blocks['py_for'] = {
 Blockly.Blocks['increase'] = {
     init: function () {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R3-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }));
-        this.appendValueInput("VALUE")
-            .setCheck(null)
-
-            .appendField(new Blockly.FieldDropdown([["raise", "OPTIONNAME"], ["modulo", "OPTIONNAME"], ["divide", "OPTIONNAME"], ["multiply", "OPTIONNAME"], ["decrease", "OPTIONNAME"], ["increase", "OPTIONNAME"]]), "NAME");
-        this.appendDummyInput()
-            .appendField("to");
         this.appendValueInput("NUMBER")
             .setCheck(null);
+        this.appendValueInput("VALUE")
+            .setCheck(null)
+            .appendField(new Blockly.FieldDropdown([["=+", "=+"],["=-", "=-"],["=*", "=*"],["=/", "=/"],["=%", "=%"]]), "NAME");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

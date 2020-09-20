@@ -73,14 +73,16 @@ Blockly.Python['np_array'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength. 
   return [code, Blockly.Python.ORDER_NONE];   
 };
- 
+  
 //np.arange  
 Blockly.Python['np_arrange'] = function(block) {
-  var text_np_arrange_value = block.getFieldValue('np_arrange_value');
-  // TODO: Assemble Python into code variable.
-  var code = `np.arange(${text_np_arrange_value})\n`; 
+  var text_np_arrange_value1 = block.getFieldValue('np_arrange_value1');
+  var text_np_arrange_value2 = block.getFieldValue('np_arrange_value2');
+  var text_np_arrange_value3 = block.getFieldValue('np_arrange_value3');
+  // TODO: Assemble JavaScript into code variable.
+  var code = `np.arange(${text_np_arrange_value1},${text_np_arrange_value2},${text_np_arrange_value3})\n`; 
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy 함수 zeros 배열생성,   
@@ -589,6 +591,6 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
     // TODO: Assemble JavaScript into code variable.
     var libImportIo = "import io\n";
     var libImportBase64 = "import base64\n";
-    var code = "import matplotlib.pyplot as" + " "  + value_name.replace("'"," ")+ "\n" + libImportIo + libImportBase64;
+    var code = "import matplotlib.pyplot as plt\n" + libImportIo + libImportBase64;
     return code;
   };
