@@ -655,7 +655,7 @@ Blockly.defineBlocksWithJsonArray(
     //np.append etc
     {
       "type": "np_arry_change",
-      "message0": "[ 값 변경  ] %1 ( %2 , %3 )",
+      "message0": "[ 값 변경 ]  %1 %2 변수 %3 값 %4",
       "args0": [
         {
           "type": "field_dropdown",
@@ -679,7 +679,9 @@ Blockly.defineBlocksWithJsonArray(
             ]
           ]
         },
-        //아래로 수정
+        {
+          "type": "input_dummy"
+        },
         {
           "type": "input_value",
           "name": "np_arry_change_var"
@@ -687,23 +689,12 @@ Blockly.defineBlocksWithJsonArray(
         {
           "type": "input_value",
           "name": "np_arry_change_value"
-        },
-        //기존 
-        // {
-        //   "type": "field_input",
-        //   "name": "np_arry_change_var",
-        //   "text": "원본"
-        // },
-        // {
-        //   "type": "field_input",
-        //   "name": "np_arry_change_value",
-        //   "text": "값"
-        // }
+        }
       ],
       "inputsInline": true,
       "previousStatement": null,
       "nextStatement": null,
-      "colour": "%{BKY_NUMPY_HUE}",
+      "colour": 125,
       "tooltip": "",
       "helpUrl": ""
     },

@@ -175,7 +175,7 @@ Blockly.Python['np_arrange'] = function(block) {
     Blockly.Python['np_flatten'] = function(block) {
       var value_np_flatten_var = Blockly.Python.valueToCode(block, 'np_flatten_var', Blockly.Python.ORDER_ATOMIC);
       // TODO: Assemble Python into code variable.
-      var code = `np.flatten(${value_np_flatten_var})`;
+      var code = `${value_np_flatten_var}.flatten()`;
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.Python.ORDER_NONE];
     };
@@ -252,9 +252,8 @@ Blockly.Python['np_arrange'] = function(block) {
     //np.append etc
     Blockly.Python['np_arry_change'] = function(block) {
       var dropdown_np_arry_change_option = block.getFieldValue('np_arry_change_Option');
-      var value_np_arry_change_var = Blockly.JavaScript.valueToCode(block, 'np_arry_change_var', Blockly.JavaScript.ORDER_ATOMIC);
-      var value_np_arry_change_value = Blockly.JavaScript.valueToCode(block, 'np_arry_change_value', Blockly.JavaScript.ORDER_ATOMIC);
-      
+      var value_np_arry_change_var = Blockly.Python.valueToCode(block, 'np_arry_change_var', Blockly.Python.ORDER_ATOMIC);
+      var value_np_arry_change_value = Blockly.Python.valueToCode(block, 'np_arry_change_value', Blockly.Python.ORDER_ATOMIC);
       // TODO: Assemble Python into code variable.
       var code ;
       switch(dropdown_np_arry_change_option){  
@@ -277,10 +276,9 @@ Blockly.Python['np_arrange'] = function(block) {
         default:
         break;
       } 
-      // TODO: Change ORDER_NONE to the correct strength.
-      return [code, Blockly.Python.ORDER_NONE];
+      return code;
     };
- 
+    
     //np.prod
     Blockly.Python['np_prod'] = function(block) {
       var text_np_prod_var = block.getFieldValue('np_prod_var');
