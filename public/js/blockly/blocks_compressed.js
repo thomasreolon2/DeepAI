@@ -659,8 +659,9 @@ Blockly.defineBlocksWithJsonArray([
   },
   {
     type: "controls_if",
-    message0: "%{BKY_CONTROLS_IF_MSG_IF} %1",
-    args0: [{ type: "input_value", name: "IF0", check: "Boolean" }],
+    message0: "%1 %{BKY_CONTROLS_IF_MSG_IF} %2",
+    args0: [{"type": "field_image","src": "/img/Logic/L1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+    { type: "input_value", name: "IF0", check: "Boolean" }],
     message1: "%{BKY_CONTROLS_IF_MSG_THEN} %1",
     args1: [{ type: "input_statement", name: "DO0" }],
     previousStatement: null,
@@ -672,8 +673,9 @@ Blockly.defineBlocksWithJsonArray([
   },
   {
     type: "controls_ifelse",
-    message0: "%{BKY_CONTROLS_IF_MSG_IF} %1",
-    args0: [{ type: "input_value", name: "IF0", check: "Boolean" }],
+    message0: "%1 %{BKY_CONTROLS_IF_MSG_IF} %2",
+    args0: [{"type": "field_image","src": "/img/Logic/L2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+    { type: "input_value", name: "IF0", check: "Boolean" }],
     message1: "%{BKY_CONTROLS_IF_MSG_THEN} %1",
     args1: [{ type: "input_statement", name: "DO0" }],
     message2: "%{BKY_CONTROLS_IF_MSG_ELSE} %1",
