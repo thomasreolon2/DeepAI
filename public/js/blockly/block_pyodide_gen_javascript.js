@@ -250,3 +250,4 @@ Blockly.JavaScript['median'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+

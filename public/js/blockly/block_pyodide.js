@@ -1215,7 +1215,7 @@ Blockly.Blocks['fetch_openml'] = {
 Blockly.Blocks['import_scikit'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[메트릭스 라이브러리 임포트] ")
+            .appendField("[임포트] 메트릭스 ")
             .appendField(new Blockly.FieldDropdown([["정확도", "accuracy_score"], ["AUC", "metrics"], ["AP", "average_precision_score"], ["PRC", "precision_score"], ["MAE", "mean_absolute_error"], ["MSE", "mean_squared_error"], ["Median", "median_absolute_error"]]), "metrics");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1530,7 +1530,7 @@ Blockly.Blocks['sgd_regressor'] = {
 Blockly.Blocks['import_mlp'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[MLP 라이브러리 임포트] ")
+            .appendField("[임포트] MLP ")
             .appendField(new Blockly.FieldDropdown([["MLP분류기", "MLPClassifier"], ["MLP예측기", "MLPRegressor"]]), "lib");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1544,7 +1544,7 @@ Blockly.Blocks['import_mlp'] = {
 Blockly.Blocks['import_linear'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[선형모델 라이브러리 임포트] ")
+            .appendField("[임포트] 선형모델 ")
             .appendField(new Blockly.FieldDropdown([["선형회귀 모델", "LinearRegression"], ["SGD 예측기", "SGDRegressor"], ["Ridge 예측기", "Ridge"], ["로지스틱 회귀 모델", "LogisticRegression"], ["로지스틱 회귀 CV모델", "LogisticRegressionCV"], ["Ridge 분류기", "RidgeClassifier"], ["베이지안 모델","linear_model"], ["SGD 분류기", "SGDClassifier"],["퍼셉트론 모델", "Perceptron"]]), "lib");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1558,7 +1558,7 @@ Blockly.Blocks['import_linear'] = {
 Blockly.Blocks['import_kmeans'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[Kmeans 라이브러리 임포트] ");
+            .appendField("[임포트] Kmeans ");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
