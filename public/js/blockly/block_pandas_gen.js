@@ -23,7 +23,7 @@ Blockly.Python['fill_null_data'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_name + '=' + value_name + '.fillna(' + value_name + dropdown_name + ')';
+  var code = value_name + '=' + value_name + '.fillna(' + value_name + dropdown_name + ')\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -118,7 +118,7 @@ Blockly.Python['select_row_list'] = function (block) {
   var text_name = block.getFieldValue('list_val');
   var dropdown_name = block.getFieldValue('srd_NAME');
   // TODO: Assemble Python into code variable.
-  if (dropdown_name == 1) var code =  value_list_data + '.loc[[' + text_name + ']]\n';
+  if (dropdown_name == 1) var code =  value_list_data + '.loc[[' + text_name + ']]';
   else if (dropdown_name == 2) var code =  value_list_data + '[' + value_list_data +'.columns[[' + text_name + ']]]';
   return [code, Blockly.Python.ORDER_NONE];
 };
@@ -137,7 +137,7 @@ Blockly.Python['select_row_column_value'] = function (block) {
   var value_select_row_locate = Blockly.Python.valueToCode(block, 'select_row_locate', Blockly.Python.ORDER_ATOMIC);
   var value_select_column_locate = Blockly.Python.valueToCode(block, 'select_column_locate', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_select_value + '.iloc[' + value_select_row_locate + ',' + value_select_column_locate + ']\n';
+  var code = value_select_value + '.iloc[' + value_select_row_locate + ',' + value_select_column_locate + ']';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -146,7 +146,7 @@ Blockly.Python['row_count'] = function (block) {
   var value_select_value = Blockly.Python.valueToCode(block, 'select_value', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('count');
   // TODO: Assemble Python into code variable.
-  var code = value_select_value + dropdown_name + '\n';
+  var code = value_select_value + dropdown_name;
   return [code, Blockly.Python.ORDER_NONE];
 };
 
