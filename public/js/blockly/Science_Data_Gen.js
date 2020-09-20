@@ -591,6 +591,6 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
     // TODO: Assemble JavaScript into code variable.
     var libImportIo = "import io\n";
     var libImportBase64 = "import base64\n";
-    var code = "import matplotlib.pyplot as" + " "  + value_name.replace("'"," ")+ "\n" + libImportIo + libImportBase64;
+    var code = "import matplotlib.pyplot as plt\n" + libImportIo + libImportBase64;
     return code;
   };
