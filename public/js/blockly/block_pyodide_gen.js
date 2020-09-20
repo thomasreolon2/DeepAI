@@ -690,12 +690,8 @@ Blockly.Python['import_mlp'] = function (block) {
 Blockly.Python['import_linear'] = function (block) {
     var dropdown_lib = block.getFieldValue('lib');
     // TODO: Assemble Python into code variable.
-    var code = "";
-    if (dropdown_lib == "linear_model") {
-        code = 'from sklearn import linear_model' + "\n";
-    } else {
-        code = 'from sklearn.linear_model import ' + dropdown_lib + "\n";
-    }
+    var code = 'from sklearn.linear_model import ' + dropdown_lib + "\n";
+   
     return code;
 };
 Blockly.Python['import_kmeans'] = function (block) {

@@ -1546,7 +1546,7 @@ Blockly.Blocks['import_linear'] = {
     init: function () {
         this.appendDummyInput()
             .appendField("[임포트] 선형모델 ")
-            .appendField(new Blockly.FieldDropdown([["선형회귀 모델", "LinearRegression"], ["SGD 예측기", "SGDRegressor"], ["Ridge 예측기", "Ridge"], ["로지스틱 회귀 모델", "LogisticRegression"], ["로지스틱 회귀 CV모델", "LogisticRegressionCV"], ["Ridge 분류기", "RidgeClassifier"], ["베이지안 모델","linear_model"], ["SGD 분류기", "SGDClassifier"],["퍼셉트론 모델", "Perceptron"]]), "lib");
+            .appendField(new Blockly.FieldDropdown([["선형회귀 모델", "LinearRegression"], ["SGD 예측기", "SGDRegressor"], ["Ridge 예측기", "Ridge"], ["로지스틱 회귀 모델", "LogisticRegression"], ["로지스틱 회귀 CV모델", "LogisticRegressionCV"], ["Ridge 분류기", "RidgeClassifier"], ["베이지안 모델","BayesianRidge"], ["SGD 분류기", "SGDClassifier"],["퍼셉트론 모델", "Perceptron"]]), "lib");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
