@@ -958,6 +958,10 @@ Blockly.Blocks['py_return'] = {
 // int 형 변환
 Blockly.Blocks['conver_int'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O13-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
+
         this.appendValueInput("VALUE")
             .setCheck(null)
             .appendField("정수형 (");
@@ -974,6 +978,9 @@ Blockly.Blocks['conver_int'] = {
 // float 형 변환
 Blockly.Blocks['conver_float'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O14-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
         this.appendValueInput("VALUE")
             .setCheck(null)
             .appendField("실수형 (");
@@ -990,6 +997,9 @@ Blockly.Blocks['conver_float'] = {
 // str 형 변환
 Blockly.Blocks['conver_str'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O15-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
         this.appendValueInput("VALUE")
             .setCheck(null)
             .appendField("문자형 (");
@@ -1006,6 +1016,9 @@ Blockly.Blocks['conver_str'] = {
 // bool 형 변환
 Blockly.Blocks['conver_bool'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O16-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
         this.appendValueInput("VALUE")
             .setCheck(null)
             .appendField("불 자료형 (");
