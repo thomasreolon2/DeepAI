@@ -976,14 +976,14 @@
       <block type="missing_value_inquiry">
         <value name="mis_data">
           <block type="variables_get">
-            <field name="VAR">pd</field>
+            <field name="VAR">df</field>
           </block>
         </value>
       </block>
       <block type="stats_inquiry">
         <value name="inq_data">
           <block type="variables_get">
-            <field name="VAR">pd</field>
+            <field name="VAR">df</field>
           </block>
         </value>
       </block>
@@ -1468,7 +1468,7 @@
             csvval[0] = csvval[0].replace('\r', '');
             // row
             var cnt = (csvval.length < 2000) ? csvval.length : 2000;
-            for (var i = 1; i < cnt; i++) {
+            for (var i = 1; i < cnt-1; i++) {
               csvval[i] = csvval[i].replace('\r', '');
               var cols = csvval[i].split(',');
               var fileObject = new Object();
@@ -1737,6 +1737,7 @@
     // ********   테이블 그리기      **********//
     // **************************************//  
     function draw_table(Get_CSV_DATA) {
+      console.log("get_csv_value",Get_CSV_DATA);
 
       var NPTD_Data = Array.from(Array(Get_CSV_DATA[0].length), () => new Array(Get_CSV_DATA.length));
 
