@@ -5,7 +5,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
           .appendField(new Blockly.FieldDropdown([["AdaBoost분류","AdaBoostClassifier"], ["AdaBoost회귀","AdaBoostRegressor"], ["GradientBoosting분류","GradientBoostingClassifier"], ["GradientBoosting회귀","GradientBoostingRegressor"], ["결정트리 분류","RandomForestClassifier"], ["결정트리 회귀","RandomForestRegressor"]]), "NAME");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -25,7 +25,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -45,7 +45,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -62,7 +62,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -79,7 +79,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -99,7 +99,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -119,7 +119,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -133,7 +133,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
           .appendField(new Blockly.FieldDropdown([["PolynomialFeatures","PolynomialFeatures"], ["LabelEncoder","LabelEncoder"], ["OneHotEncoder","OneHotEncoder"], ["StandardScaler","StandardScaler"], ["Scale","scale"]]), "NAME");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -149,7 +149,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -167,7 +167,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -180,7 +180,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
           .appendField(new Blockly.FieldDropdown([["선형SVC","LinearSVC"], ["선형SVR","LinearSVR"]]), "NAME");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -198,7 +198,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
           .appendField("오차");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -214,7 +214,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
           .appendField(" LinearSVR");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -232,7 +232,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
           .appendField("오차");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -250,7 +250,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -268,7 +268,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -282,7 +282,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -296,7 +296,7 @@ Blockly.Blocks['sklearn.preprocessing'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }

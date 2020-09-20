@@ -58,10 +58,7 @@ this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-
 };
 Blockly.Blocks['lrgraph'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Machine_Learning/M12-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        })).appendField("[선형회귀 그래프 출력]");
+        this.appendDummyInput().appendField("[선형회귀 그래프 출력]");
         this.appendValueInput("x").setCheck(null).appendField("X_data");
         this.appendValueInput("y").setCheck(null).appendField("Y_data");
         this.appendValueInput("w").setCheck(null).appendField("가중치");
@@ -69,7 +66,7 @@ Blockly.Blocks['lrgraph'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(160);
+        this.setColour("%{BKY_VISUAL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -88,10 +85,7 @@ Blockly.Blocks['array_get'] = {
 };
 Blockly.Blocks['logicgraph'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Machine_Learning/M13-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        })).appendField("[로지스틱 회귀 그래프 출력]");
+        this.appendDummyInput().appendField("[로지스틱 회귀 그래프 출력]");
         this.appendValueInput("x").setCheck(null).appendField("X_data");
         this.appendValueInput("y").setCheck(null).appendField("Y_data");
         this.appendValueInput("w").setCheck(null).appendField("가중치");
@@ -99,7 +93,7 @@ Blockly.Blocks['logicgraph'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(160);
+        this.setColour("%{BKY_VISUAL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -138,7 +132,7 @@ Blockly.Blocks['csv3'] = {
         this.appendDummyInput().appendField('Y_data 컬럼 선택').appendField(dropdown, 'OPTIONS');
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(20);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     },
@@ -171,7 +165,7 @@ Blockly.Blocks['scikit_learn'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setInputsInline(true);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -187,7 +181,7 @@ Blockly.Blocks['labelencoder'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -232,7 +226,7 @@ Blockly.Blocks['import_dataset'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -272,7 +266,7 @@ Blockly.Blocks['train_test_split'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -311,7 +305,7 @@ Blockly.Blocks['jin_train_test_split'] = {
         this.setInputsInline(false);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -329,7 +323,7 @@ Blockly.Blocks['model_score'] = {
             .setCheck(null)
             .appendField("Y_test");
         this.setInputsInline(true);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setOutput(true, null);
         this.setTooltip("");
         this.setHelpUrl("");
@@ -346,7 +340,7 @@ Blockly.Blocks['model_predict'] = {
             .appendField("예측 값");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -844,7 +838,7 @@ Blockly.Blocks['sklearn_mlp'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(240);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -884,7 +878,7 @@ Blockly.Blocks['k_means'] = {
         this.appendDummyInput().appendField("그룹 개수 ").appendField(new Blockly.FieldTextInput(""), "cnt");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1221,7 +1215,7 @@ Blockly.Blocks['vis_tree'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_VISUAL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1255,7 +1249,7 @@ Blockly.Blocks['fetch_openml'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1269,7 +1263,7 @@ Blockly.Blocks['import_scikit'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1286,7 +1280,7 @@ Blockly.Blocks['acc_score'] = {
             .appendField("Y_pred");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1303,7 +1297,7 @@ Blockly.Blocks['AUC'] = {
             .appendField("Y 축");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1320,7 +1314,7 @@ Blockly.Blocks['AP'] = {
             .appendField("Y_score");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1340,7 +1334,7 @@ Blockly.Blocks['precision'] = {
             .appendField(new Blockly.FieldDropdown([["None", "None"], ["macro", "macro"], ["micro", "micro"], ["weighted", "weighted"]]), "aver");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1358,7 +1352,7 @@ Blockly.Blocks['mae'] = {
             .appendField("Y_pred");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1376,7 +1370,7 @@ Blockly.Blocks['mse'] = {
             .appendField("Y_pred");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1393,7 +1387,7 @@ Blockly.Blocks['median'] = {
             .appendField("Y_pred");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1413,7 +1407,7 @@ Blockly.Blocks['mlp_classifier'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1432,7 +1426,7 @@ Blockly.Blocks['mlp_regressor'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1449,7 +1443,7 @@ Blockly.Blocks['logistic_regression'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1467,7 +1461,7 @@ Blockly.Blocks['logistic_regression_cv'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1483,7 +1477,7 @@ Blockly.Blocks['perceptron'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1496,7 +1490,7 @@ Blockly.Blocks['ridge_classifier'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1512,7 +1506,7 @@ Blockly.Blocks['sgd_classifier'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1525,7 +1519,7 @@ Blockly.Blocks['linear_regression'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1541,7 +1535,7 @@ Blockly.Blocks['ridge'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1554,7 +1548,7 @@ Blockly.Blocks['bayesian_ridge'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1570,7 +1564,7 @@ Blockly.Blocks['sgd_regressor'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1584,7 +1578,7 @@ Blockly.Blocks['import_mlp'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1598,7 +1592,7 @@ Blockly.Blocks['import_linear'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1611,7 +1605,7 @@ Blockly.Blocks['import_kmeans'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1628,7 +1622,7 @@ Blockly.Blocks['model_fit'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1643,7 +1637,7 @@ Blockly.Blocks['kmeans_fit'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -1668,7 +1662,7 @@ Blockly.Blocks['sivalidation'] = {
           .appendField(new Blockly.FieldTextInput("3"), "cv");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1681,7 +1675,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1703,7 +1697,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1725,7 +1719,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1753,7 +1747,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1766,7 +1760,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIPY_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1784,7 +1778,7 @@ Blockly.Blocks['sivalidation'] = {
           .appendField("Y_data");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIPY_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1801,7 +1795,7 @@ Blockly.Blocks['sivalidation'] = {
           .appendField(new Blockly.FieldTextInput("1"), "s");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIPY_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1817,7 +1811,7 @@ Blockly.Blocks['sivalidation'] = {
           .appendField(new Blockly.FieldTextInput("1000"), "e");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIPY_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1831,7 +1825,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1850,7 +1844,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1862,7 +1856,7 @@ Blockly.Blocks['sivalidation'] = {
           .appendField("[계수 추출] 모델");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1874,7 +1868,7 @@ Blockly.Blocks['sivalidation'] = {
           .appendField("[절펀 추출] 모델");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -1926,7 +1920,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, "Array");
       // this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_PROLOG_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -1942,7 +1936,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, "Array");
       // this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_PROLOG_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -1955,7 +1949,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(135);
+      this.setColour("%{BKY_PROLOG_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -1976,7 +1970,7 @@ Blockly.Blocks['sivalidation'] = {
         .appendField(new Blockly.FieldTextInput(""), "NAME");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(135);
+      this.setColour("%{BKY_PROLOG_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -1991,7 +1985,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, "Array");
-      this.setColour(190);
+      this.setColour("%{BKY_PROLOG_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -2007,7 +2001,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(false);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, "Array");
-      this.setColour(190);
+      this.setColour("%{BKY_PROLOG_HUE}");
       this.setTooltip("Ein einfacher Fakt, welches aus einer Relation und einem oder mehreren Termen besteht.");
       this.setHelpUrl("https://www.tinohempel.de/info/info/prolog/regeln.htm");
     }
@@ -2022,7 +2016,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, "Array");
-      this.setColour(100);
+      this.setColour("%{BKY_PROLOG_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -2037,7 +2031,7 @@ Blockly.Blocks['sivalidation'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, "Array");
-      this.setColour(100);
+      this.setColour("%{BKY_PROLOG_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
