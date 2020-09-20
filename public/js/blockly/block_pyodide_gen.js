@@ -728,7 +728,7 @@ Blockly.Python['sivalidation'] = function (block) {
 Blockly.Python['import_sivalidation'] = function (block) {
     var dropdown_vali = block.getFieldValue('vali');
     // TODO: Assemble Python into code variable.
-    var code = 'from sklearn.model_selection import ' + dropdown_vali;
+    var code = 'from sklearn.model_selection import ' + dropdown_vali+"\n";
     return code;
 };
 Blockly.Python['kfold'] = function (block) {
