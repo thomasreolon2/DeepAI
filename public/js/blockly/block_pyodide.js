@@ -1198,6 +1198,22 @@ this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C16-
     }
 };
 
+Blockly.Blocks['add_string'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null);
+      this.appendValueInput("NAME2")
+          .setCheck(null)
+          .appendField("+");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
 // text_replace
 Blockly.Blocks['text_replace'] = {
     init: function () {

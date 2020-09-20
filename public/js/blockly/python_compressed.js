@@ -1536,6 +1536,16 @@ Blockly.Python['text_replace'] = function(block) {
   return [code,Blockly.Python.ORDER_NONE];
 };
 
+Blockly.Python['add_string'] = function(block) {
+  var string1 = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  var string2 = Blockly.Python.valueToCode(block, 'NAME2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = string1 + ' + ' + string2;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+
 // increase
 Blockly.Python['increase'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
