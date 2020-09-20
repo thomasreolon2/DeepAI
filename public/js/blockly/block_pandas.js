@@ -102,17 +102,17 @@ Blockly.Blocks['deletehead'] = {
 };
 
 // 특정 행 삭제
-//2020-09-19-양승국 수정
+//2020-09-20-양승국 수정
 Blockly.Blocks['select_row_delete'] = {
   init: function () {
     this.appendValueInput("select_data")
       .setCheck(null)
       .appendField("[행열삭제] 프레임");
-    this.appendValueInput("select_drop")
-        .setCheck(null)
-        .appendField("(삭제(컬럼/인덱스)");
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([["행삭제", ", axis = 0"], ["열삭제", ", axis = 1"]]), "srd_NAME")
+      .appendField("(인덱스값")
+      .appendField(new Blockly.FieldTextInput("ex)0,1"), "select_drop"); 
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([["행삭제", "1"], ["열삭제", "2"]]), "srd_NAME")
       .appendField(")");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -235,8 +235,8 @@ Blockly.Blocks['select_row_list'] = {
       .setCheck(null)
       .appendField("[행렬추출] 프레임");
     this.appendDummyInput()
-        .appendField("(인덱스/컬럼명")
-        .appendField(new Blockly.FieldTextInput("행(인덱스)열(컬럼명)"), "list_val");        
+        .appendField("(인덱스값")
+        .appendField(new Blockly.FieldTextInput("ex)0,1"), "list_val");        
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([["행", "1"], ["열", "2"]]), "srd_NAME");
     this.appendDummyInput()
