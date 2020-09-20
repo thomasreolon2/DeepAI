@@ -350,6 +350,16 @@ Blockly.Python['pandas_plus'] = function (block) {
   return code;
 };
 
+//2020-09-21 양승국 추가 array[None, sasd]
+Blockly.Python['pan_aray'] = function (block) {
+  var variable_aray_array = Blockly.Python.valueToCode(block, 'aray_array', Blockly.Python.ORDER_ATOMIC);
+  var variable_ary_a1 = Blockly.Python.valueToCode(block, 'ary_a1', Blockly.Python.ORDER_ATOMIC);
+  var variable_ary_a2 = Blockly.Python.valueToCode(block, 'ary_a2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_aray_array + '[' + variable_ary_a1 + ',' +variable_ary_a2 + ']\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
 ////////////////////////////////////////////////////////////////////
 // Pandas 2학년 파트 끝
 ////////////////////////////////////////////////////////////////////
