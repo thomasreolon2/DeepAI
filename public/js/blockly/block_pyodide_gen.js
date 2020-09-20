@@ -214,7 +214,7 @@ Blockly.Python['train_test_split'] = function (block) {
     var dropdown_shuffle = block.getFieldValue('shuffle');
     var text_seed = block.getFieldValue('seed');
     // TODO: Assemble Python into code variable.
-    var code = 'from sklearn.model_selection import train_test_split\n' + value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split(' + value_x_data + ',' + value_y_data + ',' + 'test_size=' + text_test_size + ', shuffle=' + dropdown_shuffle + ', random_state=' + text_seed + ')\n';
+    var code = value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= train_test_split(' + value_x_data + ',' + value_y_data + ',' + 'test_size=' + text_test_size + ', shuffle=' + dropdown_shuffle + ', random_state=' + text_seed + ')\n';
     return code;
 };
 Blockly.Python['jin_train_test_split'] = function (block) {
@@ -437,7 +437,7 @@ Blockly.Python['sklearn_mlp'] = function (block) {
     }
 
 
-    var code = `from sklearn.neural_network import MLPClassifier\n
+    var code = `
 ${value_sklearn_mlp_lib_val} = MLPClassifier( 
 hidden_layer_sizes = (${text_sklearn_mlp_hidden_layer_sizes_}),
 activation = '${get_sklearn_mlp_activation}',
@@ -689,12 +689,8 @@ Blockly.Python['import_mlp'] = function (block) {
 Blockly.Python['import_linear'] = function (block) {
     var dropdown_lib = block.getFieldValue('lib');
     // TODO: Assemble Python into code variable.
-    var code = "";
-    if (dropdown_lib == "linear_model") {
-        code = 'from sklearn import linear_model' + "\n";
-    } else {
-        code = 'from sklearn.linear_model import ' + dropdown_lib + "\n";
-    }
+    var code = 'from sklearn.linear_model import ' + dropdown_lib + "\n";
+   
     return code;
 };
 Blockly.Python['import_kmeans'] = function (block) {
@@ -717,3 +713,130 @@ Blockly.Python['kmeans_fit'] = function (block) {
     var code = value_model + ".fit(" + variable_x_train + ")" + "\n";
     return code;
 };
+
+Blockly.Python['sivalidation'] = function (block) {
+    var dropdown_vali = block.getFieldValue('vali');
+    var value_em = Blockly.Python.valueToCode(block, 'em', Blockly.Python.ORDER_ATOMIC);
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    var text_cv = block.getFieldValue('cv');
+    // TODO: Assemble Python into code variable.
+    var code = dropdown_vali + '(' + value_em + ', ' + value_x + ', ' + value_y + ', cv=' + text_cv + ')\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+};
+Blockly.Python['import_sivalidation'] = function (block) {
+    var dropdown_vali = block.getFieldValue('vali');
+    // TODO: Assemble Python into code variable.
+    var code = 'from sklearn.model_selection import ' + dropdown_vali;
+    return code;
+};
+Blockly.Python['kfold'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_name = block.getFieldValue('NAME');
+    var dropdown_shuffle = block.getFieldValue('shuffle');
+    var text_seed = block.getFieldValue('seed');
+    // TODO: Assemble Python into code variable.
+    var code = value_model + '= KFold(n_splits=' + text_name + ',shuffle=' + dropdown_shuffle + ',random_state=' + text_seed + ')\n';
+    return code;
+};
+Blockly.Python['stratifiedkfold'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_name = block.getFieldValue('NAME');
+    var dropdown_shuffle = block.getFieldValue('shuffle');
+    var text_seed = block.getFieldValue('seed');
+    // TODO: Assemble Python into code variable.
+    var code = value_model + '= KFold(n_splits=' + text_name + ',shuffle=' + dropdown_shuffle + ',random_state=' + text_seed + ')\n';
+    return code;
+};
+Blockly.Python['bernoullirbm'] = function (block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_hi = block.getFieldValue('hi');
+    var text_lr = block.getFieldValue('lr');
+    var text_batch = block.getFieldValue('batch');
+    var text_epochs = block.getFieldValue('epochs');
+    var text_seed = block.getFieldValue('seed');
+    // TODO: Assemble Python into code variable.
+    var code = value_model + '= BernoulliRBM(n_components=' + text_hi + ',learning_rate=' + text_lr + ',batch_size=' + text_batch + ' ,n_iter = ' + text_epochs + ',random_state = ' + text_seed + ')\n';
+    return code;
+};
+Blockly.Python['import_scipy'] = function (block) {
+    var dropdown_scipy = block.getFieldValue('scipy');
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    switch (dropdown_scipy) {
+        case "curve_fit":
+            code = "from scipy.optimize import curve_fit";
+            break;
+        case "interp1d":
+            code = "from scipy.interpolate import interp1d";
+            break;
+        case "UnivariateSpline":
+            code = "from scipy.interpolate import UnivariateSpline";
+            break;
+        case "quad":
+            code = "from scipy.integrate import quad";
+            break;
+        case "trapz":
+            code = "from scipy.integrate import trapz";
+            break;
+    }
+
+    return code;
+};
+Blockly.Python['curve_fit'] = function(block) {
+    var value_fun = Blockly.Python.valueToCode(block, 'fun', Blockly.Python.ORDER_ATOMIC);
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code ='curve_fit('+value_fun+', '+value_x+', '+value_y+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+  Blockly.Python['univariatespline'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+    var text_s = block.getFieldValue('s');
+    // TODO: Assemble Python into code variable.
+    var code = 'UnivariateSpline('+value_x+', '+value_y+', s='+text_s+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+  Blockly.Python['quad'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+    var text_s = block.getFieldValue('s');
+    var text_e = block.getFieldValue('e');
+    // TODO: Assemble Python into code variable.
+    var code = 'quad('+value_x+', '+text_s+', '+text_e+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+  Blockly.Python['import_tree'] = function(block) {
+    var dropdown_tree = block.getFieldValue('tree');
+    // TODO: Assemble Python into code variable.
+    var code = 'from sklearn.tree import'+dropdown_tree+'\n';
+    return code;
+  };
+
+  Blockly.Python['decision'] = function(block) {
+    var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+    var text_dept = block.getFieldValue('dept');
+    var text_seed = block.getFieldValue('seed');
+    // TODO: Assemble Python into code variable.
+    var code = value_model+'= DecisionTreeClassifier(max_depth='+text_dept+',random_state='+text_seed+')\n';
+    return code;
+  };
+  Blockly.Python['coef'] = function(block) {
+    var value_coef = Blockly.Python.valueToCode(block, 'coef', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_coef+'.coef_';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+  Blockly.Python['intercept'] = function(block) {
+    var value_intercept = Blockly.Python.valueToCode(block, 'intercept', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = value_coef+'.intercept_';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };

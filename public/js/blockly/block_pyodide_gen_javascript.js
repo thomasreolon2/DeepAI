@@ -317,3 +317,113 @@ Blockly.JavaScript['kmeans_fit'] = function (block) {
   var code = '\n';
   return code;
 };
+
+
+Blockly.JavaScript['sivalidation'] = function(block) {
+  var dropdown_vali = block.getFieldValue('vali');
+  var value_em = Blockly.JavaScript.valueToCode(block, 'em', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_cv = block.getFieldValue('cv');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['import_sivalidation'] = function(block) {
+  var dropdown_vali = block.getFieldValue('vali');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['kfold'] = function(block) {
+  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_name = block.getFieldValue('NAME');
+  var dropdown_shuffle = block.getFieldValue('shuffle');
+  var text_seed = block.getFieldValue('seed');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+Blockly.JavaScript['stratifiedkfold'] = function(block) {
+  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_name = block.getFieldValue('NAME');
+  var dropdown_shuffle = block.getFieldValue('shuffle');
+  var text_seed = block.getFieldValue('seed');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+Blockly.JavaScript['bernoullirbm'] = function(block) {
+  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_hi = block.getFieldValue('hi');
+  var text_lr = block.getFieldValue('lr');
+  var text_batch = block.getFieldValue('batch');
+  var text_epochs = block.getFieldValue('epochs');
+  var text_seed = block.getFieldValue('seed');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+Blockly.JavaScript['import_scipy'] = function(block) {
+  var dropdown_scipy = block.getFieldValue('scipy');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+Blockly.JavaScript['curve_fit'] = function(block) {
+  var value_fun = Blockly.JavaScript.valueToCode(block, 'fun', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['univariatespline'] = function(block) {
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_s = block.getFieldValue('s');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['quad'] = function(block) {
+  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_s = block.getFieldValue('s');
+  var text_e = block.getFieldValue('e');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['import_tree'] = function(block) {
+  var dropdown_tree = block.getFieldValue('tree');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+Blockly.JavaScript['decision'] = function(block) {
+  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_dept = block.getFieldValue('dept');
+  var text_seed = block.getFieldValue('seed');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+Blockly.JavaScript['coef'] = function(block) {
+  var value_coef = Blockly.JavaScript.valueToCode(block, 'coef', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+Blockly.JavaScript['intercept'] = function(block) {
+  var value_intercept = Blockly.JavaScript.valueToCode(block, 'intercept', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
