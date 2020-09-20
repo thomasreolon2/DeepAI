@@ -367,7 +367,7 @@ Blockly.Blocks['dict'] = {
    */
     init: function () {
         this.appendDummyInput().appendField("딕셔너리");
-        this.setColour(230);
+        this.setColour("%{BKY_DICT_HUE}");
         this.updateShape_();
         this.setOutput(true, null);
         this.setMutator(new Blockly.Mutator(['lists_create_with_item']));
@@ -543,7 +543,7 @@ Blockly.Blocks['dic_menu'] = {
         this.appendDummyInput().appendField("값2");
         this.appendValueInput("dic3")
         this.setInputsInline(true);
-        this.setColour(230);
+        this.setColour("%{BKY_DICT_HUE}");
         this.setOutput(true, null);
         this.setTooltip("");
         this.setHelpUrl("");
