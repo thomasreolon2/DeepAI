@@ -1095,36 +1095,24 @@
         <block type="fetch_openml"></block>
         <block type="csv3"></block>
       </category>
-      <category name="앙상블 (Esemble)" colour="%{BKY_ML_HUE}">
-      </category>
-      <category name="신경망 (Neural_network)" colour="%{BKY_ML_HUE}">
-        <block type="sklearn_mlp"></block> <!-- 사이킷런 MLP 블록  -->
-        <!-- <block type="make_mlp_classifier"></block>
-        <block type="make_mlp_regressor"></block> -->
-        <block type="mlp_classifier"></block>
-        <block type="mlp_regressor"></block>
-      </category>
-        <!-- <block type="scikit_learn"></block> -->
-      <category name="선형모델 (Linear_model" colour="%{BKY_ML_HUE}">
-        <block type="scikit_learn"></block>
-        <block type="logistic_regression"></block>
-        <block type="logistic_regression_cv"></block>
-        <block type="perceptron"></block>
-        <block type="ridge_classifier"></block>
-        <block type="sgd_classifier"></block>
-        <block type="linear_regression"></block>
-        <block type="ridge"></block>
-        <block type="sgd_regressor"></block>
-      </category>
-      <category name="서포트 벡터 머신 (SVM)" colour="%{BKY_ML_HUE}">
-      
-      </category>
       <category name="전처리 (Preprocessing)" colour="%{BKY_ML_HUE}">
         <block type="labelencoder"></block>
         <block type="train_test_split"></block>
-
+      </category>
+      <category name="선형모델 (Linear_model" colour="%{BKY_ML_HUE}">
+        <block type="scikit_learn"></block>
+        <block type="linear_regression"></block>
+        <block type="sgd_regressor"></block>
+        <block type="ridge"></block>
+        <block type="logistic_regression"></block>
+        <block type="logistic_regression_cv"></block>
+        <block type="ridge_classifier"></block>
+        <block type="sgd_classifier"></block>
+        <block type="perceptron"></block>
       </category>
       <category name="메트릭스 (Metrics)" colour="%{BKY_ML_HUE}"> 
+        <block type="model_score"></block>
+        <block type="model_predict"></block>
         <block type="import_scikit"></block>
         <block type="acc_score"></block>
         <block type="AUC"></block>
@@ -1133,13 +1121,23 @@
         <block type="mae"></block>
         <block type="mse"></block>
         <block type="median"></block>
-        <block type="model_score"></block>
-        <block type="model_predict"></block>
+      </category>
+      <category name="신경망 (Neural_network)" colour="%{BKY_ML_HUE}">
+        <block type="sklearn_mlp"></block> <!-- 사이킷런 MLP 블록  -->
+        <!-- <block type="make_mlp_classifier"></block>
+        <block type="make_mlp_regressor"></block> -->
+        <block type="mlp_classifier"></block>
+        <block type="mlp_regressor"></block>
       </category>
       <category name="KNN (Neighbors)" colour="%{BKY_ML_HUE}">
         <block type="k_means"></block>
       </category>
-    
+      <category name="앙상블 (Esemble)" colour="%{BKY_ML_HUE}">
+      </category>
+      <category name="서포트 벡터 머신 (SVM)" colour="%{BKY_ML_HUE}">
+      </category>
+
+  
       <!-- <block type="array_get"></block> -->
       <!-- <block type="csv3"></block> -->
       <!-- <block type="sklearn_mlp_fit"></block> -->
