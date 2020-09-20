@@ -1122,7 +1122,7 @@ Blockly.Blocks['text_replace'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_TEXTS_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
