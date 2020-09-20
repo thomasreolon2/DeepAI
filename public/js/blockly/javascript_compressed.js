@@ -902,3 +902,111 @@ Blockly.JavaScript['break_block'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
+
+// 파이썬 for문
+Blockly.JavaScript['py_for'] = function(block) {
+    var value_item = Blockly.JavaScript.valueToCode(block, 'item', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
+    var statements_value = Blockly.JavaScript.statementToCode(block, 'value');
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['increase'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_number = Blockly.JavaScript.valueToCode(block, 'NUMBER', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['range1'] = function(block) {
+    var value_value1 = Blockly.JavaScript.valueToCode(block, 'VALUE1', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_value2 = Blockly.JavaScript.valueToCode(block, 'VALUE2', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+  
+  Blockly.JavaScript['range2'] = function(block) {
+    var value_value1 = Blockly.JavaScript.valueToCode(block, 'VALUE1', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.JavaScript['conver_int'] = function(block) {
+    var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = "\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.JavaScript['conver_float'] = function(block) {
+    var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = "\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.JavaScript['conver_str'] = function(block) {
+    var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = "\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  Blockly.JavaScript['conver_bool'] = function(block) {
+    var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = "\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+
+  
+// 리스트 정렬, 뒤집기
+// sort
+Blockly.JavaScript['list_sort_reverse'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    var value_list = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+  };
+  
+  // index
+Blockly.JavaScript['list_index'] = function(block) {
+    var value_list = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_index = Blockly.JavaScript.valueToCode(block, 'INDEX', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  // insert
+Blockly.JavaScript['list_insert'] = function(block) {
+    var value_list = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_index = Blockly.JavaScript.valueToCode(block, 'INDEX', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['list_remove_pop_count_extend'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    var value_list = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };
