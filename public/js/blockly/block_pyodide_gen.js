@@ -87,9 +87,9 @@ Blockly.Python['csv2'] = function (block) {
                 if (data == "") {
                     data = "None";
                 }
-                // if (Number(data) == 0) {
-                //     data = "0";
-                // }
+                if (Number(data) == 0) {
+                    data = "0";
+                }
                 x_train[i][j] = data; // value
             } value = value + "[" + x_train[i] + "]";
             if (i != x_train.length - 1) {
