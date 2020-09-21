@@ -498,7 +498,7 @@ Blockly.Python['val_vi'] = function(block) {
 
       console.log("check_value_matplotlib_main_cols",DL_Gra); 
       var code =`fig = plt.figure()     
-fig, ax_lst = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_rows}, figsize=(8,6) , constrained_layout=True)\n`; 
+fig, ax_lst = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_rows}, figsize=(8,4) , constrained_layout=True)\n`; 
        return code;   
     };   
     
