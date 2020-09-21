@@ -79,7 +79,7 @@ Blockly.Blocks['normal'] = {
       .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
