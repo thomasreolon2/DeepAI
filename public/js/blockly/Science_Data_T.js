@@ -776,7 +776,7 @@ Blockly.defineBlocksWithJsonArray(
   //matplot1 
   {
     "type": "matplotlib_main",
-    "message0": "[ 그래프 갯수 설정 ]  %1 ( %2 , %3  )",
+    "message0": "[ 그래프 개수 설정 ]  %1 ( %2 , %3  )",
     "args0": [
       {
         "type": "input_dummy"
