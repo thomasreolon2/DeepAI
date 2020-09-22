@@ -1274,10 +1274,10 @@ Blockly.defineBlocksWithJsonArray([
     args0: [
       {"type": "field_image","src": "/img/Operation/O2-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
 
-      { type: "input_value", name: "A", check: "Number" },
+      { type: "input_value", name: "A", check: null },
       {
         type: "field_dropdown",
-        name: "OP",
+        name: "OP", 
         options: [
           ["%{BKY_MATH_ADDITION_SYMBOL}", "ADD"],
           ["%{BKY_MATH_SUBTRACTION_SYMBOL}", "MINUS"],
@@ -1287,7 +1287,7 @@ Blockly.defineBlocksWithJsonArray([
           ["%{BKY_MATH_POWER_SYMBOL}", "POWER"],
         ],
       },
-      { type: "input_value", name: "B", check: "Number" },
+      { type: "input_value", name: "B", check: null },
     ],
     inputsInline: !0,
     output: "Number",

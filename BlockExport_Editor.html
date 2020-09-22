@@ -120,7 +120,7 @@
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/utils/plotly.js"></script>
-
+  
   <script>
     languagePluginLoader.then(() => {
       pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn']).then(() => {     // , 'scikit-learn'
@@ -291,21 +291,21 @@
         <!-- display -->
         <select id="display_select" class="form-control col-md-2 mt-2 ml-1">
           <option value="python">python</option>
-          <option value="javascript">javascript</option>
+          <option value="javascript">javascript</option> 
         </select>
 
         <!-- 실행 버튼 -->
         <input id="runButton1" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;"
           onClick="runButton()" value="실행" /> <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
-        <!-- 실행 로딩 중 -->
+        <!-- 실행 로딩 중 --> 
         <div id="loading_image1"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div>
-        <!-- 결과 버튼 -->
+        <!-- 결과 버튼 --> 
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="clear_result();"
-          value="결과 지우기" />
+          value="결과 지우기" /> 
 
         <!-- 저장 버튼 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="file_save();"
-          value="코드저장" />
+          value="코드저장" /> 
 
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal"
@@ -1246,11 +1246,11 @@
       // readOnly: true,
       lineNumbers: true,
       lineWrapping: true, // 자동 줄바꿈 설정
-      extraKeys: {
-        "Ctrl-Space": "autocomplete"
-      },
+    
+      
       //   spellcheck: true,   autocorrect: true,
     });
+   
 
     var pyEditor = CodeMirror(document.getElementById("pyCodeEditor"), {
       mode: "python",
@@ -1260,6 +1260,7 @@
       // readOnly: true,
       lineNumbers: true,
       lineWrapping: true, // 자동 줄바꿈 설정
+      spellcheck: true,
       extraKeys: {
         "Ctrl-Space": "autocomplete"
       },
@@ -1335,7 +1336,7 @@
 
     // ==================================
     // 블록 불러오기 
-    //===================================  
+    //===================================   
     function loadBlock() {
       var reader = new FileReader();
       var files = document.getElementById("file").files;
@@ -1402,8 +1403,8 @@
       var code_java = Blockly.JavaScript.workspaceToCode(demoWorkspace);
       var code_python = Blockly.Python.workspaceToCode(demoWorkspace);
       var blobObject = new Blob([code_python, code_java]);
-      saveAs(blobObject, "download.js");
-      //saveAs(blobObject, "download.py");
+      saveAs(blobObject, "download.js");  
+      //saveAs(blobObject, "download.py"); 
     }
 
     // ==================================
@@ -1679,7 +1680,7 @@
     // 로지스틱 그래프
     function Logisticgraph(x, y, w, b) {
       var ba = new Array();
-      function sigmoida(ax) {
+      function sigmoida(ax) { 
         value = 1 / (1 + (Math.exp(-ax)));
         return value;
       }
@@ -1918,7 +1919,7 @@
         csvFile += processRow(rows[i]);
       }
 
-      var blob = new Blob(["\ufeff" + csvFile], { type: 'text/csv;charset=utf-8;' });;//utf-8  (["\ufeff"+data+], {type: 'text/csv;charset=utf-8;'}); // 기존 ([csvFile], { type: 'text/csv;charset=ANSI;' });
+      var blob = new Blob(["\ufeff" + csvFile], { type: 'text/csv;charset=utf-8;' });//utf-8  (["\ufeff"+data+], {type: 'text/csv;charset=utf-8;'}); // 기존 ([csvFile], { type: 'text/csv;charset=ANSI;' });
       if (navigator.msSaveBlob) { // IE 10+  
         navigator.msSaveBlob(blob, filename);
       } else {
@@ -1933,7 +1934,7 @@
           link.click();
           document.body.removeChild(link);
         }
-      }
+      } 
     }
 
     function Check_matplotlib_user_input(a, b) {
