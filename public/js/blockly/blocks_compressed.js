@@ -1262,7 +1262,7 @@ Blockly.defineBlocksWithJsonArray([
       },
       { type: "field_number", name: "NUM", value: 0 },
     ],
-    output: "Number",
+    output: "Number", 
     helpUrl: "%{BKY_MATH_NUMBER_HELPURL}",
     style: "math_blocks",
     tooltip: "%{BKY_MATH_NUMBER_TOOLTIP}",
