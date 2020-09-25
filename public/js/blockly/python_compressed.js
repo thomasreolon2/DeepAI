@@ -587,11 +587,21 @@ Blockly.Python['py_for'] = function(block) {
   var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var statements_value = Blockly.Python.statementToCode(block, 'value');
   // TODO: Assemble Python into code variable.
-  var code = 'for '+value_item+' in '+value_list+' :\n'+statements_value;
+  // var code = 'for '+value_item+' in '+value_list+' :\n'+statements_value;
 
   var code = 'for '+value_item+' in '+value_list+ ' :\n'+statements_value;
 
   return code;
+};
+// 연산
+Blockly.Python['Oper'] = function(block) {
+  var value_a = Blockly.Python.valueToCode(block, 'A', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_b = Blockly.Python.valueToCode(block, 'B', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_a+dropdown_name+value_b+'\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 Blockly.Python.controls_for = function (a) {

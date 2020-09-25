@@ -461,9 +461,19 @@ Blockly.JavaScript.math_arithmetic = function (a) {
     b = b[1];
     var d = Blockly.JavaScript.valueToCode(a, "A", b) || "0";
     a = Blockly.JavaScript.valueToCode(a, "B", b) || "0";
-    //return c ? [d + c + a, b] : ["Math.pow(" + d + ", " + a + ")", Blockly.JavaScript.ORDER_FUNCTION_CALL]
-    return '\n';
+    return c ? [d + c + a, b] : ["Math.pow(" + d + ", " + a + ")", Blockly.JavaScript.ORDER_FUNCTION_CALL]
 };
+
+Blockly.JavaScript['Oper'] = function(block) {
+    var value_a = Blockly.JavaScript.valueToCode(block, 'A', Blockly.JavaScript.ORDER_ATOMIC);
+    var dropdown_name = block.getFieldValue('NAME');
+    var value_b = Blockly.JavaScript.valueToCode(block, 'B', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };
+
 Blockly.JavaScript.math_single = function (a) {
     var b = a.getFieldValue("OP");
     if ("NEG" == b) return a = Blockly.JavaScript.valueToCode(a, "NUM", Blockly.JavaScript.ORDER_UNARY_NEGATION) || "0", "-" == a[0] && (a = " " + a), ["-" + a, Blockly.JavaScript.ORDER_UNARY_NEGATION];

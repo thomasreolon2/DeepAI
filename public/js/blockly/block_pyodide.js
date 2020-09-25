@@ -911,6 +911,9 @@ Blockly.Blocks['py_for'] = {
 // for문안 range,xyz
 Blockly.Blocks['range3'] = {
     init: function() {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R6-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"}));
       this.appendValueInput("x")
           .setCheck(null)
           .appendField("범위(");
@@ -947,11 +950,27 @@ Blockly.Blocks['increase'] = {
         this.setHelpUrl("");
     }
 };
-
+// 기초 연산
+Blockly.Blocks['Oper'] = {
+    init: function() {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O2-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }));
+      this.appendValueInput("A")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["+","+"], ["-","-"], ["*","*"], ["/","/"], ["%","%"], ["^","^"]]), "NAME");
+      this.appendValueInput("B")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_MATH_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 //
 Blockly.Blocks['break_block'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R6-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }));
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R7-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }));
         this.appendDummyInput()
             .appendField("정지");
         this.setPreviousStatement(true, null);
