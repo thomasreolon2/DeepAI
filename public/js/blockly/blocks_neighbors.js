@@ -3,11 +3,12 @@ Blockly.Blocks['knn_import'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("[임포트] KNN")
-          .appendField(new Blockly.FieldDropdown([["KNeighborsClassifier","Classifier"], ["KNeighborsRegressorption","Regressor"], ["KNeighborsTransformer","TransformerME"], ["kneighbors_graph","graph"], ["NearestNeighbors","Nearest"]]), "NAME");
+          .appendField(new Blockly.FieldDropdown([["KNeighborsClassifier","KNeighborsClassifier"], ["KNeighborsRegressorption","KNeighborsRegressorption"], 
+          ["KNeighborsTransformer","KNeighborsTransformer"], ["kneighbors_graph","kneighbors_graph"], ["NearestNeighbors","NearestNeighbors"]]), "NAME");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -28,7 +29,7 @@ Blockly.Blocks['knn_import'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -49,13 +50,14 @@ Blockly.Blocks['knn_import'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
     }
   };
   
 
+  // KNeighborsTransformer 블록 함수
   Blockly.Blocks['kneighborstransformer_function'] = {
     init: function() {
       this.appendDummyInput()
@@ -69,39 +71,42 @@ Blockly.Blocks['knn_import'] = {
           .setCheck(null);
       this.appendDummyInput()
           .appendField("모드")
-          .appendField(new Blockly.FieldDropdown([["Distance","Distance"], ["Connectivity","Connectivity"]]), "NAME");
+          .appendField(new Blockly.FieldDropdown([["Distance","distance"], ["Connectivity","donnectivity"]]), "NAME");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
     }
   };
 
-
-   //kneighbors_graph 블록 함수
-   Blockly.Blocks['kneighbors_graph_function'] = {
+  //kneighbors_graph 블록 함수
+  Blockly.Blocks['kneighbors_graph_function'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("[KNeighbors 그래프]")
-          .appendField("X");
+          .appendField("모델");
       this.appendValueInput("value")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("모델");
+          .appendField("X");
       this.appendValueInput("value1")
           .setCheck(null);
       this.appendDummyInput()
+          .appendField("데이터");
+      this.appendValueInput("value2")
+          .setCheck(null);
+      this.appendDummyInput()
           .appendField("모드")
-          .appendField(new Blockly.FieldDropdown([["Distance","Distance"], ["Connectivity","Connectivity"]]), "NAME");
+          .appendField(new Blockly.FieldDropdown([["Distance","distance"], ["Connectivity","connectivity"]]), "NAME");
       this.appendDummyInput()
           .appendField("포함시키기")
-          .appendField(new Blockly.FieldDropdown([["True","True"], ["False","False"], ["Auto","Auto"]]), "NAME");
+          .appendField(new Blockly.FieldDropdown([["True","true"], ["False","false"]]), "NAME1");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
     }
