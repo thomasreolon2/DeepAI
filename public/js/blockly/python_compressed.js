@@ -1581,6 +1581,16 @@ Blockly.Python['range2'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+Blockly.Python['range3'] = function(block) {
+  var x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+  var y = Blockly.Python.valueToCode(block, 'y', Blockly.Python.ORDER_ATOMIC);
+  var z = Blockly.Python.valueToCode(block, 'z', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'range(' + x + ',' + y + ',' + z + ')';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
 // 정지
 Blockly.Python['break_block'] = function(block) {
   // TODO: Assemble JavaScript into code variable.

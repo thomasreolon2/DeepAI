@@ -907,6 +907,29 @@ Blockly.Blocks['py_for'] = {
         this.setHelpUrl("");
     }
 };
+
+// for문안 range,xyz
+Blockly.Blocks['range3'] = {
+    init: function() {
+      this.appendValueInput("x")
+          .setCheck(null)
+          .appendField("범위(");
+      this.appendValueInput("y")
+          .setCheck(null)
+          .appendField(",");
+      this.appendValueInput("z")
+          .setCheck(null)
+          .appendField(",");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_LOOPS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
 // increase 등등
 Blockly.Blocks['increase'] = {
     init: function () {
