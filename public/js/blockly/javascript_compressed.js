@@ -461,7 +461,8 @@ Blockly.JavaScript.math_arithmetic = function (a) {
     b = b[1];
     var d = Blockly.JavaScript.valueToCode(a, "A", b) || "0";
     a = Blockly.JavaScript.valueToCode(a, "B", b) || "0";
-    return c ? [d + c + a, b] : ["Math.pow(" + d + ", " + a + ")", Blockly.JavaScript.ORDER_FUNCTION_CALL]
+    //return c ? [d + c + a, b] : ["Math.pow(" + d + ", " + a + ")", Blockly.JavaScript.ORDER_FUNCTION_CALL]
+    return '\n';
 };
 Blockly.JavaScript.math_single = function (a) {
     var b = a.getFieldValue("OP");
@@ -909,7 +910,9 @@ Blockly.JavaScript['py_for'] = function(block) {
     var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
     var statements_value = Blockly.JavaScript.statementToCode(block, 'value');
     // TODO: Assemble Python into code variable.
+  
     var code = '\n';
+  
     return code;
   };
 
@@ -928,7 +931,7 @@ Blockly.JavaScript['py_for'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.JavaScript.ORDER_NONE];
   };
   
   Blockly.JavaScript['range2'] = function(block) {
@@ -936,7 +939,7 @@ Blockly.JavaScript['py_for'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.JavaScript.ORDER_NONE];
   };
 
   Blockly.JavaScript['conver_int'] = function(block) {
@@ -944,7 +947,7 @@ Blockly.JavaScript['py_for'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.JavaScript.ORDER_NONE];
   };
 
   Blockly.JavaScript['conver_float'] = function(block) {
@@ -952,7 +955,7 @@ Blockly.JavaScript['py_for'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.JavaScript.ORDER_NONE];
   };
 
   Blockly.JavaScript['conver_str'] = function(block) {
@@ -960,7 +963,7 @@ Blockly.JavaScript['py_for'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.JavaScript.ORDER_NONE];
   };
 
   Blockly.JavaScript['conver_bool'] = function(block) {
@@ -968,9 +971,16 @@ Blockly.JavaScript['py_for'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.JavaScript.ORDER_NONE];
   };
 
+  Blockly.JavaScript['math_arithmetic'] = function(block) {
+    var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = "\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return code;
+  };
   
 // 리스트 정렬, 뒤집기
 // sort
