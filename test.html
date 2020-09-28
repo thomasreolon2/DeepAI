@@ -16,39 +16,39 @@
     </head>
     <body>
         <button id="runButton2" style="width: 150px; height: 150;" onclick="runButton();" style="display:none;">실행</button>
-        <div>
+        <div id="img">
             <textarea id="pyCodeEditor" style="height: 500px;width: 500px;"></textarea>
         </div>
         <textarea id="exeArea" class="form-control" readonly style="height: 500px;width: 500px; background-color: bisque;"></textarea>
 
         <script>
-            function runButton() {
-                // languagePluginLoader.then(() => {
-                //     pyodide.runPython(`
-                //     import sys
-                //     import io
-                //     sys.stdout = io.StringIO()
-                //     `);
-
-                // });
-                globalThis.iodide = {
-                    output: {
-                        element: (tagName) => {
-                            let outputPane = document.createElement(tagName);
-                            document.querySelector("#result-pane").appendChild(outputPane);
-                            return outputPane;
-                        }
+            globalThis.iodide = {
+                output: {
+                    element: (tagName) => {
+                        let outputPane = document.createElement(tagName);
+                        document.querySelector("#img").appendChild(outputPane);
+                        return outputPane;
                     }
-                };
+                }
+            };
+            function runButton() {
+                languagePluginLoader.then(() => {
+                    pyodide.runPython(`
+                    import sys
+                    import io
+                    sys.stdout = io.StringIO()
+                    `);
+
+                });
                 var code = document.getElementById("pyCodeEditor")
                 var exe = document.getElementById('exeArea')
                 languagePluginLoader.then(() => {
                     try {
                         exe.innerHTML = pyodide.runPython(code.value);
-                        // let stdout = pyodide.runPython("sys.stdout.getvalue()")
-                        // let stdout_console = document.createElement('exeArea');
-                        // exe.innerHTML = stdout;
-                        // console.log(stdout);
+                        let stdout = pyodide.runPython("sys.stdout.getvalue()")
+                        let stdout_console = document.createElement('exeArea');
+                        exe.innerHTML = stdout;
+                        console.log(stdout);
                     } catch (e) {
                         console.log(e);
                     }
