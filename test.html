@@ -23,23 +23,32 @@
 
         <script>
             function runButton() {
-                languagePluginLoader.then(() => {
-                    pyodide.runPython(`
-                    import sys
-                    import io
-                    sys.stdout = io.StringIO()
-                    `);
+                // languagePluginLoader.then(() => {
+                //     pyodide.runPython(`
+                //     import sys
+                //     import io
+                //     sys.stdout = io.StringIO()
+                //     `);
 
-                });
+                // });
+                globalThis.iodide = {
+                    output: {
+                        element: (tagName) => {
+                            let outputPane = document.createElement(tagName);
+                            document.querySelector("#result-pane").appendChild(outputPane);
+                            return outputPane;
+                        }
+                    }
+                };
                 var code = document.getElementById("pyCodeEditor")
                 var exe = document.getElementById('exeArea')
                 languagePluginLoader.then(() => {
                     try {
                         exe.innerHTML = pyodide.runPython(code.value);
-                        let stdout = pyodide.runPython("sys.stdout.getvalue()")
-                        let stdout_console = document.createElement('exeArea');
-                        stdout_console.innerText = stdout;
-                        console.log(stdout);
+                        // let stdout = pyodide.runPython("sys.stdout.getvalue()")
+                        // let stdout_console = document.createElement('exeArea');
+                        // exe.innerHTML = stdout;
+                        // console.log(stdout);
                     } catch (e) {
                         console.log(e);
                     }
