@@ -383,8 +383,8 @@
 
   <!-- Toolbox 정의 -->
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display: none">
-    <category name="변수 (Variable)" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-    <category name="논리 (Logic)" colour="%{BKY_LOGIC_HUE}">
+    <category name="변수(Variable)" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+    <category name="논리(Logic)" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block> <!-- if -->
       <block type="controls_ifelse"></block><!-- if_else -->
       <block type="logic_compare"></block>
@@ -394,7 +394,7 @@
       <block type="logic_null"></block>
       <!-- <block type="logic_ternary"></block> 이거 뭐임? -->
     </category>
-    <category name="반복 (Repeat)" colour="%{BKY_LOOPS_HUE}">
+    <category name="반복(Repeat)" colour="%{BKY_LOOPS_HUE}">
       <!-- for 문 -->
       <block type="py_for"></block>
       <!-- while 문 -->
@@ -413,7 +413,7 @@
       <block type="break_block"></block>
 
     </category>
-    <category name="연산 (Operation)" colour="%{BKY_MATH_HUE}">
+    <category name="연산(Operation)" colour="%{BKY_MATH_HUE}">
       <block type="math_number">
         <field name="NUM">0</field>
       </block>
@@ -499,7 +499,7 @@
     </category>
 
     <!-- 문자 -->
-    <category name="문자 (Text)" colour="%{BKY_TEXTS_HUE}">
+    <category name="문자(Text)" colour="%{BKY_TEXTS_HUE}">
 
       <!-- print -->
       <block type="printc"></block>
@@ -582,7 +582,7 @@
     </category>
 
     <!-- list -->
-    <category name="컬렉션 (Collection)" colour="%{BKY_COLLECTION_HUE}">
+    <category name="컬렉션(Collection)" colour="%{BKY_COLLECTION_HUE}">
       <!-- 리스트 생성 -->
       <block type="lists_create_with"></block>
       <!-- 비어있는 리스트 생성 -->
@@ -668,7 +668,7 @@
 
     <!-- 커스텀 블록 -->
 
-    <category name="함수 (Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
+    <category name="함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
 
     </category>
 
@@ -683,7 +683,7 @@
     <!-- # numpy function # -->
 
 
-      <category name="넘파이 (Numpy)" colour="%{BKY_NUMPY_HUE}">
+      <category name="넘파이(Numpy)" colour="%{BKY_NUMPY_HUE}">
    
       <!-- import numpy as np -->
       <block type="numpy_library"></block>
@@ -810,7 +810,7 @@
     <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
     <!-- ************************************************** ************************* *************************  -->
     <!-- 2020-09-20 양승국 수정-->
-    <category name="판다스 (Pandas)" colour="%{BKY_PANDAS_HUE}">
+    <category name="판다스(Pandas)" colour="%{BKY_PANDAS_HUE}">
       <!-- 2020-09-20 양승국 판다스 전체수정-->
       <!-- <block type="import_lib">
           <value name="var">
@@ -1006,7 +1006,7 @@
     <!-- ************************************************** ************************* *************************  -->
 
     <!-- # 시각화 부분 #  -->
-    <category name="매트플롯립 (Matplotlib)" colour="%{BKY_VISUAL_HUE}">
+    <category name="맷 플롯립(Matplot)" colour="%{BKY_VISUAL_HUE}">
       <block type="visualization_library">
         <value name="lib_var">
           <block type="variables_get">
@@ -1064,7 +1064,7 @@
 
 
     </category>
-    <category name="사이파이 (Scipy)" colour="%{BKY_SCIPY_HUE}">
+    <category name="사이파이(Scipy)" colour="%{BKY_SCIPY_HUE}">
       <block type="import_scipy"></block>
       <block type="curve_fit"></block>
       <block type="univariatespline"></block>
@@ -1072,7 +1072,7 @@
     </category>
     <!-- # 시각화 부분 #  -->
 
-    <category name="사이킷런 (Scikitlearn)" colour="%{BKY_SCIKITLEARN_HUE}">
+    <category name="사이킷런(Scikit)" colour="%{BKY_SCIKITLEARN_HUE}">
       <category name="데이터셋 (Dataset)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_dataset"></block>
         <block type="fetch_openml"></block>
@@ -1094,7 +1094,7 @@
         <block type="onehotencoder"></block>
      </category>
 
-      <category name="선형모델 (Linear_model)" colour="%{BKY_SCIKITLEARN_HUE}">
+      <category name="선형모델(Linear)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_linear"></block>
         <!-- <block type="scikit_learn"></block> --><!--지현이가 만든거 여기에 잠들다.-->
         <block type="linear_regression"></block>
@@ -1109,7 +1109,7 @@
         <block type="coef"></block>
         <block type="intercept"></block>
       </category>
-      <category name="KNN (Neighbors)" colour="%{BKY_SCIKITLEARN_HUE}">
+      <category name="KNN(Neighbors)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_kmeans"></block>
         <block type="knn_import"></block>
         <block type="k_means"></block>
@@ -1118,12 +1118,12 @@
         <block type="kneighborstransformer_function"></block>
         <block type="kneighbors_graph_function"></block>
       </category>
-      <category name="결정트리 (Decisiontree)" colour="%{BKY_SCIKITLEARN_HUE}">
+      <category name="결정트리(Decisiontree)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_tree"></block>
         <block type="decision"></block>
         <block type="tree_text"></block>
       </category>
-      <category name="서포트 벡터 머신 (SVM)" colour="%{BKY_SCIKITLEARN_HUE}">
+      <category name="서포트 벡터 머신" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="sklearn_svm"></block>
         <block type="linearsvc"></block>
         <block type="linearsvr"></block>
@@ -1131,7 +1131,7 @@
         
       </category>
       
-      <category name="앙상블 (Esemble)" colour="%{BKY_SCIKITLEARN_HUE}">
+      <category name="앙상블(Esemble)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="sklearn_ensemble"></block>
         <block type="adaboostclassifier"></block>
         <block type="adaboostregressor"></block>
@@ -1142,7 +1142,7 @@
         
       </category>
       
-      <category name="메트릭스 (Metrics)" colour="%{BKY_SCIKITLEARN_HUE}">
+      <category name="메트릭스(Metrics)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_scikit"></block>
         <block type="model_fit"></block>
         <block type="kmeans_fit"></block>
@@ -1156,14 +1156,14 @@
         <block type="mse"></block>
         <block type="median"></block>
       </category>
-      <category name="셀렉션 (Selection)" colour="%{BKY_SCIKITLEARN_HUE}">
+      <category name="셀렉션(Selection)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_sivalidation"></block>
         <block type="kfold"></block>
         <block type="stratifiedkfold"></block>
         <block type="train_test_split"></block>
         <block type="sivalidation"></block>
       </category>
-      <category name="신경망 (Neural_network)" colour="%{BKY_SCIKITLEARN_HUE}">
+      <category name="신경망(Neuralnetwork)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_mlp"></block>
         <block type="sklearn_mlp"></block> 
         <!-- 사이킷런 MLP 블록  -->
@@ -1185,11 +1185,11 @@
     </category>
     <!-- 기본 블록 2020 - 09 - 07 찬영 -->
     <!-- 새 블록  딕셔너리 -->
-    <category name="데이터사이언스 (Data_Science)" colour="%{BKY_DATA_HUE}">
+    <category name="데이터사이언스(DS)" colour="%{BKY_DATA_HUE}">
     </category>
-    <category name="머신러닝 (Machine_Learning)" colour="%{BKY_ML_HUE}">
+    <category name="머신러닝(ML)" colour="%{BKY_ML_HUE}">
     </category>
-    <category name="딥러닝 (Deep_Learning)" colour="%{BKY_DL_HUE}">
+    <category name="딥러닝 (DL)" colour="%{BKY_DL_HUE}">
     </category>
     <!-- <category name="프롤로그 (Prolog)" colour="%{BKY_PROLOG_HUE}">
       <block type="prolog_list">

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+        <script>
+            languagePluginLoader.then(() => {
+                pyodide.loadPackage(['pandas', 'numpy', 'matplotlib']).then(() => { // , 'scikit-learn'
+
+                    console.log('pyodide 라이브러리 로딩완료');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="runButton2" style="width: 150px; height: 150;" onclick="runButton();" style="display:none;">실행</button>
+        <div>
+            <textarea id="pyCodeEditor" style="height: 500px;width: 500px;"></textarea>
+        </div>
+        <textarea id="exeArea" class="form-control" readonly style="height: 500px;width: 500px; background-color: bisque;"></textarea>
+
+        <script>
+            function runButton() {
+                languagePluginLoader.then(() => {
+                    pyodide.runPython(`
+                    import sys
+                    import io
+                    sys.stdout = io.StringIO()
+                    `);
+
+                });
+                var code = document.getElementById("pyCodeEditor")
+                var exe = document.getElementById('exeArea')
+                languagePluginLoader.then(() => {
+                    try {
+                        exe.innerHTML = pyodide.runPython(code.value);
+                        let stdout = pyodide.runPython("sys.stdout.getvalue()")
+                        let stdout_console = document.createElement('exeArea');
+                        stdout_console.innerText = stdout;
+                        console.log(stdout);
+                    } catch (e) {
+                        console.log(e);
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
+

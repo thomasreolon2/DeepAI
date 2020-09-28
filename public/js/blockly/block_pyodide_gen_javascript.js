@@ -453,7 +453,7 @@ Blockly.JavaScript['py_for'] = function(block) {
   var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_value = Blockly.JavaScript.statementToCode(block, 'value');
   // TODO: Assemble Python into code variable.
-  var code = '\n';
+  var code = statements_value+'\n';
   return code;
 };
 
