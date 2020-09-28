@@ -599,7 +599,7 @@ Blockly.Python['Oper'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var value_b = Blockly.Python.valueToCode(block, 'B', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_a+dropdown_name+value_b+'\n';
+  var code = value_a+dropdown_name+value_b;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
@@ -1580,7 +1580,7 @@ Blockly.Python['range1'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = 'range('+value_value1+','+value_value2+')';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['range2'] = function(block) {
@@ -1588,7 +1588,7 @@ Blockly.Python['range2'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = 'range(len('+value_value1+'))';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['range3'] = function(block) {
@@ -1598,7 +1598,7 @@ Blockly.Python['range3'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = 'range(' + x + ',' + y + ',' + z + ')';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 // 정지
