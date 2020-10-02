@@ -559,10 +559,12 @@ fig, ax_lst = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_mai
 
   if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){  
     code = code.concat(`${text_matplotlib_user_xy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
-  }else if(DL_Gra == "graph_both_1" ){ //1,1
-     code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )`);       
-  }else{ 
-    if(dropdown_matplotlib_graph_select == "matplotlib_box" ){  
+  }else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ){
+    code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}", c = None )`);  
+  // else if(DL_Gra == "graph_both_1" ){ //1,1
+  //    code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )`);       
+  }else{  
+    if(dropdown_matplotlib_graph_select == "matplotlib_box" ){    
       code = code.concat(`${text_matplotlib_user_xy } )`);   
     }else{ 
       code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )`);    
