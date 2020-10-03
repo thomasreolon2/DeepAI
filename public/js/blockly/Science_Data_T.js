@@ -879,7 +879,7 @@ Blockly.defineBlocksWithJsonArray(
   //matplot3 
   {
     "type": "matplotlib_graph_end",
-    "message0": " [ 그래프 출력 ] ",
+    "message0": " [ 그래프 저장 ] ",
     "args0": [
       
     ],

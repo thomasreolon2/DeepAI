@@ -137,10 +137,10 @@
   <!-- table -->
   <link rel="stylesheet" href="/css/table_custom.css">
   <style type="text/css">
-    canvas {
+    /* canvas {
       background-color: white;
       border: 1px solid black
-    }
+    } */
 
     .btn {
       margin: 10px;
@@ -158,10 +158,10 @@
       /*overflow: hidden; 이거 끄니까 코드미러 넘버링나옴 */
       height: auto;
     }
-
+/* 
     .canvas {
       margin-left: 10px;
-    }
+    } */
 
     #pyCodeEditor {
       position: absolute;
@@ -1428,31 +1428,68 @@
   ====== 블록 실행
   ===================================-->
   <script>
-    // 실행 버튼
+    //새로운 실행방법
     function runButton() {
-      Blockly.Python.addReservedWords('code');
-      var code = pyEditor.getValue();
+    globalThis.iodide = {
+                output: {
+                    element: (tagName) => {
+                        let outputPane = document.createElement(tagName);
+                        document.querySelector("#graph1").appendChild(outputPane);
+                        console.log(outputPane)
+                        return outputPane;
+                    }
+                }
+    };
+    Blockly.Python.addReservedWords('code');
+    var code = pyEditor.getValue();
 
-      Blockly.JavaScript.addReservedWords('code2');
-      var code2 = jsEditor.getValue();
+    languagePluginLoader.then(() => {
+        pyodide.runPython(`
+                    import sys
+                    import io
+                    sys.stdout = io.StringIO()
+                    `);
 
-      async function runcode() {
-        languagePluginLoader.then(() => {
-          try { pyodide.runPython(code); }
-          catch (e) { document.getElementById('exeArea').innerHTML = e; }
-        });
+    });
+    // var code = document.getElementById("pyCodeEditor");
+    console.log(code);
+    console.log(typeof(code));
+    var exe = document.getElementById('exeArea');
+    languagePluginLoader.then(() => {
+        try {
+            exe.innerHTML = pyodide.runPython(code);
+            let stdout = pyodide.runPython("sys.stdout.getvalue()");
+            exe.innerHTML = stdout;
+        } catch (e) {
+            exe.innerHTML = e;
+        }
+    });
+}
+    // 기존 실행 버튼
+    // function runButton() {
+    //   Blockly.Python.addReservedWords('code');
+    //   var code = pyEditor.getValue();
+
+    //   Blockly.JavaScript.addReservedWords('code2');
+    //   var code2 = jsEditor.getValue();
+
+    //   async function runcode() {
+    //     languagePluginLoader.then(() => {
+    //       try { pyodide.runPython(code); }
+    //       catch (e) { document.getElementById('exeArea').innerHTML = e; }
+    //     });
         // 명성이형 그래프 추가(일단 주석처리)
         // languagePluginLoader.then(await function () {
         //   if (DL_Gra == "chcked") { document.getElementById("pyplotfigure").src = pyodide.globals.img_str;}
         // });
         // DL_Gra = 0;
-      };
+    //   };
 
-      runcode().then(() => {
-        document.getElementById('exeArea').innerHTML = eval(code2);
-      });
+    //   runcode().then(() => {
+    //     document.getElementById('exeArea').innerHTML = eval(code2);
+    //   });
 
-    };
+    // };
 
 
     function openTextFile(blockId) {

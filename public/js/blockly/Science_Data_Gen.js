@@ -592,7 +592,7 @@ ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_loc
 ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`);  
 }
 
-
+  code=code.concat(`plt.show()\n`);
  return code;
 };
   
