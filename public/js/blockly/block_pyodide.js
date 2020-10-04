@@ -1953,12 +1953,15 @@ Blockly.Blocks['sivalidation'] = {
       this.appendValueInput("model")
           .setCheck(null)
           .appendField("[결정트리 모델] 모델");
-      this.appendValueInput("depth")
-          .setCheck(null)
-          .appendField("깊이");
-      this.appendValueInput("seed")
-          .setCheck(null)
-          .appendField("Seed");
+    //   this.appendValueInput("depth")
+    //       .setCheck(null)
+    //       .appendField("깊이");
+    //   this.appendValueInput("seed")
+    //       .setCheck(null)
+    //       .appendField("Seed");
+      this.appendDummyInput().appendField("깊이 ").appendField(new Blockly.FieldTextInput(""), "depth");
+      this.appendDummyInput().appendField("Seed ").appendField(new Blockly.FieldTextInput(""), "seed");
+
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
