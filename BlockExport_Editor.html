@@ -1450,6 +1450,10 @@
   <script>
     //새로운 실행방법
     function runButton() {
+      // 그래프 위쪽 삭제
+      $("#graph1").remove(); 
+      $("#csv_show").before("<div id='graph1' style=\"height:500px; width:900;\"><img id='pyplotfigure' /></div>");
+
     globalThis.iodide = {
                 output: {
                     element: (tagName) => {
