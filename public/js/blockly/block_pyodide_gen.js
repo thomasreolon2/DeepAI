@@ -822,8 +822,16 @@ Blockly.Python['curve_fit'] = function(block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
     var text_dept = block.getFieldValue('depth');
     var text_seed = block.getFieldValue('seed');
-    // TODO: Assemble Python into code variable.
-    var code = value_model+'= DecisionTreeClassifier(max_depth='+text_dept+',random_state='+text_seed+')\n';
+    var code='';
+    // TODO: Assemble Python into code variable.\
+    if(!(text_dept)){
+        text_dept="null"
+    }
+    if(!(text_seed)){
+        text_seed="null"
+    }   
+        code = value_model+'= DecisionTreeClassifier(max_depth='+text_dept+',random_state='+text_seed+')\n';
+
     return code;
   };
   Blockly.Python['coef'] = function(block) {
