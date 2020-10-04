@@ -1500,7 +1500,12 @@
         });
       }
       runcode().then(() => {
-        document.getElementById('exeArea').innerHTML = eval(code2);
+        if(eval(code2)==undefined){
+          document.getElementById('exeArea').innerHTML+='\n';
+        }
+        else{
+        document.getElementById('exeArea').innerHTML += eval(code2);
+      }
       });
 
     }
