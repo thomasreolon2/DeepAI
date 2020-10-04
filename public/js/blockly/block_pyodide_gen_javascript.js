@@ -1,7 +1,7 @@
 Blockly.JavaScript['printc'] = function (block) {
     var value_content = Blockly.JavaScript.valueToCode(block, 'content', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = 'printc(' + value_content + ')\n';
+    var code = '\n';
     return code;
   };
   Blockly.JavaScript['nj_array'] = function (block) {

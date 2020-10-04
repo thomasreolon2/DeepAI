@@ -18,7 +18,7 @@
 
   <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
 
-  <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->  
+  <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script>
   <script src="/js/blockly/javascript_compressed.js"></script>
   <script src="/js/blockly/python_compressed.js"></script>
@@ -53,7 +53,7 @@
   <script src="/js/blockly/Science_Data_T.js"></script>
   <script src="/js/blockly/Science_Data_Gen.js"></script>
   <script src="/js/blockly/Science_Data_Js.js"></script>
-  
+
   <!-- 데이타 사이언스 블록 -->
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지, 카테고리 색상 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -63,13 +63,13 @@
   <script src="/js/blockly/blocks_neighbors.js"></script>
   <script src="/js/blockly/blocks_neighbors_gen.js"></script>
   <script src="/js/blockly/blocks_neighbors_java.js"></script>
-  
+
   <!-- api 블록 -->
   <script src="/js/blockly/block_api.js"></script>
   <script src="/js/blockly/block_api_gen.js"></script>
   <script src="/js/blockly/block_api_gen_javascript.js"></script>
   <!-- api 블록 -->
-  
+
   <!--plotly cdn-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
 
@@ -114,24 +114,29 @@
   <script>
     var Data_process_on = 0;
     var DL_Gra = 0;
-    var testing_1 = 0; 
+    var testing_1 = 0;
   </script>
 
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/utils/plotly.js"></script>
-  
+
   <script>
     languagePluginLoader.then(() => {
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn','micropip']).then(() => {     // , 'scikit-learn'
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'micropip']).then(
+    () => { // , 'scikit-learn'
 
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image1").hide(); // 로딩 끝나면 로딩 창 없앰 
-        $("#runButton1").css({ 'display': "block" });
+        $("#runButton1").css({
+          'display': "block"
+        });
         $("#loading_image2").hide(); // 로딩 끝나면 로딩 창 없앰 
-        $("#runButton2").css({ 'display': "inline" });
+        $("#runButton2").css({
+          'display': "inline"
+        });
       });
-    });   
+    });
   </script>
 
   <!-- table -->
@@ -158,7 +163,8 @@
       /*overflow: hidden; 이거 끄니까 코드미러 넘버링나옴 */
       height: auto;
     }
-/* 
+
+    /* 
     .canvas {
       margin-left: 10px;
     } */
@@ -291,21 +297,21 @@
         <!-- display -->
         <select id="display_select" class="form-control col-md-2 mt-2 ml-1">
           <option value="python">python</option>
-          <option value="javascript">javascript</option> 
+          <option value="javascript">javascript</option>
         </select>
 
         <!-- 실행 버튼 -->
         <input id="runButton1" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;"
           onClick="runButton()" value="실행" /> <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
-        <!-- 실행 로딩 중 --> 
+        <!-- 실행 로딩 중 -->
         <div id="loading_image1"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div>
-        <!-- 결과 버튼 --> 
+        <!-- 결과 버튼 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="clear_result();"
-          value="결과 지우기" /> 
+          value="결과 지우기" />
 
         <!-- 저장 버튼 -->
         <input id="button" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="file_save();"
-          value="코드저장" /> 
+          value="코드저장" />
 
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal"
@@ -482,7 +488,7 @@
           </shadow>
         </value>
       </block>
-       <!-- 형변환  -->
+      <!-- 형변환  -->
       <block type="conver_int">
         <value name="VALUE"></value>
       </block>
@@ -495,7 +501,7 @@
       <block type="conver_bool">
         <value name="VALUE"></value>
       </block>
-      
+
     </category>
 
     <!-- 문자 -->
@@ -506,8 +512,8 @@
       <block type="input"></block>
       <block type="text"></block>
       <block type="text_join"></block>
-      
-      
+
+
       <!-- len -->
       <block type="text_length">
         <value name="VALUE">
@@ -560,7 +566,7 @@
       <!-- 문자 개수 세기 -->
       <block type="text_count">
       </block>
-      
+
       <!-- trim -->
       <block type="text_trim">
         <value name="TEXT">
@@ -670,30 +676,30 @@
     <!-- 함수 -->
     <category name="함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
 
-    
-    <!--pyodide_test--> 
 
-   <!-- 클래스 준비중 -->
-    <category name="클래스 (Class)" colour="%{BKY_VISUAL_HUE}" >
-       
+    <!--pyodide_test-->
+
+    <!-- 클래스 준비중 -->
+    <category name="클래스 (Class)" colour="%{BKY_VISUAL_HUE}">
+
       <!-- 클래스  -->
       <block type="python_class"></block>
-      <!-- 클래스  --> 
+      <!-- 클래스  -->
 
-       <!-- 객체  -->
-       <block type="class_refer">
+      <!-- 객체  -->
+      <block type="class_refer">
         <value name="class_refer_val">
           <block type="variables_get">
             <field name="VAR">df</field>
           </block>
         </value>
-       </block>
-       <!-- 객체  -->
+      </block>
+      <!-- 객체  -->
 
-    </category> 
-   <!-- 클래스 준비중 -->
+    </category>
+    <!-- 클래스 준비중 -->
     <sep></sep>
-  
+
 
 
     <!-- #####################################################################################################  -->
@@ -702,11 +708,11 @@
     <!-- # numpy function # -->
 
 
-      <category name="넘파이(Numpy)" colour="%{BKY_NUMPY_HUE}">
-   
+    <category name="넘파이(Numpy)" colour="%{BKY_NUMPY_HUE}">
+
       <!-- import numpy as np -->
       <block type="numpy_library"></block>
-       <!-- import numpy as np -->
+      <!-- import numpy as np -->
 
       <!-- CSV 저장 -->
       <block type="data_to_csv"></block>
@@ -716,7 +722,7 @@
       <block type="data_conversion"></block>
       <!-- data_conversion -->
 
-      <!-- numpy_concatenate --> 
+      <!-- numpy_concatenate -->
       <block type="np_concatenate"></block>
       <!-- numpy_concatenate -->
 
@@ -754,7 +760,7 @@
       <!-- np.shape  -->
 
       <!-- np.reshape  -->
-      <block type="numpy_reshape"> </block> 
+      <block type="numpy_reshape"> </block>
       <!-- np.reshape  -->
 
       <!-- np.reshape  -->
@@ -1005,7 +1011,7 @@
           </block>
         </value>
       </block>
-      
+
       <!-- <block type="pan_aray">
         <value name="aray_array">
           <block type="variables_get">
@@ -1111,11 +1117,12 @@
           </value>
         </block>
         <block type="onehotencoder"></block>
-     </category>
+      </category>
 
       <category name="선형모델(Linear)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_linear"></block>
-        <!-- <block type="scikit_learn"></block> --><!--지현이가 만든거 여기에 잠들다.-->
+        <!-- <block type="scikit_learn"></block> -->
+        <!--지현이가 만든거 여기에 잠들다.-->
         <block type="linear_regression"></block>
         <block type="sgd_regressor"></block>
         <block type="ridge"></block>
@@ -1146,10 +1153,10 @@
         <block type="sklearn_svm"></block>
         <block type="linearsvc"></block>
         <block type="linearsvr"></block>
-        
-        
+
+
       </category>
-      
+
       <category name="앙상블(Esemble)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="sklearn_ensemble"></block>
         <block type="adaboostclassifier"></block>
@@ -1158,9 +1165,9 @@
         <block type="gradientboostingregressor"></block>
         <block type="randomforestclassifier"></block>
         <block type="randomforestregressor"></block>
-        
+
       </category>
-      
+
       <category name="메트릭스(Metrics)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_scikit"></block>
         <block type="model_fit"></block>
@@ -1184,7 +1191,7 @@
       </category>
       <category name="신경망(Neuralnetwork)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_mlp"></block>
-        <block type="sklearn_mlp"></block> 
+        <block type="sklearn_mlp"></block>
         <!-- 사이킷런 MLP 블록  -->
         <!-- <block type="make_mlp_classifier"></block>
         <block type="make_mlp_regressor"></block> -->
@@ -1193,7 +1200,7 @@
         <block type="bernoullirbm"></block>
 
       </category>
- 
+
 
 
       <!-- <block type="array_get"></block> -->
@@ -1255,11 +1262,11 @@
       // readOnly: true,
       lineNumbers: true,
       lineWrapping: true, // 자동 줄바꿈 설정
-    
-      
+
+
       //   spellcheck: true,   autocorrect: true,
     });
-   
+
 
     var pyEditor = CodeMirror(document.getElementById("pyCodeEditor"), {
       mode: "python",
@@ -1269,7 +1276,7 @@
       // readOnly: true,
       lineNumbers: true,
       lineWrapping: true, // 자동 줄바꿈 설정
-     // spellcheck: true,
+      // spellcheck: true,
       extraKeys: {
         "Ctrl-Space": "autocomplete"
       },
@@ -1283,45 +1290,45 @@
 
     var demoWorkspace = Blockly.inject( // 블록이 나타나는 부분 
       "blocklyDiv", {
-      toolbox: document.getElementById("toolbox"), // 툴박스  보이기 
-      grid: // 그리드 보이기 
-      {
-        spacing: 0,
-        length: 3,
-        colour: '#ccc',
-        snap: true
-      },
-      zoom: // 줌 기능 
-      {
-        controls: true,
-        wheel: true,
-        startScale: 1.0,
-        maxScale: 3,
-        minScale: 0.3,
-        scaleSpeed: 1.2
-      },
-      trashcan: true, // 휴지통
-      /*theme: {
-        'blockStyles': {
-          "list_blocks": {
-            "colourPrimary": "#4a148c",
-            "colourSecondary": "#AD7BE9",
-            "colourTertiary": "#CDB6E9"
-          }
+        toolbox: document.getElementById("toolbox"), // 툴박스  보이기 
+        grid: // 그리드 보이기 
+        {
+          spacing: 0,
+          length: 3,
+          colour: '#ccc',
+          snap: true
         },
-        'categoryStyles': {
-          "list_category": {
-            "colour": "#4a148c"
-          }
+        zoom: // 줌 기능 
+        {
+          controls: true,
+          wheel: true,
+          startScale: 1.0,
+          maxScale: 3,
+          minScale: 0.3,
+          scaleSpeed: 1.2
         },
-        'componentStyles': {
-          'toolboxBackgroundColour': '#848484', // toolbox background
-          'toolboxForegroundColour': '#fff',
-          'flyoutBackgroundColour': '#D8D8D8', // toolbox color
-        }
-      }*/
-      renderer: "zelos"
-    }
+        trashcan: true, // 휴지통
+        /*theme: {
+          'blockStyles': {
+            "list_blocks": {
+              "colourPrimary": "#4a148c",
+              "colourSecondary": "#AD7BE9",
+              "colourTertiary": "#CDB6E9"
+            }
+          },
+          'categoryStyles': {
+            "list_category": {
+              "colour": "#4a148c"
+            }
+          },
+          'componentStyles': {
+            'toolboxBackgroundColour': '#848484', // toolbox background
+            'toolboxForegroundColour': '#fff',
+            'flyoutBackgroundColour': '#D8D8D8', // toolbox color
+          }
+        }*/
+        renderer: "zelos"
+      }
 
     );
 
@@ -1386,7 +1393,8 @@
         } catch (e) {
           console.log('python 코드가 매핑되어 있지 않습니다. Error : ' + e);
         }
-      } coderun().then(() => {
+      }
+      coderun().then(() => {
         try {
           var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
           jsEditor.setValue(jsCode);
@@ -1413,7 +1421,7 @@
       var code_java = Blockly.JavaScript.workspaceToCode(demoWorkspace);
       var code_python = Blockly.Python.workspaceToCode(demoWorkspace);
       var blobObject = new Blob([code_python, code_java]);
-      saveAs(blobObject, "download.js");  
+      saveAs(blobObject, "download.js");
       //saveAs(blobObject, "download.py"); 
     }
 
@@ -1451,44 +1459,51 @@
     //새로운 실행방법
     function runButton() {
       // 그래프 위쪽 삭제
-      $("#graph1").remove(); 
+      $("#graph1").remove();
       $("#csv_show").before("<div id='graph1' style=\"height:500px; width:900;\"><img id='pyplotfigure' /></div>");
 
-    globalThis.iodide = {
-                output: {
-                    element: (tagName) => {
-                        let outputPane = document.createElement(tagName);
-                        document.querySelector("#graph1").appendChild(outputPane);
-                        console.log(outputPane)
-                        return outputPane;
-                    }
-                }
-    };
-    Blockly.Python.addReservedWords('code');
-    var code = pyEditor.getValue();
-
-    languagePluginLoader.then(() => {
+      globalThis.iodide = {
+        output: {
+          element: (tagName) => {
+            let outputPane = document.createElement(tagName);
+            document.querySelector("#graph1").appendChild(outputPane);
+            console.log(outputPane)
+            return outputPane;
+          }
+        }
+      };
+      Blockly.Python.addReservedWords('code');
+      var code = pyEditor.getValue();
+      Blockly.JavaScript.addReservedWords('code2');
+      var code2 = jsEditor.getValue();
+      languagePluginLoader.then(() => {
         pyodide.runPython(`
                     import sys
                     import io
                     sys.stdout = io.StringIO()
                     `);
 
-    });
-    // var code = document.getElementById("pyCodeEditor");
-    console.log(code);
-    console.log(typeof(code));
-    var exe = document.getElementById('exeArea');
-    languagePluginLoader.then(() => {
-        try {
+      });
+      // var code = document.getElementById("pyCodeEditor");
+      async function runcode() {
+        console.log(code);
+        console.log(typeof (code));
+        var exe = document.getElementById('exeArea');
+        languagePluginLoader.then(() => {
+          try {
             exe.innerHTML = pyodide.runPython(code);
             let stdout = pyodide.runPython("sys.stdout.getvalue()");
             exe.innerHTML = stdout;
-        } catch (e) {
+          } catch (e) {
             exe.innerHTML = e;
-        }
-    });
-}
+          }
+        });
+      }
+      runcode().then(() => {
+        document.getElementById('exeArea').innerHTML = eval(code2);
+      });
+
+    }
     // 기존 실행 버튼
     // function runButton() {
     //   Blockly.Python.addReservedWords('code');
@@ -1502,11 +1517,11 @@
     //       try { pyodide.runPython(code); }
     //       catch (e) { document.getElementById('exeArea').innerHTML = e; }
     //     });
-        // 명성이형 그래프 추가(일단 주석처리)
-        // languagePluginLoader.then(await function () {
-        //   if (DL_Gra == "chcked") { document.getElementById("pyplotfigure").src = pyodide.globals.img_str;}
-        // });
-        // DL_Gra = 0;
+    // 명성이형 그래프 추가(일단 주석처리)
+    // languagePluginLoader.then(await function () {
+    //   if (DL_Gra == "chcked") { document.getElementById("pyplotfigure").src = pyodide.globals.img_str;}
+    // });
+    // DL_Gra = 0;
     //   };
 
     //   runcode().then(() => {
@@ -1539,7 +1554,7 @@
             csvval[0] = csvval[0].replace('\r', '');
             // row
             var cnt = (csvval.length < 2000) ? csvval.length : 2000;
-            for (var i = 1; i < cnt-1; i++) {
+            for (var i = 1; i < cnt - 1; i++) {
               csvval[i] = csvval[i].replace('\r', '');
               var cols = csvval[i].split(',');
               var fileObject = new Object();
@@ -1731,7 +1746,8 @@
     // 로지스틱 그래프
     function Logisticgraph(x, y, w, b) {
       var ba = new Array();
-      function sigmoida(ax) { 
+
+      function sigmoida(ax) {
         value = 1 / (1 + (Math.exp(-ax)));
         return value;
       }
@@ -1821,53 +1837,51 @@
 
 
       //--------------------------------- data 속성 ---------------------------// 
-      var data = [
-        {
-          type: 'table',
+      var data = [{
+        type: 'table',
 
-          //--------------헤더 설정 ---------------// 
-          header: {
-            values: Get_CSV_Header,
-            //     values: [["<b>EXPENSES</b>"], ["<b>Q1</b>"],["<b>Q2</b>"], ["<b>Q3</b>"], ["<b>Q4</b>"]], 
+        //--------------헤더 설정 ---------------// 
+        header: {
+          values: Get_CSV_Header,
+          //     values: [["<b>EXPENSES</b>"], ["<b>Q1</b>"],["<b>Q2</b>"], ["<b>Q3</b>"], ["<b>Q4</b>"]], 
 
-            //     function(Table_Chart){
-            //         for (var j = 0; j < Table_Chart[0].length; j++) {   //테이블 요소만 가져오기 
-            //            [Table_Chart[j][0]] 
-            //            }
-            //   },
+          //     function(Table_Chart){
+          //         for (var j = 0; j < Table_Chart[0].length; j++) {   //테이블 요소만 가져오기 
+          //            [Table_Chart[j][0]] 
+          //            }
+          //   },
 
-            //     align: "center",
-            line: {
-              width: 1,
-              color: 'black'
-            },
-            fill: {
-              color: "grey"
-            },
-            font: {
-              family: "Arial",
-              size: 12,
-              color: "white"
-            }
+          //     align: "center",
+          line: {
+            width: 1,
+            color: 'black'
           },
-          //--------------헤더 설정 ---------------//
+          fill: {
+            color: "grey"
+          },
+          font: {
+            family: "Arial",
+            size: 12,
+            color: "white"
+          }
+        },
+        //--------------헤더 설정 ---------------//
 
-          cells: {
-            values: NPTD_Data,
-            align: "center",
-            line: {
-              color: "black",
-              width: 1
+        cells: {
+          values: NPTD_Data,
+          align: "center",
+          line: {
+            color: "black",
+            width: 1
 
-            },
-            font: {
-              family: "Arial",
-              size: 11,
-              color: ["black"]
-            }
+          },
+          font: {
+            family: "Arial",
+            size: 11,
+            color: ["black"]
           }
         }
-      ]
+      }]
 
 
       var title = "테이블 확인 하기 "
@@ -1896,7 +1910,7 @@
         var Show_CSV_Data = document.createElement("input");
         Show_CSV_Data.setAttribute("id", "Data_S_read_CSV");
         Show_CSV_Data.type = "file";
-        Show_CSV_Data.accept = ".csv";   //loadFile    
+        Show_CSV_Data.accept = ".csv"; //loadFile    
         Show_CSV_Data.onchange = function (event) {
 
           if (event.target.files != undefined) {
@@ -1905,7 +1919,7 @@
             testing_1 = event.target.files[0].name;
 
             var reader = new FileReader();
-            reader.onload = function (e) {   //들어오기전에 먼저 실행됨  
+            reader.onload = function (e) { //들어오기전에 먼저 실행됨  
               var fileResult = e.target.result;
 
               resolve(fileResult);
@@ -1928,7 +1942,8 @@
     //팝업창 열기 블록 
     function datasets_load_lms() {
       window.open("http://localhost:8000/datasets_load_lms", "a",
-        "width=600, height=500, left=100, top=50, directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=no,resizable=no,");
+        "width=600, height=500, left=100, top=50, directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=no,resizable=no,"
+        );
     }
 
 
@@ -1970,7 +1985,9 @@
         csvFile += processRow(rows[i]);
       }
 
-      var blob = new Blob(["\ufeff" + csvFile], { type: 'text/csv;charset=utf-8;' });//utf-8  (["\ufeff"+data+], {type: 'text/csv;charset=utf-8;'}); // 기존 ([csvFile], { type: 'text/csv;charset=ANSI;' });
+      var blob = new Blob(["\ufeff" + csvFile], {
+        type: 'text/csv;charset=utf-8;'
+      }); //utf-8  (["\ufeff"+data+], {type: 'text/csv;charset=utf-8;'}); // 기존 ([csvFile], { type: 'text/csv;charset=ANSI;' });
       if (navigator.msSaveBlob) { // IE 10+  
         navigator.msSaveBlob(blob, filename);
       } else {
@@ -1985,7 +2002,7 @@
           link.click();
           document.body.removeChild(link);
         }
-      } 
+      }
     }
 
     function Check_matplotlib_user_input(a, b) {
@@ -1997,12 +2014,6 @@
         DL_Gra = 0;
       }
     }
-
-
-
-
-
-
   </script>
 
   <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
