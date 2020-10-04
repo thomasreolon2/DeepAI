@@ -1645,6 +1645,8 @@ Blockly.Blocks.procedures_defnoreturn = {
       Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT &&
       this.setCommentText(Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT);
     this.setStyle("procedure_blocks");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFNORETURN_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL);
     this.arguments_ = [];
@@ -1867,6 +1869,8 @@ Blockly.Blocks.procedures_defreturn = {
       Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT &&
       this.setCommentText(Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT);
     this.setStyle("procedure_blocks");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFRETURN_HELPURL);
     this.arguments_ = [];
@@ -1903,7 +1907,7 @@ Blockly.Blocks.procedures_mutatorcontainer = {
     this.setStyle("procedure_blocks");
     this.setTooltip(Blockly.Msg.PROCEDURES_MUTATORCONTAINER_TOOLTIP);
     this.contextMenu = !1;
-  },
+  }, 
 };
 Blockly.Blocks.procedures_mutatorarg = {
   init: function () {
@@ -1967,7 +1971,7 @@ Blockly.Blocks.procedures_callnoreturn = {
   init: function () {
     this.appendDummyInput("TOPROW").appendField(this.id, "NAME");
     this.setPreviousStatement(!0);
-    this.setNextStatement(!0);
+    this.setNextStatement(!0); 
     this.setStyle("procedure_blocks");
     this.setHelpUrl(Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL);
     this.arguments_ = [];

@@ -1,3 +1,20 @@
+//클래스 선언
+Blockly.JavaScript['python_class'] = function(block) {
+  var text_python_class_statement_name = block.getFieldValue('Python_Class_statement_name');
+  var statements_python_class_statement = Blockly.JavaScript.statementToCode(block, 'Python_Class_statement');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+}; 
+//객체 
+Blockly.JavaScript['class_refer'] = function(block) {
+  var value_class_refer_classname = Blockly.JavaScript.valueToCode(block, 'class_refer_className', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_class_refer_val = block.getFieldValue('class_refer_val');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
 //넘파이 라이브러리 
 Blockly.JavaScript['numpy_library'] = function (block) {
   // TODO: Assemble JavaScript into code variable.

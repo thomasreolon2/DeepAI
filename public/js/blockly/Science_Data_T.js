@@ -1,5 +1,30 @@
 Blockly.defineBlocksWithJsonArray(
     [
+
+//클래스 선언
+{
+  "type": "python_class",
+  "message0": "[ 클래스  선언 ] %1 %2 %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "Python_Class_statement_name",
+      "text": "클래스 명"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_statement",
+      "name": "Python_Class_statement"
+    }
+  ], 
+  "inputsInline": true,
+  "colour": 125,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+      
 //numpy 라이브러리 임포트
     {
         "type": "numpy_library",
@@ -919,4 +944,19 @@ Blockly.defineBlocksWithJsonArray(
   
   ]
   ); 
-  
+  //객체  
+  Blockly.Blocks['class_refer'] = {
+    init: function() {
+      this.appendValueInput("class_refer_className")
+          .setCheck(null)
+          .appendField("[ 객체 ]");
+      this.appendDummyInput()
+          .appendField(".")
+          .appendField(new Blockly.FieldTextInput(""), "class_refer_val");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(125);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

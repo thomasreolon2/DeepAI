@@ -1,4 +1,24 @@
 //  2020-09-07
+//클래스 선언
+Blockly.Python['python_class'] = function(block) {
+  var text_python_class_statement_name = block.getFieldValue('Python_Class_statement_name');
+  var statements_python_class_statement = Blockly.Python.statementToCode(block, 'Python_Class_statement');
+  // TODO: Assemble Python into code variable.
+  var code = `class ${text_python_class_statement_name}:
+  ${statements_python_class_statement}\n`;
+  return code;  
+};
+
+//객체 
+Blockly.Python['class_refer'] = function(block) {
+  var value_class_refer_classname = Blockly.Python.valueToCode(block, 'class_refer_className', Blockly.Python.ORDER_ATOMIC);
+  var text_class_refer_val = block.getFieldValue('class_refer_val');
+  // TODO: Assemble Python into code variable.
+  var code = `${value_class_refer_classname}.${text_class_refer_val}\n`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];  
+};
+
 //넘파이 라이브러리 
 Blockly.Python['numpy_library'] = function(block) {
   // TODO: Assemble Python into code variable. 

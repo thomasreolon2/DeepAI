@@ -667,14 +667,33 @@
     </category>
 
     <!-- 커스텀 블록 -->
+    <!-- 함수 -->
+    <category name="함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
 
-    <category name="함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE">
-
-    </category>
-
+    
     <!--pyodide_test--> 
 
+   <!-- 클래스 준비중 -->
+    <category name="클래스 (Class)" colour="%{BKY_VISUAL_HUE}" >
+       
+      <!-- 클래스  -->
+      <block type="python_class"></block>
+      <!-- 클래스  --> 
+
+       <!-- 객체  -->
+       <block type="class_refer">
+        <value name="class_refer_val">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+       </block>
+       <!-- 객체  -->
+
+    </category> 
+   <!-- 클래스 준비중 -->
     <sep></sep>
+  
 
 
     <!-- #####################################################################################################  -->
@@ -1053,7 +1072,7 @@
       <!--  matplot2 시각화 준비      -->
 
       <!--  matplot3 시각화 하기      -->
-      <block type="matplotlib_graph_end"></block>
+      <!-- <block type="matplotlib_graph_end"></block> -->
       <!--  matplot3 시각화 하기      -->
 
       <!--  사이킷런 시각화 하기      -->
