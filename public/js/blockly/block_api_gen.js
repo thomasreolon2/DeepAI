@@ -104,10 +104,11 @@ Blockly.Python['sklearn_ensemble'] = function(block) {
   };
 
   Blockly.Python['onehotencoder'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    var value_df = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
     var dropdown_name = block.getFieldValue('NAME');
+    var text_column = block.getFieldValue('column');
     // TODO: Assemble Python into code variable.
-    var code = value_name + " = OneHotEncoder(handle_unknown='"+dropdown_name+"')\n";
+    var code =  "OneHot_enc = OneHotEncoder(handle_unknown='"+dropdown_name+"')\n" + value_df + "['" + text_column + "'] = OneHotEncoder.fit_transform(" + value_df + "['" + text_column + "'])\n";
     return code;
   };
 

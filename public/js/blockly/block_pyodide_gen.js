@@ -557,7 +557,7 @@ Blockly.Python['precision'] = function (block) {
     var value_yp = Blockly.Python.valueToCode(block, 'yp', Blockly.Python.ORDER_ATOMIC);
     var dropdown_aver = block.getFieldValue('aver');
     // TODO: Assemble Python into code variable.
-    var code = "precision_score(" + value_yt + "," + value_yp + ", average='" + dropdown_aver + "')";
+    var code = "precision_score(" + value_yt + "," + value_yp + ", average=" + dropdown_aver + ")";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
