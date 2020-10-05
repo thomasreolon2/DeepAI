@@ -20,7 +20,7 @@ Blockly.defineBlocksWithJsonArray(
     }
   ], 
   "inputsInline": true,
-  "colour": 125,
+  "colour": "%{BKY_CLASS_HUE}",
   "tooltip": "",
   "helpUrl": ""
 }, 
@@ -955,7 +955,7 @@ Blockly.defineBlocksWithJsonArray(
           .appendField(new Blockly.FieldTextInput(""), "class_refer_val");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(125);
+      this.setColour("%{BKY_CLASS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }

@@ -680,7 +680,7 @@
     <!--pyodide_test-->
 
     <!-- 클래스 준비중 -->
-    <category name="클래스 (Class)" colour="%{BKY_VISUAL_HUE}">
+    <category name="클래스 (Class)" colour="%{BKY_CLASS_HUE}">
 
       <!-- 클래스  -->
       <block type="python_class"></block>
@@ -997,6 +997,7 @@
 
       <!-- <block type="column_count"></block> -->
       <!-- <block type="image_list"></block> -->
+      <!-- 결측치 조회 -->
       <block type="missing_value_inquiry">
         <value name="mis_data">
           <block type="variables_get">
@@ -1004,6 +1005,7 @@
           </block>
         </value>
       </block>
+      <!-- 통계 정보 조회 -->
       <block type="stats_inquiry">
         <value name="inq_data">
           <block type="variables_get">

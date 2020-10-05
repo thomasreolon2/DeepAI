@@ -442,7 +442,7 @@ Blockly.Msg["NUMPY_HUE"] = "472BFF"; // 넘파이
 Blockly.Msg["PANDAS_HUE"] = "FF3D98"; // 판다스
 Blockly.Msg["VISUAL_HUE"] = "E8BE38"; // 매트플롯립, 시각화
 Blockly.Msg["SCIPY_HUE"] = "5AE88A"; // 사이파이
-
+Blockly.Msg["CLASS_HUE"] = "5BA561"; // 클래스
 Blockly.Msg["SCIKITLEARN_HUE"] = "E85938"; // 사이킷런
 Blockly.Msg["DATA_HUE"] = "6D3A85"; // 데이터사이언스
 Blockly.Msg["ML_HUE"] = "E6675E"; // 머신러닝
