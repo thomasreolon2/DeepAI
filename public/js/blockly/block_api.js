@@ -261,18 +261,12 @@ Blockly.Blocks['onehotencoder'] = {
     this.appendValueInput("data")
       .setCheck(null)
       .appendField("[범주형 자료 변환] ")
-      .appendField("데이터");
-    this.appendDummyInput().appendField("컬럼설정");
-    this.appendDummyInput().appendField("").appendField(new Blockly.FieldTextInput("컬럼명"), "column").appendField("  ");
-    this.appendDummyInput()
-      .appendField("오류발생 처리")
-      .appendField(new Blockly.FieldDropdown([["받기", "error"], ["무시하기", "ignore"]]), "NAME");
+      .appendField("변수");
     this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+    this.setOutput(true, null);
     this.setTooltip("");
     this.setHelpUrl("");
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
   }
 };
 
