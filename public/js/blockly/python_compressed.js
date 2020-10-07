@@ -39,7 +39,7 @@ Blockly.Python.init = function (a) {
   Blockly.Python.PASS = this.INDENT + "pass\n";
   Blockly.Python.definitions_ = Object.create(null);
   Blockly.Python.functionNames_ = Object.create(null);
-  Blockly.Python.variableDB_
+  Blockly.Python.variableDB_ 
     ? Blockly.Python.variableDB_.reset()
     : (Blockly.Python.variableDB_ = new Blockly.Names(
         Blockly.Python.RESERVED_WORDS_
@@ -55,18 +55,18 @@ Blockly.Python.init = function (a) {
         c[d],
         Blockly.Names.DEVELOPER_VARIABLE_TYPE
       ) + " = None"
-    );
+    ); 
   a = Blockly.Variables.allUsedVarModels(a);
-  for (d = 0; d < a.length; d++)
-    b.push(
-      Blockly.Python.variableDB_.getName(
-        a[d].getId(),
-        Blockly.VARIABLE_CATEGORY_NAME
-      ) + " = None"
-    );
+  // for (d = 0; d < a.length; d++)
+  //   b.push(
+  //     Blockly.Python.variableDB_.getName(
+  //       a[d].getId(),
+  //       Blockly.VARIABLE_CATEGORY_NAME
+  //     ) //+ " = None"
+  //   );
   Blockly.Python.definitions_.variables = b.join("\n");
 };
-Blockly.Python.finish = function (a) {
+Blockly.Python.finish = function (a) {  
   var b = [],
     c = [],
     d;
@@ -1068,6 +1068,8 @@ Blockly.Python.math_atan2 = function (a) {
     Blockly.Python.ORDER_MULTIPLICATIVE,
   ];
 };
+
+
 Blockly.Python.procedures = {};
 Blockly.Python.procedures_defreturn = function (a) {
   for (
@@ -1142,11 +1144,11 @@ Blockly.Python.procedures_callreturn = function (a) {
   )
     c[d] =
       Blockly.Python.valueToCode(a, "ARG" + d, Blockly.Python.ORDER_NONE) ||
-      "None";
+      "self";
   return [b + "(" + c.join(", ") + ")", Blockly.Python.ORDER_FUNCTION_CALL];
 };
 Blockly.Python.procedures_callnoreturn = function (a) {
-  return Blockly.Python.procedures_callreturn(a)[0] + "\n";
+  return Blockly.Python.procedures_callreturn(a)[0] + "\n"; 
 };
 Blockly.Python.procedures_ifreturn = function (a) {
   var b =
@@ -1167,6 +1169,9 @@ Blockly.Python.procedures_ifreturn = function (a) {
     : (b += Blockly.Python.INDENT + "return\n");
   return b;
 };
+
+
+
 Blockly.Python.texts = {};
 Blockly.Python.text = function (a) {
   return [
