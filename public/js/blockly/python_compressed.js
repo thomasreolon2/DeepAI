@@ -1083,7 +1083,7 @@ Blockly.Python.procedures_defreturn = function (a) {
     f++
   )
     (c = c.name),
-      -1 == a.arguments_.indexOf(c) &&
+      -1 == a.arguments_.indexOf(c) && 
         b.push(
           Blockly.Python.variableDB_.getName(c, Blockly.VARIABLE_CATEGORY_NAME)
         );
