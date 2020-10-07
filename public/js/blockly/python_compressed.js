@@ -1070,17 +1070,19 @@ Blockly.Python.math_atan2 = function (a) {
 };
 
 
+
+
 Blockly.Python.procedures = {};
 //return O
 Blockly.Python.procedures_defreturn = function (a) {
   for (
     var b = [],
-      c,
-      d = a.workspace,
-      e = Blockly.Variables.allUsedVarModels(d) || [],
-      f = 0;
-    (c = e[f]);
-    f++
+        c,
+        d = a.workspace,
+        e = Blockly.Variables.allUsedVarModels(d) || [],
+        f = 0;
+        (c = e[f]);
+        f++
   )
     (c = c.name),
       -1 == a.arguments_.indexOf(c) && 
@@ -1118,17 +1120,17 @@ Blockly.Python.procedures_defreturn = function (a) {
     k = "";
   h && g && (k = e);
   g
-    ? (g = Blockly.Python.INDENT + "return " + g + "\n")
+    ? (g = Blockly.Python.INDENT + "return " + g + "\n") 
     : h || (h = Blockly.Python.PASS);
   var l = [];
-  for (f = 0; f < a.arguments_.length; f++)
+  for (f = 0; f < a.arguments_.length; f++) 
     l[f] = Blockly.Python.variableDB_.getName(  
       a.arguments_[f], 
       Blockly.VARIABLE_CATEGORY_NAME   
     );
   b = "def " + d + "(" + l.join(", ") + "):\n" + b + e + c + h + k + g;
   b = Blockly.Python.scrub_(a, b);
-  //Blockly.Python.definitions_["%" + d] = b;
+  //Blockly.Python.definitions_["%" + d] = b; 
   return b; 
 };
 
@@ -1154,10 +1156,12 @@ Blockly.Python.procedures_callreturn = function (a) {
 };
 
 //no return block 
-Blockly.Python.procedures_callnoreturn = function (a) {
-  return Blockly.Python.procedures_callreturn(a)[0] + "\n"; 
-};
-Blockly.Python.procedures_ifreturn = function (a) {
+Blockly.Python.procedures_callnoreturn = function (a) {     
+  return Blockly.Python.procedures_callreturn(a)[0] + "\n";  
+}; 
+ 
+//
+Blockly.Python.procedures_ifreturn = function (a) { 
   var b =
     "if " +
     (Blockly.Python.valueToCode(a, "CONDITION", Blockly.Python.ORDER_NONE) ||
@@ -1168,12 +1172,12 @@ Blockly.Python.procedures_ifreturn = function (a) {
       Blockly.Python.injectId(Blockly.Python.STATEMENT_SUFFIX, a),
       Blockly.Python.INDENT
     ));
-  a.hasReturnValue_
+  a.hasReturnValue_ 
     ? ((a =
         Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) ||
         "None"),
       (b += Blockly.Python.INDENT + "return " + a + "\n"))
-    : (b += Blockly.Python.INDENT + "return\n");
+    : (b += Blockly.Python.INDENT + "return\n"); 
   return b;
 };
 
