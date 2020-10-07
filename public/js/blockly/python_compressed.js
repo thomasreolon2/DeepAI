@@ -1071,6 +1071,7 @@ Blockly.Python.math_atan2 = function (a) {
 
 
 Blockly.Python.procedures = {};
+//return O
 Blockly.Python.procedures_defreturn = function (a) {
   for (
     var b = [],
@@ -1107,11 +1108,11 @@ Blockly.Python.procedures_defreturn = function (a) {
   e && (e = Blockly.Python.prefixLines(e, Blockly.Python.INDENT));
   c = "";
   Blockly.Python.INFINITE_LOOP_TRAP &&
-    (c = Blockly.Python.prefixLines(
+    (c = Blockly.Python.prefixLines( 
       Blockly.Python.injectId(Blockly.Python.INFINITE_LOOP_TRAP, a),
       Blockly.Python.INDENT
     ));
-  var h = Blockly.Python.statementToCode(a, "STACK"),
+  var h = Blockly.Python.statementToCode(a, "STACK"), 
     g =
       Blockly.Python.valueToCode(a, "RETURN", Blockly.Python.ORDER_NONE) || "",
     k = "";
@@ -1121,19 +1122,23 @@ Blockly.Python.procedures_defreturn = function (a) {
     : h || (h = Blockly.Python.PASS);
   var l = [];
   for (f = 0; f < a.arguments_.length; f++)
-    l[f] = Blockly.Python.variableDB_.getName(
-      a.arguments_[f],
-      Blockly.VARIABLE_CATEGORY_NAME
+    l[f] = Blockly.Python.variableDB_.getName(  
+      a.arguments_[f], 
+      Blockly.VARIABLE_CATEGORY_NAME   
     );
   b = "def " + d + "(" + l.join(", ") + "):\n" + b + e + c + h + k + g;
   b = Blockly.Python.scrub_(a, b);
-  Blockly.Python.definitions_["%" + d] = b;
-  return null;
+  //Blockly.Python.definitions_["%" + d] = b;
+  return b; 
 };
+
+//return X
 Blockly.Python.procedures_defnoreturn = Blockly.Python.procedures_defreturn;
+
+//reuturn block 
 Blockly.Python.procedures_callreturn = function (a) {
   for (
-    var b = Blockly.Python.variableDB_.getName(
+    var b = Blockly.Python.variableDB_.getName( 
         a.getFieldValue("NAME"),
         Blockly.PROCEDURE_CATEGORY_NAME
       ),
@@ -1147,6 +1152,8 @@ Blockly.Python.procedures_callreturn = function (a) {
       "self";
   return [b + "(" + c.join(", ") + ")", Blockly.Python.ORDER_FUNCTION_CALL];
 };
+
+//no return block 
 Blockly.Python.procedures_callnoreturn = function (a) {
   return Blockly.Python.procedures_callreturn(a)[0] + "\n"; 
 };
