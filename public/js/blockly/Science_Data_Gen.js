@@ -208,27 +208,27 @@ Blockly.Python['np_arrange'] = function(block) {
 
       switch (dropdown_numpy_random_rand_option){
         case "numpy_random_randn":
-        code = `np.random.randn(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        code = `np.random.randn(${text_numpy_random_randn_rows},${text_numpy_random_randn_cols})`
         break;
 
         case "numpy_random_randint":
-        code = `np.random.randint(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        code = `np.random.randint(${text_numpy_random_randn_rows},${text_numpy_random_randn_cols})`
         break;
 
         case "numpy_random_rand":
-        code = `np.random.randn(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        code = `np.random.randn(${text_numpy_random_randn_rows},${text_numpy_random_randn_cols})`
         break;
 
         case "numpy_random_sample":
-        code = `np.random_sample(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        code = `np.random_sample(${text_numpy_random_randn_rows},${text_numpy_random_randn_cols})`
         break; 
 
         case "numpy_random_choice":
-        code = `np.random.choice(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        code = `np.random.choice(${text_numpy_random_randn_rows},${text_numpy_random_randn_cols})`
         break;
  
         case "numpy_random_seed":
-        code = `np.random.seed(${text_numpy_random_randn_rows}.${text_numpy_random_randn_cols})`
+        code = `np.random.seed(${text_numpy_random_randn_rows},${text_numpy_random_randn_cols})`
         break;
 
         default: 
