@@ -290,6 +290,7 @@ Blockly.JavaScript['matplotlib_pre_graph'] = function (block) {
   var text_matplotlib_pre_graph_xlable = block.getFieldValue('matplotlib_pre_graph_Xlable');
   var text_matplotlib_pre_graph_ylable = block.getFieldValue('matplotlib_pre_graph_Ylable');
   var text_matplotlib_pre_legend = block.getFieldValue('matplotlib_pre_legend');
+  var value_matplotlib_pre_color = Blockly.JavaScript.valueToCode(block, 'matplotlib_pre_color', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = "\n";
   return code;
