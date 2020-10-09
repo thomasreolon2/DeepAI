@@ -581,7 +581,12 @@ fig, ax_lst = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_mai
   if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){  
     code = code.concat(`${text_matplotlib_user_xy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
   }else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line"){
-    code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color} )`);  
+    if(value_matplotlib_pre_color.length > 0){
+      code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color} )`);  
+    }else{
+      code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}", c = None )`);  
+    }
+     
   // else if(DL_Gra == "graph_both_1" ){ //1,1
   //    code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )`);       
   }else{  
