@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Camera API</title>
+        <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
+    </head>
+ 
+    <body>
+ 
+        <!-- <div class="container">
+            <h1>Camera API</h1>
+ 
+            <section class="main-content">
+                <p>A demo of the Camera API, currently implemented in Firefox and Google Chrome on Android. Choose to take a picture with your device's camera and a preview will be shown through createObjectURL or a FileReader object (choosing local files supported too).</p>
+ 
+                <p>
+                    <input type="file" id="take-picture" accept="image/*">
+                </p>
+ 
+                <h2>Preview:</h2>
+                <p>
+                    <img src="about:blank" alt="" id="show-picture">
+                </p>
+ 
+                <p id="error"></p>
+ 
+            </section>
+   
+            <p class="footer">All the code is available in the <a href="https://github.com/robnyman/robnyman.github.com/tree/master/camera-api">Camera API repository on GitHub</a>.</p>
+        </div> -->
+
+
+
+        <video width="300" height="200" controls loop> 
+            <source src="nature.mp4" type="video/mp4">  
+            <source src="nature.ogg" type="video/ogg">
+        </video>
+
+       
+
+        <!-- 카메라 동작 성공 -> div 형태로 만들어서 티처블 머신 처럼 쭉 나열 한다음에 그 데이터를 학습데이터로 사용하면 됨      -->
+
+        <video id="player" controls autoplay></video>  <!-- 비디오 태그? 검색 해봐야 할듯   -->
+        <button id="capture">Capture</button>  <!-- 캡처란 버튼 생성  -->
+        <canvas id="snapshot" width=320 height=240></canvas> <!-- 캡처한 이미지를 저장할 캔바스 생성  -->
+         
+
+
+        <script>
+             var player = document.getElementById('player'); 
+             var snapshotCanvas = document.getElementById('snapshot'); 
+             var captureButton = document.getElementById('capture');
+
+             var handleSuccess = function(stream) {
+                // Attach the video stream to the video element and autoplay.
+                player.srcObject = stream;
+                };
+                 
+
+            captureButton.addEventListener('click', function() { 
+            var context = snapshot.getContext('2d');
+             // Draw the video frame to the canvas.
+            context.drawImage(player, 0, 0, snapshotCanvas.width, 
+            snapshotCanvas.height);
+             });
+
+             navigator.mediaDevices.getUserMedia({video: true})
+            .then(handleSuccess);
+        </script>
+ 
+ 
+    </body>
+</html>

@@ -820,12 +820,12 @@ Blockly.defineBlocksWithJsonArray(
     "nextStatement": null,
     "colour": "%{BKY_VISUAL_HUE}",
     "tooltip": "",
-    "helpUrl": ""
+    "helpUrl": "" 
   },
   //matplot2 수정
-  {
+  {  
     "type": "matplotlib_pre_graph",
-    "message0": "[ 그래프 출력 설정 ]    좌표  [ %1 ][ %2 %3 ] ( X , Y ) 값  %4 그래프 종류  %5 제목  %6 X축  %7 Y축  %8 범례  %9",
+    "message0": "[ 그래프 출력 설정 ]    좌표  [ %1 ][ %2 %3 ] ( X , Y ) 값  %4 그래프 종류  %5 제목  %6 X축  %7 Y축  %8 범례  %9 %10",
     "args0": [
       {
         "type": "input_value",
@@ -892,6 +892,10 @@ Blockly.defineBlocksWithJsonArray(
         "type": "field_input",
         "name": "matplotlib_pre_legend",
         "text": ""
+      },
+      {
+        "type": "matplotlib_pre_color",
+        "name": "NAME"
       }
     ],
     "inputsInline": true,
