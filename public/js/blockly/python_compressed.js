@@ -1156,7 +1156,7 @@ Blockly.Python.procedures_ifreturn = function (a) {
     (Blockly.Python.valueToCode(a, "CONDITION", Blockly.Python.ORDER_NONE) ||
       "False") +
     ":\n";
-  Blockly.Python.STATEMENT_SUFFIX &&
+  Blockly.Python.STATEMENT_SUFFIX && 
     (b += Blockly.Python.prefixLines(
       Blockly.Python.injectId(Blockly.Python.STATEMENT_SUFFIX, a),
       Blockly.Python.INDENT
