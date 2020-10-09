@@ -1070,19 +1070,22 @@ Blockly.Python.math_atan2 = function (a) {
 };
 
 
+
+
 Blockly.Python.procedures = {};
+//return O
 Blockly.Python.procedures_defreturn = function (a) {
   for (
     var b = [],
-      c,
-      d = a.workspace,
-      e = Blockly.Variables.allUsedVarModels(d) || [],
-      f = 0;
-    (c = e[f]);
-    f++
+        c,
+        d = a.workspace,
+        e = Blockly.Variables.allUsedVarModels(d) || [],
+        f = 0;
+        (c = e[f]);
+        f++
   )
     (c = c.name),
-      -1 == a.arguments_.indexOf(c) &&
+      -1 == a.arguments_.indexOf(c) && 
         b.push(
           Blockly.Python.variableDB_.getName(c, Blockly.VARIABLE_CATEGORY_NAME)
         );
@@ -1107,33 +1110,37 @@ Blockly.Python.procedures_defreturn = function (a) {
   e && (e = Blockly.Python.prefixLines(e, Blockly.Python.INDENT));
   c = "";
   Blockly.Python.INFINITE_LOOP_TRAP &&
-    (c = Blockly.Python.prefixLines(
+    (c = Blockly.Python.prefixLines( 
       Blockly.Python.injectId(Blockly.Python.INFINITE_LOOP_TRAP, a),
       Blockly.Python.INDENT
     ));
-  var h = Blockly.Python.statementToCode(a, "STACK"),
+  var h = Blockly.Python.statementToCode(a, "STACK"), 
     g =
       Blockly.Python.valueToCode(a, "RETURN", Blockly.Python.ORDER_NONE) || "",
     k = "";
   h && g && (k = e);
   g
-    ? (g = Blockly.Python.INDENT + "return " + g + "\n")
+    ? (g = Blockly.Python.INDENT + "return " + g + "\n") 
     : h || (h = Blockly.Python.PASS);
   var l = [];
-  for (f = 0; f < a.arguments_.length; f++)
-    l[f] = Blockly.Python.variableDB_.getName(
-      a.arguments_[f],
-      Blockly.VARIABLE_CATEGORY_NAME
+  for (f = 0; f < a.arguments_.length; f++) 
+    l[f] = Blockly.Python.variableDB_.getName(  
+      a.arguments_[f], 
+      Blockly.VARIABLE_CATEGORY_NAME   
     );
   b = "def " + d + "(" + l.join(", ") + "):\n" + b + e + c + h + k + g;
   b = Blockly.Python.scrub_(a, b);
-  Blockly.Python.definitions_["%" + d] = b;
-  return null;
+  //Blockly.Python.definitions_["%" + d] = b; 
+  return b; 
 };
+
+//return X
 Blockly.Python.procedures_defnoreturn = Blockly.Python.procedures_defreturn;
+
+//reuturn block 
 Blockly.Python.procedures_callreturn = function (a) {
   for (
-    var b = Blockly.Python.variableDB_.getName(
+    var b = Blockly.Python.variableDB_.getName( 
         a.getFieldValue("NAME"),
         Blockly.PROCEDURE_CATEGORY_NAME
       ),
@@ -1147,10 +1154,14 @@ Blockly.Python.procedures_callreturn = function (a) {
       "self";
   return [b + "(" + c.join(", ") + ")", Blockly.Python.ORDER_FUNCTION_CALL];
 };
-Blockly.Python.procedures_callnoreturn = function (a) {
-  return Blockly.Python.procedures_callreturn(a)[0] + "\n"; 
-};
-Blockly.Python.procedures_ifreturn = function (a) {
+
+//no return block 
+Blockly.Python.procedures_callnoreturn = function (a) {     
+  return Blockly.Python.procedures_callreturn(a)[0] + "\n";  
+}; 
+ 
+//
+Blockly.Python.procedures_ifreturn = function (a) { 
   var b =
     "if " +
     (Blockly.Python.valueToCode(a, "CONDITION", Blockly.Python.ORDER_NONE) ||
@@ -1161,12 +1172,12 @@ Blockly.Python.procedures_ifreturn = function (a) {
       Blockly.Python.injectId(Blockly.Python.STATEMENT_SUFFIX, a),
       Blockly.Python.INDENT
     ));
-  a.hasReturnValue_
+  a.hasReturnValue_ 
     ? ((a =
         Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) ||
         "None"),
       (b += Blockly.Python.INDENT + "return " + a + "\n"))
-    : (b += Blockly.Python.INDENT + "return\n");
+    : (b += Blockly.Python.INDENT + "return\n"); 
   return b;
 };
 
