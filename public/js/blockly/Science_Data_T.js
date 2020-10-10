@@ -823,10 +823,14 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": "" 
   },
   //matplot2 수정
-  {  
+  {
     "type": "matplotlib_pre_graph",
-    "message0": "[ 그래프 출력 설정 ]    좌표  [ %1 ][ %2 %3 ] ( X , Y ) 값  %4 그래프 종류  %5 제목  %6 X축  %7 Y축  %8 범례  %9 %10",
+    "message0": "[ 그래프 출력 설정 ] %1 좌표 [ %2 ][ %3 %4 ] ( X , Y ) 값  %5 그래프 종류  %6 제목  %7 X축  %8 Y축  %9 범례  %10 %11 색 %12",
     "args0": [
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_graph_lib_val"
+      },
       {
         "type": "input_value",
         "name": "matplotlib_pre_graph_location1"
@@ -841,7 +845,7 @@ Blockly.defineBlocksWithJsonArray(
       {
         "type": "field_input",
         "name": "matplotlib_user_xy",
-        "text": "변수명 -> ex) aa,bb" 
+        "text": ""
       },
       {
         "type": "field_dropdown",
@@ -894,8 +898,11 @@ Blockly.defineBlocksWithJsonArray(
         "text": ""
       },
       {
-        "type": "matplotlib_pre_color",
-        "name": "NAME"
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_color"
       }
     ],
     "inputsInline": true,
@@ -904,7 +911,7 @@ Blockly.defineBlocksWithJsonArray(
     "colour": "%{BKY_VISUAL_HUE}",
     "tooltip": "",
     "helpUrl": ""
-  },  
+  },
   //matplot3 
   {
     "type": "matplotlib_graph_end",

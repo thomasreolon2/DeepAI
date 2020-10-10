@@ -2,7 +2,7 @@ Blockly.Blocks['sklearn_ensemble'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("[임포트] 앙상블")
-      .appendField(new Blockly.FieldDropdown([["AdaBoost분류", "AdaBoostClassifier"], ["AdaBoost회귀", "AdaBoostRegressor"], ["GradientBoosting분류", "GradientBoostingClassifier"], ["GradientBoosting회귀", "GradientBoostingRegressor"], ["결정트리 분류", "RandomForestClassifier"], ["결정트리 회귀", "RandomForestRegressor"]]), "NAME");
+      .appendField(new Blockly.FieldDropdown([["AdaBoost분류", "AdaBoostClassifier"], ["AdaBoost회귀", "AdaBoostRegressor"], ["GradientBoosting분류", "GradientBoostingClassifier"], ["GradientBoosting회귀", "GradientBoostingRegressor"], ["결정트리 분류", "RandomForestClassifier"], ["결정트리 회귀", "RandomForestRegressor"],["IsolationForest","IsolationForest"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("%{BKY_SCIKITLEARN_HUE}");
