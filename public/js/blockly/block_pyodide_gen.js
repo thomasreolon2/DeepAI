@@ -199,12 +199,7 @@ Blockly.Python['import_dataset'] = function (block) {
     var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
     var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code;
-    if (dropdown_dataset_name == "make_blobs" || dropdown_dataset_name == "make_moons" ){
-        code = `from sklearn.datasets import ${dropdown_dataset_name}`;
-    }else{
-        code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data + ' = ' + dropdown_dataset_name + '().data\n' + value_y_data + ' = ' + dropdown_dataset_name + '().target\n';
-    }
+    var code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data + ' = ' + dropdown_dataset_name + '().data\n' + value_y_data + ' = ' + dropdown_dataset_name + '().target\n';
     return code;
 };
 

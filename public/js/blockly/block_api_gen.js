@@ -2,7 +2,7 @@ Blockly.Python['sklearn_ensemble'] = function (block) {
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble Python into code variable.
   var code = 'from sklearn.ensemble import ' + dropdown_name + '\n';
-  return code; 
+  return code;
 };
 
 Blockly.Python['adaboostclassifier'] = function (block) {

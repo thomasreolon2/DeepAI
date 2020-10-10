@@ -218,7 +218,7 @@ Blockly.Blocks['labelencoder'] = {
 // };
 
 Blockly.Blocks['import_dataset'] = {
-    init: function () { 
+    init: function () {
         this.appendDummyInput()
             .appendField("[사이킷런 데이터셋]  ")
             .appendField(new Blockly.FieldDropdown([
@@ -226,10 +226,7 @@ Blockly.Blocks['import_dataset'] = {
                 ["손글씨 데이터", "load_digits"],
                 ["당뇨병 데이터", "load_diabetes"],
                 ["붓꽃 데이터", "load_iris"],
-                ["와인 품질 데이터", "load_wine"], 
-                ["Blobs","make_blobs"],
-                ["moons","make_moons"],
-                ["circles","make_circles"]
+                ["와인 품질 데이터", "load_wine"]
             ]), "dataset_name");
         this.appendValueInput("x_data")
             .setCheck(null)
