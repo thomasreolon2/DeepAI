@@ -20,6 +20,8 @@ Blockly.defineBlocksWithJsonArray(
     }
   ], 
   "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
   "colour": "%{BKY_CLASS_HUE}",
   "tooltip": "",
   "helpUrl": ""
@@ -972,6 +974,42 @@ Blockly.defineBlocksWithJsonArray(
     }
   };
 
+  //객체 위아래
+  Blockly.Blocks['class_instance'] = {
+    init: function() {
+      this.appendValueInput("class_instance_val")
+          .setCheck(null)
+          .appendField("[ 객체 ]");
+      this.appendDummyInput()
+          .appendField(".")
+          .appendField(new Blockly.FieldTextInput(""), "class_instance_value")
+          .appendField("=");
+      this.appendValueInput("class_instance_input")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(125);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  //사이킷런 데이터셋 임포트
+  Blockly.Blocks['sklearn_datasets_noval'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[ 데이터셋 무작위 생성 ] ")
+          .appendField(new Blockly.FieldDropdown([["Blobs","sklearn_datasets_noval_Blobs"], ["Moons","sklearn_datasets_noval_Moons"], ["Circles","sklearn_datasets_noval_Circles"]]), "sklearn_datasets_noval_Option");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
   //make blobs
   Blockly.Blocks['make_blobs'] = {
     init: function() {
@@ -1082,7 +1120,7 @@ Blockly.Blocks['metrics_fit_predict'] = {
   init: function() {
     this.appendValueInput("metrics_fit_predict_val")
         .setCheck(null)
-        .appendField("[ DBSCAN ]");
+        .appendField("[ DBSCAN 학습 및 예측 ]");
     this.appendValueInput("metrics_fit_predict_Xdata")
         .setCheck(null)
         .appendField("Xdata");
@@ -1092,7 +1130,7 @@ Blockly.Blocks['metrics_fit_predict'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};
+}; 
 
 //classification_report
 Blockly.Blocks['classification_report'] = {

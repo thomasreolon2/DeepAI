@@ -686,6 +686,10 @@
       <block type="python_class"></block>
       <!-- 클래스  -->
 
+       <!-- 클래스 connect  -->
+       <block type="class_instance"></block>
+       <!-- 클래스 connect -->
+
       <!-- 객체  -->
       <block type="class_refer">
         <value name="class_refer_val">
@@ -1102,8 +1106,9 @@
     <category name="사이킷런(Scikit)" colour="%{BKY_SCIKITLEARN_HUE}">
       <category name="데이터셋 (Dataset)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_dataset"></block>
+        <block type="sklearn_datasets_noval"></block>
         <block type="make_blobs"></block>
-        <block type="make_moons"></block>
+        <block type="make_moons"></block> 
         <block type="fetch_openml"></block>
         <block type="csv3"></block>
       </category>
@@ -1175,7 +1180,7 @@
       </category>
 
       <category name="메트릭스(Metrics)" colour="%{BKY_SCIKITLEARN_HUE}">
-        <block type="import_scikit"></block>
+        <block type="import_scikit"></block> 
         <block type="model_fit"></block>
         <block type="kmeans_fit"></block>
         <block type="model_score"></block>

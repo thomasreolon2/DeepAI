@@ -5,7 +5,7 @@ Blockly.Python['python_class'] = function(block) {
   var statements_python_class_statement = Blockly.Python.statementToCode(block, 'Python_Class_statement');
   // TODO: Assemble Python into code variable.
   var code = `class ${text_python_class_statement_name}:
-  ${statements_python_class_statement}\n`;
+${statements_python_class_statement}\n`;
   return code;  
 };
 
@@ -14,9 +14,19 @@ Blockly.Python['class_refer'] = function(block) {
   var value_class_refer_classname = Blockly.Python.valueToCode(block, 'class_refer_className', Blockly.Python.ORDER_ATOMIC);
   var text_class_refer_val = block.getFieldValue('class_refer_val');
   // TODO: Assemble Python into code variable.
-  var code = `${value_class_refer_classname}.${text_class_refer_val}\n`;
+  var code = `${value_class_refer_classname}.${text_class_refer_val}`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];  
+};
+
+//객체 위아래 
+Blockly.Python['class_instance'] = function(block) {
+  var value_class_instance_val = Blockly.Python.valueToCode(block, 'class_instance_val', Blockly.Python.ORDER_ATOMIC);
+  var text_class_instance_value = block.getFieldValue('class_instance_value');
+  var value_class_instance_input = Blockly.Python.valueToCode(block, 'class_instance_input', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_class_instance_val}.${text_class_instance_value} = ${value_class_instance_input}\n`;
+  return code; 
 };
 
 //넘파이 라이브러리 
@@ -651,6 +661,30 @@ Blockly.Python['print_output_var'] = function(block) {
   return code;
 };
 
+
+//사이킷런 데이터셋 임포트
+Blockly.Python['sklearn_datasets_noval'] = function(block) {
+  var dropdown_sklearn_datasets_noval_option = block.getFieldValue('sklearn_datasets_noval_Option');
+  // TODO: Assemble Python into code variable.
+  var code;
+  switch (dropdown_sklearn_datasets_noval_option){
+    case "sklearn_datasets_noval_Blobs":
+    code = "from sklearn.datasets import make_blobs\n"
+    break;
+
+    case "sklearn_datasets_noval_Moons":
+    code = "from sklearn.datasets import make_moons\n"
+    break;
+
+    case "sklearn_datasets_noval_Circles":
+    code = "from sklearn.datasets import make_circles\n"
+    break;
+
+
+  }
+  return code; 
+}; 
+
 //make blobs
 Blockly.Python['make_blobs'] = function(block) {
   var value_make_blobs_x = Blockly.Python.valueToCode(block, 'Make_Blobs_X', Blockly.Python.ORDER_ATOMIC);
@@ -689,7 +723,17 @@ Blockly.Python['isolation_forest'] = function(block) {
 Blockly.Python['import_knn'] = function(block) {
   var dropdown_import_knn_option = block.getFieldValue('Import_KNN_Option');
   // TODO: Assemble Python into code variable.
-  var code = `from sklearn.cluster import ${dropdown_import_knn_option}\n`;
+  var code;
+  switch (dropdown_import_knn_option){
+    case "Import_KNN_KMeans":
+    code ="from sklearn.cluster import KMeans";
+    break;
+
+    case "Import_KNN_DBSCAN":
+    code ="from sklearn.cluster import DBSCAN";
+    break;
+
+  }
   return code;
 };
 

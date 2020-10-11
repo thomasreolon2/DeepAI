@@ -11,10 +11,22 @@ Blockly.JavaScript['class_refer'] = function(block) {
   var value_class_refer_classname = Blockly.JavaScript.valueToCode(block, 'class_refer_className', Blockly.JavaScript.ORDER_ATOMIC);
   var text_class_refer_val = block.getFieldValue('class_refer_val');
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
+  var code = '';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+//객체 위아래
+Blockly.JavaScript['class_instance'] = function(block) {
+  var value_class_instance_val = Blockly.JavaScript.valueToCode(block, 'class_instance_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_class_instance_value = block.getFieldValue('class_instance_value');
+  var value_class_instance_input = Blockly.JavaScript.valueToCode(block, 'class_instance_input', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+
 //넘파이 라이브러리 
 Blockly.JavaScript['numpy_library'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
@@ -333,6 +345,14 @@ Blockly.JavaScript['make_blobs'] = function(block) {
   var code = `\n`;
   return code;
 }; 
+
+//
+Blockly.JavaScript['sklearn_datasets_noval'] = function(block) {
+  var dropdown_sklearn_datasets_noval_option = block.getFieldValue('sklearn_datasets_noval_Option');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
 
 //make moons
 Blockly.JavaScript['make_moons'] = function(block) {

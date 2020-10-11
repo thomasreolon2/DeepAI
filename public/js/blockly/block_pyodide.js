@@ -227,9 +227,6 @@ Blockly.Blocks['import_dataset'] = {
                 ["당뇨병 데이터", "load_diabetes"],
                 ["붓꽃 데이터", "load_iris"],
                 ["와인 품질 데이터", "load_wine"],
-                ["Blobs","make_blobs"],
-                ["moons","make_moons"],
-                ["circles","make_circles"]
             ]), "dataset_name");
         this.appendValueInput("x_data")
             .setCheck(null)
@@ -1015,6 +1012,7 @@ Blockly.Blocks['Oper'] = {
                 ["*", "*"],
                 ["/", "/"],
                 ["%", "%"],
+                ["=", "="],
                 ["**", "**"]
             ]), "NAME");
         this.appendValueInput("B")
@@ -1471,8 +1469,8 @@ Blockly.Blocks['import_scikit'] = {
                 ["PRC", "precision_score"],
                 ["MAE", "mean_absolute_error"],
                 ["MSE", "mean_squared_error"],
-                ["Median", "median_absolute_error"],
-                ["classification_report", "import_classification_report"]
+                ["Classification Report", "classification_report"],
+                ["Median", "median_absolute_error"]
             ]), "metrics");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);

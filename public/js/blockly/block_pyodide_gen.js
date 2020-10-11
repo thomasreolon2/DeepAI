@@ -531,7 +531,7 @@ Blockly.Python['import_scikit'] = function (block) {
         case "classification_report":
             code = "from sklearn.metrics import classification_report\n";
             break;     
-    }
+    } 
     return code;
 };
 
