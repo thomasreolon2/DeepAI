@@ -321,3 +321,76 @@ Blockly.JavaScript['print_output_var'] = function (block) {
   var code = '\n';
   return code;
 };
+
+//make blobs
+Blockly.JavaScript['make_blobs'] = function(block) {
+  var value_make_blobs_x = Blockly.JavaScript.valueToCode(block, 'Make_Blobs_X', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_make_blobs_y = Blockly.JavaScript.valueToCode(block, 'Make_Blobs_Y', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_make_blobs_sample = block.getFieldValue('Make_Blobs_sample');
+  var text_make_blobs_feature = block.getFieldValue('Make_Blobs_feature');
+  var text_make_blobs_randomstate = block.getFieldValue('Make_Blobs_randomstate');
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return code;
+}; 
+
+//make moons
+Blockly.JavaScript['make_moons'] = function(block) {
+  var value_make_moons_x = Blockly.JavaScript.valueToCode(block, 'make_moons_X', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_make_moons_y = Blockly.JavaScript.valueToCode(block, 'make_moons_Y', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_make_moons_sample = block.getFieldValue('make_moons_sample');
+  var text_make_moons_randomstate = block.getFieldValue('make_moons_randomstate');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+//IsolationForest
+Blockly.JavaScript['isolation_forest'] = function(block) {
+  var value_isolation_forest_val = Blockly.JavaScript.valueToCode(block, 'Isolation_Forest_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_isolation_forest_estimators = block.getFieldValue('Isolation_Forest_estimators');
+  var text_isolation_forest_connection = block.getFieldValue('Isolation_Forest_connection');
+  var text_isolation_forest_randomstate = block.getFieldValue('Isolation_Forest_randomstate');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+//import knn
+Blockly.JavaScript['import_knn'] = function(block) {
+  var dropdown_import_knn_option = block.getFieldValue('Import_KNN_Option');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+//dbscan
+Blockly.JavaScript['dbscan'] = function(block) {
+  var value_dbscan_val = Blockly.JavaScript.valueToCode(block, 'DBSCAN_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_dbscan_eps = block.getFieldValue('DBSCAN_EPS');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+
+//matrix_fit_predict
+Blockly.JavaScript['metrics_fit_predict'] = function(block) {
+  var value_metrics_fit_predict_val = Blockly.JavaScript.valueToCode(block, 'metrics_fit_predict_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_metrics_fit_predict_xdata = Blockly.JavaScript.valueToCode(block, 'metrics_fit_predict_Xdata', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+
+//classification_report
+Blockly.JavaScript['classification_report'] = function(block) {
+  var value_classification_report_y_true = Blockly.JavaScript.valueToCode(block, 'classification_report_Y_true', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_classification_report_y_pred = Blockly.JavaScript.valueToCode(block, 'classification_report_y_pred', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};

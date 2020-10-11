@@ -1471,7 +1471,8 @@ Blockly.Blocks['import_scikit'] = {
                 ["PRC", "precision_score"],
                 ["MAE", "mean_absolute_error"],
                 ["MSE", "mean_squared_error"],
-                ["Median", "median_absolute_error"]
+                ["Median", "median_absolute_error"],
+                ["classification_report", "import_classification_report"]
             ]), "metrics");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);

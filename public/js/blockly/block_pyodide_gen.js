@@ -528,6 +528,9 @@ Blockly.Python['import_scikit'] = function (block) {
         case "median_absolute_error":
             code = "from sklearn.metrics import median_absolute_error\n";
             break;
+        case "classification_report":
+            code = "from sklearn.metrics import classification_report\n";
+            break;     
     }
     return code;
 };

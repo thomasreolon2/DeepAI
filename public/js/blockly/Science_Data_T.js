@@ -971,3 +971,143 @@ Blockly.defineBlocksWithJsonArray(
    this.setHelpUrl("");
     }
   };
+
+  //make blobs
+  Blockly.Blocks['make_blobs'] = {
+    init: function() {
+      this.appendValueInput("Make_Blobs_X")
+          .setCheck(null)
+          .appendField("[Make Blobs] X_data");
+      this.appendValueInput("Make_Blobs_Y")
+          .setCheck(null)
+          .appendField("Y_data");
+      this.appendDummyInput()
+          .appendField("샘플수")
+          .appendField(new Blockly.FieldTextInput("100"), "Make_Blobs_sample")
+          .appendField("특성 개수")
+          .appendField(new Blockly.FieldTextInput("2"), "Make_Blobs_feature")
+          .appendField("Seed")
+          .appendField(new Blockly.FieldTextInput("0"), "Make_Blobs_randomstate");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    } 
+  };
+
+  //make moons
+  Blockly.Blocks['make_moons'] = {
+    init: function() {
+      this.appendValueInput("make_moons_X")
+          .setCheck(null)
+          .appendField("[make_moons] X_data");
+      this.appendValueInput("make_moons_Y")
+          .setCheck(null)
+          .appendField("Y_data");
+      this.appendDummyInput()
+          .appendField("샘플수")
+          .appendField(new Blockly.FieldTextInput("100"), "make_moons_sample")
+          .appendField("Seed")
+          .appendField(new Blockly.FieldTextInput("0"), "make_moons_randomstate");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}"); 
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  //IsolationForest
+Blockly.Blocks['isolation_forest'] = {
+  init: function() {
+    this.appendValueInput("Isolation_Forest_val")
+        .setCheck(null)
+        .appendField("[Isolation Forest]");
+    this.appendDummyInput()
+        .appendField("추정자 최대수")
+        .appendField(new Blockly.FieldTextInput("100"), "Isolation_Forest_estimators")
+        .appendField("이상치 비율")
+        .appendField(new Blockly.FieldTextInput("0.5"), "Isolation_Forest_connection")
+        .appendField("Seed")
+        .appendField(new Blockly.FieldTextInput("0"), "Isolation_Forest_randomstate");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//import knn
+Blockly.Blocks['import_knn'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[ 임포트 ]")
+        .appendField(new Blockly.FieldDropdown([
+          ["KMeans","Import_KNN_KMeans"], 
+          ["DBSCAN","Import_KNN_DBSCAN"]]), "Import_KNN_Option");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+}; 
+
+//dbscan
+Blockly.Blocks['dbscan'] = {
+  init: function() {
+    this.appendValueInput("DBSCAN_val")
+        .setCheck(null)
+        .appendField("[ DBSCAN ]");
+    this.appendDummyInput()
+        .appendField("EPS ")
+        .appendField(new Blockly.FieldTextInput("0.5"), "DBSCAN_EPS");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//metrics_fit_predict
+Blockly.Blocks['metrics_fit_predict'] = {
+  init: function() {
+    this.appendValueInput("metrics_fit_predict_val")
+        .setCheck(null)
+        .appendField("[ DBSCAN ]");
+    this.appendValueInput("metrics_fit_predict_Xdata")
+        .setCheck(null)
+        .appendField("Xdata");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//classification_report
+Blockly.Blocks['classification_report'] = {
+  init: function() {
+    this.appendValueInput("classification_report_Y_true")
+        .setCheck(null)
+        .appendField("[ Classification Report ]")
+        .appendField("Y_true");
+    this.appendValueInput("classification_report_y_pred")
+        .setCheck(null)
+        .appendField("Y_pred ");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

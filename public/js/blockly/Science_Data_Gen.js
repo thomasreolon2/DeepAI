@@ -650,3 +650,75 @@ Blockly.Python['print_output_var'] = function(block) {
   var code =`print(${value_print_output_var1} ,${value_print_output_var2})` ;
   return code;
 };
+
+//make blobs
+Blockly.Python['make_blobs'] = function(block) {
+  var value_make_blobs_x = Blockly.Python.valueToCode(block, 'Make_Blobs_X', Blockly.Python.ORDER_ATOMIC);
+  var value_make_blobs_y = Blockly.Python.valueToCode(block, 'Make_Blobs_Y', Blockly.Python.ORDER_ATOMIC);
+  var text_make_blobs_sample = block.getFieldValue('Make_Blobs_sample');
+  var text_make_blobs_feature = block.getFieldValue('Make_Blobs_feature');
+  var text_make_blobs_randomstate = block.getFieldValue('Make_Blobs_randomstate');
+  // TODO: Assemble Python into code variable.
+  var code = `${value_make_blobs_x},${value_make_blobs_y} = make_blobs(n_samples = ${text_make_blobs_sample}, n_features = ${text_make_blobs_feature}, random_state = ${text_make_blobs_randomstate})\n`;
+  return code;
+}; 
+
+//make moons
+Blockly.Python['make_moons'] = function(block) {
+  var value_make_moons_x = Blockly.Python.valueToCode(block, 'make_moons_X', Blockly.Python.ORDER_ATOMIC);
+  var value_make_moons_y = Blockly.Python.valueToCode(block, 'make_moons_Y', Blockly.Python.ORDER_ATOMIC);
+  var text_make_moons_sample = block.getFieldValue('make_moons_sample');
+  var text_make_moons_randomstate = block.getFieldValue('make_moons_randomstate');
+  // TODO: Assemble Python into code variable.
+  var code = `${value_make_moons_x},${value_make_moons_y} = make_blobs(n_samples = ${text_make_moons_sample}, random_state = ${text_make_moons_randomstate})\n`;
+  return code;
+}; 
+
+//IsolationForest
+Blockly.Python['isolation_forest'] = function(block) {
+  var value_isolation_forest_val = Blockly.Python.valueToCode(block, 'Isolation_Forest_val', Blockly.Python.ORDER_ATOMIC);
+  var text_isolation_forest_estimators = block.getFieldValue('Isolation_Forest_estimators');
+  var text_isolation_forest_connection = block.getFieldValue('Isolation_Forest_connection');
+  var text_isolation_forest_randomstate = block.getFieldValue('Isolation_Forest_randomstate');
+  // TODO: Assemble Python into code variable.
+  var code = `${value_isolation_forest_val} = IsolationForest(n_estimators = ${text_isolation_forest_estimators}, contamination = ${text_isolation_forest_connection}, random_state = ${text_isolation_forest_randomstate})\n`;
+  return code;
+};
+
+//import knn
+Blockly.Python['import_knn'] = function(block) {
+  var dropdown_import_knn_option = block.getFieldValue('Import_KNN_Option');
+  // TODO: Assemble Python into code variable.
+  var code = `from sklearn.cluster import ${dropdown_import_knn_option}\n`;
+  return code;
+};
+
+//dbscan
+Blockly.Python['dbscan'] = function(block) {
+  var value_dbscan_val = Blockly.Python.valueToCode(block, 'DBSCAN_val', Blockly.Python.ORDER_ATOMIC);
+  var text_dbscan_eps = block.getFieldValue('DBSCAN_EPS');
+  // TODO: Assemble Python into code variable.
+  var code = `${value_dbscan_val} = DBSCAN( eps = ${text_dbscan_eps} )\n`;
+  return code;
+};
+
+//metrics_fit_predict
+Blockly.Python['metrics_fit_predict'] = function(block) {
+  var value_metrics_fit_predict_val = Blockly.Python.valueToCode(block, 'metrics_fit_predict_val', Blockly.Python.ORDER_ATOMIC);
+  var value_metrics_fit_predict_xdata = Blockly.Python.valueToCode(block, 'metrics_fit_predict_Xdata', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code =`${value_metrics_fit_predict_val}.fit_predict(${value_metrics_fit_predict_xdata})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+//classification_report
+Blockly.Python['classification_report'] = function(block) {
+  var value_classification_report_y_true = Blockly.Python.valueToCode(block, 'classification_report_Y_true', Blockly.Python.ORDER_ATOMIC);
+  var value_classification_report_y_pred = Blockly.Python.valueToCode(block, 'classification_report_y_pred', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `classification_report( ${value_classification_report_y_true}, ${value_classification_report_y_pred})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
