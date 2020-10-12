@@ -1628,6 +1628,16 @@ Blockly.Extensions.registerMutator(
   Blockly.Constants.Math.LIST_MODES_MUTATOR_MIXIN,
   Blockly.Constants.Math.LIST_MODES_MUTATOR_EXTENSION
 );
+
+
+
+
+
+
+
+
+
+
 Blockly.Blocks.procedures = {};
 Blockly.Blocks.procedures_defnoreturn = {
   init: function () {
@@ -1636,7 +1646,7 @@ Blockly.Blocks.procedures_defnoreturn = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage("/img/Function/F1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField(Blockly.Msg.PROCEDURES_DEFNORETURN_TITLE)
-      .appendField(a, "NAME")
+      .appendField(a, "NAME") 
       .appendField("", "PARAMS");
     this.setMutator(new Blockly.Mutator(["procedures_mutatorarg"]));
     (this.workspace.options.comments ||
@@ -1644,15 +1654,15 @@ Blockly.Blocks.procedures_defnoreturn = {
         this.workspace.options.parentWorkspace.options.comments)) &&
       Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT &&
       this.setCommentText(Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT);
-    this.setStyle("procedure_blocks");
-    this.setPreviousStatement(true, null);
+    this.setStyle("procedure_blocks");   
+    this.setPreviousStatement(true, null);   
     this.setNextStatement(true, null);
-    this.setTooltip(Blockly.Msg.PROCEDURES_DEFNORETURN_TOOLTIP);
-    this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL);
-    this.arguments_ = [];
-    this.argumentVarModels_ = [];
-    this.setStatements_(!0);
-    this.statementConnection_ = null;
+    this.setTooltip(Blockly.Msg.PROCEDURES_DEFNORETURN_TOOLTIP); 
+    this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL);  
+    this.arguments_ = []; 
+    this.argumentVarModels_ = []; 
+    this.setStatements_(!0);  
+    this.statementConnection_ = null;  
   },
   setStatements_: function (a) {
     this.hasStatements_ !== a &&

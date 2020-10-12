@@ -62,7 +62,7 @@ Blockly.Python.init = function (a) {
   //   b.push(
   //     Blockly.Python.variableDB_.getName(
   //       a[d].getId(),
-  //       Blockly.VARIABLE_CATEGORY_NAME
+  //       Blockly.VARIABLE_CATEGORY_NAME 
   //     ) //+ " = None"
   //   );
   Blockly.Python.definitions_.variables = b.join("\n");
