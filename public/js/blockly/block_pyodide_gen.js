@@ -714,7 +714,52 @@ Blockly.Python['model_fit'] = function (block) {
     var variable_x_train = Blockly.Python.valueToCode(block, 'X_train', Blockly.Python.ORDER_ATOMIC);
     var variable_y_train = Blockly.Python.valueToCode(block, 'Y_train', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = value_model + ".fit(" + variable_x_train + ", " + variable_y_train + ")" + "\n";
+    var code = "";
+    if(!(variable_x_train)&&variable_y_train){
+       code=value_model + ".fit(" + variable_y_train + ")" + "\n";
+    }
+    else if(!(variable_y_train)&&variable_x_train){
+        code=value_model + ".fit(" + variable_x_train + ")" + "\n";
+    }
+    else if(variable_y_train&&variable_x_train){
+        code=value_model + ".fit(" + variable_x_train +","+variable_y_train+ ")" + "\n";
+    }
+    else{
+        code="fit()"
+    }
+    return code;
+};
+Blockly.Python['random_import'] = function (block) {
+    var dropdown_dataset_name = block.getFieldValue('dataset_name');
+    var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
+    var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
+    var sample = block.getFieldValue('sa');
+    var fea = block.getFieldValue('fe');
+    var seed = block.getFieldValue('seed');
+    
+    var code="";
+    if (dropdown_dataset_name == "make_blobs"){
+        if(value_x_data&&!(value_y_data)){
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+' n_features = '+fea+' random_state = '+seed+')\n';
+        }
+        else if(!(value_x_data)&&value_y_data){
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_y_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+' n_features = '+fea+' random_state = '+seed+')\n';
+        }
+        else{
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data +','+value_y_data+ ' = ' + dropdown_dataset_name +'( n_samples = '+sample+' n_features = '+fea+' random_state = '+seed+')\n';
+        }
+    }
+    if( dropdown_dataset_name == "make_moons"){
+        if(value_x_data&&!(value_y_data)){
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+' random_state = '+seed+')\n';
+        }
+        else if(!(value_x_data)&&value_y_data){
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_y_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+' random_state = '+seed+')\n';
+        }
+        else{
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data +','+value_y_data+ ' = ' + dropdown_dataset_name +'( n_samples = '+sample+' random_state = '+seed+')\n';
+        }
+    }
     return code;
 };
 Blockly.Python['kmeans_fit'] = function (block) {
