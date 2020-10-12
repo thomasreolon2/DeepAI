@@ -387,7 +387,7 @@ Blockly.Blocks['pandas_datalist'] = {
 
 //20.09.09 이성주 - 컬럼추가 블록
 Blockly.Blocks.createColumn = {
-  init: function () {
+  init: function () { 
 
     this.setStyle("list_blocks");
     this.itemCount_ = 3;

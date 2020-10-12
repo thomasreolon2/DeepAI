@@ -35,6 +35,7 @@ Blockly.Python.ORDER_OVERRIDES = [
   [Blockly.Python.ORDER_LOGICAL_AND, Blockly.Python.ORDER_LOGICAL_AND],
   [Blockly.Python.ORDER_LOGICAL_OR, Blockly.Python.ORDER_LOGICAL_OR],
 ];
+
 Blockly.Python.init = function (a) {
   Blockly.Python.PASS = this.INDENT + "pass\n";
   Blockly.Python.definitions_ = Object.create(null);
@@ -66,6 +67,8 @@ Blockly.Python.init = function (a) {
   //   );
   Blockly.Python.definitions_.variables = b.join("\n");
 };
+
+
 Blockly.Python.finish = function (a) {  
   var b = [],
     c = [],
