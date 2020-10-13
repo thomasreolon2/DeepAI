@@ -766,21 +766,85 @@ Blockly.Python['classification_report'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+//클래스 함수
 Blockly.Python['class_func'] = function(block) {
   var text_class_func_name = block.getFieldValue('class_func_name');
+  var value_class_func_val = Blockly.Python.valueToCode(block, 'class_func_val', Blockly.Python.ORDER_ATOMIC);
   var statements_class_func_state = Blockly.Python.statementToCode(block, 'class_func_state');
-  var elements = new Array(block.itemCount_);
-  for (var i = 0; i < block.itemCount_; i++) {
-    elements[i] = Blockly.Python.valueToCode(block, 'ADD' + i,
-    Blockly.Python.ORDER_NONE) || 'self';
   // TODO: Assemble Python into code variable.
-
- // var code = value_name + '(' + elements.join(')[') + ']';
-  var code = `${text_class_func_name} ( ${elements.join} )[] :
+  var code = `def ${text_class_func_name}(${value_class_func_val}):
 ${statements_class_func_state}\n`;
- 
   return code;
 };
+
+//클래스 함수 return
+Blockly.Python['class_func_return'] = function(block) {
+  var text_class_func_return_classname = block.getFieldValue('class_func_return_className');
+  var value_class_func_return_param = Blockly.Python.valueToCode(block, 'class_func_return_param', Blockly.Python.ORDER_ATOMIC);
+  var statements_class_func_return = Blockly.Python.statementToCode(block, 'class_func_return');
+  var value_class_func_return_val = Blockly.Python.valueToCode(block, 'class_func_return_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `def ${text_class_func_return_classname}(${value_class_func_return_param}):
+${statements_class_func_return}
+  return ${value_class_func_return_val};\n`; 
+  return code;
 };
+
+//클래스 =
+Blockly.Python['class_equ'] = function(block) {
+  var value_class_equ_val1 = Blockly.Python.valueToCode(block, 'class_equ_val1', Blockly.Python.ORDER_ATOMIC);
+  var text_class_equ_val2 = block.getFieldValue('class_equ_val2');
+  // TODO: Assemble Python into code variable.
+  var code = `${value_class_equ_val1} = ${text_class_equ_val2}\n`;
+  return code; 
+};
+ 
+
+//객체 함수 
+Blockly.Python['class_instance_function'] = function(block) { 
+  var text_class_instance = block.getFieldValue('class_instance');
+  var value_class_instance_function = Blockly.Python.valueToCode(block, 'class_instance_functions', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${text_class_instance}.(${value_class_instance_function})\n`;
+  return code;
+};
+Blockly.Python['class_instance_function'] = function(block) {
+  var value_class_instanceval = Blockly.Python.valueToCode(block, 'class_instanceVal', Blockly.Python.ORDER_ATOMIC);
+  var text_class_instance_argument = block.getFieldValue('class_instance_argument');
+  var value_class_instance_functions = Blockly.Python.valueToCode(block, 'class_instance_functions', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_class_instanceval}.${text_class_instance_argument}(${value_class_instance_functions})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE]; 
+};
+
+
+
+//클래스 함수 매개변수  
+Blockly.Python['class_func_param'] = function (a) {
+  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++)
+     b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "self";
+  return [b.join(", "), Blockly.Python.ORDER_ATOMIC]
+};
+
+
+
+//클래스 함수 statement 형식 
+// Blockly.Python['class_func'] = function(block) {
+//   var text_class_func_name = block.getFieldValue('class_func_name');
+//   var statements_class_func_state = Blockly.Python.statementToCode(block, 'class_func_state');
+//   var elements = new Array(block.itemCount_);
+//   for (var i = 0; i < block.itemCount_; i++) {
+//     elements[i] = Blockly.Python.valueToCode(block, 'ADD' + i,
+//     Blockly.Python.ORDER_NONE) || 'self';
+//   // TODO: Assemble Python into code variable.
+//   };
+//  // var code = value_name + '(' + elements.join(')[') + ']'; 
+//   var code = `${text_class_func_name} ( ${elements.join(',')} ) :
+// ${statements_class_func_state}\n`;
+ 
+//   return code;
+// };
+
 
 

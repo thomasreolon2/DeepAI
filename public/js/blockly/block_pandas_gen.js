@@ -384,6 +384,7 @@ Blockly.Python['stats_inquiry'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 // array
+
 Blockly.Python['array_select'] = function (block) {
   // Create a list with any number of elements of any type.
   var value_name = Blockly.Python.valueToCode(block, 'array_var', Blockly.Python.ORDER_ATOMIC);
@@ -396,6 +397,7 @@ Blockly.Python['array_select'] = function (block) {
   var code = value_name + '[' + elements.join('][') + ']';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
 // 상관관계 조회
 Blockly.Python['corr_inquiry'] = function (block) {
   var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);

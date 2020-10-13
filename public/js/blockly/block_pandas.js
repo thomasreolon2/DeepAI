@@ -387,7 +387,7 @@ Blockly.Blocks['pandas_datalist'] = {
 
 //20.09.09 이성주 - 컬럼추가 블록
 Blockly.Blocks.createColumn = {
-  init: function () { 
+  init: function () {  
 
     this.setStyle("list_blocks");
     this.itemCount_ = 3;
@@ -396,7 +396,7 @@ Blockly.Blocks.createColumn = {
     this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
     this.setColour(pandas_color);
-  },
+  }, 
   mutationToDom: function () {
     var a = Blockly.utils.xml.createElement("mutation");
     a.setAttribute("items", this.itemCount_);
@@ -1087,7 +1087,7 @@ Blockly.Blocks['array_select'] = {
       var connection = this.getInput('ADD' + i).connection.targetConnection;
       if (connection && connections.indexOf(connection) == -1) {
         connection.disconnect();
-      }
+      } 
     }
     this.itemCount_ = connections.length;
     this.updateShape_();
