@@ -1033,16 +1033,29 @@ Blockly.Blocks['py_return'] = {
     }
 };
 
-// int 형 변환
-Blockly.Blocks['conver_int'] = {
+// 형 변환
+Blockly.Blocks['convert'] = {
     init: function () {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O13-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
-
-        this.appendValueInput("VALUE").setCheck(null).appendField("정수형 (");
-        this.appendDummyInput().appendField(")");
+        this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+            [
+                "정수형", "int("
+            ],
+            [
+                "실수형", "float("
+            ],
+            [
+                "문자형", "str("
+            ],
+            [
+                "불자료형", "bool("
+            ],
+            
+        ]), "NAME");
+        this.appendValueInput("B").setCheck(null);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_MATH_HUE}");
@@ -1051,56 +1064,9 @@ Blockly.Blocks['conver_int'] = {
     }
 };
 
-// float 형 변환
-Blockly.Blocks['conver_float'] = {
-    init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O14-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
-        this.appendValueInput("VALUE").setCheck(null).appendField("실수형 (");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_MATH_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
-// str 형 변환
-Blockly.Blocks['conver_str'] = {
-    init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O15-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
-        this.appendValueInput("VALUE").setCheck(null).appendField("문자형 (");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_MATH_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
-// bool 형 변환
-Blockly.Blocks['conver_bool'] = {
-    init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O16-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
-        this.appendValueInput("VALUE").setCheck(null).appendField("불 자료형 (");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_MATH_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
 
 // for range(범위)
 Blockly.Blocks['range1'] = {

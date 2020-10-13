@@ -952,33 +952,11 @@ Blockly.JavaScript['py_for'] = function(block) {
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
 
-  Blockly.JavaScript['conver_int'] = function(block) {
-    var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = "\n";
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE];
-  };
-
-  Blockly.JavaScript['conver_float'] = function(block) {
-    var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = "\n";
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE];
-  };
-
-  Blockly.JavaScript['conver_str'] = function(block) {
-    var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = "\n";
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE];
-  };
-
-  Blockly.JavaScript['conver_bool'] = function(block) {
-    var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
+// 타입 생성, 형 변환
+Blockly.JavaScript['convert'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    var value_b = Blockly.JavaScript.valueToCode(block, 'B', Blockly.PytJavaScripthon.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
     var code = "\n";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];

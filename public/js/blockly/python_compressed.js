@@ -1473,34 +1473,11 @@ Blockly.Python['py_return'] = function(block) {
 };
 
 // 타입 생성, 형 변환
-Blockly.Python['conver_int'] = function(block) {
-  var value_VALUE = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+Blockly.Python['convert'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_b = Blockly.Python.valueToCode(block, 'B', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = "int ("+value_VALUE+")";
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-Blockly.Python['conver_float'] = function(block) {
-  var value_VALUE = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = "float ("+value_VALUE+")";
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-Blockly.Python['conver_str'] = function(block) {
-  var value_VALUE = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = "str ("+value_VALUE+")";
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-Blockly.Python['conver_bool'] = function(block) {
-  var value_VALUE = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = "bool ("+value_VALUE+")";
+  var code = dropdown_name+value_b+")";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
