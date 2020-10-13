@@ -346,7 +346,7 @@ Blockly.JavaScript['make_blobs'] = function(block) {
   return code;
 }; 
 
-//
+//사이킷런 데이터셋 임포트
 Blockly.JavaScript['sklearn_datasets_noval'] = function(block) {
   var dropdown_sklearn_datasets_noval_option = block.getFieldValue('sklearn_datasets_noval_Option');
   // TODO: Assemble JavaScript into code variable.
@@ -375,7 +375,7 @@ Blockly.JavaScript['isolation_forest'] = function(block) {
   var code = '\n';
   return code;
 };
-
+ 
 //import knn
 Blockly.JavaScript['import_knn'] = function(block) {
   var dropdown_import_knn_option = block.getFieldValue('Import_KNN_Option');
@@ -414,3 +414,11 @@ Blockly.JavaScript['classification_report'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['class_func'] = function(block) {
+  var text_class_func_name = block.getFieldValue('class_func_name');
+  var statements_class_func_state = Blockly.JavaScript.statementToCode(block, 'class_func_state');
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return code;
+}; 

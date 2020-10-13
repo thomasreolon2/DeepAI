@@ -766,3 +766,21 @@ Blockly.Python['classification_report'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+Blockly.Python['class_func'] = function(block) {
+  var text_class_func_name = block.getFieldValue('class_func_name');
+  var statements_class_func_state = Blockly.Python.statementToCode(block, 'class_func_state');
+  var elements = new Array(block.itemCount_);
+  for (var i = 0; i < block.itemCount_; i++) {
+    elements[i] = Blockly.Python.valueToCode(block, 'ADD' + i,
+    Blockly.Python.ORDER_NONE) || 'self';
+  // TODO: Assemble Python into code variable.
+
+ // var code = value_name + '(' + elements.join(')[') + ']';
+  var code = `${text_class_func_name} ( ${elements.join} )[] :
+${statements_class_func_state}\n`;
+ 
+  return code;
+};
+};
+
+
