@@ -254,8 +254,8 @@ Blockly.Blocks['random_import'] = {
         ]), "dataset_name");
         this.appendValueInput("x_data").setCheck(null).appendField("X_data");
         this.appendValueInput("y_data").setCheck(null).appendField("Y_data");
-        this.appendDummyInput().appendField("샘플 수").appendField(new Blockly.FieldTextInput("0"), "sa");
-        this.appendDummyInput().appendField("특성 개수").appendField(new Blockly.FieldTextInput("0"), "fe");
+        this.appendDummyInput().appendField("샘플 수").appendField(new Blockly.FieldTextInput("100"), "sa");
+        this.appendDummyInput().appendField("특성 개수").appendField(new Blockly.FieldTextInput("2"), "fe");
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "seed");
 
         this.setInputsInline(true);
