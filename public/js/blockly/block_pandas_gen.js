@@ -438,3 +438,22 @@ Blockly.Python['df_values'] = function (block) {
   var code = variable_data + ".values" + "\n";
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+// 컬럼명 변경 2020-10-15 정지현
+Blockly.Python['df_col_rename'] = function(block) {
+  var value_df = Blockly.Python.valueToCode(block, 'df', Blockly.Python.ORDER_ATOMIC);
+  var value_origin_col = Blockly.Python.valueToCode(block, 'origin_col', Blockly.Python.ORDER_ATOMIC);
+  var text_modified_col = block.getFieldValue('modified_col');
+  // TODO: Assemble Python into code variable.
+  var code = value_df + ' = ' + value_df + '.rename(columns={'+ value_df + '.columns[' + value_origin_col +'] : "'+text_modified_col + '"})\n';
+  return code;
+};
+
+Blockly.Python['df_add_col'] = function(block) {
+  var value_df = Blockly.Python.valueToCode(block, 'df', Blockly.Python.ORDER_ATOMIC);
+  var text_added_col = block.getFieldValue('added_col');
+  var value_add_data = Blockly.Python.valueToCode(block, 'add_data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_df + "['" + text_added_col + "'] = " + value_add_data + '\n';
+  return code;
+};

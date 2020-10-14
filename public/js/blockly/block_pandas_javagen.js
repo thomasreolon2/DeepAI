@@ -311,3 +311,14 @@ Blockly.JavaScript['df_values'] = function (block) {
   var code = '\n';
   return code;
 };
+
+// 컬럼명 변경
+Blockly.JavaScript['df_col_rename'] = function(block) {
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['df_add_col'] = function(block) {
+  var code = '\n';
+  return code;
+};

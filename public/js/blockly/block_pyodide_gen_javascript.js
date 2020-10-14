@@ -98,7 +98,11 @@ Blockly.JavaScript['sklearn_mlp'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-
+Blockly.JavaScript['mlp_loss'] = function(block) {
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
   
 //MLP fit
 // Blockly.JavaScript['sklearn_mlp_fit'] = function(block) {
@@ -170,6 +174,11 @@ Blockly.JavaScript['k_means'] = function (block) {
   var code = '\n';
   return code;
 }
+
+Blockly.JavaScript['make_circles'] = function(block) {
+  var code = '\n';
+  return code;
+};
 
 Blockly.JavaScript['model_score'] = function (block) {
   // TODO: Assemble JavaScript into code variable.

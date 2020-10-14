@@ -953,13 +953,14 @@
           </block>
         </value>
       </block>
-      <block type="pandas_plus">
+      <!-- <block type="pandas_plus">
         <value name="pl_v">
           <block type="variables_get">
             <field name="VAR">df</field>
           </block>
         </value>
-      </block>
+      </block> -->
+      <block type="df_add_col"></block>
       <block type="row_count">
         <value name="select_value">
           <block type="variables_get">
@@ -1010,6 +1011,8 @@
         </value>
       </block>
 
+      <!-- 2020-10-15 정지현 컬럼명 변경 -->
+      <block type="df_col_rename"></block>
 
       <!-- <block type="column_count"></block> -->
       <!-- <block type="image_list"></block> -->
@@ -1114,6 +1117,7 @@
       <category name="데이터셋 (Dataset)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_dataset"></block>
         <block type="random_import"></block>
+        <block type="make_circles"></block>
         <block type="fetch_openml"></block>
         <block type="csv3"></block>
       </category>
@@ -1222,6 +1226,7 @@
         <block type="mlp_classifier"></block>
         <block type="mlp_regressor"></block>
         <block type="bernoullirbm"></block>
+        <block type="mlp_loss"></block>
 
       </category>
 

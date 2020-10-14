@@ -701,29 +701,52 @@ Blockly.Blocks.lists_create_with_item = {
 };
 
 //2020-09-20 양승국 추가
-Blockly.Blocks['pandas_plus'] = {
-  init: function () {
-    this.appendValueInput("pl_v")
-      .setCheck(null)
-      .appendField("[열추가] 변수");
+// Blockly.Blocks['pandas_plus'] = {
+//   init: function () {
+//     this.appendValueInput("pl_v")
+//       .setCheck(null)
+//       .appendField("[열추가] 변수");
+//     this.appendDummyInput()
+//       .appendField("(추가컬럼")
+//       .appendField(new Blockly.FieldTextInput("컬럼명"), "crt_col")
+//     this.appendDummyInput()
+//       .appendField("데이터1")
+//       .appendField(new Blockly.FieldTextInput("0"), "fr_col")
+//     this.appendDummyInput()
+//       .appendField(new Blockly.FieldDropdown([["+", "+"], ["-", "-"], ["/", "/"], ["*", "*"]]), "dat_fu")
+//     this.appendDummyInput()
+//       .appendField("데이터2")
+//       .appendField(new Blockly.FieldTextInput("1"), "se_col")
+//       .appendField(")");
+//     this.setInputsInline(true);
+//     this.setPreviousStatement(true, null);
+//     this.setNextStatement(true, null);
+//     this.setColour(pandas_color);
+//     this.setTooltip("");
+//     this.setHelpUrl("");
+//   }
+// };
+
+// 2020-10-15 정지현 열 추가 재 정의
+Blockly.Blocks['df_add_col'] = {
+  init: function() {
+    this.appendValueInput("df")
+        .setCheck(null)
+        .appendField("[열 추가] 프레임");
     this.appendDummyInput()
-      .appendField("(추가컬럼")
-      .appendField(new Blockly.FieldTextInput("컬럼명"), "crt_col")
+        .appendField("(추가컬럼")
+        .appendField(new Blockly.FieldTextInput(""), "added_col");
+    this.appendValueInput("add_data")
+        .setCheck(null)
+        .appendField(" 삽입 데이터");
     this.appendDummyInput()
-      .appendField("데이터1")
-      .appendField(new Blockly.FieldTextInput("0"), "fr_col")
-    this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([["+", "+"], ["-", "-"], ["/", "/"], ["*", "*"]]), "dat_fu")
-    this.appendDummyInput()
-      .appendField("데이터2")
-      .appendField(new Blockly.FieldTextInput("1"), "se_col")
-      .appendField(")");
+        .appendField(")");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(pandas_color);
-    this.setTooltip("");
-    this.setHelpUrl("");
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
 };
 
@@ -1208,5 +1231,28 @@ Blockly.Blocks['df_values'] = {
     this.setOutput(true, null);
     this.setTooltip("");
     this.setHelpUrl("");
+  }
+};
+
+// 컬럼명 변경 2020-10-15 정지현
+Blockly.Blocks['df_col_rename'] = {
+  init: function() {
+    this.appendValueInput("df")
+        .setCheck(null)
+        .appendField("[컬럼명 변경] 프레임");
+    this.appendValueInput("origin_col")
+        .setCheck("Number")
+        .appendField("(원본 컬럼 인덱스");
+    this.appendDummyInput()
+        .appendField("변경 컬럼")
+        .appendField(new Blockly.FieldTextInput(""), "modified_col");
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
 };

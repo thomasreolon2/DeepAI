@@ -1095,7 +1095,7 @@ Blockly.Blocks['metrics_fit_predict'] = {
   init: function() {
     this.appendValueInput("metrics_fit_predict_val")
         .setCheck(null)
-        .appendField("[ DBSCAN 학습 및 예측 ]");
+        .appendField("[ DBSCAN 학습 및 예측 ] 모델 ");
     this.appendValueInput("metrics_fit_predict_Xdata")
         .setCheck(null)
         .appendField("Xdata");

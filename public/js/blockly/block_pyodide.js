@@ -250,7 +250,7 @@ Blockly.Blocks['random_import'] = {
             ],
             [
                 "moons", "make_moons"
-            ],
+            ]
         ]), "dataset_name");
         this.appendValueInput("x_data").setCheck(null).appendField("X_data");
         this.appendValueInput("y_data").setCheck(null).appendField("Y_data");
@@ -266,6 +266,30 @@ Blockly.Blocks['random_import'] = {
         this.setHelpUrl("");
     }
 };
+
+// 2020-10-15 정지현 추가
+Blockly.Blocks['make_circles'] = {
+    init: function() {
+      this.appendValueInput("x_data")
+          .setCheck(null)
+          .appendField("[무작위 데이터셋 생성 - Circles] X_data");
+      this.appendValueInput("y_data")
+          .setCheck(null)
+          .appendField("Y_data ");
+      this.appendDummyInput()
+          .appendField("샘플 수 ")
+          .appendField(new Blockly.FieldTextInput("100"), "n_samples");
+      this.appendDummyInput()
+          .appendField("거리 비율 (Factor)")
+          .appendField(new Blockly.FieldTextInput("0.7"), "factor");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 Blockly.Blocks['train_test_split'] = {
     init: function () {
@@ -814,12 +838,16 @@ Blockly.Blocks['for_range'] = {
 // };
 Blockly.Blocks['sklearn_mlp'] = {
     init: function () {
-        this.appendDummyInput().appendField("[MLP 모델 생성] ")
-
+        this.appendDummyInput().appendField("[MLP 분류기] ")
         this.appendValueInput("sklearn_mlp_lib_val").setCheck(null).appendField("모델");
-        this.appendValueInput("sklearn_mlp_fit_X").setCheck(null).appendField("X_train");
-        this.appendValueInput("sklearn_mlp_fit_Y").setCheck(null).appendField("Y_train");
-        this.appendDummyInput().appendField("MLP 분류기 (").appendField("은닉층 개수").appendField(new Blockly.FieldTextInput("10,10,10"), "sklearn_mlp_hidden_layer_sizes ").appendField("Activation").appendField(new Blockly.FieldDropdown([
+        // this.appendValueInput("sklearn_mlp_fit_X").setCheck(null).appendField("X_train");
+        // this.appendValueInput("sklearn_mlp_fit_Y").setCheck(null).appendField("Y_train");
+        this.appendDummyInput().appendField("(").appendField("은닉층 개수").appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
+        this.appendValueInput("sklearn_MLP_Max_iter").setCheck(null).appendField("Epochs");
+        this.appendDummyInput().appendField("Activation").appendField(new Blockly.FieldDropdown([
+            [
+                "Relu", "sklearn_MLP_activation_relu"
+            ],
             [
                 "Identity", "sklearn_MLP_activation_identity"
             ],
@@ -828,21 +856,25 @@ Blockly.Blocks['sklearn_mlp'] = {
             ],
             [
                 "Tanh", "sklearn_MLP_activation_tanh"
-            ],
-            [
-                "Relu", "sklearn_MLP_activation_relu"
             ]
         ]), "sklearn_mlp_activation_Option").appendField("Optimizer").appendField(new Blockly.FieldDropdown([
+            [
+                "Adam", "sklearn_MLP_Optimizer_Adam"
+            ],
             [
                 "Lbfgs", "sklearn_MLP_Optimizer_Lbfgs"
             ],
             [
                 "SGD", "sklearn_MLP_Optimizer_SGD"
+            ]
+        ]), "sklearn_MLP_Optimizer_Option").appendField("학습률").appendField(new Blockly.FieldTextInput("0.001"), "sklearn_MLP_learning_rate").appendField("Warm Start").appendField(new Blockly.FieldDropdown([
+            [
+                "False", "sklearn_MLP_Warm_Start_False"
             ],
             [
-                "Adam", "sklearn_MLP_Optimizer_Adam"
+                "True", "sklearn_MLP_Warm_Start_True"
             ]
-        ]), "sklearn_MLP_Optimizer_Option").appendField("학습률").appendField(new Blockly.FieldTextInput("0.001"), "sklearn_MLP_learning_rate").appendField("epochs").appendField(new Blockly.FieldTextInput("200"), "sklearn_MLP_epochs").appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "sklearn_MLP_seed");
+        ]), "sklearn_MLP_Warm_Start_Option").appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "sklearn_MLP_random_state");
 
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -852,6 +884,20 @@ Blockly.Blocks['sklearn_mlp'] = {
         this.setHelpUrl("");
     }
 };
+
+// 2020-10-15 정지현 추가
+Blockly.Blocks['mlp_loss'] = {
+    init: function() {
+      this.appendValueInput("model")
+          .setCheck(null)
+          .appendField("[MLP 손실값 추출 ] 모델");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 
 // //MLP fit
