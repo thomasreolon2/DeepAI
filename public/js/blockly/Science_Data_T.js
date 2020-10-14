@@ -529,16 +529,16 @@ Blockly.defineBlocksWithJsonArray(
         "name": "numpy_random_rand_Option",
         "options": [
           [
-            "정규분포",
-            "numpy_random_randn"
+            "균일 분포",
+            "numpy_random_rand"
           ],
           [
             "정수",
             "numpy_random_randint"
           ],
           [
-            "균일분포",
-            "numpy_random_rand"
+            "가우시안 분포",
+            "numpy_random_randn"
           ],
           [
             "Sample",
@@ -1045,6 +1045,32 @@ Blockly.Blocks['import_knn'] = {
  this.setHelpUrl("");
   }
 }; 
+
+Blockly.Blocks['k_means_inertia'] = {
+  init: function() {
+    this.appendValueInput("model")
+        .setCheck(null)
+        .appendField("[K-Means 응집도 추출] 모델 ");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['k_means_centroid'] = {
+  init: function() {
+    this.appendValueInput("model")
+        .setCheck(null)
+        .appendField("[K-Means Centroid 추출] 모델 ");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
 //dbscan
 Blockly.Blocks['dbscan'] = {

@@ -384,6 +384,20 @@ Blockly.JavaScript['import_knn'] = function(block) {
   return code;
 };
 
+Blockly.JavaScript['k_means_inertia'] = function(block) {
+  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['k_means_centroid'] = function(block) {
+  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
 //dbscan
 Blockly.JavaScript['dbscan'] = function(block) {
   var value_dbscan_val = Blockly.JavaScript.valueToCode(block, 'DBSCAN_val', Blockly.JavaScript.ORDER_ATOMIC);

@@ -226,7 +226,7 @@ Blockly.Python['np_arrange'] = function(block) {
         break;
 
         case "numpy_random_rand":
-        code = `np.random.randn(${text_numpy_random_randn_rows},${text_numpy_random_randn_cols})`
+        code = `np.random.rand(${text_numpy_random_randn_rows},${text_numpy_random_randn_cols})`
         break;
 
         case "numpy_random_sample":
@@ -693,7 +693,7 @@ Blockly.Python['make_blobs'] = function(block) {
   var text_make_blobs_feature = block.getFieldValue('Make_Blobs_feature');
   var text_make_blobs_randomstate = block.getFieldValue('Make_Blobs_randomstate');
   // TODO: Assemble Python into code variable.
-  var code = `${value_make_blobs_x},${value_make_blobs_y} = make_blobs(n_samples = ${text_make_blobs_sample}, n_features = ${text_make_blobs_feature}, random_state = ${text_make_blobs_randomstate})\n`;
+  var code = `${value_make_blobs_x},${value_make_blobs_y} = make_blobs(n_samples=${text_make_blobs_sample},n_features=${text_make_blobs_feature},random_state=${text_make_blobs_randomstate})\n`;
   return code;
 }; 
 
@@ -704,7 +704,7 @@ Blockly.Python['make_moons'] = function(block) {
   var text_make_moons_sample = block.getFieldValue('make_moons_sample');
   var text_make_moons_randomstate = block.getFieldValue('make_moons_randomstate');
   // TODO: Assemble Python into code variable.
-  var code = `${value_make_moons_x},${value_make_moons_y} = make_blobs(n_samples = ${text_make_moons_sample}, random_state = ${text_make_moons_randomstate})\n`;
+  var code = `${value_make_moons_x},${value_make_moons_y}=make_blobs(n_samples = ${text_make_moons_sample}, random_state = ${text_make_moons_randomstate})\n`;
   return code;
 }; 
 
@@ -726,15 +726,30 @@ Blockly.Python['import_knn'] = function(block) {
   var code;
   switch (dropdown_import_knn_option){
     case "Import_KNN_KMeans":
-    code ="from sklearn.cluster import KMeans";
+    code ="from sklearn.cluster import KMeans\n";
     break;
 
     case "Import_KNN_DBSCAN":
-    code ="from sklearn.cluster import DBSCAN";
+    code ="from sklearn.cluster import DBSCAN\n";
     break;
 
   }
   return code;
+};
+
+Blockly.Python['k_means_inertia'] = function(block) {
+  var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_model + '.intertia_';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['k_means_centroid'] = function(block) {
+  var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_model + '.cluster_centers_';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 //dbscan

@@ -1161,15 +1161,22 @@
         <block type="intercept"></block>
       </category>
       <category name="KNN(Neighbors)" colour="%{BKY_SCIKITLEARN_HUE}">
-        <block type="import_knn"></block>
         <block type="knn_import"></block>
-        <block type="k_means"></block>
         <block type="kneighborsclassifier_function"></block>
         <block type="kneighborsregressor_function"></block>
         <block type="kneighborstransformer_function"></block>
         <block type="kneighbors_graph_function"></block>
-        <block type="dbscan"></block>
       </category>
+
+      <!-- 2020-10-14 정지현이 추가함, 기존 KNN의 클러스터 블록 가져옴 -->
+      <category name="클러스터(Cluster)" colour="%{BKY_SCIKITLEARN_HUE}">
+        <block type="import_knn"></block>
+        <block type="k_means"></block>
+        <block type="dbscan"></block>
+        <block type="k_means_inertia"></block>
+        <block type="k_means_centroid"></block>
+      </category>
+
       <category name="결정트리(Decisiontree)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_tree"></block>
         <block type="decision"></block>

@@ -879,18 +879,37 @@ Blockly.Blocks['sklearn_mlp'] = {
 
 
 // kMeans
+// Blockly.Blocks['k_means'] = {
+//     init: function () {
+//         this.appendDummyInput().appendField("[KMeans 모델 생성] ");
+//         this.appendValueInput("model").setCheck(null).appendField("모델");
+//         // this.appendDummyInput().appendField("그룹 개수 ").appendField(new Blockly.FieldTextInput(""), "cnt");
+//         this.appendValueInput("model")
+//         .setCheck(null).appendField("그룹 개수 ")
+//         this.setPreviousStatement(true, null);
+//         this.setNextStatement(true, null);
+//         this.setColour("%{BKY_SCIKITLEARN_HUE}");
+//         this.setTooltip("");
+//         this.setHelpUrl("");
+//     }
+// };
 Blockly.Blocks['k_means'] = {
-    init: function () {
-        this.appendDummyInput().appendField("[KMeans 모델 생성] ");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
-        this.appendDummyInput().appendField("그룹 개수 ").appendField(new Blockly.FieldTextInput(""), "cnt");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
+    init: function() {
+      this.appendValueInput("model")
+          .setCheck(null)
+          .appendField("[KMeans 모델 생성] 모델 ");
+      this.appendValueInput("cnt")
+          .setCheck(null)
+          .appendField("그룹 개수 ");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
     }
-};
+  };
+
 // for
 Blockly.Blocks['py_for'] = {
     init: function () {

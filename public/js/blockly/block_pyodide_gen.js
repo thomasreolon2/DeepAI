@@ -469,9 +469,9 @@ ${value_sklearn_mlp_lib_val}.fit(${value_sklearn_mlp_fit_x},${value_sklearn_mlp_
 // kMeans
 Blockly.Python['k_means'] = function (block) {
     var variable_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var cnt = block.getFieldValue('cnt');
+    var value_cnt = Blockly.Python.valueToCode(block, 'cnt', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = variable_model + " = KMeans(n_clusters = " + cnt + ")\n";
+    var code = variable_model + " = KMeans(n_clusters = " + value_cnt + ")\n";
     return code;
 };
 
