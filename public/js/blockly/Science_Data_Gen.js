@@ -740,7 +740,7 @@ Blockly.Python['import_knn'] = function(block) {
 Blockly.Python['k_means_inertia'] = function(block) {
   var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_model + '.intertia_';
+  var code = value_model + '.inertia_';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
