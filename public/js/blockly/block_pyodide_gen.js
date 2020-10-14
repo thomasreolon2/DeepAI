@@ -740,24 +740,24 @@ Blockly.Python['random_import'] = function (block) {
     var code="";
     if (dropdown_dataset_name == "make_blobs"){
         if(value_x_data&&!(value_y_data)){
-            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+' n_features = '+fea+' random_state = '+seed+')\n';
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+', n_features = '+fea+', random_state = '+seed+')\n';
         }
         else if(!(value_x_data)&&value_y_data){
-            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_y_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+' n_features = '+fea+' random_state = '+seed+')\n';
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_y_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+', n_features = '+fea+', random_state = '+seed+')\n';
         }
         else{
-            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data +','+value_y_data+ ' = ' + dropdown_dataset_name +'( n_samples = '+sample+' n_features = '+fea+' random_state = '+seed+')\n';
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data +','+value_y_data+ ' = ' + dropdown_dataset_name +'( n_samples = '+sample+', n_features = '+fea+', random_state = '+seed+')\n';
         }
     }
     if( dropdown_dataset_name == "make_moons"){
         if(value_x_data&&!(value_y_data)){
-            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+' random_state = '+seed+')\n';
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+', random_state = '+seed+')\n';
         }
         else if(!(value_x_data)&&value_y_data){
-            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_y_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+' random_state = '+seed+')\n';
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_y_data + ' = ' + dropdown_dataset_name + '( n_samples = '+sample+', random_state = '+seed+')\n';
         }
         else{
-            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data +','+value_y_data+ ' = ' + dropdown_dataset_name +'( n_samples = '+sample+' random_state = '+seed+')\n';
+            code = 'from sklearn.datasets import ' + dropdown_dataset_name + '\n' + value_x_data +','+value_y_data+ ' = ' + dropdown_dataset_name +'( n_samples = '+sample+', random_state = '+seed+')\n';
         }
     }
     return code;
