@@ -1150,7 +1150,30 @@ Blockly.Blocks['val_set'] = {
     }
   };
 
-
+// 리스트 자르기
+Blockly.Blocks['list_dot'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[리스트 자르기]");
+        this.appendValueInput("list")
+        .setCheck(null);
+      this.appendDummyInput()
+          .appendField("[");
+      this.appendValueInput("a")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(":");
+      this.appendValueInput("b")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("]");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_COLLECTION_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 // for range(범위)
 Blockly.Blocks['range1'] = {
     init: function () {

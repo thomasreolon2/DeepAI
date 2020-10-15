@@ -1490,7 +1490,16 @@ Blockly.Python['val_set'] = function(block) {
   var code = value_a+"="+value_b+"\n";
   return code;
 };
-
+// 리스트 자르기
+Blockly.Python['list_dot'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC)
+  var value_a = Blockly.Python.valueToCode(block, 'a', Blockly.Python.ORDER_ATOMIC);
+  var value_b = Blockly.Python.valueToCode(block, 'b', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list+"["+value_a+":"+value_b+"]";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
 // append
 Blockly.Python['list_append'] = function(block) {
   var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
