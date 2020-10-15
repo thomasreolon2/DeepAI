@@ -1882,8 +1882,8 @@ Blockly.Blocks['sivalidation'] = {
             ]
         ]), "vali");
         this.appendValueInput("em").setCheck(null).appendField("estimator");
-        this.appendValueInput("x").setCheck(null).appendField("X_data");
-        this.appendValueInput("y").setCheck(null).appendField("Y_data");
+        this.appendValueInput("x").setCheck(null).appendField("X");
+        this.appendValueInput("y").setCheck(null).appendField("Y");
         this.appendDummyInput().appendField("교차검증 횟수").appendField(new Blockly.FieldTextInput("3"), "cv");
         this.setInputsInline(true);
         this.setOutput(true, null);
