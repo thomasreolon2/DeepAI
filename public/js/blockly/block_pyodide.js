@@ -2196,7 +2196,7 @@ Blockly.Blocks['np_dot'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(330);
+      this.setColour("%{BKY_NUMPY_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
