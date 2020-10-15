@@ -392,7 +392,7 @@ Blockly.Blocks.lists_setIndex = {
       .appendField(new Blockly.FieldImage("/img/Array/A8-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField(Blockly.Msg.LISTS_SET_INDEX_INPUT_IN_LIST);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown(a), "MODE")
+      .appendField(new Blockly.FieldDropdown(a), "MODE") 
       .appendField("", "SPACE");
     this.appendDummyInput("AT");
     this.appendValueInput("TO").appendField(
@@ -1654,9 +1654,7 @@ Blockly.Blocks.procedures_defnoreturn = {
         this.workspace.options.parentWorkspace.options.comments)) &&
       Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT &&
       this.setCommentText(Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT);
-    this.setStyle("procedure_blocks");   
-    this.setPreviousStatement(true, null);   
-    this.setNextStatement(true, null);
+    this.setStyle("procedure_blocks");    
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFNORETURN_TOOLTIP); 
     this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL);  
     this.arguments_ = []; 
@@ -1879,8 +1877,6 @@ Blockly.Blocks.procedures_defreturn = {
       Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT &&
       this.setCommentText(Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT);
     this.setStyle("procedure_blocks");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
     this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFRETURN_HELPURL);
     this.arguments_ = [];
