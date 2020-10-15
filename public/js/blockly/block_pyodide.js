@@ -2165,3 +2165,21 @@ Blockly.Blocks['separate'] = {
         this.setHelpUrl("");
     }
 };
+
+Blockly.Blocks['np_dot'] = {
+    init: function() {
+      this.appendValueInput("dot")
+          .setCheck(null)
+          .appendField("[ 행렬 곱 ] (");
+      this.appendValueInput("dot2")
+          .setCheck(null)
+          .appendField(",");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(330);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

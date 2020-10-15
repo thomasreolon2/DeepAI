@@ -937,3 +937,11 @@ Blockly.Python['curve_fit'] = function(block) {
     var code = '#결정트리시각화\n';
     return code;
   };
+  Blockly.Python['np_dot'] = function(block) {
+    var value_dot = Blockly.Python.valueToCode(block, 'dot', Blockly.Python.ORDER_ATOMIC);
+    var value_dot2 = Blockly.Python.valueToCode(block, 'dot2', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = 'np.dot('+value_dot+','+value_dot2+')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };

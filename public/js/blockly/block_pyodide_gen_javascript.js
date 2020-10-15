@@ -454,7 +454,14 @@ Blockly.JavaScript['tree_text'] = function(block) {
 };
 
 
-
+Blockly.JavaScript['np_dot'] = function(block) {
+  var value_dot = Blockly.JavaScript.valueToCode(block, 'dot', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_dot2 = Blockly.JavaScript.valueToCode(block, 'dot2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
 
 
 Blockly.JavaScript['py_for'] = function(block) {
