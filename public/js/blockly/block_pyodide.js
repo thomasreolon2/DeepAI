@@ -1130,7 +1130,25 @@ Blockly.Blocks['convert'] = {
 };
 
 
-
+// 변수 설정
+Blockly.Blocks['val_set'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[변수 설정]");
+      this.appendValueInput("a")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("=");
+      this.appendValueInput("b")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_MATH_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 
 // for range(범위)
