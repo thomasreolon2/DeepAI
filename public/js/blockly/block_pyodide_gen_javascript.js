@@ -83,7 +83,7 @@ Blockly.JavaScript['csv2'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 // 사이킷런 MLP 블록 
-Blockly.JavaScript['sklearn_mlp'] = function(block) { 
+Blockly.JavaScript['sklearn_mlp_classifier'] = function(block) { 
   var text_sklearn_mlp_hidden_size = block.getFieldValue('sklearn_MLP_hidden_size');
   var dropdown_sklearn_mlp_activation__option = block.getFieldValue('sklearn_MLP_activation _Option');
   var dropdown_sklearn_mlp_optimizer_option = block.getFieldValue('sklearn_MLP_Optimizer_Option');
@@ -95,7 +95,13 @@ Blockly.JavaScript['sklearn_mlp'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  return code;
+};
+
+Blockly.JavaScript['sklearn_mlp_regressor'] = function(block) { 
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
 };
 
 Blockly.JavaScript['mlp_loss'] = function(block) {
