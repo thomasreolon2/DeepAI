@@ -962,6 +962,15 @@ Blockly.JavaScript['convert'] = function(block) {
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
 
+  //
+  // 변수 설정
+Blockly.JavaScript['val_set'] = function(block) {
+    var value_a = Blockly.JavaScript.valueToCode(block, 'a', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_b = Blockly.JavaScript.valueToCode(block, 'b', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = "\n";
+    return code;
+  };
   Blockly.JavaScript['math_arithmetic'] = function(block) {
     var value_VALUE = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
