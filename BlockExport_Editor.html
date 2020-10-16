@@ -11,6 +11,7 @@
   <script src="/js/blockly/brython.js"></script>
   <script src="/js/blockly/brython_stdlib.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
+  <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
   <!--  Blockly 자체의 설정과 관련된 파일 -->
   <!--test-->
   <!-- pyodide -->
@@ -841,6 +842,7 @@
       <!-- np.fft -->
       <block type="np_fft_fft"></block>
       <!-- np.fft -->
+      <block type="np_dot"></block>
 
       <!--  import sklearn  -->
       <!-- <block type="lib_import_sklearn"></block> -->
@@ -1214,18 +1216,19 @@
       <category name="셀렉션(Selection)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_sivalidation"></block>
         <block type="kfold"></block>
-        <block type="stratifiedkfold"></block>
+        <!-- <block type="stratifiedkfold"></block> -->
         <block type="train_test_split"></block>
         <block type="sivalidation"></block>
       </category>
       <category name="신경망(Neuralnetwork)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_mlp"></block>
-        <block type="sklearn_mlp"></block>
+        <block type="sklearn_mlp_classifier"></block>
+        <block type="sklearn_mlp_regressor"></block>
         <!-- 사이킷런 MLP 블록  -->
         <!-- <block type="make_mlp_classifier"></block>
         <block type="make_mlp_regressor"></block> -->
-        <block type="mlp_classifier"></block>
-        <block type="mlp_regressor"></block>
+        <!-- <block type="mlp_classifier"></block>
+        <block type="mlp_regressor"></block> -->
         <block type="bernoullirbm"></block>
         <block type="mlp_loss"></block>
 

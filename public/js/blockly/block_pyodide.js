@@ -836,7 +836,7 @@ Blockly.Blocks['for_range'] = {
 //    this.setHelpUrl("");
 //     }
 // };
-Blockly.Blocks['sklearn_mlp'] = {
+Blockly.Blocks['sklearn_mlp_classifier'] = {
     init: function () {
         this.appendDummyInput().appendField("[MLP 분류기] ")
         this.appendValueInput("sklearn_mlp_lib_val").setCheck(null).appendField("모델");
@@ -844,7 +844,56 @@ Blockly.Blocks['sklearn_mlp'] = {
         // this.appendValueInput("sklearn_mlp_fit_Y").setCheck(null).appendField("Y_train");
         this.appendDummyInput().appendField("(").appendField("은닉층 개수").appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
         this.appendValueInput("sklearn_MLP_Max_iter").setCheck(null).appendField("Epochs");
-        this.appendDummyInput().appendField("Activation").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField('Batch Size').appendField(new Blockly.FieldTextInput("16"), "sklearn_MLP_batch_size").appendField("Activation").appendField(new Blockly.FieldDropdown([
+            [
+                "Relu", "sklearn_MLP_activation_relu"
+            ],
+            [
+                "Identity", "sklearn_MLP_activation_identity"
+            ],
+            [
+                "Logistic", "sklearn_MLP_activation_logistic"
+            ],
+            [
+                "Tanh", "sklearn_MLP_activation_tanh"
+            ]
+        ]), "sklearn_mlp_activation_Option").appendField("Optimizer").appendField(new Blockly.FieldDropdown([
+            [
+                "Adam", "sklearn_MLP_Optimizer_Adam"
+            ],
+            [
+                "Lbfgs", "sklearn_MLP_Optimizer_Lbfgs"
+            ],
+            [
+                "SGD", "sklearn_MLP_Optimizer_SGD"
+            ]
+        ]), "sklearn_MLP_Optimizer_Option").appendField("학습률").appendField(new Blockly.FieldTextInput("0.001"), "sklearn_MLP_learning_rate").appendField("Warm Start").appendField(new Blockly.FieldDropdown([
+            [
+                "False", "sklearn_MLP_Warm_Start_False"
+            ],
+            [
+                "True", "sklearn_MLP_Warm_Start_True"
+            ]
+        ]), "sklearn_MLP_Warm_Start_Option").appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "sklearn_MLP_random_state");
+
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['sklearn_mlp_regressor'] = {
+    init: function () {
+        this.appendDummyInput().appendField("[MLP 예측기] ")
+        this.appendValueInput("sklearn_mlp_lib_val").setCheck(null).appendField("모델");
+        // this.appendValueInput("sklearn_mlp_fit_X").setCheck(null).appendField("X_train");
+        // this.appendValueInput("sklearn_mlp_fit_Y").setCheck(null).appendField("Y_train");
+        this.appendDummyInput().appendField("(").appendField("은닉층 개수").appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
+        this.appendValueInput("sklearn_MLP_Max_iter").setCheck(null).appendField("Epochs");
+        this.appendDummyInput().appendField('Batch Size').appendField(new Blockly.FieldTextInput("16"), "sklearn_MLP_batch_size").appendField("Activation").appendField(new Blockly.FieldDropdown([
             [
                 "Relu", "sklearn_MLP_activation_relu"
             ],
@@ -1856,8 +1905,8 @@ Blockly.Blocks['sivalidation'] = {
             ]
         ]), "vali");
         this.appendValueInput("em").setCheck(null).appendField("estimator");
-        this.appendValueInput("x").setCheck(null).appendField("X_data");
-        this.appendValueInput("y").setCheck(null).appendField("Y_data");
+        this.appendValueInput("x").setCheck(null).appendField("X");
+        this.appendValueInput("y").setCheck(null).appendField("Y");
         this.appendDummyInput().appendField("교차검증 횟수").appendField(new Blockly.FieldTextInput("3"), "cv");
         this.setInputsInline(true);
         this.setOutput(true, null);
@@ -2206,3 +2255,21 @@ Blockly.Blocks['separate'] = {
         this.setHelpUrl("");
     }
 };
+
+Blockly.Blocks['np_dot'] = {
+    init: function() {
+      this.appendValueInput("dot")
+          .setCheck(null)
+          .appendField("[ 행렬 곱 ] (");
+      this.appendValueInput("dot2")
+          .setCheck(null)
+          .appendField(",");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

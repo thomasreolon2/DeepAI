@@ -36,7 +36,7 @@ Blockly.Blocks['procedures_defnoreturn'] = {
         .appendField(nameField, 'NAME')
         .appendField('', 'PARAMS');
     this.setMutator(new Blockly.Mutator(['procedures_mutatorarg']));
-    if ((this.workspace.options.comments ||
+    if ((this.workspace.options.comments || 
          (this.workspace.options.parentWorkspace &&
           this.workspace.options.parentWorkspace.options.comments)) &&
         Blockly.Msg['PROCEDURES_DEFNORETURN_COMMENT']) { 
@@ -46,6 +46,7 @@ Blockly.Blocks['procedures_defnoreturn'] = {
     this.setTooltip(Blockly.Msg['PROCEDURES_DEFNORETURN_TOOLTIP']);
     this.setHelpUrl(Blockly.Msg['PROCEDURES_DEFNORETURN_HELPURL']);
     this.arguments_ = [];
+    // 
     this.argumentVarModels_ = [];
     this.setStatements_(true);
     this.statementConnection_ = null;
@@ -490,13 +491,13 @@ Blockly.Blocks['procedures_mutatorarg'] = {
       this.oldShowEditorFn_();
     };
     field.showEditor_ = newShowEditorFn;
-
+  
     this.appendDummyInput()
         .appendField(Blockly.Msg['PROCEDURES_MUTATORARG_TITLE'])
         .appendField(field, 'NAME');
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
-    this.setStyle('procedure_blocks');
+    // this.setPreviousStatement(true); 
+    // this.setNextStatement(true);
+    this.setStyle('procedure_blocks'); 
     this.setTooltip(Blockly.Msg['PROCEDURES_MUTATORARG_TOOLTIP']);
     this.contextMenu = false;
 
@@ -593,8 +594,8 @@ Blockly.Blocks['procedures_callnoreturn'] = {
   init: function() {
     this.appendDummyInput('TOPROW')
         .appendField(this.id, 'NAME');
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    // this.setPreviousStatement(true);
+    // this.setNextStatement(true);
     this.setStyle('procedure_blocks');
     // Tooltip is set in renameProcedure.
     this.setHelpUrl(Blockly.Msg['PROCEDURES_CALLNORETURN_HELPURL']);
@@ -619,7 +620,7 @@ Blockly.Blocks['procedures_callnoreturn'] = {
    * If the name matches this block's procedure, rename it.
    * @param {string} oldName Previous name of procedure.
    * @param {string} newName Renamed procedure.
-   * @this {Blockly.Block}
+   * @this {Blockly.Block} 
    */
   renameProcedure: function(oldName, newName) {
     if (Blockly.Names.equals(oldName, this.getProcedureCall())) {
@@ -978,8 +979,8 @@ Blockly.Blocks['procedures_ifreturn'] = {
     this.appendValueInput('VALUE')
         .appendField(Blockly.Msg['PROCEDURES_DEFRETURN_RETURN']);
     this.setInputsInline(true);
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    // this.setPreviousStatement(true);
+    // this.setNextStatement(true); 
     this.setStyle('procedure_blocks');
     this.setTooltip(Blockly.Msg['PROCEDURES_IFRETURN_TOOLTIP']);
     this.setHelpUrl(Blockly.Msg['PROCEDURES_IFRETURN_HELPURL']);
