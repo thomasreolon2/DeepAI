@@ -1,3 +1,12 @@
+ //""없는 문자
+ Blockly.JavaScript['char_a_none'] = function(block) {
+  var text_char_a_none_val = block.getFieldValue('char_A_none_val');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 //클래스 선언
 Blockly.JavaScript['python_class'] = function(block) {
   var text_python_class_statement_name = block.getFieldValue('Python_Class_statement_name');
@@ -26,6 +35,16 @@ Blockly.JavaScript['class_instance'] = function(block) {
   return code;
 };
 
+
+//함수 호출
+Blockly.JavaScript['function__parameter'] = function(block) {
+  var text_function__parameter_name = block.getFieldValue('function__parameter_name');
+  var value_function__parameter_val = Blockly.JavaScript.valueToCode(block, 'function__parameter_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
 
 //넘파이 라이브러리 
 Blockly.JavaScript['numpy_library'] = function (block) {
@@ -231,6 +250,17 @@ Blockly.JavaScript['np_fft_fft'] = function (block) {
 
 
 
+//np.abs
+Blockly.JavaScript['nump_abs'] = function(block) {
+  var value_nump_abs_val = Blockly.JavaScript.valueToCode(block, 'nump_abs_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+
+
 //라이브러리 임포트 사이킷런 
 Blockly.JavaScript['lib_import_sklearn'] = function (block) {
   var dropdown_lib_from_a_option = block.getFieldValue('lib_from_a_option');
@@ -312,6 +342,24 @@ Blockly.JavaScript['matplotlib_pre_graph'] = function (block) {
 Blockly.JavaScript['matplotlib_graph_end'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'document.getElementById("pyplotfigure").src = pyodide.globals.img_str;';
+  return code;
+};
+
+
+//plt.plot()
+Blockly.JavaScript['matplotlib_plt_plot'] = function(block) {
+  var value_matplotlib_plt_plot_val = Blockly.JavaScript.valueToCode(block, 'matplotlib_plt_plot_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
+//plt.show()
+Blockly.JavaScript['matplotlib_plt_show'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = ''; 
+  // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
 

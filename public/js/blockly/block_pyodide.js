@@ -1183,7 +1183,7 @@ Blockly.Blocks['convert'] = {
 Blockly.Blocks['val_set'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[변수 설정]");
+          .appendField("[ 외부 입력 ]");
       this.appendValueInput("a")
           .setCheck(null);
       this.appendDummyInput()

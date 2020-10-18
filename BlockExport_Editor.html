@@ -55,6 +55,11 @@
   <script src="/js/blockly/Science_Data_Gen.js"></script>
   <script src="/js/blockly/Science_Data_Js.js"></script>
 
+  <!-- 기계 고장 진단 -->
+  <script src="/js/blockly/block_escalator_T.js"></script>
+  <script src="/js/blockly/block_escalator_js.js"></script>
+  <script src="/js/blockly/block_escalator_python.js"></script>
+
   <!-- 데이타 사이언스 블록 -->
   <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지, 카테고리 색상 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -421,11 +426,20 @@
 
     </category>
     <category name="연산(Operation)" colour="%{BKY_MATH_HUE}">
+      
       <block type="math_number">
         <field name="NUM">0</field>
       </block>
+
       <!-- 연산블럭 -->
       <block type="Oper"></block>
+
+      <!-- 외부 입력 -->
+      <block type="val_set"> 
+        <value name="a">
+          <block type="class_func_param"></block>
+        </value> 
+      </block>
 
       <block type="math_single">
         <value name="NUM">
@@ -434,6 +448,7 @@
           </shadow>
         </value>
       </block>
+
       <!-- 사인, 코사인 -->
       <block type="math_trig"></block>
       <!-- 파이 등-->
@@ -493,8 +508,7 @@
       <block type="convert">
         <value name="VALUE"></value>
       </block>
-      <block type="val_set">
-      </block>
+     
       
 
     </category>
@@ -506,8 +520,13 @@
       <block type="printc"></block>
       <block type="input"></block>
       <block type="text"></block>
+
+       <!-- ""없는 문자 -->
+       <block type="char_a_none"></block>
+
       <block type="text_join"></block>
 
+    
 
       <!-- len -->
       <block type="text_length">
@@ -658,7 +677,7 @@
       <!-- <block type="print_output_var"></block> -->
       <!-- 인덱스 가져오기 -->
       <block type="array_select">
-        <value name="array_var">
+        <value name="array_var"> 
           <block type="variables_get">
             <field name="VAR">array</field>
           </block>
@@ -697,7 +716,11 @@
       <!-- 클래스 함수 return -->
 
        <!-- 클래스 = -->
-       <block type="class_equ"></block>  
+       <block type="function__parameter">
+        <value name="function__parameter_val">
+          <block type="class_func_param"></block>
+        </value> 
+       </block>  
       <!-- 클래스 = -->
 
 
@@ -842,7 +865,14 @@
       <!-- np.fft -->
       <block type="np_fft_fft"></block>
       <!-- np.fft -->
+
+      <!-- np.dot -->
       <block type="np_dot"></block>
+      <!-- np.dot -->
+
+      <!-- np.abs -->
+      <block type="nump_abs"></block>
+      <!-- np.abs -->
 
       <!--  import sklearn  -->
       <!-- <block type="lib_import_sklearn"></block> -->
@@ -1100,6 +1130,16 @@
       <!-- <block type="matplotlib_graph_end"></block> -->
       <!--  matplot3 시각화 하기      -->
 
+
+      <!--  matplot plt.plot()      -->
+      <block type="matplotlib_plt_plot"></block>
+      <!--  matplot plt.plot()      --> 
+
+
+      <!--  matplot plt.show()      -->
+      <block type="matplotlib_plt_show"></block>
+      <!--  matplot plt.show()      -->
+
       <!--  사이킷런 시각화 하기      -->
       <!-- <block type="lrgraph"></block>
       <block type="logicgraph"></block> -->
@@ -1279,6 +1319,19 @@
       <block type="rumpf"></block> 
     </category> -->
 
+
+
+    <!-- 기계 고장 진단  -->
+    <category name="기계고장 진단" colour="%{BKY_PROLOG_HUE}">
+      <block type="wavfile_read">
+        <value name="wavfile_read_val">
+          <block type="class_func_param"></block>
+        </value> 
+      </block>
+
+
+      
+    </category> 
 
 
   </xml>

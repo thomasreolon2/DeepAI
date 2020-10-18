@@ -1,4 +1,14 @@
-//  2020-09-07
+
+//""없는 문자
+Blockly.Python['char_a_none'] = function(block) {
+  var text_char_a_none_val = block.getFieldValue('char_A_none_val');
+  // TODO: Assemble Python into code variable.
+  var code = `${text_char_a_none_val}`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+
 //클래스 선언
 Blockly.Python['python_class'] = function(block) {
   var text_python_class_statement_name = block.getFieldValue('Python_Class_statement_name');
@@ -27,6 +37,16 @@ Blockly.Python['class_instance'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = `${value_class_instance_val}.${text_class_instance_value} = ${value_class_instance_input}\n`;
   return code; 
+};
+
+//함수 호출
+Blockly.Python['function__parameter'] = function(block) {
+  var text_function__parameter_name = block.getFieldValue('function__parameter_name');
+  var value_function__parameter_val = Blockly.Python.valueToCode(block, 'function__parameter_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${text_function__parameter_name}.(${value_function__parameter_val})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 //넘파이 라이브러리 
@@ -323,6 +343,15 @@ Blockly.Python['np_arrange'] = function(block) {
       var code = `np.fft.fft(${value_np_fft_fft_var})`;  
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.JavaScript.ORDER_NONE]; 
+    };
+
+    //np.abs
+    Blockly.Python['nump_abs'] = function(block) {
+      var value_nump_abs_val = Blockly.Python.valueToCode(block, 'nump_abs_val', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
+      var code = `np.abs(${value_nump_abs_val})`;
+      // TODO: Change ORDER_NONE to the correct strength.
+      return [code, Blockly.Python.ORDER_NONE];
     };
     
   
@@ -641,6 +670,25 @@ buf.seek(0)
 img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8')\n`;
       return code;
   }; 
+
+
+  //plt.plot()
+  Blockly.Python['matplotlib_plt_plot'] = function(block) {
+    var value_matplotlib_plt_plot_val = Blockly.Python.valueToCode(block, 'matplotlib_plt_plot_val', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = `plt.plot(${value_matplotlib_plt_plot_val})`;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return code;  
+  };
+
+  //plt.show
+  Blockly.Python['matplotlib_plt_show'] = function(block) {
+    // TODO: Assemble Python into code variable.
+    var code = 'plt.show()'; 
+    // TODO: Change ORDER_NONE to the correct strength.
+    return code;
+  };
+
       
 
   //라이브러리 임포트    

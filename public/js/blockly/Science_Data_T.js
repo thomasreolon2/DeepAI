@@ -878,6 +878,38 @@ Blockly.defineBlocksWithJsonArray(
     "helpUrl": ""
   },
 
+  //plt.plot()
+  {
+  "type": "matplotlib_plt_plot",
+  "message0": "[ plt.plot ] %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "matplotlib_plt_plot_val"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 125,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+  //plt.show()
+  {
+    "type": "matplotlib_plt_show",
+    "message0": "[ plt.show ]",
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": 125,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  
+
   //결과 출력
   {
     "type": "print_output_var",
@@ -906,6 +938,37 @@ Blockly.defineBlocksWithJsonArray(
   
   ]
   ); 
+
+  //""없는 문자
+  Blockly.Blocks['char_a_none'] = {
+    init: function() { 
+      this.appendDummyInput()
+          .appendField("[ 문자 ]")
+          .appendField(new Blockly.FieldTextInput(""), "char_A_none_val");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };
+
+
+  //np.abs
+  Blockly.Blocks['nump_abs'] = {
+    init: function() {
+      this.appendValueInput("nump_abs_val")
+          .setCheck(null)
+          .appendField("[ 절대 값 ]");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(125);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
   //객체  
   Blockly.Blocks['class_refer'] = {
     init: function() {
@@ -1131,7 +1194,7 @@ Blockly.Blocks['classification_report'] = {
 Blockly.Blocks['class_func'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 클래스 함수 ]")
+        .appendField("[ 함수 ]")
         .appendField(new Blockly.FieldTextInput("함수 명"), "class_func_name");
     this.appendValueInput("class_func_val")
         .setCheck(null)
@@ -1153,11 +1216,11 @@ Blockly.Blocks['class_func'] = {
 Blockly.Blocks['class_func_return'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 클래스 함수 ]")
+        .appendField("[ 함수 ]")
         .appendField(new Blockly.FieldTextInput("함수 명"), "class_func_return_className");
-    this.appendValueInput("class_func_return_param")
-        .setCheck(null)
-        .appendField("( 매개 변수");
+    this.appendValueInput("class_func_return_param") 
+        .setCheck(null) 
+        .appendField("( 매개 변수"); 
     this.appendDummyInput()
         .appendField(")");
     this.appendStatementInput("class_func_return")
@@ -1168,6 +1231,23 @@ Blockly.Blocks['class_func_return'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
+    this.setColour(125);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//함수 호출
+Blockly.Blocks['function__parameter'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[ 함수 호출 ]")
+        .appendField(new Blockly.FieldTextInput(""), "function__parameter_name")
+        .appendField(".");
+    this.appendValueInput("function__parameter_val")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
     this.setColour(125);
  this.setTooltip("");
  this.setHelpUrl("");
