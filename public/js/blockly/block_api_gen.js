@@ -91,10 +91,14 @@ Blockly.Python['linearsvr'] = function (block) {
 Blockly.Python['sklearn.preprocessing'] = function (block) {
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble Python into code variable.
-  var code = 'from sklearn.preprocessing import ' + dropdown_name + '\n';
+  var code;
+  code = 'from sklearn.preprocessing import ' + dropdown_name + '\n';
   if (dropdown_name == "OneHotEncoder") {
     code += "oh_enc = OneHotEncoder()\n";
+  }else if (dropdown_name == "train_test_split") {
+    code = "from sklearn.model_selection import train_test_split";
   }
+  
   return code;
 };
 

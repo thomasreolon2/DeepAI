@@ -130,7 +130,14 @@ Blockly.Blocks['sklearn.preprocessing'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("[임포트] 전처리 ")
-      .appendField(new Blockly.FieldDropdown([["PolynomialFeatures", "PolynomialFeatures"], ["LabelEncoder", "LabelEncoder"], ["OneHotEncoder", "OneHotEncoder"], ["StandardScaler", "StandardScaler"], ["Scale", "scale"]]), "NAME");
+      .appendField(new Blockly.FieldDropdown([
+       ["PolynomialFeatures", "PolynomialFeatures"], 
+       ["LabelEncoder", "LabelEncoder"], 
+       ["OneHotEncoder", "OneHotEncoder"], 
+       ["StandardScaler", "StandardScaler"],
+       ["Scale", "scale"], 
+       ["train_test_split","train_test_split"] 
+      ]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("%{BKY_SCIKITLEARN_HUE}");

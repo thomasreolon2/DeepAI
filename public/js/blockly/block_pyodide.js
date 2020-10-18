@@ -2023,7 +2023,14 @@ Blockly.Blocks['import_scipy'] = {
             ],
             [
                 "trapz", "trapz"
-            ]
+            ],
+            [
+                "wavfile", "wavfile"
+            ],
+            [
+                "signal", "signal"
+            ] 
+
         ]), "scipy");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);

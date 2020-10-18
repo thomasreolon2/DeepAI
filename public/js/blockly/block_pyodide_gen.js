@@ -960,6 +960,12 @@ Blockly.Python['import_scipy'] = function (block) {
         case "trapz":
             code = "from scipy.integrate import trapz";
             break;
+        case "wavfile":
+            code = "from scipy.io import wavfile";  
+            break;
+        case "signal":
+            code = "from scipy import signal";  
+            break;
     }
 
     return code;
