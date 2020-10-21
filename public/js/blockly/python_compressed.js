@@ -1079,12 +1079,11 @@ Blockly.Python.procedures = {};
 //return O
 Blockly.Python.procedures_defreturn = function (a) {
   for (
-    var b = [],
-        c,
+    var b = [], c,
         d = a.workspace,
         e = Blockly.Variables.allUsedVarModels(d) || [],
         f = 0;
-        (c = e[f]);
+        (c = e[f]); 
         f++
   )
     (c = c.name),
