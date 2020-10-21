@@ -5,6 +5,7 @@ var express = require('express');
 var fs = require('fs');
 //var https = require('https');
 const ejs = require("ejs"); 
+//const hostname = '114.71.137.154';
 
 
 //크롤링 
@@ -22,7 +23,9 @@ const options = {
 
 
 var app = express();
-var server = require('http').createServer(options, app);
+var server = require('http').createServer(options, app).listen(18080, function(){
+    console.log('Socket IO server listening on port 18080');
+});
 var io = require('socket.io')(server);// http server를 socket.io server로 upgrade 
  
 app.set("view engine", "ejs"); 
@@ -33,9 +36,9 @@ app.use(bodyParser.json()); // json 타입으로 파싱하게 설정
 app.use('/js', express.static(__dirname + '/public/js')); 
 app.use(express.static(__dirname + '/public'));
 
-server.listen(8000, function () {
-    console.log('Socket IO server listening on port 8000');
-}); 
+// server.listen(80, function () {
+//     console.log('Socket IO server listening on port 8000');
+// }); 
  
 //index 
 app.get('/', function (req, res) {
