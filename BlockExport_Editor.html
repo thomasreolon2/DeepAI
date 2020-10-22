@@ -266,15 +266,20 @@
         <script>
           // 블럭만 보이기
           $('#visibleBlock').click(function () {
-            $('#codeDiv').css({
+            $('#codeDiv1').css({
               'display': "none"
             });
             $('#blocklyDiv').css({
               'display': "block",
+              'height' : "65vh"
+            });
+            $('#codeDiv2').css({
+              'width' : '100%'
             });
             // svg width 100%
-            $('.blocklySvg').attr('width', '100%');
-            $('#blocklyDiv').attr('class', 'col-md-12');
+            $('#codeDiv').attr('class', 'col-md-12'); // 콘솔 창 12
+            $('.blocklySvg').attr('width', '100%'); // 블록 창 넓이 
+            $('#blocklyDiv').attr('class', 'col-md-12'); // 블록 창 넓이 
             // Blockly 리사이즈
             Blockly.svgResize(demoWorkspace);
           });
@@ -283,8 +288,12 @@
           $('#visibleAll').click(function () {
             $('#blocklyDiv').css({
               'display': "block",
+              'height' : "90vh"
             });
-            $('#codeDiv').css({
+            $('#codeDiv1').css({
+              'display': "block"
+            });
+            $('#codeDiv2').css({
               'display': "block"
             });
             $('#blocklyDiv').attr('class', 'col-md-8');
@@ -298,7 +307,7 @@
             $('#blocklyDiv').css({
               'display': "none"
             });
-            $('#codeDiv').css({
+            $('#codeDiv1').css({
               'display': "block"
             });
             $('#codeDiv').attr('class', 'col-md-12');
@@ -380,23 +389,26 @@
 
       <!-- 오른쪽 -->
       <div id="codeDiv" class="col-md-4">
-        <div class="card shadow-sm">
-          <div class="text-white bg-dark">
-            <h5 class="my-1 mx-1">코드</h5>
-          </div>
-          <div style="position:relative; " style="height: 80vh;">
-            <dive id="pyCodeEditor"></dive>
-            <dive id="jsCodeEditor"></dive>
+        <div id="codeDiv1">
+          <div class="card shadow-sm">
+            <div class="text-white bg-dark">
+              <h5 class="my-1 mx-1">코드</h5>
+            </div>
+            <div style="position:relative; " style="height: 80vh;">
+              <dive id="pyCodeEditor"></dive>
+              <dive id="jsCodeEditor"></dive>
+            </div>
           </div>
         </div>
-
         <!-- console -->
-        <div class="card mb-6 mt-6 shadow-sm">
-          <div class="text-white bg-dark">
-            <h5 class="my-1 mx-1">콘솔</h5>
+        <div id="codeDiv2">
+          <div class="card mb-6 mt-6 shadow-sm">
+            <div class="text-white bg-dark">
+              <h5 class="my-1 mx-1">콘솔</h5>
+            </div>
+            </textarea>
+            <textarea id="exeArea" class="form-control" readonly style="height: 20vh;"></textarea>
           </div>
-          </textarea>
-          <textarea id="exeArea" class="form-control" readonly style="height: 20vh;"></textarea>
         </div>
       </div> <!-- 오른쪽 -->
     </div> <!-- 하단 -->
