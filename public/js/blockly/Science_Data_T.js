@@ -962,7 +962,7 @@ Blockly.defineBlocksWithJsonArray(
           .appendField("[ 절대 값 ]");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(125);
+      this.setColour("%{BKY_VISUAL_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
