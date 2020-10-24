@@ -891,7 +891,7 @@ Blockly.defineBlocksWithJsonArray(
   "inputsInline": true,
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 125,
+  "colour": "%{BKY_VISUAL_HUE}",
   "tooltip": "",
   "helpUrl": ""
 },
@@ -903,7 +903,7 @@ Blockly.defineBlocksWithJsonArray(
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": 125,
+    "colour": "%{BKY_VISUAL_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
