@@ -14,7 +14,7 @@ Blockly.JavaScript['python_class'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   return code;
-}; 
+};  
 //객체 
 Blockly.JavaScript['class_refer'] = function(block) {
   var value_class_refer_classname = Blockly.JavaScript.valueToCode(block, 'class_refer_className', Blockly.JavaScript.ORDER_ATOMIC);
@@ -525,6 +525,15 @@ Blockly.JavaScript['class_func_param'] = function (block) {
   return [b.join(", "), Blockly.JavaScript.ORDER_ATOMIC]
   // TODO: Assemble JavaScript into code variable.
 };
+
+//크롤링 URL 가져오기 
+Blockly.JavaScript['script_block'] = function(block) {
+  var dropdown_script_block_option = block.getFieldValue('Script_Block_Option');
+  // TODO: Assemble JavaScript into code variable.
+   
+  var code = `socket.emit("Scripts_Get_URL", { S_option : "${dropdown_script_block_option}"});\n`;
+  return code;
+}; 
 
 
 

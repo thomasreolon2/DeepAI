@@ -909,5 +909,38 @@ Blockly.Python['class_func_param'] = function (a) {
 //   return code;
 // };
 
+//클롤링 url 가져오기 
+Blockly.Python['script_block'] = function(block) {
+  var dropdown_script_block_option = block.getFieldValue('Script_Block_Option');
+  // TODO: Assemble Python into code variable.
+  var code;
+  var url;
+  var html;
 
+  socket.on("Scripts_Get_URL", function(data) {
+    html = data; 
+  }); 
+
+  switch(dropdown_script_block_option){   
+    case "Script_block_naver":
+    url = "https://order.pay.naver.com/home"// + encodeURI("코로나"); //+ "&start=" ;
+    break;
+
+    case "Script_block_melon": 
+    url = "https://www.melon.com/chart/week/index.html" ;    
+    break;  
+
+   default:  
+   console.log("error");  
+   }  
+ 
+  code = `#from urllib.request import urlopen
+from bs4 import BeautifulSoup
+#html = urlopen("${url}")  
+bsObject = BeautifulSoup(${html}, "html.parser") 
+print(bsObject) # 웹 문서 전체가 출력됩니다. ` 
+
+  
+  return code;
+};
 

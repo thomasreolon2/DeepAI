@@ -11,7 +11,7 @@
       console.log = function(){};
       console.warn = function(){};
       console.error = function(){};
-      console.info = function(){};
+      console.info = function(){}; 
 
   </script>
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
@@ -57,6 +57,9 @@
   <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>   -->
   <!-- 임시 -->
 
+  <!-- 웹 크롤링  -->
+  <script src="/socket.io/socket.io.js"></script> 
+  <!-- 웹 크롤링  -->
 
 
   <!-- 데이타 사이언스 블록 -->
@@ -154,7 +157,20 @@
     });
   </script>
 
-  <!-- table -->
+
+
+  <!--Socket.IO --> 
+  <script>  
+    var socket = io.connect('http://localhost:8000');
+      // socket.on('CSV_Name_error', function(data) { 
+      //   if (data == "error"); 
+      //   window.alert("잘못된 입력입니다.");  
+      //  });  
+  </script>      
+  <!--Socket.IO -->   
+
+
+  <!-- table --> 
   <link rel="stylesheet" href="/css/table_custom.css">
   <style type="text/css">
     /* canvas {
@@ -1174,9 +1190,17 @@
       <block type="logicgraph"></block> -->
       <block type="vis_tree"></block>
       <!--  사이킷런 시각화 하기      -->
-
-
     </category>
+
+    <!-- 웹크롤링 -->
+    <category name="데이터 수집" colour="%{BKY_CLASS_HUE}">
+      <block type="script_block"></block>
+    </category>
+    <!-- 웹크롤링 -->
+ 
+
+
+
     <category name="사이파이(Scipy)" colour="%{BKY_SCIPY_HUE}">
       <block type="import_scipy"></block>
       <block type="curve_fit"></block>

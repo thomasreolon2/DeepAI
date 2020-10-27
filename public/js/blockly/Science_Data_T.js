@@ -12,7 +12,7 @@ Blockly.defineBlocksWithJsonArray(
       "text": "클래스 명"
     },
     {
-      "type": "input_dummy"
+      "type": "input_dummy" 
     },
     {
       "type": "input_statement",
@@ -1422,6 +1422,20 @@ Blockly.Blocks['class_func_param'] = {
     }
   };
 
+
+  //크롤링 url 가져오기 
+  Blockly.Blocks['script_block'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[ 크롤링 테스트중 ]")
+          .appendField(new Blockly.FieldDropdown([["네이버 ","Script_block_naver"], ["멜론","Script_block_melon"]]), "Script_Block_Option");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(125);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 
 
