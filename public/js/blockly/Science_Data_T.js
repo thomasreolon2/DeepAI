@@ -939,6 +939,54 @@ Blockly.defineBlocksWithJsonArray(
   ]
   ); 
 
+  //넘파이 연산 
+  Blockly.Blocks['numpy_operator'] = { 
+    init: function() {
+      this.appendValueInput("numpy_operator_val")
+          .setCheck(null) 
+          .appendField("[ 수학 연산 ]")
+          .appendField(new Blockly.FieldDropdown([["배열 덧셈 (np.add)","np.add"], ["배열 뺄셈 ( np.subtract )","np.subtract"], ["배열 곱 ( np.multiply )","np.multiply"], ["배열 나눗셈 ( np.divide  )","np.divide"], ["배열 나머지 반환 ( np.remainder )","np.remainder"], ["배열 역수 ( np.reciprocal  )","np.reciprocal "]]), "numpy_operator_Option");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
+  //인덱스/값 검색
+  Blockly.Blocks['numpy_index_values'] = {
+    init: function() {
+      this.appendValueInput("numpy_index_values_val")
+          .setCheck(null)
+          .appendField("[ 인덱스 / 값 검색 ]")
+          .appendField(new Blockly.FieldDropdown([["배열 최댓값 ( np.amax)","np.amax"], ["배열 최소값 ( np.amin )","np.subtract"], ["최대값 인덱스 ( np.argmax )","np.argmax"], ["배열 정렬 인덱스 ( np.argsort )","np.argsort"], ["배열 아닌 인덱스 ( np.nonzero )","np.nonzero "], ["인덱스를 이용한 배열요소 가져오기 ( np.take )","np.take "], ["해당 조건 인덱스 ( np.where )","np.where "]]), "numpy_operator_Option");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  //행렬 연산
+  Blockly.Blocks['numpy_array_operator'] = {
+    init: function() {
+      this.appendValueInput("numpy_array_operator_val")
+          .setCheck(null)
+          .appendField("[ 행렬 연산 ]")
+          .appendField(new Blockly.FieldDropdown([["두 배열의 내적 연산 ( np.dot)","np.dot "], ["두 배열 행렬 곱 ( np.matmul )","np.subtract"], ["전치 행렬 ( np.transpose  )","np.transpose "], ["하삼각 행렬 ( np.tril )","np.tril"], ["상삼각행렬 ( np.triu )","np.triu "]]), "numpy_array_operator_Option");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
+
   //""없는 문자
   Blockly.Blocks['char_a_none'] = {
     init: function() { 

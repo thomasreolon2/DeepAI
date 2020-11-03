@@ -1,3 +1,35 @@
+ //기본 연산
+ Blockly.JavaScript['numpy_operator'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_operator_val = Blockly.JavaScript.valueToCode(block, 'numpy_operator_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+ 
+
+//인덱스/값 검색
+Blockly.JavaScript['numpy_index_values'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_index_values_val = Blockly.JavaScript.valueToCode(block, 'numpy_index_values_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+
+//행렬 연산
+Blockly.JavaScript['numpy_array_operator'] = function(block) {
+  var dropdown_numpy_array_operator_option = block.getFieldValue('numpy_array_operator_Option');
+  var value_numpy_array_operator_val = Blockly.JavaScript.valueToCode(block, 'numpy_array_operator_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+ 
  //""없는 문자
  Blockly.JavaScript['char_a_none'] = function(block) {
   var text_char_a_none_val = block.getFieldValue('char_A_none_val');
@@ -7,7 +39,7 @@
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-//클래스 선언
+//클래스 선언 
 Blockly.JavaScript['python_class'] = function(block) {
   var text_python_class_statement_name = block.getFieldValue('Python_Class_statement_name');
   var statements_python_class_statement = Blockly.JavaScript.statementToCode(block, 'Python_Class_statement');
@@ -249,7 +281,6 @@ Blockly.JavaScript['np_fft_fft'] = function (block) {
 };
 
 
-
 //np.abs
 Blockly.JavaScript['nump_abs'] = function(block) {
   var value_nump_abs_val = Blockly.JavaScript.valueToCode(block, 'nump_abs_val', Blockly.JavaScript.ORDER_ATOMIC);
@@ -258,6 +289,7 @@ Blockly.JavaScript['nump_abs'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
 
 
 

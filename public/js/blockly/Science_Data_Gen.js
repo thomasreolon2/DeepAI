@@ -1,4 +1,34 @@
 
+//기본 연산
+Blockly.Python['numpy_operator'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_operator_val = Blockly.Python.valueToCode(block, 'numpy_operator_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${dropdown_numpy_operator_option}(${value_numpy_operator_val})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+//인덱스/값 검색
+Blockly.Python['numpy_index_values'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_index_values_val = Blockly.Python.valueToCode(block, 'numpy_index_values_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code =`${dropdown_numpy_operator_option}(${value_numpy_index_values_val})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+//행렬 연산
+Blockly.Python['numpy_array_operator'] = function(block) {
+  var dropdown_numpy_array_operator_option = block.getFieldValue('numpy_array_operator_Option');
+  var value_numpy_array_operator_val = Blockly.Python.valueToCode(block, 'numpy_array_operator_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code =`${dropdown_numpy_array_operator_option}(${value_numpy_array_operator_val})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
 //""없는 문자
 Blockly.Python['char_a_none'] = function(block) {
   var text_char_a_none_val = block.getFieldValue('char_A_none_val');
@@ -10,7 +40,7 @@ Blockly.Python['char_a_none'] = function(block) {
 
 
 //클래스 선언
-Blockly.Python['python_class'] = function(block) {
+Blockly.Python['python_class'] = function(block) { 
   var text_python_class_statement_name = block.getFieldValue('Python_Class_statement_name');
   var statements_python_class_statement = Blockly.Python.statementToCode(block, 'Python_Class_statement');
   // TODO: Assemble Python into code variable.
@@ -353,7 +383,8 @@ Blockly.Python['np_arrange'] = function(block) {
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.Python.ORDER_NONE];
     };
-    
+
+  
   
   
   //라이브러리 전체 새로운 것   
