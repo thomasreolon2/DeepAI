@@ -1402,7 +1402,7 @@ Blockly.Blocks['add_string'] = {
 
 
 // text_replace
-//2020-12-04 양승국 번역
+//2020-12-04 양승국1 번역
 Blockly.Blocks['text_replace'] = {
     init: function () {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T13-logo.png", 25, 23, {
