@@ -1156,16 +1156,16 @@ Blockly.Blocks['convert'] = {
         }));
         this.appendDummyInput().appendField(new Blockly.FieldDropdown([
             [
-                "정수형", "int("
+                "%{BKY_OPERATION_13_1}", "int("
             ],
             [
-                "실수형", "float("
+                "%{BKY_OPERATION_13_2}", "float("
             ],
             [
-                "문자형", "str("
+                "%{BKY_OPERATION_13_3}", "str("
             ],
             [
-                "불자료형", "bool("
+                "%{BKY_OPERATION_13_4}", "bool("
             ],
             
         ]), "NAME");
@@ -1183,7 +1183,7 @@ Blockly.Blocks['convert'] = {
 Blockly.Blocks['val_set'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[ 외부 입력 ]");
+          .appendField("[ "+ Blockly.Msg.OPERATION_1_INPUT+" ]");
       this.appendValueInput("a")
           .setCheck(null);
       this.appendDummyInput()

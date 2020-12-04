@@ -480,3 +480,14 @@ Blockly.Msg["PROLOG_HUE"] = "8FBF36"; // 프롤로그
 Blockly.Msg["PROCEDURES_HUE"] = "41CDCD"; // ?
 Blockly.Msg["COLOUR_HUE"] = "289AFF"; // color
 Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310"; //?
+
+// ----- Operation
+Blockly.Msg['OPERATION_1_INPUT'] = "External Input";
+Blockly.Msg['OPERATION_13_1'] = "Integer Type";
+Blockly.Msg['OPERATION_13_2'] = "Float Type";
+Blockly.Msg['OPERATION_13_3'] = "Character Type";
+Blockly.Msg['OPERATION_13_4'] = "boolean Type";
+
+// -----Class
+Blockly.Msg['CLASS_1_1'] = "class declaration";
+Blockly.Msg['CLASS_1_2'] = "class name";

@@ -4,12 +4,12 @@ Blockly.defineBlocksWithJsonArray(
 //클래스 선언
 {
   "type": "python_class",
-  "message0": "[ 클래스  선언 ] %1 %2 %3",
+  "message0": "[ %{BKY_CLASS_1_1} ] %1 %2 %3",
   "args0": [
     {
       "type": "field_input",
       "name": "Python_Class_statement_name",
-      "text": "클래스 명"
+      "text": "%{BKY_CLASS_1_2}"
     },
     {
       "type": "input_dummy" 
