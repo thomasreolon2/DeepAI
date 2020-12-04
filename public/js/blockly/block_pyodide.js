@@ -1012,9 +1012,9 @@ Blockly.Blocks['py_for'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("반복문");
-        this.appendValueInput("item").setCheck(null).appendField("변수");
-        this.appendValueInput("list").setCheck(null).appendField("리스트");
+        this.appendDummyInput().appendField(Blockly.Msg.REPEAT_1_REPEAT);
+        this.appendValueInput("item").setCheck(null).appendField(Blockly.Msg.REPEAT_1_VARIABLE);
+        this.appendValueInput("list").setCheck(null).appendField(Blockly.Msg.REPEAT_1_LIST);
         this.appendDummyInput().appendField(":");
         this.appendStatementInput("value").setCheck(null);
         this.setInputsInline(true);
@@ -1033,7 +1033,7 @@ Blockly.Blocks['range3'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendValueInput("x").setCheck(null).appendField("범위(");
+        this.appendValueInput("x").setCheck(null).appendField(Blockly.Msg.REPEAT_6_RANGE +"(");
         this.appendValueInput("y").setCheck(null).appendField(",");
         this.appendValueInput("z").setCheck(null).appendField(",");
         this.appendDummyInput().appendField(")");
@@ -1124,7 +1124,7 @@ Blockly.Blocks['break_block'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("정지");
+        this.appendDummyInput().appendField(Blockly.Msg.REPEAT_7_BREAK);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour("%{BKY_LOOPS_HUE}");
@@ -1230,7 +1230,7 @@ Blockly.Blocks['range1'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("범위(");
+        this.appendDummyInput().appendField(Blockly.Msg.REPEAT_4_RANGE+"(");
         this.appendValueInput("VALUE1").setCheck(null);
         this.appendDummyInput().appendField(",");
         this.appendValueInput("VALUE2").setCheck(null);
@@ -1249,7 +1249,7 @@ Blockly.Blocks['range2'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("범위(길이(");
+        this.appendDummyInput().appendField(Blockly.Msg.REPEAT_5_RANGE+"(" + Blockly.Msg.REPEAT_5_LENGTH + "(");
         this.appendValueInput("VALUE1").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);

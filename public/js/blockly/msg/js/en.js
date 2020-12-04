@@ -58,6 +58,22 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "repeat until";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "repeat while";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "While a value is false, then do some statements.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "While a value is true, then do some statements.";
+/**
+ *  이성주 영어화 작업
+ */
+
+Blockly.Msg.REPEAT_1_REPEAT = "repeat";
+Blockly.Msg["REPEAT_1_VARIABLE"] = "variable";
+Blockly.Msg["REPEAT_1_LIST"] = "list";
+Blockly.Msg["REPEAT_4_RANGE"] = "range";
+Blockly.Msg["REPEAT_5_RANGE"] = "range";
+Blockly.Msg["REPEAT_5_LENGTH"] = "length";
+Blockly.Msg["REPEAT_6_RANGE"] = "range";
+Blockly.Msg["REPEAT_7_BREAK"] = "break";
+
+
+
+
 Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete all %1 blocks?";
 Blockly.Msg["DELETE_BLOCK"] = "Delete Block";
 Blockly.Msg["DELETE_VARIABLE"] = "Delete the '%1' variable";
@@ -423,12 +439,44 @@ Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_
 Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 
-Blockly.Msg["MATH_HUE"] = "230";
-Blockly.Msg["LOOPS_HUE"] = "120";
-Blockly.Msg["LISTS_HUE"] = "260";
-Blockly.Msg["LOGIC_HUE"] = "210";
-Blockly.Msg["VARIABLES_HUE"] = "330";
-Blockly.Msg["TEXTS_HUE"] = "160";
-Blockly.Msg["PROCEDURES_HUE"] = "290";
-Blockly.Msg["COLOUR_HUE"] = "20";
-Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "110";
+// Blockly.Msg["MATH_HUE"] = "230";
+// Blockly.Msg["LOOPS_HUE"] = "120";
+// Blockly.Msg["LISTS_HUE"] = "260";
+// Blockly.Msg["LOGIC_HUE"] = "210";
+// Blockly.Msg["VARIABLES_HUE"] = "330";
+// Blockly.Msg["TEXTS_HUE"] = "160";
+// Blockly.Msg["PROCEDURES_HUE"] = "290";
+// Blockly.Msg["COLOUR_HUE"] = "20";
+// Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "110";
+
+Blockly.Msg["VARIABLES_HUE"] = "4C97FF";// 변수
+Blockly.Msg["LOGIC_HUE"] = "9966FF";// 논리
+Blockly.Msg["LOOPS_HUE"] = "D65CD6"; // 반복
+
+Blockly.Msg["MATH_HUE"] = "E8754D"; // 연산
+Blockly.Msg["TEXTS_HUE"] = "FFAB19"; // 문자
+
+Blockly.Msg["COLLECTION_HUE"] = "4CBFE6"; // 컬렉션
+Blockly.Msg["LISTS_HUE"] = "40BF4A"; // 리스트
+Blockly.Msg["DICT_HUE"] = ""; // 딕셔너리
+Blockly.Msg["SET_HUE"] = "FF6680"; // 집합
+Blockly.Msg["TUPLE_HUE"] = "593AE8"; // 튜플
+
+// 커스텀 색상
+Blockly.Msg["NUMPY_HUE"] = "472BFF"; // 넘파이
+Blockly.Msg["PANDAS_HUE"] = "FF3D98"; // 판다스
+Blockly.Msg["VISUAL_HUE"] = "E8BE38"; // 매트플롯립, 시각화
+Blockly.Msg["SCIPY_HUE"] = "5AE88A"; // 사이파이
+Blockly.Msg["CLASS_HUE"] = "5BA561"; // 클래스
+Blockly.Msg["SCIKITLEARN_HUE"] = "E85938"; // 사이킷런
+Blockly.Msg["DATA_HUE"] = "6D3A85"; // 데이터사이언스
+Blockly.Msg["ML_HUE"] = "E6675E"; // 머신러닝
+Blockly.Msg["DL_HUE"] = "E69344"; // 딥러닝
+Blockly.Msg["PROLOG_HUE"] = "8FBF36"; // 프롤로그
+
+
+
+// 안쓰는 커테고리
+Blockly.Msg["PROCEDURES_HUE"] = "41CDCD"; // ?
+Blockly.Msg["COLOUR_HUE"] = "289AFF"; // color
+Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310"; //?

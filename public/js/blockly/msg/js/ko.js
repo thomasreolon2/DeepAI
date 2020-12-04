@@ -58,6 +58,25 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "다음까지 반복";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "동안 반복";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "값이 거짓일 때, 몇 가지 선언을 합니다.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "값이 참일 때, 몇 가지 선언을 합니다.";
+
+//   이성주 블록 한글/영어 메시지 선언 작업
+ 
+Blockly.Msg['REPEAT_1_REPEAT'] = "반복문";
+Blockly.Msg["REPEAT_1_VARIABLE"] = "변수";
+Blockly.Msg['REPEAT_1_LIST'] = "리스트";
+Blockly.Msg['REPEAT_4_RANGE'] = "범위";
+Blockly.Msg['REPEAT_5_RANGE'] = "범위";
+Blockly.Msg['REPEAT_5_LENGTH'] = "길이";
+Blockly.Msg['REPEAT_6_RANGE'] = "범위";
+
+
+Blockly.Msg['REPEAT_7_BREAK'] = "정지";
+Blockly.Msg['REPEAT_7_BREAK'] = "정지";
+Blockly.Msg['REPEAT_7_BREAK'] = "정지";
+
+// ==========반복문 ========== 
+
+
 Blockly.Msg["DELETE_ALL_BLOCKS"] = "모든 블록 %1개를 삭제하겠습니까?";
 Blockly.Msg["DELETE_BLOCK"] = "블록 삭제";
 Blockly.Msg["DELETE_VARIABLE"] = "'%1' 변수를 삭제합니다";
