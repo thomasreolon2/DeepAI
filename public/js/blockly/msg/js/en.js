@@ -58,22 +58,6 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "repeat until";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "repeat while";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "While a value is false, then do some statements.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "While a value is true, then do some statements.";
-/**
- *  이성주 영어화 작업
- */
-
-Blockly.Msg.REPEAT_1_REPEAT = "repeat";
-Blockly.Msg["REPEAT_1_VARIABLE"] = "variable";
-Blockly.Msg["REPEAT_1_LIST"] = "list";
-Blockly.Msg["REPEAT_4_RANGE"] = "range";
-Blockly.Msg["REPEAT_5_RANGE"] = "range";
-Blockly.Msg["REPEAT_5_LENGTH"] = "length";
-Blockly.Msg["REPEAT_6_RANGE"] = "range";
-Blockly.Msg["REPEAT_7_BREAK"] = "break";
-
-
-
-
 Blockly.Msg["DELETE_ALL_BLOCKS"] = "Delete all %1 blocks?";
 Blockly.Msg["DELETE_BLOCK"] = "Delete Block";
 Blockly.Msg["DELETE_VARIABLE"] = "Delete the '%1' variable";
@@ -456,16 +440,80 @@ Blockly.Msg.TEXT_14_1_TEXTCHANGE = 'text change -> variable';
 //, 변경
  Blockly.Msg.TEXT_14_3_CHANGE = ', change';
 
+ 
+// 2020.12.04 이성주 블록 한글/영어 변환
+lockly.Msg['REPEAT_1_REPEAT'] = "repeat";
+Blockly.Msg["REPEAT_1_VARIABLE"] = "variable";
+Blockly.Msg["REPEAT_1_LIST"] = "list";
 
-// Blockly.Msg["MATH_HUE"] = "230";
-// Blockly.Msg["LOOPS_HUE"] = "120";
-// Blockly.Msg["LISTS_HUE"] = "260";
-// Blockly.Msg["LOGIC_HUE"] = "210";
-// Blockly.Msg["VARIABLES_HUE"] = "330";
-// Blockly.Msg["TEXTS_HUE"] = "160";
-// Blockly.Msg["PROCEDURES_HUE"] = "290";
-// Blockly.Msg["COLOUR_HUE"] = "20";
-// Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "110";
+Blockly.Msg["REPEAT_4_RANGE"] = "range";
+
+Blockly.Msg["REPEAT_5_RANGE"] = "range";
+Blockly.Msg["REPEAT_5_LENGTH"] = "length";
+
+Blockly.Msg["REPEAT_6_RANGE"] = "range";
+
+Blockly.Msg["REPEAT_7_BREAK"] = "break";
+Blockly.Msg['COLLECTION_7_TUPLE'] = "tuple";
+
+Blockly.Msg['COLLECTION_8_DICT'] = "dictionary";
+
+Blockly.Msg['COLLECTION_9_DICTOPTION'] = "dictionary option";
+Blockly.Msg['COLLECTION_9_DICVAR'] = "dic variable";
+Blockly.Msg['COLLECTION_9_VAL1'] = "val1";
+Blockly.Msg['COLLECTION_9_VAL2'] = "val2";
+Blockly.Msg['COLLECTION_9_DROPDOWN_VALSELECT'] = "select value";
+Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUVAL1'] = "output value1";
+Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUTVAL2'] = "output value2";
+Blockly.Msg['COLLECTION_9_DROPDOWN_VALAPPEND'] = "value append/change";
+Blockly.Msg['COLLECTION_9_DROPDOWN_VALDELET'] = "value delete";
+Blockly.Msg['COLLECTION_9_DROPDOWN_CASTINGDICT'] = "casting to dict";
+Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUTKEY'] = " output key";
+Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUVAL'] = " output values";
+
+Blockly.Msg['COLLECTION_10_SET'] = "set";
+
+Blockly.Msg['COLLECTION_11_UNION'] = "union";
+Blockly.Msg['COLLECTION_11_INTERSECTION'] = "intersection";
+Blockly.Msg['COLLECTION_11_DIFFERENCE'] = "difference";
+Blockly.Msg['COLLECTION_11_ADD'] = "append element";
+Blockly.Msg['COLLECTION_11_UPDATE'] = "append list";
+Blockly.Msg['COLLECTION_11_REMOVE'] = "remove element";
+Blockly.Msg['COLLECTION_11_SELECTSET'] = "select set";
+Blockly.Msg['COLLECTION_11_VALCHANGE'] = "value change";
+Blockly.Msg['COLLECTION_11_SET'] = "set";
+Blockly.Msg['COLLECTION_11_CHANGEVAL'] = "changing value";
+
+
+Blockly.Msg['COLLECTION_12_ARRAYSUM'] = "array sum";
+
+Blockly.Msg['COLLECTION_13_LIST'] = "list";
+Blockly.Msg['COLLECTION_13_REVERSE'] = "reverse";
+Blockly.Msg['COLLECTION_13_SORT'] = "sort";
+
+
+Blockly.Msg['COLLECTION_14_FINDVALUE'] = "find value in list ->";
+Blockly.Msg['COLLECTION_14_INDEX'] = "index";
+
+Blockly.Msg['COLLECTION_15_INSERTTOLIST'] = "insert to list -> list";
+Blockly.Msg['COLLECTION_15_INDEX'] = "index";
+Blockly.Msg['COLLECTION_15_VALUE'] = "value";
+
+Blockly.Msg['COLLECTION_16_LIST'] = "list";
+Blockly.Msg['COLLECTION_16_ELEMETNT'] = "element";
+Blockly.Msg['COLLECTION_16_EXTEND'] = "extend";
+Blockly.Msg['COLLECTION_16_COUNT'] = "count of element";
+Blockly.Msg['COLLECTION_16_POP'] = "pull out";
+Blockly.Msg['COLLECTION_16_APPEND'] = "append";
+
+Blockly.Msg['COLLECTION_17_SPLIT'] = "split list";
+
+Blockly.Msg['COLLECTION_18_GETINDEX'] = "get index";
+Blockly.Msg['COLLECTION_18_ARRAY'] = "array";
+
+///////////////////////////
+
+
 
 Blockly.Msg["VARIABLES_HUE"] = "4C97FF";// 변수
 Blockly.Msg["LOGIC_HUE"] = "9966FF";// 논리
@@ -509,3 +557,6 @@ Blockly.Msg['OPERATION_13_4'] = "boolean Type";
 // -----Class
 Blockly.Msg['CLASS_1_1'] = "class declaration";
 Blockly.Msg['CLASS_1_2'] = "class name";
+
+// Mutator
+Blockly.Msg['MUTATOR_ADD_ITEM'] = "add item";

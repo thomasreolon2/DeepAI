@@ -49,7 +49,7 @@ Blockly.Blocks['sump'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendValueInput("i").setCheck(null).appendField("배열 합계");
+        this.appendValueInput("i").setCheck(null).appendField(Blockly.Msg.COLLECTION_13_LIST);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_COLLECTION_HUE}");
@@ -396,7 +396,7 @@ Blockly.Blocks['dict'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("딕셔너리");
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_8_DICT);
         this.setColour("%{BKY_DICT_HUE}");
         this.updateShape_();
         this.setOutput(true, null);
@@ -545,37 +545,37 @@ Blockly.Blocks['dic_menu'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("딕셔너리 옵션").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_DICTOPTION).appendField(new Blockly.FieldDropdown([
             [
-                "값선택", "selectvalues"
+                Blockly.Msg.COLLECTION_9_DROPDOWN_VALSELECT, "selectvalues"
             ],
             [
-                "값출력1", "printvalues1"
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL1, "printvalues1"
             ],
             [
-                "값출력2", "printvalues2"
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTVAL2, "printvalues2"
             ],
             [
-                "값추가/변경", "addvalues"
+                Blockly.Msg.COLLECTION_9_DROPDOWN_VALAPPEND, "addvalues"
             ],
             [
-                "값삭제", "delvalues"
+                Blockly.Msg.COLLECTION_9_DROPDOWN_VALDELET, "delvalues"
             ],
             [
-                "dict로 변경", "changedict"
+                Blockly.Msg.COLLECTION_9_DROPDOWN_CASTINGDICT, "changedict"
             ],
             [
-                "key값 추출", "getkeys"
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTKEY, "getkeys"
             ],
             [
-                "values값 추출", "getvalues"
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL, "getvalues"
             ]
         ]), "dic");
-        this.appendDummyInput().appendField("dic변수");
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_DICVAR);
         this.appendValueInput("dic1").setCheck(null);
-        this.appendDummyInput().appendField("값1");
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_VAL1);
         this.appendValueInput("dic2").setCheck(null);
-        this.appendDummyInput().appendField("값2");
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_VAL2);
         this.appendValueInput("dic3")
         this.setInputsInline(true);
         this.setColour("%{BKY_DICT_HUE}");
@@ -594,7 +594,7 @@ Blockly.Blocks['set'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("집합");
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_10_SET);
         this.appendValueInput("SET").setCheck(null);
         this.setInputsInline(true);
         this.setOutput(true, null);
@@ -614,25 +614,26 @@ Blockly.Blocks['set_menu'] = {
         }));
         this.appendValueInput("SET1").setCheck(null).appendField(new Blockly.FieldDropdown([
             [
-                "합집합", "union"
+                Blockly.Msg.COLLECTION_11_UNION, "union"
             ],
             [
-                "교집합", "intersection"
+                Blockly.Msg.COLLECTION_11_INTERSECTION, "intersection"
             ],
             [
-                "차집합", "difference"
+                Blockly.Msg.COLLECTION_11_DIFFERENCE, "difference"
             ],
             [
-                "원소추가", "add"
+                Blockly.Msg.COLLECTION_11_ADD, "add"
             ],
             [
-                "리스트추가", "update"
+                Blockly.Msg.COLLECTION_11_UPDATE, "update"
             ],
             [
-                "원소제거", "remove"
+                Blockly.Msg.COLLECTION_11_REMOVE, "remove"
             ]
         ]), "set_menu");
-        this.appendValueInput("SET2").setCheck(null).appendField("집합 선택: (A and B), 값 변경: (집합A and 바꿀값)");
+        this.appendValueInput("SET2").setCheck(null).appendField(Blockly.Msg.COLLECTION_11_SELECTSET +": (A and B)," +
+                                                                 Blockly.Msg.COLLECTION_11_VALCHANGE+ ":");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SET_HUE}");
@@ -650,7 +651,7 @@ Blockly.Blocks['tuple'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("튜플");
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_7_TUPLE);
         this.setColour("%{BKY_TUPLE_HUE}");
         this.updateShape_();
         this.setOutput(true, null);
@@ -1204,7 +1205,7 @@ Blockly.Blocks['val_set'] = {
 Blockly.Blocks['list_dot'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[리스트 자르기]");
+          .appendField("[" + Blockly.Msg.COLLECTION_17_SPLIT +"]");
         this.appendValueInput("list")
         .setCheck(null);
       this.appendDummyInput()
@@ -1284,12 +1285,12 @@ Blockly.Blocks['list_sort_reverse'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("리스트").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_13_ARRAYSUM).appendField(new Blockly.FieldDropdown([
             [
-                "뒤집기", "reverse"
+                Blockly.Msg.COLLECTION_13_REVERSE, "reverse"
             ],
             [
-                "정렬", "sort"
+                Blockly.Msg.COLLECTION_13_SORT, "sort"
             ]
         ]), "NAME");
         this.appendValueInput("LIST").setCheck(null);
@@ -1310,9 +1311,9 @@ Blockly.Blocks['list_index'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("리스트에서 값찾기 -> ");
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_14_FINDVALUE);
         this.appendValueInput("LIST").setCheck(null);
-        this.appendDummyInput().appendField("(인덱스");
+        this.appendDummyInput().appendField("(" + Blockly.Msg.COLLECTION_14_INDEX);
         this.appendValueInput("INDEX").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
@@ -1331,11 +1332,11 @@ Blockly.Blocks['list_insert'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("리스트삽입 -> 리스트");
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_INSERTTOLIST);
         this.appendValueInput("LIST").setCheck(null);
-        this.appendDummyInput().appendField("(인덱스");
+        this.appendDummyInput().appendField("(" + Blockly.Msg.COLLECTION_15_INDEX);
         this.appendValueInput("INDEX").setCheck(null);
-        this.appendDummyInput().appendField(", 값");
+        this.appendDummyInput().appendField(", " + Blockly.Msg.COLLECTION_15_VALUE);
         this.appendValueInput("VALUE").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
@@ -1354,25 +1355,25 @@ Blockly.Blocks['list_remove_pop_count_extend'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("리스트").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_16_LIST).appendField(new Blockly.FieldDropdown([
             [
-                "확장", "extend"
+                Blockly.Msg.COLLECTION_16_EXTEND, "extend"
             ],
             [
-                "요소의개수", "count"
+                Blockly.Msg.COLLECTION_16_EXTEND, "count"
             ],
             [
-                "끄집어내기", "pop"
+                Blockly.Msg.COLLECTION_16_COUNT, "pop"
             ],
             [
-                "요소삭제", "remove"
+                Blockly.Msg.COLLECTION_16_POP, "remove"
             ],
             [
-                "요소추가", "append"
+                Blockly.Msg.COLLECTION_16_APPEND, "append"
             ]
-        ]), "NAME").appendField("->").appendField("(리스트");
+        ]), "NAME").appendField("->").appendField("(" + Blockly.Msg.COLLECTION_16_LIST);
         this.appendValueInput("LIST").setCheck(null);
-        this.appendDummyInput().appendField(", 요소");
+        this.appendDummyInput().appendField(", " + Blockly.Msg.COLLECTION_16_ELEMETNT);
         this.appendValueInput("VALUE").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);

@@ -58,25 +58,6 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "다음까지 반복";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "동안 반복";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "값이 거짓일 때, 몇 가지 선언을 합니다.";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "값이 참일 때, 몇 가지 선언을 합니다.";
-
-//   이성주 블록 한글/영어 메시지 선언 작업
- 
-Blockly.Msg['REPEAT_1_REPEAT'] = "반복문";
-Blockly.Msg["REPEAT_1_VARIABLE"] = "변수";
-Blockly.Msg['REPEAT_1_LIST'] = "리스트";
-Blockly.Msg['REPEAT_4_RANGE'] = "범위";
-Blockly.Msg['REPEAT_5_RANGE'] = "범위";
-Blockly.Msg['REPEAT_5_LENGTH'] = "길이";
-Blockly.Msg['REPEAT_6_RANGE'] = "범위";
-
-
-Blockly.Msg['REPEAT_7_BREAK'] = "정지";
-Blockly.Msg['REPEAT_7_BREAK'] = "정지";
-Blockly.Msg['REPEAT_7_BREAK'] = "정지";
-
-// ==========반복문 ========== 
-
-
 Blockly.Msg["DELETE_ALL_BLOCKS"] = "모든 블록 %1개를 삭제하겠습니까?";
 Blockly.Msg["DELETE_BLOCK"] = "블록 삭제";
 Blockly.Msg["DELETE_VARIABLE"] = "'%1' 변수를 삭제합니다";
@@ -458,6 +439,81 @@ Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT
 //, 변경
  Blockly.Msg.TEXT_14_3_CHANGE = ', 변경';
 
+
+// 2020.12.04  이성주 블록 한글/영어 메시지 전환
+ 
+Blockly.Msg['REPEAT_1_REPEAT'] = "반복문";
+Blockly.Msg["REPEAT_1_VARIABLE"] = "변수";
+Blockly.Msg['REPEAT_1_LIST'] = "리스트";
+
+Blockly.Msg['REPEAT_4_RANGE'] = "범위";
+
+Blockly.Msg['REPEAT_5_RANGE'] = "범위";
+Blockly.Msg['REPEAT_5_LENGTH'] = "길이";
+
+Blockly.Msg['REPEAT_6_RANGE'] = "범위";
+
+Blockly.Msg['COLLECTION_7_TUPLE'] = "튜플";
+
+Blockly.Msg['COLLECTION_8_DICT'] = "딕셔너리";
+
+Blockly.Msg['COLLECTION_9_DICTOPTION'] = "딕셔너리 옵션";
+Blockly.Msg['COLLECTION_9_DICVAR'] = "dic변수";
+Blockly.Msg['COLLECTION_9_VAL1'] = "값1";
+Blockly.Msg['COLLECTION_9_VAL2'] = "값2";
+Blockly.Msg['COLLECTION_9_DROPDOWN_VALSELECT'] = "값선택";
+Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUVAL1'] = "값출력1";
+Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUTVAL2'] = "값출력2";
+Blockly.Msg['COLLECTION_9_DROPDOWN_VALAPPEND'] = "값추가/변경";
+Blockly.Msg['COLLECTION_9_DROPDOWN_VALDELET'] = "값삭제";
+Blockly.Msg['COLLECTION_9_DROPDOWN_CASTINGDICT'] = "dict로 변경";
+Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUTKEY'] = "key값 추출";
+Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUVAL'] = "values값 추출";
+
+Blockly.Msg['COLLECTION_10_SET'] = "집합";
+
+Blockly.Msg['COLLECTION_11_UNION'] = "합집함";
+Blockly.Msg['COLLECTION_11_INTERSECTION'] = "교집합";
+Blockly.Msg['COLLECTION_11_DIFFERENCE'] = "차집합";
+Blockly.Msg['COLLECTION_11_ADD'] = "원소추가";
+Blockly.Msg['COLLECTION_11_UPDATE'] = "리스트 추가";
+Blockly.Msg['COLLECTION_11_REMOVE'] = "원소제거";
+Blockly.Msg['COLLECTION_11_SELECTSET'] = "집합 선택";
+Blockly.Msg['COLLECTION_11_VALCHANGE'] = "값 변경";
+Blockly.Msg['COLLECTION_11_SET'] = "집합";
+Blockly.Msg['COLLECTION_11_CHANGEVAL'] = "바꿀 값";
+
+
+Blockly.Msg['COLLECTION_12_ARRAYSUM'] = "배열 합계";
+
+Blockly.Msg['COLLECTION_13_LIST'] = "리스트";
+Blockly.Msg['COLLECTION_13_REVERSE'] = "뒤집기";
+Blockly.Msg['COLLECTION_13_SORT'] = "정렬";
+
+
+Blockly.Msg['COLLECTION_14_FINDVALUE'] = "리스트에서 값 찾기 ->";
+Blockly.Msg['COLLECTION_14_INDEX'] = "인덱스";
+
+Blockly.Msg['COLLECTION_15_INSERTTOLIST'] = "리스트 삽입 -> list";
+Blockly.Msg['COLLECTION_15_INDEX'] = "인덱스";
+Blockly.Msg['COLLECTION_15_VALUE'] = "값";
+
+Blockly.Msg['COLLECTION_16_LIST'] = "리스트";
+Blockly.Msg['COLLECTION_16_ELEMETNT'] = "요소";
+Blockly.Msg['COLLECTION_16_EXTEND'] = "확장";
+Blockly.Msg['COLLECTION_16_COUNT'] = "개수";
+Blockly.Msg['COLLECTION_16_POP'] = "끄집어내기";
+Blockly.Msg['COLLECTION_16_APPEND'] = "요소추가";
+
+Blockly.Msg['COLLECTION_17_SPLIT'] = "리스트 자르기";
+
+Blockly.Msg['COLLECTION_18_GETINDEX'] = "인덱스 가져오기";
+Blockly.Msg['COLLECTION_18_ARRAY'] = "배열";
+
+// =============================
+
+
+
 // 카테고리 색 변경
 Blockly.Msg["VARIABLES_HUE"] = "4C97FF";// 변수
 Blockly.Msg["LOGIC_HUE"] = "9966FF";// 논리
@@ -501,3 +557,6 @@ Blockly.Msg['OPERATION_13_4'] = "불자료형";
 // -----Class
 Blockly.Msg['CLASS_1_1'] = "클래스 선언";
 Blockly.Msg['CLASS_1_2'] = "클래스 명";
+
+// Mutator
+Blockly.Msg['MUTATOR_ADD_ITEM'] = "항목추가";

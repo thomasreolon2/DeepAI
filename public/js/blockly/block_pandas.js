@@ -678,7 +678,7 @@ Blockly.Blocks.lists_create_with_container = {
   init: function () {
     this.setStyle("list_blocks");
     this.appendDummyInput().appendField(
-      "항목추가"
+      Blockly.Msg.MUTATOR_ADD_ITEM
     );
     this.appendStatementInput("STACK");
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
@@ -1043,8 +1043,8 @@ Blockly.Blocks['array_select'] = {
     this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C18-logo.png", 25, 23, {
       alt: "*",
       flipRtl: "FALSE"}));
-    this.appendDummyInput().appendField("[인덱스 가져오기]")
-    this.appendValueInput("array_var").setCheck(null).appendField("배열");
+    this.appendDummyInput().appendField("["+Blockly.Msg.COLLECTION_18_GETINDEX +"]")
+    this.appendValueInput("array_var").setCheck(null).appendField(Blockly.Msg.COLLECTION_18_ARRAY);
     this.setHelpUrl(Blockly.Msg['LISTS_CREATE_WITH_HELPURL']);
     this.itemCount_ = 1;
     this.updateShape_();
