@@ -560,3 +560,4 @@ Blockly.Msg['CLASS_1_2'] = "클래스 명";
 
 // Mutator
 Blockly.Msg['MUTATOR_ADD_ITEM'] = "항목추가";
+//
