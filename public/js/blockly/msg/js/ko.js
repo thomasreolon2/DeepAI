@@ -557,7 +557,16 @@ Blockly.Msg['OPERATION_13_4'] = "불자료형";
 // -----Class
 Blockly.Msg['CLASS_1_1'] = "클래스 선언";
 Blockly.Msg['CLASS_1_2'] = "클래스 명";
+Blockly.Msg['CLASS_2_1'] = "함수";
+Blockly.Msg['CLASS_2_2'] = "변수 이름";
+Blockly.Msg['CLASS_2_3'] = "함수 명";
+Blockly.Msg['CLASS_3_1'] = "함수";
+Blockly.Msg['CLASS_3_2'] = "변수 이름";
+Blockly.Msg['CLASS_4_1'] = "함수 호출";//"객체 & 함수";
+Blockly.Msg['CLASS_5_1'] = "객체 & 함수";
+Blockly.Msg['CLASS_6_1'] = "객체 & 함수";
+Blockly.Msg['CLASS_7_1'] = "객체 & 함수";
+
 
 // Mutator
 Blockly.Msg['MUTATOR_ADD_ITEM'] = "항목추가";
-//

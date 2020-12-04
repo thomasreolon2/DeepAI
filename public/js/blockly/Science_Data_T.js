@@ -1023,7 +1023,7 @@ Blockly.defineBlocksWithJsonArray(
     init: function() {
       this.appendValueInput("class_refer_className")
           .setCheck(null)
-          .appendField("[ 객체 & 함수 ]");
+          .appendField("[ "+ Blockly.Msg.CLASS_6_1 +" ]");
       this.appendDummyInput()
           .appendField(".")
           .appendField(new Blockly.FieldTextInput(""), "class_refer_val");
@@ -1040,7 +1040,7 @@ Blockly.defineBlocksWithJsonArray(
     init: function() {
       this.appendValueInput("class_instance_val")
           .setCheck(null)
-          .appendField("[ 객체 & 함수 ]");
+          .appendField("[ "+ Blockly.Msg.CLASS_5_1 +" ]");
       this.appendDummyInput()
           .appendField(".")
           .appendField(new Blockly.FieldTextInput(""), "class_instance_value")
@@ -1243,11 +1243,11 @@ Blockly.Blocks['classification_report'] = {
 Blockly.Blocks['class_func'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 함수 ]")
-        .appendField(new Blockly.FieldTextInput("함수 명"), "class_func_name");
+        .appendField("[ "+ Blockly.Msg.CLASS_2_1 +" ]")
+        .appendField(new Blockly.FieldTextInput(Blockly.Msg.CLASS_2_3), "class_func_name");
     this.appendValueInput("class_func_val")
         .setCheck(null)
-        .appendField("( 매개 변수");
+        .appendField("( " + Blockly.Msg.CLASS_2_2);
     this.appendDummyInput()
         .appendField(")");
     this.appendStatementInput("class_func_state")
@@ -1265,18 +1265,18 @@ Blockly.Blocks['class_func'] = {
 Blockly.Blocks['class_func_return'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 함수 ]")
-        .appendField(new Blockly.FieldTextInput("함수 명"), "class_func_return_className");
+        .appendField("[ "+ Blockly.Msg.CLASS_3_1 +" ]")
+        .appendField(new Blockly.FieldTextInput(Blockly.Msg.MUTATOR_ADD_ITEM), "class_func_return_className");
     this.appendValueInput("class_func_return_param") 
         .setCheck(null) 
-        .appendField("( 매개 변수"); 
+        .appendField("( "+ Blockly.Msg.CLASS_3_2); 
     this.appendDummyInput()
         .appendField(")");
     this.appendStatementInput("class_func_return")
         .setCheck(null);
     this.appendValueInput("class_func_return_val")
         .setCheck(null)
-        .appendField("다음을 돌려줌");
+        .appendField(Blockly.Msg.CLASS_3_3);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -1290,7 +1290,7 @@ Blockly.Blocks['class_func_return'] = {
 Blockly.Blocks['function__parameter'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 함수 호출 ]")
+        .appendField("[ "+ Blockly.Msg.CLASS_4_1 +" ]")
         .appendField(new Blockly.FieldTextInput(""), "function__parameter_name")
         .appendField(".");
     this.appendValueInput("function__parameter_val")
@@ -1326,7 +1326,7 @@ Blockly.Blocks['class_instance_function'] = {
   init: function() {
     this.appendValueInput("class_instanceVal")
         .setCheck(null)
-        .appendField("[ 객체 함수 ]");
+        .appendField("[ "+ Blockly.Msg.CLASS_7_1 +" ]");
     this.appendValueInput("class_instance_functions")
         .setCheck(null)
         .appendField(".")

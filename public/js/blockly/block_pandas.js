@@ -936,7 +936,7 @@ Blockly.Blocks.lists_create_with_container = {
   init: function () {
     this.setStyle("list_blocks");
     this.appendDummyInput().appendField(
-      "항목추가"
+      Blockly.Msg.MUTATOR_ADD_ITEM
     );
     this.appendStatementInput("STACK");
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);

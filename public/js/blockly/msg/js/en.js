@@ -442,7 +442,7 @@ Blockly.Msg.TEXT_14_1_TEXTCHANGE = 'text change -> variable';
 
  
 // 2020.12.04 이성주 블록 한글/영어 변환
-lockly.Msg['REPEAT_1_REPEAT'] = "repeat";
+Blockly.Msg['REPEAT_1_REPEAT'] = "repeat";
 Blockly.Msg["REPEAT_1_VARIABLE"] = "variable";
 Blockly.Msg["REPEAT_1_LIST"] = "list";
 
@@ -557,6 +557,16 @@ Blockly.Msg['OPERATION_13_4'] = "boolean Type";
 // -----Class
 Blockly.Msg['CLASS_1_1'] = "class declaration";
 Blockly.Msg['CLASS_1_2'] = "class name";
+Blockly.Msg['CLASS_2_1'] = "function";
+Blockly.Msg['CLASS_2_2'] = "parameter";
+Blockly.Msg['CLASS_2_3'] = "function name";
+Blockly.Msg['CLASS_3_1'] = "function";
+Blockly.Msg['CLASS_3_2'] = "parameter";
+Blockly.Msg['CLASS_3_3'] = "return";
+Blockly.Msg['CLASS_4_1'] = "function call";
+Blockly.Msg['CLASS_5_1'] = "object & function";
+Blockly.Msg['CLASS_6_1'] = "object & function";
+Blockly.Msg['CLASS_7_1'] = "object & function";
 
 // Mutator
 Blockly.Msg['MUTATOR_ADD_ITEM'] = "add item";
