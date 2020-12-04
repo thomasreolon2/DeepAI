@@ -1,9 +1,10 @@
+//2020-12-04 양승국 번역 수정
 Blockly.Blocks['printc'] = {
     init: function () {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("결과 출력 ");
+        })).appendField(Blockly.Msg.TEXT_1_PRINT);
         this.appendValueInput("content").setCheck(null);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1401,17 +1402,18 @@ Blockly.Blocks['add_string'] = {
 
 
 // text_replace
+//2020-12-04 양승국 번역
 Blockly.Blocks['text_replace'] = {
     init: function () {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T13-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("문자열변경 -> 변수 ");
+        this.appendDummyInput().appendField(Blockly.Msg.TEXT_14_1_TEXTCHANGE);
         this.appendValueInput("TEXT").setCheck(null);
-        this.appendDummyInput().appendField("( 기존");
+        this.appendDummyInput().appendField(Blockly.Msg.TEXT_14_2_EXISTING);
         this.appendValueInput("A").setCheck(null);
-        this.appendDummyInput().appendField(", 변경");
+        this.appendDummyInput().appendField(Blockly.Msg.TEXT_14_3_CHANGE);
         this.appendValueInput("B").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
@@ -1462,13 +1464,14 @@ Blockly.Blocks['vis_tree'] = {
         this.setHelpUrl("");
     }
 };
+//2020-12-04 양승국 번역
 Blockly.Blocks['input'] = {
     init: function () {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T2-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("데이터 입력");
+        this.appendDummyInput().appendField(Blockly.Msg.TEXT_2_DATAINPUT);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_TEXTS_HUE}");

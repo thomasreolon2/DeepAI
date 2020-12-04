@@ -988,18 +988,19 @@ Blockly.defineBlocksWithJsonArray(
 
 
   //""없는 문자
-  Blockly.Blocks['char_a_none'] = {
-    init: function() { 
-      this.appendDummyInput()
-          .appendField("[ 문자 ]")
-          .appendField(new Blockly.FieldTextInput(""), "char_A_none_val");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_TEXTS_HUE}");
-   this.setTooltip(""); 
-   this.setHelpUrl("");
-    }
-  };
+ //2020-12-04 양승국 번역
+ Blockly.Blocks['char_a_none'] = {
+  init: function() { 
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.TEXT_4_TEXT)
+        .appendField(new Blockly.FieldTextInput(""), "char_A_none_val");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_TEXTS_HUE}");
+ this.setTooltip(""); 
+ this.setHelpUrl("");
+  }
+};
 
 
   //np.abs

@@ -353,7 +353,7 @@ Blockly.Msg["TEXT_CHARAT_TAIL"] = "";
 Blockly.Msg["TEXT_CHARAT_TITLE"] = "%1 in text %2 %3";
 Blockly.Msg["TEXT_CHARAT_TOOLTIP"] = "Returns the letter at the specified position.";
 Blockly.Msg["TEXT_COUNT_HELPURL"] = "https://github.com/google/blockly/wiki/Text#counting-substrings";
-Blockly.Msg["TEXT_COUNT_MESSAGE0"] = "%1 count in %2";
+Blockly.Msg["TEXT_COUNT_MESSAGE0"] = "%1 count in %2 %3";
 Blockly.Msg["TEXT_COUNT_TOOLTIP"] = "Count how many times some text occurs within some other text.";
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TOOLTIP"] = "Add an item to the text.";
 Blockly.Msg["TEXT_CREATE_JOIN_TITLE_JOIN"] = "join";
@@ -438,6 +438,24 @@ Blockly.Msg["PROCEDURES_DEFRETURN_PROCEDURE"] = Blockly.Msg["PROCEDURES_DEFNORET
 Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_TITLE"];
 Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
+
+/**
+ * 2020-12-04 양승국 블록 한글/영어 화
+ */
+
+ //결과출력
+ Blockly.Msg.TEXT_1_PRINT = 'print';
+//데이터 입력
+Blockly.Msg.TEXT_2_DATAINPUT = "data input";
+//문자
+Blockly.Msg.TEXT_4_TEXT = "text";
+//문자열변경 -> 변수
+Blockly.Msg.TEXT_14_1_TEXTCHANGE = 'text change -> variable';
+//( 기존
+ Blockly.Msg.TEXT_14_2_EXISTING = '( existing';
+//, 변경
+ Blockly.Msg.TEXT_14_3_CHANGE = ', change';
+
 
 // Blockly.Msg["MATH_HUE"] = "230";
 // Blockly.Msg["LOOPS_HUE"] = "120";

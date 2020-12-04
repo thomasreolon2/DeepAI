@@ -442,6 +442,22 @@ Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_
 Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 
+/**
+ * 2020-12-04 양승국 블록 한글/영어 화
+ */
+ //결과출력
+ Blockly.Msg.TEXT_1_PRINT = '결과출력';
+ //데이터 입력
+ Blockly.Msg.TEXT_2_DATAINPUT = '데이터입력';
+ //문자
+ Blockly.Msg.TEXT_4_TEXT = '문자';
+//문자열변경 -> 변수
+ Blockly.Msg.TEXT_14_1_TEXTCHANGE = '문자열변경 -> 변수';
+//( 기존
+ Blockly.Msg.TEXT_14_2_EXISTING= '( 기존';
+//, 변경
+ Blockly.Msg.TEXT_14_3_CHANGE = ', 변경';
+
 // 카테고리 색 변경
 Blockly.Msg["VARIABLES_HUE"] = "4C97FF";// 변수
 Blockly.Msg["LOGIC_HUE"] = "9966FF";// 논리
