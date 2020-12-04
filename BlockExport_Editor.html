@@ -22,7 +22,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
   <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
   <!--  Blockly 자체의 설정과 관련된 파일 -->
-  <!--test-->
+  <!--test1-->
 
   <!-- pyodide -->
   <!-- <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script> -->
@@ -552,9 +552,6 @@
       
 
     </category>
-    <!-- 테스트입니다아아아아 -->
-    <!-- 테스트입니다아ㅏ아아ㅏ아ㅏ아ㅏ아아ㅏㅏ by gp-->
-    
 
     <!-- 문자 -->
     <category name="문자(Text)" colour="%{BKY_TEXTS_HUE}">
@@ -1521,7 +1518,9 @@
     function saveBlock() {
       var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
       var p_xml = Blockly.Xml.domToPrettyText(xml);
-      var fileObject = new File([p_xml], "blocks.xml");
+      // 다른이름으로
+      var filename = prompt("다른이름으로 저장."); 
+      var fileObject = new File([p_xml], filename+".xml");
       saveAs(fileObject);
     }
 
@@ -1590,14 +1589,21 @@
     }
 
     // ==================================
-    // 파일로 저장하기 
+    // 파일로 저장하기
     //===================================  
     function file_save() {
-      var code_java = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      //var code_java = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      //var blobObject = new Blob([code_python, code_java]);
+      //saveAs(blobObject, "download.js");
+      
       var code_python = Blockly.Python.workspaceToCode(demoWorkspace);
-      var blobObject = new Blob([code_python, code_java]);
-      saveAs(blobObject, "download.js");
+      // 이 부분 추가로 블럭뿐만 아니라 코드 쓴것도 저장됨
+      var code = pyEditor.getValue();
+      var blobObject = new Blob([code]);  
+      var filename = prompt("다른이름으로 저장.");
+      //window.location.href = window.URL.createObjectURL(blobObject);
       //saveAs(blobObject, "download.py"); 
+      saveAs(blobObject, filename+".py"); 
     }
 
     // ==================================
@@ -1637,6 +1643,7 @@
       $("#graph1").remove();
       $("#csv_show").before("<div id='graph1' style=\"height:500px; width:900;\"><img id='pyplotfigure' /></div>");
 
+      // 그래프같은 이미지들을 싹다 잡아옴 plt.show()하면 바로 되는이유
       globalThis.iodide = {
         output: {
           element: (tagName) => {
@@ -1647,10 +1654,14 @@
           }
         }
       };
+
       Blockly.Python.addReservedWords('code');
+
       var code = pyEditor.getValue();
       Blockly.JavaScript.addReservedWords('code2');
       var code2 = jsEditor.getValue();
+      
+      // 이 부분이 코드 싹다 잡아와서 출력
       languagePluginLoader.then(() => {
         pyodide.runPython(`
                     import sys
@@ -1660,6 +1671,7 @@
 
       });
       // var code = document.getElementById("pyCodeEditor");
+      // 순차적 실행을 위해 놓은 코드 async, .then()
       async function runcode() {
         console.log(code);
         console.log(typeof (code));
@@ -1667,13 +1679,15 @@
         languagePluginLoader.then(() => {
           try {
             exe.innerHTML = pyodide.runPython(code);
-            let stdout = pyodide.runPython("sys.stdout.getvalue()");
+            let stdout = pyodide.runPython("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
             exe.innerHTML = stdout;
           } catch (e) {
             exe.innerHTML = e;
           }
         });
       }
+      
+      // runcode끝내고 또 돌림, 테이블 형식 블록을위해 이걸 넣어줌
       runcode().then(() => {
         if(eval(code2)==undefined){
           document.getElementById('exeArea').innerHTML+='\n';
