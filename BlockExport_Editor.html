@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>D.I.Y</title>
   <!-- Blockly 개발자모드 코드 안보이게 막음-->
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     console = {};
       console.log = function(){};
       console.warn = function(){};
       console.error = function(){};
       console.info = function(){}; 
 
-  </script>
+  </script> -->
   <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="/js/blockly/storage.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
@@ -75,8 +75,9 @@
   <script src="/js/blockly/block_escalator_js.js"></script>
   <script src="/js/blockly/block_escalator_python.js"></script>
 
+
+
   <!-- 데이타 사이언스 블록 -->
-  <script src="/js/blockly/msg/js/ko.js"></script> <!-- 언어 패키지, 카테고리 색상 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
   <script src="/js/blockly/tau-prolog.js"></script> <!-- tau Prolog 추가 -->
 
@@ -218,8 +219,12 @@
 
 <!-- onload : body가 떳을때 작동되는 js입력 -->
 
-<body>
 
+<body>
+  <!-- 언어 패키지, 카테고리 색상 -->
+  <!-- 2020-12-05 양승국 동적 변경을 위해 head -> body로 옮김-->
+  <script id = "lan" src="/js/blockly/msg/js/ko.js"></script> 
+-
   <!-- 그래프 사이드바 -->
   <aside id="sidebar">
     <!-- 그래프 사이드바 닫기 버튼 -->
@@ -336,6 +341,13 @@
 
       <!-- 오른쪽 구역 -->
       <div class="d-flex flex-wrap text-white" style="width: 55%;">
+
+        <!-- 2020-12-05 양승국 언어변경을 위해 생성-->
+        <!--언어변환 -->
+        <select id="language" class="form-control col-md-2 mt-2 ml-1">
+          <option id = "ko" value="kor">Korea</option>
+          <option id = "en" value="eng">English</option>
+        </select>
 
         <!-- display -->
         <select id="display_select" class="form-control col-md-2 mt-2 ml-1">
@@ -1829,6 +1841,13 @@
       console.log(alphaPixel);
     }
 
+
+
+        // $("#lan").attr("src", "/js/blockly/msg/js/ko.js");
+           
+
+    
+
     /*
      * 코드미러 화면 전환(python&javascript)
      */
@@ -2079,6 +2098,33 @@
   </script>
 
   <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
+
+  <!-- 2020-12-05 양승국 언어변경 -->
+  <script>
+    $("#language").change(function () {
+      var selectName = $(this).find(":selected").val();
+
+      if (selectName == "kor") {
+        $("#lan").remove();
+        var script = document.createElement('script');
+        script.id = 'lan';
+        script.src = '/js/blockly/msg/js/ko.js'; // script url.
+        document.body.appendChild(script);
+        // $("#lan").attr("src", "/js/blockly/msg/js/ko.js");
+        // alert($("#lan").attr('src'));
+      }
+      // $("#lan").attr("src", "/js/blockly/msg/js/ko.js");
+      else if (selectName == "eng") {
+        $("#lan").remove();
+        var script = document.createElement('script');
+        script.id = 'lan';
+        script.src = '/js/blockly/msg/js/en.js'; // script url.
+        document.body.appendChild(script);
+        // $("#lan").attr("src", "/js/blockly/msg/js/en.js");
+       // alert($("#lan").attr('src'));
+      }  
+    });
+  </script>
 </body>
 
 <style>
