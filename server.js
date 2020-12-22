@@ -24,7 +24,7 @@ const options = {
 
 var app = express();
 var server = require('http').createServer(options, app).listen(18081, function(){
-    console.log('Socket IO server listening on port 8000');
+    console.log('Socket IO server listening on port 18081');
 });
 var io = require('socket.io')(server);// http server를 socket.io server로 upgrade 
  
