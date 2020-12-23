@@ -660,6 +660,7 @@ Blockly.Msg['PANDAS_LIBRARY'] = "[ import ] pandas as pd";
 Blockly.Msg['PANDAS_CSVDATAFRAME'] = "[CSV frame] variable";
 Blockly.Msg['PANDAS_CSV2'] = "import csv";
 Blockly.Msg['PANDAS_DATALIST'] = "[zip list] variable";
+Blockly.Msg['PANDAS_DATALIST_2'] = "array variable";
 Blockly.Msg['PANDAS_DATAFRAME_1'] = "[zip frame]";
 Blockly.Msg['PANDAS_DATAFRAME_2'] = "variable";
 Blockly.Msg['PANDAS_DATAFRAME_3'] = "(zip list";

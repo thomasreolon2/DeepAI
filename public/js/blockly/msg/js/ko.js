@@ -657,6 +657,7 @@ Blockly.Msg['PANDAS_LIBRARY'] = "[ 임포트 ] pandas를 pd로";
 Blockly.Msg['PANDAS_CSVDATAFRAME'] = "[CSV프레임] 변수";
 Blockly.Msg['PANDAS_CSV2'] = "csv 불러오기";
 Blockly.Msg['PANDAS_DATALIST'] = "[zip리스트] 변수";
+Blockly.Msg['PANDAS_DATALIST_2'] = "배열변수";
 Blockly.Msg['PANDAS_DATAFRAME_1'] = "[zip프레임]";
 Blockly.Msg['PANDAS_DATAFRAME_2'] = "변수";
 Blockly.Msg['PANDAS_DATAFRAME_3'] = "(zip리스트";
