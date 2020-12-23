@@ -598,29 +598,29 @@ Blockly.Msg['NUMPY_ARRAY_OPERATOR_4'] = "전치 행렬 ( np.transpose  )";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_5'] = "하삼각 행렬 ( np.tril )";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_6'] = "상삼각행렬 ( np.triu )";
 
-Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ CSV 파일로 저장 ] 변수  ";
+Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ CSV 파일로 저장 ] 변수 %1 (  %2  ) ";
 Blockly.Msg['NUMPY_DATA_TO_CSV_2'] = " 파일 이름 ";
 
-Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ 리스트 변환 ] 변수  ";
+Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ 리스트 변환 ] 변수  %1  데이터 형식    %2 )";
 Blockly.Msg['NUMPY_DATA_CONVERSION_2'] = "  데이터 형식    ";
 
-Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "배열 연결"; 
+Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "[ 배열 연결 ] ((   %1 , %2 ))"; 
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_2'] = "값"; 
 
-Blockly.Msg['NUMPY_NP_ARRAY_1'] = "넘파이 배열"; 
+Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[ 넘파이 배열  ]  %1"; 
 
-Blockly.Msg['NUMPY_CREATE_ARR_1'] = "배열 값"; 
+Blockly.Msg['NUMPY_CREATE_ARR_1'] = "[ 배열 값 ] %1"; 
 
-Blockly.Msg['NUMPY_NP_ARRANGE_1'] = "정렬 값 배열"; 
+Blockly.Msg['NUMPY_NP_ARRANGE_1'] = "[ 정렬 값 배열  ] %1 "; 
 
-Blockly.Msg['NUMPY_ZEROS_1'] = "배열";
+Blockly.Msg['NUMPY_ZEROS_1'] = "[ 0 배열  ] ( %1 , %2 ) %3";
 Blockly.Msg['NUMPY_ZEROS_2'] = "행";
 Blockly.Msg['NUMPY_ZEROS_3'] = "열";
 
-Blockly.Msg['NUMPY_FULL_1'] = "배열동일 값 생성";
+Blockly.Msg['NUMPY_FULL_1'] = "[ 동일 값 생성 ] (( %1 , %2 ) 값 %3 )";
 Blockly.Msg['NUMPY_FULL_2'] = "값";
 
-Blockly.Msg['NUMPY_EYE_1'] = "대각선 1로 배열";
+Blockly.Msg['NUMPY_EYE_1'] = "[ 대각선 1로 배열  ] ( %1 )";
 Blockly.Msg['NUMPY_EYE_2'] = "크기";
 
 Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )";
@@ -645,7 +645,7 @@ Blockly.Msg['NUMPY_DIFF_2'] = "값";
 
 Blockly.Msg['NUMPY_ARRAY_CHANGE_1'] = "[ 값 변경 ]  %1 %2 변수 %3 값 %4";
 
-Blockly.Msg['NUMPY_PROD_1'] = "요소의 곱";
+Blockly.Msg['NUMPY_PROD_1'] = "[ 요소의 곱 ] %1";
 Blockly.Msg['NUMPY_PROD_2'] = "값";
 
 Blockly.Msg['NUMPY_FFT_FFT_1'] = "[ 푸리에 변환 ] 값 %1 %2";

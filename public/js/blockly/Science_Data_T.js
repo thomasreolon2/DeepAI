@@ -30,7 +30,7 @@ Blockly.defineBlocksWithJsonArray(
 //numpy 라이브러리 임포트
     {
         "type": "numpy_library",
-        "message0": "[ 임포트 ] numpy를 np로",
+        "message0": "%{BKY_NUMPY_IMPORT_1}",
         "inputsInline": true,
         "previousStatement": null, 
         "nextStatement": null,
@@ -43,7 +43,7 @@ Blockly.defineBlocksWithJsonArray(
 //CSV 파일로 저장   
 {
   "type": "data_to_csv",
-  "message0": "[ CSV 파일로 저장 ] 변수  %1 (  %2  )", 
+  "message0": "%{BKY_NUMPY_DATA_TO_CSV_1}", 
   "args0": [
     {
       "type": "input_value",
@@ -52,7 +52,7 @@ Blockly.defineBlocksWithJsonArray(
     {
       "type": "field_input",
       "name": "value_value_data_to_csv_name",
-      "text": " 파일 이름 "
+      "text": "%{BKY_NUMPY_DATA_TO_CSV_2}"
     }
   ],
   "inputsInline": true,
@@ -66,7 +66,7 @@ Blockly.defineBlocksWithJsonArray(
 //.list 데이터 리스트 변환
 {
   "type": "data_conversion",
-  "message0": "[ 리스트 변환 ] 변수  %1  데이터 형식    %2 )",
+  "message0": "%{BKY_NUMPY_DATA_CONVERSION_1}",
   "args0": [
     {
       "type": "input_value",
@@ -103,17 +103,17 @@ Blockly.defineBlocksWithJsonArray(
 //np.concatenate
 {
   "type": "np_concatenate",
-  "message0": "[ 배열 연결 ] ((   %1 , %2 ))",
+  "message0": "%{BKY_NUMPY_NP_CONCATENATEARRAY_1}",
   "args0": [
     {
       "type": "field_input",
       "name": "np_concatenate_var1",
-      "text": "값"
+      "text": "%{BKY_NUMPY_NP_CONCATENATEARRAY_2}"
     },
     {
       "type": "field_input",
       "name": "np_concatenate_var2",
-      "text": "값"
+      "text": "%{BKY_NUMPY_NP_CONCATENATEARRAY_2}"
     }
   ],
   "inputsInline": true,
@@ -125,7 +125,7 @@ Blockly.defineBlocksWithJsonArray(
 //배열 생성
 {
   "type": "create_arry",
-  "message0": "[ 배열 값 ] %1", 
+  "message0": "%{BKY_NUMPY_CREATE_ARR_1}", 
   "args0": [  
     {
       "type": "field_input", 
@@ -142,7 +142,7 @@ Blockly.defineBlocksWithJsonArray(
  // 배열 np.arry 
  {
   "type": "np_array",
-  "message0": "[ 넘파이 배열  ]  %1",
+  "message0": "%{BKY_NUMPY_NP_ARRAY_1}",
   "args0": [
     {
       "type": "input_value",
@@ -158,12 +158,12 @@ Blockly.defineBlocksWithJsonArray(
 //np.arange 
 {
   "type": "np_arrange",
-  "message0": "[ 정렬 값 배열  ] %1 ",
+  "message0": "%{BKY_NUMPY_NP_ARRANGE_1}",
   "args0": [
     {
       "type": "field_input",
       "name": "np_arrange_value1",
-      "text": "값"
+      "text": "%{BKY_NUMPY_NP_CONCATENATEARRAY_2}"
     },
    
   ],
@@ -346,17 +346,17 @@ Blockly.defineBlocksWithJsonArray(
   // numpy 함수 zeros
   {
     "type": "numpy_zeros",
-    "message0": "[ 0 배열  ] ( %1 , %2 ) %3",
+    "message0": "%{BKY_NUMPY_ZEROS_1}",
     "args0": [
       {
         "type": "field_input",
         "name": "numpy_zeros_num_1",
-        "text": "행"
+        "text": "%{BKY_NUMPY_ZEROS_2}"
       },
       {
         "type": "field_input",
         "name": "numpy_zeros_num_2",
-        "text": "열"
+        "text": "%{BKY_NUMPY_ZEROS_3}"
       },
       {
         "type": "field_dropdown",
@@ -382,17 +382,17 @@ Blockly.defineBlocksWithJsonArray(
   // np.full 배열 생성 및 , 채워질 값 
   {
     "type": "numpy_full",
-    "message0": "[ 동일 값 생성 ] (( %1 , %2 ) 값 %3 )",
+    "message0": "%{BKY_NUMPY_FULL_1}",
     "args0": [
       {
         "type": "field_input",
         "name": "numpy_full_rows",
-        "text": "행"
+        "text": "%{BKY_NUMPY_ZEROS_2}"
       },
       {
         "type": "field_input",
         "name": "numpy_full_cols",
-        "text": "열"
+        "text": "%{BKY_NUMPY_ZEROS_3}"
       },
       {
         "type": "field_input",
@@ -409,12 +409,12 @@ Blockly.defineBlocksWithJsonArray(
   // eye 함수 대각선으로 1채우기 
   {
     "type": "numpy_eye",
-    "message0": "[ 대각선 1로 배열  ] ( %1 )",
+    "message0": "%{BKY_NUMPY_EYE_1}",
     "args0": [
       {
         "type": "field_input",
         "name": "numpy_eye_num",
-        "text": "크기"
+        "text": "%{BKY_NUMPY_EYE_2}"
       }
     ], 
     "inputsInline": true,
@@ -427,7 +427,7 @@ Blockly.defineBlocksWithJsonArray(
   // np.max_min  최대 값,최소 값 찾기 
   {
     "type": "numpy_max_min",
-    "message0": "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )",
+    "message0": "%{BKY_NUMPY_MAX_MIN_1}",
     "args0": [
       {
         "type": "field_dropdown",
@@ -460,7 +460,7 @@ Blockly.defineBlocksWithJsonArray(
   //np.shape  
   {
     "type": "numpy_shape",
-    "message0": "[ 행렬 차원 ] %1 변수  %2",
+    "message0": "%{BKY_NUMPY_SHAPE_1}",
     "args0": [
       {
         "type": "input_dummy"
@@ -479,7 +479,7 @@ Blockly.defineBlocksWithJsonArray(
   // reshpae 행렬 차원 변경 
   {
     "type": "numpy_reshape",
-    "message0": "[ 행렬 차원 변경 ] 원본 %1 %2 변경 차원 %3",
+    "message0": "%{BKY_NUMPY_RESHAPE_1}",
     "args0": [
       {
         "type": "input_dummy"
@@ -503,7 +503,7 @@ Blockly.defineBlocksWithJsonArray(
   //np.flatten
   {
     "type": "np_flatten",
-    "message0": "[ 행렬 1차원 변경 ] 변수 %1 %2",
+    "message0": "%{BKY_NUMPY_FLATTEN_1}",
     "args0": [
       {
         "type": "input_dummy"
@@ -522,22 +522,22 @@ Blockly.defineBlocksWithJsonArray(
   // random.randn  표준정규 분포에 따른 무작위 숫자 생성 
   {
     "type": "numpy_random_rand",
-    "message0": "[ 랜덤 행렬 ] %1 (  %2 ,  %3 )",
+    "message0": "[ %{BKY_NUMPY_RANDOM_RAND_1} ] %1 (  %2 ,  %3 )",
     "args0": [
       {
         "type": "field_dropdown",
         "name": "numpy_random_rand_Option",
         "options": [
           [
-            "균일 분포",
+            "%{BKY_NUMPY_RANDOM_RAND_2}",
             "numpy_random_rand"
           ],
           [
-            "정수",
+            "%{BKY_NUMPY_RANDOM_RAND_3}",
             "numpy_random_randint"
           ],
           [
-            "가우시안 분포",
+            "%{BKY_NUMPY_RANDOM_RAND_4}",
             "numpy_random_randn"
           ],
           [
@@ -574,7 +574,7 @@ Blockly.defineBlocksWithJsonArray(
     // 지수 exp
     {
       "type": "numpy_exp",
-      "message0": "[ 자연 상수 제곱]  ( 변수   %1 )",
+      "message0": "%{BKY_NUMPY_EXP_1}",
       "args0": [ 
         {
           "type": "input_value",
@@ -590,7 +590,7 @@ Blockly.defineBlocksWithJsonArray(
     //np.mean
     {
       "type": "np_mean",
-      "message0": "[ 평균  ] 변수 %1 %2",
+      "message0": "%{BKY_NUMPY_MEAN_1}",
       "args0": [
         {
           "type": "input_dummy"
@@ -609,12 +609,12 @@ Blockly.defineBlocksWithJsonArray(
     //np.diff
     {
       "type": "np_diff_",
-      "message0": "[ 차분 ]  %1",
+      "message0": "[ %{BKY_NUMPY_DIFF_1} ]  %1",
       "args0": [
         {
           "type": "field_input",
           "name": "np_diff_var_value",
-          "text": "값"
+          "text": "%{BKY_NUMPY_DIFF_2}"
         }
       ],
       "inputsInline": true,
@@ -626,7 +626,7 @@ Blockly.defineBlocksWithJsonArray(
     //np.append etc
     {
       "type": "np_arry_change",
-      "message0": "[ 값 변경 ]  %1 %2 변수 %3 값 %4",
+      "message0": "%{BKY_NUMPY_ARRAY_CHANGE_1}",
       "args0": [
         {
           "type": "field_dropdown",
@@ -672,12 +672,12 @@ Blockly.defineBlocksWithJsonArray(
     //np.prod
     {
       "type": "np_prod",
-      "message0": "[ 요소의 곱 ]  %1",
+      "message0": "%{BKY_NUMPY_PROD_1}",
       "args0": [
         {
           "type": "field_input",
           "name": "np_prod_var",
-          "text": "값"
+          "text": "%{BKY_NUMPY_PROD_2}"
         }
       ],
       "inputsInline": true,
@@ -689,7 +689,7 @@ Blockly.defineBlocksWithJsonArray(
     //np.fft
     {
       "type": "np_fft_fft",
-      "message0": "[ 푸리에 변환 ] 값 %1 %2",
+      "message0": "%{BKY_NUMPY_FFT_FFT_1}",
       "args0": [
         {
           "type": "input_dummy"
@@ -944,8 +944,8 @@ Blockly.defineBlocksWithJsonArray(
     init: function() {
       this.appendValueInput("numpy_operator_val")
           .setCheck(null) 
-          .appendField("[ 수학 연산 ]")
-          .appendField(new Blockly.FieldDropdown([["배열 덧셈 (np.add)","np.add"], ["배열 뺄셈 ( np.subtract )","np.subtract"], ["배열 곱 ( np.multiply )","np.multiply"], ["배열 나눗셈 ( np.divide  )","np.divide"], ["배열 나머지 반환 ( np.remainder )","np.remainder"], ["배열 역수 ( np.reciprocal  )","np.reciprocal "]]), "numpy_operator_Option");
+          .appendField(Blockly.Msg.NUMPY_CALCULATION_1)
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_CALCULATION_2,"np.add"], [Blockly.Msg.NUMPY_CALCULATION_3,"np.subtract"], [Blockly.Msg.NUMPY_CALCULATION_4,"np.multiply"], [Blockly.Msg.NUMPY_CALCULATION_5,"np.divide"], [Blockly.Msg.NUMPY_CALCULATION_6,"np.remainder"], [Blockly.Msg.NUMPY_CALCULATION_7,"np.reciprocal "]]), "numpy_operator_Option");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");
@@ -960,8 +960,8 @@ Blockly.defineBlocksWithJsonArray(
     init: function() {
       this.appendValueInput("numpy_index_values_val")
           .setCheck(null)
-          .appendField("[ 인덱스 / 값 검색 ]")
-          .appendField(new Blockly.FieldDropdown([["배열 최댓값 ( np.amax)","np.amax"], ["배열 최소값 ( np.amin )","np.subtract"], ["최대값 인덱스 ( np.argmax )","np.argmax"], ["배열 정렬 인덱스 ( np.argsort )","np.argsort"], ["배열 아닌 인덱스 ( np.nonzero )","np.nonzero "], ["인덱스를 이용한 배열요소 가져오기 ( np.take )","np.take "], ["해당 조건 인덱스 ( np.where )","np.where "]]), "numpy_operator_Option");
+          .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_1)
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_2,"np.amax"], [Blockly.Msg.NUMPY_INDEX_VALUES_3,"np.subtract"], [Blockly.Msg.NUMPY_INDEX_VALUES_4,"np.argmax"], [Blockly.Msg.NUMPY_INDEX_VALUES_5,"np.argsort"], [Blockly.Msg.NUMPY_INDEX_VALUES_6,"np.nonzero "], [Blockly.Msg.NUMPY_INDEX_VALUES_7,"np.take "], [Blockly.Msg.NUMPY_INDEX_VALUES_8,"np.where "]]), "numpy_operator_Option");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");
@@ -975,8 +975,8 @@ Blockly.defineBlocksWithJsonArray(
     init: function() {
       this.appendValueInput("numpy_array_operator_val")
           .setCheck(null)
-          .appendField("[ 행렬 연산 ]")
-          .appendField(new Blockly.FieldDropdown([["두 배열의 내적 연산 ( np.dot)","np.dot "], ["두 배열 행렬 곱 ( np.matmul )","np.subtract"], ["전치 행렬 ( np.transpose  )","np.transpose "], ["하삼각 행렬 ( np.tril )","np.tril"], ["상삼각행렬 ( np.triu )","np.triu "]]), "numpy_array_operator_Option");
+          .appendField(Blockly.Msg.NUMPY_ARRAY_OPERATOR_1)
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_ARRAY_OPERATOR_2,"np.dot "], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_3,"np.subtract"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_4,"np.transpose "], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_5,"np.tril"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_6,"np.triu "]]), "numpy_array_operator_Option");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");
@@ -1008,7 +1008,7 @@ Blockly.defineBlocksWithJsonArray(
     init: function() {
       this.appendValueInput("nump_abs_val")
           .setCheck(null)
-          .appendField("[ 절대 값 ]");
+          .appendField(Blockly.Msg.NUMPY_ABS_1);
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");

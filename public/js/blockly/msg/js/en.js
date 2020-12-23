@@ -601,29 +601,29 @@ Blockly.Msg['NUMPY_ARRAY_OPERATOR_4'] = "Reverse the axes of an array ( np.trans
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_5'] = "lower triangle of an array ( np.tril )";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_6'] = "upper triangle of an array ( np.triu )";
 
-Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ save as CSV fiel ] variable  ";
+Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ save as CSV file ] variable  %1 (  %2  )";
 Blockly.Msg['NUMPY_DATA_TO_CSV_2'] = " file name ";
 
-Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ list transformation ] variable  ";
+Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ list transformation ] variable  %1 data format %2";
 Blockly.Msg['NUMPY_DATA_CONVERSION_2'] = "  data format    ";
 
-Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "array concatenation"; 
+Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "[array concatenation ] ((   %1 , %2 ))"; 
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_2'] = "value"; 
 
-Blockly.Msg['NUMPY_NP_ARRAY_1'] = "numpy array";
+Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[numpy array]  %1";
 
-Blockly.Msg['NUMPY_CREATE_ARR_1'] = "array value"; 
+Blockly.Msg['NUMPY_CREATE_ARR_1'] = "[ array value ]  %1"; 
 
-Blockly.Msg['NUMPY_NP_ARRANGE_1'] = "array of arranged values"; 
+Blockly.Msg['NUMPY_NP_ARRANGE_1'] = "[array of arranged values] %1"; 
 
-Blockly.Msg['NUMPY_ZEROS_1'] = "array";
+Blockly.Msg['NUMPY_ZEROS_1'] = "[ 0 array  ] ( %1 , %2 ) %3";
 Blockly.Msg['NUMPY_ZEROS_2'] = "row";
 Blockly.Msg['NUMPY_ZEROS_3'] = "column";
 
-Blockly.Msg['NUMPY_FULL_1'] = "creat new array of given array";
+Blockly.Msg['NUMPY_FULL_1'] = "[create new array of given array ] (( %1 , %2 ) value %3 )";
 Blockly.Msg['NUMPY_FULL_2'] = "value";
 
-Blockly.Msg['NUMPY_EYE_1'] = "array with ones on the diagonal";
+Blockly.Msg['NUMPY_EYE_1'] = "[ array with ones on the diagonal  ] ( %1 )";
 Blockly.Msg['NUMPY_EYE_2'] = "size";
 
 Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ maximum, minimum value  ]  %1 %2 ( variable  %3 )";
@@ -648,8 +648,8 @@ Blockly.Msg['NUMPY_DIFF_2'] = "value";
 
 Blockly.Msg['NUMPY_ARRAY_CHANGE_1'] = "[ change value ]  %1 %2 variable %3 value %4";
 
-Blockly.Msg['NUMPY_PROD_1'] = "요소의 곱";
-Blockly.Msg['NUMPY_PROD_2'] = "값";
+Blockly.Msg['NUMPY_PROD_1'] = "[ multiply of elements ] %1";
+Blockly.Msg['NUMPY_PROD_2'] = "vlalue";
 
 Blockly.Msg['NUMPY_FFT_FFT_1'] = "[ fourier transform ] value %1 %2";
 
