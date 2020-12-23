@@ -105,7 +105,7 @@ Blockly.Blocks['csv2'] = {
             alt: "*",
             flipRtl: "FALSE"
 
-        })).appendField("csv 불러오기").appendField(new Blockly.FieldTextInput(""), "csv_url");
+        })).appendField(Blockly.Msg.PANDAS_CSV2).appendField(new Blockly.FieldTextInput(""), "csv_url");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour(20);

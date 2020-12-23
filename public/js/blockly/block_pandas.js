@@ -8,7 +8,7 @@ var pandas_color = "%{BKY_PANDAS_HUE}";
 Blockly.Blocks['csv_library'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("[ 임포트 ] pandas를 pd로");
+        .appendField(Blockly.Msg.PANDAS_LIBRARY);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -40,10 +40,10 @@ Blockly.Blocks['fill_null_data'] = {
   init: function () {
     this.appendValueInput("DATA")
       .setCheck(null)
-      .appendField("[결측치삽입] 프레임");
+      .appendField(Blockly.Msg.PANDAS_FILL_NULL_DATA_1);
     this.appendDummyInput()
       .appendField("(")
-      .appendField(new Blockly.FieldDropdown([["최댓값", "1"], ["최솟값", "2"], ["중간값", "3"], ["평균값", "4"], ["0값", "5"]]), "NAME")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_FILL_NULL_DATA_2, "1"], [Blockly.Msg.PANDAS_FILL_NULL_DATA_3, "2"], [Blockly.Msg.PANDAS_FILL_NULL_DATA_4, "3"], [Blockly.Msg.PANDAS_FILL_NULL_DATA_5, "4"], [Blockly.Msg.PANDAS_FILL_NULL_DATA_6, "5"]]), "NAME")
       .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -107,12 +107,12 @@ Blockly.Blocks['select_row_delete'] = {
   init: function () {
     this.appendValueInput("select_data")
       .setCheck(null)
-      .appendField("[행열삭제] 프레임");
+      .appendField(Blockly.Msg.PANDAS_SELECT_ROW_DELETE_1);
     this.appendDummyInput()
-      .appendField("(인덱스값")
+      .appendField(Blockly.Msg.PANDAS_SELECT_ROW_DELETE_2)
       .appendField(new Blockly.FieldTextInput("ex)0,1"), "select_drop");
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([["행삭제", "1"], ["열삭제", "2"]]), "srd_NAME")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_SELECT_ROW_DELETE_3, "1"], [Blockly.Msg.PANDAS_SELECT_ROW_DELETE_4, "2"]]), "srd_NAME")
       .appendField(")");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -233,12 +233,12 @@ Blockly.Blocks['select_row_list'] = {
   init: function () {
     this.appendValueInput("list_data")
       .setCheck(null)
-      .appendField("[행렬추출] 프레임");
+      .appendField(Blockly.Msg.PANDAS_SELECT_ROW_LIST_1);
     this.appendDummyInput()
-      .appendField("(인덱스값")
+      .appendField(Blockly.Msg.PANDAS_SELECT_ROW_LIST_2)
       .appendField(new Blockly.FieldTextInput("ex)0,1"), "list_val");
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([["행", "1"], ["열", "2"]]), "srd_NAME");
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_SELECT_ROW_LIST_3, "1"], [Blockly.Msg.PANDAS_SELECT_ROW_LIST_4, "2"]]), "srd_NAME");
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);
@@ -255,13 +255,13 @@ Blockly.Blocks['select_row_column_value'] = {
   init: function () {
     this.appendValueInput("select_data")
       .setCheck(null)
-      .appendField("[범위설정] 프레임");
+      .appendField(Blockly.Msg.PANDAS_SELECT_ROW_COLUMN_VALUE_1);
     this.appendValueInput("select_row_locate")
       .setCheck(null)
-      .appendField("(행");
+      .appendField(Blockly.Msg.PANDAS_SELECT_ROW_COLUMN_VALUE_2);
     this.appendValueInput("select_column_locate")
       .setCheck(null)
-      .appendField("열")
+      .appendField(Blockly.Msg.PANDAS_SELECT_ROW_COLUMN_VALUE_3)
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);
@@ -329,13 +329,13 @@ Blockly.Blocks['pandas_dataframe'] = {
   init: function () {
     this.appendValueInput("df_va")
       .setCheck(null)
-      .appendField("[zip프레임]")
-      .appendField("변수");
+      .appendField(Blockly.Msg.PANDAS_DATAFRAME_1)
+      .appendField(Blockly.Msg.PANDAS_DATAFRAME_2);
     this.appendValueInput("lst")
       .setCheck(null)
-      .appendField("(zip리스트");
+      .appendField(Blockly.Msg.PANDAS_DATAFRAME_3);
     this.appendDummyInput()
-      .appendField("컬럼명")
+      .appendField(Blockly.Msg.PANDAS_DATAFRAME_4)
       .appendField(new Blockly.FieldTextInput("ex)'NAME','MATH'"), "col_name")
       .appendField(")");
     this.setPreviousStatement(true, null);
@@ -350,7 +350,7 @@ Blockly.Blocks['csvdataframe_J'] = {
   init: function () {
     this.appendValueInput("input_var")
       .setCheck(null)
-      .appendField("[CSV프레임] 변수");
+      .appendField(Blockly.Msg.PANDAS_CSVDATAFRAME);
     this.appendValueInput("csv")
       .setCheck(null)
       .appendField("(");
@@ -371,7 +371,7 @@ Blockly.Blocks['pandas_datalist'] = {
   init: function () {
     this.appendValueInput("frm_var")
       .setCheck(null)
-      .appendField("[zip리스트] 변수");
+      .appendField(Blockly.Msg.PANDAS_DATALIST);
     this.appendValueInput("data_lst")
       .setCheck(null)
       .appendField("(")
@@ -456,7 +456,7 @@ Blockly.Blocks.createColumn = {
     for (var a = 0; a < this.itemCount_; a++)
       if (!this.getInput("ADD" + a)) {
         var b = this.appendValueInput("ADD" + a).setAlign(Blockly.ALIGN_RIGHT);
-        0 == a && b.appendField("배열변수");
+        0 == a && b.appendField(Blockly.Msg.PANDAS_DATALIST_2);
       }
     for (; this.getInput("ADD" + a);) this.removeInput("ADD" + a), a++;
   },
@@ -492,16 +492,16 @@ Blockly.Blocks['pandas_conversion'] = {
   init: function () {
     this.appendValueInput("pa_frm")
       .setCheck(null)
-      .appendField("[일괄변경] 프레임");
+      .appendField(Blockly.Msg.PANDAS_CONVERSION_1);
     this.appendValueInput("pa_cul")
       .setCheck(null)
-      .appendField("(컬럼명");
+      .appendField(Blockly.Msg.PANDAS_CONVERSION_2);
     this.appendValueInput("pa_data")
       .setCheck(null)
-      .appendField("원본데이터");
+      .appendField(Blockly.Msg.PANDAS_CONVERSION_3);
     this.appendValueInput("pa_chidata")
       .setCheck(null)
-      .appendField("변경데이터")
+      .appendField(Blockly.Msg.PANDAS_CONVERSION_4)
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);
@@ -518,10 +518,10 @@ Blockly.Blocks['pandas_mis_del'] = {
   init: function () {
     this.appendValueInput("DATA_del")
       .setCheck(null)
-      .appendField("[결측치삭제] 프레임");
+      .appendField(Blockly.Msg.PANDAS_MIS_DEL_1);
     this.appendDummyInput()
       .appendField("(")
-      .appendField(new Blockly.FieldDropdown([["행삭제", ".dropna()"], ["열삭제", ".dropna(axis = 1)"]]), "DEL_NAME")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_MIS_DEL_2, ".dropna()"], [Blockly.Msg.PANDAS_MIS_DEL_3, ".dropna(axis = 1)"]]), "DEL_NAME")
       .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -535,7 +535,7 @@ Blockly.Blocks['pandas_mis_del'] = {
 Blockly.Blocks['selec_value_all'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("전체범위");
+      .appendField(Blockly.Msg.PANDAS_SELECT_VALUE_ALL);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);
@@ -548,7 +548,7 @@ Blockly.Blocks['selec_value_all'] = {
 Blockly.Blocks['iloc_range'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("부분범위")
+      .appendField(Blockly.Msg.PANDAS_ILOC_RANGE)
       .appendField(new Blockly.FieldTextInput("0"), "st_range");
     this.appendDummyInput()
       .appendField(":")
@@ -732,13 +732,13 @@ Blockly.Blocks['df_add_col'] = {
   init: function() {
     this.appendValueInput("df")
         .setCheck(null)
-        .appendField("[열 추가] 프레임");
+        .appendField(Blockly.Msg.PANDAS_DF_ADD_COL_1);
     this.appendDummyInput()
-        .appendField("(추가컬럼")
+        .appendField(Blockly.Msg.PANDAS_DF_ADD_COL_2)
         .appendField(new Blockly.FieldTextInput(""), "added_col");
     this.appendValueInput("add_data")
         .setCheck(null)
-        .appendField(" 삽입 데이터");
+        .appendField(Blockly.Msg.PANDAS_DF_ADD_COL_3);
     this.appendDummyInput()
         .appendField(")");
     this.setInputsInline(true);
