@@ -625,3 +625,33 @@ Blockly.Msg['NUMPY_FULL_2'] = "value";
 
 Blockly.Msg['NUMPY_EYE_1'] = "array with ones on the diagonal";
 Blockly.Msg['NUMPY_EYE_2'] = "size";
+
+Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ maximum, minimum value  ]  %1 %2 ( variable  %3 )";
+
+Blockly.Msg['NUMPY_SHAPE_1'] = "[ matrix dimensions ] %1 variable  %2";
+
+Blockly.Msg['NUMPY_RESHAPE_1'] = "[ change matrix dimension ] original %1 %2 change dimension %3";
+
+Blockly.Msg['NUMPY_FLATTEN_1'] = "[ change array matrix to 1 dimensional ] variable %1 %2";
+
+Blockly.Msg['NUMPY_RANDOM_RAND_1'] = "random matrix";
+Blockly.Msg['NUMPY_RANDOM_RAND_2'] = "uniform distribution";
+Blockly.Msg['NUMPY_RANDOM_RAND_3'] = "integer";
+Blockly.Msg['NUMPY_RANDOM_RAND_4'] = "gaussian distribution";
+
+Blockly.Msg['NUMPY_EXP_1'] = "[ natural constant squared]  ( variable   %1 )";
+
+Blockly.Msg['NUMPY_MEAN_1'] = "[ mean  ] variable %1 %2";
+
+Blockly.Msg['NUMPY_DIFF_1'] = "difference";
+Blockly.Msg['NUMPY_DIFF_2'] = "value";
+
+Blockly.Msg['NUMPY_ARRAY_CHANGE_1'] = "[ change value ]  %1 %2 variable %3 value %4";
+
+Blockly.Msg['NUMPY_PROD_1'] = "요소의 곱";
+Blockly.Msg['NUMPY_PROD_2'] = "값";
+
+Blockly.Msg['NUMPY_FFT_FFT_1'] = "[ fourier transform ] value %1 %2";
+
+Blockly.Msg['NUMPY_ABS_1'] = "[ absolute value ]";
+

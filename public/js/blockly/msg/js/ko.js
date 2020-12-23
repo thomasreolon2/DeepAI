@@ -622,5 +622,37 @@ Blockly.Msg['NUMPY_FULL_2'] = "값";
 
 Blockly.Msg['NUMPY_EYE_1'] = "대각선 1로 배열";
 Blockly.Msg['NUMPY_EYE_2'] = "크기";
+
+Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )";
+
+Blockly.Msg['NUMPY_SHAPE_1'] = "[ 행렬 차원 ] %1 변수  %2";
+
+Blockly.Msg['NUMPY_RESHAPE_1'] = "[ 행렬 차원 변경 ] 원본 %1 %2 변경 차원 %3";
+
+Blockly.Msg['NUMPY_FLATTEN_1'] = "[ 행렬 1차원 변경 ] 변수 %1 %2";
+
+Blockly.Msg['NUMPY_RANDOM_RAND_1'] = "랜덤 행렬";
+Blockly.Msg['NUMPY_RANDOM_RAND_2'] = "균일 분포";
+Blockly.Msg['NUMPY_RANDOM_RAND_3'] = "정수";
+Blockly.Msg['NUMPY_RANDOM_RAND_4'] = "가우시안 분포";
+
+Blockly.Msg['NUMPY_EXP_1'] = "[ 자연 상수 제곱]  ( 변수   %1 )";
+
+Blockly.Msg['NUMPY_MEAN_1'] = "[ 평균  ] 변수 %1 %2";
+
+Blockly.Msg['NUMPY_DIFF_1'] = "차분";
+Blockly.Msg['NUMPY_DIFF_2'] = "값";
+
+Blockly.Msg['NUMPY_ARRAY_CHANGE_1'] = "[ 값 변경 ]  %1 %2 변수 %3 값 %4";
+
+Blockly.Msg['NUMPY_PROD_1'] = "요소의 곱";
+Blockly.Msg['NUMPY_PROD_2'] = "값";
+
+Blockly.Msg['NUMPY_FFT_FFT_1'] = "[ 푸리에 변환 ] 값 %1 %2";
+
+Blockly.Msg['NUMPY_ABS_1'] = "[ 절대 값 ]";
+
+
+//Blockly.Msg['NUMPY__1'] = "";
 // Blockly.Msg.  %{BKY_NUMPY_NUMPY_DATA_CONVERSION_1}
 
