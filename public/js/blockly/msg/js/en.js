@@ -570,3 +570,58 @@ Blockly.Msg['CLASS_7_1'] = "object & function";
 
 // Mutator
 Blockly.Msg['MUTATOR_ADD_ITEM'] = "add item";
+
+
+
+// ---- 넘파이
+
+Blockly.Msg['NUMPY_IMPORT_1'] = "[ import ] numpy as np";
+
+Blockly.Msg['NUMPY_CALCULATION_1'] = "[ calculation ]";
+Blockly.Msg['NUMPY_CALCULATION_2'] = "array add (np.add)";
+Blockly.Msg['NUMPY_CALCULATION_3'] = "array subtract ( np.subtract )";
+Blockly.Msg['NUMPY_CALCULATION_4'] = "array mulitply ( np.multiply )";
+Blockly.Msg['NUMPY_CALCULATION_5'] = "array divide ( np.divide  )";
+Blockly.Msg['NUMPY_CALCULATION_6'] = "array remainder ( np.remainder )";
+Blockly.Msg['NUMPY_CALCULATION_7'] = "array reciprocal ( np.reciprocal  )";
+
+Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[ index / value search ]";
+Blockly.Msg['NUMPY_INDEX_VALUES_2'] = "maximum value of array ( np.amax)";
+Blockly.Msg['NUMPY_INDEX_VALUES_3'] = "minimum value of array ( np.amin )";
+Blockly.Msg['NUMPY_INDEX_VALUES_4'] = "maximum value of index ( np.argmax )";
+Blockly.Msg['NUMPY_INDEX_VALUES_5'] = "array sort ( np.argsort )";
+Blockly.Msg['NUMPY_INDEX_VALUES_6'] = "Return the indices of the non-zero elements ( np.nonzero )";
+Blockly.Msg['NUMPY_INDEX_VALUES_7'] = "take elements from an array along an axis ( np.take )";
+Blockly.Msg['NUMPY_INDEX_VALUES_8'] = "corresponding condition index ( np.where )";
+
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_1'] = "[ matrix operation ]";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_2'] = "dot product of two arrays ( np.dot)";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_3'] = "matrix product of two arrays ( np.matmul )";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_4'] = "Reverse the axes of an array ( np.transpose  )";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_5'] = "lower triangle of an array ( np.tril )";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_6'] = "upper triangle of an array ( np.triu )";
+
+Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ save as CSV fiel ] variable  ";
+Blockly.Msg['NUMPY_DATA_TO_CSV_2'] = " file name ";
+
+Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ list transformation ] variable  ";
+Blockly.Msg['NUMPY_DATA_CONVERSION_2'] = "  data format    ";
+
+Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "array concatenation"; 
+Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_2'] = "value"; 
+
+Blockly.Msg['NUMPY_NP_ARRAY_1'] = "numpy array";
+
+Blockly.Msg['NUMPY_CREATE_ARR_1'] = "array value"; 
+
+Blockly.Msg['NUMPY_NP_ARRANGE_1'] = "array of arranged values"; 
+
+Blockly.Msg['NUMPY_ZEROS_1'] = "array";
+Blockly.Msg['NUMPY_ZEROS_2'] = "row";
+Blockly.Msg['NUMPY_ZEROS_3'] = "column";
+
+Blockly.Msg['NUMPY_FULL_1'] = "creat new array of given array";
+Blockly.Msg['NUMPY_FULL_2'] = "value";
+
+Blockly.Msg['NUMPY_EYE_1'] = "array with ones on the diagonal";
+Blockly.Msg['NUMPY_EYE_2'] = "size";
