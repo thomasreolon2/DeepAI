@@ -690,6 +690,44 @@ Blockly.Msg['PANDAS_SELECT_ROW_LIST_4'] = "열";
 Blockly.Msg['PANDAS_DF_ADD_COL_1'] = "[열 추가] 프레임";
 Blockly.Msg['PANDAS_DF_ADD_COL_2'] = "(추가컬럼";
 Blockly.Msg['PANDAS_DF_ADD_COL_3'] = " 삽입 데이터";
+// -- 판다스 2번째 시작점 --> 적용 후 지울것
+Blockly.Msg['PANDAS_SERIES'] = "[시리즈생성] 변수";
+Blockly.Msg['PANDAS_CONCAT_1'] = "[시리즈concat] 변수";
+Blockly.Msg['PANDAS_CONCAT_2'] = "(데이터1";
+Blockly.Msg['PANDAS_CONCAT_3'] = "데이터2";
+Blockly.Msg['PANDAS_CONCAT_4'] = "행에 추가";
+Blockly.Msg['PANDAS_CONCAT_5'] = "열에 추가";
+Blockly.Msg['PANDAS_MERGE_1'] = "[시리즈merge] 변수";
+Blockly.Msg['PANDAS_MERGE_2'] = "(데이터1";
+Blockly.Msg['PANDAS_MERGE_3'] = "데이터2";
+Blockly.Msg['PANDAS_MERGE_4'] = "방식";
+Blockly.Msg['PANDAS_MERGE_ONCOL_1'] = "[공통컬럼O] 컬럼명";
+Blockly.Msg['PANDAS_MERGE_ONCOL_2'] = "컬럼명";
+Blockly.Msg['PANDAS_MERGE_IRON_1'] = "[공통컬럼X] 왼쪽 컬럼";
+Blockly.Msg['PANDAS_MERGE_IRON_2'] = "컬럼명";
+Blockly.Msg['PANDAS_MERGE_IRON_3'] = "오른쪽 컬럼";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_1'] = "[프레임그룹화] 데이터프레임";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_2'] = "통계함수";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_3'] = "(평균)";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_4'] = "(갯수)";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_5'] = "(총 합)";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_6'] = "(전체의 곱)";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_7'] = "(최소값)";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_8'] = "(최대값)";
+Blockly.Msg['PANDAS_DF_COL_RENAME_1'] = "[컬럼명 변경] 프레임";
+Blockly.Msg['PANDAS_DF_COL_RENAME_2'] = "(원본 컬럼 인덱스";
+Blockly.Msg['PANDAS_DF_COL_RENAME_3'] = "변경 컬럼";
+Blockly.Msg['PANDAS_MISSING_VALUE_INQUIRY'] = "결측치 조회하기";
+Blockly.Msg['PANDAS_STATS_INQUIRY'] = "통계 정보 조회하기";
+Blockly.Msg['PANDAS_CORR_INQUIRY'] = "[상관관계 조회]";
+Blockly.Msg['PANDAS_DF_SORT_1'] = "[데이터 정렬]";
+Blockly.Msg['PANDAS_DF_SORT_2'] = "컬럼명 ";
+Blockly.Msg['PANDAS_DF_SORT_3'] = "오름차순 ";
+Blockly.Msg['PANDAS_DF_COLUMNS'] = "[컬럼명 추출]";
+Blockly.Msg['PANDAS_DF_INDEX'] = "[인덱스 추출]";
+Blockly.Msg['PANDAS_DF_VALUES'] = "[데이터 추출]";
+
+
 
 
 
