@@ -742,3 +742,42 @@ Blockly.Msg['PANDAS_DF_SORT_3'] = "ascending ";
 Blockly.Msg['PANDAS_DF_COLUMNS'] = "[column name extract]";
 Blockly.Msg['PANDAS_DF_INDEX'] = "[index extract]";
 Blockly.Msg['PANDAS_DF_VALUES'] = "[data extract]";
+
+// ---- 맷플롯립
+Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ import ] matplotlib as plt";
+Blockly.Msg['MATPLOT_VAL_VI'] = "[ table format ]   %1 variable  %2 ";
+Blockly.Msg['MATPLOT_MAIN'] = "[ graph count setting ]  %1 ( %2 , %3  )";
+Blockly.Msg['MATPLOT_PRE_GRAPH_1'] = "[ graph output setting ] coordinate[ %1 ][ %2 %3 ] ( X , Y ) value  %4 graph type  %5 title  %6 X-axis  %7 Y-axis  %8 legend  %9 %10 colour %11";
+Blockly.Msg['MATPLOT_PRE_GRAPH_2'] = "line_graph";
+Blockly.Msg['MATPLOT_PRE_GRAPH_3'] = "Scatter_graph";
+Blockly.Msg['MATPLOT_PRE_GRAPH_4'] = "bar_graph";
+Blockly.Msg['MATPLOT_PRE_GRAPH_5'] = "error_bar";
+Blockly.Msg['MATPLOT_PRE_GRAPH_6'] = "box_graph";
+Blockly.Msg['MATPLOT_PRE_GRAPH_7'] = "histrogram";
+Blockly.Msg['MATPLOT_VIS_TREE_1'] = "[decisiontree graph output] model";
+Blockly.Msg['MATPLOT_VIS_TREE_2'] = "X-axis column position";
+Blockly.Msg['MATPLOT_VIS_TREE_3'] = "Y-axis column position";
+
+// ---- 사이파이
+Blockly.Msg['SCIPY_IMPORT'] = "[import] scipy";
+Blockly.Msg['SCIPY_CURVE_FIT'] = "[Curve_Fit] function";
+Blockly.Msg['SCIPY_QUAD'] = "[Quad] function";
+
+// --------- 사이킷런
+// ---- 데이터 셋
+Blockly.Msg['DATASET_IMPORT_DATASET_1'] = "[사이킷런 데이터셋]  ";
+Blockly.Msg['DATASET_IMPORT_DATASET_2'] = "보스턴 집 값 데이터 ";
+Blockly.Msg['DATASET_IMPORT_DATASET_3'] = "손글씨 데이터";
+Blockly.Msg['DATASET_IMPORT_DATASET_4'] = "당뇨병 데이터";
+Blockly.Msg['DATASET_IMPORT_DATASET_5'] = "붓꽃 데이터";
+Blockly.Msg['DATASET_IMPORT_DATASET_6'] = "와인 품질 데이터";
+Blockly.Msg['DATASET_RANDOM_IMPORT_1'] = "[무작위 데이터셋 생성]  ";
+Blockly.Msg['DATASET_RANDOM_IMPORT_2'] = "샘플 수";
+Blockly.Msg['DATASET_RANDOM_IMPORT_3'] = "특성 개수";
+Blockly.Msg['DATASET_MAKE_CIRCLES_1'] = "[무작위 데이터셋 생성 - Circles] X_data";
+Blockly.Msg['DATASET_MAKE_CIRCLES_2'] = "샘플 수 ";
+Blockly.Msg['DATASET_MAKE_CIRCLES_3'] = "거리 비율 (Factor)";
+Blockly.Msg['DATASET_FETCH_OPENML_1'] = "[openml 데이터셋] ";
+Blockly.Msg['DATASET_FETCH_OPENML_2'] = "집 값";
+Blockly.Msg['DATASET_CSV3_1'] = "[CSV 파일 로드]";
+Blockly.Msg['DATASET_CSV3_2'] = "Y_data 컬럼 선택";

@@ -740,6 +740,44 @@ Blockly.Msg['PANDAS_DF_COLUMNS'] = "[컬럼명 추출]";
 Blockly.Msg['PANDAS_DF_INDEX'] = "[인덱스 추출]";
 Blockly.Msg['PANDAS_DF_VALUES'] = "[데이터 추출]";
 
+// ---- 맷플롯립
+Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ 임포트 ] matplotlib를 plt로";
+Blockly.Msg['MATPLOT_VAL_VI'] = "[ 테이블 형식 출력 ]   %1 변수  %2 ";
+Blockly.Msg['MATPLOT_MAIN'] = "[ 그래프 개수 설정 ]  %1 ( %2 , %3  )";
+Blockly.Msg['MATPLOT_PRE_GRAPH_1'] = "[ 그래프 출력 설정 ] 좌표 [ %1 ][ %2 %3 ] ( X , Y ) 값  %4 그래프 종류  %5 제목  %6 X축  %7 Y축  %8 범례  %9 %10 색 %11";
+Blockly.Msg['MATPLOT_PRE_GRAPH_2'] = "선_그래프";
+Blockly.Msg['MATPLOT_PRE_GRAPH_3'] = "Scatter_그래프";
+Blockly.Msg['MATPLOT_PRE_GRAPH_4'] = "막대_그래프";
+Blockly.Msg['MATPLOT_PRE_GRAPH_5'] = "에러_바";
+Blockly.Msg['MATPLOT_PRE_GRAPH_6'] = "박스_그래프";
+Blockly.Msg['MATPLOT_PRE_GRAPH_7'] = "히스토그램";
+Blockly.Msg['MATPLOT_VIS_TREE_1'] = "[결정트리 그래프 출력] 모델";
+Blockly.Msg['MATPLOT_VIS_TREE_2'] = "X축 컬럼위치";
+Blockly.Msg['MATPLOT_VIS_TREE_3'] = "Y축 컬럼위치";
+
+// ---- 사이파이
+Blockly.Msg['SCIPY_IMPORT'] = "[임포트] 사이파이";
+Blockly.Msg['SCIPY_CURVE_FIT'] = "[Curve_Fit] 함수";
+Blockly.Msg['SCIPY_QUAD'] = "[Quad] 함수";
+
+// --------- 사이킷런
+// ---- 데이터 셋
+Blockly.Msg['DATASET_IMPORT_DATASET_1'] = "[사이킷런 데이터셋]  ";
+Blockly.Msg['DATASET_IMPORT_DATASET_2'] = "보스턴 집 값 데이터 ";
+Blockly.Msg['DATASET_IMPORT_DATASET_3'] = "손글씨 데이터";
+Blockly.Msg['DATASET_IMPORT_DATASET_4'] = "당뇨병 데이터";
+Blockly.Msg['DATASET_IMPORT_DATASET_5'] = "붓꽃 데이터";
+Blockly.Msg['DATASET_IMPORT_DATASET_6'] = "와인 품질 데이터";
+Blockly.Msg['DATASET_RANDOM_IMPORT_1'] = "[무작위 데이터셋 생성]  ";
+Blockly.Msg['DATASET_RANDOM_IMPORT_2'] = "샘플 수";
+Blockly.Msg['DATASET_RANDOM_IMPORT_3'] = "특성 개수";
+Blockly.Msg['DATASET_MAKE_CIRCLES_1'] = "[무작위 데이터셋 생성 - Circles] X_data";
+Blockly.Msg['DATASET_MAKE_CIRCLES_2'] = "샘플 수 ";
+Blockly.Msg['DATASET_MAKE_CIRCLES_3'] = "거리 비율 (Factor)";
+Blockly.Msg['DATASET_FETCH_OPENML_1'] = "[openml 데이터셋] ";
+Blockly.Msg['DATASET_FETCH_OPENML_2'] = "집 값";
+Blockly.Msg['DATASET_CSV3_1'] = "[CSV 파일 로드]";
+Blockly.Msg['DATASET_CSV3_2'] = "Y_data 컬럼 선택";
 
 
 
