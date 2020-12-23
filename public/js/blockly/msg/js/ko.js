@@ -598,29 +598,29 @@ Blockly.Msg['NUMPY_ARRAY_OPERATOR_4'] = "전치 행렬 ( np.transpose  )";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_5'] = "하삼각 행렬 ( np.tril )";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_6'] = "상삼각행렬 ( np.triu )";
 
-Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ CSV 파일로 저장 ] 변수 %1 (  %2  ) ";
+Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ CSV 파일로 저장 ] 변수  ";
 Blockly.Msg['NUMPY_DATA_TO_CSV_2'] = " 파일 이름 ";
 
-Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ 리스트 변환 ] 변수  %1  데이터 형식    %2 )";
+Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ 리스트 변환 ] 변수  ";
 Blockly.Msg['NUMPY_DATA_CONVERSION_2'] = "  데이터 형식    ";
 
-Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "[ 배열 연결 ] ((   %1 , %2 ))"; 
+Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "배열 연결"; 
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_2'] = "값"; 
 
-Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[ 넘파이 배열  ]  %1"; 
+Blockly.Msg['NUMPY_NP_ARRAY_1'] = "넘파이 배열"; 
 
-Blockly.Msg['NUMPY_CREATE_ARR_1'] = "[ 배열 값 ] %1"; 
+Blockly.Msg['NUMPY_CREATE_ARR_1'] = "배열 값"; 
 
-Blockly.Msg['NUMPY_NP_ARRANGE_1'] = "[ 정렬 값 배열  ] %1 "; 
+Blockly.Msg['NUMPY_NP_ARRANGE_1'] = "정렬 값 배열"; 
 
-Blockly.Msg['NUMPY_ZEROS_1'] = "[ 0 배열  ] ( %1 , %2 ) %3";
+Blockly.Msg['NUMPY_ZEROS_1'] = "배열";
 Blockly.Msg['NUMPY_ZEROS_2'] = "행";
 Blockly.Msg['NUMPY_ZEROS_3'] = "열";
 
-Blockly.Msg['NUMPY_FULL_1'] = "[ 동일 값 생성 ] (( %1 , %2 ) 값 %3 )";
+Blockly.Msg['NUMPY_FULL_1'] = "배열동일 값 생성";
 Blockly.Msg['NUMPY_FULL_2'] = "값";
 
-Blockly.Msg['NUMPY_EYE_1'] = "[ 대각선 1로 배열  ] ( %1 )";
+Blockly.Msg['NUMPY_EYE_1'] = "대각선 1로 배열";
 Blockly.Msg['NUMPY_EYE_2'] = "크기";
 
 Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )";
@@ -645,14 +645,55 @@ Blockly.Msg['NUMPY_DIFF_2'] = "값";
 
 Blockly.Msg['NUMPY_ARRAY_CHANGE_1'] = "[ 값 변경 ]  %1 %2 변수 %3 값 %4";
 
-Blockly.Msg['NUMPY_PROD_1'] = "[ 요소의 곱 ] %1";
+Blockly.Msg['NUMPY_PROD_1'] = "요소의 곱";
 Blockly.Msg['NUMPY_PROD_2'] = "값";
 
 Blockly.Msg['NUMPY_FFT_FFT_1'] = "[ 푸리에 변환 ] 값 %1 %2";
 
 Blockly.Msg['NUMPY_ABS_1'] = "[ 절대 값 ]";
 
+// ---- 판다스
+Blockly.Msg['PANDAS_LIBRARY'] = "[ 임포트 ] pandas를 pd로";
+Blockly.Msg['PANDAS_CSVDATAFRAME'] = "[CSV프레임] 변수";
+Blockly.Msg['PANDAS_CSV2'] = "csv 불러오기";
+Blockly.Msg['PANDAS_DATALIST'] = "[zip리스트] 변수";
+Blockly.Msg['PANDAS_DATAFRAME_1'] = "[zip프레임]";
+Blockly.Msg['PANDAS_DATAFRAME_2'] = "변수";
+Blockly.Msg['PANDAS_DATAFRAME_3'] = "(zip리스트";
+Blockly.Msg['PANDAS_DATAFRAME_4'] = "컬럼명";
+Blockly.Msg['PANDAS_CONVERSION_1'] = "[일괄변경] 프레임";
+Blockly.Msg['PANDAS_CONVERSION_2'] = "(컬럼명";
+Blockly.Msg['PANDAS_CONVERSION_3'] = "원본데이터";
+Blockly.Msg['PANDAS_CONVERSION_4'] = "변경데이터";
+Blockly.Msg['PANDAS_FILL_NULL_DATA_1'] = "[결측치삽입] 프레임";
+Blockly.Msg['PANDAS_FILL_NULL_DATA_2'] = "최댓값";
+Blockly.Msg['PANDAS_FILL_NULL_DATA_3'] = "최솟값";
+Blockly.Msg['PANDAS_FILL_NULL_DATA_4'] = "중간값";
+Blockly.Msg['PANDAS_FILL_NULL_DATA_5'] = "평균값";
+Blockly.Msg['PANDAS_FILL_NULL_DATA_6'] = "0값";
+Blockly.Msg['PANDAS_MIS_DEL_1'] = "[결측치삭제] 프레임";
+Blockly.Msg['PANDAS_MIS_DEL_2'] = "행삭제";
+Blockly.Msg['PANDAS_MIS_DEL_3'] = "열삭제";
+Blockly.Msg['PANDAS_SELECT_ROW_COLUMN_VALUE_1'] = "[범위설정] 프레임";
+Blockly.Msg['PANDAS_SELECT_ROW_COLUMN_VALUE_2'] = "(행";
+Blockly.Msg['PANDAS_SELECT_ROW_COLUMN_VALUE_3'] = "열";
+Blockly.Msg['PANDAS_SELECT_VALUE_ALL'] = "전체범위";
+Blockly.Msg['PANDAS_ILOC_RANGE'] = "부분범위";
+Blockly.Msg['PANDAS_SELECT_ROW_DELETE_1'] = "[행열삭제] 프레임";
+Blockly.Msg['PANDAS_SELECT_ROW_DELETE_2'] = "(인덱스값";
+Blockly.Msg['PANDAS_SELECT_ROW_DELETE_3'] = "행삭제";
+Blockly.Msg['PANDAS_SELECT_ROW_DELETE_4'] = "열삭제";
+Blockly.Msg['PANDAS_SELECT_ROW_LIST_1'] = "[행렬추출] 프레임";
+Blockly.Msg['PANDAS_SELECT_ROW_LIST_2'] = "(인덱스값";
+Blockly.Msg['PANDAS_SELECT_ROW_LIST_3'] = "행";
+Blockly.Msg['PANDAS_SELECT_ROW_LIST_4'] = "열";
+Blockly.Msg['PANDAS_DF_ADD_COL_1'] = "[열 추가] 프레임";
+Blockly.Msg['PANDAS_DF_ADD_COL_2'] = "(추가컬럼";
+Blockly.Msg['PANDAS_DF_ADD_COL_3'] = " 삽입 데이터";
 
-//Blockly.Msg['NUMPY__1'] = "";
+
+
+
+//Blockly.Msg['PANDAS_'] = "";
 // Blockly.Msg.  %{BKY_NUMPY_NUMPY_DATA_CONVERSION_1}
 
