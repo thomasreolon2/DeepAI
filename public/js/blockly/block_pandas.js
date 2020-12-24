@@ -72,10 +72,10 @@ Blockly.Blocks['normal'] = {
   init: function () {
     this.appendValueInput("Normalization_data")
       .setCheck(null)
-      .appendField("[표준스케일] 프레임");
+      .appendField(Blockly.Msg.PREPROCESSING_NORMAL_1);
     this.appendDummyInput()
       .appendField("(")
-      .appendField(new Blockly.FieldTextInput("컬럼명"), "NAME")
+      .appendField(new Blockly.FieldTextInput(Blockly.Msg.PREPROCESSING_NORMAL_2), "NAME")
       .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

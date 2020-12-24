@@ -124,14 +124,14 @@ function removeOptions() {
 }
 Blockly.Blocks['csv3'] = {
     init: function () {
-        this.appendDummyInput().appendField('[CSV 파일 로드]')
+        this.appendDummyInput().appendField(Blockly.Msg.DATASET_CSV3_1)
         var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Machine_Learning/M1-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField(new Blockly.FieldTextInput("default"), "csv_url");
         this.appendDummyInput().appendField('X_data').appendField(new Blockly.FieldVariable("xData"), "var_x").appendField('Y_data').appendField(new Blockly.FieldVariable("yData"), "var_y")
-        this.appendDummyInput().appendField('Y_data 컬럼 선택').appendField(dropdown, 'OPTIONS');
+        this.appendDummyInput().appendField(Blockly.Msg.DATASET_CSV3_2).appendField(dropdown, 'OPTIONS');
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -176,10 +176,10 @@ Blockly.Blocks['scikit_learn'] = {
 // ///////////////////////////////데이터전처리 라벨링//////////////////////20200909 이진형
 Blockly.Blocks['labelencoder'] = {
     init: function () {
-        this.appendDummyInput().appendField("[데이터 라벨 인코딩] ");
-        this.appendValueInput("df").setCheck(null).appendField("데이터");
-        this.appendDummyInput().appendField("컬럼설정");
-        this.appendDummyInput().appendField("").appendField(new Blockly.FieldTextInput("컬럼명"), "column").appendField("  ");
+        this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_LABELENCODER_1);
+        this.appendValueInput("df").setCheck(null).appendField(Blockly.Msg.PREPROCESSING_LABELENCODER_2);
+        this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_LABELENCODER_3);
+        this.appendDummyInput().appendField("").appendField(new Blockly.FieldTextInput(Blockly.Msg.PREPROCESSING_LABELENCODER_4), "column").appendField("  ");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -216,21 +216,21 @@ Blockly.Blocks['labelencoder'] = {
 
 Blockly.Blocks['import_dataset'] = {
     init: function () {
-        this.appendDummyInput().appendField("[사이킷런 데이터셋]  ").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg.DATASET_IMPORT_DATASET_1).appendField(new Blockly.FieldDropdown([
             [
-                "보스턴 집 값 데이터 ", "load_boston"
+                Blockly.Msg.DATASET_IMPORT_DATASET_2, "load_boston"
             ],
             [
-                "손글씨 데이터", "load_digits"
+                Blockly.Msg.DATASET_IMPORT_DATASET_3, "load_digits"
             ],
             [
-                "당뇨병 데이터", "load_diabetes"
+                Blockly.Msg.DATASET_IMPORT_DATASET_4, "load_diabetes"
             ],
             [
-                "붓꽃 데이터", "load_iris"
+                Blockly.Msg.DATASET_IMPORT_DATASET_5, "load_iris"
             ],
             [
-                "와인 품질 데이터", "load_wine"
+                Blockly.Msg.DATASET_IMPORT_DATASET_6, "load_wine"
             ],
         ]), "dataset_name");
         this.appendValueInput("x_data").setCheck(null).appendField("X_data");
@@ -245,7 +245,7 @@ Blockly.Blocks['import_dataset'] = {
 };
 Blockly.Blocks['random_import'] = {
     init: function () {
-        this.appendDummyInput().appendField("[무작위 데이터셋 생성]  ").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg.DATASET_RANDOM_IMPORT_1).appendField(new Blockly.FieldDropdown([
             [
                 "blobs", "make_blobs"
             ],
@@ -255,8 +255,8 @@ Blockly.Blocks['random_import'] = {
         ]), "dataset_name");
         this.appendValueInput("x_data").setCheck(null).appendField("X_data");
         this.appendValueInput("y_data").setCheck(null).appendField("Y_data");
-        this.appendDummyInput().appendField("샘플 수").appendField(new Blockly.FieldTextInput("100"), "sa");
-        this.appendDummyInput().appendField("특성 개수").appendField(new Blockly.FieldTextInput("2"), "fe");
+        this.appendDummyInput().appendField(Blockly.Msg.DATASET_RANDOM_IMPORT_2).appendField(new Blockly.FieldTextInput("100"), "sa");
+        this.appendDummyInput().appendField(Blockly.Msg.DATASET_RANDOM_IMPORT_3).appendField(new Blockly.FieldTextInput("2"), "fe");
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "seed");
 
         this.setInputsInline(true);
@@ -273,15 +273,15 @@ Blockly.Blocks['make_circles'] = {
     init: function() {
       this.appendValueInput("x_data")
           .setCheck(null)
-          .appendField("[무작위 데이터셋 생성 - Circles] X_data");
+          .appendField(Blockly.Msg.DATASET_MAKE_CIRCLES_1);
       this.appendValueInput("y_data")
           .setCheck(null)
           .appendField("Y_data ");
       this.appendDummyInput()
-          .appendField("샘플 수 ")
+          .appendField(Blockly.Msg.DATASET_MAKE_CIRCLES_2)
           .appendField(new Blockly.FieldTextInput("100"), "n_samples");
       this.appendDummyInput()
-          .appendField("거리 비율 (Factor)")
+          .appendField(Blockly.Msg.DATASET_MAKE_CIRCLES_3)
           .appendField(new Blockly.FieldTextInput("0.7"), "factor");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
@@ -294,7 +294,7 @@ Blockly.Blocks['make_circles'] = {
 
 Blockly.Blocks['train_test_split'] = {
     init: function () {
-        this.appendDummyInput().appendField("[데이터 분리] ")
+        this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_1)
         this.appendValueInput("x_data").setCheck(null).appendField("X_Data");
         this.appendValueInput("y_data").setCheck(null).appendField("Y_Data");
         this.appendValueInput("x_train").setCheck(null).appendField("X_train");
@@ -304,10 +304,10 @@ Blockly.Blocks['train_test_split'] = {
         this.appendDummyInput().appendField("Test Size").appendField(new Blockly.FieldTextInput("0.2"), "test_size");
         this.appendDummyInput().appendField("Data Shuffle").appendField(new Blockly.FieldDropdown([
             [
-                "예", "True"
+                Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_2, "True"
             ],
             [
-                "아니오", "False"
+                Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_3, "False"
             ]
         ]), "shuffle");
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "seed");
@@ -321,7 +321,7 @@ Blockly.Blocks['train_test_split'] = {
 };
 Blockly.Blocks['jin_train_test_split'] = {
     init: function () {
-        this.appendDummyInput().appendField("[데이터 분리] ")
+        this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_1)
         this.appendValueInput("x_data").setCheck(null).appendField("X_data ");
         this.appendValueInput("y_data").setCheck(null).appendField("Y_data ");
         this.appendValueInput("x_train").setCheck(null).appendField("X_train ");
@@ -331,10 +331,10 @@ Blockly.Blocks['jin_train_test_split'] = {
         this.appendDummyInput().appendField("Test Size ").appendField(new Blockly.FieldTextInput("0.2"), "test_size");
         this.appendDummyInput().appendField("Data Shuffle ").appendField(new Blockly.FieldDropdown([
             [
-                "예", "True"
+                Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_2, "True"
             ],
             [
-                "아니오", "False"
+                Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_3, "False"
             ]
         ]), "shuffle");
         this.appendDummyInput().appendField("Seed ").appendField(new Blockly.FieldTextInput("0"), "seed");
@@ -994,10 +994,10 @@ Blockly.Blocks['k_means'] = {
     init: function() {
       this.appendValueInput("model")
           .setCheck(null)
-          .appendField("[KMeans 모델 생성] 모델 ");
+          .appendField(Blockly.Msg.CLUSTER_K_MEANS_1);
       this.appendValueInput("cnt")
           .setCheck(null)
-          .appendField("그룹 개수 ");
+          .appendField(Blockly.Msg.CLUSTER_K_MEANS_2);
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -1452,11 +1452,11 @@ Blockly.Blocks['stats_inquiry'] = {
 };
 Blockly.Blocks['vis_tree'] = {
     init: function () {
-        this.appendValueInput("model").setCheck(null).appendField("[결정트리 그래프 출력] 모델");
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.MATPLOT_VIS_TREE_1);
         this.appendValueInput("x_data").setCheck(null).appendField("X_data");
         this.appendValueInput("y_data").setCheck(null).appendField("Ydata: ");
-        this.appendDummyInput().appendField("X축 컬럼위치").appendField(new Blockly.FieldTextInput("1"), "s");
-        this.appendDummyInput().appendField("Y축 컬럼위치").appendField(new Blockly.FieldTextInput("2"), "e");
+        this.appendDummyInput().appendField(Blockly.Msg.MATPLOT_VIS_TREE_2).appendField(new Blockly.FieldTextInput("1"), "s");
+        this.appendDummyInput().appendField(Blockly.Msg.MATPLOT_VIS_TREE_3).appendField(new Blockly.FieldTextInput("2"), "e");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1482,12 +1482,12 @@ Blockly.Blocks['input'] = {
 };
 Blockly.Blocks['fetch_openml'] = {
     init: function () {
-        this.appendDummyInput().appendField("[openml 데이터셋] ").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg.DATASET_FETCH_OPENML_1).appendField(new Blockly.FieldDropdown([
             [
                 "타이타닉", "titanic"
             ],
             [
-                "집 값", "house_price"
+                Blockly.Msg.DATASET_FETCH_OPENML_2, "house_price"
             ],
             [
                 "Mnist", "mnist_784"
@@ -1659,7 +1659,7 @@ Blockly.Blocks['mlp_classifier'] = {
 Blockly.Blocks['mlp_regressor'] = {
     init: function () {
         this.appendDummyInput().appendField("[MLP 예측기]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("1"), "numSeed").appendField("Epochs").appendField(new Blockly.FieldTextInput("500"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1672,8 +1672,8 @@ Blockly.Blocks['mlp_regressor'] = {
 // //////////////////////////// Linear //////////////////////////////
 Blockly.Blocks['logistic_regression'] = {
     init: function () {
-        this.appendDummyInput().appendField("[로지스틱 회귀 모델]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_LOGISTIC_REGRESSION);
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "numSeed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1685,9 +1685,9 @@ Blockly.Blocks['logistic_regression'] = {
 };
 Blockly.Blocks['logistic_regression_cv'] = {
     init: function () {
-        this.appendDummyInput().appendField("[로지스틱 회귀 CV 모델]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
-        this.appendDummyInput().appendField("교차검증 횟수").appendField(new Blockly.FieldTextInput("5"), "numCv").appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "numSeed");
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_LOGISTIC_REGRESSION_CV_1);
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_LOGISTIC_REGRESSION_CV_2).appendField(new Blockly.FieldTextInput("5"), "numCv").appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "numSeed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1698,8 +1698,8 @@ Blockly.Blocks['logistic_regression_cv'] = {
 };
 Blockly.Blocks['perceptron'] = {
     init: function () {
-        this.appendDummyInput().appendField("[퍼셉트론 모델]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_PERCEPTRON);
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "numSeed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1711,8 +1711,8 @@ Blockly.Blocks['perceptron'] = {
 };
 Blockly.Blocks['ridge_classifier'] = {
     init: function () {
-        this.appendDummyInput().appendField("[Ridge 분류기]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_RIDGE_CLASSIFIER);
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1723,8 +1723,8 @@ Blockly.Blocks['ridge_classifier'] = {
 };
 Blockly.Blocks['sgd_classifier'] = {
     init: function () {
-        this.appendDummyInput().appendField("[SGD 분류기]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_SGD_CLASSIFIER);
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.appendDummyInput().appendField("Epochs").appendField(new Blockly.FieldTextInput("1000"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1736,8 +1736,8 @@ Blockly.Blocks['sgd_classifier'] = {
 };
 Blockly.Blocks['linear_regression'] = {
     init: function () {
-        this.appendDummyInput().appendField("[선형회귀 모델]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_1);
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1748,8 +1748,8 @@ Blockly.Blocks['linear_regression'] = {
 };
 Blockly.Blocks['ridge'] = {
     init: function () {
-        this.appendDummyInput().appendField("[Ridge 예측기]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_RIDGE);
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.appendDummyInput().appendField("Alpha").appendField(new Blockly.FieldTextInput("1.0"), "numAlpha");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1761,8 +1761,8 @@ Blockly.Blocks['ridge'] = {
 };
 Blockly.Blocks['bayesian_ridge'] = {
     init: function () {
-        this.appendDummyInput().appendField("[베이지안 모델]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_BAYESIAN_RIDGE);
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1773,8 +1773,8 @@ Blockly.Blocks['bayesian_ridge'] = {
 };
 Blockly.Blocks['sgd_regressor'] = {
     init: function () {
-        this.appendDummyInput().appendField("[SGD 예측기]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_SGD_REGRESSION);
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.appendDummyInput().appendField("Epochs").appendField(new Blockly.FieldTextInput("1000"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1809,33 +1809,33 @@ Blockly.Blocks['import_mlp'] = {
 // 선형모델 라이브러리 임포트
 Blockly.Blocks['import_linear'] = {
     init: function () {
-        this.appendDummyInput().appendField("[임포트] 선형모델 ").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_IMPORT_1).appendField(new Blockly.FieldDropdown([
             [
-                "선형회귀 모델", "LinearRegression"
+                Blockly.Msg.LINEAR_IMPORT_2, "LinearRegression"
             ],
             [
-                "SGD 예측기", "SGDRegressor"
+                Blockly.Msg.LINEAR_IMPORT_3, "SGDRegressor"
             ],
             [
-                "Ridge 예측기", "Ridge"
+                Blockly.Msg.LINEAR_IMPORT_4, "Ridge"
             ],
             [
-                "로지스틱 회귀 모델", "LogisticRegression"
+                Blockly.Msg.LINEAR_IMPORT_5, "LogisticRegression"
             ],
             [
-                "로지스틱 회귀 CV모델", "LogisticRegressionCV"
+                Blockly.Msg.LINEAR_IMPORT_6, "LogisticRegressionCV"
             ],
             [
-                "Ridge 분류기", "RidgeClassifier"
+                Blockly.Msg.LINEAR_IMPORT_7, "RidgeClassifier"
             ],
             [
-                "베이지안 모델", "BayesianRidge"
+                Blockly.Msg.LINEAR_IMPORT_8, "BayesianRidge"
             ],
             [
-                "SGD 분류기", "SGDClassifier"
+                Blockly.Msg.LINEAR_IMPORT_9, "SGDClassifier"
             ],
             [
-                "퍼셉트론 모델", "Perceptron"
+                Blockly.Msg.LINEAR_IMPORT_10, "Perceptron"
             ]
         ]), "lib");
         this.setInputsInline(true);
@@ -2012,7 +2012,7 @@ Blockly.Blocks['bernoullirbm'] = {
 };
 Blockly.Blocks['import_scipy'] = {
     init: function () {
-        this.appendDummyInput().appendField("[임포트] 사이파이").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg.SCIPY_IMPORT).appendField(new Blockly.FieldDropdown([
             [
                 "curve_fit", "curve_fit"
             ],
@@ -2046,7 +2046,7 @@ Blockly.Blocks['import_scipy'] = {
 };
 Blockly.Blocks['curve_fit'] = {
     init: function () {
-        this.appendValueInput("fun").setCheck(null).appendField("[Curve_Fit] 함수");
+        this.appendValueInput("fun").setCheck(null).appendField(Blockly.Msg.SCIPY_CURVE_FIT);
         this.appendValueInput("x").setCheck(null).appendField("X_data");
         this.appendValueInput("y").setCheck(null).appendField("Y_data");
         this.setInputsInline(true);
@@ -2070,7 +2070,7 @@ Blockly.Blocks['univariatespline'] = {
 };
 Blockly.Blocks['quad'] = {
     init: function () {
-        this.appendValueInput("x").setCheck(null).appendField("[Quad] 함수");
+        this.appendValueInput("x").setCheck(null).appendField(Blockly.Msg.SCIPY_QUAD);
         this.appendDummyInput().appendField(new Blockly.FieldTextInput("0"), "s");
         this.appendDummyInput().appendField(new Blockly.FieldTextInput("1000"), "e");
         this.setInputsInline(true);
@@ -2083,7 +2083,7 @@ Blockly.Blocks['quad'] = {
 
 Blockly.Blocks['import_tree'] = {
     init: function () {
-        this.appendDummyInput().appendField("[임포트] 결정트리").appendField(new Blockly.FieldDropdown([["Decisiontree", "DecisionTreeClassifier"]]), "tree");
+        this.appendDummyInput().appendField(Blockly.Msg.DECISIONTREE_IMPORT).appendField(new Blockly.FieldDropdown([["Decisiontree", "DecisionTreeClassifier"]]), "tree");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -2094,14 +2094,14 @@ Blockly.Blocks['import_tree'] = {
 };
 Blockly.Blocks['decision'] = {
     init: function () {
-        this.appendValueInput("model").setCheck(null).appendField("[결정트리 모델] 모델");
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.DECISIONTREE_DESICION_1);
         // this.appendValueInput("depth")
         //       .setCheck(null)
         //       .appendField("깊이");
         // this.appendValueInput("seed")
         //       .setCheck(null)
         //       .appendField("Seed");
-        this.appendDummyInput().appendField("깊이").appendField(new Blockly.FieldTextInput("null"), "depth");
+        this.appendDummyInput().appendField(Blockly.Msg.DECISIONTREE_DESICION_2).appendField(new Blockly.FieldTextInput("null"), "depth");
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("null"), "seed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -2113,7 +2113,7 @@ Blockly.Blocks['decision'] = {
 };
 Blockly.Blocks['coef'] = {
     init: function () {
-        this.appendValueInput("coef").setCheck(null).appendField("[계수 추출] 모델");
+        this.appendValueInput("coef").setCheck(null).appendField(Blockly.Msg.LINEAR_COEF);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -2123,7 +2123,7 @@ Blockly.Blocks['coef'] = {
 };
 Blockly.Blocks['intercept'] = {
     init: function () {
-        this.appendValueInput("intercept").setCheck(null).appendField("[절펀 추출] 모델");
+        this.appendValueInput("intercept").setCheck(null).appendField(Blockly.Msg.LINEAR_INTERCEPT);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -2135,7 +2135,7 @@ Blockly.Blocks['intercept'] = {
 
 Blockly.Blocks['tree_text'] = {
     init: function () {
-        this.appendValueInput("trr").setCheck(null).appendField("[결정트리 시각화] 모델");
+        this.appendValueInput("trr").setCheck(null).appendField(Blockly.Msg.DECISIONTREE_TREE_TEXT);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

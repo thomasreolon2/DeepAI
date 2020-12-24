@@ -2,7 +2,7 @@
 Blockly.Blocks['knn_import'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[임포트] KNN")
+          .appendField(Blockly.Msg.KNN_IMPORT)
           .appendField(new Blockly.FieldDropdown([["KNeighborsClassifier","KNeighborsClassifier"], ["KNeighborsRegressorption","KNeighborsRegressorption"], 
           ["KNeighborsTransformer","KNeighborsTransformer"], ["kneighbors_graph","kneighbors_graph"], ["NearestNeighbors","NearestNeighbors"]]), "NAME");
       this.setInputsInline(true);
@@ -18,12 +18,12 @@ Blockly.Blocks['knn_import'] = {
   Blockly.Blocks['kneighborsclassifier_function'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[KNeighbors 분류하기]")
-          .appendField("모델");
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_1)
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_2);
       this.appendValueInput("value")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("데이터");
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3);
       this.appendValueInput("value1")
           .setCheck(null);
       this.setInputsInline(true);
@@ -39,12 +39,12 @@ Blockly.Blocks['knn_import'] = {
   Blockly.Blocks['kneighborsregressor_function'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[KNeighbors 회귀]")
-          .appendField("모델");
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSREGERESSOR_FUNCTION)
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_2);
       this.appendValueInput("value")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("데이터");
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3);
       this.appendValueInput("value1")
           .setCheck(null);
       this.setInputsInline(true);
@@ -61,16 +61,16 @@ Blockly.Blocks['knn_import'] = {
   Blockly.Blocks['kneighborstransformer_function'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[KNeighbors 트랜스포머]")
-          .appendField("모델");
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSTRANSFORMER_FUNCTION_1)
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_2);
       this.appendValueInput("value")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("데이터");
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3);
       this.appendValueInput("value1")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("모드")
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSTRANSFORMER_FUNCTION_2)
           .appendField(new Blockly.FieldDropdown([["Distance","distance"], ["Connectivity","donnectivity"]]), "NAME");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
@@ -85,8 +85,8 @@ Blockly.Blocks['knn_import'] = {
   Blockly.Blocks['kneighbors_graph_function'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[KNeighbors 그래프]")
-          .appendField("모델");
+          .appendField(Blockly.Msg.KNN_KNEIGHBORS_GRAPH_FUNCTION_1)
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_2);
       this.appendValueInput("value")
           .setCheck(null);
       this.appendDummyInput()
@@ -94,14 +94,14 @@ Blockly.Blocks['knn_import'] = {
       this.appendValueInput("value1")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("데이터");
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3);
       this.appendValueInput("value2")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("모드")
+          .appendField(Blockly.Msg.KNN_KNEIGHBORSTRANSFORMER_FUNCTION_2)
           .appendField(new Blockly.FieldDropdown([["Distance","distance"], ["Connectivity","connectivity"]]), "NAME");
       this.appendDummyInput()
-          .appendField("포함시키기")
+          .appendField(Blockly.Msg.KNN_KNEIGHBORS_GRAPH_FUNCTION_2)
           .appendField(new Blockly.FieldDropdown([["True","true"], ["False","false"]]), "NAME1");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);

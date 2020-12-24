@@ -709,7 +709,7 @@ Blockly.defineBlocksWithJsonArray(
   Blockly.Blocks['visualization_library'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[ 임포트 ] matplotlib를 plt로 ");
+          .appendField(Blockly.Msg.MATPLOT_VISUALIZATION_LIBRARY);
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -721,7 +721,7 @@ Blockly.defineBlocksWithJsonArray(
     // pandas, numpy, tuple  시각화   
    {
     "type": "val_vi",
-    "message0": "[ 테이블 형식 출력 ]   %1 변수  %2 ",
+    "message0": "%{BKY_MATPLOT_VAL_VI}",
     "args0": [ 
       {
         "type": "field_dropdown",
@@ -756,7 +756,7 @@ Blockly.defineBlocksWithJsonArray(
   //matplot1 
   {
     "type": "matplotlib_main",
-    "message0": "[ 그래프 개수 설정 ]  %1 ( %2 , %3  )",
+    "message0": "%{BKY_MATPLOT_MAIN}",
     "args0": [
       {
         "type": "input_dummy"
@@ -780,7 +780,7 @@ Blockly.defineBlocksWithJsonArray(
   //matplot2 수정
   {
     "type": "matplotlib_pre_graph",
-    "message0": "[ 그래프 출력 설정 ] 좌표 [ %1 ][ %2 %3 ] ( X , Y ) 값  %4 그래프 종류  %5 제목  %6 X축  %7 Y축  %8 범례  %9 %10 색 %11",
+    "message0": "%{BKY_MATPLOT_PRE_GRAPH_1}",
     "args0": [
       {
         "type": "input_value",
@@ -803,27 +803,27 @@ Blockly.defineBlocksWithJsonArray(
         "name": "matplotlib_graph_select",
         "options": [
           [
-            "선_그래프",
+            "%{BKY_MATPLOT_PRE_GRAPH_2}",
             "matplotlib_line"
           ],
           [
-            "Scatter_그래프",
+            "%{BKY_MATPLOT_PRE_GRAPH_3}",
             "matplotlib_scatter"
           ],
           [
-            "막대_그래프",
+            "%{BKY_MATPLOT_PRE_GRAPH_4}",
             "matplotlib_bar"
           ],
           [
-            "에러_바",
+            "%{BKY_MATPLOT_PRE_GRAPH_5}",
             "matplotlib_error_bar"
           ],
           [
-            "박스_그래프",
+            "%{BKY_MATPLOT_PRE_GRAPH_6}",
             "matplotlib_box"
           ],
           [
-            "히스토그램",
+            "%{BKY_MATPLOT_PRE_GRAPH_7}",
             "matplotlib_histogram"
           ]
         ]
@@ -1145,7 +1145,7 @@ Blockly.Blocks['isolation_forest'] = {
 Blockly.Blocks['import_knn'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 임포트 ]")
+        .appendField(Blockly.Msg.CLUSTER_IMPORT)
         .appendField(new Blockly.FieldDropdown([
           ["KMeans","Import_KNN_KMeans"], 
           ["DBSCAN","Import_KNN_DBSCAN"]]), "Import_KNN_Option");
@@ -1162,7 +1162,7 @@ Blockly.Blocks['k_means_inertia'] = {
   init: function() {
     this.appendValueInput("model")
         .setCheck(null)
-        .appendField("[K-Means 응집도 추출] 모델 ");
+        .appendField(Blockly.Msg.CLUSTER_K_MEANS_INERTIA);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -1175,7 +1175,7 @@ Blockly.Blocks['k_means_centroid'] = {
   init: function() {
     this.appendValueInput("model")
         .setCheck(null)
-        .appendField("[K-Means Centroid 추출] 모델 ");
+        .appendField(Blockly.Msg.CLUSTER_K_MEANS_CENTROID);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_SCIKITLEARN_HUE}");

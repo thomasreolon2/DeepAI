@@ -1,8 +1,8 @@
 Blockly.Blocks['sklearn_ensemble'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("[임포트] 앙상블")
-      .appendField(new Blockly.FieldDropdown([["AdaBoost분류", "AdaBoostClassifier"], ["AdaBoost회귀", "AdaBoostRegressor"], ["GradientBoosting분류", "GradientBoostingClassifier"], ["GradientBoosting회귀", "GradientBoostingRegressor"], ["결정트리 분류", "RandomForestClassifier"], ["결정트리 회귀", "RandomForestRegressor"],["IsolationForest","IsolationForest"]]), "NAME");
+      .appendField(Blockly.Msg.ESEMBLE_SKLEARN_ESEMBLE_1)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ESEMBLE_SKLEARN_ESEMBLE_2, "AdaBoostClassifier"], [Blockly.Msg.ESEMBLE_SKLEARN_ESEMBLE_3, "AdaBoostRegressor"], [Blockly.Msg.ESEMBLE_SKLEARN_ESEMBLE_4, "GradientBoostingClassifier"], [Blockly.Msg.ESEMBLE_SKLEARN_ESEMBLE_5, "GradientBoostingRegressor"], [Blockly.Msg.ESEMBLE_SKLEARN_ESEMBLE_6, "RandomForestClassifier"], [Blockly.Msg.ESEMBLE_SKLEARN_ESEMBLE_7, "RandomForestRegressor"],["IsolationForest","IsolationForest"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -129,7 +129,7 @@ Blockly.Blocks['randomforestregressor'] = {
 Blockly.Blocks['sklearn.preprocessing'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("[임포트] 전처리 ")
+      .appendField(Blockly.Msg.PREPROCESSING_SKLEARN)
       .appendField(new Blockly.FieldDropdown([
        ["PolynomialFeatures", "PolynomialFeatures"], 
        ["LabelEncoder", "LabelEncoder"], 
@@ -183,8 +183,8 @@ Blockly.Blocks['fit_transform'] = {
 Blockly.Blocks['sklearn_svm'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("[임포트] SVM")
-      .appendField(new Blockly.FieldDropdown([["선형SVC", "LinearSVC"], ["선형SVR", "LinearSVR"]]), "NAME");
+      .appendField(Blockly.Msg.SKLEARN_SVM_1)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.SKLEARN_SVM_2, "LinearSVC"], [Blockly.Msg.SKLEARN_SVM_3, "LinearSVR"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -196,13 +196,13 @@ Blockly.Blocks['sklearn_svm'] = {
 Blockly.Blocks['linearsvc'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("[선형SVM] ");
+      .appendField(Blockly.Msg.LINEARSVC_1);
     this.appendValueInput("NAME")
       .setCheck(null)
       .appendField("seed");
     this.appendValueInput("NAME2")
       .setCheck(null)
-      .appendField("오차");
+      .appendField(Blockly.Msg.LINEARSVC_2);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -230,7 +230,7 @@ Blockly.Blocks['make_pipeline'] = {
 Blockly.Blocks['linearsvr'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("[선형SVR] ");
+      .appendField(Blockly.Msg.LINEARSVR);
     this.appendValueInput("NAME")
       .setCheck(null)
       .appendField("seed");
@@ -249,10 +249,10 @@ Blockly.Blocks['polynomialfeatures'] = {
   init: function () {
     this.appendValueInput("NAME")
       .setCheck(null)
-      .appendField("[다항 Features] ")
-      .appendField("모델");
+      .appendField(Blockly.Msg.PREPROCESSING_POLYNOMIALFEATURES_1)
+      .appendField(Blockly.Msg.PREPROCESSING_POLYNOMIALFEATURES_2);
     this.appendDummyInput()
-      .appendField("상호작용")
+      .appendField(Blockly.Msg.PREPROCESSING_POLYNOMIALFEATURES_3)
       .appendField(new Blockly.FieldDropdown([["True", "True"], ["False", "False"]]), "NAME");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
@@ -267,8 +267,8 @@ Blockly.Blocks['onehotencoder'] = {
   init: function () {
     this.appendValueInput("data")
       .setCheck(null)
-      .appendField("[범주형 자료 변환] ")
-      .appendField("변수");
+      .appendField(Blockly.Msg.PREPROCESSING_ONEHOTENCODER_1)
+      .appendField(Blockly.Msg.PREPROCESSING_ONEHOTENCODER_2);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setTooltip("");
