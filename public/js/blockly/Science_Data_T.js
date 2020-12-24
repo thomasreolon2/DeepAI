@@ -1126,9 +1126,9 @@ Blockly.Blocks['isolation_forest'] = {
         .setCheck(null)
         .appendField("[Isolation Forest]");
     this.appendDummyInput()
-        .appendField("추정자 최대수")
+        .appendField(Blockly.Msg['ESEMBLE_ADABOOSTCLASSIFIER_2'])
         .appendField(new Blockly.FieldTextInput("100"), "Isolation_Forest_estimators")
-        .appendField("이상치 비율")
+        .appendField(Blockly.Msg['ESEMBLE_ISOLATION_FOREST'])
         .appendField(new Blockly.FieldTextInput("0.5"), "Isolation_Forest_connection")
         .appendField("Seed")
         .appendField(new Blockly.FieldTextInput("0"), "Isolation_Forest_randomstate");
@@ -1207,7 +1207,7 @@ Blockly.Blocks['metrics_fit_predict'] = {
   init: function() {
     this.appendValueInput("metrics_fit_predict_val")
         .setCheck(null)
-        .appendField("[ DBSCAN 학습 및 예측 ] 모델 ");
+        .appendField(Blockly.Msg['METRICS_METRICS_FIT_PREDICT']);
     this.appendValueInput("metrics_fit_predict_Xdata")
         .setCheck(null)
         .appendField("Xdata");

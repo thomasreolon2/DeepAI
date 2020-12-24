@@ -598,29 +598,29 @@ Blockly.Msg['NUMPY_ARRAY_OPERATOR_4'] = "전치 행렬 ( np.transpose  )";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_5'] = "하삼각 행렬 ( np.tril )";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_6'] = "상삼각행렬 ( np.triu )";
 
-Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ CSV 파일로 저장 ] 변수  ";
+Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ CSV 파일로 저장 ] 변수  %1 (  %2  )";
 Blockly.Msg['NUMPY_DATA_TO_CSV_2'] = " 파일 이름 ";
 
-Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ 리스트 변환 ] 변수  ";
-Blockly.Msg['NUMPY_DATA_CONVERSION_2'] = "  데이터 형식    ";
+Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ 리스트 변환 ] 변수  %1 데이터 형식 %2 ";
+//Blockly.Msg['NUMPY_DATA_CONVERSION_2'] = "  데이터 형식    ";
 
-Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "배열 연결"; 
+Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "[ 배열 연결 ] ((   %1 , %2 ))"; 
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_2'] = "값"; 
 
-Blockly.Msg['NUMPY_NP_ARRAY_1'] = "넘파이 배열"; 
+Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[ 넘파이 배열 ] %1"; 
 
-Blockly.Msg['NUMPY_CREATE_ARR_1'] = "배열 값"; 
+Blockly.Msg['NUMPY_CREATE_ARR_1'] = "[ 배열 값 ] %1"; 
 
-Blockly.Msg['NUMPY_NP_ARRANGE_1'] = "정렬 값 배열"; 
+Blockly.Msg['NUMPY_NP_ARRANGE_1'] = "[ 정렬 값 배열 ] %1"; 
 
-Blockly.Msg['NUMPY_ZEROS_1'] = "배열";
+Blockly.Msg['NUMPY_ZEROS_1'] = "[ 0 배열 ] ( %1 , %2 ) %3";
 Blockly.Msg['NUMPY_ZEROS_2'] = "행";
 Blockly.Msg['NUMPY_ZEROS_3'] = "열";
 
-Blockly.Msg['NUMPY_FULL_1'] = "배열동일 값 생성";
-Blockly.Msg['NUMPY_FULL_2'] = "값";
+Blockly.Msg['NUMPY_FULL_1'] = "[ 배열동일 값 생성 ] (( %1 , %2 ) 값 %3 )";
+//Blockly.Msg['NUMPY_FULL_2'] = "값";
 
-Blockly.Msg['NUMPY_EYE_1'] = "대각선 1로 배열";
+Blockly.Msg['NUMPY_EYE_1'] = "[ 대각선 1로 배열 ] ( %1 )";
 Blockly.Msg['NUMPY_EYE_2'] = "크기";
 
 Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )";
@@ -645,7 +645,7 @@ Blockly.Msg['NUMPY_DIFF_2'] = "값";
 
 Blockly.Msg['NUMPY_ARRAY_CHANGE_1'] = "[ 값 변경 ]  %1 %2 변수 %3 값 %4";
 
-Blockly.Msg['NUMPY_PROD_1'] = "요소의 곱";
+Blockly.Msg['NUMPY_PROD_1'] = "[요소의 곱] %1";
 Blockly.Msg['NUMPY_PROD_2'] = "값";
 
 Blockly.Msg['NUMPY_FFT_FFT_1'] = "[ 푸리에 변환 ] 값 %1 %2";
@@ -776,8 +776,10 @@ Blockly.Msg['DATASET_MAKE_CIRCLES_2'] = "샘플 수 ";
 Blockly.Msg['DATASET_MAKE_CIRCLES_3'] = "거리 비율 (Factor)";
 Blockly.Msg['DATASET_FETCH_OPENML_1'] = "[openml 데이터셋] ";
 Blockly.Msg['DATASET_FETCH_OPENML_2'] = "집 값";
+Blockly.Msg['DATASET_FETCH_OPENML_3'] = "타이타닉";
 Blockly.Msg['DATASET_CSV3_1'] = "[CSV 파일 로드]";
 Blockly.Msg['DATASET_CSV3_2'] = "Y_data 컬럼 선택";
+Blockly.Msg['DATASET_CSV3_3'] = "선택하세요";
 
 // ---- 전처리
 Blockly.Msg['PREPROCESSING_SKLEARN'] = "[임포트] 전처리 ";
@@ -855,12 +857,12 @@ Blockly.Msg['LINEARSVR'] = "[선형SVR] ";
 
 // ---- 앙상블(Esemble
 Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_1'] = "[임포트] 앙상블";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "AdaBoost분류";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "AdaBoost회귀";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "GradientBoosting분류";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "GradientBoosting회귀";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "결정트리 분류";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "결정트리 회귀";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_2'] = "AdaBoost분류";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_3'] = "AdaBoost회귀";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_4'] = "GradientBoosting분류";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_5'] = "GradientBoosting회귀";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_6'] = "결정트리 분류";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_7'] = "결정트리 회귀";
 Blockly.Msg['ESEMBLE_ADABOOSTCLASSIFIER_1'] = "[Adaboost분류] 모델";
 Blockly.Msg['ESEMBLE_ADABOOSTCLASSIFIER_2'] = "추정자 최대 수"; // 중복 사용되는 것
 Blockly.Msg['ESEMBLE_ADABOOSTREGRESSOR'] = "[Adaboost회귀] 모델";
@@ -900,14 +902,14 @@ Blockly.Msg['SELECTION_KFOLD_1'] = "[KFold] 모델";
 Blockly.Msg['SELECTION_KFOLD_2'] = "예"; // 중복 사용되는 것
 Blockly.Msg['SELECTION_KFOLD_3'] = "아니요"; // 중복 사용되는 것
 Blockly.Msg['SELECTION_TRAIN_TEST_SPLIT'] = "[데이터 분리] ";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "[모델 검증] 검증기";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "교차검증";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "교차추정값";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "교차검증 점수";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "학습곡선";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "순열교차검증";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "검증곡선";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "교차검증 횟수";
+Blockly.Msg['SELECTION_SIVALIDATION_1'] = "[모델 검증] 검증기";
+Blockly.Msg['SELECTION_SIVALIDATION_2'] = "교차검증";
+Blockly.Msg['SELECTION_SIVALIDATION_3'] = "교차추정값";
+Blockly.Msg['SELECTION_SIVALIDATION_4'] = "교차검증 점수";
+Blockly.Msg['SELECTION_SIVALIDATION_5'] = "학습곡선";
+Blockly.Msg['SELECTION_SIVALIDATION_6'] = "순열교차검증";
+Blockly.Msg['SELECTION_SIVALIDATION_7'] = "검증곡선";
+Blockly.Msg['SELECTION_SIVALIDATION_8'] = "교차검증 횟수";
 
 // ---- 신경망(Neuralnetwork)
 Blockly.Msg['NEURALNETWORK_IMPORT_MLP_1'] = "[임포트] 신경망 ";

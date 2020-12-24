@@ -140,7 +140,7 @@ Blockly.Blocks['csv3'] = {
     },
     dynamicOptions: function () {
         if (! dynamicDropdownOptions_.length) {
-            return [['선택하세요.', 'OPTION-1']];
+            return [[Blockly.Msg['DATASET_CSV3_3'], 'OPTION-1']];
         }
         return dynamicDropdownOptions_;
     }
@@ -349,7 +349,7 @@ Blockly.Blocks['jin_train_test_split'] = {
 
 Blockly.Blocks['model_score'] = {
     init: function () {
-        this.appendValueInput("model_name").setCheck(null).appendField("[모델 평가]  모델");
+        this.appendValueInput("model_name").setCheck(null).appendField(Blockly.Msg['METRICS_MODEL_SCORE']);
         this.appendValueInput("x_test").setCheck(null).appendField("X_test");
         this.appendValueInput("y_test").setCheck(null).appendField("Y_test");
         this.setInputsInline(true);
@@ -362,8 +362,8 @@ Blockly.Blocks['model_score'] = {
 
 Blockly.Blocks['model_predict'] = {
     init: function () {
-        this.appendValueInput("model").setCheck(null).appendField("[모델 예측] 모델");
-        this.appendValueInput("NAME").setCheck(null).appendField("예측 값");
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['METRICS_MODEL_PREDICT_1']);
+        this.appendValueInput("NAME").setCheck(null).appendField(Blockly.Msg['METRICS_MODEL_PREDICT_2']);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -840,11 +840,11 @@ Blockly.Blocks['for_range'] = {
 // };
 Blockly.Blocks['sklearn_mlp_classifier'] = {
     init: function () {
-        this.appendDummyInput().appendField("[MLP 분류기] ")
-        this.appendValueInput("sklearn_mlp_lib_val").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_1'])
+        this.appendValueInput("sklearn_mlp_lib_val").setCheck(null).appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_2']);
         // this.appendValueInput("sklearn_mlp_fit_X").setCheck(null).appendField("X_train");
         // this.appendValueInput("sklearn_mlp_fit_Y").setCheck(null).appendField("Y_train");
-        this.appendDummyInput().appendField("(").appendField("은닉층 개수").appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
+        this.appendDummyInput().appendField("(").appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_3']).appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
         this.appendValueInput("sklearn_MLP_Max_iter").setCheck(null).appendField("Epochs");
         this.appendDummyInput().appendField('Batch Size').appendField(new Blockly.FieldTextInput("16"), "sklearn_MLP_batch_size").appendField("Activation").appendField(new Blockly.FieldDropdown([
             [
@@ -869,7 +869,7 @@ Blockly.Blocks['sklearn_mlp_classifier'] = {
             [
                 "SGD", "sklearn_MLP_Optimizer_SGD"
             ]
-        ]), "sklearn_MLP_Optimizer_Option").appendField("학습률").appendField(new Blockly.FieldTextInput("0.001"), "sklearn_MLP_learning_rate").appendField("Warm Start").appendField(new Blockly.FieldDropdown([
+        ]), "sklearn_MLP_Optimizer_Option").appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_4']).appendField(new Blockly.FieldTextInput("0.001"), "sklearn_MLP_learning_rate").appendField("Warm Start").appendField(new Blockly.FieldDropdown([
             [
                 "False", "sklearn_MLP_Warm_Start_False"
             ],
@@ -889,11 +889,11 @@ Blockly.Blocks['sklearn_mlp_classifier'] = {
 
 Blockly.Blocks['sklearn_mlp_regressor'] = {
     init: function () {
-        this.appendDummyInput().appendField("[MLP 예측기] ")
-        this.appendValueInput("sklearn_mlp_lib_val").setCheck(null).appendField("모델");
+        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_REGRESSOR'])
+        this.appendValueInput("sklearn_mlp_lib_val").setCheck(null).appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_2']);
         // this.appendValueInput("sklearn_mlp_fit_X").setCheck(null).appendField("X_train");
         // this.appendValueInput("sklearn_mlp_fit_Y").setCheck(null).appendField("Y_train");
-        this.appendDummyInput().appendField("(").appendField("은닉층 개수").appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
+        this.appendDummyInput().appendField("(").appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_3']).appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
         this.appendValueInput("sklearn_MLP_Max_iter").setCheck(null).appendField("Epochs");
         this.appendDummyInput().appendField('Batch Size').appendField(new Blockly.FieldTextInput("16"), "sklearn_MLP_batch_size").appendField("Activation").appendField(new Blockly.FieldDropdown([
             [
@@ -918,7 +918,7 @@ Blockly.Blocks['sklearn_mlp_regressor'] = {
             [
                 "SGD", "sklearn_MLP_Optimizer_SGD"
             ]
-        ]), "sklearn_MLP_Optimizer_Option").appendField("학습률").appendField(new Blockly.FieldTextInput("0.001"), "sklearn_MLP_learning_rate").appendField("Warm Start").appendField(new Blockly.FieldDropdown([
+        ]), "sklearn_MLP_Optimizer_Option").appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_4']).appendField(new Blockly.FieldTextInput("0.001"), "sklearn_MLP_learning_rate").appendField("Warm Start").appendField(new Blockly.FieldDropdown([
             [
                 "False", "sklearn_MLP_Warm_Start_False"
             ],
@@ -941,7 +941,7 @@ Blockly.Blocks['mlp_loss'] = {
     init: function() {
       this.appendValueInput("model")
           .setCheck(null)
-          .appendField("[MLP 손실값 추출 ] 모델");
+          .appendField(Blockly.Msg['NEURALNETWORK_MLP_LOSS']);
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -1484,7 +1484,7 @@ Blockly.Blocks['fetch_openml'] = {
     init: function () {
         this.appendDummyInput().appendField(Blockly.Msg.DATASET_FETCH_OPENML_1).appendField(new Blockly.FieldDropdown([
             [
-                "타이타닉", "titanic"
+                Blockly.Msg['DATASET_FETCH_OPENML_3'], "titanic"
             ],
             [
                 Blockly.Msg.DATASET_FETCH_OPENML_2, "house_price"
@@ -1506,9 +1506,9 @@ Blockly.Blocks['fetch_openml'] = {
 
 Blockly.Blocks['import_scikit'] = {
     init: function () {
-        this.appendDummyInput().appendField("[임포트] 메트릭스 ").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg['METRICS_IMPORT_SCIKIT_1']).appendField(new Blockly.FieldDropdown([
             [
-                "정확도", "accuracy_score"
+                Blockly.Msg['METRICS_IMPORT_SCIKIT_2'], "accuracy_score"
             ],
             [
                 "AUC", "metrics"
@@ -1542,7 +1542,7 @@ Blockly.Blocks['import_scikit'] = {
 };
 Blockly.Blocks['acc_score'] = {
     init: function () {
-        this.appendDummyInput().appendField("[분류 정확도] ");
+        this.appendDummyInput().appendField(Blockly.Msg['METRICS_ACC_SCORE']);
         this.appendValueInput("yt").setCheck(null).appendField("Y_true");
         this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
         this.setInputsInline(true);
@@ -1554,9 +1554,9 @@ Blockly.Blocks['acc_score'] = {
 };
 Blockly.Blocks['AUC'] = {
     init: function () {
-        this.appendDummyInput().appendField("[AUC 계산] ");
-        this.appendValueInput("yt").setCheck(null).appendField("X 축");
-        this.appendValueInput("yp").setCheck(null).appendField("Y 축");
+        this.appendDummyInput().appendField(Blockly.Msg['METRICS_AUC_1']);
+        this.appendValueInput("yt").setCheck(null).appendField(Blockly.Msg['METRICS_AUC_2']);
+        this.appendValueInput("yp").setCheck(null).appendField(Blockly.Msg['METRICS_AUC_3']);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -1566,7 +1566,7 @@ Blockly.Blocks['AUC'] = {
 };
 Blockly.Blocks['AP'] = {
     init: function () {
-        this.appendDummyInput().appendField("[AP 계산] ");
+        this.appendDummyInput().appendField(Blockly.Msg['METRICS_AP']);
         this.appendValueInput("yt").setCheck(null).appendField("Y_true");
         this.appendValueInput("yp").setCheck(null).appendField("Y_score");
         this.setInputsInline(true);
@@ -1578,10 +1578,10 @@ Blockly.Blocks['AP'] = {
 };
 Blockly.Blocks['precision'] = {
     init: function () {
-        this.appendDummyInput().appendField("[PRC 계산] ");
+        this.appendDummyInput().appendField(Blockly.Msg['METRICS_PRECISION_1']);
         this.appendValueInput("yt").setCheck(null).appendField("Y_true");
         this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
-        this.appendDummyInput().appendField("평균 ").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg['METRICS_PRECISION_2']).appendField(new Blockly.FieldDropdown([
             [
                 "None", "None"
             ],
@@ -1605,7 +1605,7 @@ Blockly.Blocks['precision'] = {
 
 Blockly.Blocks['mae'] = {
     init: function () {
-        this.appendDummyInput().appendField("[MAE 계산(Mean)] ");
+        this.appendDummyInput().appendField(Blockly.Msg['METRICS_MAE']);
         this.appendValueInput("yt").setCheck(null).appendField("Y_true");
         this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
         this.setInputsInline(true);
@@ -1618,7 +1618,7 @@ Blockly.Blocks['mae'] = {
 
 Blockly.Blocks['mse'] = {
     init: function () {
-        this.appendDummyInput().appendField("[MSE 계산] ");
+        this.appendDummyInput().appendField(Blockly.Msg['METRICS_MSE']);
         this.appendValueInput("yt").setCheck(null).appendField("Y_true");
         this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
         this.setInputsInline(true);
@@ -1630,7 +1630,7 @@ Blockly.Blocks['mse'] = {
 };
 Blockly.Blocks['median'] = {
     init: function () {
-        this.appendDummyInput().appendField("[MSE 계산(Median)] ");
+        this.appendDummyInput().appendField(Blockly.Msg['METRICS_MEDIAN']);
         this.appendValueInput("yt").setCheck(null).appendField("Y_true");
         this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
         this.setInputsInline(true);
@@ -1645,7 +1645,7 @@ Blockly.Blocks['median'] = {
 Blockly.Blocks['mlp_classifier'] = {
     init: function () {
         this.appendDummyInput().appendField("[MLP 분류기]");
-        this.appendValueInput("model").setCheck(null).appendField("모델");
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_2']);
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("1"), "numSeed").appendField("Epochs").appendField(new Blockly.FieldTextInput("300"), "numEpochs");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -1787,12 +1787,12 @@ Blockly.Blocks['sgd_regressor'] = {
 // MLP 라이브러리 임포트
 Blockly.Blocks['import_mlp'] = {
     init: function () {
-        this.appendDummyInput().appendField("[임포트] 신경망 ").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_IMPORT_MLP_1']).appendField(new Blockly.FieldDropdown([
             [
-                "MLP분류기", "MLPClassifier"
+                Blockly.Msg['NEURALNETWORK_IMPORT_MLP_2'], "MLPClassifier"
             ],
             [
-                "MLP예측기", "MLPRegressor"
+                Blockly.Msg['NEURALNETWORK_IMPORT_MLP_3'], "MLPRegressor"
             ],
             [
                 "BernoulliRBM", "BernoulliRBM"
@@ -1861,7 +1861,7 @@ Blockly.Blocks['import_kmeans'] = {
 // fit
 Blockly.Blocks['model_fit'] = {
     init: function () {
-        this.appendValueInput("model").appendField("[모델 학습] 모델");
+        this.appendValueInput("model").appendField(Blockly.Msg['METRICS_MODEL_FIT']);
         this.appendValueInput("X_train").appendField(" X_train");
         this.appendValueInput("Y_train").appendField("Y_train");
         this.setInputsInline(true);
@@ -1888,30 +1888,30 @@ Blockly.Blocks['kmeans_fit'] = {
 
 Blockly.Blocks['sivalidation'] = {
     init: function () {
-        this.appendDummyInput().appendField("[모델 검증] 검증기").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg['SELECTION_SIVALIDATION_1']).appendField(new Blockly.FieldDropdown([
             [
-                "교차검증", "cross_validate"
+                Blockly.Msg['SELECTION_SIVALIDATION_2'], "cross_validate"
             ],
             [
-                "교차추정값", "cross_val_predict"
+                Blockly.Msg['SELECTION_SIVALIDATION_3'], "cross_val_predict"
             ],
             [
-                "교차검증 점수", "cross_val_score"
+                Blockly.Msg['SELECTION_SIVALIDATION_4'], "cross_val_score"
             ],
             [
-                "학습곡선", "learning_curve"
+                Blockly.Msg['SELECTION_SIVALIDATION_5'], "learning_curve"
             ],
             [
-                "순열교차검증", "permutation_test_score"
+                Blockly.Msg['SELECTION_SIVALIDATION_6'], "permutation_test_score"
             ],
             [
-                "검증곡선", "validation_curve"
+                Blockly.Msg['SELECTION_SIVALIDATION_7'], "validation_curve"
             ]
         ]), "vali");
         this.appendValueInput("em").setCheck(null).appendField("estimator");
         this.appendValueInput("x").setCheck(null).appendField("X");
         this.appendValueInput("y").setCheck(null).appendField("Y");
-        this.appendDummyInput().appendField("교차검증 횟수").appendField(new Blockly.FieldTextInput("3"), "cv");
+        this.appendDummyInput().appendField(Blockly.Msg['SELECTION_SIVALIDATION_8']).appendField(new Blockly.FieldTextInput("3"), "cv");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -1921,7 +1921,7 @@ Blockly.Blocks['sivalidation'] = {
 };
 Blockly.Blocks['import_sivalidation'] = {
     init: function () {
-        this.appendDummyInput().appendField("[임포트] 셀렉션").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg['SELECTION_IMPORT_SIVALIDATION_1']).appendField(new Blockly.FieldDropdown([
             [
                 "KFold", "KFold"
             ],
@@ -1932,16 +1932,16 @@ Blockly.Blocks['import_sivalidation'] = {
                 "train_test_split", "train_test_split"
             ],
             [
-                "교차검증 점수", "cross_val_score"
+                Blockly.Msg['SELECTION_IMPORT_SIVALIDATION_2'], "cross_val_score"
             ],
             [
-                "학습곡선", "learning_curve"
+                Blockly.Msg['SELECTION_IMPORT_SIVALIDATION_3'], "learning_curve"
             ],
             [
-                "순열교차검증", "permutation_test_score"
+                Blockly.Msg['SELECTION_IMPORT_SIVALIDATION_4'], "permutation_test_score"
             ],
             [
-                "검증곡선", "validation_curve"
+                Blockly.Msg['SELECTION_IMPORT_SIVALIDATION_5'], "validation_curve"
             ]
         ]), "vali");
         this.setInputsInline(true);
@@ -1954,14 +1954,14 @@ Blockly.Blocks['import_sivalidation'] = {
 };
 Blockly.Blocks['kfold'] = {
     init: function () {
-        this.appendValueInput("model").setCheck(null).appendField("[KFold] 모델");
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['SELECTION_KFOLD_1']);
         this.appendDummyInput().appendField("Splits").appendField(new Blockly.FieldTextInput("default"), "NAME");
         this.appendDummyInput().appendField("Data Shuffle").appendField(new Blockly.FieldDropdown([
             [
-                "예", "True"
+                Blockly.Msg['SELECTION_KFOLD_2'], "True"
             ],
             [
-                "아니요", "False"
+                Blockly.Msg['SELECTION_KFOLD_3'], "False"
             ]
         ]), "shuffle");
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("None"), "seed");
@@ -1975,14 +1975,14 @@ Blockly.Blocks['kfold'] = {
 };
 Blockly.Blocks['stratifiedkfold'] = {
     init: function () {
-        this.appendValueInput("model").setCheck(null).appendField("[KFold] 모델");
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['SELECTION_KFOLD_1']);
         this.appendDummyInput().appendField("Splits").appendField(new Blockly.FieldTextInput("default"), "NAME");
         this.appendDummyInput().appendField("Data Shuffle").appendField(new Blockly.FieldDropdown([
             [
-                "예", "True"
+                Blockly.Msg['SELECTION_KFOLD_2'], "True"
             ],
             [
-                "아니요", "False"
+                Blockly.Msg['SELECTION_KFOLD_3'], "False"
             ]
         ]), "shuffle");
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("None"), "seed");
@@ -1996,10 +1996,10 @@ Blockly.Blocks['stratifiedkfold'] = {
 };
 Blockly.Blocks['bernoullirbm'] = {
     init: function () {
-        this.appendValueInput("model").setCheck(null).appendField("[BernoulliRBM] 모델");
-        this.appendDummyInput().appendField("은닉층 개수").appendField(new Blockly.FieldTextInput("2"), "hi");
-        this.appendDummyInput().appendField(" 학습률").appendField(new Blockly.FieldTextInput("0.1"), "lr");
-        this.appendDummyInput().appendField(" 배치사이즈").appendField(new Blockly.FieldTextInput("10"), "batch");
+        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_1']);
+        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_3']).appendField(new Blockly.FieldTextInput("2"), "hi");
+        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_4']).appendField(new Blockly.FieldTextInput("0.1"), "lr");
+        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_2']).appendField(new Blockly.FieldTextInput("10"), "batch");
         this.appendDummyInput().appendField(" Epochs").appendField(new Blockly.FieldTextInput("10"), "epochs");
         this.appendDummyInput().appendField(" Seed").appendField(new Blockly.FieldTextInput("None"), "seed");
         this.setInputsInline(true);

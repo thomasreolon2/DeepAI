@@ -15,10 +15,10 @@ Blockly.Blocks['adaboostclassifier'] = {
   init: function () {
     this.appendValueInput("NAME")
       .setCheck(null)
-      .appendField("[Adaboost분류] 모델");
+      .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_1);
     this.appendValueInput("NAME2")
       .setCheck(null)
-      .appendField("추정자 최대 수");
+      .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_2);
     this.appendValueInput("NAME3")
       .setCheck(null)
       .appendField("seed");
@@ -35,10 +35,10 @@ Blockly.Blocks['adaboostregressor'] = {
   init: function () {
     this.appendValueInput("NAME")
       .setCheck(null)
-      .appendField("[Adaboost회귀] 모델");
+      .appendField(Blockly.Msg.ESEMBLE_ADABOOSTREGRESSOR);
     this.appendValueInput("NAME2")
       .setCheck(null)
-      .appendField("추정자 최대 수");
+      .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_2);
     this.appendValueInput("NAME3")
       .setCheck(null)
       .appendField("seed");
@@ -55,10 +55,10 @@ Blockly.Blocks['gradientboostingclassifier'] = {
   init: function () {
     this.appendValueInput("NAME")
       .setCheck(null)
-      .appendField("[GradientBoosting분류] 모델");
+      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_1);
     this.appendValueInput("NAME2")
       .setCheck(null)
-      .appendField("나무 최대 깊이");
+      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -72,10 +72,10 @@ Blockly.Blocks['gradientboostingregressor'] = {
   init: function () {
     this.appendValueInput("NAME")
       .setCheck(null)
-      .appendField("[GradientBoosting회귀] 모델");
+      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGREGRESSOR);
     this.appendValueInput("NAME2")
       .setCheck(null)
-      .appendField("나무 최대 깊이");
+      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -89,10 +89,10 @@ Blockly.Blocks['randomforestclassifier'] = {
   init: function () {
     this.appendValueInput("NAME")
       .setCheck(null)
-      .appendField("[결정트리 분류] 모델");
+      .appendField(Blockly.Msg['ESEMBLE_RANDOMFORESTCLASSIFIER']);
     this.appendValueInput("NAME2")
       .setCheck(null)
-      .appendField("나무 최대 깊이");
+      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
     this.appendValueInput("NAME3")
       .setCheck(null)
       .appendField("seed");
@@ -109,10 +109,10 @@ Blockly.Blocks['randomforestregressor'] = {
   init: function () {
     this.appendValueInput("NAME")
       .setCheck(null)
-      .appendField("[결정트리 회귀] 모델");
+      .appendField(Blockly.Msg['ESEMBLE_RANDOMFORESTREGRESSOR']);
     this.appendValueInput("NAME2")
       .setCheck(null)
-      .appendField("나무 최대 깊이");
+      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
     this.appendValueInput("NAME3")
       .setCheck(null)
       .appendField("seed");

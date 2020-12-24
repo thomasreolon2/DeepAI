@@ -649,7 +649,7 @@ Blockly.Msg['NUMPY_DIFF_2'] = "value";
 Blockly.Msg['NUMPY_ARRAY_CHANGE_1'] = "[ change value ]  %1 %2 variable %3 value %4";
 
 Blockly.Msg['NUMPY_PROD_1'] = "[ multiply of elements ] %1";
-Blockly.Msg['NUMPY_PROD_2'] = "vlalue";
+Blockly.Msg['NUMPY_PROD_2'] = "value";
 
 Blockly.Msg['NUMPY_FFT_FFT_1'] = "[ fourier transform ] value %1 %2";
 
@@ -777,11 +777,12 @@ Blockly.Msg['DATASET_RANDOM_IMPORT_3'] = "number of features";
 Blockly.Msg['DATASET_MAKE_CIRCLES_1'] = "[generate random data sets - Circles] X_data";
 Blockly.Msg['DATASET_MAKE_CIRCLES_2'] = "number of samples ";
 Blockly.Msg['DATASET_MAKE_CIRCLES_3'] = "distance ratio (Factor)"; // 단어 확인받기 
-Blockly.Msg['DATASET_FETCH_OPENML_1'] = "[openml 데이터셋] ";
+Blockly.Msg['DATASET_FETCH_OPENML_1'] = "[openml dataset] ";
 Blockly.Msg['DATASET_FETCH_OPENML_2'] = "house priwce";
+Blockly.Msg['DATASET_FETCH_OPENML_3'] = "titanic";
 Blockly.Msg['DATASET_CSV3_1'] = "[CSV file load]";
 Blockly.Msg['DATASET_CSV3_2'] = "select Y_data column";
-
+Blockly.Msg['DATASET_CSV3_3'] = "choose";
 // ---- 전처리
 Blockly.Msg['PREPROCESSING_SKLEARN'] = "[import] preprocessing ";
 Blockly.Msg['PREPROCESSING_LABELENCODER_1'] = "[data labe encoding] ";
@@ -858,12 +859,12 @@ Blockly.Msg['LINEARSVR'] = "[linear-SVR] ";
 
 // ---- 앙상블(Esemble
 Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_1'] = "[import] esemble";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "AdaBoost-classification";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "AdaBoost-regression";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "GradientBoosting-classification";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "GradientBoosting-regression";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "decisiontree classification";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_'] = "decisiontree regression";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_2'] = "AdaBoost-classification";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_3'] = "AdaBoost-regression";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_4'] = "GradientBoosting-classification";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_5'] = "GradientBoosting-regression";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_6'] = "decisiontree classification";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_7'] = "decisiontree regression";
 Blockly.Msg['ESEMBLE_ADABOOSTCLASSIFIER_1'] = "[Adaboost-classification] model";
 Blockly.Msg['ESEMBLE_ADABOOSTCLASSIFIER_2'] = "maximum number of estimators"; // 중복 사용되는 것
 Blockly.Msg['ESEMBLE_ADABOOSTREGRESSOR'] = "[Adaboost-regression] model";
@@ -903,14 +904,14 @@ Blockly.Msg['SELECTION_KFOLD_1'] = "[KFold] model";
 Blockly.Msg['SELECTION_KFOLD_2'] = "yes"; // 중복 사용되는 것
 Blockly.Msg['SELECTION_KFOLD_3'] = "no"; // 중복 사용되는 것
 Blockly.Msg['SELECTION_TRAIN_TEST_SPLIT'] = "[data separation] ";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "[model validation] verifier";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "cross-validation";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "estimate cross-validation score";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "cross-validation score";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "learning curve";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "permutation learning curve";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "verification curve";
-Blockly.Msg['SELECTION_SIVALIDATION_'] = "number of cross-validation";
+Blockly.Msg['SELECTION_SIVALIDATION_1'] = "[model validation] verifier";
+Blockly.Msg['SELECTION_SIVALIDATION_2'] = "cross-validation";
+Blockly.Msg['SELECTION_SIVALIDATION_3'] = "estimate cross-validation score";
+Blockly.Msg['SELECTION_SIVALIDATION_4'] = "cross-validation score";
+Blockly.Msg['SELECTION_SIVALIDATION_5'] = "learning curve";
+Blockly.Msg['SELECTION_SIVALIDATION_6'] = "permutation learning curve";
+Blockly.Msg['SELECTION_SIVALIDATION_7'] = "verification curve";
+Blockly.Msg['SELECTION_SIVALIDATION_8'] = "number of cross-validation";
 
 // ---- 신경망(Neuralnetwork)
 Blockly.Msg['NEURALNETWORK_IMPORT_MLP_1'] = "[import] neuralnetwork ";
