@@ -765,19 +765,73 @@ Blockly.Msg['SCIPY_QUAD'] = "[Quad] function";
 
 // --------- 사이킷런
 // ---- 데이터 셋
-Blockly.Msg['DATASET_IMPORT_DATASET_1'] = "[사이킷런 데이터셋]  ";
-Blockly.Msg['DATASET_IMPORT_DATASET_2'] = "보스턴 집 값 데이터 ";
-Blockly.Msg['DATASET_IMPORT_DATASET_3'] = "손글씨 데이터";
-Blockly.Msg['DATASET_IMPORT_DATASET_4'] = "당뇨병 데이터";
-Blockly.Msg['DATASET_IMPORT_DATASET_5'] = "붓꽃 데이터";
-Blockly.Msg['DATASET_IMPORT_DATASET_6'] = "와인 품질 데이터";
-Blockly.Msg['DATASET_RANDOM_IMPORT_1'] = "[무작위 데이터셋 생성]  ";
-Blockly.Msg['DATASET_RANDOM_IMPORT_2'] = "샘플 수";
-Blockly.Msg['DATASET_RANDOM_IMPORT_3'] = "특성 개수";
-Blockly.Msg['DATASET_MAKE_CIRCLES_1'] = "[무작위 데이터셋 생성 - Circles] X_data";
-Blockly.Msg['DATASET_MAKE_CIRCLES_2'] = "샘플 수 ";
-Blockly.Msg['DATASET_MAKE_CIRCLES_3'] = "거리 비율 (Factor)";
+Blockly.Msg['DATASET_IMPORT_DATASET_1'] = "[scikit-learn data set]  ";
+Blockly.Msg['DATASET_IMPORT_DATASET_2'] = "boston housing price data ";
+Blockly.Msg['DATASET_IMPORT_DATASET_3'] = "handwriting data";
+Blockly.Msg['DATASET_IMPORT_DATASET_4'] = "diabetes data";
+Blockly.Msg['DATASET_IMPORT_DATASET_5'] = "iris data";
+Blockly.Msg['DATASET_IMPORT_DATASET_6'] = "wine quality data";
+Blockly.Msg['DATASET_RANDOM_IMPORT_1'] = "[generate random data sets]  ";
+Blockly.Msg['DATASET_RANDOM_IMPORT_2'] = "number of samples";
+Blockly.Msg['DATASET_RANDOM_IMPORT_3'] = "number of features";
+Blockly.Msg['DATASET_MAKE_CIRCLES_1'] = "[generate random data sets - Circles] X_data";
+Blockly.Msg['DATASET_MAKE_CIRCLES_2'] = "number of samples ";
+Blockly.Msg['DATASET_MAKE_CIRCLES_3'] = "distance ratio (Factor)"; // 단어 확인받기 
 Blockly.Msg['DATASET_FETCH_OPENML_1'] = "[openml 데이터셋] ";
-Blockly.Msg['DATASET_FETCH_OPENML_2'] = "집 값";
-Blockly.Msg['DATASET_CSV3_1'] = "[CSV 파일 로드]";
-Blockly.Msg['DATASET_CSV3_2'] = "Y_data 컬럼 선택";
+Blockly.Msg['DATASET_FETCH_OPENML_2'] = "house priwce";
+Blockly.Msg['DATASET_CSV3_1'] = "[CSV file load]";
+Blockly.Msg['DATASET_CSV3_2'] = "select Y_data column";
+
+// ---- 전처리
+Blockly.Msg['PREPROCESSING_SKLEARN'] = "[import] preprocessing ";
+Blockly.Msg['PREPROCESSING_LABELENCODER_1'] = "[data labe encoding] ";
+Blockly.Msg['PREPROCESSING_LABELENCODER_2'] = "data";
+Blockly.Msg['PREPROCESSING_LABELENCODER_3'] = "column setting";
+Blockly.Msg['PREPROCESSING_LABELENCODER_4'] = "column name";
+Blockly.Msg['PREPROCESSING_TRAIN_TEST_SPLIT_1'] = "[separate data] ";
+Blockly.Msg['PREPROCESSING_TRAIN_TEST_SPLIT_2'] = "yes";
+Blockly.Msg['PREPROCESSING_TRAIN_TEST_SPLIT_3'] = "no";
+Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_1'] = "[polynomiales Features] ";
+Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_2'] = "model";
+Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_3'] = "interaction";
+Blockly.Msg['PREPROCESSING_NORMAL_1'] = "[standard scale] frame";
+Blockly.Msg['PREPROCESSING_NORMAL_2'] = "column name";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_1'] = "[categorical data conversion] ";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_2'] = "variable";
+
+// ---- 선형모델 
+Blockly.Msg['LINEAR_IMPORT_1'] = "[import] linear regression ";
+Blockly.Msg['LINEAR_IMPORT_2'] = "linear regression model";
+Blockly.Msg['LINEAR_IMPORT_3'] = "SGD predictor";
+Blockly.Msg['LINEAR_IMPORT_4'] = "Ridge predictor";
+Blockly.Msg['LINEAR_IMPORT_5'] = "logistic regression model";
+Blockly.Msg['LINEAR_IMPORT_6'] = "logistic regression CV-model";
+Blockly.Msg['LINEAR_IMPORT_7'] = "Ridge classifier";
+Blockly.Msg['LINEAR_IMPORT_8'] = "bayesian model";
+Blockly.Msg['LINEAR_IMPORT_9'] = "SGD classifier";
+Blockly.Msg['LINEAR_IMPORT_10'] = "perceptron model";
+Blockly.Msg['LINEAR_LINEAR_REGRESSION_1'] = "[linear regression model]";
+Blockly.Msg['LINEAR_LINEAR_REGRESSION_2'] = "model"; // 중복 사용되는 것 
+Blockly.Msg['LINEAR_SGD_REGRESSION'] = "[SGD predictor]";
+Blockly.Msg['LINEAR_RIDGE'] = "[Ridge predictor]";
+Blockly.Msg['LINEAR_BAYESIAN_RIDGE'] = "[bayesian model]";
+Blockly.Msg['LINEAR_LOGISTIC_REGRESSION'] = "[logistic regression model]";
+Blockly.Msg['LINEAR_LOGISTIC_REGRESSION_CV_1'] = "[logistic regression CV-model]";
+Blockly.Msg['LINEAR_LOGISTIC_REGRESSION_CV_2'] = "number of cross validation";
+Blockly.Msg['LINEAR_RIDGE_CLASSIFIER'] = "[Ridge classifier]";
+Blockly.Msg['LINEAR_SGD_CLASSIFIER'] = "[SGD classifier]";
+Blockly.Msg['LINEAR_PERCEPTRON'] = "[perceptron model]";
+Blockly.Msg['LINEAR_COEF'] = "[coefficient extraction] model";
+Blockly.Msg['LINEAR_INTERCEPT'] = "[intercept extraction] model";
+
+// ---- KNN
+Blockly.Msg['KNN_IMPORT'] = "[import] KNN";
+Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_1'] = "[KNeighbors classifier]";
+Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_2'] = "model"; // 중복 사용되는 것
+Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3'] = "data"; // 중복 사용되는 것
+Blockly.Msg['KNN_KNEIGHBORSREGERESSOR_FUNCTION'] = "[KNeighbors regression]";
+Blockly.Msg['KNN_KNEIGHBORSTRANSFORMER_FUNCTION_1'] = "[KNeighbors transformer]";
+Blockly.Msg['KNN_KNEIGHBORSTRANSFORMER_FUNCTION_2'] = "mode"; // 중복 사용되는 것
+Blockly.Msg['KNN_KNEIGHBORS_GRAPH_FUNCTION_1'] = "[KNeighbors graph]";
+Blockly.Msg['KNN_KNEIGHBORS_GRAPH_FUNCTION_2'] = "include";
+
