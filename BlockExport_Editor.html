@@ -452,8 +452,24 @@
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display: none">
     <category name="변수(Variable)" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="논리(Logic)" colour="%{BKY_LOGIC_HUE}">
-      <block type="controls_if"></block> <!-- if -->
-      <block type="controls_ifelse"></block><!-- if_else -->
+      
+      <!-- if -->
+      <block type="controls_if">
+        <value name="IF0">
+          <shadow type="indata">
+            <field name="indata1">True</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- if_else --> 
+      <block type="controls_ifelse">
+        <value name="IF0">
+          <shadow type="indata">
+            <field name="indata1">True</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 비교 블록 -->
       <block type="logic_compare">
         <value name="A">
