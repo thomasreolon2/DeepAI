@@ -178,13 +178,13 @@
 
 
   <!--Socket.IO --> 
-  <script>  
+  <!-- <script>  
     var socket = io.connect('http://localhost:8000');
       // socket.on('CSV_Name_error', function(data) { 
       //   if (data == "error"); 
       //   window.alert("잘못된 입력입니다.");  
       //  });  
-  </script>      
+  </script>       -->
   <!--Socket.IO -->   
 
 
@@ -598,6 +598,7 @@
         <value name="y">
           <shadow type="indata">
             <field name="indata1">0</field>
+
           </shadow>
         </value>
         <value name="z">
@@ -893,13 +894,11 @@
       <block type="tuple"></block>
       <!-- 새 블록  딕셔너리 -->
       <block type="dict">
-        <value name="DICT">
-        </value>
+       
       </block>
       <!-- 딕셔너리 선택 -->
       <block type="dic_menu">
-        <value name="dic_menu">
-        </value>
+        
       </block>
       <!-- 집합 -->
       <block type="set">
@@ -907,10 +906,7 @@
         </value>
       </block>
       <!-- 집합선택 -->
-      <block type="set_menu">
-        <value name="set_menu">
-        </value>
-      </block>
+      <block type="set_menu"></block>
       <block type="sump"></block>
       <!-- sort,reverse -->
       <block type="list_sort_reverse"></block>
@@ -1482,9 +1478,6 @@
     </category>
     -->
     <!-- 웹크롤링 -->
- 
-
-
 
     <category name="사이파이(Scipy)" colour="%{BKY_SCIPY_HUE}">
       <block type="import_scipy"></block>
