@@ -609,66 +609,91 @@
         </value> 
       </block>
 
+      <!-- 제곱근 부터~ -->
       <block type="math_single">
         <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">9</field>
+          <shadow type="indata">
+            <field name="indata1">0</field>
           </shadow>
         </value>
       </block>
 
       <!-- 사인, 코사인 -->
-      <block type="math_trig"></block>
+      <block type="math_trig">
+        <value name="NUM">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 파이 등-->
       <block type="math_constant"></block>
       <!-- 짝수, 홀수 등 판단 -->
-      <block type="math_number_property"></block>
+      <block type="math_number_property">
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 반올림 -->
-      <block type="math_round"></block>
-      <!-- sum, 최소, 최대값 등-->
-      <block type="math_on_list"></block>
+      <block type="math_round">
+        <value name="NUM">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 합, 최소, 최대값 등-->
+      <block type="math_on_list">
+        <value name="LIST">
+          <shadow type="indata">
+            <field name="indata1">list</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 이건 뭔지 모르겠음 -->
       <block type="math_constrain">
         <value name="VALUE">
-          <shadow type="math_number">
-            <field name="NUM">50</field>
+          <shadow type="indata">
+            <field name="indata1">50</field>
           </shadow>
         </value>
         <value name="LOW">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
+          <shadow type="indata">
+            <field name="indata1">1</field>
           </shadow>
         </value>
         <value name="HIGH">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
+          <shadow type="indata">
+            <field name="indata1">100</field>
           </shadow>
         </value>
       </block>
-      <!-- 랜덤 정수 -->
+      <!-- 랜덤으로 정수생성 -->
       <block type="math_random_int">
         <value name="FROM">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
+          <shadow type="indata">
+            <field name="indata1">1</field>
           </shadow>
         </value>
         <value name="TO">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
+          <shadow type="indata">
+            <field name="indata1">100</field>
           </shadow>
         </value>
       </block>
-      <!-- 랜덤 실수 -->
+      <!-- ?? -->
       <block type="math_random_float"></block>
       <block type="math_atan2">
         <value name="X">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
+          <shadow type="indata">
+            <field name="indata1">1</field>
           </shadow>
         </value>
         <value name="Y">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
+          <shadow type="indata">
+            <field name="indata1">1</field>
           </shadow>
         </value>
       </block>
