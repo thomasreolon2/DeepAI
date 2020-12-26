@@ -464,15 +464,6 @@ Blockly.JavaScript.math_arithmetic = function (a) {
     return c ? [d + c + a, b] : ["Math.pow(" + d + ", " + a + ")", Blockly.JavaScript.ORDER_FUNCTION_CALL]
 };
 
-Blockly.JavaScript['Oper'] = function(block) {
-    var value_a = Blockly.JavaScript.valueToCode(block, 'A', Blockly.JavaScript.ORDER_ATOMIC);
-    var dropdown_name = block.getFieldValue('NAME');
-    var value_b = Blockly.JavaScript.valueToCode(block, 'B', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE];
-  };
 
 Blockly.JavaScript.math_single = function (a) {
     var b = a.getFieldValue("OP");
@@ -952,15 +943,6 @@ Blockly.JavaScript['py_for'] = function(block) {
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
 
-// 타입 생성, 형 변환
-Blockly.JavaScript['convert'] = function(block) {
-    var dropdown_name = block.getFieldValue('NAME');
-    var value_b = Blockly.JavaScript.valueToCode(block, 'B', Blockly.PytJavaScripthon.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-    var code = "\n";
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE];
-  };
 
   //
   // 변수 설정
