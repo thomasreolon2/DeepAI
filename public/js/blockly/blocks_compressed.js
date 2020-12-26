@@ -691,14 +691,14 @@ Blockly.defineBlocksWithJsonArray([
     type: "logic_compare",
     message0: "%1 %2 %3 %4",
     args0: [
-      {"type": "field_image","src": "/img/Logic/L3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      { type: "field_image","src": "/img/Logic/L3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "A" },
       {
         type: "field_dropdown",
         name: "OP",
         options: [
          
-          ["=", "EQ"],
+          ["==", "EQ"],
           ["\u2260", "NEQ"],
           ["\u200f<", "LT"],
           ["\u200f\u2264", "LTE"],
