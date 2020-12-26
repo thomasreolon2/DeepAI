@@ -70,6 +70,11 @@
   <script src="/js/blockly/Science_Data_Gen.js"></script>
   <script src="/js/blockly/Science_Data_Js.js"></script>
 
+  <!-- 연산 블록 추가 -->
+  <script src="/js/blockly/block_oper_js.js"></script>
+  <script src="/js/blockly/block_oper_py.js"></script>
+  <script src="/js/blockly/block_oper.js"></script>
+
   <!-- 컬렉션 블록 추가 -->
   <script src="/js/blockly/block_collection_js.js"></script>
   <script src="/js/blockly/block_collection_py.js"></script>
@@ -584,7 +589,18 @@
       </block>
 
       <!-- 연산블럭 -->
-      <block type="Oper"></block>
+      <block type="Oper">
+        <value name="A">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
 
       <!-- 외부 입력 -->
       <block type="val_set"> 
