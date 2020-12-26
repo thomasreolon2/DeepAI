@@ -454,6 +454,7 @@
     <category name="논리(Logic)" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block> <!-- if -->
       <block type="controls_ifelse"></block><!-- if_else -->
+      <!-- 비교 블록 -->
       <block type="logic_compare">
         <value name="A">
           <shadow type="indata">
@@ -465,10 +466,27 @@
             <field name="indata1">0</field>
           </shadow>
         </value>
-        
       </block>
-      <block type="logic_operation"></block>
-      <block type="logic_negate"></block>
+      <!-- true, false -->
+      <block type="logic_operation">
+        <value name="A">
+          <shadow type="indata">
+            <field name="indata1">True</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="indata">
+            <field name="indata1">True</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="logic_negate">
+        <value name="BOOL">
+          <shadow type="indata">
+            <field name="indata1">True</field>
+          </shadow>
+        </value>
+      </block>
       <block type="logic_boolean"></block>
       <block type="logic_null"></block>
       <!-- <block type="logic_ternary"></block> 이거 뭐임? -->
