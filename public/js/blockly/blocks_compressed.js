@@ -99,6 +99,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_LISTS_ISEMPTY_TOOLTIP}",
     helpUrl: "%{BKY_LISTS_ISEMPTY_HELPURL}",
   },
+  // 리스트의 길이
   {
     type: "lists_length",
     message0: "%{BKY_LISTS_LENGTH_TITLE}",
