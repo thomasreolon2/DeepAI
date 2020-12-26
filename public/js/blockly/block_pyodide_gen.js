@@ -1,10 +1,5 @@
 
-Blockly.Python['printc'] = function (block) {
-    var value_content = Blockly.Python.valueToCode(block, 'content', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-    var code ='print(' + value_content + ')\n';
-    return code;
-};
+
 Blockly.Python['nj_array'] = function (block) {
     var text_array = block.getFieldValue('array');
     // TODO: Assemble JavaScript into code variable.
@@ -610,12 +605,7 @@ Blockly.Python['vis_tree'] = function (block) {
     return code;
 };
 
-Blockly.Python['input'] = function (block) {
-    // TODO: Assemble Python into code variable.
-    var code = 'input()';
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_ATOMIC];
-};
+
 
 Blockly.Python['fetch_openml'] = function (block) {
     var dropdown_name = block.getFieldValue('NAME');
