@@ -70,6 +70,11 @@
   <script src="/js/blockly/block_definitions_py.js"></script>
   <script src="/js/blockly/block_definitions_js.js"></script>
 
+  <!-- 클래스 -->
+  <script src="/js/blockly/block_class.js"></script>
+  <script src="/js/blockly/block_class_py.js"></script>
+  <script src="/js/blockly/block_class_js.js"></script>
+
   <!-- 데이타 사이언스 블록 -->
   <script src="/js/blockly/Science_Data_T.js"></script>
   <script src="/js/blockly/Science_Data_Gen.js"></script>
@@ -954,15 +959,16 @@
 
 
     <!--pyodide_test-->
-
+    
     <!-- 클래스 준비중 -->
+    
     <category name="클래스 (Class)" colour="%{BKY_CLASS_HUE}">
-
-      <!-- 클래스  -->
+<!-- 
+      클래스 
       <block type="python_class"></block>
-      <!-- 클래스  -->
+      클래스 
 
-      <!-- 클래스 함수  -->
+      클래스 함수 
       <block type="class_func">
         <value name="class_func_val">
           <block type="class_func_param">
@@ -974,9 +980,9 @@
           </block>
         </value> 
       </block>  
-      <!-- 클래스 함수  -->
+      클래스 함수 
 
-       <!-- 클래스 함수 return -->
+       클래스 함수 return
        <block type="class_func_return">
         <value name="class_func_return_param">
           <block type="class_func_param">
@@ -984,22 +990,22 @@
           </block>
         </value> 
       </block>  
-      <!-- 클래스 함수 return -->
+      클래스 함수 return
 
-       <!-- 클래스 = -->
+       클래스 =
        <block type="function__parameter">
         <value name="function__parameter_val">
           <block type="class_func_param"></block>
         </value> 
        </block>  
-      <!-- 클래스 = -->
+      클래스 =
 
 
-       <!-- 클래스 connect  -->
+       클래스 connect 
        <block type="class_instance"></block>
-       <!-- 클래스 connect -->
+       클래스 connect
 
-      <!-- 객체  -->
+      객체 
       <block type="class_refer">
         <value name="class_refer_val">
           <block type="variables_get">
@@ -1007,17 +1013,19 @@
           </block>
         </value>
       </block>
-      <!-- 객체  -->
+      객체 
 
-      <!-- 객체 함수 -->
+      객체 함수
       <block type="class_instance_function">
         <value name="class_instance_functions"> 
           <block type="class_func_param"></block> 
         </value> 
       </block>  
-      <!-- 객체 함수 -->
-    
+      객체 함수
+    -->
      
+    <block type="webclass"></block>
+    <block type="self"></block>
 
     </category>
     <!-- 클래스 준비중 -->
