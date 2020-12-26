@@ -50,7 +50,8 @@
   <script src="/js/blockly/block_pandas_javagen.js"></script>
   <!-- Pandas 블록 -->
 
-  <!-- <script src="/js/blockly/test.js"></script>
+  <!-- 테스트용 js
+  <script src="/js/blockly/test.js"></script>
   <script src="/js/blockly/test_gen.js"></script>  -->
 
   <!-- 임시 -->
@@ -79,6 +80,11 @@
   <script src="/js/blockly/block_collection_js.js"></script>
   <script src="/js/blockly/block_collection_py.js"></script>
   <script src="/js/blockly/block_collection.js"></script>
+
+  <!-- 텍스트 블록 추가 -->
+  <script src="/js/blockly/block_text_js.js"></script>
+  <script src="/js/blockly/block_text_py.js"></script>
+  <script src="/js/blockly/block_text.js"></script>
 
   <!-- 기계 고장 진단 -->
   <script src="/js/blockly/block_escalator_T.js"></script>
@@ -231,7 +237,7 @@
 <body>
   <!-- 언어 패키지, 카테고리 색상 -->
   <!-- 2020-12-05 양승국 동적 변경을 위해 head -> body로 옮김-->
-  <script id = "lan" src="/js/blockly/msg/js/en.js"></script> 
+  <script id = "lan" src="/js/blockly/msg/js/ko.js"></script> 
 -
   <!-- 그래프 사이드바 -->
   <aside id="sidebar">
@@ -288,7 +294,7 @@
           <button type="button" class="btn btn-secondary mr-0" id="visibleAll">블럭+코드</button>
           <button type="button" class="btn btn-secondary mr-0" id="visibleCode">코드</button>
         </div>
-
+          
         <!-- 데이터 셋 불러오기  -->
         <!-- <input id="datasets_load" type="button" class="" onClick="datasets_load_lms();"
         value="데이터셋 불러오기" /> -->
@@ -455,8 +461,8 @@
 
   <!-- Toolbox 정의 -->
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display: none">
-    <category name="%{BKY_CATEGORY_VARIABLE}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-    <category name="%{BKY_CATEGORY_LOGIC}" colour="%{BKY_LOGIC_HUE}">
+    <category name="변수(Variable)" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
+    <category name="논리(Logic)" colour="%{BKY_LOGIC_HUE}">
       
       <!-- if -->
       <block type="controls_if">
@@ -512,8 +518,8 @@
       <block type="logic_null"></block>
       <!-- <block type="logic_ternary"></block> 이거 뭐임? -->
     </category>
-    <!-- 2020-12-26 양승국 -->
-    <category name="%{BKY_CATEGORY_REPEAT}" colour="%{BKY_LOOPS_HUE}">
+    <!-- 2020-12-26 양승국 start-->
+    <category name="반복(Repeat)" colour="%{BKY_LOOPS_HUE}">
       <!-- for 문 1 -->
       <block type="py_for">
         <value name="item">
@@ -575,14 +581,37 @@
         </value>
       </block>
       <!-- 범위2 블록 -->      
-      <block type="range2"></block>
+      <block type="range2">
+        <value name="VALUE1">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 범위3 블록 -->      
-      <block type="range3"></block>
+      <block type="range3">
+        <value name="x">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+        <value name="y">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+        <value name="z">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
       <!-- break 블록 -->      
       <block type="break_block"></block>
 
     </category>
-    <category name="%{BKY_CATEGORY_OPERATION}" colour="%{BKY_MATH_HUE}">
+    <!-- 2020-12-26 양승국 end -->
+    <category name="연산(Operation)" colour="%{BKY_MATH_HUE}">
       
       <block type="math_number">
         <field name="NUM">0</field>
@@ -609,112 +638,147 @@
         </value> 
       </block>
 
+      <!-- 제곱근 부터~ -->
       <block type="math_single">
         <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">9</field>
+          <shadow type="indata">
+            <field name="indata1">0</field>
           </shadow>
         </value>
       </block>
 
       <!-- 사인, 코사인 -->
-      <block type="math_trig"></block>
+      <block type="math_trig">
+        <value name="NUM">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 파이 등-->
       <block type="math_constant"></block>
       <!-- 짝수, 홀수 등 판단 -->
-      <block type="math_number_property"></block>
+      <block type="math_number_property">
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 반올림 -->
-      <block type="math_round"></block>
-      <!-- sum, 최소, 최대값 등-->
-      <block type="math_on_list"></block>
+      <block type="math_round">
+        <value name="NUM">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 합, 최소, 최대값 등-->
+      <block type="math_on_list">
+        <value name="LIST">
+          <shadow type="indata">
+            <field name="indata1">list</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 이건 뭔지 모르겠음 -->
       <block type="math_constrain">
         <value name="VALUE">
-          <shadow type="math_number">
-            <field name="NUM">50</field>
+          <shadow type="indata">
+            <field name="indata1">50</field>
           </shadow>
         </value>
         <value name="LOW">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
+          <shadow type="indata">
+            <field name="indata1">1</field>
           </shadow>
         </value>
         <value name="HIGH">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
+          <shadow type="indata">
+            <field name="indata1">100</field>
           </shadow>
         </value>
       </block>
-      <!-- 랜덤 정수 -->
+      <!-- 랜덤으로 정수생성 -->
       <block type="math_random_int">
         <value name="FROM">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
+          <shadow type="indata">
+            <field name="indata1">1</field>
           </shadow>
         </value>
         <value name="TO">
-          <shadow type="math_number">
-            <field name="NUM">100</field>
+          <shadow type="indata">
+            <field name="indata1">100</field>
           </shadow>
         </value>
       </block>
-      <!-- 랜덤 실수 -->
+      <!-- ?? -->
       <block type="math_random_float"></block>
       <block type="math_atan2">
         <value name="X">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
+          <shadow type="indata">
+            <field name="indata1">1</field>
           </shadow>
         </value>
         <value name="Y">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
+          <shadow type="indata">
+            <field name="indata1">1</field>
           </shadow>
         </value>
       </block>
       <!-- 형변환  -->
-      <block type="convert">
-        <value name="VALUE"></value>
+      <block type="convert_block">
+        <value name="A">
+          <shadow type="indata">
+            <field name="indata1">1</field>
+          </shadow>
+        </value>
       </block>
      
       
 
     </category>
 
+    <!-- 2020-12-26 양승국 문자 start -->
     <!-- 문자 -->
-    <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}">
+    <category name="문자(Text)" colour="%{BKY_TEXTS_HUE}">
 
       <!-- print -->
-      <block type="printc"></block>
-      <block type="input"></block>
+      <block type="printc">
+        <value name="content">
+          <shadow type="text">
+            <field name="TEXT"></field>
+          </shadow>
+        </value>
+      </block>
+      <!-- input -->
+      <block type="input1"></block>
+      <!-- text -->
       <block type="text"></block>
 
-       <!-- ""없는 문자 -->
-       <block type="char_a_none"></block>
+       <!-- ""없는 문자
+       <block type="char_a_none"></block> -->
 
       <block type="text_join"></block>
 
-    
-
       <!-- len -->
       <block type="text_length">
-        <value name="VALUE">
-
-        </value>
+        <value name="VALUE"></value>
       </block>
+
       <!-- empty?? -->
       <block type="text_isEmpty">
         <value name="VALUE">
           <shadow type="text">dic
-
           </shadow>
         </value>
       </block>
+
       <!-- find-->
       <block type="text_indexOf">
         <value name="VALUE">
           <block type="variables_get">
-            <field name="VAR">{textVariable}</field>
+            <field name="VAR">text</field>
           </block>
         </value>
         <value name="FIND">
@@ -727,7 +791,7 @@
       <block type="text_charAt">
         <value name="VALUE">
           <block type="variables_get">
-            <field name="VAR">{textVariable}</field>
+            <field name="VAR">text</field>
           </block>
         </value>
       </block>
@@ -735,7 +799,7 @@
       <block type="text_getSubstring">
         <value name="STRING">
           <block type="variables_get">
-            <field name="VAR">{textVariable}</field>
+            <field name="VAR">text</field>
           </block>
         </value>
       </block>
@@ -760,15 +824,20 @@
       </block>
       <!-- ??  -->
       <block type="text_prompt_ext">
-        <value name="TEXT">
-
-        </value>
+        <value name="TEXT"></value>
       </block>
      
     </category>
 
     <!-- list -->
-    <category name="%{BKY_CATEGORY_COLLECTION}" colour="%{BKY_COLLECTION_HUE}">
+    <category name="컬렉션(Collection)" colour="%{BKY_COLLECTION_HUE}">
+      <block type = "create_list">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">1,2,3,4</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 리스트 생성 -->
       <block type="lists_create_with"></block>
       <!-- 비어있는 리스트 생성 -->
@@ -776,22 +845,44 @@
         <mutation items="0"></mutation>
       </block>
       <!-- 같은 내용을 n번 넣어 리스트 생성 -->
-      <block type="lists_repeat">
+      <block type="lists_repeat">ITEM
+        <value name="ITEM">
+          <shadow type="indata">
+            <field name="indata1">1,2,3,4</field>
+          </shadow>
+        </value>
         <value name="NUM">
-          <shadow type="math_number">
-            <field name="NUM">5</field>
+          <shadow type="indata">
+            <field name="indata1">5</field>
           </shadow>
         </value>
       </block>
       <!-- 리스트의 길이 -->
-      <block type="lists_length"></block>
+      <block type="lists_length">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">lst</field>
+          </block>
+        </value>
+      </block>
       <!-- 리스트가 비어있는지 확인 -->
-      <block type="lists_isEmpty"></block>
+      <block type="lists_isEmpty">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">lst</field>
+          </block>
+        </value>
+      </block>
       <!-- split -->
       <block type="lists_split">
+        <value name="INPUT">
+          <block type="variables_get">
+            <field name="VAR">lst</field>
+          </block>
+        </value>
         <value name="DELIM">
-          <shadow type="text">
-            <field name="TEXT">,</field>
+          <shadow type="indata">
+            <field name="indata1">,</field>
           </shadow>
         </value>
       </block>
@@ -799,10 +890,7 @@
 
 
       <!-- 튜플 -->
-      <block type="tuple">
-        <value name="tuple">
-        </value>
-      </block>
+      <block type="tuple"></block>
       <!-- 새 블록  딕셔너리 -->
       <block type="dict">
         <value name="DICT">
@@ -855,13 +943,13 @@
 
     <!-- 커스텀 블록 -->
     <!-- 함수 -->
-    <category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+    <category name="함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
 
 
     <!--pyodide_test-->
 
     <!-- 클래스 준비중 -->
-    <category name="%{BKY_CATEGORY_CLASS}" colour="%{BKY_CLASS_HUE}">
+    <category name="클래스 (Class)" colour="%{BKY_CLASS_HUE}">
 
       <!-- 클래스  -->
       <block type="python_class"></block>
@@ -936,7 +1024,7 @@
     <!-- # numpy function # -->
 
 
-    <category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}">
+    <category name="넘파이(Numpy)" colour="%{BKY_NUMPY_HUE}">
 
       <!-- import numpy as np -->
       <block type="numpy_library"></block>
@@ -1088,7 +1176,7 @@
     <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
     <!-- ************************************************** ************************* *************************  -->
     <!-- 2020-09-20 양승국 수정-->
-    <category name="%{BKY_CATEGORY_PANDAS}" colour="%{BKY_PANDAS_HUE}">
+    <category name="판다스(Pandas)" colour="%{BKY_PANDAS_HUE}">
       <!-- 2020-09-20 양승국 판다스 전체수정-->
       <!-- <block type="import_lib">
           <value name="var">
@@ -1097,8 +1185,10 @@
             </block>
           </value>
         </block> -->
+      <!-- pandas 라이브러리 -->
       <block type="csv_library"></block>
       <!-- <block type="pyo_lib"></block> -->
+      <!-- csv프레임 -->
       <block type="csvdataframe_J">
         <value name="input_var">
           <block type="variables_get">
@@ -1111,6 +1201,7 @@
       </block>
 
       <!-- 2020-09-09 양승국 -->
+      <!-- zip리스트 -->
       <block type="pandas_datalist">
         <value name="frm_var">
           <block type="variables_get">
@@ -1121,6 +1212,7 @@
           <block type="createColumn"></block>
         </value>
       </block>
+      <!-- zip 프레임 -->
       <block type="pandas_dataframe">
         <value name="df_va">
           <block type="variables_get">
@@ -1134,13 +1226,30 @@
         </value>
       </block>
       <!-- 2020-09-09 양승국-->
+      <!-- 일괄변경 -->
       <block type="pandas_conversion">
         <value name="pa_frm">
           <block type="variables_get">
             <field name="VAR">df</field>
           </block>
         </value>
+        <value name="pa_cul">
+          <shadow type="indata">
+            <field name="indata1">name</field>
+          </shadow>
+        </value>
+        <value name="pa_data">
+          <shadow type="indata">
+            <field name="indata1">null</field>
+          </shadow>
+        </value>
+        <value name="pa_chidata">
+          <shadow type="indata">
+            <field name="indata1">50</field>
+          </shadow>
+        </value>
       </block>
+      <!-- 결측치삽입 -->
       <block type="fill_null_data">
         <value name="DATA">
           <block type="variables_get">
@@ -1149,6 +1258,7 @@
         </value>
       </block>
       <!-- 2020-09-10 양승국-->
+      <!-- 결측치삭제 -->
       <block type="pandas_mis_del">
         <value name="DATA_del">
           <block type="variables_get">
@@ -1156,6 +1266,7 @@
           </block>
         </value>
       </block>
+      <!-- 범위설정 -->
       <block type="select_row_column_value">
         <value name="select_data">
           <block type="variables_get">
@@ -1169,10 +1280,13 @@
           <block type="selec_value_all"></block>
         </value>
       </block>
+      <!-- 전체범위 -->
       <block type="selec_value_all"></block>
+      <!-- 부분범위 -->
       <block type="iloc_range"></block>
 
       <!-- <block type="pandas_print"></block> -->
+      <!-- 행열삭제 -->
       <block type="select_row_delete">
         <value name="select_data">
           <block type="variables_get">
@@ -1183,6 +1297,7 @@
       <!-- <block type="save_image"></block> -->
       <!-- <block type="list"></block> -->
       <!-- <block type="header"></block> -->
+      <!-- 행렬추출 -->
       <block type="select_row_list">
         <value name="list_data">
           <block type="variables_get">
@@ -1197,7 +1312,9 @@
           </block>
         </value>
       </block> -->
+      <!-- 열 추가 -->
       <block type="df_add_col"></block>
+      <!-- 행렬크기 -->
       <block type="row_count">
         <value name="select_value">
           <block type="variables_get">
@@ -1207,6 +1324,7 @@
       </block>
       <!-- 2020-09-16 양승국-->
       <!-- <block type="nm"></block> -->
+      <!-- 시리즈생성 -->
       <block type="pandas_series">
         <value name="ser_var">
           <block type="variables_get">
@@ -1217,6 +1335,7 @@
           <block type="pandas_series_data"></block>
         </value>
       </block>
+      <!-- 시리즈 concat -->
       <block type="pandas_concat">
         <value name="cat_vl">
           <block type="variables_get">
@@ -1225,6 +1344,7 @@
         </value>
       </block>
       <!-- 2020-09-17 양승국 블록추가 -->
+      <!-- 시리즈 merge -->
       <block type="pandas_merge">
         <value name="mer_var">
           <block type="variables_get">
@@ -1235,13 +1355,17 @@
           <block type="pandas_merge_oncol"></block>
         </value>
       </block>
+      <!-- 공통컬럼0 -->
       <block type="pandas_merge_oncol"></block>
+      <!-- 공통컬럼x -->
       <block type="pandas_merge_lron"></block>
+      <!-- 시리즈그룹화 -->
       <block type="groupby_series">
         <value name="colName">
           <block type="groupby_series_"></block>
         </value>
       </block>
+      <!-- 프레임그룹화 -->
       <block type="groupby_dataFrame">
         <value name="colName">
           <block type="groupby_series_"></block>
@@ -1289,7 +1413,7 @@
     <!-- ************************************************** ************************* *************************  -->
 
     <!-- # 시각화 부분 #  -->
-    <category name="%{BKY_CATEGORY_MATPLOT}" colour="%{BKY_VISUAL_HUE}">
+    <category name="맷플롯립(Matplot)" colour="%{BKY_VISUAL_HUE}">
       <block type="visualization_library">
         <value name="lib_var">
           <block type="variables_get">
@@ -1362,7 +1486,7 @@
 
 
 
-    <category name="%{BKY_CATEGORY_SCIPY}" colour="%{BKY_SCIPY_HUE}">
+    <category name="사이파이(Scipy)" colour="%{BKY_SCIPY_HUE}">
       <block type="import_scipy"></block>
       <block type="curve_fit"></block>
       <block type="univariatespline"></block>
@@ -1370,7 +1494,7 @@
     </category>
     <!-- # 시각화 부분 #  -->
 
-    <category name="%{BKY_CATEGORY_SCIKIT}" colour="%{BKY_SCIKITLEARN_HUE}">
+    <category name="사이킷런(Scikit)" colour="%{BKY_SCIKITLEARN_HUE}">
       <category name="데이터셋 (Dataset)" colour="%{BKY_SCIKITLEARN_HUE}">
         <block type="import_dataset"></block>
         <block type="random_import"></block>
@@ -1498,11 +1622,11 @@
     </category>
     <!-- 기본 블록 2020 - 09 - 07 찬영 -->
     <!-- 새 블록  딕셔너리 -->
-    <category name="%{BKY_CATEGORY_DATASCIENCE}" colour="%{BKY_DATA_HUE}">
+    <category name="데이터과학(DS)" colour="%{BKY_DATA_HUE}">
     </category>
-    <category name="%{BKY_CATEGORY_MACHINELEARNING}" colour="%{BKY_ML_HUE}">
+    <category name="머신러닝(ML)" colour="%{BKY_ML_HUE}">
     </category>
-    <category name="%{BKY_CATEGORY_DEEPLEARNING}" colour="%{BKY_DL_HUE}">
+    <category name="딥러닝(DL)" colour="%{BKY_DL_HUE}">
     </category>
     <!-- <category name="프롤로그 (Prolog)" colour="%{BKY_PROLOG_HUE}">
       <block type="prolog_list">
@@ -1536,16 +1660,13 @@
 
 
     <!-- 기계 고장 진단  -->
-    <category name="%{BKY_CATEGORY_AIX}" colour="%{BKY_PROLOG_HUE}">
+    <!-- <category name="전공직무AI융합" colour="%{BKY_PROLOG_HUE}">
       <block type="wavfile_read">
         <value name="wavfile_read_val">
           <block type="class_func_param"></block>
         </value> 
       </block>
-
-
-      
-    </category> 
+    </category>  -->
 
 
   </xml>
