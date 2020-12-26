@@ -16,9 +16,8 @@ Blockly.Blocks['webdefine'] = {
             .setCheck(null);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("#CDDA36");
+        this.setColour("%{BKY_PROCEDURES_HUE}");
         this.setTooltip('');
-        this.setHelpUrl('http://www.example.com/');
     },
 };
 
@@ -32,7 +31,7 @@ Blockly.Blocks['webreturn2'] = {
             .setCheck(null);
         this.setPreviousStatement(true, null);
         this.setInputsInline(true);
-        this.setColour("#CDDA36");
+        this.setColour("%{BKY_PROCEDURES_HUE}");
         this.setTooltip('');
         this.setHelpUrl('');
     },
