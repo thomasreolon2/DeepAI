@@ -445,7 +445,7 @@ Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT
 Blockly.Msg['REPEAT_1_REPEAT'] = "반복문";
 Blockly.Msg["REPEAT_1_VARIABLE"] = "변수";
 Blockly.Msg['REPEAT_1_LIST'] = "리스트";
-
+Blockly.Msg["REPEAT_7_BREAK"] = "break";
 Blockly.Msg['REPEAT_4_RANGE'] = "범위";
 
 Blockly.Msg['REPEAT_5_RANGE'] = "범위";

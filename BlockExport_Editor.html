@@ -507,9 +507,9 @@
       <block type="logic_null"></block>
       <!-- <block type="logic_ternary"></block> 이거 뭐임? -->
     </category>
+    <!-- 2020-12-26 양승국 -->
     <category name="반복(Repeat)" colour="%{BKY_LOOPS_HUE}">
-      <!-- 2020-12-26 양승국 -->
-      <!-- for 문 -->
+      <!-- for 문 1 -->
       <block type="py_for">
         <value name="item">
           <block type="variables_get">
@@ -522,6 +522,7 @@
           </shadow>
         </value>
       </block>
+      <!-- for 문 2 -->
       <block type="py_for">
         <value name="item">
           <shadow type="indata">
@@ -535,18 +536,44 @@
         </value>
       </block>
       <!-- while 문 -->
-      <block type="controls_whileUntil"></block>
-      <block type="increase">
-
-        <value name="VALUE">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
+      <block type="controls_whileUntil">
+        <value name="BOOL">
+          <shadow type="indata">
+            <field name="indata1">False</field>
           </shadow>
         </value>
       </block>
-      <block type="range1"></block>
+      <!-- R3 블록 -->
+      <block type="increase">
+        <value name="NUMBER">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+        <value name="VALUE">
+          <shadow type="indata">
+            <field name="indata1">10</field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 범위1 블록 -->
+      <block type="range1">
+        <value name="VALUE1">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+        <value name="VALUE2">
+          <shadow type="indata">
+            <field name="indata1">5</field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 범위2 블록 -->      
       <block type="range2"></block>
+      <!-- 범위3 블록 -->      
       <block type="range3"></block>
+      <!-- break 블록 -->      
       <block type="break_block"></block>
 
     </category>
