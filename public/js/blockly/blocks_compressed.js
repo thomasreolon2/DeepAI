@@ -643,7 +643,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "logic_boolean",
     message0: "%1 %2",
     args0: [
-      {"type": "field_image","src": "/img/Logic/L7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Logic/L6-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       {
         type: "field_dropdown",
         name: "BOOL",
@@ -757,7 +757,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "logic_null",
     message0: "%{BKY_LOGIC_NULL}",
     args0:[
-      {"type": "field_image","src": "/img/Logic/L6-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Logic/L7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
     ],
     output: null,
     style: "logic_blocks",

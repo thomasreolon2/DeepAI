@@ -6,7 +6,7 @@ Blockly.Blocks['create_list'] = {
   init: function () {
       this.appendDummyInput()
           .appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
-          .appendField(new Blockly.FieldVariable("list"), "list")
+          .appendField(new Blockly.FieldVariable("my_list"), "list")
           .appendField(" = [");
       this.appendValueInput("text")
           .setCheck(null);
