@@ -1,4 +1,4 @@
- // 넘파이 기본 연산
+ //기본 연산
  Blockly.JavaScript['numpy_operator'] = function(block) {
   var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
   var value_numpy_operator_val = Blockly.JavaScript.valueToCode(block, 'numpy_operator_val', Blockly.JavaScript.ORDER_ATOMIC);
@@ -30,7 +30,14 @@ Blockly.JavaScript['numpy_array_operator'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
  
-
+ //""없는 문자
+ Blockly.JavaScript['char_a_none'] = function(block) {
+  var text_char_a_none_val = block.getFieldValue('char_A_none_val');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
 
 //클래스 선언 
 Blockly.JavaScript['python_class'] = function(block) {

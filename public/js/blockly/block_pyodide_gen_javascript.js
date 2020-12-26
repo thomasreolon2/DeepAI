@@ -1,4 +1,9 @@
-
+Blockly.JavaScript['printc'] = function (block) {
+    var value_content = Blockly.JavaScript.valueToCode(block, 'content', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
   Blockly.JavaScript['nj_array'] = function (block) {
     var text_array = block.getFieldValue('array');
     // TODO: Assemble JavaScript into code variable.
@@ -151,7 +156,12 @@ Blockly.JavaScript['sump'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-
+Blockly.JavaScript['input'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
 
 Blockly.JavaScript['csv3'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
@@ -183,6 +193,12 @@ Blockly.JavaScript['model_score'] = function (block) {
 }
 
 
+Blockly.JavaScript['input'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code="\n"
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
 
 Blockly.JavaScript['fetch_openml'] = function (block) {
   var dropdown_name = block.getFieldValue('NAME');
