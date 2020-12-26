@@ -1,5 +1,5 @@
 
-//기본 연산
+// 넘파이 기본 연산
 Blockly.Python['numpy_operator'] = function(block) {
   var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
   var value_numpy_operator_val = Blockly.Python.valueToCode(block, 'numpy_operator_val', Blockly.Python.ORDER_ATOMIC);
@@ -29,14 +29,7 @@ Blockly.Python['numpy_array_operator'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-//""없는 문자
-Blockly.Python['char_a_none'] = function(block) {
-  var text_char_a_none_val = block.getFieldValue('char_A_none_val');
-  // TODO: Assemble Python into code variable.
-  var code = `${text_char_a_none_val}`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
-};
+
 
 
 //클래스 선언

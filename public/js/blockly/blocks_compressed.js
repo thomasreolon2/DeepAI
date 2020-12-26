@@ -99,6 +99,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_LISTS_ISEMPTY_TOOLTIP}",
     helpUrl: "%{BKY_LISTS_ISEMPTY_HELPURL}",
   },
+  // 리스트의 길이
   {
     type: "lists_length",
     message0: "%{BKY_LISTS_LENGTH_TITLE}",
@@ -1061,6 +1062,7 @@ Blockly.defineBlocksWithJsonArray([
   {
     type: "controls_whileUntil",
     message0: "%1 %2 %3",
+    
     args0: [
       
       {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
@@ -1082,6 +1084,7 @@ Blockly.defineBlocksWithJsonArray([
     helpUrl: "%{BKY_CONTROLS_WHILEUNTIL_HELPURL}",
     extensions: ["controls_whileUntil_tooltip"],
   },
+  
   {
     type: "controls_for",
     message0: "%{BKY_CONTROLS_FOR_TITLE}",

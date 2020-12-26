@@ -210,7 +210,7 @@ Blockly.Python['pandas_conversion'] = function (block) {
   var value_pa_data = Blockly.Python.valueToCode(block, 'pa_data', Blockly.Python.ORDER_ATOMIC);
   var value_pa_chidata = Blockly.Python.valueToCode(block, 'pa_chidata', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = value_pa_frm + '.loc[' + value_pa_frm + '[' + value_pa_cul + '] ==' + value_pa_data + ', ' + value_pa_cul
+  var code = value_pa_frm + '.loc[' + value_pa_frm + '[' + value_pa_cul + '] == ' + value_pa_data + ', ' + value_pa_cul
     + '] = ' + value_pa_chidata + ';\n';
   return code;
 };
