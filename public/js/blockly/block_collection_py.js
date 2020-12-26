@@ -16,3 +16,10 @@ Blockly.Python['create_list'] = function (block) {
   var code = variable_list + ' = [' + value_text + ']\n';
   return code;
 };
+//2020-12-27-전우진-global
+Blockly.Python['global'] = function (block) {
+  var text_print = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'global ' + text_print + '\n';
+  return code;
+};
