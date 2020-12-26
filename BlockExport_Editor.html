@@ -172,13 +172,13 @@
 
 
   <!--Socket.IO --> 
-  <script>  
+  <!-- <script>  
     var socket = io.connect('http://localhost:8000');
       // socket.on('CSV_Name_error', function(data) { 
       //   if (data == "error"); 
       //   window.alert("잘못된 입력입니다.");  
       //  });  
-  </script>      
+  </script>       -->
   <!--Socket.IO -->   
 
 
@@ -575,9 +575,31 @@
         </value>
       </block>
       <!-- 범위2 블록 -->      
-      <block type="range2"></block>
+      <block type="range2">
+        <value name="VALUE1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
       <!-- 범위3 블록 -->      
-      <block type="range3"></block>
+      <block type="range3">
+        <value name="x">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="y">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="z">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
       <!-- break 블록 -->      
       <block type="break_block"></block>
 
@@ -805,13 +827,11 @@
       </block>
       <!-- 새 블록  딕셔너리 -->
       <block type="dict">
-        <value name="DICT">
-        </value>
+       
       </block>
       <!-- 딕셔너리 선택 -->
       <block type="dic_menu">
-        <value name="dic_menu">
-        </value>
+        
       </block>
       <!-- 집합 -->
       <block type="set">
@@ -819,10 +839,7 @@
         </value>
       </block>
       <!-- 집합선택 -->
-      <block type="set_menu">
-        <value name="set_menu">
-        </value>
-      </block>
+      <block type="set_menu"></block>
       <block type="sump"></block>
       <!-- sort,reverse -->
       <block type="list_sort_reverse"></block>
@@ -1358,9 +1375,6 @@
     </category>
     -->
     <!-- 웹크롤링 -->
- 
-
-
 
     <category name="%{BKY_CATEGORY_SCIPY}" colour="%{BKY_SCIPY_HUE}">
       <block type="import_scipy"></block>

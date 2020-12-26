@@ -316,16 +316,7 @@ Blockly.Python['data_csv_read'] = function (block) {
 
 
 
-// 새 튜플
-Blockly.Python['tuple'] = function (block) {
-    // Create a list with any number of elements of any type.
-    var elements = new Array(block.itemCount_);
-    for (var i = 0; i < block.itemCount_; i++) {
-        elements[i] = Blockly.Python.valueToCode(block, 'ADD' + i, Blockly.Python.ORDER_NONE) || 'None';
-    }
-    var code = '(' + elements.join(', ') + ')';
-    return [code, Blockly.Python.ORDER_ATOMIC];
-};
+
 
 // 딕셔너리
 Blockly.Python['dict'] = function (block) {

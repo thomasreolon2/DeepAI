@@ -658,6 +658,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_LOGIC_BOOLEAN_TOOLTIP}",
     helpUrl: "%{BKY_LOGIC_BOOLEAN_HELPURL}",
   },
+  // if문 
   {
     type: "controls_if",
     message0: "%1 %{BKY_CONTROLS_IF_MSG_IF} %2",
