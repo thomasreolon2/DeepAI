@@ -924,7 +924,24 @@ Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_1'] = "[BernoulliRBM] 모델";
 Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_2'] = "배치사이즈";
 Blockly.Msg['NEURALNETWORK_MLP_LOSS'] = "[MLP 손실값 추출 ] 모델";
 
-
+// 카테고리
+Blockly.Msg['CATEGORY_VARIABLE'] = "변수(Variable)";
+Blockly.Msg['CATEGORY_LOGIC'] = "논리(Logic)";
+Blockly.Msg['CATEGORY_REPEAT'] = "반복(Repeat)";
+Blockly.Msg['CATEGORY_OPERATION'] = "연산(Operation)";
+Blockly.Msg['CATEGORY_TEXT'] = "문자(Text)";
+Blockly.Msg['CATEGORY_COLLECTION'] = "컬렉션(Collection)";
+Blockly.Msg['CATEGORY_FUNCTION'] = "함수(Function)";
+Blockly.Msg['CATEGORY_CLASS'] = "클래스(Class)";
+Blockly.Msg['CATEGORY_NUMPY'] = "넘파이(Numpy)";
+Blockly.Msg['CATEGORY_PANDAS'] = "판다스(Pandas)";
+Blockly.Msg['CATEGORY_MATPLOT'] = "맷플롯립(Matplotlib)";
+Blockly.Msg['CATEGORY_SCIPY'] = "사이파이(Scipy)";
+Blockly.Msg['CATEGORY_SCIKIT']= "사이킷런(Scikit)"
+Blockly.Msg['CATEGORY_DATASCIENCE'] = "데이터과학(DS)";
+Blockly.Msg['CATEGORY_MACHINELEARNING'] ="머신러닝(ML)";
+Blockly.Msg['CATEGORY_DEEPLEARNING']="딥러닝(DL)";
+Blockly.Msg['CATEGORY_AIX'] = "전공직무AI융합"
 //Blockly.Msg['PANDAS_'] = "";
 // Blockly.Msg.  %{BKY_NUMPY_NUMPY_DATA_CONVERSION_1}
 

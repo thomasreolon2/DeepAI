@@ -925,3 +925,22 @@ Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_REGRESSOR'] = "[MLP predictor] ";
 Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_1'] = "[BernoulliRBM] model";
 Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_2'] = "batch siz";
 Blockly.Msg['NEURALNETWORK_MLP_LOSS'] = "[MLP loss value extraction ] model";
+
+// 카테고리
+Blockly.Msg['CATEGORY_VARIABLE'] = "Variable";
+Blockly.Msg['CATEGORY_LOGIC'] = "Logic";
+Blockly.Msg['CATEGORY_REPEAT'] = "Repeat";
+Blockly.Msg['CATEGORY_OPERATION'] = "Operation";
+Blockly.Msg['CATEGORY_TEXT'] = "Text";
+Blockly.Msg['CATEGORY_COLLECTION'] = "Collection";
+Blockly.Msg['CATEGORY_FUNCTION'] = "Function";
+Blockly.Msg['CATEGORY_CLASS'] = "Class";
+Blockly.Msg['CATEGORY_NUMPY'] = "Numpy";
+Blockly.Msg['CATEGORY_PANDAS'] = "Pandas";
+Blockly.Msg['CATEGORY_MATPLOT'] = "Matplotlib";
+Blockly.Msg['CATEGORY_SCIPY'] = "Scipy";
+Blockly.Msg['CATEGORY_SCIKIT']= "Scikit-learn"
+Blockly.Msg['CATEGORY_DATASCIENCE'] = "Data science";
+Blockly.Msg['CATEGORY_MACHINELEARNING'] ="Machine learning";
+Blockly.Msg['CATEGORY_DEEPLEARNING']="Deep Learning";
+Blockly.Msg['CATEGORY_AIX'] = "AI + X"
