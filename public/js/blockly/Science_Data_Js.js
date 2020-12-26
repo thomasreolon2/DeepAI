@@ -1,4 +1,4 @@
- //기본 연산
+ // 넘파이 기본 연산
  Blockly.JavaScript['numpy_operator'] = function(block) {
   var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
   var value_numpy_operator_val = Blockly.JavaScript.valueToCode(block, 'numpy_operator_val', Blockly.JavaScript.ORDER_ATOMIC);
