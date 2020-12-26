@@ -474,8 +474,32 @@
       <!-- <block type="logic_ternary"></block> 이거 뭐임? -->
     </category>
     <category name="반복(Repeat)" colour="%{BKY_LOOPS_HUE}">
+      <!-- 2020-12-26 양승국 -->
       <!-- for 문 -->
-      <block type="py_for"></block>
+      <block type="py_for">
+        <value name="item">
+          <shadow type="variables_get">
+            <field name="VAR">i</field>
+          </shadow>
+        </value>
+        <value name="list">
+          <shadow type="indata">
+            <field name="indata1">number</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="py_for">
+        <value name="item">
+          <shadow type="indata">
+            <field name="indata1">x</field>
+          </shadow>
+        </value>
+        <value name="list">
+          <shadow type="indata">
+            <field name="indata1">y</field>
+          </shadow>
+        </value>
+      </block>
       <!-- while 문 -->
       <block type="controls_whileUntil"></block>
       <block type="increase">
