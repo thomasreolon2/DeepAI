@@ -1157,8 +1157,10 @@
             </block>
           </value>
         </block> -->
+      <!-- pandas 라이브러리 -->
       <block type="csv_library"></block>
       <!-- <block type="pyo_lib"></block> -->
+      <!-- csv프레임 -->
       <block type="csvdataframe_J">
         <value name="input_var">
           <block type="variables_get">
@@ -1171,6 +1173,7 @@
       </block>
 
       <!-- 2020-09-09 양승국 -->
+      <!-- zip리스트 -->
       <block type="pandas_datalist">
         <value name="frm_var">
           <block type="variables_get">
@@ -1181,6 +1184,7 @@
           <block type="createColumn"></block>
         </value>
       </block>
+      <!-- zip 프레임 -->
       <block type="pandas_dataframe">
         <value name="df_va">
           <block type="variables_get">
@@ -1194,6 +1198,7 @@
         </value>
       </block>
       <!-- 2020-09-09 양승국-->
+      <!-- 일괄변경 -->
       <block type="pandas_conversion">
         <value name="pa_frm">
           <block type="variables_get">
@@ -1201,6 +1206,7 @@
           </block>
         </value>
       </block>
+      <!-- 결측치삽입 -->
       <block type="fill_null_data">
         <value name="DATA">
           <block type="variables_get">
@@ -1209,6 +1215,7 @@
         </value>
       </block>
       <!-- 2020-09-10 양승국-->
+      <!-- 결측치삭제 -->
       <block type="pandas_mis_del">
         <value name="DATA_del">
           <block type="variables_get">
@@ -1216,6 +1223,7 @@
           </block>
         </value>
       </block>
+      <!-- 범위설정 -->
       <block type="select_row_column_value">
         <value name="select_data">
           <block type="variables_get">
@@ -1229,10 +1237,13 @@
           <block type="selec_value_all"></block>
         </value>
       </block>
+      <!-- 전체범위 -->
       <block type="selec_value_all"></block>
+      <!-- 부분범위 -->
       <block type="iloc_range"></block>
 
       <!-- <block type="pandas_print"></block> -->
+      <!-- 행열삭제 -->
       <block type="select_row_delete">
         <value name="select_data">
           <block type="variables_get">
@@ -1243,6 +1254,7 @@
       <!-- <block type="save_image"></block> -->
       <!-- <block type="list"></block> -->
       <!-- <block type="header"></block> -->
+      <!-- 행렬추출 -->
       <block type="select_row_list">
         <value name="list_data">
           <block type="variables_get">
@@ -1257,7 +1269,9 @@
           </block>
         </value>
       </block> -->
+      <!-- 열 추가 -->
       <block type="df_add_col"></block>
+      <!-- 행렬크기 -->
       <block type="row_count">
         <value name="select_value">
           <block type="variables_get">
@@ -1267,6 +1281,7 @@
       </block>
       <!-- 2020-09-16 양승국-->
       <!-- <block type="nm"></block> -->
+      <!-- 시리즈생성 -->
       <block type="pandas_series">
         <value name="ser_var">
           <block type="variables_get">
@@ -1277,6 +1292,7 @@
           <block type="pandas_series_data"></block>
         </value>
       </block>
+      <!-- 시리즈 concat -->
       <block type="pandas_concat">
         <value name="cat_vl">
           <block type="variables_get">
@@ -1285,6 +1301,7 @@
         </value>
       </block>
       <!-- 2020-09-17 양승국 블록추가 -->
+      <!-- 시리즈 merge -->
       <block type="pandas_merge">
         <value name="mer_var">
           <block type="variables_get">
@@ -1295,13 +1312,17 @@
           <block type="pandas_merge_oncol"></block>
         </value>
       </block>
+      <!-- 공통컬럼0 -->
       <block type="pandas_merge_oncol"></block>
+      <!-- 공통컬럼x -->
       <block type="pandas_merge_lron"></block>
+      <!-- 시리즈그룹화 -->
       <block type="groupby_series">
         <value name="colName">
           <block type="groupby_series_"></block>
         </value>
       </block>
+      <!-- 프레임그룹화 -->
       <block type="groupby_dataFrame">
         <value name="colName">
           <block type="groupby_series_"></block>
