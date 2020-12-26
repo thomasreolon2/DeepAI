@@ -71,11 +71,14 @@
   <script src="/js/blockly/Science_Data_Js.js"></script>
 
   <!-- 기계 고장 진단 -->
+  <script src="/js/blockly/block_collection_js.js"></script>
+  <script src="/js/blockly/block_collection_py.js"></script>
+  <script src="/js/blockly/block_collection.js"></script>
+
+  <!-- 기계 고장 진단 -->
   <script src="/js/blockly/block_escalator_T.js"></script>
   <script src="/js/blockly/block_escalator_js.js"></script>
   <script src="/js/blockly/block_escalator_python.js"></script>
-
-
 
   <!-- 데이타 사이언스 블록 -->
   <script src="/js/blockly/FileSaver.js"></script> <!-- 파일 저장 기능 -->
@@ -452,10 +455,12 @@
       <block type="controls_if"></block> <!-- if -->
       <block type="controls_ifelse"></block><!-- if_else -->
       <block type="logic_compare">
-        <shadow type="math_number">
-          <field name="NUM">10</field>
-          <field name="NUM">10</field>
-        </shadow>
+        <value name="A">
+          <shadow type="indata2">
+            <field name="indata3"></field>
+          </shadow>
+        </value>
+        
       </block>
       <block type="logic_operation"></block>
       <block type="logic_negate"></block>

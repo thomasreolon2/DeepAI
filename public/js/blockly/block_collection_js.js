@@ -2,7 +2,7 @@
 // // 2020-12-26
 // ////////////////////////////////////////////////////////////////////
 
-Blockly.JavaScript['indata'] = function(block) {
+Blockly.JavaScript['indata2'] = function(block) {
   var code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
