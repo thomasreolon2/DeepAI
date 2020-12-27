@@ -1,5 +1,4 @@
 //2020-12-26-전우진 definitions
-
 Blockly.Blocks['webdefine'] = {
     init: function () {
         this.appendDummyInput()
@@ -20,9 +19,7 @@ Blockly.Blocks['webdefine'] = {
         this.setTooltip('');
     },
 };
-
 //2020-12-26-전우진 return
-
 Blockly.Blocks['webreturn2'] = {
     init: function () {
         this.appendDummyInput()

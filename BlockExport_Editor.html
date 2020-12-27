@@ -952,10 +952,25 @@
     <!-- <category name="함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category> -->
 
     <category name="함수 (Function)" colour="%{BKY_PROCEDURES_HUE}">
-
-      <block type="webdefine"></block>
-      <block type="webreturn2"></block>
-      
+      <block type="webdefine">
+        <value name="1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <block type="webreturn2">
+        <value name="return">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
     </category>
 
 
@@ -964,7 +979,21 @@
     <!-- 클래스 준비중 -->
     
     <category name="클래스 (Class)" colour="%{BKY_CLASS_HUE}">
-<!-- 
+      <block type="webclass">
+        <value name="class">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <block type="self">
+        <value name="varset">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+    <!-- 
       클래스 
       <block type="python_class"></block>
       클래스 
@@ -1024,12 +1053,7 @@
       </block>  
       객체 함수
     -->
-     
-    <block type="webclass"></block>
-    <block type="self"></block>
-
     </category>
-    <!-- 클래스 준비중 -->
     <sep></sep>
 
 
