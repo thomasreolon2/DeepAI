@@ -794,9 +794,12 @@ Blockly.defineBlocksWithJsonArray(
         "name": "matplotlib_pre_graph_location2"
       },
       {
-        "type": "field_input",
-        "name": "matplotlib_user_xy",
-        "text": ""
+        "type": "input_value",
+        "name": "xx"
+      },
+      {
+        "type": "input_value",
+        "name": "yy"
       },
       {
         "type": "field_dropdown",

@@ -588,7 +588,8 @@ fig, ax_lst = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_mai
   Blockly.Python['matplotlib_pre_graph'] = function(block) {
     var value_matplotlib_pre_graph_location1 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location1', Blockly.Python.ORDER_ATOMIC);
     var value_matplotlib_pre_graph_location2 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location2', Blockly.Python.ORDER_ATOMIC);
-    var text_matplotlib_user_xy = block.getFieldValue('matplotlib_user_xy');
+    var xx = Blockly.Python.valueToCode(block, 'xx', Blockly.Python.ORDER_ATOMIC);
+    var yy = Blockly.Python.valueToCode(block, 'yy', Blockly.Python.ORDER_ATOMIC);
     var dropdown_matplotlib_graph_select = block.getFieldValue('matplotlib_graph_select');
     var text_matplotlib_pre_graph_title = block.getFieldValue('matplotlib_pre_graph_Title');
     var text_matplotlib_pre_graph_xlable = block.getFieldValue('matplotlib_pre_graph_Xlable');
@@ -642,20 +643,20 @@ fig, ax_lst = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_mai
 
 
   if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){  
-    code = code.concat(`${text_matplotlib_user_xy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
+    code = code.concat(`${xx + ", " + yy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
   }else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line"){
       if(value_matplotlib_pre_color.length > 0){
-        code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color} )`);  
+        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color} )`);  
       }else{
-        code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}", c = None )`);  
+        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = None )`);  
       }
   // else if(DL_Gra == "graph_both_1" ){ //1,1
   //    code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )`);       
   }else{  
     if(dropdown_matplotlib_graph_select == "matplotlib_box" ){    
-      code = code.concat(`${text_matplotlib_user_xy } )`);   
+      code = code.concat(`${xx + ", " + yy } )`);   
     }else{ 
-      code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )`);    
+      code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}" )`);    
     } 
       
   } 
