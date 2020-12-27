@@ -772,7 +772,11 @@
 
       <!-- len -->
       <block type="text_length">
-        <value name="VALUE"></value>
+        <value name="VALUE">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
       </block>
 
       <!-- empty?? -->
@@ -803,6 +807,11 @@
             <field name="VAR">text</field>
           </block>
         </value>
+        <value name="AT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
       </block>
       <!-- a[ :0] -->
       <block type="text_getSubstring">
@@ -811,29 +820,73 @@
             <field name="VAR">text</field>
           </block>
         </value>
+        <value name="AT1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="AT2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
       </block>
       <!-- upper, lower -->
       <block type="text_changeCase">
         <value name="TEXT">
-
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
         </value>
       </block>
       <!-- 문자 개수 세기 -->
       <block type="text_count">
+        <value name="TEXT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="SUB">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
       </block>
 
       <!-- trim -->
       <block type="text_trim">
         <value name="TEXT">
-
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
         </value>
       </block>
+
       <!-- 문자열 변경 -->
       <block type="text_replace">
+        <value name="TEXT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="A">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
       </block>
       <!-- ??  -->
       <block type="text_prompt_ext">
-        <value name="TEXT"></value>
+        <value name="TEXT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
       </block>
      
     </category>
