@@ -944,3 +944,5 @@ Blockly.Msg['CATEGORY_DATASCIENCE'] = "Data science";
 Blockly.Msg['CATEGORY_MACHINELEARNING'] ="Machine learning";
 Blockly.Msg['CATEGORY_DEEPLEARNING']="Deep Learning";
 Blockly.Msg['CATEGORY_AIX'] = "AI + X"
+
+$("#code").text("code");

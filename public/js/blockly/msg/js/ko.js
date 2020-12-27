@@ -945,3 +945,4 @@ Blockly.Msg['CATEGORY_AIX'] = "전공직무AI융합"
 //Blockly.Msg['PANDAS_'] = "";
 // Blockly.Msg.  %{BKY_NUMPY_NUMPY_DATA_CONVERSION_1}
 
+$("#code").text("코드");
