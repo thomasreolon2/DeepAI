@@ -575,7 +575,6 @@ Blockly.Blocks['dic_menu'] = {
 // 집합
 Blockly.Blocks['set'] = {
     init: function () {
-
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C10-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
@@ -1193,30 +1192,6 @@ Blockly.Blocks['list_append'] = {
     }
 };
 
-// 리스트 정렬, 뒤집기
-Blockly.Blocks['list_sort_reverse'] = {
-    init: function () {
-
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C13-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
-        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_13_ARRAYSUM).appendField(new Blockly.FieldDropdown([
-            [
-                Blockly.Msg.COLLECTION_13_REVERSE, "reverse"
-            ],
-            [
-                Blockly.Msg.COLLECTION_13_SORT, "sort"
-            ]
-        ]), "NAME");
-        this.appendValueInput("LIST").setCheck(null);
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_COLLECTION_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
 
 // list_index
