@@ -472,7 +472,7 @@ Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUVAL'] = "values값 추출";
 
 Blockly.Msg['COLLECTION_10_SET'] = "집합";
 
-Blockly.Msg['COLLECTION_11_UNION'] = "합집함";
+Blockly.Msg['COLLECTION_11_UNION'] = "합집합";
 Blockly.Msg['COLLECTION_11_INTERSECTION'] = "교집합";
 Blockly.Msg['COLLECTION_11_DIFFERENCE'] = "차집합";
 Blockly.Msg['COLLECTION_11_ADD'] = "원소추가";

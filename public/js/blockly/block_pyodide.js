@@ -627,6 +627,7 @@ Blockly.Blocks['set_menu'] = {
         this.setHelpUrl("");
     }
 };
+// 튜플
 Blockly.Blocks['tuple'] = {
     /**
      * Block for creating a list with any number of elements of any type.
@@ -749,9 +750,7 @@ Blockly.Blocks['tuple'] = {
         }
     }
 };
-
-// 튜플 블록
-
+// 튜플 톱니바퀴
 Blockly.Blocks['tuple_create_with_container'] = { /**
      * Mutator block for list container.
      * @this {Blockly.Block}

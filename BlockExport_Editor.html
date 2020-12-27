@@ -849,8 +849,25 @@
       </block>
       <!-- 리스트 생성 -->
       <block type="lists_create_with"></block>
+      <!-- 변수명 이렇게 하면 잘들어가지긴함
+        <value name="ADD0">
+          <shadow type="indata">
+            <field name="indata1">1</field>
+          </shadow>
+        </value>
+        <value name="ADD1">
+          <shadow type="indata">
+            <field name="indata1">2</field>
+          </shadow>
+        </value>
+        <value name="ADD2">
+          <shadow type="indata">
+            <field name="indata1">3</field>
+          </shadow>
+        </value> -->
       <!-- 비어있는 리스트 생성 -->
       <block type="lists_create_with">
+        
         <mutation items="0"></mutation>
       </block>
       <!-- 같은 내용을 n번 넣어 리스트 생성 -->
@@ -901,12 +918,24 @@
       <!-- 튜플 -->
       <block type="tuple"></block>
       <!-- 새 블록  딕셔너리 -->
-      <block type="dict">
-       
-      </block>
-      <!-- 딕셔너리 선택 -->
+      <block type="dict"></block>
+      <!-- 딕셔너리 옵션 -->
       <block type="dic_menu">
-        
+        <value name="dic1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="dic2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="dic3">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
       </block>
       <!-- 집합 -->
       <block type="set">

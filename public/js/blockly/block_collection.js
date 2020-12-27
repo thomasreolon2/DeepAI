@@ -15,7 +15,7 @@ Blockly.Blocks['create_list'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_LISTS_HUE}");
+      this.setColour("%{BKY_COLLECTION_HUE}");
       this.setTooltip("Create a list");
       this.setHelpUrl("");
   }
@@ -42,7 +42,7 @@ Blockly.Blocks['global'] = {
           .setCheck(null);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour('#F89621');
+      this.setColour("%{BKY_COLLECTION_HUE}");
       this.setTooltip('');
       this.setHelpUrl('');
   },
