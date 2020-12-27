@@ -1116,30 +1116,6 @@ Blockly.Blocks['val_set'] = {
     }
   };
 
-// 리스트 자르기
-Blockly.Blocks['list_dot'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("[" + Blockly.Msg.COLLECTION_17_SPLIT +"]");
-        this.appendValueInput("list")
-        .setCheck(null);
-      this.appendDummyInput()
-          .appendField("[");
-      this.appendValueInput("a")
-          .setCheck(null);
-      this.appendDummyInput()
-          .appendField(":");
-      this.appendValueInput("b")
-          .setCheck(null);
-      this.appendDummyInput()
-          .appendField("]");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_COLLECTION_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
 // for range(범위)
 Blockly.Blocks['range1'] = {
     init: function () {
@@ -1182,90 +1158,6 @@ Blockly.Blocks['list_append'] = {
     init: function () {
         this.appendValueInput("LIST").setCheck(null).appendField("리스트 요소추가 -> 리스트");
         this.appendValueInput("value").setCheck(null).appendField("추가내용 (");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_COLLECTION_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-
-
-
-// list_index
-Blockly.Blocks['list_index'] = {
-    init: function () {
-
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C14-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
-        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_14_FINDVALUE);
-        this.appendValueInput("LIST").setCheck(null);
-        this.appendDummyInput().appendField("(" + Blockly.Msg.COLLECTION_14_INDEX);
-        this.appendValueInput("INDEX").setCheck(null);
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_COLLECTION_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-
-// list_insert
-Blockly.Blocks['list_insert'] = {
-    init: function () {
-
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C15-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
-        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_INSERTTOLIST);
-        this.appendValueInput("LIST").setCheck(null);
-        this.appendDummyInput().appendField("(" + Blockly.Msg.COLLECTION_15_INDEX);
-        this.appendValueInput("INDEX").setCheck(null);
-        this.appendDummyInput().appendField(", " + Blockly.Msg.COLLECTION_15_VALUE);
-        this.appendValueInput("VALUE").setCheck(null);
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_COLLECTION_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-// 리스트 삭제, 끄집어내기, 요소의개수, 확장
-Blockly.Blocks['list_remove_pop_count_extend'] = {
-    init: function () {
-
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C16-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
-        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_16_LIST).appendField(new Blockly.FieldDropdown([
-            [
-                Blockly.Msg.COLLECTION_16_EXTEND, "extend"
-            ],
-            [
-                Blockly.Msg.COLLECTION_16_EXTEND, "count"
-            ],
-            [
-                Blockly.Msg.COLLECTION_16_COUNT, "pop"
-            ],
-            [
-                Blockly.Msg.COLLECTION_16_POP, "remove"
-            ],
-            [
-                Blockly.Msg.COLLECTION_16_APPEND, "append"
-            ]
-        ]), "NAME").appendField("->").appendField("(" + Blockly.Msg.COLLECTION_16_LIST);
-        this.appendValueInput("LIST").setCheck(null);
-        this.appendDummyInput().appendField(", " + Blockly.Msg.COLLECTION_16_ELEMETNT);
-        this.appendValueInput("VALUE").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);

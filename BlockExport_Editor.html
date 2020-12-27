@@ -468,7 +468,7 @@
   </div> <!-- container -->
 
   <!-- Toolbox 정의 -->
-  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display: none">
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display:none">
     <category name="변수(Variable)" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="논리(Logic)" colour="%{BKY_LOGIC_HUE}">
       
@@ -1021,15 +1021,73 @@
         </value>
       </block>
 
-      <!-- index -->
-      <block type="list_index"></block>
+      <!-- 리스트에서 값 찾기 -->
+      <block type="list_index">
+        <value name="LIST">
+          <shadow type="indata">
+            <field name="indata1">my_list</field>
+          </shadow>
+        </value>
+        <value name="INDEX">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
 
-      <!-- insert -->
-      <block type="list_insert"></block>
+      <!-- 리스트 삽입 -->
+      <block type="list_insert">
+        <value name="LIST">
+          <shadow type="indata">
+            <field name="indata1">my_list</field>
+          </shadow>
+        </value>
+        <value name="INDEX">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="VALUE">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
 
       <!-- remove, pop, count, extend -->
-      <block type="list_remove_pop_count_extend"></block>
-      <block type="list_dot"></block>
+      <block type="list_remove_pop_count_extend">
+        <value name="LIST">
+          <shadow type="indata">
+            <field name="indata1">my_list</field>
+          </shadow>
+        </value>
+        <value name="VALUE">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+
+      </block>
+
+      <!-- 리스트 자르기 -->
+      <block type="list_dot">
+        <value name="list">
+          <shadow type="indata">
+            <field name="indata1">my_list</field>
+          </shadow>
+        </value>
+        <value name="a">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="b">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+
+      </block>
   
       <!-- return 반환
       <block type="py_return"></block>
@@ -1046,7 +1104,13 @@
         </value>
       </block>
       <!-- 2020-12-27-전우진 global -->
-      <block type="global"></block>
+      <block type="global">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
     </category>
 
     <!-- 커스텀 블록 -->
