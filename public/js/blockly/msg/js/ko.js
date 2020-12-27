@@ -953,7 +953,26 @@ Blockly.Msg['CATEGORY_DATASCIENCE'] = "데이터과학(DS)";
 Blockly.Msg['CATEGORY_MACHINELEARNING'] ="머신러닝(ML)";
 Blockly.Msg['CATEGORY_DEEPLEARNING']="딥러닝(DL)";
 Blockly.Msg['CATEGORY_AIX'] = "전공직무AI융합"
-//Blockly.Msg['PANDAS_'] = "";
-// Blockly.Msg.  %{BKY_NUMPY_NUMPY_DATA_CONVERSION_1}
 
+
+// html 부분
 $("#code").text("코드");
+$("label[for = 'file']").text("파일 열기");
+$("#console").text("콘솔");
+
+$("#button_block_del").val('블록 지우기');
+$("#button_block_save").val('블록 저장');
+$("#button_console_clear").val('결과 지우기');
+$("#button_code_save").val('코드 저장');
+$("#sidebar_button").val('그래프');
+$("#runButton1").val('실행');
+
+$("#visibleBlock").html('블록');
+$("#visibleAll").html('블록+코드');
+$("#visibleCode").html('코드');
+$("#button_paint").html('그림판');
+$("#runButton2").html('실행');
+$("#button_close").html('닫기');
+$("#button_clear").html('지우기');
+$("#button_reset").html('초기화');
+

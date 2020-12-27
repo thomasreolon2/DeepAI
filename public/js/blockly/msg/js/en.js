@@ -956,4 +956,23 @@ Blockly.Msg['CATEGORY_MACHINELEARNING'] ="Machine learning";
 Blockly.Msg['CATEGORY_DEEPLEARNING']="Deep Learning";
 Blockly.Msg['CATEGORY_AIX'] = "AI + X"
 
+// html 부분
 $("#code").text("code");
+$("label[for = 'file']").text("open file..");
+$("#console").text("console");
+
+$("#button_block_del").val('clear block');
+$("#button_block_save").val('save block');
+$("#button_console_clear").val('clear console');
+$("#button_code_save").val('save code');
+$("#sidebar_button").val('graph');
+$("#runButton1").val('run');
+
+$("#visibleBlock").html('block');
+$("#visibleAll").html('block + code');
+$("#visibleCode").html('code');
+$("#button_paint").html('paint');
+$("#runButton2").html('run');
+$("#button_close").html('close');
+$("#button_clear").html('clear');
+$("#button_reset").html('reset');
