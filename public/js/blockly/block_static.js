@@ -35,3 +35,24 @@ Blockly.Blocks['statistics1'] = {
     this.setHelpUrl("");
   }
 };
+
+//2020-09-19 양승국 블록수정
+Blockly.Blocks['statistics2'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("통계함수 2 ")
+      .appendField(new Blockly.FieldDropdown([["median_grouped", "1"], ["quantiles", "2"], ["pvariance", "3"], ["variance", "4"]]), "NAME")
+      .appendField("(");
+    this.appendValueInput("va1")
+      .setCheck(null);
+    this.appendValueInput("va2")
+      .setCheck(null);
+    this.appendDummyInput()
+       .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
