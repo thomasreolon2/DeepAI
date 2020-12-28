@@ -905,6 +905,13 @@ Blockly.JavaScript['break_block'] = function(block) {
     return code;
   };
 
+//continue
+Blockly.JavaScript['continue_block'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
   Blockly.JavaScript['for_range'] = function(block) {
     var value_value1 = Blockly.JavaScript.valueToCode(block, 'VALUE1', Blockly.JavaScript.ORDER_ATOMIC);
     var value_value2 = Blockly.JavaScript.valueToCode(block, 'VALUE2', Blockly.JavaScript.ORDER_ATOMIC);

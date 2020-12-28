@@ -1628,3 +1628,10 @@ Blockly.Python['break_block'] = function(block) {
   var code = 'break\n';
   return code;
 };
+
+// continue
+Blockly.Python['continue_block'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'continue\n';
+  return code;
+};

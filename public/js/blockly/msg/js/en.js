@@ -464,6 +464,7 @@ Blockly.Msg["REPEAT_5_LENGTH"] = "length";
 Blockly.Msg["REPEAT_6_RANGE"] = "range";
 
 Blockly.Msg["REPEAT_7_BREAK"] = "break";
+Blockly.Msg["REPEAT_CONTINUE"] = "continue";
 Blockly.Msg['COLLECTION_7_TUPLE'] = "tuple";
 
 Blockly.Msg['COLLECTION_8_DICT'] = "dictionary";

@@ -456,6 +456,7 @@ Blockly.Msg['REPEAT_1_REPEAT'] = "반복(for)";
 Blockly.Msg["REPEAT_1_VARIABLE"] = "값을";
 Blockly.Msg['REPEAT_1_LIST'] = "리스트";
 Blockly.Msg["REPEAT_7_BREAK"] = "정지(break)";
+Blockly.Msg["REPEAT_CONTINUE"] = "건너뛰기(continue)";
 Blockly.Msg['REPEAT_4_RANGE'] = "범위";
 
 Blockly.Msg['REPEAT_5_RANGE'] = "범위";

@@ -1080,6 +1080,21 @@ Blockly.Blocks['break_block'] = {
     }
 };
 
+Blockly.Blocks['continue_block'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R7-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        }));
+        this.appendDummyInput().appendField(Blockly.Msg.REPEAT_CONTINUE);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_LOOPS_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
 
 // return 블럭, 반환
 Blockly.Blocks['py_return'] = {
