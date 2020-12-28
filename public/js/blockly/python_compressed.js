@@ -585,11 +585,20 @@ Blockly.Python.controls_whileUntil = function (a) {
   return "while " + c + ":\n" + d;
 };
 
+// new_while
 Blockly.Python.controls_whileTorF = function(a) {
   var b = a.getFieldValue('value');
   var d = Blockly.Python.statementToCode(a, "DO");
   d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
   return "while " + b + ":\n" + d;
+};
+
+// repeat
+Blockly.Python.controls_repeat = function(a) {
+  var b = a.getFieldValue('count');
+  var d = Blockly.Python.statementToCode(a, "DO");
+  d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
+  return "for index in range(" + b + "):\n" + d;
 };
 
 // 파이썬 for문
