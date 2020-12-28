@@ -476,9 +476,8 @@
   <!-- Toolbox 정의 -->
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display:none">
     <category name="%{BKY_CATEGORY_VARIABLE}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category><!--변수(Variable)-->
-
-    <!-- 2020-12-28 양승국 -->
-    <category name = "입출력" colour = "255">
+     <!-- 2020-12-28 양승국 -->
+     <category name = "입출력" colour = "255">
 
       <!-- input -->
       <block type="input1"></block>
@@ -497,7 +496,6 @@
 
       <block type="indata"></block>
     </category>
-    
     <category name="%{BKY_CATEGORY_LOGIC}" colour="%{BKY_LOGIC_HUE}"><!--논리(Logic)-->
       
       <!-- if -->
@@ -779,7 +777,7 @@
     <!-- 2020-12-26 양승국 문자 start -->
     <!-- 문자 -->
     <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> <!--문자(Text)-->
-
+      
       <!-- text -->
       <block type="text"></block>
 
@@ -906,6 +904,9 @@
           </shadow>
         </value>
       </block> -->
+      <block type="indata">
+
+      </block>
     </category>
 
     <!-- list -->
@@ -1132,7 +1133,7 @@
 
     <!-- 커스텀 블록 -->
     <!-- 함수 -->
-    <!-- <category name="함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category> -->
+    <category name="기존함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
 
     <category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}"> <!--함수 (Function)-->
       <block type="webdefine">
@@ -1157,10 +1158,69 @@
     </category>
 
 
-    <!--pyodide_test-->
-    
     <!-- 클래스 준비중 -->
+    <category name="기존클래스" colour="%{BKY_CLASS_HUE}">
     
+      <!-- 클래스  -->
+      <block type="python_class"></block>
+      <!-- 클래스  -->
+
+      <!-- 클래스 함수  -->
+      <block type="class_func">
+        <value name="class_func_val">
+          <block type="class_func_param">
+            <value name="ADD">
+              <block type="variables_get">
+                <field name="VAR">param</field>
+              </block>
+            </value>
+          </block>
+        </value> 
+      </block>  
+      <!-- 클래스 함수  -->
+
+       <!-- 클래스 함수 return -->
+       <block type="class_func_return">
+        <value name="class_func_return_param">
+          <block type="class_func_param">
+          
+          </block>
+        </value> 
+      </block>  
+      <!-- 클래스 함수 return -->
+
+       <!-- 클래스 = -->
+       <block type="function__parameter">
+        <value name="function__parameter_val">
+          <block type="class_func_param"></block>
+        </value> 
+       </block>  
+      <!-- 클래스 = -->
+
+
+       <!-- 클래스 connect  -->
+       <block type="class_instance"></block>
+       <!-- 클래스 connect -->
+
+      <!-- 객체  -->
+      <block type="class_refer">
+        <value name="class_refer_val">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+      </block>
+      <!-- 객체  -->
+
+      <!-- 객체 함수 -->
+      <block type="class_instance_function">
+        <value name="class_instance_functions"> 
+          <block type="class_func_param"></block> 
+        </value> 
+      </block>  
+      <!-- 객체 함수 -->
+  
+  </category>
     <category name="%{BKY_CATEGORY_CLASS}" colour="%{BKY_CLASS_HUE}"> <!--클래스 (Class)-->
       <block type="webclass">
         <value name="class">
@@ -1176,66 +1236,7 @@
           </shadow>
         </value>
       </block>
-    <!-- 
-      클래스 
-      <block type="python_class"></block>
-      클래스 
-
-      클래스 함수 
-      <block type="class_func">
-        <value name="class_func_val">
-          <block type="class_func_param">
-            <value name="ADD">
-              <block type="variables_get">
-                <field name="VAR">param</field>
-              </block>
-            </value>
-          </block>
-        </value> 
-      </block>  
-      클래스 함수 
-
-       클래스 함수 return
-       <block type="class_func_return">
-        <value name="class_func_return_param">
-          <block type="class_func_param">
-          
-          </block>
-        </value> 
-      </block>  
-      클래스 함수 return
-
-       클래스 =
-       <block type="function__parameter">
-        <value name="function__parameter_val">
-          <block type="class_func_param"></block>
-        </value> 
-       </block>  
-      클래스 =
-
-
-       클래스 connect 
-       <block type="class_instance"></block>
-       클래스 connect
-
-      객체 
-      <block type="class_refer">
-        <value name="class_refer_val">
-          <block type="variables_get">
-            <field name="VAR">df</field>
-          </block>
-        </value>
-      </block>
-      객체 
-
-      객체 함수
-      <block type="class_instance_function">
-        <value name="class_instance_functions"> 
-          <block type="class_func_param"></block> 
-        </value> 
-      </block>  
-      객체 함수
-    -->
+    
     </category>
     <sep></sep>
 
