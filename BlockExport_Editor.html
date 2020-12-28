@@ -488,12 +488,26 @@
       <!-- input -->
       <block type="input1"></block>
 
-      <!-- 결과출력 -->
+      <!-- 결과출력 text + var -->
+      <block type="printtv">
+        <value name="content1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="content2">
+          <block type="variables_get">
+            <field name="VAR">variable</field>
+          </block>
+        </value>
+      </block>
+
+      <!-- 결과출력 var -->
       <block type="printc">
         <value name="content">
-          <shadow type="indata">
-            <field name="indata1">"1"</field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">variable</field>
+          </block>
         </value>
       </block>
 

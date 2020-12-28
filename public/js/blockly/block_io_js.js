@@ -9,6 +9,14 @@ Blockly.JavaScript['input1'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
+Blockly.JavaScript['printtv'] = function (block) {
+  var value_content1 = Blockly.JavaScript.valueToCode(block, 'content1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_content2 = Blockly.JavaScript.valueToCode(block, 'content2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
 Blockly.JavaScript['printc'] = function (block) {
   var value_content = Blockly.JavaScript.valueToCode(block, 'content', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.

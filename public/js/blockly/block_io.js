@@ -18,7 +18,25 @@ Blockly.Blocks['input1'] = {
   }
 };
 
-//출력
+//출력(텍스트 + 변수)
+Blockly.Blocks['printtv'] = {
+  init: function () {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
+          alt: "*",
+          flipRtl: "FALSE"
+      })).appendField(Blockly.Msg.TEXT_1_PRINT);
+      this.appendValueInput("content1").setCheck(null);
+      this.appendValueInput("content2").setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+//출력(변수만 있는거)
 Blockly.Blocks['printc'] = {
   init: function () {
       this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
