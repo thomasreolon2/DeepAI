@@ -23,7 +23,7 @@ Blockly.Python['printtv'] = function (block) {
 Blockly.Python['printc'] = function (block) {
   var value_content = Blockly.Python.valueToCode(block, 'content', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code ='print(' + value_content + ')\n';
+  var code ='print( str(' + value_content + ' ))\n';
   return code;
 };
 

@@ -56,3 +56,60 @@ Blockly.Blocks['statistics2'] = {
     this.setHelpUrl("");
   }
 };
+
+////////////////////////////////////
+/// random 블록
+////////////////////////////////////
+
+Blockly.Blocks['random_library'] = {
+  init: function () {
+    this.appendDummyInput()
+        .appendField("random 라이브러리");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+//2020-09-19 양승국 블록수정
+Blockly.Blocks['random1'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("랜덤함수 1 ")
+      .appendField(new Blockly.FieldDropdown([["random", "random"], ["choice", "choice"], ["shuffle", "shuffle"]]), "NAME")
+      .appendField("(");
+    this.appendValueInput("va")
+      .setCheck(null)
+    this.appendDummyInput()
+       .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+//2020-09-19 양승국 블록수정
+Blockly.Blocks['random2'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("랜덤함수 2 ")
+      .appendField(new Blockly.FieldDropdown([["randint", "1"], ["sample", "2"]]), "NAME")
+      .appendField("(");
+    this.appendValueInput("va1")
+      .setCheck(null);
+    this.appendValueInput("va2")
+      .setCheck(null);
+    this.appendDummyInput()
+       .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
