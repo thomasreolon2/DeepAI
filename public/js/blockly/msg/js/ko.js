@@ -57,7 +57,11 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://ko.wikipedia.org/wiki/Whil
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "다음까지 반복(while)";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "동안 반복(while)";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "값이 거짓일 때, 몇 가지 선언을 합니다.";
-Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "값이 참일 때, 몇 가지 선언을 합니다.";Blockly.Msg["CONTROLS_WHILETORF_1"] = "반복(While): ";
+Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "값이 참일 때, 몇 가지 선언을 합니다.";
+Blockly.Msg["CONTROLS_REPEAT_1"] = "반복(Repeat): ";
+Blockly.Msg["CONTROLS_REPEAT_2"] = "회";
+Blockly.Msg["CONTROLS_REPEAT_3"] = "실행";
+Blockly.Msg["CONTROLS_WHILETORF_1"] = "반복(While): ";
 Blockly.Msg["CONTROLS_WHILETORF_2"] = "참(True)";
 Blockly.Msg["CONTROLS_WHILETORF_3"] = "거짓(False)";
 Blockly.Msg["CONTROLS_WHILETORF_4"] = "인 동안";
