@@ -9,7 +9,9 @@ Blockly.Blocks['input1'] = {
           alt: "*",
           flipRtl: "FALSE"
       }));
-      this.appendDummyInput().appendField(Blockly.Msg.TEXT_2_DATAINPUT);
+      this.appendDummyInput()
+        .appendField(Blockly.Msg.TEXT_2_DATAINPUT)
+        .appendField(new Blockly.FieldTextInput(""), "inputdata");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_TEXTS_HUE}");
@@ -17,6 +19,7 @@ Blockly.Blocks['input1'] = {
       this.setHelpUrl("");
   }
 };
+
 
 //출력(텍스트 + 변수)
 Blockly.Blocks['printtv'] = {
