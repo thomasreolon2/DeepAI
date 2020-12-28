@@ -34,3 +34,36 @@ Blockly.Blocks['math_library'] = {
       this.setHelpUrl("");
     }
   };
+
+  Blockly.Blocks['math2'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("수학 2 ")
+        .appendField(new Blockly.FieldDropdown([["gcd", "1"], ["log", "2"], ["pow", "3"], ["dist", "4"]]), "NAME")
+        .appendField("(");
+      this.appendValueInput("va1")
+        .setCheck(null);
+      this.appendValueInput("va2")
+        .setCheck(null);
+      this.appendDummyInput()
+         .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['math3'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("수학 3 ")
+        .appendField(new Blockly.FieldDropdown([["pi", "pi"], ["e", "e"], ["inf", "inf"], ["nan", "nan"]]), "NAME")
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
