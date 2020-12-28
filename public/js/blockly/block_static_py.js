@@ -4,7 +4,7 @@
 
 Blockly.Python['static_library'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = "import statistics\n";
+  var code = "from statistics import *\n";
   return code;
 };
 
