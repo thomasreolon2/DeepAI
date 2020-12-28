@@ -4,7 +4,7 @@
 Blockly.Blocks['itdata'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("사용자입력")
+        .appendField("파이썬 코드 입력")
         .appendField(new Blockly.FieldTextInput(""), "itdata1");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);

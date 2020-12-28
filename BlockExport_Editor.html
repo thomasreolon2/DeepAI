@@ -617,7 +617,7 @@
         </value>
         <value name="z">
           <shadow type="indata">
-            <field name="indata1">0</field>
+            <field name="indata1">1</field>
           </shadow>
         </value>
       </block>
@@ -673,13 +673,13 @@
       <!-- 파이 등-->
       <block type="math_constant"></block>
       <!-- 짝수, 홀수 등 판단 -->
-      <block type="math_number_property">
+      <!-- <block type="math_number_property">
         <value name="NUMBER_TO_CHECK">
           <shadow type="indata">
             <field name="indata1">0</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- 반올림 -->
       <block type="math_round">
         <value name="NUM">
@@ -696,7 +696,7 @@
           </shadow>
         </value>
       </block>
-      <!-- 이건 뭔지 모르겠음 -->
+      <!-- 이건 뭔지 모르겠음
       <block type="math_constrain">
         <value name="VALUE">
           <shadow type="indata">
@@ -713,9 +713,9 @@
             <field name="indata1">100</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- 랜덤으로 정수생성 -->
-      <block type="math_random_int">
+      <!-- <block type="math_random_int">
         <value name="FROM">
           <shadow type="indata">
             <field name="indata1">1</field>
@@ -726,9 +726,9 @@
             <field name="indata1">100</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- ?? -->
-      <block type="math_random_float"></block>
+      <!-- <block type="math_random_float"></block>
       <block type="math_atan2">
         <value name="X">
           <shadow type="indata">
@@ -740,7 +740,7 @@
             <field name="indata1">1</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- 형변환  -->
       <block type="convert_block">
         <value name="A">
@@ -757,6 +757,7 @@
     <!-- 2020-12-26 양승국 문자 start -->
     <!-- 문자 -->
     <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> <!--문자(Text)-->
+      <!-- 파이썬 코드 입력 -->
       <block type="itdata"></block>
       <!-- 결과출력 -->
       <block type="printc">
@@ -886,14 +887,14 @@
           </shadow>
         </value>
       </block>
-      <!-- ??  -->
-      <block type="text_prompt_ext">
+      <!-- input 할때 프롬프트 설정하는거 (근데 이거 안됨)  -->
+      <!-- <block type="text_prompt_ext">
         <value name="TEXT">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <block type="indata">
 
       </block>
@@ -909,7 +910,7 @@
         </value>
       </block>
       <!-- 리스트 생성 -->
-      <block type="lists_create_with"></block>
+      <!-- <block type="lists_create_with"></block> -->
       <!-- 변수명 이렇게 하면 잘들어가지긴함
         <value name="ADD0">
           <shadow type="indata">
@@ -932,7 +933,7 @@
         <mutation items="0"></mutation>
       </block>
       <!-- 같은 내용을 n번 넣어 리스트 생성 -->
-      <block type="lists_repeat">ITEM
+      <!-- <block type="lists_repeat">ITEM
         <value name="ITEM">
           <shadow type="indata">
             <field name="indata1">1,2,3,4</field>
@@ -943,7 +944,7 @@
             <field name="indata1">5</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- 리스트의 길이 -->
       <block type="lists_length">
         <value name="VALUE">
