@@ -1085,7 +1085,38 @@ Blockly.defineBlocksWithJsonArray([
     helpUrl: "%{BKY_CONTROLS_WHILEUNTIL_HELPURL}",
     extensions: ["controls_whileUntil_tooltip"],
   },
-  
+  {
+    "type": "controls_whileTorF",
+    "message0": "%1%{BKY_CONTROLS_WHILETORF_1}%2%{BKY_CONTROLS_WHILETORF_4}%3",
+    "args0": [
+      {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {
+        "type": "field_dropdown",
+        "name": "value",
+        "options": [
+          [
+            "참(True)",
+            "True"
+          ],
+          [
+            "거짓(False)",
+            "False"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy",
+        "align": "RIGHT"
+      },
+    ],
+    message1: "%{BKY_CONTROLS_WHILETORF_5}%1",
+    args1: [{ type: "input_statement", name: "DO" }],
+    "previousStatement": null,
+    "nextStatement": null,
+    style: "loop_blocks",
+    "tooltip": "",
+    "helpUrl": ""
+  },
   {
     type: "controls_for",
     message0: "%{BKY_CONTROLS_FOR_TITLE}",

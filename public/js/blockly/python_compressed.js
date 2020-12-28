@@ -584,6 +584,14 @@ Blockly.Python.controls_whileUntil = function (a) {
   b && (c = "not " + c);
   return "while " + c + ":\n" + d;
 };
+
+Blockly.Python.controls_whileTorF = function(a) {
+  var b = a.getFieldValue('value');
+  var d = Blockly.Python.statementToCode(a, "DO");
+  d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
+  return "while " + b + ":\n" + d;
+};
+
 // 파이썬 for문
 Blockly.Python['py_for'] = function(block) {
   var value_item = Blockly.Python.valueToCode(block, 'item', Blockly.Python.ORDER_ATOMIC);

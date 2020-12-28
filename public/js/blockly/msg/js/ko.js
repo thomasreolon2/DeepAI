@@ -57,7 +57,11 @@ Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://ko.wikipedia.org/wiki/Whil
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "다음까지 반복(while)";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "동안 반복(while)";
 Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL"] = "값이 거짓일 때, 몇 가지 선언을 합니다.";
-Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "값이 참일 때, 몇 가지 선언을 합니다.";
+Blockly.Msg["CONTROLS_WHILEUNTIL_TOOLTIP_WHILE"] = "값이 참일 때, 몇 가지 선언을 합니다.";Blockly.Msg["CONTROLS_WHILETORF_1"] = "반복(While): ";
+Blockly.Msg["CONTROLS_WHILETORF_2"] = "참(True)";
+Blockly.Msg["CONTROLS_WHILETORF_3"] = "거짓(False)";
+Blockly.Msg["CONTROLS_WHILETORF_4"] = "인 동안";
+Blockly.Msg["CONTROLS_WHILETORF_5"] = "실행";
 Blockly.Msg["DELETE_ALL_BLOCKS"] = "모든 블록 %1개를 삭제하겠습니까?";
 Blockly.Msg["DELETE_BLOCK"] = "블록 삭제";
 Blockly.Msg["DELETE_VARIABLE"] = "'%1' 변수를 삭제합니다";
