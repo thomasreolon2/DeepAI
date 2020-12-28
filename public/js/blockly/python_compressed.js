@@ -601,6 +601,15 @@ Blockly.Python.controls_repeat = function(a) {
   return "for index in range(" + b + "):\n" + d;
 };
 
+// repeat2
+Blockly.Python.controls_repeat2 = function(a) {
+  var b = Blockly.Python.variableDB_.getName(a.getFieldValue('variable'), Blockly.Variables.NAME_TYPE);
+  var c = a.getFieldValue('count');
+  var d = Blockly.Python.statementToCode(a, "DO");
+  d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
+  return "for "+b+" in range(" +c + "):\n" + d;
+};
+
 // 파이썬 for문
 Blockly.Python['py_for'] = function(block) {
   var value_item = Blockly.Python.valueToCode(block, 'item', Blockly.Python.ORDER_ATOMIC);

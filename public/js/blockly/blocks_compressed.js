@@ -1086,28 +1086,6 @@ Blockly.defineBlocksWithJsonArray([
     extensions: ["controls_whileUntil_tooltip"],
   },
   {
-    "type": "controls_repeat",
-    "message0": "%1%{BKY_CONTROLS_REPEAT_1}%2 %{BKY_CONTROLS_REPEAT_2} %3 ",
-    "args0": [
-      {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
-      {
-        "type": "field_input",
-        "name": "count",
-        "text": "4"
-      },
-      {
-        "type": "input_dummy"
-      },
-    ],
-    message1: "%{BKY_CONTROLS_REPEAT_3} %1",
-    args1: [{ type: "input_statement", name: "DO" }],
-    "previousStatement": null,
-    "nextStatement": null,
-    style: "loop_blocks",
-    "tooltip": "",
-    "helpUrl": ""
-  },
-  {
     "type": "controls_whileTorF",
     "message0": "%1%{BKY_CONTROLS_WHILETORF_1}%2%{BKY_CONTROLS_WHILETORF_4}%3",
     "args0": [
@@ -1131,8 +1109,59 @@ Blockly.defineBlocksWithJsonArray([
         "align": "RIGHT"
       },
     ],
-    message1: "%{BKY_CONTROLS_WHILETORF_5}%1",
+    message1: "%{BKY_CONTROLS_DO}%1",
     args1: [{ type: "input_statement", name: "DO" }],
+    "previousStatement": null,
+    "nextStatement": null,
+    style: "loop_blocks",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "controls_repeat",
+    "message0": "%1%{BKY_CONTROLS_REPEAT_1}%2 %{BKY_CONTROLS_REPEAT_2} %3 ",
+    "args0": [
+      {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {
+        "type": "field_input",
+        "name": "count",
+        "text": "4"
+      },
+      {
+        "type": "input_dummy"
+      },
+    ],
+    message1: "%{BKY_CONTROLS_DO} %1",
+    args1: [{ type: "input_statement", name: "DO" }],
+    "previousStatement": null,
+    "nextStatement": null,
+    style: "loop_blocks",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "controls_repeat2",
+    "message0": "%1%{BKY_CONTROLS_REPEAT2_1}%2%{BKY_CONTROLS_REPEAT2_2}%3%{BKY_CONTROLS_REPEAT2_3}%4 %{BKY_CONTROLS_DO} %5",
+    "args0": [
+      {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {
+        "type": "field_variable",
+        "name": "variable",
+        "variable": "i"
+      },
+      {
+        "type": "field_input",
+        "name": "count",
+        "text": "4"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "DO"
+      }
+    ],
     "previousStatement": null,
     "nextStatement": null,
     style: "loop_blocks",
