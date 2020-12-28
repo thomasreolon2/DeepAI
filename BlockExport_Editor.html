@@ -496,8 +496,9 @@
      <!-- 2020-12-28 양승국 -->
      <category name = "입출력" colour = "255">
 
-      <!-- input -->
+      <!-- 데이터 입력 -->
       <block type="input1"></block>
+
 
       <!-- 결과출력 text + var -->
       <block type="printtv">
@@ -675,6 +676,8 @@
       </block>
       <!-- break 블록 -->      
       <block type="break_block"></block>
+      <!-- continue 블록 -->      
+      <block type="continue_block"></block>
 
     </category>
     <!-- 2020-12-26 양승국 end -->
@@ -2876,7 +2879,23 @@
         document.body.appendChild(script);
       }  
     });
+
+    
   </script>
+  <!-- 데이터 입력 bug fix -->
+  <script>
+    function input_fixed(text) {
+        return prompt(text);
+    };
+    
+    languagePluginLoader.then(() => {
+      pyodide.runPythonAsync(`
+    from js import input_fixed
+    input = input_fixed
+    __builtins__.input = input_fixed
+    `);
+    });
+    </script>
 </body>
 
 <style>

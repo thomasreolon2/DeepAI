@@ -411,12 +411,14 @@ Blockly.Msg["CONTROLS_IF_MSG_THEN"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
 Blockly.Msg["CONTROLS_WHILEUNTIL_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
 Blockly.Msg["CONTROLS_REPEAT_1"] = "Repeat: ";
 Blockly.Msg["CONTROLS_REPEAT_2"] = "times";
-Blockly.Msg["CONTROLS_REPEAT_3"] = "do";
+Blockly.Msg["CONTROLS_REPEAT2_1"] = "for:  ";
+Blockly.Msg["CONTROLS_REPEAT2_2"] = " from 0 to ";
+Blockly.Msg["CONTROLS_REPEAT2_3"] = "";
 Blockly.Msg["CONTROLS_WHILETORF_1"] = "While: ";
 Blockly.Msg["CONTROLS_WHILETORF_2"] = "True";
 Blockly.Msg["CONTROLS_WHILETORF_3"] = "False";
 Blockly.Msg["CONTROLS_WHILETORF_4"] = "";
-Blockly.Msg["CONTROLS_WHILETORF_5"] = "do";
+Blockly.Msg["CONTROLS_DO"] = "do";
 Blockly.Msg["LISTS_CREATE_WITH_ITEM_TITLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["LISTS_GET_INDEX_HELPURL"] = Blockly.Msg["LISTS_INDEX_OF_HELPURL"];
 Blockly.Msg["LISTS_GET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
@@ -462,6 +464,7 @@ Blockly.Msg["REPEAT_5_LENGTH"] = "length";
 Blockly.Msg["REPEAT_6_RANGE"] = "range";
 
 Blockly.Msg["REPEAT_7_BREAK"] = "break";
+Blockly.Msg["REPEAT_CONTINUE"] = "continue";
 Blockly.Msg['COLLECTION_7_TUPLE'] = "tuple";
 
 Blockly.Msg['COLLECTION_8_DICT'] = "dictionary";

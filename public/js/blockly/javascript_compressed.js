@@ -402,6 +402,9 @@ Blockly.JavaScript.controls_whileTorF = function (a) {
 Blockly.JavaScript.controls_repeat = function (a) {
     return "\n"
 };
+Blockly.JavaScript.controls_repeat2 = function (a) {
+    return "\n"
+};
 Blockly.JavaScript.controls_for = function (a) {
     var b = Blockly.JavaScript.variableDB_.getName(a.getFieldValue("VAR"), Blockly.VARIABLE_CATEGORY_NAME),
         c = Blockly.JavaScript.valueToCode(a, "FROM", Blockly.JavaScript.ORDER_ASSIGNMENT) || "0",
@@ -898,6 +901,13 @@ Blockly.JavaScript['text_replace'] = function(block) {
 // break
 Blockly.JavaScript['break_block'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+//continue
+Blockly.JavaScript['continue_block'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     return code;
   };
