@@ -1121,7 +1121,7 @@ Blockly.defineBlocksWithJsonArray([
     "type": "controls_repeat",
     "message0": "%1%{BKY_CONTROLS_REPEAT_1}%2 %{BKY_CONTROLS_REPEAT_2} %3 ",
     "args0": [
-      {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Repeat/R1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       {
         "type": "field_input",
         "name": "count",
@@ -1143,7 +1143,7 @@ Blockly.defineBlocksWithJsonArray([
     "type": "controls_repeat2",
     "message0": "%1%{BKY_CONTROLS_REPEAT2_1}%2%{BKY_CONTROLS_REPEAT2_2}%3%{BKY_CONTROLS_REPEAT2_3}%4 %{BKY_CONTROLS_DO} %5",
     "args0": [
-      {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Repeat/R1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       {
         "type": "field_variable",
         "name": "variable",

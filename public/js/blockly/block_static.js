@@ -20,9 +20,9 @@ Blockly.Blocks['statistics1'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("통계함수 1 ")
-      .appendField(new Blockly.FieldDropdown([["mean", "mean"], ["fmean", "fmean"], ["geometric_mean", "geometric_mean"], ["harmonic_mean", "harmonic_mean"], 
-      ["median", "median"], ["median_low", "median_low"], ["median_high", "median_high"], ["median_grouped", "median_grouped"], ["mode", "mode"], ["multimode", "multimode"],
-      ["pstdev", "pstdev"], ["pvariance", "pvariance"], ["stdev", "stdev"], ["variance", "variance"]]), "NAME")
+      .appendField(new Blockly.FieldDropdown([["산술 평균", "mean"], ["부동 소수점 산술 평균", "fmean"], ["기하 평균", "geometric_mean"], ["조화 평균", "harmonic_mean"], 
+      ["중앙값", "median"], ["낮은 중앙값", "median_low"], ["높은 중앙값", "median_high"], ["그룹화된 데이터의 중앙값", "median_grouped"], ["단일 최빈값", "mode"], ["최빈값 리스트", "multimode"],
+      ["모집단 표준 편차", "pstdev"], ["모집단 분산", "pvariance"], ["표본 표준 편차", "stdev"], ["표본 분산", "variance"]]), "NAME")
       .appendField("(");
     this.appendValueInput("va")
       .setCheck(null)
@@ -41,7 +41,7 @@ Blockly.Blocks['statistics2'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("통계함수 2 ")
-      .appendField(new Blockly.FieldDropdown([["median_grouped", "1"], ["quantiles", "2"], ["pvariance", "3"], ["variance", "4"]]), "NAME")
+      .appendField(new Blockly.FieldDropdown([["그룹화된 데이터의 중앙값", "1"], ["같은 확률을 갖는 구간으로 나누기", "2"], ["모집단 분산", "3"], ["표본 분산", "4"]]), "NAME")
       .appendField("(");
     this.appendValueInput("va1")
       .setCheck(null);
