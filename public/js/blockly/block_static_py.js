@@ -15,5 +15,5 @@ Blockly.Python['statistics1'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
   var code = dropdown_name + '(' + value_name + ')\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };

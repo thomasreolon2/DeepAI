@@ -28,8 +28,8 @@ Blockly.Blocks['statistics1'] = {
       .setCheck(null)
     this.appendDummyInput()
        .appendField(")");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
     this.setColour(pandas_color);
     this.setTooltip("");
     this.setHelpUrl("");

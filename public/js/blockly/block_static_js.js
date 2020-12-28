@@ -13,5 +13,5 @@ Blockly.JavaScript['statistics1'] = function (block) {
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
