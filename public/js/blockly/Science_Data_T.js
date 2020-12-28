@@ -1328,7 +1328,19 @@ Blockly.Blocks['class_instance_function'] = {
   }
 };
  
-
+// 클래스 self
+Blockly.Blocks['self_block'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("self.")
+        .appendField(new Blockly.FieldVariable("result"), "NAME");        
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(125);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 //클래스 매개변수 
 Blockly.Blocks['class_func_param'] = {
     /**

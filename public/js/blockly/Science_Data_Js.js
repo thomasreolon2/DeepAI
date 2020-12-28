@@ -552,6 +552,14 @@ Blockly.JavaScript['class_func_param'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
 };
 
+// 클래스 self
+Blockly.JavaScript['self_block'] = function(block) {
+  var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code = '\n';
+  return [code,Blockly.JavaScript.ORDER_ATOMIC];
+};
+
 //크롤링 URL 가져오기 
 Blockly.JavaScript['script_block'] = function(block) {
   var dropdown_script_block_option = block.getFieldValue('Script_Block_Option');

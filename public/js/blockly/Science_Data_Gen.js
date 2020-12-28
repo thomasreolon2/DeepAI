@@ -915,6 +915,13 @@ Blockly.Python['class_func_param'] = function (a) {
   return [b.join(", "), Blockly.Python.ORDER_ATOMIC]
 };
 
+// 클래스 self
+Blockly.Python['self_block'] = function(block) {
+  var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code = 'self.'+variable_name;
+  return [code,Blockly.Python.ORDER_ATOMIC];
+};
 
 
 //클래스 함수 statement 형식 
