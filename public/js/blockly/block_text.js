@@ -32,21 +32,6 @@ Blockly.Blocks['printc'] = {
   }
 };
 
-Blockly.Blocks['input1'] = {
-  init: function () {
-      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T2-logo.png", 25, 23, {
-          alt: "*",
-          flipRtl: "FALSE"
-      }));
-      this.appendDummyInput().appendField(Blockly.Msg.TEXT_2_DATAINPUT);
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_TEXTS_HUE}");
-      this.setTooltip("");
-      this.setHelpUrl("");
-  }
-};
-
 //""없는 문자
 Blockly.Blocks['char_a_none'] = {
   init: function() { 

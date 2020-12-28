@@ -476,6 +476,28 @@
   <!-- Toolbox 정의 -->
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display:none">
     <category name="%{BKY_CATEGORY_VARIABLE}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category><!--변수(Variable)-->
+
+    <!-- 2020-12-28 양승국 -->
+    <category name = "입출력" colour = "255">
+
+      <!-- input -->
+      <block type="input1"></block>
+
+      <!-- 결과출력 -->
+      <block type="printc">
+        <value name="content">
+          <shadow type="indata">
+            <field name="indata1">"1"</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 파이썬 코드 입력 -->
+      <block type="itdata"></block>
+
+      <block type="indata"></block>
+    </category>
+    
     <category name="%{BKY_CATEGORY_LOGIC}" colour="%{BKY_LOGIC_HUE}"><!--논리(Logic)-->
       
       <!-- if -->
@@ -757,18 +779,7 @@
     <!-- 2020-12-26 양승국 문자 start -->
     <!-- 문자 -->
     <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> <!--문자(Text)-->
-      <!-- 파이썬 코드 입력 -->
-      <block type="itdata"></block>
-      <!-- 결과출력 -->
-      <block type="printc">
-        <value name="content">
-          <shadow type="indata">
-            <field name="indata1">"1"</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- input -->
-      <block type="input1"></block>
+
       <!-- text -->
       <block type="text"></block>
 
@@ -895,9 +906,6 @@
           </shadow>
         </value>
       </block> -->
-      <block type="indata">
-
-      </block>
     </category>
 
     <!-- list -->
