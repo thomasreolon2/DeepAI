@@ -115,6 +115,12 @@
   <script src="/js/blockly/block_api_gen_javascript.js"></script>
   <!-- api 블록 -->
 
+  <!-- 명성이형이 만든 블록 2020.12.28 -->
+  <script src="/js/blockly/block_numpy1.js"></script>
+  <script src="/js/blockly/block_numpy1_py.js"></script>
+  <script src="/js/blockly/block_numpy1_js.js"></script>
+  <!-- api 블록 -->
+
   <!--plotly cdn-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
 
@@ -1372,14 +1378,231 @@
       <block type="nump_abs"></block>
       <!-- np.abs -->
 
-    
+      
 
       <!--  import sklearn  -->
       <!-- <block type="lib_import_sklearn"></block> -->
       <!--  import sklearn  -->
 
     </category>
+    <!-- 명성이형이 수정한 넘파이 2020.12.28 -->
+    <category name="넘파이수정">
+      <!-- 통계 / 순서 -->
+      <block type="numpy_order_static">
+        <value name="numpy_order_static_val">
+          <block type="class_func_param"></block>
+        </value>  
+      </block>
+      <!-- 통계 / 순서  -->
 
+      <!-- 통계 / 평균 & 분산  -->
+      <block type="numpy_averages_variances">
+        <value name="numpy_Averages_variances_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block>
+      <!-- 통계 / 평균 & 분산  -->
+
+      <!-- 통계 / 상관 -->
+      <block type="numpy_correlating">
+        <value name="numpy_Correlating_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block>
+      <!-- 통계 / 상관 -->
+
+      <!-- 정렬 -->
+      <block type="numpy_sorting">
+        <value name="numpy_Sorting_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 정렬 -->
+
+      <!-- 검색 -->
+      <block type="numpy_searching">
+        <value name="numpy_Searching"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 검색 -->
+
+      <!-- 랜덤 / 단순 -->
+      <block type="numpy_random_sample">
+        <value name="numpy_Random_sample_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 랜덤 / 단순 -->
+ 
+      <!-- 랜덤 / 순열  -->
+      <block type="numpy_random_permutations">
+        <value name="numpy_Random_Permutations_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 랜덤 / 순열  -->
+
+      <!-- 랜덤 / 분포1  -->
+      <block type="numpy_random_distributions">
+        <value name="numpy_Random_Distributions_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 랜덤 / 분포1  -->
+
+       <!-- 랜덤 / 분포2  -->
+       <block type="numpy_random_distributions_two">
+        <value name="numpy_Random_Distributions_two_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 랜덤 / 분포2  -->
+
+       <!-- 랜덤 / 분포3 -->
+       <block type="numpy_random_distributions_third">
+        <value name="numpy_Random_Distributions_third_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 랜덤 / 분포3  -->
+
+       <!-- 랜덤 / 생성기 -->
+       <block type="numpy_random_generator">
+        <value name="numpy_Random_generator_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 랜덤 / 생성기  -->
+
+      <!-- 수학 / 삼각 -->
+      <block type="numpy_mathematical_functions">
+        <value name="numpy_Mathematical functions_val"> 
+          <block type="class_func_param"></block>
+        </value>   
+      </block> 
+      <!-- 수학 / 삼각  -->
+
+      <!-- 수학 / 쌍곡 --> 
+      <block type="numpy_hyperbolic_functions">
+        <value name="numpy_Hyperbolic functions_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 수학 / 쌍곡  -->
+
+
+      <!-- 수학 / 반올림 --> 
+      <block type="numpy_rounding">
+        <value name="numpy_Rounding_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 수학 / 반올림  -->
+
+      <!-- 수학 / 지수 & 로그 --> 
+      <block type="numpy_exponents_logarithms">
+        <value name="numpy_Exponents_logarithms_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 수학 / 지수 & 로그  -->
+
+
+      <!-- 수학 / 산술1 --> 
+      <block type="numpy_arithmetic_operations1">
+        <value name="numpy_Arithmetic_operations1_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 수학 / 산술1  -->
+
+
+      <!-- 수학 / 산술2 --> 
+      <block type="numpy_arithmetic_operations2">
+        <value name="numpy_Arithmetic_operations2_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 수학 / 산술2  -->
+
+
+      <!-- 수학 / 복소수 --> 
+      <block type="numpy_handling_complex_numbers">
+        <value name="numpy_Handling complex numbers_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 수학 / 복소수  -->
+
+
+      <!-- 수학 / 합계 & 차이 --> 
+      <block type="numpy_sums_differences">
+        <value name="numpy_Sums_differences_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 수학 / 합계 & 차이  -->
+
+      <!-- 수학 / 분해 --> 
+       <block type="numpy_matrix_decomposition">
+        <value name="numpy_Matrix_Decomposition_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 수학 / 분해  -->
+
+
+      <!-- 논리 / 배열 --> 
+      <block type="numpy_array_contents">
+        <value name="numpy_Array_contents_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 논리 / 배열  -->
+
+
+      <!-- 논리 / 비교 --> 
+      <block type="numpy_comparison">
+        <value name="numpy_Comparison_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 논리 / 비교  -->
+      
+      <!-- 문자열 / 연산1 --> 
+      <block type="numpy_string_operations">
+        <value name="numpy_String_operations_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 문자열 / 연산1  -->
+
+
+      <!-- 문자열 / 연산2 --> 
+      <block type="numpy_string_operations2">
+        <value name="numpy_String_operations2_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- 문자열 / 연산2  -->
+
+       <!-- <!— 문자열 / 정보 —>  -->
+       <block type="numpystring_information">
+        <value name="numpyString_information_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- <!— 문자열 / 정보  —> -->
+
+      <!-- <!— 배열조작 / 모양 변경 —>  -->
+      <block type="numpy_changing_array_shape">
+        <value name="numpy_Changing_array_shape_val"> 
+          <block type="class_func_param"></block>
+        </value>  
+      </block> 
+      <!-- <!— 배열조작 / 모양 변경  —> -->
+    </category>
     <!-- ************************************************** ************************* *************************  -->
     <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
     <!-- ************************************************** ************************* *************************  -->
