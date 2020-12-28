@@ -1,6 +1,20 @@
 ///////////////////////////////////////////////////////
 // 2020-12-26
 ///////////////////////////////////////////////////////
+Blockly.Blocks['itdata'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("사용자입력")
+        .appendField(new Blockly.FieldTextInput(""), "itdata1");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_TEXTS_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 
 Blockly.Blocks['printc'] = {
   init: function () {
