@@ -1,36 +1,6 @@
 ///////////////////////////////////////////////////////
 // 2020-12-26
 ///////////////////////////////////////////////////////
-Blockly.Blocks['itdata'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("파이썬 코드 입력")
-        .appendField(new Blockly.FieldTextInput(""), "itdata1");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_TEXTS_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-
-Blockly.Blocks['printc'] = {
-  init: function () {
-      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
-          alt: "*",
-          flipRtl: "FALSE"
-      })).appendField(Blockly.Msg.TEXT_1_PRINT);
-      this.appendValueInput("content").setCheck(null);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_TEXTS_HUE}");
-      this.setTooltip("");
-      this.setHelpUrl("");
-  }
-};
 
 //""없는 문자
 Blockly.Blocks['char_a_none'] = {

@@ -17,3 +17,46 @@ Blockly.Blocks['input1'] = {
       this.setHelpUrl("");
   }
 };
+
+//출력
+Blockly.Blocks['printc'] = {
+  init: function () {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
+          alt: "*",
+          flipRtl: "FALSE"
+      })).appendField(Blockly.Msg.TEXT_1_PRINT);
+      this.appendValueInput("content").setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['itdata'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("파이썬 코드 입력")
+        .appendField(new Blockly.FieldTextInput(""), "itdata1");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_TEXTS_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['indata'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("파이썬 부분 코드"), "indata1");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(255);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

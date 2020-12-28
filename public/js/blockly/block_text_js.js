@@ -1,19 +1,8 @@
 // ////////////////////////////////////////////////////////////////////
 // // 2020-12-26
 // ////////////////////////////////////////////////////////////////////
-Blockly.JavaScript['itdata'] = function(block) {
-  var text_name = block.getFieldValue('itdata1');
-  // TODO: Assemble JavaScript into code variable.
-  var code = text_name;
-  return code;
-};
 
-Blockly.JavaScript['printc'] = function (block) {
-  var value_content = Blockly.JavaScript.valueToCode(block, 'content', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
+
 
 Blockly.JavaScript['input'] = function(block) {
   // TODO: Assemble JavaScript into code variable.

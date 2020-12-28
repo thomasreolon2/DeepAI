@@ -21,17 +21,6 @@ Blockly.Blocks['create_list'] = {
   }
 };
 
-Blockly.Blocks['indata'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput("파이썬 부분 코드"), "indata1");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(255);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 //2020-12-27-전우진-global
 Blockly.Blocks['global'] = {

@@ -2,11 +2,6 @@
 // // 2020-12-26
 // ////////////////////////////////////////////////////////////////////
 
-Blockly.JavaScript['indata'] = function(block) {
-  var text_modified_col = block.getFieldValue('indata1');
-  var code = '\n';
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
 
 
 Blockly.JavaScript['create_list'] = function (block) {

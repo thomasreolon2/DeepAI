@@ -8,3 +8,23 @@ Blockly.JavaScript['input1'] = function (block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+Blockly.JavaScript['printc'] = function (block) {
+  var value_content = Blockly.JavaScript.valueToCode(block, 'content', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['itdata'] = function(block) {
+  var text_name = block.getFieldValue('itdata1');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['indata'] = function(block) {
+  var text_modified_col = block.getFieldValue('indata1');
+  var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
