@@ -21,13 +21,16 @@
   <script src="/js/blockly/brython_stdlib.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
   <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+
+  <!-- 기태 처리 (파일) 20.12.29------------------------------------------------------------------------->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js"></script>  
   <!--  Blockly 자체의 설정과 관련된 파일 -->
   <!--test1-->
 
-  <!-- pyodide -->
-  <!-- <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script> -->
+  <!-- pyodide 파일 처리를 위해서는 아직은 이전 버전을 사용해야 함 from 기태 -->
+  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
   <!-- pyodide cdn변경 20.11.16 -->
-  <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
+  <!--<script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script> -->
   
   <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
 
@@ -265,8 +268,8 @@
 
 <!-- onload : body가 떳을때 작동되는 js입력 -->
 
-
-<body>
+<!-- 기태 처리 (파일) 20.12.29 - onload 추가 큰 의미는 없음 ----------------------------------------------->
+<body onload="start()">
   <!-- 언어 패키지, 카테고리 색상 -->
   <!-- 2020-12-05 양승국 동적 변경을 위해 head -> body로 옮김-->
   <script id = "lan" src="/js/blockly/msg/js/ko.js"></script> 
@@ -2959,6 +2962,78 @@
     `);
     });
     </script>
+
+    <!-- 기태 처리 (파일) 20.12.29------------------------------------------------------------------------->
+    <!-- 파일 입력 부분과 아래 스크립트 추가 -->
+    <input type="file" id="file_input" name="file-input"
+    accept=".jpg, .png, .txt, .csv"
+    onchange="loadFile(this);"
+    />
+
+    <script>
+    var datas="";
+    let fss;
+    let fileName2="temp";      
+    var rows = "";
+
+    function start(){
+      console.log("start");
+      datas = "123 test 한글 처리";            
+    }  
+
+    function loadFile(sender) {
+      var reader = new FileReader();
+        
+      reader.onload = function (sender) {
+        datas = sender.target.result;          
+        console.log("datas", datas);
+        fss.writeFileSync(fileName2, datas);
+      };
+
+      fileName2 =  sender.files[0].name;
+      reader.readAsText(sender.files[0]);        
+    }
+
+    BrowserFS.install(window);
+      BrowserFS.configure({
+          fs: "LocalStorage"
+      }, function(e) {
+          fss = require('fs');
+          var fs = BrowserFS.BFSRequire('fs');          
+          fss.writeFileSync(fileName2, "");
+          
+          languagePluginLoader.then(async ()=>{            
+            pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy']).then(() => {
+              console.log("Module loaded.");
+            })
+             
+            let FS = pyodide._module.FS;
+            let PATH = pyodide._module.PATH;
+            console.log(FS.mount);
+            console.log(PATH);
+
+            // Create an Emscripten interface for the BrowserFS
+            var BFS = new BrowserFS.EmscriptenFS(FS, PATH);
+            // Create mount point in Emscripten FS
+            FS.createFolder(FS.root, 'data', true, true);
+            // Mount BrowserFS into Emscripten FS
+            FS.mount(BFS, {root: '/'}, '/data');
+
+            pythonCode = `              
+              import sys
+              from io import StringIO
+              sys.stdout = StringIO()        
+            `
+
+            languagePluginLoader.then(() => {
+              return pyodide.loadPackage(['micropip'])
+            }).then(() => {
+              pyodide.runPython(pythonCode);
+            })          
+          });
+      });
+    </script>    
+    <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
 </body>
 
 <style>
