@@ -1,3 +1,4 @@
+const { valuesDistribution } = require("@tensorflow/tfjs-vis/dist/show/tensor");
 
 // 넘파이 기본 연산
 Blockly.Python['numpy_operator'] = function(block) {
