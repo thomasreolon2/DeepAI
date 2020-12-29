@@ -55,3 +55,13 @@ Blockly.JavaScript['dic_menu1'] = function (block) {
   code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+// 집합 종류
+Blockly.JavaScript['set_menu1'] = function (block) {
+  var dropdown_set_menu = block.getFieldValue('set_menu');
+  var value_set1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_set2 = Blockly.JavaScript.valueToCode(block, 'SET2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

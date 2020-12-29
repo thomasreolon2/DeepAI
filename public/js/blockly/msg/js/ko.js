@@ -491,8 +491,8 @@ Blockly.Msg['COLLECTION_11_DIFFERENCE'] = "차집합";
 Blockly.Msg['COLLECTION_11_ADD'] = "원소추가";
 Blockly.Msg['COLLECTION_11_UPDATE'] = "리스트 추가";
 Blockly.Msg['COLLECTION_11_REMOVE'] = "원소제거";
-Blockly.Msg['COLLECTION_11_SELECTSET'] = "집합 선택";
-Blockly.Msg['COLLECTION_11_VALCHANGE'] = "값 변경";
+Blockly.Msg['COLLECTION_11_SELECTSET'] = "에";
+Blockly.Msg['COLLECTION_11_VALCHANGE'] = "을";
 Blockly.Msg['COLLECTION_11_SET'] = "집합";
 Blockly.Msg['COLLECTION_11_CHANGEVAL'] = "바꿀 값";
 
