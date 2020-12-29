@@ -1480,6 +1480,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_MATH_CONSTANT_TOOLTIP}",
     helpUrl: "%{BKY_MATH_CONSTANT_HELPURL}",
   },
+  // 짝수 홀수 판단
   {
     type: "math_number_property",
     message0: "%1 %2 %3",
@@ -1636,6 +1637,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_MATH_CONSTRAIN_TOOLTIP}",
     helpUrl: "%{BKY_MATH_CONSTRAIN_HELPURL}",
   },
+  // 랜덤 정수 생성
   {
     type: "math_random_int",
     message0: "%{BKY_MATH_RANDOM_INT_TITLE}",
@@ -1650,6 +1652,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_MATH_RANDOM_INT_TOOLTIP}",
     helpUrl: "%{BKY_MATH_RANDOM_INT_HELPURL}",
   },
+  // 랜덤 실수 생성
   {
     type: "math_random_float",
     message0: "%{BKY_MATH_RANDOM_FLOAT_TITLE_RANDOM}",
