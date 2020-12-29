@@ -538,7 +538,19 @@ Blockly.Python.logic_boolean = function (a) {
 Blockly.Python.logic_null = function (a) {
   return ["None", Blockly.Python.ORDER_ATOMIC];
 };
-Blockly.Python.logic_ternary = function (a) {
+Blockly.Python.logic_ternary = function (a) { // 삼항표현식 if - else
+  var b =
+      Blockly.Python.valueToCode(a, "IF", Blockly.Python.ORDER_CONDITIONAL) ||
+      "False",
+    c =
+      Blockly.Python.valueToCode(a, "THEN", Blockly.Python.ORDER_CONDITIONAL) ||
+      "None";
+  a =
+    Blockly.Python.valueToCode(a, "ELSE", Blockly.Python.ORDER_CONDITIONAL) ||
+    "None";
+  return [c + " if " + b + " else " + a, Blockly.Python.ORDER_CONDITIONAL];
+};
+Blockly.Python.logic_ternary2 = function (a) { // 삼항표현식 ? - :
   var b =
       Blockly.Python.valueToCode(a, "IF", Blockly.Python.ORDER_CONDITIONAL) ||
       "False",
