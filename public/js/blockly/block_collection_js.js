@@ -65,3 +65,14 @@ Blockly.JavaScript['set_menu1'] = function (block) {
   code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+// 라운드형 반복 조건 블록
+Blockly.JavaScript['forif'] = function (block) {
+  var value_SET1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_SET2 = Blockly.JavaScript.valueToCode(block, 'SET2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_SET3 = Blockly.JavaScript.valueToCode(block, 'SET3', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_SET4 = Blockly.JavaScript.valueToCode(block, 'SET4', Blockly.JavaScript.ORDER_ATOMIC);
+
+  var code = "\n";
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

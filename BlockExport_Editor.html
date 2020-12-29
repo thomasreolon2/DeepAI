@@ -741,6 +741,28 @@
       <!-- continue 블록 -->      
       <block type="continue_block"></block>
 
+      <block type ="forif">
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+      </value>
+        <value name="SET3">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="SET4">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
     </category>
     <!-- 2020-12-26 양승국 end -->
     <category name="%{BKY_CATEGORY_OPERATION}" colour="%{BKY_MATH_HUE}"><!--연산(Operation)-->
