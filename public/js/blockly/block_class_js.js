@@ -13,3 +13,15 @@ Blockly.JavaScript['webclass'] = function (block) {
     return 'class ' + text_const + ':\n' + branch;
     //return '\n';
 };
+
+// 객체 사용
+Blockly.JavaScript['class_use'] = function(block) {
+    var val1 = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC);
+    var text_1 = block.getFieldValue('INPUT');
+    var val2 = Blockly.JavaScript.valueToCode(block, 'VAR2', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code; 
+  };
+
+  

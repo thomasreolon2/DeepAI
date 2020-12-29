@@ -4,7 +4,7 @@ Blockly.Blocks['self'] = {
     init: function () {
         this.appendDummyInput()
             .appendField('self.')
-            .appendField(new Blockly.FieldVariable(""), "VAR")
+            .appendField(new Blockly.FieldVariable("My_class"), "VAR")
             .appendField(new Blockly.FieldDropdown([['=', '='], ['+=', '+='], ["-=", "-="]]), 'NAME');
         this.appendValueInput("varset")
             .setCheck(null);
@@ -22,11 +22,10 @@ Blockly.Blocks['self'] = {
 Blockly.Blocks['webclass'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField('class');
-        this.appendValueInput("class")
-            .setCheck(null);
-        this.appendDummyInput()
-            .appendField(':');
+            .appendField('클래스')
+            .appendField(new Blockly.FieldVariable("My_class"), "VAR")
+            .appendField(' :');
+
         this.appendStatementInput('DO')
             .appendField('');
         this.setPreviousStatement(true, null);
@@ -36,3 +35,22 @@ Blockly.Blocks['webclass'] = {
         this.setHelpUrl('');
     },
 };
+
+ // 객체사용 
+ Blockly.Blocks['class_use'] = {
+    init: function() {     
+      this.appendDummyInput()
+          .appendField("[ "+ Blockly.Msg.CLASS_5_1 +" ]")
+          .appendField(new Blockly.FieldVariable("a"), "VAR1")
+          .appendField(".")
+          .appendField(new Blockly.FieldVariable("b"), "VAR2")
+          .appendField("(")
+          .appendField(new Blockly.FieldTextInput(""), "INPUT")
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(125);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

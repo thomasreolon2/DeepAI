@@ -577,9 +577,9 @@ Blockly.Msg['CLASS_2_3'] = "함수 명";
 Blockly.Msg['CLASS_3_1'] = "함수";
 Blockly.Msg['CLASS_3_2'] = "변수 이름";
 Blockly.Msg['CLASS_4_1'] = "함수 호출";//"객체 & 함수";
-Blockly.Msg['CLASS_5_1'] = "객체 & 함수";
-Blockly.Msg['CLASS_6_1'] = "객체 & 함수";
-Blockly.Msg['CLASS_7_1'] = "객체 & 함수";
+Blockly.Msg['CLASS_5_1'] = "객체사용";
+Blockly.Msg['CLASS_6_1'] = "객체사용";
+Blockly.Msg['CLASS_7_1'] = "객체사용";
 
 
 // Mutator
