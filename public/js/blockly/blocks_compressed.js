@@ -3144,3 +3144,40 @@ Blockly.Extensions.registerMixin(
   Blockly.Constants.VariablesDynamic
     .CUSTOM_CONTEXT_MENU_VARIABLE_GETTER_SETTER_MIXIN
 );
+
+// 이성주 r3 -> 커스텀으로
+Blockly.Blocks['increase'] = {
+  init: function () {
+      this.setStyle("variable_blocks");
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R3-logo.png", 25, 23, {
+          alt: "*",
+          flipRtl: "FALSE"
+      }));
+      this.appendValueInput("NUMBER").setCheck(null);
+      this.appendValueInput("VALUE").setCheck(null).appendField(new Blockly.FieldDropdown([
+          [
+              "+=", "+="
+          ],
+          [
+              "-=", "-="
+          ],
+          [
+              "*=", "*="
+          ],
+          [
+              "/=", "/="
+          ],
+          [
+              "%=", "%="
+          ],
+          [
+              "**=", "**="
+          ]
+      ]), "NAME");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
