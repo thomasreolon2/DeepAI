@@ -347,7 +347,7 @@ Blockly.Msg["TEXT_CHARAT_TAIL"] = "";
 Blockly.Msg["TEXT_CHARAT_TITLE"] = "%1 텍스트 %2 %3에서";
 Blockly.Msg["TEXT_CHARAT_TOOLTIP"] = "특정 번째 위치에서, 문자를 얻어내 돌려줍니다.";
 Blockly.Msg["TEXT_COUNT_HELPURL"] = "https://github.com/google/blockly/wiki/Text#counting-substrings";
-Blockly.Msg["TEXT_COUNT_MESSAGE0"] = "%1 문자 개수 세기-> 텍스트 %3 문자 %2";
+Blockly.Msg["TEXT_COUNT_MESSAGE0"] = "%1 문자 개수 %3 에서 %2";
 Blockly.Msg["TEXT_COUNT_TOOLTIP"] = "다른 어떤 텍스트에서 어떤 텍스트가 나타난 횟수를 셉니다.";
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TOOLTIP"] = "텍스트에 항목을 추가합니다.";
 Blockly.Msg["TEXT_CREATE_JOIN_TITLE_JOIN"] = "가입";
@@ -363,9 +363,9 @@ Blockly.Msg["TEXT_GET_SUBSTRING_START_FROM_START"] = "에서, 처음부터 # 번
 Blockly.Msg["TEXT_GET_SUBSTRING_TAIL"] = "";
 Blockly.Msg["TEXT_GET_SUBSTRING_TOOLTIP"] = "문장 중 일부를 얻어내 돌려줍니다.";
 Blockly.Msg["TEXT_INDEXOF_HELPURL"] = "https://github.com/google/blockly/wiki/Text#finding-text";
-Blockly.Msg["TEXT_INDEXOF_OPERATOR_FIRST"] = "에서 다음 문장이 처음으로 나타난 위치 찾기 :";
-Blockly.Msg["TEXT_INDEXOF_OPERATOR_LAST"] = "에서 다음 문장이 마지막으로 나타난 위치 찾기 :";
-Blockly.Msg["TEXT_INDEXOF_TITLE"] = "%1 문장 %2 %3 %4";
+Blockly.Msg["TEXT_INDEXOF_OPERATOR_FIRST"] = "앞에서부터";//"에서 다음 문장이 처음으로 나타난 위치 찾기 :";
+Blockly.Msg["TEXT_INDEXOF_OPERATOR_LAST"] = "뒤에서부터";//"에서 다음 문장이 마지막으로 나타난 위치 찾기 :";
+Blockly.Msg["TEXT_INDEXOF_TITLE"] = "%1 문자위치 찾기 %2에서 %3 %4 찾기";
 Blockly.Msg["TEXT_INDEXOF_TOOLTIP"] = "두 번째 텍스트에서 첫 번째 텍스트가 처음 또는 마지막으로 발생한 색인 위치를 반환합니다. 텍스트가 없으면 %1을 반환합니다.";
 Blockly.Msg["TEXT_ISEMPTY_HELPURL"] = "https://github.com/google/blockly/wiki/Text#checking-for-empty-text";
 Blockly.Msg["TEXT_ISEMPTY_TITLE"] = "%1 %2이 비어 있습니다";
@@ -443,11 +443,13 @@ Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT
  //문자
  Blockly.Msg.TEXT_4_TEXT = '문자';
 //문자열변경 -> 변수
- Blockly.Msg.TEXT_14_1_TEXTCHANGE = '문자열변경 -> 변수';
+ Blockly.Msg.TEXT_14_1_TEXTCHANGE = '문자열 바꾸기 ';
 //( 기존
- Blockly.Msg.TEXT_14_2_EXISTING= '( 기존';
+ Blockly.Msg.TEXT_14_2_EXISTING= '에서 ';
 //, 변경
- Blockly.Msg.TEXT_14_3_CHANGE = ', 변경';
+Blockly.Msg.TEXT_14_3_CHANGE = '를 ';
+//, 
+Blockly.Msg.TEXT_14_4_END = '로';
 
 
 // 2020.12.04  이성주 블록 한글/영어 메시지 전환

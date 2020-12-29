@@ -30,7 +30,7 @@ Blockly.Blocks['text_replace'] = {
       this.appendValueInput("A").setCheck(null);
       this.appendDummyInput().appendField(Blockly.Msg.TEXT_14_3_CHANGE);
       this.appendValueInput("B").setCheck(null);
-      this.appendDummyInput().appendField(")");
+      this.appendDummyInput().appendField(Blockly.Msg.TEXT_14_4_END);
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_TEXTS_HUE}");

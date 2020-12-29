@@ -353,9 +353,9 @@ Blockly.Msg["TEXT_GET_SUBSTRING_START_FROM_START"] = "get substring from letter 
 Blockly.Msg["TEXT_GET_SUBSTRING_TAIL"] = "";
 Blockly.Msg["TEXT_GET_SUBSTRING_TOOLTIP"] = "Returns a specified portion of the text.";
 Blockly.Msg["TEXT_INDEXOF_HELPURL"] = "https://github.com/google/blockly/wiki/Text#finding-text";
-Blockly.Msg["TEXT_INDEXOF_OPERATOR_FIRST"] = "find first occurrence of text";
-Blockly.Msg["TEXT_INDEXOF_OPERATOR_LAST"] = "find last occurrence of text";
-Blockly.Msg["TEXT_INDEXOF_TITLE"] = "%1 in text %2 %3 %4";
+Blockly.Msg["TEXT_INDEXOF_OPERATOR_FIRST"] = "first occurrence of the";
+Blockly.Msg["TEXT_INDEXOF_OPERATOR_LAST"] = "last occurrence of the";
+Blockly.Msg["TEXT_INDEXOF_TITLE"] = "%1 %2 find the %3 %4";
 Blockly.Msg["TEXT_INDEXOF_TOOLTIP"] = "Returns the index of the first/last occurrence of the first text in the second text. Returns %1 if text is not found.";
 Blockly.Msg["TEXT_ISEMPTY_HELPURL"] = "https://github.com/google/blockly/wiki/Text#checking-for-empty-text";
 Blockly.Msg["TEXT_ISEMPTY_TITLE"] = "%1 %2 is empty";
@@ -444,11 +444,13 @@ Blockly.Msg.TEXT_2_DATAINPUT = "data input";
 //문자
 Blockly.Msg.TEXT_4_TEXT = "text";
 //문자열변경 -> 변수
-Blockly.Msg.TEXT_14_1_TEXTCHANGE = 'text change -> variable';
+Blockly.Msg.TEXT_14_1_TEXTCHANGE = 'phrase replace ';
 //( 기존
- Blockly.Msg.TEXT_14_2_EXISTING = '( existing';
+ Blockly.Msg.TEXT_14_2_EXISTING = ' ';
 //, 변경
- Blockly.Msg.TEXT_14_3_CHANGE = ', change';
+ Blockly.Msg.TEXT_14_3_CHANGE = ' to ';
+ //, 
+Blockly.Msg.TEXT_14_4_END = '';
 
  
 // 2020.12.04 이성주 블록 한글/영어 변환
