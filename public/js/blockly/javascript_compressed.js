@@ -375,6 +375,12 @@ Blockly.JavaScript.logic_ternary = function (a) {
     a = Blockly.JavaScript.valueToCode(a, "ELSE", Blockly.JavaScript.ORDER_CONDITIONAL) || "null";
     return [b + " ? " + c + " : " + a, Blockly.JavaScript.ORDER_CONDITIONAL]
 };
+Blockly.JavaScript.logic_ternary2 = function (a) {
+    var b = Blockly.JavaScript.valueToCode(a, "IF", Blockly.JavaScript.ORDER_CONDITIONAL) || "false",
+        c = Blockly.JavaScript.valueToCode(a, "THEN", Blockly.JavaScript.ORDER_CONDITIONAL) || "null";
+    a = Blockly.JavaScript.valueToCode(a, "ELSE", Blockly.JavaScript.ORDER_CONDITIONAL) || "null";
+    return [b + " ? " + c + " : " + a, Blockly.JavaScript.ORDER_CONDITIONAL]
+};
 Blockly.JavaScript.loops = {};
 Blockly.JavaScript.controls_repeat_ext = function (a) {
     var b = a.getField("TIMES") ? String(Number(a.getFieldValue("TIMES"))) : Blockly.JavaScript.valueToCode(a, "TIMES", Blockly.JavaScript.ORDER_ASSIGNMENT) || "0",
@@ -571,10 +577,15 @@ Blockly.JavaScript.math_number_property = function (a) {
     }
     return [d, Blockly.JavaScript.ORDER_EQUALITY]
 };
-Blockly.JavaScript.math_change = function (a) {
-    var b = Blockly.JavaScript.valueToCode(a, "DELTA", Blockly.JavaScript.ORDER_ADDITION) || "0";
-    a = Blockly.JavaScript.variableDB_.getName(a.getFieldValue("VAR"), Blockly.VARIABLE_CATEGORY_NAME);
-    return a + " = (typeof " + a + " == 'number' ? " + a + " : 0) + " + b + ";\n"
+// Blockly.JavaScript.math_change = function (a) {
+//     var b = Blockly.JavaScript.valueToCode(a, "DELTA", Blockly.JavaScript.ORDER_ADDITION) || "0";
+//     a = Blockly.JavaScript.variableDB_.getName(a.getFieldValue("VAR"), Blockly.VARIABLE_CATEGORY_NAME);
+//     return a + " = (typeof " + a + " == 'number' ? " + a + " : 0) + " + b + ";\n"
+// };
+Blockly.JavaScript.math_change = function (block) {
+
+    var code = "\n";
+    return code;
 };
 Blockly.JavaScript.math_round = Blockly.JavaScript.math_single;
 Blockly.JavaScript.math_trig = Blockly.JavaScript.math_single;
