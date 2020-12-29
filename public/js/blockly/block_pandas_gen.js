@@ -457,3 +457,15 @@ Blockly.Python['df_add_col'] = function(block) {
   var code = value_df + "['" + text_added_col + "'] = " + value_add_data + '\n';
   return code;
 };
+
+
+//2020-12-29 전우진 csv url 불러오기
+
+Blockly.Python['csv_url'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = variable_list + "= pd.read_csv(pyodide.open_url('" + value_name + "'))" + '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};

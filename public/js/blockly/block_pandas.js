@@ -1256,3 +1256,25 @@ Blockly.Blocks['df_col_rename'] = {
  this.setHelpUrl("");
   }
 };
+
+//2020-12-29 전우진 csv url 불러오기
+
+Blockly.Blocks['csv_url'] = {
+  init: function () {
+    this.appendDummyInput()
+    .appendField(new Blockly.FieldVariable("value"), "list");
+    this.appendDummyInput()
+      .appendField("CSV URL")
+      .appendField("(");
+    this.appendValueInput("va")
+      .setCheck(null)
+    this.appendDummyInput()
+       .appendField(")");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};

@@ -322,3 +322,8 @@ Blockly.JavaScript['df_add_col'] = function(block) {
   var code = '\n';
   return code;
 };
+
+Blockly.JavaScript['csv_url'] = function(block) {
+  var code = '\n';
+  return code;
+};
