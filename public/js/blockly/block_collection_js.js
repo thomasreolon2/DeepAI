@@ -45,3 +45,13 @@ Blockly.JavaScript['create_ziphap'] = function (block) {
   var code = '\n';
   return code;
 };
+
+// 딕셔너리 옵션
+Blockly.JavaScript['dic_menu1'] = function (block) {
+  var dropdown_dic = block.getFieldValue('dic');
+  var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_dic2 = Blockly.JavaScript.valueToCode(block, 'dic2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_dic3 = Blockly.JavaScript.valueToCode(block, 'dic3', Blockly.JavaScript.ORDER_ATOMIC);
+  code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

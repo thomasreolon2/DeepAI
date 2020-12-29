@@ -373,5 +373,53 @@ Blockly.Blocks['dict1'] = {
         }
     }
 };
+
+// 딕셔너리 옵션 블록
+Blockly.Blocks['dic_menu1'] = {
+    init: function () {
+
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C9-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        })).appendField(Blockly.Msg.COLLECTION_9_DICTOPTION);
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_DICVAR);
+        this.appendValueInput("dic1").setCheck(null);
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_VAL1);
+        this.appendValueInput("dic2").setCheck(null);
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_VAL2);
+        this.appendValueInput("dic3")
+        this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_VALSELECT, "selectvalues"
+            ],
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL1, "printvalues1"
+            ],
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTVAL2, "printvalues2"
+            ],
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_VALAPPEND, "addvalues"
+            ],
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_VALDELET, "delvalues"
+            ],
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_CASTINGDICT, "changedict"
+            ],
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTKEY, "getkeys"
+            ],
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL, "getvalues"
+            ]
+        ]), "dic");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_DICT_HUE}");
+        this.setOutput(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
   
 

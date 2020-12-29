@@ -1093,6 +1093,24 @@
             <!-- 딕셔너리2 -->
       <block type = "dict1"></block>
 
+      <block type ="dic_menu1">
+        <value name="dic1">
+            <block type="variables_get">
+              <field name="VAR">dic</field>
+            </block>
+        </value>
+        <value name="dic2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="dic3">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
       <!-- 리스트 생성 -->
       <!-- <block type="lists_create_with"></block> -->
       <!-- 변수명 이렇게 하면 잘들어가지긴함
@@ -1165,14 +1183,10 @@
       <!-- 튜플 -->
       <!-- <block type="tuple"></block> -->
       <!-- 새 블록  딕셔너리 -->
-<<<<<<< Updated upstream
-      <block type="dict"></block>
-
-=======
       <!-- <block type="dict"></block> -->
->>>>>>> Stashed changes
+
       <!-- 딕셔너리 옵션 -->
-      <block type="dic_menu">
+      <!-- <block type="dic_menu">
         <value name="dic1">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -1188,7 +1202,7 @@
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- 집합 -->
       <!-- <block type="set">
         <value name="SET">

@@ -78,3 +78,30 @@ Blockly.Python['dict1'] = function (block) {
   var code =  variable_list + ' = {' + key.join('') + '}';
   return code;
 };
+
+
+// 딕셔너리 옵션
+Blockly.Python['dic_menu1'] = function (block) {
+  var dropdown_dic = block.getFieldValue('dic');
+  var value_dic1 = Blockly.Python.valueToCode(block, 'dic1', Blockly.Python.ORDER_ATOMIC);
+  var value_dic2 = Blockly.Python.valueToCode(block, 'dic2', Blockly.Python.ORDER_ATOMIC);
+  var value_dic3 = Blockly.Python.valueToCode(block, 'dic3', Blockly.Python.ORDER_ATOMIC);
+  if (dropdown_dic == 'printvalues1') {
+      var code = 'print(' + value_dic1 + '[' + value_dic2 + '])';
+  } else if (dropdown_dic == 'printvalues2') {
+      var code = 'print(' + value_dic1 + '[' + value_dic2 + ']' + '[' + value_dic3 + '])';
+  } else if (dropdown_dic == 'addvalues') {
+      var code = value_dic1 + '[' + value_dic2 + '] = ' + value_dic3;
+  } else if (dropdown_dic == 'delvalues') {
+      var code = 'del ' + value_dic1 + '[' + value_dic2 + ']';
+  } else if (dropdown_dic == 'changedict') {
+      var code = 'dict(' + value_dic1 + ')';
+  } else if (dropdown_dic == 'selectvalues') {
+      var code = value_dic1 + '[' + value_dic2 + ']';
+  } else if (dropdown_dic == 'getvalues') {
+      var code = value_dic1 + '.values()';
+  } else if (dropdown_dic == 'getkeys') {
+      var code = value_dic1 + '.keys()';
+  }
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

@@ -470,10 +470,10 @@ Blockly.Msg['COLLECTION_7_TUPLE'] = "튜플";
 
 Blockly.Msg['COLLECTION_8_DICT'] = "딕셔너리";
 
-Blockly.Msg['COLLECTION_9_DICTOPTION'] = "딕셔너리 옵션";
+Blockly.Msg['COLLECTION_9_DICTOPTION'] = "딕셔너리 다루기";
 Blockly.Msg['COLLECTION_9_DICVAR'] = "dic변수";
-Blockly.Msg['COLLECTION_9_VAL1'] = "값1";
-Blockly.Msg['COLLECTION_9_VAL2'] = "값2";
+Blockly.Msg['COLLECTION_9_VAL1'] = "키";
+Blockly.Msg['COLLECTION_9_VAL2'] = "값";
 Blockly.Msg['COLLECTION_9_DROPDOWN_VALSELECT'] = "값선택";
 Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUVAL1'] = "값출력1";
 Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUTVAL2'] = "값출력2";
