@@ -527,7 +527,7 @@
       <block type="printtv">
         <value name="content1">
           <shadow type="indata">
-            <field name="indata1">"결과 = "</field>
+            <field name="indata1">메시지 =</field>
           </shadow>
         </value>
         <value name="content2">
@@ -1157,6 +1157,7 @@
       <block type="tuple"></block>
       <!-- 새 블록  딕셔너리 -->
       <block type="dict"></block>
+
       <!-- 딕셔너리 옵션 -->
       <block type="dic_menu">
         <value name="dic1">
@@ -1300,25 +1301,30 @@
     <category name="기존함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
 
     <category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}"> <!--함수 (Function)-->
+      <!-- 함수 -->
       <block type="webdefine">
         <value name="1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">func</field>
+          </block>
         </value>
         <value name="2">
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">x</field>
           </shadow>
         </value>
       </block>
-      <block type="webreturn2">
+      <block type="func_return1">
+        
+      </block>
+      <block type="func_return2"></block>
+      <!-- <block type="webreturn2">
         <value name="return">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block>
+      </block> -->
     </category>
 
 

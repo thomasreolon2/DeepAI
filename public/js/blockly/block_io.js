@@ -11,7 +11,7 @@ Blockly.Blocks['input1'] = {
       }));
       this.appendDummyInput()
         .appendField(Blockly.Msg.TEXT_2_DATAINPUT)
-        .appendField(new Blockly.FieldTextInput(""), "inputdata");
+        .appendField(new Blockly.FieldTextInput("메시지"), "inputdata");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_TEXTS_HUE}");
@@ -21,7 +21,7 @@ Blockly.Blocks['input1'] = {
 };
 
 
-//출력(텍스트 + 변수)
+//결과출력(텍스트 + 변수)
 Blockly.Blocks['printtv'] = {
   init: function () {
       this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
@@ -39,7 +39,7 @@ Blockly.Blocks['printtv'] = {
   }
 };
 
-//출력(변수만 있는거)
+//결과출력(변수만 있는거)
 Blockly.Blocks['printc'] = {
   init: function () {
       this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {

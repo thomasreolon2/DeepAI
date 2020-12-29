@@ -18,3 +18,22 @@ Blockly.JavaScript['webreturn2'] = function (block) {
     var code = '\n';
     return code;
 };
+
+// 함수 return1
+Blockly.JavaScript['func_return1'] = function(block) {
+    var variable_1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
+    var text_2 = block.getFieldValue('2');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+};
+
+// 함수 return 2
+Blockly.JavaScript['func_return2'] = function(block) {
+    var text_1 = block.getFieldValue('1');
+    var variable_2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('2'), Blockly.Variables.NAME_TYPE);
+    var text_3 = block.getFieldValue('3');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
