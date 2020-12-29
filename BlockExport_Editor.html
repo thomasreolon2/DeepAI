@@ -971,7 +971,7 @@
         </value>
       </block>
       <!-- a[0] -->
-      <block type="text_charAt">
+      <!-- <block type="text_charAt">
         <value name="VALUE">
           <block type="variables_get">
             <field name="VAR">text</field>
@@ -982,9 +982,9 @@
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- a[ :0] -->
-      <block type="text_getSubstring">
+      <!-- <block type="text_getSubstring">
         <value name="STRING">
           <block type="variables_get">
             <field name="VAR">text</field>
@@ -1000,7 +1000,7 @@
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- upper, lower -->
       <block type="text_changeCase">
         <value name="TEXT">
@@ -1235,7 +1235,7 @@
       </block>
 
       <!-- 리스트 자르기 -->
-      <block type="list_dot">
+      <!-- <block type="list_dot">
         <value name="list">
           <shadow type="indata">
             <field name="indata1">my_list</field>
@@ -1251,23 +1251,20 @@
             <field name="indata1"></field>
           </shadow>
         </value>
-
       </block>
-  
+   -->
       <!-- return 반환
       <block type="py_return"></block>
       -->
 
-      <!-- 결과 출력 -->
-      <!-- <block type="print_output_var"></block> -->
       <!-- 인덱스 가져오기 -->
-      <block type="array_select">
+      <!-- <block type="array_select">
         <value name="array_var"> 
           <block type="variables_get">
             <field name="VAR">array</field>
           </block>
         </value>
-      </block>
+      </block> -->
       <!-- 2020-12-27-전우진 global -->
       <block type="global">
         <value name="text">
