@@ -935,20 +935,41 @@ Blockly.Python.math_number_property = function (a) {
   }
   return [d, Blockly.Python.ORDER_RELATIONAL];
 };
-Blockly.Python.math_change = function (a) {
+// Blockly.Python.math_change = function (a) {
+//   Blockly.Python.definitions_.from_numbers_import_Number =
+//     "from numbers import Number";
+//   var b =
+//     Blockly.Python.valueToCode(a, "DELTA", Blockly.Python.ORDER_ADDITIVE) ||
+//     "0";
+//   a = Blockly.Python.variableDB_.getName(
+//     a.getFieldValue("VAR"),
+//     Blockly.VARIABLE_CATEGORY_NAME
+//   );
+//   return (
+//     a + " = (" + a + " if isinstance(" + a + ", Number) else 0) + " + b + "\n"
+//   );
+// };
+Blockly.Python.math_change = function (block) {
   Blockly.Python.definitions_.from_numbers_import_Number =
     "from numbers import Number";
   var b =
-    Blockly.Python.valueToCode(a, "DELTA", Blockly.Python.ORDER_ADDITIVE) ||
+    Blockly.Python.valueToCode(block, "DELTA", Blockly.Python.ORDER_ATOMIC) ||
     "0";
-  a = Blockly.Python.variableDB_.getName(
-    a.getFieldValue("VAR"),
-    Blockly.VARIABLE_CATEGORY_NAME
-  );
-  return (
-    a + " = (" + a + " if isinstance(" + a + ", Number) else 0) + " + b + "\n"
-  );
+
+  var a =
+    Blockly.Python.valueToCode(block, "VAR", Blockly.Python.ORDER_ATOMIC) ||
+    "0";
+
+  // a = Blockly.Python.variableDB_.getName(
+  //   a.getFieldValue("VAR"),
+  //   Blockly.VARIABLE_CATEGORY_NAME
+  // );
+
+  var dropdown_name = block.getFieldValue("NAME");
+  // var val_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  return a + dropdown_name + b + "\n";
 };
+
 Blockly.Python.math_round = Blockly.Python.math_single;
 Blockly.Python.math_trig = Blockly.Python.math_single;
 Blockly.Python.math_on_list = function (a) {
@@ -1591,7 +1612,7 @@ Blockly.Python['increase'] = function(block) {
   var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
   var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_number+dropdown_name+value_value+'\n';
+  var code = value_number + dropdown_name + value_value+'\n';
   return code;
 };
 
@@ -1633,5 +1654,14 @@ Blockly.Python['break_block'] = function(block) {
 Blockly.Python['continue_block'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = 'continue\n';
+  return code;
+};
+
+// 여러 변수 치환문
+Blockly.Python['many_variables'] = function(block) {
+  var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+  var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_number + " = " + value_value+'\n';
   return code;
 };

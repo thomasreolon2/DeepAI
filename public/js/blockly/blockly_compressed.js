@@ -12378,38 +12378,54 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
       b.push(d);
     }
     // 이성주 r3 -> 커스텀으로
-    if (Blockly.Blocks.variables_set) {
+    // if (Blockly.Blocks.increase) {
+    
+    //   var k = Blockly.utils.xml.createElement("block");
+      
+    //   k.setAttribute("type", "increase");
+    //   k.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
+    //   k.appendChild(Blockly.Variables.generateVariableFieldDom(c));
+    //   k.appendChild(Blockly.Xml.textToDom(
+    //     '<value name="VALUE1"><block type="variables_get"><field name="var1">a</field></block></value>'
+    //   ))
+    //   k.appendChild(Blockly.Xml.textToDom(
+    //     '<value name="VALUE2"><block type="variables_get"><field name="var2"></field></block></value>'
+    //   ))
+    //   b.push(k);
+    // }
+
+    // 이성주 여러 변수 치환블록
+    if (Blockly.Blocks.many_variables) {
     
       var k = Blockly.utils.xml.createElement("block");
       
-      k.setAttribute("type", "increase");
+      k.setAttribute("type", "many_variables");
       k.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
       k.appendChild(Blockly.Variables.generateVariableFieldDom(c));
       k.appendChild(Blockly.Xml.textToDom(
         '<value name="NUMBER"><shadow type="indata"><field name="indata1">0</field></shadow></value>'
       ))
       k.appendChild(Blockly.Xml.textToDom(
-        '<value name="VALUE"><shadow type="indata"><field name="indata1">10</field></shadow></value>'
+        '<value name="VALUE"><shadow type="indata"><field name="indata2">10</field></shadow></value>'
       ))
       b.push(k);
     }
+
+    // 이성주 r3 -> 커스텀으로  (기존의 변수 블록 변형)
     Blockly.Blocks.math_change &&
       ((d = Blockly.utils.xml.createElement("block")),
       d.setAttribute("type", "math_change"),
       d.setAttribute("gap", Blockly.Blocks.variables_get ? 20 : 8),
       d.appendChild(Blockly.Variables.generateVariableFieldDom(c)),
       (c = Blockly.Xml.textToDom(
-        '<value name="DELTA"><shadow type="math_number"><field name="NUM">1</field></shadow></value>'
+        '<value name="DELTA"><shadow type="indata"><field name="NUM">5</field></shadow></value>'
       )),
       d.appendChild(c),
+      d.appendChild(Blockly.Xml.textToDom(
+        '<value name="VAR"><block type="variables_get"><field name="NUM">5</field></block></value>'
+      )),
       b.push(d));
-    // if (Blockly.Blocks.increase) {
-    //   var d = Blockly.utils.xml.createElement("block");
-    //   d.setAttribute("type", "increase");
-    //   d.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
-    //   d.appendChild(Blockly.Variables.generateVariableFieldDom(c));
-    //   b.push(d);
-    // }
+    
       
     if (Blockly.Blocks.variables_get) {
       a.sort(Blockly.VariableModel.compareByName);

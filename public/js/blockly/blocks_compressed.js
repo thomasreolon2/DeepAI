@@ -1487,12 +1487,46 @@ Blockly.defineBlocksWithJsonArray([
     args0: [
       {"type": "field_image","src": "/img/Variable/V2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       {
-        type: "field_variable",
-        name: "VAR",
-        variable: "%{BKY_MATH_CHANGE_TITLE_ITEM}",
+        // type: "field_variable",
+        // name: "VAR",
+        // variable: "%{BKY_MATH_CHANGE_TITLE_ITEM}",
+        type : "input_value",
+        name : "VAR"
+
       },
-      { type: "input_value", name: "DELTA", check: "Number" },
+      {
+        "type": "field_dropdown",
+        "name": "NAME",
+        "options": [
+          [
+            "+=",
+            "+="
+          ],
+          [
+            "-=",
+            "-="
+          ],
+          [
+            "*=",
+            "*="
+          ],
+          [
+            "/=",
+            "/="
+          ],
+          [
+            "%=",
+            "%="
+          ],
+          [
+            "**=",
+            "**="
+          ]
+        ]
+      },
+      { type: "input_value", name: "DELTA"}
     ],
+    inputsInline : true,
     previousStatement: null,
     nextStatement: null,
     style: "variable_blocks",
@@ -3149,11 +3183,9 @@ Blockly.Extensions.registerMixin(
 Blockly.Blocks['increase'] = {
   init: function () {
       this.setStyle("variable_blocks");
-      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R3-logo.png", 25, 23, {
-          alt: "*",
-          flipRtl: "FALSE"
-      }));
+      
       this.appendValueInput("NUMBER").setCheck(null);
+      
       this.appendValueInput("VALUE").setCheck(null).appendField(new Blockly.FieldDropdown([
           [
               "+=", "+="
@@ -3174,6 +3206,20 @@ Blockly.Blocks['increase'] = {
               "**=", "**="
           ]
       ]), "NAME");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+// 여러변수 치환문 블록
+Blockly.Blocks['many_variables'] = {
+  init: function () {
+      this.setStyle("variable_blocks");
+      this.appendValueInput("NUMBER").setCheck(null);
+      this.appendValueInput("VALUE").setCheck(null).appendField(" = ");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);

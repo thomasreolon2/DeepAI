@@ -1043,3 +1043,13 @@ Blockly.JavaScript['list_insert'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
+
+  //여러 변수 치환
+  Blockly.JavaScript['many_variables'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_number = Blockly.JavaScript.valueToCode(block, 'NUMBER', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+  };
