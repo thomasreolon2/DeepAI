@@ -33,7 +33,7 @@ Blockly.Blocks['webclass'] = {
         this.setColour("%{BKY_CLASS_HUE}");
         this.setTooltip('Class Statement.');
         this.setHelpUrl('');
-    },
+    }
 };
 
  // 객체사용 
@@ -49,6 +49,26 @@ Blockly.Blocks['webclass'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
+      this.setColour(125);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // 객체 생성
+  Blockly.Blocks['class_make'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[객체생성]")
+          .appendField(new Blockly.FieldVariable("a"), "1")
+          .appendField("를")
+          .appendField(new Blockly.FieldVariable("b"), "2")
+          .appendField("(")
+          .appendField(new Blockly.FieldTextInput(""), "3")
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour(125);
    this.setTooltip("");
    this.setHelpUrl("");

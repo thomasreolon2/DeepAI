@@ -12403,10 +12403,10 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
       k.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
       k.appendChild(Blockly.Variables.generateVariableFieldDom(c));
       k.appendChild(Blockly.Xml.textToDom(
-        '<value name="NUMBER"><shadow type="indata"><field name="indata1">0</field></shadow></value>'
+        '<value name="NUMBER"><shadow type="indata"><field name="indata1">x,y,z</field></shadow></value>'
       ))
       k.appendChild(Blockly.Xml.textToDom(
-        '<value name="VALUE"><shadow type="indata"><field name="indata2">10</field></shadow></value>'
+        '<value name="VALUE"><shadow type="indata"><field name="indata1">0,0,0</field></shadow></value>'
       ))
       b.push(k);
     }
@@ -12418,7 +12418,7 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
       d.setAttribute("gap", Blockly.Blocks.variables_get ? 20 : 8),
       d.appendChild(Blockly.Variables.generateVariableFieldDom(c)),
       (c = Blockly.Xml.textToDom(
-        '<value name="DELTA"><shadow type="indata"><field name="NUM">5</field></shadow></value>'
+        '<value name="DELTA"><shadow type="indata"><field name="indata1">1</field></shadow></value>'
       )),
       d.appendChild(c),
       d.appendChild(Blockly.Xml.textToDom(

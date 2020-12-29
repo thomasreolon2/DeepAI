@@ -460,3 +460,18 @@ Blockly.Blocks['set_menu1'] = {
     }
 };
 
+// 라운드형 반복 조건 블록
+Blockly.Blocks['forif'] = {
+    init: function () {
+        this.appendDummyInput().appendField("(라벨)").appendField("반복");
+        this.appendValueInput("SET1").setCheck(null);
+        this.appendValueInput("SET2").setCheck(null).appendField("for");          
+        this.appendValueInput("SET3").setCheck(null).appendField("in");   
+        this.appendValueInput("SET4").setCheck(null).appendField("if");                                          
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_SET_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};

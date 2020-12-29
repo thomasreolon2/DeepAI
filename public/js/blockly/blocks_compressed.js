@@ -765,23 +765,46 @@ Blockly.defineBlocksWithJsonArray([
     helpUrl: "%{BKY_LOGIC_NULL_HELPURL}",
   },
   {
-    type: "logic_ternary",
+    type: "logic_ternary",      // 삼항표현식 if - else
     message0: "%{BKY_LOGIC_TERNARY_CONDITION} %2",
     args0: [
       {"type": "field_image","src": "/img/Logic/L7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
-      { type: "input_value", name: "IF", check: "Boolean" }
+      { type: "input_value", name: "THEN" }
     ],
     message1: "%{BKY_LOGIC_TERNARY_IF_TRUE} %1",
-    args1: [{ type: "input_value", name: "THEN" }],
+    args1: [{ type: "input_value", name: "IF", check: "Boolean" }],
 
     message2: "%{BKY_LOGIC_TERNARY_IF_FALSE} %1",
     args2: [{ type: "input_value", name: "ELSE" }],
     output: null,
 
+    
     style: "logic_blocks",
     tooltip: "%{BKY_LOGIC_TERNARY_TOOLTIP}",
     helpUrl: "%{BKY_LOGIC_TERNARY_HELPURL}",
     extensions: ["logic_ternary"],
+    "inputsInline": true,
+  },
+  {
+    type: "logic_ternary2",       // 삼항표현식 ? - :
+    message0: "%{BKY_LOGIC_TERNARY_CONDITION} %2",
+    args0: [
+      {"type": "field_image","src": "/img/Logic/L7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      { type: "input_value", name: "THEN" }
+    ],
+    message1: "? %1",
+    args1: [{ type: "input_value", name: "IF", check: "Boolean" }],
+
+    message2: ": %1",
+    args2: [{ type: "input_value", name: "ELSE" }],
+    output: null,
+
+    
+    style: "logic_blocks",
+    tooltip: "%{BKY_LOGIC_TERNARY_TOOLTIP}",
+    helpUrl: "%{BKY_LOGIC_TERNARY_HELPURL}",
+    extensions: ["logic_ternary"],
+    "inputsInline": true,
   },
 ]);
 Blockly.defineBlocksWithJsonArray([
@@ -966,6 +989,8 @@ Blockly.Extensions.register(
   "controls_if_tooltip",
   Blockly.Constants.Logic.CONTROLS_IF_TOOLTIP_EXTENSION
 );
+
+
 Blockly.Constants.Logic.LOGIC_COMPARE_ONCHANGE_MIXIN = {
   onchange: function (a) {
     this.prevBlocks_ || (this.prevBlocks_ = [null, null]);
@@ -1455,12 +1480,13 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_MATH_CONSTANT_TOOLTIP}",
     helpUrl: "%{BKY_MATH_CONSTANT_HELPURL}",
   },
+  // 짝수 홀수 판단
   {
     type: "math_number_property",
     message0: "%1 %2 %3",
     args0: [
       {"type": "field_image","src": "/img/Operation/O6-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
-      { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
+
       {
         type: "field_dropdown",
         name: "PROPERTY",
@@ -1474,6 +1500,7 @@ Blockly.defineBlocksWithJsonArray([
           ["%{BKY_MATH_IS_DIVISIBLE_BY}", "DIVISIBLE_BY"],
         ],
       },
+      { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
     ],
     inputsInline: !0,
     output: "Boolean",
@@ -1610,6 +1637,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_MATH_CONSTRAIN_TOOLTIP}",
     helpUrl: "%{BKY_MATH_CONSTRAIN_HELPURL}",
   },
+  // 랜덤 정수 생성
   {
     type: "math_random_int",
     message0: "%{BKY_MATH_RANDOM_INT_TITLE}",
@@ -1624,6 +1652,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_MATH_RANDOM_INT_TOOLTIP}",
     helpUrl: "%{BKY_MATH_RANDOM_INT_HELPURL}",
   },
+  // 랜덤 실수 생성
   {
     type: "math_random_float",
     message0: "%{BKY_MATH_RANDOM_FLOAT_TITLE_RANDOM}",
@@ -2966,7 +2995,7 @@ Blockly.defineBlocksWithJsonArray([
       {
         type: "field_variable",
         name: "VAR",
-        variable: "%{BKY_VARIABLES_DEFAULT_NAME}",
+        variable: "",
       },
     ],
     output: null,

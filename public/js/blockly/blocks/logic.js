@@ -220,6 +220,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "name": "ELSE"
       }
     ],
+    "inputsInline": true,
     "output": null,
     "style": "logic_blocks",
     "tooltip": "%{BKY_LOGIC_TERNARY_TOOLTIP}",

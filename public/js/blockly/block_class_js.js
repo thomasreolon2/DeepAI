@@ -25,3 +25,14 @@ Blockly.JavaScript['class_use'] = function(block) {
   };
 
   
+ // 객체 생성
+Blockly.JavaScript['class_make'] = function(block) {
+    var variable_1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
+    var variable_2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('2'), Blockly.Variables.NAME_TYPE);
+    var text_3 = block.getFieldValue('3');
+    // TODO: Assemble JavaScript into code variable.
+    var code = variable_1+' = '+variable_2+'('+text_3+')\n';
+    return code;
+  };
+
+  
