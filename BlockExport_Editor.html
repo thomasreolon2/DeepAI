@@ -1311,7 +1311,7 @@
 
     <!-- 커스텀 블록 -->
     <!-- 함수 -->
-    <category name="기존함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+    <!-- <category name="기존함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category> -->
 
     <category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}"> <!--함수 (Function)-->
       <!-- 함수 -->
@@ -1327,17 +1327,19 @@
           </shadow>
         </value>
       </block>
-      <block type="func_return1">
-        
-      </block>
-      <block type="func_return2"></block>
-      <!-- <block type="webreturn2">
+      <!-- return -->
+      <block type="webreturn2">
         <value name="return">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block> -->
+      </block> 
+      <!-- return1 -->
+      <block type="func_return1"></block>
+      <!-- return2 -->
+      <block type="func_return2"></block>
+      
     </category>
 
 
