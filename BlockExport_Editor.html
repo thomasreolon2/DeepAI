@@ -22,6 +22,10 @@
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <!-- tensorflow -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
@@ -82,10 +86,7 @@
 
   
 
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+ 
 
   <!-- canvas -->
   <script src="./js/canvas.js"></script>
@@ -188,9 +189,57 @@
   <script src="/js/blockly/block_numpy1_py.js"></script>
   <script src="/js/blockly/block_numpy1_js.js"></script>
   <!-- api 블록 -->
+  
 
-  <!--css-->
+  <!-- #####################################################################################################  -->
+  <!-- ******************************                CSS                      ******************************* -->
+  <!-- #####################################################################################################  -->
+
+  <!-- 사이드 바 -->
   <link rel="stylesheet" href="css\sidebar.css">
+  
+  <!-- table --> 
+  <link rel="stylesheet" href="/css/table_custom.css">
+
+  <style type="text/css">
+    /* canvas {
+      background-color: white;
+      border: 1px solid black
+    } */
+
+    .btn {
+      margin: 10px;
+    }
+
+    .file {
+      margin: 10px;
+    }
+
+    .form-control {
+      height: 50%;
+    }
+
+    div {
+      /*overflow: hidden; 이거 끄니까 코드미러 넘버링나옴 */
+      height: auto;
+    }
+
+    /* 
+    .canvas {
+      margin-left: 10px;
+    } */
+
+    #pyCodeEditor {
+      position: absolute;
+      width: 100%;
+    }
+
+    #jsCodeEditor {
+      position: relative;
+      visibility: hidden;
+    }
+  </style>
+  
   <script>
     var Data_process_on = 0;
     var DL_Gra = 0;
@@ -232,46 +281,8 @@
   <!--Socket.IO -->   
 
 
-  <!-- table --> 
-  <link rel="stylesheet" href="/css/table_custom.css">
-  <style type="text/css">
-    /* canvas {
-      background-color: white;
-      border: 1px solid black
-    } */
-
-    .btn {
-      margin: 10px;
-    }
-
-    .file {
-      margin: 10px;
-    }
-
-    .form-control {
-      height: 50%;
-    }
-
-    div {
-      /*overflow: hidden; 이거 끄니까 코드미러 넘버링나옴 */
-      height: auto;
-    }
-
-    /* 
-    .canvas {
-      margin-left: 10px;
-    } */
-
-    #pyCodeEditor {
-      position: absolute;
-      width: 100%;
-    }
-
-    #jsCodeEditor {
-      position: relative;
-      visibility: hidden;
-    }
-  </style>
+  
+  
 
 </head>
 
