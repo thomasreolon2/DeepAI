@@ -22,8 +22,9 @@ Blockly.Python['class_use'] = function(block) {
     var val2 = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR2'), Blockly.Variables.NAME_TYPE);
     var text_1 = block.getFieldValue('INPUT');
     // TODO: Assemble Python into code variable.
-    var code = `${val1}.${val2} = ${text_1}\n`;
-    return code; 
+    var code = val1+'.'+val2+'('+text_1+')';
+    // var code = `${val1}.${val2} = ${text_1}\n`;
+    return [code, Blockly.Python.ORDER_NONE]; 
   };
 
   
