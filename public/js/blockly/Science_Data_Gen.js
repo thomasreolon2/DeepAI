@@ -1,4 +1,4 @@
-const { valuesDistribution } = require("@tensorflow/tfjs-vis/dist/show/tensor");
+// const { valuesDistribution } = require("@tensorflow/tfjs-vis/dist/show/tensor"); 2020.12.30 남지원 (에러나서 주석처리함)
 
 // 넘파이 기본 연산
 Blockly.Python['numpy_operator'] = function(block) {
