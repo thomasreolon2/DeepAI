@@ -239,7 +239,7 @@
       visibility: hidden;
     }
   </style>
-  
+
   <script>
     var Data_process_on = 0;
     var DL_Gra = 0;
@@ -609,6 +609,14 @@
     </category>
     <!-- 2020-12-26 양승국 start-->
     <category name="%{BKY_CATEGORY_REPEAT}" colour="%{BKY_LOOPS_HUE}"><!--반복(Repeat)-->
+      <!--repeat1-->
+      <block type="controls_repeat">
+        <value name="count">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
       <!-- for 문 1 -->
       <block type="py_for">
         <value name="item">
@@ -635,14 +643,7 @@
           </shadow>
         </value>
       </block>
-      <!--repeat1-->
-      <block type="controls_repeat">
-        <value name="count">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-      </block>
+      
       <!--repeat2-->
       <block type="controls_repeat2">
         <value name="variable">
@@ -666,19 +667,7 @@
           </shadow>
         </value>
       </block>
-      <!-- R3 블록 -->
-      <block type="increase">
-        <value name="NUMBER">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-        <value name="VALUE">
-          <shadow type="indata">
-            <field name="indata1">10</field>
-          </shadow>
-        </value>
-      </block>
+      
       <!-- 범위1 블록 -->
       <block type="range1">
         <value name="VALUE1">
@@ -745,7 +734,19 @@
           </shadow>
         </value>
       </block>
-
+      <!-- R3 블록 -->
+      <block type="increase">
+        <value name="NUMBER">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+        <value name="VALUE">
+          <shadow type="indata">
+            <field name="indata1">10</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 외부 입력
       <block type="val_set"> 
         <value name="a">
@@ -1049,14 +1050,7 @@
           </shadow>
         </value>
       </block>
-      <!-- input 할때 프롬프트 설정하는거 (근데 이거 안됨)  -->
-      <!-- <block type="text_prompt_ext">
-        <value name="TEXT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> -->
+    
       <block type="indata">
 
       </block>

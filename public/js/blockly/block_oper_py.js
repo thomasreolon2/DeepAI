@@ -6,7 +6,7 @@ Blockly.Python['Oper'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = value_a+dropdown_name+value_b;
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 // 타입 생성, 형 변환
@@ -16,5 +16,5 @@ Blockly.Python['convert_block'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = dropdown_name+value_b+")";
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.Python.ORDER_ATOMIC];
   };

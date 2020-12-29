@@ -5,7 +5,7 @@
 Blockly.Python['input1'] = function (block) {
   var text_name = block.getFieldValue('inputdata');
   // TODO: Assemble Python into code variable.
-  var code = 'input("'+text_name+'")\n';
+  var code = 'input("'+text_name+'")';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

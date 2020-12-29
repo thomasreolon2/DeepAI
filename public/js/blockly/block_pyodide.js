@@ -1031,39 +1031,6 @@ Blockly.Blocks['range3'] = {
     }
 };
 
-// increase, 증가 등등
-Blockly.Blocks['increase'] = {
-    init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R3-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
-        this.appendValueInput("NUMBER").setCheck(null);
-        this.appendValueInput("VALUE").setCheck(null).appendField(new Blockly.FieldDropdown([
-            [
-                "+=", "+="
-            ],
-            [
-                "-=", "-="
-            ],
-            [
-                "*=", "*="
-            ],
-            [
-                "/=", "/="
-            ],
-            [
-                "%=", "%="
-            ]
-        ]), "NAME");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_LOOPS_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 //
 Blockly.Blocks['break_block'] = {
     init: function () {
