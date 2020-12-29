@@ -222,11 +222,11 @@ Blockly.Blocks['create_dict'] = {
         this.appendDummyInput()
             .appendField("딕셔너리")
             .appendField(new Blockly.FieldVariable("my_dict"), "list")
-            .appendField(" = (");
+            .appendField(" = {");
         this.appendValueInput("text")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField(")");
+            .appendField("}");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
