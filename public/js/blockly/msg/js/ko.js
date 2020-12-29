@@ -145,7 +145,7 @@ Blockly.Msg["LISTS_ISEMPTY_HELPURL"] = "https://github.com/google/blockly/wiki/L
 Blockly.Msg["LISTS_ISEMPTY_TITLE"] = "%1 빈 리스트 확인  %2";
 Blockly.Msg["LISTS_ISEMPTY_TOOLTIP"] = "목록이 비었을 때 참을 반환합니다.";
 Blockly.Msg["LISTS_LENGTH_HELPURL"] = "https://github.com/google/blockly/wiki/Lists#length-of";
-Blockly.Msg["LISTS_LENGTH_TITLE"] = "%1 %2의 길이";
+Blockly.Msg["LISTS_LENGTH_TITLE"] = "%1 리스트 길이 %2";
 Blockly.Msg["LISTS_LENGTH_TOOLTIP"] = "목록의 길이를 반환합니다.";
 Blockly.Msg["LISTS_REPEAT_HELPURL"] = "https://github.com/google/blockly/wiki/Lists#create-list-with";
 Blockly.Msg["LISTS_REPEAT_TITLE"] = "%1 %2을 %3번 넣어, 리스트 생성";
@@ -507,9 +507,10 @@ Blockly.Msg['COLLECTION_13_SORT'] = "정렬";
 Blockly.Msg['COLLECTION_14_FINDVALUE'] = "리스트에서 값 찾기 ->";
 Blockly.Msg['COLLECTION_14_INDEX'] = "인덱스";
 
-Blockly.Msg['COLLECTION_15_INSERTTOLIST'] = "리스트 삽입 -> list";
-Blockly.Msg['COLLECTION_15_INDEX'] = "인덱스";
-Blockly.Msg['COLLECTION_15_VALUE'] = "값";
+Blockly.Msg['COLLECTION_15_INSERTTOLIST'] = "특정위치에 추가 ";
+Blockly.Msg['COLLECTION_15_INDEX'] = "에서 ";
+Blockly.Msg['COLLECTION_15_VALUE'] = "에 ";
+Blockly.Msg['COLLECTION_15_END'] = "을";
 
 Blockly.Msg['COLLECTION_16_LIST'] = "리스트";
 Blockly.Msg['COLLECTION_16_ELEMETNT'] = "요소";

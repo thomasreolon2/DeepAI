@@ -95,11 +95,11 @@ Blockly.Blocks['list_insert'] = {
         }));
         this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_INSERTTOLIST);
         this.appendValueInput("LIST").setCheck(null);
-        this.appendDummyInput().appendField("(" + Blockly.Msg.COLLECTION_15_INDEX);
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_INDEX);
         this.appendValueInput("INDEX").setCheck(null);
-        this.appendDummyInput().appendField(", " + Blockly.Msg.COLLECTION_15_VALUE);
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_VALUE);
         this.appendValueInput("VALUE").setCheck(null);
-        this.appendDummyInput().appendField(")");
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_END);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

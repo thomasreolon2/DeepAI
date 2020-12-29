@@ -508,9 +508,10 @@ Blockly.Msg['COLLECTION_13_SORT'] = "sort";
 Blockly.Msg['COLLECTION_14_FINDVALUE'] = "find value in list ->";
 Blockly.Msg['COLLECTION_14_INDEX'] = "index";
 
-Blockly.Msg['COLLECTION_15_INSERTTOLIST'] = "insert to list -> list";
+Blockly.Msg['COLLECTION_15_INSERTTOLIST'] = "insert to list ";
 Blockly.Msg['COLLECTION_15_INDEX'] = "index";
 Blockly.Msg['COLLECTION_15_VALUE'] = "value";
+Blockly.Msg['COLLECTION_15_END'] = "";
 
 Blockly.Msg['COLLECTION_16_LIST'] = "list";
 Blockly.Msg['COLLECTION_16_ELEMETNT'] = "element";
