@@ -12377,6 +12377,22 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
       d.appendChild(Blockly.Variables.generateVariableFieldDom(c));
       b.push(d);
     }
+    // 이성주 r3 -> 커스텀으로
+    if (Blockly.Blocks.variables_set) {
+    
+      var k = Blockly.utils.xml.createElement("block");
+      
+      k.setAttribute("type", "increase");
+      k.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
+      k.appendChild(Blockly.Variables.generateVariableFieldDom(c));
+      k.appendChild(Blockly.Xml.textToDom(
+        '<value name="NUMBER"><shadow type="indata"><field name="indata1">0</field></shadow></value>'
+      ))
+      k.appendChild(Blockly.Xml.textToDom(
+        '<value name="VALUE"><shadow type="indata"><field name="indata1">10</field></shadow></value>'
+      ))
+      b.push(k);
+    }
     Blockly.Blocks.math_change &&
       ((d = Blockly.utils.xml.createElement("block")),
       d.setAttribute("type", "math_change"),
@@ -12387,6 +12403,14 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
       )),
       d.appendChild(c),
       b.push(d));
+    // if (Blockly.Blocks.increase) {
+    //   var d = Blockly.utils.xml.createElement("block");
+    //   d.setAttribute("type", "increase");
+    //   d.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
+    //   d.appendChild(Blockly.Variables.generateVariableFieldDom(c));
+    //   b.push(d);
+    // }
+      
     if (Blockly.Blocks.variables_get) {
       a.sort(Blockly.VariableModel.compareByName);
       c = 0;
