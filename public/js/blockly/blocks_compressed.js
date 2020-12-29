@@ -1485,7 +1485,7 @@ Blockly.defineBlocksWithJsonArray([
     message0: "%1 %2 %3",
     args0: [
       {"type": "field_image","src": "/img/Operation/O6-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
-      { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
+
       {
         type: "field_dropdown",
         name: "PROPERTY",
@@ -1499,6 +1499,7 @@ Blockly.defineBlocksWithJsonArray([
           ["%{BKY_MATH_IS_DIVISIBLE_BY}", "DIVISIBLE_BY"],
         ],
       },
+      { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
     ],
     inputsInline: !0,
     output: "Boolean",
@@ -2991,7 +2992,7 @@ Blockly.defineBlocksWithJsonArray([
       {
         type: "field_variable",
         name: "VAR",
-        variable: "%{BKY_VARIABLES_DEFAULT_NAME}",
+        variable: "",
       },
     ],
     output: null,
