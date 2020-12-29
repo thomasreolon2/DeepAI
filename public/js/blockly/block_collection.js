@@ -216,10 +216,27 @@ Blockly.Blocks['create_ziphap'] = {
     }
 };
 
-//////////////////////////////////////////////////////
-// 실험실
+// 딕셔너리 - 버전1
+Blockly.Blocks['create_dict'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("딕셔너리")
+            .appendField(new Blockly.FieldVariable("my_dict"), "list")
+            .appendField(" = (");
+        this.appendValueInput("text")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_COLLECTION_HUE}");
+        this.setTooltip("Create a list");
+        this.setHelpUrl("");
+    }
+};
 
-// 딕셔너리(신버전)
+// 딕셔너리 - 버전2
 Blockly.Blocks['dict1'] = {
     /**
      * Block for creating a list with any number of elements of any type.
