@@ -38,3 +38,5 @@ Blockly.Python['func_return2'] = function(block) {
     var code = 'return '+text_1+' = '+variable_2+'('+text_3+')\n';
     return code;
   };
+
+  

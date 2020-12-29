@@ -70,18 +70,4 @@ Blockly.Blocks['func_return2'] = {
     }
   };
 
-  // 객체 생성 블록
-  Blockly.Blocks['class_make'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldVariable("item"), "VAR1")
-          .appendField("를")
-          .appendField(new Blockly.FieldVariable("item"), "VAR2")
-          .appendField("(")
-          .appendField(new Blockly.FieldTextInput(""), "INPUT1")
-          .appendField(")");
-      this.setColour(230);
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
+  
