@@ -5,7 +5,7 @@
 Blockly.Blocks['math_library'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("math 라이브러리");
+          .appendField("[임포트] math");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -19,9 +19,9 @@ Blockly.Blocks['math_library'] = {
     init: function () {
       this.appendDummyInput()
         .appendField("수학 1 ")
-        .appendField(new Blockly.FieldDropdown([["소수점 올림", "ceil"], ["절대값 반환", "fabs"], ["계승 정수 반환", "factorial"], ["소수점 무시", "floor"], 
-        ["정수 제곱근 반환", "isqrt"], ["소수,정수 반환", "modf"], ["e 거듭 제곱 반환", "exp"], ["log10 반환", "log10"], ["제곱근 반환", "sqrt"], ["라디안에서 도 변환", "degrees "],
-        ["도에서 라디안 변환", "radians"], ["라디안 단윈 아크 코사인 반환", "acos"], ["라디안 단위 아크 사인 반환", "asin"], ["라디안 단위 아크 탄젠트 반환", "atan"],["코사인 반환", "cos"],["사인 반환", "sin"],["탄젠트 반환", "tan"]]), "NAME")
+        .appendField(new Blockly.FieldDropdown([["올림", "ceil"], ["절대값", "fabs"], ["계승 정수", "factorial"], ["내림", "floor"], 
+        ["정수 제곱근", "isqrt"], ["소수,정수", "modf"], ["e 거듭 제곱", "exp"], ["log10", "log10"], ["제곱근", "sqrt"], ["라디안에서 도 변환", "degrees "],
+        ["도에서 라디안 변환", "radians"], ["아크 코사인", "acos"], ["아크 사인", "asin"], ["아크 탄젠트", "atan"],["코사인", "cos"],["사인", "sin"],["탄젠트", "tan"]]), "NAME")
         .appendField("(");
       this.appendValueInput("va")
         .setCheck(null)
@@ -39,7 +39,7 @@ Blockly.Blocks['math_library'] = {
     init: function () {
       this.appendDummyInput()
         .appendField("수학 2 ")
-        .appendField(new Blockly.FieldDropdown([["최대 공약수 반환", "1"], ["자연로그 반환", "2"], ["거듭제곱", "3"], ["유클리드 거리 반환", "4"]]), "NAME")
+        .appendField(new Blockly.FieldDropdown([["최대 공약수", "1"], ["자연로그", "2"], ["거듭제곱", "3"], ["유클리드 거리", "4"]]), "NAME")
         .appendField("(");
       this.appendValueInput("va1")
         .setCheck(null);
