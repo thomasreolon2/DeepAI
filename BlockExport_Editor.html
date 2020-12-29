@@ -14,25 +14,45 @@
       console.info = function(){}; 
 
   </script> -->
-  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-  <script src="/js/blockly/storage.js"></script>
+
+  <!-- #####################################################################################################  -->
+  <!-- ******************************               CDN                       ******************************* -->
+  <!-- #####################################################################################################  -->
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- tensorflow -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
+  <!-- blockly-->
+  <script src="/js/blockly/storage.js"></script>
   <script src="/js/blockly/brython.js"></script>
   <script src="/js/blockly/brython_stdlib.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
+  
   <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+  <!-- plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>    
+  <!--numjs-->             
+  <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>  
 
   <!-- 기태 처리 (파일) 20.12.29------------------------------------------------------------------------->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js"></script>  
   <!--  Blockly 자체의 설정과 관련된 파일 -->
-  <!--test1-->
 
   <!-- pyodide 파일 처리를 위해서는 아직은 이전 버전을 사용해야 함 from 기태 -->
   <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
   <!-- pyodide cdn변경 20.11.16 -->
   <!--<script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script> -->
-  
   <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
+
+  <!-- 임시 -->
+  <!-- <script type="text/javascript">
+    window.languagePluginUrl = "https://pyodide-cdn2.iodide.io/v0.15.0/full/";
+  </script>
+  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>   -->
+  <!-- 임시 -->
+
 
   <!--   javascript 언어 규칙 및 블록 변환과 관련된 내용을 압축한 파일 -->
   <script src="/js/blockly/blockly_compressed.js"></script>
@@ -41,6 +61,41 @@
   <script src="/js/blockly/blocks_compressed.js"></script>
   <!--미리 정의되어 있는 기본 블록에 대한 설정을 모두 담고 있음.-->
   <script src="/js/blockly/block_pyodide.js"></script>
+
+  <!-- codemirror 추가 -->
+  <script src="/js/codemirror/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="/js/codemirror/lib/codemirror.css">
+  <script src="/js/codemirror/mode/javascript/javascript.js"></script>
+  <script src="/js/codemirror/mode/python/python.js"></script>
+  <!-- codemirror 추가 -->
+
+  <!-- codemirror 스타일 지정 -->
+  <link rel="stylesheet" href="./js/codemirror/theme/oceanic-next.css">
+  <!-- codemirror 스타일 지정 -->
+
+  <!-- cdoemirror 자동 완성 기능 -->
+  <script src="./js/codemirror/addon/hint/show-hint.js"></script>
+  <script src="./js/codemirror/addon/hint/javascript-hint.js"></script>
+  <script src="./js/codemirror/addon/hint/anyword-hint.js"></script>
+  <link rel="stylesheet" href="./js/codemirror/addon/hint/show-hint.css">
+  <!-- cdoemirror 자동 완성 기능 -->
+
+  
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+  <!-- canvas -->
+  <script src="./js/canvas.js"></script>
+
+  <!-- 그래프 aside -->
+  <script src="./js/aside.js"></script>
+
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   블록 import                           ******************************* -->
+  <!-- #####################################################################################################  -->
 
   <!-- pyodide 블록 -->
   <script src="/js/blockly/block_pyodide_gen.js"></script>
@@ -59,22 +114,15 @@
   <script src="/js/blockly/block_io_js.js"></script>
   <!-- 압출력 블록 -->
 
-    <!-- 입출력 블록 -->
-    <script src="/js/blockly/block_static.js"></script>
-    <script src="/js/blockly/block_static_py.js"></script>
-    <script src="/js/blockly/block_static_js.js"></script>
-    <!-- 압출력 블록 -->
+  <!-- 연산(통계) 블록 -->
+  <script src="/js/blockly/block_static.js"></script>
+  <script src="/js/blockly/block_static_py.js"></script>
+  <script src="/js/blockly/block_static_js.js"></script>
+  <!-- 연산(통계) 블록 -->
 
   <!-- 테스트용 js
   <script src="/js/blockly/test.js"></script>
   <script src="/js/blockly/test_gen.js"></script>  -->
-
-  <!-- 임시 -->
-  <!-- <script type="text/javascript">
-    window.languagePluginUrl = "https://pyodide-cdn2.iodide.io/v0.15.0/full/";
-  </script>
-  <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>   -->
-  <!-- 임시 -->
 
   <!-- 웹 크롤링  -->
   <script src="/socket.io/socket.io.js"></script> 
@@ -140,45 +188,6 @@
   <script src="/js/blockly/block_numpy1_py.js"></script>
   <script src="/js/blockly/block_numpy1_js.js"></script>
   <!-- api 블록 -->
-
-  <!--plotly cdn-->
-  <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
-
-  <!--numjs-->
-  <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
-
-  <!-- codemirror 추가 -->
-  <script src="/js/codemirror/lib/codemirror.js"></script>
-  <link rel="stylesheet" href="/js/codemirror/lib/codemirror.css">
-  <script src="/js/codemirror/mode/javascript/javascript.js"></script>
-  <script src="/js/codemirror/mode/python/python.js"></script>
-  <!-- codemirror 추가 -->
-
-  <!-- codemirror 스타일 지정 -->
-  <link rel="stylesheet" href="./js/codemirror/theme/oceanic-next.css">
-  <!-- codemirror 스타일 지정 -->
-
-  <!-- cdoemirror 자동 완성 기능 -->
-  <script src="./js/codemirror/addon/hint/show-hint.js"></script>
-  <script src="./js/codemirror/addon/hint/javascript-hint.js"></script>
-  <script src="./js/codemirror/addon/hint/anyword-hint.js"></script>
-  <link rel="stylesheet" href="./js/codemirror/addon/hint/show-hint.css">
-  <!-- cdoemirror 자동 완성 기능 -->
-
-  <!--jquery-->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-  <!-- canvas -->
-  <script src="./js/canvas.js"></script>
-
-  <!-- 그래프 aside -->
-  <script src="./js/aside.js"></script>
 
   <!--css-->
   <link rel="stylesheet" href="css\sidebar.css">
