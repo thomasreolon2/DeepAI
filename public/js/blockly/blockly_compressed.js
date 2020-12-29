@@ -12385,7 +12385,12 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
       k.setAttribute("type", "increase");
       k.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
       k.appendChild(Blockly.Variables.generateVariableFieldDom(c));
-      
+      k.appendChild(Blockly.Xml.textToDom(
+        '<value name="NUMBER"><shadow type="indata"><field name="indata1">0</field></shadow></value>'
+      ))
+      k.appendChild(Blockly.Xml.textToDom(
+        '<value name="VALUE"><shadow type="indata"><field name="indata1">10</field></shadow></value>'
+      ))
       b.push(k);
     }
     Blockly.Blocks.math_change &&
