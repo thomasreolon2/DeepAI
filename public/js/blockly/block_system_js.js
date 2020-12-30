@@ -35,6 +35,49 @@
     return code;
   };
 
+  Blockly.JavaScript['os_getcwd'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['os_mkdir'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['os_rmdir'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['os_chdir'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+  
+  Blockly.JavaScript['os_listdir'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+  
+  Blockly.JavaScript['os_remove'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['os_rename'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+//리성주
   Blockly.JavaScript['datetime_now'] = function(block) {
     var value_variables = Blockly.JavaScript.valueToCode(block, 'variables', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
