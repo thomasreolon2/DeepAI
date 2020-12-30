@@ -116,7 +116,7 @@ Blockly.Blocks['fd_read'] = {
   init: function () {
       this.appendDummyInput()
           .appendField("파일읽기")
-          .appendField(new Blockly.FieldVariable("fd"), "list1")
+          .appendField(new Blockly.FieldVariable("data"), "list1")
           .appendField(" = ")
           .appendField(new Blockly.FieldVariable("f"), "list2")
           .appendField(".read()");
@@ -132,7 +132,7 @@ Blockly.Blocks['fd_readline'] = {
   init: function () {
       this.appendDummyInput()
           .appendField("파일읽기")
-          .appendField(new Blockly.FieldVariable("fd"), "list1")
+          .appendField(new Blockly.FieldVariable("data"), "list1")
           .appendField(" = ")
           .appendField(new Blockly.FieldVariable("f"), "list2")
           .appendField(".readline()");
