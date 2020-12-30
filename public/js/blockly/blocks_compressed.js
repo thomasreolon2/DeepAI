@@ -1084,7 +1084,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
     helpUrl: "%{BKY_CONTROLS_REPEAT_HELPURL}",
   },
-  // while문
+  // while문 동안~반복
   {
     type: "controls_whileUntil",
     message0: "%1 %2 %3",
@@ -1110,29 +1110,13 @@ Blockly.defineBlocksWithJsonArray([
     helpUrl: "%{BKY_CONTROLS_WHILEUNTIL_HELPURL}",
     extensions: ["controls_whileUntil_tooltip"],
   },
+  // 새로운 while
   {
-    "type": "controls_whileTorF",
-    "message0": "%1%{BKY_CONTROLS_WHILETORF_1}%2%{BKY_CONTROLS_WHILETORF_4}%3",
-    "args0": [
-      {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
-      {
-        "type": "field_dropdown",
-        "name": "value",
-        "options": [
-          [
-            "참(True)",
-            "True"
-          ],
-          [
-            "거짓(False)",
-            "False"
-          ]
-        ]
-      },
-      {
-        "type": "input_dummy",
-        "align": "RIGHT"
-      },
+    type: "controls_whileTorF",
+    message0: "%1 %{BKY_CONTROLS_WHILETORF_1} %2 %{BKY_CONTROLS_WHILETORF_4}",
+    args0: [
+      { type: "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      { type: "input_value", name: "BOOL", check: "Boolean" },
     ],
     message1: "%{BKY_CONTROLS_DO}%1",
     args1: [{ type: "input_statement", name: "DO" }],
@@ -1678,21 +1662,25 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_MATH_ATAN2_TOOLTIP}",
     helpUrl: "%{BKY_MATH_ATAN2_HELPURL}",
   },
+
   {
-    type: "gptest",
-    message0: "%1데이터 다루기 %2에 %3를 %4",
+    type: "create_new_list",
+    message0: "%{BKY_COLLECTION_NEW_LIST}",
     args0: [
-      {"type": "field_image","src": "/img/Operation/O6-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/C1-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
       { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
       { type: "input_value", name: "DIVISOR", check: "Number" },
+    ],
+    message1: "%1",
+    args1: [
       {
         type: "field_dropdown",
         name: "PROPERTY",
         options: [
-          ["%{BKY_COLLECTION_13_REVERSE}", "REVERSE"],
-          ["%{BKY_COLLECTION_13_SORT}", "SORT"],
+          //["%{BKY_COLLECTION_13_REVERSE}", "REVERSE"], //mutator 마스터 후 사용 
+          //["%{BKY_COLLECTION_13_SORT}", "SORT"],
+          //["test", "DIVISIBLE_BY"],//%{BKY_MATH_IS_DIVISIBLE_BY}
           ["%{BKY_LISTS_INDEX}", "INDEX"],
-          ["test", "DIVISIBLE_BY"],//%{BKY_MATH_IS_DIVISIBLE_BY}
           ["%{BKY_LISTS_SPLIT_LIST_FROM_TEXT}", "SPLIT"],
           ["%{BKY_LISTS_SPLIT_TEXT_FROM_LIST}", "JOIN"],
           ["%{BKY_COLLECTION_16_EXTEND}", "EXTEND"],
@@ -1707,9 +1695,10 @@ Blockly.defineBlocksWithJsonArray([
     output: "Number",
     colour: "%{BKY_COLLECTION_HUE}",
     tooltip: "%{BKY_MATH_IS_TOOLTIP}",
-    mutator: "math_is_divisibleby_mutator",
+    //mutator: "math_is_divisibleby_mutator",
   },
 ]);
+  
 Blockly.Constants.Math.TOOLTIPS_BY_OP = {
   ADD: "%{BKY_MATH_ARITHMETIC_TOOLTIP_ADD}",
   MINUS: "%{BKY_MATH_ARITHMETIC_TOOLTIP_MINUS}",
@@ -2502,6 +2491,7 @@ Blockly.defineBlocksWithJsonArray([
     style: "text_blocks",
     helpUrl: "%{BKY_TEXT_JOIN_HELPURL}",
     tooltip: "%{BKY_TEXT_JOIN_TOOLTIP}",
+    inputsInline: "true",
     mutator: "text_join_mutator",
   },
   {

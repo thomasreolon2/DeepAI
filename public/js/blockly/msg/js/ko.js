@@ -192,7 +192,7 @@ Blockly.Msg["LOGIC_COMPARE_TOOLTIP_LT"] = "첫 번째 값이 두 번째 값보�
 Blockly.Msg["LOGIC_COMPARE_TOOLTIP_LTE"] = "첫 번째 값이 두 번째 값보다 작거나 같으면, 참(true) 값을 돌려줍니다.";
 Blockly.Msg["LOGIC_COMPARE_TOOLTIP_NEQ"] = "두 값이 서로 다르면, 참(true) 값을 돌려줍니다.";
 Blockly.Msg["LOGIC_NEGATE_HELPURL"] = "https://ko.wikipedia.org/wiki/%EB%B6%80%EC%A0%95";
-Blockly.Msg["LOGIC_NEGATE_TITLE"] = "%1 %2가 아닙니다";
+Blockly.Msg["LOGIC_NEGATE_TITLE"] = "%1 not %2";
 Blockly.Msg["LOGIC_NEGATE_TOOLTIP"] = "입력값이 거짓이라면 참을 반환합니다. 참이라면 거짓을 반환합니다.";
 Blockly.Msg["LOGIC_NULL"] = "%1 빈 값(null)";
 Blockly.Msg["LOGIC_NULL_HELPURL"] = "https://en.wikipedia.org/wiki/Nullable_type";
@@ -455,6 +455,8 @@ Blockly.Msg.TEXT_14_4_END = '로';
 
 
 // 2020.12.04  이성주 블록 한글/영어 메시지 전환
+Blockly.Msg['COLLECTION_NEW_LIST'] = "%1데이터 다루기 %2에 %3를";
+Blockly.Msg['COLLECTION_NEW_LIST2'] = "데이터 다루기";
  
 Blockly.Msg['REPEAT_1_REPEAT'] = "반복(for)";
 Blockly.Msg["REPEAT_1_VARIABLE"] = "값을";
@@ -947,7 +949,7 @@ Blockly.Msg['CATEGORY_REPEAT'] = "반복(Repeat)";
 Blockly.Msg['CATEGORY_OPERATION'] = "연산(Operation)";
 Blockly.Msg['CATEGORY_TEXT'] = "문자(Text)";
 Blockly.Msg['CATEGORY_COLLECTION'] = "컬렉션(Collection)";
-Blockly.Msg['CATEGORY_FUNCTION'] = "함수&클래스(Definitions)";
+Blockly.Msg['CATEGORY_FUNCTION'] = "함수(Definitions)";
 Blockly.Msg['CATEGORY_CLASS'] = "클래스(Class)";
 Blockly.Msg['CATEGORY_NUMPY'] = "넘파이(Numpy)";
 Blockly.Msg['CATEGORY_PANDAS'] = "판다스(Pandas)";

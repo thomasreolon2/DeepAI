@@ -463,6 +463,8 @@ Blockly.Python.lists_reverse = function (a) {
   ];
 };
 Blockly.Python.logic = {};
+
+// if문
 Blockly.Python.controls_if = function (a) {
   var b = 0,
     c = "";
@@ -599,7 +601,7 @@ Blockly.Python.controls_whileUntil = function (a) {
 
 // new_while
 Blockly.Python.controls_whileTorF = function(a) {
-  var b = a.getFieldValue('value');
+  var b = Blockly.Python.valueToCode(a, "BOOL", Blockly.Python.ORDER_CONDITIONAL);
   var d = Blockly.Python.statementToCode(a, "DO");
   d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
   return "while " + b + ":\n" + d;
@@ -1283,11 +1285,13 @@ Blockly.Python.text_join = function (a) {
         b[c] =
           Blockly.Python.valueToCode(a, "ADD" + c, Blockly.Python.ORDER_NONE) ||
           "''";
-      a = Blockly.Python.variableDB_.getDistinctName(
-        "x",
-        Blockly.VARIABLE_CATEGORY_NAME
-      );
-      a = "''.join([str(" + a + ") for " + a + " in [" + b.join(", ") + "]])";
+      // a = Blockly.Python.variableDB_.getDistinctName(
+      //   "x",
+      //   Blockly.VARIABLE_CATEGORY_NAME
+      // );
+      //a = "''.join([str(" + a + ") for " + a + " in [" + b.join(", ") + "]])";
+      a = b.join("+");
+      //a = "'" + b + "'";
       return [a, Blockly.Python.ORDER_FUNCTION_CALL];
   }
 };

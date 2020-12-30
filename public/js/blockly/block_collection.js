@@ -5,7 +5,7 @@
 Blockly.Blocks['create_list'] = {
   init: function () {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+          .appendField(new Blockly.FieldImage("/img/Collection/C4-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
           .appendField(new Blockly.FieldVariable("my_list"), "list")
           .appendField(" = [");
       this.appendValueInput("text")
@@ -42,10 +42,13 @@ Blockly.Blocks['global'] = {
 Blockly.Blocks['list_sort_reverse'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C13-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
+        this.appendDummyInput()
+        .appendField(Blockly.Msg.COLLECTION_NEW_LIST2);
+        this.appendValueInput("LIST").setCheck(null);
         this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_13_ARRAYSUM).appendField(new Blockly.FieldDropdown([
             [
                 Blockly.Msg.COLLECTION_13_REVERSE, "reverse"
@@ -54,7 +57,6 @@ Blockly.Blocks['list_sort_reverse'] = {
                 Blockly.Msg.COLLECTION_13_SORT, "sort"
             ]
         ]), "NAME");
-        this.appendValueInput("LIST").setCheck(null);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_COLLECTION_HUE}");
@@ -89,7 +91,7 @@ Blockly.Blocks['list_index'] = {
 Blockly.Blocks['list_insert'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C15-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
