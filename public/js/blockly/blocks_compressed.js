@@ -2502,6 +2502,7 @@ Blockly.defineBlocksWithJsonArray([
     style: "text_blocks",
     helpUrl: "%{BKY_TEXT_JOIN_HELPURL}",
     tooltip: "%{BKY_TEXT_JOIN_TOOLTIP}",
+    inputsInline: "true",
     mutator: "text_join_mutator",
   },
   {

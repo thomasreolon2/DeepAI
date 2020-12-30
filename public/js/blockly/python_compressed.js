@@ -1283,11 +1283,13 @@ Blockly.Python.text_join = function (a) {
         b[c] =
           Blockly.Python.valueToCode(a, "ADD" + c, Blockly.Python.ORDER_NONE) ||
           "''";
-      a = Blockly.Python.variableDB_.getDistinctName(
-        "x",
-        Blockly.VARIABLE_CATEGORY_NAME
-      );
-      a = "''.join([str(" + a + ") for " + a + " in [" + b.join(", ") + "]])";
+      // a = Blockly.Python.variableDB_.getDistinctName(
+      //   "x",
+      //   Blockly.VARIABLE_CATEGORY_NAME
+      // );
+      //a = "''.join([str(" + a + ") for " + a + " in [" + b.join(", ") + "]])";
+      a = b.join("+");
+      //a = "'" + b + "'";
       return [a, Blockly.Python.ORDER_FUNCTION_CALL];
   }
 };
