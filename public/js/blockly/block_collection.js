@@ -481,11 +481,31 @@ Blockly.Blocks['forif'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("[리스트 표기]").appendField("반복");
+        this.appendDummyInput().appendField("[리스트]").appendField("반복");
         this.appendValueInput("SET1").setCheck(null);
         this.appendValueInput("SET2").setCheck(null).appendField("for");          
         this.appendValueInput("SET3").setCheck(null).appendField("in");   
         this.appendValueInput("SET4").setCheck(null).appendField("if");                                          
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        //this.setstyle("list_blocks");
+        this.setColour("%{BKY_COLLECTION_HUE}");//"%{BKY_LIST_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+// 라운드형 반복 조건 블록
+Blockly.Blocks['forif2'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C4-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        }));
+        this.appendDummyInput().appendField("[리스트]").appendField("반복");
+        this.appendValueInput("SET1").setCheck(null);
+        this.appendValueInput("SET2").setCheck(null).appendField("for");          
+        this.appendValueInput("SET3").setCheck(null).appendField("in");                                            
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setstyle("list_blocks");
