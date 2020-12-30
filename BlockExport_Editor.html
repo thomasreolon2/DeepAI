@@ -1034,9 +1034,9 @@
       <!-- 문자 개수 세기 -->
       <block type="text_count">
         <value name="TEXT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">text</field>
+          </block>
         </value>
         <value name="SUB">
           <shadow type="indata">
@@ -1057,9 +1057,9 @@
       <!-- 문자열 변경 -->
       <block type="text_replace">
         <value name="TEXT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">text</field>
+          </block>
         </value>
         <value name="A">
           <shadow type="indata">
@@ -1553,8 +1553,60 @@
       
       <block type="pickle_dump"></block>
       <block type="pickle_load"></block>
+
+      <block type="os_getcwd">
       
-      <!-- datetime 객체 생성 -->
+      </block>
+      <block type="os_listdir">
+
+      </block>
+      
+      <block type="os_mkdir">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="os_rmdir">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="os_chdir">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="os_remove">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="os_rename">
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      
+      <!-- datetime 객체 생성 리성주-->
       <block type = "datetime_now">
         <value name = "variables">
           <block type="variables_get">

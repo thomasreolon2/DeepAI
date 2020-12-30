@@ -92,7 +92,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "lists_isEmpty",
     message0: "%{BKY_LISTS_ISEMPTY_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Collection/C5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/C7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Boolean",
     style: "conversion_blocks",//"list_blocks",
@@ -104,7 +104,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "lists_length",
     message0: "%{BKY_LISTS_LENGTH_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Collection/C4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/C6-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Number",
     style: "conversion_blocks",//"list_blocks",
@@ -175,7 +175,7 @@ Blockly.Blocks.lists_create_with = {
       : this.itemCount_ ||
         this.getInput("EMPTY") ||
         this.appendDummyInput("EMPTY")
-            .appendField(new Blockly.FieldImage("/img/Collection/C2-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+            .appendField(new Blockly.FieldImage("/img/Collection/C5-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
             .appendField(
             Blockly.Msg.LISTS_CREATE_EMPTY_TITLE
             );
@@ -1496,7 +1496,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "math_change",
     message0: "%{BKY_MATH_CHANGE_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Variable/V2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Variable/V1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       {
         // type: "field_variable",
         // name: "VAR",
@@ -1671,7 +1671,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "create_new_list",
     message0: "%{BKY_COLLECTION_NEW_LIST}",
     args0: [
-      {"type": "field_image","src": "/img/Collection/C1-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/C3-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
       { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
       { type: "input_value", name: "DIVISOR", check: "Number" },
     ],
@@ -3292,7 +3292,7 @@ Blockly.Blocks['increase'] = {
 Blockly.Blocks['many_variables'] = {
   init: function () {
       this.setStyle("variable_blocks");
-      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Variable/V1-logo.png", 25, 23, {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Variable/V2-logo.png", 25, 23, {
         alt: "*",
         flipRtl: "FALSE"
       }));

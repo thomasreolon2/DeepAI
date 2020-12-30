@@ -361,6 +361,10 @@ Blockly.Blocks['model_predict'] = {
 // 딕셔너리(구버전)
 Blockly.Blocks['create_dict'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C11-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        }))
         this.appendValueInput("dict1").setCheck(null);
         this.appendValueInput("dict2").setCheck(null);
         this.setInputsInline(true);

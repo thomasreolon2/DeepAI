@@ -12370,13 +12370,17 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
   var b = [];
   if (0 < a.length) {
     var c = a[a.length - 1];
-    if (Blockly.Blocks.variables_set) {
-      var d = Blockly.utils.xml.createElement("block");
-      d.setAttribute("type", "variables_set");
-      d.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
-      d.appendChild(Blockly.Variables.generateVariableFieldDom(c));
-      b.push(d);
-    }
+
+    // 2020. 12.30 이성주 변수설정 블록 지움.. 삭제는 안될거 같음..
+
+    // if (Blockly.Blocks.variables_set) {
+    //   var d = Blockly.utils.xml.createElement("block");
+    //   d.setAttribute("type", "variables_set");
+    //   d.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
+    //   d.appendChild(Blockly.Variables.generateVariableFieldDom(c));
+    //   b.push(d);
+    // }
+
     // 이성주 r3 -> 커스텀으로
     // if (Blockly.Blocks.increase) {
     
@@ -12394,40 +12398,41 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
     //   b.push(k);
     // }
 
-    // 이성주 여러 변수 치환블록
-    if (Blockly.Blocks.many_variables) {
-        
-      var k = Blockly.utils.xml.createElement("block");
-      
-      k.setAttribute("type", "many_variables");
-      k.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
-      k.appendChild(Blockly.Variables.generateVariableFieldDom(c));
-      k.appendChild(Blockly.Xml.textToDom(
-        '<value name="NUMBER"><shadow type="indata"><field name="indata1">x,y,z</field></shadow></value>'
-      ))
-      k.appendChild(Blockly.Xml.textToDom(
-        '<value name="VALUE"><shadow type="indata"><field name="indata1">0,0,0</field></shadow></value>'
-      ))
-      b.push(k);
-    }
+    
 
     // 이성주 r3 -> 커스텀으로  (기존의 변수 블록 변형)
     if (Blockly.Blocks.math_change) {
-      ((d = Blockly.utils.xml.createElement("block")),
-      d.setAttribute("type", "math_change"),
-      d.setAttribute("gap", Blockly.Blocks.variables_get ? 20 : 8),
-      d.appendChild(Blockly.Variables.generateVariableFieldDom(c)),
-      (c = Blockly.Xml.textToDom(
-        '<value name="DELTA"><shadow type="indata"><field name="indata1">1</field></shadow></value>'
-      )),
-      d.appendChild(c),
+      //((d = Blockly.utils.xml.createElement("block")),
+      var d = Blockly.utils.xml.createElement("block");
+      d.setAttribute("type", "math_change");
+      d.setAttribute("gap", Blockly.Blocks.variables_get ? 20 : 8);
+      d.appendChild(Blockly.Variables.generateVariableFieldDom(c));
+      // (c = Blockly.Xml.textToDom(
+      //   '<value name="DELTA"><shadow type="indata"><field name="indata1">1</field></shadow></value>'
+      // )),
+      d.appendChild(Blockly.Xml.textToDom('<value name="DELTA"><shadow type="indata"><field name="indata1">1</field></shadow></value>')),
       d.appendChild(Blockly.Xml.textToDom(
         '<value name="VAR"><block type="variables_get"><field name="NUM">5</field></block></value>'
-      )),
-      b.push(d));
+      ))
+      b.push(d);
       }
       
-    
+      // 이성주 여러 변수 치환블록
+      if (Blockly.Blocks.many_variables) {
+          
+        var k = Blockly.utils.xml.createElement("block");
+        
+        k.setAttribute("type", "many_variables");
+        k.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
+        k.appendChild(Blockly.Variables.generateVariableFieldDom(c));
+        k.appendChild(Blockly.Xml.textToDom(
+          '<value name="NUMBER"><shadow type="indata"><field name="indata1">x,y,z</field></shadow></value>'
+        ))
+        k.appendChild(Blockly.Xml.textToDom(
+          '<value name="VALUE"><shadow type="indata"><field name="indata1">0,0,0</field></shadow></value>'
+        ))
+        b.push(k);
+      }
     
     // 2020.12.20 이성주 -> 변수설정 블록 없앰 (일단 안지워야 할듯..) 
     // if (Blockly.Blocks.variables_get) {
