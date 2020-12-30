@@ -455,6 +455,8 @@ Blockly.Msg.TEXT_14_4_END = '로';
 
 
 // 2020.12.04  이성주 블록 한글/영어 메시지 전환
+Blockly.Msg['COLLECTION_NEW_LIST'] = "%1데이터 다루기 %2에 %3를";
+Blockly.Msg['COLLECTION_NEW_LIST2'] = "데이터 다루기";
  
 Blockly.Msg['REPEAT_1_REPEAT'] = "반복(for)";
 Blockly.Msg["REPEAT_1_VARIABLE"] = "값을";
