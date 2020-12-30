@@ -497,7 +497,7 @@ Blockly.Python.controls_if = function (a) {
 };
 Blockly.Python.controls_ifelse = Blockly.Python.controls_if;
 Blockly.Python.logic_compare = function (a) {
-  var b = { EQ: "==", NEQ: "!=", LT: "<", LTE: "<=", GT: ">", GTE: ">=" }[
+  var b = { EQ: "==", NEQ: "!=", LT: "<", LTE: "<=", GT: ">", GTE: ">=", IS: "is", ISN: "is not", IN: "in", INN: "not in" }[
       a.getFieldValue("OP")
     ],
     c = Blockly.Python.ORDER_RELATIONAL,

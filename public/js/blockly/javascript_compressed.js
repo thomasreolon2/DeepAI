@@ -340,7 +340,11 @@ Blockly.JavaScript.logic_compare = function (a) {
             LT: "<",
             LTE: "<=",
             GT: ">",
-            GTE: ">="
+            GTE: ">=",
+            IS: "is",
+            ISN: "is not", 
+            IN: "in", 
+            INN: "not in" 
         } [a.getFieldValue("OP")],
         c = "==" == b || "!=" == b ? Blockly.JavaScript.ORDER_EQUALITY : Blockly.JavaScript.ORDER_RELATIONAL,
         d = Blockly.JavaScript.valueToCode(a, "A", c) || "0";
