@@ -23,10 +23,20 @@ Blockly.Python['webreturn2'] = function (block) {
 // 함수 return1
 Blockly.Python['func_return1'] = function(block) {
     var variable_1 = Blockly.Python.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
+    var variable_2 = Blockly.Python.variableDB_.getName(block.getFieldValue('2'), Blockly.Variables.NAME_TYPE);
+    var text_2 = block.getFieldValue('3');
+    // TODO: Assemble Python into code variable.
+    var code = variable_1+' = '+variable_2+'('+text_2+')'+'\n';
+    return code;
+};
+
+// 함수 return11
+Blockly.Python['func_return11'] = function(block) {
+    var variable_1 = Blockly.Python.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
     var text_2 = block.getFieldValue('2');
     // TODO: Assemble Python into code variable.
-    var code = variable_1+'('+text_2+')'+'\n';
-    return code;
+    var code = variable_1+'('+text_2+')';
+    return [code, Blockly.Python.ORDER_ATOMIC]; ;
 };
 
 // 함수 return 2

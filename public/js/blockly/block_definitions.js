@@ -38,18 +38,37 @@ Blockly.Blocks['webreturn2'] = {
 Blockly.Blocks['func_return1'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldVariable("func"), "1")
+          .appendField(new Blockly.FieldVariable("res"), "1")
+          .appendField("=")
+          .appendField(new Blockly.FieldVariable("func"), "2")
           .appendField("(")
-          .appendField(new Blockly.FieldTextInput("de"), "2")
+          .appendField(new Blockly.FieldTextInput(""), "3")
           .appendField(")");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_PROCEDURES_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
   };
+
+  // 함수 return 블록1 
+Blockly.Blocks['func_return11'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldVariable("func"), "1")
+          .appendField("(")
+          .appendField(new Blockly.FieldTextInput(""), "2")
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_PROCEDURES_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
 
 // 함수 return 블록 2
 Blockly.Blocks['func_return2'] = {
@@ -64,7 +83,7 @@ Blockly.Blocks['func_return2'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(230);
+      this.setColour("%{BKY_PROCEDURES_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
