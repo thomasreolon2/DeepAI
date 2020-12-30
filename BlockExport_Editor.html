@@ -1537,10 +1537,13 @@
 
     <category name="시스템(sys)" colour="#FF0000">
       <label text="import"></label>
+
       <block type="pyodide_library"></block>
       <block type="os_library"></block>
       <block type="pickle_library"></block>
       <block type="datetime_library"></block>
+      <block type="shutil_library"></block>
+      
       
       <label text="Pickle"></label>
       <block type="pickle_dump"></block>
@@ -1619,6 +1622,46 @@
         </value>
       </block>
 
+      <label text="Shutil"></label>
+
+      <block type="shutil_copy">
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="shutil_copytree">
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="shutil_move">
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
 
     </category>
     <sep></sep>

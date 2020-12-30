@@ -23,6 +23,12 @@
     return code;
   };
 
+  Blockly.JavaScript['os_library'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
   Blockly.JavaScript['pickle_dump'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
@@ -72,6 +78,24 @@
   };
 
   Blockly.JavaScript['os_rename'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['shutil_copy'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['shutil_copytree'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['shutil_move'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     return code;

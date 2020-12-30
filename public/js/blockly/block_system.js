@@ -50,6 +50,19 @@
     }
   };
 
+  Blockly.Blocks['shutil_library'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField("[임포트] shutil");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("#FF0000");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
   Blockly.Blocks['pickle_dump'] = {
     init: function () {
       this.appendDummyInput()
@@ -192,6 +205,69 @@
     init: function () {
       this.appendDummyInput()
         .appendField("파일 변경 ")
+        .appendField("(");
+      this.appendValueInput("va1")
+        .setCheck(null)
+      this.appendDummyInput()
+        .appendField(",")
+      this.appendValueInput("va2")
+        .setCheck(null)
+      this.appendDummyInput()
+         .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("#FF0000");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['shutil_copy'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("파일 복사 ")
+        .appendField("(");
+      this.appendValueInput("va1")
+        .setCheck(null)
+      this.appendDummyInput()
+        .appendField(",")
+      this.appendValueInput("va2")
+        .setCheck(null)
+      this.appendDummyInput()
+         .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("#FF0000");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['shutil_copytree'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("디렉토리 복사 ")
+        .appendField("(");
+      this.appendValueInput("va1")
+        .setCheck(null)
+      this.appendDummyInput()
+        .appendField(",")
+      this.appendValueInput("va2")
+        .setCheck(null)
+      this.appendDummyInput()
+         .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("#FF0000");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['shutil_move'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("파일 이동 ")
         .appendField("(");
       this.appendValueInput("va1")
         .setCheck(null)
