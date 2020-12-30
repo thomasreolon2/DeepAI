@@ -683,13 +683,7 @@
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_REPEAT}" colour="%{BKY_LOOPS_HUE}">
       <!--repeat1-->
-      <block type="controls_repeat">
-        <value name="count">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-      </block>
+      <block type="controls_repeat"></block>
       <!-- for 문 1 -->
       <block type="py_for">
         <value name="item">
@@ -718,18 +712,7 @@
       </block>
       
       <!--repeat2-->
-      <block type="controls_repeat2">
-        <value name="variable">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-        <value name="count">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-      </block>
+      <block type="controls_repeat2"></block>
       <!--new_while-->
       <block type="controls_whileTorF">
         <value name="BOOL">
@@ -1407,13 +1390,7 @@
 
     <category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}"> <!--함수 (Function)-->
       <!-- 클래스 -->
-      <block type="webclass">
-        <value name="class">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+      <block type="webclass"></block>
       <!-- self -->
       <block type="self">
         <value name="varset">
@@ -1426,13 +1403,9 @@
       <block type="self_block"></block>  
       <block type="class_use"></block> 
       <block type="class_make"></block>
+      
       <!-- 함수 -->
       <block type="webdefine">
-        <value name="1">
-          <block type="variables_get">
-            <field name="VAR">func</field>
-          </block>
-        </value>
         <value name="2">
           <shadow type="indata">
             <field name="indata1">x</field>

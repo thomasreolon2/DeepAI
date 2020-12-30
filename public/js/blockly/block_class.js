@@ -25,7 +25,6 @@ Blockly.Blocks['webclass'] = {
             .appendField('클래스')
             .appendField(new Blockly.FieldVariable("My_class"), "VAR")
             .appendField(' :');
-
         this.appendStatementInput('DO')
             .appendField('');
         this.setPreviousStatement(true, null);
