@@ -42,7 +42,7 @@ Blockly.Blocks['global'] = {
 Blockly.Blocks['list_sort_reverse'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C1-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C2-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -91,7 +91,7 @@ Blockly.Blocks['list_index'] = {
 Blockly.Blocks['list_insert'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C3-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C1-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -182,6 +182,10 @@ Blockly.Blocks['list_dot'] = {
   Blockly.Blocks['create_tuple'] = {
     init: function () {
         this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/img/Collection/C8-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"   
+            }))
             .appendField("튜플")
             .appendField(new Blockly.FieldVariable("my_tuple"), "list")
             .appendField(" = (");
@@ -202,6 +206,10 @@ Blockly.Blocks['list_dot'] = {
 Blockly.Blocks['create_ziphap'] = {
     init: function () {
         this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/img/Collection/C9-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+            }))
             .appendField("집합")
             .appendField(new Blockly.FieldVariable("my_set"), "list")
             .appendField(" = (");
@@ -222,6 +230,10 @@ Blockly.Blocks['create_ziphap'] = {
 Blockly.Blocks['create_dict'] = {
     init: function () {
         this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/img/Collection/C11-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+            }))
             .appendField("딕셔너리")
             .appendField(new Blockly.FieldVariable("my_dict"), "list")
             .appendField(" = {");
@@ -380,7 +392,7 @@ Blockly.Blocks['dict1'] = {
 Blockly.Blocks['dic_menu1'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C9-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField(Blockly.Msg.COLLECTION_9_DICTOPTION);
@@ -428,7 +440,7 @@ Blockly.Blocks['dic_menu1'] = {
 Blockly.Blocks['set_menu1'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C11-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C10-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField("집합 다루기");;
@@ -465,6 +477,10 @@ Blockly.Blocks['set_menu1'] = {
 // 라운드형 반복 조건 블록
 Blockly.Blocks['forif'] = {
     init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C4-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        }));
         this.appendDummyInput().appendField("[리스트 표기]").appendField("반복");
         this.appendValueInput("SET1").setCheck(null);
         this.appendValueInput("SET2").setCheck(null).appendField("for");          
