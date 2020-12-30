@@ -81,3 +81,30 @@ Blockly.Blocks['indata'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['fd_open'] = {
+  init: function () {
+      this.appendDummyInput()
+          .appendField("파일오픈")
+          .appendField(new Blockly.FieldVariable("my_list"), "list")
+          .appendField(" = open( ");
+      this.appendValueInput("text")
+          .setCheck(null);
+      this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+            [
+                "읽기", "r"
+            ],
+            [
+                "쓰기", "w"
+            ]
+        ]), "set_menu");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+      this.setTooltip("Create a list");
+      this.setHelpUrl("");
+  }
+};

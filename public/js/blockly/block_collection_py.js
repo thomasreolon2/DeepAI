@@ -2,8 +2,6 @@
 // 2020-12-26 
 ////////////////////////////////////////////////////////////////////
 
-
-
 Blockly.Python['create_list'] = function (block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
@@ -139,3 +137,4 @@ Blockly.Python['forif'] = function (block) {
   var code = "[" + value_SET1 + " for " + value_SET2 + " in " +  value_SET3 + " if " + value_SET4 + "]";
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
