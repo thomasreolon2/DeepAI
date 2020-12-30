@@ -1560,7 +1560,7 @@ Blockly.Python['list_sort_reverse'] = function(block) {
   var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = value_list+'.'+dropdown_name+'()\n';
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 
