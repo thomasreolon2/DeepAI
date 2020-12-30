@@ -1014,9 +1014,9 @@
       <!-- 문자 개수 세기 -->
       <block type="text_count">
         <value name="TEXT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">text</field>
+          </block>
         </value>
         <value name="SUB">
           <shadow type="indata">
@@ -1037,9 +1037,9 @@
       <!-- 문자열 변경 -->
       <block type="text_replace">
         <value name="TEXT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">text</field>
+          </block>
         </value>
         <value name="A">
           <shadow type="indata">
