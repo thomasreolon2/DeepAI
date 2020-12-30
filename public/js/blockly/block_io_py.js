@@ -54,14 +54,14 @@ Blockly.Python['fd_read'] = function (block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
   var code = variable_list + '.read()\n';
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['fd_readline'] = function (block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
   var code = variable_list + '.readline()\n';
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['fd_close'] = function (block) {
@@ -76,5 +76,54 @@ Blockly.Python['fd_write'] = function (block) {
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = variable_list + '.write( ' + value_text  +  ' )\n';
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+// Blockly.Python['qqq'] = function (block) {
+//   var file = block.getFieldValue('csv_url');
+//   // x, y
+//   var x_train;
+//   var value = "";
+//   var columns = "[";
+//   try {
+//       file = obFile.Path;
+//       // key 값만 추출
+//       // var key = Object.getOwnPropertyNames(file[0]);
+//       // 2차원 배열 array
+//       // x_train = new Array(file.length);
+
+//       // for (var i = 0; i < x_train.length; i++) {
+//       //     x_train[i] = new Array(key.length);
+//       // }
+//       // for (var i = 0; i < key.length; i++) {
+//       //     columns = columns + "'" + key[i] + "'";
+//       //     if (i != key.length - 1) {
+//       //         columns = columns + ",";
+//       //     }
+//       // }
+//       // // 값 세팅
+//       // for (var i = 0; i < x_train.length; i++) {
+//       //     for (var j = 0; j < key.length; j++) {
+//       //         var keyName = key[j]; // key 값
+//       //         var data = file[i][keyName];
+//       //         if (Number(data) * 0 != 0) {
+//       //             data = "'" + data + "'";
+//       //         }
+//       //         if (data == "") {
+//       //             data = "None";
+//       //         }
+//       //         if (Number(data) == 0) {
+//       //             data = "0";
+//       //         }
+//       //         x_train[i][j] = data; // value
+//       //     } value = value + "[" + x_train[i] + "]";
+//       //     if (i != x_train.length - 1) {
+//       //         value = value + ",";
+//       //     }
+//       // }
+//   } catch (e) {
+//       // console.log(e);
+//   }
+//   var code = file;
+//   return [code, Blockly.Python.ORDER_ATOMIC];
+// };

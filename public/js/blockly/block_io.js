@@ -86,7 +86,7 @@ Blockly.Blocks['fd_open'] = {
   init: function () {
       this.appendDummyInput()
           .appendField("파일오픈")
-          .appendField(new Blockly.FieldVariable("my_list"), "list")
+          .appendField(new Blockly.FieldVariable("f"), "list")
           .appendField(" = open( ");
       this.appendValueInput("text")
           .setCheck(null);
@@ -113,13 +113,12 @@ Blockly.Blocks['fd_read'] = {
   init: function () {
       this.appendDummyInput()
           .appendField("파일오픈")
-          .appendField(new Blockly.FieldVariable("fd"), "list")
+          .appendField(new Blockly.FieldVariable("f"), "list")
           .appendField(".read( ");
       this.appendDummyInput()
           .appendField(")");
       this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
+      this.setOutput(true, null);
       this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
       this.setTooltip("Create a list");
       this.setHelpUrl("");
@@ -130,13 +129,12 @@ Blockly.Blocks['fd_readline'] = {
   init: function () {
       this.appendDummyInput()
           .appendField("파일오픈")
-          .appendField(new Blockly.FieldVariable("fd"), "list")
+          .appendField(new Blockly.FieldVariable("f"), "list")
           .appendField(".readline( ");
       this.appendDummyInput()
           .appendField(")");
       this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
+      this.setOutput(true, null);
       this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
       this.setTooltip("Create a list");
       this.setHelpUrl("");
@@ -147,7 +145,7 @@ Blockly.Blocks['fd_close'] = {
   init: function () {
       this.appendDummyInput()
           .appendField("파일닫기")
-          .appendField(new Blockly.FieldVariable("fd"), "list")
+          .appendField(new Blockly.FieldVariable("f"), "list")
           .appendField(".close( ");
       this.appendDummyInput()
           .appendField(")");
@@ -164,17 +162,43 @@ Blockly.Blocks['fd_write'] = {
   init: function () {
       this.appendDummyInput()
           .appendField("파일쓰기")
-          .appendField(new Blockly.FieldVariable("my_list"), "list")
+          .appendField(new Blockly.FieldVariable("f"), "list")
           .appendField(" = write( ");
       this.appendValueInput("text")
           .setCheck(null);
       this.appendDummyInput()
           .appendField(")");
       this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
+      this.setOutput(true, null);
       this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
       this.setTooltip("Create a list");
       this.setHelpUrl("");
   }
 };
+
+
+
+/////////////////////////////////////////////////
+// Blockly.Blocks['qqq'] = {
+//   init: function () {
+//       this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Machine_Learning/M1-logo.png", 25, 23, {
+//           alt: "*",
+//           flipRtl: "FALSE"
+
+//       })).appendField(Blockly.Msg.PANDAS_CSV2).appendField(new Blockly.FieldTextInput(""), "csv_url");
+//       this.setInputsInline(true);
+//       this.setOutput(true, null);
+//       this.setColour(20);
+//       this.setTooltip("");
+//       this.setHelpUrl("");
+//   }
+// };
+// var dynamicDropdownOptions_ = [];
+
+// function addOptions(text) {
+//     dynamicDropdownOptions_.push([text, text]);
+// }
+
+// function removeOptions() {
+//     dynamicDropdownOptions_ = [];
+// }

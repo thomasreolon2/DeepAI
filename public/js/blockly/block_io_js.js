@@ -52,14 +52,14 @@ Blockly.JavaScript['fd_read'] = function (block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble .JavaScript into code variable.
   var code = '\n';
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['fd_readline'] = function (block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble .JavaScript into code variable.
   var code = '\n';
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.JavaScript['fd_close'] = function (block) {
@@ -74,5 +74,13 @@ Blockly.JavaScript['fd_write'] = function (block) {
   var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = '\n';
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+
+// Blockly.JavaScript['qqq'] = function (block) {
+//   var file = block.getFieldValue('csv_url');
+  
+//   var code = "\n";
+//   return [code, Blockly.JavaScript.ORDER_ATOMIC];
+// };
