@@ -746,7 +746,7 @@ Blockly.defineBlocksWithJsonArray([
     message0: "%{BKY_LOGIC_NEGATE_TITLE}",
     args0: [
       {"type": "field_image","src": "/img/Logic/L5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
-      { type: "input_value", name: "BOOL", check: "Boolean" },
+      { type: "input_value", name: "BOOL" },
     ],
     output: "Boolean",
     style: "logic_blocks",
@@ -2535,6 +2535,7 @@ Blockly.defineBlocksWithJsonArray([
     style: "text_blocks",
     extensions: ["text_append_tooltip"],
   },
+  // 문자열 길이 확인
   {
     type: "text_length",
     message0: "%{BKY_TEXT_LENGTH_TITLE}",
@@ -2546,6 +2547,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_TEXT_LENGTH_TOOLTIP}",
     helpUrl: "%{BKY_TEXT_LENGTH_HELPURL}",
   },
+  // 문자열 비어있는지 확인
   {
     type: "text_isEmpty",
     args0: [
