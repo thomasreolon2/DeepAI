@@ -1105,6 +1105,49 @@
         </value>
       </block>
 
+      <block type ="forif">
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">연산</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+      </value>
+        <value name="SET3">
+          <shadow type="indata">
+            <field name="indata1">리스트</field>
+          </shadow>
+        </value>
+        <value name="SET4">
+          <shadow type="indata">
+            <field name="indata1">조건</field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 비어있는 리스트 생성 -->
+      <block type="lists_create_with">
+        <mutation items="0"></mutation>
+      </block>
+       <!-- 리스트의 길이 -->
+       <block type="lists_length">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
+      </block>
+      <!-- 리스트가 비어있는지 확인 -->
+      <block type="lists_isEmpty">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
+      </block>
+
       <!-- 튜플블록 -->
       <block type = "create_tuple">
         <value name="text">
@@ -1122,6 +1165,8 @@
           </shadow>
         </value>
       </block>      
+
+      <block type = "set_menu1"></block>
 
       <!-- 딕셔너리1 -->
       <block type = "create_dict">
@@ -1153,25 +1198,10 @@
         </value>
       </block>
 
-      <block type ="forif">
-        <value name="SET1">
+      <block type="global">
+        <value name="text">
           <shadow type="indata">
-            <field name="indata1">연산</field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <block type="variables_get">
-            <field name="VAR">i</field>
-          </block>
-      </value>
-        <value name="SET3">
-          <shadow type="indata">
-            <field name="indata1">리스트</field>
-          </shadow>
-        </value>
-        <value name="SET4">
-          <shadow type="indata">
-            <field name="indata1">조건</field>
+            <field name="indata1"></field>
           </shadow>
         </value>
       </block>
@@ -1193,10 +1223,7 @@
             <field name="indata1">3</field>
           </shadow>
         </value> -->
-      <!-- 비어있는 리스트 생성 -->
-      <block type="lists_create_with">
-        <mutation items="0"></mutation>
-      </block>
+    
       <!-- 같은 내용을 n번 넣어 리스트 생성 -->
       <!-- <block type="lists_repeat">ITEM
         <value name="ITEM">
@@ -1210,23 +1237,7 @@
           </shadow>
         </value>
       </block> -->
-      <!-- 리스트의 길이 -->
-      <block type="lists_length">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>
-      </block>
-      <!-- 리스트가 비어있는지 확인 -->
-      <block type="lists_isEmpty">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>
-      </block>
-      <!-- split -->
+      <!-- split -
       <block type="lists_split">
         <value name="INPUT">
           <block type="variables_get">
@@ -1239,7 +1250,7 @@
           </shadow>
         </value>
       </block>
-      
+      -->
       <!-- <block type="tfarraylen"></block>  -->
 
 
@@ -1275,7 +1286,7 @@
         </value>
       </block> -->
       <!-- 집합선택 -->
-      <block type = "set_menu1"></block>
+      
       <!-- <block type="set_menu">
         <value name="SET1">
           <shadow type="indata">
@@ -1355,13 +1366,8 @@
         </value>
       </block> -->
       <!-- 2020-12-27-전우진 global -->
-      <block type="global">
-        <value name="text">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+
+
     </category>
 
     <!-- #####################################################################################################  -->

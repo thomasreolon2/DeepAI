@@ -546,6 +546,7 @@ Blockly.Msg["LISTS_HUE"] = "40BF4A"; // 리스트
 Blockly.Msg["DICT_HUE"] = ""; // 딕셔너리
 Blockly.Msg["SET_HUE"] = "FF6680"; // 집합
 Blockly.Msg["TUPLE_HUE"] = "593AE8"; // 튜플
+Blockly.Msg["LIST_HUE"] = "#ff8c1a"; // 리스트
 
 // 커스텀 색상
 Blockly.Msg["NUMPY_HUE"] = "472BFF"; // 넘파이

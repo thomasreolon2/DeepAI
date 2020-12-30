@@ -5,7 +5,7 @@
 Blockly.Blocks['create_list'] = {
   init: function () {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldImage("/img/Collection/C4-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+          .appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
           .appendField(new Blockly.FieldVariable("my_list"), "list")
           .appendField(" = [");
       this.appendValueInput("text")
@@ -42,7 +42,7 @@ Blockly.Blocks['global'] = {
 Blockly.Blocks['list_sort_reverse'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C1-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -212,7 +212,7 @@ Blockly.Blocks['create_ziphap'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("%{BKY_COLLECTION_HUE}");
+        this.setColour("%{BKY_SET_HUE}");//"%{BKY_COLLECTION_HUE}");
         this.setTooltip("Create a list");
         this.setHelpUrl("");
     }
@@ -232,7 +232,7 @@ Blockly.Blocks['create_dict'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("%{BKY_COLLECTION_HUE}");
+        this.setColour("%{BKY_DICT_HUE}");//"%{BKY_COLLECTION_HUE}");
         this.setTooltip("Create a list");
         this.setHelpUrl("");
     }
@@ -472,7 +472,8 @@ Blockly.Blocks['forif'] = {
         this.appendValueInput("SET4").setCheck(null).appendField("if");                                          
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour("%{BKY_SET_HUE}");
+        //this.setstyle("list_blocks");
+        this.setColour("%{BKY_LIST_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
