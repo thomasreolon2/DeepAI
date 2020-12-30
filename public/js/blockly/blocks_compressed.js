@@ -1684,7 +1684,7 @@ Blockly.defineBlocksWithJsonArray([
           ["%{BKY_LISTS_SPLIT_LIST_FROM_TEXT}", "SPLIT"],
           ["%{BKY_LISTS_SPLIT_TEXT_FROM_LIST}", "JOIN"],
           ["%{BKY_COLLECTION_16_EXTEND}", "EXTEND"],
-          ["%{BKY_COLLECTION_16_EXTEND}", "COUNT"],
+          ["%{BKY_COLLECTION_16_COUNT}", "COUNT"],
           ["%{BKY_COLLECTION_16_COUNT}", "POP"],
           ["%{BKY_COLLECTION_16_POP}", "REMOVE"],
           ["%{BKY_COLLECTION_16_APPEND}", "APPEND"],

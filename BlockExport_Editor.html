@@ -1078,7 +1078,15 @@
          </value>
        </block>
 
-       <!-- 리스트 삽입 -->
+      <block type = "create_list">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">1,2,3,4</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 리스트 삽입 -->
       <block type="list_insert">
         <value name="LIST">
           <shadow type="indata">
@@ -1096,15 +1104,7 @@
           </shadow>
         </value>
       </block>
-
-      <block type = "create_list">
-        <value name="text">
-          <shadow type="indata">
-            <field name="indata1">1,2,3,4</field>
-          </shadow>
-        </value>
-      </block>
-
+      
       <block type ="forif">
         <value name="SET1">
           <shadow type="indata">

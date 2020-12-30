@@ -1682,7 +1682,7 @@ Blockly.Python['many_variables'] = function(block) {
   return code;
 };
 
-Blockly.Python.gptest = function (a) {
+Blockly.Python.create_new_list = function (a) {
   var b =
       Blockly.Python.valueToCode(
         a,
