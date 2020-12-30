@@ -109,11 +109,11 @@
   <script src="/js/blockly/block_pandas_javagen.js"></script>
   <!-- Pandas 블록 -->
 
-  <!-- Pandas 블록 -->
+  <!-- matplot 블록 -->
   <script src="/js/blockly/block_matplot.js"></script>
   <script src="/js/blockly/block_matplot_py.js"></script>
   <script src="/js/blockly/block_matplot_js.js"></script>
-  <!-- Pandas 블록 -->
+  <!-- matplot 블록 -->
 
   <!-- 입출력 블록 -->
   <script src="/js/blockly/block_io.js"></script>
@@ -546,7 +546,7 @@
       <block type="printtv">
         <value name="content1">
           <shadow type="indata">
-            <field name="indata1">메시지 =</field>
+            <field name="indata1">메시지</field>
           </shadow>
         </value>
         <value name="content2">
@@ -570,7 +570,10 @@
 
       <block type="indata"></block>
     </category>
-    <category name="%{BKY_CATEGORY_LOGIC}" colour="%{BKY_LOGIC_HUE}"><!--논리(Logic)-->
+    <!-- #####################################################################################################  -->
+    <!-- ******************************   논리(Logic)                            ******************************* -->
+    <!-- #####################################################################################################  -->
+    <category name="%{BKY_CATEGORY_LOGIC}" colour="%{BKY_LOGIC_HUE}">
       
       <!-- if -->
       <block type="controls_if">
@@ -615,6 +618,7 @@
           </shadow>
         </value>
       </block>
+      <!-- not 블록-->
       <block type="logic_negate">
         <value name="BOOL">
           <shadow type="indata">
@@ -622,8 +626,11 @@
           </shadow>
         </value>
       </block>
+      <!-- 참, 거짓 -->
       <block type="logic_boolean"></block>
+      <!-- null값 -->
       <block type="logic_null"></block>
+      <!-- 삼항연산자 -->
       <block type="logic_ternary">
         <value name="THEN">
           <shadow type="indata">
@@ -702,12 +709,10 @@
         </value>
       </block>
       <!--new_while-->
-      <block type="controls_whileTorF"></block>
-      <!-- while 문 -->
-      <block type="controls_whileUntil">
+      <block type="controls_whileTorF">
         <value name="BOOL">
           <shadow type="indata">
-            <field name="indata1">False</field>
+            <field name="indata1">True</field>
           </shadow>
         </value>
       </block>
@@ -1044,10 +1049,6 @@
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block>
-    
-      <block type="indata">
-
       </block>
     </category>
 

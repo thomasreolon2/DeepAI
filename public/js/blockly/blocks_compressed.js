@@ -1084,7 +1084,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
     helpUrl: "%{BKY_CONTROLS_REPEAT_HELPURL}",
   },
-  // while문
+  // while문 동안~반복
   {
     type: "controls_whileUntil",
     message0: "%1 %2 %3",
@@ -1110,29 +1110,13 @@ Blockly.defineBlocksWithJsonArray([
     helpUrl: "%{BKY_CONTROLS_WHILEUNTIL_HELPURL}",
     extensions: ["controls_whileUntil_tooltip"],
   },
+  // 새로운 while
   {
-    "type": "controls_whileTorF",
-    "message0": "%1%{BKY_CONTROLS_WHILETORF_1}%2%{BKY_CONTROLS_WHILETORF_4}%3",
-    "args0": [
-      {"type": "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
-      {
-        "type": "field_dropdown",
-        "name": "value",
-        "options": [
-          [
-            "참(True)",
-            "True"
-          ],
-          [
-            "거짓(False)",
-            "False"
-          ]
-        ]
-      },
-      {
-        "type": "input_dummy",
-        "align": "RIGHT"
-      },
+    type: "controls_whileTorF",
+    message0: "%1 %{BKY_CONTROLS_WHILETORF_1} %2 %{BKY_CONTROLS_WHILETORF_4}",
+    args0: [
+      { type: "field_image","src": "/img/Repeat/R2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      { type: "input_value", name: "BOOL", check: "Boolean" },
     ],
     message1: "%{BKY_CONTROLS_DO}%1",
     args1: [{ type: "input_statement", name: "DO" }],

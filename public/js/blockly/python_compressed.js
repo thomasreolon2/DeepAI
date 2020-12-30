@@ -463,6 +463,8 @@ Blockly.Python.lists_reverse = function (a) {
   ];
 };
 Blockly.Python.logic = {};
+
+// if문
 Blockly.Python.controls_if = function (a) {
   var b = 0,
     c = "";
@@ -599,7 +601,7 @@ Blockly.Python.controls_whileUntil = function (a) {
 
 // new_while
 Blockly.Python.controls_whileTorF = function(a) {
-  var b = a.getFieldValue('value');
+  var b = Blockly.Python.valueToCode(a, "BOOL", Blockly.Python.ORDER_CONDITIONAL);
   var d = Blockly.Python.statementToCode(a, "DO");
   d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
   return "while " + b + ":\n" + d;
