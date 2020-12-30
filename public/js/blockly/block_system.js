@@ -66,7 +66,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(pandas_color);
+      this.setColour("#FF0000");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -86,7 +86,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(pandas_color);
+      this.setColour("#FF0000");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -99,7 +99,7 @@
         .appendField("현재 경로 ")
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("#FF0000");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -111,7 +111,7 @@
         .appendField("파일, 디렉터리 목록 ")
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("#FF0000");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -129,7 +129,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("#FF0000");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -146,7 +146,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("#FF0000");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -163,7 +163,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("#FF0000");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -180,7 +180,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("#FF0000");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -201,7 +201,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("#FF0000");
       this.setTooltip("");
       this.setHelpUrl("");
     }
