@@ -1528,6 +1528,24 @@
       <block type="pickle_dump"></block>
       <block type="pickle_load"></block>
       
+      <!-- datetime 객체 생성 -->
+      <block type = "datetime_now">
+        <value name = "variables">
+          <block type="variables_get">
+            <field name="VAR">day</field>
+          </block>
+        </value>
+      </block>
+      <!-- 년도, 년, 월, 일, 시, 분, 초 사용 -->
+      <block type = "now_method">
+        <value name = "object">
+          <block type="variables_get">
+            <field name="VAR">day</field>
+          </block>
+        </value>
+      </block>
+
+
     </category>
     <sep></sep>
 

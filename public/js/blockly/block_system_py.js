@@ -1,26 +1,26 @@
-  Blockly.Python['os_library'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = "import os \n";
-    return code;
-  };
+Blockly.Python['os_library'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "import os \n";
+  return code;
+};
 
-  Blockly.Python['pyodide_library'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = "import pyodide \n";
-    return code;
-  };
+Blockly.Python['pyodide_library'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "import pyodide \n";
+  return code;
+};
 
-  Blockly.Python['pickle_library'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = "import pickle \n";
-    return code;
-  };
+Blockly.Python['pickle_library'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "import pickle \n";
+  return code;
+};
 
-  Blockly.Python['datetime_library'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = "import datetime\n";
-    return code;
-  };
+Blockly.Python['datetime_library'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "import datetime\n";
+  return code;
+};
 
   
 Blockly.Python['pickle_dump'] = function (block) {
@@ -40,4 +40,20 @@ Blockly.Python['pickle_load'] = function (block) {
   var code = variable_list + "= pickle.load(" + value_name + ")" + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
+};
+
+
+Blockly.Python['datetime_now'] = function(block) {
+  var value_variables = Blockly.Python.valueToCode(block, 'variables', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_variables + " = datetime.datetime.now()\n";
+  return code;
+};
+
+Blockly.Python['now_method'] = function(block) {
+  var value_object = Blockly.Python.valueToCode(block, 'object', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_datetime_module = block.getFieldValue('datetime_module');
+  // TODO: Assemble Python into code variable.
+  var code = value_object + "." + dropdown_datetime_module;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };

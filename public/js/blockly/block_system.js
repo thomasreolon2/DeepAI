@@ -92,5 +92,33 @@
     }
   };
 
+  Blockly.Blocks['datetime_now'] = {
+    init: function() {
+      this.appendValueInput("variables")
+          .setCheck(null)
+          .appendField("datetime 객체생성");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("FF0000");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['now_method'] = {
+    init: function() {
+      this.appendValueInput("object")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["년도","year"], ["월","month"], ["일","day"], ["시간","hour"], ["분","minute"], ["초","second"], ["요일","weekday()"]]), "datetime_module");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("FF0000");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
 
 
