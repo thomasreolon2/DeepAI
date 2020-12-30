@@ -225,6 +225,7 @@
   Blockly.Blocks['shutil_copy'] = {
     init: function () {
       this.appendDummyInput()
+        .appendField("Shutil")
         .appendField("파일 복사 ")
         .appendField("(");
       this.appendValueInput("va1")
@@ -246,6 +247,7 @@
   Blockly.Blocks['shutil_copytree'] = {
     init: function () {
       this.appendDummyInput()
+        .appendField("Shutil")
         .appendField("디렉토리 복사 ")
         .appendField("(");
       this.appendValueInput("va1")
@@ -267,6 +269,7 @@
   Blockly.Blocks['shutil_move'] = {
     init: function () {
       this.appendDummyInput()
+        .appendField("Shutil")
         .appendField("파일 이동 ")
         .appendField("(");
       this.appendValueInput("va1")
