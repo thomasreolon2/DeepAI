@@ -570,7 +570,27 @@
 
       <block type="indata"></block>
 
-      <block type = "fd_open"></blcok>
+      <block type = "fd_open">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">메시지</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "fd_read"></block>
+
+      <block type = "fd_readline"></block>
+
+      <block type = "fd_write">
+        <value name="text">
+          <block type="variables_get">
+            <field name="VAR">variable</field>
+          </block>
+        </value>
+      </block>
+
+      <block type = "fd_close"></block>
     </category>
     <!-- #####################################################################################################  -->
     <!-- ******************************   논리(Logic)                            ******************************* -->
@@ -1110,7 +1130,7 @@
       <block type ="forif">
         <value name="SET1">
           <shadow type="indata">
-            <field name="indata1">연산</field>
+            <field name="indata1">리턴</field>
           </shadow>
         </value>
         <value name="SET2">

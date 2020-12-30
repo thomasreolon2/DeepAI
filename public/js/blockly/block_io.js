@@ -108,3 +108,73 @@ Blockly.Blocks['fd_open'] = {
       this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['fd_read'] = {
+  init: function () {
+      this.appendDummyInput()
+          .appendField("파일오픈")
+          .appendField(new Blockly.FieldVariable("fd"), "list")
+          .appendField(".read( ");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+      this.setTooltip("Create a list");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['fd_readline'] = {
+  init: function () {
+      this.appendDummyInput()
+          .appendField("파일오픈")
+          .appendField(new Blockly.FieldVariable("fd"), "list")
+          .appendField(".readline( ");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+      this.setTooltip("Create a list");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['fd_close'] = {
+  init: function () {
+      this.appendDummyInput()
+          .appendField("파일닫기")
+          .appendField(new Blockly.FieldVariable("fd"), "list")
+          .appendField(".close( ");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+      this.setTooltip("Create a list");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['fd_write'] = {
+  init: function () {
+      this.appendDummyInput()
+          .appendField("파일쓰기")
+          .appendField(new Blockly.FieldVariable("my_list"), "list")
+          .appendField(" = write( ");
+      this.appendValueInput("text")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+      this.setTooltip("Create a list");
+      this.setHelpUrl("");
+  }
+};

@@ -49,3 +49,32 @@ Blockly.Python['fd_open'] = function (block) {
   var code = variable_list + ' = open( "' + value_text  + '", "' + dropdown_set_menu + '" )\n';
   return code;
 };
+
+Blockly.Python['fd_read'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + '.read()\n';
+  return code;
+};
+
+Blockly.Python['fd_readline'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + '.readline()\n';
+  return code;
+};
+
+Blockly.Python['fd_close'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + '.close()\n';
+  return code;
+};
+
+Blockly.Python['fd_write'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + '.write( ' + value_text  +  ' )\n';
+  return code;
+};

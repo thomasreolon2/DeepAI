@@ -47,3 +47,32 @@ Blockly.JavaScript['fd_open'] = function (block) {
   var code = '\n';
   return code;
 };
+
+Blockly.JavaScript['fd_read'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble .JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['fd_readline'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble .JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['fd_close'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble .JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['fd_write'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = '\n';
+  return code;
+};
