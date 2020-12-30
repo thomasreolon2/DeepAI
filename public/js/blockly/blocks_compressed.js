@@ -1496,7 +1496,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "math_change",
     message0: "%{BKY_MATH_CHANGE_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Variable/V2-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Variable/V1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       {
         // type: "field_variable",
         // name: "VAR",
@@ -3292,7 +3292,7 @@ Blockly.Blocks['increase'] = {
 Blockly.Blocks['many_variables'] = {
   init: function () {
       this.setStyle("variable_blocks");
-      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Variable/V1-logo.png", 25, 23, {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Variable/V2-logo.png", 25, 23, {
         alt: "*",
         flipRtl: "FALSE"
       }));
