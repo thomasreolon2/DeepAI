@@ -166,6 +166,7 @@ Blockly.Msg["LISTS_SORT_TYPE_TEXT"] = "alphabetic";
 Blockly.Msg["LISTS_SPLIT_HELPURL"] = "https://github.com/google/blockly/wiki/Lists#splitting-strings-and-joining-lists";
 Blockly.Msg["LISTS_SPLIT_LIST_FROM_TEXT"] = "make list from text";
 Blockly.Msg["LISTS_SPLIT_TEXT_FROM_LIST"] = "make text from list";
+Blockly.Msg["LISTS_INDEX"] = "index";
 Blockly.Msg["LISTS_SPLIT_TOOLTIP_JOIN"] = "Join a list of texts into one text, separated by a delimiter.";
 Blockly.Msg["LISTS_SPLIT_TOOLTIP_SPLIT"] = "Split text into a list of texts, breaking at each delimiter.";
 Blockly.Msg["LISTS_SPLIT_WITH_DELIMITER"] = "with delimiter";

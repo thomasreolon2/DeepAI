@@ -1677,3 +1677,88 @@ Blockly.Python['many_variables'] = function(block) {
   var code = value_number + " = " + value_value+'\n';
   return code;
 };
+
+Blockly.Python.gptest = function (a) {
+  var b =
+      Blockly.Python.valueToCode(
+        a,
+        "NUMBER_TO_CHECK",
+        Blockly.Python.ORDER_MULTIPLICATIVE
+      ) || "",
+    c = a.getFieldValue("PROPERTY");
+  if ("PRIME" == c)
+    return (
+      (Blockly.Python.definitions_.import_math = "import math"),
+      (Blockly.Python.definitions_.from_numbers_import_Number =
+        "from numbers import Number"),
+      [
+        Blockly.Python.provideFunction_("math_isPrime", [
+          "def " + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + "(n):",
+          "  # https://en.wikipedia.org/wiki/Primality_test#Naive_methods",
+          "  # If n is not a number but a string, try parsing it.",
+          "  if not isinstance(n, Number):",
+          "    try:",
+          "      n = float(n)",
+          "    except:",
+          "      return False",
+          "  if n == 2 or n == 3:",
+          "    return True",
+          "  # False if n is negative, is 1, or not whole, or if n is divisible by 2 or 3.",
+          "  if n <= 1 or n % 1 != 0 or n % 2 == 0 or n % 3 == 0:",
+          "    return False",
+          "  # Check all the numbers of form 6k +/- 1, up to sqrt(n).",
+          "  for x in range(6, int(math.sqrt(n)) + 2, 6):",
+          "    if n % (x - 1) == 0 or n % (x + 1) == 0:",
+          "      return False",
+          "  return True",
+        ]) +
+          "(" +
+          b +
+          ")",
+        Blockly.Python.ORDER_FUNCTION_CALL,
+      ]
+    );
+    a = Blockly.Python.valueToCode(
+      a,
+      "DIVISOR",
+      Blockly.Python.ORDER_MULTIPLICATIVE
+    );
+    //if (!a || "0" == a) return ["False", Blockly.Python.ORDER_ATOMIC];
+
+  switch (c) {
+    case "REVERSE":
+      var d = b + ".reverse()";
+      break;
+    case "SORT":
+      d = b + ".sort()";
+      break;
+    case "INDEX":
+      d = b + ".index(" + a + ")";
+      break;
+    case "SPLIT":
+      d = b + ".split('" + a + "')";
+      break;
+    case "JOIN":
+      d = b + ".join([" + a + "])";
+      break;
+    case "EXTEND":
+      d = b + ".extend(" + a + ")";
+      break;
+    case "COUNT":
+      d = b + ".count(" + a + ")";
+      break;
+    case "POP":
+      d = b + ".pop(" + a + ")";
+      break;
+    case "REMOVE":
+      d = b + ".remove(" + a + ")";
+      break;
+    case "APPEND":
+      d = b + ".append(" + a + ")";
+      break;
+    case "DIVISIBLE_BY":
+      
+      d = b + " % " + a + " == 0";
+  }
+  return [d, Blockly.Python.ORDER_RELATIONAL];
+};

@@ -1678,6 +1678,37 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_MATH_ATAN2_TOOLTIP}",
     helpUrl: "%{BKY_MATH_ATAN2_HELPURL}",
   },
+  {
+    type: "gptest",
+    message0: "%1데이터 다루기 %2에 %3를 %4",
+    args0: [
+      {"type": "field_image","src": "/img/Operation/O6-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
+      { type: "input_value", name: "DIVISOR", check: "Number" },
+      {
+        type: "field_dropdown",
+        name: "PROPERTY",
+        options: [
+          ["%{BKY_COLLECTION_13_REVERSE}", "REVERSE"],
+          ["%{BKY_COLLECTION_13_SORT}", "SORT"],
+          ["%{BKY_LISTS_INDEX}", "INDEX"],
+          ["test", "DIVISIBLE_BY"],//%{BKY_MATH_IS_DIVISIBLE_BY}
+          ["%{BKY_LISTS_SPLIT_LIST_FROM_TEXT}", "SPLIT"],
+          ["%{BKY_LISTS_SPLIT_TEXT_FROM_LIST}", "JOIN"],
+          ["%{BKY_COLLECTION_16_EXTEND}", "EXTEND"],
+          ["%{BKY_COLLECTION_16_EXTEND}", "COUNT"],
+          ["%{BKY_COLLECTION_16_COUNT}", "POP"],
+          ["%{BKY_COLLECTION_16_POP}", "REMOVE"],
+          ["%{BKY_COLLECTION_16_APPEND}", "APPEND"],
+        ],
+      },
+    ],
+    inputsInline: !0,
+    output: "Number",
+    colour: "%{BKY_COLLECTION_HUE}",
+    tooltip: "%{BKY_MATH_IS_TOOLTIP}",
+    mutator: "math_is_divisibleby_mutator",
+  },
 ]);
 Blockly.Constants.Math.TOOLTIPS_BY_OP = {
   ADD: "%{BKY_MATH_ARITHMETIC_TOOLTIP_ADD}",
@@ -1726,15 +1757,33 @@ Blockly.Constants.Math.IS_DIVISIBLEBY_MUTATOR_MIXIN = {
     this.updateShape_(a);
   },
   updateShape_: function (a) {
+
     var b = this.getInput("DIVISOR");
+    var t = this.getField("PROPERTY");
+    
+    /*
+    this.getSourceBlock().this.appendField(new Blockly.FieldDropdown([
+      ["%{BKY_COLLECTION_13_REVERSE}", "REVERSE"],
+      ["%{BKY_COLLECTION_13_SORT}", "SORT"],
+      ["%{BKY_LISTS_INDEX}", "INDEX"],
+      ["test", "DIVISIBLE_BY"],//%{BKY_MATH_IS_DIVISIBLE_BY}
+      ["%{BKY_LISTS_SPLIT_LIST_FROM_TEXT}", "SPLIT"],
+      ["%{BKY_LISTS_SPLIT_TEXT_FROM_LIST}", "JOIN"],
+      ["%{BKY_COLLECTION_16_EXTEND}", "EXTEND"],
+      ["%{BKY_COLLECTION_16_EXTEND}", "COUNT"],
+      ["%{BKY_COLLECTION_16_COUNT}", "POP"],
+      ["%{BKY_COLLECTION_16_POP}", "REMOVE"],
+      ["%{BKY_COLLECTION_16_APPEND}", "APPEND"]
+    ]),"PROPERTY");
+    */
     a
       ? b || this.appendValueInput("DIVISOR").setCheck("Number")
-      : b && this.removeInput("DIVISOR");
+      : b && this.removeInput("DIVISOR"); 
   },
 };
 Blockly.Constants.Math.IS_DIVISIBLE_MUTATOR_EXTENSION = function () {
   this.getField("PROPERTY").setValidator(function (a) {
-    a = "DIVISIBLE_BY" == a;
+    a = "DIVISIBLE_BY" != a;
     this.getSourceBlock().updateShape_(a);
   });
 };
