@@ -53,6 +53,7 @@
   Blockly.Blocks['pickle_dump'] = {
     init: function () {
       this.appendDummyInput()
+        .appendField("Pickle")
         .appendField("입력")
         .appendField("(");
       this.appendValueInput("va1")
@@ -75,6 +76,7 @@
   Blockly.Blocks['pickle_load'] = {
     init: function () {
       this.appendDummyInput()
+      .appendField("Pickle")
       .appendField(new Blockly.FieldVariable("data"), "list");
       this.appendDummyInput()
         .appendField("불러오기")
