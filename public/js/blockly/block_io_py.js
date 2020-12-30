@@ -16,14 +16,14 @@ Blockly.Python['printtv'] = function (block) {
   var value_content1 = Blockly.Python.valueToCode(block, 'content1', Blockly.Python.ORDER_ATOMIC);
   var value_content2 = Blockly.Python.valueToCode(block, 'content2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code ='print("' + value_content1 + ' " + ' + "str(" + value_content2 + ') )\n';
+  var code ='print("' + value_content1 + ' " + ' + value_content2 + ' )\n';
   return code;
 };
 
 Blockly.Python['printc'] = function (block) {
   var value_content = Blockly.Python.valueToCode(block, 'content', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code ='print( str(' + value_content + ' ))\n';
+  var code ='print( '+ value_content + ' )\n';
   return code;
 };
 
