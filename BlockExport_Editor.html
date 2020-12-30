@@ -757,28 +757,6 @@
       <!-- continue 블록 -->      
       <block type="continue_block"></block>
 
-      <block type ="forif">
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <block type="variables_get">
-            <field name="VAR">i</field>
-          </block>
-      </value>
-        <value name="SET3">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="SET4">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
     </category>
     <!-- 2020-12-26 양승국 end -->
 
@@ -1133,6 +1111,28 @@
         </value>
       </block>
 
+      <block type ="forif">
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">연산</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+      </value>
+        <value name="SET3">
+          <shadow type="indata">
+            <field name="indata1">리스트</field>
+          </shadow>
+        </value>
+        <value name="SET4">
+          <shadow type="indata">
+            <field name="indata1">조건</field>
+          </shadow>
+        </value>
+      </block>
       <!-- 리스트 생성 -->
       <!-- <block type="lists_create_with"></block> -->
       <!-- 변수명 이렇게 하면 잘들어가지긴함
@@ -1153,7 +1153,6 @@
         </value> -->
       <!-- 비어있는 리스트 생성 -->
       <block type="lists_create_with">
-        
         <mutation items="0"></mutation>
       </block>
       <!-- 같은 내용을 n번 넣어 리스트 생성 -->

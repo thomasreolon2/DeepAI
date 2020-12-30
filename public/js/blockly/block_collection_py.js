@@ -136,6 +136,6 @@ Blockly.Python['forif'] = function (block) {
   var value_SET3 = Blockly.Python.valueToCode(block, 'SET3', Blockly.Python.ORDER_ATOMIC);
   var value_SET4 = Blockly.Python.valueToCode(block, 'SET4', Blockly.Python.ORDER_ATOMIC);
 
-  var code = value_SET1 + " for " + value_SET2 + " in " +  value_SET3 + " if " + value_SET4;
+  var code = "[" + value_SET1 + " for " + value_SET2 + " in " +  value_SET3 + " if " + value_SET4 + "]";
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
