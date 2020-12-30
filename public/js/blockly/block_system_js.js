@@ -22,4 +22,16 @@
     var code = '\n';
     return code;
   };
+
+  Blockly.JavaScript['pickle_dump'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['pickle_load'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
   
