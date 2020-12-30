@@ -12396,7 +12396,7 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
 
     // 이성주 여러 변수 치환블록
     if (Blockly.Blocks.many_variables) {
-    
+        
       var k = Blockly.utils.xml.createElement("block");
       
       k.setAttribute("type", "many_variables");
@@ -12412,7 +12412,7 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
     }
 
     // 이성주 r3 -> 커스텀으로  (기존의 변수 블록 변형)
-    Blockly.Blocks.math_change &&
+    if (Blockly.Blocks.math_change) {
       ((d = Blockly.utils.xml.createElement("block")),
       d.setAttribute("type", "math_change"),
       d.setAttribute("gap", Blockly.Blocks.variables_get ? 20 : 8),
@@ -12425,18 +12425,21 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
         '<value name="VAR"><block type="variables_get"><field name="NUM">5</field></block></value>'
       )),
       b.push(d));
-    
+      }
       
-    if (Blockly.Blocks.variables_get) {
-      a.sort(Blockly.VariableModel.compareByName);
-      c = 0;
-      for (var e; (e = a[c]); c++)
-        (d = Blockly.utils.xml.createElement("block")),
-          d.setAttribute("type", "variables_get"),
-          d.setAttribute("gap", 8),
-          d.appendChild(Blockly.Variables.generateVariableFieldDom(e)),
-          b.push(d);
-    }
+    
+    
+    // 2020.12.20 이성주 -> 변수설정 블록 없앰 (일단 안지워야 할듯..) 
+    // if (Blockly.Blocks.variables_get) {
+    //   a.sort(Blockly.VariableModel.compareByName);
+    //   c = 0;
+    //   for (var e; (e = a[c]); c++)
+    //     (d = Blockly.utils.xml.createElement("block")),
+    //       d.setAttribute("type", "variables_get"),
+    //       d.setAttribute("gap", 8),
+    //       d.appendChild(Blockly.Variables.generateVariableFieldDom(e)),
+    //       b.push(d);
+    // }
   }
   return b;
 };

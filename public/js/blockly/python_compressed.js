@@ -964,8 +964,8 @@ Blockly.Python.math_number_property = function (a) {
 //   );
 // };
 Blockly.Python.math_change = function (block) {
-  Blockly.Python.definitions_.from_numbers_import_Number =
-    "from numbers import Number";
+  // Blockly.Python.definitions_.from_numbers_import_Number =
+  //   "from numbers import Number";
   var b =
     Blockly.Python.valueToCode(block, "DELTA", Blockly.Python.ORDER_ATOMIC) ||
     "0";
@@ -981,7 +981,7 @@ Blockly.Python.math_change = function (block) {
 
   var dropdown_name = block.getFieldValue("NAME");
   // var val_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-  return a + dropdown_name + b + "\n";
+  return a + ' ' + dropdown_name + ' ' + b + "\n";
 };
 
 Blockly.Python.math_round = Blockly.Python.math_single;
@@ -1499,19 +1499,20 @@ Blockly.Python.variables_get = function (a) {
     Blockly.Python.ORDER_ATOMIC,
   ];
 };
-Blockly.Python.variables_set = function (a) {
-  var b =
-    Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) || "0";
-  return (
-    Blockly.Python.variableDB_.getName(
-      a.getFieldValue("VAR"),
-      Blockly.VARIABLE_CATEGORY_NAME
-    ) +
-    " = " +
-    b +
-    "\n"
-  );
-};
+// 2020.12.30 이성주  커스텀 블록 수정: 일단 지우면 안됨..
+// Blockly.Python.variables_set = function (a) {
+//   var b =
+//     Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) || "0";
+//   return (
+//     Blockly.Python.variableDB_.getName(
+//       a.getFieldValue("VAR"),
+//       Blockly.VARIABLE_CATEGORY_NAME
+//     ) +
+//     " = " +
+//     b +
+//     "\n"
+//   );
+// };
 Blockly.Python.variablesDynamic = {};
 Blockly.Python.variables_get_dynamic = Blockly.Python.variables_get;
 Blockly.Python.variables_set_dynamic = Blockly.Python.variables_set;

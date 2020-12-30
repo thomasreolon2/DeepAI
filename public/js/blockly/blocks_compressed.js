@@ -1510,6 +1510,10 @@ Blockly.defineBlocksWithJsonArray([
         "name": "NAME",
         "options": [
           [
+            "=",
+            "="
+          ],
+          [
             "+=",
             "+="
           ],
@@ -3043,33 +3047,35 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_VARIABLES_GET_TOOLTIP}",
     extensions: ["contextMenu_variableSetterGetter"],
   },
-  {
-    type: "variables_set",
-    message0: "%{BKY_VARIABLES_SET}",
-    args0: [
-      {
-        type: "field_image",
-        src: "/img/Variable/V1-logo.png",
-        width: 25,
-        height: 23,
-        alt: "*",
-        flipRtl: false,
-      },
-      {
-        type: "field_variable",
-        name: "VAR",
-        variable: "%{BKY_VARIABLES_DEFAULT_NAME}",
-      },
+
+  // 2020.12.30 이성주  커스텀 블록 수정: 일단 지우면 안됨..
+  // {
+  //   type: "variables_set",
+  //   message0: "%{BKY_VARIABLES_SET}",
+  //   args0: [
+  //     {
+  //       type: "field_image",
+  //       src: "/img/Variable/V1-logo.png",
+  //       width: 25,
+  //       height: 23,
+  //       alt: "*",
+  //       flipRtl: false,
+  //     },
+  //     {
+  //       type: "field_variable",
+  //       name: "VAR",
+  //       variable: "%{BKY_VARIABLES_DEFAULT_NAME}",
+  //     },
       
-      { type: "input_value", name: "VALUE" },
-    ],
-    previousStatement: null,
-    nextStatement: null,
-    style: "variable_blocks",
-    tooltip: "%{BKY_VARIABLES_SET_TOOLTIP}",
-    helpUrl: "%{BKY_VARIABLES_SET_HELPURL}",
-    extensions: ["contextMenu_variableSetterGetter"],
-  },
+  //     { type: "input_value", name: "VALUE" },
+  //   ],
+  //   previousStatement: null,
+  //   nextStatement: null,
+  //   style: "variable_blocks",
+  //   tooltip: "%{BKY_VARIABLES_SET_TOOLTIP}",
+  //   helpUrl: "%{BKY_VARIABLES_SET_HELPURL}",
+  //   extensions: ["contextMenu_variableSetterGetter"],
+  // },
 ]);
 Blockly.Constants.Variables.CUSTOM_CONTEXT_MENU_VARIABLE_GETTER_SETTER_MIXIN = {
   customContextMenu: function (a) {
@@ -3286,6 +3292,10 @@ Blockly.Blocks['increase'] = {
 Blockly.Blocks['many_variables'] = {
   init: function () {
       this.setStyle("variable_blocks");
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Variable/V1-logo.png", 25, 23, {
+        alt: "*",
+        flipRtl: "FALSE"
+      }));
       this.appendValueInput("NUMBER").setCheck(null);
       this.appendValueInput("VALUE").setCheck(null).appendField(" = ");
       this.setInputsInline(true);
