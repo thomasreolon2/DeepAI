@@ -4,7 +4,7 @@ Blockly.Blocks['self'] = {
     init: function () {
         this.appendDummyInput()
             .appendField('self.')
-            .appendField(new Blockly.FieldVariable("My_class"), "VAR")
+            .appendField(new Blockly.FieldVariable("a"), "VAR")
             .appendField(new Blockly.FieldDropdown([['=', '='], ['+=', '+='], ["-=", "-="]]), 'NAME');
         this.appendValueInput("varset")
             .setCheck(null);
@@ -41,9 +41,9 @@ Blockly.Blocks['webclass'] = {
     init: function() {     
       this.appendDummyInput()
           .appendField("[ "+ Blockly.Msg.CLASS_5_1 +" ]")
-          .appendField(new Blockly.FieldVariable("a"), "VAR1")
+          .appendField(new Blockly.FieldVariable("obj"), "VAR1")
           .appendField(".")
-          .appendField(new Blockly.FieldVariable("b"), "VAR2")
+          .appendField(new Blockly.FieldVariable("func"), "VAR2")
           .appendField("(")
           .appendField(new Blockly.FieldTextInput(""), "INPUT")
           .appendField(")");
@@ -60,9 +60,9 @@ Blockly.Blocks['webclass'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("[객체생성]")
-          .appendField(new Blockly.FieldVariable("a"), "1")
+          .appendField(new Blockly.FieldVariable("obj"), "1")
           .appendField("를")
-          .appendField(new Blockly.FieldVariable("b"), "2")
+          .appendField(new Blockly.FieldVariable("My_class"), "2")
           .appendField("(")
           .appendField(new Blockly.FieldTextInput(""), "3")
           .appendField(")");
