@@ -15,7 +15,7 @@ Blockly.Blocks['create_list'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+      this.setColour("%{BKY_COLLECTION_HUE}");
       this.setTooltip("Create a list");
       this.setHelpUrl("");
   }
@@ -105,7 +105,7 @@ Blockly.Blocks['list_insert'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+        this.setColour("%{BKY_COLLECTION_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -192,7 +192,7 @@ Blockly.Blocks['list_dot'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("%{BKY_COLLECTION_HUE}");
+        this.setColour("%{BKY_LIST2_HUE}");//"%{BKY_COLLECTION_HUE}");
         this.setTooltip("Create a list");
         this.setHelpUrl("");
     }
@@ -473,7 +473,7 @@ Blockly.Blocks['forif'] = {
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setstyle("list_blocks");
-        this.setColour("%{BKY_LIST_HUE}");
+        this.setColour("%{BKY_COLLECTION_HUE}");//"%{BKY_LIST_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }

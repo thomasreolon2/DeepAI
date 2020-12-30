@@ -95,7 +95,7 @@ Blockly.defineBlocksWithJsonArray([
       {"type": "field_image","src": "/img/Collection/C5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Boolean",
-    style: "list_blocks",
+    style: "conversion_blocks",//"list_blocks",
     tooltip: "%{BKY_LISTS_ISEMPTY_TOOLTIP}",
     helpUrl: "%{BKY_LISTS_ISEMPTY_HELPURL}",
   },
@@ -107,7 +107,7 @@ Blockly.defineBlocksWithJsonArray([
       {"type": "field_image","src": "/img/Collection/C4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Number",
-    style: "list_blocks",
+    style: "conversion_blocks",//"list_blocks",
     tooltip: "%{BKY_LISTS_LENGTH_TOOLTIP}",
     helpUrl: "%{BKY_LISTS_LENGTH_HELPURL}",
   },
@@ -115,7 +115,7 @@ Blockly.defineBlocksWithJsonArray([
 Blockly.Blocks.lists_create_with = {
   init: function () {
     this.setHelpUrl(Blockly.Msg.LISTS_CREATE_WITH_HELPURL);
-    this.setStyle("list_blocks");
+    this.setStyle("conversion_blocks");//"list_blocks");
     this.itemCount_ = 3;
     this.updateShape_();
     this.setOutput(!0, "Array");
