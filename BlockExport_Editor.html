@@ -1055,6 +1055,47 @@
     <!-- ******************************   리스트 , 컬렉션(Collection)             ******************************* -->
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_COLLECTION}" colour="%{BKY_COLLECTION_HUE}"> 
+
+      <block type="list_sort_reverse">
+        <value name="LIST">
+          <shadow type="indata">
+            <field name="indata1">my_list</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="create_new_list">
+        <value name="NUMBER_TO_CHECK">
+           <shadow type="indata">
+             <field name="indata1">my_list</field>
+           </shadow>
+         </value>
+         <value name="DIVISOR">
+           <shadow type="indata">
+             <field name="indata1"></field>
+           </shadow>
+         </value>
+       </block>
+
+       <!-- 리스트 삽입 -->
+      <block type="list_insert">
+        <value name="LIST">
+          <shadow type="indata">
+            <field name="indata1">my_list</field>
+          </shadow>
+        </value>
+        <value name="INDEX">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="VALUE">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
       <block type = "create_list">
         <value name="text">
           <shadow type="indata">
@@ -1248,15 +1289,8 @@
       </block> -->
       <!-- 연산에 있음 <block type="sump"></block> -->
       <!-- sort,reverse -->
-      <block type="list_sort_reverse">
-        <value name="LIST">
-          <shadow type="indata">
-            <field name="indata1">my_list</field>
-          </shadow>
-        </value>
-      </block>
 
-      <!-- 리스트에서 값 찾기 -->
+      <!-- 리스트에서 값 찾기 
       <block type="list_index">
         <value name="LIST">
           <shadow type="indata">
@@ -1269,27 +1303,10 @@
           </shadow>
         </value>
       </block>
+      -->
 
-      <!-- 리스트 삽입 -->
-      <block type="list_insert">
-        <value name="LIST">
-          <shadow type="indata">
-            <field name="indata1">my_list</field>
-          </shadow>
-        </value>
-        <value name="INDEX">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="VALUE">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
 
-      <!-- remove, pop, count, extend -->
+      <!-- remove, pop, count, extend 
       <block type="list_remove_pop_count_extend">
         <value name="LIST">
           <shadow type="indata">
@@ -1303,6 +1320,7 @@
         </value>
 
       </block>
+      -->
 
       <!-- 리스트 자르기 -->
       <!-- <block type="list_dot">
