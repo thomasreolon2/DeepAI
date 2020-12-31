@@ -358,8 +358,8 @@ Blockly.Blocks['numpy_matrix_decomposition'] = {
 Blockly.Blocks['numpy_array_contents'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 논리 / 배열 요소 ]")
-        .appendField(new Blockly.FieldDropdown([["유한성 체크 (np.isfinite)","np.isfinite"], ["양 무한 체크 (np.isposinf)","np.isposinf"], ["음수 무한 체크 (np.isneginf)","np.isneginf"], ["양/음수 무한 체크 (np.isinf)","np.isinf"]]), "numpy_Array_contents_opt");
+        .appendField("[np 배열요소]")
+        .appendField(new Blockly.FieldDropdown([["유한성체크(isfinite)","np.isfinite"], ["양무한체크(isposinf)","np.isposinf"], ["음수무한체크(isneginf)","np.isneginf"], ["양/음수무한체크(isinf)","np.isinf"]]), "numpy_Array_contents_opt");
     this.appendValueInput("numpy_Array_contents_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -375,8 +375,8 @@ Blockly.Blocks['numpy_array_contents'] = {
 Blockly.Blocks['numpy_comparison'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 논리 / 비교 ]")
-        .appendField(new Blockly.FieldDropdown([["허용 오차 (np.allclose)","np.allclose"], ["허용 오차내 동일 논리 (np.isclose)","np.isclose"], ["모양&요소 체크 (np.array_equal)","np.array_equal"], ["배열형태&요소 체크 (np.array_equiv)","np.array_equiv"], ["x1 > x2 체크 (np.greater)","np.greater"], ["x1 >= x2 체크 (np.greater_equal)","np.greater_equal"], ["x1 < x2 체크 (np.less)","np.less"], ["x1 <= x2 체크 (np.less_equal)","np.less_equal"], ["x1 == x2 체크 (np.equal)","np.equal"], ["x1 != x2 체크 (np.not_equal)","np.not_equal"]]), "numpy_Comparison_opt");
+        .appendField("[np 비교]")
+        .appendField(new Blockly.FieldDropdown([["허용오차(allclose)","np.allclose"], ["허용오차내동일논리(isclose)","np.isclose"], ["모양&요소체크(array_equal)","np.array_equal"], ["배열형태&요소체크(array_equiv)","np.array_equiv"], ["x1>x2체크(greater)","np.greater"], ["x1>=x2체크(greater_equal)","np.greater_equal"], ["x1<x2체크(less)","np.less"], ["x1<=x2체크(less_equal)","np.less_equal"], ["x1==x2체크(equal)","np.equal"], ["x1!=x2체크(not_equal)","np.not_equal"]]), "numpy_Comparison_opt");
     this.appendValueInput("numpy_Comparison_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -391,14 +391,14 @@ Blockly.Blocks['numpy_comparison'] = {
 Blockly.Blocks['numpy_string_operations'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 문자열 / 연산1 ]")
-        .appendField(new Blockly.FieldDropdown([["연결 (np.char.add)","np.char.add"],
-                                                ["다중 연결 (np.char.multiply)","np.char.multiply"],
-                                                ["첫문짜 대문자로 (np.char.capitalize)","np.char.capitalize"],
-                                                ["문자열 중심 복사 (np.char.center)","np.char.center"],
-                                                ["소문자로 (np.char.lower)","np.char.lower"], 
-                                                ["대문자로 (np.char.upper)","np.char.upper"], 
-                                                ["선행 문자 제거 (np.char.lstrip)","np.char.lstrip"]]), "numpy_String_operations_opt");
+        .appendField("[np 연산1]")
+        .appendField(new Blockly.FieldDropdown([["연결(char.add)","np.char.add"],
+                                                ["다중연결(char.multiply)","np.char.multiply"],
+                                                ["첫문자대문자로(char.capitalize)","np.char.capitalize"],
+                                                ["문자열 중심 복사(char.center)","np.char.center"],
+                                                ["소문자로(char.lower)","np.char.lower"], 
+                                                ["대문자로(char.upper)","np.char.upper"], 
+                                                ["선행문자제거(char.lstrip)","np.char.lstrip"]]), "numpy_String_operations_opt");
     this.appendValueInput("numpy_String_operations_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -413,13 +413,13 @@ Blockly.Blocks['numpy_string_operations'] = {
 Blockly.Blocks['numpy_string_operations2'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 문자열 / 연산2 ]")
-        .appendField(new Blockly.FieldDropdown([["대체 (np.char.replace)","np.char.replace"], 
-                                                ["왼쪽 정렬 (np.char.ljust)","np.char.ljust"], 
-                                                ["오른쪽 정렬 (np.char.rjust)","np.char.rjust"], 
-                                                ["구분자 분할 (np.char.split)","np.char.split"], 
-                                                ["선행 또는 후행 문자제거(np.char.strip)","np.char.strip"], 
-                                                ["0으로 채움 (np.char.zfill)","np.char.zfill"]]), "numpy_String_operations2_opt");
+        .appendField("[np 연산2]")
+        .appendField(new Blockly.FieldDropdown([["대체(char.replace)","np.char.replace"], 
+                                                ["왼쪽정렬(char.ljust)","np.char.ljust"], 
+                                                ["오른쪽정렬(char.rjust)","np.char.rjust"], 
+                                                ["구분자분할(char.split)","np.char.split"], 
+                                                ["선행또는후행문자제거(char.strip)","np.char.strip"], 
+                                                ["0으로채움(char.zfill)","np.char.zfill"]]), "numpy_String_operations2_opt");
     this.appendValueInput("numpy_String_operations2_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -435,16 +435,16 @@ Blockly.Blocks['numpy_string_operations2'] = {
 Blockly.Blocks['numpystring_information'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ 문자열 / 정보 ]")
-        .appendField(new Blockly.FieldDropdown([["특정문자 갯수 확인 (np.char.count)","np.char.count"], 
-                                                ["가장 낮은 인덱스 (np.char.find)","np.char.find"], 
-                                                ["알파벳 체크 (np.char.isalpha)","np.char.isalpha"], 
-                                                ["10진수 체크 (np.char.isdecimal)","np.char.isdecimal"], 
-                                                ["숫자 체크 (np.char.isdigit)","np.char.isdigit"], 
-                                                ["소문자 체크 (np.char.islower)","(np.char.islower"], 
-                                                ["대문자 체크 (np.char.isupper)","np.char.isupper"], 
-                                                ["모든 요소 숫자 체크 (np.char.isnumeric)","np.char.isnumeric"], 
-                                                ["공백 체크 (np.char.isspace)","np.char.isspace"]]), "numpyString_information_opt");
+        .appendField("[np 정보]")
+        .appendField(new Blockly.FieldDropdown([["특정문자갯수확인(char.count)","np.char.count"], 
+                                                ["가장낮은인덱스(char.find)","np.char.find"], 
+                                                ["알파벳체크(char.isalpha)","np.char.isalpha"], 
+                                                ["10진수체크(char.isdecimal)","np.char.isdecimal"], 
+                                                ["숫자체크(char.isdigit)","np.char.isdigit"], 
+                                                ["소문자체크(char.islower)","(np.char.islower"], 
+                                                ["대문자체크(char.isupper)","np.char.isupper"], 
+                                                ["모든요소숫자체크(char.isnumeric)","np.char.isnumeric"], 
+                                                ["공백체크(char.isspace)","np.char.isspace"]]), "numpyString_information_opt");
     this.appendValueInput("numpyString_information_val")
         .setCheck(null);
     this.setInputsInline(true);
