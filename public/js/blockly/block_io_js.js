@@ -49,6 +49,7 @@ Blockly.JavaScript['fd_open'] = function (block) {
 };
 
 Blockly.JavaScript['fd_read'] = function (block) {
+  var dropdown_set_menu = block.getFieldValue('set_menu');
   var variable_list1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var variable_list2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble .JavaScript into code variable.
@@ -56,10 +57,11 @@ Blockly.JavaScript['fd_read'] = function (block) {
   return code;
 };
 
-Blockly.JavaScript['fd_readline'] = function (block) {
-  var variable_list1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
-  var variable_list2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
-  // TODO: Assemble .JavaScript into code variable.
+Blockly.JavaScript['fd_write'] = function (block) {
+  var dropdown_set_menu = block.getFieldValue('set_menu');
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
   var code = '\n';
   return code;
 };
@@ -71,13 +73,7 @@ Blockly.JavaScript['fd_close'] = function (block) {
   return code;
 };
 
-Blockly.JavaScript['fd_write'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '\n';
-  return code;
-};
+
 
 
 // Blockly.JavaScript['qqq'] = function (block) {

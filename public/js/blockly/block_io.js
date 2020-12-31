@@ -119,7 +119,14 @@ Blockly.Blocks['fd_read'] = {
           .appendField(new Blockly.FieldVariable("data"), "list1")
           .appendField(" = ")
           .appendField(new Blockly.FieldVariable("f"), "list2")
-          .appendField(".read()");
+          .appendField(new Blockly.FieldDropdown([
+            [
+                ".read()", ".read()"
+            ],
+            [
+                ".readline()", ".readline()"
+            ]
+        ]), "set_menu");      
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
@@ -128,21 +135,31 @@ Blockly.Blocks['fd_read'] = {
   }
 };
 
-Blockly.Blocks['fd_readline'] = {
-  init: function () {
-      this.appendDummyInput()
-          .appendField("파일읽기")
-          .appendField(new Blockly.FieldVariable("data"), "list1")
-          .appendField(" = ")
-          .appendField(new Blockly.FieldVariable("f"), "list2")
-          .appendField(".readline()");
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
-      this.setTooltip("Create a list");
-      this.setHelpUrl("");
-  }
-};
+Blockly.Blocks['fd_write'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("파일쓰기")
+            .appendField(new Blockly.FieldVariable("f"), "list")
+            .appendField(new Blockly.FieldDropdown([
+                [
+                    ".write", ".write"
+                ],
+                [
+                    ".writeline", ".writeline"
+                ]
+            ]), "set_menu"); 
+        this.appendValueInput("text")
+            .appendField("(")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+        this.setTooltip("Create a list");
+        this.setHelpUrl("");
+    }
+  };
 
 Blockly.Blocks['fd_close'] = {
   init: function () {
@@ -161,23 +178,6 @@ Blockly.Blocks['fd_close'] = {
   }
 };
 
-Blockly.Blocks['fd_write'] = {
-  init: function () {
-      this.appendDummyInput()
-          .appendField("파일쓰기")
-          .appendField(new Blockly.FieldVariable("f"), "list")
-          .appendField(".write( ");
-      this.appendValueInput("text")
-          .setCheck(null);
-      this.appendDummyInput()
-          .appendField(")");
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
-      this.setTooltip("Create a list");
-      this.setHelpUrl("");
-  }
-};
 
 
 

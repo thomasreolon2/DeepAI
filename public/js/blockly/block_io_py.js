@@ -51,18 +51,20 @@ Blockly.Python['fd_open'] = function (block) {
 };
 
 Blockly.Python['fd_read'] = function (block) {
+  var dropdown_set_menu = block.getFieldValue('set_menu');
   var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var variable_list2 = Blockly.Python.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
-  var code = variable_list1 + " = " + variable_list2 + '.read()\n';
+  var code = variable_list1 + " = " + variable_list2 + dropdown_set_menu +'\n';
   return code;
 };
 
-Blockly.Python['fd_readline'] = function (block) {
-  var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
-  var variable_list2 = Blockly.Python.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
+Blockly.Python['fd_write'] = function (block) {
+  var dropdown_set_menu = block.getFieldValue('set_menu');
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = variable_list1 + " = " + variable_list2 + '.readline()\n';
+  var code = variable_list + dropdown_set_menu + '( ' +  value_text  +  ' )\n';
   return code;
 };
 
@@ -73,13 +75,6 @@ Blockly.Python['fd_close'] = function (block) {
   return code;
 };
 
-Blockly.Python['fd_write'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = variable_list + '.write( ' + value_text  +  ' )\n';
-  return code;
-};
 
 // Blockly.Python['qqq'] = function (block) {
 //   var file = block.getFieldValue('csv_url');
