@@ -954,6 +954,7 @@ Blockly.Msg['CATEGORY_COLLECTION'] = "컬렉션(Collection)";
 Blockly.Msg['CATEGORY_FUNCTION'] = "함수(Definitions)";
 Blockly.Msg['CATEGORY_CLASS'] = "클래스(Class)";
 Blockly.Msg['CATEGORY_NUMPY'] = "넘파이(Numpy)";
+Blockly.Msg['CATEGORY_DB'] = "데이터베이스(DB)";
 Blockly.Msg['CATEGORY_PANDAS'] = "판다스(Pandas)";
 Blockly.Msg['CATEGORY_MATPLOT'] = "맷플롯립(Matplotlib)";
 Blockly.Msg['CATEGORY_SCIPY'] = "사이파이(Scipy)";

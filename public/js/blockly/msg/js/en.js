@@ -551,6 +551,7 @@ Blockly.Msg["LIST2_HUE"] = "#ff8c1a";// 리스트2
 
 // 커스텀 색상
 Blockly.Msg["NUMPY_HUE"] = "472BFF"; // 넘파이
+Blockly.Msg["DB_HUE"] = "#FFA7A7"; // 데이터베이스
 Blockly.Msg["PANDAS_HUE"] = "FF3D98"; // 판다스
 Blockly.Msg["VISUAL_HUE"] = "E8BE38"; // 매트플롯립, 시각화
 Blockly.Msg["SCIPY_HUE"] = "5AE88A"; // 사이파이
@@ -957,6 +958,7 @@ Blockly.Msg['CATEGORY_COLLECTION'] = "Collection";
 Blockly.Msg['CATEGORY_FUNCTION'] = "Function";
 Blockly.Msg['CATEGORY_CLASS'] = "Class";
 Blockly.Msg['CATEGORY_NUMPY'] = "Numpy";
+Blockly.Msg['CATEGORY_DB'] = "Database";
 Blockly.Msg['CATEGORY_PANDAS'] = "Pandas";
 Blockly.Msg['CATEGORY_MATPLOT'] = "Matplotlib";
 Blockly.Msg['CATEGORY_SCIPY'] = "Scipy";

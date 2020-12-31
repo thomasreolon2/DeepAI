@@ -1262,7 +1262,7 @@ Blockly.Blocks['df_col_rename'] = {
 Blockly.Blocks['csv_url'] = {
   init: function () {
     this.appendDummyInput()
-    .appendField(new Blockly.FieldVariable("value"), "list");
+    .appendField(new Blockly.FieldVariable("df"), "list");
     this.appendDummyInput()
       .appendField("CSV URL")
       .appendField("(");
