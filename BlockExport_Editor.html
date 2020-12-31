@@ -1704,6 +1704,17 @@
         <block type="numpy_library"></block>
       <!-- import numpy as np -->
 
+      <!-- numpy.array -->
+      <block type="np_array">
+        <value name="np_array_val">
+          <block type="create_arry"></block>
+        </value>
+      </block>
+
+      <!-- np.reshape  -->
+      <block type="numpy_reshape"> </block>
+      <!-- np.reshape  -->
+
        <!-- 넘파이 기본연산 -->
        <block type="numpy_operator">
         <value name="numpy_operator_val">
@@ -1713,6 +1724,14 @@
       <!-- 넘파이 기본연산 -->
 
 
+      <!-- 행렬 연산-->
+      <block type="numpy_array_operator">
+        <value name="numpy_array_operator_val">
+          <block type="class_func_param"></block>
+        </value> 
+      </block>
+      <!-- 행렬 연산 -->
+
        <!-- 넘파이 인덱스/값 검색 -->
        <block type="numpy_index_values">
         <value name="numpy_index_values_val">
@@ -1721,13 +1740,13 @@
       </block>
       <!-- 넘파이 인덱스/값 검색 -->
 
-       <!-- 행렬 연산-->
-       <block type="numpy_array_operator">
-        <value name="numpy_array_operator_val">
+      <!-- 통계 / 평균 & 분산  -->
+      <block type="numpy_averages_variances">
+        <value name="numpy_Averages_variances_val"> 
           <block type="class_func_param"></block>
-        </value> 
+        </value>  
       </block>
-      <!-- 행렬 연산 -->
+      <!-- 통계 / 평균 & 분산  -->
 
       <!-- CSV 저장 -->
       <block type="data_to_csv"></block>
@@ -1741,12 +1760,6 @@
       <block type="np_concatenate"></block>
       <!-- numpy_concatenate -->
 
-      <!-- numpy.array -->
-      <block type="np_array">
-        <value name="np_array_val">
-          <block type="create_arry"></block>
-        </value>
-      </block>
       <!-- numpy.array -->
 
        <!-- numpy.array -->
@@ -1777,10 +1790,6 @@
       <!-- np.shape  -->
       <block type="numpy_shape"></block>
       <!-- np.shape  -->
-
-      <!-- np.reshape  -->
-      <block type="numpy_reshape"> </block>
-      <!-- np.reshape  -->
 
       <!-- np.reshape  -->
       <block type="np_flatten"> </block>
