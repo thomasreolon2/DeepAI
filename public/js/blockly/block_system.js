@@ -111,7 +111,7 @@
   Blockly.Blocks['os_getcwd'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("현재 경로 ")
+        .appendField("현재경로 ")
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("#FF0000");
@@ -123,7 +123,7 @@
   Blockly.Blocks['os_listdir'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("파일, 디렉터리 목록 ")
+        .appendField("파일, 디렉터리목록 ")
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("#FF0000");
@@ -136,7 +136,7 @@
   Blockly.Blocks['os_mkdir'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("디렉토리 생성 ")
+        .appendField("디렉토리생성 ")
         .appendField("(");
       this.appendValueInput("va")
         .setCheck(null)
@@ -153,7 +153,7 @@
   Blockly.Blocks['os_rmdir'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("디렉토리 삭제 ")
+        .appendField("디렉토리삭제 ")
         .appendField("(");
       this.appendValueInput("va")
         .setCheck(null)
@@ -170,7 +170,7 @@
   Blockly.Blocks['os_chdir'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("작업 디렉토리 변경 ")
+        .appendField("디렉토리변경 ")
         .appendField("(");
       this.appendValueInput("va")
         .setCheck(null)
@@ -187,7 +187,7 @@
   Blockly.Blocks['os_remove'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("파일 삭제")
+        .appendField("파일삭제")
         .appendField("(");
       this.appendValueInput("va")
         .setCheck(null)
@@ -204,7 +204,7 @@
   Blockly.Blocks['os_rename'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("파일 변경 ")
+        .appendField("파일변경 ")
         .appendField("(");
       this.appendValueInput("va1")
         .setCheck(null)
@@ -226,7 +226,7 @@
     init: function () {
       this.appendDummyInput()
         .appendField("Shutil")
-        .appendField("파일 복사 ")
+        .appendField("파일복사 ")
         .appendField("(");
       this.appendValueInput("va1")
         .setCheck(null)
@@ -248,7 +248,7 @@
     init: function () {
       this.appendDummyInput()
         .appendField("Shutil")
-        .appendField("디렉토리 복사 ")
+        .appendField("디렉토리복사 ")
         .appendField("(");
       this.appendValueInput("va1")
         .setCheck(null)
@@ -270,7 +270,7 @@
     init: function () {
       this.appendDummyInput()
         .appendField("Shutil")
-        .appendField("파일 이동 ")
+        .appendField("파일이동 ")
         .appendField("(");
       this.appendValueInput("va1")
         .setCheck(null)
