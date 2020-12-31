@@ -129,22 +129,26 @@ Blockly.Python['set_menu1'] = function (block) {
 
 // 라운드형 반복 조건 블록
 Blockly.Python['forif'] = function (block) {
+  var value_SET0 = Blockly.Python.valueToCode(block, 'SET0', Blockly.Python.ORDER_ATOMIC);
   var value_SET1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
   var value_SET2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
   var value_SET3 = Blockly.Python.valueToCode(block, 'SET3', Blockly.Python.ORDER_ATOMIC);
   var value_SET4 = Blockly.Python.valueToCode(block, 'SET4', Blockly.Python.ORDER_ATOMIC);
+  var value_SET5 = Blockly.Python.valueToCode(block, 'SET5', Blockly.Python.ORDER_ATOMIC);
 
-  var code = "[" + value_SET1 + " for " + value_SET2 + " in " +  value_SET3 + " if " + value_SET4 + "]";
+  var code = value_SET0 + value_SET1 + " for " + value_SET2 + " in " +  value_SET3 + " if " + value_SET4 + value_SET5;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 // 라운드형 반복 조건 블록
 Blockly.Python['forif2'] = function (block) {
+  var value_SET0 = Blockly.Python.valueToCode(block, 'SET0', Blockly.Python.ORDER_ATOMIC);
   var value_SET1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
   var value_SET2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
   var value_SET3 = Blockly.Python.valueToCode(block, 'SET3', Blockly.Python.ORDER_ATOMIC);
+  var value_SET4 = Blockly.Python.valueToCode(block, 'SET4', Blockly.Python.ORDER_ATOMIC);
 
-  var code = "[" + value_SET1 + " for " + value_SET2 + " in " +  value_SET3 +  "]";
+  var code = value_SET0 + value_SET1 + " for " + value_SET2 + " in " +  value_SET3 +  value_SET4;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 

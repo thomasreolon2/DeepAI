@@ -1051,6 +1051,68 @@
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_COLLECTION}" colour="%{BKY_COLLECTION_HUE}"> 
       <label text="LIST"></label>
+
+      <block type ="forif">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">[</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">리턴</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+      </value>
+        <value name="SET3">
+          <shadow type="indata">
+            <field name="indata1">범위</field>
+          </shadow>
+        </value>
+        <value name="SET4">
+          <shadow type="indata">
+            <field name="indata1">조건</field>
+          </shadow>
+        </value>
+        <value name="SET5">
+          <shadow type="indata">
+            <field name="indata1">]</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type ="forif2">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">[</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">리턴</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+      </value>
+        <value name="SET3">
+          <shadow type="indata">
+            <field name="indata1">범위</field>
+          </shadow>
+        </value>
+        <value name="SET4">
+          <shadow type="indata">
+            <field name="indata1">]</field>
+          </shadow>
+        </value>
+      </block>
+
       <block type = "create_list">
         <value name="text">
           <shadow type="indata">
@@ -1060,6 +1122,7 @@
       </block>
 
       <!-- 리스트 삽입 -->
+      
       <block type="list_insert">
         <value name="LIST">
           <shadow type="indata">
@@ -1098,47 +1161,6 @@
            </shadow>
          </value>
        </block>
-      
-      <block type ="forif">
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1">리턴</field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <block type="variables_get">
-            <field name="VAR">i</field>
-          </block>
-      </value>
-        <value name="SET3">
-          <shadow type="indata">
-            <field name="indata1">범위</field>
-          </shadow>
-        </value>
-        <value name="SET4">
-          <shadow type="indata">
-            <field name="indata1">조건</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type ="forif2">
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1">리턴</field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <block type="variables_get">
-            <field name="VAR">i</field>
-          </block>
-      </value>
-        <value name="SET3">
-          <shadow type="indata">
-            <field name="indata1">범위</field>
-          </shadow>
-        </value>
-      </block>
 
       <!-- 비어있는 리스트 생성 -->
       <block type="lists_create_with">

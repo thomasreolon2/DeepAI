@@ -5,7 +5,7 @@
 Blockly.Blocks['create_list'] = {
   init: function () {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+          .appendField(new Blockly.FieldImage("/img/Collection/C1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
           .appendField(new Blockly.FieldVariable("my_list"), "list")
           .appendField(" = [");
       this.appendValueInput("text")
@@ -42,7 +42,7 @@ Blockly.Blocks['global'] = {
 Blockly.Blocks['list_sort_reverse'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C2-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -91,7 +91,7 @@ Blockly.Blocks['list_index'] = {
 Blockly.Blocks['list_insert'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C1-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C2-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -477,15 +477,16 @@ Blockly.Blocks['set_menu1'] = {
 // 라운드형 반복 조건 블록
 Blockly.Blocks['forif'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C4-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("[리스트]").appendField("반복");
+        this.appendValueInput("SET0").appendField("반복");
         this.appendValueInput("SET1").setCheck(null);
         this.appendValueInput("SET2").setCheck(null).appendField("for");          
         this.appendValueInput("SET3").setCheck(null).appendField("in");   
-        this.appendValueInput("SET4").setCheck(null).appendField("if");                                          
+        this.appendValueInput("SET4").setCheck(null).appendField("if");
+        this.appendValueInput("SET5");                                          
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setstyle("list_blocks");
@@ -498,14 +499,15 @@ Blockly.Blocks['forif'] = {
 // 라운드형 반복 조건 블록
 Blockly.Blocks['forif2'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C4-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField("[리스트]").appendField("반복");
+        this.appendValueInput("SET0").setCheck(null);
         this.appendValueInput("SET1").setCheck(null);
         this.appendValueInput("SET2").setCheck(null).appendField("for");          
-        this.appendValueInput("SET3").setCheck(null).appendField("in");                                            
+        this.appendValueInput("SET3").setCheck(null).appendField("in");     
+        this.appendValueInput("SET4").setCheck(null);                                       
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setstyle("list_blocks");

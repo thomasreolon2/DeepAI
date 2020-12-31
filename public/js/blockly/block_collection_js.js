@@ -68,10 +68,12 @@ Blockly.JavaScript['set_menu1'] = function (block) {
 
 // 라운드형 반복 조건 블록
 Blockly.JavaScript['forif'] = function (block) {
+  var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
   var value_SET1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_SET2 = Blockly.JavaScript.valueToCode(block, 'SET2', Blockly.JavaScript.ORDER_ATOMIC);
   var value_SET3 = Blockly.JavaScript.valueToCode(block, 'SET3', Blockly.JavaScript.ORDER_ATOMIC);
   var value_SET4 = Blockly.JavaScript.valueToCode(block, 'SET4', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_SET5 = Blockly.JavaScript.valueToCode(block, 'SET5', Blockly.JavaScript.ORDER_ATOMIC);
 
   var code = "\n";
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -79,9 +81,11 @@ Blockly.JavaScript['forif'] = function (block) {
 
 // 라운드형 반복 조건 블록
 Blockly.JavaScript['forif2'] = function (block) {
+  var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
   var value_SET1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_SET2 = Blockly.JavaScript.valueToCode(block, 'SET2', Blockly.JavaScript.ORDER_ATOMIC);
   var value_SET3 = Blockly.JavaScript.valueToCode(block, 'SET3', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_SET4 = Blockly.JavaScript.valueToCode(block, 'SET4', Blockly.JavaScript.ORDER_ATOMIC);
 
   var code = "\n";
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
