@@ -588,8 +588,25 @@
         </value>
       </block>
 
-      <block type="pickle_dump"></block>
-      <block type="pickle_load"></block>
+      <block type="pickle_dump">
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1">데이터</field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1">f</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="pickle_load">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1">f</field>
+          </shadow>
+        </value>
+      </block>
 
       <block type = "fd_close"></block>
 
