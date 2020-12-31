@@ -12435,16 +12435,16 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
       }
     
     // 2020.12.20 이성주 -> 변수설정 블록 없앰 (일단 안지워야 할듯..) 
-    // if (Blockly.Blocks.variables_get) {
-    //   a.sort(Blockly.VariableModel.compareByName);
-    //   c = 0;
-    //   for (var e; (e = a[c]); c++)
-    //     (d = Blockly.utils.xml.createElement("block")),
-    //       d.setAttribute("type", "variables_get"),
-    //       d.setAttribute("gap", 8),
-    //       d.appendChild(Blockly.Variables.generateVariableFieldDom(e)),
-    //       b.push(d);
-    // }
+    if (Blockly.Blocks.variables_get) {
+      a.sort(Blockly.VariableModel.compareByName);
+      c = 0;
+      for (var e; (e = a[c]); c++)
+        (d = Blockly.utils.xml.createElement("block")),
+          d.setAttribute("type", "variables_get"),
+          d.setAttribute("gap", 8),
+          d.appendChild(Blockly.Variables.generateVariableFieldDom(e)),
+          b.push(d);
+    }
   }
   return b;
 };
