@@ -650,28 +650,40 @@
       <block type="logic_boolean"></block>
       <!-- null값 -->
       <block type="logic_null"></block>
+
       <!-- 삼항연산자 -->
       <block type="logic_ternary">
         <value name="THEN">
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">True리턴</field>
+          </shadow>
+        </value>
+        <value name="IF">
+          <shadow type="indata">
+            <field name="indata1">조건</field>
           </shadow>
         </value>
         <value name="ELSE">
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">False리턴</field>
           </shadow>
         </value>
       </block>
+
       <block type="logic_ternary2">
         <value name="THEN">
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">True리턴</field>
+          </shadow>
+        </value>
+        <value name="IF">
+          <shadow type="indata">
+            <field name="indata1">조건</field>
           </shadow>
         </value>
         <value name="ELSE">
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">False리턴</field>
           </shadow>
         </value>
       </block>  <!-- 삼항 표현식 ? - : --->
