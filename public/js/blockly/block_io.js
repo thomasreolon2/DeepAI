@@ -205,3 +205,12 @@ Blockly.Blocks['fd_close'] = {
 // function removeOptions() {
 //     dynamicDropdownOptions_ = [];
 // }
+
+// ===== 기태 수정(로컬 파일 열기) 21.01.01======================================================================
+Blockly.JavaScript['fileopen'] = function (block) {
+    var file = block.getFieldValue('csv_url');
+    
+    var code = "\n";
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  };
+  // ===== 기태 수정(로컬 파일 열기) ========================================================================================

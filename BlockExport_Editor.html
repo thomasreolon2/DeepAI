@@ -570,13 +570,13 @@
 
       <block type="indata"></block>
 
+      <!-- 기태 수정(로컬 파일 열기) 21.01.01 ------------------------------------> 	
       <block type = "fd_open">
-        <value name="text">
-          <shadow type="indata">
-            <field name="indata1">경로</field>
-          </shadow>
+        <value name="text">               
+            <block type="fileopen"></block>     
         </value>
       </block>
+	  <!-- 기태 수정 (로컬 파일 열기)---------------------------------------------> 	
 
       <block type = "fd_read"></block>
 
@@ -2952,6 +2952,13 @@
           openTextFile(event.blockId);
         }
 
+        // 기태 수정(로컬 파일 열기) 21.01.01 ==============================================
+        if ('fileopen' == block.type) {
+          console.log("파일 열기");
+          localFileOpen(event.blockId);         
+        }
+        // 기태 수정(로컬 파일 열기) ========================================================
+
         if ('data_csv_read' == block.type) {
           Show_csv();
         }
@@ -3454,17 +3461,48 @@
     </script>
 
     <!-- 기태 처리 (파일) 20.12.29------------------------------------------------------------------------->
-    <!-- 파일 입력 부분과 아래 스크립트 추가 -->
-    <input type="file" id="file_input" name="file-input"
+    <!-- 외부 파일 입력 제거 -->
+    <!-- <input type="file" id="file_input" name="file-input"
     accept=".jpg, .png, .txt, .csv"
     onchange="loadFile(this);"
-    />
+    /> -->
 
     <script>
     var datas="";
     let fss;
     let fileName2="temp";      
     var rows = "";
+    
+    //== 기태 수정 (로컬 파일 열기 ) 21.01.01=============================================
+    function localFileOpen(blockId) {
+      console.log("localFileOpen");
+      var input = document.createElement("input");
+      input.type = "file";
+      input.accept = ".jpg, .png, .txt, .csv"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+      input.onchange = function (e) {
+       
+        if (e.target.files != undefined) {
+          console.log("loadLocalFile-1")
+          var reader = new FileReader();
+        
+          reader.onload = function (e) {
+            datas = e.target.result;          
+            console.log("datas", datas);
+            fss.writeFileSync(fileName2, datas);
+            var block = demoWorkspace.getBlockById(blockId);
+            var bId = Blockly.mainWorkspace.getBlockById(blockId)
+            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
+          };
+
+          fileName2 =  e.target.files[0].name;
+          console.log(fileName2);
+          reader.readAsText(e.target.files[0]);        
+        }
+      };
+
+      input.click();
+    }
+    //== 기태 수정 (로컬 파일 열기 ) ===================================================
 
     function start(){
       console.log("start");

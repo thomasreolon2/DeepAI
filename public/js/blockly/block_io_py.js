@@ -124,3 +124,12 @@ Blockly.Python['fd_close'] = function (block) {
 //   var code = file;
 //   return [code, Blockly.Python.ORDER_ATOMIC];
 // };
+
+// ===== 기태 수정(로컬 파일 열기) 21.01.01=======================================================================
+Blockly.Python['fileopen'] = function (block) {
+  var file = block.getFieldValue('file_path');
+  
+  var code = file;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+// ===== 기태 수정(로컬 파일 열기) ==================================================================================
