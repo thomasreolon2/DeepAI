@@ -1424,6 +1424,7 @@ Blockly.Python.text_getSubstring = function (a) {
   }
   return [d + "[" + b + " : " + a + "]", Blockly.Python.ORDER_MEMBER];
 };
+// 대소문자
 Blockly.Python.text_changeCase = function (a) {
   var b = {
     UPPERCASE: ".upper()",

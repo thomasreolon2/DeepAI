@@ -19,3 +19,13 @@ Blockly.JavaScript['input'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+// 문자다루기 2021.01.02 남지원
+Blockly.JavaScript['text_maker'] = function(block) {
+  var variable_var = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var text_input = block.getFieldValue('INPUT');
+  var dropdown_func = block.getFieldValue('FUNC');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};

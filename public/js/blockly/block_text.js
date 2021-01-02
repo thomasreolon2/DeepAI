@@ -46,13 +46,13 @@ Blockly.Blocks['text_maker'] = {
         .appendField("[문자다루기]")
         .appendField(new Blockly.FieldVariable("item"), "VAR")
         .appendField("에")
-        .appendField(new Blockly.FieldTextInput(""), "INPUT")
+    this.appendValueInput("INPUT").setCheck(null);    
+    this.appendDummyInput()
         .appendField("를")
         .appendField(new Blockly.FieldDropdown([["분리(split)","split"], ["개수(count)","count"], ["위치(find)","find"], ["삽입(join)","join"], ["교체(replace)","replace"], ["대문자로(upper)","upper"],["소문자로(lower)","lower"],["L공백제거(lstrip)","lstrip"],["R공백제거(rstrip)","rstrip"],["양쪽공백제거(strip)","strip"]]), "FUNC");
     this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setOutput(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
