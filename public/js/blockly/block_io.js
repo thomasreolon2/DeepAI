@@ -139,7 +139,7 @@ Blockly.Blocks['fd_read'] = {
                 ".read()", ".read()"
             ],
             [
-                ".readline()", ".readline()"
+                ".readlines()", ".readlines()"
             ]
         ]), "set_menu");      
       this.setPreviousStatement(true, null);
@@ -160,7 +160,7 @@ Blockly.Blocks['fd_write'] = {
                     ".write", ".write"
                 ],
                 [
-                    ".writeline", ".writeline"
+                    ".writelines", ".writelines"
                 ]
             ]), "set_menu"); 
         this.appendValueInput("text")
