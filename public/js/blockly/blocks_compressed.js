@@ -2724,9 +2724,9 @@ Blockly.Blocks.text_getSubstring = {
       this.getInput("ORDINAL1") && this.moveInputBefore("ORDINAL1", "AT2"));
   },
 };
+// 대소문자
 Blockly.Blocks.text_changeCase = {
   init: function () {
-    
     var a = [
       [Blockly.Msg.TEXT_CHANGECASE_OPERATOR_UPPERCASE, "UPPERCASE"],
       [Blockly.Msg.TEXT_CHANGECASE_OPERATOR_LOWERCASE, "LOWERCASE"],

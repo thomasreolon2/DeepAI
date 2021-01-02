@@ -12,7 +12,6 @@ Blockly.Python['char_a_none'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-
 // text_replace
 Blockly.Python['text_replace'] = function(block) {
   var value_text = Blockly.Python.valueToCode(block, 'TEXT', Blockly.Python.ORDER_ATOMIC);
@@ -29,10 +28,37 @@ Blockly.Python['text_maker'] = function(block) {
   var text_input = block.getFieldValue('INPUT');
   var dropdown_func = block.getFieldValue('FUNC');
   // TODO: Assemble Python into code variable.
-  if(variable_var == "count"){
-    var code = ``;
-  } else {
-    var code = '...\n';
+  switch(dropdown_func){
+    case 'split':
+      var code = `${variable_var}.${dropdown_func}('${text_input}')`;
+    break;
+    case 'count':
+      var code = `${variable_var}.${dropdown_func}('${text_input}')`;
+    break;
+    case 'find':
+      var code = `${variable_var}.${dropdown_func}('${text_input}')`;
+    break;
+    case 'join':
+      var code = `"${text_input}".${dropdown_func}(${variable_var})`;
+    break;
+    case 'replace':
+      var code = ``;
+    break;
+    case 'upper':
+      var code = `${variable_var}.${dropdown_func}()`;
+    break;
+    case 'lower':
+      var code = `${variable_var}.${dropdown_func}()`;
+    break;
+    case 'lstrip':
+      var code = `${variable_var}.${dropdown_func}()`;
+    break;
+    case 'rstrip':
+      var code = `${variable_var}.${dropdown_func}()`;
+    break;
+    case 'strip':
+      var code = `${variable_var}.${dropdown_func}()`;
+    break;
   }
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };

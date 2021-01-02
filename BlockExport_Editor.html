@@ -1161,38 +1161,15 @@
           </shadow>
         </value>
       </block> -->
-      <!-- upper, lower -->
-      <block type="text_changeCase">
-        <value name="TEXT">
+     
+      <!-- 문자 다루기 -->
+      <block type="text_maker">
+        <value name="INPUT">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
       </block>
-      <!-- 문자 개수 세기 -->
-      <block type="text_count">
-        <value name="TEXT">
-          <block type="variables_get">
-            <field name="VAR">text</field>
-          </block>
-        </value>
-        <value name="SUB">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- trim -->
-      <block type="text_trim">
-        <value name="TEXT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      
-      <block type="text_maker"></block>
 
       <!-- 문자열 변경 -->
       <block type="text_replace">
