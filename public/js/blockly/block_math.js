@@ -9,7 +9,7 @@ Blockly.Blocks['math_library'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_MATH_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -29,7 +29,7 @@ Blockly.Blocks['math_library'] = {
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_MATH_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -49,7 +49,7 @@ Blockly.Blocks['math_library'] = {
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_MATH_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -62,7 +62,7 @@ Blockly.Blocks['math_library'] = {
         .appendField(new Blockly.FieldDropdown([["파이 (π)", "pi"], ["자연로그 밑 (e)", "e"], ["양의 무한대 (inf)", "inf"], ["nan 값 (nan)", "nan"]]), "NAME")
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_MATH_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }

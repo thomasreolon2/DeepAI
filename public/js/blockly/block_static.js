@@ -9,7 +9,7 @@ Blockly.Blocks['static_library'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_MATH_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -30,7 +30,7 @@ Blockly.Blocks['statistics1'] = {
        .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_MATH_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -51,7 +51,7 @@ Blockly.Blocks['statistics2'] = {
        .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_MATH_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -68,7 +68,7 @@ Blockly.Blocks['random_library'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_MATH_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -87,7 +87,7 @@ Blockly.Blocks['random1'] = {
        .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_MATH_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -108,7 +108,7 @@ Blockly.Blocks['random2'] = {
        .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_MATH_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
