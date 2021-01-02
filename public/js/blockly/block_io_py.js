@@ -43,10 +43,11 @@ Blockly.Python['indata'] = function(block) {
 
 Blockly.Python['fd_open'] = function (block) {
   var dropdown_set_menu = block.getFieldValue('set_menu');
+  var dropdown_set_menu2 = block.getFieldValue('set_menu2');
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = variable_list + ' = open( ' + value_text  + ', "' + dropdown_set_menu + '" )\n';
+  var code = variable_list + ' = open( ' + value_text  + ', "' + dropdown_set_menu + dropdown_set_menu2 + '" )\n';
   return code;
 };
 

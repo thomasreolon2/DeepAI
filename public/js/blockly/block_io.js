@@ -83,34 +83,49 @@ Blockly.Blocks['indata'] = {
 };
 
 Blockly.Blocks['fd_open'] = {
-  init: function () {
-      this.appendDummyInput()
-          .appendField("파일열기")
-          .appendField(new Blockly.FieldVariable("f"), "list")
-          .appendField(" = open( ");
-      this.appendValueInput("text")
-          .setCheck(null);
+    init: function () {
+        this.appendDummyInput()
+            .appendField("파일열기")
+            .appendField(new Blockly.FieldVariable("f"), "list")
+            .appendField(" = open( ");
+        this.appendValueInput("text")
+            .setCheck(null);
+            this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+              [
+                  "읽기쓰기", "wr"
+              ],
+              [
+                  "읽기", "r"
+              ],
+              [
+                  "쓰기", "w"
+              ],
+              [
+                  "추가", "a"
+              ]
+          ]), "set_menu");
       this.appendDummyInput().appendField(new Blockly.FieldDropdown([
-            [
-                "읽기", "r"
-            ],
-            [
-                "쓰기", "w"
-            ],
-            [
-                "추가", "a"
-            ]
-        ]), "set_menu");
-      this.appendDummyInput()
-          .appendField(")");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
-      this.setTooltip("Create a list");
-      this.setHelpUrl("");
-  }
-};
+              [
+                  "텍스트", "t"
+              ],
+              [
+                  "바이트", "b"
+              ],
+              [
+                  "없음", ""
+              ]
+          ]), "set_menu2");
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+        this.setTooltip("Create a list");
+        this.setHelpUrl("");
+    }
+  };
+  
 
 Blockly.Blocks['fd_read'] = {
   init: function () {
