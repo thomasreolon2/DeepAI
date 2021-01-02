@@ -99,3 +99,12 @@ Blockly.Blocks['fileopen'] = {
   }
 };
 // ===== 기태 수정(로컬 파일 열기) =================================================================================
+
+Blockly.JavaScript['withs'] = function(a) {
+  var set0 = Blockly.JavaScript.valueToCode(a, "set0", Blockly.JavaScript.ORDER_CONDITIONAL);
+  var set1 = Blockly.JavaScript.valueToCode(a, "set1", Blockly.JavaScript.ORDER_CONDITIONAL);
+  var d = Blockly.JavaScript.statementToCode(a, "in");
+  // d = Blockly.JavaScript.addLoopTrap(d, a) || Blockly.JavaScript.PASS;
+  d = Blockly.JavaScript.addLoopTrap(d, a);
+  return "\n";
+};

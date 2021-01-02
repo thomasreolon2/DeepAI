@@ -133,3 +133,13 @@ Blockly.Python['fileopen'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 // ===== 기태 수정(로컬 파일 열기) ==================================================================================
+
+  Blockly.Python['withs'] = function(a) {
+  var set0 = Blockly.Python.valueToCode(a, "set0", Blockly.Python.ORDER_CONDITIONAL);
+  var set1 = Blockly.Python.valueToCode(a, "set1", Blockly.Python.ORDER_CONDITIONAL);
+  var d = Blockly.Python.statementToCode(a, "in");
+  // d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
+  d = Blockly.Python.addLoopTrap(d, a);
+  var code = "with " + set0 + " as " + set1 + ":\n" + d;
+  return code;
+};

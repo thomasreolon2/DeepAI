@@ -239,4 +239,25 @@ Blockly.JavaScript['fileopen'] = function (block) {
 
 
 
+
   
+  Blockly.Blocks['withs'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("with");
+      this.appendValueInput("set0")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("as");
+      this.appendValueInput("set1")
+          .setCheck(null);
+      this.appendStatementInput("in")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LIST_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

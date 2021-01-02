@@ -76,7 +76,7 @@
     init: function () {
       this.appendDummyInput()
           .appendField("[삭제] ");
-      this.appendValueInput("SET0").appendField("DELECT FROM").setCheck(null);
+      this.appendValueInput("SET0").appendField("DELETE FROM").setCheck(null);
       this.appendValueInput("SET1").appendField("WHERE").setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);

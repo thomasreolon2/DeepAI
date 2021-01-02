@@ -44,7 +44,7 @@ Blockly.Python['db_delete'] = function (block) {
   var value_SET0 = Blockly.Python.valueToCode(block, 'SET0', Blockly.Python.ORDER_ATOMIC);
   var value_SET1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = "DELECT FROM " + value_SET0 + " WHERE " + value_SET1;
+  var code = "DELETE FROM " + value_SET0 + " WHERE " + value_SET1;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
