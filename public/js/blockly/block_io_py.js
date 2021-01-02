@@ -76,6 +76,10 @@ Blockly.Python['fd_close'] = function (block) {
   return code;
 };
 
+Blockly.Python['print_mutator'] = function (a) {
+  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
+  return [b.join(", "), Blockly.Python.ORDER_ATOMIC]
+};
 
 // Blockly.Python['qqq'] = function (block) {
 //   var file = block.getFieldValue('csv_url');

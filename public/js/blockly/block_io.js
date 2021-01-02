@@ -214,6 +214,112 @@ Blockly.defineBlocksWithJsonArray([
     "helpUrl": ""
   }
 ]);
+
+
+//컬럼추가 블록
+Blockly.Blocks.print_mutator = {
+  init: function () {  
+
+    this.setStyle("list_blocks");
+    this.itemCount_ = 3;
+    this.updateShape_();
+    //this.setOutput(!0, "Array");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
+    this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
+    this.setColour(Blockly.Msg.TEXTS_HUE);
+  }, 
+  mutationToDom: function () {
+    var a = Blockly.utils.xml.createElement("mutation");
+    a.setAttribute("items", this.itemCount_);
+    return a;
+  },
+  domToMutation: function (a) {
+    this.itemCount_ = parseInt(a.getAttribute("items"), 10);
+    this.updateShape_();
+  },
+  decompose: function (a) {
+    var b = a.newBlock("lists_create_with_container");
+    b.initSvg();
+    for (
+      var c = b.getInput("STACK").connection, d = 0;
+      d < this.itemCount_;
+      d++
+    ) {
+      var e = a.newBlock("lists_create_with_item");
+      e.initSvg();
+      c.connect(e.previousConnection);
+      c = e.nextConnection;
+    }
+    return b;
+  },
+  compose: function (a) {
+    var b = a.getInputTargetBlock("STACK");
+    for (a = []; b;)
+      a.push(b.valueConnection_),
+        (b = b.nextConnection && b.nextConnection.targetBlock());
+    for (b = 0; b < this.itemCount_; b++) {
+      var c = this.getInput("ADD" + b).connection.targetConnection;
+      c && -1 == a.indexOf(c) && c.disconnect();
+    }
+    this.itemCount_ = a.length;
+    this.updateShape_();
+    for (b = 0; b < this.itemCount_; b++)
+      Blockly.Mutator.reconnect(a[b], this, "ADD" + b);
+  },
+  saveConnections: function (a) {
+    a = a.getInputTargetBlock("STACK");
+    for (var b = 0; a;) {
+      var c = this.getInput("ADD" + b);
+      a.valueConnection_ = c && c.connection.targetConnection;
+      b++;
+      a = a.nextConnection && a.nextConnection.targetBlock();
+    }
+  },
+  updateShape_: function () {
+    this.itemCount_ && this.getInput("EMPTY")
+      ? this.removeInput("EMPTY")
+      : this.itemCount_ ||
+      this.getInput("EMPTY") ||
+      this.appendDummyInput("EMPTY")
+        .appendField(
+          Blockly.Msg.LISTS_CREATE_EMPTY_TITLE
+        );
+    for (var a = 0; a < this.itemCount_; a++)
+      if (!this.getInput("ADD" + a)) {
+        var b = this.appendValueInput("ADD" + a).setAlign(Blockly.ALIGN_RIGHT);
+        0 == a && b.appendField("출력");
+      }
+    for (; this.getInput("ADD" + a);) this.removeInput("ADD" + a), a++;
+  },
+};
+Blockly.Blocks.lists_create_with_container = {
+  init: function () {
+    this.setStyle("list_blocks");
+    this.appendDummyInput().appendField(
+      "항목추가"
+    );
+    this.appendStatementInput("STACK");
+    this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
+    this.setColour(Blockly.Msg.TEXTS_HUE);
+    this.contextMenu = !1;
+  },
+};
+Blockly.Blocks.lists_create_with_item = {
+  init: function () {
+    this.setStyle("list_blocks");
+    this.appendDummyInput().appendField(
+      Blockly.Msg.LISTS_CREATE_WITH_ITEM_TITLE
+    );
+    this.setPreviousStatement(!0);
+    this.setNextStatement(!0);
+    this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
+    this.setColour(Blockly.Msg.TEXTS_HUE);
+    this.contextMenu = !1;
+  },
+};
 //
 
 

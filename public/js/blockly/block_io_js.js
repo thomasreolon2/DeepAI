@@ -73,7 +73,11 @@ Blockly.JavaScript['fd_close'] = function (block) {
   return code;
 };
 
-
+Blockly.JavaScript['print_mutator'] = function (block) {
+  for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.JavaScript.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
+  return [b.join(", "), Blockly.JavaScript.ORDER_ATOMIC]
+  // TODO: Assemble JavaScript into code variable.
+};
 
 
 // Blockly.JavaScript['qqq'] = function (block) {
