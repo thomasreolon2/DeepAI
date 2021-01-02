@@ -177,7 +177,29 @@ Blockly.Blocks['fd_close'] = {
       this.setHelpUrl("");
   }
 };
-
+Blockly.defineBlocksWithJsonArray([
+// Gp mutator 사용 출력 21.01.02
+{
+    "type": "print_mutator",
+    "message0": "출력 %1 %2",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "NAME"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    style: "text_blocks",
+    "tooltip": "",
+    "helpUrl": ""
+  }
+]);
+//
 
 
 
@@ -214,3 +236,7 @@ Blockly.JavaScript['fileopen'] = function (block) {
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
   };
   // ===== 기태 수정(로컬 파일 열기) ========================================================================================
+
+
+
+  
