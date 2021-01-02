@@ -439,9 +439,9 @@ Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT
  * 2020-12-04 양승국 블록 한글/영어 화
  */
  //결과출력
- Blockly.Msg.TEXT_1_PRINT = '결과출력';
+ Blockly.Msg.TEXT_1_PRINT = '출력';
  //데이터 입력
- Blockly.Msg.TEXT_2_DATAINPUT = '데이터입력';
+ Blockly.Msg.TEXT_2_DATAINPUT = '입력';
  //문자
  Blockly.Msg.TEXT_4_TEXT = '문자';
 //문자열변경 -> 변수
