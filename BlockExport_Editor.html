@@ -1567,21 +1567,7 @@
     <!-- <category name="기존함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category> -->
 
     <category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}"> <!--함수 (Function)-->
-      <!-- 클래스 -->
-      <block type="webclass"></block>
-      <!-- self -->
-      <block type="self">
-        <value name="varset">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      <!-- 클래스 self -->
-      <block type="self_block"></block>  
-      <block type="class_use"></block> 
-      <block type="class_make"></block>
-      
+
       <!-- 함수 -->
       <block type="webdefine">
         <value name="2">
@@ -1612,6 +1598,22 @@
           </shadow>
         </value>
       </block>
+
+      <!-- 클래스 -->
+      <block type="webclass"></block>
+      <!-- self -->
+      <block type="self">
+        <value name="varset">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 클래스 self -->
+      <block type="self_block"></block>  
+      <block type="class_use"></block> 
+      <block type="class_make"></block>
+      
     </category>
 
 
