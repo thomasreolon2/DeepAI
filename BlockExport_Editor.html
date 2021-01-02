@@ -1099,8 +1099,9 @@
     <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> 
       <!-- text -->
       <block type="text"></block>
+      <!-- 문자 연결 -->
       <block type="text_join"></block>
-      <!-- len -->
+      <!-- 문자열 길이 -->
       <block type="text_length">
         <value name="VALUE">
           <shadow type="indata">
@@ -1108,7 +1109,7 @@
           </shadow>
         </value>
       </block>
-      <!-- find-->
+      <!-- 문자 위치 찾기 -->
       <block type="text_indexOf">
         <value name="VALUE">
           <block type="variables_get">

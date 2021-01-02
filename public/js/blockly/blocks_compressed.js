@@ -2489,6 +2489,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_TEXT_TEXT_TOOLTIP}",
     extensions: ["parent_tooltip_when_inline"],
   },
+  // 문자 연결
   {
     type: "text_join",
     message0: "%1",
@@ -2564,6 +2565,7 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_TEXT_ISEMPTY_TOOLTIP}",
     helpUrl: "%{BKY_TEXT_ISEMPTY_HELPURL}",
   },
+  // 문자 위치 찾기
   {
     type: "text_indexOf",
     message0: "%{BKY_TEXT_INDEXOF_TITLE}",

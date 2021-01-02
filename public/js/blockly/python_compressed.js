@@ -1307,11 +1307,12 @@ Blockly.Python.text_append = function (a) {
     b + " = str(" + b + ") + " + Blockly.Python.text.forceString_(a) + "\n"
   );
 };
+// 문자열 길이
 Blockly.Python.text_length = function (a) {
   return [
     "len(" +
       (Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) ||
-        "''") +
+        "") +
       ")",
     Blockly.Python.ORDER_FUNCTION_CALL,
   ];
@@ -1338,7 +1339,7 @@ Blockly.Python.text_indexOf = function (a) {
     c +
     ")";
   return a.workspace.options.oneBasedIndex
-    ? [b + " + 1", Blockly.Python.ORDER_ADDITIVE]
+    ? [b, Blockly.Python.ORDER_ADDITIVE]
     : [b, Blockly.Python.ORDER_FUNCTION_CALL];
 };
 Blockly.Python.text_charAt = function (a) {
@@ -1475,15 +1476,15 @@ Blockly.Python.text_count = function (a) {
   a = Blockly.Python.valueToCode(a, "SUB", Blockly.Python.ORDER_NONE) || "''";
   return [b + ".count(" + a + ")", Blockly.Python.ORDER_MEMBER];
 };
-Blockly.Python.text_replace = function (a) {
-  var b =
-      Blockly.Python.valueToCode(a, "TEXT", Blockly.Python.ORDER_MEMBER) ||
-      "''",
-    c =
-      Blockly.Python.valueToCode(a, "FROM", Blockly.Python.ORDER_NONE) || "''";
-  a = Blockly.Python.valueToCode(a, "TO", Blockly.Python.ORDER_NONE) || "''";
-  return [b + ".replace(" + c + ", " + a + ")", Blockly.Python.ORDER_MEMBER];
-};
+// Blockly.Python.text_replace = function (a) {
+//   var b =
+//       Blockly.Python.valueToCode(a, "TEXT", Blockly.Python.ORDER_MEMBER) ||
+//       "''",
+//     c =
+//       Blockly.Python.valueToCode(a, "FROM", Blockly.Python.ORDER_NONE) || "''";
+//   a = Blockly.Python.valueToCode(a, "TO", Blockly.Python.ORDER_NONE) || "''";
+//   return [b + ".replace(" + c + ", " + a + ")", Blockly.Python.ORDER_MEMBER];
+// };
 Blockly.Python.text_reverse = function (a) {
   return [
     (Blockly.Python.valueToCode(a, "TEXT", Blockly.Python.ORDER_MEMBER) ||
@@ -1603,16 +1604,6 @@ Blockly.Python['list_remove_pop_count_extend'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = value_list+'.'+dropdown_name+'('+value_value+')\n';
   return code;
-};
-
-// text_replace
-Blockly.Python['text_replace'] = function(block) {
-  var value_text = Blockly.Python.valueToCode(block, 'TEXT', Blockly.Python.ORDER_ATOMIC);
-  var value_a = Blockly.Python.valueToCode(block, 'A', Blockly.Python.ORDER_ATOMIC);
-  var value_b = Blockly.Python.valueToCode(block, 'B', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = value_text+'.replace('+value_a+','+value_b+')\n';
-  return [code,Blockly.Python.ORDER_NONE];
 };
 
 Blockly.Python['add_string'] = function(block) {
