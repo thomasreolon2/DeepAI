@@ -1073,3 +1073,8 @@ Blockly.JavaScript['list_insert'] = function(block) {
     
     return "\n";
   };
+
+  Blockly.JavaScript['create_new_list2'] = function(block) {
+    
+    return "\n";
+  };

@@ -51,14 +51,16 @@ Blockly.Blocks['list_sort_reverse'] = {
         this.appendValueInput("LIST").appendField(Blockly.Msg.COLLECTION_13_ARRAYSUM).setCheck(null);
         this.appendDummyInput().appendField(new Blockly.FieldDropdown([
             [
-                Blockly.Msg.COLLECTION_13_REVERSE, "reverse"
+                Blockly.Msg.COLLECTION_13_SORT, "reverse"
             ],
             [
-                Blockly.Msg.COLLECTION_13_SORT, "sort"
+                Blockly.Msg.COLLECTION_13_REVERSE, "sort"
             ]
         ]), "NAME");
         this.setInputsInline(true);
-        this.setOutput(true, null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        //this.setOutput(true, null);
         this.setColour("%{BKY_COLLECTION_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
