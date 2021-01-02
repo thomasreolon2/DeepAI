@@ -1,119 +1,50 @@
 
-  Blockly.JavaScript['os_library'] = function (block) {
+  Blockly.JavaScript['db_create'] = function (block) {
+    var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
-    return code;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
   };
 
-  Blockly.JavaScript['pyodide_library'] = function (block) {
+  Blockly.JavaScript['db_insert'] = function (block) {
+    var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_SET1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
-    return code;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
   };
 
-  Blockly.JavaScript['pickle_library'] = function (block) {
+  Blockly.JavaScript['db_select1'] = function (block) {
+    var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_SET1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_SET2 = Blockly.JavaScript.valueToCode(block, 'SET2', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
-    return code;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
   };
 
-  Blockly.JavaScript['datetime_library'] = function (block) {
+  Blockly.JavaScript['db_select2'] = function (block) {
+    var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_SET1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_SET2 = Blockly.JavaScript.valueToCode(block, 'SET2', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
-    return code;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
   };
 
-  Blockly.JavaScript['os_library'] = function (block) {
+  Blockly.JavaScript['db_update'] = function (block) {
+    var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_SET1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_SET2 = Blockly.JavaScript.valueToCode(block, 'SET2', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
-    return code;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
   };
 
-  Blockly.JavaScript['pickle_dump'] = function (block) {
+  Blockly.JavaScript['db_delete'] = function (block) {
+    var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_SET1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
-    return code;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
   };
-
-  Blockly.JavaScript['pickle_load'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['os_getcwd'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['os_mkdir'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['os_rmdir'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['os_chdir'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-  
-  Blockly.JavaScript['os_listdir'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-  
-  Blockly.JavaScript['os_remove'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['os_rename'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['shutil_copy'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['shutil_copytree'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['shutil_move'] = function (block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-//리성주
-  Blockly.JavaScript['datetime_now'] = function(block) {
-    var value_variables = Blockly.JavaScript.valueToCode(block, 'variables', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['now_method'] = function(block) {
-    var value_object = Blockly.JavaScript.valueToCode(block, 'object', Blockly.JavaScript.ORDER_ATOMIC);
-    var dropdown_datetime_module = block.getFieldValue('datetime_module');
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    return code;
-  };
-  

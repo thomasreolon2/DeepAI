@@ -1105,9 +1105,8 @@
     <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> 
       <!-- text -->
       <block type="text"></block>
-      <!-- 문자 연결 -->
       <block type="text_join"></block>
-      <!-- 문자열 길이 -->
+      <!-- len -->
       <block type="text_length">
         <value name="VALUE">
           <shadow type="indata">
@@ -1115,7 +1114,7 @@
           </shadow>
         </value>
       </block>
-      <!-- 문자 위치 찾기 -->
+      <!-- find-->
       <block type="text_indexOf">
         <value name="VALUE">
           <block type="variables_get">
@@ -1328,18 +1327,7 @@
            </shadow>
          </value>
        </block>
-       <block type="create_new_list2">
-        <value name="NUMBER_TO_CHECK">
-           <shadow type="indata">
-             <field name="indata1">my_list</field>
-           </shadow>
-         </value>
-         <value name="DIVISOR">
-           <shadow type="indata">
-             <field name="indata1"></field>
-           </shadow>
-         </value>
-       </block>
+
       <!-- 비어있는 리스트 생성 -->
       <block type="lists_create_with">
         <mutation items="0"></mutation>
@@ -1727,7 +1715,105 @@
     
     </category> -->
 
-    <category name="%{BKY_CATEGORY_DB}" colour="%{BKY_DB_HUE}"></category>
+    <category name="%{BKY_CATEGORY_DB}" colour="%{BKY_DB_HUE}">
+
+      <!-- 생성 -->
+      <block type = "db_create">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 삽입 -->
+      <block type = "db_insert">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">빈칸</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 조회1 -->
+      <block type = "db_select1">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <shadow type="indata">
+            <field name="indata1">조건</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 조회 -->
+      <block type = "db_select2">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <shadow type="indata">
+            <field name="indata1">빈칸</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 수정 -->
+      <block type = "db_update">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">빈칸</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <shadow type="indata">
+            <field name="indata1">조건</field>
+          </shadow>
+        </value>
+      </block>
+
+
+      <!-- 삭제 -->
+      <block type = "db_delete">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">조건</field>
+          </shadow>
+        </value>
+      </block>
+
+    </category>
+    
     <sep></sep>
 
     

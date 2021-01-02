@@ -1,325 +1,87 @@
-  Blockly.Blocks['os_library'] = {
-    init: function () {
-      this.appendDummyInput()
-          .appendField("[임포트] os");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['pyodide_library'] = {
-    init: function () {
-      this.appendDummyInput()
-          .appendField("[임포트] pyodide");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['pickle_library'] = {
-    init: function () {
-      this.appendDummyInput()
-          .appendField("[임포트] pickle");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['datetime_library'] = {
-    init: function () {
-      this.appendDummyInput()
-          .appendField("[임포트] datetime");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['shutil_library'] = {
-    init: function () {
-      this.appendDummyInput()
-          .appendField("[임포트] shutil");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['pickle_dump'] = {
-    init: function () {
-      this.appendDummyInput()
-        .appendField("Pickle")
-        .appendField("입력")
-        .appendField("(");
-      this.appendValueInput("va1")
-        .setCheck(null)
-      this.appendDummyInput()
-        .appendField(",")
-      this.appendValueInput("va2")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['pickle_load'] = {
-    init: function () {
-      this.appendDummyInput()
-      .appendField("Pickle")
-      .appendField(new Blockly.FieldVariable("data"), "list");
-      this.appendDummyInput()
-        .appendField("불러오기")
-        .appendField("(");
-      this.appendValueInput("va")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
+  var database = 205;
   
-  Blockly.Blocks['os_getcwd'] = {
+  Blockly.Blocks['db_create'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("현재경로 ")
+          .appendField("[생성] ");
+      this.appendValueInput("SET0").appendField("CREATE TABLE IF NOT EXISTS").setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#FF0000");
+      this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
     }
   };
 
-  Blockly.Blocks['os_listdir'] = {
+  Blockly.Blocks['db_insert'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("파일, 디렉터리목록 ")
+          .appendField("[삽입] ");
+      this.appendValueInput("SET0").appendField("INSERT INTO").setCheck(null);
+      this.appendValueInput("SET1").appendField("VALUES").setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#FF0000");
+      this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
     }
   };
 
-
-  Blockly.Blocks['os_mkdir'] = {
+  Blockly.Blocks['db_select1'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("디렉토리생성 ")
-        .appendField("(");
-      this.appendValueInput("va")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
+          .appendField("[조회] ");
+      this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
+      this.appendValueInput("SET1").appendField("FROM").setCheck(null);
+      this.appendValueInput("SET2").appendField("WHERE").setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#FF0000");
+      this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
     }
   };
 
-  Blockly.Blocks['os_rmdir'] = {
+  Blockly.Blocks['db_select2'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("디렉토리삭제 ")
-        .appendField("(");
-      this.appendValueInput("va")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
+          .appendField("[조회] ");
+      this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
+      this.appendValueInput("SET1").appendField("FROM").setCheck(null);
+      this.appendValueInput("SET2").appendField("").setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#FF0000");
+      this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
     }
   };
 
-  Blockly.Blocks['os_chdir'] = {
+  Blockly.Blocks['db_update'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("디렉토리변경 ")
-        .appendField("(");
-      this.appendValueInput("va")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
+          .appendField("[수정] ");
+      this.appendValueInput("SET0").appendField("UPDATE").setCheck(null);
+      this.appendValueInput("SET1").appendField("SET").setCheck(null);
+      this.appendValueInput("SET2").appendField("WHERE").setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#FF0000");
+      this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
     }
   };
 
-  Blockly.Blocks['os_remove'] = {
+  Blockly.Blocks['db_delete'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("파일삭제")
-        .appendField("(");
-      this.appendValueInput("va")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
+          .appendField("[삭제] ");
+      this.appendValueInput("SET0").appendField("DELECT FROM").setCheck(null);
+      this.appendValueInput("SET1").appendField("WHERE").setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#FF0000");
+      this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
     }
   };
-
-  Blockly.Blocks['os_rename'] = {
-    init: function () {
-      this.appendDummyInput()
-        .appendField("파일변경 ")
-        .appendField("(");
-      this.appendValueInput("va1")
-        .setCheck(null)
-      this.appendDummyInput()
-        .appendField(",")
-      this.appendValueInput("va2")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['shutil_copy'] = {
-    init: function () {
-      this.appendDummyInput()
-        .appendField("Shutil")
-        .appendField("파일복사 ")
-        .appendField("(");
-      this.appendValueInput("va1")
-        .setCheck(null)
-      this.appendDummyInput()
-        .appendField(",")
-      this.appendValueInput("va2")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['shutil_copytree'] = {
-    init: function () {
-      this.appendDummyInput()
-        .appendField("Shutil")
-        .appendField("디렉토리복사 ")
-        .appendField("(");
-      this.appendValueInput("va1")
-        .setCheck(null)
-      this.appendDummyInput()
-        .appendField(",")
-      this.appendValueInput("va2")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['shutil_move'] = {
-    init: function () {
-      this.appendDummyInput()
-        .appendField("Shutil")
-        .appendField("파일이동 ")
-        .appendField("(");
-      this.appendValueInput("va1")
-        .setCheck(null)
-      this.appendDummyInput()
-        .appendField(",")
-      this.appendValueInput("va2")
-        .setCheck(null)
-      this.appendDummyInput()
-         .appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("#FF0000");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
-
-
-
-
-
-  //리성주
-  Blockly.Blocks['datetime_now'] = {
-    init: function() {
-      this.appendValueInput("variables")
-          .setCheck(null)
-          .appendField("datetime 객체생성");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("FF0000");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['now_method'] = {
-    init: function() {
-      this.appendValueInput("object")
-          .setCheck(null);
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown([["년도","year"], ["월","month"], ["일","day"], ["시간","hour"], ["분","minute"], ["초","second"], ["요일","weekday()"]]), "datetime_module");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("FF0000");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
-
-
