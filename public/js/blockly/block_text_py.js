@@ -22,3 +22,17 @@ Blockly.Python['text_replace'] = function(block) {
   var code = `${value_text}.replace('${value_a}','${value_b}')`;
   return [code,Blockly.Python.ORDER_NONE];
 };
+
+// 문자다루기 2021.01.02 남지원
+Blockly.Python['text_maker'] = function(block) {
+  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var text_input = block.getFieldValue('INPUT');
+  var dropdown_func = block.getFieldValue('FUNC');
+  // TODO: Assemble Python into code variable.
+  if(variable_var == "count"){
+    var code = ``;
+  } else {
+    var code = '...\n';
+  }
+  return code;
+};
