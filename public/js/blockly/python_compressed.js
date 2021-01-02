@@ -972,14 +972,14 @@ Blockly.Python.math_change = function (block) {
     Blockly.Python.valueToCode(block, "DELTA", Blockly.Python.ORDER_ATOMIC) ||
     "0";
 
-  var a =
-    Blockly.Python.valueToCode(block, "VAR", Blockly.Python.ORDER_ATOMIC) ||
-    "0";
+  //var a =
+  //  Blockly.Python.valueToCode(block, "VAR", Blockly.Python.ORDER_ATOMIC) ||
+  //  "0";
 
-  // a = Blockly.Python.variableDB_.getName(
-  //   a.getFieldValue("VAR"),
-  //   Blockly.VARIABLE_CATEGORY_NAME
-  // );
+  var a = Blockly.Python.variableDB_.getName(
+     block.getFieldValue("VAR"),
+     Blockly.VARIABLE_CATEGORY_NAME
+   );
 
   var dropdown_name = block.getFieldValue("NAME");
   // var val_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
