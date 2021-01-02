@@ -78,7 +78,7 @@ Blockly.Python['fd_close'] = function (block) {
 
 Blockly.Python['print_mutator'] = function (a) {
   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
-  return [b.join(", "), Blockly.Python.ORDER_ATOMIC]
+  return b.join(", ")
 };
 
 // Blockly.Python['qqq'] = function (block) {
