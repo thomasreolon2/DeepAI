@@ -559,7 +559,7 @@
       <block type="printtv">
         <value name="content1">
           <shadow type="indata">
-            <field name="indata1">메시지</field>
+            <field name="indata1">"메시지"</field>
           </shadow>
         </value>
         <value name="content2">
@@ -1178,9 +1178,18 @@
         </value>
       </block> -->
      
-      <!-- 문자 다루기 -->
-      <block type="text_maker">
-        <value name="INPUT">
+      <!-- 문자 편집 -->
+      <block type="text_editing">
+        <value name="INPUT1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 문자 검색 -->
+      <block type="text_search">
+        <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>

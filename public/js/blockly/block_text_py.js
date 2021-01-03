@@ -23,32 +23,61 @@ Blockly.Python['text_replace'] = function(block) {
 };
 
 // 문자다루기 2021.01.02 남지원
-Blockly.Python['text_maker'] = function(block) {
+// Blockly.Python['text_editing'] = function(block) {
+//   var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+//   var text_input = block.getFieldValue('INPUT');
+//   var dropdown_func = block.getFieldValue('FUNC');
+//   // TODO: Assemble Python into code variable.
+//   switch(dropdown_func){
+//     case 'split':
+//       var code = `${variable_var}.${dropdown_func}('${text_input}')`;
+//     break;
+//     case 'count':
+//       var code = `${variable_var}.${dropdown_func}('${text_input}')`;
+//     break;
+//     case 'find':
+//       var code = `${variable_var}.${dropdown_func}('${text_input}')`;
+//     break;
+//     case 'join':
+//       var code = `"${text_input}".${dropdown_func}(${variable_var})`;
+//     break;
+//     case 'replace':
+//       var code = ``;
+//     break;
+//     case 'upper':
+//       var code = `${variable_var}.${dropdown_func}()`;
+//     break;
+//     case 'lower':
+//       var code = `${variable_var}.${dropdown_func}()`;
+//     break;
+//     case 'lstrip':
+//       var code = `${variable_var}.${dropdown_func}()`;
+//     break;
+//     case 'rstrip':
+//       var code = `${variable_var}.${dropdown_func}()`;
+//     break;
+//     case 'strip':
+//       var code = `${variable_var}.${dropdown_func}()`;
+//     break;
+//   }
+//   return [code, Blockly.Python.ORDER_ATOMIC];
+// };
+
+// 문자 편집 2021.01.03 남지원
+Blockly.Python['text_editing'] = function(block) {
   var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
-  var text_input = block.getFieldValue('INPUT');
+  var text_input =  Blockly.Python.valueToCode(block, 'INPUT1', Blockly.Python.ORDER_ATOMIC);
   var dropdown_func = block.getFieldValue('FUNC');
   // TODO: Assemble Python into code variable.
   switch(dropdown_func){
     case 'split':
-      var code = `${variable_var}.${dropdown_func}('${text_input}')`;
-    break;
-    case 'count':
-      var code = `${variable_var}.${dropdown_func}('${text_input}')`;
-    break;
-    case 'find':
-      var code = `${variable_var}.${dropdown_func}('${text_input}')`;
+      var code = `${variable_var}.${dropdown_func}(${text_input})`;
     break;
     case 'join':
       var code = `"${text_input}".${dropdown_func}(${variable_var})`;
     break;
     case 'replace':
-      var code = ``;
-    break;
-    case 'upper':
-      var code = `${variable_var}.${dropdown_func}()`;
-    break;
-    case 'lower':
-      var code = `${variable_var}.${dropdown_func}()`;
+      var code = `${variable_var}.${dropdown_func}(${text_input})`;
     break;
     case 'lstrip':
       var code = `${variable_var}.${dropdown_func}()`;
@@ -60,5 +89,15 @@ Blockly.Python['text_maker'] = function(block) {
       var code = `${variable_var}.${dropdown_func}()`;
     break;
   }
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// 문자 검색 2021.01.03 남지원
+Blockly.Python['text_search'] = function(block) {
+  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var text_input =  Blockly.Python.valueToCode(block, 'INPUT1', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_func = block.getFieldValue('FUNC');
+  // TODO: Assemble Python into code variable.
+  var code = `${variable_var}.${dropdown_func}(${text_input})`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
