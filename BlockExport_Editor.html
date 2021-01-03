@@ -2557,7 +2557,33 @@
       </category>
 
       <category name="DataFrame">
+        <!-- 프레임그룹화 -->
+        <block type="groupby_dataFrame">
+          <value name="colName">
+            <block type="groupby_series_"></block>
+          </value>
+        </block>
+        <!-- 2020-10-15 정지현 컬럼명 변경 -->
+        <block type="df_col_rename"></block>
 
+        <!-- <block type="column_count"></block> -->
+        <!-- <block type="image_list"></block> -->
+        <!-- 결측치 조회 -->
+        <block type="missing_value_inquiry">
+          <value name="mis_data">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+        </block>
+        <!-- 통계 정보 조회 -->
+        <block type="stats_inquiry">
+          <value name="inq_data">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+        </block>
       </category>
       
       <category name="그룹(Group)">
@@ -2730,34 +2756,9 @@
           <block type="groupby_series_"></block>
         </value>
       </block>
-      <!-- 프레임그룹화 -->
-      <block type="groupby_dataFrame">
-        <value name="colName">
-          <block type="groupby_series_"></block>
-        </value>
-      </block>
+      
 
-      <!-- 2020-10-15 정지현 컬럼명 변경 -->
-      <block type="df_col_rename"></block>
-
-      <!-- <block type="column_count"></block> -->
-      <!-- <block type="image_list"></block> -->
-      <!-- 결측치 조회 -->
-      <block type="missing_value_inquiry">
-        <value name="mis_data">
-          <block type="variables_get">
-            <field name="VAR">pd</field>
-          </block>
-        </value>
-      </block>
-      <!-- 통계 정보 조회 -->
-      <block type="stats_inquiry">
-        <value name="inq_data">
-          <block type="variables_get">
-            <field name="VAR">pd</field>
-          </block>
-        </value>
-      </block>
+      
 
       <!-- <block type="pan_aray">
         <value name="aray_array">
