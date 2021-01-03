@@ -1563,7 +1563,7 @@ Blockly.Python['list_sort_reverse'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_list+'.'+dropdown_name+'()';
+  var code = value_list+'.'+dropdown_name+'()\n';
   return code;
 };
 
@@ -1759,7 +1759,7 @@ Blockly.Python.create_new_list = function (a) {
       
       d = b + " % " + a + " == 0";
   }
-  return [d, Blockly.Python.ORDER_RELATIONAL];
+  return [d , Blockly.Python.ORDER_RELATIONAL];
 };
 
 Blockly.Python.create_new_list2 = function (a) {
@@ -1844,5 +1844,5 @@ Blockly.Python.create_new_list2 = function (a) {
       
       d = b + " % " + a + " == 0";
   }
-  return d;
+  return d + "\n";
 };
