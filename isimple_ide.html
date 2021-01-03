@@ -2,149 +2,44 @@
 <html>
   <head>
     <script type="text/javascript">
-      window.languagePluginUrl = "https://pyodide-cdn2.iodide.io/v0.15.0/full/";
-      //window.languagePluginUrl = "https://pyodide-cdn2.iodide.io/v0.16.1/full/";
+      window.languagePluginUrl = 'https://pyodide-cdn2.iodide.io/v0.16.1/full/';
     </script>
-    <!-- <script src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js"></script>    
+    <script src="https://pyodide-cdn2.iodide.io/v0.16.1/full/pyodide.js"></script>
   </head>
-  <body onload="start()">
+  <body>
     <h2>Runtime test</h2>
     <textarea id="code-pane"></textarea>
-    <button id="execute-button">Initializing...</button>   
-    <input type="file" id="file_input" name="file-input"
-      accept=".jpg, .png, .txt, .csv"
-      onchange="loadFile(this);"
-    />
-    <div id="result-pane"></div>    
+    <button id="execute-button">Initializing...</button>
+    <div id="result-pane"></div>
     <script type="text/javascript">
-      var datas="";
-      let fss;
-      let fileName="temp";
-      function start(){
-        console.log("start");
-        datas = "123 test 한글 처리";            
-      }
-
-      var rows = "";
-      function loadFile(sender) {
-        var reader = new FileReader();
-        
-        reader.onload = function (sender) {
-
-          datas = sender.target.result;
-          
-        //  console.log(data);
-          //datas = datas.split(/\r\n|\n/);
-        //   console.log(datas);
-          
-        //   var items = [], 
-        //     item1 = [],
-        //     item2 = [],
-        //     standard_deviation = [],
-        //     xx=[], yy=[];
-        //   for (var i = 1; i < datas.length; i++) {
-        //     rows += "abc" + "\n";    
-        //     console.log(rows);        
-       //    }
-        //   datas = rows
-           console.log("datas", datas);
-           fss.writeFileSync(fileName, datas);
+        globalThis.iodide = {
+            output:{
+                element: (tagName) => {
+                    let outputPane = document.createElement(tagName);
+                    document.querySelector("#result-pane").appendChild(outputPane);
+                    return outputPane;
+                }
+            }
         };
-
-        fileName =  sender.files[0].name;
-        reader.readAsText(sender.files[0]);
-        
-      }
-
-      globalThis.iodide = {
-          output:{
-              element: (tagName) => {
-                  let outputPane = document.createElement(tagName);
-                  document.querySelector("#result-pane").appendChild(outputPane);
-                  return outputPane;
-              }
-          }
-      };
-      let executeButton = document.querySelector('#execute-button');
-      let resultPane = document.querySelector('#result-pane');
-      
-      BrowserFS.install(window);
-      BrowserFS.configure({
-          fs: "LocalStorage"
-      }, function(e) {
-          fss = require('fs');
-
-          var fs = BrowserFS.BFSRequire('fs');
-          /*
-          fss.readFile('/test.txt', 'utf8', function(err, data) {
-             console.log("111");
-             if (err) throw err;
-             datas = data;
-             console.log(data);
-          });
-          */
-
-          //fss.writeFileSync('/test.csv', data);    
-          
-          //console.log('data2:', "");
-          fss.writeFileSync(fileName, "");
-          //fss.writeFileSync('/test.csv', data);
-          languagePluginLoader.then(async ()=>{
-
-           // pyodide._module.packages.dependencies["Pillow"] = []               
-           // pyodide.loadPackage('https://cdn.jsdelivr.net/gh/matham/kivy@pyodide_serve/pyodide_js/Pillow.js')
-            
-            pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy']).then(() => {
-              console.log("Module loaded.");
-            })
-             
-              let FS = pyodide._module.FS;
-              let PATH = pyodide._module.PATH;
-              console.log(FS.mount);
-              console.log(PATH);
-
-              // Create an Emscripten interface for the BrowserFS
-              var BFS = new BrowserFS.EmscriptenFS(FS, PATH);
-              // Create mount point in Emscripten FS
-              FS.createFolder(FS.root, 'data', true, true);
-              // Mount BrowserFS into Emscripten FS
-              FS.mount(BFS, {root: '/'}, '/data');
-
-              pythonCode = `              
+        let executeButton = document.querySelector('#execute-button');
+        let resultPane = document.querySelector('#result-pane');
+        languagePluginLoader.then( ()=>{
+            pyodide.runPython(`
                 import sys
-                from io import StringIO
-                sys.stdout = StringIO()
-                
-                def do_work(*args):                                    
-                  print("")
-
-                import micropip
-                micropip.install('https://files.pythonhosted.org/packages/bc/45/5118a05b0d61173e6eb12bc5804f0fbb6f196adb0a20e0b16efc2b8e98be/seaborn-0.11.0-py3-none-any.whl').then(do_work)
-                #micropip.install('https://files.pythonhosted.org/packages/2b/65/e4a5130b4162d20ed99ff096549a04d18f050cfcdb16fe1643ac751c0181/Pillow-8.0.1-cp37-cp37m-win_amd64.whl').then(do_work)
-              `
-
-              languagePluginLoader.then(() => {
-                return pyodide.loadPackage(['micropip'])
-              }).then(() => {
-                pyodide.runPython(pythonCode);
-              })
-
-              
-          executeButton.textContent = 'Execute';
-          executeButton.addEventListener('click', execute_code);
-      });
-      });
-
-      async function execute_code() {
-          let code = document.querySelector('#code-pane').value;
-          let result = await pyodide.runPythonAsync(code);
-          let stdout = pyodide.runPython("sys.stdout.getvalue()")
-          let stdout_console = document.createElement('div');
-          stdout_console.innerText = stdout;
-          resultPane.appendChild(stdout_console);
-      }
-    </script>   
+                import io
+                sys.stdout = io.StringIO()
+            `);
+            executeButton.textContent = 'Execute';
+            executeButton.addEventListener('click', execute_code);
+        });
+        async function execute_code() {
+            let code = document.querySelector('#code-pane').value;
+            let result = await pyodide.runPythonAsync(code);
+            let stdout = pyodide.runPython("sys.stdout.getvalue()")
+            let stdout_console = document.createElement('div');
+            stdout_console.innerText = stdout;
+            resultPane.appendChild(stdout_console);
+        }
+    </script>
   </body>
 </html>
