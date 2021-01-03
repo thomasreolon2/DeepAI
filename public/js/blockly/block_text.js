@@ -124,11 +124,13 @@ Blockly.Blocks['text_sort'] = {
         .appendField(new Blockly.FieldVariable("item"), "VAR")  
         .appendField("에");
     this.appendValueInput("INPUT1")
-        .setCheck(null);   
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField("만큼");
     this.appendValueInput("INPUT2")
         .setCheck(null);   
     this.appendDummyInput()
-        .appendField("만큼")
+        .appendField("를")
         .appendField(new Blockly.FieldDropdown([["L맞춤(ljust)","ljust"], ["R맞춤(rjust))","rjust"], ["중앙(center)","center"], ["탭지정(extendtabs)","extendtabs"]]), "FUNC");
     this.setInputsInline(true);
     this.setOutput(true, null);
