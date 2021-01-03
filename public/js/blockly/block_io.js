@@ -45,7 +45,7 @@ Blockly.Blocks['printf'] = {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField(Blockly.Msg.TEXT_1_PRINT + " f-");
+        })).appendField(Blockly.Msg.TEXT_1_PRINT);
         this.appendValueInput("content1").setCheck(null);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
