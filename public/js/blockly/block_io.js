@@ -221,7 +221,7 @@ Blockly.Blocks.print_mutator = {
   init: function () {  
 
     this.setStyle("list_blocks");
-    this.itemCount_ = 3;
+    this.itemCount_ = 1;
     this.updateShape_();
     //this.setOutput(!0, "Array");
     this.setInputsInline(true);
