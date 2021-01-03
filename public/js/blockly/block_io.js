@@ -10,8 +10,8 @@ Blockly.Blocks['input1'] = {
           flipRtl: "FALSE"
       }));
       this.appendDummyInput()
-        .appendField(Blockly.Msg.TEXT_2_DATAINPUT)
-        .appendField(new Blockly.FieldTextInput("메시지"), "inputdata");
+          .appendField(Blockly.Msg.TEXT_2_DATAINPUT);
+      this.appendValueInput("content1").setCheck(null);        
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_TEXTS_HUE}");
