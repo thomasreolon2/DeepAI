@@ -2511,9 +2511,9 @@
     <!-- ************************************************** ************************* *************************  -->
     <!-- 2020-09-20 양승국 수정-->
     <category name="%{BKY_CATEGORY_PANDAS}" colour="%{BKY_PANDAS_HUE}"> <!--판다스(Pandas)-->
-      <category name="기본" >
+      <category name="기본" colour="%{BKY_PANDAS_HUE}">
         <!-- pyodide 라이브러리 -->
-        <block type="pyodide_library"></block>
+        <block type="pyodide_library" ></block>
       
         <block type = "csv_url">
           <value name="va">
@@ -2530,7 +2530,7 @@
 
       </category>
 
-      <category name="일반기능">
+      <category name="일반기능" colour="%{BKY_PANDAS_HUE}">
         <block type="corr_inquiry"></block>
         <block type="df_sort"></block>
         <block type="df_columns"></block>
@@ -2538,7 +2538,7 @@
         <block type="df_values"></block>
       </category>
 
-      <category name="Series">
+      <category name="Series" colour="%{BKY_PANDAS_HUE}">
         
         <!-- 시리즈생성 -->
         <block type="pandas_series">
@@ -2588,7 +2588,7 @@
         
       </category>
 
-      <category name="DataFrame">
+      <category name="DataFrame" colour="%{BKY_PANDAS_HUE}">
         <!-- pandas 라이브러리 -->
         <block type="csv_library"></block>
         <!-- <block type="pyo_lib"></block> -->
@@ -2748,7 +2748,7 @@
         </block>
       </category>
       
-      <category name="그룹(Group)">
+      <category name="그룹(Group)" colour="%{BKY_PANDAS_HUE}">
 
       </category>
       <!-- 2020-09-20 양승국 판다스 전체수정-->
@@ -2759,11 +2759,6 @@
             </block>
           </value>
         </block> -->
-      
-      
-      
-      
-      
       
       <!-- <block type="pandas_print"></block> -->
       
