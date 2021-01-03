@@ -67,3 +67,13 @@ Blockly.JavaScript['text_query'] = function(block) {
   var code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+// 문자 슬라이싱 2021.01.03 남지원
+Blockly.JavaScript['text_slice'] = function(block) {
+  var variable_var = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var text_input1 =  Blockly.JavaScript.valueToCode(block, 'INPUT1', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_input2 =  Blockly.JavaScript.valueToCode(block, 'INPUT2', Blockly.JavaScript.ORDER_ATOMIC);
+  var text_input3 =  Blockly.JavaScript.valueToCode(block, 'INPUT3', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

@@ -155,3 +155,30 @@ Blockly.Blocks['text_query'] = {
     this.setHelpUrl("");
   }
 };
+
+// 문자 슬라이싱 2021.01.03 남지원
+Blockly.Blocks['text_slice'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[슬라이싱]")
+        .appendField(new Blockly.FieldVariable("item"), "VAR")  
+        .appendField("[");
+    this.appendValueInput("INPUT1")
+        .setCheck(null);
+        this.appendDummyInput()
+        .appendField(":")   
+    this.appendValueInput("INPUT2")
+        .setCheck(null);  
+        this.appendDummyInput()
+        .appendField(":") 
+    this.appendValueInput("INPUT3")
+        .setCheck(null);   
+    this.appendDummyInput()
+        .appendField("]")
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_TEXTS_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
