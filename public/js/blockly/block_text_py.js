@@ -101,3 +101,32 @@ Blockly.Python['text_search'] = function(block) {
   var code = `${variable_var}.${dropdown_func}(${text_input})`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+// 문자 대소문자 2021.01.03 남지원
+Blockly.Python['text_up_low'] = function(block) {
+  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var dropdown_func = block.getFieldValue('FUNC');
+  // TODO: Assemble Python into code variable.
+  var code = `${variable_var}.${dropdown_func}()`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// 문자 정렬 2021.01.03 남지원
+Blockly.Python['text_sort'] = function(block) {
+  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var text_input =  Blockly.Python.valueToCode(block, 'INPUT1', Blockly.Python.ORDER_ATOMIC);
+  var text_input2 =  Blockly.Python.valueToCode(block, 'INPUT2', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_func = block.getFieldValue('FUNC');
+  // TODO: Assemble Python into code variable.
+  var code = `${variable_var}.${dropdown_func}(${text_input},${text_input2})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// 문자 질의 2021.01.03 남지원
+Blockly.Python['text_query'] = function(block) {
+  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var dropdown_func = block.getFieldValue('FUNC');
+  // TODO: Assemble Python into code variable.
+  var code = `${variable_var}.${dropdown_func}()`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

@@ -1145,7 +1145,7 @@
         </value>
       </block>
       <!-- find-->
-      <block type="text_indexOf">
+      <!-- <block type="text_indexOf">
         <value name="VALUE">
           <block type="variables_get">
             <field name="VAR">text</field>
@@ -1156,7 +1156,7 @@
             <field name="TEXT">abc</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- a[0] -->
       <!-- <block type="text_charAt">
         <value name="VALUE">
@@ -1207,8 +1207,41 @@
         </value>
       </block>
 
+      <!-- 문자 대소문자 -->
+      <block type="text_up_low">
+        <value name="INPUT1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      
+      <!-- 문자 정렬 -->
+      <block type="text_sort">
+        <value name="INPUT1">
+          <shadow type="indata">
+            <field name="indata1">10</field>
+          </shadow>
+        </value>
+        <value name="INPUT2">
+          <shadow type="indata">
+            <field name="indata1">''</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 문자 질의 -->
+      <block type="text_query">
+        <value name="INPUT1">
+          <shadow type="indata">
+            <field name="indata1">10</field>
+          </shadow>
+        </value>
+      </block>
+
       <!-- 문자열 변경 -->
-      <block type="text_replace">
+      <!-- <block type="text_replace">
         <value name="TEXT">
           <block type="variables_get">
             <field name="VAR">text</field>
@@ -1224,7 +1257,7 @@
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block>
+      </block> -->
     </category>
 
     <!-- #####################################################################################################  -->

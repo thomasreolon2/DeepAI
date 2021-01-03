@@ -98,3 +98,60 @@ Blockly.Blocks['text_search'] = {
     this.setHelpUrl("");
   }
 };
+
+// 문자 대소문자 2021.01.03 남지원
+Blockly.Blocks['text_up_low'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[대소]")
+        .appendField(new Blockly.FieldVariable("item"), "VAR"); 
+    this.appendDummyInput()
+        .appendField("를")
+        .appendField(new Blockly.FieldDropdown([["대문자(upper)","upper"], ["소문자(lower)","lower"], ["첫문자(title)","title"], ["첫문장(capitalize)","capitalize"],["교환(swapcase)","swapcase"]]), "FUNC");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_TEXTS_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+// 문자 정렬 2021.01.03 남지원
+Blockly.Blocks['text_sort'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[정렬]")
+        .appendField(new Blockly.FieldVariable("item"), "VAR")  
+        .appendField("에");
+    this.appendValueInput("INPUT1")
+        .setCheck(null);   
+    this.appendValueInput("INPUT2")
+        .setCheck(null);   
+    this.appendDummyInput()
+        .appendField("만큼")
+        .appendField(new Blockly.FieldDropdown([["L맞춤(ljust)","ljust"], ["R맞춤(rjust))","rjust"], ["중앙(center)","center"], ["탭지정(extendtabs)","extendtabs"]]), "FUNC");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_TEXTS_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+
+// 문자 대소문자 2021.01.03 남지원
+Blockly.Blocks['text_query'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[질의]")
+        .appendField(new Blockly.FieldVariable("item"), "VAR"); 
+    this.appendDummyInput()
+        .appendField("를")
+        .appendField(new Blockly.FieldDropdown([["문자(isalpha)","isalpha"], ["숫자(isdigit)","isdigit"], ["문숫자(isalnum)","isalnum"], ["대문자(isupper)","isupper"],["소문자(islower)","islower"]]), "FUNC");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_TEXTS_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
