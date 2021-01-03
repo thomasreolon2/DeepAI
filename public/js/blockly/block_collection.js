@@ -483,7 +483,7 @@ Blockly.Blocks['forif'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendValueInput("SET0").appendField("반복");
+        this.appendValueInput("SET0");
         this.appendValueInput("SET1").setCheck(null);
         this.appendValueInput("SET2").setCheck(null).appendField("for");          
         this.appendValueInput("SET3").setCheck(null).appendField("in");   
