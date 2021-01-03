@@ -1495,7 +1495,31 @@ Blockly.Blocks['class_func_param'] = {
       }
     }
   };
-
+  Blockly.Blocks.lists_create_with_container = {
+    init: function () {
+      this.setStyle("list_blocks");
+      this.appendDummyInput().appendField(
+        "항목추가"
+      );
+      this.appendStatementInput("STACK");
+      this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
+      this.setColour(125);
+      this.contextMenu = !1;
+    },
+  };
+  Blockly.Blocks.lists_create_with_item = {
+    init: function () {
+      this.setStyle("list_blocks");
+      this.appendDummyInput().appendField(
+        Blockly.Msg.LISTS_CREATE_WITH_ITEM_TITLE
+      );
+      this.setPreviousStatement(!0);
+      this.setNextStatement(!0);
+      this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
+      this.setColour(125);
+      this.contextMenu = !1;
+    },
+  };
 
   //크롤링 url 가져오기 
   Blockly.Blocks['script_block'] = {
