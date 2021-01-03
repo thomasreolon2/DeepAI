@@ -1,6 +1,6 @@
 Blockly.Python['math_library'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
-    var code = "from math import *\n";
+    var code = "import math \n";
     return code;
   };
 
