@@ -138,6 +138,6 @@ Blockly.Python['text_slice'] = function(block) {
   var text_input2 =  Blockly.Python.valueToCode(block, 'INPUT2', Blockly.Python.ORDER_ATOMIC);
   var text_input3 =  Blockly.Python.valueToCode(block, 'INPUT3', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${variable_var}([${text_input1}:${text_input2}:${text_input3}])`;
+  var code = `${variable_var}[${text_input1}:${text_input2}:${text_input3}]`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
