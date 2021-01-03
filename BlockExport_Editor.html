@@ -2559,6 +2559,13 @@
         <!-- 공통컬럼x -->
         <block type="pandas_merge_lron"></block>
 
+        <!-- 시리즈그룹화 -->
+        <block type="groupby_series">
+          <value name="colName">
+            <block type="groupby_series_"></block>
+          </value>
+        </block>
+        
       </category>
 
       <category name="DataFrame">
@@ -2751,16 +2758,6 @@
       </block>
       <!-- 2020-09-16 양승국-->
       <!-- <block type="nm"></block> -->
-
-      <!-- 시리즈그룹화 -->
-      <block type="groupby_series">
-        <value name="colName">
-          <block type="groupby_series_"></block>
-        </value>
-      </block>
-      
-
-      
 
       <!-- <block type="pan_aray">
         <value name="aray_array">
