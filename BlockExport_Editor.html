@@ -969,11 +969,9 @@
     <!-- ******************************   연산(Operation)                       ******************************* -->
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_OPERATION}" colour="%{BKY_MATH_HUE}">
-      <label text="import"></label>
-      <block type = "static_library"></block>
-      <block type = "random_library"></block>
-      <block type = "math_library"></block>
+
       <label text="수학"></label>
+      <block type = "math_library"></block>
       <block type="math_number">
         <field name="NUM">0</field>
       </block>
@@ -1084,7 +1082,9 @@
       <block type = "math3"></block>
 
       <!--2020-12-29 전우진 math1 end -->
-      <label text="통계"></label>
+      <label text="통계 및 랜덤"></label>
+
+      <block type = "static_library"></block>
 
       <block type = "statistics1">
         <value name="va">
@@ -1107,8 +1107,7 @@
         </value>
       </block>
 
-      <label text="랜덤"></label>
-
+      <block type = "random_library"></block>
       <block type = "random1">
         <value name="va">
           <shadow type="indata">
