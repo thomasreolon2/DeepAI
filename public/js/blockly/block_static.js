@@ -75,13 +75,26 @@ Blockly.Blocks['random_library'] = {
 };
 
 //2020-09-19 양승국 블록수정
-Blockly.Blocks['random1'] = {
+Blockly.Blocks['random1_integer'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("랜덤")
-      .appendField(new Blockly.FieldDropdown([["정수랜덤(random)", "random"], ["랜덤원소하나추출(choice)", "choice"], ["셔플(shuffle)", "shuffle"]]), "NAME")
+      .appendField("정수랜덤(random)( )")
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_MATH_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['random1_choice'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("랜덤")
+      .appendField("추출(choice)")
       .appendField("(");
-    this.appendValueInput("va")
+    this.appendValueInput("va2")
       .setCheck(null)
     this.appendDummyInput()
        .appendField(")");
@@ -93,12 +106,51 @@ Blockly.Blocks['random1'] = {
   }
 };
 
+Blockly.Blocks['random1_shuffle'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("랜덤")
+      .appendField("셔플(shuffle)")
+      .appendField("(");
+    this.appendValueInput("va3")
+      .setCheck(null)
+    this.appendDummyInput()
+       .appendField(")");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    //this.setOutput(true, null);
+    this.setColour("%{BKY_MATH_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
 //2020-09-19 양승국 블록수정
 Blockly.Blocks['random2'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("랜덤")
-      .appendField(new Blockly.FieldDropdown([["정수랜덤(randint)", "1"], ["랜덤추출(sample)", "2"]]), "NAME")
+      .appendField(new Blockly.FieldDropdown([["정수랜덤(randint)", "1"],["실수랜덤(randuniform)", "3"]]), "NAME")
+      .appendField("(");
+    this.appendValueInput("va1")
+      .setCheck(null);
+    this.appendValueInput("va2")
+      .setCheck(null);
+    this.appendDummyInput()
+       .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_MATH_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['random3'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("랜덤")
+      .appendField("랜덤추출(sample)")
       .appendField("(");
     this.appendValueInput("va1")
       .setCheck(null);

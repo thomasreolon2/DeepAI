@@ -1107,11 +1107,29 @@
         </value>
       </block>
 
+<<<<<<< Updated upstream
       <block type = "random_library"></block>
       <block type = "random1">
         <value name="va">
+=======
+      <label text="랜덤"></label>
+
+      <block type = "random1_integer  ">
+      </block>
+
+      <block type = "random1_choice">
+        <value name="va2">
+>>>>>>> Stashed changes
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">컬렉션</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "random1_shuffle">
+        <value name="va3">
+          <shadow type="indata">
+            <field name="indata1">컬렉션</field>
           </shadow>
         </value>
       </block>
@@ -1119,17 +1137,28 @@
       <block type = "random2">
         <value name="va1">
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">시작</field>
           </shadow>
         </value>
         <value name="va2">
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">끝</field>
           </shadow>
         </value>
       </block>
 
-
+      <block type = "random3">
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1">컬렉션</field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1">갯수</field>
+          </shadow>
+        </value>
+      </block>
     </category>
 
     <!-- #####################################################################################################  -->
@@ -1991,6 +2020,13 @@
         <block type="numpy_library"></block>
       <!-- import numpy as np -->
 
+      <block type = "create_np_array">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">1,2,'a','b'</field>
+          </shadow>
+        </value>
+      </block>
       <!-- numpy.array -->
       <block type="np_array">
         <value name="np_array_val">
@@ -2005,7 +2041,18 @@
        <!-- 넘파이 기본연산 -->
        <block type="numpy_operator">
         <value name="numpy_operator_val">
-          <block type="parameter_two"></block>
+          <block type="parameter_two">
+            <value name="par1">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+            <value name="par2">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
         </value> 
       </block>
       <!-- 넘파이 기본연산 -->
@@ -2014,7 +2061,18 @@
       <!-- 행렬 연산-->
       <block type="numpy_array_operator">
         <value name="numpy_array_operator_val">
-          <block type="parameter_two"></block>
+          <block type="parameter_two">
+            <value name="par1">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+            <value name="par2">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
         </value> 
       </block>
       <!-- 행렬 연산 -->
@@ -2022,7 +2080,13 @@
        <!-- 넘파이 인덱스/값 검색 -->
        <block type="numpy_index_values">
         <value name="numpy_index_values_val">
-          <block type="class_func_param"></block>
+          <block type="class_func_param">
+            <value name="ADD">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
         </value> 
       </block>
       <!-- 넘파이 인덱스/값 검색 -->
@@ -2030,7 +2094,18 @@
        <!-- 넘파이 인덱스/값 검색 인자 두개-->
        <block type="numpy_index_values2">
         <value name="numpy_index_values_val">
-          <block type="parameter_two"></block>
+          <block type="parameter_two">
+            <value name="par1">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+            <value name="par2">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
         </value> 
       </block>
       <!-- 넘파이 인덱스/값 검색 인자 두개-->
@@ -2038,7 +2113,13 @@
        <!-- 넘파이 인덱스/값 검색 인자 하나-->
        <block type="numpy_index_values3">
         <value name="numpy_index_values_val">
-          <block type="parameter_one"></block>
+          <block type="parameter_one">
+            <value name="par1">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
         </value> 
       </block>
       <!-- 넘파이 인덱스/값 검색 인자 하나-->
@@ -2046,7 +2127,8 @@
       <!-- 통계 / 평균 & 분산  -->
       <block type="numpy_averages_variances">
         <value name="numpy_Averages_variances_val"> 
-          <block type="class_func_param"></block>
+          <block type="class_func_param">
+          </block>
         </value>  
       </block>
       <!-- 통계 / 평균 & 분산  -->

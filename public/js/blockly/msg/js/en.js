@@ -522,6 +522,7 @@ Blockly.Msg['COLLECTION_16_LIST'] = "list";
 Blockly.Msg['COLLECTION_16_ELEMETNT'] = "element";
 Blockly.Msg['COLLECTION_16_EXTEND'] = "extend";
 Blockly.Msg['COLLECTION_16_COUNT'] = "count of element";
+Blockly.Msg['COLLECTION_16_INDEX'] = "index";
 Blockly.Msg['COLLECTION_16_POP'] = "pull out";
 Blockly.Msg['COLLECTION_16_APPEND'] = "append";
 

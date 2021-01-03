@@ -1688,7 +1688,7 @@ Blockly.defineBlocksWithJsonArray([
           //["%{BKY_COLLECTION_13_REVERSE}", "REVERSE"], //mutator 마스터 후 사용 
           //["%{BKY_COLLECTION_13_SORT}", "SORT"],
           //["test", "DIVISIBLE_BY"],//%{BKY_MATH_IS_DIVISIBLE_BY}
-          ["%{BKY_LISTS_INDEX}", "INDEX"],
+          ["%{BKY_COLLECTION_16_INDEX}", "INDEX"],
           //["%{BKY_LISTS_SPLIT_LIST_FROM_TEXT}", "SPLIT"],
           //["%{BKY_LISTS_SPLIT_TEXT_FROM_LIST}", "JOIN"],
           //["%{BKY_COLLECTION_16_EXTEND}", "EXTEND"],

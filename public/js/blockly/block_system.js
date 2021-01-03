@@ -31,7 +31,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#FF0000");
+      this.setColour("%{BKY_LIST_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -80,7 +80,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#FF0000");
+      this.setColour("%{BKY_LIST_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -101,7 +101,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#FF0000");
+      this.setColour("%{BKY_LIST_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }

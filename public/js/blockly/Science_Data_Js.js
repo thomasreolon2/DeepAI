@@ -591,7 +591,7 @@ Blockly.JavaScript['parameter_two'] = function(block) {
   var value_par1 = Blockly.JavaScript.valueToCode(block, 'par1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_par2 = Blockly.JavaScript.valueToCode(block, 'par2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '...\n';
   return code;
 };
 

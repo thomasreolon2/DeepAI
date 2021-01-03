@@ -504,8 +504,8 @@ Blockly.Msg['COLLECTION_11_CHANGEVAL'] = "바꿀 값";
 Blockly.Msg['COLLECTION_12_ARRAYSUM'] = "배열 합계";
 
 Blockly.Msg['COLLECTION_13_LIST'] = "리스트";
-Blockly.Msg['COLLECTION_13_REVERSE'] = "역순";
-Blockly.Msg['COLLECTION_13_SORT'] = "정렬";
+Blockly.Msg['COLLECTION_13_REVERSE'] = "역순(reverse)";
+Blockly.Msg['COLLECTION_13_SORT'] = "정렬(sort)";
 
 
 Blockly.Msg['COLLECTION_14_FINDVALUE'] = "리스트에서 값 찾기 ->";
@@ -518,11 +518,12 @@ Blockly.Msg['COLLECTION_15_END'] = "을";
 
 Blockly.Msg['COLLECTION_16_LIST'] = "리스트";
 Blockly.Msg['COLLECTION_16_ELEMETNT'] = "요소";
-Blockly.Msg['COLLECTION_16_EXTEND'] = "확장";
-Blockly.Msg['COLLECTION_16_COUNT'] = "개수";
-Blockly.Msg['COLLECTION_16_POP'] = "끝삭제";
-Blockly.Msg['COLLECTION_16_REMOVE'] = "삭제";
-Blockly.Msg['COLLECTION_16_APPEND'] = "붙임";
+Blockly.Msg['COLLECTION_16_EXTEND'] = "확장(extend)";
+Blockly.Msg['COLLECTION_16_COUNT'] = "개수(count)";
+Blockly.Msg['COLLECTION_16_INDEX'] = "인덱스(index)";
+Blockly.Msg['COLLECTION_16_POP'] = "끝삭제(pop)";
+Blockly.Msg['COLLECTION_16_REMOVE'] = "삭제(remove)";
+Blockly.Msg['COLLECTION_16_APPEND'] = "붙임(append)";
 
 Blockly.Msg['COLLECTION_17_SPLIT'] = "리스트 자르기";
 

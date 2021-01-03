@@ -42,23 +42,53 @@ Blockly.Python['random_library'] = function (block) {
   return code;
 };
 
-Blockly.Python['random1'] = function (block) {
-  var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_name = block.getFieldValue('NAME');
+// 랜덤정렬
+Blockly.Python['random1_integer'] = function (block) {
+  //var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
+  //var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = "random." + dropdown_name + '(' + value_name + ')';
+  var code = "random.random()";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+// 랜덤.choice
+Blockly.Python['random1_choice'] = function (block) {
+  var value_name = Blockly.Python.valueToCode(block, 'va2', Blockly.Python.ORDER_ATOMIC);
+  //var dropdown_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = "random.choice(" + value_name + ")";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
 
+// 랜덤.shuffle
+Blockly.Python['random1_shuffle'] = function (block) {
+  var value_name = Blockly.Python.valueToCode(block, 'va3', Blockly.Python.ORDER_ATOMIC);
+  //var dropdown_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = "random.shuffle(" + value_name + ")\n";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
 Blockly.Python['random2'] = function (block) {
   var value_name1 = Blockly.Python.valueToCode(block, 'va1', Blockly.Python.ORDER_ATOMIC);
   var value_name2 = Blockly.Python.valueToCode(block, 'va2', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
   if (dropdown_name == 1)   var code = "random.randint" + '(' + value_name1 + ", " + value_name2 + ')';
-  else if (dropdown_name == 2) var code = "random.sample" + '(' + value_name1 + ", " + value_name2 + ')';
+  //else if (dropdown_name == 2) var code = "random.sample" + '(' + value_name1 + ", " + value_name2 + ')';
+  else if (dropdown_name == 3) var code = "random.ramduniform" + '(' + value_name1 + ", " + value_name2 + ')';
   // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['random3'] = function (block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'va1', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'va2', Blockly.Python.ORDER_ATOMIC);
+  //var dropdown_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = "random.sample" + '(' + value_name1 + ", " + value_name2 + ')';
+
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

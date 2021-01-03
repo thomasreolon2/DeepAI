@@ -1486,6 +1486,7 @@ Blockly.Blocks['class_func_param'] = {
           if (i == 0) {
             // input.appendField("array"); 
           }
+          
         }
       }
       // Remove deleted inputs.
