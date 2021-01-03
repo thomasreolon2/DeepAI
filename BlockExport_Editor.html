@@ -595,14 +595,10 @@
 
       
       <category name="시스템(os)" colour="%{BKY_OS_HUE}">
-        <label text="import"></label>
-  
-        <block type="os_library"></block>
-        <block type="datetime_library"></block>
-        <block type="shutil_library"></block>
   
         <label text="OS"></label>
-  
+        
+        <block type="os_library"></block>
         <block type="os_getcwd">
         
         </block>
@@ -657,6 +653,9 @@
   
   
         <label text="DateTime"></label>
+
+        <block type="datetime_library"></block>
+
         <!-- datetime 객체 생성 리성주-->
         <block type = "datetime_now">
           <value name = "variables">
@@ -675,7 +674,9 @@
         </block>
   
         <label text="Shutil"></label>
-  
+        
+        <block type="shutil_library"></block>
+
         <block type="shutil_copy">
           <value name="va1">
             <shadow type="indata">
