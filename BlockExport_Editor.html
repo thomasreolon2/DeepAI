@@ -2512,6 +2512,21 @@
     <!-- 2020-09-20 양승국 수정-->
     <category name="%{BKY_CATEGORY_PANDAS}" colour="%{BKY_PANDAS_HUE}"> <!--판다스(Pandas)-->
       <category name="기본" >
+        <!-- pyodide 라이브러리 -->
+        <block type="pyodide_library"></block>
+      
+        <block type = "csv_url">
+          <value name="va">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+      
+        <!-- 전체범위 -->
+        <block type="selec_value_all"></block>
+        <!-- 부분범위 -->
+        <block type="iloc_range"></block>
 
       </category>
 
@@ -2740,28 +2755,12 @@
             </block>
           </value>
         </block> -->
-      <!-- pyodide 라이브러리 -->
-      <block type="pyodide_library"></block>
-      
-
-      <block type = "csv_url">
-        <value name="va">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
       
       
       
       
       
-      <!-- 전체범위 -->
-      <block type="selec_value_all"></block>
-      <!-- 부분범위 -->
-      <block type="iloc_range"></block>
-
+      
       <!-- <block type="pandas_print"></block> -->
       
       <!-- <block type="save_image"></block> -->
