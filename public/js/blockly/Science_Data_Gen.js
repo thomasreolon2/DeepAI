@@ -20,6 +20,25 @@ Blockly.Python['numpy_index_values'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+//인덱스/값 검색
+Blockly.Python['numpy_index_values2'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_index_values_val = Blockly.Python.valueToCode(block, 'numpy_index_values_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code =`${dropdown_numpy_operator_option}(${value_numpy_index_values_val})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+//인덱스/값 검색
+Blockly.Python['numpy_index_values3'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_index_values_val = Blockly.Python.valueToCode(block, 'numpy_index_values_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = "np.nonzero(" + value_numpy_index_values_val + ")";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
 //행렬 연산
 Blockly.Python['numpy_array_operator'] = function(block) {
   var dropdown_numpy_array_operator_option = block.getFieldValue('numpy_array_operator_Option');
@@ -912,7 +931,7 @@ Blockly.Python['class_instance_function'] = function(block) {
 //클래스 함수 매개변수  
 Blockly.Python['class_func_param'] = function (a) {
   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++)
-     b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "self";
+     b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "";
   return [b.join(", "), Blockly.Python.ORDER_ATOMIC]
 };
 
@@ -977,3 +996,19 @@ print(bsObject) # 웹 문서 전체가 출력됩니다. `
   return code;
 };
 
+//넘파이 매개변수 두 개
+Blockly.Python['parameter_two'] = function(block) {
+  var value_par1 = Blockly.Python.valueToCode(block, 'par1', Blockly.Python.ORDER_ATOMIC);
+  var value_par2 = Blockly.Python.valueToCode(block, 'par2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_par1 + ',' + value_par2;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+//넘파이 매개변수 한 개
+Blockly.Python['parameter_one'] = function(block) {
+  var value_par1 = Blockly.Python.valueToCode(block, 'par1', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_par1;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

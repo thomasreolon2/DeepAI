@@ -130,7 +130,7 @@ Blockly.defineBlocksWithJsonArray(
     {
       "type": "field_input", 
       "name": "Create_arry_val",
-      "text": "ex) 1,2,3,4"
+      "text": "1,2,'a','b'"
     }
   ],
   "inputsInline": true,
@@ -491,7 +491,7 @@ Blockly.defineBlocksWithJsonArray(
       {
         "type": "field_input",
         "name": "numpy_reshape_struct",
-        "text": "ex)4,5,5"
+        "text": "행수,열수"
       }
     ],
     "inputsInline": true,
@@ -948,7 +948,7 @@ Blockly.defineBlocksWithJsonArray(
       this.appendValueInput("numpy_operator_val")
           .setCheck(null) 
           .appendField(Blockly.Msg.NUMPY_CALCULATION_1)
-          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_CALCULATION_2,"np.add"], [Blockly.Msg.NUMPY_CALCULATION_3,"np.subtract"], [Blockly.Msg.NUMPY_CALCULATION_4,"np.multiply"], [Blockly.Msg.NUMPY_CALCULATION_5,"np.divide"], [Blockly.Msg.NUMPY_CALCULATION_6,"np.remainder"], [Blockly.Msg.NUMPY_CALCULATION_7,"np.reciprocal "]]), "numpy_operator_Option");
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_CALCULATION_2,"np.add"], [Blockly.Msg.NUMPY_CALCULATION_3,"np.subtract"], [Blockly.Msg.NUMPY_CALCULATION_4,"np.multiply"], [Blockly.Msg.NUMPY_CALCULATION_5,"np.divide"], [Blockly.Msg.NUMPY_CALCULATION_6,"np.remainder"], [Blockly.Msg.NUMPY_CALCULATION_7,"np.reciprocal"]]), "numpy_operator_Option");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");
@@ -964,7 +964,7 @@ Blockly.defineBlocksWithJsonArray(
       this.appendValueInput("numpy_index_values_val")
           .setCheck(null)
           .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_1)
-          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_2,"np.amax"], [Blockly.Msg.NUMPY_INDEX_VALUES_3,"np.subtract"], [Blockly.Msg.NUMPY_INDEX_VALUES_4,"np.argmax"], [Blockly.Msg.NUMPY_INDEX_VALUES_5,"np.argsort"], [Blockly.Msg.NUMPY_INDEX_VALUES_6,"np.nonzero "], [Blockly.Msg.NUMPY_INDEX_VALUES_7,"np.take "], [Blockly.Msg.NUMPY_INDEX_VALUES_8,"np.where "]]), "numpy_operator_Option");
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_2,"np.amax"], [Blockly.Msg.NUMPY_INDEX_VALUES_3,"np.amin"], [Blockly.Msg.NUMPY_INDEX_VALUES_8,"np.where"]]), "numpy_operator_Option");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");
@@ -972,14 +972,41 @@ Blockly.defineBlocksWithJsonArray(
    this.setHelpUrl("");
     }
   };
-
+  //인덱스/값 검색 인자 두개짜리
+  Blockly.Blocks['numpy_index_values2'] = {
+    init: function() {
+      this.appendValueInput("numpy_index_values_val")
+          .setCheck(null)
+          .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_1)
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_4,"np.argmax"], [Blockly.Msg.NUMPY_INDEX_VALUES_5,"np.argsort"], [Blockly.Msg.NUMPY_INDEX_VALUES_7,"np.take"]]), "numpy_operator_Option");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  //인덱스/값 검색 인자 하나짜리
+  Blockly.Blocks['numpy_index_values3'] = {
+    init: function() {
+      this.appendValueInput("numpy_index_values_val")
+          .setCheck(null)
+          .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_1)
+          .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_6);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
   //행렬 연산
   Blockly.Blocks['numpy_array_operator'] = {
     init: function() {
       this.appendValueInput("numpy_array_operator_val")
           .setCheck(null)
           .appendField(Blockly.Msg.NUMPY_ARRAY_OPERATOR_1)
-          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_ARRAY_OPERATOR_2,"np.dot "], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_3,"np.subtract"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_4,"np.transpose "], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_5,"np.tril"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_6,"np.triu "]]), "numpy_array_operator_Option");
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_ARRAY_OPERATOR_2,"np.dot"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_3,"np.subtract"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_4,"np.transpose"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_5,"np.tril"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_6,"np.triu"]]), "numpy_array_operator_Option");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");
@@ -1484,10 +1511,35 @@ Blockly.Blocks['class_func_param'] = {
     }
   };
 
+  // 넘파이 매개변수 두개짜리
+  Blockly.Blocks['parameter_two'] = {
+    init: function() {
+      this.setStyle("list_blocks");
+      this.appendValueInput("par1")
+          .setCheck(null);
+      this.appendValueInput("par2")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setColour(125);
+    this.setOutput(true);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+  };
 
-
-
-
+  // 넘파이 매개변수 하나짜리
+  Blockly.Blocks['parameter_one'] = {
+    init: function() {
+      this.setStyle("list_blocks");
+      this.appendValueInput("par1")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setColour(125);
+    this.setOutput(true);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+  };
 //클래스 함수 statement 형식  
 // Blockly.Blocks['class_func'] = {
 //   /**

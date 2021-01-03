@@ -9,7 +9,7 @@ Blockly.Blocks['numpy_order_static'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl(""); 
   }
@@ -25,7 +25,7 @@ Blockly.Blocks['numpy_averages_variances'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -42,7 +42,7 @@ Blockly.Blocks['numpy_correlating'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -58,7 +58,7 @@ Blockly.Blocks['numpy_sorting'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   } 
@@ -74,7 +74,7 @@ Blockly.Blocks['numpy_searching'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -90,7 +90,7 @@ Blockly.Blocks['numpy_random_sample'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -107,7 +107,7 @@ Blockly.Blocks['numpy_random_permutations'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -124,7 +124,7 @@ Blockly.Blocks['numpy_random_distributions'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl(""); 
   }
@@ -140,7 +140,7 @@ Blockly.Blocks['numpy_random_distributions_two'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -157,7 +157,7 @@ Blockly.Blocks['numpy_random_distributions_third'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -174,7 +174,7 @@ Blockly.Blocks['numpy_random_generator'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -191,7 +191,7 @@ Blockly.Blocks['numpy_mathematical_functions'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -207,7 +207,7 @@ Blockly.Blocks['numpy_hyperbolic_functions'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -224,7 +224,7 @@ Blockly.Blocks['numpy_rounding'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -240,7 +240,7 @@ Blockly.Blocks['numpy_exponents_logarithms'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -263,7 +263,7 @@ Blockly.Blocks['numpy_arithmetic_operations1'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -280,7 +280,7 @@ Blockly.Blocks['numpy_arithmetic_operations2'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -296,7 +296,7 @@ Blockly.Blocks['numpy_handling_complex_numbers'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -312,7 +312,7 @@ Blockly.Blocks['numpy_sums_differences'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -329,7 +329,7 @@ Blockly.Blocks['numpy_matrix_vector_products'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -347,7 +347,7 @@ Blockly.Blocks['numpy_matrix_decomposition'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -364,7 +364,7 @@ Blockly.Blocks['numpy_array_contents'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -381,7 +381,7 @@ Blockly.Blocks['numpy_comparison'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -403,7 +403,7 @@ Blockly.Blocks['numpy_string_operations'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -424,7 +424,7 @@ Blockly.Blocks['numpy_string_operations2'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -449,7 +449,7 @@ Blockly.Blocks['numpystring_information'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -465,7 +465,7 @@ Blockly.Blocks['numpy_changing_array_shape'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -481,7 +481,7 @@ Blockly.Blocks['numpy_transpose_like_operations'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -497,7 +497,7 @@ Blockly.Blocks['numpy_changing_number'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -513,7 +513,7 @@ Blockly.Blocks['numpy_changing_kind_array'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -529,7 +529,7 @@ Blockly.Blocks['numpy_joining_arrays'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -545,7 +545,7 @@ Blockly.Blocks['numpy_splitting_arrays'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -561,7 +561,7 @@ Blockly.Blocks['numpy_adding_removing_elements'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -577,7 +577,7 @@ Blockly.Blocks['numpy_rearranging_elements'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -593,7 +593,7 @@ Blockly.Blocks['numpy_ones_and_zeros'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -609,7 +609,7 @@ Blockly.Blocks['numpy_from_existing_data'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -625,7 +625,7 @@ Blockly.Blocks['numpy_creating_record_arrays'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -641,7 +641,7 @@ Blockly.Blocks['numpy_numerical_ranges'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -657,7 +657,7 @@ Blockly.Blocks['numpy_building_matrices'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(240);
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }

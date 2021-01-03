@@ -18,7 +18,24 @@ Blockly.JavaScript['numpy_index_values'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
-
+//인덱스/값 검색
+Blockly.JavaScript['numpy_index_values2'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_index_values_val = Blockly.JavaScript.valueToCode(block, 'numpy_index_values_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+//인덱스/값 검색
+Blockly.JavaScript['numpy_index_values3'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_index_values_val = Blockly.JavaScript.valueToCode(block, 'numpy_index_values_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
 
 //행렬 연산
 Blockly.JavaScript['numpy_array_operator'] = function(block) {
@@ -569,8 +586,23 @@ Blockly.JavaScript['script_block'] = function(block) {
   return code;
 }; 
 
+// 넘파이 매개변수 두개
+Blockly.JavaScript['parameter_two'] = function(block) {
+  var value_par1 = Blockly.JavaScript.valueToCode(block, 'par1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_par2 = Blockly.JavaScript.valueToCode(block, 'par2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
 
-
+// 넘파이 매개변수 두개
+Blockly.JavaScript['parameter_one'] = function(block) {
+  var value_par1 = Blockly.JavaScript.valueToCode(block, 'par1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_par2 = Blockly.JavaScript.valueToCode(block, 'par2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
 //클래스 함수 statement 형식 
 // Blockly.JavaScript['class_func'] = function(block) {
 //   var text_class_func_name = block.getFieldValue('class_func_name');

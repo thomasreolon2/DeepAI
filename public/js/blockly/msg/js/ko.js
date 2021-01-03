@@ -596,29 +596,29 @@ Blockly.Msg['MUTATOR_ADD_ITEM'] = "항목추가";
 // ---- 넘파이
 Blockly.Msg['NUMPY_IMPORT_1'] = "[ 임포트 ] numpy를 np로";
 
-Blockly.Msg['NUMPY_CALCULATION_1'] = "[ 수학 연산 ]";
-Blockly.Msg['NUMPY_CALCULATION_2'] = "배열 덧셈 (np.add)";
-Blockly.Msg['NUMPY_CALCULATION_3'] = "배열 뺄셈 ( np.subtract )";
-Blockly.Msg['NUMPY_CALCULATION_4'] = "배열 곱 ( np.multiply )";
-Blockly.Msg['NUMPY_CALCULATION_5'] = "배열 나눗셈 ( np.divide  )";
-Blockly.Msg['NUMPY_CALCULATION_6'] = "배열 나머지 반환 ( np.remainder )";
-Blockly.Msg['NUMPY_CALCULATION_7'] = "배열 역수 ( np.reciprocal  )";
+Blockly.Msg['NUMPY_CALCULATION_1'] = "[np 산술]";
+Blockly.Msg['NUMPY_CALCULATION_2'] = "요소별덧셈(add)";
+Blockly.Msg['NUMPY_CALCULATION_3'] = "요소별뺄셈(subtract)";
+Blockly.Msg['NUMPY_CALCULATION_4'] = "요소별곱(multiply)";
+Blockly.Msg['NUMPY_CALCULATION_5'] = "요소별나눗셈(divide)";
+Blockly.Msg['NUMPY_CALCULATION_6'] = "요소별나머지 반환(remainder)";
+Blockly.Msg['NUMPY_CALCULATION_7'] = "배열 역수(reciprocal)";
 
-Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[ 인덱스 / 값 검색 ]";
-Blockly.Msg['NUMPY_INDEX_VALUES_2'] = "배열 최댓값 ( np.amax)";
-Blockly.Msg['NUMPY_INDEX_VALUES_3'] = "배열 최소값 ( np.amin )";
-Blockly.Msg['NUMPY_INDEX_VALUES_4'] = "최대값 인덱스 ( np.argmax )";
-Blockly.Msg['NUMPY_INDEX_VALUES_5'] = "배열 정렬 인덱스 ( np.argsort )";
-Blockly.Msg['NUMPY_INDEX_VALUES_6'] = "배열 아닌 인덱스 ( np.nonzero )"; // 0이 아닌 인덱스값 반환 --> ????
-Blockly.Msg['NUMPY_INDEX_VALUES_7'] = "인덱스를 이용한 배열요소 가져오기 ( np.take )";
-Blockly.Msg['NUMPY_INDEX_VALUES_8'] = "해당 조건 인덱스 ( np.where )";
+Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[np 순서]";
+Blockly.Msg['NUMPY_INDEX_VALUES_2'] = "배열최댓값(amax)";
+Blockly.Msg['NUMPY_INDEX_VALUES_3'] = "배열최소값(amin)";
+Blockly.Msg['NUMPY_INDEX_VALUES_4'] = "최대값 인덱스(argmax)";
+Blockly.Msg['NUMPY_INDEX_VALUES_5'] = "배열 정렬 인덱스(argsort)";
+Blockly.Msg['NUMPY_INDEX_VALUES_6'] = "배열 아닌 인덱스(nonzero)"; // 0이 아닌 인덱스값 반환 --> ????
+Blockly.Msg['NUMPY_INDEX_VALUES_7'] = "배열요소 가져오기(take)";
+Blockly.Msg['NUMPY_INDEX_VALUES_8'] = "해당 조건 인덱스(where)";
 
-Blockly.Msg['NUMPY_ARRAY_OPERATOR_1'] = "[ 행렬 연산 ]";
-Blockly.Msg['NUMPY_ARRAY_OPERATOR_2'] = "두 배열의 내적 연산 ( np.dot)";
-Blockly.Msg['NUMPY_ARRAY_OPERATOR_3'] = "두 배열 행렬 곱 ( np.matmul )";
-Blockly.Msg['NUMPY_ARRAY_OPERATOR_4'] = "전치 행렬 ( np.transpose  )";
-Blockly.Msg['NUMPY_ARRAY_OPERATOR_5'] = "하삼각 행렬 ( np.tril )";
-Blockly.Msg['NUMPY_ARRAY_OPERATOR_6'] = "상삼각행렬 ( np.triu )";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_1'] = "[np 행렬&벡터]";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_2'] = "두배열내적(dot)";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_3'] = "두배열 행렬곱(matmul)";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_4'] = "전치 행렬(transpose)";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_5'] = "하삼각 행렬(tril)";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_6'] = "상삼각행렬(triu)";
 
 Blockly.Msg['NUMPY_DATA_TO_CSV_1'] = "[ CSV 파일로 저장 ] 변수  %1 (  %2  )";
 Blockly.Msg['NUMPY_DATA_TO_CSV_2'] = " 파일 이름 ";
@@ -629,7 +629,7 @@ Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ 리스트 변환 ] 변수  %1 데이
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "[ 배열 연결 ] ((   %1 , %2 ))"; 
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_2'] = "값"; 
 
-Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[ 넘파이 배열 ] %1"; 
+Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[np 배열] %1"; 
 
 Blockly.Msg['NUMPY_CREATE_ARR_1'] = "[ 배열 값 ] %1"; 
 
@@ -649,7 +649,7 @@ Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )";
 
 Blockly.Msg['NUMPY_SHAPE_1'] = "[ 행렬 차원 ] %1 변수  %2";
 
-Blockly.Msg['NUMPY_RESHAPE_1'] = "[ 행렬 차원 변경 ] 원본 %1 %2 변경 차원 %3";
+Blockly.Msg['NUMPY_RESHAPE_1'] = "[np 차원] 배열 %1 %2 차원 %3";
 
 Blockly.Msg['NUMPY_FLATTEN_1'] = "[ 행렬 1차원 변경 ] 변수 %1 %2";
 

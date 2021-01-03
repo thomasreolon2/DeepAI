@@ -632,7 +632,7 @@ Blockly.Msg['NUMPY_DATA_CONVERSION_2'] = "  data format    ";
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "[array concatenation ] ((   %1 , %2 ))"; 
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_2'] = "value"; 
 
-Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[numpy array]  %1";
+Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[np array]  %1";
 
 Blockly.Msg['NUMPY_CREATE_ARR_1'] = "[ array value ]  %1"; 
 

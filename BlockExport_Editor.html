@@ -2001,11 +2001,11 @@
       <!-- np.reshape  -->
       <block type="numpy_reshape"> </block>
       <!-- np.reshape  -->
-
+      <label text="연산"></label>
        <!-- 넘파이 기본연산 -->
        <block type="numpy_operator">
         <value name="numpy_operator_val">
-          <block type="class_func_param"></block>
+          <block type="parameter_two"></block>
         </value> 
       </block>
       <!-- 넘파이 기본연산 -->
@@ -2014,11 +2014,11 @@
       <!-- 행렬 연산-->
       <block type="numpy_array_operator">
         <value name="numpy_array_operator_val">
-          <block type="class_func_param"></block>
+          <block type="parameter_two"></block>
         </value> 
       </block>
       <!-- 행렬 연산 -->
-
+      <label text="인덱스/값 검색"></label>
        <!-- 넘파이 인덱스/값 검색 -->
        <block type="numpy_index_values">
         <value name="numpy_index_values_val">
@@ -2027,6 +2027,22 @@
       </block>
       <!-- 넘파이 인덱스/값 검색 -->
 
+       <!-- 넘파이 인덱스/값 검색 인자 두개-->
+       <block type="numpy_index_values2">
+        <value name="numpy_index_values_val">
+          <block type="parameter_two"></block>
+        </value> 
+      </block>
+      <!-- 넘파이 인덱스/값 검색 인자 두개-->
+
+       <!-- 넘파이 인덱스/값 검색 인자 하나-->
+       <block type="numpy_index_values3">
+        <value name="numpy_index_values_val">
+          <block type="parameter_one"></block>
+        </value> 
+      </block>
+      <!-- 넘파이 인덱스/값 검색 인자 하나-->
+      <label text=""></label>
       <!-- 통계 / 평균 & 분산  -->
       <block type="numpy_averages_variances">
         <value name="numpy_Averages_variances_val"> 
