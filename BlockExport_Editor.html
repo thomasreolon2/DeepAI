@@ -2514,15 +2514,52 @@
       <category name="기본" >
 
       </category>
+
       <category name="일반기능">
 
       </category>
-      <category name="Series">
 
+      <category name="Series">
+              <!-- 시리즈생성 -->
+        <block type="pandas_series">
+          <value name="ser_var">
+            <block type="variables_get">
+              <field name="VAR">ds</field>
+           </block>
+          </value>
+          <value name="ser_data">
+           <block type="pandas_series_data"></block>
+          </value>
+        </block>
+      
+          <!-- 시리즈 concat -->
+        <block type="pandas_concat">
+          <value name="cat_vl">
+            <block type="variables_get">
+              <field name="VAR">ds</field>
+            </block>
+          </value>
+        </block>
+        <!-- 2020-09-17 양승국 블록추가 -->
+      
+        <!-- 시리즈 merge -->
+        <block type="pandas_merge">
+         <value name="mer_var">
+            <block type="variables_get">
+              <field name="VAR">ds</field>
+            </block>
+         </value>
+         <value name="connet_way">
+           <block type="pandas_merge_oncol"></block>
+          </value>
+        </block>
+      
       </category>
+
       <category name="DataFrame">
 
       </category>
+      
       <category name="그룹(Group)">
 
       </category>
@@ -2683,37 +2720,6 @@
       </block>
       <!-- 2020-09-16 양승국-->
       <!-- <block type="nm"></block> -->
-      <!-- 시리즈생성 -->
-      <block type="pandas_series">
-        <value name="ser_var">
-          <block type="variables_get">
-            <field name="VAR">ds</field>
-          </block>
-        </value>
-        <value name="ser_data">
-          <block type="pandas_series_data"></block>
-        </value>
-      </block>
-      <!-- 시리즈 concat -->
-      <block type="pandas_concat">
-        <value name="cat_vl">
-          <block type="variables_get">
-            <field name="VAR">ds</field>
-          </block>
-        </value>
-      </block>
-      <!-- 2020-09-17 양승국 블록추가 -->
-      <!-- 시리즈 merge -->
-      <block type="pandas_merge">
-        <value name="mer_var">
-          <block type="variables_get">
-            <field name="VAR">ds</field>
-          </block>
-        </value>
-        <value name="connet_way">
-          <block type="pandas_merge_oncol"></block>
-        </value>
-      </block>
       <!-- 공통컬럼0 -->
       <block type="pandas_merge_oncol"></block>
       <!-- 공통컬럼x -->
@@ -2799,7 +2805,7 @@
       <!--  matplot1 시각화 틀    -->
       <block type="matplotlib_main">
         <value name="matplotlib_main_cols">
-          <shadow type="math_number">
+          <shadow t 
             <field name="NUM">2</field>
           </shadow>
         </value>
