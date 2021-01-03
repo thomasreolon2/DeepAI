@@ -593,64 +593,11 @@
       
       <block type="indata"></block>
 
-      <!-- 기태 수정(로컬 파일 열기) 21.01.01 ------------------------------------> 	
-      <block type = "fd_open">
-        <value name="text">               
-            <block type="fileopen"></block>     
-        </value>
-      </block>
-	  <!-- 기태 수정 (로컬 파일 열기)---------------------------------------------> 	
-
-      <block type = "fd_read"></block>
-
-      <block type = "fd_write">
-        <value name="text">
-          <block type="variables_get">
-            <field name="VAR">data</field>
-          </block>
-        </value>
-      </block>
-
-      <block type="pickle_dump">
-        <value name="va1">
-          <shadow type="indata">
-            <field name="indata1">데이터</field>
-          </shadow>
-        </value>
-        <value name="va2">
-          <shadow type="indata">
-            <field name="indata1">f</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="pickle_load">
-        <value name="va">
-          <shadow type="indata">
-            <field name="indata1">f</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "fd_close"></block>
-
-      <block type = "withs">
-        <value name="set0">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="set1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
       
       <category name="시스템(os)" colour="%{BKY_OS_HUE}">
         <label text="import"></label>
   
         <block type="os_library"></block>
-        <block type="pickle_library"></block>
         <block type="datetime_library"></block>
         <block type="shutil_library"></block>
   
@@ -769,7 +716,63 @@
         </block>
 
       </category>
+      <category name="파일(file)" colour="255">
+        <block type="pickle_library"></block>
+
+        <!-- 기태 수정(로컬 파일 열기) 21.01.01 ------------------------------------> 	
+      <block type = "fd_open">
+        <value name="text">               
+            <block type="fileopen"></block>     
+        </value>
+      </block>
+	  <!-- 기태 수정 (로컬 파일 열기)---------------------------------------------> 	
+
+      <block type = "fd_read"></block>
+
+      <block type = "fd_write">
+        <value name="text">
+          <block type="variables_get">
+            <field name="VAR">data</field>
+          </block>
+        </value>
+      </block>
+
+      <block type="pickle_dump">
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1">데이터</field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1">f</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="pickle_load">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1">f</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "fd_close"></block>
+
+      <block type = "withs">
+        <value name="set0">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="set1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
       
+      </category>
     </category>
     <!-- #####################################################################################################  -->
     <!-- ******************************   논리(Logic)  조건, 판단                ******************************* -->
@@ -1206,7 +1209,7 @@
         </shadow>
       </value>
     </block>
-    
+
       <!-- 문자 편집 -->
       <block type="text_editing">
         <value name="INPUT1">
