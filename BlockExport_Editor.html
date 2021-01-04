@@ -213,6 +213,11 @@
     <script src="/js/blockly/block_ysk_py.js"></script>
     <script src="/js/blockly/block_ysk_js.js"></script>
     <!-- 블록 -->
+
+    <!-- 임시 판다스 전우진 -->
+    <script src="/js/blockly/woojin.js"></script>
+    <script src="/js/blockly/woojin_py.js"></script>
+    <script src="/js/blockly/woojin_js.js"></script>
   
 
   <!-- #####################################################################################################  -->
@@ -2552,6 +2557,12 @@
         <block type="df_columns"></block>
         <block type="df_index"></block>
         <block type="df_values"></block>
+        <!-- 시리즈그룹화 -->
+        <block type="groupby_series">
+          <value name="colName">
+          <block type="groupby_series_"></block>
+          </value>
+        </block>
       </category>
 
       <category name="Series" colour="%{BKY_PANDAS_HUE}">
