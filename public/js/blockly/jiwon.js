@@ -63,3 +63,25 @@ Blockly.Blocks['block_cumsum'] = {
    this.setHelpUrl("");
    }
 };
+
+// 판다스 사칙연산
+Blockly.Blocks['block_calculations'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[사칙연산]")
+          .appendField(new Blockly.FieldVariable("df"), "VAR")
+          .appendField(".");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["더하기(add)","add"],["빼기(sub)","sub"],["곱하기(mul)","mul"],["나누기(div)","div"]]), "DROP")
+          .appendField("(");
+      this.appendValueInput("INPUT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+   }
+};
