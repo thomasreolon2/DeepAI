@@ -2561,74 +2561,7 @@
       <!-- import numpy as np -->
       
     </category>
-    <category name="지원">
-      <block type="block_tail_head">
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
 
-      <block type="block_sum_min">
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-
-      <block type="block_cumsum">
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-
-      <block type="block_calculations">
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-
-      <block type="pandas_sort">
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-
-      <block type="pandas_corr">
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="INPUT2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-      <block type="pandas_stack">
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-      <block type="pandas_nanull">
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-    </category>
     <!-- ************************************************** ************************* *************************  -->
     <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
     <!-- ************************************************** ************************* *************************  -->
@@ -2680,6 +2613,73 @@
           <block type="groupby_series_"></block>
           </value>
         </block>
+
+        <block type="block_tail_head">
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+  
+        <block type="block_sum_min">
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+  
+        <block type="block_cumsum">
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+  
+        <block type="block_calculations">
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+  
+        <block type="pandas_sort">
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+  
+        <block type="pandas_corr">
+          <value name="INPUT1">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="INPUT2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+        <block type="pandas_stack">
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+        <block type="pandas_nanull">
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
       </category>
 
       <category name="Series" colour="%{BKY_PANDAS_HUE}">
