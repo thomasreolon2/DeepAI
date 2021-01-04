@@ -219,7 +219,10 @@
     <script src="/js/blockly/woojin_py.js"></script>
     <script src="/js/blockly/woojin_js.js"></script>
   
-
+<!--neighbors 블록-->
+<script src="/js/blockly/jiwon.js"></script>
+<script src="/js/blockly/jiwon_py.js"></script>
+<script src="/js/blockly/jiwon_js.js"></script>
   <!-- #####################################################################################################  -->
   <!-- ******************************                CSS                      ******************************* -->
   <!-- #####################################################################################################  -->
@@ -2528,7 +2531,39 @@
       <!-- import numpy as np -->
       
     </category>
-   
+    <category name="지원">
+      <block type="block_tail_head">
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block> 
+
+      <block type="block_sum_min">
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block> 
+
+      <block type="block_cumsum">
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block> 
+
+      <block type="block_calculations">
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block> 
+    </category>
     <!-- ************************************************** ************************* *************************  -->
     <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
     <!-- ************************************************** ************************* *************************  -->
@@ -2784,6 +2819,47 @@
       </category>
       
       <category name="그룹(Group)" colour="%{BKY_PANDAS_HUE}">
+
+      </category>
+      <category name = "ysk" colour = 244>
+        
+        <block type = "df_values"></block>
+
+        <block type = "df_columns"></block>
+
+        <block type = "df_T"></block>
+
+        <block type = "df_pivot_table">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1">df, values=['D', 'E'], index=['A', 'C'], aggfunc={'D': np.mean,'E': np.mean}</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "df_ap">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1">np.average, axis=0</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "df_bb">
+          <value name = "LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "df_set_index">
+          <value name = "LIST">
+            <shadow type="indata">
+              <field name="indata1">'month'</field>
+            </shadow>
+          </value>
+        </block>
 
       </category>
       <!-- 2020-09-20 양승국 판다스 전체수정-->
