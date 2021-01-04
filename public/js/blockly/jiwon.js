@@ -85,3 +85,89 @@ Blockly.Blocks['block_calculations'] = {
    this.setHelpUrl("");
    }
 };
+
+// 판다스 정렬
+Blockly.Blocks['pandas_sort'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[정렬]")
+          .appendField(new Blockly.FieldVariable("df"), "VAR")
+          .appendField(".");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["인덱스정렬(sort_index)","sort_index"],["값정렬(sort_values)","sort_values"]]), "DROP")
+          .appendField("(");
+      this.appendValueInput("INPUT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+   }
+};
+
+// 판다스 상관관계
+Blockly.Blocks['pandas_corr'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[상관관계]");
+      this.appendValueInput("INPUT1")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(".")
+          .appendField(new Blockly.FieldDropdown([["두변수간(corr)","corr"], ["모든변수간(corrwith)","corrwith"],["두변수공분산(cov)","cov"]]), "DROP");
+      this.appendValueInput("INPUT2")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // 판다스 스택
+Blockly.Blocks['pandas_stack'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[스택]")
+          .appendField(new Blockly.FieldVariable("df"), "VAR")
+          .appendField(".");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["스택(stack)","stack"],["스택해제(unstack)","unstack"]]), "DROP")
+          .appendField("(");
+      this.appendValueInput("INPUT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+   }
+};
+
+  // 판다스 난,널 판단
+  Blockly.Blocks['pandas_nanull'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[nan,null판단]")
+          .appendField(new Blockly.FieldVariable("df"), "VAR")
+          .appendField(".");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["nan인지(isna)","isna"],["nan아닌지(notna)","notna"],["nan버리기(dropna)","dropna"],["null인지(isnull)","isnull"],["null아닌지(notnull)","notnull"]]), "DROP")
+          .appendField("(");
+      this.appendValueInput("INPUT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+   }
+};
