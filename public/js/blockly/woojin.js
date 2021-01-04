@@ -25,7 +25,7 @@ Blockly.Blocks['sr_name'] = {
 Blockly.Blocks['sr_is_in'] = {
     init: function () {
       this.appendDummyInput().appendField(Blockly.Msg.PANDAS_CORR_INQUIRY);
-      this.appendValueInput("data").setCheck(null)
+      this.appendField(new Blockly.FieldVariable("data"), "1")
       this.appendValueInput("data2").setCheck(null)
       this.setColour(pandas_color);
       this.setInputsInline(true);

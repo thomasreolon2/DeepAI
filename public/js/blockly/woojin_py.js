@@ -13,10 +13,10 @@ Blockly.Python['sr_name'] = function (block) {
   };
 
   Blockly.Python['sr_is_in'] = function (block) {
-    var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+    var variable_1 = Blockly.Python.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
     var variable_data2 = Blockly.Python.valueToCode(block, 'data2', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = variable_data + ".is_in(" + variable_data2 +")" + "\n";
+    var code = variable_1 + ".is_in(" + variable_data2 +")" + "\n";
     return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
