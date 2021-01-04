@@ -79,7 +79,7 @@ Blockly.Blocks['random1_integer'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("랜덤")
-      .appendField("정수랜덤(random)( )")
+      .appendField("0~1사이값(random)( )")
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_MATH_HUE}");
@@ -130,7 +130,7 @@ Blockly.Blocks['random2'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("랜덤")
-      .appendField(new Blockly.FieldDropdown([["정수랜덤(randint)", "1"],["실수랜덤(randuniform)", "3"]]), "NAME")
+      .appendField(new Blockly.FieldDropdown([["정수(randint)", "1"],["실수(randuniform)", "3"]]), "NAME")
       .appendField("(");
     this.appendValueInput("va1")
       .setCheck(null);
@@ -150,7 +150,7 @@ Blockly.Blocks['random3'] = {
   init: function () {
     this.appendDummyInput()
       .appendField("랜덤")
-      .appendField("랜덤추출(sample)")
+      .appendField("추출(sample)")
       .appendField("(");
     this.appendValueInput("va1")
       .setCheck(null);
