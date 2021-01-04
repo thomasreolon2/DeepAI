@@ -490,15 +490,6 @@ Blockly.Blocks['set_menu1'] = {
             ],
             [
                 Blockly.Msg.COLLECTION_11_DIFFERENCE, "difference"
-            ],
-            [
-                Blockly.Msg.COLLECTION_11_ADD, "add"
-            ],
-            [
-                Blockly.Msg.COLLECTION_11_UPDATE, "update"
-            ],
-            [
-                Blockly.Msg.COLLECTION_11_REMOVE, "remove"
             ]
         ]), "set_menu");                                                                 
         this.setInputsInline(true);
