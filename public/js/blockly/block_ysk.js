@@ -169,3 +169,18 @@ Blockly.Blocks['df_series3'] = {
       this.setHelpUrl("");
   }
 };
+
+//df_agg
+Blockly.Blocks['df_agg'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[그룹]").appendField(new Blockly.FieldVariable("df"), "list");
+      this.appendValueInput("LIST").appendField(".agg(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
