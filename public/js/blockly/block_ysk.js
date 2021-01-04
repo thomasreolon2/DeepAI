@@ -121,3 +121,51 @@ Blockly.Blocks['df_set_index'] = {
  this.setHelpUrl("");
   }
 };
+
+
+
+////////////////////////////////
+//df_series1
+Blockly.Blocks['df_series1'] = {
+  init: function () {
+      this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("df"), "list");
+      this.appendValueInput("LIST").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+//df_series2
+Blockly.Blocks['df_series2'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("df"), "list");
+      this.appendValueInput("LIST").appendField("[").setCheck(null);
+      this.appendDummyInput().appendField("]");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+//df_series3
+Blockly.Blocks['df_series3'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("df"), "list");
+      this.appendValueInput("LIST").appendField("[").setCheck("Boolean");
+      this.appendDummyInput().appendField("]");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
