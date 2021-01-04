@@ -8,7 +8,7 @@ Blockly.Python['df_values'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".values";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 //columns
@@ -17,7 +17,7 @@ Blockly.Python['df_columns'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".columns";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 //T
@@ -26,7 +26,7 @@ Blockly.Python['df_T'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".T";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 //df_pivot_table
@@ -35,7 +35,7 @@ Blockly.Python['df_pivot_table'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = "pd.pivot_table(" + value_name + ")";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
 //df_ap
@@ -46,7 +46,7 @@ Blockly.Python['df_ap'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + dropdown_dic + value_name + ")";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 //df_bb
@@ -57,7 +57,7 @@ Blockly.Python['df_bb'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + dropdown_dic + value_name + ")";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 //df_set_index
@@ -67,7 +67,7 @@ Blockly.Python['df_set_index'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".set_index(" + value_name + ")";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 
@@ -80,7 +80,7 @@ Blockly.Python['df_series1'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + "(" + value_name + ")";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
 //df_series2
@@ -90,7 +90,7 @@ Blockly.Python['df_series2'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + "[" + value_name + "]";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
 //df_series3
@@ -100,7 +100,7 @@ Blockly.Python['df_series3'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + "[" + value_name + "]";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
 //df_agg
@@ -110,7 +110,7 @@ Blockly.Python['df_agg'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".agg( " + value_name + " )";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
 //df_reindex
@@ -120,7 +120,7 @@ Blockly.Python['df_reindex'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".reindex( " + value_name + " )";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
 //df_reindex
@@ -129,7 +129,7 @@ Blockly.Python['df_unique'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".unique()";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
 //df_reindex
@@ -139,7 +139,7 @@ Blockly.Python['df_is_in'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".is_in( " + value_name + " )";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
 //df_reindex
@@ -148,7 +148,7 @@ Blockly.Python['df_name'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".name";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
 //df_reindex
@@ -157,5 +157,5 @@ Blockly.Python['df_tolist'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".tolist()";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };  
