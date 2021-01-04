@@ -199,3 +199,57 @@ Blockly.Blocks['df_reindex'] = {
       this.setHelpUrl("");
   }
 };
+
+//sr.unique()
+Blockly.Blocks['df_unique'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[unique]").appendField(new Blockly.FieldVariable("sr"), "list").appendField(".unique( )");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+//sr.is_in()
+Blockly.Blocks['df_is_in'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[is_in]").appendField(new Blockly.FieldVariable("sr"), "list");
+      this.appendValueInput("LIST").appendField(".is_in(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+//sr.tolist()
+Blockly.Blocks['df_tolist'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[tolist]").appendField(new Blockly.FieldVariable("sr"), "list").appendField(".tolist( )");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+//sr.name
+Blockly.Blocks['df_name'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[name]").appendField(new Blockly.FieldVariable("sr"), "list").appendField(".name");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};

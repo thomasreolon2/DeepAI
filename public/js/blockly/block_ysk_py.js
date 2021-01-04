@@ -122,3 +122,40 @@ Blockly.Python['df_reindex'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];;
 };  
+
+//df_reindex
+Blockly.Python['df_unique'] = function(block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + ".unique()";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];;
+};  
+
+//df_reindex
+Blockly.Python['df_is_in'] = function(block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + ".is_in( " + value_name + " )";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];;
+};  
+
+//df_reindex
+Blockly.Python['df_name'] = function(block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + ".name";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];;
+};  
+
+//df_reindex
+Blockly.Python['df_tolist'] = function(block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + ".tolist()";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];;
+};  
