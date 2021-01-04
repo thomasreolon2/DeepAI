@@ -83,7 +83,7 @@ Blockly.Python['os_rmdir'] = function (block) {
 Blockly.Python['os_chdir'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = "os.chir"+ "('" + value_name + "')";
+  var code = "os.chdir"+ "('" + value_name + "')";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
