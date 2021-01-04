@@ -458,6 +458,7 @@ Blockly.Msg.TEXT_14_4_END = '';
 // 2020.12.04 이성주 블록 한글/영어 변환
 Blockly.Msg['COLLECTION_NEW_LIST'] = "%1data control  list %2 to %3";
 Blockly.Msg['COLLECTION_NEW_LIST2'] = "data control";
+Blockly.Msg['CHANGE_COLLECTION'] = "생성변환";
 
 Blockly.Msg['REPEAT_1_REPEAT'] = "repeat";
 Blockly.Msg["REPEAT_1_VARIABLE"] = "variable";

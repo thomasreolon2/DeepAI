@@ -1001,6 +1001,14 @@ Blockly.JavaScript['list_sort_reverse'] = function(block) {
     var code = '\n';
     return code;
   };
+
+  Blockly.JavaScript['change_collection'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    var value_list = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = '\n';
+    return code;
+  };
   
   // index
 Blockly.JavaScript['list_index'] = function(block) {

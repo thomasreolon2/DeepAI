@@ -1567,6 +1567,15 @@ Blockly.Python['list_sort_reverse'] = function(block) {
   return code;
 };
 
+// create collection
+Blockly.Python['change_collection'] = function(block) {
+  var dropdown_name = block.getFieldValue('collection');
+  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = dropdown_name +'(' + value_list + ')';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
 
 
 // index

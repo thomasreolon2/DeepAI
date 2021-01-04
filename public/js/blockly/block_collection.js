@@ -67,6 +67,39 @@ Blockly.Blocks['list_sort_reverse'] = {
     }
 };
 
+Blockly.Blocks['change_collection'] = {
+    init: function () {
+
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        }));
+        this.appendDummyInput()
+        .appendField(Blockly.Msg.CHANGE_COLLECTION);
+        this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+            [
+                Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TITLE_ADD, "list"
+            ],
+            [
+                Blockly.Msg.COLLECTION_7_TUPLE, "tuple"
+            ],
+            [
+                Blockly.Msg.COLLECTION_10_SET, "set"
+            ],
+            [
+                Blockly.Msg.COLLECTION_8_DICT, "dict"
+            ]
+        ]), "collection");
+        this.appendValueInput("LIST").appendField(Blockly.Msg.COLLECTION_13_ARRAYSUM).setCheck(null);
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        //this.setOutput(true, null);
+        this.setColour("%{BKY_COLLECTION_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
 // 리스트에서 값 찾기
 Blockly.Blocks['list_index'] = {
     init: function () {
