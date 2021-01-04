@@ -639,6 +639,19 @@ Blockly.Python['py_for'] = function(block) {
   return code;
 };
 
+// 파이썬 for1문
+Blockly.Python['py_for1'] = function(block) {
+  var value_item = Blockly.Python.valueToCode(block, 'item', Blockly.Python.ORDER_ATOMIC);
+  var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
+  var statements_value = Blockly.Python.statementToCode(block, 'value');
+  // TODO: Assemble Python into code variable.
+  // var code = 'for '+value_item+' in '+value_list+' :\n'+statements_value;
+
+  var code = 'for '+value_item+' in range( '+ value_list + ' ):\n'+statements_value;
+
+  return code;
+};
+
 Blockly.Python.controls_for = function (a) {
   var b = Blockly.Python.variableDB_.getName(
       a.getFieldValue("VAR"),

@@ -1037,8 +1037,18 @@
     <category name="%{BKY_CATEGORY_REPEAT}" colour="%{BKY_LOOPS_HUE}">
       <!--repeat1-->
       <block type="controls_repeat"></block>
+
+      <!--new_while-->
+      <block type="controls_whileTorF">
+        <value name="BOOL">
+          <shadow type="indata">
+            <field name="indata1">True</field>
+          </shadow>
+        </value>
+      </block>
+
       <!-- for 문 1 -->
-      <block type="py_for">
+      <block type="py_for1">
         <value name="item">
           <block type="variables_get">
             <field name="VAR">i</field>
@@ -1050,6 +1060,7 @@
           </shadow>
         </value>
       </block>
+
       <!-- for 문 2 -->
       <block type="py_for">
         <value name="item">
@@ -1060,17 +1071,6 @@
         <value name="list">
           <shadow type="indata">
             <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      
-      <!--repeat2-->
-      <block type="controls_repeat2"></block>
-      <!--new_while-->
-      <block type="controls_whileTorF">
-        <value name="BOOL">
-          <shadow type="indata">
-            <field name="indata1">True</field>
           </shadow>
         </value>
       </block>

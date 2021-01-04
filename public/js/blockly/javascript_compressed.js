@@ -951,6 +951,18 @@ Blockly.JavaScript['py_for'] = function(block) {
     return code;
   };
 
+  // 파이썬 for1문
+Blockly.JavaScript['py_for1'] = function(block) {
+    var value_item = Blockly.JavaScript.valueToCode(block, 'item', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
+    var statements_value = Blockly.JavaScript.statementToCode(block, 'value');
+    // TODO: Assemble Python into code variable.
+  
+    var code = '\n';
+  
+    return code;
+  };
+
   Blockly.JavaScript['increase'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
     var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);

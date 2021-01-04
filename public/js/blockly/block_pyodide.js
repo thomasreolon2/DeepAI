@@ -1016,6 +1016,27 @@ Blockly.Blocks['py_for'] = {
     }
 };
 
+// for1
+Blockly.Blocks['py_for1'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R1-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        }));
+        this.appendDummyInput().appendField(Blockly.Msg.REPEAT_1_REPEAT);
+        this.appendValueInput("item").setCheck(null).appendField(Blockly.Msg.REPEAT_1_VARIABLE);
+        this.appendValueInput("list").setCheck(null).appendField("in range(");
+        this.appendDummyInput().appendField("):");
+        this.appendStatementInput("value").setCheck(null);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_LOOPS_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
 // for문안 range,xyz
 Blockly.Blocks['range3'] = {
     init: function () {
