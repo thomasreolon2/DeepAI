@@ -160,3 +160,12 @@ Blockly.Python['forif2'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+// 내장함수 map, filter
+Blockly.Python['map_filter'] = function(block) {
+  var dropdown_function = block.getFieldValue('function');
+  var value_val1 = Blockly.Python.valueToCode(block, 'val1', Blockly.Python.ORDER_ATOMIC);
+  var value_val2 = Blockly.Python.valueToCode(block, 'val2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = dropdown_function + "(" + value_val1 + "," + value_val2 + ")";
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

@@ -1617,6 +1617,7 @@
 
     <category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}"> <!--함수 (Function)-->
 
+      <label text="함수"></label>
       <!-- 함수 -->
       <block type="webdefine">
         <value name="2">
@@ -1647,7 +1648,10 @@
           </shadow>
         </value>
       </block>
-
+      <label text="내장함수"></label>
+      <block type="map_filter"><</block>
+      
+      <label text="클래스"></label>
       <!-- 클래스 -->
       <block type="webclass"></block>
       <!-- self -->
@@ -1663,6 +1667,9 @@
       <block type="class_use"></block> 
       <block type="class_make"></block>
 
+      
+
+      <label text=""></label>
       <block type = "withs">
         <value name="set0">
           <shadow type="indata">

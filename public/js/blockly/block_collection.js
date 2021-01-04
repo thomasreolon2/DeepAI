@@ -572,3 +572,19 @@ Blockly.Blocks['forif2'] = {
         this.setHelpUrl("");
     }
 };
+
+Blockly.Blocks['map_filter'] = {
+    init: function() {
+      this.appendValueInput("val1")
+          .setCheck(null)
+          .appendField("[내장함수]")
+          .appendField(new Blockly.FieldDropdown([["map()","map"], ["filter()","filter"]]), "function");
+      this.appendValueInput("val2")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setColour("%{BKY_COLLECTION_HUE}");
+    this.setOutput(true, null);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+  };

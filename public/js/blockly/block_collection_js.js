@@ -100,3 +100,13 @@ Blockly.JavaScript['forif2'] = function (block) {
   var code = "\n";
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+// 내장함수 map, filter
+Blockly.JavaScript['map_filter'] = function(block) {
+  var dropdown_function = block.getFieldValue('function');
+  var value_val1 = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val2 = Blockly.JavaScript.valueToCode(block, 'val2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
