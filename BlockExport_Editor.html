@@ -219,7 +219,10 @@
     <script src="/js/blockly/woojin_py.js"></script>
     <script src="/js/blockly/woojin_js.js"></script>
   
-
+<!--neighbors 블록-->
+<script src="/js/blockly/jiwon.js"></script>
+<script src="/js/blockly/jiwon_py.js"></script>
+<script src="/js/blockly/jiwon_js.js"></script>
   <!-- #####################################################################################################  -->
   <!-- ******************************                CSS                      ******************************* -->
   <!-- #####################################################################################################  -->
@@ -2519,7 +2522,31 @@
       <!-- import numpy as np -->
       
     </category>
-   
+    <category name="지원">
+      <block type="block_tail_head">
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block> 
+
+      <block type="block_sum_min">
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block> 
+
+      <block type="block_cumsum">
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block> 
+    </category>
     <!-- ************************************************** ************************* *************************  -->
     <!-- *************************************** 2020-09-07, Pandas Blocks  ***********************************  -->
     <!-- ************************************************** ************************* *************************  -->
