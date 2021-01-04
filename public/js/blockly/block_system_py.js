@@ -4,6 +4,12 @@ Blockly.Python['os_library'] = function (block) {
   return code;
 };
 
+Blockly.Python['time_library'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "import time \n";
+  return code;
+};
+
 Blockly.Python['pyodide_library'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
   var code = "import pyodide \n";
