@@ -1317,6 +1317,16 @@ Blockly.Python.text_length = function (a) {
     Blockly.Python.ORDER_FUNCTION_CALL,
   ];
 };
+// 문자열 길이
+Blockly.Python.built_in_function_str = function (a) {
+  return [
+    "ord(" +
+      (Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) ||
+        "") +
+      ")",
+    Blockly.Python.ORDER_FUNCTION_CALL,
+  ];
+};
 Blockly.Python.text_isEmpty = function (a) {
   return [
     "not len(" +

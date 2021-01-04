@@ -18,3 +18,13 @@ Blockly.JavaScript['convert_block'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
+
+  // 내장함수 - 숫자
+  Blockly.JavaScript['built_in_function_num'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    var value_b = Blockly.JavaScript.valueToCode(block, 'A', Blockly.PytJavaScripthon.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = "\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };

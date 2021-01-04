@@ -454,7 +454,14 @@ Blockly.Msg.TEXT_14_1_TEXTCHANGE = 'phrase replace ';
  //, 
 Blockly.Msg.TEXT_14_4_END = '';
 
- 
+ // 숫자 / 문자
+Blockly.Msg['NUMSTR_INFUCTION'] = "[Built-in function]";
+Blockly.Msg['NUMSTR_INFUCTION_NUM_1'] = "maximum(max)";
+Blockly.Msg['NUMSTR_INFUCTION_NUM_2'] = "minimum(min)";
+Blockly.Msg['NUMSTR_INFUCTION_NUM_3'] = "round off(round)";
+Blockly.Msg['NUMSTR_INFUCTION_NUM_4'] = "absolute value(abs)";
+Blockly.Msg['NUMSTR_INFUCTION_STR_5'] = "change to ASCII(ord)";
+
 // 2020.12.04 이성주 블록 한글/영어 변환
 Blockly.Msg['COLLECTION_NEW_LIST'] = "%1data control  list %2 to %3";
 Blockly.Msg['COLLECTION_NEW_LIST2'] = "data control";

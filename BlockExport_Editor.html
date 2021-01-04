@@ -830,11 +830,29 @@
         </value>
       </block>
 
+      <!-- 내장함수 - 숫자-->
+      <block type="built_in_function_num">
+        <value name="A">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
       <!-- text -->
       <block type="text"></block>
       <block type="text_join"></block>
       <!-- len -->
       <block type="text_length">
+        <value name="VALUE">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 내장함수 - 문자-->
+      <block type="built_in_function_str">
         <value name="VALUE">
           <shadow type="indata">
             <field name="indata1"></field>
