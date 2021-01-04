@@ -184,3 +184,18 @@ Blockly.Blocks['df_agg'] = {
       this.setHelpUrl("");
   }
 };
+
+//df_reindex
+Blockly.Blocks['df_reindex'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[인덱스재설정]").appendField(new Blockly.FieldVariable("df"), "list");
+      this.appendValueInput("LIST").appendField(".reindex(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
