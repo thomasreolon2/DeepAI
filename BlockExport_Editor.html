@@ -554,6 +554,14 @@
         </value>
       </block>
 
+      <!-- 결과출력 var -->
+      <block type="printc">
+        <value name="content">
+          <block type="variables_get">
+            <field name="VAR">variable</field>
+          </block>
+        </value>
+      </block>
 
       <!-- 결과출력 text + var -->
       <block type="printtv">
@@ -578,19 +586,11 @@
         </value>
       </block>
 
-      <!-- 결과출력 var -->
-      <block type="printc">
-        <value name="content">
-          <block type="variables_get">
-            <field name="VAR">variable</field>
-          </block>
-        </value>
-      </block>
       <!-- 출력 뮤테이터 -->
       <block type="print_mutator"></block>
       <!-- 파이썬 코드 입력 -->
       <block type="itdata"></block>
-      
+      <!-- 파이썬 부분 코드(만능)-->
       <block type="indata"></block>
 
       
@@ -775,6 +775,122 @@
       
       </category>
     </category>
+    <!-- #####################################################################################################  -->
+    <!-- ******************************   숫자 문자 ( Text )                         ******************************* -->
+    <!-- #####################################################################################################  -->
+    <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> 
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+
+      <!-- 연산블럭 -->
+      <block type="Oper">
+        <value name="A">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 형변환  -->
+      <block type="convert_block">
+        <value name="A">
+          <shadow type="indata">
+            <field name="indata1">1</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- text -->
+      <block type="text"></block>
+      <block type="text_join"></block>
+      <!-- len -->
+      <block type="text_length">
+        <value name="VALUE">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      
+     <!-- 문자 슬라이스 -->
+     <block type="text_slice">
+      <value name="INPUT1">
+        <shadow type="indata">
+          <field name="indata1">0</field>
+        </shadow>
+      </value>
+      <value name="INPUT2">
+        <shadow type="indata">
+          <field name="indata1">5</field>
+        </shadow>
+      </value>
+      <value name="INPUT3">
+        <shadow type="indata">
+          <field name="indata1">1</field>
+        </shadow>
+      </value>
+    </block>
+
+      <!-- 문자 편집 -->
+      <block type="text_editing">
+        <value name="INPUT1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 문자 검색 -->
+      <block type="text_search">
+        <value name="INPUT1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 문자 대소문자 -->
+      <block type="text_up_low">
+        <value name="INPUT1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      
+      <!-- 문자 정렬 -->
+      <block type="text_sort">
+        <value name="INPUT1">
+          <shadow type="indata">
+            <field name="indata1">10</field>
+          </shadow>
+        </value>
+        <value name="INPUT2">
+          <shadow type="indata">
+            <field name="indata1">''</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 문자 질의 -->
+      <block type="text_query">
+        <value name="INPUT1">
+          <shadow type="indata">
+            <field name="indata1">10</field>
+          </shadow>
+        </value>
+      </block>
+
+      
+    </category>
+    
     <!-- #####################################################################################################  -->
     <!-- ******************************   논리(Logic)  조건, 판단                ******************************* -->
     <!-- #####################################################################################################  -->
@@ -966,93 +1082,13 @@
     <!-- 2020-12-26 양승국 end -->
 
     <!-- #####################################################################################################  -->
-    <!-- ******************************   연산(Operation)                       ******************************* -->
+    <!-- ******************************   수학통계(Operation)                       ******************************* -->
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_OPERATION}" colour="%{BKY_MATH_HUE}">
 
       <label text="수학"></label>
       <block type = "math_library"></block>
-      <block type="math_number">
-        <field name="NUM">0</field>
-      </block>
-
-      <!-- 연산블럭 -->
-      <block type="Oper">
-        <value name="A">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-        <value name="B">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- 제곱근 부터~ -->
-      <!-- <block type="math_single">
-        <value name="NUM">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-      </block> -->
-
-      <!-- 사인, 코사인 -->
-      <!-- <block type="math_trig">
-        <value name="NUM">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-      </block> -->
-    
-      <!-- 반올림 -->
-      <!-- <block type="math_round">
-        <value name="NUM">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-      </block>
-       -->
-      <!-- 합, 최소, 최대값 등-->
-      <!-- <block type="math_on_list">
-        <value name="LIST">
-          <shadow type="indata">
-            <field name="indata1">list</field>
-          </shadow>
-        </value>
-      </block> -->
-
-      <!-- 이건 뭔지 모르겠음
-      <block type="math_constrain">
-        <value name="VALUE">
-          <shadow type="indata">
-            <field name="indata1">50</field>
-          </shadow>
-        </value>
-        <value name="LOW">
-          <shadow type="indata">
-            <field name="indata1">1</field>
-          </shadow>
-        </value>
-        <value name="HIGH">
-          <shadow type="indata">
-            <field name="indata1">100</field>
-          </shadow>
-        </value>
-      </block> -->
       
-      <!-- 형변환  -->
-      <block type="convert_block">
-        <value name="A">
-          <shadow type="indata">
-            <field name="indata1">1</field>
-          </shadow>
-        </value>
-      </block>
      
       
       <!--2020-12-29 전우진 math1  -->
@@ -1155,156 +1191,7 @@
       </block>
     </category>
 
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   문자 ( Text )                         ******************************* -->
-    <!-- #####################################################################################################  -->
-    <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> 
-      <!-- text -->
-      <block type="text"></block>
-      <block type="text_join"></block>
-      <!-- len -->
-      <block type="text_length">
-        <value name="VALUE">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      <!-- find-->
-      <!-- <block type="text_indexOf">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">text</field>
-          </block>
-        </value>
-        <value name="FIND">
-          <shadow type="text">
-            <field name="TEXT">abc</field>
-          </shadow>
-        </value>
-      </block> -->
-      <!-- a[0] -->
-      <!-- <block type="text_charAt">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">text</field>
-          </block>
-        </value>
-        <value name="AT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> -->
-      <!-- a[ :0] -->
-      <!-- <block type="text_getSubstring">
-        <value name="STRING">
-          <block type="variables_get">
-            <field name="VAR">text</field>
-          </block>
-        </value>
-        <value name="AT1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="AT2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> -->
-     <!-- 문자 슬라이스 -->
-     <block type="text_slice">
-      <value name="INPUT1">
-        <shadow type="indata">
-          <field name="indata1">0</field>
-        </shadow>
-      </value>
-      <value name="INPUT2">
-        <shadow type="indata">
-          <field name="indata1">5</field>
-        </shadow>
-      </value>
-      <value name="INPUT3">
-        <shadow type="indata">
-          <field name="indata1">1</field>
-        </shadow>
-      </value>
-    </block>
-
-      <!-- 문자 편집 -->
-      <block type="text_editing">
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- 문자 검색 -->
-      <block type="text_search">
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- 문자 대소문자 -->
-      <block type="text_up_low">
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      
-      <!-- 문자 정렬 -->
-      <block type="text_sort">
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1">10</field>
-          </shadow>
-        </value>
-        <value name="INPUT2">
-          <shadow type="indata">
-            <field name="indata1">''</field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- 문자 질의 -->
-      <block type="text_query">
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1">10</field>
-          </shadow>
-        </value>
-      </block>
-
-      
-
-      <!-- 문자열 변경 -->
-      <!-- <block type="text_replace">
-        <value name="TEXT">
-          <block type="variables_get">
-            <field name="VAR">text</field>
-          </block>
-        </value>
-        <value name="A">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="B">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> -->
-    </category>
+    
 
     <!-- #####################################################################################################  -->
     <!-- ******************************   리스트 , 컬렉션(Collection)             ******************************* -->
@@ -2587,9 +2474,12 @@
     <!-- 2020-09-20 양승국 수정-->
     <category name="%{BKY_CATEGORY_PANDAS}" colour="%{BKY_PANDAS_HUE}"> <!--판다스(Pandas)-->
       <category name="기본" colour="%{BKY_PANDAS_HUE}">
+        <!-- pandas 라이브러리 -->
+        <block type="csv_library"></block>
+
         <!-- pyodide 라이브러리 -->
         <block type="pyodide_library" ></block>
-      
+        
         <block type = "csv_url">
           <value name="va">
             <shadow type="indata">
@@ -2603,10 +2493,21 @@
         <!-- 부분범위 -->
         <block type="iloc_range"></block>
 
+        <!-- 통계 정보 조회 -->
+        <block type="stats_inquiry">
+          <value name="inq_data">
+            <block type="variables_get">
+              <field name="VAR">pd</field>
+            </block>
+          </value>
+        </block>
+
+        <!-- 상관 관계 조회 -->
+        <block type="corr_inquiry"></block>
+
       </category>
 
       <category name="일반기능" colour="%{BKY_PANDAS_HUE}">
-        <block type="corr_inquiry"></block>
         <block type="df_sort"></block>
         <block type="df_columns"></block>
         <block type="df_index"></block>
@@ -2664,8 +2565,7 @@
       </category>
 
       <category name="DataFrame" colour="%{BKY_PANDAS_HUE}">
-        <!-- pandas 라이브러리 -->
-        <block type="csv_library"></block>
+        
         <!-- <block type="pyo_lib"></block> -->
         <!-- csv프레임 -->
         <block type="csvdataframe_J">
@@ -2813,14 +2713,7 @@
             </block>
           </value>
         </block>
-        <!-- 통계 정보 조회 -->
-        <block type="stats_inquiry">
-          <value name="inq_data">
-            <block type="variables_get">
-              <field name="VAR">pd</field>
-            </block>
-          </value>
-        </block>
+        
       </category>
       
       <category name="그룹(Group)" colour="%{BKY_PANDAS_HUE}">

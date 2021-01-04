@@ -64,7 +64,7 @@ Blockly.Blocks['text_editing'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[편집]")
-        .appendField(new Blockly.FieldVariable("item"), "VAR")
+        .appendField(new Blockly.FieldVariable("s"), "VAR")
         .appendField("에");
     this.appendValueInput("INPUT1")
         .setCheck(null);    
@@ -84,7 +84,7 @@ Blockly.Blocks['text_search'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[검색]")
-        .appendField(new Blockly.FieldVariable("item"), "VAR")
+        .appendField(new Blockly.FieldVariable("s"), "VAR")
         .appendField("에");
     this.appendValueInput("INPUT1")
         .setCheck(null);    
@@ -104,7 +104,7 @@ Blockly.Blocks['text_up_low'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[대소]")
-        .appendField(new Blockly.FieldVariable("item"), "VAR"); 
+        .appendField(new Blockly.FieldVariable("s"), "VAR"); 
     this.appendDummyInput()
         .appendField("를")
         .appendField(new Blockly.FieldDropdown([["대문자(upper)","upper"], ["소문자(lower)","lower"], ["첫문자(title)","title"], ["첫문장(capitalize)","capitalize"],["교환(swapcase)","swapcase"]]), "FUNC");
@@ -121,7 +121,7 @@ Blockly.Blocks['text_sort'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[정렬]")
-        .appendField(new Blockly.FieldVariable("item"), "VAR")  
+        .appendField(new Blockly.FieldVariable("s"), "VAR")  
         .appendField("에");
     this.appendValueInput("INPUT1")
         .setCheck(null);
@@ -146,7 +146,7 @@ Blockly.Blocks['text_query'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[질의]")
-        .appendField(new Blockly.FieldVariable("item"), "VAR"); 
+        .appendField(new Blockly.FieldVariable("s"), "VAR"); 
     this.appendDummyInput()
         .appendField("를")
         .appendField(new Blockly.FieldDropdown([["문자(isalpha)","isalpha"], ["숫자(isdigit)","isdigit"], ["문숫자(isalnum)","isalnum"], ["대문자(isupper)","isupper"],["소문자(islower)","islower"]]), "FUNC");
@@ -163,7 +163,7 @@ Blockly.Blocks['text_slice'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[슬라이싱]")
-        .appendField(new Blockly.FieldVariable("item"), "VAR")  
+        .appendField(new Blockly.FieldVariable("s"), "VAR")  
         .appendField("[");
     this.appendValueInput("INPUT1")
         .setCheck(null);
