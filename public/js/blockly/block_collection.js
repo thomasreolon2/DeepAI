@@ -446,8 +446,8 @@ Blockly.Blocks['set_menu1'] = {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField("집합 다루기");;
-        this.appendValueInput("SET2").setCheck(null);
-        this.appendValueInput("SET1").setCheck(null).appendField(Blockly.Msg.COLLECTION_11_SELECTSET);
+        this.appendValueInput("SET1").setCheck(null);
+        this.appendValueInput("SET2").setCheck(null).appendField(Blockly.Msg.COLLECTION_11_SELECTSET);
         this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_11_VALCHANGE).appendField(new Blockly.FieldDropdown([
             [
                 Blockly.Msg.COLLECTION_11_UNION, "union"
@@ -470,6 +470,36 @@ Blockly.Blocks['set_menu1'] = {
         ]), "set_menu");                                                                 
         this.setInputsInline(true);
         this.setOutput(true, null);
+        this.setColour("%{BKY_SET_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+// 집합 선택
+Blockly.Blocks['set_menu1_2'] = {
+    init: function () {
+
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C10-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        })).appendField("집합 다루기");;
+        this.appendValueInput("SET1").setCheck(null);
+        this.appendValueInput("SET2").setCheck(null).appendField(Blockly.Msg.COLLECTION_11_SELECTSET);
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_11_VALCHANGE).appendField(new Blockly.FieldDropdown([
+            [
+                Blockly.Msg.COLLECTION_11_ADD, "add"
+            ],
+            [
+                Blockly.Msg.COLLECTION_11_UPDATE, "update"
+            ],
+            [
+                Blockly.Msg.COLLECTION_11_REMOVE, "remove"
+            ]
+        ]), "set_menu2");                                                                 
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour("%{BKY_SET_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");

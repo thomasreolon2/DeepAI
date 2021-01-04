@@ -104,6 +104,21 @@ Blockly.Python['dic_menu1'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+Blockly.Python['set_menu1_2'] = function (block) {
+  var dropdown_set_menu = block.getFieldValue('set_menu2');
+  var value_set1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
+  var value_set2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  if (dropdown_set_menu == 'add') {
+      var code = value_set1 + '.add(' + value_set2 + ')';
+  } else if (dropdown_set_menu == 'update') {
+      var code = value_set1 + '.update(' + value_set2 + ')';
+  } else if (dropdown_set_menu == 'remove') {
+      var code = value_set1 + '.remove(' + value_set2 + ')';
+  }
+  return code + "\n";
+};
+
 // 집합 종류
 Blockly.Python['set_menu1'] = function (block) {
   var dropdown_set_menu = block.getFieldValue('set_menu');
@@ -116,16 +131,9 @@ Blockly.Python['set_menu1'] = function (block) {
       var code = value_set1 + '.intersection(' + value_set2 + ')';
   } else if (dropdown_set_menu == 'difference') {
       var code = value_set1 + '.difference(' + value_set2 + ')';
-  } else if (dropdown_set_menu == 'add') {
-      var code = value_set1 + '.add(' + value_set2 + ')';
-  } else if (dropdown_set_menu == 'update') {
-      var code = value_set1 + '.update(' + value_set2 + ')';
-  } else if (dropdown_set_menu == 'remove') {
-      var code = value_set1 + '.remove(' + value_set2 + ')';
-  }
+  } 
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
-
 
 // 라운드형 반복 조건 블록
 Blockly.Python['forif'] = function (block) {
