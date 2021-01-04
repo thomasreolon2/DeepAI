@@ -2804,6 +2804,47 @@
       <category name="그룹(Group)" colour="%{BKY_PANDAS_HUE}">
 
       </category>
+      <category name = "ysk" colour = 244>
+        
+        <block type = "df_values"></block>
+
+        <block type = "df_columns"></block>
+
+        <block type = "df_T"></block>
+
+        <block type = "df_pivot_table">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1">df, values=['D', 'E'], index=['A', 'C'], aggfunc={'D': np.mean,'E': np.mean}</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "df_ap">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1">np.average, axis=0</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "df_bb">
+          <value name = "LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "df_set_index">
+          <value name = "LIST">
+            <shadow type="indata">
+              <field name="indata1">'month'</field>
+            </shadow>
+          </value>
+        </block>
+
+      </category>
       <!-- 2020-09-20 양승국 판다스 전체수정-->
       <!-- <block type="import_lib">
           <value name="var">
