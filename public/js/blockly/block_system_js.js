@@ -117,3 +117,15 @@
     return code;
   };
   
+  Blockly.JavaScript['time_'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['sleep'] = function(block) {
+    var value_val1 = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '...;\n';
+    return code;
+  };
