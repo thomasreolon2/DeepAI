@@ -459,7 +459,7 @@ Blockly.Msg['NUMSTR_INFUCTION_NUM_1'] = "최댓값(max)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_2'] = "최솟값(min)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_3'] = "반올림(round)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_4'] = "절댓값(abs)";
-Blockly.Msg['NUMSTR_INFUCTION_STR_5'] = "ASCII로변환(ord)";
+Blockly.Msg['NUMSTR_INFUCTION_STR'] = "ASCII로변환(ord)";
 
 // 2020.12.04  이성주 블록 한글/영어 메시지 전환
 Blockly.Msg['COLLECTION_NEW_LIST'] = "%1데이터 다루기 %2에 %3를";
