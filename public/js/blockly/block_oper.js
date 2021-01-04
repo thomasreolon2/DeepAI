@@ -78,7 +78,7 @@ Blockly.Blocks['built_in_function_num'] = {
             flipRtl: "FALSE"
         }));
         this.appendDummyInput()
-        .appendField("");
+        .appendField(Blockly.Msg.NUMSTR_INFUCTION);
         this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([            
             [
