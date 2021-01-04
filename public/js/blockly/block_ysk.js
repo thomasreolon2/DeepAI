@@ -72,7 +72,6 @@ Blockly.Blocks['df_ap'] = {
           ],
       ]), "collection");
       this.appendValueInput("LIST").appendField().setCheck(null);
-      this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
@@ -98,7 +97,6 @@ Blockly.Blocks['df_bb'] = {
           ]
       ]), "collection");
       this.appendValueInput("LIST").appendField().setCheck(null);
-      this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
