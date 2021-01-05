@@ -220,8 +220,21 @@ Blockly.Blocks['lists_create_with'] = {
     if (this.itemCount_ && this.getInput('EMPTY')) {
       this.removeInput('EMPTY');
     } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-      this.appendDummyInput('EMPTY')
-          .appendField(Blockly.Msg['LISTS_CREATE_EMPTY_TITLE']);
+     // this.appendDummyInput('EMPTY')
+      this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+        [
+            Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TITLE_ADD, "list"
+        ],
+        [
+            Blockly.Msg.COLLECTION_7_TUPLE, "tuple"
+        ],
+        [
+            Blockly.Msg.COLLECTION_10_SET, "set"
+        ],
+        [
+            Blockly.Msg.COLLECTION_8_DICT, "dict"
+        ]
+    ]), "collection");
     }
     // Add new inputs.
     for (var i = 0; i < this.itemCount_; i++) {

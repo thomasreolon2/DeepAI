@@ -1198,6 +1198,27 @@
         </value>
       </block>
 
+      <!-- 비어있는 리스트 생성 -->
+      <block type="lists_create_with">
+        <mutation items="0"></mutation>
+      </block>
+       <!-- 리스트의 길이 -->
+       <block type="lists_length">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
+      </block>
+      <!-- 리스트가 비어있는지 확인 -->
+      <block type="lists_isEmpty">
+        <value name="VALUE">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
+      </block>
+
       <label text="리스트"></label>
 
       <block type = "create_list">
@@ -1263,26 +1284,6 @@
        </block>
 
        
-      <!-- 비어있는 리스트 생성 -->
-      <block type="lists_create_with">
-        <mutation items="0"></mutation>
-      </block>
-       <!-- 리스트의 길이 -->
-       <block type="lists_length">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>
-      </block>
-      <!-- 리스트가 비어있는지 확인 -->
-      <block type="lists_isEmpty">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>
-      </block>
 
       <label text="튜플"></label>
       <!-- 튜플블록 -->

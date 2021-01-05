@@ -224,7 +224,7 @@ Blockly.Python.lists_length = function (a) {
 };
 Blockly.Python.lists_isEmpty = function (a) {
   return [
-    "not len(" +
+    "not not(" +
       (Blockly.Python.valueToCode(a, "VALUE", Blockly.Python.ORDER_NONE) ||
         "[]") +
       ")",
