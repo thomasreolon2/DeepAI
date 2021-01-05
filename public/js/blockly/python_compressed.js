@@ -1892,8 +1892,9 @@ Blockly.Python.create_new_list2 = function (a) {
       d = b + ".append(" + a + ")";
       break;
     case "DIVISIBLE_BY":
-      
       d = b + " % " + a + " == 0";
+    case "COPY":
+      d = b + " = " + a  + ".copy()";
   }
   return d + "\n";
 };

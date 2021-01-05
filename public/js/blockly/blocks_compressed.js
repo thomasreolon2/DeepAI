@@ -1738,6 +1738,7 @@ Blockly.defineBlocksWithJsonArray([
           //["%{BKY_COLLECTION_16_POP}", "POP"],
           ["%{BKY_COLLECTION_16_REMOVE}", "REMOVE"],
           ["%{BKY_COLLECTION_16_APPEND}", "APPEND"],
+          ["복사(copy)", "COPY"],
         ],
       },
     ],
