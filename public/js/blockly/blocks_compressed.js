@@ -780,7 +780,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "logic_ternary",      // 삼항표현식 if - else
     message0: "%{BKY_LOGIC_TERNARY_CONDITION} %2",
     args0: [
-      {"type": "field_image","src": "/img/Logic/L7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Logic/L8-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "THEN" }
     ],
     message1: "%{BKY_LOGIC_TERNARY_IF_TRUE} %1",
@@ -801,7 +801,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "logic_ternary2",       // 삼항표현식 ? - :
     message0: "%{BKY_LOGIC_TERNARY_CONDITION} %2",
     args0: [
-      {"type": "field_image","src": "/img/Logic/L7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Logic/L9-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "THEN" }
     ],
     message1: "? %1",
