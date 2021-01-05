@@ -397,3 +397,11 @@ Blockly.JavaScript['create_np_array'] = function (block) {
   var code = '\n';
   return code;
 };
+
+Blockly.JavaScript['create_np_array2'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble .JavaScript into code variable.
+  var code = '\n';
+  return code;
+};

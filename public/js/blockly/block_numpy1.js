@@ -680,3 +680,25 @@ Blockly.Blocks['create_np_array'] = {
       this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['create_np_array2'] = {
+  init: function () {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldVariable("a"), "list")
+          .appendField(" = np.array(");
+      this.appendValueInput("text")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")[");
+      this.appendValueInput("text2")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("]");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+      this.setTooltip("Create a list");
+      this.setHelpUrl("");
+  }
+};
