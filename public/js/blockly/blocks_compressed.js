@@ -1361,7 +1361,7 @@ Blockly.defineBlocksWithJsonArray([
     args0: [
       {
         type: "field_image",
-        src: "/img/Operation/O1-logo.png",
+        src: "/img/Numeric/N1-logo.png",
         width: 25,
         height: 22,
         alt: "*",
@@ -1379,7 +1379,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "math_arithmetic",
     message0: "%1 %2 %3 %4",
     args0: [
-      {"type": "field_image","src": "/img/Operation/O2-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Numeric/N2-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
 
       { type: "input_value", name: "A", check: null },
       {
@@ -2512,7 +2512,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text",
     message0: "%1 %2",
     args0: [
-      {"type": "field_image","src": "/img/Text/T3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Text/T1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "field_input", name: "TEXT", text: "" },
     ],
     output: "String",
@@ -2546,7 +2546,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_join",
     message0: "%1",
     args0:[
-      {"type": "field_image","src": "/img/Text/T4-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Text/T2-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
     ],
     output: "String",
     style: "text_blocks",
@@ -2597,7 +2597,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_length",
     message0: "%{BKY_TEXT_LENGTH_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Text/T5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Text/T3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Number",
     style: "text_blocks",
@@ -2609,7 +2609,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "built_in_function_str",
     message0: "%1%{BKY_NUMSTR_INFUCTION} %{BKY_NUMSTR_INFUCTION_STR} %2",
     args0: [
-      {"type": "field_image","src": "/img/Text/T5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Text/T4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Number",
     style: "text_blocks",
