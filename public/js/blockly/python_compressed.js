@@ -614,7 +614,7 @@ Blockly.Python.controls_repeat = function(a) {
   var b = a.getFieldValue('count');
   var d = Blockly.Python.statementToCode(a, "DO");
   d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
-  return "for index in range(" + b + "):\n" + d;
+  return "for _ in range(" + b + "):\n" + d;
 };
 
 // repeat2
@@ -633,8 +633,9 @@ Blockly.Python['py_for'] = function(block) {
   var statements_value = Blockly.Python.statementToCode(block, 'value');
   // TODO: Assemble Python into code variable.
   // var code = 'for '+value_item+' in '+value_list+' :\n'+statements_value;
-
-  var code = 'for '+value_item+' in '+value_list+ ' :\n'+statements_value;
+  var d = Blockly.Python.statementToCode(block, "value");
+  d = Blockly.Python.addLoopTrap(d, block) || Blockly.Python.PASS;
+  var code = 'for '+ value_item+' in '+ value_list + ' :\n' + d;
 
   return code;
 };
@@ -643,11 +644,12 @@ Blockly.Python['py_for'] = function(block) {
 Blockly.Python['py_for1'] = function(block) {
   var value_item = Blockly.Python.valueToCode(block, 'item', Blockly.Python.ORDER_ATOMIC);
   var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
-  var statements_value = Blockly.Python.statementToCode(block, 'value');
+  var statements_value = Blockly.Python.statementToCode(block, 'value') || Blockly.Python.PASS;
   // TODO: Assemble Python into code variable.
   // var code = 'for '+value_item+' in '+value_list+' :\n'+statements_value;
-
-  var code = 'for '+value_item+' in range( '+ value_list + ' ):\n'+statements_value;
+  var d = Blockly.Python.statementToCode(block, "value");
+  d = Blockly.Python.addLoopTrap(d, block) || Blockly.Python.PASS;
+  var code = 'for '+value_item+' in range( '+ value_list + ' ):\n'+ d;
 
   return code;
 };
