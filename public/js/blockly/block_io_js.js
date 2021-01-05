@@ -35,11 +35,12 @@ Blockly.JavaScript['printc'] = function (block) {
 };
 
 Blockly.JavaScript['itdata'] = function(block) {
-  var text_name = block.getFieldValue('itdata1');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
+  var value_text = Blockly.JavaScript.valueToCode(block, 'itdata1', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = "\n";
   return code;
 };
+
 
 Blockly.JavaScript['indata'] = function(block) {
   var text_modified_col = block.getFieldValue('indata1');

@@ -98,7 +98,7 @@ Blockly.Msg["IOS_VARIABLES_VARIABLE_NAME"] = "변수 이름";
 Blockly.Msg["LISTS_CREATE_EMPTY_HELPURL"] = "https://github.com/google/blockly/wiki/Lists#create-empty-list";
 Blockly.Msg["LISTS_CREATE_EMPTY_TITLE"] = "빈 리스트 생성";
 Blockly.Msg["LISTS_CREATE_EMPTY_TOOLTIP"] = "데이터 레코드가 없는, 길이가 0인 목록을 반환합니다.";
-Blockly.Msg["LISTS_CREATE_WITH_CONTAINER_TITLE_ADD"] = "리스트";
+Blockly.Msg["LISTS_CREATE_WITH_CONTAINER_TITLE_ADD"] = "리스트(list)";
 Blockly.Msg["LISTS_CREATE_WITH_CONTAINER_TOOLTIP"] = "섹션을 추가, 제거하거나 순서를 변경하여 이 리스트 블럭을 재구성합니다.";
 Blockly.Msg["LISTS_CREATE_WITH_HELPURL"] = "https://github.com/google/blockly/wiki/Lists#create-list-with";
 Blockly.Msg["LISTS_CREATE_WITH_INPUT_WITH"] = "리스트 만들기";
@@ -479,9 +479,9 @@ Blockly.Msg['REPEAT_5_LENGTH'] = "길이";
 
 Blockly.Msg['REPEAT_6_RANGE'] = "범위";
 
-Blockly.Msg['COLLECTION_7_TUPLE'] = "튜플";
+Blockly.Msg['COLLECTION_7_TUPLE'] = "튜플(tuple)";
 
-Blockly.Msg['COLLECTION_8_DICT'] = "딕셔너리";
+Blockly.Msg['COLLECTION_8_DICT'] = "딕셔너리(dict)";
 
 Blockly.Msg['COLLECTION_9_DICTOPTION'] = "딕셔너리 다루기";
 Blockly.Msg['COLLECTION_9_DICVAR'] = "dic변수";
@@ -496,14 +496,14 @@ Blockly.Msg['COLLECTION_9_DROPDOWN_CASTINGDICT'] = "dict로 변경";
 Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUTKEY'] = "key값 추출";
 Blockly.Msg['COLLECTION_9_DROPDOWN_OUTPUVAL'] = "values값 추출";
 
-Blockly.Msg['COLLECTION_10_SET'] = "집합";
+Blockly.Msg['COLLECTION_10_SET'] = "집합(set)";
 
-Blockly.Msg['COLLECTION_11_UNION'] = "합집합";
-Blockly.Msg['COLLECTION_11_INTERSECTION'] = "교집합";
-Blockly.Msg['COLLECTION_11_DIFFERENCE'] = "차집합";
-Blockly.Msg['COLLECTION_11_ADD'] = "원소추가";
-Blockly.Msg['COLLECTION_11_UPDATE'] = "리스트 추가";
-Blockly.Msg['COLLECTION_11_REMOVE'] = "원소제거";
+Blockly.Msg['COLLECTION_11_UNION'] = "합집합(union)";
+Blockly.Msg['COLLECTION_11_INTERSECTION'] = "교집합(intersection)";
+Blockly.Msg['COLLECTION_11_DIFFERENCE'] = "차집합(difference)";
+Blockly.Msg['COLLECTION_11_ADD'] = "원소추가(add)";
+Blockly.Msg['COLLECTION_11_UPDATE'] = "리스트추가(update)";
+Blockly.Msg['COLLECTION_11_REMOVE'] = "원소제거(remove)";
 Blockly.Msg['COLLECTION_11_SELECTSET'] = "에";
 Blockly.Msg['COLLECTION_11_VALCHANGE'] = "을";
 Blockly.Msg['COLLECTION_11_SET'] = "집합";

@@ -36,9 +36,9 @@ Blockly.Python['printc'] = function (block) {
 };
 
 Blockly.Python['itdata'] = function(block) {
-  var text_name = block.getFieldValue('itdata1');
+  var value_text = Blockly.Python.valueToCode(block, 'itdata1', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = text_name + "\n";
+  var code = value_text + "\n";
   return code;
 };
 

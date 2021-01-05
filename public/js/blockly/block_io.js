@@ -72,12 +72,13 @@ Blockly.Blocks['printc'] = {
       this.setHelpUrl("");
   }
 };
+//.appendField(new Blockly.FieldTextInput(""), "itdata1");
 
 Blockly.Blocks['itdata'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("파이썬 코드")
-        .appendField(new Blockly.FieldTextInput(""), "itdata1");
+        .appendField("파이썬코드");
+    this.appendValueInput("itdata1").setCheck(null);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

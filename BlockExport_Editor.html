@@ -603,7 +603,13 @@
       <!-- 출력 뮤테이터 -->
       <block type="print_mutator"></block>
       <!-- 파이썬 코드 입력 -->
-      <block type="itdata"></block>
+      <block type="itdata">
+        <value name="itdata1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
       <!-- 파이썬 부분 코드(만능)-->
       <block type="indata"></block>
 
