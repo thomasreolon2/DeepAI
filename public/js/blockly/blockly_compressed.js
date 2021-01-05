@@ -12408,7 +12408,7 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
       // (c = Blockly.Xml.textToDom(
       //   '<value name="DELTA"><shadow type="indata"><field name="indata1">1</field></shadow></value>'
       // )),
-      d.appendChild(Blockly.Xml.textToDom('<value name="dic1"><shadow type="indata"><field name="indata1">3</field></shadow></value>')),
+      d.appendChild(Blockly.Xml.textToDom('<value name="DELTA"><shadow type="indata"><field name="indata1">3</field></shadow></value>')),
       b.push(d);
       }
       

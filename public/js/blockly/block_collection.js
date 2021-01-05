@@ -617,7 +617,7 @@ Blockly.Blocks['va_id'] = {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Variable/V3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("객체주소값 (");
+        })).appendField("메모리주소(id) (");
         this.appendValueInput("dic1").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
