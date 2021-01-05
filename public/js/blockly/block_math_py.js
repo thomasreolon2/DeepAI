@@ -1,3 +1,9 @@
+Blockly.Python['operation_library'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "import math \nfrom statistics import *\nimport random\n";
+  return code;
+};
+
 Blockly.Python['math_library'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
     var code = "import math \n";

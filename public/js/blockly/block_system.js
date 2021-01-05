@@ -1,7 +1,7 @@
   Blockly.Blocks['os_library'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("[임포트] os");
+          .appendField("[임포트] os,날짜,시간");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);

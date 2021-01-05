@@ -2,6 +2,19 @@
 // 2020-12-28 math 전우진
 //////////////////////////////////////////////////////
 
+Blockly.Blocks['operation_library'] = {
+  init: function () {
+    this.appendDummyInput()
+        .appendField("[임포트] 수학,통계,랜덤");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_MATH_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['math_library'] = {
     init: function () {
       this.appendDummyInput()

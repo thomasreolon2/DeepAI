@@ -1,6 +1,6 @@
 Blockly.Python['os_library'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = "import os \n";
+  var code = "import os \nimport time\nimport datetime\n";
   return code;
 };
 
