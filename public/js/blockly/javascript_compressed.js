@@ -1011,7 +1011,7 @@ Blockly.JavaScript['val_set'] = function(block) {
 // sort
 Blockly.JavaScript['list_sort_reverse'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
-    var value_list = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
+    var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
     // TODO: Assemble Python into code variable.
     var code = '\n';
     return code;
@@ -1036,7 +1036,7 @@ Blockly.JavaScript['list_index'] = function(block) {
 
   // insert
 Blockly.JavaScript['list_insert'] = function(block) {
-    var value_list = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
+    var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
     var value_index = Blockly.JavaScript.valueToCode(block, 'INDEX', Blockly.JavaScript.ORDER_ATOMIC);
     var value_value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.

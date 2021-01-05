@@ -49,8 +49,7 @@ Blockly.Blocks['list_sort_reverse'] = {
             flipRtl: "FALSE"
         }));
         this.appendDummyInput()
-        .appendField(Blockly.Msg.COLLECTION_NEW_LIST2);
-        this.appendValueInput("LIST").appendField(Blockly.Msg.COLLECTION_13_ARRAYSUM).setCheck(null);
+        .appendField(Blockly.Msg.COLLECTION_NEW_LIST2).appendField(new Blockly.FieldVariable("my_dict"), "list");
         this.appendDummyInput().appendField(new Blockly.FieldDropdown([
             [
                 Blockly.Msg.COLLECTION_13_SORT, "sort"
@@ -132,8 +131,7 @@ Blockly.Blocks['list_insert'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_INSERTTOLIST);
-        this.appendValueInput("LIST").setCheck(null);
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_INSERTTOLIST).appendField(new Blockly.FieldVariable("my_set"), "list");
         this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_INDEX);
         this.appendValueInput("INDEX").setCheck(null);
         this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_15_VALUE);

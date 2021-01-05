@@ -1603,9 +1603,9 @@ Blockly.Python['list_append'] = function(block) {
 // sort
 Blockly.Python['list_sort_reverse'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
-  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
-  var code = value_list+'.'+dropdown_name+'()\n';
+  var code = variable_list+'.'+dropdown_name+'()\n';
   return code;
 };
 
@@ -1631,11 +1631,11 @@ Blockly.Python['list_index'] = function(block) {
 
 // insert
 Blockly.Python['list_insert'] = function(block) {
-  var value_list = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_index = Blockly.Python.valueToCode(block, 'INDEX', Blockly.Python.ORDER_ATOMIC);
   var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_list+'.insert('+value_index+', '+value_value+')\n';
+  var code = variable_list+'.insert('+value_index+', '+value_value+')\n';
   return code;
 };
 /*
