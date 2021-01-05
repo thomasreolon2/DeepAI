@@ -17,7 +17,7 @@ Blockly.Blocks['Oper'] = {
                 "*", "*"
             ],
             [
-                "//", "//"
+                "/", "/"
             ],
             [
                 "%", "%"
@@ -27,6 +27,9 @@ Blockly.Blocks['Oper'] = {
             ],
             [
                 "**", "**"
+            ],
+            [
+                "//", "//"
             ]
         ]), "NAME");
         this.appendValueInput("B").setCheck(null);
