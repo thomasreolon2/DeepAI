@@ -621,7 +621,7 @@ Blockly.Blocks['va_id'] = {
         this.appendValueInput("dic1").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
-        this.setColour("%{BKY_DICT_HUE}");
+        this.setColour("4C97FF");
         this.setOutput(true, null);
         this.setTooltip("");
         this.setHelpUrl("");
