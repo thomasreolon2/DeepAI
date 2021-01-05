@@ -559,6 +559,8 @@ Blockly.Msg["TUPLE_HUE"] = "593AE8"; // 튜플
 Blockly.Msg["LIST_HUE"] = "#ff8c1a"; // 리스트
 Blockly.Msg["LIST2_HUE"] = "#ff8c1a";// 리스트2
 
+Blockly.Msg["FILE_HUE"] = "#FF8C1A";// 파일
+
 // 커스텀 색상
 Blockly.Msg["NUMPY_HUE"] = "472BFF"; // 넘파이
 Blockly.Msg["PANDAS_HUE"] = "FF3D98"; // 판다스
