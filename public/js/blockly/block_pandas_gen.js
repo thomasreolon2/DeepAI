@@ -428,7 +428,7 @@ Blockly.Python['df_columns'] = function (block) {
 Blockly.Python['df_index'] = function (block) {
   var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = variable_data + ".index" + "\n";
+  var code = variable_data + ".index";
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 // 데이터 조회
