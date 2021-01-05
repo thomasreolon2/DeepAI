@@ -571,6 +571,7 @@ Blockly.Msg["ML_HUE"] = "E6675E"; // 머신러닝
 Blockly.Msg["DL_HUE"] = "E69344"; // 딥러닝
 Blockly.Msg["PROLOG_HUE"] = "8FBF36"; // 프롤로그
 Blockly.Msg["OS_HUE"] = "#55ad15"; // 시스템
+Blockly.Msg["lst_HUE"] = "#183153"; // 시스템
 
 
 // 안쓰는 커테고리
