@@ -1891,7 +1891,7 @@ Blockly.Blocks['test'] = {
 Blockly.Blocks['printc'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("/img/Text/T13-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+      .appendField(new Blockly.FieldImage("/img/Operation/O1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField("결과 출력 ");
     this.appendValueInput("content")
       .setCheck(null);

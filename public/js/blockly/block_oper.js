@@ -1,7 +1,7 @@
 // 기초 연산
 Blockly.Blocks['Oper'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O2-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Numeric/N2-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -42,7 +42,7 @@ Blockly.Blocks['Oper'] = {
 // 내장함수 - 숫자
 Blockly.Blocks['convert_block'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O13-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Numeric/N3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -79,7 +79,7 @@ Blockly.Blocks['convert_block'] = {
 // 내장함수 
 Blockly.Blocks['built_in_function_num'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Operation/O13-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Numeric/N4-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));

@@ -5,10 +5,7 @@
 //입력블록
 Blockly.Blocks['input1'] = {
   init: function () {
-      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T2-logo.png", 25, 23, {
-          alt: "*",
-          flipRtl: "FALSE"
-      }));
+      
       this.appendDummyInput()
           .appendField(Blockly.Msg.TEXT_2_DATAINPUT);
       this.appendValueInput("content1").setCheck(null);        
@@ -24,7 +21,7 @@ Blockly.Blocks['input1'] = {
 //결과출력(텍스트 + 변수)
 Blockly.Blocks['printtv'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Output/O2-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField(Blockly.Msg.TEXT_1_PRINT);
@@ -42,7 +39,7 @@ Blockly.Blocks['printtv'] = {
   //결과출력(f-문자열 텍스트)
 Blockly.Blocks['printf'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Output/O3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField(Blockly.Msg.TEXT_1_PRINT);
@@ -59,7 +56,7 @@ Blockly.Blocks['printf'] = {
 //결과출력(변수만 있는거)
 Blockly.Blocks['printc'] = {
   init: function () {
-      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T1-logo.png", 25, 23, {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Output/O1-logo.png", 25, 23, {
           alt: "*",
           flipRtl: "FALSE"
       })).appendField(Blockly.Msg.TEXT_1_PRINT);
@@ -237,7 +234,10 @@ Blockly.defineBlocksWithJsonArray([
 //컬럼추가 블록
 Blockly.Blocks.print_mutator = {
   init: function () {  
-
+    this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Output/O4-logo.png", 25, 23, {
+      alt: "*",
+      flipRtl: "FALSE"
+  }))
     this.setStyle("list_blocks");
     this.itemCount_ = 1;
     this.updateShape_();
