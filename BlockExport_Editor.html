@@ -610,33 +610,15 @@
       
       <category name="시스템(os)" colour="%{BKY_OS_HUE}">
   
-        <label text="OS"></label>
+        <label text="os & shutil"></label>
         
         <block type="os_library"></block>
-        <block type="os_getcwd">
+        <block type="shutil_library"></block>
+
+        <block type="os_getcwd"></block>
+        <block type="os_listdir"></block>
         
-        </block>
-        <block type="os_listdir">
-  
-        </block>
-        
-        <block type="os_mkdir">
-          <value name="va">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-  
-        <block type="os_rmdir">
-          <value name="va">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-  
-        <block type="os_chdir">
+        <block type="os_dir">
           <value name="va">
             <shadow type="indata">
               <field name="indata1"></field>
@@ -664,8 +646,21 @@
             </shadow>
           </value>
         </block>
-  
-        <label text="time"></label>
+
+        <block type="shutil_file">
+          <value name="va1">
+            <shadow type="indata">
+              <field name="indata1">원본</field>
+            </shadow>
+          </value>
+          <value name="va2">
+            <shadow type="indata">
+              <field name="indata1">복사</field>
+            </shadow>
+          </value>
+        </block>
+
+        <label text="time & datetime"></label>
         <!--<block type="time_library"></block>-->
         <block type="time_"></block>
         <block type="sleep">
@@ -675,8 +670,6 @@
             </shadow>
           </value>
         </block>
-
-        <label text="DateTime"></label>
 
         <!--<block type="datetime_library"></block>-->
 
@@ -694,49 +687,6 @@
             <block type="variables_get">
               <field name="VAR">day</field>
             </block>
-          </value>
-        </block>
-  
-        <label text="Shutil"></label>
-        
-        <block type="shutil_library"></block>
-
-        <block type="shutil_copy">
-          <value name="va1">
-            <shadow type="indata">
-              <field name="indata1">원본</field>
-            </shadow>
-          </value>
-          <value name="va2">
-            <shadow type="indata">
-              <field name="indata1">복사</field>
-            </shadow>
-          </value>
-        </block>
-  
-        <block type="shutil_copytree">
-          <value name="va1">
-            <shadow type="indata">
-              <field name="indata1">원본</field>
-            </shadow>
-          </value>
-          <value name="va2">
-            <shadow type="indata">
-              <field name="indata1">복사</field>
-            </shadow>
-          </value>
-        </block>
-  
-        <block type="shutil_move">
-          <value name="va1">
-            <shadow type="indata">
-              <field name="indata1">원본</field>
-            </shadow>
-          </value>
-          <value name="va2">
-            <shadow type="indata">
-              <field name="indata1">복사</field>
-            </shadow>
           </value>
         </block>
 

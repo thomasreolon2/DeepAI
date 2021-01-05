@@ -124,6 +124,7 @@
   Blockly.Blocks['os_getcwd'] = {
     init: function () {
       this.appendDummyInput()
+        .appendField("os")
         .appendField("현재경로 (getcwd)")
       this.setInputsInline(true);
       this.setOutput(true, null);
@@ -136,6 +137,7 @@
   Blockly.Blocks['os_listdir'] = {
     init: function () {
       this.appendDummyInput()
+        .appendField("os")
         .appendField("파일, 디렉터리목록 (listdir)")
       this.setInputsInline(true);
       this.setOutput(true, null);
@@ -149,6 +151,7 @@
   Blockly.Blocks['os_mkdir'] = {
     init: function () {
       this.appendDummyInput()
+        
         .appendField("디렉토리생성 (mkdir)")
         .appendField("(");
       this.appendValueInput("va")
@@ -163,15 +166,17 @@
     }
   };
 
-  Blockly.Blocks['os_rmdir'] = {
+  Blockly.Blocks['os_dir'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("디렉토리삭제 (rmdir)")
-        .appendField("(");
+      .appendField("os")
+          //.appendField("디렉토리삭제 (rmdir)")
+          //.appendField("(");
       this.appendValueInput("va")
-        .setCheck(null)
+          .appendField(new Blockly.FieldDropdown([["디렉토리생성 (mkdir) (","os.mkdir"], ["디렉토리삭제 (rmdir) (","os.rmdir"], ["디렉토리변경 (chdir) (","os.chdir"]]), "directory")
+          .setCheck(null)
       this.appendDummyInput()
-         .appendField(")");
+          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("#55ad15");
@@ -183,6 +188,7 @@
   Blockly.Blocks['os_chdir'] = {
     init: function () {
       this.appendDummyInput()
+      .appendField("os")
         .appendField("디렉토리변경 (chdir)")
         .appendField("(");
       this.appendValueInput("va")
@@ -200,6 +206,7 @@
   Blockly.Blocks['os_remove'] = {
     init: function () {
       this.appendDummyInput()
+      .appendField("os")
         .appendField("파일삭제 (remove)")
         .appendField("(");
       this.appendValueInput("va")
@@ -217,6 +224,7 @@
   Blockly.Blocks['os_rename'] = {
     init: function () {
       this.appendDummyInput()
+        .appendField("os")
         .appendField("파일변경 (rename)")
         .appendField("(");
       this.appendValueInput("va1")
@@ -235,13 +243,14 @@
     }
   };
 
-  Blockly.Blocks['shutil_copy'] = {
+  Blockly.Blocks['shutil_file'] = {
     init: function () {
       this.appendDummyInput()
         .appendField("Shutil")
-        .appendField("파일복사 (copy)")
-        .appendField("(");
+        //.appendField("파일복사 (copy)")
+        //.appendField("(");
       this.appendValueInput("va1")
+        .appendField(new Blockly.FieldDropdown([["파일복사 (copy) (","shutil.copy"], ["디렉토리복사 (copytree) (","shutil.copytree"], ["파일이동 (move) (","shutil.move"]]), "shutil")
         .setCheck(null)
       this.appendDummyInput()
         .appendField(",")

@@ -78,10 +78,11 @@ Blockly.Python['os_mkdir'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['os_rmdir'] = function (block) {
+Blockly.Python['os_dir'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = "os.rmdir"+ "('" + value_name + "')";
+  var dropdown_directory = block.getFieldValue('directory');
+
+  var code = dropdown_directory + "('" + value_name + "')";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -111,11 +112,12 @@ Blockly.Python['os_rename'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['shutil_copy'] = function (block) {
+Blockly.Python['shutil_file'] = function (block) {
   var value_name1 = Blockly.Python.valueToCode(block, 'va1', Blockly.Python.ORDER_ATOMIC);
   var value_name2 = Blockly.Python.valueToCode(block, 'va2', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = " shutil.copy"+ "('" + value_name1 + "','" + value_name2 + "')";
+  var dropdown_directory = block.getFieldValue('shutil');
+
+  var code = dropdown_directory + "('" + value_name1 + "','" + value_name2 + "')";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

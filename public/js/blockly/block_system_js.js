@@ -59,7 +59,7 @@
     return code;
   };
 
-  Blockly.JavaScript['os_rmdir'] = function (block) {
+  Blockly.JavaScript['os_dir'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     return code;
@@ -89,7 +89,7 @@
     return code;
   };
 
-  Blockly.JavaScript['shutil_copy'] = function (block) {
+  Blockly.JavaScript['shutil_file'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     return code;
