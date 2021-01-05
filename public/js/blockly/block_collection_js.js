@@ -136,3 +136,11 @@ Blockly.JavaScript['va_ser'] = function (block) {
   var code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+//va_id
+Blockly.JavaScript['va_id'] = function (block) {
+  var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
+  
+  var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

@@ -213,3 +213,11 @@ Blockly.Python['va_ser'] = function (block) {
   var code = value_dic1 + " in " + variable_list;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+//va_id
+Blockly.Python['va_id'] = function (block) {
+  var value_dic1 = Blockly.Python.valueToCode(block, 'dic1', Blockly.Python.ORDER_ATOMIC);
+  
+  var code = "id( " + value_dic1 + " )"
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

@@ -624,3 +624,20 @@ Blockly.Blocks['va_ser'] = {
         this.setHelpUrl("");
     }
 };
+
+// va_id
+Blockly.Blocks['va_id'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        })).appendField("객체주소값 (");
+        this.appendValueInput("dic1").setCheck(null);
+        this.appendDummyInput().appendField(")");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_DICT_HUE}");
+        this.setOutput(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
