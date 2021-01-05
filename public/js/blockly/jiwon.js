@@ -36,7 +36,7 @@ Blockly.Blocks['block_sum_min'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour(pandas_color);
    this.setTooltip("");
    this.setHelpUrl("");
    }
@@ -58,7 +58,7 @@ Blockly.Blocks['block_cumsum'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour(pandas_color);
    this.setTooltip("");
    this.setHelpUrl("");
    }
@@ -80,7 +80,7 @@ Blockly.Blocks['block_calculations'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour(pandas_color);
    this.setTooltip("");
    this.setHelpUrl("");
    }
@@ -102,7 +102,7 @@ Blockly.Blocks['pandas_sort'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour(pandas_color);
    this.setTooltip("");
    this.setHelpUrl("");
    }
@@ -122,7 +122,7 @@ Blockly.Blocks['pandas_corr'] = {
           .setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour(pandas_color);
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -144,7 +144,7 @@ Blockly.Blocks['pandas_stack'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour(pandas_color);
    this.setTooltip("");
    this.setHelpUrl("");
    }
@@ -166,7 +166,7 @@ Blockly.Blocks['pandas_stack'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(230);
+      this.setColour(pandas_color);
    this.setTooltip("");
    this.setHelpUrl("");
    }

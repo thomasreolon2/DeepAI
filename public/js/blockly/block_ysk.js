@@ -10,7 +10,7 @@ Blockly.Blocks['df_values'] = {
         .appendField(new Blockly.FieldVariable("df"), "list");
         this.setInputsInline(true);
         this.setOutput(true, null);
-    this.setColour("%{BKY_TEXTS_HUE}");
+    this.setColour(pandas_color);
  this.setTooltip(""); 
  this.setHelpUrl("");
   }
@@ -24,7 +24,7 @@ Blockly.Blocks['df_columns'] = {
         .appendField(new Blockly.FieldVariable("df"), "list");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour("%{BKY_TEXTS_HUE}");
+    this.setColour(pandas_color);
  this.setTooltip(""); 
  this.setHelpUrl("");
   }
@@ -38,7 +38,7 @@ Blockly.Blocks['df_T'] = {
         .appendField(new Blockly.FieldVariable("df"), "list");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour("%{BKY_TEXTS_HUE}");
+    this.setColour(pandas_color);
  this.setTooltip(""); 
  this.setHelpUrl("");
   }
@@ -53,7 +53,7 @@ Blockly.Blocks['df_pivot_table'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour("%{BKY_COLLECTION_HUE}");
+      this.setColour(pandas_color);
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -75,7 +75,7 @@ Blockly.Blocks['df_ap'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour("%{BKY_COLLECTION_HUE}");
+      this.setColour(pandas_color);
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -100,7 +100,7 @@ Blockly.Blocks['df_bb'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour("%{BKY_COLLECTION_HUE}");
+      this.setColour(pandas_color);
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -116,7 +116,7 @@ Blockly.Blocks['df_set_index'] = {
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-    this.setColour("%{BKY_TEXTS_HUE}");
+    this.setColour(pandas_color);
  this.setTooltip(""); 
  this.setHelpUrl("");
   }

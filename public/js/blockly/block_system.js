@@ -31,7 +31,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#55ad15");
+      this.setColour(pandas_color);
       this.setTooltip("");
       this.setHelpUrl("");
     }
