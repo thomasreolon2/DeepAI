@@ -2,12 +2,11 @@
 // 2020-12-26
 ///////////////////////////////////////////////////////
 
-var list_colour = "#515E7B"
-
+// 리스트생성
 Blockly.Blocks['create_list'] = {
   init: function () {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldImage("/img/Collection/C1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+          .appendField(new Blockly.FieldImage("/img/Collection/L1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
           .appendField(new Blockly.FieldVariable("my_list"), "list")
           .appendField(" = [");
       this.appendValueInput("text")
@@ -44,7 +43,7 @@ Blockly.Blocks['global'] = {
 Blockly.Blocks['list_sort_reverse'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C3-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/L3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -71,7 +70,7 @@ Blockly.Blocks['list_sort_reverse'] = {
 Blockly.Blocks['change_collection'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -127,7 +126,7 @@ Blockly.Blocks['list_index'] = {
 Blockly.Blocks['list_insert'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C2-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/L2-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -217,10 +216,6 @@ Blockly.Blocks['list_dot'] = {
   Blockly.Blocks['create_tuple'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField(new Blockly.FieldImage("/img/Collection/C8-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"   
-            }))
             .appendField("튜플")
             .appendField(new Blockly.FieldVariable("my_tuple"), "list")
             .appendField(" = (");
@@ -241,10 +236,6 @@ Blockly.Blocks['list_dot'] = {
 Blockly.Blocks['create_ziphap'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField(new Blockly.FieldImage("/img/Collection/C9-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-            }))
             .appendField("집합")
             .appendField(new Blockly.FieldVariable("my_set"), "list")
             .appendField(" = (");
@@ -265,7 +256,7 @@ Blockly.Blocks['create_ziphap'] = {
 Blockly.Blocks['create_dict'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField(new Blockly.FieldImage("/img/Collection/C11-logo.png", 25, 23, {
+            .appendField(new Blockly.FieldImage("/img/Collection/D1-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
             }))
@@ -426,7 +417,7 @@ Blockly.Blocks['dict1'] = {
 // 딕셔너리 옵션 블록 수정2021-01-05 ysk
 Blockly.Blocks['dic_menu1'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/D2-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField(Blockly.Msg.COLLECTION_9_DICTOPTION);
@@ -457,10 +448,8 @@ Blockly.Blocks['dic_menu1'] = {
 Blockly.Blocks['set_menu1'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C10-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        })).appendField("집합 다루기");;
+        this.appendDummyInput()
+            .appendField("집합 다루기");;
         this.appendValueInput("SET1").setCheck(null);
         this.appendValueInput("SET2").setCheck(null).appendField(Blockly.Msg.COLLECTION_11_SELECTSET);
         this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_11_VALCHANGE).appendField(new Blockly.FieldDropdown([
@@ -486,10 +475,7 @@ Blockly.Blocks['set_menu1'] = {
 Blockly.Blocks['set_menu1_2'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C10-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        })).appendField("집합 다루기");;
+        this.appendDummyInput().appendField("집합 다루기");;
         this.appendValueInput("SET1").setCheck(null);
         this.appendValueInput("SET2").setCheck(null).appendField(Blockly.Msg.COLLECTION_11_SELECTSET);
         this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_11_VALCHANGE).appendField(new Blockly.FieldDropdown([
@@ -537,7 +523,7 @@ Blockly.Blocks['forif'] = {
 // 라운드형 반복 조건 블록
 Blockly.Blocks['forif2'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C0-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C1-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -577,7 +563,7 @@ Blockly.Blocks['map_filter'] = {
 Blockly.Blocks['va_sel'] = {
     init: function () {
 
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C7-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField("값선택").appendField(new Blockly.FieldVariable("df"), "list").appendField("[");
@@ -594,7 +580,7 @@ Blockly.Blocks['va_sel'] = {
 // va_sel
 Blockly.Blocks['va_del'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C8-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField("값삭제").appendField("del ").appendField(new Blockly.FieldVariable("df"), "list").appendField("[");
@@ -611,7 +597,7 @@ Blockly.Blocks['va_del'] = {
 // va_ser
 Blockly.Blocks['va_ser'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/D3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField("키조사");
@@ -628,7 +614,7 @@ Blockly.Blocks['va_ser'] = {
 // va_id
 Blockly.Blocks['va_id'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Variable/V3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField("객체주소값 (");

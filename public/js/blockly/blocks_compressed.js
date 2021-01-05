@@ -92,7 +92,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "lists_isEmpty",
     message0: "%{BKY_LISTS_ISEMPTY_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Collection/C7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/C6-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Boolean",
     style: "conversion_blocks",//"list_blocks",
@@ -104,7 +104,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "lists_length",
     message0: "%{BKY_LISTS_LENGTH_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Collection/C6-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/C5-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Number",
     style: "conversion_blocks",//"list_blocks",
@@ -112,10 +112,11 @@ Blockly.defineBlocksWithJsonArray([
     helpUrl: "%{BKY_LISTS_LENGTH_HELPURL}",
   },
 ]);
+// 빈리스트 생성
 Blockly.Blocks.lists_create_with = {
   init: function () {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("/img/Collection/C5-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldImage("/img/Collection/C4-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
         .appendField(new Blockly.FieldDropdown([["빈리스트","list"], ["빈튜플","tuple"], ["빈집합","set"], ["빈딕셔너리","dict"]]), "NAME")
         .appendField("생성");
     this.setColour(230);
@@ -1681,12 +1682,12 @@ Blockly.defineBlocksWithJsonArray([
 
   // 변수자리에 원래 이거있었음 2021.01.05 남지원
   // { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
-
+  // 데이터 다루기
   {
     type: "create_new_list",
     message0: "%{BKY_COLLECTION_NEW_LIST}",
     args0: [
-      {"type": "field_image","src": "/img/Collection/C4-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/L5-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
       {
         "type": "field_variable",
         "name": "NUMBER_TO_CHECK",
@@ -1720,11 +1721,12 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_MATH_IS_TOOLTIP}",
     //mutator: "math_is_divisibleby_mutator",
   },
+  // 데이터 다루기
   {
     type: "create_new_list2",
     message0: "%{BKY_COLLECTION_NEW_LIST}",
     args0: [
-      {"type": "field_image","src": "/img/Collection/C4-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Collection/L4-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
       { type: "field_variable", name: "NUMBER_TO_CHECK", "variable": "my_list"},
       { type: "input_value", name: "DIVISOR", check: "Number" },
     ],
