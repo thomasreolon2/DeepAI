@@ -114,14 +114,21 @@ Blockly.defineBlocksWithJsonArray([
 ]);
 Blockly.Blocks.lists_create_with = {
   init: function () {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage("/img/Collection/C5-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldDropdown([["빈리스트","list"], ["빈튜플","tuple"], ["빈집합","set"], ["빈딕셔너리","dict"]]), "NAME")
+        .appendField("생성");
+    this.setColour(230);
     this.setHelpUrl(Blockly.Msg.LISTS_CREATE_WITH_HELPURL);
     this.setStyle("conversion_blocks");//"list_blocks");
-    this.itemCount_ = 3;
-    this.updateShape_();
+    this.setInputsInline(true);
+    //this.itemCount_ = 3;
+    //this.updateShape_();
     this.setOutput(!0, "Array");
-    this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
+    //this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
   },
+  /*
   mutationToDom: function () {
     var a = Blockly.utils.xml.createElement("mutation");
     a.setAttribute("items", this.itemCount_);
@@ -187,6 +194,7 @@ Blockly.Blocks.lists_create_with = {
       }
     for (; this.getInput("ADD" + a); ) this.removeInput("ADD" + a), a++;
   },
+  */
 };
 Blockly.Blocks.lists_create_with_container = {
   init: function () {

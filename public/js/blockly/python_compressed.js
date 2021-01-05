@@ -199,11 +199,28 @@ Blockly.Python.lists_create_empty = function (a) {
   return ["[]", Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python.lists_create_with = function (a) {
+  /* 뮤테이터 
   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++)
     b[c] =
       Blockly.Python.valueToCode(a, "ADD" + c, Blockly.Python.ORDER_NONE) ||
       "None";
-  return ["[" + b.join(", ") + "]", Blockly.Python.ORDER_ATOMIC];
+    */
+    var dropdown_name = a.getFieldValue('NAME');
+    var code;
+    
+    switch(dropdown_name){
+      case "list":
+        code = "[ ]"; break;
+      case "tuple":
+        code = "( )"; break;
+      case "set":
+        code = "([ ])"; break;
+      case "dict":
+        code = "{ }"; break;
+      defualt : break;
+    }
+
+  return code;//["[" + b.join(", ") + "]", Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python.lists_repeat = function (a) {
   var b =
