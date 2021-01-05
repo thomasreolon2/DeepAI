@@ -1728,13 +1728,18 @@ Blockly.Python['many_variables'] = function(block) {
   return code;
 };
 
+// 2021.01.05 남지원
+// DB내용 전에 이거들어있었음!!
+//
+// Blockly.Python.valueToCode(
+//   a,
+//   "NUMBER_TO_CHECK",
+//   Blockly.Python.ORDER_MULTIPLICATIVE
+// ) || "",
 Blockly.Python.create_new_list = function (a) {
   var b =
-      Blockly.Python.valueToCode(
-        a,
-        "NUMBER_TO_CHECK",
-        Blockly.Python.ORDER_MULTIPLICATIVE
-      ) || "",
+      Blockly.Python.variableDB_.getName(a.getFieldValue('NUMBER_TO_CHECK'), Blockly.Variables.NAME_TYPE) || "",
+      
     c = a.getFieldValue("PROPERTY");
   if ("PRIME" == c)
     return (

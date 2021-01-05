@@ -1679,12 +1679,19 @@ Blockly.defineBlocksWithJsonArray([
     helpUrl: "%{BKY_MATH_ATAN2_HELPURL}",
   },
 
+  // 변수자리에 원래 이거있었음 2021.01.05 남지원
+  // { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
+
   {
     type: "create_new_list",
     message0: "%{BKY_COLLECTION_NEW_LIST}",
     args0: [
       {"type": "field_image","src": "/img/Collection/C4-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
-      { type: "input_value", name: "NUMBER_TO_CHECK", check: "Number" },
+      {
+        "type": "field_variable",
+        "name": "NUMBER_TO_CHECK",
+        "variable": "my_list"
+      },
       { type: "input_value", name: "DIVISOR", check: "Number" },
     ],
     message1: "%1",
