@@ -423,44 +423,26 @@ Blockly.Blocks['dict1'] = {
     }
 };
 
-// 딕셔너리 옵션 블록
+// 딕셔너리 옵션 블록 수정2021-01-05 ysk
 Blockly.Blocks['dic_menu1'] = {
     init: function () {
-
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField(Blockly.Msg.COLLECTION_9_DICTOPTION);
-        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_DICVAR);
-        this.appendValueInput("dic1").setCheck(null);
-        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_VAL1);
-        this.appendValueInput("dic2").setCheck(null);
-        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_VAL2);
-        this.appendValueInput("dic3")
-        this.appendDummyInput().appendField(new Blockly.FieldDropdown([
-            [
-                Blockly.Msg.COLLECTION_9_DROPDOWN_VALSELECT, "selectvalues"
-            ],
-            [
-                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL1, "printvalues1"
-            ],
-            [
-                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTVAL2, "printvalues2"
-            ],
-            [
-                Blockly.Msg.COLLECTION_9_DROPDOWN_VALAPPEND, "addvalues"
-            ],
-            [
-                Blockly.Msg.COLLECTION_9_DROPDOWN_VALDELET, "delvalues"
-            ],
-            [
-                Blockly.Msg.COLLECTION_9_DROPDOWN_CASTINGDICT, "changedict"
-            ],
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_DICVAR).appendField(new Blockly.FieldVariable("my_dict"), "list")
+            .appendField(new Blockly.FieldDropdown([
             [
                 Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTKEY, "getkeys"
             ],
             [
                 Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL, "getvalues"
+            ],
+            [
+                "키,값쌍얻기", "item"
+            ],
+            [
+                "키,값쌍모두지우기", "clear"
             ]
         ]), "dic");
         this.setInputsInline(true);
@@ -588,3 +570,57 @@ Blockly.Blocks['map_filter'] = {
     this.setHelpUrl("");
     }
   };
+
+  //2021-01-05 ysk
+
+// va_sel
+Blockly.Blocks['va_sel'] = {
+    init: function () {
+
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        })).appendField("값선택").appendField(new Blockly.FieldVariable("df"), "list").appendField("[");
+        this.appendValueInput("dic1").setCheck(null);
+        this.appendDummyInput().appendField("]");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_COLLECTION_HUE}");
+        this.setOutput(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+// va_sel
+Blockly.Blocks['va_del'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        })).appendField("값삭제").appendField("del ").appendField(new Blockly.FieldVariable("df"), "list").appendField("[");
+        this.appendValueInput("dic1").setCheck(null);
+        this.appendDummyInput().appendField("]");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_COLLECTION_HUE}");
+        this.setOutput(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+// va_ser
+Blockly.Blocks['va_ser'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C12-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        })).appendField("키조사");
+        this.appendValueInput("dic1").setCheck(null);
+        this.appendDummyInput().appendField(" in ").appendField(new Blockly.FieldVariable("my_dict"), "list");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_DICT_HUE}");
+        this.setOutput(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};

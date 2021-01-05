@@ -46,12 +46,10 @@ Blockly.JavaScript['create_ziphap'] = function (block) {
   return code;
 };
 
-// 딕셔너리 옵션
+// 딕셔너리 옵션 블록 수정2021-01-05 ysk
 Blockly.JavaScript['dic_menu1'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var dropdown_dic = block.getFieldValue('dic');
-  var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_dic2 = Blockly.JavaScript.valueToCode(block, 'dic2', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_dic3 = Blockly.JavaScript.valueToCode(block, 'dic3', Blockly.JavaScript.ORDER_ATOMIC);
   code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
@@ -107,6 +105,34 @@ Blockly.JavaScript['map_filter'] = function(block) {
   var value_val1 = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_val2 = Blockly.JavaScript.valueToCode(block, 'val2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+//2021-01-05
+//va_sel
+Blockly.JavaScript['va_sel'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
+  
+  var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+//va_del
+Blockly.JavaScript['va_del'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
+  
+  var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+//va_ser
+Blockly.JavaScript['va_ser'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
+  
+  var code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
