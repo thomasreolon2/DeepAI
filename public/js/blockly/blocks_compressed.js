@@ -2512,7 +2512,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text",
     message0: "%1 %2",
     args0: [
-      {"type": "field_image","src": "/img/Text/T1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "field_input", name: "TEXT", text: "" },
     ],
     output: "String",
@@ -2546,7 +2546,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_join",
     message0: "%1",
     args0:[
-      {"type": "field_image","src": "/img/Text/T2-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S2-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
     ],
     output: "String",
     style: "text_blocks",
@@ -2579,7 +2579,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_append",
     message0: "%{BKY_TEXT_APPEND_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Text/T4-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S4-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
       {
         type: "field_variable",
         name: "VAR",
@@ -2597,7 +2597,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_length",
     message0: "%{BKY_TEXT_LENGTH_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Text/T3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Number",
     style: "text_blocks",
@@ -2609,7 +2609,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "built_in_function_str",
     message0: "%1%{BKY_NUMSTR_INFUCTION} %{BKY_NUMSTR_INFUCTION_STR} %2",
     args0: [
-      {"type": "field_image","src": "/img/Text/T4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Number",
     style: "text_blocks",
@@ -2620,7 +2620,7 @@ Blockly.defineBlocksWithJsonArray([
   {
     type: "text_isEmpty",
     args0: [
-      {"type": "field_image","src": "/img/Text/T6-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S6-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     message0: "%{BKY_TEXT_ISEMPTY_TITLE}",
     
@@ -2634,7 +2634,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_indexOf",
     message0: "%{BKY_TEXT_INDEXOF_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Text/T7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S7-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: "String" },
       {
         type: "field_dropdown",
@@ -2656,7 +2656,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_charAt",
     message0: "%{BKY_TEXT_CHARAT_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Text/T8-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S8-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: "String" },
       {
         type: "field_dropdown",
@@ -2693,7 +2693,7 @@ Blockly.Blocks.text_getSubstring = {
     this.setStyle("text_blocks");
     this.appendValueInput("STRING")
       .setCheck("String")
-      .appendField(new Blockly.FieldImage("/img/Text/T9-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+      .appendField(new Blockly.FieldImage("/img/Str/S9-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField(Blockly.Msg.TEXT_GET_SUBSTRING_INPUT_IN_TEXT);
     this.appendDummyInput("AT1");
     this.appendDummyInput("AT2");
@@ -2764,7 +2764,7 @@ Blockly.Blocks.text_changeCase = {
     this.setStyle("text_blocks");
     this.appendValueInput("TEXT")
       .setCheck("String")
-      .appendField(new Blockly.FieldImage("/img/Text/T10-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+      .appendField(new Blockly.FieldImage("/img/Str/S10-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField(new Blockly.FieldDropdown(a), "CASE");
     this.setOutput(!0, "String");
     this.setTooltip(Blockly.Msg.TEXT_CHANGECASE_TOOLTIP);
@@ -2873,7 +2873,7 @@ Blockly.Blocks.text_count = {
     this.jsonInit({
       message0: Blockly.Msg.TEXT_COUNT_MESSAGE0,
       args0: [
-        {"type": "field_image","src": "/img/Text/T11-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+        {"type": "field_image","src": "/img/Str/S11-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
         { type: "input_value", name: "SUB", check: "String" },
         { type: "input_value", name: "TEXT", check: "String" },
       ],

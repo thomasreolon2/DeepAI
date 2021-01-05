@@ -63,7 +63,7 @@ Blockly.Blocks['text_replace'] = {
 Blockly.Blocks['text_editing'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("/img/Text/T6-logo.png", 25, 23, {
+        .appendField(new Blockly.FieldImage("/img/Str/S6-logo.png", 25, 23, {
          alt: "*",
          flipRtl: "FALSE"
      }))
@@ -87,7 +87,7 @@ Blockly.Blocks['text_editing'] = {
 Blockly.Blocks['text_search'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("/img/Text/T7-logo.png", 25, 23, {
+        .appendField(new Blockly.FieldImage("/img/Str/S7-logo.png", 25, 23, {
           alt: "*",
           flipRtl: "FALSE"
       }))
@@ -111,7 +111,7 @@ Blockly.Blocks['text_search'] = {
 Blockly.Blocks['text_up_low'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("/img/Text/T8-logo.png", 25, 23, {
+        .appendField(new Blockly.FieldImage("/img/Str/S8-logo.png", 25, 23, {
           alt: "*",
           flipRtl: "FALSE"
       }))
@@ -132,7 +132,7 @@ Blockly.Blocks['text_up_low'] = {
 Blockly.Blocks['text_sort'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("/img/Text/T9-logo.png", 25, 23, {
+        .appendField(new Blockly.FieldImage("/img/Str/S9-logo.png", 25, 23, {
           alt: "*",
           flipRtl: "FALSE"
       }))
@@ -161,7 +161,7 @@ Blockly.Blocks['text_sort'] = {
 Blockly.Blocks['text_query'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldImage("/img/Text/T10-logo.png", 25, 23, {
+        .appendField(new Blockly.FieldImage("/img/Str/S10-logo.png", 25, 23, {
           alt: "*",
           flipRtl: "FALSE"
       }))
@@ -181,7 +181,7 @@ Blockly.Blocks['text_query'] = {
 // 문자 슬라이싱 2021.01.03 남지원
 Blockly.Blocks['text_slice'] = {
   init: function() {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Text/T5-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Str/S5-logo.png", 25, 23, {
               alt: "*",
               flipRtl: "FALSE"
         }))   
