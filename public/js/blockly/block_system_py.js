@@ -168,42 +168,42 @@ Blockly.Python['sleep'] = function(block) {
   var value_val1 = Blockly.Python.valueToCode(block, 'val1', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'time.sleep(' + value_val1 + ")\n";
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['abspath'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'os.path.abspath(' + value_name + ")";
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['basename'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'os.path.basename(' + value_name + ")";
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['dirname'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'os.path.dirname(' + value_name + ")";
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['exists'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'os.path.exists(' + value_name + ")";
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['getsize'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'os.path.getsize(' + value_name + ")";
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['is_dir_file'] = function(block) {
@@ -211,12 +211,12 @@ Blockly.Python['is_dir_file'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'os.path.' + dropdown_what + value_name + ")";
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['path_split'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'os.path.split(' + value_name + ")";
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
