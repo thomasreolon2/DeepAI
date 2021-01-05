@@ -998,7 +998,7 @@ Blockly.Blocks['k_means'] = {
 // for
 Blockly.Blocks['py_for'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R1-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R4-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -1019,7 +1019,7 @@ Blockly.Blocks['py_for'] = {
 // for1
 Blockly.Blocks['py_for1'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R1-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -1040,7 +1040,7 @@ Blockly.Blocks['py_for1'] = {
 // for문안 range,xyz
 Blockly.Blocks['range3'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R6-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R7-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -1059,7 +1059,7 @@ Blockly.Blocks['range3'] = {
 //
 Blockly.Blocks['break_block'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R7-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R8-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -1074,7 +1074,7 @@ Blockly.Blocks['break_block'] = {
 
 Blockly.Blocks['continue_block'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R7-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R9-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -1126,7 +1126,7 @@ Blockly.Blocks['val_set'] = {
 // for range(범위)
 Blockly.Blocks['range1'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R4-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R5-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
@@ -1145,7 +1145,7 @@ Blockly.Blocks['range1'] = {
 
 Blockly.Blocks['range2'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R5-logo.png", 25, 23, {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R6-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
         }));
