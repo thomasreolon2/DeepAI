@@ -5,7 +5,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -18,7 +18,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -57,7 +57,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -70,7 +70,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -128,7 +128,7 @@
         .appendField("현재경로 (getcwd)")
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -141,7 +141,7 @@
         .appendField("파일, 디렉터리목록 (listdir)")
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -160,7 +160,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -179,7 +179,7 @@
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -197,7 +197,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -215,7 +215,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -237,7 +237,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -260,7 +260,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -282,7 +282,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -304,7 +304,7 @@
          .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("#55ad15");
+      this.setColour("%{BKY_OS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -319,7 +319,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -334,7 +334,7 @@
           .appendField(new Blockly.FieldDropdown([["년도","year"], ["월","month"], ["일","day"], ["시간","hour"], ["분","minute"], ["초","second"], ["요일","weekday()"]]), "datetime_module");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -347,7 +347,7 @@
           .appendField("현재시각 time.time()");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -362,7 +362,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -379,7 +379,7 @@
       //this.setPreviousStatement(true, null);
       //this.setNextStatement(true, null);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -396,7 +396,7 @@
       // this.setPreviousStatement(true, null);
       // this.setNextStatement(true, null);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -413,7 +413,7 @@
       // this.setPreviousStatement(true, null);
       // this.setNextStatement(true, null);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -430,7 +430,7 @@
       // this.setPreviousStatement(true, null);
       // this.setNextStatement(true, null);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip(""); 
    this.setHelpUrl("");
     }
@@ -447,7 +447,7 @@
       // this.setPreviousStatement(true, null);
       // this.setNextStatement(true, null);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip(""); 
    this.setHelpUrl("");
     }
@@ -464,7 +464,7 @@
       // this.setPreviousStatement(true, null);
       // this.setNextStatement(true, null);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip(""); 
    this.setHelpUrl("");
     }
@@ -480,7 +480,7 @@
       this.appendDummyInput();
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -497,7 +497,7 @@
       // this.setPreviousStatement(true, null);
       // this.setNextStatement(true, null);
       this.setOutput(true, null);
-      this.setColour("55ad15");
+      this.setColour("%{BKY_OS_HUE}");
    this.setTooltip(""); 
    this.setHelpUrl("");
     }

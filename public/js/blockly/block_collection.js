@@ -2,7 +2,7 @@
 // 2020-12-26
 ///////////////////////////////////////////////////////
 
-var list_colour = "#183153"
+var list_colour = "#515E7B"
 
 Blockly.Blocks['create_list'] = {
   init: function () {
@@ -17,7 +17,7 @@ Blockly.Blocks['create_list'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(list_colour);
+      this.setColour("%{BKY_LISTS_HUE}");
       this.setTooltip("Create a list");
       this.setHelpUrl("");
   }
@@ -62,7 +62,7 @@ Blockly.Blocks['list_sort_reverse'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         //this.setOutput(true, null);
-        this.setColour(list_colour);
+        this.setColour("%{BKY_LISTS_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -140,7 +140,7 @@ Blockly.Blocks['list_insert'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(list_colour);
+        this.setColour("%{BKY_LISTS_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
