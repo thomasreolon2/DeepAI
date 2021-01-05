@@ -59,6 +59,12 @@ Blockly.Blocks['convert_block'] = {
             [
                 "%{BKY_OPERATION_13_4}", "bool("
             ],
+            [
+                "%{BKY_OPERATION_13_5}", "chr("
+            ],
+            [
+                "%{BKY_OPERATION_13_6}", "ord("
+            ],
             
         ]), "NAME");
         this.appendValueInput("A").setCheck(null);

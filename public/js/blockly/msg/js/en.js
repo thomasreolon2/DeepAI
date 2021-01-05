@@ -582,8 +582,10 @@ Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310"; //?
 Blockly.Msg['OPERATION_1_INPUT'] = "External Input";
 Blockly.Msg['OPERATION_13_1'] = "Integer Type";
 Blockly.Msg['OPERATION_13_2'] = "Float Type";
-Blockly.Msg['OPERATION_13_3'] = "Character Type";
+Blockly.Msg['OPERATION_13_3'] = "String Type";
 Blockly.Msg['OPERATION_13_4'] = "boolean Type";
+Blockly.Msg['OPERATION_13_5'] = "Character Type";
+Blockly.Msg['OPERATION_13_6'] = "ASCII Type";
 
 // -----Class
 Blockly.Msg['CLASS_1_1'] = "class declaration";

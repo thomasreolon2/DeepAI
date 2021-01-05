@@ -583,8 +583,12 @@ Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310"; //?
 Blockly.Msg['OPERATION_1_INPUT'] = "외부 입력";
 Blockly.Msg['OPERATION_13_1'] = "정수형";
 Blockly.Msg['OPERATION_13_2'] = "실수형";
-Blockly.Msg['OPERATION_13_3'] = "문자형";
+Blockly.Msg['OPERATION_13_3'] = "문자열형";
 Blockly.Msg['OPERATION_13_4'] = "불자료형";
+Blockly.Msg['OPERATION_13_5'] = "문자형";
+Blockly.Msg['OPERATION_13_6'] = "아스키코드형";
+
+
 
 // -----Class
 Blockly.Msg['CLASS_1_1'] = "클래스 선언";
