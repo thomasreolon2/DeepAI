@@ -170,3 +170,53 @@ Blockly.Python['sleep'] = function(block) {
   var code = 'time.sleep(' + value_val1 + ")\n";
   return code;
 };
+
+Blockly.Python['abspath'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'os.path.abspath(' + value_name + ")";
+  return code;
+};
+
+Blockly.Python['basename'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'os.path.basename(' + value_name + ")";
+  return code;
+};
+
+Blockly.Python['dirname'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'os.path.dirname(' + value_name + ")";
+  return code;
+};
+
+Blockly.Python['exists'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'os.path.exists(' + value_name + ")";
+  return code;
+};
+
+Blockly.Python['getsize'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'os.path.getsize(' + value_name + ")";
+  return code;
+};
+
+Blockly.Python['is_dir_file'] = function(block) {
+  var dropdown_what = block.getFieldValue('what');
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'os.path.' + dropdown_what + value_name + ")";
+  return code;
+};
+
+Blockly.Python['path_split'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'os.path.split(' + value_name + ")";
+  return code;
+};

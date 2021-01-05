@@ -310,7 +310,7 @@
     }
   };
 
-  //리성주
+  // datetime 객체 생성
   Blockly.Blocks['datetime_now'] = {
     init: function() {
       this.appendValueInput("variables")
@@ -325,6 +325,7 @@
     }
   };
 
+  // 년도, 월, 일 시간, 분, 초, 요일
   Blockly.Blocks['now_method'] = {
     init: function() {
       this.appendValueInput("object")
@@ -339,6 +340,7 @@
     }
   };
 
+  // 현재 시각
   Blockly.Blocks['time_'] = {
     init: function() {
       this.appendDummyInput()
@@ -351,6 +353,7 @@
     }
   };
 
+  // 프로그램 일시 정지
   Blockly.Blocks['sleep'] = {
     init: function() {
       this.appendValueInput("val1")
@@ -365,4 +368,137 @@
     }
   };
 
+  // 파일 절대경로 반환
+  Blockly.Blocks['abspath'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("path 절대경로(abspath)");
+      this.appendDummyInput();
+      this.setInputsInline(true);
+      //this.setPreviousStatement(true, null);
+      //this.setNextStatement(true, null);
+      this.setOutput(true, null);
+      this.setColour("55ad15");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  
+  // path의 기본이름 반환
+  Blockly.Blocks['basename'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("path 기본이름(basename)");
+      this.appendDummyInput();
+      this.setInputsInline(true);
+      // this.setPreviousStatement(true, null);
+      // this.setNextStatement(true, null);
+      this.setOutput(true, null);
+      this.setColour("55ad15");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
+  // path의 파일/디렉토리 경로 반환
+  Blockly.Blocks['dirname'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("path 경로(dirname)");
+      this.appendDummyInput();
+      this.setInputsInline(true);
+      // this.setPreviousStatement(true, null);
+      // this.setNextStatement(true, null);
+      this.setOutput(true, null);
+      this.setColour("55ad15");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // path의 존재유무
+  Blockly.Blocks['exists'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("path 존재유무(exists)");
+      this.appendDummyInput();
+      this.setInputsInline(true);
+      // this.setPreviousStatement(true, null);
+      // this.setNextStatement(true, null);
+      this.setOutput(true, null);
+      this.setColour("55ad15");
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };
+
+  // path 존재 유무 리턴
+  Blockly.Blocks['exists'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("path 존재유무(exists)");
+      this.appendDummyInput();
+      this.setInputsInline(true);
+      // this.setPreviousStatement(true, null);
+      // this.setNextStatement(true, null);
+      this.setOutput(true, null);
+      this.setColour("55ad15");
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };
+
+  // path 파일 크기 바이트 반환
+  Blockly.Blocks['getsize'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("path 파일크기(getsize)");
+      this.appendDummyInput();
+      this.setInputsInline(true);
+      // this.setPreviousStatement(true, null);
+      // this.setNextStatement(true, null);
+      this.setOutput(true, null);
+      this.setColour("55ad15");
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };
+
+  // path 디렉토리인지 아닌지, 파일, 절대경로인지
+  Blockly.Blocks['is_dir_file'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("path")
+          .appendField(new Blockly.FieldDropdown([["디렉토리인지 확인(isdir)","isdir("], ["파일인지 확인(isfile)","isfile("], ["절대경로인지 확인(isabs)","isabs("]]), "what");
+      this.appendDummyInput();
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("55ad15");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // path 디렉토리, 파일 분리
+  Blockly.Blocks['path_split'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("path 디렉토리&파일 분리(split)");
+      this.appendDummyInput();
+      this.setInputsInline(true);
+      // this.setPreviousStatement(true, null);
+      // this.setNextStatement(true, null);
+      this.setOutput(true, null);
+      this.setColour("55ad15");
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };

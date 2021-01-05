@@ -610,7 +610,7 @@
       
       <category name="시스템(os)" colour="%{BKY_OS_HUE}">
   
-        <label text="os & shutil"></label>
+        <label text="os & os.path & shutil"></label>
         
         <block type="os_library"></block>
         <block type="shutil_library"></block>
@@ -643,6 +643,62 @@
           <value name="va2">
             <shadow type="indata">
               <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "abspath">
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">"파일 혹은 폴더"</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "basename">
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">"절대경로"</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "dirname">
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">'path'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "exists">
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">'path'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "getsize">
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">'path'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "is_dir_file">
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">'path'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "path_split">
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">'path'</field>
             </shadow>
           </value>
         </block>
@@ -690,7 +746,13 @@
           </value>
         </block>
 
+
+        
+
       </category>
+
+      
+    
       <category name="파일(file)" colour="255">
         <block type="pickle_library"></block>
 
@@ -748,6 +810,8 @@
       </block>
       
       </category>
+
+    </category>
     </category>
     <!-- #####################################################################################################  -->
     <!-- ******************************   숫자 문자 ( Text )                         ******************************* -->
