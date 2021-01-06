@@ -50,13 +50,14 @@ Blockly.Python.init = function (a) {
     var b = [], c = Blockly.Variables.allDeveloperVariables(a), d = 0;
     d < c.length;
     d++
-  )
+  ){
     b.push(
       Blockly.Python.variableDB_.getName(
         c[d],
         Blockly.Names.DEVELOPER_VARIABLE_TYPE
       ) + " = None"
     ); 
+  }
   a = Blockly.Variables.allUsedVarModels(a);
   // for (d = 0; d < a.length; d++)
   //   b.push(
@@ -997,6 +998,8 @@ Blockly.Python.math_number_property = function (a) {
 //     a + " = (" + a + " if isinstance(" + a + ", Number) else 0) + " + b + "\n"
 //   );
 // };
+
+// 이성주 변수 대/소문자 구별 수정
 Blockly.Python.math_change = function (block) {
   // Blockly.Python.definitions_.from_numbers_import_Number =
   //   "from numbers import Number";
@@ -1012,10 +1015,24 @@ Blockly.Python.math_change = function (block) {
      block.getFieldValue("VAR"),
      Blockly.VARIABLE_CATEGORY_NAME
    );
+   
+
+  console.log("test" + a);
 
   var dropdown_name = block.getFieldValue("NAME");
-  // var val_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-  return a + ' ' + dropdown_name + ' ' + b + "\n";
+  
+  // 대,소문자 구별
+  if(a == a.toUpperCase()){  // 변수명 => 대문자 일때 출력
+    console.log("대문자버전: " + a);
+    return a.toUpperCase() + ' ' + dropdown_name + ' ' + b + "\n";
+  }
+  else if(a == a.toLowerCase()){ // 변수명 => 소문자 일때
+    console.log("소문자버전: " + a);
+     return a.toLowerCase() + ' ' + dropdown_name + ' ' + b + "\n";
+  }
+  //return null;
+     // var val_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  
 };
 
 Blockly.Python.math_round = Blockly.Python.math_single;

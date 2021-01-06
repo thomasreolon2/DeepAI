@@ -5384,15 +5384,16 @@ Blockly.VariableMap.prototype.renameVariableWithConflict_ = function (
   this.variableMap_[e].splice(a, 1);
 };
 
-// 대소문자 구별__
+// 대,소문자 구별__
 Blockly.VariableMap.prototype.createVariable = function (a, b, c) {
 
   console.log("dfsfffffffffffffffff:  " + a);
 
   var d = this.getVariable(a, b);
-  if(a == a.toUpperCase()) d = null;
-  if(a == a.toLowerCase()) d = null;
-  if (d) {
+  if(a == a.toUpperCase()) d = null; // 대,소문자 구별을 위해 d를 null로 지정
+  if(a == a.toLowerCase()) d = null; // 대,소문자 구별을 위해 d를 null로 지정
+
+  if (d) { // d가 존재한다면, 변수가 이미 존재한다는 뜻..
     if (c && d.getId() != c){
       throw Error(
         'Variable "' +
@@ -5413,14 +5414,15 @@ Blockly.VariableMap.prototype.createVariable = function (a, b, c) {
     
     throw Error('Variable id, "' + c + '", is already in use.');
   }
-  console.log("eeeeeeeeeee");
+
+  // 대문자와 소문자 구별하여 블록형상이 생성되게 수정.
   d = c || Blockly.utils.genUid();
   b = b || "";
-  d = new Blockly.VariableModel(this.workspace, a, b, d);
+  d = new Blockly.VariableModel(this.workspace, a, b, d); // 새로운 변수 형상을 생성.
 
-  console.log("kkkkkkkkkkkkk: " + typeof(d.getId()));
+  console.log("test d.getID(): " + typeof(d.getId()));
   a = this.variableMap_[b] || [];
-  a.push(d);
+  a.push(d);   // 변수 카테고리에 생성된 변수 넣는 부분.
   delete this.variableMap_[b];
   this.variableMap_[b] = a;
   return d;
@@ -12086,7 +12088,9 @@ Blockly.Names.prototype.getName = function (a, b) {
     var c = this.getNameForUserVariable_(a);
     c && (a = c);
   }
-  c = a.toLowerCase() + "_" + b;
+  // c = a.toLowerCase() + "_" + b; // 대,소문자 구별
+
+  c = a + "_" + b;   // console 부분 출력 소문자 -> 있는 그대로 출력
   var d =
     b == Blockly.VARIABLE_CATEGORY_NAME ||
     b == Blockly.Names.DEVELOPER_VARIABLE_TYPE
@@ -12500,7 +12504,7 @@ Blockly.Variables.generateUniqueNameFromOptions = function (a, b) {
   }
 };
 
-// 대소문자 구별__
+// 대,소문자 구별__
 Blockly.Variables.createVariableButtonHandler = function (a, b, c) {
   var d = c || "",
     e = function (c) { // 프롬프트: 새 변수를 입력하세요 출력
@@ -12525,12 +12529,12 @@ Blockly.Variables.createVariableButtonHandler = function (a, b, c) {
             });
           } 
           else {
+            // 대,소문자 구별 안하면 자동으로 같은 알파벳으로 인식하기 때문에 구별..
             console.log("c.name:" + c)
-            if(c == c.toUpperCase()) 
-              a.createVariable(c, d), b && b(c);
-            else if(c == c.toLowerCase()) {
-              // var k = c;
-              a.createVariable(c, d), b && b(c);
+            if(c == c.toUpperCase())  // 대문자일 때 변수 카테고리에 변수블록 생성
+              a.createVariable(c, d), b && b(c); // 변수 블록 생성하는 함수
+            else if(c == c.toLowerCase()) { // 소문자일 때 변수 카테고리에 변수블록 생성
+              a.createVariable(c, d), b && b(c); // 변수 블록 생성하는 함수
             }
           }
         } else b && b(null);
@@ -12579,7 +12583,7 @@ Blockly.Variables.nameUsedWithOtherType_ = function (a, b, c) {
   return null;
 };
 
-// 대소문자 구별__
+// 대,소문자 구별__
 Blockly.Variables.nameUsedWithAnyType_ = function (a, b) {
   b = b.getVariableMap().getAllVariables();
   //a = a.toLowerCase();
@@ -12590,17 +12594,14 @@ Blockly.Variables.nameUsedWithAnyType_ = function (a, b) {
   // for (var c = 0, d; (d = b[c]); c++) if (d.name.toLowerCase() == a) return d;
                                         // a: 입력값 그대로
   for (var c = 0, d; (d = b[c]); c++){ // d: 이전에 생성된 변수들
-    // console.log("test111d: " + d.name)
-    // if (d.name.toLowerCase() == a) return d;
-    console.log("test111d: " + d.name);
 
-    // if ((d.name.toLowerCase()) == (a.toLowerCase())) return d;
-    // else if (d.name.toUpperCase() == a.toUpperCase()) return d;
+    console.log("test111d: " + d.name);
 
     if (d.name == a){
       //d.name = d.name.toLowerCase();
       console.log("소문자d: " +d.name)
       return d;
+
     }
     
   }
