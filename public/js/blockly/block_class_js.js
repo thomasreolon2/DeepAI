@@ -14,6 +14,17 @@ Blockly.JavaScript['webclass'] = function (block) {
     //return '\n';
 };
 
+Blockly.JavaScript['webclass2'] = function (block) {
+    var text_const = Blockly.JavaScript.valueToCode(block, 'class', Blockly.JavaScript.ORDER_ATOMIC);
+    var branch = Blockly.JavaScript.statementToCode(block, 'DO');
+    var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+
+    branch = Blockly.JavaScript.addLoopTrap(branch, block.id) || Blockly.JavaScript.PASS;
+    return 'class ' + text_const + ':\n' + branch;
+    //return '\n';
+};
+
+
 // 객체 사용
 Blockly.JavaScript['class_use'] = function(block) {
     var val1 = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC);

@@ -35,6 +35,27 @@ Blockly.Blocks['webclass'] = {
     }
 };
 
+// 상속 2021.01.06 남지원
+Blockly.Blocks['webclass2'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField('상속')
+            .appendField(new Blockly.FieldVariable("My_class"), "VAR")
+            .appendField('(');
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(')')
+            .appendField(' :');
+        this.appendStatementInput('DO')
+            .appendField('');
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_CLASS_HUE}");
+        this.setTooltip('Class Statement.');
+        this.setHelpUrl('');
+    }
+};
  // 객체사용 
  Blockly.Blocks['class_use'] = {
     init: function() {     

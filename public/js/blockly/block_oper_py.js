@@ -4,7 +4,7 @@ Blockly.Python['Oper'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
     var value_b = Blockly.Python.valueToCode(block, 'B', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = value_a+dropdown_name+value_b;
+    var code = `${value_a} ${dropdown_name} ${value_b}`;
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];
 };

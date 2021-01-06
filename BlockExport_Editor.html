@@ -870,15 +870,6 @@
           </shadow>
         </value>
       </block>
-
-      <!-- 내장함수 - 문자-->
-      <block type="built_in_function_str">
-        <value name="VALUE">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
       
      <!-- 문자 슬라이스 -->
      <block type="text_slice">
@@ -1744,6 +1735,15 @@
       <label text="클래스"></label>
       <!-- 클래스 -->
       <block type="webclass"></block>
+      <!-- 상속 -->
+      <block type="webclass2">
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+
+      </block>
       <!-- self -->
       <block type="self">
         <value name="varset">

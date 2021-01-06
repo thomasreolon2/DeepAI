@@ -13,8 +13,19 @@ Blockly.Python['webclass'] = function (block) {
     var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
     var branch = Blockly.Python.statementToCode(block, 'DO');
     branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
-    return 'class ' + variable_name + ':\n' + branch;
+    return 'class ' + variable_name + ':\n' + branch + '\n';
 };
+
+// 상속 블록
+Blockly.Python['webclass2'] = function (block) {
+  var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var branch = Blockly.Python.statementToCode(block, 'DO');
+  var value_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+
+  branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
+  return `class ${variable_name}(${value_name}) : \n ${branch} `;
+};
+
 
 // 객체 사용
 Blockly.Python['class_use'] = function(block) {

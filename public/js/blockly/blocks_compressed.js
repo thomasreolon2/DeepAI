@@ -2606,18 +2606,6 @@ Blockly.defineBlocksWithJsonArray([
     tooltip: "%{BKY_TEXT_LENGTH_TOOLTIP}",
     helpUrl: "%{BKY_TEXT_LENGTH_HELPURL}",
   },
-   // 내장함수 - 문자열
-  {
-    type: "built_in_function_str",
-    message0: "%1%{BKY_NUMSTR_INFUCTION} %{BKY_NUMSTR_INFUCTION_STR} %2",
-    args0: [
-      {"type": "field_image","src": "/img/Str/S4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
-      { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
-    output: "Number",
-    style: "text_blocks",
-    tooltip: "%{BKY_TEXT_LENGTH_TOOLTIP}",
-    helpUrl: "%{BKY_TEXT_LENGTH_HELPURL}",
-  },
   // 문자열 비어있는지 확인
   {
     type: "text_isEmpty",

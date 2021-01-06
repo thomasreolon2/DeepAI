@@ -748,9 +748,6 @@ Blockly.JavaScript.text_append = function (a) {
 Blockly.JavaScript.text_length = function (a) {
     return [(Blockly.JavaScript.valueToCode(a, "VALUE", Blockly.JavaScript.ORDER_FUNCTION_CALL) || "''") + ".length", Blockly.JavaScript.ORDER_MEMBER]
 };
-Blockly.JavaScript.built_in_function_str = function (a) {
-    return [(Blockly.JavaScript.valueToCode(a, "VALUE", Blockly.JavaScript.ORDER_FUNCTION_CALL) || "''") + ".length", Blockly.JavaScript.ORDER_MEMBER]
-};
 Blockly.JavaScript.text_isEmpty = function (a) {
     return ["!" + (Blockly.JavaScript.valueToCode(a, "VALUE", Blockly.JavaScript.ORDER_MEMBER) || "''") + ".length", Blockly.JavaScript.ORDER_LOGICAL_NOT]
 };
