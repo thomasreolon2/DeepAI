@@ -298,7 +298,7 @@ Blockly.Msg["NEW_COLOUR_VARIABLE"] = "색 변수 만들기...";
 Blockly.Msg["NEW_NUMBER_VARIABLE"] = "숫자 변수 만들기....";
 Blockly.Msg["NEW_STRING_VARIABLE"] = "문자열 변수 만들기...";
 Blockly.Msg["NEW_VARIABLE"] = "변수 만들기...";
-Blockly.Msg["NEW_VARIABLE_TITLE"] = "새 변수 이름:";
+Blockly.Msg["NEW_VARIABLE_TITLE"] = "새 변수 이름 (식별자 원칙) ex.) python, python_lang :";
 Blockly.Msg["NEW_VARIABLE_TYPE_TITLE"] = "새 변수 유형:";
 Blockly.Msg["ORDINAL_NUMBER_SUFFIX"] = "";
 Blockly.Msg["PROCEDURES_ALLOW_STATEMENTS"] = "서술 허가";
@@ -810,14 +810,14 @@ Blockly.Msg['DATASET_IMPORT_DATASET_6'] = "와인 품질 데이터";
 Blockly.Msg['DATASET_RANDOM_IMPORT_1'] = "[무작위 데이터셋 생성]  ";
 Blockly.Msg['DATASET_RANDOM_IMPORT_2'] = "샘플 수";
 Blockly.Msg['DATASET_RANDOM_IMPORT_3'] = "특성 개수";
-Blockly.Msg['DATASET_MAKE_CIRCLES_1'] = "[무작위 데이터셋 생성 - Circles] X_data";
+Blockly.Msg['DATASET_MAKE_CIRCLES_1'] = "[무작위 데이터셋 생성 - Circles] x_data";
 Blockly.Msg['DATASET_MAKE_CIRCLES_2'] = "샘플 수 ";
 Blockly.Msg['DATASET_MAKE_CIRCLES_3'] = "거리 비율 (Factor)";
 Blockly.Msg['DATASET_FETCH_OPENML_1'] = "[openml 데이터셋] ";
 Blockly.Msg['DATASET_FETCH_OPENML_2'] = "집 값";
 Blockly.Msg['DATASET_FETCH_OPENML_3'] = "타이타닉";
 Blockly.Msg['DATASET_CSV3_1'] = "[CSV 파일 로드]";
-Blockly.Msg['DATASET_CSV3_2'] = "Y_data 컬럼 선택";
+Blockly.Msg['DATASET_CSV3_2'] = "y_data 컬럼 선택";
 Blockly.Msg['DATASET_CSV3_3'] = "선택하세요";
 
 // ---- 전처리

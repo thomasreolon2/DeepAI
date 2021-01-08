@@ -116,7 +116,7 @@ Blockly.Blocks['csv3'] = {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField(new Blockly.FieldTextInput("default"), "csv_url");
-        this.appendDummyInput().appendField('X_data').appendField(new Blockly.FieldVariable("xData"), "var_x").appendField('Y_data').appendField(new Blockly.FieldVariable("yData"), "var_y")
+        this.appendDummyInput().appendField('x_data').appendField(new Blockly.FieldVariable("xData"), "var_x").appendField('y_data').appendField(new Blockly.FieldVariable("yData"), "var_y")
         this.appendDummyInput().appendField(Blockly.Msg.DATASET_CSV3_2).appendField(dropdown, 'OPTIONS');
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -148,8 +148,8 @@ Blockly.Blocks['scikit_learn'] = {
                 "결정트리", "DecisionTreeClassifier"
             ]
         ]), "cate");
-        this.appendDummyInput().appendField(" X_train ").appendField(new Blockly.FieldVariable("xData"), "x");
-        this.appendDummyInput().appendField(" Y_train ").appendField(new Blockly.FieldVariable("yData"), "y");
+        this.appendDummyInput().appendField(" x_train ").appendField(new Blockly.FieldVariable("xData"), "x");
+        this.appendDummyInput().appendField(" y_train ").appendField(new Blockly.FieldVariable("yData"), "y");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setInputsInline(true);
@@ -219,8 +219,8 @@ Blockly.Blocks['import_dataset'] = {
                 Blockly.Msg.DATASET_IMPORT_DATASET_6, "load_wine"
             ],
         ]), "dataset_name");
-        this.appendValueInput("x_data").setCheck(null).appendField("X_data");
-        this.appendValueInput("y_data").setCheck(null).appendField("Y_data");
+        this.appendValueInput("x_data").setCheck(null).appendField("x_data");
+        this.appendValueInput("y_data").setCheck(null).appendField("y_data");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -239,8 +239,8 @@ Blockly.Blocks['random_import'] = {
                 "moons", "make_moons"
             ]
         ]), "dataset_name");
-        this.appendValueInput("x_data").setCheck(null).appendField("X_data");
-        this.appendValueInput("y_data").setCheck(null).appendField("Y_data");
+        this.appendValueInput("x_data").setCheck(null).appendField("x_data");
+        this.appendValueInput("y_data").setCheck(null).appendField("y_data");
         this.appendDummyInput().appendField(Blockly.Msg.DATASET_RANDOM_IMPORT_2).appendField(new Blockly.FieldTextInput("100"), "sa");
         this.appendDummyInput().appendField(Blockly.Msg.DATASET_RANDOM_IMPORT_3).appendField(new Blockly.FieldTextInput("2"), "fe");
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "seed");
@@ -262,7 +262,7 @@ Blockly.Blocks['make_circles'] = {
           .appendField(Blockly.Msg.DATASET_MAKE_CIRCLES_1);
       this.appendValueInput("y_data")
           .setCheck(null)
-          .appendField("Y_data ");
+          .appendField("y_data ");
       this.appendDummyInput()
           .appendField(Blockly.Msg.DATASET_MAKE_CIRCLES_2)
           .appendField(new Blockly.FieldTextInput("100"), "n_samples");
@@ -281,12 +281,12 @@ Blockly.Blocks['make_circles'] = {
 Blockly.Blocks['train_test_split'] = {
     init: function () {
         this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_1)
-        this.appendValueInput("x_data").setCheck(null).appendField("X_Data");
-        this.appendValueInput("y_data").setCheck(null).appendField("Y_Data");
-        this.appendValueInput("x_train").setCheck(null).appendField("X_train");
-        this.appendValueInput("x_test").setCheck(null).appendField("X_test");
-        this.appendValueInput("y_train").setCheck(null).appendField("Y_train");
-        this.appendValueInput("y_test").setCheck(null).appendField("Y_test");
+        this.appendValueInput("x_data").setCheck(null).appendField("x_Data");
+        this.appendValueInput("y_data").setCheck(null).appendField("y_Data");
+        this.appendValueInput("x_train").setCheck(null).appendField("x_train");
+        this.appendValueInput("x_test").setCheck(null).appendField("x_test");
+        this.appendValueInput("y_train").setCheck(null).appendField("y_train");
+        this.appendValueInput("y_test").setCheck(null).appendField("y_test");
         this.appendDummyInput().appendField("Test Size").appendField(new Blockly.FieldTextInput("0.2"), "test_size");
         this.appendDummyInput().appendField("Data Shuffle").appendField(new Blockly.FieldDropdown([
             [
@@ -308,12 +308,12 @@ Blockly.Blocks['train_test_split'] = {
 Blockly.Blocks['jin_train_test_split'] = {
     init: function () {
         this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_1)
-        this.appendValueInput("x_data").setCheck(null).appendField("X_data ");
-        this.appendValueInput("y_data").setCheck(null).appendField("Y_data ");
-        this.appendValueInput("x_train").setCheck(null).appendField("X_train ");
-        this.appendValueInput("x_test").setCheck(null).appendField("Y_train");
-        this.appendValueInput("y_train").setCheck(null).appendField("X_test ");
-        this.appendValueInput("y_test").setCheck(null).appendField("Y_test ");
+        this.appendValueInput("x_data").setCheck(null).appendField("x_data ");
+        this.appendValueInput("y_data").setCheck(null).appendField("y_data ");
+        this.appendValueInput("x_train").setCheck(null).appendField("x_train ");
+        this.appendValueInput("x_test").setCheck(null).appendField("x_test");
+        this.appendValueInput("y_train").setCheck(null).appendField("y_train ");
+        this.appendValueInput("y_test").setCheck(null).appendField("y_test ");
         this.appendDummyInput().appendField("Test Size ").appendField(new Blockly.FieldTextInput("0.2"), "test_size");
         this.appendDummyInput().appendField("Data Shuffle ").appendField(new Blockly.FieldDropdown([
             [
@@ -336,8 +336,8 @@ Blockly.Blocks['jin_train_test_split'] = {
 Blockly.Blocks['model_score'] = {
     init: function () {
         this.appendValueInput("model_name").setCheck(null).appendField(Blockly.Msg['METRICS_MODEL_SCORE']);
-        this.appendValueInput("x_test").setCheck(null).appendField("X_test");
-        this.appendValueInput("y_test").setCheck(null).appendField("Y_test");
+        this.appendValueInput("x_test").setCheck(null).appendField("x_test");
+        this.appendValueInput("y_test").setCheck(null).appendField("y_test");
         this.setInputsInline(true);
         this.setColour("%{BKY_SCIKITLEARN_HUE}");
         this.setOutput(true, null);
@@ -1219,8 +1219,8 @@ Blockly.Blocks['stats_inquiry'] = {
 Blockly.Blocks['vis_tree'] = {
     init: function () {
         this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.MATPLOT_VIS_TREE_1);
-        this.appendValueInput("x_data").setCheck(null).appendField("X_data");
-        this.appendValueInput("y_data").setCheck(null).appendField("Ydata: ");
+        this.appendValueInput("x_data").setCheck(null).appendField("x_data");
+        this.appendValueInput("y_data").setCheck(null).appendField("y_data: ");
         this.appendDummyInput().appendField(Blockly.Msg.MATPLOT_VIS_TREE_2).appendField(new Blockly.FieldTextInput("1"), "s");
         this.appendDummyInput().appendField(Blockly.Msg.MATPLOT_VIS_TREE_3).appendField(new Blockly.FieldTextInput("2"), "e");
         this.setInputsInline(true);
@@ -1246,8 +1246,8 @@ Blockly.Blocks['fetch_openml'] = {
                 "Mnist", "mnist_784"
             ]
         ]), "NAME");
-        this.appendValueInput("x").setCheck(null).appendField("X_data");
-        this.appendValueInput("y").setCheck(null).appendField("Y_data");
+        this.appendValueInput("x").setCheck(null).appendField("x_data");
+        this.appendValueInput("y").setCheck(null).appendField("y_data");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1615,8 +1615,8 @@ Blockly.Blocks['import_kmeans'] = {
 Blockly.Blocks['model_fit'] = {
     init: function () {
         this.appendValueInput("model").appendField(Blockly.Msg['METRICS_MODEL_FIT']);
-        this.appendValueInput("X_train").appendField(" X_train");
-        this.appendValueInput("Y_train").appendField("Y_train");
+        this.appendValueInput("X_train").appendField(" x_train");
+        this.appendValueInput("Y_train").appendField("y_train");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -1800,8 +1800,8 @@ Blockly.Blocks['import_scipy'] = {
 Blockly.Blocks['curve_fit'] = {
     init: function () {
         this.appendValueInput("fun").setCheck(null).appendField(Blockly.Msg.SCIPY_CURVE_FIT);
-        this.appendValueInput("x").setCheck(null).appendField("X_data");
-        this.appendValueInput("y").setCheck(null).appendField("Y_data");
+        this.appendValueInput("x").setCheck(null).appendField("x_data");
+        this.appendValueInput("y").setCheck(null).appendField("y_data");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SCIPY_HUE}");
@@ -1811,7 +1811,7 @@ Blockly.Blocks['curve_fit'] = {
 };
 Blockly.Blocks['univariatespline'] = {
     init: function () {
-        this.appendValueInput("x").setCheck(null).appendField("[UnivariateSpline] X_data");
+        this.appendValueInput("x").setCheck(null).appendField("[UnivariateSpline] x_data");
         this.appendValueInput("y").setCheck(null).appendField("Y_data");
         this.appendDummyInput().appendField(new Blockly.FieldTextInput("1"), "s");
         this.setInputsInline(true);

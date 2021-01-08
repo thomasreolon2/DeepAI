@@ -12508,7 +12508,7 @@ Blockly.Variables.generateUniqueNameFromOptions = function (a, b) {
 Blockly.Variables.createVariableButtonHandler = function (a, b, c) {
   var d = c || "",
     e = function (c) { // 프롬프트: 새 변수를 입력하세요 출력
-      Blockly.Variables.promptName(Blockly.Msg.NEW_VARIABLE_TITLE, c, function (
+      Blockly.Variables.promptName(Blockly.Msg.NEW_VARIABLE_TITLE, c , function (
         c
       ) {
         if (c) {

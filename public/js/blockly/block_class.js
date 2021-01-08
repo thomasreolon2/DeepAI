@@ -23,7 +23,7 @@ Blockly.Blocks['webclass'] = {
     init: function () {
         this.appendDummyInput()
             .appendField('클래스')
-            .appendField(new Blockly.FieldVariable("My_class"), "VAR")
+            .appendField(new Blockly.FieldVariable("MyClass"), "VAR")
             .appendField(' :');
         this.appendStatementInput('DO')
             .appendField('');
@@ -40,7 +40,7 @@ Blockly.Blocks['webclass2'] = {
     init: function () {
         this.appendDummyInput()
             .appendField('상속')
-            .appendField(new Blockly.FieldVariable("My_class"), "VAR")
+            .appendField(new Blockly.FieldVariable("MyClass"), "VAR")
             .appendField('(');
         this.appendValueInput("INPUT")
             .setCheck(null);
@@ -82,7 +82,7 @@ Blockly.Blocks['webclass2'] = {
           .appendField("[객체생성]")
           .appendField(new Blockly.FieldVariable("obj"), "1")
           .appendField("를")
-          .appendField(new Blockly.FieldVariable("My_class"), "2")
+          .appendField(new Blockly.FieldVariable("MyClass"), "2")
           .appendField("(")
           .appendField(new Blockly.FieldTextInput(""), "3")
           .appendField(")");
