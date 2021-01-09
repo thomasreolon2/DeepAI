@@ -3057,21 +3057,8 @@
 
     <!-- # 시각화 부분 #  -->
     <category name="%{BKY_CATEGORY_MATPLOT}" colour="%{BKY_VISUAL_HUE}"> <!--맷플롯립(Matplot)-->
-      <!-- 그래프 출력 -->
-      <!-- <block type="select_graph_option">
-        <value name="select_graph_option_location1">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow> 
-        </value>
-        <value name="select_graph_option_location2">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-      </block> -->
-      <!-- 그래프 출력 -->
-
+      <category name="기본" colour="%{BKY_VISUAL_HUE}">
+        <!-- 그래프 출력 -->
       <block type="visualization_library">
         <value name="lib_var">
           <block type="variables_get">
@@ -3141,6 +3128,28 @@
       <block type="logicgraph"></block> -->
       <block type="vis_tree"></block>
       <!--  사이킷런 시각화 하기      -->
+
+      </category>
+      <category name="라인,바&마커형" colour="%{BKY_VISUAL_HUE}"></category>
+      <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}"></category>
+      <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}"></category>
+      <category name="통계형" colour="%{BKY_VISUAL_HUE}"></category>
+      <category name="파이형" colour="%{BKY_VISUAL_HUE}"></category>
+
+      <!-- 그래프 출력 -->
+      <!-- <block type="select_graph_option">
+        <value name="select_graph_option_location1">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow> 
+        </value>
+        <value name="select_graph_option_location2">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block> -->
+      
     </category>
 
     <!-- 웹크롤링 -->
