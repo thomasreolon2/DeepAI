@@ -186,7 +186,7 @@ Blockly.Python['va_del'] = function (block) {
   var value_dic1 = Blockly.Python.valueToCode(block, 'dic1', Blockly.Python.ORDER_ATOMIC);
   
   var code = 'del ' + variable_list + '[ ' + value_dic1 + ' ]';
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 // 딕셔너리 옵션 블록 수정2021-01-05 ysk

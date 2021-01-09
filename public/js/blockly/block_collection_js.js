@@ -125,7 +125,7 @@ Blockly.JavaScript['va_del'] = function (block) {
   var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
   
   var code = '\n';
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return code;
 };
 
 //va_ser

@@ -566,7 +566,7 @@ Blockly.Blocks['va_sel'] = {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C7-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("값선택").appendField(new Blockly.FieldVariable("df"), "list").appendField("[");
+        })).appendField("값선택").appendField(new Blockly.FieldVariable("my_list"), "list").appendField("[");
         this.appendValueInput("dic1").setCheck(null);
         this.appendDummyInput().appendField("]");
         this.setInputsInline(true);
@@ -583,12 +583,13 @@ Blockly.Blocks['va_del'] = {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C8-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("값삭제").appendField("del ").appendField(new Blockly.FieldVariable("df"), "list").appendField("[");
+        })).appendField("값삭제").appendField("del ").appendField(new Blockly.FieldVariable("my_list"), "list").appendField("[");
         this.appendValueInput("dic1").setCheck(null);
         this.appendDummyInput().appendField("]");
         this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour("%{BKY_COLLECTION_HUE}");
-        this.setOutput(true, null);
         this.setTooltip("");
         this.setHelpUrl("");
     }
