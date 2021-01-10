@@ -1145,9 +1145,8 @@ Blockly.defineBlocksWithJsonArray([
     "args0": [
       {"type": "field_image","src": "/img/Repeat/R1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       {
-        "type": "field_input",
-        "name": "count",
-        "text": "4"
+        "type": "input_value",
+        "name": "COUNT"
       },
       {
         "type": "input_dummy"

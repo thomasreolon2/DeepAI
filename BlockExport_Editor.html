@@ -1017,7 +1017,13 @@
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_REPEAT}" colour="%{BKY_LOOPS_HUE}">
       <!--repeat1-->
-      <block type="controls_repeat"></block>
+      <block type="controls_repeat">
+        <value name="COUNT">
+          <shadow type="indata">
+            <field name="indata1">4</field>
+          </shadow>
+        </value>
+      </block>
 
       <!--new_while-->
       <block type="controls_whileTorF">

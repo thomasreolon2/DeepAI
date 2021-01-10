@@ -629,7 +629,7 @@ Blockly.Python.controls_whileTorF = function(a) {
 
 // repeat
 Blockly.Python.controls_repeat = function(a) {
-  var b = a.getFieldValue('count');
+  var b = Blockly.Python.valueToCode(a, "COUNT", Blockly.Python.ORDER_CONDITIONAL);
   var d = Blockly.Python.statementToCode(a, "DO");
   d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
   return "for i in range(" + b + "):\n" + d;
