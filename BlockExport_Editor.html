@@ -1183,7 +1183,7 @@
       <block type="lists_create_with">
         <mutation items="0"></mutation>
       </block>
-       <!-- 리스트의 길이 -->
+       <!-- 컬렉션의 길이 -->
        <block type="lists_length">
         <value name="VALUE">
           <block type="variables_get">
@@ -1299,7 +1299,7 @@
       <block type = "create_ziphap">
         <value name="text">
           <shadow type="indata">
-            <field name="indata1">[1,2,3,4]</field>
+            <field name="indata1">1,2,3,4</field>
           </shadow>
         </value>
       </block>      
@@ -3167,7 +3167,7 @@
       <block type="quad"></block>
     </category>
     <!-- # 시각화 부분 #  -->
-
+    <category name="사이킷이미지(Scikit-image)" colour="%{BKY_SCIKITLEARN_HUE}"></category>
     <category name="%{BKY_CATEGORY_SCIKIT}" colour="%{BKY_SCIKITLEARN_HUE}"> <!--사이킷런(Scikit)-->
       <category name="%{BKY_CATEGORY_DATASET}" colour="%{BKY_SCIKITLEARN_HUE}"> <!--데이터셋 (Dataset)-->
         <block type="import_dataset"></block>

@@ -238,11 +238,11 @@ Blockly.Blocks['create_ziphap'] = {
         this.appendDummyInput()
             .appendField("집합")
             .appendField(new Blockly.FieldVariable("my_set"), "list")
-            .appendField(" = (");
+            .appendField(" = {");
         this.appendValueInput("text")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField(")");
+            .appendField("}");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
