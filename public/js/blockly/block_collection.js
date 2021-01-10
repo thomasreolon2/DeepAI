@@ -430,7 +430,7 @@ Blockly.Blocks['dic_menu1'] = {
                 Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL, "getvalues"
             ],
             [
-                "키,값쌍얻기", "item"
+                "키,값쌍얻기", "items"
             ],
             [
                 "키,값쌍모두지우기", "clear"

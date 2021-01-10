@@ -194,8 +194,8 @@ Blockly.Python['va_del'] = function (block) {
 Blockly.Python['dic_menu1'] = function (block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var dropdown_dic = block.getFieldValue('dic');
-  if (dropdown_dic == 'item') {
-    var code = variable_list + '.item()';
+  if (dropdown_dic == 'items') {
+    var code = variable_list + '.items()';
   } else if (dropdown_dic == 'clear') {
     var code = variable_list + '.clear()';
   } else if (dropdown_dic == 'getvalues') {
