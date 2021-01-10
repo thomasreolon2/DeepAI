@@ -632,7 +632,7 @@ Blockly.Python.controls_repeat = function(a) {
   var b = a.getFieldValue('count');
   var d = Blockly.Python.statementToCode(a, "DO");
   d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
-  return "for _ in range(" + b + "):\n" + d;
+  return "for i in range(" + b + "):\n" + d;
 };
 
 // repeat2
