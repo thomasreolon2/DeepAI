@@ -1141,9 +1141,13 @@ Blockly.defineBlocksWithJsonArray([
   },
   {
     "type": "controls_repeat",
-    "message0": "%1%{BKY_CONTROLS_REPEAT_1}%2 %{BKY_CONTROLS_REPEAT_2} %3 ",
+    "message0": "%1 %{BKY_CONTROLS_REPEAT_1}%2 에 %3 %{BKY_CONTROLS_REPEAT_2} %4 ",
     "args0": [
       {"type": "field_image","src": "/img/Repeat/R1-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {
+        "type": "input_value",
+        "name": "VAR"
+      },
       {
         "type": "input_value",
         "name": "COUNT"

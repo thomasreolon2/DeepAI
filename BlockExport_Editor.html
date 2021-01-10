@@ -1018,6 +1018,11 @@
     <category name="%{BKY_CATEGORY_REPEAT}" colour="%{BKY_LOOPS_HUE}">
       <!--repeat1-->
       <block type="controls_repeat">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="COUNT">
           <shadow type="indata">
             <field name="indata1">4</field>
