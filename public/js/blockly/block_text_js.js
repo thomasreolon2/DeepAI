@@ -77,3 +77,12 @@ Blockly.JavaScript['text_slice'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+// 문자 만들기 2021.01.11 남지원
+Blockly.JavaScript['create_text'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = "\n";
+  return code;
+};

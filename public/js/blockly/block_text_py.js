@@ -141,3 +141,12 @@ Blockly.Python['text_slice'] = function(block) {
   var code = `${variable_var}[${text_input1}:${text_input2}:${text_input3}]`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+// 문자 만들기 2021.01.11 남지원
+Blockly.Python['create_text'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + ' = "' + value_text + '"\n';
+  return code;
+};

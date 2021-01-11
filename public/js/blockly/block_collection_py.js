@@ -186,7 +186,7 @@ Blockly.Python['va_del'] = function (block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_dic1 = Blockly.Python.valueToCode(block, 'dic1', Blockly.Python.ORDER_ATOMIC);
   
-  var code = 'del ' + variable_list + '[ ' + value_dic1 + ' ]';
+  var code = 'del ' + variable_list + '[ ' + value_dic1 + ' ]\n';
   return code;
 };
 

@@ -207,3 +207,23 @@ Blockly.Blocks['text_slice'] = {
     this.setHelpUrl("");
   }
 };
+
+// 문자생성
+Blockly.Blocks['create_text'] = {
+  init: function () {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldImage("/img/Str/S4-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+          .appendField(new Blockly.FieldVariable("s"), "VAR")
+          .appendField(' = "');
+      this.appendValueInput("text")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField('"');
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
+      this.setTooltip("Create a list");
+      this.setHelpUrl("");
+  }
+};
