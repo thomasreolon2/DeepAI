@@ -215,7 +215,7 @@ Blockly.Python.lists_create_with = function (a) {
       case "tuple":
         code = "( )"; break;
       case "set":
-        code = "([ ])"; break;
+        code = "{ }"; break;
       case "dict":
         code = "{ }"; break;
       defualt : break;
