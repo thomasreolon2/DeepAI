@@ -212,7 +212,7 @@ Blockly.Blocks['text_slice'] = {
 Blockly.Blocks['create_text'] = {
   init: function () {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldImage("/img/Str/S4-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
+          .appendField(new Blockly.FieldImage("/img/Str/S2-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
           .appendField(new Blockly.FieldVariable("s"), "VAR")
           .appendField(' = "');
       this.appendValueInput("text")

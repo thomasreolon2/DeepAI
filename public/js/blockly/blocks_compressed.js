@@ -2551,7 +2551,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_join",
     message0: "%1",
     args0:[
-      {"type": "field_image","src": "/img/Str/S2-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S3-logo.png","width": 25,"height": 26,"alt": "*","flipRtl": false},
     ],
     output: "String",
     style: "text_blocks",
@@ -2602,7 +2602,7 @@ Blockly.defineBlocksWithJsonArray([
     type: "text_length",
     message0: "%{BKY_TEXT_LENGTH_TITLE}",
     args0: [
-      {"type": "field_image","src": "/img/Str/S3-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
+      {"type": "field_image","src": "/img/Str/S4-logo.png","width": 25,"height": 23,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VALUE", check: ["String", "Array"] }],
     output: "Number",
     style: "text_blocks",

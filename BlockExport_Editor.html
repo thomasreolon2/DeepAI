@@ -848,6 +848,15 @@
 
       <!-- text -->
       <block type="text"></block>
+      <!-- 문자 생성 -->
+      <block type = "create_text">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">1,2,3,4</field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 문자 합치기 -->
       <block type="text_join"></block>
       <!-- len -->
       <block type="text_length">
@@ -857,13 +866,7 @@
           </shadow>
         </value>
       </block>
-      <block type = "create_text">
-        <value name="text">
-          <shadow type="indata">
-            <field name="indata1">1,2,3,4</field>
-          </shadow>
-        </value>
-      </block>
+      
      <!-- 문자 슬라이스 -->
      <block type="text_slice">
       <value name="INPUT1">
