@@ -186,7 +186,7 @@ Blockly.Blocks['numpy_mathematical_functions'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 삼각]")
-        .appendField(new Blockly.FieldDropdown([["사인(sign)","np.sign"], ["코사인(cos)","np.cos"], ["탄젠트(tan)","np.tan"], ["역 사인(arcsin)","np.arcsin"], ["역 코사인(arccos)","np.arccos"], ["역 탄젠트(arctan)","np.arctan"], ["라디안->도(degrees)","np.degrees"], ["도->라디안(radians)","np.radians"]]), "numpy_Mathematical functions_opt");
+        .appendField(new Blockly.FieldDropdown([["사인(sin)","np.sin"], ["코사인(cos)","np.cos"], ["탄젠트(tan)","np.tan"], ["역 사인(arcsin)","np.arcsin"], ["역 코사인(arccos)","np.arccos"], ["역 탄젠트(arctan)","np.arctan"], ["라디안->도(degrees)","np.degrees"], ["도->라디안(radians)","np.radians"]]), "numpy_Mathematical functions_opt");
     this.appendValueInput("numpy_Mathematical functions_val")
         .setCheck(null);
     this.setInputsInline(true);
