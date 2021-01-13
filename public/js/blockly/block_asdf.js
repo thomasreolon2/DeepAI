@@ -135,3 +135,81 @@ Blockly.Blocks['numpy_random_generator1'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['Oper1'] = {
+  init: function () {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Numeric/N2-logo.png", 25, 23, {
+          alt: "*",
+          flipRtl: "FALSE"
+      }));
+      this.appendValueInput("A").setCheck(null);
+      this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+          [
+              "*", "*"
+          ],
+          [
+              "+", "+"
+          ],
+          [
+              "-", "-"
+          ],
+          [
+              "/", "/"
+          ],
+          [
+              "%", "%"
+          ],
+          [
+              "**", "**"
+          ],
+          [
+              "//", "//"
+          ]
+      ]), "NAME");
+      this.appendValueInput("B").setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_MATH_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['Oper2'] = {
+  init: function () {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Numeric/N2-logo.png", 25, 23, {
+          alt: "*",
+          flipRtl: "FALSE"
+      }));
+      this.appendValueInput("A").setCheck(null);
+      this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+          [
+              "**", "**"
+          ],
+          [
+              "+", "+"
+          ],
+          [
+              "-", "-"
+          ],
+          [
+              "*", "*"
+          ],
+          [
+              "/", "/"
+          ],
+          [
+              "%", "%"
+          ],
+          [
+              "//", "//"
+          ]
+      ]), "NAME");
+      this.appendValueInput("B").setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_MATH_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
