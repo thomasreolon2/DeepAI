@@ -219,10 +219,10 @@
     <script src="/js/blockly/jiwon_py.js"></script>
     <script src="/js/blockly/jiwon_js.js"></script>
 
-    <!--임시 판다스 김과필-->
+    <!--임시 판다스 김관필-->
     <script src="/js/blockly/gwanpil.js"></script>
-    <script src="/js/blockly/gwanpil.js"></script>
-    <script src="/js/blockly/gwanpil.js"></script>
+    <script src="/js/blockly/gwanpil_py.js"></script>
+    <script src="/js/blockly/gwanpil_js.js"></script>
 
     <!-- 사이킷 이미지 -->
     <script src="/js/blockly/block_skimage.js"></script>
@@ -3992,6 +3992,172 @@
           <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax</field></shadow></value>
           <value name="VALUE"><block type = "pie_subplots"></block></value>
         </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">im</field></shadow></value>
+          <value name="VALUE"><block type = "pie_subplots_1">
+            <value name="name1">
+              <shadow type="indata">
+                <field name="indata1">ax</field>
+              </shadow>
+            </value>
+            <value name="name2">
+              <shadow type="indata">
+                <field name="indata1">harvest</field>
+              </shadow>
+            </value>
+          </block></value>
+        </block>
+
+        <block type = "heatmaps_1">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
+          <value name="REAL_VALUE">
+            <block type="numpy_numerical_ranges">
+              <value name="numpy_Numerical_ranges_val"> 
+                <block type="text_length">
+                  <value name="VALUE">
+                    <shadow type="indata">
+                      <field name="indata1">farmers</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>  
+            </block> 
+          </value>
+        </block>
+
+        <block type = "heatmaps_2">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
+          <value name="REAL_VALUE">
+            <block type="numpy_numerical_ranges">
+              <value name="numpy_Numerical_ranges_val"> 
+                <block type="text_length">
+                  <value name="VALUE">
+                    <shadow type="indata">
+                      <field name="indata1">vegetables</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>  
+            </block> 
+          </value>
+        </block>
+
+        <block type = "heatmaps_3">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
+          <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">farmers</field></shadow></value>
+        </block>
+
+        <block type = "heatmaps_4">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
+          <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">vegetables</field></shadow></value>
+        </block>
+
+        <block type = "heatmaps_5">
+          <value name="REAL_VALUE">
+            <block type = "pie_subplots_2">
+              <value name="name1">
+                <shadow type="indata">
+                  <field name="indata1">ax</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+          <value name="REAL_VALUE_2"><shadow type="indata"><field name="indata1">45</field></shadow></value>
+          <value name="REAL_VALUE_3"><shadow type="indata"><field name="indata1">"right"</field></shadow></value>
+          <value name="REAL_VALUE_4"><shadow type="indata"><field name="indata1">"anchor"</field></shadow></value>
+        </block>
+
+        <!-- for 문 1 -->
+      <block type="py_for1">
+        <value name="item">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
+        <value name="list">
+          <block type="text_length">
+            <value name="VALUE">
+              <shadow type="indata">
+                <field name="indata1">vegetables</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+
+       <!-- for 문 1 -->
+       <block type="py_for1">
+        <value name="item">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
+        <value name="list">
+          <block type="text_length">
+            <value name="VALUE">
+              <shadow type="indata">
+                <field name="indata1">farmers</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">text</field></shadow></value>
+        <value name="VALUE">
+          <block type = "pie_subplots_3">
+            <value name="name1">
+              <shadow type="indata">
+                <field name="indata1">ax</field>
+              </shadow>
+            </value>
+            <value name="name2">
+              <shadow type="indata">
+                <field name="indata1">i</field>
+              </shadow>
+            </value>
+            <value name="name3">
+              <shadow type="indata">
+                <field name="indata1">j</field>
+              </shadow>
+            </value>
+            <value name="name4">
+              <shadow type="indata">
+                <field name="indata1">harvest</field>
+              </shadow>
+            </value>
+            <value name="name5">
+              <shadow type="indata">
+                <field name="indata1">"center"</field>
+              </shadow>
+            </value>
+            <value name="name6">
+              <shadow type="indata">
+                <field name="indata1">"center"</field>
+              </shadow>
+            </value>
+            <value name="name7">
+              <shadow type="indata">
+                <field name="indata1">"w"</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+
+      <block type = "heatmaps_6">
+        <value name="NAME"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">"Harvest of local farmers (in tons/year)"</field></shadow></value>
+      </block>
+
+      <block type = "heatmaps_7">
+        <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
+      </block>
+
+      <block type="matplotlib_plt_show"></block>
+      
 
       </category>
       <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}"></category>
