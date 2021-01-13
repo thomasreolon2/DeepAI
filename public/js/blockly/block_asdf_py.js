@@ -4,11 +4,10 @@
 
 //pie_subplots
 Blockly.Python['pie_subplots'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
-  var code = variable_list + "= plt.subplots()\n";
+  var code =  "plt.subplots()\n";
   // TODO: Change ORDER_NONE to the correct strength.
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];;
 };
 
 //pie_pie
@@ -69,6 +68,32 @@ Blockly.Python['pie_ax_scatter'] = function(block) {
   var value_name7 = Blockly.Python.valueToCode(block, 'd7', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = variable_list + " = " + value_name1 +".scatter( " + value_name2 + ", " + value_name3 + ", c = " + value_name4 + ", s = " + value_name5 + ", cmap = " + value_name6 + ", alpha = " + value_name7 + " )\n";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
+//numpy_random_generator1
+Blockly.Python['numpy_random_generator1'] = function(block) {
+  var dropdown_numpy_random_generator_opt = block.getFieldValue('numpy_Random_generator_opt');
+  var value_numpy_random_generator_val = Blockly.Python.valueToCode(block, 'numpy_Random_generator_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code;
+  switch (dropdown_numpy_random_generator_opt){
+    case "numpy_Random_generator_seed": 
+    code = `np.random.seed(${value_numpy_random_generator_val})\n`;  
+    break; 
+
+    case "numpy_Random_generator_get_state": 
+    code = `np.random.get_state(${value_numpy_random_generator_val})\n`;  
+    break;
+
+    case "numpy_Random_generator_set_state":
+    code = `np.random.set_state(${value_numpy_random_generator_val})\n`;  
+    break;
+
+    default:
+    break;
+  }
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };

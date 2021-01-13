@@ -5,13 +5,9 @@
 //pie_subplots
 Blockly.Blocks['pie_subplots'] = {
   init: function() { 
-    this.appendDummyInput()
-        .appendField("[subplots]")
-        .appendField(new Blockly.FieldVariable("ax1"), "list")
-        .appendField("= plt.subplots()");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
+    this.appendDummyInput().appendField("[subplots]");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
     this.setColour(pandas_color);
  this.setTooltip(""); 
  this.setHelpUrl("");
@@ -119,6 +115,23 @@ Blockly.Blocks['pie_ax_scatter'] = {
     this.setNextStatement(true, null);
     this.setColour(pandas_color);
  this.setTooltip(""); 
+ this.setHelpUrl("");
+  }
+};
+
+//numpy_random_generator1
+Blockly.Blocks['numpy_random_generator1'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[np 생성기]")
+        .appendField(new Blockly.FieldDropdown([["규칙 난수(seed)","numpy_Random_generator_seed"], ["생성기 내부 상태(get_state)","numpy_Random_generator_get_state"], ["튜플 내부상태 설정(set_state)","numpy_Random_generator_set_state"]]), "numpy_Random_generator_opt");
+    this.appendValueInput("numpy_Random_generator_val")
+        .setCheck(null);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+ this.setTooltip("");
  this.setHelpUrl("");
   }
 };

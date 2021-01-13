@@ -4,11 +4,10 @@
 
 //pie_subplots
 Blockly.JavaScript['pie_subplots'] = function(block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return code;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];;
 };
 
 //pie_pie
@@ -69,6 +68,16 @@ Blockly.JavaScript['pie_ax_scatter'] = function(block) {
   var value_name7 = Blockly.JavaScript.valueToCode(block, 'd7', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
+//numpy_random_generator1
+Blockly.JavaScript['numpy_random_generator1'] = function(block) {
+  var dropdown_numpy_random_generator_opt = block.getFieldValue('numpy_Random_generator_opt');
+  var value_numpy_random_generator_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_generator_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = "\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };

@@ -3484,8 +3484,9 @@
 
         <block type="visualization_library"></block>
 
-        <block type = "math_change">
-          <value name="DELTA">
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">labels</field></shadow></value>
+          <value name="VALUE">
             <shadow type="indata">
               <field name="indata1">'Frogs', 'Hogs', 'Dogs', 'Logs'</field>
             </shadow>
@@ -3508,17 +3509,20 @@
           </value>
         </block>
 
-        <block type = "pie_subplots"></block>
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">fig1, ax1</field></shadow></value>
+          <value name="VALUE"><block type = "pie_subplots"></block></value>
+        </block>
 
         <block type = "pie_pie1">
           <value name="d1">
             <shadow type="indata">
-              <field name="indata1">sizes</field>
+              <field name="indata1">my_list</field>
             </shadow>
           </value>
           <value name="d2">
             <shadow type="indata">
-              <field name="indata1">explode</field>
+              <field name="indata1">my_tuple</field>
             </shadow>
           </value>
           <value name="d3">
@@ -3554,7 +3558,7 @@
 
         <block type="visualization_library"></block>
 
-        <block type="numpy_random_generator">
+        <block type="numpy_random_generator1">
           <value name="numpy_Random_generator_val"> 
             <block type="math_number">
               <field name="NUM">19680801</field>
@@ -3687,7 +3691,7 @@
           </value>
           <value name="d3">
             <shadow type="indata">
-              <field name="indata1">'r'</field>
+              <field name="indata1">r</field>
             </shadow>
           </value>
           <value name="d4">
