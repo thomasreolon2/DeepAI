@@ -218,6 +218,11 @@
     <script src="/js/blockly/block_skimage_py.js"></script>
     <script src="/js/blockly/block_skimage_js.js"></script>
 
+    <!-- 맷 파이 이미지 -->
+    <script src="/js/blockly/block_asdf.js"></script>
+    <script src="/js/blockly/block_asdf_py.js"></script>
+    <script src="/js/blockly/block_asdf_js.js"></script>
+
   <!-- #####################################################################################################  -->
   <!-- ******************************                CSS                      ******************************* -->
   <!-- #####################################################################################################  -->
@@ -3162,7 +3167,47 @@
       <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}"></category>
       <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}"></category>
       <category name="통계형" colour="%{BKY_VISUAL_HUE}"></category>
-      <category name="파이형" colour="%{BKY_VISUAL_HUE}"></category>
+      <category name="파이형" colour="%{BKY_VISUAL_HUE}">
+
+        <block type = "pie_subplots"></block>
+
+        <block type = "pie_pie1">
+          <value name="d1">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="d2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="d3">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="d4">
+            <shadow type="indata">
+              <field name="indata1">'%1.1f%%'</field>
+            </shadow>
+          </value>
+          <value name="d5">
+            <shadow type="indata">
+              <field name="indata1">90</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "pie_axis">
+          <value name="d1">
+            <shadow type="indata">
+              <field name="indata1">'equal'</field>
+            </shadow>
+          </value>
+        </block>
+
+      </category>
 
       <!-- 그래프 출력 -->
       <!-- <block type="select_graph_option">
