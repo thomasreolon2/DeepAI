@@ -3169,22 +3169,49 @@
       <category name="통계형" colour="%{BKY_VISUAL_HUE}"></category>
       <category name="파이형" colour="%{BKY_VISUAL_HUE}">
 
+        <label text="Basic pie chart"></label>
+
+        <block type="visualization_library"></block>
+
+        <block type = "math_change"><value name="DELTA">
+          <shadow type="indata">
+            <field name="indata1">'Frogs', 'Hogs', 'Dogs', 'Logs'</field>
+          </shadow>
+        </value>
+        </block>
+
+        <block type = "create_list">
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">15, 30, 45, 10</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "create_tuple">
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">0, 0.1, 0, 0</field>
+            </shadow>
+          </value>
+        </block>
+
         <block type = "pie_subplots"></block>
 
         <block type = "pie_pie1">
           <value name="d1">
             <shadow type="indata">
-              <field name="indata1"></field>
+              <field name="indata1">sizes</field>
             </shadow>
           </value>
           <value name="d2">
             <shadow type="indata">
-              <field name="indata1"></field>
+              <field name="indata1">explode</field>
             </shadow>
           </value>
           <value name="d3">
             <shadow type="indata">
-              <field name="indata1"></field>
+              <field name="indata1">labels</field>
             </shadow>
           </value>
           <value name="d4">
@@ -3207,6 +3234,8 @@
           </value>
         </block>
 
+        <block type="matplotlib_plt_show"></block>
+        
       </category>
 
       <!-- 그래프 출력 -->
