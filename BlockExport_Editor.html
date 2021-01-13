@@ -3421,9 +3421,7 @@
               </shadow>
             </value>
             <value name="val">
-              <shadow type="indata">
-                <field name="indata1">True</field>
-              </shadow>
+              <block type="logic_boolean"></block>
             </value>
           </block>
     
@@ -3475,6 +3473,474 @@
           </block>
   
   
+          <block type="fig_tight_layout"></block>
+  
+          <block type="matplotlib_plt_show"></block>
+
+
+          <block type="fig_tight_layout"></block>
+  
+          <block type="matplotlib_plt_show"></block>
+          <label text="Marker examples"></label>
+
+          <block type="numpy_library"></block>
+  
+          <block type="visualization_library">
+            <value name="lib_var">
+              <block type="variables_get">
+                <field name="VAR">plt</field>
+              </block>
+            </value>
+          </block>
+  
+          <block type="itdata">
+            <value name="itdata1">
+              <shadow type="numpy_random_generator">
+                <value name="numpy_Random_generator_val">
+                  <shadow type="indata">
+                    <field name="indata1">19680801</field>
+                </shadow>
+              </value>
+              </shadow>
+            </value>
+          </block>
+
+          <block type="many_variables">
+            <value name="NUMBER">
+              <shadow type="indata">
+                <field name="indata1">x</field>
+              </shadow>
+            </value>
+            <value name="VALUE">
+              <block type="numpy_random_sample">
+                <value name="numpy_Random_sample_val"> 
+                  <shadow type="math_number">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>  
+              </block> 
+            </value>
+          </block>
+
+          <block type="many_variables">
+            <value name="NUMBER">
+              <shadow type="indata">
+                <field name="indata1">y</field>
+              </shadow>
+            </value>
+            <value name="VALUE">
+              <block type="numpy_random_sample">
+                <value name="numpy_Random_sample_val"> 
+                  <shadow type="math_number">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>  
+              </block> 
+            </value>
+          </block>
+
+
+          <block type="many_variables">
+            <value name="NUMBER">
+              <shadow type="indata">
+                <field name="indata1">z</field>
+              </shadow>
+            </value>
+            <value name="VALUE">
+              <block type="np_sqrt">
+                <value name = "val1">
+                  <block type="Oper">
+                    <value name="A">
+                      <block type="Oper_garbage3">
+                        <value name="A">
+                          <block type="indata">
+                            <field name="indata1">x</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="indata">
+                            <field name="indata1">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="Oper_garbage3">
+                        <value name="A">
+                          <block type="indata">
+                            <field name="indata1">y</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="indata">
+                            <field name="indata1">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+
+          
+          <block type="subplots">
+            <value name="row">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+
+            <value name="col">
+              <shadow type="math_number">
+                <field name="NUM">3</field>
+              </shadow>
+            </value>
+
+            <value name="val1">
+              <block type="logic_boolean"></block>
+            </value>
+            <value name="val2">
+              <block type="logic_boolean"></block>
+            </value>
+          </block>
+
+          <!-- 0,0 그래프 -->
+          <block type="scatter">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">0,0</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">x</field>
+              </block>
+            </value>
+
+            <value name="val_y">
+              <block type="indata">
+                <field name="indata1">y</field>
+              </block>
+            </value>
+
+            <value name="val1">
+              <block type="indata">
+                <field name="indata1">80</field>
+              </block>
+            </value>
+
+            <value name="val2">
+              <block type="indata">
+                <field name="indata1">z</field>
+              </block>
+            </value>
+
+            <value name="val3">
+              <block type="indata">
+                <field name="indata1">">"</field>
+              </block>
+            </value>
+          </block>
+
+          <block type="set_title">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">0,0</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">"marker='>'"</field>
+              </block>
+            </value>
+          </block>
+
+
+          <!-- 0,1 그래프 -->
+          <block type="scatter">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">0,1</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">x</field>
+              </block>
+            </value>
+
+            <value name="val_y">
+              <block type="indata">
+                <field name="indata1">y</field>
+              </block>
+            </value>
+
+            <value name="val1">
+              <block type="indata">
+                <field name="indata1">80</field>
+              </block>
+            </value>
+
+            <value name="val2">
+              <block type="indata">
+                <field name="indata1">z</field>
+              </block>
+            </value>
+
+            <value name="val3">
+              <block type="indata">
+                <field name="indata1">r'$\alpha$'</field>
+              </block>
+            </value>
+          </block>
+
+          <block type="set_title">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">0,1</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">r"marker=r'\$\alpha\$'"</field>
+              </block>
+            </value>
+          </block>
+
+
+<!-- 리스트 하나 추가 -->
+
+          <block type = "create_list">
+            <value name="text">
+              <shadow type="indata">
+                <field name="indata1">[-1, -1], [1, -1], [1, 1], [-1, -1]</field>
+              </shadow>
+            </value>
+          </block>
+
+          <!-- 0,2 그래프 -->
+          <block type="scatter">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">0,2</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">x</field>
+              </block>
+            </value>
+
+            <value name="val_y">
+              <block type="indata">
+                <field name="indata1">y</field>
+              </block>
+            </value>
+
+            <value name="val1">
+              <block type="indata">
+                <field name="indata1">80</field>
+              </block>
+            </value>
+
+            <value name="val2">
+              <block type="indata">
+                <field name="indata1">z</field>
+              </block>
+            </value>
+
+            <value name="val3">
+              <block type="indata">
+                <field name="indata1">my_list</field>
+              </block>
+            </value>
+          </block>
+
+          <block type="set_title">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">0,1</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">"marker=verts"</field>
+              </block>
+            </value>
+          </block>
+
+
+          <!-- 1,0 그래프 -->
+          <block type="scatter">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">1,0</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">x</field>
+              </block>
+            </value>
+
+            <value name="val_y">
+              <block type="indata">
+                <field name="indata1">y</field>
+              </block>
+            </value>
+
+            <value name="val1">
+              <block type="indata">
+                <field name="indata1">80</field>
+              </block>
+            </value>
+
+            <value name="val2">
+              <block type="indata">
+                <field name="indata1">z</field>
+              </block>
+            </value>
+
+            <value name="val3">
+              <block type="indata">
+                <field name="indata1">(5, 0)</field>
+              </block>
+            </value>
+          </block>
+
+          <block type="set_title">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">1,0</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">"marker=(5, 0)"</field>
+              </block>
+            </value>
+          </block>
+
+          <!-- 1,1 그래프 -->
+          <block type="scatter">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">1,1</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">x</field>
+              </block>
+            </value>
+
+            <value name="val_y">
+              <block type="indata">
+                <field name="indata1">y</field>
+              </block>
+            </value>
+
+            <value name="val1">
+              <block type="indata">
+                <field name="indata1">80</field>
+              </block>
+            </value>
+
+            <value name="val2">
+              <block type="indata">
+                <field name="indata1">z</field>
+              </block>
+            </value>
+
+            <value name="val3">
+              <block type="indata">
+                <field name="indata1">(5, 1)</field>
+              </block>
+            </value>
+          </block>
+
+          <block type="set_title">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">1,1</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">"marker=(5, 1)"</field>
+              </block>
+            </value>
+          </block>
+
+
+
+
+          <!-- 1,2 그래프 -->
+          <block type="scatter">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">1,2</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">x</field>
+              </block>
+            </value>
+
+            <value name="val_y">
+              <block type="indata">
+                <field name="indata1">y</field>
+              </block>
+            </value>
+
+            <value name="val1">
+              <block type="indata">
+                <field name="indata1">80</field>
+              </block>
+            </value>
+
+            <value name="val2">
+              <block type="indata">
+                <field name="indata1">z</field>
+              </block>
+            </value>
+
+            <value name="val3">
+              <block type="indata">
+                <field name="indata1">(5, 2)</field>
+              </block>
+            </value>
+          </block>
+
+          <block type="set_title">
+            <value name="row_col">
+              <block type="indata">
+                <field name="indata1">1,2</field>
+              </block>
+            </value>
+
+            <value name="val_x">
+              <block type="indata">
+                <field name="indata1">"marker=(5, 2)"</field>
+              </block>
+            </value>
+          </block>
+
+        
           <block type="fig_tight_layout"></block>
   
           <block type="matplotlib_plt_show"></block>
