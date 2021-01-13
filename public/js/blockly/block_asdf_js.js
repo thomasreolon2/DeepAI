@@ -36,3 +36,39 @@ Blockly.JavaScript['pie_axis'] = function(block) {
   return code;
 };
 
+//pie_figure
+Blockly.JavaScript['pie_figure'] = function(block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
+//pie_add_subplot
+Blockly.JavaScript['pie_add_subplot'] = function(block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_name1 = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name3 = Blockly.JavaScript.valueToCode(block, 'd3', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
+//pie_ax_scatter
+Blockly.JavaScript['pie_ax_scatter'] = function(block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_name1 = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name3 = Blockly.JavaScript.valueToCode(block, 'd3', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name4 = Blockly.JavaScript.valueToCode(block, 'd4', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name5 = Blockly.JavaScript.valueToCode(block, 'd5', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name6 = Blockly.JavaScript.valueToCode(block, 'd6', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name7 = Blockly.JavaScript.valueToCode(block, 'd7', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
