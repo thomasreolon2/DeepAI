@@ -208,10 +208,16 @@
     <script src="/js/blockly/woojin_py.js"></script>
     <script src="/js/blockly/woojin_js.js"></script>
   
-    <!--neighbors 블록-->
+    <!--임시 판다스 남지원-->
     <script src="/js/blockly/jiwon.js"></script>
     <script src="/js/blockly/jiwon_py.js"></script>
     <script src="/js/blockly/jiwon_js.js"></script>
+
+    <!-- 사이킷 이미지 -->
+    <script src="/js/blockly/block_skimage.js"></script>
+    <script src="/js/blockly/block_skimage_py.js"></script>
+    <script src="/js/blockly/block_skimage_js.js"></script>
+
   <!-- #####################################################################################################  -->
   <!-- ******************************                CSS                      ******************************* -->
   <!-- #####################################################################################################  -->
@@ -3187,7 +3193,9 @@
       <block type="quad"></block>
     </category>
     <!-- # 시각화 부분 #  -->
-    <category name="사이킷이미지(Skimage)" colour="%{BKY_SCIKITLEARN_HUE}"></category>
+    <category name="사이킷이미지(Skimage)" colour="%{BKY_SCIKITLEARN_HUE}">
+      <block type="import_skimage"></block>
+    </category>
     <category name="%{BKY_CATEGORY_SCIKIT}" colour="%{BKY_SCIKITLEARN_HUE}"> <!--사이킷런(Scikit)-->
       <category name="%{BKY_CATEGORY_DATASET}" colour="%{BKY_SCIKITLEARN_HUE}"> <!--데이터셋 (Dataset)-->
         <block type="import_dataset"></block>
