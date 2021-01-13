@@ -3948,6 +3948,50 @@
       </category>
       <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}">
         <label text="Creating annotated heatmaps"></label>
+        <!--라이브러리-->
+        <block type="numpy_library"></block>
+        <block type="visualization_library_1"></block>
+        
+        <block type = "create_list_1">
+          <value name="list">
+            <field name="indata1">vegetables</field>
+          </value>
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">"cucumber", "tomato", "lettuce", "asparagus","potato", "wheat", "barley"</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "create_list_2">
+          <value name="list">
+            <field name="indata1">vegetables</field>
+          </value>
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">"Farmer Joe", "Upland Bros.", "Smith Gardening","Agrifun", "Organiculture", "BioGoods Ltd.", "Cornylee Corp."</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "create_np_array_1">
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0],
+                [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0],
+                [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0],
+                [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0],
+                [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0],
+                [1.3, 1.2, 0.0, 0.0, 0.0, 3.2, 5.1],
+                [0.1, 2.0, 0.0, 1.4, 0.0, 1.9, 6.3]</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax</field></shadow></value>
+          <value name="VALUE"><block type = "pie_subplots"></block></value>
+        </block>
 
       </category>
       <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}"></category>
