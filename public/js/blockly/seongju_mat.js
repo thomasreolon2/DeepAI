@@ -136,6 +136,91 @@ Blockly.Blocks['fig_tight_layout'] = {
   }
 };
 
+// np.sqrt 넘파이
+Blockly.Blocks['np_sqrt'] = {
+  init: function() {
+    this.appendValueInput("val1")
+        .setCheck(null)
+        .appendField("[np제곱근] 제곱근(sqrt)");
+    this.setInputsInline(true);
+    this.setColour("%{BKY_NUMPY_HUE}");
+    this.setOutput(true, null);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+// 새로운 subplots..
+Blockly.Blocks['subplots'] = {
+  init: function() {
+    this.appendValueInput("row")
+        .setCheck(null)
+        .appendField("plt.subplots");
+    this.appendValueInput("col")
+        .setCheck(null)
+        .appendField(",");
+    this.appendValueInput("val1")
+        .setCheck(null)
+        .appendField("  sharex=");
+    this.appendValueInput("val2")
+        .setCheck(null)
+        .appendField("sharey=");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_VISUAL_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['scatter'] = {
+  init: function() {
+    this.appendValueInput("row_col")
+        .setCheck(null)
+        .appendField("axs.scatter 좌표:");
+    this.appendValueInput("val_x")
+        .setCheck(null)
+        .appendField(" x=");
+    this.appendValueInput("val_y")
+        .setCheck(null)
+        .appendField("y=");
+    this.appendValueInput("val1")
+        .setCheck(null)
+        .appendField("s=");
+    this.appendValueInput("val2")
+        .setCheck(null)
+        .appendField("c=");
+    this.appendValueInput("val3")
+        .setCheck(null)
+        .appendField("marker=");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_VISUAL_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['set_title'] = {
+  init: function() {
+    this.appendValueInput("row_col")
+        .setCheck(null)
+        .appendField("axs.set_title 좌표:");
+    this.appendValueInput("val_x")
+        .setCheck(null)
+        .appendField(" title명:");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_VISUAL_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 
 // 나중에 버리는 코드 곱하기 코드임
 Blockly.Blocks['Oper_garbage'] = {
@@ -202,6 +287,45 @@ Blockly.Blocks['Oper_garbage2'] = {
           ],
           [
               "**", "**"
+          ],
+          [
+              "//", "//"
+          ]
+      ]), "NAME");
+      this.appendValueInput("B").setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_MATH_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['Oper_garbage3'] = {
+  init: function () {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Numeric/N2-logo.png", 25, 23, {
+          alt: "*",
+          flipRtl: "FALSE"
+      }));
+      this.appendValueInput("A").setCheck(null);
+      this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+          [
+              "**", "**"
+          ],
+          [
+              "-", "-"
+          ],
+          [
+              "+", "+"
+          ],
+          [
+              "/", "/"
+          ],
+          [
+              "%", "%"
+          ],
+          [
+              "*", "*"
           ],
           [
               "//", "//"

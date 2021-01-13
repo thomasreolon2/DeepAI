@@ -59,6 +59,49 @@ Blockly.JavaScript['fig_tight_layout'] = function(block) {
   return code;
 };
 
+
+Blockly.JavaScript['np_sqrt'] = function(block) {
+  var value_val1 = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+Blockly.JavaScript['subplots'] = function(block) {
+  var value_row = Blockly.JavaScript.valueToCode(block, 'row', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_col = Blockly.JavaScript.valueToCode(block, 'col', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val1 = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val2 = Blockly.JavaScript.valueToCode(block, 'val2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+
+Blockly.JavaScript['scatter'] = function(block) {
+  var value_row_col = Blockly.JavaScript.valueToCode(block, 'row_col', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val_x = Blockly.JavaScript.valueToCode(block, 'val_x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val_y = Blockly.JavaScript.valueToCode(block, 'val_y', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val1 = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val2 = Blockly.JavaScript.valueToCode(block, 'val2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val3 = Blockly.JavaScript.valueToCode(block, 'val3', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+
+Blockly.JavaScript['set_title'] = function(block) {
+  var value_row_col = Blockly.JavaScript.valueToCode(block, 'row_col', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val_x = Blockly.JavaScript.valueToCode(block, 'val_x', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+// 이 밑으로는 있는거(==> 임의로 만듬.)
+
 Blockly.JavaScript['Oper_garbage'] = function(block) {
   var value_a = Blockly.JavaScript.valueToCode(block, 'A', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
@@ -70,6 +113,16 @@ Blockly.JavaScript['Oper_garbage'] = function(block) {
 };
 
 Blockly.JavaScript['Oper_garbage2'] = function(block) {
+  var value_a = Blockly.JavaScript.valueToCode(block, 'A', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_b = Blockly.JavaScript.valueToCode(block, 'B', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['Oper_garbage3'] = function(block) {
   var value_a = Blockly.JavaScript.valueToCode(block, 'A', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   var value_b = Blockly.JavaScript.valueToCode(block, 'B', Blockly.JavaScript.ORDER_ATOMIC);

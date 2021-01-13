@@ -66,6 +66,50 @@ Blockly.Python['fig_tight_layout'] = function(block) {
   return code;
 };
 
+Blockly.Python['np_sqrt'] = function(block) {
+  var value_val1 = Blockly.Python.valueToCode(block, 'val1', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'np.sqrt(' + value_val1 + ')';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+Blockly.Python['subplots'] = function(block) {
+  var value_row = Blockly.Python.valueToCode(block, 'row', Blockly.Python.ORDER_ATOMIC);
+  var value_col = Blockly.Python.valueToCode(block, 'col', Blockly.Python.ORDER_ATOMIC);
+  var value_val1 = Blockly.Python.valueToCode(block, 'val1', Blockly.Python.ORDER_ATOMIC);
+  var value_val2 = Blockly.Python.valueToCode(block, 'val2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'fig, axs = plt.subplots(' + value_row + ',' +
+       value_col + ',sharex = ' + value_val1 + ', sharey = ' + value_val2 +')\n';
+  return code;
+};
+
+
+Blockly.Python['scatter'] = function(block) {
+  var value_row_col = Blockly.Python.valueToCode(block, 'row_col', Blockly.Python.ORDER_ATOMIC);
+  var value_val_x = Blockly.Python.valueToCode(block, 'val_x', Blockly.Python.ORDER_ATOMIC);
+  var value_val_y = Blockly.Python.valueToCode(block, 'val_y', Blockly.Python.ORDER_ATOMIC);
+  var value_val1 = Blockly.Python.valueToCode(block, 'val1', Blockly.Python.ORDER_ATOMIC);
+  var value_val2 = Blockly.Python.valueToCode(block, 'val2', Blockly.Python.ORDER_ATOMIC);
+  var value_val3 = Blockly.Python.valueToCode(block, 'val3', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'axs[' + value_row_col + '].scatter(' + value_val_x + ',' + value_val_y
+              + ', s = ' + value_val1 + ', c = ' + value_val2 + ',marker= ' + value_val3 +')\n';
+  return code;
+};
+
+
+Blockly.Python['set_title'] = function(block) {
+  var value_row_col = Blockly.Python.valueToCode(block, 'row_col', Blockly.Python.ORDER_ATOMIC);
+  var value_val_x = Blockly.Python.valueToCode(block, 'val_x', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'axs[' + value_row_col + '].set_title(' + value_val_x + ')\n';
+  return code;
+};
+
+
+// 이 밑으로는 있는거(==> 임의로 만듬.)
 
 Blockly.Python['Oper_garbage'] = function(block) {
   var value_a = Blockly.Python.valueToCode(block, 'A', Blockly.Python.ORDER_ATOMIC);
@@ -79,6 +123,16 @@ Blockly.Python['Oper_garbage'] = function(block) {
 
 
 Blockly.Python['Oper_garbage2'] = function(block) {
+  var value_a = Blockly.Python.valueToCode(block, 'A', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_b = Blockly.Python.valueToCode(block, 'B', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_a} ${dropdown_name} ${value_b}`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['Oper_garbage3'] = function(block) {
   var value_a = Blockly.Python.valueToCode(block, 'A', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   var value_b = Blockly.Python.valueToCode(block, 'B', Blockly.Python.ORDER_ATOMIC);
