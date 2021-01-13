@@ -189,6 +189,12 @@
   <script src="/js/blockly/block_numpy1.js"></script>
   <script src="/js/blockly/block_numpy1_py.js"></script>
   <script src="/js/blockly/block_numpy1_js.js"></script>
+
+    <!-- 임시 블록 이성주 -->
+    <script src="/js/blockly/seongju_mat.js"></script>
+    <script src="/js/blockly/seongju_mat_py.js"></script>
+    <script src="/js/blockly/seongju_mat_js.js"></script>
+    
   <!-- api 블록 -->
 
     <!-- 임시 데이터베이스 양승국 -->
@@ -3164,7 +3170,311 @@
       <!--  사이킷런 시각화 하기      -->
 
       </category>
-      <category name="라인,바&마커형" colour="%{BKY_VISUAL_HUE}"></category>
+      <category name="라인,바&마커형" colour="%{BKY_VISUAL_HUE}">
+
+          <block type="numpy_library"></block>
+  
+          <block type="visualization_library">
+            <value name="lib_var">
+              <block type="variables_get">
+                <field name="VAR">plt</field>
+              </block>
+            </value>
+          </block>
+  
+          <block type="itdata">
+            <value name="itdata1">
+              <shadow type="numpy_random_generator">
+                <value name="numpy_Random_generator_val">
+                  <shadow type="indata">
+                    <field name="indata1">19680801</field>
+                </shadow>
+              </value>
+              </shadow>
+            </value>
+          </block>
+          
+          <block type="many_variables">
+            <value name="NUMBER">
+              <shadow type="indata">
+                <field name="indata1">dt</field>
+              </shadow>
+            </value>
+            <value name="VALUE">
+              <shadow type="indata">
+                <field name="indata1">0.01</field>
+              </shadow>
+            </value>
+          </block>
+  
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <shadow type="indata">
+                <field name="indata1">t</field>
+              </shadow>
+            </value>
+            <value name="VALUE">
+              <shadow type="numpy_numerical_ranges">
+                <value name="numpy_Numerical_ranges_val">
+                  <shadow type="indata">
+                    <field name="indata1">0,30,dt</field>
+                  </shadow>
+                </value>
+              </shadow>
+            </value>
+          </block>
+  
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <shadow type="indata">
+                <field name="indata1">nse1</field>
+              </shadow>
+            </value>
+            <value name="VALUE">
+              <block type="numpy_random_sample__">
+                <value name="numpy_Random_sample_val"> 
+                  <block type="text_length">
+                    <value name="VALUE">
+                      <shadow type="indata">
+                        <field name="indata1">t</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>  
+              </block> 
+            </value>
+          </block>
+  
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <shadow type="indata">
+                <field name="indata1">nse2</field>
+              </shadow>
+            </value>
+            <value name="VALUE">
+              <block type="numpy_random_sample__">
+                <value name="numpy_Random_sample_val"> 
+                  <block type="text_length">
+                    <value name="VALUE">
+                      <shadow type="indata">
+                        <field name="indata1">t</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>  
+              </block> 
+            </value>
+          </block>
+  <!-- nse1, nse2 만들기 -->
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="indata">
+                <field name="indata1">s1</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="Oper">
+                <value name="A">
+                  <block type="numpy_mathematical_functions">
+                    <value name="numpy_Mathematical functions_val"> 
+                      <block type="Oper_garbage">
+                        <value name="A">
+                          <block type="np_pi"></block>
+                        </value>
+                        <value name="B">
+                          <block type="indata">
+                            <field name="indata1">2*10*t</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>   
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="indata">
+                    <field name="indata1">nse1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+  
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="indata">
+                <field name="indata1">s2</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="Oper">
+                <value name="A">
+                  <block type="numpy_mathematical_functions">
+                    <value name="numpy_Mathematical functions_val"> 
+                      <block type="Oper_garbage">
+                        <value name="A">
+                          <block type="np_pi"></block>
+                        </value>
+                        <value name="B">
+                          <block type="indata">
+                            <field name="indata1">2*10*t</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>   
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="indata">
+                    <field name="indata1">nse2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+  
+  
+          <block type="matplotlib_main">
+            <value name="matplotlib_main_cols">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+    
+            <value name="matplotlib_main_rows">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+          </block>
+  
+  
+          <block type="ax_lst_plot">
+            <value name="NAME">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="val">
+              <shadow type="indata">
+                <field name="indata1">t,s1,t,s2</field>
+            </shadow>
+          </value>
+          </block>
+    
+    
+          <block type="axs_set_xlim">
+            <value name="NAME">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="val">
+              <shadow type="indata">
+                <field name="indata1">0,2</field>
+              </shadow>
+            </value>
+          </block>
+    
+    
+          <block type="axs_set_xlabel">
+            <value name="NAME">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="val">
+              <shadow type="indata">
+                <field name="indata1">'time'</field>
+              </shadow>
+            </value>
+          </block>
+    
+    
+          <block type="axs_set_ylabel">
+            <value name="NAME">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="val">
+              <shadow type="indata">
+                <field name="indata1">'s1 and s2'</field>
+              </shadow>
+            </value>
+          </block>
+    
+    
+          <block type="axs_grid">
+            <value name="NAME">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="val">
+              <shadow type="indata">
+                <field name="indata1">True</field>
+              </shadow>
+            </value>
+          </block>
+    
+    
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <shadow type="indata">
+                <field name="indata1">cxy, f</field>
+              </shadow>
+            </value>
+            <value name="VALUE">
+              <block type="axs_cohere">
+                <value name="NAME">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="val">
+                  <block type="Oper_garbage2">
+                    <value name="A">
+                      <block type="indata">
+                        <field name="indata1">s1, s2, 256, 1.</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="indata">
+                        <field name="indata1">dt</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+          </block>
+  
+  
+          <block type="axs_set_ylabel">
+            <value name="NAME">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            
+            <value name="val">
+              <shadow type="indata">
+                <field name="indata1">'coherence'</field>
+              </shadow>
+            </value>
+          </block>
+  
+  
+          <block type="fig_tight_layout"></block>
+  
+          <block type="matplotlib_plt_show"></block>
+
+      </category>
       <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}"></category>
       <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}"></category>
       <category name="통계형" colour="%{BKY_VISUAL_HUE}"></category>
