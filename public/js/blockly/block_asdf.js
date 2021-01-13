@@ -5,7 +5,7 @@
 //pie_subplots
 Blockly.Blocks['pie_subplots'] = {
   init: function() { 
-    this.appendDummyInput().appendField("[subplots]");
+    this.appendDummyInput().appendField("plt.subplot");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);
@@ -211,5 +211,118 @@ Blockly.Blocks['Oper2'] = {
       this.setColour("%{BKY_MATH_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['Oper3'] = {
+  init: function () {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Numeric/N2-logo.png", 25, 23, {
+          alt: "*",
+          flipRtl: "FALSE"
+      }));
+      this.appendValueInput("A").setCheck(null);
+      this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+          [
+              "/", "/"
+          ],
+          [
+              "**", "**"
+          ],
+          [
+              "+", "+"
+          ],
+          [
+              "-", "-"
+          ],
+          [
+              "*", "*"
+          ],
+          [
+              "%", "%"
+          ],
+          [
+              "//", "//"
+          ]
+      ]), "NAME");
+      this.appendValueInput("B").setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_MATH_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pie_linspace'] = {
+  init: function () {
+      this.appendDummyInput().appendField("np.linspace(");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").setCheck(null).appendField(",");
+      this.appendValueInput("d3").setCheck(null).appendField("*");
+      this.appendValueInput("d4").setCheck(null).appendField(",");
+      this.appendDummyInput().appendField(", endpoint =").appendField(new Blockly.FieldDropdown([
+          [
+              "False", "False"
+          ],
+          [
+              "True", "True"
+          ]
+      ]), "NAME");
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_MATH_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pie_cm_viridis'] = {
+  init: function () {
+      this.appendDummyInput().appendField("np.cm.viridis(");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_MATH_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+//pie_subplots
+Blockly.Blocks['pie_subplots1'] = {
+  init: function() { 
+    this.appendDummyInput().appendField("plt.subplot(");
+    this.appendValueInput("d1").setCheck(null).appendField(",");
+    this.appendValueInput("d2").setCheck(null).appendField("projection =");
+    this.appendDummyInput().appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+ this.setTooltip(""); 
+ this.setHelpUrl("");
+  }
+};
+
+//pie_bar
+Blockly.Blocks['pie_bar'] = {
+  init: function() { 
+    this.appendDummyInput()
+        .appendField("[bar]")
+        .appendField(new Blockly.FieldVariable("ax"), "list");
+    this.appendValueInput("d1").appendField().setCheck(null).appendField(".bar(");
+    this.appendValueInput("d2").setCheck(null).appendField(",");
+    this.appendValueInput("d3").setCheck(null).appendField(", width =");
+    this.appendValueInput("d4").appendField("bottom =").setCheck(null);
+    this.appendValueInput("d5").appendField("color =").setCheck(null);    
+    this.appendValueInput("d6").appendField("alpha =").setCheck(null);  
+    this.appendDummyInput().appendField(")");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+ this.setTooltip(""); 
+ this.setHelpUrl("");
   }
 };

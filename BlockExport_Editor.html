@@ -4192,6 +4192,294 @@
 
         <block type="matplotlib_plt_show"></block>
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ysk -->
+        <label text="Bar chart on polar axis"></label>
+
+        <block type="numpy_library"></block>
+
+        <block type="visualization_library"></block>
+
+        <block type="numpy_random_generator1">
+          <value name="numpy_Random_generator_val"> 
+            <block type="math_number">
+              <field name="NUM">19680801</field>
+            </block>
+          </value>  
+        </block> 
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">N</field></shadow></value>
+          <value name="VALUE"><shadow type="indata"><field name="indata1">20</field></shadow></value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">theta</field></shadow></value>
+          <value name="VALUE">
+            <block type="pie_linspace">
+              <value name="d1">
+                <shadow type="indata"><field name="indata1">0.0</field></shadow>
+              </value>
+              <value name="d2">
+                <shadow type="indata"><field name="indata1">2</field></shadow>
+              </value>
+              <value name="d3">
+                <shadow type="indata"><field name="indata1">np.pi</field></shadow>
+              </value>
+              <value name="d4">
+                <shadow type="indata"><field name="indata1">N</field></shadow>
+              </value>
+            </block>
+            </value>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">radii</field></shadow></value>
+          <value name="VALUE">
+            <block type="Oper1">
+              <value name="A">
+                <shadow type="indata">
+                  <field name="indata1">10</field>
+                </shadow>
+              </value>
+              <value name="B">
+                <block type="numpy_random_sample">
+                  <value name="numpy_Random_sample_val"> 
+                    <shadow type="indata">
+                      <field name="indata1">N</field>
+                    </shadow>
+                  </value>  
+                </block> 
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">width</field></shadow></value>
+          <value name="VALUE">
+            <block type="Oper3">
+              <value name="A">
+                <shadow type="indata">
+                  <field name="indata1">np.pi</field>
+                </shadow>
+              </value>
+              <value name="B">
+                <block type="Oper1">
+                  <value name="A">
+                    <shadow type="indata">
+                      <field name="indata1">4</field>
+                    </shadow>
+                  </value>
+                  <value name="B">
+                    <block type="numpy_random_sample">
+                      <value name="numpy_Random_sample_val"> 
+                        <shadow type="indata">
+                          <field name="indata1">N</field>
+                        </shadow>
+                      </value>  
+                    </block> 
+                  </value>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">colors</field></shadow></value>
+          <value name="VALUE">
+            <block type = "pie_cm_viridis">
+              <value name="d1">
+                <block type="Oper3">
+                  <value name="A">
+                    <shadow type="indata">
+                      <field name="indata1">radii</field>
+                    </shadow>
+                  </value>
+                  <value name="B">
+                    <shadow type="indata">
+                      <field name="indata1">10</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
+          <value name="VALUE">
+            <block type = "pie_subplots1">
+              <value name="d1">
+                <shadow type="indata">
+                  <field name="indata1">111</field>
+                </shadow>
+              </value>
+              <value name="d2">
+                <shadow type="indata">
+                  <field name="indata1">'polar'</field>
+                </shadow>
+              </value> 
+            </block>
+          </value>
+        </block>
+
+        <block type = "pie_bar">
+          <value name="d1">
+            <shadow type="indata">
+              <field name="indata1">theta</field>
+            </shadow>
+          </value>
+          <value name="d2">
+            <shadow type="indata">
+              <field name="indata1">radii</field>
+            </shadow>
+          </value>
+          <value name="d3">
+            <shadow type="indata">
+              <field name="indata1">width</field>
+            </shadow>
+          </value>
+          <value name="d4">
+            <shadow type="indata">
+              <field name="indata1">0.0</field>
+            </shadow>
+          </value>
+          <value name="d5">
+            <shadow type="indata">
+              <field name="indata1">colors</field>
+            </shadow>
+          </value>
+          <value name="d6">
+            <shadow type="indata">
+              <field name="indata1">0.5</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="matplotlib_plt_show"></block>
+
       </category>
 
       <!-- 그래프 출력 -->
