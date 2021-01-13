@@ -1154,7 +1154,7 @@ Blockly.defineBlocksWithJsonArray([
       },
       {
         "type": "input_dummy"
-      },
+      }
     ],
     message1: "%{BKY_CONTROLS_DO} %1",
     args1: [{ type: "input_statement", name: "DO" }],

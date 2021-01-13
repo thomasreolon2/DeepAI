@@ -566,7 +566,7 @@ Blockly.Blocks['va_sel'] = {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C7-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("값선택").appendField(new Blockly.FieldVariable("my_list"), "list").appendField("[");
+        })).appendField("인덱싱").appendField(new Blockly.FieldVariable("my_list"), "list").appendField("[");
         this.appendValueInput("dic1").setCheck(null);
         this.appendDummyInput().appendField("]");
         this.setInputsInline(true);
