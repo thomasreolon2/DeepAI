@@ -35,3 +35,20 @@ Blockly.Blocks['select_graph_option'] = {
    this.setHelpUrl("");
     }
   };
+
+
+  
+// 2021.01.13 plt.imshow (남지원)
+Blockly.Blocks['plt_imshow'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField("[이미지그리기]")
+          .appendField(new Blockly.FieldVariable("img"), "VAR");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(230);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };

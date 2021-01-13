@@ -4,3 +4,11 @@ Blockly.JavaScript['import_skimage'] = function (block) {
     var code = "\n";
     return code;
   };
+
+  // 2021.01.13 이미지 사용 (남지원)
+Blockly.JavaScript['skimage_data'] = function (block) {
+  var dropdown_dic = block.getFieldValue('DATA');
+  var code = '\n'
+
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

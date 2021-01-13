@@ -13,3 +13,10 @@ Blockly.JavaScript['select_graph_option'] = function(block) {
     var code = '\n';    
     return code; 
   };
+
+  // 2021.01.13 plt.imshow (남지원)
+  Blockly.JavaScript['plt_imshow'] = function (block) {
+    var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+    var code = `\n`;
+    return code;
+  };
