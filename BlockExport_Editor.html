@@ -4615,6 +4615,11 @@
         </block>
 
         <block type = "create_tuple">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">explode</field>
+            </block>
+          </value>  
           <value name="text">
             <shadow type="indata">
               <field name="indata1">0, 0.1, 0, 0</field>
@@ -4635,7 +4640,7 @@
           </value>
           <value name="d2">
             <block type="variables_get">
-              <field name="VAR">my_tuple</field>
+              <field name="VAR">explode</field>
             </block>
           </value>
           <value name="d3">
