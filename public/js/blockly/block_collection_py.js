@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////
 
 Blockly.Python['create_list'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = variable_list + ' = [' + value_text + ']\n';
@@ -32,7 +32,7 @@ Blockly.Python['tuple'] = function(block) {
 
 //2020-12-29 양승국
 Blockly.Python['create_tuple'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = variable_list + ' = (' + value_text + ')\n';
@@ -41,7 +41,7 @@ Blockly.Python['create_tuple'] = function (block) {
 
 //2020-12-29 양승국
 Blockly.Python['create_ziphap'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = `${variable_list} = {${value_text}}\n`;
@@ -51,7 +51,7 @@ Blockly.Python['create_ziphap'] = function (block) {
 
 //2020-12-29 양승국
 Blockly.Python['create_dict'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = variable_list + ' = { ' + value_text + ' }\n';
@@ -174,25 +174,25 @@ Blockly.Python['map_filter'] = function(block) {
 //2021-01-05
 //va_sel
 Blockly.Python['va_sel'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_list1 = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_dic1 = Blockly.Python.valueToCode(block, 'dic1', Blockly.Python.ORDER_ATOMIC);
   
-  var code = variable_list + '[ ' + value_dic1 + ' ]';
+  var code = value_list1 + '[' + value_dic1 + ']';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 //va_del
 Blockly.Python['va_del'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_list1 = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_dic1 = Blockly.Python.valueToCode(block, 'dic1', Blockly.Python.ORDER_ATOMIC);
   
-  var code = 'del ' + variable_list + '[ ' + value_dic1 + ' ]\n';
+  var code = 'del ' + value_list1 + '[' + value_dic1 + ']\n';
   return code;
 };
 
 // 딕셔너리 옵션 블록 수정2021-01-05 ysk
 Blockly.Python['dic_menu1'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list =  Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var dropdown_dic = block.getFieldValue('dic');
   if (dropdown_dic == 'items') {
     var code = variable_list + '.items()';
@@ -208,7 +208,7 @@ Blockly.Python['dic_menu1'] = function (block) {
 
 //va_ser
 Blockly.Python['va_ser'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_dic1 = Blockly.Python.valueToCode(block, 'dic1', Blockly.Python.ORDER_ATOMIC);
   
   var code = value_dic1 + " in " + variable_list;

@@ -1251,6 +1251,11 @@
 
       <!-- 인덱싱 -->
       <block type = "va_sel">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
         <value name="dic1">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -1259,6 +1264,11 @@
       </block>
 
       <block type = "va_del">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
         <value name="dic1">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -1271,6 +1281,11 @@
       <label text="리스트"></label>
 
       <block type = "create_list">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>  
         <value name="text">
           <shadow type="indata">
             <field name="indata1">1,2,3,4</field>
@@ -1281,11 +1296,11 @@
       <!-- 리스트 삽입 -->
       
       <block type="list_insert">
-        <value name="LIST">
-          <shadow type="indata">
-            <field name="indata1">my_list</field>
-          </shadow>
-        </value>
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_set</field>
+          </block>
+        </value>  
         <value name="INDEX">
           <shadow type="indata">
             <field name="indata1">인덱스</field>
@@ -1299,6 +1314,11 @@
       </block>
 
       <block type="list_sort_reverse">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_dict</field>
+          </block>
+        </value>  
         <value name="LIST">
           <shadow type="indata">
             <field name="indata1">my_list</field>
@@ -1320,10 +1340,10 @@
        </block>
        
       <block type="create_new_list">
-        <value name="NUMBER_TO_CHECK">
-           <shadow type="indata">
-             <field name="indata1">my_list</field>
-           </shadow>
+        <value name="VAR1">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
          </value>
          <value name="DIVISOR">
            <shadow type="indata">
@@ -1337,6 +1357,11 @@
       <label text="튜플"></label>
       <!-- 튜플블록 -->
       <block type = "create_tuple">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_tuple</field>
+          </block>
+        </value>  
         <value name="text">
           <shadow type="indata">
             <field name="indata1">1,2,3,4</field>
@@ -1347,6 +1372,11 @@
       <label text="집합"></label>
       <!-- 집합블록 -->
       <block type = "create_ziphap">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_set</field>
+          </block>
+        </value>  
         <value name="text">
           <shadow type="indata">
             <field name="indata1">1,2,3,4</field>
@@ -1383,6 +1413,11 @@
       <label text="딕셔너리"></label>
       <!-- 딕셔너리1 -->
       <block type = "create_dict">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_dict</field>
+          </block>
+        </value>  
         <value name="text">
           <shadow type="indata">
             <field name="indata1">'a':1, 'b':2</field>
@@ -1391,21 +1426,11 @@
       </block>  
 
       <block type ="dic_menu1">
-        <value name="dic1">
-            <block type="variables_get">
-              <field name="VAR">dic</field>
-            </block>
-        </value>
-        <value name="dic2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="dic3">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_dict</field>
+          </block>
+        </value>  
       </block>
 
       <block type = "va_ser">
@@ -1414,6 +1439,11 @@
             <field name="indata1"></field>
           </shadow>
         </value>
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_dict</field>
+          </block>
+        </value>  
       </block>
 
       <!-- 딕셔너리2 
@@ -4572,6 +4602,11 @@
         </block>
 
         <block type = "create_list">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">sizes</field>
+            </block>
+          </value> 
           <value name="text">
             <shadow type="indata">
               <field name="indata1">15, 30, 45, 10</field>
@@ -4595,7 +4630,7 @@
         <block type = "pie_pie1">
           <value name="d1">
             <block type="variables_get">
-              <field name="VAR">my_list</field>
+              <field name="VAR">sizes</field>
             </block>
           </value>
           <value name="d2">

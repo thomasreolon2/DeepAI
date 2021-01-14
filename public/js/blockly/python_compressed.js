@@ -1611,7 +1611,7 @@ Blockly.Python['list_append'] = function(block) {
 // sort
 Blockly.Python['list_sort_reverse'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = variable_list+'.'+dropdown_name+'()\n';
   return code;
@@ -1639,7 +1639,7 @@ Blockly.Python['list_index'] = function(block) {
 
 // insert
 Blockly.Python['list_insert'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_index = Blockly.Python.valueToCode(block, 'INDEX', Blockly.Python.ORDER_ATOMIC);
   var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
@@ -1747,7 +1747,7 @@ Blockly.Python['many_variables'] = function(block) {
 // ) || "",
 Blockly.Python.create_new_list = function (a) {
   var b =
-      Blockly.Python.variableDB_.getName(a.getFieldValue('NUMBER_TO_CHECK'), Blockly.Variables.NAME_TYPE) || "",
+    Blockly.Python.valueToCode(a, 'VAR1', Blockly.Python.ORDER_ATOMIC) || "",
       
     c = a.getFieldValue("PROPERTY");
   if ("PRIME" == c)

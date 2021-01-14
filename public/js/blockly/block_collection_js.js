@@ -3,7 +3,7 @@
 // ////////////////////////////////////////////////////////////////////
 
 Blockly.JavaScript['create_list'] = function (block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble .JavaScript into code variable.
   var code = '\n';
@@ -21,7 +21,7 @@ Blockly.JavaScript['global'] = function (block) {
 
 //2020-12-29 양승국
 Blockly.JavaScript['create_tuple'] = function (block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble .JavaScript into code variable.
   var code = '\n';
@@ -30,7 +30,7 @@ Blockly.JavaScript['create_tuple'] = function (block) {
 
 //2020-12-29 양승국
 Blockly.JavaScript['create_dict'] = function (block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble .JavaScript into code variable.
   var code = '\n';
@@ -39,7 +39,7 @@ Blockly.JavaScript['create_dict'] = function (block) {
 
 //2020-12-29 양승국
 Blockly.JavaScript['create_ziphap'] = function (block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble .JavaScript into code variable.
   var code = '\n';
@@ -48,7 +48,7 @@ Blockly.JavaScript['create_ziphap'] = function (block) {
 
 // 딕셔너리 옵션 블록 수정2021-01-05 ysk
 Blockly.JavaScript['dic_menu1'] = function (block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_dic = block.getFieldValue('dic');
   code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -112,7 +112,7 @@ Blockly.JavaScript['map_filter'] = function(block) {
 //2021-01-05
 //va_sel
 Blockly.JavaScript['va_sel'] = function (block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_list1 = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
   
   var code = '\n';
@@ -121,7 +121,7 @@ Blockly.JavaScript['va_sel'] = function (block) {
 
 //va_del
 Blockly.JavaScript['va_del'] = function (block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_list1 = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
   
   var code = '\n';
@@ -130,7 +130,7 @@ Blockly.JavaScript['va_del'] = function (block) {
 
 //va_ser
 Blockly.JavaScript['va_ser'] = function (block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
   
   var code = '\n';
