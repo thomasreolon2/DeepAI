@@ -225,20 +225,6 @@ this.setHelpUrl("");
 },
 };
 
-// get_demo_img
-Blockly.Blocks['get_demo_img'] = {
-init: function() {
-    this.appendDummyInput()
-        .appendField("[get_demo_img]");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_VISUAL_HUE}");
-this.setTooltip("");
-this.setHelpUrl("");
-},
-};
-
-
 // set_inset_axes
 Blockly.Blocks['set_inset_axes'] = {
     init: function() {

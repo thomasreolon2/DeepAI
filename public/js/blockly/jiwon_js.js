@@ -70,12 +70,7 @@ Blockly.JavaScript['pandas_nanull'] = function(block) {
   return code;
 };
 
- //라이브러리 임포트    
- Blockly.JavaScript['get_demo_img'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = "\n";
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
+
 
 //////////////////////
 Blockly.JavaScript['get_sample_data'] = function (block) {

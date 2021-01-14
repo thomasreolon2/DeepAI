@@ -100,13 +100,6 @@ Blockly.Python['block_tail_head'] = function(block) {
     return code;
   };
 
-  
-//라이브러리 임포트    
-Blockly.Python['get_demo_img'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = "get_demo_img()";
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 // get_sample_data
 Blockly.Python['get_sample_data'] = function (block) {

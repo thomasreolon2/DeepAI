@@ -4668,16 +4668,26 @@
             </block>
           </value>
         </block>
-
-        <block type="def1">
+        
+        <block type="webdefine">
+          <value name="1">
+            <block type="variables_get">
+              <field name="VAR">get_demo_img</field>
+            </block>
+          </value>  
           <value name="2">
             <shadow type="indata">
               <field name="indata1"></field>
             </shadow>
           </value>
         </block>
+
         <block type = "many_variables">
-          <value name="NUMBER"><shadow type="indata"><field name="indata1">z</field></shadow></value>
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">z</field>
+            </block>
+          </value>
           <value name="VALUE">
             <block type="get_sample_data">
               <value name="INPUT">
@@ -4696,8 +4706,6 @@
           </shadow>
         </value>
         </block> 
-        
-        <!-- <block type="get_demo_img"></block> -->
 
         <block type = "many_variables">
           <value name="NUMBER"><shadow type="indata"><field name="indata1">fig,ax</field></shadow></value>
@@ -4706,7 +4714,15 @@
 
         <block type = "many_variables">
           <value name="NUMBER"><shadow type="indata"><field name="indata1">Z,extent</field></shadow></value>
-          <value name="VALUE"><block type="get_demo_img"></block></value>
+          <value name="VALUE">
+            <block type="func_return11">
+            <value name="1">
+              <block type="variables_get">
+                <field name="VAR">get_demo_img</field>
+              </block>
+            </value> 
+            </block>
+          </value>
         </block>
 
         <block type = "many_variables">
@@ -4731,7 +4747,20 @@
           <value name="NUMBER"><shadow type="indata"><field name="indata1">Z2[30:30+ny, 30:30+nx]</field></shadow></value>
           <value name="VALUE"><shadow type="indata"><field name="indata1">Z</field></shadow></value>
         </block>
-        <!-- imshow 들어가야됨 -->
+        <!-- 밑에 imshow 임 -->
+        <block type = "pie_subplots_1">
+          <value name="name1">
+            <shadow type="indata">
+              <field name="indata1">ax</field>
+            </shadow>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">Z2, extent=extent, origin="lower"</field>
+            </shadow>
+          </value>
+        </block>
+
         <block type = "many_variables">
           <value name="NUMBER"><shadow type="indata"><field name="indata1">axins</field></shadow></value>
           <value name="VALUE">
@@ -4744,6 +4773,19 @@
             <value name="INPUT"><shadow type="indata"><field name="indata1">[0.5, 0.5, 0.47, 0.47]</field></shadow></value>
           </block>
         </value>
+        </block>
+
+        <block type = "pie_subplots_1">
+          <value name="name1">
+            <shadow type="indata">
+              <field name="indata1">axs</field>
+            </shadow>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">Z2, extent=extent, origin="lower"</field>
+            </shadow>
+          </value>
         </block>
 
         <!-- imshow 들어가야됨 -->
