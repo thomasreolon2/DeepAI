@@ -193,7 +193,23 @@ Blockly.Blocks['def1'] = {
         this.setTooltip('');
     },
 };
-
+// get_sample_data
+Blockly.Blocks['get_sample_data'] = {
+    init: function() {
+        this.appendDummyInput()
+          .appendField("cbook.get_sample_data");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+          .appendField("np_load=")
+          .appendField(new Blockly.FieldDropdown([["참(True)","True"],["거짓(False)","False"]]),"DROP");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    },
+  };
 // cbook_import
 Blockly.Blocks['cbook_import'] = {
     init: function() {

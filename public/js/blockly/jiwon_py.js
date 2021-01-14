@@ -108,4 +108,12 @@ Blockly.Python['block_tail_head'] = function(block) {
     return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
-  
+     //////////////////////
+     Blockly.Python['get_sample_data'] = function (block) {
+      var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+      var dropdown_drop = block.getFieldValue('DROP');
+
+      // TODO: Assemble Python into code variable.
+      var code = `cbook.get_sample_data("${input_text}", np_load=${dropdown_drop})`;
+      return [code, Blockly.Python.ORDER_ATOMIC];
+    };

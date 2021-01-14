@@ -76,3 +76,13 @@ Blockly.JavaScript['pandas_nanull'] = function(block) {
   var code = "\n";
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+   //////////////////////
+   Blockly.JavaScript['get_sample_data'] = function (block) {
+    var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+    var dropdown_drop = block.getFieldValue('DROP');
+
+    // TODO: Assemble JavaScript into code variable.
+    var code = `cbook.get_sample_data("${input_text}", np_load=${dropdown_drop})`;
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  };
