@@ -101,19 +101,40 @@ Blockly.Python['block_tail_head'] = function(block) {
   };
 
   
-  //라이브러리 임포트    
-  Blockly.Python['get_demo_img'] = function(block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = "get_demo_img()";
-    return [code, Blockly.Python.ORDER_ATOMIC];
-  };
+//라이브러리 임포트    
+Blockly.Python['get_demo_img'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "get_demo_img()";
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
 
-     //////////////////////
-     Blockly.Python['get_sample_data'] = function (block) {
-      var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
-      var dropdown_drop = block.getFieldValue('DROP');
+// get_sample_data
+Blockly.Python['get_sample_data'] = function (block) {
+  var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
 
-      // TODO: Assemble Python into code variable.
-      var code = `cbook.get_sample_data("${input_text}", np_load=${dropdown_drop})`;
-      return [code, Blockly.Python.ORDER_ATOMIC];
-    };
+  // TODO: Assemble Python into code variable.
+  var code = `cbook.get_sample_data("${input_text}", np_load=${dropdown_drop})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// get_sample_data
+Blockly.Python['set_inset_axes'] = function (block) {
+  var var_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text}.inset_axes(${input_text})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// set_xlim_ylim
+Blockly.Python['set_xlim_ylim'] = function (block) {
+  var var_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text}.${dropdown_drop}(${input_text})\n`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
