@@ -872,6 +872,11 @@
       <block type="text"></block>
       <!-- 문자 생성 -->
       <block type = "create_text">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="text">
           <shadow type="indata">
             <field name="indata1">Hello, Python!</field>
@@ -882,6 +887,11 @@
       <block type="text_join"></block>
       <!-- len -->
       <block type="text_length">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="VALUE">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -891,6 +901,11 @@
       
      <!-- 문자 슬라이스 -->
      <block type="text_slice">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">i</field>
+        </block>
+      </value>
       <value name="INPUT1">
         <shadow type="indata">
           <field name="indata1">0</field>
@@ -910,6 +925,11 @@
 
       <!-- 문자 편집 -->
       <block type="text_editing">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -919,6 +939,11 @@
 
       <!-- 문자 검색 -->
       <block type="text_search">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -928,6 +953,11 @@
 
       <!-- 문자 대소문자 -->
       <block type="text_up_low">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -938,6 +968,11 @@
       
       <!-- 문자 정렬 -->
       <block type="text_sort">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1">10</field>
@@ -952,6 +987,11 @@
 
       <!-- 문자 질의 -->
       <block type="text_query">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1">10</field>
@@ -4648,10 +4688,83 @@
             </block>
           </value>
         </block>
-
         
-        <block type="get_demo_img"></block>
+        <block type="webreturn2">
+        <value name="return">
+          <shadow type="indata">
+            <field name="indata1">z, (-3,4,-4,3)</field>
+          </shadow>
+        </value>
+        </block> 
+        
+        <!-- <block type="get_demo_img"></block> -->
 
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">fig,ax</field></shadow></value>
+          <value name="VALUE"><shadow type="indata"><field name="indata1">plt.subplots(figsize=[5, 4])</field></shadow></value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">Z,extent</field></shadow></value>
+          <value name="VALUE"><block type="get_demo_img"></block></value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">Z2</field></shadow></value>
+          <value name="VALUE">
+            <block type="numpy_ones_and_zeros">
+              <value name="numpy_Ones and zeros_val"> 
+                <shadow type="indata">
+                  <field name="indata1">(150,150)</field>
+                </shadow>
+              </value>  
+            </block> 
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">ny, nx</field></shadow></value>
+          <value name="VALUE"><shadow type="indata"><field name="indata1">Z.shape</field></shadow></value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">Z2[30:30+ny, 30:30+nx]</field></shadow></value>
+          <value name="VALUE"><shadow type="indata"><field name="indata1">Z</field></shadow></value>
+        </block>
+        <!-- imshow 들어가야됨 -->
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">axins</field></shadow></value>
+          <value name="VALUE">
+            <block type="set_inset_axes">
+            <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+            </block>
+            </value>
+            <value name="INPUT"><shadow type="indata"><field name="indata1">[0.5, 0.5, 0.47, 0.47]</field></shadow></value>
+          </block>
+        </value>
+        </block>
+
+        <!-- imshow 들어가야됨 -->
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">x1, x2, y1, y2</field></shadow></value>
+          <value name="VALUE"><shadow type="indata"><field name="indata1">-1.5, -0.9, -2.5, -1.9</field></shadow></value>
+        </block>
+
+        <block type="set_xlim_ylim">
+        
+              <value name="VAR">
+                <block type="variables_get">
+                  <field name="VAR">axins</field>
+                </block>
+              </value>
+            
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">y1, y2</field></shadow>
+          </value>
+          </block>
       </category>
 
 

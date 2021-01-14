@@ -77,12 +77,33 @@ Blockly.JavaScript['pandas_nanull'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-   //////////////////////
-   Blockly.JavaScript['get_sample_data'] = function (block) {
-    var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
-    var dropdown_drop = block.getFieldValue('DROP');
+//////////////////////
+Blockly.JavaScript['get_sample_data'] = function (block) {
+  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
 
-    // TODO: Assemble JavaScript into code variable.
-    var code = `cbook.get_sample_data("${input_text}", np_load=${dropdown_drop})`;
-    return [code, Blockly.JavaScript.ORDER_ATOMIC];
-  };
+  // TODO: Assemble JavaScript into code variable.
+  var code = `cbook.get_sample_data("${input_text}", np_load=${dropdown_drop})`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// get_sample_data
+Blockly.JavaScript['set_inset_axes'] = function (block) {
+  var var_text = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// set_xlim_ylim
+Blockly.JavaScript['set_xlim_ylim'] = function (block) {
+  var var_text = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text}.${dropdown_drop}(${input_text})\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

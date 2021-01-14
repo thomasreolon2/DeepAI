@@ -65,7 +65,7 @@ Blockly.Python['text_replace'] = function(block) {
 
 // 문자 편집 2021.01.03 남지원
 Blockly.Python['text_editing'] = function(block) {
-  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var variable_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var text_input =  Blockly.Python.valueToCode(block, 'INPUT1', Blockly.Python.ORDER_ATOMIC);
   var dropdown_func = block.getFieldValue('FUNC');
   // TODO: Assemble Python into code variable.
@@ -94,7 +94,7 @@ Blockly.Python['text_editing'] = function(block) {
 
 // 문자 검색 2021.01.03 남지원
 Blockly.Python['text_search'] = function(block) {
-  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var variable_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var text_input =  Blockly.Python.valueToCode(block, 'INPUT1', Blockly.Python.ORDER_ATOMIC);
   var dropdown_func = block.getFieldValue('FUNC');
   // TODO: Assemble Python into code variable.
@@ -104,7 +104,7 @@ Blockly.Python['text_search'] = function(block) {
 
 // 문자 대소문자 2021.01.03 남지원
 Blockly.Python['text_up_low'] = function(block) {
-  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var variable_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var dropdown_func = block.getFieldValue('FUNC');
   // TODO: Assemble Python into code variable.
   var code = `${variable_var}.${dropdown_func}()`;
@@ -113,7 +113,7 @@ Blockly.Python['text_up_low'] = function(block) {
 
 // 문자 정렬 2021.01.03 남지원
 Blockly.Python['text_sort'] = function(block) {
-  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var variable_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var text_input =  Blockly.Python.valueToCode(block, 'INPUT1', Blockly.Python.ORDER_ATOMIC);
   var text_input2 =  Blockly.Python.valueToCode(block, 'INPUT2', Blockly.Python.ORDER_ATOMIC);
   var dropdown_func = block.getFieldValue('FUNC');
@@ -124,7 +124,7 @@ Blockly.Python['text_sort'] = function(block) {
 
 // 문자 질의 2021.01.03 남지원
 Blockly.Python['text_query'] = function(block) {
-  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var variable_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var dropdown_func = block.getFieldValue('FUNC');
   // TODO: Assemble Python into code variable.
   var code = `${variable_var}.${dropdown_func}()`;
@@ -133,7 +133,8 @@ Blockly.Python['text_query'] = function(block) {
 
 // 문자 슬라이싱 2021.01.03 남지원
 Blockly.Python['text_slice'] = function(block) {
-  var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  //var variable_var = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var variable_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var text_input1 =  Blockly.Python.valueToCode(block, 'INPUT1', Blockly.Python.ORDER_ATOMIC);
   var text_input2 =  Blockly.Python.valueToCode(block, 'INPUT2', Blockly.Python.ORDER_ATOMIC);
   var text_input3 =  Blockly.Python.valueToCode(block, 'INPUT3', Blockly.Python.ORDER_ATOMIC);
@@ -144,9 +145,9 @@ Blockly.Python['text_slice'] = function(block) {
 
 // 문자 만들기 2021.01.11 남지원
 Blockly.Python['create_text'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var variable_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = variable_list + ' = "' + value_text + '"\n';
+  var code = variable_var + ' = "' + value_text + '"\n';
   return code;
 };

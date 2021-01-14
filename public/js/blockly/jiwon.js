@@ -210,28 +210,70 @@ Blockly.Blocks['get_sample_data'] = {
    this.setHelpUrl("");
     },
   };
+  
 // cbook_import
 Blockly.Blocks['cbook_import'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("[임포트]cbook");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_VISUAL_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    },
-  };
+init: function() {
+    this.appendDummyInput()
+        .appendField("[임포트]cbook");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_VISUAL_HUE}");
+this.setTooltip("");
+this.setHelpUrl("");
+},
+};
+
 // get_demo_img
-  Blockly.Blocks['get_demo_img'] = {
+Blockly.Blocks['get_demo_img'] = {
+init: function() {
+    this.appendDummyInput()
+        .appendField("[get_demo_img]");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_VISUAL_HUE}");
+this.setTooltip("");
+this.setHelpUrl("");
+},
+};
+
+
+// set_inset_axes
+Blockly.Blocks['set_inset_axes'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField("[get_demo_img]");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_VISUAL_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".inset_axes(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
     },
-  };
+};
+
+// set_xlim_ylim
+Blockly.Blocks['set_xlim_ylim'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".")
+            .appendField(new Blockly.FieldDropdown([["set_xlim","set_xlim"],["set_ylim","set_ylim"]]),"DROP");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    },
+};
