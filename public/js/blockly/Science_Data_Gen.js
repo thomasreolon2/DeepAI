@@ -766,6 +766,7 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
     var code = "import matplotlib.pyplot as plt\n" + libImportIo + libImportBase64;
     return code;
   };
+
 //결과 출력
 Blockly.Python['print_output_var'] = function(block) {
   var value_print_output_var1 = Blockly.Python.valueToCode(block, 'print_output_var1', Blockly.Python.ORDER_ATOMIC);

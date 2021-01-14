@@ -1,10 +1,10 @@
 
 
 //numpy_order_static
-Blockly.Python['numpy_order_static'] = function(block) {
+Blockly.JavaScript['numpy_order_static'] = function(block) {
   var dropdown_numpy_order_static_opt = block.getFieldValue('numpy_order_static_opt');
-  var value_numpy_order_static_val = Blockly.Python.valueToCode(block, 'numpy_order_static_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_order_static_val = Blockly.JavaScript.valueToCode(block, 'numpy_order_static_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
 
   switch (dropdown_numpy_order_static_opt){
@@ -48,27 +48,27 @@ Blockly.Python['numpy_order_static'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength. 
-  return [code, Blockly.Python.ORDER_NONE]; 
+  return [code, Blockly.JavaScript.ORDER_NONE]; 
 };
  
 
 
 //numpy_averages_variances
-Blockly.Python['numpy_averages_variances'] = function(block) {
+Blockly.JavaScript['numpy_averages_variances'] = function(block) {
   var dropdown_numpy_averages_variances_opt = block.getFieldValue('numpy_Averages_variances_opt');
-  var value_numpy_averages_variances_val = Blockly.Python.valueToCode(block, 'numpy_Averages_variances_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_averages_variances_val = Blockly.JavaScript.valueToCode(block, 'numpy_Averages_variances_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_averages_variances_opt}(${value_numpy_averages_variances_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_correlating
-Blockly.Python['numpy_correlating'] = function(block) {
+Blockly.JavaScript['numpy_correlating'] = function(block) {
   var dropdown_numpy_correlating_opt = block.getFieldValue('numpy_Correlating_opt');
-  var value_numpy_correlating_val = Blockly.Python.valueToCode(block, 'numpy_Correlating_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_correlating_val = Blockly.JavaScript.valueToCode(block, 'numpy_Correlating_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
   switch (dropdown_numpy_correlating_opt){
     case "numpy_Correlating_corrcoef": 
@@ -87,15 +87,15 @@ Blockly.Python['numpy_correlating'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_sorting
-Blockly.Python['numpy_sorting'] = function(block) {
+Blockly.JavaScript['numpy_sorting'] = function(block) {
   var dropdown_numpy_sorting_opt = block.getFieldValue('numpy_Sorting_opt');
-  var value_numpy_sorting_val = Blockly.Python.valueToCode(block, 'numpy_Sorting_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_sorting_val = Blockly.JavaScript.valueToCode(block, 'numpy_Sorting_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
   switch (dropdown_numpy_sorting_opt){
     case "numpy_Sorting_sort": 
@@ -118,14 +118,14 @@ Blockly.Python['numpy_sorting'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_searching
-Blockly.Python['numpy_searching'] = function(block) {
+Blockly.JavaScript['numpy_searching'] = function(block) {
   var dropdown_numpy_searching_opt = block.getFieldValue('numpy_Searching_opt');
-  var value_numpy_searching = Blockly.Python.valueToCode(block, 'numpy_Searching', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_searching = Blockly.JavaScript.valueToCode(block, 'numpy_Searching', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
   switch (dropdown_numpy_searching_opt){
     case "numpy_argmax": 
@@ -152,15 +152,15 @@ Blockly.Python['numpy_searching'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_random_sample
-Blockly.Python['numpy_random_sample'] = function(block) {
+Blockly.JavaScript['numpy_random_sample'] = function(block) {
   var dropdown_numpy_random_sample_opt = block.getFieldValue('numpy_Random_sample_opt');
-  var value_numpy_random_sample_val = Blockly.Python.valueToCode(block, 'numpy_Random_sample_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_random_sample_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_sample_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
  
   var code;
   switch (dropdown_numpy_random_sample_opt){
@@ -193,14 +193,14 @@ Blockly.Python['numpy_random_sample'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_random_permutations
-Blockly.Python['numpy_random_permutations'] = function(block) {
+Blockly.JavaScript['numpy_random_permutations'] = function(block) {
   var dropdown_numpy_random_permutations_opt = block.getFieldValue('numpy_Random_Permutations_opt');
-  var value_numpy_random_permutations_val = Blockly.Python.valueToCode(block, 'numpy_Random_Permutations_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_random_permutations_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_Permutations_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
   switch (dropdown_numpy_random_permutations_opt){
     case "numpy_Random_Permutations_shuffle": 
@@ -215,14 +215,14 @@ Blockly.Python['numpy_random_permutations'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //
-Blockly.Python['numpy_random_distributions'] = function(block) {
+Blockly.JavaScript['numpy_random_distributions'] = function(block) {
   var dropdown_numpy_random_distributions_opt = block.getFieldValue('numpy_Random_Distributions_opt');
-  var value_numpy_random_distributions_val = Blockly.Python.valueToCode(block, 'numpy_Random_Distributions_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_random_distributions_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_Distributions_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
   switch (dropdown_numpy_random_distributions_opt){
     case "numpy_Random_Distributions_binomial": 
@@ -273,14 +273,14 @@ Blockly.Python['numpy_random_distributions'] = function(block) {
     default:
     break;
   }
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_random_distributions_two
-Blockly.Python['numpy_random_distributions_two'] = function(block) {
+Blockly.JavaScript['numpy_random_distributions_two'] = function(block) {
   var dropdown_numpy_random_distributions_two_opt = block.getFieldValue('numpy_Random_Distributions_two_opt');
-  var value_numpy_random_distributions_two_val = Blockly.Python.valueToCode(block, 'numpy_Random_Distributions_two_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_random_distributions_two_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_Distributions_two_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
   switch (dropdown_numpy_random_distributions_two_opt){
     case "numpy_Random_Distributions_two_lognormal": 
@@ -332,14 +332,14 @@ Blockly.Python['numpy_random_distributions_two'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_random_distributions_third
-Blockly.Python['numpy_random_distributions_third'] = function(block) {
+Blockly.JavaScript['numpy_random_distributions_third'] = function(block) {
   var numpy_Random_Distributions_third_opt = block.getFieldValue('numpy_Random_Distributions_two_opt');
-  var value_numpy_random_distributions_third_val = Blockly.Python.valueToCode(block, 'numpy_Random_Distributions_third_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_random_distributions_third_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_Distributions_third_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
   switch (numpy_Random_Distributions_third_opt){
     case "numpy_Random_Distributions_third_standard_gamma": 
@@ -378,16 +378,16 @@ Blockly.Python['numpy_random_distributions_third'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 
 //numpy_random_generator
-Blockly.Python['numpy_random_generator'] = function(block) {
+Blockly.JavaScript['numpy_random_generator'] = function(block) {
   var dropdown_numpy_random_generator_opt = block.getFieldValue('numpy_Random_generator_opt');
-  var value_numpy_random_generator_val = Blockly.Python.valueToCode(block, 'numpy_Random_generator_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_random_generator_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_generator_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
   switch (dropdown_numpy_random_generator_opt){
     case "numpy_Random_generator_seed": 
@@ -406,322 +406,322 @@ Blockly.Python['numpy_random_generator'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_mathematical_functions
-Blockly.Python['numpy_mathematical_functions'] = function(block) {
+Blockly.JavaScript['numpy_mathematical_functions'] = function(block) {
   var dropdown_numpy_mathematical_functions_opt = block.getFieldValue('numpy_Mathematical functions_opt');
-  var value_numpy_mathematical_functions_val = Blockly.Python.valueToCode(block, 'numpy_Mathematical functions_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_mathematical_functions_val = Blockly.JavaScript.valueToCode(block, 'numpy_Mathematical functions_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_mathematical_functions_opt}(${value_numpy_mathematical_functions_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_mathematical_functions
-Blockly.Python['numpy_hyperbolic_functions'] = function(block) {
+Blockly.JavaScript['numpy_hyperbolic_functions'] = function(block) {
   var dropdown_numpy_hyperbolic_functions_opt = block.getFieldValue('numpy_Hyperbolic functions_opt');
-  var value_numpy_hyperbolic_functions_val = Blockly.Python.valueToCode(block, 'numpy_Hyperbolic functions_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_hyperbolic_functions_val = Blockly.JavaScript.valueToCode(block, 'numpy_Hyperbolic functions_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_hyperbolic_functions_opt}(${value_numpy_hyperbolic_functions_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.Python['numpy_rounding'] = function(block) {
+Blockly.JavaScript['numpy_rounding'] = function(block) {
   var dropdown_numpy_rounding_opt = block.getFieldValue('numpy_Rounding_opt');
-  var value_numpy_rounding_val = Blockly.Python.valueToCode(block, 'numpy_Rounding_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_rounding_val = Blockly.JavaScript.valueToCode(block, 'numpy_Rounding_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_rounding_opt}(${value_numpy_rounding_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_exponents_logarithms
-Blockly.Python['numpy_exponents_logarithms'] = function(block) {
+Blockly.JavaScript['numpy_exponents_logarithms'] = function(block) {
   var dropdown_numpy_exponents_logarithms_opt = block.getFieldValue('numpy_Exponents_logarithms_opt');
-  var value_numpy_exponents_logarithms_val = Blockly.Python.valueToCode(block, 'numpy_Exponents_logarithms_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_exponents_logarithms_val = Blockly.JavaScript.valueToCode(block, 'numpy_Exponents_logarithms_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_exponents_logarithms_opt}(${value_numpy_exponents_logarithms_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_arithmetic_operations1
-Blockly.Python['numpy_arithmetic_operations1'] = function(block) {
+Blockly.JavaScript['numpy_arithmetic_operations1'] = function(block) {
   var dropdown_numpy_arithmetic_operations_opt = block.getFieldValue('numpy_Arithmetic_operations_opt');
-  var value_numpy_arithmetic_operations1_val = Blockly.Python.valueToCode(block, 'numpy_Arithmetic_operations1_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_arithmetic_operations1_val = Blockly.JavaScript.valueToCode(block, 'numpy_Arithmetic_operations1_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_arithmetic_operations_opt}(${value_numpy_arithmetic_operations1_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_arithmetic_operations2
-Blockly.Python['numpy_arithmetic_operations2'] = function(block) {
+Blockly.JavaScript['numpy_arithmetic_operations2'] = function(block) {
   var dropdown_numpy_arithmetic_operations2_opt = block.getFieldValue('numpy_Arithmetic_operations2_opt');
-  var value_numpy_arithmetic_operations2_val = Blockly.Python.valueToCode(block, 'numpy_Arithmetic_operations2_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_arithmetic_operations2_val = Blockly.JavaScript.valueToCode(block, 'numpy_Arithmetic_operations2_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_arithmetic_operations2_opt}(${value_numpy_arithmetic_operations2_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_handling_complex_numbers
-Blockly.Python['numpy_handling_complex_numbers'] = function(block) {
+Blockly.JavaScript['numpy_handling_complex_numbers'] = function(block) {
   var dropdown_numpy_handling_complex_numbers_opt = block.getFieldValue('numpy_Handling complex numbers_opt');
-  var value_numpy_handling_complex_numbers_val = Blockly.Python.valueToCode(block, 'numpy_Handling complex numbers_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_handling_complex_numbers_val = Blockly.JavaScript.valueToCode(block, 'numpy_Handling complex numbers_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_handling_complex_numbers_opt}(${value_numpy_handling_complex_numbers_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_sums_differences
-Blockly.Python['numpy_sums_differences'] = function(block) {
+Blockly.JavaScript['numpy_sums_differences'] = function(block) {
   var dropdown_numpy_sums_differences_opt = block.getFieldValue('numpy_Sums_differences_opt');
-  var value_numpy_sums_differences_val = Blockly.Python.valueToCode(block, 'numpy_Sums_differences_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_sums_differences_val = Blockly.JavaScript.valueToCode(block, 'numpy_Sums_differences_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_sums_differences_opt}(${value_numpy_sums_differences_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_matrix_vector_products
-Blockly.Python['numpy_matrix_vector_products'] = function(block) {
+Blockly.JavaScript['numpy_matrix_vector_products'] = function(block) {
   var dropdown_numpy_matrix_vector_products_opt = block.getFieldValue('numpy_Matrix_vector_products_opt');
-  var value_numpy_matrix_vector_products_val = Blockly.Python.valueToCode(block, 'numpy_Matrix_vector_products_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_matrix_vector_products_val = Blockly.JavaScript.valueToCode(block, 'numpy_Matrix_vector_products_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_matrix_vector_products_opt}(${value_numpy_matrix_vector_products_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_matrix_decomposition
-Blockly.Python['numpy_matrix_decomposition'] = function(block) {
+Blockly.JavaScript['numpy_matrix_decomposition'] = function(block) {
   var dropdown_numpy_matrix_decomposition_opt = block.getFieldValue('numpy_Matrix_Decomposition_opt');
-  var value_numpy_matrix_decomposition_val = Blockly.Python.valueToCode(block, 'numpy_Matrix_Decomposition_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_matrix_decomposition_val = Blockly.JavaScript.valueToCode(block, 'numpy_Matrix_Decomposition_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_matrix_decomposition_opt}(${value_numpy_matrix_decomposition_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
  
 
 //numpy_array_contents
-Blockly.Python['numpy_array_contents'] = function(block) {
+Blockly.JavaScript['numpy_array_contents'] = function(block) {
   var dropdown_numpy_array_contents_opt = block.getFieldValue('numpy_Array_contents_opt');
-  var value_numpy_array_contents_val = Blockly.Python.valueToCode(block, 'numpy_Array_contents_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_array_contents_val = Blockly.JavaScript.valueToCode(block, 'numpy_Array_contents_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_array_contents_opt}(${value_numpy_array_contents_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_comparison
-Blockly.Python['numpy_comparison'] = function(block) {
+Blockly.JavaScript['numpy_comparison'] = function(block) {
   var dropdown_numpy_comparison_opt = block.getFieldValue('numpy_Comparison_opt');
-  var value_numpy_comparison_val = Blockly.Python.valueToCode(block, 'numpy_Comparison_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_comparison_val = Blockly.JavaScript.valueToCode(block, 'numpy_Comparison_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_comparison_opt}(${value_numpy_comparison_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_string_operations
-Blockly.Python['numpy_string_operations'] = function(block) {
+Blockly.JavaScript['numpy_string_operations'] = function(block) {
   var dropdown_numpy_string_operations_opt = block.getFieldValue('numpy_String_operations_opt');
-  var value_numpy_string_operations_val = Blockly.Python.valueToCode(block, 'numpy_String_operations_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_string_operations_val = Blockly.JavaScript.valueToCode(block, 'numpy_String_operations_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_string_operations_opt}(${value_numpy_string_operations_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_string_operations2
-Blockly.Python['numpy_string_operations2'] = function(block) {
+Blockly.JavaScript['numpy_string_operations2'] = function(block) {
   var dropdown_numpy_string_operations2_opt = block.getFieldValue('numpy_String_operations2_opt');
-  var value_numpy_string_operations2_val = Blockly.Python.valueToCode(block, 'numpy_String_operations2_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_string_operations2_val = Blockly.JavaScript.valueToCode(block, 'numpy_String_operations2_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_string_operations2_opt}(${value_numpy_string_operations2_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpystring_information
-Blockly.Python['numpystring_information'] = function(block) {
+Blockly.JavaScript['numpystring_information'] = function(block) {
   var dropdown_numpystring_information_opt = block.getFieldValue('numpyString_information_opt');
-  var value_numpystring_information_val = Blockly.Python.valueToCode(block, 'numpyString_information_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpystring_information_val = Blockly.JavaScript.valueToCode(block, 'numpyString_information_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpystring_information_opt}(${value_numpystring_information_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_changing_array_shape
-Blockly.Python['numpy_changing_array_shape'] = function(block) {
+Blockly.JavaScript['numpy_changing_array_shape'] = function(block) {
   var dropdown_numpy_changing_array_shape_opt = block.getFieldValue('numpy_Changing_array_shape_opt');
-  var value_numpy_changing_array_shape_val = Blockly.Python.valueToCode(block, 'numpy_Changing_array_shape_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_changing_array_shape_val = Blockly.JavaScript.valueToCode(block, 'numpy_Changing_array_shape_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_changing_array_shape_opt}(${value_numpy_changing_array_shape_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_transpose_like_operations
-Blockly.Python['numpy_transpose_like_operations'] = function(block) {
+Blockly.JavaScript['numpy_transpose_like_operations'] = function(block) {
   var dropdown_numpy_transpose_like_operations_opt = block.getFieldValue('numpy_Transpose_like_operations_opt');
-  var value_numpy_transpose_like_operations_val = Blockly.Python.valueToCode(block, 'numpy_Transpose_like_operations_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_transpose_like_operations_val = Blockly.JavaScript.valueToCode(block, 'numpy_Transpose_like_operations_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_transpose_like_operations_opt}(${value_numpy_transpose_like_operations_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_changing_number
-Blockly.Python['numpy_changing_number'] = function(block) {
+Blockly.JavaScript['numpy_changing_number'] = function(block) {
   var dropdown_numpy_changing_number_opt = block.getFieldValue('numpy_Changing_number_opt');
-  var value_numpy_changing_number_val = Blockly.Python.valueToCode(block, 'numpy_Changing_number_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_changing_number_val = Blockly.JavaScript.valueToCode(block, 'numpy_Changing_number_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_changing_number_opt}(${value_numpy_changing_number_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_changing_kind_array
-Blockly.Python['numpy_changing_kind_array'] = function(block) {
+Blockly.JavaScript['numpy_changing_kind_array'] = function(block) {
   var dropdown_numpy_changing_kind_array_opt = block.getFieldValue('numpy_Changing_kind_array_opt');
-  var value_numpy_changing_kind_array_val = Blockly.Python.valueToCode(block, 'numpy_Changing_kind_array_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_changing_kind_array_val = Blockly.JavaScript.valueToCode(block, 'numpy_Changing_kind_array_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_changing_kind_array_opt}(${value_numpy_changing_kind_array_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_joining_arrays
-Blockly.Python['numpy_joining_arrays'] = function(block) {
+Blockly.JavaScript['numpy_joining_arrays'] = function(block) {
   var dropdown_numpy_joining_arrays_opt = block.getFieldValue('numpy_Joining_arrays_opt');
-  var value_numpy_joining_arrays_val = Blockly.Python.valueToCode(block, 'numpy_Joining_arrays_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_joining_arrays_val = Blockly.JavaScript.valueToCode(block, 'numpy_Joining_arrays_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_joining_arrays_opt}(${value_numpy_joining_arrays_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
  
 //numpy_splitting_arrays
-Blockly.Python['numpy_splitting_arrays'] = function(block) {
+Blockly.JavaScript['numpy_splitting_arrays'] = function(block) {
   var dropdown_numpy_splitting_arrays_opt = block.getFieldValue('numpy_Splitting_arrays_opt');
-  var value_numpy_splitting_arrays_val = Blockly.Python.valueToCode(block, 'numpy_Splitting_arrays_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_splitting_arrays_val = Blockly.JavaScript.valueToCode(block, 'numpy_Splitting_arrays_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_splitting_arrays_opt}(${value_numpy_splitting_arrays_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 
 //numpy_adding_removing_elements
-Blockly.Python['numpy_adding_removing_elements'] = function(block) {
+Blockly.JavaScript['numpy_adding_removing_elements'] = function(block) {
   var dropdown_numpy_adding_removing_elements_opt = block.getFieldValue('numpy_Adding_removing_elements_opt');
-  var value_numpy_adding_removing_elements_val = Blockly.Python.valueToCode(block, 'numpy_Adding_removing_elements_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_adding_removing_elements_val = Blockly.JavaScript.valueToCode(block, 'numpy_Adding_removing_elements_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_adding_removing_elements_opt}(${value_numpy_adding_removing_elements_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_rearranging_elements
-Blockly.Python['numpy_rearranging_elements'] = function(block) {
+Blockly.JavaScript['numpy_rearranging_elements'] = function(block) {
   var dropdown_numpy_rearranging_elements_opt = block.getFieldValue('numpy_Rearranging_elements_opt');
-  var value_numpy_rearranging_elements_val = Blockly.Python.valueToCode(block, 'numpy_Rearranging_elements_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_rearranging_elements_val = Blockly.JavaScript.valueToCode(block, 'numpy_Rearranging_elements_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_rearranging_elements_opt}(${value_numpy_rearranging_elements_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 //numpy_ones_and_zeros
-Blockly.Python['numpy_ones_and_zeros'] = function(block) {
+Blockly.JavaScript['numpy_ones_and_zeros'] = function(block) {
   var dropdown_numpy_ones_and_zeros_opt = block.getFieldValue('numpy_Ones and zeros_opt');
-  var value_numpy_ones_and_zeros_val = Blockly.Python.valueToCode(block, 'numpy_Ones and zeros_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_ones_and_zeros_val = Blockly.JavaScript.valueToCode(block, 'numpy_Ones and zeros_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_ones_and_zeros_opt}(${value_numpy_ones_and_zeros_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 
 //numpy_ones_and_zeros
-Blockly.Python['numpy_ones_and_zeros'] = function(block) {
+Blockly.JavaScript['numpy_ones_and_zeros'] = function(block) {
   var dropdown_numpy_ones_and_zeros_opt = block.getFieldValue('numpy_Ones and zeros_opt');
-  var value_numpy_ones_and_zeros_val = Blockly.Python.valueToCode(block, 'numpy_Ones and zeros_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_ones_and_zeros_val = Blockly.JavaScript.valueToCode(block, 'numpy_Ones and zeros_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_ones_and_zeros_opt}(${value_numpy_ones_and_zeros_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 //numpy_from_existing_data
-Blockly.Python['numpy_from_existing_data'] = function(block) {
+Blockly.JavaScript['numpy_from_existing_data'] = function(block) {
   var dropdown_numpy_from_existing_data_opt = block.getFieldValue('numpy_From_existing_data_opt');
-  var value_numpy_from_existing_data_val = Blockly.Python.valueToCode(block, 'numpy_From_existing_data_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_from_existing_data_val = Blockly.JavaScript.valueToCode(block, 'numpy_From_existing_data_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_from_existing_data_opt}(${value_numpy_from_existing_data_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 //numpy_creating_record_arrays
-Blockly.Python['numpy_creating_record_arrays'] = function(block) {
+Blockly.JavaScript['numpy_creating_record_arrays'] = function(block) {
   var dropdown_numpy_creating_record_arrays_opt = block.getFieldValue('numpy_Creating_record_arrays_opt');
-  var value_numpy_creating_record_arrays_val = Blockly.Python.valueToCode(block, 'numpy_Creating_record_arrays_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_creating_record_arrays_val = Blockly.JavaScript.valueToCode(block, 'numpy_Creating_record_arrays_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_creating_record_arrays_opt}(${value_numpy_creating_record_arrays_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 //numpy_numerical_ranges
-Blockly.Python['numpy_numerical_ranges'] = function(block) {
+Blockly.JavaScript['numpy_numerical_ranges'] = function(block) {
   var dropdown_numpy_numerical_ranges_opt = block.getFieldValue('numpy_Numerical_ranges_opt');
-  var value_numpy_numerical_ranges_val = Blockly.Python.valueToCode(block, 'numpy_Numerical_ranges_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_numerical_ranges_val = Blockly.JavaScript.valueToCode(block, 'numpy_Numerical_ranges_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_building_matrices
-Blockly.Python['numpy_building_matrices'] = function(block) {
+Blockly.JavaScript['numpy_building_matrices'] = function(block) {
   var dropdown_numpy_building_matrices_opt = block.getFieldValue('numpy_Building_matrices_opt');
-  var value_numpy_building_matrices_val = Blockly.Python.valueToCode(block, 'numpy_Building_matrices_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_building_matrices_val = Blockly.JavaScript.valueToCode(block, 'numpy_Building_matrices_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = `${dropdown_numpy_building_matrices_opt}(${value_numpy_building_matrices_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.Python['create_np_array'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+Blockly.JavaScript['create_np_array'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = variable_list + ' = np.array([' + value_text + '])\n';
   return code;
 };
 
-Blockly.Python['create_np_array2'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-  var value_text2 = Blockly.Python.valueToCode(block, 'text2', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+Blockly.JavaScript['create_np_array2'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_text2 = Blockly.JavaScript.valueToCode(block, 'text2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code = variable_list + ' = np.array(' + value_text + ')[' + value_text2 + ']\n';
   return code;
 };

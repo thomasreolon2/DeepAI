@@ -3095,11 +3095,11 @@
     </category>
 
     <!-- ************************************************** ************************* *************************  -->
-    <!-- ***************************************  Pandas Blocks end  ******************************************  -->
+    <!-- ***************************************  맷플롯립(Matplotlib)  ******************************************  -->
     <!-- ************************************************** ************************* *************************  -->
 
     <!-- # 시각화 부분 #  -->
-    <category name="%{BKY_CATEGORY_MATPLOT}" colour="%{BKY_VISUAL_HUE}"> <!--맷플롯립(Matplot)-->
+    <category name="%{BKY_CATEGORY_MATPLOT}" colour="%{BKY_VISUAL_HUE}"> 
       <category name="기본" colour="%{BKY_VISUAL_HUE}">
         <!-- 그래프 출력 -->
       <block type="visualization_library">
@@ -3175,6 +3175,9 @@
       <!--  사이킷런 시각화 하기      -->
 
       </category>
+    <!-- ************************************************** ************************* *************************  -->
+    <!-- ***************************************  라인, 바 마커(Matplotlib)  ******************************************  -->
+    <!-- ************************************************** ************************* *************************  -->
       <category name="라인,바&마커형" colour="%{BKY_VISUAL_HUE}">
 
           <block type="numpy_library"></block>
@@ -3946,6 +3949,9 @@
           <block type="matplotlib_plt_show"></block>
 
       </category>
+      <!-- ************************************************** ************************* *************************  -->
+    <!-- ***************************************  이미지 필드(Matplotlib)  ******************************************  -->
+    <!-- ************************************************** ************************* *************************  -->
       <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}">
         <label text="Creating annotated heatmaps"></label>
         <!--라이브러리-->
@@ -4160,7 +4166,41 @@
       
 
       </category>
-      <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}"></category>
+       <!-- ************************************************** ************************* *************************  -->
+    <!-- ***************************************  서브플롯형(Matplotlib)  ******************************************  -->
+    <!-- ************************************************** ************************* *************************  -->
+      <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}">
+
+        <!-- Zoom region inset axes (지원) -->
+        <block type="numpy_library"></block>
+        <block type="cbook_import"></block>
+
+        <block type="visualization_library">
+          <value name="lib_var">
+            <block type="variables_get">
+              <field name="VAR">plt</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="def1">
+          <value name="2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+
+        <block type="get_demo_img"></block>
+
+      </category>
+
+
+
+
+
+
       <category name="통계형" colour="%{BKY_VISUAL_HUE}"></category>
       <category name="파이형" colour="%{BKY_VISUAL_HUE}">
 

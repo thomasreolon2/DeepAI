@@ -78,3 +78,34 @@ Blockly.Python['block_tail_head'] = function(block) {
         return code;
     };
 
+
+
+    //////////////////////
+    Blockly.Python['def1'] = function (block) {
+      var text_1 = Blockly.Python.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
+      var text_2 = Blockly.Python.valueToCode(block, '2', Blockly.Python.ORDER_ATOMIC);
+      var branch = Blockly.Python.statementToCode(block, 'DO');
+      branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
+      // const statements_name = Blockly.Python.statementToCode(block, 'NAME');
+      // TODO: Assemble Python into code variable.
+      var code = 'def ' + text_1 + '(' + text_2 + '):\n' + branch;
+      return code;
+  };
+
+  //라이브러리 임포트    
+  Blockly.Python['cbook_import'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    
+    var code = "from matplotlib import cbook\n";
+    return code;
+  };
+
+  
+  //라이브러리 임포트    
+  Blockly.Python['get_demo_img'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = "get_demo_img()";
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+
+  

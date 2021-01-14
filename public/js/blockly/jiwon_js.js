@@ -13,7 +13,7 @@
     var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
     var dropdown_drop = block.getFieldValue('DROP');
     var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
+    // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     return code;
   };
@@ -23,7 +23,7 @@
     var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
     var dropdown_drop = block.getFieldValue('DROP');
     var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
+    // TODO: Assemble JavaScript into code variable.
     var code = `\n`;
 
     return code;
@@ -34,7 +34,7 @@
     var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
     var dropdown_drop = block.getFieldValue('DROP');
     var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
+    // TODO: Assemble JavaScript into code variable.
     var code = `\n`;
     return code;
 };
@@ -44,7 +44,35 @@ Blockly.JavaScript['pandas_nanull'] = function(block) {
     var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
     var dropdown_drop = block.getFieldValue('DROP');
     var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
+    // TODO: Assemble JavaScript into code variable.
     var code = `\n`;
     return code;
+};
+
+
+//
+ //////////////////////
+ Blockly.JavaScript['def1'] = function (block) {
+  var text_1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
+  var text_2 = Blockly.JavaScript.valueToCode(block, '2', Blockly.JavaScript.ORDER_ATOMIC);
+  var branch = Blockly.JavaScript.statementToCode(block, 'DO');
+  branch = Blockly.JavaScript.addLoopTrap(branch, block.id) || Blockly.JavaScript.PASS;
+  // const statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'def ' + text_1 + '(' + text_2 + '):\n' + branch;
+  return code;
+};
+
+ //라이브러리 임포트    
+ Blockly.JavaScript['cbook_import'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "\n";
+  return code;
+};
+
+ //라이브러리 임포트    
+ Blockly.JavaScript['get_demo_img'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "\n";
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

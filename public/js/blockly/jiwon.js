@@ -171,3 +171,51 @@ Blockly.Blocks['pandas_stack'] = {
    this.setHelpUrl("");
    }
 };
+
+
+// 2021.01.14 맷플롯립 작업시작
+// 함수 블록
+Blockly.Blocks['def1'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField('함수 ')
+            .appendField(new Blockly.FieldVariable("get_demo_img"), "1")
+            .appendField('(');
+        this.appendValueInput('2')
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField('):');
+        this.appendStatementInput('DO')
+            .setCheck(null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_PROCEDURES_HUE}");
+        this.setTooltip('');
+    },
+};
+
+// cbook_import
+Blockly.Blocks['cbook_import'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[임포트]cbook");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    },
+  };
+// get_demo_img
+  Blockly.Blocks['get_demo_img'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[get_demo_img]");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    },
+  };
