@@ -21,8 +21,8 @@ Blockly.JavaScript['webreturn2'] = function (block) {
 
 // 함수 return1
 Blockly.JavaScript['func_return1'] = function(block) {
-    var variable_1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
-    var variable_2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('2'), Blockly.Variables.NAME_TYPE);
+    var variable_1 =  Blockly.JavaScript.valueToCode(block, '1', Blockly.JavaScript.ORDER_ATOMIC);
+    var variable_2 =  Blockly.JavaScript.valueToCode(block, '2', Blockly.JavaScript.ORDER_ATOMIC);
     var text_2 = block.getFieldValue('3');
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
@@ -31,7 +31,7 @@ Blockly.JavaScript['func_return1'] = function(block) {
 
 // 함수 return1
 Blockly.JavaScript['func_return11'] = function(block) {
-    var variable_1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
+    var variable_1 =  Blockly.JavaScript.valueToCode(block, '1', Blockly.JavaScript.ORDER_ATOMIC);
     var text_2 = block.getFieldValue('2');
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
@@ -41,7 +41,7 @@ Blockly.JavaScript['func_return11'] = function(block) {
 // 함수 return 2
 Blockly.JavaScript['func_return2'] = function(block) {
     var text_1 = block.getFieldValue('1');
-    var variable_2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('2'), Blockly.Variables.NAME_TYPE);
+    var variable_2 =  Blockly.JavaScript.valueToCode(block, '2', Blockly.JavaScript.ORDER_ATOMIC);
     var text_3 = block.getFieldValue('3');
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';

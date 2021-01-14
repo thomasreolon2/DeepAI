@@ -2,12 +2,11 @@
 // 함수 블록
 Blockly.Blocks['webdefine'] = {
     init: function () {
-        this.appendDummyInput()
-            .appendField('함수 ')
-            .appendField(new Blockly.FieldVariable("func"), "1")
-            .appendField('(');
-        this.appendValueInput('2')
+        this.appendValueInput('1')
             .setCheck(null);
+        this.appendValueInput('2')
+            .setCheck(null)
+            .appendField('(');
         this.appendDummyInput()
             .appendField('):');
         this.appendStatementInput('DO')
@@ -37,13 +36,15 @@ Blockly.Blocks['webreturn2'] = {
 // 함수 return 블록1 
 Blockly.Blocks['func_return1'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldVariable("res"), "1")
-          .appendField("=")
-          .appendField(new Blockly.FieldVariable("func"), "2")
-          .appendField("(")
-          .appendField(new Blockly.FieldTextInput(""), "3")
-          .appendField(")");
+        this.appendValueInput('1')
+            .setCheck(null);
+        this.appendValueInput('2')
+            .setCheck(null)
+            .appendField("=");
+        this.appendDummyInput()
+            .appendField("(")
+            .appendField(new Blockly.FieldTextInput(""), "3")
+            .appendField(")");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -56,8 +57,9 @@ Blockly.Blocks['func_return1'] = {
   // 함수 return 블록1 
 Blockly.Blocks['func_return11'] = {
     init: function() {
+        this.appendValueInput('1')
+          .setCheck(null);
       this.appendDummyInput()
-          .appendField(new Blockly.FieldVariable("func"), "1")
           .appendField("(")
           .appendField(new Blockly.FieldTextInput(""), "2")
           .appendField(")");
@@ -75,8 +77,10 @@ Blockly.Blocks['func_return2'] = {
     init: function() {
       this.appendDummyInput()
           .appendField(new Blockly.FieldTextInput("x,y"), "1")
-          .appendField("=")
-          .appendField(new Blockly.FieldVariable("func"), "2")
+          .appendField("=");
+        this.appendValueInput('2')
+          .setCheck(null);
+    this.appendDummyInput()
           .appendField("(")
           .appendField(new Blockly.FieldTextInput(""), "3")
           .appendField(")");

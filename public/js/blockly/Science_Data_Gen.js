@@ -959,7 +959,7 @@ Blockly.Python['class_func_param'] = function (a) {
 
 // 클래스 self
 Blockly.Python['self_block'] = function(block) {
-  var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+  var variable_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'self.'+variable_name;
   return [code,Blockly.Python.ORDER_ATOMIC];

@@ -1358,9 +1358,9 @@ Blockly.Blocks['class_instance_function'] = {
 // 클래스 self
 Blockly.Blocks['self_block'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField("self.")
-        .appendField(new Blockly.FieldVariable("result"), "NAME");        
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("self.");  
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(125);

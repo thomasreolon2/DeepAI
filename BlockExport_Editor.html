@@ -1740,12 +1740,18 @@
       <label text="함수"></label>
       <!-- 함수 -->
       <block type="webdefine">
+        <value name="1">
+          <block type="variables_get">
+            <field name="VAR">func</field>
+          </block>
+        </value>  
         <value name="2">
           <shadow type="indata">
             <field name="indata1">x</field>
           </shadow>
         </value>
       </block>
+
       <!-- return -->
       <block type="webreturn2">
         <value name="return">
@@ -1754,12 +1760,37 @@
           </shadow>
         </value>
       </block> 
+
       <!-- return1 -->
-      <block type="func_return1"></block>
-      <block type="func_return11"></block>
+      <block type="func_return1">
+        <value name="1">
+          <block type="variables_get">
+            <field name="VAR">res</field>
+          </block>
+        </value>  
+        <value name="2">
+          <block type="variables_get">
+            <field name="VAR">func</field>
+          </block>
+        </value>  
+      </block>
+
+      <block type="func_return11">
+        <value name="1">
+          <block type="variables_get">
+            <field name="VAR">func</field>
+          </block>
+        </value> 
+      </block>
 
       <!-- return2 -->
-      <block type="func_return2"></block>
+      <block type="func_return2">
+        <value name="2">
+          <block type="variables_get">
+            <field name="VAR">func</field>
+          </block>
+        </value> 
+      </block>
 
       <block type="global">
         <value name="text">
@@ -1784,28 +1815,75 @@
       
       <label text="클래스"></label>
       <!-- 클래스 -->
-      <block type="webclass"></block>
+      <block type="webclass">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">MyClass</field>
+          </block>
+        </value> 
+      </block>
       <!-- 상속 -->
       <block type="webclass2">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">MyClass</field>
+          </block>
+        </value> 
         <value name="INPUT">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
-
       </block>
+
       <!-- self -->
       <block type="self">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">a</field>
+          </block>
+        </value> 
         <value name="varset">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
       </block>
+
       <!-- 클래스 self -->
-      <block type="self_block"></block>  
-      <block type="class_use"></block> 
-      <block type="class_make"></block>
+      <block type="self_block">
+        <value name="NAME">
+          <block type="variables_get">
+            <field name="VAR">result</field>
+          </block>
+        </value> 
+      </block>  
+
+      <block type="class_use">
+        <value name="VAR1">
+          <block type="variables_get">
+            <field name="VAR">obj</field>
+          </block>
+        </value> 
+        <value name="VAR2">
+          <block type="variables_get">
+            <field name="VAR">func</field>
+          </block>
+        </value> 
+      </block> 
+
+      <block type="class_make">
+        <value name="1">
+          <block type="variables_get">
+            <field name="VAR">obj</field>
+          </block>
+        </value> 
+        <value name="2">
+          <block type="variables_get">
+            <field name="VAR">MyClass</field>
+          </block>
+        </value> 
+      </block>
 
       
 

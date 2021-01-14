@@ -571,7 +571,7 @@ Blockly.JavaScript['class_func_param'] = function (block) {
 
 // 클래스 self
 Blockly.JavaScript['self_block'] = function(block) {
-  var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+  var variable_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = '\n';
   return [code,Blockly.JavaScript.ORDER_ATOMIC];
