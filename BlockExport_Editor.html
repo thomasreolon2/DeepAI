@@ -872,6 +872,11 @@
       <block type="text"></block>
       <!-- 문자 생성 -->
       <block type = "create_text">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="text">
           <shadow type="indata">
             <field name="indata1">Hello, Python!</field>
@@ -882,6 +887,11 @@
       <block type="text_join"></block>
       <!-- len -->
       <block type="text_length">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="VALUE">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -891,6 +901,11 @@
       
      <!-- 문자 슬라이스 -->
      <block type="text_slice">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">i</field>
+        </block>
+      </value>
       <value name="INPUT1">
         <shadow type="indata">
           <field name="indata1">0</field>
@@ -910,6 +925,11 @@
 
       <!-- 문자 편집 -->
       <block type="text_editing">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -919,6 +939,11 @@
 
       <!-- 문자 검색 -->
       <block type="text_search">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -928,6 +953,11 @@
 
       <!-- 문자 대소문자 -->
       <block type="text_up_low">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1"></field>
@@ -938,6 +968,11 @@
       
       <!-- 문자 정렬 -->
       <block type="text_sort">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1">10</field>
@@ -952,6 +987,11 @@
 
       <!-- 문자 질의 -->
       <block type="text_query">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">i</field>
+          </block>
+        </value>
         <value name="INPUT1">
           <shadow type="indata">
             <field name="indata1">10</field>
