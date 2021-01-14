@@ -36,6 +36,21 @@ Blockly.JavaScript['axs_set_ylabel'] = function(block) {
   return code;
 };
 
+Blockly.JavaScript['axs_set_xlabel2'] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+
+Blockly.JavaScript['axs_set_ylabel2'] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
 
 Blockly.JavaScript['axs_grid'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
@@ -95,6 +110,29 @@ Blockly.JavaScript['scatter'] = function(block) {
 Blockly.JavaScript['set_title'] = function(block) {
   var value_row_col = Blockly.JavaScript.valueToCode(block, 'row_col', Blockly.JavaScript.ORDER_ATOMIC);
   var value_val_x = Blockly.JavaScript.valueToCode(block, 'val_x', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['set_title2'] = function(block) {
+  var value_row_col = Blockly.JavaScript.valueToCode(block, 'row_col', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['ax_stackplot'] = function(block) {
+  var value_list_val = Blockly.JavaScript.valueToCode(block, 'list_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_dic_val = Blockly.JavaScript.valueToCode(block, 'dic_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_dic_key = Blockly.JavaScript.valueToCode(block, 'dic_key', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['ax_legend'] = function(block) {
+  var value_loc = Blockly.JavaScript.valueToCode(block, 'loc', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '...;\n';
   return code;
@@ -170,4 +208,36 @@ Blockly.JavaScript['numpy_random_sample'] = function(block) {
   }
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+
+Blockly.JavaScript['create_dict_1'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble .JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['create_list_sj'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble .JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+
+Blockly.JavaScript['dic_menu1_sj'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var dropdown_dic = block.getFieldValue('dic');
+  code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['dic_menu1_sj2'] = function (block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var dropdown_dic = block.getFieldValue('dic');
+  code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

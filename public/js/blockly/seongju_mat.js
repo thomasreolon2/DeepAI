@@ -14,7 +14,7 @@ Blockly.Blocks['np_pi'] = {
 Blockly.Blocks['ax_lst_plot'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ax_lst[].plot]");
+        .appendField("[ax[].plot]");
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("좌표");
@@ -33,7 +33,7 @@ Blockly.Blocks['ax_lst_plot'] = {
 Blockly.Blocks['axs_set_xlim'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ax_lst[].set_xlim]");
+        .appendField("[ax[].set_xlim]");
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("좌표");
@@ -52,7 +52,7 @@ Blockly.Blocks['axs_set_xlim'] = {
 Blockly.Blocks['axs_set_xlabel'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ax_lst[].set_xlabel]");
+        .appendField("[ax[].set_xlabel]");
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("좌표");
@@ -71,7 +71,7 @@ Blockly.Blocks['axs_set_xlabel'] = {
 Blockly.Blocks['axs_set_ylabel'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ax_lst[].set_ylabel]");
+        .appendField("[ax[].set_ylabel]");
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("좌표");
@@ -90,7 +90,7 @@ Blockly.Blocks['axs_set_ylabel'] = {
 Blockly.Blocks['axs_grid'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ax_lst[].grid]");
+        .appendField("[ax[].grid]");
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("좌표");
@@ -108,7 +108,7 @@ Blockly.Blocks['axs_grid'] = {
 Blockly.Blocks['axs_cohere'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ax_lst[].cohere]");
+        .appendField("[ax[].cohere]");
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("좌표");
@@ -221,6 +221,85 @@ Blockly.Blocks['set_title'] = {
   }
 };
 
+Blockly.Blocks['set_title2'] = {
+    init: function() {
+      this.appendValueInput("row_col")
+          .setCheck(null)
+          .appendField("[ax.set_title]");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+Blockly.Blocks['ax_stackplot'] = {
+    init: function() {
+      this.appendValueInput("list_val")
+          .setCheck(null)
+          .appendField("[ax.stackplot] 리스트:");
+      this.appendValueInput("dic_val")
+          .setCheck(null)
+          .appendField("딕셔너리 값: ");
+      this.appendValueInput("dic_key")
+          .setCheck(null)
+          .appendField("딕셔너리 키: ");
+      //this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
+Blockly.Blocks['ax_legend'] = {
+    init: function() {
+        this.appendValueInput("loc")
+            .setCheck(null)
+            .appendField("[ax.legend] loc: ");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_VISUAL_HUE}");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['axs_set_xlabel2'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[ax.set_xlabel]");
+        this.appendValueInput("val")
+        .setCheck(null)
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  
+  
+  Blockly.Blocks['axs_set_ylabel2'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[ax.set_ylabel]");
+      this.appendValueInput("val")
+          .setCheck(null)
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 // 나중에 버리는 코드 곱하기 코드임
 Blockly.Blocks['Oper_garbage'] = {
@@ -353,4 +432,108 @@ Blockly.Blocks['numpy_random_sample__'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
+};
+
+Blockly.Blocks['create_dict_1'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/img/Collection/D1-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+            }))
+            .appendField("딕셔너리")
+            .appendField(new Blockly.FieldVariable("population_by_continent"), "list")
+            .appendField(" = {");
+        this.appendValueInput("text")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField("}");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_DICT_HUE}");//"%{BKY_COLLECTION_HUE}");
+        this.setTooltip("Create a list");
+        this.setHelpUrl("");
+    }
+};
+
+
+Blockly.Blocks['create_list_sj'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/img/Collection/L1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }));
+        this.appendDummyInput("test")
+            .appendField(new Blockly.FieldVariable("year"), "list");
+        this.appendDummyInput()
+            .appendField(" = [");
+        this.appendValueInput("text")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField("]");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_LISTS_HUE}");
+        this.setTooltip("Create a list");
+        this.setHelpUrl("");
+    }
+  };
+
+
+  Blockly.Blocks['dic_menu1_sj'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/D2-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        })).appendField(Blockly.Msg.COLLECTION_9_DICTOPTION);
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_DICVAR).appendField(new Blockly.FieldVariable("population_by_continent"), "list")
+            .appendField(new Blockly.FieldDropdown([
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTKEY, "getkeys"
+            ],
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL, "getvalues"
+            ],
+            [
+                "키,값쌍얻기", "items"
+            ],
+            [
+                "키,값쌍모두지우기", "clear"
+            ]
+        ]), "dic");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_DICT_HUE}");
+        this.setOutput(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['dic_menu1_sj2'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/D2-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        })).appendField(Blockly.Msg.COLLECTION_9_DICTOPTION);
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_9_DICVAR).appendField(new Blockly.FieldVariable("population_by_continent"), "list")
+            .appendField(new Blockly.FieldDropdown([
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL, "getvalues"
+            ],
+            [
+                Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTKEY, "getkeys"
+            ],
+            [
+                "키,값쌍얻기", "items"
+            ],
+            [
+                "키,값쌍모두지우기", "clear"
+            ]
+        ]), "dic");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_DICT_HUE}");
+        this.setOutput(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };
