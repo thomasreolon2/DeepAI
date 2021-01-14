@@ -210,3 +210,45 @@ Blockly.Python['heatmaps_1'] = function(block) {
         // TODO: Change ORDER_NONE to the correct strength.
         return code;
       };
+
+      Blockly.Python['heatmaps_8'] = function(block) {
+        var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
+        var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        var code = value_number + ".set_xlabel( " + value_value+' )\n';
+        return code;
+      };
+    
+      Blockly.Python['heatmaps_9'] = function(block) {
+        var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
+        var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        var code = value_number + ".set_ylabel( " + value_value+' )\n';
+        return code;
+      };
+
+      Blockly.Python['pcolor_plot'] = function(block) {
+        var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
+        var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        var code = value_number + ".plot( " + value_value+' )\n';
+        return code;
+      };
+    
+      Blockly.Python['pcolor_tick_params'] = function(block) {
+        var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
+        var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        var code = value_number + ".tick_params( " + value_value+' )\n';
+        return code;
+      };
+
+      Blockly.Python['twinx'] = function(block) {
+        // TODO: Assemble Python into code variable.
+        var value_name1 = Blockly.Python.valueToCode(block, 'name1', Blockly.Python.ORDER_ATOMIC);
+        
+      // TODO: Assemble Python into code variable.
+        var code =  value_name1 + ".twinx( )";
+        // TODO: Change ORDER_NONE to the correct strength.
+        return [code, Blockly.Python.ORDER_ATOMIC];
+      };

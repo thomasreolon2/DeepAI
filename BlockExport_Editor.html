@@ -4394,6 +4394,115 @@
       </block>
 
       <block type="matplotlib_plt_show"></block>
+
+      <!--나중에 서브플롯으로 옮길것-->
+      <label text="Plots with different scales"></label>
+      <block type="numpy_library"></block>
+      <block type="visualization_library_1"></block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">t</field></shadow></value>
+        <value name="VALUE">
+          <block type="numpy_numerical_ranges">
+            <value name="numpy_Numerical_ranges_val"> 
+              <shadow type="indata"><field name="indata1">0.01, 10.0, 0.01</field></shadow>
+            </value>  
+          </block> 
+        </value>
+      </block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">data1</field></shadow></value>
+        <value name="VALUE">
+          <block type="numpy_exp">
+            <value name="numpy_exp_num"> 
+              <shadow type="indata"><field name="indata1">t</field></shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">data2</field></shadow></value>
+        <value name="VALUE">
+          <block type="numpy_mathematical_functions">
+            <value name="numpy_Mathematical functions_val"> 
+              <shadow type="indata"><field name="indata1">2 * np.pi * t</field></shadow>
+            </value>   
+          </block> 
+        </value>
+      </block>
+      
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax1</field></shadow></value>
+        <value name="VALUE"><block type = "pie_subplots"></block></value>
+      </block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">color</field></shadow></value>
+        <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:red'</field></shadow></value>
+      </block>
+
+      <block type = "heatmaps_8">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'time (s)'</field></shadow></value>
+      </block>
+
+      <block type = "heatmaps_9">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'exp', color=color</field></shadow></value>
+      </block>
+
+      <block type = "pcolor_plot">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">t, data1, color=color</field></shadow></value>
+      </block>
+
+      <block type = "pcolor_tick_params">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
+      </block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
+        <value name="VALUE">
+          <block type = "twinx">
+            <value name="name1">
+              <shadow type="indata">
+                <field name="indata1">ax1</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+      
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">color</field></shadow></value>
+        <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:blue'</field></shadow></value>
+      </block>
+
+      <block type = "heatmaps_9">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'sin', color=color</field></shadow></value>
+      </block>
+
+      <block type = "pcolor_plot">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">t, data2, color=color</field></shadow></value>
+      </block>
+
+      <block type = "pcolor_tick_params">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
+      </block>
+
+      <block type = "heatmaps_7">
+        <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
+      </block>
+
+      <block type="matplotlib_plt_show"></block>
+
+
       </category>
        <!-- ************************************************** ************************* *************************  -->
     <!-- ***************************************  서브플롯형(Matplotlib)  ******************************************  -->

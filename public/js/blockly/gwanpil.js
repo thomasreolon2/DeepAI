@@ -353,3 +353,80 @@ Blockly.Blocks['gp'] = {
    this.setHelpUrl("");
     }
   };
+
+  Blockly.Blocks['heatmaps_8'] = {
+    init: function () {
+        this.setStyle("variable_blocks");
+        this.appendDummyInput().appendField("[set_xlabel]");
+        this.appendValueInput("NUMBER").setCheck(null);
+        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".set_xlabel(");
+        this.appendDummyInput().appendField(")");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_VISUAL_HUE}");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['heatmaps_9'] = {
+    init: function () {
+        this.setStyle("variable_blocks");
+        this.appendDummyInput().appendField("[set_ylabel]");
+        this.appendValueInput("NUMBER").setCheck(null);
+        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".set_ylabel(");
+        this.appendDummyInput().appendField(")");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_VISUAL_HUE}");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['pcolor_plot'] = {
+    init: function () {
+        this.setStyle("variable_blocks");
+        this.appendDummyInput().appendField("[plot]");
+        this.appendValueInput("NUMBER").setCheck(null);
+        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".plot(");
+        this.appendDummyInput().appendField(")");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_VISUAL_HUE}");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['pcolor_tick_params'] = {
+    init: function () {
+        this.setStyle("variable_blocks");
+        this.appendDummyInput().appendField("[tick_params]");
+        this.appendValueInput("NUMBER").setCheck(null);
+        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".tick_params(");
+        this.appendDummyInput().appendField(")");
+        this.setInputsInline(true);
+        this.setColour("%{BKY_VISUAL_HUE}");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['twinx'] = {
+    init: function() { 
+      this.appendValueInput("name1")
+        .setCheck(null);
+      this.appendDummyInput().appendField(".twinx( )");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(pandas_color);
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };

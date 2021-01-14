@@ -159,3 +159,28 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = '\n';
         return code;
       };
+
+      Blockly.JavaScript['heatmaps_8'] = function(block) {
+        var code = '\n';
+        return code;
+      };
+    
+      Blockly.JavaScript['heatmaps_9'] = function(block) {
+        var code = '\n';
+        return code;
+      };
+
+      Blockly.JavaScript['pcolor_plot'] = function(block) {
+        var code = '\n';
+        return code;
+      };
+    
+      Blockly.JavaScript['pcolor_tick_params'] = function(block) {
+        var code = '\n';
+        return code;
+      };
+
+      Blockly.JavaScript['twinx'] = function(block) {
+        var code = '\n';
+        return code;
+      };
