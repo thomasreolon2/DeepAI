@@ -136,5 +136,14 @@ Blockly.Python['set_xlim_ylim'] = function (block) {
 
   // TODO: Assemble Python into code variable.
   var code = `${var_text}.${dropdown_drop}(${input_text})\n`;
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
+};
+
+//// indicate_inset_zoom
+Blockly.Python['indicate_inset_zoom'] = function (block) {
+  var var_text1 = Blockly.Python.valueToCode(block, 'VAR1', Blockly.Python.ORDER_ATOMIC);
+  var var_text2 = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text1}.indicate_inset_zoom(${var_text2})\n`;
+  return code;
 };

@@ -271,9 +271,30 @@ Blockly.Blocks['set_xlim_ylim'] = {
         this.appendDummyInput()
             .appendField(")");
         this.setInputsInline(true);
-        this.setOutput(true, null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour("%{BKY_VISUAL_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
-    },
+    }
+};
+
+// indicate_inset_zoom
+Blockly.Blocks['indicate_inset_zoom'] = {
+    init: function() {
+        this.appendValueInput("VAR1")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".indicate_inset_zoom(");
+        this.appendValueInput("VAR2")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
 };
