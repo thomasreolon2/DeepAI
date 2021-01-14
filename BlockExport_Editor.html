@@ -4415,14 +4415,20 @@
             </shadow>
           </value>
         </block>
-
-        <block type="get_sample_data">
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1">axes_grid/bivariate_normal.npy</field>
-            </shadow>
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">z</field></shadow></value>
+          <value name="VALUE">
+            <block type="get_sample_data">
+              <value name="INPUT">
+                <shadow type="indata">
+                  <field name="indata1">axes_grid/bivariate_normal.npy</field>
+                </shadow>
+              </value>
+            </block>
           </value>
         </block>
+
+        
         <block type="get_demo_img"></block>
 
       </category>
