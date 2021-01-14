@@ -3,7 +3,8 @@
 Blockly.Blocks['webdefine'] = {
     init: function () {
         this.appendValueInput('1')
-            .setCheck(null);
+            .setCheck(null)
+            .appendField('함수');
         this.appendValueInput('2')
             .setCheck(null)
             .appendField('(');

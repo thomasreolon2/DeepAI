@@ -1,7 +1,7 @@
 //2020-12-26-전우진 definitions
 
 Blockly.Python['webdefine'] = function (block) {
-    var text_1 = Blockly.Python.variableDB_.getName(block.getFieldValue('1'), Blockly.Variables.NAME_TYPE);
+    var text_1 = Blockly.Python.valueToCode(block, '1', Blockly.Python.ORDER_ATOMIC);
     var text_2 = Blockly.Python.valueToCode(block, '2', Blockly.Python.ORDER_ATOMIC);
     var branch = Blockly.Python.statementToCode(block, 'DO');
     branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
