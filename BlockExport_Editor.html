@@ -3948,6 +3948,132 @@
   
           <block type="matplotlib_plt_show"></block>
 
+
+          <label text="Stackplots"></label>
+
+          <block type="numpy_library"></block>
+  
+          <block type="visualization_library">
+            <value name="lib_var">
+              <block type="variables_get">
+                <field name="VAR">plt</field>
+              </block>
+            </value>
+          </block>
+
+          <block type = "create_list_sj">
+            <value name="list">
+              <field name="indata1">year</field>
+            </value>
+            <value name="text">
+              <shadow type="indata">
+                <field name="indata1">1950, 1960, 1970, 1980, 1990, 2000, 2010, 2018</field>
+              </shadow>
+            </value>
+          </block>
+
+          
+
+          <block type = "create_dict_1">
+            <value name="list">
+              <field name="indata1">population_by_continent</field>
+            </value>
+            <value name="text">
+              <shadow type="indata">
+                <field name="indata1">'africa': [228, 284, 365, 477, 631, 814, 1044, 1275], 'americas': [340, 425, 519, 619, 727, 840, 943, 1006], 'asia': [1394, 1686, 2120, 2625, 3202, 3714, 4169, 4560], 'europe': [220, 253, 276, 295, 310, 303, 294, 293], 'oceania': [12, 15, 19, 22, 26, 31, 36, 39],</field>
+              </shadow>
+            </value>
+          </block>
+
+          <block type = "many_variables">
+            <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax</field></shadow></value>
+            <value name="VALUE"><block type = "pie_subplots"></block></value>
+          </block>
+
+          <block type="ax_stackplot">
+            <value name="list_val">
+              <shadow type="indata">
+                <field name="indata1">year</field>
+              </shadow>
+            </value>
+
+            <value name="dic_val">
+              <block type ="dic_menu1_sj2">
+                <value name="dic1">
+                    <block type="variables_get">
+                      <field name="VAR">dic</field>
+                    </block>
+                </value>
+                <value name="dic2">
+                  <shadow type="indata">
+                    <field name="indata1"></field>
+                  </shadow>
+                </value>
+                <value name="dic3">
+                  <shadow type="indata">
+                    <field name="indata1"></field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+
+            <value name="dic_key">
+              <block type ="dic_menu1_sj">
+                <value name="dic1">
+                    <block type="variables_get">
+                      <field name="VAR">dic</field>
+                    </block>
+                </value>
+                <value name="dic2">
+                  <shadow type="indata">
+                    <field name="indata1"></field>
+                  </shadow>
+                </value>
+                <value name="dic3">
+                  <shadow type="indata">
+                    <field name="indata1"></field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+
+          </block>
+
+          <block type="ax_legend">
+            <value name="loc">
+              <shadow type="indata">
+                <field name="indata1">upper left</field>
+              </shadow>
+            </value>
+          </block>
+
+          <block type="set_title2">
+            <value name="row_col">
+              <shadow type="indata">
+                <field name="indata1">World population</field>
+              </shadow>
+            </value>
+          </block>
+
+
+          <block type="axs_set_xlabel2">
+            <value name="val">
+              <shadow type="indata">
+                <field name="indata1">Year</field>
+              </shadow>
+            </value>
+          </block>
+
+          <block type="axs_set_ylabel2">
+            <value name="val">
+              <shadow type="indata">
+                <field name="indata1">Number of people (millions)</field>
+              </shadow>
+            </value>
+          </block>
+
+          <block type="matplotlib_plt_show"></block>
+          
       </category>
       <!-- ************************************************** ************************* *************************  -->
     <!-- ***************************************  이미지 필드(Matplotlib)  ******************************************  -->
