@@ -105,5 +105,14 @@ Blockly.JavaScript['set_xlim_ylim'] = function (block) {
 
   // TODO: Assemble JavaScript into code variable.
   var code = `${var_text}.${dropdown_drop}(${input_text})\n`;
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+  return code;
+};
+
+//// indicate_inset_zoom
+Blockly.JavaScript['indicate_inset_zoom'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'VAR2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.indicate_inset_zoom(${var_text2})\n`;
+  return code;
 };
