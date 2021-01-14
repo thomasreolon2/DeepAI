@@ -4165,6 +4165,105 @@
       <block type="matplotlib_plt_show"></block>
       
 
+       
+
+
+      <label text="Creating annotated heatmaps"></label>
+
+      <block type="numpy_library"></block>
+      <block type="visualization_library_2"></block>
+
+      <block type="numpy_random_generator_1">
+        <value name="numpy_Random_generator_val"> 
+          <shadow type="indata">
+            <field name="indata1">19680801</field>
+          </shadow>
+        </value>  
+      </block> 
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">Z</field></shadow></value>
+        <value name="VALUE">
+          <block type="numpy_random_sample">
+            <value name="numpy_Random_sample_val"> 
+              <shadow type="indata">
+                <field name="indata1">6, 10</field>
+              </shadow>
+            </value>  
+          </block> 
+        </value>
+      </block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, (ax0, ax1)</field></shadow></value>
+        <value name="VALUE">
+          <block type = "pie_subplots_4">
+            <value name="name">
+              <shadow type="indata">
+                <field name="indata1">2, 1</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">c</field></shadow></value>
+        <value name="VALUE">
+          <block type = "pie_subplots_5">
+            <value name="name1">
+              <shadow type="indata">
+                <field name="indata1">ax0</field>
+              </shadow>
+            </value>
+            <value name="name2">
+              <shadow type="indata">
+                <field name="indata1">Z</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+
+      <block type = "pcolor_set_title">
+        <value name="title">
+          <shadow type="indata">
+            <field name="indata1">'default: no edges'</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">c</field></shadow></value>
+        <value name="VALUE">
+          <block type = "pie_subplots_5">
+            <value name="name1">
+              <shadow type="indata">
+                <field name="indata1">ax1</field>
+              </shadow>
+            </value>
+            <value name="name2">
+              <shadow type="indata">
+                <field name="indata1">Z, edgecolors='k', linewidths=4</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+
+      <block type = "pcolor_set_title_1">
+        <value name="title">
+          <shadow type="indata">
+            <field name="indata1">'thick edges'</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "heatmaps_7">
+        <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
+      </block>
+
+      <block type="matplotlib_plt_show"></block>
       </category>
        <!-- ************************************************** ************************* *************************  -->
     <!-- ***************************************  서브플롯형(Matplotlib)  ******************************************  -->

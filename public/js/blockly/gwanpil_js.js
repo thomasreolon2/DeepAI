@@ -39,6 +39,15 @@ Blockly.JavaScript['gp'] = function (block) {
     return code;
   };
 
+  Blockly.JavaScript['visualization_library_2'] = function (block) {
+    //var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var libImportIo = "import io\n";
+    var libImportBase64 = "import base64\n";
+    var code = "\n";
+    return code;
+  };
+
   //pie_subplots
   Blockly.JavaScript['pie_subplots_1'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
@@ -55,6 +64,20 @@ Blockly.JavaScript['gp'] = function (block) {
   };
 
   Blockly.JavaScript['pie_subplots_3'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];;
+  };
+
+  Blockly.JavaScript['pie_subplots_4'] = function(block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];;
+  };
+
+  Blockly.JavaScript['pie_subplots_5'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
@@ -113,3 +136,26 @@ Blockly.JavaScript['gp'] = function (block) {
     var code = '\n';
     return code;
   };
+
+    /////////////////  Pcolor Demo
+
+    Blockly.JavaScript['numpy_random_generator_1'] = function(block) {
+
+        // TODO: Assemble Python into code variable.
+        var code = '\n';
+        return code;
+      };
+
+      Blockly.JavaScript['pcolor_set_title'] = function(block) {
+
+        // TODO: Assemble Python into code variable.
+        var code = '\n';
+        return code;
+      };
+
+      Blockly.JavaScript['pcolor_set_title_1'] = function(block) {
+
+        // TODO: Assemble Python into code variable.
+        var code = '\n';
+        return code;
+      };

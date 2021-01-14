@@ -89,10 +89,23 @@ Blockly.Blocks['gp'] = {
     }
   };
 
+  Blockly.Blocks['visualization_library_2'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.MATPLOT_VISUALIZATION_LIBRARY);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
   Blockly.Blocks['pie_subplots_1'] = {
     init: function() { 
-      this.appendValueInput("name1")
-        .setCheck(null);
+      this.appendDummyInput()
+        .appendField(new Blockly.FieldVariable("ax"), "name1");
       this.appendDummyInput().appendField(".imshow");
       this.appendValueInput("name2")
         .setCheck(null);
@@ -141,6 +154,37 @@ Blockly.Blocks['gp'] = {
    this.setHelpUrl("");
     }
   };
+
+  Blockly.Blocks['pie_subplots_4'] = {
+    init: function() { 
+      this.appendDummyInput().appendField("plt.subplots( ");
+      this.appendValueInput("name")
+        .setCheck(null);
+      this.appendDummyInput().appendField(" )");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(pandas_color);
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['pie_subplots_5'] = {
+    init: function() { 
+      this.appendValueInput("name1")
+        .setCheck(null);
+      this.appendDummyInput().appendField(".pcolor( ");
+      this.appendValueInput("name2")
+        .setCheck(null);
+      this.appendDummyInput().appendField(" )");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(pandas_color);
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };
+  
 
  
   Blockly.Blocks['heatmaps_1'] = {
@@ -252,5 +296,60 @@ Blockly.Blocks['gp'] = {
         this.setNextStatement(true, null);
         this.setTooltip("");
         this.setHelpUrl("");
+    }
+  };
+
+
+  /////////////////  Pcolor Demo
+
+  Blockly.Blocks['numpy_random_generator_1'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[np 생성기]")
+          .appendField(new Blockly.FieldDropdown([["규칙 난수(seed)","numpy_Random_generator_seed"], ["생성기 내부 상태(get_state)","numpy_Random_generator_get_state"], ["튜플 내부상태 설정(set_state)","numpy_Random_generator_set_state"]]), "numpy_Random_generator_opt");
+      this.appendValueInput("numpy_Random_generator_val")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['pcolor_set_title'] = {
+    init: function() { 
+      this.appendDummyInput()
+          .appendField("[set_title]")
+          .appendField(new Blockly.FieldVariable("ax0"), "list")
+          .appendField(".set_title(");
+      this.appendValueInput("title")
+          .setCheck(null); 
+      this.appendDummyInput().appendField(" )");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(pandas_color);
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['pcolor_set_title_1'] = {
+    init: function() { 
+      this.appendDummyInput()
+          .appendField("[set_title]")
+          .appendField(new Blockly.FieldVariable("ax1"), "list")
+          .appendField(".set_title(");
+      this.appendValueInput("title")
+          .setCheck(null); 
+      this.appendDummyInput().appendField(" )");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(pandas_color);
+   this.setTooltip(""); 
+   this.setHelpUrl("");
     }
   };
