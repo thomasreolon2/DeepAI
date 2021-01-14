@@ -1730,7 +1730,8 @@ Blockly.defineBlocksWithJsonArray([
     message0: "%{BKY_COLLECTION_NEW_LIST}",
     args0: [
       {"type": "field_image","src": "/img/Collection/L4-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
-      { type: "field_variable", name: "NUMBER_TO_CHECK", "variable": "my_list"},
+      { type: "input_value", name: "VAR1"},
+      // { type: "field_variable", name: "NUMBER_TO_CHECK", "variable": "my_list"},
       { type: "input_value", name: "DIVISOR", check: "Number" },
     ],
     message1: "%1",

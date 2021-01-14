@@ -1834,7 +1834,8 @@ Blockly.Python.create_new_list2 = function (a) {
       //   "NUMBER_TO_CHECK",
       //   Blockly.Python.ORDER_MULTIPLICATIVE
       // ) 
-      Blockly.Python.variableDB_.getName(a.getFieldValue('NUMBER_TO_CHECK'), Blockly.Variables.NAME_TYPE) || "",
+      //Blockly.Python.variableDB_.getName(a.getFieldValue('VAR1'), Blockly.Variables.NAME_TYPE) || "",
+      Blockly.Python.valueToCode(a, 'VAR1', Blockly.Python.ORDER_ATOMIC) || "",
     c = a.getFieldValue("PROPERTY");
   if ("PRIME" == c)
     return (
