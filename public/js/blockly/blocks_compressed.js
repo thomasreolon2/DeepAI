@@ -3362,7 +3362,19 @@ Blockly.Blocks['many_variables'] = {
         flipRtl: "FALSE"
       }));
       this.appendValueInput("NUMBER").setCheck(null);
-      this.appendValueInput("VALUE").setCheck(null).appendField(" = ");
+      this.appendValueInput("VALUE").setCheck(null).appendField(new Blockly.FieldDropdown([
+        [
+            "=", "="
+        ],
+        [
+            "+=", "+="
+        ],
+        [
+            "-=", "-="
+        ],
+        
+    ]), "NAME");
+      // this.appendValueInput("VALUE").setCheck(null).appendField(" = ");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);

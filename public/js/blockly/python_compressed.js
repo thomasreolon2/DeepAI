@@ -1731,8 +1731,9 @@ Blockly.Python['continue_block'] = function(block) {
 Blockly.Python['many_variables'] = function(block) {
   var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
   var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble Python into code variable.
-  var code = value_number + " = " + value_value+'\n';
+  var code = value_number + ' ' +dropdown_name + ' ' +value_value+'\n';
   return code;
 };
 
