@@ -1099,7 +1099,14 @@
       </block>
       
       <!-- 범위1 블록 -->
-      <block type="range1">
+      <block type="range_len">
+        <value name="x">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <!-- <block type="range1">
         <value name="VALUE1">
           <shadow type="indata">
             <field name="indata1">0</field>
@@ -1110,7 +1117,7 @@
             <field name="indata1">5</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- 범위2 블록 -->      
       <block type="range2">
         <value name="VALUE1">
@@ -1128,7 +1135,7 @@
         </value>
         <value name="y">
           <shadow type="indata">
-            <field name="indata1">0</field>
+            <field name="indata1">10</field>
 
           </shadow>
         </value>

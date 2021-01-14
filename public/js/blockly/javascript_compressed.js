@@ -1098,3 +1098,12 @@ Blockly.JavaScript['list_insert'] = function(block) {
     
     return "\n";
   };
+
+
+  Blockly.JavaScript['range_len'] = function(block) {
+    var x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '…';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };

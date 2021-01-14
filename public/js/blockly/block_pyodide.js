@@ -1056,6 +1056,7 @@ Blockly.Blocks['range3'] = {
     }
 };
 
+
 //
 Blockly.Blocks['break_block'] = {
     init: function () {
@@ -2037,3 +2038,19 @@ Blockly.Blocks['np_dot'] = {
    this.setHelpUrl("");
     }
   };
+
+
+  Blockly.Blocks['range_len'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R5-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        }));
+        this.appendValueInput("x").setCheck(null).appendField("길이(len)");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_LOOPS_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
