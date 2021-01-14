@@ -67,8 +67,10 @@ Blockly.Blocks['text_editing'] = {
          alt: "*",
          flipRtl: "FALSE"
      }))
-        .appendField("[편집]")
-        .appendField(new Blockly.FieldVariable("s"), "VAR")
+        .appendField("[편집]");
+    this.appendValueInput("VAR")
+        .setCheck(null);
+    this.appendDummyInput()
         .appendField("에");
     this.appendValueInput("INPUT1")
         .setCheck(null);    
@@ -91,8 +93,10 @@ Blockly.Blocks['text_search'] = {
           alt: "*",
           flipRtl: "FALSE"
       }))
-        .appendField("[검색]")
-        .appendField(new Blockly.FieldVariable("s"), "VAR")
+        .appendField("[검색]");
+    this.appendValueInput("VAR")
+        .setCheck(null);
+    this.appendDummyInput()
         .appendField("에");
     this.appendValueInput("INPUT1")
         .setCheck(null);    
@@ -115,8 +119,9 @@ Blockly.Blocks['text_up_low'] = {
           alt: "*",
           flipRtl: "FALSE"
       }))
-        .appendField("[대소]")
-        .appendField(new Blockly.FieldVariable("s"), "VAR"); 
+        .appendField("[대소]");
+    this.appendValueInput("VAR")
+        .setCheck(null);
     this.appendDummyInput()
         .appendField("를")
         .appendField(new Blockly.FieldDropdown([["대문자(upper)","upper"], ["소문자(lower)","lower"], ["첫문자(title)","title"], ["첫문장(capitalize)","capitalize"],["교환(swapcase)","swapcase"]]), "FUNC");
@@ -136,8 +141,10 @@ Blockly.Blocks['text_sort'] = {
           alt: "*",
           flipRtl: "FALSE"
       }))
-        .appendField("[정렬]")
-        .appendField(new Blockly.FieldVariable("s"), "VAR")  
+        .appendField("[정렬]");
+    this.appendValueInput("VAR")
+        .setCheck(null);
+    this.appendDummyInput()
         .appendField("에");
     this.appendValueInput("INPUT1")
         .setCheck(null);
@@ -165,8 +172,9 @@ Blockly.Blocks['text_query'] = {
           alt: "*",
           flipRtl: "FALSE"
       }))
-        .appendField("[질의]")
-        .appendField(new Blockly.FieldVariable("s"), "VAR"); 
+        .appendField("[질의]");
+    this.appendValueInput("VAR")
+        .setCheck(null);
     this.appendDummyInput()
         .appendField("를")
         .appendField(new Blockly.FieldDropdown([["문자(isalpha)","isalpha"], ["숫자(isdigit)","isdigit"], ["문숫자(isalnum)","isalnum"], ["대문자(isupper)","isupper"],["소문자(islower)","islower"]]), "FUNC");
@@ -185,11 +193,12 @@ Blockly.Blocks['text_slice'] = {
               alt: "*",
               flipRtl: "FALSE"
         }))   
-        .appendField("[슬라이싱]")
-        .appendField(new Blockly.FieldVariable("s"), "VAR")  
-        .appendField("[");
-    this.appendValueInput("INPUT1")
+        .appendField("[슬라이싱]");
+    this.appendValueInput("VAR")
         .setCheck(null);
+    this.appendValueInput("INPUT1")
+        .setCheck(null)
+        .appendField("[");
         this.appendDummyInput()
         .appendField(":")   
     this.appendValueInput("INPUT2")
@@ -212,8 +221,10 @@ Blockly.Blocks['text_slice'] = {
 Blockly.Blocks['create_text'] = {
   init: function () {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldImage("/img/Str/S2-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
-          .appendField(new Blockly.FieldVariable("s"), "VAR")
+          .appendField(new Blockly.FieldImage("/img/Str/S2-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }));
+      this.appendValueInput("VAR")
+          .setCheck(null);
+      this.appendDummyInput()
           .appendField(' = "');
       this.appendValueInput("text")
           .setCheck(null);
