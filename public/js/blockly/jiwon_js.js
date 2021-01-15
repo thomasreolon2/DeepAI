@@ -111,3 +111,12 @@ Blockly.JavaScript['indicate_inset_zoom'] = function (block) {
   var code = `${var_text1}.indicate_inset_zoom(${var_text2})\n`;
   return code;
 };
+
+//// subplot
+Blockly.JavaScript['subplots'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'VAR2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.subplots(${var_text2})\n`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

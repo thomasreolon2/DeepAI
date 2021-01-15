@@ -613,7 +613,7 @@
 
       <!-- 출력 뮤테이터 -->
       <block type="print_mutator"></block>
-      <!-- 파이썬 코드 입력 -->
+      <!-- 파이썬코드 입력 -->
       <block type="itdata">
         <value name="itdata1">
           <shadow type="indata">
@@ -4709,7 +4709,19 @@
 
         <block type = "many_variables">
           <value name="NUMBER"><shadow type="indata"><field name="indata1">fig,ax</field></shadow></value>
-          <value name="VALUE"><shadow type="indata"><field name="indata1">plt.subplots(figsize=[5, 4])</field></shadow></value>
+          <value name="VALUE">
+            <block type="subplots">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="VAR2">
+                <shadow type="indata">
+                  <field name="indata1">figsize=[5, 4]</field>
+                </shadow>
+              </value>
+          </value>
         </block>
 
         <block type = "many_variables">
@@ -4795,18 +4807,16 @@
         </block>
 
         <block type="set_xlim_ylim">
-        
-              <value name="VAR">
-                <block type="variables_get">
-                  <field name="VAR">axins</field>
-                </block>
-              </value>
-            
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
           </value>
+            
           <value name="INPUT">
             <shadow type="indata"><field name="indata1">y1, y2</field></shadow>
           </value>
-          </block>
+        </block>
 
           <block type="indicate_inset_zoom">
             <value name="VAR1">
@@ -4823,11 +4833,23 @@
       </category>
 
 
+      <category name="통계형" colour="%{BKY_VISUAL_HUE}">
+        <block type="numpy_library"></block>
+        <block type="cbook_import"></block>
+        
+        <block type="itdata">
+          <value name="itdata1">
+            <block type="numpy_random_generator">
+              <value name="numpy_Random_generator_val"> 
+                <shadow type="indata">
+                  <field name="indata1">19680801</field>
+                </shadow>
+              </value>  
+            </block> 
+          </value>
+        </block>
 
-
-
-
-      <category name="통계형" colour="%{BKY_VISUAL_HUE}"></category>
+      </category>
       <category name="파이형" colour="%{BKY_VISUAL_HUE}">
 
         <label text="Basic pie chart"></label>

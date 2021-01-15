@@ -284,3 +284,23 @@ Blockly.Blocks['indicate_inset_zoom'] = {
     this.setHelpUrl("");
     }
 };
+
+
+// plt.subplot
+Blockly.Blocks['subplots'] = {
+    init: function() {
+        this.appendValueInput("VAR1")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".subplots(");
+        this.appendValueInput("VAR2")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
