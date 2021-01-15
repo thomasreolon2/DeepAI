@@ -3308,7 +3308,54 @@
 
 
       <!--  matplot plt.plot()      -->
-      <block type="matplotlib_plt_plot"></block>
+      <block type="ax_lst_plot">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+        </value>
+      </block>
+
+      <block type="subplots">
+        <value name="VAR1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="VAR2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="shape">
+        <value name="VAR1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "pie_subplots_1">
+        <value name="name1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="name2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+
       <!--  matplot plt.plot()      --> 
 
 
