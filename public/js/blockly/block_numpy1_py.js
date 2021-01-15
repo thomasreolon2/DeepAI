@@ -694,7 +694,11 @@ Blockly.Python['numpy_numerical_ranges'] = function(block) {
   var dropdown_numpy_numerical_ranges_opt = block.getFieldValue('numpy_Numerical_ranges_opt');
   var value_numpy_numerical_ranges_val = Blockly.Python.valueToCode(block, 'numpy_Numerical_ranges_val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val})`;
+  if(dropdown_numpy_numerical_ranges_opt == "np.ogrid"){
+    var code = `${dropdown_numpy_numerical_ranges_opt}[${value_numpy_numerical_ranges_val}]`;
+  } else {
+    var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val})`;
+  }
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
