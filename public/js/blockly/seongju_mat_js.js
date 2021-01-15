@@ -6,6 +6,7 @@ Blockly.JavaScript['np_pi'] = function(block) {
 
 
 Blockly.JavaScript['ax_lst_plot'] = function(block) {
+  var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '...;\n';

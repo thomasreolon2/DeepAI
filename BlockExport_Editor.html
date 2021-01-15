@@ -3507,7 +3507,6 @@
                 <field name="NUM">2</field>
               </shadow>
             </value>
-    
             <value name="matplotlib_main_rows">
               <shadow type="math_number">
                 <field name="NUM">1</field>
@@ -3517,16 +3516,25 @@
   
   
           <block type="ax_lst_plot">
+            <value name="list">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
+          </value>
             <value name="NAME">
               <shadow type="math_number">
-                <field name="NUM">0</field>
+                <field name="NUM">t,s1,t,s2</field>
               </shadow>
             </value>
-            <value name="val">
-              <shadow type="indata">
-                <field name="indata1">t,s1,t,s2</field>
-            </shadow>
-          </value>
           </block>
     
     

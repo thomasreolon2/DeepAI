@@ -6,10 +6,10 @@ Blockly.Python['np_pi'] = function(block) {
 
 
 Blockly.Python['ax_lst_plot'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-  var value_val = Blockly.Python.valueToCode(block, 'val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'ax[' + value_name + '].plot(' + value_val + ')\n';
+  var code = value_list + '.plot(' + value_name + ')\n';
   return code;
 };
 
