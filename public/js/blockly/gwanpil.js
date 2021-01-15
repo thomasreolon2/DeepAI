@@ -130,10 +130,10 @@ Blockly.Blocks['gp'] = {
     }
   };
 
-  Blockly.Blocks['pie_subplots_3'] = {
+  Blockly.Blocks['plt_text'] = {
     init: function() { 
       this.appendValueInput("name1")
-        .setCheck(null).appendField("[text] ");
+        .setCheck(null);
       this.appendDummyInput().appendField(".text( ");
       this.appendValueInput("name2")
         .setCheck(null)

@@ -70,7 +70,7 @@ Blockly.Python['create_list_1'] = function (block) {
     return [code, Blockly.Python.ORDER_ATOMIC];;
   };
 
-  Blockly.Python['pie_subplots_3'] = function(block) {
+  Blockly.Python['plt_text'] = function(block) {
     // TODO: Assemble Python into code variable.
     var value_name1 = Blockly.Python.valueToCode(block, 'name1', Blockly.Python.ORDER_ATOMIC);
     var value_name2 = Blockly.Python.valueToCode(block, 'name2', Blockly.Python.ORDER_ATOMIC);

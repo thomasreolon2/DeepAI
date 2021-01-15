@@ -63,7 +63,7 @@ Blockly.JavaScript['gp'] = function (block) {
     return [code, Blockly.JavaScript.ORDER_ATOMIC];;
   };
 
-  Blockly.JavaScript['pie_subplots_3'] = function(block) {
+  Blockly.JavaScript['plt_text'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
