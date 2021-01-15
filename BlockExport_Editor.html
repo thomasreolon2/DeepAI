@@ -4721,194 +4721,6 @@
 
     <block type="matplotlib_plt_show"></block>
 
-    <!--나중에 서브플롯으로 옮길것-->
-    <label text="Plots with different scales"></label>
-    <block type="numpy_library"></block>
-    <block type="visualization_library_1"></block>
-
-    <block type = "many_variables">
-      <value name="NUMBER">
-        <block type="variables_get">
-          <field name="VAR">t</field>
-        </block>
-      </value>
-      <value name="VALUE">
-        <block type="numpy_numerical_ranges">
-          <value name="numpy_Numerical_ranges_val"> 
-            <shadow type="indata"><field name="indata1">0.01, 10.0, 0.01</field></shadow>
-          </value>  
-        </block> 
-      </value>
-    </block>
-
-    <block type = "many_variables">
-      <value name="NUMBER">
-        <block type="variables_get">
-          <field name="VAR">data1</field>
-        </block>
-      </value>
-      <value name="VALUE">
-        <block type="numpy_exp">
-          <value name="numpy_exp_num"> 
-            <shadow type="indata"><field name="indata1">t</field></shadow>
-          </value>
-        </block>
-      </value>
-    </block>
-
-    <block type = "many_variables">
-      <value name="NUMBER">
-        <block type="variables_get">
-          <field name="VAR">data2</field>
-        </block>
-      </value>
-      <value name="VALUE">
-        <block type="numpy_mathematical_functions">
-          <value name="numpy_Mathematical functions_val"> 
-            <shadow type="indata"><field name="indata1">2 * np.pi * t</field></shadow>
-          </value>   
-        </block> 
-      </value>
-    </block>
-    
-    <block type = "many_variables">
-      <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax1</field></shadow></value>
-      <value name="VALUE">
-        <block type = "plt_subplots">
-          <value name="name">
-            <block type="variables_get">
-              <field name="VAR">plt</field>
-            </block>
-          </value>
-          <value name="name2"><shadow type="indata"><field name="indata1"> </field></shadow></value>
-        </block>
-      </value>
-    </block>
-
-    <block type = "many_variables">
-      <value name="NUMBER">
-        <block type="variables_get">
-          <field name="VAR">color</field>
-        </block>
-      </value>
-      <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:red'</field></shadow></value>
-    </block>
-
-    <block type="set_xlabel">
-      <value name="VAR">
-        <block type="variables_get">
-          <field name="VAR">ax1</field>
-        </block>
-      </value>
-      <value name="INPUT">
-        <shadow type="indata"><field name="indata1">'time (s)'</field></shadow>
-      </value>
-    </block>
-
-    <block type="set_ylabel">
-      <value name="VAR">
-        <block type="variables_get">
-          <field name="VAR">ax1</field>
-        </block>
-      </value>
-      <value name="INPUT">
-        <shadow type="indata"><field name="indata1">'exp', color=color</field></shadow>
-      </value>
-    </block>
-
-    <block type="ax_lst_plot">
-      <value name="list">
-        <block type="variables_get">
-          <field name="VAR">ax2</field>
-        </block>
-    </value>
-      <value name="NAME">
-        <shadow type="indata"><field name="indata1">t, data1, color=color</field></shadow>
-      </value>
-    </block>
-
-    <block type = "tick_params">
-      <value name="NUMBER">
-        <block type="variables_get">
-          <field name="VAR">ax1</field>
-        </block>
-      </value>
-      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
-    </block>
-
-    <block type = "many_variables">
-      <value name="NUMBER">
-        <block type="variables_get">
-          <field name="VAR">ax2</field>
-        </block>
-      </value>
-      <value name="VALUE">
-        <block type = "twinx">
-          <value name="name1">
-            <block type="variables_get">
-              <field name="VAR">ax1</field>
-            </block>
-          </value>
-        </block>
-      </value>
-    </block>
-    
-    <block type = "many_variables">
-      <value name="NUMBER">
-        <block type="variables_get">
-          <field name="VAR">color</field>
-        </block>
-      </value>
-      <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:blue'</field></shadow></value>
-    </block>
-
-    <block type="set_ylabel">
-      <value name="VAR">
-        <block type="variables_get">
-          <field name="VAR">ax2</field>
-        </block>
-      </value>
-      <value name="INPUT">
-        <shadow type="indata"><field name="indata1">'sin', color=color</field></shadow>
-      </value>
-    </block>
-
-    <block type="ax_lst_plot">
-      <value name="list">
-        <block type="variables_get">
-          <field name="VAR">ax2</field>
-        </block>
-    </value>
-      <value name="NAME">
-        <shadow type="indata"><field name="indata1">t, data2, color=color</field></shadow>
-      </value>
-    </block>
-
-    <block type = "tick_params">
-      <value name="NUMBER">
-        <block type="variables_get">
-          <field name="VAR">ax2</field>
-        </block>
-      </value>
-      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
-    </block>
-
-    <block type="tight_layout">
-      <value name="VAR">
-        <block type="variables_get">
-          <field name="VAR">fig</field>
-        </block>
-      </value>
-      <value name="INPUT">
-        <shadow type="indata">
-          <field name="indata1"></field>
-        </shadow>
-      </value>
-    </block>
-
-    <block type="matplotlib_plt_show"></block>
-
-
     </category>
     <!-- ************************************************** ************************* *************************  -->
     <!-- ***************************************  서브플롯형(Matplotlib)  ******************************************  -->
@@ -5144,6 +4956,195 @@
         </block>
 
         <block type="matplotlib_plt_show"></block>
+
+
+
+        <!--Plots with different scales-->
+    <label text="Plots with different scales"></label>
+    <block type="numpy_library"></block>
+    <block type="visualization_library_1"></block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">t</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_numerical_ranges">
+          <value name="numpy_Numerical_ranges_val"> 
+            <shadow type="indata"><field name="indata1">0.01, 10.0, 0.01</field></shadow>
+          </value>  
+        </block> 
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">data1</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_exp">
+          <value name="numpy_exp_num"> 
+            <shadow type="indata"><field name="indata1">t</field></shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">data2</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_mathematical_functions">
+          <value name="numpy_Mathematical functions_val"> 
+            <shadow type="indata"><field name="indata1">2 * np.pi * t</field></shadow>
+          </value>   
+        </block> 
+      </value>
+    </block>
+    
+    <block type = "many_variables">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax1</field></shadow></value>
+      <value name="VALUE">
+        <block type = "plt_subplots">
+          <value name="name">
+            <block type="variables_get">
+              <field name="VAR">plt</field>
+            </block>
+          </value>
+          <value name="name2"><shadow type="indata"><field name="indata1"> </field></shadow></value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">color</field>
+        </block>
+      </value>
+      <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:red'</field></shadow></value>
+    </block>
+
+    <block type="set_xlabel">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'time (s)'</field></shadow>
+      </value>
+    </block>
+
+    <block type="set_ylabel">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'exp', color=color</field></shadow>
+      </value>
+    </block>
+
+    <block type="ax_lst_plot">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+    </value>
+      <value name="NAME">
+        <shadow type="indata"><field name="indata1">t, data1, color=color</field></shadow>
+      </value>
+    </block>
+
+    <block type = "tick_params">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type = "twinx">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">color</field>
+        </block>
+      </value>
+      <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:blue'</field></shadow></value>
+    </block>
+
+    <block type="set_ylabel">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'sin', color=color</field></shadow>
+      </value>
+    </block>
+
+    <block type="ax_lst_plot">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+    </value>
+      <value name="NAME">
+        <shadow type="indata"><field name="indata1">t, data2, color=color</field></shadow>
+      </value>
+    </block>
+
+    <block type = "tick_params">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+      </value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
+    </block>
+
+    <block type="tight_layout">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">fig</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type="matplotlib_plt_show"></block>
 
       </category>
 
