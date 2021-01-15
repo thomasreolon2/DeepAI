@@ -13,13 +13,14 @@ Blockly.Blocks['np_pi'] = {
 
 Blockly.Blocks['ax_lst_plot'] = {
   init: function() {
+    this.appendValueInput("list")
+        .setCheck(null);
     this.appendDummyInput()
-        .appendField("[ax[].plot]");
+        .appendField(".plot(");
     this.appendValueInput("NAME")
-        .setCheck(null)
-        .appendField("좌표");
-        this.appendValueInput("val")
-        .setCheck(null)
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
