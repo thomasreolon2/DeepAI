@@ -454,7 +454,8 @@ Blockly.Blocks['set_facecolor'] = {
         this.appendDummyInput()
             .appendField(")");
         this.setInputsInline(true);
-        this.setOutput(true, null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour("%{BKY_VISUAL_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");

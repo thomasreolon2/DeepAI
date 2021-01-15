@@ -1110,7 +1110,7 @@
         </value>
       </block>
 
-      <!-- for 문 1 -->
+      <!-- for 문 range -->
       <block type="py_for1">
         <value name="item">
           <block type="variables_get">
@@ -1124,7 +1124,7 @@
         </value>
       </block>
 
-      <!-- for 문 2 -->
+      <!-- for 문 in -->
       <block type="py_for">
         <value name="item">
           <shadow type="indata">
@@ -4733,11 +4733,11 @@
 
 
     </category>
-       <!-- ************************************************** ************************* *************************  -->
+    <!-- ************************************************** ************************* *************************  -->
     <!-- ***************************************  서브플롯형(Matplotlib)  ******************************************  -->
     <!-- ************************************************** ************************* *************************  -->
       <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}">
-
+        <label text="Zoom region inset axes"></label>
         <!-- Zoom region inset axes (지원) -->
         <block type="numpy_library"></block>
         <block type="cbook_import"></block>
@@ -4820,7 +4820,11 @@
         </block>
 
         <block type = "many_variables">
-          <value name="NUMBER"><shadow type="indata"><field name="indata1">Z2</field></shadow></value>
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">Z2</field>
+            </block>
+          </value>
           <value name="VALUE">
             <block type="numpy_ones_and_zeros">
               <value name="numpy_Ones and zeros_val"> 
@@ -4847,14 +4851,18 @@
 
         <block type = "many_variables">
           <value name="NUMBER"><shadow type="indata"><field name="indata1">Z2[30:30+ny, 30:30+nx]</field></shadow></value>
-          <value name="VALUE"><shadow type="indata"><field name="indata1">Z</field></shadow></value>
+          <value name="VALUE">
+            <block type="variables_get">
+              <field name="VAR">Z</field>
+            </block>
+          </value>
         </block>
         <!-- 밑에 imshow 임 -->
         <block type = "pie_subplots_1">
           <value name="name1">
-            <shadow type="indata">
-              <field name="indata1">ax</field>
-            </shadow>
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
           </value>
           <value name="name2">
             <shadow type="indata">
@@ -4863,25 +4871,29 @@
           </value>
         </block>
 
-        <block type = "many_variables">
-          <value name="NUMBER"><shadow type="indata"><field name="indata1">axins</field></shadow></value>
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
+          </value>
           <value name="VALUE">
             <block type="set_inset_axes">
             <value name="VAR">
               <block type="variables_get">
                 <field name="VAR">ax</field>
-            </block>
+              </block>
             </value>
             <value name="INPUT"><shadow type="indata"><field name="indata1">[0.5, 0.5, 0.47, 0.47]</field></shadow></value>
           </block>
-        </value>
+          </value>
         </block>
 
-        <block type = "pie_subplots_1">
+        <block type="pie_subplots_1">
           <value name="name1">
-            <shadow type="indata">
-              <field name="indata1">axs</field>
-            </shadow>
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
           </value>
           <value name="name2">
             <shadow type="indata">
@@ -4953,14 +4965,25 @@
             </block>
           </value>
         </block>
+
+        <block type="matplotlib_plt_show"></block>
+
       </category>
 
   <!-- ************************************************** ************************* *************************  -->
   <!-- ***************************************  통계형 (Matplotlib)  ******************************************  -->
   <!-- ************************************************** ************************* *************************  -->
       <category name="통계형" colour="%{BKY_VISUAL_HUE}">
+        <label text="Box plots with custom fill colors"></label>
+
         <block type="numpy_library"></block>
-        <block type="cbook_import"></block>
+        <block type="visualization_library">
+          <value name="lib_var">
+            <block type="variables_get">
+              <field name="VAR">plt</field>
+            </block>
+          </value>
+        </block>
         
         <block type="itdata">
           <value name="itdata1">
@@ -5003,18 +5026,38 @@
             <shadow type="indata"><field name="indata1">fig, (ax1, ax2)</field></shadow>
           </value>
           <value name="VALUE">
-            <shadow type="indata"><field name="indata1">plt.subplots(nrows=1, ncols=2, figsize=(9, 4))</field></shadow>
-          </value>
-        </block>
-        
-        <block type="boxplot">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">ax1</field>
+            <block type="subplots">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="VAR2">
+                <shadow type="indata">
+                  <field name="indata1">nrows=1, ncols=2, figsize=(9, 4)</field>
+                </shadow>
+              </value>
             </block>
           </value>
-          <value name="INPUT">
-            <shadow type="indata"><field name="indata1">all_data, vert=True, patch_artist=True, labels=labels</field></shadow>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">bplot1</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="boxplot">
+              <value name="VAR">
+                <block type="variables_get">
+                  <field name="VAR">ax1</field>
+                </block>
+              </value>
+              <value name="INPUT">
+                <shadow type="indata"><field name="indata1">all_data, vert=True, patch_artist=True, labels=labels</field></shadow>
+              </value>
+            </block>
           </value>
         </block>
 
@@ -5026,6 +5069,102 @@
           </value>
           <value name="INPUT">
             <shadow type="indata"><field name="indata1">'Rectangular box plot'</field></shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">bplot2</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="boxplot">
+              <value name="VAR">
+                <block type="variables_get">
+                  <field name="VAR">ax2</field>
+                </block>
+              </value>
+              <value name="INPUT">
+                <shadow type="indata"><field name="indata1">all_data,notch=True,vert=True,patch_artist=True,labels=labels</field></shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type="set_title">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax2</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">'Notched box plot'</field></shadow>
+          </value>
+        </block>
+
+        <block type = "create_list">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">colors</field>
+            </block>
+          </value>  
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">'pink', 'lightblue', 'lightgreen'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="py_for">
+          <value name="item">
+            <shadow type="indata">
+              <field name="indata1">bplot</field>
+            </shadow>
+          </value>
+          <value name="list">
+            <shadow type="indata">
+              <field name="indata1">(bplot1, bplot2)</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="py_for">
+          <value name="item">
+            <shadow type="indata">
+              <field name="indata1">patch, color</field>
+            </shadow>
+          </value>
+          <value name="list">
+            <shadow type="indata">
+              <field name="indata1">zip(bplot['boxes'], colors)</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="set_facecolor">
+          <value name="VAR1">
+            <block type="variables_get">
+              <field name="VAR">patch</field>
+            </block>
+          </value>
+          <value name="VAR2">
+            <block type="variables_get">
+              <field name="VAR">color</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="py_for">
+          <value name="item">
+            <shadow type="indata">
+              <field name="indata1">ax</field>
+            </shadow>
+          </value>
+          <value name="list">
+            <shadow type="indata">
+              <field name="indata1">[ax1, ax2]</field>
+            </shadow>
           </value>
         </block>
 
@@ -5062,8 +5201,19 @@
           </value>
         </block>
 
+        <block type="matplotlib_plt_show"></block>
+
         <label text="Some features of the histogram (hist) function"> </label>
 
+        <block type="numpy_library"></block>
+        <block type="visualization_library">
+          <value name="lib_var">
+            <block type="variables_get">
+              <field name="VAR">plt</field>
+            </block>
+          </value>
+        </block>
+        
         <block type="hist">
           <value name="VAR">
             <block type="variables_get">
