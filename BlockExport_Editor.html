@@ -4721,6 +4721,7 @@
                   <field name="indata1">figsize=[5, 4]</field>
                 </shadow>
               </value>
+            </block>
           </value>
         </block>
 
@@ -4935,7 +4936,20 @@
 
         <block type = "many_variables">
           <value name="NUMBER"><shadow type="indata"><field name="indata1">fig1, ax1</field></shadow></value>
-          <value name="VALUE"><block type = "pie_subplots"></block></value>
+          <value name="VALUE">
+            <block type="subplots">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="VAR2">
+                <shadow type="indata">
+                  <field name="indata1"></field>
+                </shadow>
+              </value>
+            </block>
+          </value>
         </block>
 
         <block type = "pie_pie1">
