@@ -53,7 +53,7 @@ Blockly.Python['create_list_1'] = function (block) {
   //pie_subplots
   Blockly.Python['pie_subplots_1'] = function(block) {
     // TODO: Assemble Python into code variable.
-    var value_name1 = Blockly.Python.variableDB_.getName(block.getFieldValue('name1'), Blockly.Variables.NAME_TYPE);
+    var value_name1 = Blockly.Python.valueToCode(block, 'name1', Blockly.Python.ORDER_ATOMIC);
     var value_name2 = Blockly.Python.valueToCode(block, 'name2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
     var code =  value_name1 + ".imshow("+ value_name2 +")\n";
@@ -74,28 +74,13 @@ Blockly.Python['create_list_1'] = function (block) {
     // TODO: Assemble Python into code variable.
     var value_name1 = Blockly.Python.valueToCode(block, 'name1', Blockly.Python.ORDER_ATOMIC);
     var value_name2 = Blockly.Python.valueToCode(block, 'name2', Blockly.Python.ORDER_ATOMIC);
-    var value_name3 = Blockly.Python.valueToCode(block, 'name3', Blockly.Python.ORDER_ATOMIC);
-    var value_name4 = Blockly.Python.valueToCode(block, 'name4', Blockly.Python.ORDER_ATOMIC);
-    var value_name5 = Blockly.Python.valueToCode(block, 'name5', Blockly.Python.ORDER_ATOMIC);
-    var value_name6 = Blockly.Python.valueToCode(block, 'name6', Blockly.Python.ORDER_ATOMIC);
-    var value_name7 = Blockly.Python.valueToCode(block, 'name7', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-    var code =  value_name1 + ".text("+ value_name3 +", "+ value_name2 +", "+value_name4+"["+value_name2+","+value_name3+"], ha="+value_name5+", va="+value_name6+", color="+value_name7+")\n";
+    var code =  value_name1 + ".text("+ value_name2 +")\n";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];;
   };
 
-  Blockly.Python['pie_subplots_4'] = function(block) {
-    // TODO: Assemble Python into code variable.
-    var value_name1 = Blockly.Python.valueToCode(block, 'name', Blockly.Python.ORDER_ATOMIC);
-    
-  // TODO: Assemble Python into code variable.
-    var code = "plt.subplots("+ value_name1 +")";
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_ATOMIC];
-  };
-
-  Blockly.Python['pie_subplots_5'] = function(block) {
+  Blockly.Python['pie_pcolor'] = function(block) {
     // TODO: Assemble Python into code variable.
     var value_name1 = Blockly.Python.valueToCode(block, 'name1', Blockly.Python.ORDER_ATOMIC);
     var value_name2 = Blockly.Python.valueToCode(block, 'name2', Blockly.Python.ORDER_ATOMIC);
@@ -138,14 +123,13 @@ Blockly.Python['heatmaps_1'] = function(block) {
     return code;
   };
 
-  Blockly.Python['heatmaps_5'] = function(block) {
+  Blockly.Python['plt_setp'] = function(block) {
+    var value_value_0 = Blockly.Python.valueToCode(block, 'REAL_VALUE_0', Blockly.Python.ORDER_ATOMIC);
     var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
     var value_value_2 = Blockly.Python.valueToCode(block, 'REAL_VALUE_2', Blockly.Python.ORDER_ATOMIC);
-    var value_value_3 = Blockly.Python.valueToCode(block, 'REAL_VALUE_3', Blockly.Python.ORDER_ATOMIC);
-    var value_value_4 = Blockly.Python.valueToCode(block, 'REAL_VALUE_4', Blockly.Python.ORDER_ATOMIC);
 
     // TODO: Assemble Python into code variable.
-    var code = "plt.setp(" + value_value + ", rotation="+value_value_2+", ha="+ value_value_3 +", rotation_mode="+ value_value_4 +")\n";
+    var code = value_value_0 + ".setp(" + value_value + ", "+value_value_2+")\n";
     return code;
   };
 
@@ -154,7 +138,7 @@ Blockly.Python['heatmaps_1'] = function(block) {
     var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
 
     // TODO: Assemble Python into code variable.
-    var code = name + ".set_title( "+value_value+")\n";
+    var code = name + ".set_title("+value_value+")\n";
     return code;
   };
 
@@ -197,7 +181,7 @@ Blockly.Python['heatmaps_1'] = function(block) {
         var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
         var value_name1 = Blockly.Python.valueToCode(block, 'title', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
-        var code = variable_list + ".set_title( " + value_name1 + " )\n";
+        var code = variable_list + ".set_title(" + value_name1 + ")\n";
         // TODO: Change ORDER_NONE to the correct strength.
         return code;
       };
@@ -206,7 +190,7 @@ Blockly.Python['heatmaps_1'] = function(block) {
         var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
         var value_name1 = Blockly.Python.valueToCode(block, 'title', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
-        var code = variable_list + ".set_title( " + value_name1 + " )\n";
+        var code = variable_list + ".set_title(" + value_name1 + ")\n";
         // TODO: Change ORDER_NONE to the correct strength.
         return code;
       };
@@ -215,7 +199,7 @@ Blockly.Python['heatmaps_1'] = function(block) {
         var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
         var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
-        var code = value_number + ".set_xlabel( " + value_value+' )\n';
+        var code = value_number + ".set_xlabel(" + value_value+')\n';
         return code;
       };
     
@@ -223,7 +207,7 @@ Blockly.Python['heatmaps_1'] = function(block) {
         var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
         var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
-        var code = value_number + ".set_ylabel( " + value_value+' )\n';
+        var code = value_number + ".set_ylabel(" + value_value+')\n';
         return code;
       };
 
@@ -231,7 +215,7 @@ Blockly.Python['heatmaps_1'] = function(block) {
         var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
         var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
-        var code = value_number + ".plot( " + value_value+' )\n';
+        var code = value_number + ".plot(" + value_value+')\n';
         return code;
       };
     
@@ -239,7 +223,7 @@ Blockly.Python['heatmaps_1'] = function(block) {
         var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
         var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
-        var code = value_number + ".tick_params( " + value_value+' )\n';
+        var code = value_number + ".tick_params(" + value_value+')\n';
         return code;
       };
 
@@ -252,3 +236,24 @@ Blockly.Python['heatmaps_1'] = function(block) {
         // TODO: Change ORDER_NONE to the correct strength.
         return [code, Blockly.Python.ORDER_ATOMIC];
       };
+
+
+      //plt_subplots
+Blockly.Python['plt_subplot'] = function(block) {
+    // TODO: Assemble Python into code variable.
+    var value_a1 = Blockly.Python.valueToCode(block, 'name', Blockly.Python.ORDER_ATOMIC);
+    var value_a2 = Blockly.Python.valueToCode(block, 'name2', Blockly.Python.ORDER_ATOMIC);
+    var code = value_a1 + ".subplot("+value_a2+")\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];;
+  };
+    
+  //plt_subplots
+  Blockly.Python['plt_subplots'] = function(block) {
+    // TODO: Assemble Python into code variable.
+    var value_a1 = Blockly.Python.valueToCode(block, 'name', Blockly.Python.ORDER_ATOMIC);
+    var value_a2 = Blockly.Python.valueToCode(block, 'name2', Blockly.Python.ORDER_ATOMIC);
+    var code = value_a1 + ".subplots("+value_a2+")\n";
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];;
+  };

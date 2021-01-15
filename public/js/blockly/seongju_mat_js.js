@@ -115,6 +115,7 @@ Blockly.JavaScript['ax_stackplot'] = function(block) {
 };
 
 Blockly.JavaScript['ax_legend'] = function(block) {
+  var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_loc = Blockly.JavaScript.valueToCode(block, 'loc', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '...;\n';

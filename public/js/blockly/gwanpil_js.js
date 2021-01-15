@@ -70,14 +70,7 @@ Blockly.JavaScript['gp'] = function (block) {
     return [code, Blockly.JavaScript.ORDER_ATOMIC];;
   };
 
-  Blockly.JavaScript['pie_subplots_4'] = function(block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = '\n';
-    // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_ATOMIC];;
-  };
-
-  Blockly.JavaScript['pie_subplots_5'] = function(block) {
+  Blockly.JavaScript['pie_pcolor'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
@@ -121,7 +114,7 @@ Blockly.JavaScript['gp'] = function (block) {
     return code;
   };
 
-  Blockly.JavaScript['heatmaps_5'] = function(block) {
+  Blockly.JavaScript['plt_setp'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
     var value_value = Blockly.JavaScript.valueToCode(block, 'REAL_VALUE', Blockly.JavaScript.ORDER_ATOMIC);
     var value_number = Blockly.JavaScript.valueToCode(block, 'NUMBER', Blockly.JavaScript.ORDER_ATOMIC);
@@ -181,6 +174,16 @@ Blockly.JavaScript['gp'] = function (block) {
       };
 
       Blockly.JavaScript['twinx'] = function(block) {
+        var code = '\n';
+        return code;
+      };
+
+      Blockly.JavaScript['plt_subplot'] = function(block) {
+        var code = '\n';
+        return code;
+      };
+
+      Blockly.JavaScript['plt_subplots'] = function(block) {
         var code = '\n';
         return code;
       };
