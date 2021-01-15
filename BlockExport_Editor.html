@@ -4306,7 +4306,9 @@
     <!-- ************************************************** ************************* *************************  -->
     <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}">
 
+      <!--Creating annotated heatmaps-->
       <label text="Creating annotated heatmaps"></label>
+      
       <!--라이브러리-->
       <block type="numpy_library"></block>
       <block type="visualization_library_1"></block>
@@ -4616,11 +4618,14 @@
       </value>
     </block>
 
-    <block type = "pcolor_set_title">
-      <value name="title">
-        <shadow type="indata">
-          <field name="indata1">'default: no edges'</field>
-        </shadow>
+    <block type="set_title">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax0</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'default: no edges'</field></shadow>
       </value>
     </block>
 
@@ -4646,11 +4651,14 @@
       </value>
     </block>
 
-    <block type = "pcolor_set_title_1">
-      <value name="title">
-        <shadow type="indata">
-          <field name="indata1">'thick edges'</field>
-        </shadow>
+    <block type="set_title">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'thick edges'</field></shadow>
       </value>
     </block>
 
