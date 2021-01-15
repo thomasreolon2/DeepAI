@@ -203,23 +203,27 @@ Blockly.Blocks['set_title2'] = {
 
 Blockly.Blocks['ax_stackplot'] = {
     init: function() {
-      this.appendValueInput("list_val")
-          .setCheck(null)
-          .appendField("[ax.stackplot] 리스트:");
-      this.appendValueInput("dic_val")
-          .setCheck(null)
-          .appendField("딕셔너리 값: ");
-      this.appendValueInput("dic_key")
-          .setCheck(null)
-          .appendField("딕셔너리 키: ");
-      //this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_VISUAL_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
+        this.appendValueInput("VAR")
+            .setCheck(null)
+            .appendField(".stackplot")
+        this.appendValueInput("list_val")
+            
+            .setCheck(null)
+            .appendField("리스트:");
+        this.appendValueInput("dic_val")
+            .setCheck(null)
+            .appendField("딕셔너리 값: ");
+        this.appendValueInput("dic_key")
+            .setCheck(null)
+            .appendField("딕셔너리 키: ");
+        //this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
     }
-  };
+};
 
 
 Blockly.Blocks['ax_legend'] = {

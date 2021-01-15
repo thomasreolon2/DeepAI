@@ -261,7 +261,7 @@ Blockly.Python['hist'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-//// hist
+//// cohere
 Blockly.Python['cohere'] = function (block) {
   var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
@@ -270,7 +270,7 @@ Blockly.Python['cohere'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-//// hist
+//// tight_layout
 Blockly.Python['tight_layout'] = function (block) {
   var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
@@ -278,4 +278,14 @@ Blockly.Python['tight_layout'] = function (block) {
   var code = `${var_text1}.tight_layout(${var_text2})\n`;
   return code;
 };
+
+//// stackplot
+Blockly.Python['stackplot'] = function (block) {
+  var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text1}.stackplot(${var_text2})\n`;
+  return code;
+};
+
 

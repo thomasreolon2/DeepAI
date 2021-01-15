@@ -578,3 +578,23 @@ Blockly.Blocks['tight_layout'] = {
     this.setHelpUrl("");
     }
 };
+
+// stackplot
+Blockly.Blocks['stackplot'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".stackplot(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
