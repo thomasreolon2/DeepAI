@@ -3359,9 +3359,9 @@
           
           <block type="many_variables">
             <value name="NUMBER">
-              <shadow type="indata">
-                <field name="indata1">dt</field>
-              </shadow>
+              <block type="variables_get">
+                <field name="VAR">dt</field>
+              </block>
             </value>
             <value name="VALUE">
               <shadow type="indata">
@@ -3373,9 +3373,9 @@
   
           <block type="many_variables">
             <value name="NUMBER">
-              <shadow type="indata">
-                <field name="indata1">t</field>
-              </shadow>
+              <block type="variables_get">
+                <field name="VAR">t</field>
+              </block>
             </value>
             <value name="VALUE">
               <shadow type="numpy_numerical_ranges">
@@ -3391,9 +3391,9 @@
   
           <block type="many_variables">
             <value name="NUMBER">
-              <shadow type="indata">
-                <field name="indata1">nse1</field>
-              </shadow>
+              <block type="variables_get">
+                <field name="VAR">nse1</field>
+              </block>
             </value>
             <value name="VALUE">
               <block type="numpy_random_sample__">
@@ -3413,9 +3413,9 @@
   
           <block type="many_variables">
             <value name="NUMBER">
-              <shadow type="indata">
-                <field name="indata1">nse2</field>
-              </shadow>
+              <block type="variables_get">
+                <field name="VAR">nse2</field>
+              </block>
             </value>
             <value name="VALUE">
               <block type="numpy_random_sample__">
@@ -3435,8 +3435,8 @@
   
           <block type="many_variables">
             <value name="NUMBER">
-              <block type="indata">
-                <field name="indata1">s1</field>
+              <block type="variables_get">
+                <field name="VAR">s1</field>
               </block>
             </value>
             <value name="VALUE">
@@ -3469,8 +3469,8 @@
   
           <block type="many_variables">
             <value name="NUMBER">
-              <block type="indata">
-                <field name="indata1">s2</field>
+              <block type="variables_get">
+                <field name="VAR">s2</field>
               </block>
             </value>
             <value name="VALUE">
@@ -3531,20 +3531,29 @@
               </block>
           </value>
             <value name="NAME">
-              <shadow type="math_number">
-                <field name="NUM">t,s1,t,s2</field>
+              <shadow type="indata">
+                <field name="indata1">t,s1,t,s2</field>
               </shadow>
             </value>
           </block>
     
     
-          <block type="axs_set_xlim">
-            <value name="NAME">
-              <shadow type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
+          <block type="set_xlim">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
             </value>
-            <value name="val">
+            <value name="INPUT">
               <shadow type="indata">
                 <field name="indata1">0,2</field>
               </shadow>
@@ -3552,13 +3561,22 @@
           </block>
     
     
-          <block type="axs_set_xlabel">
-            <value name="NAME">
-              <shadow type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
+          <block type="set_xlabel">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
             </value>
-            <value name="val">
+            <value name="INPUT">
               <shadow type="indata">
                 <field name="indata1">'time'</field>
               </shadow>
@@ -3566,13 +3584,22 @@
           </block>
     
     
-          <block type="axs_set_ylabel">
-            <value name="NAME">
-              <shadow type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
+          <block type="set_ylabel">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
             </value>
-            <value name="val">
+            <value name="INPUT">
               <shadow type="indata">
                 <field name="indata1">'s1 and s2'</field>
               </shadow>
@@ -3582,9 +3609,18 @@
     
           <block type="axs_grid">
             <value name="NAME">
-              <shadow type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
             </value>
             <value name="val">
               <block type="logic_boolean"></block>
@@ -3604,7 +3640,18 @@
             <value name="VALUE">
               <block type="cohere">
                 <value name="VAR">
-                  
+                  <block type = "va_sel">
+                    <value name="list">
+                      <block type="variables_get">
+                        <field name="VAR">ax</field>
+                      </block>
+                    </value>
+                    <value name="dic1">
+                      <shadow type="indata">
+                        <field name="indata1">1</field>
+                      </shadow>
+                    </value>
+                  </block>
                 </value>
                 <value name="INPUT">
                   <block type="Oper_garbage2">
@@ -3625,14 +3672,23 @@
           </block>
   
   
-          <block type="axs_set_ylabel">
-            <value name="NAME">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
+          <block type="set_ylabel">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">1</field>
+                  </shadow>
+                </value>
+              </block>
             </value>
             
-            <value name="val">
+            <value name="INPUT">
               <shadow type="indata">
                 <field name="indata1">'coherence'</field>
               </shadow>
@@ -3682,9 +3738,9 @@
 
           <block type="many_variables">
             <value name="NUMBER">
-              <shadow type="indata">
-                <field name="indata1">x</field>
-              </shadow>
+              <block type="variables_get">
+                <field name="VAR">x</field>
+              </block>
             </value>
             <value name="VALUE">
               <block type="numpy_random_sample">
@@ -3699,9 +3755,9 @@
 
           <block type="many_variables">
             <value name="NUMBER">
-              <shadow type="indata">
-                <field name="indata1">y</field>
-              </shadow>
+              <block type="variables_get">
+                <field name="VAR">y</field>
+              </block>
             </value>
             <value name="VALUE">
               <block type="numpy_random_sample">
@@ -3717,9 +3773,9 @@
 
           <block type="many_variables">
             <value name="NUMBER">
-              <shadow type="indata">
-                <field name="indata1">z</field>
-              </shadow>
+              <block type="variables_get">
+                <field name="VAR">z</field>
+              </block>
             </value>
             <value name="VALUE">
               <block type="np_sqrt">
@@ -3759,75 +3815,73 @@
             </value>
           </block>
 
-          
-          <block type="subplots">
-            <value name="row">
-              <shadow type="math_number">
-                <field name="NUM">2</field>
-              </shadow>
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="indata">
+                <field name="indata1">fig, ax</field>
+              </block>
             </value>
-
-            <value name="col">
-              <shadow type="math_number">
-                <field name="NUM">3</field>
-              </shadow>
-            </value>
-
-            <value name="val1">
-              <block type="logic_boolean"></block>
-            </value>
-            <value name="val2">
-              <block type="logic_boolean"></block>
-            </value>
-          </block>
-
+            <value name="VALUE">
+              <block type="subplots">
+                <value name="VAR1">
+                  <block type="variables_get">
+                    <field name="VAR">plt</field>
+                  </block>
+                </value>
+                <value name="VAR2">
+                  <shadow type="indata">
+                    <field name="indata1">2, 3, sharex=True, sharey=True</field>
+                  </shadow>
+                </value>
+              </block>
+              </value> 
+            </block>
           <!-- 0,0 그래프 -->
-          <block type="scatter">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">0,0</field>
-              </block>
-            </value>
 
-            <value name="val_x">
-              <block type="indata">
-                <field name="indata1">x</field>
-              </block>
-            </value>
-
-            <value name="val_y">
-              <block type="indata">
-                <field name="indata1">y</field>
-              </block>
-            </value>
-
-            <value name="val1">
-              <block type="indata">
-                <field name="indata1">80</field>
-              </block>
-            </value>
-
-            <value name="val2">
-              <block type="indata">
-                <field name="indata1">z</field>
-              </block>
-            </value>
-
-            <value name="val3">
-              <block type="indata">
-                <field name="indata1">">"</field>
+          <block type="itdata">
+            <value name="itdata1">
+              <block type="pie_ax_scatter">
+                <value name="list">
+                  <block type = "va_sel">
+                    <value name="list">
+                      <block type="variables_get">
+                        <field name="VAR">ax</field>
+                      </block>
+                    </value>
+                    <value name="dic1">
+                      <shadow type="indata">
+                        <field name="indata1">0,0</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="d1">
+                  <block type="indata">
+                    <field name="indata1">x, y, s=80, c=z, marker=">"</field>
+                  </block>
+                </value>
               </block>
             </value>
           </block>
+
+          
 
           <block type="set_title">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">0,0</field>
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0,0</field>
+                  </shadow>
+                </value>
               </block>
             </value>
-
-            <value name="val_x">
+            <value name="INPUT">
               <block type="indata">
                 <field name="indata1">"marker='>'"</field>
               </block>
@@ -3836,62 +3890,62 @@
 
 
           <!-- 0,1 그래프 -->
-          <block type="scatter">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">0,1</field>
-              </block>
-            </value>
-
-            <value name="val_x">
-              <block type="indata">
-                <field name="indata1">x</field>
-              </block>
-            </value>
-
-            <value name="val_y">
-              <block type="indata">
-                <field name="indata1">y</field>
-              </block>
-            </value>
-
-            <value name="val1">
-              <block type="indata">
-                <field name="indata1">80</field>
-              </block>
-            </value>
-
-            <value name="val2">
-              <block type="indata">
-                <field name="indata1">z</field>
-              </block>
-            </value>
-
-            <value name="val3">
-              <block type="indata">
-                <field name="indata1">r'$\alpha$'</field>
+          <block type="itdata">
+            <value name="itdata1">
+              <block type="pie_ax_scatter">
+                <value name="list">
+                  <block type = "va_sel">
+                    <value name="list">
+                      <block type="variables_get">
+                        <field name="VAR">ax</field>
+                      </block>
+                    </value>
+                    <value name="dic1">
+                      <shadow type="indata">
+                        <field name="indata1">0,1</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="d1">
+                  <block type="indata">
+                    <field name="indata1">x, y, s=80, c=z, marker=r'$\alpha$'</field>
+                  </block>
+                </value>
               </block>
             </value>
           </block>
 
           <block type="set_title">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">0,1</field>
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0,1</field>
+                  </shadow>
+                </value>
               </block>
             </value>
-
-            <value name="val_x">
+            <value name="INPUT">
               <block type="indata">
                 <field name="indata1">r"marker=r'\$\alpha\$'"</field>
               </block>
             </value>
           </block>
 
-
 <!-- 리스트 하나 추가 -->
 
           <block type = "create_list">
+            <value name="list">
+              <block type="variables_get">
+                <field name="VAR">verts</field>
+              </block>
+            </value>
             <value name="text">
               <shadow type="indata">
                 <field name="indata1">[-1, -1], [1, -1], [1, 1], [-1, -1]</field>
@@ -3900,52 +3954,48 @@
           </block>
 
           <!-- 0,2 그래프 -->
-          <block type="scatter">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">0,2</field>
-              </block>
-            </value>
-
-            <value name="val_x">
-              <block type="indata">
-                <field name="indata1">x</field>
-              </block>
-            </value>
-
-            <value name="val_y">
-              <block type="indata">
-                <field name="indata1">y</field>
-              </block>
-            </value>
-
-            <value name="val1">
-              <block type="indata">
-                <field name="indata1">80</field>
-              </block>
-            </value>
-
-            <value name="val2">
-              <block type="indata">
-                <field name="indata1">z</field>
-              </block>
-            </value>
-
-            <value name="val3">
-              <block type="indata">
-                <field name="indata1">my_list</field>
+          <block type="itdata">
+            <value name="itdata1">
+              <block type="pie_ax_scatter">
+                <value name="list">
+                  <block type = "va_sel">
+                    <value name="list">
+                      <block type="variables_get">
+                        <field name="VAR">ax</field>
+                      </block>
+                    </value>
+                    <value name="dic1">
+                      <shadow type="indata">
+                        <field name="indata1">0,2</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="d1">
+                  <block type="indata">
+                    <field name="indata1">x, y, s=80, c=z, marker=verts</field>
+                  </block>
+                </value>
               </block>
             </value>
           </block>
 
           <block type="set_title">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">0,2</field>
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0,2</field>
+                  </shadow>
+                </value>
               </block>
             </value>
-
-            <value name="val_x">
+            <value name="INPUT">
               <block type="indata">
                 <field name="indata1">"marker=verts"</field>
               </block>
@@ -3954,52 +4004,48 @@
 
 
           <!-- 1,0 그래프 -->
-          <block type="scatter">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">1,0</field>
-              </block>
-            </value>
-
-            <value name="val_x">
-              <block type="indata">
-                <field name="indata1">x</field>
-              </block>
-            </value>
-
-            <value name="val_y">
-              <block type="indata">
-                <field name="indata1">y</field>
-              </block>
-            </value>
-
-            <value name="val1">
-              <block type="indata">
-                <field name="indata1">80</field>
-              </block>
-            </value>
-
-            <value name="val2">
-              <block type="indata">
-                <field name="indata1">z</field>
-              </block>
-            </value>
-
-            <value name="val3">
-              <block type="indata">
-                <field name="indata1">(5, 0)</field>
+          <block type="itdata">
+            <value name="itdata1">
+              <block type="pie_ax_scatter">
+                <value name="list">
+                  <block type = "va_sel">
+                    <value name="list">
+                      <block type="variables_get">
+                        <field name="VAR">ax</field>
+                      </block>
+                    </value>
+                    <value name="dic1">
+                      <shadow type="indata">
+                        <field name="indata1">1,0</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="d1">
+                  <block type="indata">
+                    <field name="indata1">x, y, s=80, c=z, marker=(5, 0)</field>
+                  </block>
+                </value>
               </block>
             </value>
           </block>
 
           <block type="set_title">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">1,0</field>
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">1,0</field>
+                  </shadow>
+                </value>
               </block>
             </value>
-
-            <value name="val_x">
+            <value name="INPUT">
               <block type="indata">
                 <field name="indata1">"marker=(5, 0)"</field>
               </block>
@@ -4007,52 +4053,48 @@
           </block>
 
           <!-- 1,1 그래프 -->
-          <block type="scatter">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">1,1</field>
-              </block>
-            </value>
-
-            <value name="val_x">
-              <block type="indata">
-                <field name="indata1">x</field>
-              </block>
-            </value>
-
-            <value name="val_y">
-              <block type="indata">
-                <field name="indata1">y</field>
-              </block>
-            </value>
-
-            <value name="val1">
-              <block type="indata">
-                <field name="indata1">80</field>
-              </block>
-            </value>
-
-            <value name="val2">
-              <block type="indata">
-                <field name="indata1">z</field>
-              </block>
-            </value>
-
-            <value name="val3">
-              <block type="indata">
-                <field name="indata1">(5, 1)</field>
+          <block type="itdata">
+            <value name="itdata1">
+              <block type="pie_ax_scatter">
+                <value name="list">
+                  <block type = "va_sel">
+                    <value name="list">
+                      <block type="variables_get">
+                        <field name="VAR">ax</field>
+                      </block>
+                    </value>
+                    <value name="dic1">
+                      <shadow type="indata">
+                        <field name="indata1">1,1</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="d1">
+                  <block type="indata">
+                    <field name="indata1">x, y, s=80, c=z, marker=(5, 1)</field>
+                  </block>
+                </value>
               </block>
             </value>
           </block>
 
           <block type="set_title">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">1,1</field>
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">1,1</field>
+                  </shadow>
+                </value>
               </block>
             </value>
-
-            <value name="val_x">
+            <value name="INPUT">
               <block type="indata">
                 <field name="indata1">"marker=(5, 1)"</field>
               </block>
@@ -4063,52 +4105,48 @@
 
 
           <!-- 1,2 그래프 -->
-          <block type="scatter">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">1,2</field>
-              </block>
-            </value>
-
-            <value name="val_x">
-              <block type="indata">
-                <field name="indata1">x</field>
-              </block>
-            </value>
-
-            <value name="val_y">
-              <block type="indata">
-                <field name="indata1">y</field>
-              </block>
-            </value>
-
-            <value name="val1">
-              <block type="indata">
-                <field name="indata1">80</field>
-              </block>
-            </value>
-
-            <value name="val2">
-              <block type="indata">
-                <field name="indata1">z</field>
-              </block>
-            </value>
-
-            <value name="val3">
-              <block type="indata">
-                <field name="indata1">(5, 2)</field>
+          <block type="itdata">
+            <value name="itdata1">
+              <block type="pie_ax_scatter">
+                <value name="list">
+                  <block type = "va_sel">
+                    <value name="list">
+                      <block type="variables_get">
+                        <field name="VAR">ax</field>
+                      </block>
+                    </value>
+                    <value name="dic1">
+                      <shadow type="indata">
+                        <field name="indata1">1,2</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="d1">
+                  <block type="indata">
+                    <field name="indata1">x, y, s=80, c=z, marker=(5, 2)</field>
+                  </block>
+                </value>
               </block>
             </value>
           </block>
 
           <block type="set_title">
-            <value name="row_col">
-              <block type="indata">
-                <field name="indata1">1,2</field>
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">1,2</field>
+                  </shadow>
+                </value>
               </block>
             </value>
-
-            <value name="val_x">
+            <value name="INPUT">
               <block type="indata">
                 <field name="indata1">"marker=(5, 2)"</field>
               </block>
@@ -4116,7 +4154,18 @@
           </block>
 
         
-          <block type="fig_tight_layout"></block>
+          <block type="tight_layout">
+            <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">plt</field>
+              </block>
+            </value>
+            <value name="INPUT">
+              <block type="indata">
+                <field name="indata1"></field>
+              </block>
+            </value>
+          </block>
   
           <block type="matplotlib_plt_show"></block>
 
@@ -4164,9 +4213,9 @@
 
           <block type="ax_stackplot">
             <value name="list_val">
-              <shadow type="indata">
-                <field name="indata1">year</field>
-              </shadow>
+              <block type="variables_get">
+                <field name="VAR">year</field>
+              </block>
             </value>
 
             <value name="dic_val">
