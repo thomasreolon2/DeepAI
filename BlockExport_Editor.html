@@ -5016,34 +5016,24 @@
         </block>
 
         <block type = "pie_pie1">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
           <value name="d1">
-            <block type="variables_get">
-              <field name="VAR">sizes</field>
-            </block>
-          </value>
-          <value name="d2">
-            <block type="variables_get">
-              <field name="VAR">explode</field>
-            </block>
-          </value>
-          <value name="d3">
-              <block type="variables_get">
-                <field name="VAR">labels</field>
-              </block>
-          </value>
-          <value name="d4">
             <shadow type="indata">
-              <field name="indata1">'%1.1f%%'</field>
-            </shadow>
-          </value>
-          <value name="d5">
-            <shadow type="indata">
-              <field name="indata1">90</field>
+              <field name="indata1">sizes, explode = explode, labels = labels, autopct = '%1.1f%%', shadow = True, startangle = 90</field>
             </shadow>
           </value>
         </block>
 
         <block type = "pie_axis">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
           <value name="d1">
             <shadow type="indata">
               <field name="indata1">'equal'</field>
@@ -5181,61 +5171,69 @@
           </value>
         </block>
 
-        <block type = "pie_figure"></block>
-
-        <block type = "pie_add_subplot">
-          <value name="d1">
+        <block type = "many_variables">
+          <value name="NUMBER">
             <block type="variables_get">
               <field name="VAR">fig</field>
             </block>
           </value>
-          <value name="d2">
-            <shadow type="indata">
-              <field name="indata1">111</field>
-            </shadow>
-          </value>
-          <value name="d3">
-            <shadow type="indata">
-              <field name="indata1">'polar'</field>
-            </shadow>
+          <value name="VALUE">
+            <block type = "pie_figure">
+              <value name="list">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="d1">
+                <shadow type="indata">
+                  <field name="indata1"></field>
+                </shadow>
+              </value>
+            </block>
           </value>
         </block>
 
-        <block type = "pie_ax_scatter">
-          <value name="d1">
+        <block type = "many_variables">
+          <value name="NUMBER">
             <block type="variables_get">
               <field name="VAR">ax</field>
             </block>
           </value>
-          <value name="d2">
-            <block type="variables_get">
-              <field name="VAR">theta</field>
+          <value name="VALUE">
+            <block type = "pie_add_subplot">
+              <value name="list">
+                <block type="variables_get">
+                  <field name="VAR">fig</field>
+                </block>
+              </value>
+              <value name="d1">
+                <shadow type="indata">
+                  <field name="indata1">111, projection = 'polar'</field>
+                </shadow>
+              </value>
             </block>
           </value>
-          <value name="d3">
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
             <block type="variables_get">
-              <field name="VAR">r</field>
+              <field name="VAR">c</field>
             </block>
           </value>
-          <value name="d4">
-            <block type="variables_get">
-              <field name="VAR">colors</field>
+          <value name="VALUE">
+            <block type = "pie_ax_scatter">
+              <value name="list">
+                <block type="variables_get">
+                  <field name="VAR">ax</field>
+                </block>
+              </value>
+              <value name="d1">
+                <shadow type="indata">
+                  <field name="indata1">theta, r, c = colors, s = area, cmap = 'hsv', alpha = 0.75</field>
+                </shadow>
+              </value>
             </block>
-          </value>
-          <value name="d5">
-            <block type="variables_get">
-              <field name="VAR">area  </field>
-            </block>
-          </value>
-          <value name="d6">
-            <shadow type="indata">
-              <field name="indata1">'hsv'</field>
-            </shadow>
-          </value>
-          <value name="d7">
-            <shadow type="indata">
-              <field name="indata1">0.75</field>
-            </shadow>
           </value>
         </block>
 
@@ -5393,18 +5391,7 @@
           <value name="VALUE">
             <block type="pie_linspace">
               <value name="d1">
-                <shadow type="indata"><field name="indata1">0.0</field></shadow>
-              </value>
-              <value name="d2">
-                <shadow type="indata"><field name="indata1">2</field></shadow>
-              </value>
-              <value name="d3">
-                <shadow type="indata"><field name="indata1">np.pi</field></shadow>
-              </value>
-              <value name="d4">
-                <block type="variables_get">
-                  <field name="VAR">N</field>
-                </block>
+                <shadow type="indata"><field name="indata1">0.0, 2 * np.pi, N, endpoint = False</field></shadow>
               </value>
             </block>
             </value>
@@ -5506,50 +5493,30 @@
           </value>
           <value name="VALUE">
             <block type = "pie_subplots1">
+              <value name="list">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
               <value name="d1">
                 <shadow type="indata">
-                  <field name="indata1">111</field>
+                  <field name="indata1">111, projection='polar'</field>
                 </shadow>
               </value>
-              <value name="d2">
-                <shadow type="indata">
-                  <field name="indata1">'polar'</field>
-                </shadow>
-              </value> 
             </block>
           </value>
         </block>
 
         <block type = "pie_bar">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
           <value name="d1">
-            <block type="variables_get">
-              <field name="VAR">theta</field>
-            </block>
-          </value>
-          <value name="d2">
-            <block type="variables_get">
-              <field name="VAR">radii</field>
-            </block>
-          </value>
-          <value name="d3">
-            <block type="variables_get">
-              <field name="VAR">width</field>
-            </block>
-          </value>
-          <value name="d4">
-            <shadow type="indata">
-              <field name="indata1">0.0</field>
-            </shadow>
-          </value>
-          <value name="d5">
-            <block type="variables_get">
-              <field name="VAR">colors</field>
-            </block>
-          </value>
-          <value name="d6">
-            <shadow type="indata">
-              <field name="indata1">0.5</field>
-            </shadow>
+              <shadow type="indata">
+                <field name="indata1">theta, radii, width = width, bottom = 0.0, color = colors, alpha = 0.5</field>
+              </shadow>
           </value>
         </block>
 
