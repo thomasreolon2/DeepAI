@@ -4292,12 +4292,13 @@
       <block type = "many_variables">
         <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax</field></shadow></value>
         <value name="VALUE">
-          <block type = "pie_subplots">
+          <block type = "plt_subplots">
             <value name="name">
               <block type="variables_get">
                 <field name="VAR">plt</field>
               </block>
             </value>
+            <value name="name2"><shadow type="indata"><field name="indata1"> </field></shadow></value>
           </block>
         </value>
       </block>
@@ -4497,12 +4498,13 @@
     <block type = "many_variables">
       <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, (ax0, ax1)</field></shadow></value>
       <value name="VALUE">
-        <block type = "pie_subplots_4">
+        <block type = "plt_subplots">
           <value name="name">
-            <shadow type="indata">
-              <field name="indata1">2, 1</field>
-            </shadow>
+            <block type="variables_get">
+              <field name="VAR">plt</field>
+            </block>
           </value>
+          <value name="name2"><shadow type="indata"><field name="indata1">2, 1</field></shadow></value>
         </block>
       </value>
     </block>

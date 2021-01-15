@@ -146,20 +146,6 @@ Blockly.Blocks['gp'] = {
     }
   };
 
-  Blockly.Blocks['pie_subplots_4'] = {
-    init: function() { 
-      this.appendDummyInput().appendField("plt.subplots( ");
-      this.appendValueInput("name")
-        .setCheck(null);
-      this.appendDummyInput().appendField(" )");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour(pandas_color);
-   this.setTooltip(""); 
-   this.setHelpUrl("");
-    }
-  };
-
   Blockly.Blocks['pie_pcolor'] = {
     init: function() { 
       this.appendValueInput("name1")
@@ -414,6 +400,37 @@ Blockly.Blocks['gp'] = {
       this.appendValueInput("name1")
         .setCheck(null);
       this.appendDummyInput().appendField(".twinx( )");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };
+
+
+//pie_subplot
+Blockly.Blocks['plt_subplot'] = {
+    init: function() { 
+      this.appendValueInput("name").setCheck(null);
+      this.appendDummyInput().appendField(".subplot( ");
+      this.appendValueInput("name2").setCheck(null);
+      this.appendDummyInput().appendField(" )");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };   
+
+  //pie_subplots
+Blockly.Blocks['plt_subplots'] = {
+    init: function() { 
+      this.appendValueInput("name").setCheck(null);
+      this.appendDummyInput().appendField(".subplots( ");
+      this.appendValueInput("name2").setCheck(null);
+      this.appendDummyInput().appendField(" )");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_VISUAL_HUE}");
