@@ -4256,6 +4256,7 @@
     <!-- ***************************************  이미지 필드(Matplotlib)  ******************************************  -->
     <!-- ************************************************** ************************* *************************  -->
     <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}">
+
       <label text="Creating annotated heatmaps"></label>
       <!--라이브러리-->
       <block type="numpy_library"></block>
@@ -4332,7 +4333,7 @@
         </block></value>
       </block>
 
-      <block type = "heatmaps_1">
+      <block type = "set_xticks">
         <value name="NUMBER"><block type="variables_get">
           <field name="VAR">ax</field>
         </block></value>
@@ -4351,7 +4352,7 @@
         </value>
       </block>
 
-      <block type = "heatmaps_2">
+      <block type = "set_yticks">
         <value name="NUMBER">
           <block type="variables_get">
             <field name="VAR">ax</field>
@@ -4372,14 +4373,26 @@
         </value>
       </block>
 
-      <block type = "heatmaps_3">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">farmers</field></shadow></value>
+      <block type="set_xticklabels">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata"><field name="indata1">farmers</field></shadow>
+        </value>
       </block>
 
-      <block type = "heatmaps_4">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">vegetables</field></shadow></value>
+      <block type="set_yticklabels">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata"><field name="indata1">vegetables</field></shadow>
+        </value>
       </block>
 
       <block type = "plt_setp">
@@ -4458,13 +4471,28 @@
       </value>
     </block>
 
-    <block type = "heatmaps_6">
-      <value name="NAME"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
-      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">"Harvest of local farmers (in tons/year)"</field></shadow></value>
+    <block type="set_title">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">"Harvest of local farmers (in tons/year)"</field></shadow>
+      </value>
     </block>
 
-    <block type = "heatmaps_7">
-      <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
+    <block type="tight_layout">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">fig</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
     </block>
 
     <block type="matplotlib_plt_show"></block>
@@ -4577,8 +4605,17 @@
       </value>
     </block>
 
-    <block type = "heatmaps_7">
-      <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
+    <block type="tight_layout">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">fig</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
     </block>
 
     <block type="matplotlib_plt_show"></block>
@@ -4656,22 +4693,40 @@
       <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:red'</field></shadow></value>
     </block>
 
-    <block type = "heatmaps_8">
-      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
-      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'time (s)'</field></shadow></value>
+    <block type="set_xlabel">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'time (s)'</field></shadow>
+      </value>
     </block>
 
-    <block type = "heatmaps_9">
-      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
-      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'exp', color=color</field></shadow></value>
+    <block type="set_ylabel">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'exp', color=color</field></shadow>
+      </value>
     </block>
 
-    <block type = "pcolor_plot">
-      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
-      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">t, data1, color=color</field></shadow></value>
+    <block type="ax_lst_plot">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+    </value>
+      <value name="NAME">
+        <shadow type="indata"><field name="indata1">t, data1, color=color</field></shadow>
+      </value>
     </block>
 
-    <block type = "pcolor_tick_params">
+    <block type = "tick_params">
       <value name="NUMBER">
         <block type="variables_get">
           <field name="VAR">ax1</field>
@@ -4706,17 +4761,29 @@
       <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:blue'</field></shadow></value>
     </block>
 
-    <block type = "heatmaps_9">
-      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
-      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'sin', color=color</field></shadow></value>
+    <block type="set_ylabel">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'sin', color=color</field></shadow>
+      </value>
     </block>
 
-    <block type = "pcolor_plot">
-      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
-      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">t, data2, color=color</field></shadow></value>
+    <block type="ax_lst_plot">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+    </value>
+      <value name="NAME">
+        <shadow type="indata"><field name="indata1">t, data2, color=color</field></shadow>
+      </value>
     </block>
 
-    <block type = "pcolor_tick_params">
+    <block type = "tick_params">
       <value name="NUMBER">
         <block type="variables_get">
           <field name="VAR">ax2</field>
@@ -4725,8 +4792,17 @@
       <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
     </block>
 
-    <block type = "heatmaps_7">
-      <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
+    <block type="tight_layout">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">fig</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
     </block>
 
     <block type="matplotlib_plt_show"></block>

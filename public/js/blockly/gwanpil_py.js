@@ -91,7 +91,7 @@ Blockly.Python['create_list_1'] = function (block) {
     return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
-Blockly.Python['heatmaps_1'] = function(block) {
+Blockly.Python['set_xticks'] = function(block) {
     var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
     var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
@@ -99,27 +99,11 @@ Blockly.Python['heatmaps_1'] = function(block) {
     return code;
   };
 
-  Blockly.Python['heatmaps_2'] = function(block) {
+  Blockly.Python['set_yticks'] = function(block) {
     var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
     var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = value_number + ".set_yticks(" + value_value+')\n';
-    return code;
-  };
-
-  Blockly.Python['heatmaps_3'] = function(block) {
-    var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
-    var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = value_number + ".set_xticklabels(" + value_value+')\n';
-    return code;
-  };
-
-  Blockly.Python['heatmaps_4'] = function(block) {
-    var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
-    var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = value_number + ".set_yticklabels(" + value_value+')\n';
     return code;
   };
 
@@ -130,23 +114,6 @@ Blockly.Python['heatmaps_1'] = function(block) {
 
     // TODO: Assemble Python into code variable.
     var code = value_value_0 + ".setp(" + value_value + ", "+value_value_2+")\n";
-    return code;
-  };
-
-  Blockly.Python['heatmaps_6'] = function(block) {
-    var name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
-
-    // TODO: Assemble Python into code variable.
-    var code = name + ".set_title("+value_value+")\n";
-    return code;
-  };
-
-  Blockly.Python['heatmaps_7'] = function(block) {
-    var name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-
-    // TODO: Assemble Python into code variable.
-    var code = name + ".tight_layout( )\n";
     return code;
   };
 
@@ -194,32 +161,8 @@ Blockly.Python['heatmaps_1'] = function(block) {
         // TODO: Change ORDER_NONE to the correct strength.
         return code;
       };
-
-      Blockly.Python['heatmaps_8'] = function(block) {
-        var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
-        var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
-        // TODO: Assemble Python into code variable.
-        var code = value_number + ".set_xlabel(" + value_value+')\n';
-        return code;
-      };
     
-      Blockly.Python['heatmaps_9'] = function(block) {
-        var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
-        var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
-        // TODO: Assemble Python into code variable.
-        var code = value_number + ".set_ylabel(" + value_value+')\n';
-        return code;
-      };
-
-      Blockly.Python['pcolor_plot'] = function(block) {
-        var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
-        var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
-        // TODO: Assemble Python into code variable.
-        var code = value_number + ".plot(" + value_value+')\n';
-        return code;
-      };
-    
-      Blockly.Python['pcolor_tick_params'] = function(block) {
+      Blockly.Python['tick_params'] = function(block) {
         var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);
         var value_number = Blockly.Python.valueToCode(block, 'NUMBER', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.

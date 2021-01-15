@@ -77,7 +77,7 @@ Blockly.JavaScript['gp'] = function (block) {
     return [code, Blockly.JavaScript.ORDER_ATOMIC];;
   };
 
-   Blockly.JavaScript['heatmaps_1'] = function(block) {
+   Blockly.JavaScript['set_xticks'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
     var value_value = Blockly.JavaScript.valueToCode(block, 'REAL_VALUE', Blockly.JavaScript.ORDER_ATOMIC);
     var value_number = Blockly.JavaScript.valueToCode(block, 'NUMBER', Blockly.JavaScript.ORDER_ATOMIC);
@@ -87,25 +87,7 @@ Blockly.JavaScript['gp'] = function (block) {
   };
 
 
-  Blockly.JavaScript['heatmaps_2'] = function(block) {
-    var dropdown_name = block.getFieldValue('NAME');
-    var value_value = Blockly.JavaScript.valueToCode(block, 'REAL_VALUE', Blockly.JavaScript.ORDER_ATOMIC);
-    var value_number = Blockly.JavaScript.valueToCode(block, 'NUMBER', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['heatmaps_3'] = function(block) {
-    var dropdown_name = block.getFieldValue('NAME');
-    var value_value = Blockly.JavaScript.valueToCode(block, 'REAL_VALUE', Blockly.JavaScript.ORDER_ATOMIC);
-    var value_number = Blockly.JavaScript.valueToCode(block, 'NUMBER', Blockly.JavaScript.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
-  };
-
-  Blockly.JavaScript['heatmaps_4'] = function(block) {
+  Blockly.JavaScript['set_yticks'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
     var value_value = Blockly.JavaScript.valueToCode(block, 'REAL_VALUE', Blockly.JavaScript.ORDER_ATOMIC);
     var value_number = Blockly.JavaScript.valueToCode(block, 'NUMBER', Blockly.JavaScript.ORDER_ATOMIC);
@@ -123,12 +105,6 @@ Blockly.JavaScript['gp'] = function (block) {
     return code;
   };
 
-  Blockly.JavaScript['heatmaps_6'] = function(block) {
-
-    // TODO: Assemble Python into code variable.
-    var code = '\n';
-    return code;
-  };
 
     /////////////////  Pcolor Demo
 
@@ -152,23 +128,8 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = '\n';
         return code;
       };
-
-      Blockly.JavaScript['heatmaps_8'] = function(block) {
-        var code = '\n';
-        return code;
-      };
     
-      Blockly.JavaScript['heatmaps_9'] = function(block) {
-        var code = '\n';
-        return code;
-      };
-
-      Blockly.JavaScript['pcolor_plot'] = function(block) {
-        var code = '\n';
-        return code;
-      };
-    
-      Blockly.JavaScript['pcolor_tick_params'] = function(block) {
+      Blockly.JavaScript['tick_params'] = function(block) {
         var code = '\n';
         return code;
       };

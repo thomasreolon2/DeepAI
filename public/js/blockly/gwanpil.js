@@ -164,10 +164,9 @@ Blockly.Blocks['gp'] = {
   
 
  
-  Blockly.Blocks['heatmaps_1'] = {
+  Blockly.Blocks['set_xticks'] = {
     init: function () {
         this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[set_xticks]");
         this.appendValueInput("NUMBER").setCheck(null);
         this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".set_xticks(");
         this.appendDummyInput().appendField(")");
@@ -180,44 +179,11 @@ Blockly.Blocks['gp'] = {
     }
   };
 
-  Blockly.Blocks['heatmaps_2'] = {
+  Blockly.Blocks['set_yticks'] = {
     init: function () {
         this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[set_yticks]");
         this.appendValueInput("NUMBER").setCheck(null);
         this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".set_yticks(");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setColour("%{BKY_VISUAL_HUE}");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['heatmaps_3'] = {
-    init: function () {
-        this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[set_xticklabel]");
-        this.appendValueInput("NUMBER").setCheck(null);
-        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".set_xticklabels(");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setColour("%{BKY_VISUAL_HUE}");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['heatmaps_4'] = {
-    init: function () {
-        this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[set_yticklabels]");
-        this.appendValueInput("NUMBER").setCheck(null);
-        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".set_yticklabels(");
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setColour("%{BKY_VISUAL_HUE}");
@@ -231,43 +197,12 @@ Blockly.Blocks['gp'] = {
   Blockly.Blocks['plt_setp'] = {
     init: function () {
         this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[setp]");
         this.appendValueInput("REAL_VALUE_0").setCheck(null);
         this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".setp(");
         this.appendDummyInput().appendField(", ");
         this.appendValueInput("REAL_VALUE_2").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
-        this.setColour("%{BKY_VISUAL_HUE}");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['heatmaps_6'] = {
-    init: function () {
-        this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[text]");
-        this.appendValueInput("NAME").setCheck(null);
-        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".set_title(");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setColour("%{BKY_VISUAL_HUE}");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['heatmaps_7'] = {
-    init: function () {
-        this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[tight_layout]");
-        this.appendValueInput("NAME").setCheck(null);
-        this.appendDummyInput().appendField(".tight_layout()");
         this.setColour("%{BKY_VISUAL_HUE}");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -331,58 +266,9 @@ Blockly.Blocks['gp'] = {
     }
   };
 
-  Blockly.Blocks['heatmaps_8'] = {
+  Blockly.Blocks['tick_params'] = {
     init: function () {
         this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[set_xlabel]");
-        this.appendValueInput("NUMBER").setCheck(null);
-        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".set_xlabel(");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setColour("%{BKY_VISUAL_HUE}");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['heatmaps_9'] = {
-    init: function () {
-        this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[set_ylabel]");
-        this.appendValueInput("NUMBER").setCheck(null);
-        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".set_ylabel(");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setColour("%{BKY_VISUAL_HUE}");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['pcolor_plot'] = {
-    init: function () {
-        this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[plot]");
-        this.appendValueInput("NUMBER").setCheck(null);
-        this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".plot(");
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setColour("%{BKY_VISUAL_HUE}");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['pcolor_tick_params'] = {
-    init: function () {
-        this.setStyle("variable_blocks");
-        this.appendDummyInput().appendField("[tick_params]");
         this.appendValueInput("NUMBER").setCheck(null);
         this.appendValueInput("REAL_VALUE").setCheck(null).appendField(".tick_params(");
         this.appendDummyInput().appendField(")");
