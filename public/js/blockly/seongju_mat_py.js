@@ -65,13 +65,6 @@ Blockly.Python['axs_grid'] = function(block) {
 };
 
 
-Blockly.Python['axs_cohere'] = function(block) {
-  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-  var value_val = Blockly.Python.valueToCode(block, 'val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = 'ax[' + value_name + '].cohere(' + value_val + ')';
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 
 Blockly.Python['fig_tight_layout'] = function(block) {

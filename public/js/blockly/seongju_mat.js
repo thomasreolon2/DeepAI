@@ -105,23 +105,6 @@ Blockly.Blocks['axs_grid'] = {
   }
 };
 
-Blockly.Blocks['axs_cohere'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("[ax[].cohere]");
-    this.appendValueInput("NAME")
-        .setCheck(null)
-        .appendField("좌표");
-        this.appendValueInput("val")
-        .setCheck(null)
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_VISUAL_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 
 Blockly.Blocks['fig_tight_layout'] = {
   init: function() {

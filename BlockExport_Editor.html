@@ -3586,19 +3586,19 @@
     
   
           <block type="many_variables">
+
             <value name="NUMBER">
               <shadow type="indata">
                 <field name="indata1">cxy, f</field>
               </shadow>
             </value>
+
             <value name="VALUE">
-              <block type="axs_cohere">
-                <value name="NAME">
-                  <shadow type="math_number">
-                    <field name="NUM">1</field>
-                  </shadow>
+              <block type="cohere">
+                <value name="VAR">
+                  
                 </value>
-                <value name="val">
+                <value name="INPUT">
                   <block type="Oper_garbage2">
                     <value name="A">
                       <block type="indata">
@@ -3613,6 +3613,7 @@
                   </block>
                 </value>
               </block>
+            </value>
           </block>
   
   
@@ -3631,7 +3632,18 @@
           </block>
   
   
-          <block type="fig_tight_layout"></block>
+          <block type="tight_layout">
+            <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">fig</field>
+              </block>
+            </value>
+            <value name="INPUT">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
   
           <block type="matplotlib_plt_show"></block>
 
@@ -4947,6 +4959,53 @@
             <shadow type="indata"><field name="indata1">'Rectangular box plot'</field></shadow>
           </value>
         </block>
+
+        <block type="yaxis_grid">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">True</field></shadow>
+          </value>
+        </block>
+
+        <block type="set_xlabel">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">'Three separate samples'</field></shadow>
+          </value>
+        </block>
+
+        <block type="set_ylabel">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">'Observed values'</field></shadow>
+          </value>
+        </block>
+
+        <label text="Some features of the histogram (hist) function"> </label>
+
+        <block type="hist">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">x, num_bins, density=True</field></shadow>
+          </value>
+        </block>
+        
 
       </category>
        <!-- ************************************************** ************************* *************************  -->

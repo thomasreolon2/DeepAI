@@ -192,5 +192,60 @@ Blockly.JavaScript['set_title'] = function (block) {
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = `${var_text1}.set_title(${var_text2})\n`;
+  return code;
+};
+
+//// boxplot
+Blockly.JavaScript['yaxis_grid'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.yaxis.grid(${var_text2})\n`;
+  return code;
+};
+
+//// set_xlabel
+Blockly.JavaScript['set_xlabel'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.set_xlabel(${var_text2})\n`;
+  return code;
+};
+
+
+//// set_ylabel
+Blockly.JavaScript['set_ylabel'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.set_ylabel(${var_text2})\n`;
+  return code;
+};
+
+//// hist
+Blockly.JavaScript['hist'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.hist(${var_text2})\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+//// cohere
+Blockly.JavaScript['cohere'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.cohere(${var_text2})\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+//// tight_layout
+Blockly.JavaScript['tight_layout'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.tight_layout(${var_text2})\n`;
+  return code;
 };

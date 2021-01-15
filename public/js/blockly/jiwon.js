@@ -346,24 +346,6 @@ Blockly.Blocks['subplots'] = {
 };
 
 
-// patch.set_facecolor
-Blockly.Blocks['set_facecolor'] = {
-    init: function() {
-        this.appendValueInput("VAR1")
-            .setCheck(null);
-        this.appendDummyInput()
-            .appendField(".set_facecolor(");
-        this.appendValueInput("VAR2")
-            .setCheck(null);
-        this.appendDummyInput()
-            .appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_VISUAL_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-    }
-};
 
 // shape
 Blockly.Blocks['shape'] = {
@@ -441,12 +423,149 @@ Blockly.Blocks['boxplot'] = {
 };
 
 // set_title
-Blockly.Blocks['set_yticklabels'] = {
+Blockly.Blocks['set_title'] = {
     init: function() {
         this.appendValueInput("VAR")
             .setCheck(null);
         this.appendDummyInput()
             .appendField(".set_title(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// patch.set_facecolor
+Blockly.Blocks['set_facecolor'] = {
+    init: function() {
+        this.appendValueInput("VAR1")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".set_facecolor(");
+        this.appendValueInput("VAR2")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// yaxis.grid
+Blockly.Blocks['yaxis_grid'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".yaxis.grid(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// set_xlabel
+Blockly.Blocks['set_xlabel'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".set_xlabel(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// set_ylabel
+Blockly.Blocks['set_ylabel'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".set_ylabel(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// set_ylabel
+Blockly.Blocks['hist'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".hist(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// set_ylabel
+Blockly.Blocks['cohere'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".cohere(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// tight_layout
+Blockly.Blocks['tight_layout'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".tight_layout(");
         this.appendValueInput("INPUT")
             .setCheck(null);
         this.appendDummyInput()
