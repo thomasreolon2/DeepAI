@@ -118,11 +118,14 @@ Blockly.Python['set_title2'] = function(block) {
 
 
 Blockly.Python['ax_stackplot'] = function(block) {
+  var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+
   var value_list_val = Blockly.Python.valueToCode(block, 'list_val', Blockly.Python.ORDER_ATOMIC);
   var value_dic_val = Blockly.Python.valueToCode(block, 'dic_val', Blockly.Python.ORDER_ATOMIC);
   var value_dic_key = Blockly.Python.valueToCode(block, 'dic_key', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'ax.stackplot(' + value_list_val + ',' + value_dic_val + ',labels = ' + value_dic_key + ')\n';
+  //var code = 'ax.stackplot(' + value_list_val + ',' + value_dic_val + ',labels = ' + value_dic_key + ')\n';
+  var code = `${variable_name}.stackplot(${value_list_val},${value_dic_val},labels=${value_dic_key})\n`;
   return code;
 };
 

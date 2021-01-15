@@ -204,11 +204,10 @@ Blockly.Blocks['set_title2'] = {
 
 Blockly.Blocks['ax_stackplot'] = {
     init: function() {
-        this.appendValueInput("VAR")
-            .setCheck(null)
-            .appendField(".stackplot")
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldVariable("ax"), "VAR")
+            .appendField(".stackplot");
         this.appendValueInput("list_val")
-            
             .setCheck(null)
             .appendField("리스트:");
         this.appendValueInput("dic_val")
@@ -217,7 +216,7 @@ Blockly.Blocks['ax_stackplot'] = {
         this.appendValueInput("dic_key")
             .setCheck(null)
             .appendField("딕셔너리 키: ");
-        //this.setInputsInline(true);
+        this.setInputsInline(false);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour("%{BKY_VISUAL_HUE}");

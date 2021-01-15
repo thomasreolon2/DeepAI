@@ -279,13 +279,4 @@ Blockly.Python['tight_layout'] = function (block) {
   return code;
 };
 
-//// stackplot
-Blockly.Python['stackplot'] = function (block) {
-  var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
-  var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${var_text1}.stackplot(${var_text2})\n`;
-  return code;
-};
-
 
