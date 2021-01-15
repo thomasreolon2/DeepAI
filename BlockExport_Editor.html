@@ -4204,9 +4204,14 @@
           </block>
 
           <block type="ax_legend">
+            <value name="list">
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+              </block>
+            </value>
             <value name="loc">
               <shadow type="indata">
-                <field name="indata1">upper left</field>
+                <field name="indata1">loc='upper left'</field>
               </shadow>
             </value>
           </block>

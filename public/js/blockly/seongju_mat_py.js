@@ -128,9 +128,10 @@ Blockly.Python['ax_stackplot'] = function(block) {
 
 
 Blockly.Python['ax_legend'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
   var value_loc = Blockly.Python.valueToCode(block, 'loc', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = "ax.legend(loc='" + value_loc + "')\n";
+  var code = value_list + ".legend(" + value_loc + ")\n";
   return code;
 };
 

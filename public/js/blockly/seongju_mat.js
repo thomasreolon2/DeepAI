@@ -224,9 +224,13 @@ Blockly.Blocks['ax_stackplot'] = {
 
 Blockly.Blocks['ax_legend'] = {
     init: function() {
+        this.appendValueInput("list")
+        .setCheck(null);
         this.appendValueInput("loc")
             .setCheck(null)
-            .appendField("[ax.legend] loc: ");
+            .appendField(".legend(");
+        this.appendDummyInput()
+            .appendField(")");    
         this.setInputsInline(true);
         this.setColour("%{BKY_VISUAL_HUE}");
         this.setPreviousStatement(true, null);
