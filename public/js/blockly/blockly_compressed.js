@@ -12122,7 +12122,7 @@ Blockly.Names.prototype.safeName_ = function (a) {
   return a;
 };
 Blockly.Names.equals = function (a, b) {
-  return a.toLowerCase() == b.toLowerCase();
+  return a == b;  // variabels_get 대소문자 구별가능 이전 코드는 lower 때려박음
 };
 Blockly.Procedures = {};
 Blockly.Procedures.NAME_TYPE = Blockly.PROCEDURE_CATEGORY_NAME;
