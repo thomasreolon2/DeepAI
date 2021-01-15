@@ -3770,7 +3770,6 @@
             </value>
           </block>
 
-
           <block type="many_variables">
             <value name="NUMBER">
               <block type="variables_get">
@@ -3864,8 +3863,6 @@
             </value>
           </block>
 
-          
-
           <block type="set_title">
             <value name="VAR">
               <block type = "va_sel">
@@ -3887,7 +3884,6 @@
               </block>
             </value>
           </block>
-
 
           <!-- 0,1 그래프 -->
           <block type="itdata">
@@ -3937,8 +3933,6 @@
               </block>
             </value>
           </block>
-
-<!-- 리스트 하나 추가 -->
 
           <block type = "create_list">
             <value name="list">
@@ -4001,7 +3995,6 @@
               </block>
             </value>
           </block>
-
 
           <!-- 1,0 그래프 -->
           <block type="itdata">
@@ -4101,9 +4094,6 @@
             </value>
           </block>
 
-
-
-
           <!-- 1,2 그래프 -->
           <block type="itdata">
             <value name="itdata1">
@@ -4152,7 +4142,6 @@
               </block>
             </value>
           </block>
-
         
           <block type="tight_layout">
             <value name="VAR">
@@ -4169,7 +4158,6 @@
   
           <block type="matplotlib_plt_show"></block>
 
-
           <label text="Stackplots"></label>
 
           <block type="numpy_library"></block>
@@ -4182,9 +4170,11 @@
             </value>
           </block>
 
-          <block type = "create_list_sj">
+          <block type = "create_list">
             <value name="list">
-              <field name="indata1">year</field>
+              <block type="variables_get">
+                <field name="VAR">year</field>
+              </block>
             </value>
             <value name="text">
               <shadow type="indata">
@@ -4193,11 +4183,11 @@
             </value>
           </block>
 
-          
-
-          <block type = "create_dict_1">
+          <block type = "create_dict">
             <value name="list">
-              <field name="indata1">population_by_continent</field>
+              <block type="variables_get">
+                <field name="VAR">population_by_continent</field>
+              </block>
             </value>
             <value name="text">
               <shadow type="indata">
@@ -4217,7 +4207,6 @@
                 <field name="VAR">year</field>
               </block>
             </value>
-
             <value name="dic_val">
               <block type ="dic_menu1_sj2">
                 <value name="dic1">
@@ -4257,7 +4246,6 @@
                 </value>
               </block>
             </value>
-
           </block>
 
           <block type="ax_legend">
@@ -4273,27 +4261,41 @@
             </value>
           </block>
 
-          <block type="set_title2">
-            <value name="row_col">
+          <block type="set_title">
+            <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+              </block>
+            </value>
+            <value name="INPUT">
               <shadow type="indata">
-                <field name="indata1">World population</field>
+                <field name="indata1">'World population'</field>
               </shadow>
             </value>
           </block>
 
-
-          <block type="axs_set_xlabel2">
-            <value name="val">
+          <block type="set_xlabel">
+            <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+              </block>
+            </value>
+            <value name="INPUT">
               <shadow type="indata">
-                <field name="indata1">Year</field>
+                <field name="indata1">'Year'</field>
               </shadow>
             </value>
           </block>
 
-          <block type="axs_set_ylabel2">
-            <value name="val">
+          <block type="set_ylabel">
+            <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+              </block>
+            </value>
+            <value name="INPUT">
               <shadow type="indata">
-                <field name="indata1">Number of people (millions)</field>
+                <field name="indata1">'Number of people (millions)'</field>
               </shadow>
             </value>
           </block>
