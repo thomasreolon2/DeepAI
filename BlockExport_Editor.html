@@ -4242,428 +4242,481 @@
       <!-- ************************************************** ************************* *************************  -->
     <!-- ***************************************  이미지 필드(Matplotlib)  ******************************************  -->
     <!-- ************************************************** ************************* *************************  -->
-      <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}">
-        <label text="Creating annotated heatmaps"></label>
-        <!--라이브러리-->
-        <block type="numpy_library"></block>
-        <block type="visualization_library_1"></block>
-        
-        <block type = "create_list_1">
-          <value name="list">
-            <field name="indata1">vegetables</field>
-          </value>
-          <value name="text">
-            <shadow type="indata">
-              <field name="indata1">"cucumber", "tomato", "lettuce", "asparagus","potato", "wheat", "barley"</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type = "create_list_2">
-          <value name="list">
-            <field name="indata1">vegetables</field>
-          </value>
-          <value name="text">
-            <shadow type="indata">
-              <field name="indata1">"Farmer Joe", "Upland Bros.", "Smith Gardening","Agrifun", "Organiculture", "BioGoods Ltd.", "Cornylee Corp."</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type = "create_np_array_1">
-          <value name="text">
-            <shadow type="indata">
-              <field name="indata1">[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0],
-                [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0],
-                [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0],
-                [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0],
-                [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0],
-                [1.3, 1.2, 0.0, 0.0, 0.0, 3.2, 5.1],
-                [0.1, 2.0, 0.0, 1.4, 0.0, 1.9, 6.3]</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type = "many_variables">
-          <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax</field></shadow></value>
-          <value name="VALUE"><block type = "pie_subplots"></block></value>
-        </block>
-
-        <block type = "many_variables">
-          <value name="NUMBER"><shadow type="indata"><field name="indata1">im</field></shadow></value>
-          <value name="VALUE"><block type = "pie_subplots_1">
-            <value name="name1">
-              <shadow type="indata">
-                <field name="indata1">ax</field>
-              </shadow>
-            </value>
-            <value name="name2">
-              <shadow type="indata">
-                <field name="indata1">harvest</field>
-              </shadow>
-            </value>
-          </block></value>
-        </block>
-
-        <block type = "heatmaps_1">
-          <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
-          <value name="REAL_VALUE">
-            <block type="numpy_numerical_ranges">
-              <value name="numpy_Numerical_ranges_val"> 
-                <block type="text_length">
-                  <value name="VALUE">
-                    <shadow type="indata">
-                      <field name="indata1">farmers</field>
-                    </shadow>
-                  </value>
-                </block>
-              </value>  
-            </block> 
-          </value>
-        </block>
-
-        <block type = "heatmaps_2">
-          <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
-          <value name="REAL_VALUE">
-            <block type="numpy_numerical_ranges">
-              <value name="numpy_Numerical_ranges_val"> 
-                <block type="text_length">
-                  <value name="VALUE">
-                    <shadow type="indata">
-                      <field name="indata1">vegetables</field>
-                    </shadow>
-                  </value>
-                </block>
-              </value>  
-            </block> 
-          </value>
-        </block>
-
-        <block type = "heatmaps_3">
-          <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
-          <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">farmers</field></shadow></value>
-        </block>
-
-        <block type = "heatmaps_4">
-          <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
-          <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">vegetables</field></shadow></value>
-        </block>
-
-        <block type = "heatmaps_5">
-          <value name="REAL_VALUE">
-            <block type = "pie_subplots_2">
-              <value name="name1">
-                <shadow type="indata">
-                  <field name="indata1">ax</field>
-                </shadow>
-              </value>
-            </block>
-          </value>
-          <value name="REAL_VALUE_2"><shadow type="indata"><field name="indata1">45</field></shadow></value>
-          <value name="REAL_VALUE_3"><shadow type="indata"><field name="indata1">"right"</field></shadow></value>
-          <value name="REAL_VALUE_4"><shadow type="indata"><field name="indata1">"anchor"</field></shadow></value>
-        </block>
-
-        <!-- for 문 1 -->
-      <block type="py_for1">
-        <value name="item">
-          <block type="variables_get">
-            <field name="VAR">i</field>
-          </block>
-        </value>
-        <value name="list">
-          <block type="text_length">
-            <value name="VALUE">
-              <shadow type="indata">
-                <field name="indata1">vegetables</field>
-              </shadow>
-            </value>
-          </block>
-        </value>
-      </block>
-
-       <!-- for 문 1 -->
-       <block type="py_for1">
-        <value name="item">
-          <block type="variables_get">
-            <field name="VAR">i</field>
-          </block>
-        </value>
-        <value name="list">
-          <block type="text_length">
-            <value name="VALUE">
-              <shadow type="indata">
-                <field name="indata1">farmers</field>
-              </shadow>
-            </value>
-          </block>
-        </value>
-      </block>
-
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">text</field></shadow></value>
-        <value name="VALUE">
-          <block type = "pie_subplots_3">
-            <value name="name1">
-              <shadow type="indata">
-                <field name="indata1">ax</field>
-              </shadow>
-            </value>
-            <value name="name2">
-              <shadow type="indata">
-                <field name="indata1">i</field>
-              </shadow>
-            </value>
-            <value name="name3">
-              <shadow type="indata">
-                <field name="indata1">j</field>
-              </shadow>
-            </value>
-            <value name="name4">
-              <shadow type="indata">
-                <field name="indata1">harvest</field>
-              </shadow>
-            </value>
-            <value name="name5">
-              <shadow type="indata">
-                <field name="indata1">"center"</field>
-              </shadow>
-            </value>
-            <value name="name6">
-              <shadow type="indata">
-                <field name="indata1">"center"</field>
-              </shadow>
-            </value>
-            <value name="name7">
-              <shadow type="indata">
-                <field name="indata1">"w"</field>
-              </shadow>
-            </value>
-          </block>
-        </value>
-      </block>
-
-      <block type = "heatmaps_6">
-        <value name="NAME"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">"Harvest of local farmers (in tons/year)"</field></shadow></value>
-      </block>
-
-      <block type = "heatmaps_7">
-        <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
-      </block>
-
-      <block type="matplotlib_plt_show"></block>
-      
-
-       
-
-
+    <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}">
       <label text="Creating annotated heatmaps"></label>
-
-      <block type="numpy_library"></block>
-      <block type="visualization_library_2"></block>
-
-      <block type="numpy_random_generator_1">
-        <value name="numpy_Random_generator_val"> 
-          <shadow type="indata">
-            <field name="indata1">19680801</field>
-          </shadow>
-        </value>  
-      </block> 
-
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">Z</field></shadow></value>
-        <value name="VALUE">
-          <block type="numpy_random_sample">
-            <value name="numpy_Random_sample_val"> 
-              <shadow type="indata">
-                <field name="indata1">6, 10</field>
-              </shadow>
-            </value>  
-          </block> 
-        </value>
-      </block>
-
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, (ax0, ax1)</field></shadow></value>
-        <value name="VALUE">
-          <block type = "pie_subplots_4">
-            <value name="name">
-              <shadow type="indata">
-                <field name="indata1">2, 1</field>
-              </shadow>
-            </value>
-          </block>
-        </value>
-      </block>
-
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">c</field></shadow></value>
-        <value name="VALUE">
-          <block type = "pie_subplots_5">
-            <value name="name1">
-              <shadow type="indata">
-                <field name="indata1">ax0</field>
-              </shadow>
-            </value>
-            <value name="name2">
-              <shadow type="indata">
-                <field name="indata1">Z</field>
-              </shadow>
-            </value>
-          </block>
-        </value>
-      </block>
-
-      <block type = "pcolor_set_title">
-        <value name="title">
-          <shadow type="indata">
-            <field name="indata1">'default: no edges'</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">c</field></shadow></value>
-        <value name="VALUE">
-          <block type = "pie_subplots_5">
-            <value name="name1">
-              <shadow type="indata">
-                <field name="indata1">ax1</field>
-              </shadow>
-            </value>
-            <value name="name2">
-              <shadow type="indata">
-                <field name="indata1">Z, edgecolors='k', linewidths=4</field>
-              </shadow>
-            </value>
-          </block>
-        </value>
-      </block>
-
-      <block type = "pcolor_set_title_1">
-        <value name="title">
-          <shadow type="indata">
-            <field name="indata1">'thick edges'</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "heatmaps_7">
-        <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
-      </block>
-
-      <block type="matplotlib_plt_show"></block>
-
-      <!--나중에 서브플롯으로 옮길것-->
-      <label text="Plots with different scales"></label>
+      <!--라이브러리-->
       <block type="numpy_library"></block>
       <block type="visualization_library_1"></block>
+      
+      <block type = "create_list_1">
+        <value name="list">
+          <field name="indata1">vegetables</field>
+        </value>
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">"cucumber", "tomato", "lettuce", "asparagus","potato", "wheat", "barley"</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "create_list_2">
+        <value name="list">
+          <field name="indata1">vegetables</field>
+        </value>
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">"Farmer Joe", "Upland Bros.", "Smith Gardening","Agrifun", "Organiculture", "BioGoods Ltd.", "Cornylee Corp."</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "create_np_array_1">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0],
+              [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0],
+              [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0],
+              [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0],
+              [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0],
+              [1.3, 1.2, 0.0, 0.0, 0.0, 3.2, 5.1],
+              [0.1, 2.0, 0.0, 1.4, 0.0, 1.9, 6.3]</field>
+          </shadow>
+        </value>
+      </block>
 
       <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">t</field></shadow></value>
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax</field></shadow></value>
         <value name="VALUE">
+          <block type = "pie_subplots">
+            <value name="name">
+              <block type="variables_get">
+                <field name="VAR">plt</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+
+
+      <block type = "many_variables">
+        <value name="NUMBER">
+          <block type="variables_get">
+            <field name="VAR">im</field>
+          </block>
+        </value>
+        <value name="VALUE"><block type = "pie_subplots_1">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">harvest</field>
+            </shadow>
+          </value>
+        </block></value>
+      </block>
+
+      <block type = "heatmaps_1">
+        <value name="NUMBER"><block type="variables_get">
+          <field name="VAR">ax</field>
+        </block></value>
+        <value name="REAL_VALUE">
           <block type="numpy_numerical_ranges">
             <value name="numpy_Numerical_ranges_val"> 
-              <shadow type="indata"><field name="indata1">0.01, 10.0, 0.01</field></shadow>
+              <block type="text_length">
+                <value name="VALUE">
+                  <shadow type="indata">
+                    <field name="indata1">farmers</field>
+                  </shadow>
+                </value>
+              </block>
             </value>  
           </block> 
         </value>
       </block>
 
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">data1</field></shadow></value>
-        <value name="VALUE">
-          <block type="numpy_exp">
-            <value name="numpy_exp_num"> 
-              <shadow type="indata"><field name="indata1">t</field></shadow>
-            </value>
+      <block type = "heatmaps_2">
+        <value name="NUMBER">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
           </block>
         </value>
-      </block>
-
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">data2</field></shadow></value>
-        <value name="VALUE">
-          <block type="numpy_mathematical_functions">
-            <value name="numpy_Mathematical functions_val"> 
-              <shadow type="indata"><field name="indata1">2 * np.pi * t</field></shadow>
-            </value>   
+        <value name="REAL_VALUE">
+          <block type="numpy_numerical_ranges">
+            <value name="numpy_Numerical_ranges_val"> 
+              <block type="text_length">
+                <value name="VALUE">
+                  <shadow type="indata">
+                    <field name="indata1">vegetables</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>  
           </block> 
         </value>
       </block>
-      
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax1</field></shadow></value>
-        <value name="VALUE"><block type = "pie_subplots"></block></value>
+
+      <block type = "heatmaps_3">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">farmers</field></shadow></value>
       </block>
 
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">color</field></shadow></value>
-        <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:red'</field></shadow></value>
+      <block type = "heatmaps_4">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
+        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">vegetables</field></shadow></value>
       </block>
 
-      <block type = "heatmaps_8">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'time (s)'</field></shadow></value>
-      </block>
-
-      <block type = "heatmaps_9">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'exp', color=color</field></shadow></value>
-      </block>
-
-      <block type = "pcolor_plot">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">t, data1, color=color</field></shadow></value>
-      </block>
-
-      <block type = "pcolor_tick_params">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
-      </block>
-
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
-        <value name="VALUE">
-          <block type = "twinx">
+      <block type = "plt_setp">
+        <value name="REAL_VALUE_0">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="REAL_VALUE">
+          <block type = "pie_subplots_2">
             <value name="name1">
-              <shadow type="indata">
-                <field name="indata1">ax1</field>
-              </shadow>
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+              </block>
             </value>
           </block>
         </value>
-      </block>
-      
-      <block type = "many_variables">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">color</field></shadow></value>
-        <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:blue'</field></shadow></value>
+        <value name="REAL_VALUE_2"><shadow type="indata"><field name="indata1">rotation=45, ha="right", rotation_mode="anchor"</field></shadow></value>
       </block>
 
-      <block type = "heatmaps_9">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'sin', color=color</field></shadow></value>
-      </block>
+      <!-- for 문 1 -->
+    <block type="py_for1">
+      <value name="item">
+        <block type="variables_get">
+          <field name="VAR">i</field>
+        </block>
+      </value>
+      <value name="list">
+        <block type="text_length">
+          <value name="VALUE">
+            <shadow type="indata">
+              <field name="indata1">vegetables</field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
 
-      <block type = "pcolor_plot">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">t, data2, color=color</field></shadow></value>
-      </block>
+     <!-- for 문 1 -->
+     <block type="py_for1">
+      <value name="item">
+        <block type="variables_get">
+          <field name="VAR">j</field>
+        </block>
+      </value>
+      <value name="list">
+        <block type="text_length">
+          <value name="VALUE">
+            <shadow type="indata">
+              <field name="indata1">farmers</field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
 
-      <block type = "pcolor_tick_params">
-        <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
-        <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
-      </block>
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">text</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type = "pie_subplots_3">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">j, i, harvest[i, j], ha="center", va="center", color="w"</field>
+            </shadow>
+          </value>  
+        </block>
+      </value>
+    </block>
 
-      <block type = "heatmaps_7">
-        <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
-      </block>
+    <block type = "heatmaps_6">
+      <value name="NAME"><shadow type="indata"><field name="indata1">ax</field></shadow></value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">"Harvest of local farmers (in tons/year)"</field></shadow></value>
+    </block>
 
-      <block type="matplotlib_plt_show"></block>
+    <block type = "heatmaps_7">
+      <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
+    </block>
+
+    <block type="matplotlib_plt_show"></block>
+    
+
+     
 
 
-      </category>
+    <label text="Creating annotated heatmaps"></label>
+
+    <block type="numpy_library"></block>
+    <block type="visualization_library_2"></block>
+
+    <block type="numpy_random_generator_1">
+      <value name="numpy_Random_generator_val"> 
+        <shadow type="indata">
+          <field name="indata1">19680801</field>
+        </shadow>
+      </value>  
+    </block> 
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">z</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_random_sample">
+          <value name="numpy_Random_sample_val"> 
+            <shadow type="indata">
+              <field name="indata1">6, 10</field>
+            </shadow>
+          </value>  
+        </block> 
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, (ax0, ax1)</field></shadow></value>
+      <value name="VALUE">
+        <block type = "pie_subplots_4">
+          <value name="name">
+            <shadow type="indata">
+              <field name="indata1">2, 1</field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">c</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type = "pie_pcolor">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax0</field>
+            </block>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">z</field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "pcolor_set_title">
+      <value name="title">
+        <shadow type="indata">
+          <field name="indata1">'default: no edges'</field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">c</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type = "pie_pcolor">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">z, edgecolors='k', linewidths=4</field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "pcolor_set_title_1">
+      <value name="title">
+        <shadow type="indata">
+          <field name="indata1">'thick edges'</field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "heatmaps_7">
+      <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
+    </block>
+
+    <block type="matplotlib_plt_show"></block>
+
+    <!--나중에 서브플롯으로 옮길것-->
+    <label text="Plots with different scales"></label>
+    <block type="numpy_library"></block>
+    <block type="visualization_library_1"></block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">t</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_numerical_ranges">
+          <value name="numpy_Numerical_ranges_val"> 
+            <shadow type="indata"><field name="indata1">0.01, 10.0, 0.01</field></shadow>
+          </value>  
+        </block> 
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">data1</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_exp">
+          <value name="numpy_exp_num"> 
+            <shadow type="indata"><field name="indata1">t</field></shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">data2</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_mathematical_functions">
+          <value name="numpy_Mathematical functions_val"> 
+            <shadow type="indata"><field name="indata1">2 * np.pi * t</field></shadow>
+          </value>   
+        </block> 
+      </value>
+    </block>
+    
+    <block type = "many_variables">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax1</field></shadow></value>
+      <value name="VALUE">
+        <block type = "pie_subplots">
+          <value name="name">
+            <block type="variables_get">
+              <field name="VAR">plt</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">color</field>
+        </block>
+      </value>
+      <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:red'</field></shadow></value>
+    </block>
+
+    <block type = "heatmaps_8">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'time (s)'</field></shadow></value>
+    </block>
+
+    <block type = "heatmaps_9">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'exp', color=color</field></shadow></value>
+    </block>
+
+    <block type = "pcolor_plot">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax1</field></shadow></value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">t, data1, color=color</field></shadow></value>
+    </block>
+
+    <block type = "pcolor_tick_params">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type = "twinx">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">color</field>
+        </block>
+      </value>
+      <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:blue'</field></shadow></value>
+    </block>
+
+    <block type = "heatmaps_9">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">'sin', color=color</field></shadow></value>
+    </block>
+
+    <block type = "pcolor_plot">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">ax2</field></shadow></value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">t, data2, color=color</field></shadow></value>
+    </block>
+
+    <block type = "pcolor_tick_params">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+      </value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
+    </block>
+
+    <block type = "heatmaps_7">
+      <value name="NAME"><shadow type="indata"><field name="indata1">fig</field></shadow></value>
+    </block>
+
+    <block type="matplotlib_plt_show"></block>
+
+
+    </category>
        <!-- ************************************************** ************************* *************************  -->
     <!-- ***************************************  서브플롯형(Matplotlib)  ******************************************  -->
     <!-- ************************************************** ************************* *************************  -->
