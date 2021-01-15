@@ -4915,7 +4915,7 @@
     <!-- ************************************************** ************************* *************************  -->
       <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}">
         <label text="Zoom region inset axes"></label>
-        <!-- Zoom region inset axes (지원) -->
+        <!-- Zoom region inset axes -->
         <block type="numpy_library"></block>
         <block type="cbook_import"></block>
 
@@ -5390,18 +5390,177 @@
             </block>
           </value>
         </block>
-        
-        <block type="hist">
+
+        <block type="itdata">
+          <value name="itdata1">
+            <block type="numpy_random_generator">
+              <value name="numpy_Random_generator_val"> 
+                <shadow type="indata">
+                  <field name="indata1">19680801</field>
+                </shadow>
+              </value>  
+            </block> 
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">mu</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">100</field></shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">sigma</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">15</field></shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">x</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">mu + sigma * np.random.randn(437)</field></shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">num_bins</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">50</field></shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <shadow type="indata"><field name="indata1">fig, ax</field></shadow>
+          </value>
+          <value name="VALUE">
+            <block type="subplots">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="VAR2">
+                <shadow type="indata">
+                  <field name="indata1"></field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+        <!-- 지원 -->
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <shadow type="indata"><field name="indata1">n, bins, patches</field></shadow>
+          </value>
+          <value name="VALUE">
+            <block type="hist">
+              <value name="VAR">
+                <block type="variables_get">
+                  <field name="VAR">ax</field>
+                </block>
+              </value>
+              <value name="INPUT">
+                <shadow type="indata"><field name="indata1">x, num_bins, density=True</field></shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <shadow type="indata"><field name="indata1">y</field></shadow>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">((1 / (np.sqrt(2 * np.pi) * sigma)) *
+              np.exp(-0.5 * (1 / sigma * (bins - mu))**2))</field></shadow>
+          </value>
+        </block>
+
+        <block type="ax_lst_plot">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="NAME">
+            <shadow type="indata"><field name="indata1">bins, y, '--'</field></shadow>
+          </value>
+        </block>
+
+        <block type="set_xlabel">
           <value name="VAR">
             <block type="variables_get">
               <field name="VAR">ax</field>
             </block>
           </value>
           <value name="INPUT">
-            <shadow type="indata"><field name="indata1">x, num_bins, density=True</field></shadow>
+            <shadow type="indata">
+              <field name="indata1">'Smart'</field>
+            </shadow>
+          </value>
+        </block>
+  
+        <block type="set_ylabel">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1">'Probability density'</field>
+            </shadow>
           </value>
         </block>
         
+        <block type="set_title">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1">'Histogram of IQ: $\mu=100$, $\sigma=15$'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="tight_layout">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">fig</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="matplotlib_plt_show"></block>
+
 
       </category>
        <!-- ************************************************** ************************* *************************  -->
