@@ -3,7 +3,7 @@ Blockly.Blocks['np_pi'] = {
     this.appendDummyInput()
         .appendField("pi값");
     this.setInputsInline(true);
-    this.setColour("%{BKY_VISUAL_HUE}");
+    this.setColour("%{BKY_NUMPY_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
  this.setOutput(true, null);
@@ -88,24 +88,25 @@ Blockly.Blocks['axs_set_ylabel'] = {
 };
 
 
-Blockly.Blocks['axs_grid'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("[ax[].grid]");
-    this.appendValueInput("NAME")
-        .setCheck(null)
-        .appendField("좌표");
-        this.appendValueInput("val")
-        .setCheck(null)
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_VISUAL_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
+Blockly.Blocks['axs_grid'] = {
+    init: function() {
+      this.appendValueInput("NAME")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(".grid(");
+      this.appendValueInput("val")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 Blockly.Blocks['fig_tight_layout'] = {
   init: function() {

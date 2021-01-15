@@ -143,24 +143,6 @@ Blockly.Python['set_xticks'] = function(block) {
         // TODO: Change ORDER_NONE to the correct strength.
         return code + "\n";
       };
-
-      Blockly.Python['pcolor_set_title'] = function(block) {
-        var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-        var value_name1 = Blockly.Python.valueToCode(block, 'title', Blockly.Python.ORDER_ATOMIC);
-        // TODO: Assemble Python into code variable.
-        var code = variable_list + ".set_title(" + value_name1 + ")\n";
-        // TODO: Change ORDER_NONE to the correct strength.
-        return code;
-      };
-
-      Blockly.Python['pcolor_set_title_1'] = function(block) {
-        var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-        var value_name1 = Blockly.Python.valueToCode(block, 'title', Blockly.Python.ORDER_ATOMIC);
-        // TODO: Assemble Python into code variable.
-        var code = variable_list + ".set_title(" + value_name1 + ")\n";
-        // TODO: Change ORDER_NONE to the correct strength.
-        return code;
-      };
     
       Blockly.Python['tick_params'] = function(block) {
         var value_value = Blockly.Python.valueToCode(block, 'REAL_VALUE', Blockly.Python.ORDER_ATOMIC);

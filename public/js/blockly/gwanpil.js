@@ -230,42 +230,6 @@ Blockly.Blocks['gp'] = {
     }
   };
 
-  Blockly.Blocks['pcolor_set_title'] = {
-    init: function() { 
-      this.appendDummyInput()
-          .appendField("[set_title]")
-          .appendField(new Blockly.FieldVariable("ax0"), "list")
-          .appendField(".set_title(");
-      this.appendValueInput("title")
-          .setCheck(null); 
-      this.appendDummyInput().appendField(" )");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(pandas_color);
-   this.setTooltip(""); 
-   this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Blocks['pcolor_set_title_1'] = {
-    init: function() { 
-      this.appendDummyInput()
-          .appendField("[set_title]")
-          .appendField(new Blockly.FieldVariable("ax1"), "list")
-          .appendField(".set_title(");
-      this.appendValueInput("title")
-          .setCheck(null); 
-      this.appendDummyInput().appendField(" )");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(pandas_color);
-   this.setTooltip(""); 
-   this.setHelpUrl("");
-    }
-  };
-
   Blockly.Blocks['tick_params'] = {
     init: function () {
         this.setStyle("variable_blocks");

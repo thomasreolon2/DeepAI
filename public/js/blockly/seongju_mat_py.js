@@ -60,7 +60,7 @@ Blockly.Python['axs_grid'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   var value_val = Blockly.Python.valueToCode(block, 'val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = 'ax[' + value_name + '].grid(' + value_val + ')\n';
+  var code = value_name + '.grid(' + value_val + ')\n';
   return code;
 };
 

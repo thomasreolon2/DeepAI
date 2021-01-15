@@ -114,20 +114,6 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = '\n';
         return code;
       };
-
-      Blockly.JavaScript['pcolor_set_title'] = function(block) {
-
-        // TODO: Assemble Python into code variable.
-        var code = '\n';
-        return code;
-      };
-
-      Blockly.JavaScript['pcolor_set_title_1'] = function(block) {
-
-        // TODO: Assemble Python into code variable.
-        var code = '\n';
-        return code;
-      };
     
       Blockly.JavaScript['tick_params'] = function(block) {
         var code = '\n';
