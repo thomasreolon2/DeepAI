@@ -1319,7 +1319,7 @@
 
 
       <label text="리스트"></label>
-
+      <!-- [L1] 리스트 생성 -->
       <block type = "create_list">
         <value name="list">
           <block type="variables_get">
@@ -1333,7 +1333,7 @@
         </value>
       </block>
 
-      <!-- 리스트 삽입 -->
+      <!-- [L2] 리스트 삽입 -->
       
       <block type="list_insert">
         <value name="list">
@@ -4832,7 +4832,9 @@
           </block>
       </category>
 
-
+ <!-- ************************************************** ************************* *************************  -->
+    <!-- ***************************************  통계형 (Matplotlib)  ******************************************  -->
+    <!-- ************************************************** ************************* *************************  -->
       <category name="통계형" colour="%{BKY_VISUAL_HUE}">
         <block type="numpy_library"></block>
         <block type="cbook_import"></block>
@@ -4848,8 +4850,44 @@
             </block> 
           </value>
         </block>
+        
+        <block type="many_variables">
+          <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">all_data</field>
+              </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">[np.random.normal(0, std, size=100) for std in range(1, 4)]</field></shadow>
+          </value>
+        </block>
+        
+        <block type = "create_list">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">labels</field>
+            </block>
+          </value>  
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">'x1', 'x2', 'x3'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <shadow type="indata"><field name="indata1">fig, (ax1, ax2)</field></shadow>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">plt.subplots(nrows=1, ncols=2, figsize=(9, 4))</field></shadow>
+          </value>
+        </block>
 
       </category>
+       <!-- ************************************************** ************************* *************************  -->
+    <!-- ***************************************  파이형(Matplotlib)  ******************************************  -->
+    <!-- ************************************************** ************************* *************************  -->
       <category name="파이형" colour="%{BKY_VISUAL_HUE}">
 
         <label text="Basic pie chart"></label>

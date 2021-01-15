@@ -120,3 +120,13 @@ Blockly.JavaScript['subplots'] = function (block) {
   var code = `${var_text1}.subplots(${var_text2})\n`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+
+//// subplot
+Blockly.JavaScript['set_facecolor'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'VAR2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text1}.set_facecolor(${var_text2})\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
