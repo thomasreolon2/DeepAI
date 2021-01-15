@@ -116,14 +116,6 @@ Blockly.Python['scatter'] = function(block) {
 };
 
 
-Blockly.Python['set_title'] = function(block) {
-  var value_row_col = Blockly.Python.valueToCode(block, 'row_col', Blockly.Python.ORDER_ATOMIC);
-  var value_val_x = Blockly.Python.valueToCode(block, 'val_x', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = 'axs[' + value_row_col + '].set_title(' + value_val_x + ')\n';
-  return code;
-};
-
 Blockly.Python['set_title2'] = function(block) {
   var value_row_col = Blockly.Python.valueToCode(block, 'row_col', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.

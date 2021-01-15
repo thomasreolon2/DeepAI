@@ -92,7 +92,9 @@ Blockly.JavaScript['set_inset_axes'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
+// 드롭다운 버전
 // set_xlim_ylim
+/*
 Blockly.JavaScript['set_xlim_ylim'] = function (block) {
   var var_text = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_drop = block.getFieldValue('DROP');
@@ -100,6 +102,23 @@ Blockly.JavaScript['set_xlim_ylim'] = function (block) {
 
   // TODO: Assemble JavaScript into code variable.
   var code = `${var_text}.${dropdown_drop}(${input_text})\n`;
+  return code;
+};
+*/
+
+// set_xlim, set_ylim
+Blockly.JavaScript['set_xlim'] = function (block) {
+  var var_text = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text}.set_xlim(${input_text})\n`;
+  return code;
+};
+Blockly.JavaScript['set_ylim'] = function (block) {
+  var var_text = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text}.set_ylim(${input_text})\n`;
   return code;
 };
 
@@ -118,7 +137,7 @@ Blockly.JavaScript['subplots'] = function (block) {
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'VAR2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = `${var_text1}.subplots(${var_text2})\n`;
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
 
@@ -126,7 +145,52 @@ Blockly.JavaScript['subplots'] = function (block) {
 Blockly.JavaScript['set_facecolor'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'VAR2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = `${var_text1}.set_facecolor(${var_text2})\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+//// set_facecolor
+Blockly.JavaScript['shape'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+//// set_xticklabels
+Blockly.JavaScript['set_xticklabels'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.set_xticklabels(${var_text2})\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+
+//// set_yticklabels
+Blockly.JavaScript['set_yticklabels'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.set_yticklabels(${var_text2})\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+//// boxplot
+Blockly.JavaScript['boxplot'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.boxplot(${var_text2})\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+//// set_title
+Blockly.JavaScript['set_title'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${var_text1}.set_title(${var_text2})\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

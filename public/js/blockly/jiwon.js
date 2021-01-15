@@ -244,7 +244,8 @@ Blockly.Blocks['set_inset_axes'] = {
     },
 };
 
-// set_xlim_ylim
+// set_xlim_ylim 드롭다운 버전
+/*
 Blockly.Blocks['set_xlim_ylim'] = {
     init: function() {
         this.appendValueInput("VAR")
@@ -263,6 +264,45 @@ Blockly.Blocks['set_xlim_ylim'] = {
     this.setTooltip("");
     this.setHelpUrl("");
     }
+};
+*/
+
+Blockly.Blocks['set_xlim'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".set_xlim(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    },
+};
+
+Blockly.Blocks['set_ylim'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".set_ylim(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    },
 };
 
 // indicate_inset_zoom
@@ -319,6 +359,101 @@ Blockly.Blocks['set_facecolor'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// shape
+Blockly.Blocks['shape'] = {
+    init: function() {
+        this.appendValueInput("VAR1")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".shape");   
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+
+// set_xticklabels
+Blockly.Blocks['set_xticklabels'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".set_xticklabels(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// set_xticklabels
+Blockly.Blocks['set_yticklabels'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".set_yticklabels(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// boxplot
+Blockly.Blocks['boxplot'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".boxplot(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// set_title
+Blockly.Blocks['set_yticklabels'] = {
+    init: function() {
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".set_title(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour("%{BKY_VISUAL_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");

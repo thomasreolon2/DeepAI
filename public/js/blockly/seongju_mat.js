@@ -204,23 +204,6 @@ Blockly.Blocks['scatter'] = {
 };
 
 
-Blockly.Blocks['set_title'] = {
-  init: function() {
-    this.appendValueInput("row_col")
-        .setCheck(null)
-        .appendField("axs.set_title 좌표:");
-    this.appendValueInput("val_x")
-        .setCheck(null)
-        .appendField(" title명:");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_VISUAL_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 Blockly.Blocks['set_title2'] = {
     init: function() {
       this.appendValueInput("row_col")

@@ -4751,9 +4751,17 @@
           </value>
         </block>
 
-        <block type = "many_variables">
+        <block type="many_variables">
           <value name="NUMBER"><shadow type="indata"><field name="indata1">ny, nx</field></shadow></value>
-          <value name="VALUE"><shadow type="indata"><field name="indata1">Z.shape</field></shadow></value>
+          <value name="VALUE">
+            <block type="shape">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">Z</field>
+                </block>
+              </value>
+            </block>
+          </value>
         </block>
 
         <block type = "many_variables">
@@ -4807,7 +4815,7 @@
           <value name="VALUE"><shadow type="indata"><field name="indata1">-1.5, -0.9, -2.5, -1.9</field></shadow></value>
         </block>
 
-        <block type="set_xlim_ylim">
+        <block type="set_xlim">
           <value name="VAR">
             <block type="variables_get">
               <field name="VAR">axins</field>
@@ -4815,27 +4823,60 @@
           </value>
             
           <value name="INPUT">
-            <shadow type="indata"><field name="indata1">y1, y2</field></shadow>
+            <shadow type="indata"><field name="indata1">x1, x2</field></shadow>
           </value>
         </block>
 
-          <block type="indicate_inset_zoom">
-            <value name="VAR1">
-              <block type="variables_get">
-                <field name="VAR">ax</field>
-              </block>
-            </value>
-            <value name="VAR2">
-              <block type="variables_get">
-                <field name="VAR">axins</field>
-              </block>
-            </value>
-          </block>
+        <block type="set_ylim">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">y1, y2</field></shadow>
+          </value>
+        </block>
+        
+        <block type="set_xticklabels">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">''</field></shadow>
+          </value>
+        </block>
+
+        <block type="set_yticklabels">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">''</field></shadow>
+          </value>
+        </block>
+
+        <block type="indicate_inset_zoom">
+          <value name="VAR1">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="VAR2">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
+          </value>
+        </block>
       </category>
 
- <!-- ************************************************** ************************* *************************  -->
-    <!-- ***************************************  통계형 (Matplotlib)  ******************************************  -->
-    <!-- ************************************************** ************************* *************************  -->
+  <!-- ************************************************** ************************* *************************  -->
+  <!-- ***************************************  통계형 (Matplotlib)  ******************************************  -->
+  <!-- ************************************************** ************************* *************************  -->
       <category name="통계형" colour="%{BKY_VISUAL_HUE}">
         <block type="numpy_library"></block>
         <block type="cbook_import"></block>
@@ -4882,6 +4923,28 @@
           </value>
           <value name="VALUE">
             <shadow type="indata"><field name="indata1">plt.subplots(nrows=1, ncols=2, figsize=(9, 4))</field></shadow>
+          </value>
+        </block>
+        
+        <block type="boxplot">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">all_data, vert=True, patch_artist=True, labels=labels</field></shadow>
+          </value>
+        </block>
+
+        <block type="set_title">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">'Rectangular box plot'</field></shadow>
           </value>
         </block>
 

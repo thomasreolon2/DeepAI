@@ -121,7 +121,9 @@ Blockly.Python['set_inset_axes'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+// 드롭다운 버전
 // set_xlim_ylim
+/*
 Blockly.Python['set_xlim_ylim'] = function (block) {
   var var_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var dropdown_drop = block.getFieldValue('DROP');
@@ -129,6 +131,23 @@ Blockly.Python['set_xlim_ylim'] = function (block) {
 
   // TODO: Assemble Python into code variable.
   var code = `${var_text}.${dropdown_drop}(${input_text})\n`;
+  return code;
+};
+*/
+
+// set_xlim, set_ylim
+Blockly.Python['set_xlim'] = function (block) {
+  var var_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text}.set_xlim(${input_text})\n`;
+  return code;
+};
+Blockly.Python['set_ylim'] = function (block) {
+  var var_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text}.set_ylim(${input_text})\n`;
   return code;
 };
 
@@ -158,3 +177,50 @@ Blockly.Python['set_facecolor'] = function (block) {
   var code = `${var_text1}.set_facecolor(${var_text2})\n`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+//// set_facecolor
+Blockly.Python['shape'] = function (block) {
+  var var_text1 = Blockly.Python.valueToCode(block, 'VAR1', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text1}.shape`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+//// set_xticklabels
+Blockly.Python['set_xticklabels'] = function (block) {
+  var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text1}.set_xticklabels(${var_text2})\n`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+//// set_yticklabels
+Blockly.Python['set_yticklabels'] = function (block) {
+  var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text1}.set_yticklabels(${var_text2})\n`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+//// boxplot
+Blockly.Python['boxplot'] = function (block) {
+  var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text1}.boxplot(${var_text2})\n`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+//// set_title
+Blockly.Python['set_title'] = function (block) {
+  var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${var_text1}.set_title(${var_text2})\n`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+

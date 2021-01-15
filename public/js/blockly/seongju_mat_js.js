@@ -106,15 +106,6 @@ Blockly.JavaScript['scatter'] = function(block) {
   return code;
 };
 
-
-Blockly.JavaScript['set_title'] = function(block) {
-  var value_row_col = Blockly.JavaScript.valueToCode(block, 'row_col', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_val_x = Blockly.JavaScript.valueToCode(block, 'val_x', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
-};
-
 Blockly.JavaScript['set_title2'] = function(block) {
   var value_row_col = Blockly.JavaScript.valueToCode(block, 'row_col', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
