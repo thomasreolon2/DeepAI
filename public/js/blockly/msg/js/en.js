@@ -469,7 +469,7 @@ Blockly.Msg['CHANGE_COLLECTION'] = "생성변환";
 
 Blockly.Msg['REPEAT_1_REPEAT'] = "repeat";
 Blockly.Msg["REPEAT_1_VARIABLE"] = "variable";
-Blockly.Msg["REPEAT_1_LIST"] = "list";
+Blockly.Msg["REPEAT_1_LIST"] = "data";
 
 Blockly.Msg["REPEAT_4_RANGE"] = "range";
 
