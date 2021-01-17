@@ -6075,7 +6075,13 @@
     <category name="사이킷이미지(Skimage)" colour="%{BKY_SCIKITLEARN_HUE}">
       <block type="import_skimage"></block>
       <block type="skimage_data"></block>
-      
+      <block type="rgb2gray">
+        <value name="VAR">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+      </value>
+      </block>
 
     </category>
     <category name="%{BKY_CATEGORY_SCIKIT}" colour="%{BKY_SCIKITLEARN_HUE}"> <!--사이킷런(Scikit)-->

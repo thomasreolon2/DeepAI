@@ -10,7 +10,7 @@ Blockly.Blocks['import_skimage'] = {
       this.setTooltip("");
       this.setHelpUrl("");
     }
-  };
+};
 
 // 2021.01.13 이미지 사용 (남지원)
 Blockly.Blocks['skimage_data'] = {
@@ -74,6 +74,24 @@ Blockly.Blocks['skimage_data'] = {
           "로켓", "rocket"
         ]
       ]), "DATA");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(255);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+
+// 2021.01.17 rgb2gray  남지원
+Blockly.Blocks['rgb2gray'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("rgb2gray(");
+    this.appendValueInput("VAR")
+      .setCheck(null);
+    this.appendDummyInput()
+      .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(255);
