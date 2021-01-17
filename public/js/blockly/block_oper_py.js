@@ -28,6 +28,10 @@ Blockly.Python['built_in_function_num'] = function(block) {
     var code;
     // TODO: Change ORDER_NONE to the correct strength.
     switch (dropdown_name){
+        case "sum":
+            code = `sum(${value_b})`;
+            break;
+            
         case "max":
             code = "max("+value_b+")"; 
         break;

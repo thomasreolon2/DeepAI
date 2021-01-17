@@ -455,6 +455,7 @@ Blockly.Msg.TEXT_14_4_END = '로';
 
 // 숫자 / 문자
 Blockly.Msg['NUMSTR_INFUCTION'] = "[내장함수]";
+Blockly.Msg['NUMSTR_INFUCTION_NUM_0'] = "합계(sum)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_1'] = "최댓값(max)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_2'] = "최솟값(min)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_3'] = "반올림(round)";

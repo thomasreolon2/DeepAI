@@ -87,6 +87,9 @@ Blockly.Blocks['built_in_function_num'] = {
         this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([            
             [
+                "%{BKY_NUMSTR_INFUCTION_NUM_0}", "sum"
+            ],
+            [
                 "%{BKY_NUMSTR_INFUCTION_NUM_1}", "max"
             ],
             [
