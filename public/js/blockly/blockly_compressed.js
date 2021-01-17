@@ -11420,11 +11420,22 @@ Blockly.WorkspaceSvg.prototype.showContextMenu = function (a) {
       e = this.getTopBlocks(!0),
       f = Blockly.utils.genUid(),
       g = this,
-      h = {};
+      
+      // 휴지통 비우기
+    h = {};
+    h.text = Blockly.Msg.TRASHCANCLEAR;
+    h.enabled = true;
+      h.callback = function () {
+        Blockly.mainWorkspace.trashcan.emptyContents();
+      };
+      d.push(h);
+    
+    h = {};
     h.text = Blockly.Msg.UNDO;
     h.enabled = 0 < this.undoStack_.length;
     h.callback = this.undo.bind(this, !1);
     d.push(h);
+
     h = {};
     h.text = Blockly.Msg.REDO;
     h.enabled = 0 < this.redoStack_.length;

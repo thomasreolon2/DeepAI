@@ -401,6 +401,7 @@ Blockly.Msg["TEXT_TRIM_OPERATOR_RIGHT"] = "공백 문자 제거 오른쪽";
 Blockly.Msg["TEXT_TRIM_TOOLTIP"] = "문장의 왼쪽/오른쪽/양쪽에서 스페이스 문자를 제거해 돌려줍니다.";
 Blockly.Msg["TODAY"] = "오늘";
 Blockly.Msg["UNDO"] = "실행 취소";
+Blockly.Msg["TRASHCANCLEAR"] = "휴지통 비우기";
 Blockly.Msg["UNNAMED_KEY"] = "이름이 없는";
 Blockly.Msg["VARIABLES_DEFAULT_NAME"] = "항목";
 Blockly.Msg["VARIABLES_GET_CREATE_SET"] = "'집합 %1' 생성";
