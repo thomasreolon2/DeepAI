@@ -109,6 +109,15 @@ Blockly.JavaScript['map_filter'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
+Blockly.JavaScript['map2'] = function(block) {
+  var dropdown_function = block.getFieldValue('function');
+  var value_val1 = Blockly.JavaScript.valueToCode(block, 'data_type', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val2 = Blockly.JavaScript.valueToCode(block, 'input', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
 //2021-01-05
 //va_sel
 Blockly.JavaScript['va_sel'] = function (block) {

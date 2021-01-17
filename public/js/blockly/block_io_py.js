@@ -89,6 +89,23 @@ Blockly.Python['print_mutator'] = function (a) {
   return "print( " + b.join(", ") + ")";
 };
 
+
+Blockly.Python['map'] = function(block) {
+  var value_data_type = Blockly.Python.valueToCode(block, 'data_type', Blockly.Python.ORDER_ATOMIC);
+  var value_input = Blockly.Python.valueToCode(block, 'input', Blockly.Python.ORDER_ATOMIC);
+  var value_split = Blockly.Python.valueToCode(block, 'split', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  //var code = ;
+  return ['list(map(' + value_data_type + ', input(' + value_input + ').split(' + value_split + ')))', Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['map3'] = function(block) {
+  var value_data_type = Blockly.Python.valueToCode(block, 'data_type', Blockly.Python.ORDER_ATOMIC);
+  var value_input = Blockly.Python.valueToCode(block, 'input', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  //var code = ;
+  return ['list(map(' + value_data_type + ', ' + value_input + '))', Blockly.Python.ORDER_ATOMIC];
+};
 // Blockly.Python['qqq'] = function (block) {
 //   var file = block.getFieldValue('csv_url');
 //   // x, y
@@ -156,3 +173,4 @@ Blockly.Python['fileopen'] = function (block) {
   var code = "with " + set0 + " as " + set1 + ":\n" + d;
   return code;
 };
+

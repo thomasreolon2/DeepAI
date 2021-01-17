@@ -88,6 +88,23 @@ Blockly.JavaScript['print_mutator'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
 };
 
+Blockly.JavaScript['map'] = function(block) {
+  var value_data_type = Blockly.JavaScript.valueToCode(block, 'data_type', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_input = Blockly.JavaScript.valueToCode(block, 'input', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_split = Blockly.JavaScript.valueToCode(block, 'split', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['map2'] = function(block) {
+  var value_data_type = Blockly.JavaScript.valueToCode(block, 'data_type', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_input = Blockly.JavaScript.valueToCode(block, 'input', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_split = Blockly.JavaScript.valueToCode(block, 'split', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
 
 // Blockly.JavaScript['qqq'] = function (block) {
 //   var file = block.getFieldValue('csv_url');

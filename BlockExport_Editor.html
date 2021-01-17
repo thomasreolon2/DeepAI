@@ -583,6 +583,24 @@
         </value>
       </block>
 
+      <block type="map">
+        <value name="data_type">
+          <shadow type="indata">
+            <field name="indata1">int</field>
+          </shadow>
+        </value>
+        <value name="input">
+          <shadow type="indata">
+            <field name="indata1">'메시지'</field>
+          </shadow>
+        </value>
+        <value name="split">
+          <shadow type="indata">
+            <field name="indata1">'입력시구분자'</field>
+          </shadow>
+        </value>
+      </block>
+
       <!-- 결과출력 var -->
       <block type="printc">
         <value name="content">
@@ -1265,6 +1283,8 @@
         </value>
       </block>
 
+      
+
       <block type = "change_collection">
         <value name="LIST">
           <shadow type="indata">
@@ -1321,7 +1341,18 @@
         </value>
       </block>
 
-
+      <block type="map3">
+        <value name="data_type">
+          <shadow type="indata">
+            <field name="indata1">int</field>
+          </shadow>
+        </value>
+        <value name="input">
+          <shadow type="indata">
+            <field name="indata1">데이터</field>
+          </shadow>
+        </value>
+      </block>
 
       <label text="리스트"></label>
       <!-- [L1] 리스트 생성 -->
@@ -1844,19 +1875,8 @@
           </shadow>
         </value>
       </block>
-      <label text="내장함수"></label>
-      <block type="map_filter">
-        <value name="val1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="val2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+      
+      
       
       <label text="클래스"></label>
       <!-- 클래스 -->

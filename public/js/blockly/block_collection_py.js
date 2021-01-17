@@ -171,6 +171,15 @@ Blockly.Python['map_filter'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+Blockly.Python['map2'] = function(block) {
+  var dropdown_function = block.getFieldValue('function');
+  var value_val1 = Blockly.Python.valueToCode(block, 'data_type', Blockly.Python.ORDER_ATOMIC);
+  var value_val2 = Blockly.Python.valueToCode(block, 'input', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = "map(" + value_val1 + "," + value_val2 + ")";
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
 //2021-01-05
 //va_sel
 Blockly.Python['va_sel'] = function (block) {

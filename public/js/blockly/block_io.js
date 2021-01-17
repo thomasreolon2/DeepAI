@@ -400,3 +400,42 @@ Blockly.JavaScript['fileopen'] = function (block) {
    this.setHelpUrl("");
     }
   };
+
+  Blockly.Blocks['map'] = {
+    init: function() {
+      this.appendValueInput("data_type")
+          .setCheck(null)
+          .appendField("입력 list(map(");
+      this.appendValueInput("input")
+          .setCheck(null)
+          .appendField(" input(");
+      this.appendValueInput("split")
+          .setCheck(null)
+          .appendField(").split(");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_TEXTS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['map3'] = {
+    init: function() {
+      this.appendValueInput("data_type")
+          .setCheck(null)
+          .appendField("list(map(");
+      this.appendValueInput("input")
+          .setCheck(null)
+          .appendField(",");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_COLLECTION_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

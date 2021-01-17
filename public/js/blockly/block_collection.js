@@ -560,6 +560,25 @@ Blockly.Blocks['map_filter'] = {
     }
   };
 
+  Blockly.Blocks['map3'] = {
+    init: function() {
+      this.appendValueInput("data_type")
+          .setCheck(null)
+          .appendField("map(");
+      this.appendValueInput("input")
+          .setCheck(null)
+          .appendField("," );
+      
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_COLLECTION_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
   //2021-01-05 ysk
 
 // va_sel
