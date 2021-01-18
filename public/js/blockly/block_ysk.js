@@ -261,6 +261,75 @@ Blockly.Blocks['df_name'] = {
 
 
 /////////////////////////////////////////////////////////////////
-////////////// 사이킥 이미지 
+////////////// 사이킥 이미지 2021-01-18
 /////////////////////////////////////////////////////////////////
+
+Blockly.Blocks['skimage_filters'] = {
+  init: function () {
+      this.appendDummyInput().appendField("filters.").appendField(new Blockly.FieldDropdown([
+          [
+              "sobel", "sobel"
+          ],
+          [
+            "roberts", "roberts"
+          ]
+      ]), "collection");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['skimage_transform'] = {
+  init: function () {
+      this.appendDummyInput().appendField("transform.").appendField(new Blockly.FieldDropdown([
+          [
+              "hough_line", "hough_line"
+          ],
+          [
+            "hough_circle", "hough_circle"
+          ],
+          [
+            "hough_circle_peaks", "hough_circle_peaks"
+          ],
+          [
+            "hough_line_peaks", "hough_line_peaks"
+          ],
+          [
+            "probabilistic_hough_line", "probabilistic_hough_line"
+          ]
+      ]), "collection");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['skimage_img_as_float'] = {
+  init: function () {
+      this.appendDummyInput().appendField("img_as_float.").appendField(new Blockly.FieldDropdown([
+          [
+            "img_as_float", "img_as_float"
+          ]
+      ]), "collection");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
 

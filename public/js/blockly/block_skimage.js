@@ -108,40 +108,40 @@ Blockly.Blocks['ski_class'] = {
       this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([
         [
-          "data", "data"  
+          "data as data", "data as data"  
         ],
         [
-          "color", "color"
+          "color as color", "color as color"
         ],
         [
-          "filters", "filters"
+          "filters as filters", "filters as filters"
         ],
         [
-          "draw", "draw"
+          "draw as draw", "draw as draw"
         ],
         [
-          "feature", "feature"
+          "feature as feature", "feature as feature"
         ],
         [
-          "morphology", "morphology"
+          "morphology as morphology", "morphology as morphology"
         ],
         [
-          "transform", "transform"
+          "transform as transform", "transform as transform"
         ],
         [
-          "util", "util"
+          "util as util", "util as util"
         ],
         [
-          "exposure", "exposure"
+          "exposure as exposure", "exposure as exposure"
         ],
         [
-          "segmetation", "segmetation"
+          "segmetation as segmetation", "segmetation as segmetation"
         ],
         [
-          "img_as_float", "img_as_float"
+          "img_as_float as img_as_float", "img_as_float as img_as_float"
         ],
         [
-          "measure", "measure"
+          "measure as measure", "measure as measure"
         ]
       ]), "DATA");
     this.setInputsInline(true);

@@ -158,3 +158,36 @@ Blockly.JavaScript['df_tolist'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };  
+
+
+
+/////////////////////////////////////////////////////////////////
+////////////// 사이킥 이미지 
+/////////////////////////////////////////////////////////////////
+
+Blockly.JavaScript['skimage_filters'] = function(block) {
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('collection');
+  // TODO: Assemble Python into code variable.
+  var code = `filters.${dropdown_dic}(${value_name2})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['skimage_transform'] = function(block) {
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('collection');
+  // TODO: Assemble Python into code variable.
+  var code = `transform.${dropdown_dic}(${value_name2})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['skimage_img_as_float'] = function(block) {
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('collection');
+  // TODO: Assemble Python into code variable.
+  var code = `img_as_float.${dropdown_dic}(${value_name2})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
