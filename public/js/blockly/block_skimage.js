@@ -99,3 +99,56 @@ Blockly.Blocks['rgb2gray'] = {
     this.setHelpUrl("");
   }
 };
+
+// 2021-01-18 임포트 블록 양승국
+Blockly.Blocks['ski_class'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("[임포트]skimage.");
+      this.appendDummyInput()
+      .appendField(new Blockly.FieldDropdown([
+        [
+          "data", "data"  
+        ],
+        [
+          "color", "color"
+        ],
+        [
+          "filters", "filters"
+        ],
+        [
+          "draw", "draw"
+        ],
+        [
+          "feature", "feature"
+        ],
+        [
+          "morphology", "morphology"
+        ],
+        [
+          "transform", "transform"
+        ],
+        [
+          "util", "util"
+        ],
+        [
+          "exposure", "exposure"
+        ],
+        [
+          "segmetation", "segmetation"
+        ],
+        [
+          "img_as_float", "img_as_float"
+        ],
+        [
+          "measure", "measure"
+        ]
+      ]), "DATA");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(255);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};

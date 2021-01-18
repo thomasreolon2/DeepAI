@@ -20,3 +20,11 @@ Blockly.Python['rgb2gray'] = function (block) {
   var code = `rgb2gray(${var_text})`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+// 2021-01-18 임포트 블록 양승국
+Blockly.Python['ski_class'] = function (block) {
+  var dropdown_dic = block.getFieldValue('DATA');
+  var code = `import skimage.${dropdown_dic}\n`;
+  
+  return code;
+};
