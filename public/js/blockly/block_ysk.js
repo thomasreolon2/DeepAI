@@ -279,7 +279,7 @@ Blockly.Blocks['skimage_filters'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour(%{BKY_SCIKITLEARN_HUE});
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -309,7 +309,7 @@ Blockly.Blocks['skimage_transform'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour(%{BKY_SCIKITLEARN_HUE});
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -327,7 +327,7 @@ Blockly.Blocks['skimage_img_as_float'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour(%{BKY_SCIKITLEARN_HUE});
       this.setTooltip("");
       this.setHelpUrl("");
   }
