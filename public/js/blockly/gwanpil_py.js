@@ -182,3 +182,30 @@ Blockly.Python['plt_subplot'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];;
   };
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //skimage
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    Blockly.Python['skimage_draw'] = function (block) {
+        var dropdown_dic = block.getFieldValue('DATA');
+        var value_a1 = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+        var code = `data.${dropdown_dic}(${value_a1})`;
+        
+        return [code, Blockly.Python.ORDER_ATOMIC];
+      };
+
+      Blockly.Python['skimage_color'] = function (block) {
+        var dropdown_dic = block.getFieldValue('DATA');
+        var value_a1 = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+        var code = `color.${dropdown_dic}(${value_a1})`;
+        
+        return [code, Blockly.Python.ORDER_ATOMIC];
+      };
+
+      Blockly.Python['skimage_segmetation'] = function (block) {
+        var value_a1 = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+        var code = `segmetation(${value_a1})`;
+        
+        return [code, Blockly.Python.ORDER_ATOMIC];
+      };

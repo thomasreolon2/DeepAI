@@ -134,3 +134,29 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = '\n';
         return code;
       };
+      
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //skimage
+    //////////////////////////////////////////////////////////////////////////////////////////
+
+    Blockly.JavaScript['skimage_draw'] = function (block) {
+        var dropdown_dic = block.getFieldValue('DATA');
+        var code = '\n'
+      
+        return [code, Blockly.JavaScript.ORDER_ATOMIC];
+      };
+
+      Blockly.JavaScript['skimage_color'] = function (block) {
+        var dropdown_dic = block.getFieldValue('DATA');
+        var code = '\n'
+      
+        return [code, Blockly.JavaScript.ORDER_ATOMIC];
+      };
+
+      Blockly.JavaScript['skimage_segmetation'] = function (block) {
+        var dropdown_dic = block.getFieldValue('DATA');
+        var code = '\n'
+      
+        return [code, Blockly.JavaScript.ORDER_ATOMIC];
+      };

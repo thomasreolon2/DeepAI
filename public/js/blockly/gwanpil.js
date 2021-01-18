@@ -288,3 +288,99 @@ Blockly.Blocks['plt_subplots'] = {
    this.setHelpUrl("");
     }
   };
+
+
+
+  //////////////////////////////////////////////////////////////////////////////////////////
+  //skimage
+  //////////////////////////////////////////////////////////////////////////////////////////
+
+  Blockly.Blocks['skimage_draw'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("draw.")
+        .appendField(new Blockly.FieldDropdown([
+          [
+            "bezier_curve", "bezier_curve"  
+          ],
+          [
+            "ellipse_perimeter", "ellipse_perimeter"
+          ],
+          [
+            "line_aa", "line_aa"
+          ],
+          [
+            "circle_perimeter_aa", "circle_perimeter_aa"
+          ],
+          [
+            "ellipse", "ellipse"
+          ],
+          [
+            "random_shapes", "random_shapes"
+          ],
+          [
+            "circle_perimeter", "circle_perimeter"
+          ],
+          [
+            "line", "line"
+          ],
+        ]), "DATA");
+      this.appendValueInput("data")
+        .setCheck(null)
+        .appendField("(");
+      this.appendDummyInput()
+        .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(255);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['skimage_color'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("color.")
+        .appendField(new Blockly.FieldDropdown([
+          [
+            "rgb2gray", "rgb2gray"  
+          ],
+          [
+            "hed2rgb", "hed2rgb"
+          ],
+          [
+            "gray2rgb", "gray2rgb"
+          ],
+          [
+            "rgb2hsv", "rgb2hsv"
+          ]
+        ]), "DATA");
+      this.appendValueInput("data")
+        .setCheck(null)
+        .appendField("(");
+      this.appendDummyInput()
+        .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(255);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['skimage_segmetation'] = {
+    init: function () {
+      this.appendDummyInput()
+        .appendField("segmetation(");
+      this.appendValueInput("data")
+        .setCheck(null);
+      this.appendDummyInput()
+        .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(255);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
