@@ -123,6 +123,37 @@ Blockly.JavaScript['ax_legend'] = function(block) {
   return code;
 };
 
+
+// skimage/////////////
+
+
+Blockly.JavaScript['skimage_color'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.JavaScript.valueToCode(block, 'para', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['skimage_feature'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.JavaScript.valueToCode(block, 'para', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['skimage_morphology'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.JavaScript.valueToCode(block, 'para', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
 // 이 밑으로는 있는거(==> 임의로 만듬.)
 
 Blockly.JavaScript['Oper_garbage'] = function(block) {

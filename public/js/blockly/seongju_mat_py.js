@@ -138,6 +138,37 @@ Blockly.Python['ax_legend'] = function(block) {
   return code;
 };
 
+
+// skimage/////////////
+
+Blockly.Python['skimage_color'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${dropdown_method}(${value_para})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['skimage_feature'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${dropdown_method}(${value_para})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['skimage_morphology'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${dropdown_method}(${value_para})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
 // 이 밑으로는 있는거(==> 임의로 만듬.)
 
 Blockly.Python['Oper_garbage'] = function(block) {

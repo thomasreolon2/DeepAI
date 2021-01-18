@@ -276,6 +276,65 @@ Blockly.Blocks['axs_set_xlabel2'] = {
     }
   };
 
+// skimage /////////////
+
+  Blockly.Blocks['skimage_color'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("color.")
+          .appendField(new Blockly.FieldDropdown([["rgb2gray","color.rgb2gray"], ["hed2rgb","color.hed2rgb"], ["gray2rgb","color.gray2rgb"], ["rgb2hsv","color.rgb2hsv"]]), "method")
+          .appendField("(");
+      this.appendValueInput("para")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
+  Blockly.Blocks['skimage_feature'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("feature.")
+          .appendField(new Blockly.FieldDropdown([["canny","feature.canny"]]), "method")
+          .appendField("(");
+      this.appendValueInput("para")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
+  Blockly.Blocks['skimage_morphology'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("morphology.")
+          .appendField(new Blockly.FieldDropdown([["convex_hull_image","morphology.convex_hull_image"],["skeletonize","morphology.skeletonize"],["thin","morphology.thin"],["reconstruction","morphology.reconstruction"]]), "method")
+          .appendField("(");
+      this.appendValueInput("para")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
 // 나중에 버리는 코드 곱하기 코드임
 Blockly.Blocks['Oper_garbage'] = {
   init: function () {
@@ -512,3 +571,5 @@ Blockly.Blocks['dic_menu1_sj2'] = {
         this.setHelpUrl("");
     }
 };
+
+
