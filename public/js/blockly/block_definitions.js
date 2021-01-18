@@ -42,10 +42,11 @@ Blockly.Blocks['func_return1'] = {
         this.appendValueInput('2')
             .setCheck(null)
             .appendField("=");
+        this.appendValueInput('3')
+            .setCheck(null)
+            .appendField("(");
         this.appendDummyInput()
-            .appendField("(")
-            .appendField(new Blockly.FieldTextInput(""), "3")
-            .appendField(")");
+            .appendField(')');
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -60,10 +61,11 @@ Blockly.Blocks['func_return11'] = {
     init: function() {
         this.appendValueInput('1')
           .setCheck(null);
+        this.appendValueInput('3')
+          .setCheck(null)
+          .appendField("(");
       this.appendDummyInput()
-          .appendField("(")
-          .appendField(new Blockly.FieldTextInput(""), "2")
-          .appendField(")");
+          .appendField(')');
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_PROCEDURES_HUE}");
@@ -76,15 +78,16 @@ Blockly.Blocks['func_return11'] = {
 // 함수 return 블록 2
 Blockly.Blocks['func_return2'] = {
     init: function() {
+        this.appendValueInput('1')
+            .setCheck(null)
+            this.appendValueInput('2')
+            .appendField("=")
+            .setCheck(null);
+        this.appendValueInput('3')
+          .setCheck(null)
+          .appendField("(");
       this.appendDummyInput()
-          .appendField(new Blockly.FieldTextInput("x,y"), "1")
-          .appendField("=");
-        this.appendValueInput('2')
-          .setCheck(null);
-    this.appendDummyInput()
-          .appendField("(")
-          .appendField(new Blockly.FieldTextInput(""), "3")
-          .appendField(")");
+          .appendField(')');
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);

@@ -24,7 +24,7 @@ Blockly.Python['webreturn2'] = function (block) {
 Blockly.Python['func_return1'] = function(block) {
     var variable_1 =  Blockly.Python.valueToCode(block, '1', Blockly.Python.ORDER_ATOMIC);
     var variable_2 =  Blockly.Python.valueToCode(block, '2', Blockly.Python.ORDER_ATOMIC);
-    var text_2 = block.getFieldValue('3');
+    var text_2 = Blockly.Python.valueToCode(block, '3', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = variable_1+' = '+variable_2+'('+text_2+')'+'\n';
     return code;
@@ -33,7 +33,7 @@ Blockly.Python['func_return1'] = function(block) {
 // 함수 return11
 Blockly.Python['func_return11'] = function(block) {
     var variable_1 =  Blockly.Python.valueToCode(block, '1', Blockly.Python.ORDER_ATOMIC);
-    var text_2 = block.getFieldValue('2');
+    var text_2 = Blockly.Python.valueToCode(block, '3', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = variable_1+'('+text_2+')';
     return [code, Blockly.Python.ORDER_ATOMIC]; ;
@@ -41,9 +41,9 @@ Blockly.Python['func_return11'] = function(block) {
 
 // 함수 return 2
 Blockly.Python['func_return2'] = function(block) {
-    var text_1 = block.getFieldValue('1');
+    var text_1 = Blockly.Python.valueToCode(block, '1', Blockly.Python.ORDER_ATOMIC);
     var variable_2 =  Blockly.Python.valueToCode(block, '2', Blockly.Python.ORDER_ATOMIC);
-    var text_3 = block.getFieldValue('3');
+    var text_3 = Blockly.Python.valueToCode(block, '3', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = text_1+' = '+variable_2+'('+text_3+')\n';
     return code;

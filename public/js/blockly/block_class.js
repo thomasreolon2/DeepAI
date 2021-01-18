@@ -68,10 +68,10 @@ Blockly.Blocks['webclass2'] = {
         this.appendValueInput("VAR2")
           .setCheck(null)
           .appendField(".");
-        this.appendDummyInput()
+        this.appendValueInput("3")
           .appendField("(")
-          .appendField(new Blockly.FieldTextInput(""), "INPUT")
-          .appendField(")");
+        this.appendDummyInput()
+          .appendField(')')
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour(125);
@@ -89,10 +89,10 @@ Blockly.Blocks['webclass2'] = {
           this.appendValueInput("2")
             .setCheck(null)
             .appendField("를");
-      this.appendDummyInput()
-          .appendField("(")
-          .appendField(new Blockly.FieldTextInput(""), "3")
-          .appendField(")");
+            this.appendValueInput("3")
+            .appendField("(")
+          this.appendDummyInput()
+            .appendField(')')
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
