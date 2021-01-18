@@ -332,7 +332,7 @@ Blockly.Blocks['plt_subplots'] = {
         .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(255);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -363,7 +363,7 @@ Blockly.Blocks['plt_subplots'] = {
         .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(255);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -379,7 +379,7 @@ Blockly.Blocks['plt_subplots'] = {
         .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(255);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
