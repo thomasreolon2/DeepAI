@@ -20214,21 +20214,25 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function (a) {
     a && (a.workspace ? (a.dispose(!1, !0), setTimeout(c, 10)) : c());
     Blockly.Events.setGroup(!1);
   }
+  // 마우스 오른쪽 눌렀을때
   if (!this.options.readOnly && !this.isFlyout) {
     var d = [],
       e = this.getTopBlocks(!0),
       f = Blockly.utils.genUid(),
       g = this,
-    // 휴지통 비우기
-      h = {};
-      h.text = Blockly.Msg.TRASHCANCLEAR;
-      h.enabled = true;
-      h.callback = function () {
-        Blockly.mainWorkspace.trashcan.emptyContents();
-      };
-      d.push(h);
-      
 
+    // 휴지통 비우기
+    h = {}; 
+    // text가 이름
+    h.text = Blockly.Msg.TRASHCANCLEAR;
+    // enabled가 작동조건 true면 무조건 작동가능
+    h.enabled = true;
+    // callback이 실행 명령. function()처리 해줘야 작동함
+    h.callback = function () {
+      Blockly.mainWorkspace.trashcan.emptyContents();
+    };
+    d.push(h);
+      
     h = {};
     h.text = Blockly.Msg.UNDO;
     h.enabled = 0 < this.undoStack_.length;
