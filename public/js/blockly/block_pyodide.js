@@ -737,11 +737,21 @@ Blockly.Blocks['py_for1'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendDummyInput().appendField(Blockly.Msg.REPEAT_1_REPEAT);
-        this.appendValueInput("item").setCheck(null).appendField(Blockly.Msg.REPEAT_1_VARIABLE);
-        this.appendValueInput("list").setCheck(null).appendField("in range(");
-        this.appendDummyInput().appendField("):");
-        this.appendStatementInput("value").setCheck(null);
+        this.appendDummyInput()
+            .appendField(Blockly.Msg.REPEAT_1_REPEAT);
+        this.appendValueInput("item")
+            .setCheck(null)
+            .appendField(Blockly.Msg.REPEAT_1_VARIABLE);
+        this.appendDummyInput()
+            .appendField("in")
+            .appendField(new Blockly.FieldDropdown([["range","range"],["enumerate","enumerate"]]),"DROP")
+            .appendField("(");
+        this.appendValueInput("list")
+            .setCheck(null)
+        this.appendDummyInput()
+            .appendField("):");
+        this.appendStatementInput("value")
+            .setCheck(null);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

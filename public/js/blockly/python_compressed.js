@@ -663,12 +663,15 @@ Blockly.Python['py_for'] = function(block) {
 Blockly.Python['py_for1'] = function(block) {
   var value_item = Blockly.Python.valueToCode(block, 'item', Blockly.Python.ORDER_ATOMIC);
   var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+
   var statements_value = Blockly.Python.statementToCode(block, 'value') || Blockly.Python.PASS;
   // TODO: Assemble Python into code variable.
   // var code = 'for '+value_item+' in '+value_list+' :\n'+statements_value;
   var d = Blockly.Python.statementToCode(block, "value");
   d = Blockly.Python.addLoopTrap(d, block) || Blockly.Python.PASS;
-  var code = 'for '+value_item+' in range( '+ value_list + ' ):\n'+ d;
+
+  var code = `for ${value_item} in ${dropdown_drop}(${value_list}):\n${d}`;
 
   return code;
 };
