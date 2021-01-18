@@ -250,3 +250,24 @@ Blockly.JavaScript['tight_layout'] = function (block) {
   return code;
 };
 
+////////////////////////////////
+// get_sample_data
+Blockly.JavaScript['skimage_util'] = function (block) {
+  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+
+  // TODO: Assemble JavaScript into code variable.
+  var code = `util.${dropdown_drop}(${input_text})`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+////////////////////////////////
+// get_sample_data
+Blockly.JavaScript['skimage_measure'] = function (block) {
+  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+
+  // TODO: Assemble JavaScript into code variable.
+  var code = `measure.${dropdown_drop}(${input_text})`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
