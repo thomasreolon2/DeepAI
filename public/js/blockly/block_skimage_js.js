@@ -12,3 +12,12 @@ Blockly.JavaScript['skimage_data'] = function (block) {
 
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+
+// 2021.01.17 rgb2gray  남지원
+Blockly.JavaScript['rgb2gray'] = function (block) {
+  var var_text = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `rgb2gray(${var_text})`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
