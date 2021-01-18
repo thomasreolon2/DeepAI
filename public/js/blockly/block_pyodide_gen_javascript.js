@@ -38,13 +38,7 @@
     var code = "\n";
     return code;
   };
-  Blockly.JavaScript['labelencoder'] = function(block) {
-    var value_df = Blockly.JavaScript.valueToCode(block, 'df', Blockly.JavaScript.ORDER_ATOMIC);
-    var text_column = block.getFieldValue('column');
-    // TODO: Assemble JavaScript into code variable.
-    var code = "\n";
-    return code;
-  };
+
   Blockly.JavaScript['import_lib'] = function (block) {
     var dropdown_lib = block.getFieldValue('lib');
     var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
@@ -53,14 +47,7 @@
     
     return code;
 };
-Blockly.JavaScript['model_predict'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_data = block.getFieldValue('data');
-  // TODO: Assemble JavaScript into code variable.
-  var code = "\n";
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
+
 Blockly.JavaScript['scikit_learn'] = function (block) {
   var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_cate = block.getFieldValue('cate');
@@ -78,32 +65,9 @@ Blockly.JavaScript['csv2'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 // 사이킷런 MLP 블록 
-Blockly.JavaScript['sklearn_mlp_classifier'] = function(block) { 
-  var text_sklearn_mlp_hidden_size = block.getFieldValue('sklearn_MLP_hidden_size');
-  var dropdown_sklearn_mlp_activation__option = block.getFieldValue('sklearn_MLP_activation _Option');
-  var dropdown_sklearn_mlp_optimizer_option = block.getFieldValue('sklearn_MLP_Optimizer_Option');
-  var text_sklearn_mlp_max_iter = block.getFieldValue('sklearn_MLP_Max iter');
-  var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning rate');
-  var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random state');
-  var value_sklearn_mlp_fit_x = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_sklearn_mlp_fit_y = Blockly.JavaScript.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return code;
-};
 
-Blockly.JavaScript['sklearn_mlp_regressor'] = function(block) { 
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return code;
-};
 
-Blockly.JavaScript['mlp_loss'] = function(block) {
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
+
   
 //MLP fit
 // Blockly.JavaScript['sklearn_mlp_fit'] = function(block) {
@@ -114,14 +78,6 @@ Blockly.JavaScript['mlp_loss'] = function(block) {
 //   var code = '\n';
 //   return code; 
 // }; 
-Blockly.JavaScript['import_dataset'] = function(block) {
-  var dropdown_dataset_name = block.getFieldValue('dataset_name');
-  var value_x_data = Blockly.JavaScript.valueToCode(block, 'x_data', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_y_data = Blockly.JavaScript.valueToCode(block, 'y_data', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code =value_x_data+"=pyodide.pyimport('"+value_x_data+"');\n"+value_y_data+"=pyodide.pyimport('"+value_y_data+"');\n";
-  return code;
-};
 Blockly.JavaScript['scikit_learn'] = function (block) {
   var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_cate = block.getFieldValue('cate');
@@ -153,45 +109,10 @@ Blockly.JavaScript['sump'] = function (block) {
 
 
 
-Blockly.JavaScript['csv3'] = function (block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-}
-
-Blockly.JavaScript['train_test_split'] = function (block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-}
-
-Blockly.JavaScript['k_means'] = function (block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-}
-
-Blockly.JavaScript['make_circles'] = function(block) {
-  var code = '\n';
-  return code;
-};
-
-Blockly.JavaScript['model_score'] = function (block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-}
 
 
 
-Blockly.JavaScript['fetch_openml'] = function (block) {
-  var dropdown_name = block.getFieldValue('NAME');
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code="\n"
-  return code;
-};
+
 Blockly.JavaScript['import_scikit'] = function (block) {
   var dropdown_metrics = block.getFieldValue('metrics');
   // TODO: Assemble JavaScript into code variable.
@@ -200,64 +121,10 @@ Blockly.JavaScript['import_scikit'] = function (block) {
   return code;
 };
 
-Blockly.JavaScript['acc_score'] = function(block) {
-  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code="\n"
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-Blockly.JavaScript['AUC'] = function(block) {
-  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code="\n"
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-Blockly.JavaScript['AP'] = function(block) {
-  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code="\n"
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
 
-Blockly.JavaScript['precision'] = function(block) {
-  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
-  var dropdown_aver = block.getFieldValue('aver');
-  // TODO: Assemble JavaScript into code variable.
-  var code="\n"
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-Blockly.JavaScript['mae'] = function(block) {
-  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code="\n"
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-Blockly.JavaScript['mse'] = function(block) {
-  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code="\n"
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-Blockly.JavaScript['median'] = function(block) {
-  var value_yt = Blockly.JavaScript.valueToCode(block, 'yt', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_yp = Blockly.JavaScript.valueToCode(block, 'yp', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code="\n"
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
+
+
+
 
 // 신경망 MLPClassifier
 Blockly.JavaScript['mlp_classifier'] = function (block) {
@@ -268,43 +135,7 @@ Blockly.JavaScript['mlp_regressor'] = function (block) {
   var code = '\n';
   return code;
 };
-// 선형모델
-Blockly.JavaScript['logistic_regression'] = function (block) {
-  var code = '\n';
-  return code;
-};
-Blockly.JavaScript['logistic_regression_cv'] = function (block) {
-  var code = '\n';
-  return code;
-};
-Blockly.JavaScript['perceptron'] = function (block) {
-  var code = '\n';
-  return code;
-};
-Blockly.JavaScript['ridge_classifier'] = function (block) {
-  var code = '\n';
-  return code;
-};
-Blockly.JavaScript['sgd_classifier'] = function (block) {
-  var code = '\n';
-  return code;
-};
-Blockly.JavaScript['linear_regression'] = function (block) {
-  var code = '\n';
-  return code;
-};
-Blockly.JavaScript['ridge'] = function (block) {
-  var code = '\n';
-  return code;
-};
-Blockly.JavaScript['bayesian_ridge'] = function (block) {
-  var code = '\n';
-  return code;
-};
-Blockly.JavaScript['sgd_regressor'] = function (block) {
-  var code = '\n';
-  return code;
-};
+
 Blockly.JavaScript['import_mlp'] = function (block) {
   var code = '\n';
   return code;
@@ -317,43 +148,15 @@ Blockly.JavaScript['import_kmeans'] = function (block) {
   var code = '\n';
   return code;
 };
-Blockly.JavaScript['model_fit'] = function (block) {
-  var code = '\n';
-  return code;
-};
+
 Blockly.JavaScript['kmeans_fit'] = function (block) {
   var code = '\n';
   return code;
 };
 
 
-Blockly.JavaScript['sivalidation'] = function(block) {
-  var dropdown_vali = block.getFieldValue('vali');
-  var value_em = Blockly.JavaScript.valueToCode(block, 'em', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_y = Blockly.JavaScript.valueToCode(block, 'y', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_cv = block.getFieldValue('cv');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-Blockly.JavaScript['import_sivalidation'] = function(block) {
-  var dropdown_vali = block.getFieldValue('vali');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
 
-Blockly.JavaScript['kfold'] = function(block) {
-  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_name = block.getFieldValue('NAME');
-  var dropdown_shuffle = block.getFieldValue('shuffle');
-  var text_seed = block.getFieldValue('seed');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
+
 Blockly.JavaScript['stratifiedkfold'] = function(block) {
   var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
   var text_name = block.getFieldValue('NAME');
@@ -363,17 +166,7 @@ Blockly.JavaScript['stratifiedkfold'] = function(block) {
   var code = '\n';
   return code;
 };
-Blockly.JavaScript['bernoullirbm'] = function(block) {
-  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_hi = block.getFieldValue('hi');
-  var text_lr = block.getFieldValue('lr');
-  var text_batch = block.getFieldValue('batch');
-  var text_epochs = block.getFieldValue('epochs');
-  var text_seed = block.getFieldValue('seed');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
+
 Blockly.JavaScript['import_scipy'] = function(block) {
   var dropdown_scipy = block.getFieldValue('scipy');
   // TODO: Assemble JavaScript into code variable.
@@ -413,35 +206,9 @@ Blockly.JavaScript['import_tree'] = function(block) {
   var code = '\n';
   return code;
 };
-Blockly.JavaScript['decision'] = function(block) {
-  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_dept = block.getFieldValue('dept');
-  var text_seed = block.getFieldValue('seed');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
-Blockly.JavaScript['coef'] = function(block) {
-  var value_coef = Blockly.JavaScript.valueToCode(block, 'coef', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
-Blockly.JavaScript['intercept'] = function(block) {
-  var value_intercept = Blockly.JavaScript.valueToCode(block, 'intercept', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-Blockly.JavaScript['tree_text'] = function(block) {
-  var value_trr = Blockly.JavaScript.valueToCode(block, 'trr', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = 
-'pyodide.runPython(`\nimport numpy as np\nfrom sklearn.tree import DecisionTreeClassifier\nestimator='+value_trr+'\nn_nodes = estimator.tree_.node_count\nchildren_left = estimator.tree_.children_left\nchildren_right = estimator.tree_.children_right\nfeature = estimator.tree_.feature\nthreshold = estimator.tree_.threshold\nnode_depth = np.zeros(shape=n_nodes, dtype=np.int64)\nis_leaves = np.zeros(shape=n_nodes, dtype=bool)\nstack = [(0, -1)]\nwhile len(stack) > 0:\n\tnode_id, parent_depth = stack.pop()\n\tnode_depth[node_id] = parent_depth + 1\n\tif (children_left[node_id] != children_right[node_id]):\n\t\tstack.append((children_left[node_id], parent_depth + 1))\n\t\tstack.append((children_right[node_id], parent_depth + 1))\n\telse:\n\t\tis_leaves[node_id] = True\nprint("이진 트리 구조에는 ", n_nodes, "개의 노드가 있으며 다음과 같은 트리 구조입니다.")\nfor i in range(n_nodes):\n\tif is_leaves[i]:\n\t\tprint("%snode=%s leaf node." % (node_depth[i] * "\t", i))\n\telse:\n\t\tprint("%snode=%s test node: go to node %s if X[:, %s] <= %s else to node %s."% (node_depth[i] * "\t", i, children_left[i], feature[i], threshold[i], children_right[i],))\nprint()`);\nn_nodes=pyodide.pyimport("n_nodes");\nnode_depth=pyodide.pyimport("node_depth");\nis_leaves=pyodide.pyimport("is_leaves");\nchildren_left=pyodide.pyimport("children_left");\nfeature=pyodide.pyimport("feature");\nthreshold=pyodide.pyimport("threshold");\nchildren_right=pyodide.pyimport("children_right");\nfor(var i=0; i<=n_nodes; i++){\n\tif(is_leaves[i]==true){\n\tprintc(node_depth[i]+"\t"+"node = "+ i +"leaf node.");\n}\n\telse{\n\t\tprintc(node_depth[i]+"\t test node: go to node"+children_left[i]+"if X[:,"+feature[i]+"] <="+threshold[i]+" else to node "+children_right[i]);\n\t}\n}';
-  return code;
-};
+
+
+
 
 
 Blockly.JavaScript['np_dot'] = function(block) {
@@ -704,4 +471,16 @@ Blockly.JavaScript['separate'] = function (block) {
   // }
   code = statements_name;
   return code.trim();
+};
+
+  /////////////////////////////////////////////////////////////////////////////
+//
+// 2021-01 정지현 사이킷런 임포트 블록 추가
+//
+/////////////////////////////////////////////////////////////////////////////
+
+Blockly.JavaScript['import_scikit_learn'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
 };

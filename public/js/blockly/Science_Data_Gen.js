@@ -823,16 +823,7 @@ Blockly.Python['make_moons'] = function(block) {
   return code;
 }; 
 
-//IsolationForest
-Blockly.Python['isolation_forest'] = function(block) {
-  var value_isolation_forest_val = Blockly.Python.valueToCode(block, 'Isolation_Forest_val', Blockly.Python.ORDER_ATOMIC);
-  var text_isolation_forest_estimators = block.getFieldValue('Isolation_Forest_estimators');
-  var text_isolation_forest_connection = block.getFieldValue('Isolation_Forest_connection');
-  var text_isolation_forest_randomstate = block.getFieldValue('Isolation_Forest_randomstate');
-  // TODO: Assemble Python into code variable.
-  var code = `${value_isolation_forest_val} = IsolationForest(n_estimators = ${text_isolation_forest_estimators}, contamination = ${text_isolation_forest_connection}, random_state = ${text_isolation_forest_randomstate})\n`;
-  return code;
-};
+
 
 //import knn
 Blockly.Python['import_knn'] = function(block) {
@@ -852,49 +843,12 @@ Blockly.Python['import_knn'] = function(block) {
   return code;
 };
 
-Blockly.Python['k_means_inertia'] = function(block) {
-  var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = value_model + '.inertia_';
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
-Blockly.Python['k_means_centroid'] = function(block) {
-  var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = value_model + '.cluster_centers_';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
-//dbscan
-Blockly.Python['dbscan'] = function(block) {
-  var value_dbscan_val = Blockly.Python.valueToCode(block, 'DBSCAN_val', Blockly.Python.ORDER_ATOMIC);
-  var text_dbscan_eps = block.getFieldValue('DBSCAN_EPS');
-  // TODO: Assemble Python into code variable.
-  var code = `${value_dbscan_val} = DBSCAN( eps = ${text_dbscan_eps} )\n`;
-  return code;
-};
+
+
 
 //metrics_fit_predict
-Blockly.Python['metrics_fit_predict'] = function(block) {
-  var value_metrics_fit_predict_val = Blockly.Python.valueToCode(block, 'metrics_fit_predict_val', Blockly.Python.ORDER_ATOMIC);
-  var value_metrics_fit_predict_xdata = Blockly.Python.valueToCode(block, 'metrics_fit_predict_Xdata', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code =`${value_metrics_fit_predict_val}.fit_predict(${value_metrics_fit_predict_xdata})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-//classification_report
-Blockly.Python['classification_report'] = function(block) {
-  var value_classification_report_y_true = Blockly.Python.valueToCode(block, 'classification_report_Y_true', Blockly.Python.ORDER_ATOMIC);
-  var value_classification_report_y_pred = Blockly.Python.valueToCode(block, 'classification_report_y_pred', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `classification_report( ${value_classification_report_y_true}, ${value_classification_report_y_pred})`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
-};
 
 //클래스 함수
 Blockly.Python['class_func'] = function(block) {

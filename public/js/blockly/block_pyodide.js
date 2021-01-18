@@ -108,30 +108,6 @@ function addOptions(text) {
 function removeOptions() {
     dynamicDropdownOptions_ = [];
 }
-Blockly.Blocks['csv3'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.DATASET_CSV3_1)
-        var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Machine_Learning/M1-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        })).appendField(new Blockly.FieldTextInput("default"), "csv_url");
-        this.appendDummyInput().appendField('x_data').appendField(new Blockly.FieldVariable("xData"), "var_x").appendField('y_data').appendField(new Blockly.FieldVariable("yData"), "var_y")
-        this.appendDummyInput().appendField(Blockly.Msg.DATASET_CSV3_2).appendField(dropdown, 'OPTIONS');
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    },
-    dynamicOptions: function () {
-        if (! dynamicDropdownOptions_.length) {
-            return [[Blockly.Msg['DATASET_CSV3_3'], 'OPTION-1']];
-        }
-        return dynamicDropdownOptions_;
-    }
-};
-
 
 Blockly.Blocks['scikit_learn'] = {
     init: function () {
@@ -159,21 +135,6 @@ Blockly.Blocks['scikit_learn'] = {
     }
 };
 
-// ///////////////////////////////데이터전처리 라벨링//////////////////////20200909 이진형
-Blockly.Blocks['labelencoder'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_LABELENCODER_1);
-        this.appendValueInput("df").setCheck(null).appendField(Blockly.Msg.PREPROCESSING_LABELENCODER_2);
-        this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_LABELENCODER_3);
-        this.appendDummyInput().appendField("").appendField(new Blockly.FieldTextInput(Blockly.Msg.PREPROCESSING_LABELENCODER_4), "column").appendField("  ");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 // /////////////////////라이브러리 추가블록////////////////////////20200910 이진형
 // Blockly.Blocks['import_lib'] = {
 //     init: function () {
@@ -200,111 +161,7 @@ Blockly.Blocks['labelencoder'] = {
 //     }make_moons
 // };
 
-Blockly.Blocks['import_dataset'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.DATASET_IMPORT_DATASET_1).appendField(new Blockly.FieldDropdown([
-            [
-                Blockly.Msg.DATASET_IMPORT_DATASET_2, "load_boston"
-            ],
-            [
-                Blockly.Msg.DATASET_IMPORT_DATASET_3, "load_digits"
-            ],
-            [
-                Blockly.Msg.DATASET_IMPORT_DATASET_4, "load_diabetes"
-            ],
-            [
-                Blockly.Msg.DATASET_IMPORT_DATASET_5, "load_iris"
-            ],
-            [
-                Blockly.Msg.DATASET_IMPORT_DATASET_6, "load_wine"
-            ],
-        ]), "dataset_name");
-        this.appendValueInput("x_data").setCheck(null).appendField("x_data");
-        this.appendValueInput("y_data").setCheck(null).appendField("y_data");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['random_import'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.DATASET_RANDOM_IMPORT_1).appendField(new Blockly.FieldDropdown([
-            [
-                "blobs", "make_blobs"
-            ],
-            [
-                "moons", "make_moons"
-            ]
-        ]), "dataset_name");
-        this.appendValueInput("x_data").setCheck(null).appendField("x_data");
-        this.appendValueInput("y_data").setCheck(null).appendField("y_data");
-        this.appendDummyInput().appendField(Blockly.Msg.DATASET_RANDOM_IMPORT_2).appendField(new Blockly.FieldTextInput("100"), "sa");
-        this.appendDummyInput().appendField(Blockly.Msg.DATASET_RANDOM_IMPORT_3).appendField(new Blockly.FieldTextInput("2"), "fe");
-        this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "seed");
 
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-
-// 2020-10-15 정지현 추가
-Blockly.Blocks['make_circles'] = {
-    init: function() {
-      this.appendValueInput("x_data")
-          .setCheck(null)
-          .appendField(Blockly.Msg.DATASET_MAKE_CIRCLES_1);
-      this.appendValueInput("y_data")
-          .setCheck(null)
-          .appendField("y_data ");
-      this.appendDummyInput()
-          .appendField(Blockly.Msg.DATASET_MAKE_CIRCLES_2)
-          .appendField(new Blockly.FieldTextInput("100"), "n_samples");
-      this.appendDummyInput()
-          .appendField(Blockly.Msg.DATASET_MAKE_CIRCLES_3)
-          .appendField(new Blockly.FieldTextInput("0.7"), "factor");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
-Blockly.Blocks['train_test_split'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_1)
-        this.appendValueInput("x_data").setCheck(null).appendField("x_Data");
-        this.appendValueInput("y_data").setCheck(null).appendField("y_Data");
-        this.appendValueInput("x_train").setCheck(null).appendField("x_train");
-        this.appendValueInput("x_test").setCheck(null).appendField("x_test");
-        this.appendValueInput("y_train").setCheck(null).appendField("y_train");
-        this.appendValueInput("y_test").setCheck(null).appendField("y_test");
-        this.appendDummyInput().appendField("Test Size").appendField(new Blockly.FieldTextInput("0.2"), "test_size");
-        this.appendDummyInput().appendField("Data Shuffle").appendField(new Blockly.FieldDropdown([
-            [
-                Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_2, "True"
-            ],
-            [
-                Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_3, "False"
-            ]
-        ]), "shuffle");
-        this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "seed");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 Blockly.Blocks['jin_train_test_split'] = {
     init: function () {
         this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_1)
@@ -333,30 +190,9 @@ Blockly.Blocks['jin_train_test_split'] = {
     }
 };
 
-Blockly.Blocks['model_score'] = {
-    init: function () {
-        this.appendValueInput("model_name").setCheck(null).appendField(Blockly.Msg['METRICS_MODEL_SCORE']);
-        this.appendValueInput("x_test").setCheck(null).appendField("x_test");
-        this.appendValueInput("y_test").setCheck(null).appendField("y_test");
-        this.setInputsInline(true);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setOutput(true, null);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
-Blockly.Blocks['model_predict'] = {
-    init: function () {
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['METRICS_MODEL_PREDICT_1']);
-        this.appendValueInput("NAME").setCheck(null).appendField(Blockly.Msg['METRICS_MODEL_PREDICT_2']);
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
+
 // ////////////////////////////////////python basic block
 // 딕셔너리(구버전)
 Blockly.Blocks['create_dict'] = {
@@ -826,117 +662,10 @@ Blockly.Blocks['for_range'] = {
 //    this.setHelpUrl("");
 //     }
 // };
-Blockly.Blocks['sklearn_mlp_classifier'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_1'])
-        this.appendValueInput("sklearn_mlp_lib_val").setCheck(null).appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_2']);
-        // this.appendValueInput("sklearn_mlp_fit_X").setCheck(null).appendField("X_train");
-        // this.appendValueInput("sklearn_mlp_fit_Y").setCheck(null).appendField("Y_train");
-        this.appendDummyInput().appendField("(").appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_3']).appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
-        this.appendValueInput("sklearn_MLP_Max_iter").setCheck(null).appendField("Epochs");
-        this.appendDummyInput().appendField('Batch Size').appendField(new Blockly.FieldTextInput("16"), "sklearn_MLP_batch_size").appendField("Activation").appendField(new Blockly.FieldDropdown([
-            [
-                "Relu", "sklearn_MLP_activation_relu"
-            ],
-            [
-                "Identity", "sklearn_MLP_activation_identity"
-            ],
-            [
-                "Logistic", "sklearn_MLP_activation_logistic"
-            ],
-            [
-                "Tanh", "sklearn_MLP_activation_tanh"
-            ]
-        ]), "sklearn_mlp_activation_Option").appendField("Optimizer").appendField(new Blockly.FieldDropdown([
-            [
-                "Adam", "sklearn_MLP_Optimizer_Adam"
-            ],
-            [
-                "Lbfgs", "sklearn_MLP_Optimizer_Lbfgs"
-            ],
-            [
-                "SGD", "sklearn_MLP_Optimizer_SGD"
-            ]
-        ]), "sklearn_MLP_Optimizer_Option").appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_4']).appendField(new Blockly.FieldTextInput("0.001"), "sklearn_MLP_learning_rate").appendField("Warm Start").appendField(new Blockly.FieldDropdown([
-            [
-                "False", "sklearn_MLP_Warm_Start_False"
-            ],
-            [
-                "True", "sklearn_MLP_Warm_Start_True"
-            ]
-        ]), "sklearn_MLP_Warm_Start_Option").appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "sklearn_MLP_random_state");
 
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-
-Blockly.Blocks['sklearn_mlp_regressor'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_REGRESSOR'])
-        this.appendValueInput("sklearn_mlp_lib_val").setCheck(null).appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_2']);
-        // this.appendValueInput("sklearn_mlp_fit_X").setCheck(null).appendField("X_train");
-        // this.appendValueInput("sklearn_mlp_fit_Y").setCheck(null).appendField("Y_train");
-        this.appendDummyInput().appendField("(").appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_3']).appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
-        this.appendValueInput("sklearn_MLP_Max_iter").setCheck(null).appendField("Epochs");
-        this.appendDummyInput().appendField('Batch Size').appendField(new Blockly.FieldTextInput("16"), "sklearn_MLP_batch_size").appendField("Activation").appendField(new Blockly.FieldDropdown([
-            [
-                "Relu", "sklearn_MLP_activation_relu"
-            ],
-            [
-                "Identity", "sklearn_MLP_activation_identity"
-            ],
-            [
-                "Logistic", "sklearn_MLP_activation_logistic"
-            ],
-            [
-                "Tanh", "sklearn_MLP_activation_tanh"
-            ]
-        ]), "sklearn_mlp_activation_Option").appendField("Optimizer").appendField(new Blockly.FieldDropdown([
-            [
-                "Adam", "sklearn_MLP_Optimizer_Adam"
-            ],
-            [
-                "Lbfgs", "sklearn_MLP_Optimizer_Lbfgs"
-            ],
-            [
-                "SGD", "sklearn_MLP_Optimizer_SGD"
-            ]
-        ]), "sklearn_MLP_Optimizer_Option").appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_4']).appendField(new Blockly.FieldTextInput("0.001"), "sklearn_MLP_learning_rate").appendField("Warm Start").appendField(new Blockly.FieldDropdown([
-            [
-                "False", "sklearn_MLP_Warm_Start_False"
-            ],
-            [
-                "True", "sklearn_MLP_Warm_Start_True"
-            ]
-        ]), "sklearn_MLP_Warm_Start_Option").appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "sklearn_MLP_random_state");
-
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
 // 2020-10-15 정지현 추가
-Blockly.Blocks['mlp_loss'] = {
-    init: function() {
-      this.appendValueInput("model")
-          .setCheck(null)
-          .appendField(Blockly.Msg['NEURALNETWORK_MLP_LOSS']);
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
+
 
 
 // //MLP fit
@@ -978,22 +707,7 @@ Blockly.Blocks['mlp_loss'] = {
 //         this.setHelpUrl("");
 //     }
 // };
-Blockly.Blocks['k_means'] = {
-    init: function() {
-      this.appendValueInput("model")
-          .setCheck(null)
-          .appendField(Blockly.Msg.CLUSTER_K_MEANS_1);
-      this.appendValueInput("cnt")
-          .setCheck(null)
-          .appendField(Blockly.Msg.CLUSTER_K_MEANS_2);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
+
 
 // for
 Blockly.Blocks['py_for'] = {
@@ -1234,29 +948,7 @@ Blockly.Blocks['vis_tree'] = {
 };
 //2020-12-04 양승국 번역
 
-Blockly.Blocks['fetch_openml'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.DATASET_FETCH_OPENML_1).appendField(new Blockly.FieldDropdown([
-            [
-                Blockly.Msg['DATASET_FETCH_OPENML_3'], "titanic"
-            ],
-            [
-                Blockly.Msg.DATASET_FETCH_OPENML_2, "house_price"
-            ],
-            [
-                "Mnist", "mnist_784"
-            ]
-        ]), "NAME");
-        this.appendValueInput("x").setCheck(null).appendField("x_data");
-        this.appendValueInput("y").setCheck(null).appendField("y_data");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
 
 Blockly.Blocks['import_scikit'] = {
     init: function () {
@@ -1294,106 +986,15 @@ Blockly.Blocks['import_scikit'] = {
         this.setHelpUrl("");
     }
 };
-Blockly.Blocks['acc_score'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['METRICS_ACC_SCORE']);
-        this.appendValueInput("yt").setCheck(null).appendField("Y_true");
-        this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['AUC'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['METRICS_AUC_1']);
-        this.appendValueInput("yt").setCheck(null).appendField(Blockly.Msg['METRICS_AUC_2']);
-        this.appendValueInput("yp").setCheck(null).appendField(Blockly.Msg['METRICS_AUC_3']);
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['AP'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['METRICS_AP']);
-        this.appendValueInput("yt").setCheck(null).appendField("Y_true");
-        this.appendValueInput("yp").setCheck(null).appendField("Y_score");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['precision'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['METRICS_PRECISION_1']);
-        this.appendValueInput("yt").setCheck(null).appendField("Y_true");
-        this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
-        this.appendDummyInput().appendField(Blockly.Msg['METRICS_PRECISION_2']).appendField(new Blockly.FieldDropdown([
-            [
-                "None", "None"
-            ],
-            [
-                "macro", "macro"
-            ],
-            [
-                "micro", "micro"
-            ],
-            [
-                "weighted", "weighted"
-            ]
-        ]), "aver");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
-Blockly.Blocks['mae'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['METRICS_MAE']);
-        this.appendValueInput("yt").setCheck(null).appendField("Y_true");
-        this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
-Blockly.Blocks['mse'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['METRICS_MSE']);
-        this.appendValueInput("yt").setCheck(null).appendField("Y_true");
-        this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['median'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['METRICS_MEDIAN']);
-        this.appendValueInput("yt").setCheck(null).appendField("Y_true");
-        this.appendValueInput("yp").setCheck(null).appendField("Y_pred");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
+
+
+
+
+
+
 
 // //////////////////////////// 신경망 //////////////////////////////
 Blockly.Blocks['mlp_classifier'] = {
@@ -1423,121 +1024,7 @@ Blockly.Blocks['mlp_regressor'] = {
         this.setHelpUrl("");
     }
 };
-// //////////////////////////// Linear //////////////////////////////
-Blockly.Blocks['logistic_regression'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_LOGISTIC_REGRESSION);
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
-        this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "numSeed");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['logistic_regression_cv'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_LOGISTIC_REGRESSION_CV_1);
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_LOGISTIC_REGRESSION_CV_2).appendField(new Blockly.FieldTextInput("5"), "numCv").appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "numSeed");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['perceptron'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_PERCEPTRON);
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
-        this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "numSeed");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['ridge_classifier'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_RIDGE_CLASSIFIER);
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['sgd_classifier'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_SGD_CLASSIFIER);
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
-        this.appendDummyInput().appendField("Epochs").appendField(new Blockly.FieldTextInput("1000"), "numEpochs");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['linear_regression'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_1);
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['ridge'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_RIDGE);
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
-        this.appendDummyInput().appendField("Alpha").appendField(new Blockly.FieldTextInput("1.0"), "numAlpha");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['bayesian_ridge'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_BAYESIAN_RIDGE);
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['sgd_regressor'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg.LINEAR_SGD_REGRESSION);
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
-        this.appendDummyInput().appendField("Epochs").appendField(new Blockly.FieldTextInput("1000"), "numEpochs");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
 // MLP 라이브러리 임포트
 Blockly.Blocks['import_mlp'] = {
     init: function () {
@@ -1612,20 +1099,7 @@ Blockly.Blocks['import_kmeans'] = {
         this.setHelpUrl("");
     }
 };
-// fit
-Blockly.Blocks['model_fit'] = {
-    init: function () {
-        this.appendValueInput("model").appendField(Blockly.Msg['METRICS_MODEL_FIT']);
-        this.appendValueInput("X_train").appendField(" x_train");
-        this.appendValueInput("Y_train").appendField("y_train");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
 // K_Means fit
 Blockly.Blocks['kmeans_fit'] = {
     init: function () {
@@ -1640,39 +1114,7 @@ Blockly.Blocks['kmeans_fit'] = {
     }
 };
 
-Blockly.Blocks['sivalidation'] = {
-    init: function () {
-        this.appendDummyInput().appendField(Blockly.Msg['SELECTION_SIVALIDATION_1']).appendField(new Blockly.FieldDropdown([
-            [
-                Blockly.Msg['SELECTION_SIVALIDATION_2'], "cross_validate"
-            ],
-            [
-                Blockly.Msg['SELECTION_SIVALIDATION_3'], "cross_val_predict"
-            ],
-            [
-                Blockly.Msg['SELECTION_SIVALIDATION_4'], "cross_val_score"
-            ],
-            [
-                Blockly.Msg['SELECTION_SIVALIDATION_5'], "learning_curve"
-            ],
-            [
-                Blockly.Msg['SELECTION_SIVALIDATION_6'], "permutation_test_score"
-            ],
-            [
-                Blockly.Msg['SELECTION_SIVALIDATION_7'], "validation_curve"
-            ]
-        ]), "vali");
-        this.appendValueInput("em").setCheck(null).appendField("estimator");
-        this.appendValueInput("x").setCheck(null).appendField("X");
-        this.appendValueInput("y").setCheck(null).appendField("Y");
-        this.appendDummyInput().appendField(Blockly.Msg['SELECTION_SIVALIDATION_8']).appendField(new Blockly.FieldTextInput("3"), "cv");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
 Blockly.Blocks['import_sivalidation'] = {
     init: function () {
         this.appendDummyInput().appendField(Blockly.Msg['SELECTION_IMPORT_SIVALIDATION_1']).appendField(new Blockly.FieldDropdown([
@@ -1706,27 +1148,7 @@ Blockly.Blocks['import_sivalidation'] = {
         this.setHelpUrl("");
     }
 };
-Blockly.Blocks['kfold'] = {
-    init: function () {
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['SELECTION_KFOLD_1']);
-        this.appendDummyInput().appendField("Splits").appendField(new Blockly.FieldTextInput("default"), "NAME");
-        this.appendDummyInput().appendField("Data Shuffle").appendField(new Blockly.FieldDropdown([
-            [
-                Blockly.Msg['SELECTION_KFOLD_2'], "True"
-            ],
-            [
-                Blockly.Msg['SELECTION_KFOLD_3'], "False"
-            ]
-        ]), "shuffle");
-        this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("None"), "seed");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
 Blockly.Blocks['stratifiedkfold'] = {
     init: function () {
         this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['SELECTION_KFOLD_1']);
@@ -1748,22 +1170,7 @@ Blockly.Blocks['stratifiedkfold'] = {
         this.setHelpUrl("");
     }
 };
-Blockly.Blocks['bernoullirbm'] = {
-    init: function () {
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_1']);
-        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_3']).appendField(new Blockly.FieldTextInput("2"), "hi");
-        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_4']).appendField(new Blockly.FieldTextInput("0.1"), "lr");
-        this.appendDummyInput().appendField(Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_2']).appendField(new Blockly.FieldTextInput("10"), "batch");
-        this.appendDummyInput().appendField(" Epochs").appendField(new Blockly.FieldTextInput("10"), "epochs");
-        this.appendDummyInput().appendField(" Seed").appendField(new Blockly.FieldTextInput("None"), "seed");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
 Blockly.Blocks['import_scipy'] = {
     init: function () {
         this.appendDummyInput().appendField(Blockly.Msg.SCIPY_IMPORT).appendField(new Blockly.FieldDropdown([
@@ -1846,58 +1253,10 @@ Blockly.Blocks['import_tree'] = {
         this.setHelpUrl("");
     }
 };
-Blockly.Blocks['decision'] = {
-    init: function () {
-        this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.DECISIONTREE_DESICION_1);
-        // this.appendValueInput("depth")
-        //       .setCheck(null)
-        //       .appendField("깊이");
-        // this.appendValueInput("seed")
-        //       .setCheck(null)
-        //       .appendField("Seed");
-        this.appendDummyInput().appendField(Blockly.Msg.DECISIONTREE_DESICION_2).appendField(new Blockly.FieldTextInput("null"), "depth");
-        this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("null"), "seed");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['coef'] = {
-    init: function () {
-        this.appendValueInput("coef").setCheck(null).appendField(Blockly.Msg.LINEAR_COEF);
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-Blockly.Blocks['intercept'] = {
-    init: function () {
-        this.appendValueInput("intercept").setCheck(null).appendField(Blockly.Msg.LINEAR_INTERCEPT);
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
 
 
-Blockly.Blocks['tree_text'] = {
-    init: function () {
-        this.appendValueInput("trr").setCheck(null).appendField(Blockly.Msg.DECISIONTREE_TREE_TEXT);
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_HUE}");
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
+
 
 
 // //////////////////프롤로그 임시
@@ -2054,3 +1413,23 @@ Blockly.Blocks['np_dot'] = {
         this.setHelpUrl("");
     }
 };
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 2021-01 정지현 사이킷런 임포트 블록 추가
+//
+/////////////////////////////////////////////////////////////////////////////
+Blockly.defineBlocksWithJsonArray(
+    [
+        {
+            "type": "import_scikit_learn",
+            "message0": "%{BKY_IMPORT_SCIKIT_LEARN}",
+            "inputsInline": true,
+            "previousStatement": null, 
+            "nextStatement": null,
+            "colour": "%{BKY_SCIKITLEARN_HUE}",
+            "tooltip": "",
+            "helpUrl": ""
+        }
+    ]
+)

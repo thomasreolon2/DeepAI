@@ -11,120 +11,6 @@ Blockly.Blocks['sklearn_ensemble'] = {
   }
 };
 
-Blockly.Blocks['adaboostclassifier'] = {
-  init: function () {
-    this.appendValueInput("NAME")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_1);
-    this.appendValueInput("NAME2")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_2);
-    this.appendValueInput("NAME3")
-      .setCheck(null)
-      .appendField("seed");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['adaboostregressor'] = {
-  init: function () {
-    this.appendValueInput("NAME")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_ADABOOSTREGRESSOR);
-    this.appendValueInput("NAME2")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_2);
-    this.appendValueInput("NAME3")
-      .setCheck(null)
-      .appendField("seed");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['gradientboostingclassifier'] = {
-  init: function () {
-    this.appendValueInput("NAME")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_1);
-    this.appendValueInput("NAME2")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['gradientboostingregressor'] = {
-  init: function () {
-    this.appendValueInput("NAME")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGREGRESSOR);
-    this.appendValueInput("NAME2")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['randomforestclassifier'] = {
-  init: function () {
-    this.appendValueInput("NAME")
-      .setCheck(null)
-      .appendField(Blockly.Msg['ESEMBLE_RANDOMFORESTCLASSIFIER']);
-    this.appendValueInput("NAME2")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
-    this.appendValueInput("NAME3")
-      .setCheck(null)
-      .appendField("seed");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['randomforestregressor'] = {
-  init: function () {
-    this.appendValueInput("NAME")
-      .setCheck(null)
-      .appendField(Blockly.Msg['ESEMBLE_RANDOMFORESTREGRESSOR']);
-    this.appendValueInput("NAME2")
-      .setCheck(null)
-      .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
-    this.appendValueInput("NAME3")
-      .setCheck(null)
-      .appendField("seed");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
 
 Blockly.Blocks['sklearn.preprocessing'] = {
   init: function () {
@@ -146,21 +32,6 @@ Blockly.Blocks['sklearn.preprocessing'] = {
   }
 };
 
-Blockly.Blocks['polynomialfeatures'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("[PolynomialFeatures] ")
-      .appendField("PolynomialFeatures(");
-    this.appendValueInput("NAME")
-    this.appendDummyInput()
-      .appendField(")");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
 
 Blockly.Blocks['fit_transform'] = {
   init: function () {
@@ -193,23 +64,7 @@ Blockly.Blocks['sklearn_svm'] = {
   }
 };
 
-Blockly.Blocks['linearsvc'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.LINEARSVC_1);
-    this.appendValueInput("NAME")
-      .setCheck(null)
-      .appendField("seed");
-    this.appendValueInput("NAME2")
-      .setCheck(null)
-      .appendField(Blockly.Msg.LINEARSVC_2);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
+
 
 Blockly.Blocks['make_pipeline'] = {
   init: function () {
@@ -224,56 +79,6 @@ Blockly.Blocks['make_pipeline'] = {
     this.setColour("%{BKY_SCIKITLEARN_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['linearsvr'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.LINEARSVR);
-    this.appendValueInput("NAME")
-      .setCheck(null)
-      .appendField("seed");
-    this.appendValueInput("NAME2")
-      .setCheck(null)
-      .appendField("오차");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['polynomialfeatures'] = {
-  init: function () {
-    this.appendValueInput("NAME")
-      .setCheck(null)
-      .appendField(Blockly.Msg.PREPROCESSING_POLYNOMIALFEATURES_1)
-      .appendField(Blockly.Msg.PREPROCESSING_POLYNOMIALFEATURES_2);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.PREPROCESSING_POLYNOMIALFEATURES_3)
-      .appendField(new Blockly.FieldDropdown([["True", "True"], ["False", "False"]]), "NAME");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['onehotencoder'] = {
-  init: function () {
-    this.appendValueInput("data")
-      .setCheck(null)
-      .appendField(Blockly.Msg.PREPROCESSING_ONEHOTENCODER_1)
-      .appendField(Blockly.Msg.PREPROCESSING_ONEHOTENCODER_2);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setTooltip("");
-    this.setHelpUrl("");
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
   }
 };
 

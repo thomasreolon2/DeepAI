@@ -1132,27 +1132,6 @@ Blockly.defineBlocksWithJsonArray(
     }
   };
 
-  //IsolationForest
-Blockly.Blocks['isolation_forest'] = {
-  init: function() {
-    this.appendValueInput("Isolation_Forest_val")
-        .setCheck(null)
-        .appendField("[Isolation Forest]");
-    this.appendDummyInput()
-        .appendField(Blockly.Msg['ESEMBLE_ADABOOSTCLASSIFIER_2'])
-        .appendField(new Blockly.FieldTextInput("100"), "Isolation_Forest_estimators")
-        .appendField(Blockly.Msg['ESEMBLE_ISOLATION_FOREST'])
-        .appendField(new Blockly.FieldTextInput("0.5"), "Isolation_Forest_connection")
-        .appendField("Seed")
-        .appendField(new Blockly.FieldTextInput("0"), "Isolation_Forest_randomstate");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 //import knn
 Blockly.Blocks['import_knn'] = {
@@ -1171,84 +1150,13 @@ Blockly.Blocks['import_knn'] = {
   }
 }; 
 
-Blockly.Blocks['k_means_inertia'] = {
-  init: function() {
-    this.appendValueInput("model")
-        .setCheck(null)
-        .appendField(Blockly.Msg.CLUSTER_K_MEANS_INERTIA);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
-Blockly.Blocks['k_means_centroid'] = {
-  init: function() {
-    this.appendValueInput("model")
-        .setCheck(null)
-        .appendField(Blockly.Msg.CLUSTER_K_MEANS_CENTROID);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
-//dbscan
-Blockly.Blocks['dbscan'] = {
-  init: function() {
-    this.appendValueInput("DBSCAN_val")
-        .setCheck(null)
-        .appendField("[ DBSCAN ]");
-    this.appendDummyInput()
-        .appendField("EPS ")
-        .appendField(new Blockly.FieldTextInput("0.5"), "DBSCAN_EPS");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
-//metrics_fit_predict
-Blockly.Blocks['metrics_fit_predict'] = {
-  init: function() {
-    this.appendValueInput("metrics_fit_predict_val")
-        .setCheck(null)
-        .appendField(Blockly.Msg['METRICS_METRICS_FIT_PREDICT']);
-    this.appendValueInput("metrics_fit_predict_Xdata")
-        .setCheck(null)
-        .appendField("Xdata");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-}; 
 
-//classification_report
-Blockly.Blocks['classification_report'] = {
-  init: function() {
-    this.appendValueInput("classification_report_Y_true")
-        .setCheck(null)
-        .appendField("[ Classification Report ]")
-        .appendField("Y_true");
-    this.appendValueInput("classification_report_y_pred")
-        .setCheck(null)
-        .appendField("Y_pred ");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
+
+
+
 
 
 

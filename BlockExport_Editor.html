@@ -19,7 +19,7 @@
   <!-- ******************************               CDN                       ******************************* -->
   <!-- #####################################################################################################  -->
 
-  <!-- jquery -->
+  <!-- jquery --> 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- bootstrap -->
@@ -178,6 +178,11 @@
   <script src="/js/blockly/blocks_neighbors.js"></script>
   <script src="/js/blockly/blocks_neighbors_gen.js"></script>
   <script src="/js/blockly/blocks_neighbors_java.js"></script>
+
+  <!-- Scikit-Learn 블록, 2021.01 정지현 추가 -->
+  <script src="/js/blockly/block_sklearn.js"></script>
+  <script src="/js/blockly/block_sklearn_js.js"></script>
+  <script src="/js/blockly/block_sklearn_py.js"></script>
 
   <!-- api 블록 -->
   <script src="/js/blockly/block_api.js"></script>
@@ -6078,7 +6083,205 @@
       
 
     </category>
-    <category name="%{BKY_CATEGORY_SCIKIT}" colour="%{BKY_SCIKITLEARN_HUE}"> <!--사이킷런(Scikit)-->
+
+    <!-- //////////////////////////////////////////////////////////////////////////
+    //
+    // 2021.01. 사이킷런 정리, 정지현
+    //
+    ///////////////////////////////////////////////////////////////////////////////
+    -->
+    <category name="%{BKY_CATEGORY_SCIKIT}" colour="%{BKY_SCIKITLEARN_HUE}"> 
+      <!-- 기본 - 자주쓰는 블록, 모델 학습, 예측, 평가, 임포트 등 -->
+      <category name="기본" colour="%{BKY_SCIKITLEARN_HUE}">
+        <label text="라이브러리 임포트"></label>
+        <block type="import_scikit_learn"></block>
+
+        <label text="데이터 처리(핸들링)"></label>
+        <block type="train_test_split"></block>
+        <block type="labelencoder"></block>
+        <block type="onehotencoder"></block>
+
+        <label text="모델 학습 및 평가"></label>
+        <block type="model_fit"></block>
+        <block type="model_score"></block>
+        <block type="model_predict"></block>
+      </category>
+
+      <category name="데이터셋" colour="%{BKY_SCIKITLEARN_HUE}">
+        <block type="import_dataset"></block>
+        <block type="random_import"></block>
+        <block type="make_circles"></block>
+	      <block type="csv3"></block>
+      </category>
+
+      <category name="데이터핸들링" colour="%{BKY_SCIKITLEARN_HUE}">
+        <block type="train_test_split"></block>
+        <block type="kfold"></block>
+        <block type="labelencoder"></block>
+        <block type="onehotencoder"></block>
+        <block type="polynomialfeatures"></block>
+      </category>
+
+      <category name="지도학습" colour="%{BKY_SCIKITLEARN_HUE}">
+        <category name="예측" colour="%{BKY_SCIKITLEARN_HUE}">
+          <label text="기본 회귀 모델"></label>
+          <block type="linear_regression"></block>
+          <block type="sgd_regressor"></block>
+          <block type="ridge"></block>
+
+          <label text="베이지안 회귀 모델"></label>
+          <block type="bayesian_ridge"></block>
+
+          <label text="결정트리 회귀 모델"></label>
+
+          <label text="앙상블 회귀 모델"></label>
+          <block type="adaboostregressor"></block>
+          <block type="gradientboostingregressor"></block>
+          <block type="randomforestregressor"></block>
+
+          <label text="KNN 회귀 모델"></label>
+          <block type="kneighborsregressor_function"></block>
+ 
+          <label text="SVM 회귀 모델"></label>
+          <block type="linearsvr"></block>
+
+          <label text="신경망 회귀 모델"></label>
+          <block type="sklearn_mlp_regressor"></block>
+
+        </category>
+
+        <category name="분류" colour="%{BKY_SCIKITLEARN_HUE}">
+          <label text="기본 분류 모델"></label>
+          <block type="logistic_regression"></block>
+          <block type="logistic_regression_cv"></block>
+          <block type="ridge_classifier"></block>
+          <block type="sgd_classifier"></block>
+          <block type="perceptron"></block>
+
+          <label text="결정트리 분류 모델"></label>
+          <block type="decision"></block>
+
+          <label text="앙상블 분류 모델"></label>
+          <block type="adaboostclassifier"></block>
+          <block type="gradientboostingclassifier"></block>
+          <block type="randomforestclassifier"></block>
+
+          <label text="KNN 분류 모델"></label>
+          <block type="kneighborsclassifier_function"></block>
+ 
+          <label text="SVM 분류 모델"></label>
+          <block type="linearsvc"></block>
+
+          <label text="신경망 분류 모델"></label>
+          <block type="sklearn_mlp_classifier"></block>
+        </category>
+      </category>
+
+      <category name="비지도학습" colour="%{BKY_SCIKITLEARN_HUE}">
+        <label text="K-Means 모델"></label>
+        <block type="k_means"></block>
+
+        <label text="DBSCAN 모델"></label>
+        <block type="dbscan"></block>
+
+        <label text="Isolation Forest 모델"></label>
+        <block type="isolation_forest"></block>
+      </category>
+
+      <category name="평가지표" colour="%{BKY_SCIKITLEARN_HUE}">
+        <label text="기본 평가 지표"></label>
+        <block type="acc_score"></block>
+        <block type="mae"></block>
+        <block type="mse"></block>
+
+        <label text="고급 평가 지표"></label>
+        <block type="AUC"></block>
+        <block type="AP"></block>
+        <block type="precision"></block>
+        <block type="median"></block> 
+        <block type="sivalidation"></block>
+        <block type="classification_report"></block>
+      </category>
+
+      <!-- 계수, 절편 추출 등 -->
+      <category name="기타" colour="%{BKY_SCIKITLEARN_HUE}">
+        <label text="속성 추출"></label>
+        <block type="coef"></block>
+        <block type="intercept"></block>
+        <block type="k_means_inertia"></block>
+        <block type="k_means_centroid"></block>
+        <block type="mlp_loss"></block>
+
+        <label text="남은 블록(Deprecated.)"></label>
+        <block type="fetch_openml"></block>        
+        <block type="kneighborstransformer_function"></block>
+        <block type="kneighbors_graph_function"></block>
+        <block type="tree_text"></block> 
+        <block type="metrics_fit_predict"></block>
+        <block type="bernoullirbm"></block>
+        <block type="normal">
+          <value name="Normalization_data">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+
+
+      </category>
+
+    </category>
+
+    <!-- 기본 블록 2020 - 09 - 07 찬영 -->
+    <!-- 새 블록  딕셔너리 -->
+    <category name="%{BKY_CATEGORY_DATASCIENCE}" colour="%{BKY_DATA_HUE}"> <!--데이터과학(DS)-->
+    </category>
+    <category name="%{BKY_CATEGORY_MACHINELEARNING}" colour="%{BKY_ML_HUE}"> <!--머신러닝(ML)-->
+    </category>
+    <category name="%{BKY_CATEGORY_DEEPLEARNING}" colour="%{BKY_DL_HUE}"> <!--딥러닝(DL)-->
+    </category>
+    <!-- <category name="프롤로그 (Prolog)" colour="%{BKY_PROLOG_HUE}">
+      <block type="prolog_list">
+        <value name="bar">
+          <block type="funktor"></block>
+        </value>
+      </block>
+      <block type="Rule">
+        <value name="Fact">
+          <block type="prolog_list_rule">
+            <value name="bar">
+              <block type="funktor"></block>
+            </value>
+          </block>
+        </value>
+        <value name="Rumpf">
+          <block type="rumpf"></block>
+        </value>
+      </block>
+      <block type="abfrage">
+        <value name="NAME">
+          <block type="separate"></block>
+        </value>
+      </block>
+      <block type="separate"></block>
+      <block type="constant"></block>
+      <block type="funktor"></block>
+      <block type="rumpf"></block> 
+    </category> -->
+
+
+
+    <!-- 기계 고장 진단  -->
+    <!-- <category name="전공직무AI융합" colour="%{BKY_PROLOG_HUE}">
+      <block type="wavfile_read">
+        <value name="wavfile_read_val">
+          <block type="class_func_param"></block>
+        </value> 
+      </block>
+    </category>  -->
+
+    <!-- 이전 사이킷런 카테고리, Deprecated -->
+    <category name="Scikit-learn Deprecated" colour="%{BKY_SCIKITLEARN_HUE}"> <!--사이킷런(Scikit)-->
       <category name="%{BKY_CATEGORY_DATASET}" colour="%{BKY_SCIKITLEARN_HUE}"> <!--데이터셋 (Dataset)-->
         <block type="import_dataset"></block>
         <block type="random_import"></block>
@@ -6201,56 +6404,7 @@
       <!-- <block type="array_get"></block> -->
       <!-- <block type="csv3"></block> -->
       <!-- <block type="sklearn_mlp_fit"></block> -->
-
-
     </category>
-    <!-- 기본 블록 2020 - 09 - 07 찬영 -->
-    <!-- 새 블록  딕셔너리 -->
-    <category name="%{BKY_CATEGORY_DATASCIENCE}" colour="%{BKY_DATA_HUE}"> <!--데이터과학(DS)-->
-    </category>
-    <category name="%{BKY_CATEGORY_MACHINELEARNING}" colour="%{BKY_ML_HUE}"> <!--머신러닝(ML)-->
-    </category>
-    <category name="%{BKY_CATEGORY_DEEPLEARNING}" colour="%{BKY_DL_HUE}"> <!--딥러닝(DL)-->
-    </category>
-    <!-- <category name="프롤로그 (Prolog)" colour="%{BKY_PROLOG_HUE}">
-      <block type="prolog_list">
-        <value name="bar">
-          <block type="funktor"></block>
-        </value>
-      </block>
-      <block type="Rule">
-        <value name="Fact">
-          <block type="prolog_list_rule">
-            <value name="bar">
-              <block type="funktor"></block>
-            </value>
-          </block>
-        </value>
-        <value name="Rumpf">
-          <block type="rumpf"></block>
-        </value>
-      </block>
-      <block type="abfrage">
-        <value name="NAME">
-          <block type="separate"></block>
-        </value>
-      </block>
-      <block type="separate"></block>
-      <block type="constant"></block>
-      <block type="funktor"></block>
-      <block type="rumpf"></block> 
-    </category> -->
-
-
-
-    <!-- 기계 고장 진단  -->
-    <!-- <category name="전공직무AI융합" colour="%{BKY_PROLOG_HUE}">
-      <block type="wavfile_read">
-        <value name="wavfile_read_val">
-          <block type="class_func_param"></block>
-        </value> 
-      </block>
-    </category>  -->
 
 
   </xml>

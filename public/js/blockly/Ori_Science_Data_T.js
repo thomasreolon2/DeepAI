@@ -218,7 +218,7 @@ Blockly.defineBlocksWithJsonArray(
 //     "tooltip": "",
 //     "helpUrl": ""
 //   },
-  
+
 //   //print 하기   
 //   {
 //     "type": "print",
@@ -677,7 +677,7 @@ Blockly.defineBlocksWithJsonArray(
 //     "tooltip": "",
 //     "helpUrl": ""
 //   },
-  
+
 //   //matplot3 
 //   {
 //     "type": "matplotlib_graph_end",
@@ -689,7 +689,7 @@ Blockly.defineBlocksWithJsonArray(
 //     "tooltip": "",
 //     "helpUrl": ""
 //   },
-  
+
 //   //선형 회귀 생성 
 //   {
 //     "type": "linearregression_c",
@@ -727,8 +727,9 @@ Blockly.defineBlocksWithJsonArray(
 //     "tooltip": "",
 //     "helpUrl": ""
 //   },
-  
-  
-  
+
+
+
 //   ]
-//   ); 
+
+)

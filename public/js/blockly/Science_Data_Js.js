@@ -456,16 +456,7 @@ Blockly.JavaScript['make_moons'] = function(block) {
   return code;
 };
 
-//IsolationForest
-Blockly.JavaScript['isolation_forest'] = function(block) {
-  var value_isolation_forest_val = Blockly.JavaScript.valueToCode(block, 'Isolation_Forest_val', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_isolation_forest_estimators = block.getFieldValue('Isolation_Forest_estimators');
-  var text_isolation_forest_connection = block.getFieldValue('Isolation_Forest_connection');
-  var text_isolation_forest_randomstate = block.getFieldValue('Isolation_Forest_randomstate');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
+
  
 //import knn
 Blockly.JavaScript['import_knn'] = function(block) {
@@ -475,50 +466,15 @@ Blockly.JavaScript['import_knn'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['k_means_inertia'] = function(block) {
-  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.JavaScript['k_means_centroid'] = function(block) {
-  var value_model = Blockly.JavaScript.valueToCode(block, 'model', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-//dbscan
-Blockly.JavaScript['dbscan'] = function(block) {
-  var value_dbscan_val = Blockly.JavaScript.valueToCode(block, 'DBSCAN_val', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_dbscan_eps = block.getFieldValue('DBSCAN_EPS');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
 
 
-//matrix_fit_predict
-Blockly.JavaScript['metrics_fit_predict'] = function(block) {
-  var value_metrics_fit_predict_val = Blockly.JavaScript.valueToCode(block, 'metrics_fit_predict_val', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_metrics_fit_predict_xdata = Blockly.JavaScript.valueToCode(block, 'metrics_fit_predict_Xdata', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
 
 
-//classification_report
-Blockly.JavaScript['classification_report'] = function(block) {
-  var value_classification_report_y_true = Blockly.JavaScript.valueToCode(block, 'classification_report_Y_true', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_classification_report_y_pred = Blockly.JavaScript.valueToCode(block, 'classification_report_y_pred', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
+
+
+
+
+
 
 //클래스 함수
 Blockly.JavaScript['class_func'] = function(block) {

@@ -802,9 +802,13 @@ Blockly.Msg['SCIPY_CURVE_FIT'] = "[Curve_Fit] 함수";
 Blockly.Msg['SCIPY_QUAD'] = "[Quad] 함수";
 
 // --------- 사이킷런
+
+// ---- 기본
+Blockly.Msg['IMPORT_SCIKIT_LEARN'] = "[ 임포트 ] sklearn을 skl로";
+
 // ---- 데이터 셋
 Blockly.Msg['DATASET_IMPORT_DATASET_1'] = "[사이킷런 데이터셋]  ";
-Blockly.Msg['DATASET_IMPORT_DATASET_2'] = "보스턴 집 값 데이터 ";
+Blockly.Msg['DATASET_IMPORT_DATASET_2'] = "보스턴 집 가격 데이터 ";
 Blockly.Msg['DATASET_IMPORT_DATASET_3'] = "손글씨 데이터";
 Blockly.Msg['DATASET_IMPORT_DATASET_4'] = "당뇨병 데이터";
 Blockly.Msg['DATASET_IMPORT_DATASET_5'] = "붓꽃 데이터";
@@ -836,8 +840,10 @@ Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_2'] = "모델";
 Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_3'] = "상호작용";
 Blockly.Msg['PREPROCESSING_NORMAL_1'] = "[표준스케일] 프레임";
 Blockly.Msg['PREPROCESSING_NORMAL_2'] = "컬럼명";
-Blockly.Msg['PREPROCESSING_ONEHOTENCODER_1'] = "[범주형 자료 변환] ";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_1'] = "[데이터 원-핫인코딩] ";
 Blockly.Msg['PREPROCESSING_ONEHOTENCODER_2'] = "변수";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_3'] = "컬럼설정";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_4'] = "컬럼명";
 
 // ---- 선형모델 
 Blockly.Msg['LINEAR_IMPORT_1'] = "[임포트] 선형모델 ";
@@ -910,8 +916,8 @@ Blockly.Msg['ESEMBLE_ADABOOSTREGRESSOR'] = "[Adaboost회귀] 모델";
 Blockly.Msg['ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_1'] = "[GradientBoosting분류] 모델";
 Blockly.Msg['ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2'] = "나무 최대 깊이"; // 중복 사용되는 것
 Blockly.Msg['ESEMBLE_GRADIENTBOOSTINGREGRESSOR'] = "[GradientBoosting회귀] 모델";
-Blockly.Msg['ESEMBLE_RANDOMFORESTCLASSIFIER'] = "[결정트리 분류] 모델";
-Blockly.Msg['ESEMBLE_RANDOMFORESTREGRESSOR'] = "[결정트리 회귀] 모델";
+Blockly.Msg['ESEMBLE_RANDOMFORESTCLASSIFIER'] = "[랜덤포레스트 분류] 모델";
+Blockly.Msg['ESEMBLE_RANDOMFORESTREGRESSOR'] = "[랜덤포레스트 회귀] 모델";
 Blockly.Msg['ESEMBLE_ISOLATION_FOREST'] = "이상치 비율";
 
 // ---- 메트릭스(Metrics)
@@ -932,6 +938,7 @@ Blockly.Msg['METRICS_MAE'] = "[MAE 계산(Mean)] ";
 Blockly.Msg['METRICS_MSE'] = "[MSE 계산] ";
 Blockly.Msg['METRICS_MEDIAN'] = "[MSE 계산(Median)] ";
 Blockly.Msg['METRICS_METRICS_FIT_PREDICT'] = "[ DBSCAN 학습 및 예측 ] 모델 ";
+Blockly.Msg['METRICS_CLASSIFICATION_REPORT'] = "[종합분류평가지표]"
 
 // ---- 셀렉션(Selection)
 Blockly.Msg['SELECTION_IMPORT_SIVALIDATION_1'] = "[임포트] 셀렉션";

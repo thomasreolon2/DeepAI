@@ -199,13 +199,6 @@ Blockly.JavaScript['array_change'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.JavaScript['onehotencoder'] = function (block) {
-  // TODO: Assemble Python into code variable.
-  var code = "OneHotEncoder()\n";
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
 Blockly.JavaScript['onehotencoder_fit'] = function (block) {
   var value_enc_name = Blockly.JavaScript.valueToCode(block, 'enc_name', Blockly.JavaScript.ORDER_ATOMIC);
   var value_enc_fit_name = Blockly.JavaScript.valueToCode(block, 'enc_fit_name', Blockly.JavaScript.ORDER_ATOMIC);

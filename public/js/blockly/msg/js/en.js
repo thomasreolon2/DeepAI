@@ -798,6 +798,10 @@ Blockly.Msg['SCIPY_CURVE_FIT'] = "[Curve_Fit] function";
 Blockly.Msg['SCIPY_QUAD'] = "[Quad] function";
 
 // --------- 사이킷런
+
+// ---- 기본
+Blockly.Msg['IMPORT_SCIKIT_LEARN'] = "[ import ] sklearn";
+
 // ---- 데이터 셋
 Blockly.Msg['DATASET_IMPORT_DATASET_1'] = "[scikit-learn data set]  ";
 Blockly.Msg['DATASET_IMPORT_DATASET_2'] = "boston housing price data ";
@@ -819,7 +823,7 @@ Blockly.Msg['DATASET_CSV3_2'] = "select y_data column";
 Blockly.Msg['DATASET_CSV3_3'] = "choose";
 // ---- 전처리
 Blockly.Msg['PREPROCESSING_SKLEARN'] = "[import] preprocessing ";
-Blockly.Msg['PREPROCESSING_LABELENCODER_1'] = "[data labe encoding] ";
+Blockly.Msg['PREPROCESSING_LABELENCODER_1'] = "[label encoding]] ";
 Blockly.Msg['PREPROCESSING_LABELENCODER_2'] = "data";
 Blockly.Msg['PREPROCESSING_LABELENCODER_3'] = "column setting";
 Blockly.Msg['PREPROCESSING_LABELENCODER_4'] = "column name";
@@ -831,8 +835,10 @@ Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_2'] = "model";
 Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_3'] = "interaction";
 Blockly.Msg['PREPROCESSING_NORMAL_1'] = "[standard scale] frame";
 Blockly.Msg['PREPROCESSING_NORMAL_2'] = "column name";
-Blockly.Msg['PREPROCESSING_ONEHOTENCODER_1'] = "[categorical data conversion] ";
-Blockly.Msg['PREPROCESSING_ONEHOTENCODER_2'] = "variable";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_1'] = "[one-hot encoding] ";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_2'] = "data";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_3'] = "set column";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_4'] = "column name";
 
 // ---- 선형모델 
 Blockly.Msg['LINEAR_IMPORT_1'] = "[import] linear regression ";
@@ -927,6 +933,7 @@ Blockly.Msg['METRICS_MAE'] = "[MAE calculation(Mean)] ";
 Blockly.Msg['METRICS_MSE'] = "[MSE calculation] ";
 Blockly.Msg['METRICS_MEDIAN'] = "[MSE calculation(Median)] ";
 Blockly.Msg['METRICS_METRICS_FIT_PREDICT'] = "[ DBSCAN training and prediction ] model ";
+Blockly.Msg['METRICS_CLASSIFICATION_REPORT'] = "[Classification Report]"
 
 // ---- 셀렉션(Selection)
 Blockly.Msg['SELECTION_IMPORT_SIVALIDATION_1'] = "[import] selection";
