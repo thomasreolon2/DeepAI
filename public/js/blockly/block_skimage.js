@@ -147,7 +147,7 @@ Blockly.Blocks['ski_class'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(%{BKY_SCIKITLEARN_HUE});
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
