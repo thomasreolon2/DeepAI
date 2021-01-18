@@ -147,7 +147,7 @@ Blockly.JavaScript['gp'] = function (block) {
         return [code, Blockly.JavaScript.ORDER_ATOMIC];
       };
 
-      Blockly.JavaScript['skimage_color'] = function (block) {
+      Blockly.JavaScript['skimage_data_immunohistochemistry'] = function (block) {
         var dropdown_dic = block.getFieldValue('DATA');
         var code = '\n'
       

@@ -338,35 +338,20 @@ Blockly.Blocks['plt_subplots'] = {
     }
   };
 
-  Blockly.Blocks['skimage_color'] = {
+  Blockly.Blocks['skimage_data_immunohistochemistry'] = {
     init: function () {
-      this.appendDummyInput()
-        .appendField("color.")
-        .appendField(new Blockly.FieldDropdown([
-          [
-            "rgb2gray", "rgb2gray"  
-          ],
-          [
-            "hed2rgb", "hed2rgb"
-          ],
-          [
-            "gray2rgb", "gray2rgb"
-          ],
-          [
-            "rgb2hsv", "rgb2hsv"
-          ]
-        ]), "DATA");
-      this.appendValueInput("data")
-        .setCheck(null)
-        .appendField("(");
-      this.appendDummyInput()
-        .appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
+        this.appendDummyInput()
+          .appendField("data.immunohistochemistry(");
+        this.appendValueInput("data")
+          .setCheck(null);
+        this.appendDummyInput()
+          .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+      }
   };
 
   Blockly.Blocks['skimage_segmetation'] = {

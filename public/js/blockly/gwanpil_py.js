@@ -195,10 +195,9 @@ Blockly.Python['plt_subplot'] = function(block) {
         return [code, Blockly.Python.ORDER_ATOMIC];
       };
 
-      Blockly.Python['skimage_color'] = function (block) {
-        var dropdown_dic = block.getFieldValue('DATA');
+      Blockly.Python['skimage_data_immunohistochemistry'] = function (block) {
         var value_a1 = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
-        var code = `color.${dropdown_dic}(${value_a1})`;
+        var code = `data.immunohistochemistry(${value_a1})`;
         
         return [code, Blockly.Python.ORDER_ATOMIC];
       };
