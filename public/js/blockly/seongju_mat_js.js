@@ -1,6 +1,6 @@
 Blockly.JavaScript['np_pi'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -9,7 +9,7 @@ Blockly.JavaScript['ax_lst_plot'] = function(block) {
   var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -17,7 +17,7 @@ Blockly.JavaScript['ax_lst_plot'] = function(block) {
 Blockly.JavaScript['axs_set_xlim'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -25,7 +25,7 @@ Blockly.JavaScript['axs_set_xlim'] = function(block) {
 Blockly.JavaScript['axs_set_xlabel'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -33,14 +33,14 @@ Blockly.JavaScript['axs_set_xlabel'] = function(block) {
 Blockly.JavaScript['axs_set_ylabel'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
 Blockly.JavaScript['axs_set_xlabel2'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -48,7 +48,7 @@ Blockly.JavaScript['axs_set_xlabel2'] = function(block) {
 Blockly.JavaScript['axs_set_ylabel2'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -56,14 +56,14 @@ Blockly.JavaScript['axs_set_ylabel2'] = function(block) {
 Blockly.JavaScript['axs_grid'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
 Blockly.JavaScript['fig_tight_layout'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -71,7 +71,7 @@ Blockly.JavaScript['fig_tight_layout'] = function(block) {
 Blockly.JavaScript['np_sqrt'] = function(block) {
   var value_val1 = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -82,7 +82,7 @@ Blockly.JavaScript['subplots'] = function(block) {
   var value_val1 = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_val2 = Blockly.JavaScript.valueToCode(block, 'val2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -95,14 +95,14 @@ Blockly.JavaScript['scatter'] = function(block) {
   var value_val2 = Blockly.JavaScript.valueToCode(block, 'val2', Blockly.JavaScript.ORDER_ATOMIC);
   var value_val3 = Blockly.JavaScript.valueToCode(block, 'val3', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
 Blockly.JavaScript['set_title2'] = function(block) {
   var value_row_col = Blockly.JavaScript.valueToCode(block, 'row_col', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -111,7 +111,7 @@ Blockly.JavaScript['ax_stackplot'] = function(block) {
   var value_dic_val = Blockly.JavaScript.valueToCode(block, 'dic_val', Blockly.JavaScript.ORDER_ATOMIC);
   var value_dic_key = Blockly.JavaScript.valueToCode(block, 'dic_key', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -119,7 +119,7 @@ Blockly.JavaScript['ax_legend'] = function(block) {
   var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_loc = Blockly.JavaScript.valueToCode(block, 'loc', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -132,7 +132,7 @@ Blockly.JavaScript['skimage_color'] = function(block) {
   var dropdown_method = block.getFieldValue('method');
   var value_para = Blockly.JavaScript.valueToCode(block, 'para', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -141,7 +141,7 @@ Blockly.JavaScript['skimage_feature'] = function(block) {
   var dropdown_method = block.getFieldValue('method');
   var value_para = Blockly.JavaScript.valueToCode(block, 'para', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
@@ -150,7 +150,7 @@ Blockly.JavaScript['skimage_morphology'] = function(block) {
   var dropdown_method = block.getFieldValue('method');
   var value_para = Blockly.JavaScript.valueToCode(block, 'para', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 };
 
