@@ -146,7 +146,7 @@ Blockly.JavaScript['set_facecolor'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'VAR2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.set_facecolor(${var_text2})\n`;
+  var code = `\n`;
   return code;
 };
 
@@ -163,7 +163,7 @@ Blockly.JavaScript['set_xticklabels'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.set_xticklabels(${var_text2})\n`;
+  var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -173,7 +173,7 @@ Blockly.JavaScript['set_yticklabels'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.set_yticklabels(${var_text2})\n`;
+  var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -182,7 +182,7 @@ Blockly.JavaScript['boxplot'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.boxplot(${var_text2})\n`;
+  var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -191,7 +191,7 @@ Blockly.JavaScript['set_title'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.set_title(${var_text2})\n`;
+  var code = `\n`;
   return code;
 };
 
@@ -200,7 +200,7 @@ Blockly.JavaScript['yaxis_grid'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.yaxis.grid(${var_text2})\n`;
+  var code = `\n`;
   return code;
 };
 
@@ -209,7 +209,7 @@ Blockly.JavaScript['set_xlabel'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.set_xlabel(${var_text2})\n`;
+  var code = `\n`;
   return code;
 };
 
@@ -219,7 +219,7 @@ Blockly.JavaScript['set_ylabel'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.set_ylabel(${var_text2})\n`;
+  var code = `\n`;
   return code;
 };
 
@@ -228,7 +228,7 @@ Blockly.JavaScript['hist'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.hist(${var_text2})\n`;
+  var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -237,7 +237,7 @@ Blockly.JavaScript['cohere'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.cohere(${var_text2})\n`;
+  var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -246,7 +246,7 @@ Blockly.JavaScript['tight_layout'] = function (block) {
   var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${var_text1}.tight_layout(${var_text2})\n`;
+  var code = `\n`;
   return code;
 };
 
@@ -257,7 +257,7 @@ Blockly.JavaScript['skimage_util'] = function (block) {
   var dropdown_drop = block.getFieldValue('DROP');
 
   // TODO: Assemble JavaScript into code variable.
-  var code = `util.${dropdown_drop}(${input_text})`;
+  var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
@@ -268,6 +268,6 @@ Blockly.JavaScript['skimage_measure'] = function (block) {
   var dropdown_drop = block.getFieldValue('DROP');
 
   // TODO: Assemble JavaScript into code variable.
-  var code = `measure.${dropdown_drop}(${input_text})`;
+  var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

@@ -83,23 +83,6 @@ Blockly.Blocks['skimage_data'] = {
 };
 
 
-// 2021.01.17 rgb2gray  남지원
-Blockly.Blocks['rgb2gray'] = {
-  init: function () {
-    this.appendDummyInput()
-      .appendField("rgb2gray(");
-    this.appendValueInput("VAR")
-      .setCheck(null);
-    this.appendDummyInput()
-      .appendField(")");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-
 // 2021-01-18 임포트 블록 양승국
 Blockly.Blocks['ski_class'] = {
   init: function () {
@@ -108,40 +91,40 @@ Blockly.Blocks['ski_class'] = {
       this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([
         [
-          "data as data", "data as data"  
+          "data", "data"  
         ],
         [
-          "color as color", "color as color"
+          "color", "color"
         ],
         [
-          "filters as filters", "filters as filters"
+          "filters", "filters"
         ],
         [
-          "draw as draw", "draw as draw"
+          "draw", "draw"
         ],
         [
-          "feature as feature", "feature as feature"
+          "feature", "feature"
         ],
         [
-          "morphology as morphology", "morphology as morphology"
+          "morphology", "morphology"
         ],
         [
-          "transform as transform", "transform as transform"
+          "transform", "transform"
         ],
         [
-          "util as util", "util as util"
+          "util", "util"
         ],
         [
-          "exposure as exposure", "exposure as exposure"
+          "exposure", "exposure"
         ],
         [
-          "segmetation as segmetation", "segmetation as segmetation"
+          "segmetation", "segmetation"
         ],
         [
-          "img_as_float as img_as_float", "img_as_float as img_as_float"
+          "img_as_float", "img_as_float"
         ],
         [
-          "measure as measure", "measure as measure"
+          "measure", "measure"
         ]
       ]), "DATA");
     this.setInputsInline(true);

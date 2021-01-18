@@ -13,18 +13,11 @@ Blockly.Python['skimage_data'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-// 2021.01.17 rgb2gray  남지원
-Blockly.Python['rgb2gray'] = function (block) {
-  var var_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = `rgb2gray(${var_text})`;
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 // 2021-01-18 임포트 블록 양승국
 Blockly.Python['ski_class'] = function (block) {
   var dropdown_dic = block.getFieldValue('DATA');
-  var code = `import skimage.${dropdown_dic}\n`;
+  var code = `import skimage.${dropdown_dic} as ${dropdown_dic}\n`;
   
   return code;
 };

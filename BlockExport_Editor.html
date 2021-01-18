@@ -6079,16 +6079,11 @@
     <!-- # 시각화 부분 #  -->
     <category name="사이킷이미지(Skimage)" colour="%{BKY_SCIKITLEARN_HUE}">
       <block type="import_skimage"></block>
-      <block type="skimage_data"></block>
-      <block type="rgb2gray">
-        <value name="VAR">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
       <block type = "ski_class"></block>
 
+      <block type="skimage_data"></block>
+     
+      
 
       <block type = "skimage_filters">
         <value name="d2">
