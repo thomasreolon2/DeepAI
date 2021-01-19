@@ -136,5 +136,5 @@ Blockly.Python['db_close'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
   var code = variable_list1 +'.close()' + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };

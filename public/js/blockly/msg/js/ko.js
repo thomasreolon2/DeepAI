@@ -450,7 +450,14 @@ Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT
 //( 기존
  Blockly.Msg.TEXT_14_2_EXISTING= '에서 ';
 //, 변경
-Blockly.Msg.TEXT_14_3_CHANGE = '를 ';
+Blockly.Msg.TEXT_14_3_CHANGE = '를';
+
+// 이성주 중복되어도 지우면 안됨// 조사 컬렉션//
+Blockly.Msg.TEXT_14_5_CHANGE = '에';
+Blockly.Msg.TEXT_14_6_CHANGE = '를';
+Blockly.Msg.TEXT_14_7_CHANGE = '만큼';
+Blockly.Msg.TEXT_14_8_CHANGE = '';
+
 //, 
 Blockly.Msg.TEXT_14_4_END = '로';
 
@@ -462,6 +469,43 @@ Blockly.Msg['NUMSTR_INFUCTION_NUM_2'] = "최솟값(min)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_3'] = "반올림(round)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_4'] = "절댓값(abs)";
 Blockly.Msg['NUMSTR_INFUCTION_STR'] = "ASCII로변환(ord)";
+
+// 이성주
+Blockly.Msg['NUMSTR_SLICING_1'] = "[슬라이싱]";
+Blockly.Msg['NUMSTR_EDIT_1'] = "[편집]";
+Blockly.Msg['NUMSTR_EDIT_2'] = "분리(split)";
+Blockly.Msg['NUMSTR_EDIT_3'] = "삽입(join)";
+Blockly.Msg['NUMSTR_EDIT_4'] = "교체(replace)";
+Blockly.Msg['NUMSTR_EDIT_5'] = "L공백제거(lstrip)";
+Blockly.Msg['NUMSTR_EDIT_6'] = "R공백제거(rstrip)";
+Blockly.Msg['NUMSTR_EDIT_7'] = "양쪽공백제거(strip)";
+
+Blockly.Msg['NUMSTR_SERACH_1'] = "[검색]";
+Blockly.Msg['NUMSTR_SERACH_2'] = "찾기(find)";
+Blockly.Msg['NUMSTR_SERACH_3'] = "개수(count)";
+Blockly.Msg['NUMSTR_SERACH_4'] = "인덱스(index)";
+Blockly.Msg['NUMSTR_SERACH_5'] = "R찾기(rfind)";
+Blockly.Msg['NUMSTR_SERACH_6'] = "R인덱스(rindex)";
+
+Blockly.Msg['NUMSTR_Large_small_1'] = "[대소]";
+Blockly.Msg['NUMSTR_Large_small_2'] = "대문자(upper)";
+Blockly.Msg['NUMSTR_Large_small_3'] = "소문자(lower)";
+Blockly.Msg['NUMSTR_Large_small_4'] = "첫문자(title)";
+Blockly.Msg['NUMSTR_Large_small_5'] = "첫문장(capitalize)";
+Blockly.Msg['NUMSTR_Large_small_6'] = "교환(swapcase)";
+
+Blockly.Msg['NUMSTR_SORT_1'] = "[정렬]";
+Blockly.Msg['NUMSTR_SORT_2'] = "L맞춤(ljust)";
+Blockly.Msg['NUMSTR_SORT_3'] = "R맞춤(rjust)";
+Blockly.Msg['NUMSTR_SORT_4'] = "중앙(center)";
+Blockly.Msg['NUMSTR_SORT_5'] = "탭지정(extendtabs)";
+
+Blockly.Msg['NUMSTR_TrueFalse_1'] = "[질의]";
+Blockly.Msg['NUMSTR_TrueFalse_2'] = "문자(isalpha)";
+Blockly.Msg['NUMSTR_TrueFalse_3'] = "숫자(isdigit)";
+Blockly.Msg['NUMSTR_TrueFalse_4'] = "문자숫자(isalnum)";
+Blockly.Msg['NUMSTR_TrueFalse_5'] = "대문자(isupper)";
+Blockly.Msg['NUMSTR_TrueFalse_6'] = "소문자(islower)";
 
 // 지원 2021.01.19
 // 변수
@@ -623,6 +667,11 @@ Blockly.Msg['OPERATION_13_6'] = "아스키코드형";
 // -----Class
 Blockly.Msg['CLASS_1_1'] = "클래스 선언";
 Blockly.Msg['CLASS_1_2'] = "클래스 명";
+
+Blockly.Msg['CLASS_1_3'] = "클래스";
+Blockly.Msg['CLASS_1_4'] = "상속";
+Blockly.Msg['CLASS_1_5'] = "객체생성";
+
 Blockly.Msg['CLASS_2_1'] = "함수";
 Blockly.Msg['CLASS_2_2'] = "변수 이름";
 Blockly.Msg['CLASS_2_3'] = "함수 명";
@@ -1102,3 +1151,21 @@ Blockly.Msg['PICKLE_DUMP'] = "입력(dump)";
 Blockly.Msg['PICKLE_LOAD'] = "불러오기(load)";
 
 Blockly.Msg['FILE_CLOSE'] = "파일닫기";
+
+
+// -- database  이성주
+Blockly.Msg['DATABASE_IMPORT_1'] = "[임포트]";
+Blockly.Msg['DATABASE_CLOSE_1'] = "해제";
+Blockly.Msg['DATABASE_CONNECT_1'] = "연결";
+Blockly.Msg['DATABASE_CURSOR_1'] = "커서";
+Blockly.Msg['DATABASE_EXECUTE_1'] = "실행";
+Blockly.Msg['DATABASE_EXECUTEMANY_1'] = "데이터셋실행";
+Blockly.Msg['DATABASE_COMMIT_1'] = "커밋";
+Blockly.Msg['DATABASE_ROLLBACK_1'] = "롤백";
+Blockly.Msg['DATABASE_FETCHALL_1'] = "전체읽기";
+Blockly.Msg['DATABASE_FETCHONE_1'] = "하나읽기";
+Blockly.Msg['DATABASE_CREATE_1'] = "[생성]";
+Blockly.Msg['DATABASE_INSERT_1'] = "[삽입]";
+Blockly.Msg['DATABASE_UPDATE_1'] = "[수정]";
+Blockly.Msg['DATABASE_SELECT_1'] = "[조회]";
+Blockly.Msg['DATABASE_DELETE_1'] = "[삭제]";

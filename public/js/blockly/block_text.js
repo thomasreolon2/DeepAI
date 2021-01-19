@@ -67,16 +67,16 @@ Blockly.Blocks['text_editing'] = {
          alt: "*",
          flipRtl: "FALSE"
      }))
-        .appendField("[편집]");
+        .appendField(Blockly.Msg.NUMSTR_EDIT_1);
     this.appendValueInput("VAR")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("에");
+        .appendField(Blockly.Msg.TEXT_14_5_CHANGE);
     this.appendValueInput("INPUT1")
         .setCheck(null);    
     this.appendDummyInput()
-        .appendField("를")
-        .appendField(new Blockly.FieldDropdown([["분리(split)","split"], ["삽입(join)","join"], ["교체(replace)","replace"], ["L공백제거(lstrip)","lstrip"],["R공백제거(rstrip)","rstrip"],["양쪽공백제거(strip)","strip"]]), "FUNC");
+        .appendField(Blockly.Msg.TEXT_14_6_CHANGE)
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMSTR_EDIT_2,"split"], [Blockly.Msg.NUMSTR_EDIT_3,"join"], [Blockly.Msg.NUMSTR_EDIT_4,"replace"], [Blockly.Msg.NUMSTR_EDIT_5,"lstrip"],[Blockly.Msg.NUMSTR_EDIT_6,"rstrip"],[Blockly.Msg.NUMSTR_EDIT_7,"strip"]]), "FUNC");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_TEXTS_HUE}");
@@ -93,16 +93,16 @@ Blockly.Blocks['text_search'] = {
           alt: "*",
           flipRtl: "FALSE"
       }))
-        .appendField("[검색]");
+        .appendField(Blockly.Msg.NUMSTR_SERACH_1);
     this.appendValueInput("VAR")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("에");
+        .appendField(Blockly.Msg.TEXT_14_5_CHANGE);
     this.appendValueInput("INPUT1")
         .setCheck(null);    
     this.appendDummyInput()
-        .appendField("를")
-        .appendField(new Blockly.FieldDropdown([["찾기(find)","find"], ["개수(count)","count"], ["인덱스(index)","index"], ["R찾기(rfind)","rfind"],["R인덱스(rindex)","rindex"]]), "FUNC");
+        .appendField(Blockly.Msg.TEXT_14_6_CHANGE)
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMSTR_SERACH_2,"find"], [Blockly.Msg.NUMSTR_SERACH_3,"count"], [Blockly.Msg.NUMSTR_SERACH_4,"index"], [Blockly.Msg.NUMSTR_SERACH_5,"rfind"],[Blockly.Msg.NUMSTR_SERACH_6,"rindex"]]), "FUNC");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_TEXTS_HUE}");
@@ -119,12 +119,12 @@ Blockly.Blocks['text_up_low'] = {
           alt: "*",
           flipRtl: "FALSE"
       }))
-        .appendField("[대소]");
+        .appendField(Blockly.Msg.NUMSTR_Large_small_1);
     this.appendValueInput("VAR")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("를")
-        .appendField(new Blockly.FieldDropdown([["대문자(upper)","upper"], ["소문자(lower)","lower"], ["첫문자(title)","title"], ["첫문장(capitalize)","capitalize"],["교환(swapcase)","swapcase"]]), "FUNC");
+        .appendField(Blockly.Msg.TEXT_14_5_CHANGE)
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMSTR_Large_small_2,"upper"], [Blockly.Msg.NUMSTR_Large_small_3,"lower"], [Blockly.Msg.NUMSTR_Large_small_4,"title"], [Blockly.Msg.NUMSTR_Large_small_5,"capitalize"],[Blockly.Msg.NUMSTR_Large_small_6,"swapcase"]]), "FUNC");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_TEXTS_HUE}");
@@ -141,20 +141,21 @@ Blockly.Blocks['text_sort'] = {
           alt: "*",
           flipRtl: "FALSE"
       }))
-        .appendField("[정렬]");
+        .appendField(Blockly.Msg.NUMSTR_SORT_1);
     this.appendValueInput("VAR")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("에");
+        .appendField(Blockly.Msg.TEXT_14_5_CHANGE);
     this.appendValueInput("INPUT1")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("만큼");
+        .appendField(Blockly.Msg.TEXT_14_6_CHANGE);
     this.appendValueInput("INPUT2")
-        .setCheck(null);   
+        .setCheck(null)
+        .appendField(Blockly.Msg.TEXT_14_8_CHANGE);
     this.appendDummyInput()
-        .appendField("를")
-        .appendField(new Blockly.FieldDropdown([["L맞춤(ljust)","ljust"], ["R맞춤(rjust))","rjust"], ["중앙(center)","center"], ["탭지정(extendtabs)","extendtabs"]]), "FUNC");
+        .appendField(Blockly.Msg.TEXT_14_7_CHANGE)
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMSTR_SORT_2,"ljust"], [Blockly.Msg.NUMSTR_SORT_3,"rjust"], [Blockly.Msg.NUMSTR_SORT_4,"center"], [Blockly.Msg.NUMSTR_SORT_5,"extendtabs"]]), "FUNC");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_TEXTS_HUE}");
@@ -172,12 +173,12 @@ Blockly.Blocks['text_query'] = {
           alt: "*",
           flipRtl: "FALSE"
       }))
-        .appendField("[질의]");
+        .appendField(Blockly.Msg.NUMSTR_TrueFalse_1);
     this.appendValueInput("VAR")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField("를")
-        .appendField(new Blockly.FieldDropdown([["문자(isalpha)","isalpha"], ["숫자(isdigit)","isdigit"], ["문숫자(isalnum)","isalnum"], ["대문자(isupper)","isupper"],["소문자(islower)","islower"]]), "FUNC");
+        .appendField(Blockly.Msg.TEXT_14_3_CHANGE)
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMSTR_TrueFalse_2,"isalpha"], [Blockly.Msg.NUMSTR_TrueFalse_3,"isdigit"], [Blockly.Msg.NUMSTR_TrueFalse_4,"isalnum"], [Blockly.Msg.NUMSTR_TrueFalse_5,"isupper"],[Blockly.Msg.NUMSTR_TrueFalse_6,"islower"]]), "FUNC");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_TEXTS_HUE}");
@@ -193,7 +194,7 @@ Blockly.Blocks['text_slice'] = {
               alt: "*",
               flipRtl: "FALSE"
         }))   
-        .appendField("[슬라이싱]");
+        .appendField(Blockly.Msg.BKY_NUMSTR_SLICING_1);
     this.appendValueInput("VAR")
         .setCheck(null);
     this.appendValueInput("INPUT1")

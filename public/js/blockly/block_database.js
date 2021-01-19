@@ -3,7 +3,7 @@
   Blockly.Blocks['db_create'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("[생성] ");
+          .appendField(Blockly.Msg.DATABASE_CREATE_1);
       this.appendValueInput("SET0").appendField("CREATE TABLE IF NOT EXISTS").setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
@@ -16,7 +16,7 @@
   Blockly.Blocks['db_insert'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("[삽입] ");
+          .appendField(Blockly.Msg.DATABASE_INSERT_1);
       this.appendValueInput("SET0").appendField("INSERT INTO").setCheck(null);
       this.appendValueInput("SET1").appendField("VALUES").setCheck(null);
       this.setInputsInline(true);
@@ -30,7 +30,7 @@
   Blockly.Blocks['db_select1'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("[조회] ");
+          .appendField(Blockly.Msg.DATABASE_SELECT_1);
       this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
       this.appendValueInput("SET1").appendField("FROM").setCheck(null);
       this.appendValueInput("SET2").appendField("WHERE").setCheck(null);
@@ -45,7 +45,7 @@
   Blockly.Blocks['db_select2'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("[조회] ");
+          .appendField(Blockly.Msg.DATABASE_SELECT_1);
       this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
       this.appendValueInput("SET1").appendField("FROM").setCheck(null);
       this.appendValueInput("SET2").appendField("").setCheck(null);
@@ -60,7 +60,7 @@
   Blockly.Blocks['db_update'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("[수정] ");
+          .appendField(Blockly.Msg.DATABASE_UPDATE_1);
       this.appendValueInput("SET0").appendField("UPDATE").setCheck(null);
       this.appendValueInput("SET1").appendField("SET").setCheck(null);
       this.appendValueInput("SET2").appendField("WHERE").setCheck(null);
@@ -75,7 +75,7 @@
   Blockly.Blocks['db_delete'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("[삭제] ");
+          .appendField(Blockly.Msg.DATABASE_DELETE_1);
       this.appendValueInput("SET0").appendField("DELETE FROM").setCheck(null);
       this.appendValueInput("SET1").appendField("WHERE").setCheck(null);
       this.setInputsInline(true);
@@ -92,7 +92,7 @@
   Blockly.Blocks['sqlite_library'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("[임포트] sqlite3");
+          .appendField(Blockly.Msg.DATABASE_IMPORT_1 + "sqlite3");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -105,7 +105,7 @@
   Blockly.Blocks['db_conn'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField("연결")
+      .appendField(Blockly.Msg.DATABASE_CONNECT_1)
       this.appendValueInput("va")
         .setCheck(null)
       this.setInputsInline(true);
@@ -119,7 +119,7 @@
   Blockly.Blocks['db_cur'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField("커서")
+      .appendField(Blockly.Msg.DATABASE_CURSOR_1)
       .appendField(new Blockly.FieldVariable("var"), "list1")
       this.setInputsInline(true);
       this.setOutput(true, null);
@@ -132,7 +132,7 @@
   Blockly.Blocks['db_exec'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField("실행")
+      .appendField(Blockly.Msg.DATABASE_EXECUTE_1)
       .appendField(new Blockly.FieldVariable("var"), "list");
       this.appendValueInput("va")
         .setCheck(null)
@@ -148,7 +148,7 @@
   Blockly.Blocks['db_execM'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField("데이터셋실행")
+      .appendField(Blockly.Msg.DATABASE_EXECUTEMANY_1)
       .appendField(new Blockly.FieldVariable("var"), "list");
       this.appendValueInput("va")
         .setCheck(null)
@@ -163,7 +163,7 @@
   Blockly.Blocks['db_commit'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField("커밋")
+      .appendField(Blockly.Msg.DATABASE_COMMIT_1)
       .appendField(new Blockly.FieldVariable("var"), "list1")
       this.setInputsInline(true);
       this.setOutput(true, null);
@@ -176,7 +176,7 @@
   Blockly.Blocks['db_rollback'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField("롤백")
+      .appendField(Blockly.Msg.DATABASE_ROLLBACK_1)
       .appendField(new Blockly.FieldVariable("var"), "list1")
       this.setInputsInline(true);
       this.setOutput(true, null);
@@ -189,7 +189,7 @@
   Blockly.Blocks['db_fetchall'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField("전체읽기")
+      .appendField(Blockly.Msg.DATABASE_FETCHALL_1)
       .appendField(new Blockly.FieldVariable("var"), "list1")
       this.setInputsInline(true);
       this.setOutput(true, null);
@@ -202,7 +202,7 @@
   Blockly.Blocks['db_fetchone'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField("하나읽기")
+      .appendField(Blockly.Msg.DATABASE_FETCHONE_1)
       .appendField(new Blockly.FieldVariable("var"), "list1")
       this.setInputsInline(true);
       this.setOutput(true, null);
@@ -215,7 +215,7 @@
   Blockly.Blocks['db_close'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField("해제")
+      .appendField(Blockly.Msg.DATABASE_CLOSE_1)
       .appendField(new Blockly.FieldVariable("var"), "list1")
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);

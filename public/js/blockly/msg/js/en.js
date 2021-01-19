@@ -454,13 +454,58 @@ Blockly.Msg.TEXT_14_1_TEXTCHANGE = 'phrase replace ';
  //, 
 Blockly.Msg.TEXT_14_4_END = '';
 
+Blockly.Msg.TEXT_14_5_CHANGE = 'to';
+Blockly.Msg.TEXT_14_6_CHANGE = '';
+Blockly.Msg.TEXT_14_7_CHANGE = '';
+Blockly.Msg.TEXT_14_8_CHANGE = 'as';
+
  // 숫자 / 문자
 Blockly.Msg['NUMSTR_INFUCTION'] = "[Built-in function]";
+Blockly.Msg['NUMSTR_INFUCTION_NUM_0'] = "sum(sum)"; // 이성주
 Blockly.Msg['NUMSTR_INFUCTION_NUM_1'] = "maximum(max)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_2'] = "minimum(min)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_3'] = "round off(round)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_4'] = "absolute value(abs)";
 Blockly.Msg['NUMSTR_INFUCTION_STR'] = "change to ASCII(ord)";
+
+// 이성주
+Blockly.Msg['NUMSTR_SLICING_1'] = "[slicing]";
+Blockly.Msg['NUMSTR_EDIT_1'] = "[edit]";
+Blockly.Msg['NUMSTR_EDIT_2'] = "split";
+Blockly.Msg['NUMSTR_EDIT_3'] = "join";
+Blockly.Msg['NUMSTR_EDIT_4'] = "replace";
+Blockly.Msg['NUMSTR_EDIT_5'] = "lstrip";
+Blockly.Msg['NUMSTR_EDIT_6'] = "rstrip";
+Blockly.Msg['NUMSTR_EDIT_7'] = "strip";
+
+Blockly.Msg['NUMSTR_SERACH_1'] = "[search]";
+Blockly.Msg['NUMSTR_SERACH_2'] = "find";
+Blockly.Msg['NUMSTR_SERACH_3'] = "count";
+Blockly.Msg['NUMSTR_SERACH_4'] = "index";
+Blockly.Msg['NUMSTR_SERACH_5'] = "rfind";
+Blockly.Msg['NUMSTR_SERACH_6'] = "rindex";
+
+
+
+Blockly.Msg['NUMSTR_Large_small_1'] = "[large and small]";
+Blockly.Msg['NUMSTR_Large_small_2'] = "upper";
+Blockly.Msg['NUMSTR_Large_small_3'] = "lower";
+Blockly.Msg['NUMSTR_Large_small_4'] = "title";
+Blockly.Msg['NUMSTR_Large_small_5'] = "capitalize";
+Blockly.Msg['NUMSTR_Large_small_6'] = "swapcase";
+
+Blockly.Msg['NUMSTR_SORT_1'] = "[sort]";
+Blockly.Msg['NUMSTR_SORT_2'] = "ljust";
+Blockly.Msg['NUMSTR_SORT_3'] = "rjust";
+Blockly.Msg['NUMSTR_SORT_4'] = "center";
+Blockly.Msg['NUMSTR_SORT_5'] = "extendtabs";
+
+Blockly.Msg['NUMSTR_TrueFalse_1'] = "[True and False]";
+Blockly.Msg['NUMSTR_TrueFalse_2'] = "isalpha";
+Blockly.Msg['NUMSTR_TrueFalse_3'] = "isdigit";
+Blockly.Msg['NUMSTR_TrueFalse_4'] = "isalnum";
+Blockly.Msg['NUMSTR_TrueFalse_5'] = "isupper";
+Blockly.Msg['NUMSTR_TrueFalse_6'] = "islower";
 
 // 지원 2021.01.19
 // 변수
@@ -615,6 +660,9 @@ Blockly.Msg['OPERATION_13_6'] = "ASCII Type";
 // -----Class
 Blockly.Msg['CLASS_1_1'] = "class declaration";
 Blockly.Msg['CLASS_1_2'] = "class name";
+Blockly.Msg['CLASS_1_3'] = "class";
+Blockly.Msg['CLASS_1_4'] = "override";
+Blockly.Msg['CLASS_1_5'] = "create object";
 Blockly.Msg['CLASS_2_1'] = "function";
 Blockly.Msg['CLASS_2_2'] = "parameter";
 Blockly.Msg['CLASS_2_3'] = "function name";
@@ -1096,3 +1144,20 @@ Blockly.Msg['PICKLE_DUMP'] = "input(dump)";
 Blockly.Msg['PICKLE_LOAD'] = "load";
 
 Blockly.Msg['FILE_CLOSE'] = "file close";
+
+// -- database  이성주
+Blockly.Msg['DATABASE_IMPORT_1'] = "[import]";
+Blockly.Msg['DATABASE_CLOSE_1'] = "close";
+Blockly.Msg['DATABASE_CONNECT_1'] = "connect";
+Blockly.Msg['DATABASE_CURSOR_1'] = "cursor";
+Blockly.Msg['DATABASE_EXECUTE_1'] = "execute";
+Blockly.Msg['DATABASE_EXECUTEMANY_1'] = "executemany";
+Blockly.Msg['DATABASE_COMMIT_1'] = "commit";
+Blockly.Msg['DATABASE_ROLLBACK_1'] = "rollback";
+Blockly.Msg['DATABASE_FETCHALL_1'] = "fetchall";
+Blockly.Msg['DATABASE_FETCHONE_1'] = "fetchone";
+Blockly.Msg['DATABASE_CREATE_1'] = "[create]";
+Blockly.Msg['DATABASE_INSERT_1'] = "[insert]";
+Blockly.Msg['DATABASE_UPDATE_1'] = "[update]";
+Blockly.Msg['DATABASE_SELECT_1'] = "[select]";
+Blockly.Msg['DATABASE_DELETE_1'] = "[delete]";

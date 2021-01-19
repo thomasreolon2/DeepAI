@@ -118,7 +118,7 @@ Blockly.Python['text_sort'] = function(block) {
   var text_input2 =  Blockly.Python.valueToCode(block, 'INPUT2', Blockly.Python.ORDER_ATOMIC);
   var dropdown_func = block.getFieldValue('FUNC');
   // TODO: Assemble Python into code variable.
-  var code = `${variable_var}.${dropdown_func}(${text_input},${text_input2})`;
+  var code = `${variable_var}.${dropdown_func}(${text_input2},${text_input})`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 

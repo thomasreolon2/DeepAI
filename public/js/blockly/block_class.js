@@ -24,7 +24,7 @@ Blockly.Blocks['webclass'] = {
     init: function () {
         this.appendValueInput("VAR")
             .setCheck(null)
-            .appendField('클래스');
+            .appendField(Blockly.Msg.CLASS_1_3);
         this.appendDummyInput()
             .appendField(' :');
         this.appendStatementInput('DO')
@@ -42,7 +42,7 @@ Blockly.Blocks['webclass2'] = {
     init: function () {
         this.appendValueInput("VAR")
             .setCheck(null)
-            .appendField('상속');
+            .appendField(Blockly.Msg.CLASS_1_4);
         this.appendDummyInput()
             .appendField('(');
         this.appendValueInput("INPUT")
@@ -85,7 +85,7 @@ Blockly.Blocks['webclass2'] = {
     init: function() {
         this.appendValueInput("1")
             .setCheck(null)
-            .appendField("[객체생성]");
+            .appendField("[ "+Blockly.Msg.CLASS_1_5 +" ]");
           this.appendValueInput("2")
             .setCheck(null)
             .appendField("를");

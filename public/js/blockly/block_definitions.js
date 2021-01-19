@@ -4,7 +4,7 @@ Blockly.Blocks['webdefine'] = {
     init: function () {
         this.appendValueInput('1')
             .setCheck(null)
-            .appendField('함수');
+            .appendField(Blockly.Msg.CLASS_2_1);
         this.appendValueInput('2')
             .setCheck(null)
             .appendField('(');
