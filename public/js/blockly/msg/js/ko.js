@@ -1081,5 +1081,24 @@ $("#button_close").html('닫기');
 $("#button_clear").html('지우기');
 $("#button_reset").html('초기화');
 
+// 2021.01.19 남지원
+// 입출력>파일 
+Blockly.Msg['FILE_PICKLE_LIBRARY'] = "[임포트] pickle";
 
+Blockly.Msg['FILE_OPEN_1'] = "파일열기";
+Blockly.Msg['FILE_OPEN_2_1'] = "읽기쓰기(rw)";
+Blockly.Msg['FILE_OPEN_2_2'] = "읽기(r)";
+Blockly.Msg['FILE_OPEN_2_3'] = "쓰기(w)";
+Blockly.Msg['FILE_OPEN_2_4'] = "추가(a)";
+Blockly.Msg['FILE_OPEN_3_1'] = "텍스트(t)";
+Blockly.Msg['FILE_OPEN_3_2'] = "바이트(b)";
+Blockly.Msg['FILE_OPEN_3_3'] = "없음";
 
+Blockly.Msg['FILE_READ'] = "파일읽기";
+
+Blockly.Msg['FILE_WRITE'] = "파일쓰기";
+
+Blockly.Msg['PICKLE_DUMP'] = "입력(dump)";
+Blockly.Msg['PICKLE_LOAD'] = "불러오기(load)";
+
+Blockly.Msg['FILE_CLOSE'] = "파일닫기";

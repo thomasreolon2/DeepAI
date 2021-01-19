@@ -120,7 +120,9 @@ Blockly.Blocks['fileopen'] = {
           alt: "*",
           flipRtl: "FALSE"
 
-      })).appendField("파일 열기").appendField(new Blockly.FieldTextInput("경로"), "file_path");
+      }))
+        .appendField(Blockly.Msg.FILE_OPEN_1)
+        .appendField(new Blockly.FieldTextInput("경로"), "file_path");
       //this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour(20);

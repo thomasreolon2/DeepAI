@@ -1075,3 +1075,24 @@ $("#button_close").html('close');
 $("#button_clear").html('clear');
 $("#button_reset").html('reset');
 
+// 2021.01.19 남지원
+// 입출력>파일 
+Blockly.Msg['FILE_PICKLE_LIBRARY'] = "[ import ] pickle";
+
+Blockly.Msg['FILE_OPEN_1'] = "file open";
+Blockly.Msg['FILE_OPEN_2_1'] = "read write(rw)";
+Blockly.Msg['FILE_OPEN_2_2'] = "read(r)";
+Blockly.Msg['FILE_OPEN_2_3'] = "write(w)";
+Blockly.Msg['FILE_OPEN_2_4'] = "add(a)";
+Blockly.Msg['FILE_OPEN_3_1'] = "text(t)";
+Blockly.Msg['FILE_OPEN_3_2'] = "byte(b)";
+Blockly.Msg['FILE_OPEN_3_3'] = "Nan";
+
+Blockly.Msg['FILE_READ'] = "file read";
+
+Blockly.Msg['FILE_WRITE'] = "file write";
+
+Blockly.Msg['PICKLE_DUMP'] = "input(dump)";
+Blockly.Msg['PICKLE_LOAD'] = "load";
+
+Blockly.Msg['FILE_CLOSE'] = "file close";

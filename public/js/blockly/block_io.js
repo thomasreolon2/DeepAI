@@ -100,34 +100,34 @@ Blockly.Blocks['indata'] = {
 Blockly.Blocks['fd_open'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("파일열기")
+            .appendField(Blockly.Msg.FILE_OPEN_1)
             .appendField(new Blockly.FieldVariable("f"), "list")
             .appendField(" = open( ");
         this.appendValueInput("text")
             .setCheck(null);
             this.appendDummyInput().appendField(new Blockly.FieldDropdown([
               [
-                  "읽기쓰기", "wr"
+                Blockly.Msg.FILE_OPEN_2_1, "wr"
               ],
               [
-                  "읽기", "r"
+                Blockly.Msg.FILE_OPEN_2_2, "r"
               ],
               [
-                  "쓰기", "w"
+                Blockly.Msg.FILE_OPEN_2_3, "w"
               ],
               [
-                  "추가", "a"
+                Blockly.Msg.FILE_OPEN_2_4, "a"
               ]
           ]), "set_menu");
       this.appendDummyInput().appendField(new Blockly.FieldDropdown([
               [
-                  "텍스트", "t"
+                Blockly.Msg.FILE_OPEN_3_1, "t"
               ],
               [
-                  "바이트", "b"
+                Blockly.Msg.FILE_OPEN_3_2, "b"
               ],
               [
-                  "없음", ""
+                Blockly.Msg.FILE_OPEN_3_3, ""
               ]
           ]), "set_menu2");
         this.appendDummyInput()
@@ -135,7 +135,7 @@ Blockly.Blocks['fd_open'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+        this.setColour("%{BKY_LIST_HUE}");
         this.setTooltip("Create a list");
         this.setHelpUrl("");
     }
@@ -145,7 +145,7 @@ Blockly.Blocks['fd_open'] = {
 Blockly.Blocks['fd_read'] = {
   init: function () {
       this.appendDummyInput()
-          .appendField("파일읽기")
+          .appendField(Blockly.Msg.FILE_READ)
           .appendField(new Blockly.FieldVariable("data"), "list1")
           .appendField(" = ")
           .appendField(new Blockly.FieldVariable("f"), "list2")
@@ -168,7 +168,7 @@ Blockly.Blocks['fd_read'] = {
 Blockly.Blocks['fd_write'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("파일쓰기")
+            .appendField(Blockly.Msg.FILE_WRITE)
             .appendField(new Blockly.FieldVariable("f"), "list")
             .appendField(new Blockly.FieldDropdown([
                 [
@@ -194,7 +194,7 @@ Blockly.Blocks['fd_write'] = {
 Blockly.Blocks['fd_close'] = {
   init: function () {
       this.appendDummyInput()
-          .appendField("파일닫기")
+          .appendField(Blockly.Msg.FILE_CLOSE)
           .appendField(new Blockly.FieldVariable("f"), "list")
           .appendField(".close( ");
       this.appendDummyInput()

@@ -40,7 +40,7 @@
   Blockly.Blocks['pickle_library'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField("[임포트] pickle");
+          .appendField(Blockly.Msg.FILE_PICKLE_LIBRARY);
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -80,7 +80,7 @@
     init: function () {
       this.appendDummyInput()
         .appendField("Pickle")
-        .appendField("입력")
+        .appendField(Blockly.Msg.PICKLE_DUMP)
         .appendField("(");
       this.appendValueInput("va1")
         .setCheck(null)
@@ -89,7 +89,7 @@
       this.appendValueInput("va2")
         .setCheck(null)
       this.appendDummyInput()
-         .appendField(")");
+        .appendField(")");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -105,12 +105,12 @@
       .appendField("Pickle")
       .appendField(new Blockly.FieldVariable("data"), "list");
       this.appendDummyInput()
-        .appendField("불러오기")
+        .appendField(Blockly.Msg.PICKLE_LOAD)
         .appendField("(");
       this.appendValueInput("va")
         .setCheck(null)
       this.appendDummyInput()
-         .appendField(")");
+        .appendField(")");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
