@@ -1169,3 +1169,36 @@ Blockly.Msg['DATABASE_INSERT_1'] = "[삽입]";
 Blockly.Msg['DATABASE_UPDATE_1'] = "[수정]";
 Blockly.Msg['DATABASE_SELECT_1'] = "[조회]";
 Blockly.Msg['DATABASE_DELETE_1'] = "[삭제]";
+
+
+// 수학 math 이성주
+
+Blockly.Msg['MATH_IMPORT'] = "[임포트] 수학,통계,랜덤";
+Blockly.Msg['MATH_'] = "수학";
+Blockly.Msg['MATH_CEIL'] = "올림(ceil)";
+Blockly.Msg['MATH_FABS'] = "절대값(fabs)";
+Blockly.Msg['MATH_FACTORIAL'] = "팩토리얼(factorial)";
+Blockly.Msg['MATH_FLOOR'] = "내림(floor)";
+Blockly.Msg['MATH_ISQRT'] = "정수 제곱근(isqrt)";
+Blockly.Msg['MATH_MODF'] = "소수,정수(modf)";
+Blockly.Msg['MATH_EXP'] = "e 거듭제곱(exp)";
+Blockly.Msg['MATH_LOG10'] = "로그10(log10)";
+Blockly.Msg['MATH_SQRT'] = "제곱근(sqrt)";
+Blockly.Msg['MATH_DEGREES'] = "도 변환(degrees)";
+Blockly.Msg['MATH_RADIANS'] = "라디안 변환(radians)";
+Blockly.Msg['MATH_ACOS'] = "아크 코사인(acos)";
+Blockly.Msg['MATH_ASIN'] = "아크 사인(asin)";
+Blockly.Msg['MATH_ATAN'] = "아크 탄젠트(atan)";
+Blockly.Msg['MATH_COS'] = "코사인(cos)";
+Blockly.Msg['MATH_SIN'] = "사인(sin)";
+Blockly.Msg['MATH_TAN'] = "탄젠트(tan)";
+
+Blockly.Msg['MATH_GCD'] = "최대공약수(gcd)";
+Blockly.Msg['MATH_LOG'] = "자연로그(log)";
+Blockly.Msg['MATH_POW'] = "거듭제곱(pow)";
+Blockly.Msg['MATH_DIST'] = "유클리드 거리(dist)";
+
+Blockly.Msg['MATH_PI'] = "파이(π)";
+Blockly.Msg['MATH_E'] = "자연로그 밑(e)";
+Blockly.Msg['MATH_INF'] = "양의 무한대(inf)";
+Blockly.Msg['MATH_NAN'] = "nan 값(nan)";

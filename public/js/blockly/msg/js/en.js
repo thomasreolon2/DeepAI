@@ -1161,3 +1161,35 @@ Blockly.Msg['DATABASE_INSERT_1'] = "[insert]";
 Blockly.Msg['DATABASE_UPDATE_1'] = "[update]";
 Blockly.Msg['DATABASE_SELECT_1'] = "[select]";
 Blockly.Msg['DATABASE_DELETE_1'] = "[delete]";
+
+// 수학 math 이성주
+
+Blockly.Msg['MATH_IMPORT'] = "[import] math,statistics,random";
+Blockly.Msg['MATH_'] = "math";
+Blockly.Msg['MATH_CEIL'] = "ceil";
+Blockly.Msg['MATH_FABS'] = "fabs";
+Blockly.Msg['MATH_FACTORIAL'] = "factorial";
+Blockly.Msg['MATH_FLOOR'] = "floor";
+Blockly.Msg['MATH_ISQRT'] = "isqrt";
+Blockly.Msg['MATH_MODF'] = "modf";
+Blockly.Msg['MATH_EXP'] = "exp";
+Blockly.Msg['MATH_LOG10'] = "log10";
+Blockly.Msg['MATH_SQRT'] = "sqrt";
+Blockly.Msg['MATH_DEGREES'] = "degrees";
+Blockly.Msg['MATH_RADIANS'] = "radians";
+Blockly.Msg['MATH_ACOS'] = "acos";
+Blockly.Msg['MATH_ASIN'] = "asin";
+Blockly.Msg['MATH_ATAN'] = "atan";
+Blockly.Msg['MATH_COS'] = "cos";
+Blockly.Msg['MATH_SIN'] = "sin";
+Blockly.Msg['MATH_TAN'] = "tan";
+
+Blockly.Msg['MATH_GCD'] = "gcd";
+Blockly.Msg['MATH_LOG'] = "log";
+Blockly.Msg['MATH_POW'] = "pow";
+Blockly.Msg['MATH_DIST'] = "dist";
+
+Blockly.Msg['MATH_PI'] = "pi(π)";
+Blockly.Msg['MATH_E'] = "e";
+Blockly.Msg['MATH_INF'] = "inf";
+Blockly.Msg['MATH_NAN'] = "nan";
