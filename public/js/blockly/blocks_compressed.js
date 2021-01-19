@@ -117,8 +117,8 @@ Blockly.Blocks.lists_create_with = {
   init: function () {
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("/img/Collection/C4-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
-        .appendField(new Blockly.FieldDropdown([["빈리스트","list"], ["빈튜플","tuple"], ["빈집합","set"], ["빈딕셔너리","dict"]]), "NAME")
-        .appendField("생성");
+        .appendField(new Blockly.FieldDropdown([["%{BKY_COLLECTION_LISTS_CREATE_WITH_1}","list"], ["%{BKY_COLLECTION_LISTS_CREATE_WITH_2}","tuple"], ["%{BKY_COLLECTION_LISTS_CREATE_WITH_3}","set"], ["%{BKY_COLLECTION_LISTS_CREATE_WITH_4}","dict"]]), "NAME")
+        .appendField(Blockly.Msg.COLLECTION_LISTS_CREATE_WITH_5);
     this.setColour(230);
     this.setHelpUrl(Blockly.Msg.LISTS_CREATE_WITH_HELPURL);
     this.setStyle("conversion_blocks");//"list_blocks");
@@ -1727,7 +1727,6 @@ Blockly.defineBlocksWithJsonArray([
     args0: [
       {"type": "field_image","src": "/img/Collection/L4-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
       { type: "input_value", name: "VAR1"},
-      // { type: "field_variable", name: "NUMBER_TO_CHECK", "variable": "my_list"},
       { type: "input_value", name: "DIVISOR", check: "Number" },
     ],
     message1: "%1",
@@ -1747,7 +1746,7 @@ Blockly.defineBlocksWithJsonArray([
           //["%{BKY_COLLECTION_16_POP}", "POP"],
           ["%{BKY_COLLECTION_16_REMOVE}", "REMOVE"],
           ["%{BKY_COLLECTION_16_APPEND}", "APPEND"],
-          ["복사(copy)", "COPY"],
+          ["%{BKY_COLLECTION_16_COPY}", "COPY"],
         ],
       },
     ],

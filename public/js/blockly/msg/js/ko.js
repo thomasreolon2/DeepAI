@@ -530,6 +530,8 @@ Blockly.Msg['COLLECTION_15_END'] = "을";
 Blockly.Msg['COLLECTION_16_LIST'] = "리스트";
 Blockly.Msg['COLLECTION_16_ELEMETNT'] = "요소";
 Blockly.Msg['COLLECTION_16_EXTEND'] = "확장(extend)";
+Blockly.Msg['COLLECTION_16_COPY'] = "복사(copy)";
+
 Blockly.Msg['COLLECTION_16_COUNT'] = "개수(count)";
 Blockly.Msg['COLLECTION_16_INDEX'] = "인덱스(index)";
 Blockly.Msg['COLLECTION_16_POP'] = "끝삭제(pop)";
@@ -1001,7 +1003,7 @@ Blockly.Msg['CATEGORY_NEURALNETWORK'] = "신경망(Neuralnetwork)";
 Blockly.Msg['CATEGORY_DATASCIENCE'] = "데이터과학(DS)";
 Blockly.Msg['CATEGORY_MACHINELEARNING'] ="머신러닝(ML)";
 Blockly.Msg['CATEGORY_DEEPLEARNING']="딥러닝(DL)";
-Blockly.Msg['CATEGORY_AIX'] = "전공직무AI융합"
+Blockly.Msg['CATEGORY_AIX'] = "전공직무AI융합";
 
 
 // html 부분
@@ -1025,3 +1027,27 @@ $("#button_close").html('닫기');
 $("#button_clear").html('지우기');
 $("#button_reset").html('초기화');
 
+
+
+// 지원 2021.01.19
+// 변수
+// 메모리 주소
+Blockly.Msg['VA_ID'] = "메모리 주소";
+
+// 컬렉션
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_1'] = "빈리스트";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_2'] = "빈튜플";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_3'] = "빈집합";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_4'] = "빈딕셔너리";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_5'] = "생성";
+
+Blockly.Msg['COLLECTION_VA_SEL'] = "[인덱싱]";
+Blockly.Msg['COLLECTION_VA_DEL'] = "[값삭제] del";
+
+Blockly.Msg['COLLECTION_TUPLE'] = "튜플";
+
+Blockly.Msg['COLLECTION_SET'] = "집합";
+Blockly.Msg['COLLECTION_SET_CONTROL'] = "집합다루기";
+
+Blockly.Msg['COLLECTION_DICT'] = "딕셔너리";
+Blockly.Msg['COLLECTION_VA_SER'] = "키조사";

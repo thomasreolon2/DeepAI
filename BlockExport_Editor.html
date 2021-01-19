@@ -1226,7 +1226,7 @@
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_COLLECTION}" colour="%{BKY_COLLECTION_HUE}"> 
       
-
+      <!-- [C1] -->
       <block type ="forif">
         <value name="SET0">
           <shadow type="indata">
@@ -1260,6 +1260,7 @@
         </value>
       </block>
 
+      <!-- [C2] -->
       <block type ="forif2">
         <value name="SET0">
           <shadow type="indata">
@@ -1289,7 +1290,7 @@
       </block>
 
       
-
+      <!-- [C3] 생성변환 -->
       <block type = "change_collection">
         <value name="LIST">
           <shadow type="indata">
@@ -1298,19 +1299,21 @@
         </value>
       </block>
 
-      <!-- 비어있는 리스트 생성 -->
+      <!-- [C4] 비어있는 리스트 생성 -->
       <block type="lists_create_with">
         <mutation items="0"></mutation>
       </block>
-       <!-- 컬렉션의 길이 -->
-       <block type="lists_length">
-        <value name="VALUE">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>
+
+      <!-- [C5] 컬렉션의 길이 -->
+      <block type="lists_length">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">my_list</field>
+        </block>
+      </value>
       </block>
-      <!-- 리스트가 비어있는지 확인 -->
+
+      <!-- [C6] 리스트가 비어있는지 확인 -->
       <block type="lists_isEmpty">
         <value name="VALUE">
           <block type="variables_get">
@@ -1319,7 +1322,7 @@
         </value>
       </block>
 
-      <!-- 인덱싱 -->
+      <!-- [C7] 인덱싱 -->
       <block type = "va_sel">
         <value name="list">
           <block type="variables_get">
@@ -1333,6 +1336,7 @@
         </value>
       </block>
 
+      <!-- [C8] 값삭제 -->
       <block type = "va_del">
         <value name="list">
           <block type="variables_get">
@@ -1346,6 +1350,7 @@
         </value>
       </block>
 
+      <!-- [C9] map -->
       <block type="map3">
         <value name="data_type">
           <shadow type="indata">
@@ -1375,7 +1380,6 @@
       </block>
 
       <!-- [L2] 리스트 삽입 -->
-      
       <block type="list_insert">
         <value name="list">
           <block type="variables_get">
@@ -1394,6 +1398,7 @@
         </value>
       </block>
 
+      <!-- [L3] 리스트 정렬,역순 -->
       <block type="list_sort_reverse">
         <value name="list">
           <block type="variables_get">
@@ -1407,6 +1412,7 @@
         </value>
       </block>
 
+      <!-- [L4] 데이터 다루기1 -->
       <block type="create_new_list2">
         <value name="VAR1">
           <block type="variables_get">
@@ -1420,6 +1426,7 @@
          </value>
        </block>
        
+       <!-- [L5] 데이터 다루기2 -->
       <block type="create_new_list">
         <value name="VAR1">
           <block type="variables_get">
@@ -1465,11 +1472,12 @@
         </value>
       </block>      
 
+      <!-- 집합 다루기 블록-->
       <block type = "set_menu1_2">
         <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">my_set</field>
+          </block>
         </value>
         <value name="SET2">
           <shadow type="indata">
@@ -1480,9 +1488,9 @@
 
       <block type = "set_menu1">
         <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">my_set</field>
+          </block>
         </value>
         <value name="SET2">
           <shadow type="indata">

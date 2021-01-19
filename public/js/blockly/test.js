@@ -2314,20 +2314,20 @@ Blockly.Blocks['tfarraylen'] = {
 // 2020-09-07 3학년 파이썬 기본 블록
 ///////////////////////////////////////////////////////
 
-//딕셔너리(구버전)
-Blockly.Blocks['create_dict'] = {
-  init: function() {
-    this.appendValueInput("dict1")
-        .setCheck(null);
-    this.appendValueInput("dict2")
-        .setCheck(null);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
+// //딕셔너리(구버전)
+// Blockly.Blocks['create_dict'] = {
+//   init: function() {
+//     this.appendValueInput("dict1")
+//         .setCheck(null);
+//     this.appendValueInput("dict2")
+//         .setCheck(null);
+//     this.setInputsInline(true);
+//     this.setOutput(true, null);
+//     this.setColour(230);
+//  this.setTooltip("");
+//  this.setHelpUrl("");
+//   }
+// };
 
 //딕셔너리(신버전)
 Blockly.Blocks['dict'] = {

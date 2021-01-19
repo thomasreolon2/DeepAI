@@ -80,8 +80,8 @@ Blockly.Blocks['itdata'] = {
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour("%{BKY_TEXTS_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
+  this.setTooltip("");
+  this.setHelpUrl("");
   }
 };
 
@@ -92,8 +92,8 @@ Blockly.Blocks['indata'] = {
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(255);
- this.setTooltip("");
- this.setHelpUrl("");
+  this.setTooltip("");
+  this.setHelpUrl("");
   }
 };
 

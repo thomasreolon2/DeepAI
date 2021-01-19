@@ -44,14 +44,12 @@ Blockly.Blocks['global'] = {
 // 리스트 정렬, 뒤집기
 Blockly.Blocks['list_sort_reverse'] = {
     init: function () {
-
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/L3-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/img/Collection/L3-logo.png", 25, 23, {alt: "*",flipRtl: "FALSE"}));
         this.appendValueInput("list")
-        .setCheck(null);
-        this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([
             [
                 Blockly.Msg.COLLECTION_13_SORT, "sort"
             ],
@@ -62,7 +60,6 @@ Blockly.Blocks['list_sort_reverse'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        //this.setOutput(true, null);
         this.setColour("%{BKY_LISTS_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
@@ -77,7 +74,7 @@ Blockly.Blocks['change_collection'] = {
             flipRtl: "FALSE"
         }));
         this.appendDummyInput()
-        .appendField(Blockly.Msg.CHANGE_COLLECTION);
+            .appendField(Blockly.Msg.CHANGE_COLLECTION);
         this.appendDummyInput().appendField(new Blockly.FieldDropdown([
             [
                 Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TITLE_ADD, "list"
@@ -218,8 +215,8 @@ Blockly.Blocks['list_dot'] = {
   Blockly.Blocks['create_tuple'] = {
     init: function () {
         this.appendValueInput("list")
-        .setCheck(null)
-        .appendField("튜플");
+            .setCheck(null)
+            .appendField(Blockly.Msg.COLLECTION_TUPLE);
         this.appendValueInput("text")
             .setCheck(null)
             .appendField(" = (");
@@ -238,7 +235,7 @@ Blockly.Blocks['list_dot'] = {
 Blockly.Blocks['create_ziphap'] = {
     init: function () {
         this.appendValueInput("list")
-            .appendField("집합");
+            .appendField(Blockly.Msg.COLLECTION_SET);
         this.appendValueInput("text")
             .setCheck(null)
             .appendField(" = {");
@@ -261,7 +258,7 @@ Blockly.Blocks['create_dict'] = {
             alt: "*",
             flipRtl: "FALSE"
             }))
-            .appendField("딕셔너리")
+            .appendField(Blockly.Msg.COLLECTION_DICT)
         this.appendValueInput("list")
             .setCheck(null);
         this.appendValueInput("text")
@@ -452,7 +449,7 @@ Blockly.Blocks['set_menu1'] = {
     init: function () {
 
         this.appendDummyInput()
-            .appendField("집합 다루기");;
+            .appendField(Blockly.Msg.COLLECTION_SET_CONTROL);
         this.appendValueInput("SET1").setCheck(null);
         this.appendValueInput("SET2").setCheck(null).appendField(Blockly.Msg.COLLECTION_11_SELECTSET);
         this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_11_VALCHANGE).appendField(new Blockly.FieldDropdown([
@@ -478,7 +475,7 @@ Blockly.Blocks['set_menu1'] = {
 Blockly.Blocks['set_menu1_2'] = {
     init: function () {
 
-        this.appendDummyInput().appendField("집합 다루기");;
+        this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_SET_CONTROL);
         this.appendValueInput("SET1").setCheck(null);
         this.appendValueInput("SET2").setCheck(null).appendField(Blockly.Msg.COLLECTION_11_SELECTSET);
         this.appendDummyInput().appendField(Blockly.Msg.COLLECTION_11_VALCHANGE).appendField(new Blockly.FieldDropdown([
@@ -560,22 +557,21 @@ Blockly.Blocks['map_filter'] = {
     }
   };
 
-  Blockly.Blocks['map3'] = {
+Blockly.Blocks['map3'] = {
     init: function() {
-      this.appendValueInput("data_type")
-          .setCheck(null)
-          .appendField("map(");
-      this.appendValueInput("input")
-          .setCheck(null)
-          .appendField("," );
-      
-      this.appendDummyInput()
-          .appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_COLLECTION_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
+        this.appendValueInput("data_type")
+            .setCheck(null)
+            .appendField("map(");
+        this.appendValueInput("input")
+            .setCheck(null)
+            .appendField("," );
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_COLLECTION_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
     }
   };
 
@@ -588,7 +584,7 @@ Blockly.Blocks['va_sel'] = {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C7-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("인덱싱");
+        })).appendField(Blockly.Msg.COLLECTION_VA_SEL);
         this.appendValueInput("list").setCheck(null);
         this.appendValueInput("dic1").setCheck(null).appendField("[");
         this.appendDummyInput().appendField("]");
@@ -603,13 +599,16 @@ Blockly.Blocks['va_sel'] = {
 // va_sel
 Blockly.Blocks['va_del'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/C8-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        })).appendField("값삭제").appendField("del ");
-        this.appendValueInput("list").setCheck(null);
-        this.appendValueInput("dic1").setCheck(null).appendField("[");
-        this.appendDummyInput().appendField("]");
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/img/Collection/C8-logo.png", 25, 23, {alt: "*",flipRtl: "FALSE"}))
+            .appendField(Blockly.Msg.COLLECTION_VA_DEL);
+        this.appendValueInput("list")
+            .setCheck(null);
+        this.appendValueInput("dic1")
+            .setCheck(null)
+            .appendField("[");
+        this.appendDummyInput()
+            .appendField("]");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -625,7 +624,7 @@ Blockly.Blocks['va_ser'] = {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/D3-logo.png", 25, 23, {
             alt: "*",
             flipRtl: "FALSE"
-        })).appendField("키조사");
+        })).appendField(Blockly.Msg.COLLECTION_VA_SER);
         this.appendValueInput("dic1").setCheck(null);
         this.appendValueInput("list").appendField(" in ").setCheck(null);
         this.setInputsInline(true);
@@ -639,12 +638,13 @@ Blockly.Blocks['va_ser'] = {
 // va_id
 Blockly.Blocks['va_id'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Variable/V3-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        })).appendField("메모리주소( id ) (");
-        this.appendValueInput("dic1").setCheck(null);
-        this.appendDummyInput().appendField(")");
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/img/Variable/V3-logo.png", 25, 23, {alt: "*",flipRtl: "FALSE"}))
+            .appendField(`${Blockly.Msg.VA_ID}(`);
+        this.appendValueInput("dic1")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
         this.setInputsInline(true);
         this.setColour("4C97FF");
         this.setOutput(true, null);

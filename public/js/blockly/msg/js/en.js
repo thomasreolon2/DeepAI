@@ -462,10 +462,32 @@ Blockly.Msg['NUMSTR_INFUCTION_NUM_3'] = "round off(round)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_4'] = "absolute value(abs)";
 Blockly.Msg['NUMSTR_INFUCTION_STR'] = "change to ASCII(ord)";
 
+// 지원 2021.01.19
+// 변수
+Blockly.Msg['VA_ID'] = "address" // 메모리 주소
+
+// 컬렉션
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_1'] = "empty list";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_2'] = "empty tuple";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_3'] = "empty set";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_4'] = "empty dict";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_5'] = "create";
+
+Blockly.Msg['COLLECTION_VA_SEL'] = "[indexing]";
+Blockly.Msg['COLLECTION_VA_DEL'] = "[delete] del";
+
+Blockly.Msg['COLLECTION_TUPLE'] = "tuple";
+Blockly.Msg['COLLECTION_SET'] = "set";
+
+Blockly.Msg['COLLECTION_SET_CONTROL'] = "set control";
+
+Blockly.Msg['COLLECTION_DICT'] = "dictionary";
+Blockly.Msg['COLLECTION_VA_SER'] = "key have";
+
 // 2020.12.04 이성주 블록 한글/영어 변환
 Blockly.Msg['COLLECTION_NEW_LIST'] = "%1data control  list %2 to %3";
 Blockly.Msg['COLLECTION_NEW_LIST2'] = "data control";
-Blockly.Msg['CHANGE_COLLECTION'] = "생성변환";
+Blockly.Msg['CHANGE_COLLECTION'] = "type change";
 
 Blockly.Msg['REPEAT_1_REPEAT'] = "repeat";
 Blockly.Msg["REPEAT_1_VARIABLE"] = "variable";
@@ -529,6 +551,8 @@ Blockly.Msg['COLLECTION_15_END'] = "";
 Blockly.Msg['COLLECTION_16_LIST'] = "list";
 Blockly.Msg['COLLECTION_16_ELEMETNT'] = "element";
 Blockly.Msg['COLLECTION_16_EXTEND'] = "extend";
+Blockly.Msg['COLLECTION_16_COPY'] = "copy";
+
 Blockly.Msg['COLLECTION_16_COUNT'] = "count of element";
 Blockly.Msg['COLLECTION_16_INDEX'] = "index";
 Blockly.Msg['COLLECTION_16_POP'] = "pull out";
@@ -1018,3 +1042,4 @@ $("#runButton2").html('run');
 $("#button_close").html('close');
 $("#button_clear").html('clear');
 $("#button_reset").html('reset');
+
