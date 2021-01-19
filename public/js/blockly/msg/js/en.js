@@ -1022,6 +1022,38 @@ Blockly.Msg['CATEGORY_MACHINELEARNING'] ="Machine learning";
 Blockly.Msg['CATEGORY_DEEPLEARNING']="Deep Learning";
 Blockly.Msg['CATEGORY_AIX'] = "AI + X"
 
+// 시스템
+Blockly.Msg['OS_IMPORT'] = "[import] os, date, time, shutil";
+Blockly.Msg['OS_GETCWD'] = "current working directory (getcwd)";
+Blockly.Msg['OS_LISTDIR'] = "list of file, directory (listdir)";
+Blockly.Msg['OS_DIR_1'] = "Create a directory named path (mkdir) (";
+Blockly.Msg['OS_DIR_2'] = "Remove (delete) the directory path (rmdir) (";
+Blockly.Msg['OS_DIR_3'] = "Change the current working directory to path (chdir) (";
+Blockly.Msg['OS_REMOVER'] = "Remove (delete) the file path";
+Blockly.Msg['OS_RENAME'] = "Rename the file or directory";
+Blockly.Msg['OS_ABSPATH'] = "path absolute path(abspath)";
+Blockly.Msg['OS_BASENAME'] = "path base name(basename)";
+Blockly.Msg['OS_DIRNAME'] = "path directory name(dirname)";
+Blockly.Msg['OS_EXISTS'] = "path refers to an existing path(exists)";
+Blockly.Msg['OS_GETSIZE'] = "path size of path(getsize)";
+Blockly.Msg['OS_IS_DIR_FILE_1'] = "check the specified path is an existing directory or not(isdir)";
+Blockly.Msg['OS_IS_DIR_FILE_2'] = "check the spceified path is an existing regular file(isfile)";
+Blockly.Msg['OS_IS_DIR_FILE_3'] = "check the spceified path is an absolute pathname(isabs)";
+Blockly.Msg['OS_PATH_SPLIT'] = "path split directory&file(split)";
+Blockly.Msg['OS_SHUTIL_FILE_1'] = "file copy (copy) (";
+Blockly.Msg['OS_SHUTIL_FILE_2'] = "directory copy (copytree) (";
+Blockly.Msg['OS_SHUTIL_FILE_3'] = "move file (move) (";
+Blockly.Msg['OS_TIME_'] = "current time time.time()";
+Blockly.Msg['OS_SLEEP'] = "sleep (sleep)";
+Blockly.Msg['OS_DATETIME_NOW'] = "create datetime fuction";
+Blockly.Msg['OS_NOW_METHOD_1'] = "year";
+Blockly.Msg['OS_NOW_METHOD_2'] = "month";
+Blockly.Msg['OS_NOW_METHOD_3'] = "day";
+Blockly.Msg['OS_NOW_METHOD_4'] = "hour";
+Blockly.Msg['OS_NOW_METHOD_5'] = "minute";
+Blockly.Msg['OS_NOW_METHOD_6'] = "second";
+Blockly.Msg['OS_NOW_METHOD_7'] = "weekday";
+
 // html 부분
 $("#code").text("code");
 $("label[for = 'file']").text("open file..");

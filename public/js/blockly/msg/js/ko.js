@@ -1005,6 +1005,37 @@ Blockly.Msg['CATEGORY_MACHINELEARNING'] ="머신러닝(ML)";
 Blockly.Msg['CATEGORY_DEEPLEARNING']="딥러닝(DL)";
 Blockly.Msg['CATEGORY_AIX'] = "전공직무AI융합";
 
+// 시스템
+Blockly.Msg['OS_IMPORT'] = "[임포트] os,날짜,시간,shutil";
+Blockly.Msg['OS_GETCWD'] = "현재경로 (getcwd)";
+Blockly.Msg['OS_LISTDIR'] = "파일, 디렉터리목록 (listdir)"; 
+Blockly.Msg['OS_DIR_1'] = "디렉토리생성 (mkdir) ("; 
+Blockly.Msg['OS_DIR_2'] = "디렉토리삭제 (rmdir) ("; 
+Blockly.Msg['OS_DIR_3'] = "디렉토리변경 (chdir) ("; 
+Blockly.Msg['OS_REMOVER'] = "파일삭제 (remove)"; 
+Blockly.Msg['OS_RENAME'] = "파일명변경 (rename)"; 
+Blockly.Msg['OS_ABSPATH'] = "path 절대경로(abspath)";
+Blockly.Msg['OS_BASENAME'] = "path 기본이름(basename)";
+Blockly.Msg['OS_DIRNAME'] = "path 경로(dirname)";
+Blockly.Msg['OS_EXISTS'] = "path 존재유무(exists)";
+Blockly.Msg['OS_GETSIZE'] = "path 파일크기(getsize)";
+Blockly.Msg['OS_IS_DIR_FILE_1'] = "디렉토리인지 확인(isdir)";
+Blockly.Msg['OS_IS_DIR_FILE_2'] = "파일인지 확인(isfile)";
+Blockly.Msg['OS_IS_DIR_FILE_3'] = "절대경로인지 확인(isabs)";
+Blockly.Msg['OS_PATH_SPLIT'] = "path 디렉토리&파일 분리(split)";
+Blockly.Msg['OS_SHUTIL_FILE'] = "파일복사 (copy) (";
+Blockly.Msg['OS_SHUTIL_FILE_2'] = "디렉토리복사 (copytree) (";
+Blockly.Msg['OS_SHUTIL_FILE_3'] = "파일이동 (move) (";
+Blockly.Msg['OS_TIME_'] = "현재시각 time.time()";
+Blockly.Msg['OS_SLEEP'] = "일시정지 (sleep)";
+Blockly.Msg['OS_DATETIME_NOW'] = "datetime 객체생성";
+Blockly.Msg['OS_NOW_METHOD_1'] = "년도";
+Blockly.Msg['OS_NOW_METHOD_2'] = "월";
+Blockly.Msg['OS_NOW_METHOD_3'] = "일";
+Blockly.Msg['OS_NOW_METHOD_4'] = "시간";
+Blockly.Msg['OS_NOW_METHOD_5'] = "분";
+Blockly.Msg['OS_NOW_METHOD_6'] = "초";
+Blockly.Msg['OS_NOW_METHOD_7'] = "요일";
 
 // html 부분
 $("#code").text("코드");
