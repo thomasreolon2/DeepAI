@@ -1415,7 +1415,9 @@ Blockly.Blocks['np_dot'] = {
             alt: "*",
             flipRtl: "FALSE"
         }));
-        this.appendValueInput("x").setCheck(null).appendField("길이(len)");
+        this.appendValueInput("x")
+            .setCheck(null)
+            .appendField(Blockly.Msg.REPEAT_5_LENGTH);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_LOOPS_HUE}");

@@ -1116,7 +1116,7 @@
     <!-- ******************************   반복(Repeat)                           ******************************* -->
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_REPEAT}" colour="%{BKY_LOOPS_HUE}">
-      <!--repeat1-->
+      <!-- [R1] repeat1-->
       <block type="controls_repeat">
         <value name="VAR">
           <block type="variables_get">
@@ -1129,8 +1129,7 @@
           </shadow>
         </value>
       </block>
-
-      <!--new_while-->
+      <!-- [R2] new_while-->
       <block type="controls_whileTorF">
         <value name="BOOL">
           <shadow type="indata">
@@ -1138,8 +1137,7 @@
           </shadow>
         </value>
       </block>
-
-      <!-- for 문 range -->
+      <!-- [R3] for 문 range -->
       <block type="py_for1">
         <value name="item">
           <block type="variables_get">
@@ -1152,8 +1150,7 @@
           </shadow>
         </value>
       </block>
-
-      <!-- for 문 in -->
+      <!-- [R4] for 문 in -->
       <block type="py_for">
         <value name="item">
           <shadow type="indata">
@@ -1166,8 +1163,7 @@
           </shadow>
         </value>
       </block>
-      
-      <!-- 범위1 블록 -->
+      <!-- [R5] 범위1 블록 -->
       <block type="range_len">
         <value name="x">
           <shadow type="indata">
@@ -1187,7 +1183,7 @@
           </shadow>
         </value>
       </block> -->
-      <!-- 범위2 블록 -->      
+      <!-- [R6] 범위2 블록 -->      
       <block type="range2">
         <value name="VALUE1">
           <shadow type="indata">
@@ -1195,7 +1191,7 @@
           </shadow>
         </value>
       </block>
-      <!-- 범위3 블록 -->      
+      <!-- [R7] 범위3 블록 -->      
       <block type="range3">
         <value name="x">
           <shadow type="indata">
@@ -1205,7 +1201,6 @@
         <value name="y">
           <shadow type="indata">
             <field name="indata1">10</field>
-
           </shadow>
         </value>
         <value name="z">
@@ -1214,11 +1209,10 @@
           </shadow>
         </value>
       </block>
-      <!-- break 블록 -->      
+      <!-- [R8] break 블록 -->      
       <block type="break_block"></block>
-      <!-- continue 블록 -->      
+      <!-- [R9] continue 블록 -->      
       <block type="continue_block"></block>
-
     </category>
     <!-- 2020-12-26 양승국 end -->
 

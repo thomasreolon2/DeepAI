@@ -544,7 +544,7 @@ Blockly.Msg["REPEAT_CONTINUE"] = "건너뛰기(continue)";
 Blockly.Msg['REPEAT_4_RANGE'] = "범위";
 
 Blockly.Msg['REPEAT_5_RANGE'] = "범위";
-Blockly.Msg['REPEAT_5_LENGTH'] = "길이";
+Blockly.Msg['REPEAT_5_LENGTH'] = "길이(len)";
 
 Blockly.Msg['REPEAT_6_RANGE'] = "범위";
 

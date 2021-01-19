@@ -541,7 +541,7 @@ Blockly.Msg["REPEAT_1_LIST"] = "data";
 Blockly.Msg["REPEAT_4_RANGE"] = "range";
 
 Blockly.Msg["REPEAT_5_RANGE"] = "range";
-Blockly.Msg["REPEAT_5_LENGTH"] = "length";
+Blockly.Msg["REPEAT_5_LENGTH"] = "length(len)";
 
 Blockly.Msg["REPEAT_6_RANGE"] = "range";
 
