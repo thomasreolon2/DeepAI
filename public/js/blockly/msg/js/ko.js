@@ -643,7 +643,7 @@ Blockly.Msg["DATA_HUE"] = "6D3A85"; // 데이터사이언스
 Blockly.Msg["ML_HUE"] = "E6675E"; // 머신러닝
 Blockly.Msg["DL_HUE"] = "E69344"; // 딥러닝
 Blockly.Msg["PROLOG_HUE"] = "8FBF36"; // 프롤로그
-Blockly.Msg["OS_HUE"] = "#a78b76"; // 시스템
+Blockly.Msg["OS_HUE"] = "#55ad15"; // 시스템
 Blockly.Msg["lst_HUE"] = "#183153"; // 시스템
 
 
@@ -1084,7 +1084,7 @@ Blockly.Msg['OS_LISTDIR'] = "파일, 디렉터리목록 (listdir)";
 Blockly.Msg['OS_DIR_1'] = "디렉토리생성 (mkdir) ("; 
 Blockly.Msg['OS_DIR_2'] = "디렉토리삭제 (rmdir) ("; 
 Blockly.Msg['OS_DIR_3'] = "디렉토리변경 (chdir) ("; 
-Blockly.Msg['OS_REMOVER'] = "파일삭제 (remove)"; 
+Blockly.Msg['OS_REMOVE'] = "파일삭제 (remove)"; 
 Blockly.Msg['OS_RENAME'] = "파일명변경 (rename)"; 
 Blockly.Msg['OS_ABSPATH'] = "path 절대경로(abspath)";
 Blockly.Msg['OS_BASENAME'] = "path 기본이름(basename)";

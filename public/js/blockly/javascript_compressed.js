@@ -1107,3 +1107,19 @@ Blockly.JavaScript['list_insert'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
+
+  Blockly.Msg['OPERATION_STATISTICS'] = "statistics";
+  // 수학통계
+
+  Blockly.Msg['OPERATION_STATISTICS'] = "통계";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
+  Blockly.Msg['OPERATION_'] = "";
