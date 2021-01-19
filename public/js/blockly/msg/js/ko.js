@@ -463,6 +463,29 @@ Blockly.Msg['NUMSTR_INFUCTION_NUM_3'] = "반올림(round)";
 Blockly.Msg['NUMSTR_INFUCTION_NUM_4'] = "절댓값(abs)";
 Blockly.Msg['NUMSTR_INFUCTION_STR'] = "ASCII로변환(ord)";
 
+// 지원 2021.01.19
+// 변수
+// 메모리 주소
+Blockly.Msg['VA_ID'] = "메모리 주소";
+
+// 컬렉션
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_1'] = "빈리스트";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_2'] = "빈튜플";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_3'] = "빈집합";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_4'] = "빈딕셔너리";
+Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_5'] = "생성";
+
+Blockly.Msg['COLLECTION_VA_SEL'] = "[인덱싱]";
+Blockly.Msg['COLLECTION_VA_DEL'] = "[값삭제] del";
+
+Blockly.Msg['COLLECTION_TUPLE'] = "튜플";
+
+Blockly.Msg['COLLECTION_SET'] = "집합";
+Blockly.Msg['COLLECTION_SET_CONTROL'] = "집합다루기";
+
+Blockly.Msg['COLLECTION_DICT'] = "딕셔너리";
+Blockly.Msg['COLLECTION_VA_SER'] = "키조사";
+
 // 2020.12.04  이성주 블록 한글/영어 메시지 전환
 Blockly.Msg['COLLECTION_NEW_LIST'] = "%1데이터 다루기 %2에 %3를";
 Blockly.Msg['COLLECTION_NEW_LIST2'] = "데이터 다루기";
@@ -1060,25 +1083,3 @@ $("#button_reset").html('초기화');
 
 
 
-// 지원 2021.01.19
-// 변수
-// 메모리 주소
-Blockly.Msg['VA_ID'] = "메모리 주소";
-
-// 컬렉션
-Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_1'] = "빈리스트";
-Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_2'] = "빈튜플";
-Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_3'] = "빈집합";
-Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_4'] = "빈딕셔너리";
-Blockly.Msg['COLLECTION_LISTS_CREATE_WITH_5'] = "생성";
-
-Blockly.Msg['COLLECTION_VA_SEL'] = "[인덱싱]";
-Blockly.Msg['COLLECTION_VA_DEL'] = "[값삭제] del";
-
-Blockly.Msg['COLLECTION_TUPLE'] = "튜플";
-
-Blockly.Msg['COLLECTION_SET'] = "집합";
-Blockly.Msg['COLLECTION_SET_CONTROL'] = "집합다루기";
-
-Blockly.Msg['COLLECTION_DICT'] = "딕셔너리";
-Blockly.Msg['COLLECTION_VA_SER'] = "키조사";
