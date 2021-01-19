@@ -32,6 +32,7 @@ Blockly.Blocks['global'] = {
           .appendField("global");
       this.appendValueInput("text")
           .setCheck(null);
+      this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour("%{BKY_COLLECTION_HUE}");
