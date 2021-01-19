@@ -1021,19 +1021,20 @@ Blockly.Python.math_change = function (block) {
    );
    
 
-  console.log("test" + a);
+  //console.log("test" + a);
 
   var dropdown_name = block.getFieldValue("NAME");
   
+  return a + ' ' + dropdown_name + ' ' + b + "\n";
   // 대,소문자 구별
-  if(a == a.toUpperCase()){  // 변수명 => 대문자 일때 출력
-    console.log("대문자버전: " + a);
-    return a.toUpperCase() + ' ' + dropdown_name + ' ' + b + "\n";
-  }
-  else if(a == a.toLowerCase()){ // 변수명 => 소문자 일때
-    console.log("소문자버전: " + a);
-     return a.toLowerCase() + ' ' + dropdown_name + ' ' + b + "\n";
-  }
+  // if(a == a.toUpperCase()){  // 변수명 => 대문자 일때 출력
+  //   console.log("대문자버전: " + a);
+  //   return a.toUpperCase() + ' ' + dropdown_name + ' ' + b + "\n";
+  // }
+  // else if(a == a.toLowerCase()){ // 변수명 => 소문자 일때
+  //   console.log("소문자버전: " + a);
+  //    return a.toLowerCase() + ' ' + dropdown_name + ' ' + b + "\n";
+  // }
   //return null;
      // var val_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   
