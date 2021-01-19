@@ -102,6 +102,14 @@ Blockly.Python['numpy_sorting'] = function(block) {
     code = `np.sort(${value_numpy_sorting_val})`;  
     break; 
 
+    case "numpy_Sorting_argsort": 
+    code = `np.argsort(${value_numpy_sorting_val})`;  
+    break; 
+
+    case "numpy_Sorting_quantile":
+      code = `np.quantile(${value_numpy_sorting_val})`;  
+    break; 
+    
     case "numpy_Sorting_lexsort": 
     code = `np.lexsort(${value_numpy_sorting_val})`;  
     break;

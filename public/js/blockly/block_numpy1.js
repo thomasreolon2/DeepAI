@@ -53,7 +53,7 @@ Blockly.Blocks['numpy_sorting'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 정렬]")
-        .appendField(new Blockly.FieldDropdown([["정렬(sort)","numpy_Sorting_sort"], ["간접 정렬(lexsort)","numpy_Sorting_lexsort"], ["분할(partition)","numpy_Sorting_partition"], ["간접 분할(argpartition)","numpy_Sorting_argpartition"]]), "numpy_Sorting_opt");
+        .appendField(new Blockly.FieldDropdown([["정렬(sort)","numpy_Sorting_sort"],["배열정렬(argsort)","numpy_Sorting_argsort"], ["간접 정렬(lexsort)","numpy_Sorting_lexsort"], ["분할(partition)","numpy_Sorting_partition"],["데이터분할(quantile)","numpy_Sorting_quantile"], ["간접 분할(argpartition)","numpy_Sorting_argpartition"]]), "numpy_Sorting_opt");
     this.appendValueInput("numpy_Sorting_val")
         .setCheck(null);
     this.setInputsInline(true);
