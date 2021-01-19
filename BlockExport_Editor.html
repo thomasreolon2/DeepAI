@@ -6690,6 +6690,14 @@
     // 결과 지우기 2020.10.04 남지원 수정 
     //===================================  
     function clear_result() {
+
+      var code = pyEditor.getValue();
+      var tmp = code.indexOf(' = ')
+      var res = code.charAt(tmp - 1)
+
+      pyodide.runPython(`
+                    del(${res})
+                    `);
       //원본 document.getElementById("exeArea").value = "";
       $("#exeArea").empty();
     }
@@ -6752,6 +6760,16 @@
   <script>
     //새로운 실행방법
     function runButton() {
+      Blockly.Python.addReservedWords('code');
+      
+      //var code1 = pyEditor.getValue();
+      //var tmp = code1.indexOf(' = ')
+      //var res = code1.charAt(tmp - 1)
+
+      //pyodide.runPython(`
+      //              del(${res})
+      //              `);
+
       // 그래프 위쪽 삭제
       $("#graph1").remove();
       $("#csv_show").before("<div id='graph1' style=\"height:500px; width:900;\"><img id='pyplotfigure' /></div>");
