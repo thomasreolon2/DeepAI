@@ -577,8 +577,8 @@
     <!-- #####################################################################################################  -->
     <!-- ******************************   입출력 ( I/O )                           ******************************* -->
     <!-- #####################################################################################################  -->
-     <category name = "입출력(I/O)" colour = "255">
-
+     <category name = "%{BKY_CATEGORY_INPUT_OUTPUT}" colour = "255">
+      
       <!-- 데이터 입력 -->
       <block type="input1">
         <value name="content1">
@@ -653,7 +653,7 @@
 
       <block type="class_func_param"></block>
       
-      <category name="시스템(os)" colour="%{BKY_OS_HUE}">
+      <category name="%{BKY_CATEGORY_OS}" colour="%{BKY_OS_HUE}">
         <block type="os_library"></block>
         <label text="os & os.path & shutil"></label>
         
@@ -796,7 +796,7 @@
 
       
     
-      <category name="파일(file)" colour="%{BKY_FILE_HUE}">
+      <category name="%{BKY_CATEGORY_FILE}" colour="%{BKY_FILE_HUE}">
         <block type="pickle_library"></block>
 
         <!-- 기태 수정(로컬 파일 열기) 21.01.01 ------------------------------------> 	
@@ -6692,8 +6692,8 @@
     function clear_result() {
 
       var code = pyEditor.getValue();
-      var tmp = code.indexOf(' = ')
-      var res = code.charAt(tmp - 1)
+      var tmp = code.indexOf(' = ');
+      var res = code.charAt(tmp - 1);
 
       pyodide.runPython(`
                     del(${res})

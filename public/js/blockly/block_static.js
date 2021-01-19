@@ -19,10 +19,10 @@ Blockly.Blocks['static_library'] = {
 Blockly.Blocks['statistics1'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("통계")
-      .appendField(new Blockly.FieldDropdown([["산술 평균(mean)", "mean"], ["부동 소수점 산술 평균(fmean)", "fmean"], ["기하 평균(geometric_mean)", "geometric_mean"], ["조화 평균(harmonic_mean)", "harmonic_mean"], 
-      ["중앙값(median)", "median"], ["낮은 중앙값(median_low)", "median_low"], ["높은 중앙값(median_high)", "median_high"], ["그룹화된 데이터의 중앙값(median_grouped)", "median_grouped"], ["단일 최빈값(mode)", "mode"], ["최빈값 리스트(multimode)", "multimode"],
-      ["모집단 표준 편차(pstdev)", "pstdev"], ["모집단 분산(pvariance)", "pvariance"], ["표본 표준 편차(stdev)", "stdev"], ["표본 분산(variance)", "variance"]]), "NAME")
+      .appendField(Blockly.Msg.OPERATION_STATISTICS) // "통계"
+      .appendField(new Blockly.FieldDropdown([["%{BKY_OPERATION_STATISTICS1_1}", "mean"], [Blockly.Msg.OPERATION_STATISTICS1_2, "fmean"], [Blockly.Msg.OPERATION_STATISTICS1_3, "geometric_mean"], [Blockly.Msg.OPERATION_STATISTICS1_4, "harmonic_mean"], 
+      [Blockly.Msg.OPERATION_STATISTICS1_5, "median"], [Blockly.Msg.OPERATION_STATISTICS1_6, "median_low"], [Blockly.Msg.OPERATION_STATISTICS1_7, "median_high"], [Blockly.Msg.OPERATION_STATISTICS1_8, "median_grouped"], [Blockly.Msg.OPERATION_STATISTICS1_9, "mode"], [Blockly.Msg.OPERATION_STATISTICS1_10, "multimode"],
+      [Blockly.Msg.OPERATION_STATISTICS1_11, "pstdev"], [Blockly.Msg.OPERATION_STATISTICS1_12, "pvariance"], [Blockly.Msg.OPERATION_STATISTICS1_13, "stdev"], [Blockly.Msg.OPERATION_STATISTICS1_14, "variance"]]), "NAME")
       .appendField("(");
     this.appendValueInput("va")
       .setCheck(null)
@@ -40,8 +40,8 @@ Blockly.Blocks['statistics1'] = {
 Blockly.Blocks['statistics2'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("통계")
-      .appendField(new Blockly.FieldDropdown([["그룹화된 데이터의 중앙값(median_grouped)", "1"], ["같은 확률을 갖는 구간으로 나누기(quantiles)", "2"], ["모집단 분산(pvariance)", "3"], ["표본 분산(variance)", "4"]]), "NAME")
+      .appendField(Blockly.Msg.OPERATION_RANDOM)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OPERATION_STATISTICS2_1, "1"], [Blockly.Msg.OPERATION_STATISTICS2_2, "2"], [Blockly.Msg.OPERATION_STATISTICS2_3, "3"], [Blockly.Msg.OPERATION_STATISTICS2_4, "4"]]), "NAME")
       .appendField("(");
     this.appendValueInput("va1")
       .setCheck(null);
@@ -78,8 +78,8 @@ Blockly.Blocks['random_library'] = {
 Blockly.Blocks['random1_integer'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("랜덤")
-      .appendField("0~1사이값(random)( )")
+      .appendField(Blockly.Msg.OPERATION_RANDOM)
+      .appendField(Blockly.Msg.OPERATION_RANDOM1_INTEGER)
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_MATH_HUE}");
@@ -91,8 +91,8 @@ Blockly.Blocks['random1_integer'] = {
 Blockly.Blocks['random1_choice'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("랜덤")
-      .appendField("추출(choice)")
+      .appendField(Blockly.Msg.OPERATION_RANDOM)
+      .appendField(Blockly.Msg.OPERATION_RANDOM1_CHOICE)
       .appendField("(");
     this.appendValueInput("va2")
       .setCheck(null)
@@ -109,8 +109,8 @@ Blockly.Blocks['random1_choice'] = {
 Blockly.Blocks['random1_shuffle'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("랜덤")
-      .appendField("셔플(shuffle)")
+      .appendField(Blockly.Msg.OPERATION_RANDOM)
+      .appendField(Blockly.Msg["OPERATION_RANDIM1_SHUFFLE"])
       .appendField("(");
     this.appendValueInput("va3")
       .setCheck(null)
@@ -129,8 +129,8 @@ Blockly.Blocks['random1_shuffle'] = {
 Blockly.Blocks['random2'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("랜덤")
-      .appendField(new Blockly.FieldDropdown([["정수(randint)", "1"],["실수(randuniform)", "3"]]), "NAME")
+      .appendField(Blockly.Msg.OPERATION_RANDOM)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.OPERATION_RANDOM2_1, "1"],[Blockly.Msg.OPERATION_RANDOM2_2, "3"]]), "NAME")
       .appendField("(");
     this.appendValueInput("va1")
       .setCheck(null);
@@ -149,8 +149,8 @@ Blockly.Blocks['random2'] = {
 Blockly.Blocks['random3'] = {
   init: function () {
     this.appendDummyInput()
-      .appendField("랜덤")
-      .appendField("추출(sample)")
+      .appendField(Blockly.Msg.OPERATION_RANDOM)
+      .appendField(Blockly.Msg.OPERATION_RANDOM3)
       .appendField("(");
     this.appendValueInput("va1")
       .setCheck(null);

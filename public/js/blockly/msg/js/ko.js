@@ -1048,6 +1048,9 @@ Blockly.Msg['NEURALNETWORK_MLP_LOSS'] = "[MLP 손실값 추출 ] 모델";
 
 // 카테고리
 Blockly.Msg['CATEGORY_VARIABLE'] = "변수(Variable)";
+Blockly.Msg['CATEGORY_INPUT_OUTPUT'] = "입출력(I/O)";
+Blockly.Msg['CATEGORY_OS'] = "시스템(os)";
+Blockly.Msg['CATEGORY_FILE'] = "파일(file)";
 Blockly.Msg['CATEGORY_LOGIC'] = "논리(Logic)";
 Blockly.Msg['CATEGORY_REPEAT'] = "반복(Repeat)";
 Blockly.Msg['CATEGORY_OPERATION'] = "수학통계(Math)";
@@ -1202,3 +1205,36 @@ Blockly.Msg['MATH_PI'] = "파이(π)";
 Blockly.Msg['MATH_E'] = "자연로그 밑(e)";
 Blockly.Msg['MATH_INF'] = "양의 무한대(inf)";
 Blockly.Msg['MATH_NAN'] = "nan 값(nan)";
+
+// 수학통계
+
+Blockly.Msg['OPERATION_STATISTICS'] = "통계";
+Blockly.Msg['OPERATION_STATISTICS1_1'] = "산술 평균(mean)";
+Blockly.Msg['OPERATION_STATISTICS1_2'] = "부동 소수점 산술 평균(fmean)";
+Blockly.Msg['OPERATION_STATISTICS1_3'] = "기하 평균(geometric_mean)";
+Blockly.Msg['OPERATION_STATISTICS1_4'] = "조화 평균(harmonic_mean)";
+Blockly.Msg['OPERATION_STATISTICS1_5'] = "중앙값(median)";
+Blockly.Msg['OPERATION_STATISTICS1_6'] = "낮은 중앙값(median_low)";
+Blockly.Msg['OPERATION_STATISTICS1_7'] = "높은 중앙값(median_high)";
+Blockly.Msg['OPERATION_STATISTICS1_8'] = "그룹화된 데이터의 중앙값(median_grouped)";
+Blockly.Msg['OPERATION_STATISTICS1_9'] = "단일 최빈값(mode)";
+Blockly.Msg['OPERATION_STATISTICS1_10'] = "최빈값 리스트(multimode)";
+Blockly.Msg['OPERATION_STATISTICS1_11'] = "모집단 표준 편차(pstdev)";
+Blockly.Msg['OPERATION_STATISTICS1_12'] = "모집단 분산(pvariance)";
+Blockly.Msg['OPERATION_STATISTICS1_13'] = "표본 표준 편차(stdev)";
+Blockly.Msg['OPERATION_STATISTICS1_14'] = "표본 분산(variance)";
+Blockly.Msg['OPERATION_STATISTICS2_1'] = "그룹화된 데이터의 중앙값(median_grouped)";
+Blockly.Msg['OPERATION_STATISTICS2_2'] = "같은 확률을 갖는 구간으로 나누기(quantiles)";
+Blockly.Msg['OPERATION_STATISTICS2_3'] = "모집단 분산(pvariance)";
+Blockly.Msg['OPERATION_STATISTICS2_4'] = "표본 분산(variance)";
+Blockly.Msg['OPERATION_RANDOM'] = "랜덤";
+Blockly.Msg['OPERATION_RANDOM1_INTEGER'] = "0~1사이값(random)( )";
+Blockly.Msg['OPERATION_RANDOM1_SHUFFLE'] = "셔플(shuffle)";
+Blockly.Msg['OPERATION_RANDOM1_CHOICE'] = "추출(choice)";
+Blockly.Msg['OPERATION_RANDIM2_1'] = "정수(randint)";
+Blockly.Msg['OPERATION_RANDIM2_2'] = "실수(randuniform)";
+Blockly.Msg['OPERATION_RANDOM2_1'] = "정수(randint)";
+Blockly.Msg['OPERATION_RANDOM2_2'] = "실수(randuniform)";
+Blockly.Msg['OPERATION_RANDOM3'] = "추출(sample)";
+
+

@@ -1041,6 +1041,9 @@ Blockly.Msg['NEURALNETWORK_MLP_LOSS'] = "[MLP loss value extraction ] model";
 
 // 카테고리
 Blockly.Msg['CATEGORY_VARIABLE'] = "Variable";
+Blockly.Msg['CATEGORY_INPUT_OUTPUT'] = "I/O";
+Blockly.Msg['CATEGORY_OS'] = "OS";
+Blockly.Msg['CATEGORY_FILE'] = "File";
 Blockly.Msg['CATEGORY_LOGIC'] = "Logic";
 Blockly.Msg['CATEGORY_REPEAT'] = "Repeat";
 Blockly.Msg['CATEGORY_OPERATION'] = "Math";
@@ -1193,3 +1196,33 @@ Blockly.Msg['MATH_PI'] = "pi(π)";
 Blockly.Msg['MATH_E'] = "e";
 Blockly.Msg['MATH_INF'] = "inf";
 Blockly.Msg['MATH_NAN'] = "nan";
+
+
+// 수학통계
+
+Blockly.Msg['OPERATION_STATISTICS'] = "statistics";
+Blockly.Msg['OPERATION_STATISTICS1_1'] = "arithmetic mean";
+Blockly.Msg['OPERATION_STATISTICS1_2'] = "floating point arithmetic mean(fmean)";
+Blockly.Msg['OPERATION_STATISTICS1_3'] = "geometric mean of data(geometric_mean)";
+Blockly.Msg['OPERATION_STATISTICS1_4'] = "harmonic mean of data(harmonic_mean)";
+Blockly.Msg['OPERATION_STATISTICS1_5'] = "median (middle value) of data(median)";
+Blockly.Msg['OPERATION_STATISTICS1_6'] = "low median of data(median_low)";
+Blockly.Msg['OPERATION_STATISTICS1_7'] = "high median of data(median_high)";
+Blockly.Msg['OPERATION_STATISTICS1_8'] = "median, or 50th percentile, of grouped data(median_grouped)";
+Blockly.Msg['OPERATION_STATISTICS1_9'] = "single mode (most common value) of discrete or nominal data(mode)";
+Blockly.Msg['OPERATION_STATISTICS1_10'] = "list of modes (most common values) of discrete or nomimal data(multimode)";
+Blockly.Msg['OPERATION_STATISTICS1_11'] = "population standard deviation of data(pstdev)";
+Blockly.Msg['OPERATION_STATISTICS1_12'] = "population variance of data(pvariance)";
+Blockly.Msg['OPERATION_STATISTICS1_13'] = "sample standard deviation of data(stdev)";
+Blockly.Msg['OPERATION_STATISTICS1_14'] = "sample variance of data(variance)";
+Blockly.Msg['OPERATION_STATISTICS2_1'] = "grouped continuous data(median_grouped)";
+Blockly.Msg['OPERATION_STATISTICS2_2'] = "compute the qth quantile of the given data (array elements) along the specified axis(quantiles)";
+Blockly.Msg['OPERATION_STATISTICS2_3'] = "population variance(pvariance)";
+Blockly.Msg['OPERATION_STATISTICS2_3'] = "sampling variance(variance)";
+Blockly.Msg['OPERATION_RANDOM'] = "random";
+Blockly.Msg['OPERATION_RANDOM1_CHOICE'] = "random element from a list(choice)";
+Blockly.Msg['OPERATION_RANDOM1_INTEGER'] = "value between 0 and 1";
+Blockly.Msg['OPERATION_RANDIM1_SHUFFLE'] = "shuffle(shuffle)";
+Blockly.Msg['OPERATION_RANDOM2_1'] = "integer(randint)";
+Blockly.Msg['OPERATION_RANDOM2_2'] = "float(randuniform)";
+Blockly.Msg['OPERATION_RANDOM3'] = "extract(sample)";
