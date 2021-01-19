@@ -1048,6 +1048,9 @@ Blockly.Msg['NEURALNETWORK_MLP_LOSS'] = "[MLP 손실값 추출 ] 모델";
 
 // 카테고리
 Blockly.Msg['CATEGORY_VARIABLE'] = "변수(Variable)";
+Blockly.Msg['CATEGORY_INPUT_OUTPUT'] = "입출력(I/O)";
+Blockly.Msg['CATEGORY_OS'] = "시스템(os)";
+Blockly.Msg['CATEGORY_FILE'] = "파일(file)";
 Blockly.Msg['CATEGORY_LOGIC'] = "논리(Logic)";
 Blockly.Msg['CATEGORY_REPEAT'] = "반복(Repeat)";
 Blockly.Msg['CATEGORY_OPERATION'] = "수학통계(Math)";
