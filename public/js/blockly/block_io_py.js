@@ -21,26 +21,8 @@ Blockly.Python['printtv'] = function (block) {
 };
 
 Blockly.Python['printf'] = function (block) {
-  var value_content1 = Blockly.Python.valueToCode(block, 'content1', Blockly.Python.ORDER_ATOMIC);  
+  var value_content1 = Blockly.Python.valueToCode(block, 'content1', Blockly.Python.ORDER_ATOMIC);
   var value_content2 = Blockly.Python.valueToCode(block, 'content2', Blockly.Python.ORDER_ATOMIC);
-  console.log("printf:", value_content1);
-
-  var myblocks = Blockly.mainWorkspace.getAllVariables();  
-  var check = false;
-  for( var i=0;i<myblocks.length; i++){    
-    if(myblocks[i].name == value_content1){      
-      check = true;
-      break;
-    }    
-  }
-  var code;
-  if(check){
-    //console.log("변수 존재");    
-  } else {
-    console.log("변수 존재하지 않음");    
-    value_content1 = "undefined";
-  }
-  
   // TODO: Assemble JavaScript into code variable.
   var code = `print(${value_content1})\n`;
   return code;
