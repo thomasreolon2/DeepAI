@@ -161,8 +161,9 @@ Blockly.defineBlocksWithJsonArray(
   "message0": "%{BKY_NUMPY_NP_ARRANGE_1}",
   "args0": [
     {
-      "type": "input_value",
-      "name": "np_arrange_value1"
+      "type": "field_input",
+      "name": "np_arrange_value1",
+      "text": "%{BKY_NUMPY_NP_CONCATENATEARRAY_2}"
     },
    
   ],
@@ -462,8 +463,7 @@ Blockly.defineBlocksWithJsonArray(
     "message0": "%{BKY_NUMPY_SHAPE_1}",
     "args0": [
       {
-        "type": "input_value",
-        "name": "numpy_shape_num1"
+        "type": "input_dummy"
       },
       {
         "type": "input_value",
