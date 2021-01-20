@@ -639,6 +639,7 @@ Blockly.Msg["VISUAL_HUE"] = "E8BE38"; // 매트플롯립, 시각화
 Blockly.Msg["SCIPY_HUE"] = "5AE88A"; // 사이파이
 Blockly.Msg["CLASS_HUE"] = "5BA561"; // 클래스
 Blockly.Msg["SCIKITLEARN_HUE"] = "E85938"; // 사이킷런
+Blockly.Msg["SCIKITLEARN_IMAGE"] ="#008C8C"; // 사이킷런 이미지
 Blockly.Msg["DATA_HUE"] = "6D3A85"; // 데이터사이언스
 Blockly.Msg["ML_HUE"] = "E6675E"; // 머신러닝
 Blockly.Msg["DL_HUE"] = "E69344"; // 딥러닝
@@ -858,7 +859,6 @@ Blockly.Msg['PANDAS_DF_VALUES'] = "[데이터 추출]";
 
 // ---- 맷플롯립
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ 임포트 ] matplotlib를 plt로";
-Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY_CM'] = "[ 임포트 ] matplotlib.cm를 cm으로";
 Blockly.Msg['MATPLOT_VAL_VI'] = "[ 테이블 형식 출력 ]   %1 변수  %2 ";
 Blockly.Msg['MATPLOT_MAIN'] = "[ 그래프 개수 설정 ]  %1 ( %2 , %3  )";
 Blockly.Msg['MATPLOT_PRE_GRAPH_1'] = "[ 그래프 출력 설정 ] 좌표 [ %1 ][ %2 %3 ] ( X , Y ) 값  %4 %5 그래프 종류  %6 제목  %7 X축  %8 Y축  %9 범례  %10 %11 색 %12";

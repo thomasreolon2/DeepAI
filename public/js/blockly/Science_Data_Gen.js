@@ -169,7 +169,7 @@ Blockly.Python['np_array'] = function(block) {
   
 //np.arange  
 Blockly.Python['np_arrange'] = function(block) {
-  var text_np_arrange_value1 = block.getFieldValue('np_arrange_value1');
+  var text_np_arrange_value1 = Blockly.Python.valueToCode(block, 'np_arrange_value1', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = `np.arange(${text_np_arrange_value1})`; 
   // TODO: Change ORDER_NONE to the correct strength.
@@ -245,11 +245,12 @@ Blockly.Python['np_arrange'] = function(block) {
     
     //np.shape 행렬 차원 반환 
     Blockly.Python['numpy_shape'] = function(block) {
+      var value_numpy_shape_num1 = Blockly.Python.valueToCode(block, 'numpy_shape_num1', Blockly.Python.ORDER_ATOMIC);
       var value_numpy_shape_num = Blockly.Python.valueToCode(block, 'numpy_shape_num', Blockly.Python.ORDER_ATOMIC);
       // TODO: Assemble Python into code variable.
-      var code = `np.shape(${value_numpy_shape_num})`;     
+      var code = `${value_numpy_shape_num1}.shape[${value_numpy_shape_num}]`;     
       // TODO: Change ORDER_NONE to the correct strength.
-      return [code, Blockly.Python.ORDER_NONE];
+      return [code, Blockly.Python.ORDER_ATOMIC];
     }; 
 
      // reshape 행렬 차원 변경 
@@ -764,13 +765,6 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
     var libImportIo = "import io\n";
     var libImportBase64 = "import base64\n";
     var code = "import matplotlib.pyplot as plt\n" + libImportIo + libImportBase64;
-    return code;
-  };
-
-  Blockly.Python['visualization_library_cm'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-    var code = "import matplotlib.cm as cm\n";
     return code;
   };
 

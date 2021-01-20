@@ -2271,6 +2271,7 @@
 
     <category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}"> <!--넘파이(Numpy)-->
       <category name="기본" colour="%{BKY_NUMPY_HUE}">
+
         <block type="numpy_library"></block>
       <!-- import numpy as np -->
 
@@ -2303,6 +2304,22 @@
 
       <!-- np.reshape  -->
       <block type="numpy_reshape"> </block>
+
+      <!-- np.shape  -->
+      <block type="numpy_shape">
+        <value name="numpy_shape_num1">
+          <block type="variables_get">
+            <field name="VAR">np</field>
+          </block>
+        </value>
+        <value name="numpy_shape_num">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <!-- np.shape  -->
+
       <!-- np.reshape  -->
       <label text="연산"></label>
        <!-- 넘파이 기본연산 -->
@@ -2392,6 +2409,7 @@
           </block>
         </value>  
       </block>
+
       <!-- 통계 / 평균 & 분산  -->
 
       <!-- CSV 저장 -->
@@ -3321,15 +3339,6 @@
           </block>
         </value>
       </block>
-
-      <block type="visualization_library_cm">
-        <value name="lib_var">
-          <block type="variables_get">
-            <field name="VAR">plt</field>
-          </block>
-        </value>
-      </block>
-      
       <block type="val_vi"></block>
       <!--  matplot1 시각화 틀    -->
       <block type="matplotlib_main">
@@ -3425,42 +3434,9 @@
           </shadow>
         </value>
       </block>
-      
-      <block type = "plt_ravel">
-        <value name="name1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="name2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
 
 
       <!--  matplot plt.plot()      --> 
-
-      <block type = "matp_Ex">
-        <value name="d1">
-          <block type="variables_get">
-            <field name="VAR">plt</field>
-          </block>
-        </value>
-        <value name="d2">
-          <shadow type="math_number">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-        <value name="d3">
-          <shadow type="math_number">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-      </block>
-
-
 
       <!--  matplot plt.show()      -->
       <block type="matplotlib_plt_show"></block>
@@ -3491,8 +3467,6 @@
               </block>
             </value>
           </block>
-
-          
   
           <block type="itdata">
             <value name="itdata1">
@@ -6320,29 +6294,6 @@
         </value>
       </block>
 
-      <block type="skimage_util_shape">
-        <value name="para">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      
-
-      <block type="ndi_zoom">
-        <value name="data">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="data2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      
     </category>
 
     <!-- //////////////////////////////////////////////////////////////////////////

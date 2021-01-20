@@ -161,9 +161,8 @@ Blockly.defineBlocksWithJsonArray(
   "message0": "%{BKY_NUMPY_NP_ARRANGE_1}",
   "args0": [
     {
-      "type": "field_input",
-      "name": "np_arrange_value1",
-      "text": "%{BKY_NUMPY_NP_CONCATENATEARRAY_2}"
+      "type": "input_value",
+      "name": "np_arrange_value1"
     },
    
   ],
@@ -463,7 +462,8 @@ Blockly.defineBlocksWithJsonArray(
     "message0": "%{BKY_NUMPY_SHAPE_1}",
     "args0": [
       {
-        "type": "input_dummy"
+        "type": "input_value",
+        "name": "numpy_shape_num1"
       },
       {
         "type": "input_value",
@@ -710,19 +710,6 @@ Blockly.defineBlocksWithJsonArray(
     init: function() {
       this.appendDummyInput()
           .appendField(Blockly.Msg.MATPLOT_VISUALIZATION_LIBRARY);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_VISUAL_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  },
-
-  Blockly.Blocks['visualization_library_cm'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField(Blockly.Msg.MATPLOT_VISUALIZATION_LIBRARY_CM);
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
