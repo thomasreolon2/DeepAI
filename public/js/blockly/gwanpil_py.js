@@ -254,15 +254,24 @@ Blockly.Python['plt_subplot'] = function(block) {
 
       Blockly.Python['dic_menu1_2'] = function (block) {
         var variable_list =  Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
-        var dropdown_dic = block.getFieldValue('dic');
-        if (dropdown_dic == 'items') {
-          var code = variable_list + '.items()';
-        } else if (dropdown_dic == 'clear') {
-          var code = variable_list + '.clear()';
-        } else if (dropdown_dic == 'getvalues') {
-            var code = variable_list + '.values()';
-        } else if (dropdown_dic == 'getkeys') {
-            var code = variable_list + '.keys()';
-        }
+        var variable_list2 =  Blockly.Python.valueToCode(block, 'list2', Blockly.Python.ORDER_ATOMIC);
+        var code = variable_list + '.shape['+variable_list2+']';
+
         return [code, Blockly.Python.ORDER_ATOMIC];
+      };
+
+      Blockly.Python['voxels'] = function (block) {
+        var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+        var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        var code = `${var_text1}.voxels(${var_text2})\n`;
+        return code;
+      };
+
+      Blockly.Python['set_axis_off'] = function (block) {
+        var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+        var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        var code = `${var_text1}.set_axis_off(${var_text2})\n`;
+        return code;
       };

@@ -422,27 +422,51 @@ Blockly.Blocks['dic_menu1_2'] = {
           flipRtl: "FALSE"
       })).appendField(Blockly.Msg.COLLECTION_9_DICTOPTION);
       this.appendValueInput("list").setCheck(null);
+      this.appendDummyInput().appendField(".shape[");
       this.appendValueInput("list2").setCheck(null);
-      this.appendDummyInput().appendField(".shape[")
-          .appendField(new Blockly.FieldDropdown([
-          [
-              Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTKEY, "getkeys"
-          ],
-          [
-              Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL, "getvalues"
-          ],
-          [
-              "키,값쌍얻기", "items"
-          ],
-          [
-              "키,값쌍모두지우기", "clear"
-          ]
-      ]), "dic");
       this.appendDummyInput().appendField("]");
       this.setInputsInline(true);
       this.setColour("%{BKY_DICT_HUE}");
       this.setOutput(true, null);
       this.setTooltip("");
       this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['set_axis_off'] = {
+  init: function() {
+      this.appendValueInput("VAR")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(".set_axis_off(");
+      this.appendValueInput("INPUT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+  this.setTooltip("");
+  this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['voxels'] = {
+  init: function() {
+      this.appendValueInput("VAR")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(".voxels(");
+      this.appendValueInput("INPUT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+  this.setTooltip("");
+  this.setHelpUrl("");
   }
 };

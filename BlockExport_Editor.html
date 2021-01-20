@@ -6129,7 +6129,38 @@
             <block type="variables_get">
               <field name="VAR">my_dict</field>
             </block>
-          </value>  
+          </value> 
+          <value name="list2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+        </block>
+
+        <block type="set_axis_off">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="voxels">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1">struc</field>
+            </shadow>
+          </value>
         </block>
 
       </category>
