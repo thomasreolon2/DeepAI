@@ -2271,6 +2271,7 @@
 
     <category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}"> <!--넘파이(Numpy)-->
       <category name="기본" colour="%{BKY_NUMPY_HUE}">
+
         <block type="numpy_library"></block>
       <!-- import numpy as np -->
 
@@ -2303,6 +2304,22 @@
 
       <!-- np.reshape  -->
       <block type="numpy_reshape"> </block>
+
+      <!-- np.shape  -->
+      <block type="numpy_shape">
+        <value name="numpy_shape_num1">
+          <block type="variables_get">
+            <field name="VAR">np</field>
+          </block>
+        </value>
+        <value name="numpy_shape_num">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <!-- np.shape  -->
+
       <!-- np.reshape  -->
       <label text="연산"></label>
        <!-- 넘파이 기본연산 -->
@@ -2392,6 +2409,7 @@
           </block>
         </value>  
       </block>
+
       <!-- 통계 / 평균 & 분산  -->
 
       <!-- CSV 저장 -->

@@ -735,7 +735,7 @@ Blockly.Msg['NUMPY_EYE_2'] = "size";
 
 Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ maximum, minimum value  ]  %1 %2 ( variable  %3 )";
 
-Blockly.Msg['NUMPY_SHAPE_1'] = "[ matrix dimensions ] %1 variable  %2";
+Blockly.Msg['NUMPY_SHAPE_1'] = "[ matrix dimensions ] %1 .shape[ %2 ]";
 
 Blockly.Msg['NUMPY_RESHAPE_1'] = "[ change matrix dimension ] original %1 %2 change dimension %3";
 

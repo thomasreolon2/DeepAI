@@ -148,7 +148,7 @@ Blockly.JavaScript['np_array'] = function (block) {
 
 //np.arange  
 Blockly.JavaScript['np_arrange'] = function (block) {
-  var text_np_arrange_value1 = block.getFieldValue('np_arrange_value1');
+  var text_np_arrange_value1 = Blockly.JavaScript.valueToCode(block, 'np_arrange_value1', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
@@ -198,6 +198,7 @@ Blockly.JavaScript['numpy_max_min'] = function (block) {
 
 //np.shape 행렬 차원 반환 
 Blockly.JavaScript['numpy_shape'] = function (block) {
+  var value_numpy_shape_num1 = Blockly.JavaScript.valueToCode(block, 'numpy_shape_num1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_numpy_shape_num = Blockly.JavaScript.valueToCode(block, 'numpy_shape_num', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = "\n";
