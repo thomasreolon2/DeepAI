@@ -25,21 +25,7 @@ Blockly.Blocks['create_list'] = {
 };
 
 
-//2020-12-27-전우진-global
-Blockly.Blocks['global'] = {
-  init: function () {
-      this.appendDummyInput()
-          .appendField("global");
-      this.appendValueInput("text")
-          .setCheck(null);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_COLLECTION_HUE}");
-      this.setTooltip('');
-      this.setHelpUrl('');
-  },
-};
+
 
 
 // 리스트 정렬, 뒤집기

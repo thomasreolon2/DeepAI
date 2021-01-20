@@ -10,13 +10,6 @@ Blockly.Python['create_list'] = function (block) {
   return code;
 };
 
-//2020-12-27-전우진-global
-Blockly.Python['global'] = function (block) {
-  var text_print = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = 'global ' + text_print + '\n';
-  return code;
-};
 
 // 튜플
 Blockly.Python['tuple'] = function(block) {

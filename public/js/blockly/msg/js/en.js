@@ -673,6 +673,7 @@ Blockly.Msg['CLASS_4_1'] = "function call";
 Blockly.Msg['CLASS_5_1'] = "object & function";
 Blockly.Msg['CLASS_6_1'] = "object & function";
 Blockly.Msg['CLASS_7_1'] = "object & function";
+Blockly.Msg['CLASS_8_1'] = "global";
 
 // Mutator
 Blockly.Msg['MUTATOR_ADD_ITEM'] = "add item";
