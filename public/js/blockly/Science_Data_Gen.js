@@ -767,13 +767,6 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
     return code;
   };
 
-  Blockly.Python['visualization_library_cm'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-    var code = "import matplotlib.cm as cm\n";
-    return code;
-  };
-
 //결과 출력
 Blockly.Python['print_output_var'] = function(block) {
   var value_print_output_var1 = Blockly.Python.valueToCode(block, 'print_output_var1', Blockly.Python.ORDER_ATOMIC);
