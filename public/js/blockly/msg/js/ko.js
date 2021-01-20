@@ -639,7 +639,6 @@ Blockly.Msg["VISUAL_HUE"] = "E8BE38"; // 매트플롯립, 시각화
 Blockly.Msg["SCIPY_HUE"] = "5AE88A"; // 사이파이
 Blockly.Msg["CLASS_HUE"] = "5BA561"; // 클래스
 Blockly.Msg["SCIKITLEARN_HUE"] = "E85938"; // 사이킷런
-Blockly.Msg["SCIKITLEARN_IMAGE"] ="#008C8C"; // 사이킷런 이미지
 Blockly.Msg["DATA_HUE"] = "6D3A85"; // 데이터사이언스
 Blockly.Msg["ML_HUE"] = "E6675E"; // 머신러닝
 Blockly.Msg["DL_HUE"] = "E69344"; // 딥러닝
@@ -742,7 +741,7 @@ Blockly.Msg['NUMPY_EYE_2'] = "크기";
 
 Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )";
 
-Blockly.Msg['NUMPY_SHAPE_1'] = "[ 행렬 차원 ] %1 .shape[ %2 ]";
+Blockly.Msg['NUMPY_SHAPE_1'] = "[ 행렬 차원 ] %1 변수  %2";
 
 Blockly.Msg['NUMPY_RESHAPE_1'] = "[np 차원] 배열 %1 %2 차원 %3";
 
@@ -861,7 +860,6 @@ Blockly.Msg['PANDAS_DF_VALUES'] = "[데이터 추출]";
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ 임포트 ] matplotlib를 plt로";
 Blockly.Msg['MATPLOT_VAL_VI'] = "[ 테이블 형식 출력 ]   %1 변수  %2 ";
 Blockly.Msg['MATPLOT_MAIN'] = "[ 그래프 개수 설정 ]  %1 ( %2 , %3  )";
-Blockly.Msg['MATPLOT_MAIN_1'] = "[ 그래프 크기 설정 ]  %1 ( %2 , %3  )";
 Blockly.Msg['MATPLOT_PRE_GRAPH_1'] = "[ 그래프 출력 설정 ] 좌표 [ %1 ][ %2 %3 ] ( X , Y ) 값  %4 %5 그래프 종류  %6 제목  %7 X축  %8 Y축  %9 범례  %10 %11 색 %12";
 Blockly.Msg['MATPLOT_PRE_GRAPH_2'] = "선_그래프";
 Blockly.Msg['MATPLOT_PRE_GRAPH_3'] = "산점도_그래프";
@@ -918,7 +916,7 @@ Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_3'] = "상호작용";
 Blockly.Msg['PREPROCESSING_NORMAL_1'] = "[표준스케일] 프레임";
 Blockly.Msg['PREPROCESSING_NORMAL_2'] = "컬럼명";
 Blockly.Msg['PREPROCESSING_ONEHOTENCODER_1'] = "[데이터 원-핫인코딩] ";
-Blockly.Msg['PREPROCESSING_ONEHOTENCODER_2'] = "변수";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_2'] = "데이터";
 Blockly.Msg['PREPROCESSING_ONEHOTENCODER_3'] = "컬럼설정";
 Blockly.Msg['PREPROCESSING_ONEHOTENCODER_4'] = "컬럼명";
 
@@ -949,9 +947,9 @@ Blockly.Msg['LINEAR_INTERCEPT'] = "[절편 추출] 모델";
 
 // ---- KNN
 Blockly.Msg['KNN_IMPORT'] = "[임포트] KNN";
-Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_1'] = "[KNeighbors 분류하기]";
+Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_1'] = "[KNeighbors 분류기]";
 Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_2'] = "모델"; // 중복 사용되는 것
-Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3'] = "데이터"; // 중복 사용되는 것
+Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3'] = "이웃수"; // 중복 사용되는 것
 Blockly.Msg['KNN_KNEIGHBORSREGERESSOR_FUNCTION'] = "[KNeighbors 회귀]";
 Blockly.Msg['KNN_KNEIGHBORSTRANSFORMER_FUNCTION_1'] = "[KNeighbors 트랜스포머]";
 Blockly.Msg['KNN_KNEIGHBORSTRANSFORMER_FUNCTION_2'] = "모드"; // 중복 사용되는 것
@@ -967,7 +965,7 @@ Blockly.Msg['CLUSTER_K_MEANS_CENTROID'] = "[K-Means Centroid 추출] 모델 ";
 
 // ---- 결정트리(Decisiontree)
 Blockly.Msg['DECISIONTREE_IMPORT'] = "[임포트] 결정트리";
-Blockly.Msg['DECISIONTREE_DESICION_1'] = "[결정트리 모델] 모델";
+Blockly.Msg['DECISIONTREE_DESICION_1'] = "[결정트리 분류기] 모델";
 Blockly.Msg['DECISIONTREE_DESICION_2'] = "깊이";
 Blockly.Msg['DECISIONTREE_TREE_TEXT'] = "[결정트리 시각화] 모델";
 
@@ -975,15 +973,15 @@ Blockly.Msg['DECISIONTREE_TREE_TEXT'] = "[결정트리 시각화] 모델";
 Blockly.Msg['SKLEARN_SVM_1'] = "[임포트] SVM";
 Blockly.Msg['SKLEARN_SVM_2'] = "선형SVC";
 Blockly.Msg['SKLEARN_SVM_3'] = "선형SVR";
-Blockly.Msg['LINEARSVC_1'] = "[선형SVM] ";
+Blockly.Msg['LINEARSVC_1'] = "[선형SVC] ";
 Blockly.Msg['LINEARSVC_2'] = "오차"; // 중복 사용되는 것
 Blockly.Msg['LINEARSVR'] = "[선형SVR] ";
 
 // ---- 앙상블(Esemble
 Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_1'] = "[임포트] 앙상블";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_2'] = "AdaBoost분류";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_2'] = "AdaBoost 분류기";
 Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_3'] = "AdaBoost회귀";
-Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_4'] = "GradientBoosting분류";
+Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_4'] = "GradientBoosting 분류기";
 Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_5'] = "GradientBoosting회귀";
 Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_6'] = "결정트리 분류";
 Blockly.Msg['ESEMBLE_SKLEARN_ESEMBLE_7'] = "결정트리 회귀";
@@ -1035,6 +1033,7 @@ Blockly.Msg['SELECTION_SIVALIDATION_5'] = "학습곡선";
 Blockly.Msg['SELECTION_SIVALIDATION_6'] = "순열교차검증";
 Blockly.Msg['SELECTION_SIVALIDATION_7'] = "검증곡선";
 Blockly.Msg['SELECTION_SIVALIDATION_8'] = "교차검증 횟수";
+Blockly.Msg['SELECTION_SIVALIDATION_9'] = "모델"
 
 // ---- 신경망(Neuralnetwork)
 Blockly.Msg['NEURALNETWORK_IMPORT_MLP_1'] = "[임포트] 신경망 ";

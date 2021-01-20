@@ -167,7 +167,7 @@ Blockly.Blocks['csv3'] = {
             alt: "*",
             flipRtl: "FALSE"
         })).appendField(new Blockly.FieldTextInput("default"), "csv_url");
-        this.appendDummyInput().appendField('x_data').appendField(new Blockly.FieldVariable("xData"), "var_x").appendField('y_data').appendField(new Blockly.FieldVariable("yData"), "var_y")
+        this.appendDummyInput().appendField('x_data').appendField(new Blockly.FieldVariable("x_data"), "var_x").appendField('y_data').appendField(new Blockly.FieldVariable("y_data"), "var_y")
         this.appendDummyInput().appendField(Blockly.Msg.DATASET_CSV3_2).appendField(dropdown, 'OPTIONS');
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -193,8 +193,8 @@ Blockly.Blocks['csv3'] = {
 Blockly.Blocks['train_test_split'] = {
     init: function () {
         this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_1)
-        this.appendValueInput("x_data").setCheck(null).appendField("x_Data");
-        this.appendValueInput("y_data").setCheck(null).appendField("y_Data");
+        this.appendValueInput("x_data").setCheck(null).appendField("x_data");
+        this.appendValueInput("y_data").setCheck(null).appendField("y_data");
         this.appendValueInput("x_train").setCheck(null).appendField("x_train");
         this.appendValueInput("x_test").setCheck(null).appendField("x_test");
         this.appendValueInput("y_train").setCheck(null).appendField("y_train");
@@ -233,9 +233,9 @@ Blockly.Blocks['labelencoder'] = {
         this.setHelpUrl("");
     }
 };
-
+ 
 // One-Hot Encoder
-Blockly.Blocks['onehotencoder'] = {
+Blockly.Blocks['onehotencoder'] = { 
     init: function () {
         this.appendDummyInput().appendField(Blockly.Msg.PREPROCESSING_ONEHOTENCODER_1);
         this.appendValueInput("df").setCheck(null).appendField(Blockly.Msg.PREPROCESSING_ONEHOTENCODER_2);
@@ -358,12 +358,12 @@ Blockly.Blocks['adaboostregressor'] = {
         this.appendValueInput("NAME")
             .setCheck(null)
             .appendField(Blockly.Msg.ESEMBLE_ADABOOSTREGRESSOR);
-        this.appendValueInput("NAME2")
-            .setCheck(null)
-            .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_2);
-        this.appendValueInput("NAME3")
-            .setCheck(null)
-            .appendField("seed");
+            this.appendDummyInput()
+            .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_2)
+            .appendField(new Blockly.FieldTextInput("50"), "NAME2");
+            this.appendDummyInput()
+            .appendField("seed")
+            .appendField(new Blockly.FieldTextInput("0"), "NAME3");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -379,9 +379,9 @@ Blockly.Blocks['gradientboostingregressor'] = {
         this.appendValueInput("NAME")
             .setCheck(null)
             .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGREGRESSOR);
-        this.appendValueInput("NAME2")
-            .setCheck(null)
-            .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
+            this.appendDummyInput()
+            .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2)
+            .appendField(new Blockly.FieldTextInput("100"), "NAME2");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -397,12 +397,12 @@ Blockly.Blocks['randomforestregressor'] = {
         this.appendValueInput("NAME")
             .setCheck(null)
             .appendField(Blockly.Msg['ESEMBLE_RANDOMFORESTREGRESSOR']);
-        this.appendValueInput("NAME2")
-            .setCheck(null)
-            .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
-        this.appendValueInput("NAME3")
-            .setCheck(null)
-            .appendField("seed");
+        this.appendDummyInput()
+            .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2)
+            .appendField(new Blockly.FieldTextInput("100"), "NAME2");
+        this.appendDummyInput()
+            .appendField("seed")
+            .appendField(new Blockly.FieldTextInput("0"), "NAME3");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -421,9 +421,9 @@ Blockly.Blocks['kneighborsregressor_function'] = {
         this.appendValueInput("value")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3);
-        this.appendValueInput("value1")
-            .setCheck(null);
+            .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3)
+            .appendField(new Blockly.FieldTextInput("5"), "value1");
+        
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -438,12 +438,9 @@ Blockly.Blocks['linearsvr'] = {
     init: function () {
         this.appendDummyInput()
             .appendField(Blockly.Msg.LINEARSVR);
-        this.appendValueInput("NAME")
-            .setCheck(null)
-            .appendField("seed");
-        this.appendValueInput("NAME2")
-            .setCheck(null)
-            .appendField("오차");
+        this.appendDummyInput()
+            .appendField("seed")
+            .appendField(new Blockly.FieldTextInput("0"), "NAME");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -460,7 +457,13 @@ Blockly.Blocks['sklearn_mlp_regressor'] = {
         // this.appendValueInput("sklearn_mlp_fit_X").setCheck(null).appendField("X_train");
         // this.appendValueInput("sklearn_mlp_fit_Y").setCheck(null).appendField("Y_train");
         this.appendDummyInput().appendField("(").appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_3']).appendField(new Blockly.FieldTextInput("100"), "sklearn_mlp_hidden_layer_sizes ");
-        this.appendValueInput("sklearn_MLP_Max_iter").setCheck(null).appendField("Epochs");
+        //this.appendValueInput("sklearn_MLP_Max_iter").setCheck(null).appendField("Epochs");
+        //this.appendDummyInput()
+        //.appendField("epochs")
+        //.appendField(new Blockly.FieldTextInput("100"), "sklearn_MLP_Max_iter");
+        this.appendDummyInput()
+        .appendField("epochs")
+        .appendField(new Blockly.FieldTextInput("100"), "sklearn_MLP_Max_iter");
         this.appendDummyInput().appendField('Batch Size').appendField(new Blockly.FieldTextInput("16"), "sklearn_MLP_batch_size").appendField("Activation").appendField(new Blockly.FieldDropdown([
             [
                 "Relu", "sklearn_MLP_activation_relu"
@@ -592,8 +595,8 @@ Blockly.Blocks['decision'] = {
         // this.appendValueInput("seed")
         //       .setCheck(null)
         //       .appendField("Seed");
-        this.appendDummyInput().appendField(Blockly.Msg.DECISIONTREE_DESICION_2).appendField(new Blockly.FieldTextInput("null"), "depth");
-        this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("null"), "seed");
+        this.appendDummyInput().appendField(Blockly.Msg.DECISIONTREE_DESICION_2).appendField(new Blockly.FieldTextInput("10"), "depth");
+        this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("0"), "seed");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -609,12 +612,12 @@ Blockly.Blocks['adaboostclassifier'] = {
         this.appendValueInput("NAME")
             .setCheck(null)
             .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_1);
-        this.appendValueInput("NAME2")
-            .setCheck(null)
-            .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_2);
-        this.appendValueInput("NAME3")
-            .setCheck(null)
-            .appendField("seed");
+            this.appendDummyInput()
+            .appendField(Blockly.Msg.ESEMBLE_ADABOOSTCLASSIFIER_2)
+            .appendField(new Blockly.FieldTextInput("50"), "NAME2");
+            this.appendDummyInput()
+            .appendField("seed")
+            .appendField(new Blockly.FieldTextInput("0"), "NAME3");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -630,9 +633,9 @@ Blockly.Blocks['gradientboostingclassifier'] = {
         this.appendValueInput("NAME")
             .setCheck(null)
             .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_1);
-        this.appendValueInput("NAME2")
-            .setCheck(null)
-            .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
+            this.appendDummyInput()
+            .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2)
+            .appendField(new Blockly.FieldTextInput("100"), "NAME2");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -647,13 +650,13 @@ Blockly.Blocks['randomforestclassifier'] = {
     init: function () {
         this.appendValueInput("NAME")
             .setCheck(null)
-            .appendField(Blockly.Msg['ESEMBLE_RANDOMFORESTCLASSIFIER']);
-        this.appendValueInput("NAME2")
-            .setCheck(null)
-            .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2);
-        this.appendValueInput("NAME3")
-            .setCheck(null)
-            .appendField("seed");
+            .appendField(Blockly.Msg.ESEMBLE_RANDOMFORESTCLASSIFIER);
+        this.appendDummyInput()
+            .appendField(Blockly.Msg.ESEMBLE_GRADIENTBOOSTINGCLASSIFIER_2)
+            .appendField(new Blockly.FieldTextInput("100"), "NAME2");
+        this.appendDummyInput()
+            .appendField("seed")
+            .appendField(new Blockly.FieldTextInput("0"), "NAME3");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -669,12 +672,11 @@ Blockly.Blocks['kneighborsclassifier_function'] = {
         this.appendDummyInput()
             .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_1)
             .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_2);
-        this.appendValueInput("NAME")
+        this.appendValueInput("value")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3);
-        this.appendValueInput("NAME2")
-            .setCheck(null);
+            .appendField(Blockly.Msg.KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3)
+            .appendField(new Blockly.FieldTextInput("5"), "value1");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -689,12 +691,10 @@ Blockly.Blocks['linearsvc'] = {
     init: function () {
         this.appendDummyInput()
             .appendField(Blockly.Msg.LINEARSVC_1);
-        this.appendValueInput("NAME")
-            .setCheck(null)
-            .appendField("seed");
-        this.appendValueInput("NAME2")
-            .setCheck(null)
-            .appendField(Blockly.Msg.LINEARSVC_2);
+        this.appendDummyInput()
+            .appendField("seed")
+            .appendField(new Blockly.FieldTextInput("0"), "NAME");
+            
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SCIKITLEARN_HUE}");
@@ -766,9 +766,9 @@ Blockly.Blocks['k_means'] = {
         this.appendValueInput("model")
             .setCheck(null)
             .appendField(Blockly.Msg.CLUSTER_K_MEANS_1);
-        this.appendValueInput("cnt")
-            .setCheck(null)
-            .appendField(Blockly.Msg.CLUSTER_K_MEANS_2);
+        this.appendDummyInput()
+            .appendField(Blockly.Msg.CLUSTER_K_MEANS_2)
+            .appendField(new Blockly.FieldTextInput("0"), "cnt");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
@@ -961,7 +961,7 @@ Blockly.Blocks['sivalidation'] = {
                 Blockly.Msg['SELECTION_SIVALIDATION_7'], "validation_curve"
             ]
         ]), "vali");
-        this.appendValueInput("em").setCheck(null).appendField("estimator");
+        this.appendValueInput("em").setCheck(null).appendField(Blockly.Msg.SELECTION_SIVALIDATION_9);
         this.appendValueInput("x").setCheck(null).appendField("X");
         this.appendValueInput("y").setCheck(null).appendField("Y");
         this.appendDummyInput().appendField(Blockly.Msg['SELECTION_SIVALIDATION_8']).appendField(new Blockly.FieldTextInput("3"), "cv");
