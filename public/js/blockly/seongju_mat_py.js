@@ -168,6 +168,44 @@ Blockly.Python['skimage_morphology'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+Blockly.Python['skimage_util_shape'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_para}.${dropdown_method}(${value_var})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['plt_ravel'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var value_name1 = Blockly.Python.valueToCode(block, 'name1', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'name2', Blockly.Python.ORDER_ATOMIC);
+// TODO: Assemble Python into code variable.
+  var code =  value_name1 + ".ravel("+ value_name2 +")\n";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];;
+};
+
+Blockly.Python['ndi_zoom'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var value_name1 = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'data2', Blockly.Python.ORDER_ATOMIC);
+// TODO: Assemble Python into code variable.
+  var code =  value_name1 + ".zoom("+ value_name2 +")\n";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];;
+};
+
+Blockly.Python['set_axis_off'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var value_name1 = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'data2', Blockly.Python.ORDER_ATOMIC);
+// TODO: Assemble Python into code variable.
+  var code =  value_name1 + ".set_axis_off("+ value_name2 +")\n";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];;
+};
 
 // 이 밑으로는 있는거(==> 임의로 만듬.)
 

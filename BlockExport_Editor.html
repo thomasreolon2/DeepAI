@@ -3339,6 +3339,15 @@
           </block>
         </value>
       </block>
+
+      <block type="visualization_library_cm">
+        <value name="lib_var">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+      </block>
+
       <block type="val_vi"></block>
       <!--  matplot1 시각화 틀    -->
       <block type="matplotlib_main">
@@ -3458,6 +3467,31 @@
       <block type="matplotlib_plt_show"></block>
       <block type="plt_imshow"></block>
 
+      <block type = "plt_ravel">
+        <value name="name1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="name2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="set_axis_off">
+        <value name="data">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="data2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
       <!--  matplot plt.show()      -->
 
       <!--  사이킷런 시각화 하기      -->
@@ -6310,6 +6344,27 @@
         </value>
       </block>
 
+      <!-- 성주 -->
+      <block type="skimage_util_shape">
+        <value name="para">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="ndi_zoom">
+        <value name="data">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="data2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
     </category>
 
     <!-- //////////////////////////////////////////////////////////////////////////
