@@ -422,9 +422,12 @@ Blockly.Python['import_scipy'] = function (block) {
         case "signal":
             code = "from scipy import signal";  
             break;
+        case "ndimage":
+            code = "from scipy import ndimage as ndi";  
+            break;
     }
 
-    return code;
+    return code + '\n';
 };
 Blockly.Python['curve_fit'] = function(block) {
     var value_fun = Blockly.Python.valueToCode(block, 'fun', Blockly.Python.ORDER_ATOMIC);

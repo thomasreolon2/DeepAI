@@ -718,6 +718,19 @@ Blockly.defineBlocksWithJsonArray(
    this.setHelpUrl("");
     }
   },
+
+  Blockly.Blocks['visualization_library_cm'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.MATPLOT_VISUALIZATION_LIBRARY_CM);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  },
     // pandas, numpy, tuple  시각화   
    {
     "type": "val_vi",

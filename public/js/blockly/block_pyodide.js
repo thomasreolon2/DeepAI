@@ -1204,6 +1204,9 @@ Blockly.Blocks['import_scipy'] = {
             ],
             [
                 "signal", "signal"
+            ],
+            [
+                "ndimage", "ndimage"
             ] 
 
         ]), "scipy");

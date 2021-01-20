@@ -334,6 +334,76 @@ Blockly.Blocks['axs_set_xlabel2'] = {
     }
   };
 
+  Blockly.Blocks['skimage_util_shape'] = {
+    init: function() {
+        this.appendValueInput("para")
+            .appendField("util.view_as_blocks")
+            .setCheck(null);
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["reshape","reshape"],["shape","shape"]]), "method")
+          .appendField("(");
+          this.appendValueInput("var")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['plt_ravel'] = {
+    init: function() { 
+      this.appendValueInput("name1")
+        .setCheck(null);
+      this.appendDummyInput().appendField(".ravel");
+      this.appendValueInput("name2")
+        .setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip(""); 
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['ndi_zoom'] = {
+    init: function () {
+      this.appendValueInput("data")
+        .setCheck(null);
+      this.appendDummyInput()
+        .appendField(".zoom(");
+        this.appendValueInput("data2")
+        .setCheck(null);
+      this.appendDummyInput()
+        .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['set_axis_off'] = {
+    init: function () {
+      this.appendValueInput("data")
+        .setCheck(null);
+      this.appendDummyInput()
+        .appendField(".set_axis_off(");
+        this.appendValueInput("data2")
+        .setCheck(null);
+      this.appendDummyInput()
+        .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
 
 // 나중에 버리는 코드 곱하기 코드임
 Blockly.Blocks['Oper_garbage'] = {
