@@ -163,6 +163,24 @@ Blockly.JavaScript['skimage_util_shape'] = function(block) {
   return code;
 };
 
+Blockly.JavaScript['img_as_float'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.JavaScript.valueToCode(block, 'para', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['data_camera'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'var', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.JavaScript.valueToCode(block, 'para', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
 Blockly.JavaScript['plt_ravel'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';

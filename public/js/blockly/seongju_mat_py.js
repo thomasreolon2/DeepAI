@@ -177,6 +177,24 @@ Blockly.Python['skimage_util_shape'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+Blockly.Python['img_as_float'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_para}(${value_var})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['data_camera'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_method = block.getFieldValue('method');
+  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `data.camera(${value_para})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
 Blockly.Python['plt_ravel'] = function(block) {
   // TODO: Assemble Python into code variable.
   var value_name1 = Blockly.Python.valueToCode(block, 'name1', Blockly.Python.ORDER_ATOMIC);

@@ -425,6 +425,38 @@ Blockly.Blocks['axs_set_xlabel2'] = {
     }
   };
 
+  Blockly.Blocks['img_as_float'] = {
+    init: function() {
+        this.appendValueInput("para")
+            .setCheck(null);
+        this.appendValueInput("var")
+            .appendField("(")
+            .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['data_camera'] = {
+    init: function() {
+        this.appendValueInput("para")
+        .appendField("data.camera(")
+            .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
   Blockly.Blocks['plt_ravel'] = {
     init: function() { 
       this.appendValueInput("name1")
