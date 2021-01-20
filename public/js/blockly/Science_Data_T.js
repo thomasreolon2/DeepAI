@@ -880,6 +880,29 @@ Blockly.defineBlocksWithJsonArray(
     "tooltip": "",
     "helpUrl": ""
   },
+  {
+    "type": "matplotlib_main_figure",
+    "message0": "%{BKY_MATPLOT_MAIN_1}",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },  
+      {
+        "type": "input_value",
+        "name": "matplotlib_main_cols"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_main_rows"
+      },
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_VISUAL_HUE}",
+    "tooltip": "",
+    "helpUrl": "" 
+  },
 
   //plt.plot()
   {

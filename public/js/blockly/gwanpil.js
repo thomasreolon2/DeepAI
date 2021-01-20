@@ -369,3 +369,80 @@ Blockly.Blocks['plt_subplots'] = {
       this.setHelpUrl("");
     }
   };
+
+
+  ////////////// skimage 예제 
+
+  Blockly.Blocks['import_skimage_morphology'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField("[임포트]skimage.morphology");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['import_axes3D'] = {
+  init: function () {
+    this.appendDummyInput()
+        .appendField("[임포트]Axes3D");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pie_subplots_imshow'] = {
+  init: function() { 
+    this.appendValueInput("name1")
+      .setCheck(null);
+    this.appendDummyInput().appendField(".imshow");
+    this.appendValueInput("name2")
+      .setCheck(null);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_VISUAL_HUE}");
+ this.setTooltip(""); 
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['dic_menu1_2'] = {
+  init: function () {
+      this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Collection/D2-logo.png", 25, 23, {
+          alt: "*",
+          flipRtl: "FALSE"
+      })).appendField(Blockly.Msg.COLLECTION_9_DICTOPTION);
+      this.appendValueInput("list").setCheck(null);
+      this.appendValueInput("list2").setCheck(null);
+      this.appendDummyInput().appendField(".shape[")
+          .appendField(new Blockly.FieldDropdown([
+          [
+              Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUTKEY, "getkeys"
+          ],
+          [
+              Blockly.Msg.COLLECTION_9_DROPDOWN_OUTPUVAL, "getvalues"
+          ],
+          [
+              "키,값쌍얻기", "items"
+          ],
+          [
+              "키,값쌍모두지우기", "clear"
+          ]
+      ]), "dic");
+      this.appendDummyInput().appendField("]");
+      this.setInputsInline(true);
+      this.setColour("%{BKY_DICT_HUE}");
+      this.setOutput(true, null);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};

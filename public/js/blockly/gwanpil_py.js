@@ -208,3 +208,61 @@ Blockly.Python['plt_subplot'] = function(block) {
         
         return [code, Blockly.Python.ORDER_ATOMIC];
       };
+
+
+
+
+
+
+
+      ////////////// skimage 예제 
+
+      Blockly.Python['import_skimage_morphology'] = function (block) {
+        // TODO: Assemble JavaScript into code variable.
+        var code = "from skimage.morphology import (square, rectangle, diamond, disk, cube, octahedron, ball, octagon, star)\n";
+        return code;
+      };
+
+      Blockly.Python['import_axes3D'] = function (block) {
+        // TODO: Assemble JavaScript into code variable.
+        var code = "from mpl_toolkits.mplot3d import Axes3D\n";
+        return code;
+      };
+
+      Blockly.Python['matplotlib_main_figure'] = function(block) {
+        var value_matplotlib_main_cols = Blockly.Python.valueToCode(block, 'matplotlib_main_cols', Blockly.Python.ORDER_ATOMIC);
+        var value_matplotlib_main_rows = Blockly.Python.valueToCode(block, 'matplotlib_main_rows', Blockly.Python.ORDER_ATOMIC);
+        var value_matplotlib_main_screen_size_width = Blockly.Python.valueToCode(block, 'matplotlib_main_screen_size_width', Blockly.Python.ORDER_ATOMIC);
+        var value_matplotlib_main_screen_size_height = Blockly.Python.valueToCode(block, 'matplotlib_main_screen_size_height', Blockly.Python.ORDER_ATOMIC);
+
+        Check_matplotlib_user_input(value_matplotlib_main_cols,value_matplotlib_main_rows);  
+  
+  
+        var code =`fig = plt.figure(figsize=(${value_matplotlib_main_cols}, ${value_matplotlib_main_rows}))\n`; 
+         return code;   
+      };  
+
+      Blockly.Python['pie_subplots_imshow'] = function(block) {
+        // TODO: Assemble Python into code variable.
+        var value_name1 = Blockly.Python.valueToCode(block, 'name1', Blockly.Python.ORDER_ATOMIC);
+        var value_name2 = Blockly.Python.valueToCode(block, 'name2', Blockly.Python.ORDER_ATOMIC);
+      // TODO: Assemble Python into code variable.
+        var code =  value_name1 + ".imshow("+ value_name2 +")\n";
+        // TODO: Change ORDER_NONE to the correct strength.
+        return code;
+      };
+
+      Blockly.Python['dic_menu1_2'] = function (block) {
+        var variable_list =  Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
+        var dropdown_dic = block.getFieldValue('dic');
+        if (dropdown_dic == 'items') {
+          var code = variable_list + '.items()';
+        } else if (dropdown_dic == 'clear') {
+          var code = variable_list + '.clear()';
+        } else if (dropdown_dic == 'getvalues') {
+            var code = variable_list + '.values()';
+        } else if (dropdown_dic == 'getkeys') {
+            var code = variable_list + '.keys()';
+        }
+        return [code, Blockly.Python.ORDER_ATOMIC];
+      };

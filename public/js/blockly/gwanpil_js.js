@@ -160,3 +160,39 @@ Blockly.JavaScript['gp'] = function (block) {
       
         return [code, Blockly.JavaScript.ORDER_ATOMIC];
       };
+
+
+
+      ////////////// skimage 예제 
+
+      Blockly.JavaScript['import_skimage_morphology'] = function (block) {
+        // TODO: Assemble JavaScript into code variable.
+        var code = "\n";
+        return code;
+      };
+
+      Blockly.JavaScript['import_axes3D'] = function (block) {
+        // TODO: Assemble JavaScript into code variable.
+        var code = "\n";
+        return code;
+      };
+
+      Blockly.JavaScript['matplotlib_main_figure'] = function (block) {
+        // TODO: Assemble JavaScript into code variable.
+        var code = "\n";
+        return code;
+      };
+
+      Blockly.JavaScript['pie_subplots_imshow'] = function(block) {
+        // TODO: Assemble JavaScript into code variable.
+        var code = '\n';
+        // TODO: Change ORDER_NONE to the correct strength.
+        return code;
+      };
+
+      Blockly.JavaScript['dic_menu1_2'] = function (block) {
+        var variable_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
+        var dropdown_dic = block.getFieldValue('dic');
+        code = '\n';
+        return [code, Blockly.JavaScript.ORDER_ATOMIC];
+      };
