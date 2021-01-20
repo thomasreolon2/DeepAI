@@ -855,6 +855,7 @@ Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ import ] matplotlib as plt";
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY_CM'] = "[ import ] matplotlib.cm as cm";
 Blockly.Msg['MATPLOT_VAL_VI'] = "[ table format ]   %1 variable  %2 ";
 Blockly.Msg['MATPLOT_MAIN'] = "[ graph count setting ]  %1 ( %2 , %3  )";
+Blockly.Msg['MATPLOT_MAIN_1'] = "[ graph size setting ]  %1 ( %2 , %3  )";
 Blockly.Msg['MATPLOT_PRE_GRAPH_1'] = "[ graph output setting ] coordinate[ %1 ][ %2 %3 ] ( X , Y ) value  %4 %5 graph type  %6 title  %7 X-axis  %8 Y-axis  %9 legend  %10 %11 colour %12";
 Blockly.Msg['MATPLOT_PRE_GRAPH_2'] = "line_graph";
 Blockly.Msg['MATPLOT_PRE_GRAPH_3'] = "Scatter_graph";
