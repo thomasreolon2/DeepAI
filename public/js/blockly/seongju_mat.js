@@ -290,7 +290,7 @@ Blockly.Blocks['axs_set_xlabel2'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -309,7 +309,7 @@ Blockly.Blocks['axs_set_xlabel2'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -328,7 +328,7 @@ Blockly.Blocks['axs_set_xlabel2'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
    this.setTooltip("");
    this.setHelpUrl("");
     }

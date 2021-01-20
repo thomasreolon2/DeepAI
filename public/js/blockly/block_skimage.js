@@ -6,7 +6,7 @@ Blockly.Blocks['import_skimage'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -76,7 +76,7 @@ Blockly.Blocks['skimage_data'] = {
       ]), "DATA");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+    this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -130,7 +130,7 @@ Blockly.Blocks['ski_class'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour("%{BKY_SCIKITLEARN_HUE}");
+    this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
