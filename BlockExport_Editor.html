@@ -7233,13 +7233,7 @@
     //===================================  
     function clear_result() {
 
-      var code = pyEditor.getValue();
-      var tmp = code.indexOf(' = ');
-      var res = code.charAt(tmp - 1);
-
-      pyodide.runPython(`
-                    del(${res})
-                    `);
+     
       //원본 document.getElementById("exeArea").value = "";
       $("#exeArea").empty();
     }
