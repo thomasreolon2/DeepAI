@@ -196,3 +196,19 @@ Blockly.JavaScript['gp'] = function (block) {
         code = '\n';
         return [code, Blockly.JavaScript.ORDER_ATOMIC];
       };
+
+      Blockly.JavaScript['set_axis_off'] = function (block) {
+        var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+        var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+        // TODO: Assemble JavaScript into code variable.
+        var code = `\n`;
+        return code;
+      };
+
+      Blockly.JavaScript['voxels'] = function (block) {
+        var var_text1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+        var var_text2 = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+        // TODO: Assemble JavaScript into code variable.
+        var code = `\n`;
+        return code;
+      };

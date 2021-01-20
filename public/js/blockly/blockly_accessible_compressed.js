@@ -23441,16 +23441,7 @@ Blockly.Events.VarDelete = function (a) {
   a &&
     (Blockly.Events.VarDelete.superClass_.constructor.call(this, a),
     (this.varType = a.type),
-    (this.varName = a.name));
-
-  // 기태 변수 제거 처리 2021.01.20
-  console.log("var del=", a.name); 
-   
-  try{
-    pyodide.runPython(`
-      del(${a.name})
-    `);
-  } catch(e){} 
+    (this.varName = a.name));  
 };
 goog.inherits(Blockly.Events.VarDelete, Blockly.Events.Abstract);
 Blockly.Events.VarDelete.prototype.type = Blockly.Events.VAR_DELETE;
