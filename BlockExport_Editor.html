@@ -2271,6 +2271,7 @@
 
     <category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}"> <!--넘파이(Numpy)-->
       <category name="기본" colour="%{BKY_NUMPY_HUE}">
+
         <block type="numpy_library"></block>
       <!-- import numpy as np -->
 
@@ -2303,6 +2304,22 @@
 
       <!-- np.reshape  -->
       <block type="numpy_reshape"> </block>
+
+      <!-- np.shape  -->
+      <block type="numpy_shape">
+        <value name="numpy_shape_num1">
+          <block type="variables_get">
+            <field name="VAR">np</field>
+          </block>
+        </value>
+        <value name="numpy_shape_num">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <!-- np.shape  -->
+
       <!-- np.reshape  -->
       <label text="연산"></label>
        <!-- 넘파이 기본연산 -->
@@ -2392,6 +2409,7 @@
           </block>
         </value>  
       </block>
+
       <!-- 통계 / 평균 & 분산  -->
 
       <!-- CSV 저장 -->
@@ -6292,120 +6310,552 @@
         <block type="import_scikit_learn"></block>
 
         <label text="데이터 처리(핸들링)"></label>
-        <block type="train_test_split"></block>
-        <block type="labelencoder"></block>
-        <block type="onehotencoder"></block>
+        <block type="train_test_split">
+          <value name="x_data">
+            <block type="variables_get">
+              <field name="VAR">x_data</field>
+            </block>
+          </value>
+          <value name="y_data">
+            <block type="variables_get">
+              <field name="VAR">y_data</field>
+            </block>
+          </value>
+          <value name="x_train">
+            <block type="variables_get">
+              <field name="VAR">x_train</field>
+            </block>
+          </value>
+          <value name="x_test">
+            <block type="variables_get">
+              <field name="VAR">x_test</field>
+            </block>
+          </value>
+          <value name="y_train">
+            <block type="variables_get">
+              <field name="VAR">y_train</field>
+            </block>
+          </value>
+          <value name="y_test">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+        </block>
+        <block type="labelencoder">
+          <value name="df">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="onehotencoder">
+          <value name="df">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
 
         <label text="모델 학습 및 평가"></label>
-        <block type="model_fit"></block>
-        <block type="model_score"></block>
-        <block type="model_predict"></block>
+        <block type="model_fit">
+          <value name="model">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+          <value name="X_train">
+            <block type="variables_get">
+              <field name="VAR">x_train</field>
+            </block>
+          </value>
+          <value name="Y_train">
+            <block type="variables_get">
+              <field name="VAR">y_train</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="model_score">
+          <value name="model_name">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+          <value name="x_test">
+            <block type="variables_get">
+              <field name="VAR">x_test</field>
+            </block>
+          </value>
+          <value name="y_test">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+        </block>
+        <block type="model_predict">
+          <value name="model">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+          <value name="NAME">
+            <block type="variables_get">
+              <field name="VAR">x_test</field>
+            </block>
+          </value>
+        </block>
       </category>
 
       <category name="데이터셋" colour="%{BKY_SCIKITLEARN_HUE}">
-        <block type="import_dataset"></block>
-        <block type="random_import"></block>
-        <block type="make_circles"></block>
+        <block type="import_dataset">
+          <value name="x_data">
+            <block type="variables_get">
+              <field name="VAR">x_data</field>
+            </block>
+          </value>
+          <value name="y_data">
+            <block type="variables_get">
+              <field name="VAR">y_data</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="random_import">
+          <value name="x_data">
+            <block type="variables_get">
+              <field name="VAR">x_data</field>
+            </block>
+          </value>
+          <value name="y_data">
+            <block type="variables_get">
+              <field name="VAR">y_data</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="make_circles">
+          <value name="x_data">
+            <block type="variables_get">
+              <field name="VAR">x_data</field>
+            </block>
+          </value>
+          <value name="y_data">
+            <block type="variables_get">
+              <field name="VAR">y_data</field>
+            </block>
+          </value>
+        </block>
 	      <block type="csv3"></block>
       </category>
 
       <category name="데이터핸들링" colour="%{BKY_SCIKITLEARN_HUE}">
-        <block type="train_test_split"></block>
-        <block type="kfold"></block>
-        <block type="labelencoder"></block>
-        <block type="onehotencoder"></block>
+        <block type="train_test_split">
+          <value name="x_data">
+            <block type="variables_get">
+              <field name="VAR">x_data</field>
+            </block>
+          </value>
+          <value name="y_data">
+            <block type="variables_get">
+              <field name="VAR">y_data</field>
+            </block>
+          </value>
+          <value name="x_train">
+            <block type="variables_get">
+              <field name="VAR">x_train</field>
+            </block>
+          </value>
+          <value name="x_test">
+            <block type="variables_get">
+              <field name="VAR">x_test</field>
+            </block>
+          </value>
+          <value name="y_train">
+            <block type="variables_get">
+              <field name="VAR">y_train</field>
+            </block>
+          </value>
+          <value name="y_test">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+        </block>
+        </value>
+        
+        <block type="kfold">
+          <value name="model">
+            <block type="variables_get">
+              <field name="VAR">kf</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="labelencoder">
+          <value name="df">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+        
+        <block type="onehotencoder">
+          <value name="df">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
         <block type="polynomialfeatures"></block>
       </category>
 
-      <category name="지도학습" colour="%{BKY_SCIKITLEARN_HUE}">
         <category name="예측" colour="%{BKY_SCIKITLEARN_HUE}">
-          <label text="기본 회귀 모델"></label>
-          <block type="linear_regression"></block>
-          <block type="sgd_regressor"></block>
-          <block type="ridge"></block>
+          <block type="linear_regression">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="sgd_regressor">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="ridge">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
 
-          <label text="베이지안 회귀 모델"></label>
-          <block type="bayesian_ridge"></block>
+          <block type="bayesian_ridge">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
 
-          <label text="결정트리 회귀 모델"></label>
 
-          <label text="앙상블 회귀 모델"></label>
-          <block type="adaboostregressor"></block>
-          <block type="gradientboostingregressor"></block>
-          <block type="randomforestregressor"></block>
+          <block type="adaboostregressor">
+            <value name="NAME">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="gradientboostingregressor">
+            <value name="NAME">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="randomforestregressor">
+            <value name="NAME">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
 
-          <label text="KNN 회귀 모델"></label>
-          <block type="kneighborsregressor_function"></block>
+          <block type="kneighborsregressor_function">
+            <value name="value">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
  
-          <label text="SVM 회귀 모델"></label>
-          <block type="linearsvr"></block>
+          <block type="linearsvr">
+          </block>
 
-          <label text="신경망 회귀 모델"></label>
-          <block type="sklearn_mlp_regressor"></block>
+          <block type="sklearn_mlp_regressor">
+            <value name="sklearn_mlp_lib_val">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
 
         </category>
 
         <category name="분류" colour="%{BKY_SCIKITLEARN_HUE}">
-          <label text="기본 분류 모델"></label>
-          <block type="logistic_regression"></block>
-          <block type="logistic_regression_cv"></block>
-          <block type="ridge_classifier"></block>
-          <block type="sgd_classifier"></block>
-          <block type="perceptron"></block>
+          <block type="logistic_regression">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="logistic_regression_cv">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="ridge_classifier">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="sgd_classifier">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="perceptron">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
 
-          <label text="결정트리 분류 모델"></label>
-          <block type="decision"></block>
+          <block type="decision">
+            <value name="model">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
 
-          <label text="앙상블 분류 모델"></label>
-          <block type="adaboostclassifier"></block>
-          <block type="gradientboostingclassifier"></block>
-          <block type="randomforestclassifier"></block>
+          <block type="adaboostclassifier">
+            <value name="NAME">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="gradientboostingclassifier">
+            <value name="NAME">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
+          <block type="randomforestclassifier">
+            <value name="NAME">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
 
-          <label text="KNN 분류 모델"></label>
-          <block type="kneighborsclassifier_function"></block>
+          <block type="kneighborsclassifier_function">
+            <value name="value">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
  
-          <label text="SVM 분류 모델"></label>
-          <block type="linearsvc"></block>
+          <block type="linearsvc">
+          </block>
 
-          <label text="신경망 분류 모델"></label>
-          <block type="sklearn_mlp_classifier"></block>
+          <block type="sklearn_mlp_classifier">
+            <value name="sklearn_mlp_lib_val">
+              <block type="variables_get">
+                <field name="VAR">model</field>
+              </block>
+            </value>
+          </block>
         </category>
-      </category>
 
-      <category name="비지도학습" colour="%{BKY_SCIKITLEARN_HUE}">
-        <label text="K-Means 모델"></label>
-        <block type="k_means"></block>
+      <category name="군집화" colour="%{BKY_SCIKITLEARN_HUE}">
+        <block type="k_means">
+          <value name="model">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
 
-        <label text="DBSCAN 모델"></label>
-        <block type="dbscan"></block>
+        <block type="dbscan">
+          <value name="DBSCAN_val">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
 
-        <label text="Isolation Forest 모델"></label>
-        <block type="isolation_forest"></block>
+        <block type="isolation_forest">
+          <value name="Isolation_Forest_val">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
       </category>
 
       <category name="평가지표" colour="%{BKY_SCIKITLEARN_HUE}">
         <label text="기본 평가 지표"></label>
-        <block type="acc_score"></block>
-        <block type="mae"></block>
-        <block type="mse"></block>
+        <block type="acc_score">
+          <value name="yt">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+          <value name="yp">
+            <block type="variables_get">
+              <field name="VAR">preds</field>
+            </block>
+          </value>
+        </block>
+        <block type="mae">
+          <value name="yt">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+          <value name="yp">
+            <block type="variables_get">
+              <field name="VAR">preds</field>
+            </block>
+          </value>
+        </block>
+        <block type="mse">
+          <value name="yt">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+          <value name="yp">
+            <block type="variables_get">
+              <field name="VAR">preds</field>
+            </block>
+          </value>
+        </block>
 
         <label text="고급 평가 지표"></label>
-        <block type="AUC"></block>
-        <block type="AP"></block>
-        <block type="precision"></block>
-        <block type="median"></block> 
-        <block type="sivalidation"></block>
-        <block type="classification_report"></block>
+        <block type="AUC">
+          <value name="yt">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+          <value name="yp">
+            <block type="variables_get">
+              <field name="VAR">preds</field>
+            </block>
+          </value>
+        </block>
+        <block type="AP">
+          <value name="yt">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+          <value name="yp">
+            <block type="variables_get">
+              <field name="VAR">preds</field>
+            </block>
+          </value>
+        </block>
+        <block type="precision">
+          <value name="yt">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+          <value name="yp">
+            <block type="variables_get">
+              <field name="VAR">preds</field>
+            </block>
+          </value>
+        </block>
+        <block type="median">
+          <value name="yt">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+          <value name="yp">
+            <block type="variables_get">
+              <field name="VAR">preds</field>
+            </block>
+          </value>
+        </block> 
+        <block type="sivalidation">
+          <value name="em">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+          <value name="x">
+            <block type="variables_get">
+              <field name="VAR">x_train</field>
+            </block>
+          </value>
+          <value name="y">
+            <block type="variables_get">
+              <field name="VAR">y_train</field>
+            </block>
+          </value>
+        </block>
+        <block type="classification_report">
+          <value name="classification_report_Y_true">
+            <block type="variables_get">
+              <field name="VAR">y_test</field>
+            </block>
+          </value>
+          <value name="classification_report_y_pred">
+            <block type="variables_get">
+              <field name="VAR">preds</field>
+            </block>
+          </value>
+        </block>
       </category>
 
       <!-- 계수, 절편 추출 등 -->
       <category name="기타" colour="%{BKY_SCIKITLEARN_HUE}">
         <label text="속성 추출"></label>
-        <block type="coef"></block>
-        <block type="intercept"></block>
-        <block type="k_means_inertia"></block>
-        <block type="k_means_centroid"></block>
-        <block type="mlp_loss"></block>
+        <block type="coef">
+          <value name="coef">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
+        <block type="intercept">
+          <value name="intercept">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
+        <block type="k_means_inertia">
+          <value name="model">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
+        <block type="k_means_centroid">
+          <value name="model">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
+        <block type="mlp_loss">
+          <value name="model">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
 
         <label text="남은 블록(Deprecated.)"></label>
         <block type="fetch_openml"></block>        

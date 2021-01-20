@@ -854,7 +854,6 @@ Blockly.Msg['PANDAS_DF_VALUES'] = "[data extract]";
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ import ] matplotlib as plt";
 Blockly.Msg['MATPLOT_VAL_VI'] = "[ table format ]   %1 variable  %2 ";
 Blockly.Msg['MATPLOT_MAIN'] = "[ graph count setting ]  %1 ( %2 , %3  )";
-Blockly.Msg['MATPLOT_MAIN_1'] = "[ graph size setting ]  %1 ( %2 , %3  )";
 Blockly.Msg['MATPLOT_PRE_GRAPH_1'] = "[ graph output setting ] coordinate[ %1 ][ %2 %3 ] ( X , Y ) value  %4 %5 graph type  %6 title  %7 X-axis  %8 Y-axis  %9 legend  %10 %11 colour %12";
 Blockly.Msg['MATPLOT_PRE_GRAPH_2'] = "line_graph";
 Blockly.Msg['MATPLOT_PRE_GRAPH_3'] = "Scatter_graph";
@@ -943,7 +942,7 @@ Blockly.Msg['LINEAR_INTERCEPT'] = "[intercept extraction] model";
 Blockly.Msg['KNN_IMPORT'] = "[import] KNN";
 Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_1'] = "[KNeighbors classifier]";
 Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_2'] = "model"; // 중복 사용되는 것
-Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3'] = "data"; // 중복 사용되는 것
+Blockly.Msg['KNN_KNEIGHBORSCLASSIFIER_FUNCTION_3'] = "num of neighbors"; // 중복 사용되는 것
 Blockly.Msg['KNN_KNEIGHBORSREGERESSOR_FUNCTION'] = "[KNeighbors regression]";
 Blockly.Msg['KNN_KNEIGHBORSTRANSFORMER_FUNCTION_1'] = "[KNeighbors transformer]";
 Blockly.Msg['KNN_KNEIGHBORSTRANSFORMER_FUNCTION_2'] = "mode"; // 중복 사용되는 것
@@ -967,7 +966,7 @@ Blockly.Msg['DECISIONTREE_TREE_TEXT'] = "[decisiontree visualization] model";
 Blockly.Msg['SKLEARN_SVM_1'] = "[import] SVM";
 Blockly.Msg['SKLEARN_SVM_2'] = "linear-SVC";
 Blockly.Msg['SKLEARN_SVM_3'] = "linear-SVR";
-Blockly.Msg['LINEARSVC_1'] = "[linear-SVM] ";
+Blockly.Msg['LINEARSVC_1'] = "[linear-SVC] ";
 Blockly.Msg['LINEARSVC_2'] = "error"; // 중복 사용되는 것
 Blockly.Msg['LINEARSVR'] = "[linear-SVR] ";
 
@@ -1027,6 +1026,7 @@ Blockly.Msg['SELECTION_SIVALIDATION_5'] = "learning curve";
 Blockly.Msg['SELECTION_SIVALIDATION_6'] = "permutation learning curve";
 Blockly.Msg['SELECTION_SIVALIDATION_7'] = "verification curve";
 Blockly.Msg['SELECTION_SIVALIDATION_8'] = "number of cross-validation";
+Blockly.Msg['SELECTION_SIVALIDATION_9'] = "model"
 
 // ---- 신경망(Neuralnetwork)
 Blockly.Msg['NEURALNETWORK_IMPORT_MLP_1'] = "[import] neuralnetwork ";

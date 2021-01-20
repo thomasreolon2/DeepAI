@@ -322,9 +322,8 @@ Blockly.Python['kneighborsregressor_function'] = function (block) {
 // SVR
 Blockly.Python['linearsvr'] = function (block) {
     var random_state = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    var tol = Blockly.Python.valueToCode(block, 'NAME2', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = 'sklearn.svm.LinearSVR(random_state=' + random_state + ', tol=' + tol + ')';
+    var code = 'sklearn.svm.LinearSVR(random_state=' + random_state +')';
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
 };
@@ -522,8 +521,8 @@ Blockly.Python['randomforestclassifier'] = function (block) {
 //KNeighborsClassifier 블럭 함수
 
 Blockly.Python['kneighborsclassifier_function'] = function (block) {
-    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    var value_name1 = Blockly.Python.valueToCode(block, 'NAME2', Blockly.Python.ORDER_ATOMIC);
+    var value_name = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
+    var value_name1 = Blockly.Python.valueToCode(block, 'value1', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = value_name + " = " + 'sklearn.neighbors.KNeighborsClassifier(n_neighbors=' + value_name1 + " )\n";
     return code;
