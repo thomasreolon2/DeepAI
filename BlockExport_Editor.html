@@ -3444,6 +3444,7 @@
         </value>
       </block>
 
+      <!-- 2021-01-21 양승국 블럭 추가-->
       <block type = "matp_Ex">
         <value name="d1">
           <block type="variables_get">
@@ -3461,6 +3462,22 @@
           </shadow>
         </value>
       </block>
+
+      <block type = "matp_title">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="d2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      
+      <!-- 2021-01-21 양승국 블럭 추가-->
+
       <!--  matplot plt.plot()      --> 
 
       <!--  matplot plt.show()      -->
@@ -6131,7 +6148,7 @@
 
         <block type = "pie_bar">
           <value name="list">
-            <block type="variables_get">
+            <block ty 
               <field name="VAR">ax</field>
             </block>
           </value>
@@ -7110,8 +7127,8 @@
 
 
       <!-- <block type="array_get"></block>
-      <!-- <block type="csv3"></block>
-      <!-- <block type="sklearn_mlp_fit"></block> 
+      <block type="csv3"></block>
+       <block type="sklearn_mlp_fit"></block> 
     </category>
   -->
 

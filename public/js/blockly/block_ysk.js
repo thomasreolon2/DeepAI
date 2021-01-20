@@ -348,3 +348,18 @@ Blockly.Blocks['matp_Ex'] = {
       this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['matp_title'] = {
+  init: function () {
+      this.appendDummyInput().appendField("[그래프 제목]"); 
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").appendField(".set_title(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
