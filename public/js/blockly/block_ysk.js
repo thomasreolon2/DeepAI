@@ -333,3 +333,18 @@ Blockly.Blocks['skimage_img_as_float'] = {
   }
 };
 
+Blockly.Blocks['matp_Ex'] = {
+  init: function () {
+      this.appendDummyInput().appendField("[그래프 크기 설정]"); 
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").appendField(".(").setCheck(null);
+      this.appendValueInput("d3").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};

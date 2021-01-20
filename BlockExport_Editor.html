@@ -3439,19 +3439,27 @@
         </value>
       </block>
 
-      <block type="set_axis_off">
-        <value name="data">
-          <shadow type="indata">
-            <field name="indata1"></field>
+
+      <!--  matplot plt.plot()      --> 
+
+      <block type = "matp_Ex">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="d2">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
           </shadow>
         </value>
-        <value name="data2">
-          <shadow type="indata">
-            <field name="indata1"></field>
+        <value name="d3">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
           </shadow>
         </value>
       </block>
-      <!--  matplot plt.plot()      --> 
+
 
 
       <!--  matplot plt.show()      -->
@@ -6128,7 +6136,7 @@
         </value>
       </block> -->
 
-      <category name="gp" colour="%{BKY_VISUAL_HUE}">
+      <category name="gp" colour="%{BKY_VISUAL_HUE}">matp_Ex
 
         <block type="import_skimage_morphology"></block>
         <block type="import_axes3D"></block>
