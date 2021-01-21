@@ -307,7 +307,7 @@ Blockly.Blocks['numpy_sums_differences'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 합계&차이]")
-        .appendField(new Blockly.FieldDropdown([["배열곱(prod)","np.prod"], ["배열합계(sum)","np.sum"], ["누적곱(cumprod)","np.cumprod"], ["누적합계(cumsum)","np.cumsum"], ["이산차이(diff)","np.diff"], ["N차원배열기울기(gradient)","np.gradient"], ["두배열의외적(cross)","np.cross"], ["적분(trapz)","np.trapz"]]), "numpy_Sums_differences_opt");
+        .appendField(new Blockly.FieldDropdown([ ["배열합계(sum)","np.sum"],["배열곱(prod)","np.prod"], ["누적곱(cumprod)","np.cumprod"], ["누적합계(cumsum)","np.cumsum"], ["이산차이(diff)","np.diff"], ["N차원배열기울기(gradient)","np.gradient"], ["두배열의외적(cross)","np.cross"], ["적분(trapz)","np.trapz"]]), "numpy_Sums_differences_opt");
     this.appendValueInput("numpy_Sums_differences_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -477,7 +477,7 @@ Blockly.Blocks['numpy_transpose_like_operations'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 전치]")
-        .appendField(new Blockly.FieldDropdown([["새 위치 이동 (np.moveaxis)","np.moveaxis"], ["배열 축 교환 (np.swapaxes)","np.swapaxes"], ["차원 변경 (np.transpose)","np.transpose"]]), "numpy_Transpose_like_operations_opt");
+        .appendField(new Blockly.FieldDropdown([ ["행렬 전치 (np.transpose)","np.transpose"],["새 위치 이동 (np.moveaxis)","np.moveaxis"], ["배열 축 교환 (np.swapaxes)","np.swapaxes"]]), "numpy_Transpose_like_operations_opt");
     this.appendValueInput("numpy_Transpose_like_operations_val")
         .setCheck(null);
     this.setInputsInline(true);
