@@ -1378,7 +1378,7 @@
       <block type="list_insert">
         <value name="list">
           <block type="variables_get">
-            <field name="VAR">my_set</field>
+            <field name="VAR">my_list</field>
           </block>
         </value>  
         <value name="INDEX">
@@ -1397,14 +1397,9 @@
       <block type="list_sort_reverse">
         <value name="list">
           <block type="variables_get">
-            <field name="VAR">my_dict</field>
+            <field name="VAR">my_list</field>
           </block>
         </value>  
-        <value name="LIST">
-          <shadow type="indata">
-            <field name="indata1">my_list</field>
-          </shadow>
-        </value>
       </block>
 
       <!-- [L4] 데이터 다루기1 -->
