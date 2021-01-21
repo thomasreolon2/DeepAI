@@ -701,6 +701,7 @@ Blockly.Msg['NUMPY_CALCULATION_7'] = "배열 역수(reciprocal)";
 
 Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[np 순서]";
 Blockly.Msg['NUMPY_INDEX_VALUES_11'] = "[np 인덱스 검색]";
+Blockly.Msg['NUMPY_INDEX_VALUES_111'] = "[np 값 검색]";
 Blockly.Msg['NUMPY_INDEX_VALUES_2'] = "배열최댓값(amax)";
 Blockly.Msg['NUMPY_INDEX_VALUES_3'] = "배열최소값(amin)";
 Blockly.Msg['NUMPY_INDEX_VALUES_4'] = "최대값 인덱스(argmax)";

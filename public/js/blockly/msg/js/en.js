@@ -693,6 +693,7 @@ Blockly.Msg['NUMPY_CALCULATION_6'] = "array remainder ( np.remainder )";
 Blockly.Msg['NUMPY_CALCULATION_7'] = "array reciprocal ( np.reciprocal  )";
 
 Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[ index / value search ]";
+Blockly.Msg['NUMPY_INDEX_VALUES_111'] = "[ index / value search ]";
 Blockly.Msg['NUMPY_INDEX_VALUES_2'] = "maximum value of array ( np.amax)";
 Blockly.Msg['NUMPY_INDEX_VALUES_3'] = "minimum value of array ( np.amin )";
 Blockly.Msg['NUMPY_INDEX_VALUES_4'] = "maximum value of index ( np.argmax )";
