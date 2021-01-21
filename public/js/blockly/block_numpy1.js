@@ -251,7 +251,7 @@ Blockly.Blocks['numpy_exponents_logarithms'] = {
 Blockly.Blocks['numpy_arithmetic_operations1'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[np 산술1]")
+        .appendField("[np 기본 산술]")
         .appendField(new Blockly.FieldDropdown([["요소별덧셈(add)","np.add"],
                                                 ["요소별뺄셈(subtract)","np.subtract"],
                                                 ["요소별곱셈(multiply)","np.multiply"],
@@ -274,7 +274,7 @@ Blockly.Blocks['numpy_arithmetic_operations1'] = {
 Blockly.Blocks['numpy_arithmetic_operations2'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[np 산술2]")
+        .appendField("[np 심화 산술]")
         .appendField(new Blockly.FieldDropdown([["요소별거듭제곱(power)","np.power"], ["요소별나머지(remainder)","np.remainder"], ["요소별소수&정수(modf)","np.modf"], ["요소별몫&나머지(divmod)","np.divmod"]]), "numpy_Arithmetic_operations2_opt");
     this.appendValueInput("numpy_Arithmetic_operations2_val")
         .setCheck(null);
