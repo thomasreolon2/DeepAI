@@ -461,7 +461,7 @@ Blockly.Blocks['numpy_changing_array_shape'] = {
     this.appendDummyInput()
         .appendField("[np 모양변경]")
         .appendField(new Blockly.FieldDropdown([["배열형태 변경(reshape)","np.reshape"], //["1차원변경(ravel)","np.ravel"],
-           ["1차원변경(flatten)","np.flatten"]]), "numpy_Changing_array_shape_opt");
+           ["1차원변경(flatten)","np.flatten"], ["1차원씩 항목제거(squeeze)","np.squeeze"]]), "numpy_Changing_array_shape_opt");
     this.appendValueInput("numpy_Changing_array_shape_val")
         .setCheck(null);
     this.setInputsInline(true);
