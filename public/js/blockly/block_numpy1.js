@@ -391,7 +391,7 @@ Blockly.Blocks['numpy_comparison'] = {
 Blockly.Blocks['numpy_string_operations'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[np 연산1]")
+        .appendField("[np 문자 연산1]")
         .appendField(new Blockly.FieldDropdown([["연결(char.add)","np.char.add"],
                                                 ["다중연결(char.multiply)","np.char.multiply"],
                                                 ["첫문자대문자로(char.capitalize)","np.char.capitalize"],
@@ -413,7 +413,7 @@ Blockly.Blocks['numpy_string_operations'] = {
 Blockly.Blocks['numpy_string_operations2'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[np 연산2]")
+        .appendField("[np 문자 연산2]")
         .appendField(new Blockly.FieldDropdown([["대체(char.replace)","np.char.replace"], 
                                                 ["왼쪽정렬(char.ljust)","np.char.ljust"], 
                                                 ["오른쪽정렬(char.rjust)","np.char.rjust"], 
