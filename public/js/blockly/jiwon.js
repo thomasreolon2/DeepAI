@@ -618,3 +618,57 @@ Blockly.Blocks['skimage_measure'] = {
     this.setHelpUrl("");
     }
 };
+//numpy_random_sample
+Blockly.Blocks['numpy_random_sample_x'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("[np 단순]")
+          .appendField(new Blockly.FieldDropdown([["표준 정규분포(randn)","numpy_Random_sample_randn"],["임의 값(rand)","numpy_Random_sample_rand"], ["임의 정수(randint)","numpy_Random_sample_randint"], ["0~1 부동 소수점(random)","numpy_Random_sample_random"], ["배열 무작위(choice)","numpy_Random_sample_choice"], ["임의 바이트(bytes)","numpy_Random_sample_bytes"]]), "numpy_Random_sample_opt");
+      this.appendValueInput("numpy_Random_sample_val")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+Blockly.Blocks['Oper_x'] = {
+    init: function () {
+        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Numeric/N2-logo.png", 25, 23, {
+            alt: "*",
+            flipRtl: "FALSE"
+        }));
+        this.appendValueInput("A").setCheck(null);
+        this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+            [
+                "*", "*"
+            ],
+            [
+                "-", "-"
+            ],
+            [
+                "+", "+"
+            ],
+            [
+                "/", "/"
+            ],
+            [
+                "%", "%"
+            ],
+            [
+                "**", "**"
+            ],
+            [
+                "//", "//"
+            ]
+        ]), "NAME");
+        this.appendValueInput("B").setCheck(null);
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_MATH_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
