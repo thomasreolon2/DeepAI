@@ -5576,7 +5576,31 @@
             </block>
           </value>
           <value name="VALUE">
-            <shadow type="indata"><field name="indata1">mu + sigma * np.random.randn(437)</field></shadow>
+            <block type="Oper">
+              <value name="A">
+                <block type="variables_get">
+                  <field name="VAR">mu</field>
+                </block>
+              </value>
+
+              <value name="B">
+                <block type="Oper_x">
+                  <value name="A">
+                    <block type="variables_get">
+                      <field name="VAR">sigma</field>
+                    </block>
+                  </value>
+                  <value name="B">
+                    <block type="numpy_random_sample_x">
+                      <value name="numpy_Random_sample_val">
+                        <shadow type="indata"><field name="indata1">437</field></shadow>
+                      </value>
+                    </block>
+                  </value>
+                </block>
+              </value>
+
+            </block>
           </value>
         </block>
 
@@ -5610,7 +5634,6 @@
             </block>
           </value>
         </block>
-        <!-- 지원 -->
 
         <block type="many_variables">
           <value name="NUMBER">
@@ -5632,7 +5655,9 @@
 
         <block type="many_variables">
           <value name="NUMBER">
-            <shadow type="indata"><field name="indata1">y</field></shadow>
+            <block type="variables_get">
+              <field name="VAR">y</field>
+            </block>
           </value>
           <value name="VALUE">
             <shadow type="indata"><field name="indata1">((1 / (np.sqrt(2 * np.pi) * sigma)) *
