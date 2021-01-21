@@ -2627,8 +2627,17 @@
         </block> 
         <!-- 선형 / 분해  -->
       </category>
+      <!------------------------------------------------------------------------------------------------배열-->
       <category name="배열" colour="%{BKY_NUMPY_HUE}">
         <label text="배열"></label>
+        <!-- 배열생성 / 기존데이터 --> 
+        <block type="numpy_from_existing_data">
+          <value name="nnumpy_From_existing_data_val"> 
+            <block type="class_func_param"></block>
+          </value>  
+        </block> 
+        <!-- 배열생성 / 기존데이터 -->
+
         <!-- 배열조작 / 모양 변경 --> 
         <block type="numpy_changing_array_shape">
           <value name="numpy_Changing_array_shape_val"> 
@@ -2637,53 +2646,13 @@
         </block> 
         <!-- 배열조작 / 모양 변경  -->
 
-
-        <!-- 배열조작 / 전치 --> 
-        <block type="numpy_transpose_like_operations">
-          <value name="numpy_Transpose_like_operations_val"> 
-            <block type="class_func_param"></block>
-          </value>  
-        </block> 
-        <!-- 배열조작 / 전치  -->
-
-
-        <!-- 배열조작 / 차원수 변경  
-        <block type="numpy_changing_number">
-          <value name="numpy_Changing_number_val"> 
-            <block type="class_func_param"></block>
-          </value>  
-        </block> 
-      -->
-        <!-- 배열조작 / 차원수 변경   -->
-
-        
         <!-- 배열조작 / 종류 변경 --> 
         <block type="numpy_changing_kind_array">
-          <value name="numpy_Changing_kind_array_val"> 
-            <block type="class_func_param"></block>
-          </value>  
+        <value name="numpy_Changing_kind_array_val"> 
+          <block type="class_func_param"></block>
+        </value>  
         </block> 
         <!-- 배열조작 / 종류 변경   -->
-
-
-        
-        <!-- 배열조작 / 결합 --> 
-        <block type="numpy_joining_arrays">
-          <value name="numpy_Joining_arrays_val"> 
-            <block type="class_func_param"></block>
-          </value>  
-        </block> 
-        <!-- 배열조작 / 결합   -->
-
-
-        <!-- 배열조작 / 분할 --> 
-        <block type="numpy_splitting_arrays">
-          <value name="numpy_Splitting_arrays_val"> 
-            <block type="class_func_param"></block>
-          </value>  
-        </block> 
-        <!-- 배열조작 / 분할 -->
-
 
         <!-- 배열조작 / 추가 & 제거 --> 
         <block type="numpy_adding_removing_elements">
@@ -2693,14 +2662,13 @@
         </block> 
         <!-- 배열조작 / 추가 & 제거 -->
 
-
-        <!-- 배열조작 / 재정렬 --> 
-        <block type="numpy_rearranging_elements">
-          <value name="numpy_Rearranging_elements_val"> 
+        <!-- 배열생성 / 숫자 범위 --> 
+        <block type="numpy_numerical_ranges">
+          <value name="numpy_Numerical_ranges_val"> 
             <block type="class_func_param"></block>
           </value>  
         </block> 
-        <!-- 배열조작 / 재정렬 -->
+        <!-- 배열생성 / 숫자 범위 -->
 
         <!-- 배열생성 / 0 & 1 --> 
         <block type="numpy_ones_and_zeros">
@@ -2710,14 +2678,45 @@
         </block> 
         <!-- 배열생성 / 0 & 1 -->
 
-
-        <!-- 배열생성 / 기존데이터 --> 
-        <block type="numpy_from_existing_data">
-          <value name="nnumpy_From_existing_data_val"> 
+        <!-- 배열생성 / 행렬 --> 
+        <block type="numpy_building_matrices">
+          <value name="numpy_Building_matrices_val"> 
             <block type="class_func_param"></block>
           </value>  
         </block> 
-        <!-- 배열생성 / 기존데이터 -->
+        <!-- 배열생성 / 행렬 -->
+
+        <!-- 배열조작 / 전치 --> 
+        <block type="numpy_transpose_like_operations">
+          <value name="numpy_Transpose_like_operations_val"> 
+            <block type="class_func_param"></block>
+          </value>  
+        </block> 
+        <!-- 배열조작 / 전치  -->
+
+        <!-- 배열조작 / 결합 --> 
+        <block type="numpy_joining_arrays">
+          <value name="numpy_Joining_arrays_val"> 
+            <block type="class_func_param"></block>
+          </value>  
+        </block> 
+        <!-- 배열조작 / 결합   -->
+
+        <!-- 배열조작 / 분할 --> 
+        <block type="numpy_splitting_arrays">
+          <value name="numpy_Splitting_arrays_val"> 
+            <block type="class_func_param"></block>
+          </value>  
+        </block> 
+        <!-- 배열조작 / 분할 -->
+
+        <!-- 배열조작 / 재정렬 --> 
+        <block type="numpy_rearranging_elements">
+          <value name="numpy_Rearranging_elements_val"> 
+            <block type="class_func_param"></block>
+          </value>  
+        </block> 
+        <!-- 배열조작 / 재정렬 -->
 
         <!-- 배열생성 / 레코드 --> 
         <block type="numpy_creating_record_arrays">
@@ -2727,24 +2726,14 @@
         </block> 
         <!-- 배열생성 / 레코드 -->
 
-
-        <!-- 배열생성 / 숫자 범위 --> 
-        <block type="numpy_numerical_ranges">
-          <value name="numpy_Numerical_ranges_val"> 
+        <!-- 배열조작 / 차원수 변경  
+        <block type="numpy_changing_number">
+          <value name="numpy_Changing_number_val"> 
             <block type="class_func_param"></block>
           </value>  
         </block> 
-        <!-- 배열생성 / 숫자 범위 -->
-
-
-        <!-- 배열생성 / 행렬 --> 
-        <block type="numpy_building_matrices">
-          <value name="numpy_Building_matrices_val"> 
-            <block type="class_func_param"></block>
-          </value>  
-        </block> 
-        <!-- 배열생성 / 행렬 -->
-        
+      -->
+        <!-- 배열조작 / 차원수 변경   -->
       </category>
       <category name="랜덤&정렬" colour="%{BKY_NUMPY_HUE}">
         <label text="랜덤"></label>
