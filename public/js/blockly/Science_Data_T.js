@@ -1000,8 +1000,8 @@ Blockly.defineBlocksWithJsonArray(
     init: function() {
       this.appendValueInput("numpy_index_values_val")
           .setCheck(null)
-          .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_1)
-          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_2,"np.amax"], [Blockly.Msg.NUMPY_INDEX_VALUES_3,"np.amin"], [Blockly.Msg.NUMPY_INDEX_VALUES_8,"np.where"], [Blockly.Msg.NUMPY_INDEX_VALUES_7,"np.take"]]), "numpy_operator_Option");
+          .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_111)
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_2,"np.amax"], [Blockly.Msg.NUMPY_INDEX_VALUES_3,"np.amin"], [Blockly.Msg.NUMPY_INDEX_VALUES_7,"np.take"]]), "numpy_operator_Option");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");
@@ -1015,7 +1015,7 @@ Blockly.defineBlocksWithJsonArray(
       this.appendValueInput("numpy_index_values_val")
           .setCheck(null)
           .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_11)
-          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_4,"np.argmax"], [Blockly.Msg.NUMPY_INDEX_VALUES_5,"np.argsort"]]), "numpy_operator_Option");
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_4,"np.argmax"], [Blockly.Msg.NUMPY_INDEX_VALUES_5,"np.argsort"], [Blockly.Msg.NUMPY_INDEX_VALUES_8,"np.where"]]), "numpy_operator_Option");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");
