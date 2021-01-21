@@ -589,7 +589,7 @@ Blockly.Blocks['numpy_ones_and_zeros'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 0 & 1]")
-        .appendField(new Blockly.FieldDropdown([["초기화 x(empty)","np. empty"], ["대각선 1(eye)","np.eye"], ["식별 배열(identity)","np.identity"], ["형태에 따른 1(ones)","np.ones"], ["0으로 채움(zeros)","np.zeros"], ["해당 값으로 채움(full)","np.full"]]), "numpy_Ones and zeros_opt");
+        .appendField(new Blockly.FieldDropdown([["초기화 x(empty)","np. empty"], ["0으로 채움(zeros)","np.zeros"], ["형태에 따른 1(ones)","np.ones"], ["대각선 1(eye)","np.eye"], ["식별 배열(identity)","np.identity"], ["해당 값으로 채움(full)","np.full"]]), "numpy_Ones and zeros_opt");
     this.appendValueInput("numpy_Ones and zeros_val")
         .setCheck(null);
     this.setInputsInline(true);
