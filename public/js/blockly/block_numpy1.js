@@ -20,7 +20,7 @@ Blockly.Blocks['numpy_averages_variances'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 평균&분산]")
-        .appendField(new Blockly.FieldDropdown([["중앙값(median)","np.median"], ["가중평균(average)","np.average"], ["산술평균(mean)","np.mean"], ["표준편차(std)","np.std"], ["분산(var)","np.var"]]), "numpy_Averages_variances_opt");
+        .appendField(new Blockly.FieldDropdown([["산술평균(mean)","np.mean"],["가중평균(average)","np.average"],["중앙값(median)","np.median"],  ["표준편차(std)","np.std"], ["분산(var)","np.var"]]), "numpy_Averages_variances_opt");
     this.appendValueInput("numpy_Averages_variances_val")
         .setCheck(null);
     this.setInputsInline(true);
