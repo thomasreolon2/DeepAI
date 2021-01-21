@@ -435,7 +435,7 @@ Blockly.Blocks['numpy_string_operations2'] = {
 Blockly.Blocks['numpystring_information'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[np 정보]")
+        .appendField("[np 문자 정보]")
         .appendField(new Blockly.FieldDropdown([["특정문자갯수확인(char.count)","np.char.count"], 
                                                 ["가장낮은인덱스(char.find)","np.char.find"], 
                                                 ["알파벳체크(char.isalpha)","np.char.isalpha"], 
