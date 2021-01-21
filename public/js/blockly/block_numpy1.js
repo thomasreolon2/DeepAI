@@ -358,7 +358,7 @@ Blockly.Blocks['numpy_matrix_decomposition'] = {
 Blockly.Blocks['numpy_array_contents'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[np 배열요소]")
+        .appendField("[np 극한]")
         .appendField(new Blockly.FieldDropdown([["유한성체크(isfinite)","np.isfinite"], ["양무한체크(isposinf)","np.isposinf"], ["음수무한체크(isneginf)","np.isneginf"], ["양/음수무한체크(isinf)","np.isinf"]]), "numpy_Array_contents_opt");
     this.appendValueInput("numpy_Array_contents_val")
         .setCheck(null);
