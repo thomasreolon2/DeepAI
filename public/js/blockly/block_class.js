@@ -88,7 +88,7 @@ Blockly.Blocks['webclass2'] = {
             .appendField("[ "+Blockly.Msg.CLASS_1_5 +" ]");
           this.appendValueInput("2")
             .setCheck(null)
-            .appendField("를");
+            .appendField("=");
             this.appendValueInput("3")
             .appendField("(")
           this.appendDummyInput()

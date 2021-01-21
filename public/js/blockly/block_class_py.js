@@ -23,7 +23,7 @@ Blockly.Python['webclass2'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
 
   branch = Blockly.Python.addLoopTrap(branch, block.id) || Blockly.Python.PASS;
-  return `class ${variable_name}(${value_name}) : \n ${branch} `;
+  return `class ${variable_name}(${value_name}) : \n${branch} `;
 };
 
 
