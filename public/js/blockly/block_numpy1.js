@@ -557,7 +557,7 @@ Blockly.Blocks['numpy_adding_removing_elements'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 추가&제거]")
-        .appendField(new Blockly.FieldDropdown([["하위배열 삭제(delete)","np.delete"], ["인덱스 앞 삽입(insert)","np.insert"], ["배열 끝 삽입(append)","np.append"], ["지정 모양(resize)","np.resize"], ["고유요소 찾기(unique)","np.unique"]]), "numpy_Adding_removing_elements_opt");
+        .appendField(new Blockly.FieldDropdown([["배열 끝 삽입(append)","np.append"], ["인덱스 앞 삽입(insert)","np.insert"],   ["하위배열 삭제(delete)","np.delete"],["고유요소 찾기(unique)","np.unique"],["지정 모양(resize)","np.resize"]]), "numpy_Adding_removing_elements_opt");
     this.appendValueInput("numpy_Adding_removing_elements_val")
         .setCheck(null);
     this.setInputsInline(true);
