@@ -622,7 +622,7 @@ Blockly.Blocks['skimage_measure'] = {
 Blockly.Blocks['numpy_random_sample_x'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[np 단순]")
+          .appendField("[np 단순 랜덤]")
           .appendField(new Blockly.FieldDropdown([["표준 정규분포(randn)","numpy_Random_sample_randn"],["임의 값(rand)","numpy_Random_sample_rand"], ["임의 정수(randint)","numpy_Random_sample_randint"], ["0~1 부동 소수점(random)","numpy_Random_sample_random"], ["배열 무작위(choice)","numpy_Random_sample_choice"], ["임의 바이트(bytes)","numpy_Random_sample_bytes"]]), "numpy_Random_sample_opt");
       this.appendValueInput("numpy_Random_sample_val")
           .setCheck(null);
