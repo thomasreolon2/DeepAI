@@ -120,9 +120,9 @@ Blockly.Blocks['ski_class'] = {
         [
           "segmetation", "segmetation"
         ],
-        [
-          "img_as_float", "img_as_float"
-        ],
+        // [
+        //   "img_as_float", "img_as_float"
+        // ], 2020-01-21-전우진 주석처리함
         [
           "measure", "measure"
         ]

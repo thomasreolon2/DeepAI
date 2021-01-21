@@ -751,7 +751,7 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
   //plt.show
   Blockly.Python['matplotlib_plt_show'] = function(block) {
     // TODO: Assemble Python into code variable.
-    var code = 'plt.show()'; 
+    var code = 'plt.show()\n'; //2021-01-21 전우진 수정 \n
     // TODO: Change ORDER_NONE to the correct strength.
     return code;
   };

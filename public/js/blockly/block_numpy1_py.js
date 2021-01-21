@@ -425,7 +425,7 @@ Blockly.Python['numpy_mathematical_functions'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = `${dropdown_numpy_mathematical_functions_opt}(${value_numpy_mathematical_functions_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 
@@ -456,7 +456,7 @@ Blockly.Python['numpy_exponents_logarithms'] = function(block) {
   // TODO: Assemble Python into code variable.
   var code = `${dropdown_numpy_exponents_logarithms_opt}(${value_numpy_exponents_logarithms_val})`;
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 //numpy_arithmetic_operations1

@@ -188,7 +188,8 @@ Blockly.Python['skimage_img_as_float'] = function(block) {
   var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
   var dropdown_dic = block.getFieldValue('collection');
   // TODO: Assemble Python into code variable.
-  var code = `img_as_float.${dropdown_dic}(${value_name2})`;
+  // var code = `img_as_float.${dropdown_dic}(${value_name2})`;
+  var code = `${dropdown_dic}(${value_name2})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

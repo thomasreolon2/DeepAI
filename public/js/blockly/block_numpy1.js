@@ -235,7 +235,7 @@ Blockly.Blocks['numpy_exponents_logarithms'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 지수&로그]")
-        .appendField(new Blockly.FieldDropdown([["요소별지수(exp)","(np.exp"], ["요소별지수2(exp2)","np.exp2"], ["요소별자연로그(log)","np.log"], ["요소별로그10(log10)","np.log10"], ["요소별로그2(log2)","np.log2"]]), "numpy_Exponents_logarithms_opt");
+        .appendField(new Blockly.FieldDropdown([["요소별지수(exp)","np.exp"], ["요소별지수2(exp2)","np.exp2"], ["요소별자연로그(log)","np.log"], ["요소별로그10(log10)","np.log10"], ["요소별로그2(log2)","np.log2"]]), "numpy_Exponents_logarithms_opt");
     this.appendValueInput("numpy_Exponents_logarithms_val")
         .setCheck(null);
     this.setInputsInline(true);
