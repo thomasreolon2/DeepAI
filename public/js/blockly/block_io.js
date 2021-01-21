@@ -151,10 +151,13 @@ Blockly.Blocks['fd_read'] = {
           .appendField(new Blockly.FieldVariable("f"), "list2")
           .appendField(new Blockly.FieldDropdown([
             [
-                ".read()", ".read()"
+              ".read()", ".read()"
             ],
             [
-                ".readlines()", ".readlines()"
+              ".readline()", ".readline()"
+            ],
+            [
+              ".readlines()", ".readlines()"
             ]
         ]), "set_menu");      
       this.setPreviousStatement(true, null);
