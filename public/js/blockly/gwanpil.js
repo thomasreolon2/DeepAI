@@ -470,3 +470,23 @@ Blockly.Blocks['voxels'] = {
   this.setHelpUrl("");
   }
 };
+
+
+Blockly.Blocks['writerows'] = {
+  init: function () {
+      this.appendValueInput("VAR")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField('.riterows');
+      this.appendValueInput("text")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField('');
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LIST_HUE}");
+      this.setTooltip("Create a list");
+      this.setHelpUrl("");
+  }
+};

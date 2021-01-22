@@ -275,3 +275,11 @@ Blockly.Python['plt_subplot'] = function(block) {
         var code = `${var_text1}.set_axis_off(${var_text2})\n`;
         return code;
       };
+
+      Blockly.Python['writerows'] = function (block) {
+        var variable_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+        var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        var code = variable_var + '.writerows(' + value_text + ')\n';
+        return code;
+      };
