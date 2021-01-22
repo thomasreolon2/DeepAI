@@ -80,6 +80,29 @@ Blockly.Blocks['webclass2'] = {
     }
   };
 
+  // 객체사용 
+ Blockly.Blocks['class_use2'] = {
+    init: function() {     
+        this.appendValueInput("VAR1")
+          .setCheck(null)
+          .appendField("[ "+ Blockly.Msg.CLASS_5_1 +" ]");
+        this.appendValueInput("VAR2")
+          .setCheck(null)
+          .appendField(".");
+        this.appendValueInput("3")
+          .appendField("(")
+        this.appendDummyInput()
+          .appendField(')')
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(125);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
   // 객체 생성
   Blockly.Blocks['class_make'] = {
     init: function() {

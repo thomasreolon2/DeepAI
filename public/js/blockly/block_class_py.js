@@ -38,6 +38,17 @@ Blockly.Python['class_use'] = function(block) {
     return [code, Blockly.Python.ORDER_NONE]; 
   };
 
+  // 객체 사용
+Blockly.Python['class_use2'] = function(block) {
+  var var1 = Blockly.Python.valueToCode(block, 'VAR1', Blockly.Python.ORDER_ATOMIC);
+  var var2 = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
+  var text_1 = Blockly.Python.valueToCode(block, '3', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = var1+'.'+var2+'('+text_1+')';
+  // var code = `${val1}.${val2} = ${text_1}\n`;
+  return code; 
+};
+
   // 객체 생성
 Blockly.Python['class_make'] = function(block) {
     var variable_1 = Blockly.Python.valueToCode(block, '1', Blockly.Python.ORDER_ATOMIC);

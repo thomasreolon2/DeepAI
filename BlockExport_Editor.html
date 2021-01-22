@@ -1947,7 +1947,7 @@
           </block>
         </value> 
       </block>  
-
+      <!-- 객체 사용 -->
       <block type="class_use">
         <value name="VAR1">
           <block type="variables_get">
@@ -1966,6 +1966,24 @@
         </value>
       </block> 
 
+      <block type="class_use2">
+        <value name="VAR1">
+          <block type="variables_get">
+            <field name="VAR">obj</field>
+          </block>
+        </value> 
+        <value name="VAR2">
+          <block type="variables_get">
+            <field name="VAR">func</field>
+          </block>
+        </value> 
+        <value name="3">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block> 
+      <!-- 객체 생성 -->
       <block type="class_make">
         <value name="1">
           <block type="variables_get">

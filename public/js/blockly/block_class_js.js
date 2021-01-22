@@ -35,7 +35,16 @@ Blockly.JavaScript['class_use'] = function(block) {
     return code; 
   };
 
-  
+  // 객체 사용
+Blockly.JavaScript['class_use2'] = function(block) {
+    var var1 = Blockly.JavaScript.valueToCode(block, 'VAR1', Blockly.JavaScript.ORDER_ATOMIC);
+    var var2 = Blockly.JavaScript.valueToCode(block, 'VAR2', Blockly.JavaScript.ORDER_ATOMIC);
+    var text_1 = block.getFieldValue('INPUT');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code; 
+  };
+
  // 객체 생성
 Blockly.JavaScript['class_make'] = function(block) {
     var variable_1 = Blockly.JavaScript.valueToCode(block, '1', Blockly.JavaScript.ORDER_ATOMIC);
