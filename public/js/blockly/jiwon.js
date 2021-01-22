@@ -672,3 +672,29 @@ Blockly.Blocks['Oper_x'] = {
         this.setHelpUrl("");
     }
 };
+
+
+
+//2021.01.22 try_except 남지원
+Blockly.Blocks['try_except'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("try : ");
+        this.appendStatementInput("TRY")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField("except");
+        this.appendValueInput("EXCEPT1")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(":");
+        this.appendStatementInput("EXCEPT2")
+            .setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LOGIC_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

@@ -314,3 +314,13 @@ Blockly.Python['skimage_measure'] = function (block) {
   var code = `measure.${dropdown_drop}(${input_text})`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+//2021.01.22 try_except 남지원
+Blockly.Python['try_except'] = function(block) {
+  var statements_try = Blockly.Python.statementToCode(block, 'TRY');
+  var value_except1 = Blockly.Python.valueToCode(block, 'EXCEPT1', Blockly.Python.ORDER_ATOMIC);
+  var statements_except2 = Blockly.Python.statementToCode(block, 'EXCEPT2');
+  // TODO: Assemble Python into code variable.
+  var code = `try:\n${statements_try}except ${value_except1} :\n${statements_except2}`;
+  return code;
+};

@@ -281,3 +281,14 @@ Blockly.JavaScript['skimage_measure'] = function (block) {
   var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+
+//2021.01.22 try_except 남지원
+Blockly.JavaScript['try_except'] = function(block) {
+  var statements_try = Blockly.JavaScript.statementToCode(block, 'TRY');
+  var value_except1 = Blockly.JavaScript.valueToCode(block, 'EXCEPT1', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_except2 = Blockly.JavaScript.statementToCode(block, 'EXCEPT2');
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return code;
+};
