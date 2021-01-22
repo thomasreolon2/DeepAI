@@ -477,7 +477,7 @@ Blockly.Blocks['writerows'] = {
       this.appendValueInput("VAR")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField('.riterows');
+          .appendField('.writerows');
       this.appendValueInput("text")
           .setCheck(null);
       this.appendDummyInput()
