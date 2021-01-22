@@ -442,3 +442,22 @@ Blockly.JavaScript['fileopen'] = function (block) {
    this.setHelpUrl("");
     }
   };
+
+// 2021.01.22 남지원
+  Blockly.Blocks['csv_reader_writer'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("csv.")
+          .appendField(new Blockly.FieldDropdown([["reader","reader"], ["writer","writer"]]), "DROP");
+      this.appendValueInput("VAR")
+          .setCheck(null)
+          .appendField("(");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_LIST_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

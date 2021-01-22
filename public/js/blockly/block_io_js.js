@@ -36,7 +36,7 @@ Blockly.JavaScript['printc'] = function (block) {
 
 Blockly.JavaScript['itdata'] = function(block) {
   var value_text = Blockly.JavaScript.valueToCode(block, 'itdata1', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = "\n";
   return code;
 };
@@ -68,9 +68,9 @@ Blockly.JavaScript['fd_read'] = function (block) {
 
 Blockly.JavaScript['fd_write'] = function (block) {
   var dropdown_set_menu = block.getFieldValue('set_menu');
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   return code;
 };
@@ -139,4 +139,14 @@ Blockly.JavaScript['withs'] = function(a) {
   // d = Blockly.JavaScript.addLoopTrap(d, a) || Blockly.JavaScript.PASS;
   d = Blockly.JavaScript.addLoopTrap(d, a);
   return "\n";
+};
+
+
+// 2021.01.22 남지원
+Blockly.JavaScript['csv_reader_writer'] = function(block) {
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_var = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `csv.${dropdown_drop}(${value_var})`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

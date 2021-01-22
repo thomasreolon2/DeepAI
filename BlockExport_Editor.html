@@ -788,17 +788,11 @@
             </block>
           </value>
         </block>
-
-
-        
-
       </category>
-
-      
     
       <category name="%{BKY_CATEGORY_FILE}" colour="%{BKY_FILE_HUE}">
         <block type="pickle_library"></block>
-
+        <block type="csv_library"></block>
         <!-- 기태 수정(로컬 파일 열기) 21.01.01 ------------------------------------> 	
         <block type = "fd_open">
           <value name="text">               
@@ -853,7 +847,14 @@
             </shadow>
           </value>
         </block>
-
+      
+        <block type="csv_reader_writer">
+          <value name="VAR">
+            <shadow type="indata">
+              <field name="indata1">f</field>
+            </shadow>
+          </value>
+        </block>
         </category>
       </category>
     </category>

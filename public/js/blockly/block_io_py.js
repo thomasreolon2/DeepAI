@@ -174,3 +174,11 @@ Blockly.Python['fileopen'] = function (block) {
   return code;
 };
 
+// 2021.01.22 남지원
+Blockly.Python['csv_reader_writer'] = function(block) {
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `csv.${dropdown_drop}(${value_var})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

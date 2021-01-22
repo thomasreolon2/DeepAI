@@ -21,6 +21,12 @@ Blockly.Python['pickle_library'] = function (block) {
   var code = "import pickle \n";
   return code;
 };
+// 2021.01.22 csv 남지원
+Blockly.Python['csv_library'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "import csv \n";
+  return code;
+};
 
 Blockly.Python['datetime_library'] = function (block) {
   // TODO: Assemble JavaScript into code variable.

@@ -49,6 +49,20 @@
       this.setHelpUrl("");
     }
   };
+// 2021.01.22 csv라이브러리 남지원
+  Blockly.Blocks['csv_library'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField("[임포트] csv");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LIST_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
 
   Blockly.Blocks['datetime_library'] = {
     init: function () {
