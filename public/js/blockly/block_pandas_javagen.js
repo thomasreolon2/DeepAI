@@ -2,7 +2,7 @@
 // // 2020-09-19 Pandas java Code Generation 2학년 파트
 // ////////////////////////////////////////////////////////////////////
 
-Blockly.JavaScript['csv_library'] = function (block) {
+Blockly.JavaScript['pandas_library'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   return code;

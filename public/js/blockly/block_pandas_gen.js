@@ -2,7 +2,7 @@
 // 2020-09-03 Pandas Code Generation 2학년 파트
 ////////////////////////////////////////////////////////////////////
 
-Blockly.Python['csv_library'] = function (block) {
+Blockly.Python['pandas_library'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'pan_lib_var', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = "import pandas as pd\n";

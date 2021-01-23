@@ -4,8 +4,8 @@
 
 var pandas_color = "%{BKY_PANDAS_HUE}";
 
-//2020-09-19 양승국 수정
-Blockly.Blocks['csv_library'] = {
+//2020-09-19 양승국 수정 -> 2021.01.23 남지원 이름변경
+Blockly.Blocks['pandas_library'] = {
   init: function () {
     this.appendDummyInput()
         .appendField(Blockly.Msg.PANDAS_LIBRARY);

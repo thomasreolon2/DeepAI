@@ -6,7 +6,7 @@
     <variable id="v{@JWxVA[1?FJk5^o0Jq">y_data</variable>
     <variable id="?4%E#5E@=?J7z@o#8Hht">model</variable>
   </variables>
-  <block type="csv_library" id="4$qs#R(X{pc1]j1+GrS7" x="87" y="72">
+  <block type="pandas_library" id="4$qs#R(X{pc1]j1+GrS7" x="87" y="72">
     <value name="pan_lib_var">
       <block type="variables_get" id="i7WK^@FGJ98)|JR%1l7?">
         <field name="VAR" id="2s6Cr{~-VkkS9`f=BrVc">pd</field>

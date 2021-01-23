@@ -4,7 +4,7 @@
     <variable id="}Z(VguZ;*~[@aOp@5i@1">url</variable>
     <variable id="![*C,VF+H%eZ0q9_`tgn">a</variable>
   </variables>
-  <block type="csv_library" id="R4DtZudCc,N^|Tz)$(y{" x="83" y="-14">
+  <block type="pandas_library" id="R4DtZudCc,N^|Tz)$(y{" x="83" y="-14">
     <value name="VAR">
       <block type="variables_get" id="EHj]?OXVPU}Ur-JBV4V#">
         <field name="VAR" id="/RcF|Uj=T{MabPAh`?1m">pd</field>

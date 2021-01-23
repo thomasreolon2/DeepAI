@@ -32,7 +32,7 @@
     var code = 'Logisticgraph(' + value_x + ',' + value_y + ',' + value_w + ',' + value_b + ');';
     return code;
   };
-  Blockly.JavaScript['csv_library'] = function(block) {
+  Blockly.JavaScript['pandas_library'] = function(block) {
     var value_name = Blockly.JavaScript.valueToCode(block, 'pan_lib_var', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = "\n";
