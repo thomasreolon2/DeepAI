@@ -18,6 +18,27 @@ Blockly.Blocks['webdefine'] = {
         this.setTooltip('');
     },
 };
+
+// 함수 블록
+Blockly.Blocks['webdefine2'] = {
+    init: function () {
+        this.appendValueInput('1')
+            .setCheck(null)
+            .appendField(Blockly.Msg.CLASS_1_6);
+        this.appendValueInput('2')
+            .setCheck(null)
+            .appendField('(');
+        this.appendDummyInput()
+            .appendField('):');
+        this.appendStatementInput('DO')
+            .setCheck(null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_PROCEDURES_HUE}");
+        this.setTooltip('');
+    },
+};
+
 //2020-12-26-전우진 return
 // return 블록
 Blockly.Blocks['webreturn2'] = {

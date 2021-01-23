@@ -1855,6 +1855,36 @@
         </value>
       </block>
 
+      <!-- 생성자 -->
+      <block type="webdefine2">
+        <value name="1">
+          <block type="variables_get">
+            <field name="VAR">__init__</field>
+          </block>
+        </value>  
+        <value name="2">
+          <shadow type="indata">
+            <field name="indata1">self,</field>
+          </shadow>
+        </value>
+        <value name="DO">
+          <block type="self">
+            <value name="VAR">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value> 
+            <value name="varset">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        
+  
+      </block>
+
       <!-- return -->
       <block type="webreturn2">
         <value name="return">
@@ -1947,6 +1977,7 @@
           </shadow>
         </value>
       </block>
+      
 
       <!-- self -->
       <block type="self">

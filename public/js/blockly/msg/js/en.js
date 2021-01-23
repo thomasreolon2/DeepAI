@@ -661,6 +661,8 @@ Blockly.Msg['OPERATION_13_6'] = "ASCII Type";
 Blockly.Msg['CLASS_1_1'] = "class declaration";
 Blockly.Msg['CLASS_1_2'] = "class name";
 Blockly.Msg['CLASS_1_3'] = "class";
+Blockly.Msg['CLASS_1_6'] = "init";
+
 Blockly.Msg['CLASS_1_4'] = "override";
 Blockly.Msg['CLASS_1_5'] = "create object";
 Blockly.Msg['CLASS_2_1'] = "function";

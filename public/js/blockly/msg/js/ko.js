@@ -671,6 +671,8 @@ Blockly.Msg['CLASS_1_2'] = "클래스 명";
 
 Blockly.Msg['CLASS_1_3'] = "클래스";
 Blockly.Msg['CLASS_1_4'] = "상속";
+Blockly.Msg['CLASS_1_6'] = "생성자";
+
 Blockly.Msg['CLASS_1_5'] = "객체생성";
 
 Blockly.Msg['CLASS_2_1'] = "함수";
