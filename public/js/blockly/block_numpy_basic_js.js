@@ -196,3 +196,12 @@ Blockly.JavaScript['numpy_numerical_ranges_basic2'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['numpy_loadtxt_basic'] = function(block) {
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};

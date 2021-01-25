@@ -696,35 +696,6 @@ Blockly.Python['numpy_ones_and_zeros_basic'] = function(block) {
 };
 
 
-//numpy_ones_and_zeros
-Blockly.Python['numpy_ones_and_zeros'] = function(block) {
-  var dropdown_numpy_ones_and_zeros_opt = block.getFieldValue('numpy_Ones and zeros_opt');
-  var value_numpy_ones_and_zeros_val = Blockly.Python.valueToCode(block, 'numpy_Ones and zeros_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_ones_and_zeros_opt}(${value_numpy_ones_and_zeros_val})`;
-  // TODO: Change ORDER_ATOMIC to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
-//numpy_from_existing_data
-Blockly.Python['numpy_from_existing_data'] = function(block) {
-  var dropdown_numpy_from_existing_data_opt = block.getFieldValue('numpy_From_existing_data_opt');
-  var value_numpy_from_existing_data_val = Blockly.Python.valueToCode(block, 'numpy_From_existing_data_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_from_existing_data_opt}(${value_numpy_from_existing_data_val})`;
-  // TODO: Change ORDER_ATOMIC to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
-//numpy_creating_record_arrays
-Blockly.Python['numpy_creating_record_arrays'] = function(block) {
-  var dropdown_numpy_creating_record_arrays_opt = block.getFieldValue('numpy_Creating_record_arrays_opt');
-  var value_numpy_creating_record_arrays_val = Blockly.Python.valueToCode(block, 'numpy_Creating_record_arrays_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_creating_record_arrays_opt}(${value_numpy_creating_record_arrays_val})`;
-  // TODO: Change ORDER_ATOMIC to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 //numpy_numerical_ranges
 Blockly.Python['numpy_numerical_ranges_basic1'] = function(block) {
@@ -761,29 +732,12 @@ Blockly.Python['numpy_operator_basic'] = function(block) {
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
-//numpy_building_matrices
-Blockly.Python['numpy_building_matrices'] = function(block) {
-  var dropdown_numpy_building_matrices_opt = block.getFieldValue('numpy_Building_matrices_opt');
-  var value_numpy_building_matrices_val = Blockly.Python.valueToCode(block, 'numpy_Building_matrices_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_building_matrices_opt}(${value_numpy_building_matrices_val})`;
-  // TODO: Change ORDER_ATOMIC to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
-Blockly.Python['create_np_array'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = variable_list + ' = np.array([' + value_text + '])\n';
-  return code;
-};
 
-Blockly.Python['create_np_array2'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+Blockly.Python['numpy_loadtxt_basic'] = function (block) {
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-  var value_text2 = Blockly.Python.valueToCode(block, 'text2', Blockly.Python.ORDER_ATOMIC);
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
-  var code = variable_list + ' = np.array(' + value_text + ')[' + value_text2 + ']\n';
+  var code = `${variable_list} = np.loadtxt(${value_text}, delimiter=',', encoding='utf-8', dtype='str')\n`;
   return code;
 };

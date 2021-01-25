@@ -2436,6 +2436,12 @@
         <block type="numpy_library"></block>
       <!-- import numpy as np -->
 
+      <block type = "numpy_loadtxt_basic">
+        <value name="text">               
+            <block type="fileopen"></block>     
+        </value>
+      </block>
+
       <block type = "create_np_array">
         <value name="text">
           <shadow type="indata">
