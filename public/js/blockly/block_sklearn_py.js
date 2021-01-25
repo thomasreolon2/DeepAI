@@ -88,9 +88,9 @@ Blockly.Python['random_import'] = function (block) {
     var dropdown_dataset_name = block.getFieldValue('dataset_name');
     var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
     var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
-    var sample = block.getFieldValue('sa');
-    var fea = block.getFieldValue('fe');
-    var seed = block.getFieldValue('seed');
+    var sample = Blockly.Python.valueToCode(block, 'sa', Blockly.Python.ORDER_ATOMIC);
+    var fea = Blockly.Python.valueToCode(block, 'fe', Blockly.Python.ORDER_ATOMIC);
+    var seed = Blockly.Python.valueToCode(block, 'seed', Blockly.Python.ORDER_ATOMIC);
 
     var code = "";
     if (dropdown_dataset_name == "make_blobs") {
@@ -122,8 +122,10 @@ Blockly.Python['random_import'] = function (block) {
 Blockly.Python['make_circles'] = function (block) {
     var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
     var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
-    var text_n_samples = block.getFieldValue('n_samples');
-    var text_factor = block.getFieldValue('factor');
+    //var text_n_samples = block.getFieldValue('n_samples');
+    var text_n_samples = Blockly.Python.valueToCode(block, 'n_samples', Blockly.Python.ORDER_ATOMIC);
+    //var text_factor = block.getFieldValue('factor');
+    var text_factor = Blockly.Python.valueToCode(block, 'factor', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = value_x_data + ', ' + value_y_data + '= sklearn.datasets.make_circles(n_samples=' + text_n_samples + ', factor=' + text_factor + ')\n';
     return code;
@@ -188,15 +190,28 @@ Blockly.Python['csv3'] = function (block) {
 
 // Train Test Split
 Blockly.Python['train_test_split'] = function (block) {
-    var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
-    var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
-    var value_x_train = Blockly.Python.valueToCode(block, 'x_train', Blockly.Python.ORDER_ATOMIC);
-    var value_x_test = Blockly.Python.valueToCode(block, 'x_test', Blockly.Python.ORDER_ATOMIC);
-    var value_y_train = Blockly.Python.valueToCode(block, 'y_train', Blockly.Python.ORDER_ATOMIC);
-    var value_y_test = Blockly.Python.valueToCode(block, 'y_test', Blockly.Python.ORDER_ATOMIC);
-    var text_test_size = block.getFieldValue('test_size');
+    var value_x_data = Blockly.Python.variableDB_.getName(block.getFieldValue('x_data'), Blockly.Variables.NAME_TYPE);
+    var value_y_data = Blockly.Python.variableDB_.getName(block.getFieldValue('y_data'), Blockly.Variables.NAME_TYPE);
+
+    var value_x_train = Blockly.Python.variableDB_.getName(block.getFieldValue('x_train'), Blockly.Variables.NAME_TYPE);
+    var value_x_test = Blockly.Python.variableDB_.getName(block.getFieldValue('x_test'), Blockly.Variables.NAME_TYPE);
+
+    var value_y_train = Blockly.Python.variableDB_.getName(block.getFieldValue('y_train'), Blockly.Variables.NAME_TYPE);
+    var value_y_test = Blockly.Python.variableDB_.getName(block.getFieldValue('y_test'), Blockly.Variables.NAME_TYPE);
+
+    // 기존 train_test_split, 이 주석은 삭제하지 말 것
+    // var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
+    // var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
+    // var value_x_train = Blockly.Python.valueToCode(block, 'x_train', Blockly.Python.ORDER_ATOMIC);
+    // var value_x_test = Blockly.Python.valueToCode(block, 'x_test', Blockly.Python.ORDER_ATOMIC);
+    // var value_y_train = Blockly.Python.valueToCode(block, 'y_train', Blockly.Python.ORDER_ATOMIC);
+    // var value_y_test = Blockly.Python.valueToCode(block, 'y_test', Blockly.Python.ORDER_ATOMIC);
+
+    //var text_test_size = block.getFieldValue('test_size');
+    var text_test_size = Blockly.Python.valueToCode(block, 'test_size', Blockly.Python.ORDER_ATOMIC);
     var dropdown_shuffle = block.getFieldValue('shuffle');
-    var text_seed = block.getFieldValue('seed');
+    //var text_seed = block.getFieldValue('seed');
+    var text_seed = Blockly.Python.valueToCode(block, 'seed', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= sklearn.model_selection.train_test_split(' + value_x_data + ',' + value_y_data + ',' + 'test_size=' + text_test_size + ', shuffle=' + dropdown_shuffle + ', random_state=' + text_seed + ')\n';
     return code;
@@ -205,7 +220,8 @@ Blockly.Python['train_test_split'] = function (block) {
 // Label Encoder
 Blockly.Python['labelencoder'] = function (block) {
     var value_df = Blockly.Python.valueToCode(block, 'df', Blockly.Python.ORDER_ATOMIC);
-    var text_column = block.getFieldValue('column');
+    //var text_column = block.getFieldValue('column');
+    var text_column = Blockly.Python.valueToCode(block, 'column', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = "Label_enc = sklearn.preprocessing.LabelEncoder()\n" + value_df + "['" + text_column + "'] = Label_enc.fit_transform(" + value_df + "['" + text_column + "'])\n";
     return code;
@@ -222,9 +238,12 @@ Blockly.Python['onehotencoder'] = function (block) {
 // K-Fold
 Blockly.Python['kfold'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_name = block.getFieldValue('NAME');
+    //var text_name = block.getFieldValue('NAME');
     var dropdown_shuffle = block.getFieldValue('shuffle');
-    var text_seed = block.getFieldValue('seed');
+    //var text_seed = block.getFieldValue('seed');
+
+    var text_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    var text_seed = Blockly.Python.valueToCode(block, 'seed', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = value_model + '= sklearn.model_selection.KFold(n_splits=' + text_name + ',shuffle=' + dropdown_shuffle + ',random_state=' + text_seed + ')\n';
     return code;
@@ -255,7 +274,8 @@ Blockly.Python['linear_regression'] = function (block) {
 // SGD Regressor
 Blockly.Python['sgd_regressor'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_numEpochs = block.getFieldValue('numEpochs');
+    //var text_numEpochs = block.getFieldValue('numEpochs');
+    var text_numEpochs = Blockly.Python.valueToCode(block, 'numEpochs', Blockly.Python.ORDER_ATOMIC);
     var text_numTol = block.getFieldValue('numTol');
 
     // TODO: Assemble Python into code variable.
@@ -266,7 +286,8 @@ Blockly.Python['sgd_regressor'] = function (block) {
 // Ridge Regressor
 Blockly.Python['ridge'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_numAlpha = block.getFieldValue('numAlpha');
+    //var text_numAlpha = block.getFieldValue('numAlpha');
+    var text_numAlpha = Blockly.Python.valueToCode(block, 'numAlpha', Blockly.Python.ORDER_ATOMIC);
 
     // TODO: Assemble Python into code variable.
     var code = value_model + " = sklearn.linear_model.Ridge(alpha = " + text_numAlpha + ")\n";
@@ -325,20 +346,24 @@ Blockly.Python['linearsvr'] = function (block) {
     // TODO: Assemble Python into code variable.
     var code = 'sklearn.svm.LinearSVR(random_state=' + random_state +')';
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return code;
 };
 
 // MLP Regressor
 Blockly.Python['sklearn_mlp_regressor'] = function (block) {
     var value_sklearn_mlp_lib_val = Blockly.Python.valueToCode(block, 'sklearn_mlp_lib_val', Blockly.Python.ORDER_ATOMIC);
-    var text_sklearn_mlp_hidden_layer_sizes_ = block.getFieldValue('sklearn_mlp_hidden_layer_sizes ');
+    //var text_sklearn_mlp_hidden_layer_sizes_ = block.getFieldValue('sklearn_mlp_hidden_layer_sizes ');
+    var text_sklearn_mlp_hidden_layer_sizes_ = Blockly.Python.valueToCode(block, 'sklearn_mlp_hidden_layer_sizes', Blockly.Python.ORDER_ATOMIC);
     var dropdown_sklearn_mlp_activation_option = block.getFieldValue('sklearn_mlp_activation_Option');
     var dropdown_sklearn_mlp_optimizer_option = block.getFieldValue('sklearn_MLP_Optimizer_Option');
     var dropdown_sklearn_mlp_warm_start_option = block.getFieldValue('sklearn_MLP_Warm_Start_Option');
-    var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning_rate');
+    //var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning_rate');
+    var text_sklearn_mlp_learning_rate = Blockly.Python.valueToCode(block, 'sklearn_MLP_learning_rate', Blockly.Python.ORDER_ATOMIC);
     var text_sklearn_mlp_max_iter = Blockly.Python.valueToCode(block, 'sklearn_MLP_Max_iter', Blockly.Python.ORDER_ATOMIC);
-    var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random_state');
-    var text_sklearn_mlp_batch_size = block.getFieldValue('sklearn_MLP_batch_size');
+    //var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random_state');
+    var text_sklearn_mlp_random_state = Blockly.Python.valueToCode(block, 'sklearn_MLP_random_state', Blockly.Python.ORDER_ATOMIC);
+    //var text_sklearn_mlp_batch_size = block.getFieldValue('sklearn_MLP_batch_size');
+    var text_sklearn_mlp_batch_size = Blockly.Python.valueToCode(block, 'sklearn_MLP_batch_size', Blockly.Python.ORDER_ATOMIC);
     // var value_sklearn_mlp_fit_x = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.Python.ORDER_ATOMIC);
     // var value_sklearn_mlp_fit_y = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.Python.ORDER_ATOMIC);
 
@@ -426,7 +451,8 @@ random_state = ${text_sklearn_mlp_random_state} )\n`;
 // Logistic Regression
 Blockly.Python['logistic_regression'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_numSeed = block.getFieldValue('numSeed');
+    //var text_numSeed = block.getFieldValue('numSeed');
+    var text_numSeed = Blockly.Python.valueToCode(block, 'numSeed', Blockly.Python.ORDER_ATOMIC);
 
     // TODO: Assemble Python into code variable.
     var importLib = "from sklearn.linear_model import LogisticRegression" + "\n";
@@ -437,8 +463,10 @@ Blockly.Python['logistic_regression'] = function (block) {
 // Logistic Regression CV
 Blockly.Python['logistic_regression_cv'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_numCv = block.getFieldValue('numCv');
-    var text_numSeed = block.getFieldValue('numSeed');
+    // var text_numCv = block.getFieldValue('numCv');
+    var text_numCv = Blockly.Python.valueToCode(block, 'numCv', Blockly.Python.ORDER_ATOMIC);
+    // var text_numSeed = block.getFieldValue('numSeed');
+    var text_numSeed = Blockly.Python.valueToCode(block, 'numSeed', Blockly.Python.ORDER_ATOMIC);
 
     // TODO: Assemble Python into code variable.
     var importLib = "from sklearn.linear_model import LogisticRegressionCV" + "\n";
@@ -460,7 +488,8 @@ Blockly.Python['ridge_classifier'] = function (block) {
 // SGD Classifier
 Blockly.Python['sgd_classifier'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_numEpochs = block.getFieldValue('numEpochs');
+    // var text_numEpochs = block.getFieldValue('numEpochs');
+    var text_numEpochs = Blockly.Python.valueToCode(block, 'numEpochs', Blockly.Python.ORDER_ATOMIC);
 
     // TODO: Assemble Python into code variable.
     var code = value_model + " = sklearn.linear_model.SGDClassifier(max_iter = " + text_numEpochs + ", tol = 1e-3)\n";
@@ -470,7 +499,8 @@ Blockly.Python['sgd_classifier'] = function (block) {
 // Perceptron
 Blockly.Python['perceptron'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_numSeed = block.getFieldValue('numSeed');
+    // var text_numSeed = block.getFieldValue('numSeed');
+    var text_numSeed = Blockly.Python.valueToCode(block, 'numSeed', Blockly.Python.ORDER_ATOMIC);
 
     // TODO: Assemble Python into code variable.
     var importLib = "from sklearn.linear_model import Perceptron" + "\n";
@@ -481,8 +511,10 @@ Blockly.Python['perceptron'] = function (block) {
 // Decision Tree Classifier
 Blockly.Python['decision'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_dept = block.getFieldValue('depth');
-    var text_seed = block.getFieldValue('seed');;
+    // var text_dept = block.getFieldValue('depth');
+    var text_dept = Blockly.Python.valueToCode(block, 'depth', Blockly.Python.ORDER_ATOMIC);
+    // var text_seed = block.getFieldValue('seed');;
+    var text_seed = Blockly.Python.valueToCode(block, 'seed', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.\
     var code = value_model + '= sklearn.tree.DecisionTreeClassifier(max_depth=' + text_dept + ',random_state=' + text_seed + ')\n';
 
@@ -646,7 +678,8 @@ Blockly.Python['k_means'] = function (block) {
 //dbscan
 Blockly.Python['dbscan'] = function (block) {
     var value_dbscan_val = Blockly.Python.valueToCode(block, 'DBSCAN_val', Blockly.Python.ORDER_ATOMIC);
-    var text_dbscan_eps = block.getFieldValue('DBSCAN_EPS');
+    // var text_dbscan_eps = block.getFieldValue('DBSCAN_EPS');
+    var text_dbscan_eps = Blockly.Python.valueToCode(block, 'DBSCAN_EPS', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = `${value_dbscan_val} = sklearn.cluster.DBSCAN( eps = ${text_dbscan_eps} )\n`;
     return code;
@@ -656,9 +689,9 @@ Blockly.Python['dbscan'] = function (block) {
 //IsolationForest
 Blockly.Python['isolation_forest'] = function (block) {
     var value_isolation_forest_val = Blockly.Python.valueToCode(block, 'Isolation_Forest_val', Blockly.Python.ORDER_ATOMIC);
-    var text_isolation_forest_estimators = block.getFieldValue('Isolation_Forest_estimators');
-    var text_isolation_forest_connection = block.getFieldValue('Isolation_Forest_connection');
-    var text_isolation_forest_randomstate = block.getFieldValue('Isolation_Forest_randomstate');
+    var text_isolation_forest_estimators = Blockly.Python.valueToCode(block, 'Isolation_Forest_estimators', Blockly.Python.ORDER_ATOMIC);
+    var text_isolation_forest_connection = Blockly.Python.valueToCode(block, 'Isolation_Forest_connection', Blockly.Python.ORDER_ATOMIC);
+    var text_isolation_forest_randomstate = Blockly.Python.valueToCode(block, 'Isolation_Forest_randomstate', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = `${value_isolation_forest_val} = sklearn.ensemble.IsolationForest(n_estimators = ${text_isolation_forest_estimators}, contamination = ${text_isolation_forest_connection}, random_state = ${text_isolation_forest_randomstate})\n`;
     return code;
@@ -892,11 +925,11 @@ Blockly.Python['metrics_fit_predict'] = function(block) {
 // Bernoulli RBM
   Blockly.Python['bernoullirbm'] = function (block) {
     var value_model = Blockly.Python.valueToCode(block, 'model', Blockly.Python.ORDER_ATOMIC);
-    var text_hi = block.getFieldValue('hi');
-    var text_lr = block.getFieldValue('lr');
-    var text_batch = block.getFieldValue('batch');
-    var text_epochs = block.getFieldValue('epochs');
-    var text_seed = block.getFieldValue('seed');
+    var text_hi = Blockly.Python.valueToCode(block, 'hi', Blockly.Python.ORDER_ATOMIC);
+    var text_lr = Blockly.Python.valueToCode(block, 'lr', Blockly.Python.ORDER_ATOMIC);
+    var text_batch = Blockly.Python.valueToCode(block, 'batch', Blockly.Python.ORDER_ATOMIC);
+    var text_epochs = Blockly.Python.valueToCode(block, 'epochs', Blockly.Python.ORDER_ATOMIC);
+    var text_seed = Blockly.Python.valueToCode(block, 'seed', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = value_model + '= sklearn.neural_network.BernoulliRBM(n_components=' + text_hi + ',learning_rate=' + text_lr + ',batch_size=' + text_batch + ' ,n_iter = ' + text_epochs + ',random_state = ' + text_seed + ')\n';
     return code;

@@ -6690,12 +6690,28 @@
               <field name="VAR">y_test</field>
             </block>
           </value>
+          <value name = "test_size">
+            <shadow type="indata">
+              <field name="indata1">0.2</field>
+            </shadow>
+          </value>
+          <value name = "seed">
+            <shadow type="indata">
+              <field name="indata1">0</field>
+            </shadow>
+          </value>
         </block>
+
         <block type="labelencoder">
           <value name="df">
             <block type="variables_get">
               <field name="VAR">df</field>
             </block>
+          </value>
+          <value name = "column">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
           </value>
         </block>
 
@@ -6755,9 +6771,28 @@
             </block>
           </value>
         </block>
+
+        <label text="속성 추출"></label>
+        <block type="coef">
+          <value name="coef">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
+        <block type="intercept">
+          <value name="intercept">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
+
       </category>
 
-      <category name="데이터셋" colour="%{BKY_SCIKITLEARN_HUE}">
+      <category name="데이터" colour="%{BKY_SCIKITLEARN_HUE}">
+        <label text="데이터셋"></label>
+
         <block type="import_dataset">
           <value name="x_data">
             <block type="variables_get">
@@ -6782,6 +6817,21 @@
               <field name="VAR">y_data</field>
             </block>
           </value>
+          <value name = "sa">
+            <shadow type="indata">
+              <field name="indata1">100</field>
+            </shadow>
+          </value>
+          <value name = "fe">
+            <shadow type="indata">
+              <field name="indata1">2</field>
+            </shadow>
+          </value>
+          <value name = "seed">
+            <shadow type="indata">
+              <field name="indata1">0</field>
+            </shadow>
+          </value>
         </block>
 
         <block type="make_circles">
@@ -6795,17 +6845,27 @@
               <field name="VAR">y_data</field>
             </block>
           </value>
+          <value name = "n_samples">
+            <shadow type="indata">
+              <field name="indata1">100</field>
+            </shadow>
+          </value>
+          <value name = "factor">
+            <shadow type="indata">
+              <field name="indata1">0.5</field>
+            </shadow>
+          </value>
         </block>
-	      <block type="csv3"></block>
-      </category>
 
-      <category name="데이터핸들링" colour="%{BKY_SCIKITLEARN_HUE}">
+        <label text="데이터 핸들링"></label>
+
         <block type="train_test_split">
           <value name="x_data">
             <block type="variables_get">
               <field name="VAR">x_data</field>
             </block>
           </value>
+
           <value name="y_data">
             <block type="variables_get">
               <field name="VAR">y_data</field>
@@ -6831,6 +6891,16 @@
               <field name="VAR">y_test</field>
             </block>
           </value>
+          <value name = "test_size">
+            <shadow type="indata">
+              <field name="indata1">0.2</field>
+            </shadow>
+          </value>
+          <value name = "seed">
+            <shadow type="indata">
+              <field name="indata1">0</field>
+            </shadow>
+          </value>
         </block>
         </value>
         
@@ -6840,6 +6910,16 @@
               <field name="VAR">kf</field>
             </block>
           </value>
+          <value name = "NAME">
+            <shadow type="indata">
+              <field name="indata1">3</field>
+            </shadow>
+          </value>
+          <value name = "seed">
+            <shadow type="indata">
+              <field name="indata1">0</field>
+            </shadow>
+          </value>
         </block>
 
         <block type="labelencoder">
@@ -6847,6 +6927,11 @@
             <block type="variables_get">
               <field name="VAR">df</field>
             </block>
+          </value>
+          <value name = "column">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
           </value>
         </block>
         
@@ -6857,7 +6942,15 @@
             </block>
           </value>
         </block>
-        <block type="polynomialfeatures"></block>
+        <block type="polynomialfeatures">
+          <value name = "NAME">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+	      <!-- <block type="csv3"></block> -->
       </category>
 
         <category name="예측" colour="%{BKY_SCIKITLEARN_HUE}">
@@ -6868,18 +6961,30 @@
               </block>
             </value>
           </block>
+
           <block type="sgd_regressor">
             <value name="model">
               <block type="variables_get">
                 <field name="VAR">model</field>
               </block>
             </value>
+            <value name = "numEpochs">
+              <shadow type="indata">
+                <field name="indata1">100</field>
+              </shadow>
+            </value>
           </block>
+
           <block type="ridge">
             <value name="model">
               <block type="variables_get">
                 <field name="VAR">model</field>
               </block>
+            </value>
+            <value name = "numAlpha">
+              <shadow type="indata">
+                <field name="indata1">1.0</field>
+              </shadow>
             </value>
           </block>
 
@@ -6898,19 +7003,46 @@
                 <field name="VAR">model</field>
               </block>
             </value>
+            <value name = "NAME2">
+              <shadow type="indata">
+                <field name="indata1">100</field>
+              </shadow>
+            </value>
+            <value name = "NAME3">
+              <shadow type="indata">
+                <field name="indata1">0</field>
+              </shadow>
+            </value>
           </block>
+
           <block type="gradientboostingregressor">
             <value name="NAME">
               <block type="variables_get">
                 <field name="VAR">model</field>
               </block>
             </value>
+            <value name = "NAME2">
+              <shadow type="indata">
+                <field name="indata1">100</field>
+              </shadow>
+            </value>
           </block>
+
           <block type="randomforestregressor">
             <value name="NAME">
               <block type="variables_get">
                 <field name="VAR">model</field>
               </block>
+            </value>
+            <value name = "NAME2">
+              <shadow type="indata">
+                <field name="indata1">100</field>
+              </shadow>
+            </value>
+            <value name = "NAME3">
+              <shadow type="indata">
+                <field name="indata1">0</field>
+              </shadow>
             </value>
           </block>
 
@@ -6920,18 +7052,21 @@
                 <field name="VAR">model</field>
               </block>
             </value>
+            <value name = "value1">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
           </block>
  
           <block type="linearsvr">
-          </block>
-
-          <block type="sklearn_mlp_regressor">
-            <value name="sklearn_mlp_lib_val">
-              <block type="variables_get">
-                <field name="VAR">model</field>
-              </block>
+            <value name = "NAME">
+              <shadow type="indata">
+                <field name="indata1">0</field>
+              </shadow>
             </value>
           </block>
+
 
         </category>
 
@@ -6942,14 +7077,31 @@
                 <field name="VAR">model</field>
               </block>
             </value>
+            <value name = "numSeed">
+              <shadow type="indata">
+                <field name="indata1">0</field>
+              </shadow>
+            </value>
           </block>
+
           <block type="logistic_regression_cv">
             <value name="model">
               <block type="variables_get">
                 <field name="VAR">model</field>
               </block>
             </value>
+            <value name = "numCv">
+              <shadow type="indata">
+                <field name="indata1">5</field>
+              </shadow>
+            </value>
+            <value name = "numSeed">
+              <shadow type="indata">
+                <field name="indata1">0</field>
+              </shadow>
+            </value>
           </block>
+
           <block type="ridge_classifier">
             <value name="model">
               <block type="variables_get">
@@ -6963,20 +7115,29 @@
                 <field name="VAR">model</field>
               </block>
             </value>
-          </block>
-          <block type="perceptron">
-            <value name="model">
-              <block type="variables_get">
-                <field name="VAR">model</field>
-              </block>
+            <value name = "numEpochs">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
             </value>
           </block>
+        
 
           <block type="decision">
             <value name="model">
               <block type="variables_get">
                 <field name="VAR">model</field>
               </block>
+            </value>
+            <value name = "depth">
+              <shadow type="indata">
+                <field name="indata1">10</field>
+              </shadow>
+            </value>
+            <value name = "seed">
+              <shadow type="indata">
+                <field name="indata1">0</field>
+              </shadow>
             </value>
           </block>
 
@@ -6986,19 +7147,46 @@
                 <field name="VAR">model</field>
               </block>
             </value>
+            <value name = "NAME2">
+              <shadow type="indata">
+                <field name="indata1">50</field>
+              </shadow>
+            </value>
+            <value name = "NAME3">
+              <shadow type="indata">
+                <field name="indata1">0</field>
+              </shadow>
+            </value>
           </block>
+
           <block type="gradientboostingclassifier">
             <value name="NAME">
               <block type="variables_get">
                 <field name="VAR">model</field>
               </block>
             </value>
+            <value name = "NAME2">
+              <shadow type="indata">
+                <field name="indata1">100</field>
+              </shadow>
+            </value>
           </block>
+
           <block type="randomforestclassifier">
             <value name="NAME">
               <block type="variables_get">
                 <field name="VAR">model</field>
               </block>
+            </value>
+            <value name = "NAME2">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+            <value name = "NAME3">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
             </value>
           </block>
 
@@ -7008,18 +7196,22 @@
                 <field name="VAR">model</field>
               </block>
             </value>
+            <value name = "value1">
+              <shadow type="indata">
+                <field name="indata1">5</field>
+              </shadow>
+            </value>
           </block>
  
           <block type="linearsvc">
-          </block>
-
-          <block type="sklearn_mlp_classifier">
-            <value name="sklearn_mlp_lib_val">
-              <block type="variables_get">
-                <field name="VAR">model</field>
-              </block>
+            <value name = "NAME">
+              <shadow type="indata">
+                <field name="indata1">0</field>
+              </shadow>
             </value>
           </block>
+
+          
         </category>
 
       <category name="군집화" colour="%{BKY_SCIKITLEARN_HUE}">
@@ -7029,6 +7221,11 @@
               <field name="VAR">model</field>
             </block>
           </value>
+          <value name = "cnt">
+            <shadow type="indata">
+              <field name="indata1">2</field>
+            </shadow>
+          </value>
         </block>
 
         <block type="dbscan">
@@ -7036,6 +7233,11 @@
             <block type="variables_get">
               <field name="VAR">model</field>
             </block>
+          </value>
+          <value name = "DBSCAN_EPS">
+            <shadow type="indata">
+              <field name="indata1">0.5</field>
+            </shadow>
           </value>
         </block>
 
@@ -7045,7 +7247,41 @@
               <field name="VAR">model</field>
             </block>
           </value>
+          <value name = "Isolation_Forest_estimators">
+            <shadow type="indata">
+              <field name="indata1">100</field>
+            </shadow>
+          </value>
+          <value name = "Isolation_Forest_connection">
+            <shadow type="indata">
+              <field name="indata1">0.5</field>
+            </shadow>
+          </value>
+          <value name = "Isolation_Forest_randomstate">
+            <shadow type="indata">
+              <field name="indata1">0</field>
+            </shadow>
+          </value>
         </block>
+
+        <label text="K-Means 속성 추출"></label>
+
+        <block type="k_means_inertia">
+          <value name="model">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="k_means_centroid">
+          <value name="model">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+        </block>
+
       </category>
 
       <category name="평가지표" colour="%{BKY_SCIKITLEARN_HUE}">
@@ -7058,7 +7294,7 @@
           </value>
           <value name="yp">
             <block type="variables_get">
-              <field name="VAR">preds</field>
+              <field name="VAR">y_pred</field>
             </block>
           </value>
         </block>
@@ -7070,7 +7306,7 @@
           </value>
           <value name="yp">
             <block type="variables_get">
-              <field name="VAR">preds</field>
+              <field name="VAR">y_pred</field>
             </block>
           </value>
         </block>
@@ -7082,24 +7318,24 @@
           </value>
           <value name="yp">
             <block type="variables_get">
-              <field name="VAR">preds</field>
+              <field name="VAR">y_pred</field>
             </block>
           </value>
         </block>
 
         <label text="고급 평가 지표"></label>
-        <block type="AUC">
+        <!-- <block type="AUC">
           <value name="yt">
             <block type="variables_get">
-              <field name="VAR">y_test</field>
+              <field name="VAR">x_data</field>
             </block>
           </value>
           <value name="yp">
             <block type="variables_get">
-              <field name="VAR">preds</field>
+              <field name="VAR">y_pred</field>
             </block>
           </value>
-        </block>
+        </block> -->
         <block type="AP">
           <value name="yt">
             <block type="variables_get">
@@ -7108,7 +7344,7 @@
           </value>
           <value name="yp">
             <block type="variables_get">
-              <field name="VAR">preds</field>
+              <field name="VAR">y_score</field>
             </block>
           </value>
         </block>
@@ -7120,7 +7356,7 @@
           </value>
           <value name="yp">
             <block type="variables_get">
-              <field name="VAR">preds</field>
+              <field name="VAR">y_pred</field>
             </block>
           </value>
         </block>
@@ -7132,7 +7368,7 @@
           </value>
           <value name="yp">
             <block type="variables_get">
-              <field name="VAR">preds</field>
+              <field name="VAR">y_pred</field>
             </block>
           </value>
         </block> 
@@ -7144,12 +7380,12 @@
           </value>
           <value name="x">
             <block type="variables_get">
-              <field name="VAR">x_train</field>
+              <field name="VAR">x_data</field>
             </block>
           </value>
           <value name="y">
             <block type="variables_get">
-              <field name="VAR">y_train</field>
+              <field name="VAR">y_data</field>
             </block>
           </value>
         </block>
@@ -7161,41 +7397,123 @@
           </value>
           <value name="classification_report_y_pred">
             <block type="variables_get">
-              <field name="VAR">preds</field>
+              <field name="VAR">y_pred</field>
             </block>
           </value>
         </block>
       </category>
 
       <!-- 계수, 절편 추출 등 -->
-      <category name="기타" colour="%{BKY_SCIKITLEARN_HUE}">
-        <label text="속성 추출"></label>
-        <block type="coef">
-          <value name="coef">
-            <block type="variables_get">
-              <field name="VAR">model</field>
-            </block>
-          </value>
-        </block>
-        <block type="intercept">
-          <value name="intercept">
-            <block type="variables_get">
-              <field name="VAR">model</field>
-            </block>
-          </value>
-        </block>
-        <block type="k_means_inertia">
+      <category name="신경망" colour="%{BKY_SCIKITLEARN_HUE}">
+        <block type="perceptron">
           <value name="model">
             <block type="variables_get">
               <field name="VAR">model</field>
             </block>
           </value>
+          <value name = "numSeed">
+            <shadow type="indata">
+              <field name="indata1">0</field>
+            </shadow>
+          </value>
         </block>
-        <block type="k_means_centroid">
+
+        <block type="sklearn_mlp_regressor">
+          <value name="sklearn_mlp_lib_val">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+          <value name = "sklearn_mlp_hidden_layer_sizes">
+            <shadow type="indata">
+              <field name="indata1">64, 32</field>
+            </shadow>
+          </value>
+          <value name = "sklearn_MLP_Max_iter">
+            <shadow type="indata">
+              <field name="indata1">100</field>
+            </shadow>
+          </value>
+          <value name = "sklearn_MLP_random_state">
+            <shadow type="indata">
+              <field name="indata1">0</field>
+            </shadow>
+          </value>
+          <value name = "sklearn_MLP_batch_size">
+            <shadow type="indata">
+              <field name="indata1">32</field>
+            </shadow>
+          </value>
+          <value name = "sklearn_MLP_learning_rate">
+            <shadow type="indata">
+              <field name="indata1">0.001</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="sklearn_mlp_classifier">
+          <value name="sklearn_mlp_lib_val">
+            <block type="variables_get">
+              <field name="VAR">model</field>
+            </block>
+          </value>
+          <value name = "sklearn_mlp_hidden_layer_sizes">
+            <shadow type="indata">
+              <field name="indata1">64, 32</field>
+            </shadow>
+          </value>
+          <value name = "sklearn_MLP_Max_iter">
+            <shadow type="indata">
+              <field name="indata1">100</field>
+            </shadow>
+          </value>
+          <value name = "sklearn_MLP_random_state">
+            <shadow type="indata">
+              <field name="indata1">0</field>
+            </shadow>
+          </value>
+          <value name = "sklearn_MLP_batch_size">
+            <shadow type="indata">
+              <field name="indata1">32</field>
+            </shadow>
+          </value>
+          <value name = "sklearn_MLP_learning_rate">
+            <shadow type="indata">
+              <field name="indata1">0.001</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="bernoullirbm">
           <value name="model">
             <block type="variables_get">
               <field name="VAR">model</field>
             </block>
+          </value>
+          <value name = "hi">
+            <shadow type="indata">
+              <field name="indata1">50</field>
+            </shadow>
+          </value>
+          <value name = "lr">
+            <shadow type="indata">
+              <field name="indata1">0.001</field>
+            </shadow>
+          </value>
+          <value name = "batch">
+            <shadow type="indata">
+              <field name="indata1">16</field>
+            </shadow>
+          </value>
+          <value name = "epochs">
+            <shadow type="indata">
+              <field name="indata1">100</field>
+            </shadow>
+          </value>
+          <value name = "seed">
+            <shadow type="indata">
+              <field name="indata1">0</field>
+            </shadow>
           </value>
         </block>
         <block type="mlp_loss">
@@ -7206,13 +7524,8 @@
           </value>
         </block>
 
-        <label text="남은 블록(Deprecated.)"></label>
-        <block type="fetch_openml"></block>        
-        <block type="kneighborstransformer_function"></block>
-        <block type="kneighbors_graph_function"></block>
-        <block type="tree_text"></block> 
-        <block type="metrics_fit_predict"></block>
-        <block type="bernoullirbm"></block>
+        <!-- 기존에 남은 블록들입니다. 처리하던가, 새로 추가하던가 해야할 듯. -- 2021-01-26 작성 -->
+        <!-- <label text="남은 블록(Deprecated.)"></label>
         <block type="normal">
           <value name="Normalization_data">
             <block type="variables_get">
@@ -7220,8 +7533,18 @@
             </block>
           </value>
         </block>
-
-
+        <block type="fetch_openml"></block>        
+        <block type="kneighborstransformer_function"></block>
+        <block type="kneighbors_graph_function"></block>
+        <block type="tree_text"></block> 
+        <block type="metrics_fit_predict"></block> -->
+        <!-- <block type="normal">
+          <value name="Normalization_data">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block> -->
       </category>
 
     </category>

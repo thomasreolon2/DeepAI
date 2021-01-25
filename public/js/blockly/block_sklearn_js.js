@@ -196,7 +196,7 @@ Blockly.JavaScript['kneighborsregressor_function'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE];
+    return code;
   };
 
 // MLP Regressor
