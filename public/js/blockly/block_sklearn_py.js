@@ -207,11 +207,9 @@ Blockly.Python['train_test_split'] = function (block) {
     // var value_y_train = Blockly.Python.valueToCode(block, 'y_train', Blockly.Python.ORDER_ATOMIC);
     // var value_y_test = Blockly.Python.valueToCode(block, 'y_test', Blockly.Python.ORDER_ATOMIC);
 
-    //var text_test_size = block.getFieldValue('test_size');
-    var text_test_size = Blockly.Python.valueToCode(block, 'test_size', Blockly.Python.ORDER_ATOMIC);
+    var text_test_size = block.getFieldValue('test_size');
     var dropdown_shuffle = block.getFieldValue('shuffle');
-    //var text_seed = block.getFieldValue('seed');
-    var text_seed = Blockly.Python.valueToCode(block, 'seed', Blockly.Python.ORDER_ATOMIC);
+    var text_seed = block.getFieldValue('seed');
     // TODO: Assemble Python into code variable.
     var code = value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= sklearn.model_selection.train_test_split(' + value_x_data + ',' + value_y_data + ',' + 'test_size=' + text_test_size + ', shuffle=' + dropdown_shuffle + ', random_state=' + text_seed + ')\n';
     return code;

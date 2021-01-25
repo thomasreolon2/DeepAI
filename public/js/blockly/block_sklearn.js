@@ -205,12 +205,12 @@ Blockly.Blocks['train_test_split'] = {
         // this.appendValueInput("y_train").setCheck(null).appendField("y_train")
         // this.appendValueInput("y_test").setCheck(null).appendField("y_test");
         this.appendDummyInput().appendField('x_data').appendField(new Blockly.FieldVariable("x_data"), "x_data")
-        .appendField('y_data').appendField(new Blockly.FieldVariable("y_data"), "y_data");
-        this.appendDummyInput().appendField('x_train').appendField(new Blockly.FieldVariable("x_train"), "x_train")
-        .appendField('y_train').appendField(new Blockly.FieldVariable("y_train"), "y_train")
+        .appendField('x_train').appendField(new Blockly.FieldVariable("x_train"), "x_train")
+        .appendField('x_test').appendField(new Blockly.FieldVariable("x_test"), "x_test");
 
-        this.appendDummyInput().appendField('x_test').appendField(new Blockly.FieldVariable("x_test"), "x_test")
-        .appendField('y_test').appendField(new Blockly.FieldVariable("y_test"), "y_test")
+        this.appendDummyInput().appendField('y_data').appendField(new Blockly.FieldVariable("y_data"), "y_data")
+        .appendField('y_train').appendField(new Blockly.FieldVariable("y_train"), "y_train")
+        .appendField('y_test').appendField(new Blockly.FieldVariable("y_test"), "y_test");
 
         this.appendDummyInput().appendField("test_size").appendField(new Blockly.FieldTextInput("0.2"), "test_size")
         .appendField("data_shuffle").appendField(new Blockly.FieldDropdown([
