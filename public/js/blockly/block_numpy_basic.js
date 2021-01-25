@@ -100,12 +100,32 @@ Blockly.Blocks['numpy_searching'] = {
 };
 
 //numpy_random_sample
-Blockly.Blocks['numpy_random_sample'] = {
+Blockly.Blocks['numpy_random_sample_basic'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 단순 랜덤]")
-        .appendField(new Blockly.FieldDropdown([["임의 값(rand)","numpy_Random_sample_rand"], ["표준 정규분포(randn)","numpy_Random_sample_randn"], ["임의 정수(randint)","numpy_Random_sample_randint"], ["0~1 부동 소수점(random)","numpy_Random_sample_random"], ["배열 무작위(choice)","numpy_Random_sample_choice"], ["임의 바이트(bytes)","numpy_Random_sample_bytes"]]), "numpy_Random_sample_opt");
-    this.appendValueInput("numpy_Random_sample_val")
+        .appendField(new Blockly.FieldDropdown([["임의 값(rand)","numpy_Random_sample_rand"], ["표준 정규분포(randn)","numpy_Random_sample_randn"], ["배열 무작위(choice)","numpy_Random_sample_choice"]]), "numpy_Random_sample_opt");
+    this.appendValueInput("parmeter1")
+        .setCheck(null);
+    this.appendValueInput("parmeter2")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['numpy_random_randint_basic'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[np 단순 랜덤] 임의정수(randint)")
+    this.appendValueInput("parmeter1")
+        .setCheck(null);
+    this.appendValueInput("parmeter2")
+        .setCheck(null);
+    this.appendValueInput("parmeter3")
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
@@ -184,11 +204,10 @@ Blockly.Blocks['numpy_random_distributions_third'] = {
 
 
 //numpy_random_generator
-Blockly.Blocks['numpy_random_generator'] = {
+Blockly.Blocks['numpy_random_generator_basic'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[np 생성기]")
-        .appendField(new Blockly.FieldDropdown([["규칙 난수(seed)","numpy_Random_generator_seed"], ["생성기 내부 상태(get_state)","numpy_Random_generator_get_state"], ["튜플 내부상태 설정(set_state)","numpy_Random_generator_set_state"]]), "numpy_Random_generator_opt");
+        .appendField("[np 생성기] 규칙난수(seed)")
     this.appendValueInput("numpy_Random_generator_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -198,6 +217,8 @@ Blockly.Blocks['numpy_random_generator'] = {
  this.setHelpUrl("");
   }
 };
+
+
 
 
 //numpy_mathematical_functions
@@ -666,11 +687,11 @@ Blockly.Blocks['numpy_ones_and_zeros_basic'] = {
 };
 
 //numpy_from_existing_data
-Blockly.Blocks['numpy_from_existing_data'] = {
+Blockly.Blocks['numpy_from_existing_data_basic'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 기존 데이터]")
-        .appendField(new Blockly.FieldDropdown([["배열생성(array)","np.array"], ["입력된 배열(asarray)","np.asarray"], ["입력을 행렬(asmatrix)","np.asmatrix"], ["복사(copy)","np.copy"], ["버퍼를 1차원(frombuffer)","np.frombuffer"], ["텍스트 파일로드(loadtxt)","np.loadtxt"]]), "numpy_From_existing_data_opt");
+        .appendField(new Blockly.FieldDropdown([ ["복사(copy)","np.copy"],["배열생성(array)","np.array"], ["입력된 배열(asarray)","np.asarray"], ["입력을 행렬(asmatrix)","np.asmatrix"], ["버퍼를 1차원(frombuffer)","np.frombuffer"], ["텍스트 파일로드(loadtxt)","np.loadtxt"]]), "numpy_From_existing_data_opt");
     this.appendValueInput("numpy_From_existing_data_val")
         .setCheck(null);
     this.setInputsInline(true);

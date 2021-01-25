@@ -2432,6 +2432,7 @@
         </value>
       </block>
 
+      <label text="배열"></label>
       <!-- 배열생성 / 0 & 1 --> 
       <block type="numpy_ones_and_zeros_basic">
         <value name="parameter1"> 
@@ -2517,7 +2518,56 @@
         </value>  
       </block> 
 
-      <label text="연산"></label>
+      
+
+      <block type="numpy_from_existing_data">
+        <value name="numpy_From_existing_data_val"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>  
+      </block> 
+
+      <label text="랜덤&정렬"></label>
+      <block type="numpy_random_generator_basic">
+        <value name="numpy_Random_generator_val"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>  
+      </block> 
+
+      <block type="numpy_random_sample_basic">
+        <value name="parmeter1"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>  
+        <value name="parmeter2"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>  
+      </block> 
+
+      <block type="numpy_random_randint_basic">
+        <value name="parmeter1"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>  
+        <value name="parmeter2"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value> 
+        <value name="parmeter3"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>  
+      </block> 
+      <label text="수학 & 통계"></label>
        <!-- 넘파이 기본연산 -->
        <block type="numpy_operator_basic">
         <value name="parameter1"> 
@@ -2565,6 +2615,22 @@
         </value> 
       </block>
       <!-- 행렬 연산 -->
+      
+      <!-- 통계 / 평균 & 분산  -->
+      <block type="numpy_averages_variances_basic">
+        <value name="parameter1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value> 
+        <value name="parameter2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 통계 / 평균 & 분산  -->
+      
       <label text="인덱스/값 검색"></label>
        <!-- 넘파이 인덱스/값 검색 -->
        <block type="numpy_index_values_basic">
@@ -2601,20 +2667,7 @@
       <!-- 넘파이 인덱스/값 검색 인자 두개-->
 
 
-      <label text=""></label>
-      <!-- 통계 / 평균 & 분산  -->
-      <block type="numpy_averages_variances_basic">
-        <value name="parameter1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-        <value name="parameter2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+      
 
       <!-- 통계 / 평균 & 분산  -->
 

@@ -158,9 +158,10 @@ Blockly.JavaScript['numpy_searching'] = function(block) {
 
 
 //numpy_random_sample
-Blockly.JavaScript['numpy_random_sample'] = function(block) {
+Blockly.JavaScript['numpy_random_sample_basic'] = function(block) {
   var dropdown_numpy_random_sample_opt = block.getFieldValue('numpy_Random_sample_opt');
-  var value_numpy_random_sample_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_sample_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_numpy_random_sample_val = Blockly.JavaScript.valueToCode(block, 'parmeter1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_numpy_random_sample_val2 = Blockly.JavaScript.valueToCode(block, 'parmeter2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
  
   var code;
@@ -194,6 +195,17 @@ Blockly.JavaScript['numpy_random_sample'] = function(block) {
     break;
   }
   // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['numpy_random_randint_basic'] = function(block) {
+  var value_numpy_random_sample_val = Blockly.JavaScript.valueToCode(block, 'parmeter1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_numpy_random_sample_val2 = Blockly.JavaScript.valueToCode(block, 'parmeter2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_numpy_random_sample_val3 = Blockly.JavaScript.valueToCode(block, 'parmeter3', Blockly.JavaScript.ORDER_ATOMIC);
+  var code;
+
+  code = `np.random.randint(${value_numpy_random_sample_val})`;  
+
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -385,28 +397,12 @@ Blockly.JavaScript['numpy_random_distributions_third'] = function(block) {
 
 
 //numpy_random_generator
-Blockly.JavaScript['numpy_random_generator'] = function(block) {
-  var dropdown_numpy_random_generator_opt = block.getFieldValue('numpy_Random_generator_opt');
+Blockly.JavaScript['numpy_random_generator_basic'] = function(block) {
   var value_numpy_random_generator_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_generator_val', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code;
-  switch (dropdown_numpy_random_generator_opt){
-    case "numpy_Random_generator_seed": 
-    code = `np.random.seed(${value_numpy_random_generator_val})`;  
-    break; 
-
-    case "numpy_Random_generator_get_state": 
-    code = `np.random.get_state(${value_numpy_random_generator_val})`;  
-    break;
-
-    case "numpy_Random_generator_set_state":
-    code = `np.random.set_state(${value_numpy_random_generator_val})`;  
-    break;
-
-    default:
-    break;
-  }
-  // TODO: Change ORDER_NONE to the correct strength.
+  code = `np.random.seed(${value_numpy_random_generator_val})`;  
+   
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
