@@ -89,12 +89,13 @@ Blockly.Blocks['block_calculations'] = {
 // 판다스 정렬
 Blockly.Blocks['pandas_sort'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField("[정렬]")
-          .appendField(new Blockly.FieldVariable("df"), "VAR")
-          .appendField(".");
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown([["인덱스정렬(sort_index)","sort_index"],["값정렬(sort_values)","sort_values"]]), "DROP")
+        this.appendDummyInput()
+            .appendField("[정렬]");
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".")
+          .appendField(new Blockly.FieldDropdown([["인덱스정렬(sort_index)","sort_index"],["값정렬(sort_values)","sort_values"],["상위n개(nlargest))","nlargest"],["하위n개(nsmallest)","nsmallest"]]), "DROP")
           .appendField("(");
       this.appendValueInput("INPUT")
           .setCheck(null);

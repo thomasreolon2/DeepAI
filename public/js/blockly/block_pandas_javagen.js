@@ -198,12 +198,7 @@ Blockly.JavaScript['pandas_merge_lron'] = function (block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-Blockly.JavaScript['missing_value_inquiry'] = function (block) {
-  var variable_data = Blockly.JavaScript.valueToCode(block, 'mis_data', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
+
 
 
 
@@ -278,17 +273,8 @@ Blockly.JavaScript['pan_aray'] = function (block) {
   var code = variable_aray_array + '[' + variable_ary_a1 + ',' + variable_ary_a2 + ']\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
-// 상관관계 조회
-Blockly.JavaScript['corr_inquiry'] = function (block) {
-  var code = '\n';
-  return code;
-};
 
-// 데이터 정렬
-Blockly.JavaScript['df_sort'] = function (block) {
-  var code = '\n';
-  return code;
-};
+
 // 컬럼명 변경
 Blockly.JavaScript['df_col_rename'] = function(block) {
   var code = '\n';
@@ -322,6 +308,26 @@ Blockly.JavaScript['pandas_empty_nan'] = function(block) {
   var dropdown_drop = block.getFieldValue('DROP');
   // TODO: Assemble JavaScript into code variable.
   var code = `\n`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// 2020.01.26 head() 남지원
+Blockly.JavaScript['pandas_info'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// 2020.01.26 head() 남지원
+Blockly.JavaScript['pandas_astype'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${value_var}.astype(${value_input})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

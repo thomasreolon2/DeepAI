@@ -368,14 +368,6 @@ Blockly.Python['pan_aray'] = function (block) {
 // Pandas 2학년 파트 끝
 ////////////////////////////////////////////////////////////////////
 
-// 결측치 조회
-Blockly.Python['missing_value_inquiry'] = function (block) {
-  var variable_data = Blockly.Python.valueToCode(block, 'mis_data', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  ;
-  var code = "pd.DataFrame(" + variable_data + '.isnull().sum())\n';
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 // array
 
@@ -392,24 +384,6 @@ Blockly.Python['array_select'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-// 상관관계 조회
-Blockly.Python['corr_inquiry'] = function (block) {
-  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = variable_data + ".corr()" + "\n";
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
-// 데이터 정렬
-Blockly.Python['df_sort'] = function (block) {
-  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
-  var text_columns = block.getFieldValue('columns');
-  var dropdown_ascending = block.getFieldValue('ascending');
-  // TODO: Assemble Python into code variable.
-  //by=['sequence']
-  var code = variable_data + ".sort_values(by=['" + text_columns + "']," + "ascending=" + dropdown_ascending + ")\n";
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 // 컬럼명 변경 2020-10-15 정지현
 Blockly.Python['df_col_rename'] = function(block) {
@@ -458,6 +432,26 @@ Blockly.Python['pandas_empty_nan'] = function(block) {
   var dropdown_drop = block.getFieldValue('DROP');
   // TODO: Assemble Python into code variable.
   var code = `${value_var}.${dropdown_drop}`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// 2020.01.26 head() 남지원
+Blockly.Python['pandas_info'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble Python into code variable.
+  var code = `${value_var}.${dropdown_drop}`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// 2020.01.26 head() 남지원
+Blockly.Python['pandas_astype'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_var}.astype(${value_input})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

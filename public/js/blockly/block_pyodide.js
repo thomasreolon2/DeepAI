@@ -917,19 +917,6 @@ Blockly.Blocks['add_string'] = {
 };
 
 
-// 결측치 조회
-Blockly.Blocks['missing_value_inquiry'] = {
-    init: function () {
-        this.appendValueInput("data").setCheck(null)
-        this.appendDummyInput().appendField("결측치 조회하기");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
-
 Blockly.Blocks['vis_tree'] = {
     init: function () {
         this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.MATPLOT_VIS_TREE_1);

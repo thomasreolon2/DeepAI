@@ -3179,6 +3179,19 @@
           </value>
         </block>
         
+        <!-- csv프레임 -->
+        <block type="csvdataframe_J">
+          <value name="input_var">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="csv">
+            <block type="csv2"></block>
+          </value>
+        </block>
+
+
         <!-- 기초 조회 -->
         <block type="pandas_head">
           <value name="VAR">
@@ -3202,30 +3215,32 @@
         <!-- 부분범위 -->
         <block type="iloc_range"></block>
 
-
-      </category>
-
-      <category name="분석&집계" colour="%{BKY_PANDAS_HUE}">
-        <!-- 상관 관계 조회 -->
-        <block type="corr_inquiry"></block>
-
-        <block type="df_sort"></block>
-
-        <!-- 시리즈그룹화 -->
-        <block type="groupby_series">
-          <value name="colName">
-          <block type="groupby_series_"></block>
+        <!-- 정렬 -->
+        <block type="pandas_sort">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
           </value>
-        </block>
-
-        <block type = "df_reindex">
-          <value name = "LIST">
+          <value name="INPUT">
             <shadow type="indata">
               <field name="indata1"></field>
             </shadow>
           </value>
         </block> 
   
+
+      </category>
+
+      <category name="분석&집계" colour="%{BKY_PANDAS_HUE}">
+        <block type="pandas_info">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+
         <block type="block_sum_min">
           <value name="INPUT">
             <shadow type="indata">
@@ -3250,14 +3265,7 @@
           </value>
         </block> 
   
-        <block type="pandas_sort">
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block> 
-  
+        
         <block type="pandas_corr">
           <value name="INPUT1">
             <shadow type="indata">
@@ -3289,20 +3297,30 @@
 
       
       <category name="조작&가공" colour="%{BKY_PANDAS_HUE}">
-        
-        <!-- <block type="pyo_lib"></block> -->
-        <!-- csv프레임 -->
-        <block type="csvdataframe_J">
-          <value name="input_var">
+        <!-- reindex -->
+        <block type = "df_reindex">
+          <value name = "LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+
+        <!-- astype -->
+        <block type="pandas_astype">
+          <value name="VAR">
             <block type="variables_get">
               <field name="VAR">df</field>
             </block>
           </value>
-          <value name="csv">
-            <block type="csv2"></block>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
           </value>
         </block>
-
+        <!-- <block type="pyo_lib"></block> -->
+        
         <!-- 2020-09-09 양승국-->
       <!-- 일괄변경 -->
       <block type="pandas_conversion">
@@ -3381,7 +3399,7 @@
       </block>
 
       <!-- 열 추가 -->
-      <block type="df_add_col"></block>
+      <!-- <block type="df_add_col"></block> -->
 
       <!-- 행렬크기 -->
       <block type="row_count">
@@ -3429,15 +3447,7 @@
 
         <!-- <block type="column_count"></block> -->
         <!-- <block type="image_list"></block> -->
-        <!-- 결측치 조회 -->
-        <block type="missing_value_inquiry">
-          <value name="mis_data">
-            <block type="variables_get">
-              <field name="VAR">pd</field>
-            </block>
-          </value>
-        </block>
-        
+
           
         <label text="대기중"></label>
 
