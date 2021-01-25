@@ -8,7 +8,7 @@
 Blockly.Python['db_create'] = function (block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var value_SET1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
-  var value_SET2 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_SET2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = variable_list + '=' + '"CREATE TABLE ' + value_SET1 + '(' + value_SET2 + ')"';
   return code;
