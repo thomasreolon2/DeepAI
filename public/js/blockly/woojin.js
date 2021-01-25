@@ -119,7 +119,7 @@ Blockly.Blocks['sr_is_in'] = {
     init: function () {
       this.appendDummyInput()
           .appendField(Blockly.Msg.DATABASE_DELETEDB_1)
-          .appendField(new Blockly.FieldVariable("con"), "list1")
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
           .appendField(" = DROP TABLE IF EXISTS(");
       this.appendValueInput("SET0").setCheck(null);
       this.appendDummyInput()
