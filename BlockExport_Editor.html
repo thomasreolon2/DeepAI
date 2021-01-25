@@ -2225,78 +2225,78 @@
 
       <!-- 생성 -->
       <block type = "db_create">
-        <value name="SET0">
+        <value name="d1">
           <shadow type="indata">
             <field name="indata1">테이블</field>
           </shadow>
         </value>
+        <value name="d2">
+          <shadow type="indata">
+            <field name="indata1">변수 타입, 변수 타입</field>
+          </shadow>
+        </value>
       </block>
 
-      <!-- 삽입 -->
+      <!-- 추가 -->
       <block type = "db_insert">
-        <value name="SET0">
+        <value name="d1">
           <shadow type="indata">
             <field name="indata1">테이블</field>
           </shadow>
         </value>
-        <value name="SET1">
+        <value name="d2">
           <shadow type="indata">
-            <field name="indata1">빈칸</field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- 조회1 -->
-      <block type = "db_select1">
-        <value name="SET0">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <shadow type="indata">
-            <field name="indata1">조건</field>
+            <field name="indata1">?, ?</field>
           </shadow>
         </value>
       </block>
 
       <!-- 조회 -->
       <block type = "db_select2">
-        <value name="SET0">
+        <value name="d1">
           <shadow type="indata">
             <field name="indata1">필드</field>
           </shadow>
         </value>
-        <value name="SET1">
+        <value name="d2">
           <shadow type="indata">
             <field name="indata1">테이블</field>
           </shadow>
         </value>
-        <value name="SET2">
+      </block>
+
+      <!-- 조회1 -->
+      <block type = "db_select1">
+        <value name="d1">
           <shadow type="indata">
-            <field name="indata1">빈칸</field>
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+        <value name="d2">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="d3">
+          <shadow type="indata">
+            <field name="indata1">조건</field>
           </shadow>
         </value>
       </block>
 
       <!-- 수정 -->
       <block type = "db_update">
-        <value name="SET0">
+        <value name="d1">
           <shadow type="indata">
             <field name="indata1">테이블</field>
           </shadow>
         </value>
-        <value name="SET1">
+        <value name="d2">
           <shadow type="indata">
-            <field name="indata1">빈칸</field>
+            <field name="indata1">수정</field>
           </shadow>
         </value>
-        <value name="SET2">
+        <value name="d3">
           <shadow type="indata">
             <field name="indata1">조건</field>
           </shadow>
@@ -2306,12 +2306,12 @@
 
       <!-- 삭제 -->
       <block type = "db_delete">
-        <value name="SET0">
+        <value name="d1">
           <shadow type="indata">
             <field name="indata1">테이블</field>
           </shadow>
         </value>
-        <value name="SET1">
+        <value name="d2">
           <shadow type="indata">
             <field name="indata1">조건</field>
           </shadow>

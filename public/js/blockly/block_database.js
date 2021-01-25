@@ -3,10 +3,16 @@
   Blockly.Blocks['db_create'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField(Blockly.Msg.DATABASE_CREATE_1);
-      this.appendValueInput("SET0").appendField("CREATE TABLE IF NOT EXISTS").setCheck(null);
+          .appendField(Blockly.Msg.DATABASE_CREATE_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= CREATE TABLE");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendDummyInput().appendField("(");
+      this.appendValueInput("d2").setCheck(null);
+      this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
@@ -16,11 +22,14 @@
   Blockly.Blocks['db_insert'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField(Blockly.Msg.DATABASE_INSERT_1);
-      this.appendValueInput("SET0").appendField("INSERT INTO").setCheck(null);
-      this.appendValueInput("SET1").appendField("VALUES").setCheck(null);
+          .appendField(Blockly.Msg.DATABASE_INSERT_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= INSERT INTO");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").appendField("VALUES").setCheck(null);
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
@@ -30,12 +39,15 @@
   Blockly.Blocks['db_select1'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField(Blockly.Msg.DATABASE_SELECT_1);
-      this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
-      this.appendValueInput("SET1").appendField("FROM").setCheck(null);
-      this.appendValueInput("SET2").appendField("WHERE").setCheck(null);
+          .appendField(Blockly.Msg.DATABASE_SELECT_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= SELECT ");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").appendField("FROM").setCheck(null);
+      this.appendValueInput("d3").appendField("WHERE").setCheck(null);
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
@@ -45,12 +57,14 @@
   Blockly.Blocks['db_select2'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField(Blockly.Msg.DATABASE_SELECT_1);
-      this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
-      this.appendValueInput("SET1").appendField("FROM").setCheck(null);
-      this.appendValueInput("SET2").appendField("").setCheck(null);
+          .appendField(Blockly.Msg.DATABASE_SELECT_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= SELECT");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").appendField("FROM").setCheck(null);
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
@@ -60,12 +74,15 @@
   Blockly.Blocks['db_update'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField(Blockly.Msg.DATABASE_UPDATE_1);
-      this.appendValueInput("SET0").appendField("UPDATE").setCheck(null);
-      this.appendValueInput("SET1").appendField("SET").setCheck(null);
-      this.appendValueInput("SET2").appendField("WHERE").setCheck(null);
+          .appendField(Blockly.Msg.DATABASE_UPDATE_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= UPDATE");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").appendField("SET").setCheck(null);
+      this.appendValueInput("d3").appendField("WHERE").setCheck(null);
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
@@ -75,11 +92,14 @@
   Blockly.Blocks['db_delete'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField(Blockly.Msg.DATABASE_DELETE_1);
-      this.appendValueInput("SET0").appendField("DELETE FROM").setCheck(null);
-      this.appendValueInput("SET1").appendField("WHERE").setCheck(null);
+          .appendField(Blockly.Msg.DATABASE_DELETE_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= DELETE FROM");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").appendField("WHERE").setCheck(null);
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour(database);
       this.setTooltip("");
       this.setHelpUrl("");
