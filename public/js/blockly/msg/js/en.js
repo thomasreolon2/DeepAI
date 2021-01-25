@@ -1173,6 +1173,10 @@ Blockly.Msg['DATABASE_UPDATE_1'] = "[update]";
 Blockly.Msg['DATABASE_SELECT_1'] = "[select]";
 Blockly.Msg['DATABASE_DELETE_1'] = "[delete]";
 
+// --db 전우진
+Blockly.Msg['DATABASE_AUTOCOMMIT_1'] = "autocommit";
+Blockly.Msg['DATABASE_DELETEDB_1'] = "deleteDB";
+
 // 수학 math 이성주
 
 Blockly.Msg['MATH_IMPORT'] = "[import] math,statistics,random";
