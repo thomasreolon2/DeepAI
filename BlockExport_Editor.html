@@ -195,6 +195,12 @@
   <script src="/js/blockly/block_numpy1_py.js"></script>
   <script src="/js/blockly/block_numpy1_js.js"></script>
 
+  <!-- 넘파이 기본카테고리 블록 -->
+  <script src="/js/blockly/block_numpy_basic.js"></script>
+  <script src="/js/blockly/block_numpy_basic_py.js"></script>
+  <script src="/js/blockly/block_numpy_basic_js.js"></script>
+  <!-- 넘파이 기본카테고리 블록 -->
+
     <!-- 임시 블록 이성주 -->
     <script src="/js/blockly/seongju_mat.js"></script>
     <script src="/js/blockly/seongju_mat_py.js"></script>
@@ -2364,23 +2370,66 @@
       </block>
 
       <!-- 배열생성 / 0 & 1 --> 
-      <block type="numpy_ones_and_zeros">
-        <value name="numpy_Ones and zeros_val"> 
-          <block type="class_func_param"></block>
+      <block type="numpy_ones_and_zeros_basic">
+        <value name="parameter1"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="parameter2"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
         </value>  
       </block> 
       <!-- 배열생성 / 0 & 1 -->
 
       <!-- 배열생성 / 숫자 범위 --> 
-      <block type="numpy_numerical_ranges">
-        <value name="numpy_Numerical_ranges_val"> 
-          <block type="class_func_param"></block>
-        </value>  
+      <block type="numpy_numerical_ranges_basic1">
+        <value name="parameter1"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="parameter2"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value> 
+        <value name="parameter3"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value> 
       </block> 
       <!-- 배열생성 / 숫자 범위 -->
 
+      <!-- 배열생성 / 숫자 범위2 --> 
+      <block type="numpy_numerical_ranges_basic2">
+        <value name="parameter1"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="parameter2"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value> 
+
+      </block> 
+      <!-- 배열생성 / 숫자 범위2 -->
+
       <!-- np.reshape  -->
       <block type="numpy_reshape"> </block>
+
+      <block type="numpy_changing_array_shape_basic">
+        <value name="numpy_Changing_array_shape_val"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>  
+      </block>
 
       <!-- np.shape  -->
       <block type="numpy_shape">
@@ -2397,107 +2446,111 @@
       </block>
       <!-- np.shape  -->
 
-      <!-- np.reshape  -->
+      <block type="numpy_transpose_like_operations_basic">
+        <value name="numpy_Transpose_like_operations_val"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>  
+      </block> 
+
       <label text="연산"></label>
        <!-- 넘파이 기본연산 -->
-       <block type="numpy_operator">
-        <value name="numpy_operator_val">
-          <block type="parameter_two">
-            <value name="par1">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-            <value name="par2">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-          </block>
+       <block type="numpy_operator_basic">
+        <value name="parameter1"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="parameter2"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
         </value> 
       </block>
       <!-- 넘파이 기본연산 -->
 
       <!-- 수학 / 반올림 --> 
-        <block type="numpy_rounding">
+        <block type="numpy_rounding_basic">
           <value name="numpy_Rounding_val"> 
-            <block type="class_func_param"></block>
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
           </value>  
         </block> 
         <!-- 수학 / 반올림  -->
 
         <!-- 수학 / 지수 & 로그 --> 
-        <block type="numpy_exponents_logarithms">
+        <block type="numpy_exponents_logarithms_basic">
           <value name="numpy_Exponents_logarithms_val"> 
-            <block type="class_func_param"></block>
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
           </value>  
         </block> 
       <!-- 행렬 연산-->
-      <block type="numpy_array_operator">
-        <value name="numpy_array_operator_val">
-          <block type="parameter_two">
-            <value name="par1">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-            <value name="par2">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-          </block>
+      <block type="numpy_array_operator_basic">
+        <value name="parameter1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value> 
+        <value name="parameter2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
         </value> 
       </block>
       <!-- 행렬 연산 -->
       <label text="인덱스/값 검색"></label>
        <!-- 넘파이 인덱스/값 검색 -->
-       <block type="numpy_index_values">
+       <block type="numpy_index_values_basic">
         <value name="numpy_index_values_val">
-          <block type="class_func_param"></block>
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
         </value> 
       </block>
+      <!-- np.take -->
+      <block type="numpy_take_basic">
+        <value name="parameter1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value> 
+        <value name="parameter2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value> 
+      </block>
+      
       <!-- 넘파이 인덱스/값 검색 -->
 
        <!-- 넘파이 인덱스/값 검색 인자 두개-->
        <block type="numpy_index_values2">
         <value name="numpy_index_values_val">
-          <block type="parameter_two">
-            <value name="par1">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-            <value name="par2">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-          </block>
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
         </value> 
       </block>
       <!-- 넘파이 인덱스/값 검색 인자 두개-->
 
-       <!-- 넘파이 인덱스/값 검색 인자 하나 2021.01.21 주석처리 (남지원) -->
-       <!-- <block type="numpy_index_values3">
-        <value name="numpy_index_values_val">
-          <block type="parameter_one">
-            <value name="par1">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-          </block>
-        </value> 
-      </block> -->
-      <!-- 넘파이 인덱스/값 검색 인자 하나-->
+
       <label text=""></label>
       <!-- 통계 / 평균 & 분산  -->
-      <block type="numpy_averages_variances">
-        <value name="numpy_Averages_variances_val"> 
-          <block type="class_func_param">
-          </block>
-        </value>  
+      <block type="numpy_averages_variances_basic">
+        <value name="parameter1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value> 
+        <value name="parameter2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
       </block>
 
       <!-- 통계 / 평균 & 분산  -->
