@@ -1183,6 +1183,9 @@ Blockly.Msg['DATABASE_UPDATE_1'] = "[수정]";
 Blockly.Msg['DATABASE_SELECT_1'] = "[조회]";
 Blockly.Msg['DATABASE_DELETE_1'] = "[삭제]";
 
+// --db 전우진
+Blockly.Msg['DATABASE_AUTOCOMMIT_1'] = "자동커밋";
+Blockly.Msg['DATABASE_DELETEDB_1'] = "DB삭제";
 
 // 수학 math 이성주
 
