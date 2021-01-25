@@ -3181,7 +3181,7 @@
             </block>
           </value>
         </block>
-        
+
         <!-- empty, nan값 조회 -->
         <block type="pandas_empty_nan">
           <value name="VAR">
@@ -3196,21 +3196,13 @@
         <!-- 부분범위 -->
         <block type="iloc_range"></block>
 
-        <!-- 통계 정보 조회 -->
-        <block type="stats_inquiry">
-          <value name="inq_data">
-            <block type="variables_get">
-              <field name="VAR">pd</field>
-            </block>
-          </value>
-        </block>
-
-        <!-- 상관 관계 조회 -->
-        <block type="corr_inquiry"></block>
 
       </category>
 
       <category name="분석&집계" colour="%{BKY_PANDAS_HUE}">
+        <!-- 상관 관계 조회 -->
+        <block type="corr_inquiry"></block>
+
         <block type="df_sort"></block>
 
         <!-- 시리즈그룹화 -->

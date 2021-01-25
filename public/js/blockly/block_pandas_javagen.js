@@ -205,12 +205,6 @@ Blockly.JavaScript['missing_value_inquiry'] = function (block) {
   return code;
 };
 
-Blockly.JavaScript['stats_inquiry'] = function (block) {
-  var variable_data = Blockly.JavaScript.valueToCode(block, 'inq_data', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
 
 
 Blockly.JavaScript['groupby_series'] = function (block) {

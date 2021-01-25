@@ -376,13 +376,7 @@ Blockly.Python['missing_value_inquiry'] = function (block) {
   var code = "pd.DataFrame(" + variable_data + '.isnull().sum())\n';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
-// 통계 정보 조회
-Blockly.Python['stats_inquiry'] = function (block) {
-  var variable_data = Blockly.Python.valueToCode(block, 'inq_data', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = "pd.DataFrame(" + variable_data + ').describe()\n';
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
+
 // array
 
 Blockly.Python['array_select'] = function (block) {

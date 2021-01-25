@@ -929,18 +929,7 @@ Blockly.Blocks['missing_value_inquiry'] = {
         this.setHelpUrl("");
     }
 };
-// 통계 정보 조회
-Blockly.Blocks['stats_inquiry'] = {
-    init: function () {
-        this.appendValueInput("data").setCheck(null)
-        this.appendDummyInput().appendField("통계 정보 조회하기");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(230);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-};
+
 Blockly.Blocks['vis_tree'] = {
     init: function () {
         this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.MATPLOT_VIS_TREE_1);

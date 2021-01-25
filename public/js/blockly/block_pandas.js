@@ -1021,18 +1021,7 @@ Blockly.Blocks['missing_value_inquiry'] = {
     this.setHelpUrl("");
   }
 };
-// 통계 정보 조회
-Blockly.Blocks['stats_inquiry'] = {
-  init: function () {
-    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_STATS_INQUIRY);
-    this.appendValueInput("inq_data").setCheck(null)
-    this.setColour(pandas_color);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
+
 // array
 Blockly.Blocks['array_select'] = {
   /**
