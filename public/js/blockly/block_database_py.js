@@ -160,3 +160,21 @@ Blockly.Python['db_close'] = function (block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
+
+//2020-12-29 양승국
+Blockly.Python['create_data1'] = function (block) {
+  var variable_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + ' = (' + value_text + ')\n';
+  return code;
+};
+
+Blockly.Python['db_with'] = function(a) {
+  var set0 = Blockly.Python.valueToCode(a, "set0", Blockly.Python.ORDER_CONDITIONAL);
+  var d = Blockly.Python.statementToCode(a, "in");
+  // d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
+  d = Blockly.Python.addLoopTrap(d, a);
+  var code = "with " + set0  + ":\n" + d;
+  return code;
+};

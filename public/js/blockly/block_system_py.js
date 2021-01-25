@@ -88,9 +88,9 @@ Blockly.Python['os_dir'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
   var dropdown_directory = block.getFieldValue('directory');
 
-  var code = dropdown_directory + "('" + value_name + "')";
+  var code = dropdown_directory + "('" + value_name + "')\n";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Python['os_chdir'] = function (block) {
@@ -113,9 +113,9 @@ Blockly.Python['os_rename'] = function (block) {
   var value_name1 = Blockly.Python.valueToCode(block, 'va1', Blockly.Python.ORDER_ATOMIC);
   var value_name2 = Blockly.Python.valueToCode(block, 'va2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = "os.rename"+ "('" + value_name1 + "','" + value_name2 + "')";
+  var code = "os.rename"+ "('" + value_name1 + "','" + value_name2 + "')\n";
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Python['shutil_file'] = function (block) {

@@ -1173,6 +1173,7 @@ Blockly.Msg['DATABASE_INSERT_1'] = "[insert]";
 Blockly.Msg['DATABASE_UPDATE_1'] = "[update]";
 Blockly.Msg['DATABASE_SELECT_1'] = "[select]";
 Blockly.Msg['DATABASE_DELETE_1'] = "[delete]";
+Blockly.Msg['DATABASE_CREATE_DATA'] = "[DATA]";
 
 // --db 전우진
 Blockly.Msg['DATABASE_AUTOCOMMIT_1'] = "autocommit";

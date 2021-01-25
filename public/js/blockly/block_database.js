@@ -310,3 +310,42 @@
       this.setHelpUrl("");
     }
   };
+
+    //2020-12-29 양승국 블록 추가
+    Blockly.Blocks['create_data1'] = {
+      init: function () {
+          this.appendValueInput("list")
+              .setCheck(null)
+              .appendField(Blockly.Msg.DATABASE_CREATE_DATA);
+          this.appendValueInput("text")
+              .setCheck(null)
+              .appendField(" = (");
+          this.appendDummyInput()
+              .appendField(")");
+          this.setInputsInline(true);
+          this.setPreviousStatement(true, null);
+          this.setNextStatement(true, null);
+          this.setColour("205");//"%{BKY_COLLECTION_HUE}");
+          this.setTooltip("Create a list");
+          this.setHelpUrl("");
+      }
+    };
+
+    Blockly.Blocks['db_with'] = {
+      init: function() {
+        this.appendDummyInput()
+            .appendField("with");
+        this.appendValueInput("set0")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(":");
+        this.appendStatementInput("in")
+            .setCheck(null);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("205");
+     this.setTooltip("");
+     this.setHelpUrl("");
+      }
+    };

@@ -138,3 +138,21 @@
     var code = '\n';
     return code;
   };
+
+  //2020-12-29 양승국
+Blockly.JavaScript['create_data1'] = function (block) {
+  var variable_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble .JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['db_with'] = function(a) {
+  var set0 = Blockly.JavaScript.valueToCode(a, "set0", Blockly.JavaScript.ORDER_CONDITIONAL);
+  var set1 = Blockly.JavaScript.valueToCode(a, "set1", Blockly.JavaScript.ORDER_CONDITIONAL);
+  var d = Blockly.JavaScript.statementToCode(a, "in");
+  // d = Blockly.JavaScript.addLoopTrap(d, a) || Blockly.JavaScript.PASS;
+  d = Blockly.JavaScript.addLoopTrap(d, a);
+  return "\n";
+};

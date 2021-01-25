@@ -654,6 +654,7 @@
           </shadow>
         </value>
       </block>
+
       <!-- 파이썬 부분 코드(만능)-->
       <block type="indata"></block>
 
@@ -663,9 +664,17 @@
         <block type="os_library"></block>
         <label text="os & os.path & shutil"></label>
         
-        
-        <block type="os_getcwd"></block>
-        <block type="os_listdir"></block>
+        <block type="printf">
+          <value name="content1">
+            <block type="os_getcwd"></block>
+          </value>
+        </block>
+
+        <block type="printf">
+          <value name="content1">
+            <block type="os_listdir"></block>
+          </value>
+        </block>
         
         <block type="os_dir">
           <value name="va">
@@ -840,6 +849,7 @@
         </block>
         <!-- 파일 닫기 -->
         <block type = "fd_close"></block>
+
         <!-- with -->
         <block type = "withs">
           <value name="set0">
@@ -2237,6 +2247,27 @@
               </shadow>
             </value>
            </block>
+
+           <block type = "create_data1">
+            <value name="list">
+              <block type="variables_get">
+                <field name="VAR">data</field>
+              </block>
+            </value>  
+            <value name="text">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
+
+          <block type = "db_with">
+            <value name="set0">
+              <block type="variables_get">
+                <field name="VAR">con</field>
+              </block>
+            </value>  
+          </block>
 
       <!-- 생성 -->
       <block type = "db_create">
