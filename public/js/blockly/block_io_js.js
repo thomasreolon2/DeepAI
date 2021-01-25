@@ -59,6 +59,7 @@ Blockly.JavaScript['fd_open'] = function (block) {
 
 Blockly.JavaScript['fd_read'] = function (block) {
   var dropdown_set_menu = block.getFieldValue('set_menu');
+  var dropdown_set_menu1= block.getFieldValue('set_menu1');
   var variable_list1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var variable_list2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble .JavaScript into code variable.

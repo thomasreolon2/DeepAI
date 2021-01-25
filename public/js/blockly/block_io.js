@@ -168,6 +168,40 @@ Blockly.Blocks['fd_read'] = {
   }
 };
 
+Blockly.Blocks['fd_read'] = {
+  init: function () {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.FILE_READ)
+          .appendField(new Blockly.FieldVariable("data"), "list1")
+          .appendField(" = ")
+          .appendField(new Blockly.FieldVariable("f"), "list2")
+          .appendField(new Blockly.FieldDropdown([
+            [
+              ".read()", ".read()"
+            ],
+            [
+              ".readline()", ".readline()"
+            ],
+            [
+              ".readlines()", ".readlines()"
+            ]
+          ]), "set_menu")
+          .appendField(new Blockly.FieldDropdown([
+            [
+              "없음", ""
+            ],
+            [
+            ".splitlines()", ".splitlines()"
+            ]
+      ]), "set_menu1");        
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_LIST_HUE}");//"%{BKY_COLLECTION_HUE}");
+      this.setTooltip("Create a list");
+      this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['fd_write'] = {
     init: function () {
         this.appendDummyInput()
