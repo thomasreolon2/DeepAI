@@ -693,6 +693,7 @@ Blockly.Msg['NUMPY_CALCULATION_4'] = "array mulitply ( np.multiply )";
 Blockly.Msg['NUMPY_CALCULATION_5'] = "array divide ( np.divide  )";
 Blockly.Msg['NUMPY_CALCULATION_6'] = "array remainder ( np.remainder )";
 Blockly.Msg['NUMPY_CALCULATION_7'] = "array reciprocal ( np.reciprocal  )";
+Blockly.Msg['NUMPY_CALCULATION_8'] = "array sqrt ( np.sqrt  )";
 
 Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[ index / value search ]";
 Blockly.Msg['NUMPY_INDEX_VALUES_111'] = "[ index / value search ]";

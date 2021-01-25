@@ -700,6 +700,7 @@ Blockly.Msg['NUMPY_CALCULATION_4'] = "요소별곱(multiply)";
 Blockly.Msg['NUMPY_CALCULATION_5'] = "요소별나눗셈(divide)";
 Blockly.Msg['NUMPY_CALCULATION_6'] = "요소별나머지 반환(remainder)";
 Blockly.Msg['NUMPY_CALCULATION_7'] = "배열 역수(reciprocal)";
+Blockly.Msg['NUMPY_CALCULATION_8'] = "요소별제곱근(sqrt)";
 
 Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[np 순서]";
 Blockly.Msg['NUMPY_INDEX_VALUES_11'] = "[np 인덱스 검색]";
