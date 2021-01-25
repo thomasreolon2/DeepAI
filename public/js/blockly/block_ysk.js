@@ -46,13 +46,13 @@ Blockly.Blocks['df_bb'] = {
       this.appendDummyInput().appendField("[병합하기]").appendField(new Blockly.FieldVariable("df"), "list");
       this.appendDummyInput().appendField(new Blockly.FieldDropdown([
           [
-              "(merge)", ".merge("
+              "merge", ".merge("
           ],
           [
-            "(concat)", ".concat("
+            "concat", ".concat("
           ],
           [
-            "(append)", ".append("
+            "append", ".append("
           ]
       ]), "collection");
       this.appendValueInput("LIST").appendField().setCheck(null);

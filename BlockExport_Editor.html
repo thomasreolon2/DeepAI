@@ -3228,8 +3228,28 @@
             </shadow>
           </value>
         </block> 
-  
-
+  <!-- 범위설정 -->
+  <block type="select_row_column_value">
+    <value name="select_data">
+      <block type="variables_get">
+        <field name="VAR">df</field>
+      </block>
+    </value>
+    <value name="select_row_locate">
+      <block type="selec_value_all"></block>
+    </value>
+    <value name="select_column_locate">
+      <block type="selec_value_all"></block>
+    </value>
+  </block>
+<!-- 행렬추출 -->
+<block type="select_row_list">
+  <value name="list_data">
+    <block type="variables_get">
+      <field name="VAR">df</field>
+    </block>
+  </value>
+</block>
       </category>
 
       <category name="분석&집계" colour="%{BKY_PANDAS_HUE}">
@@ -3293,6 +3313,20 @@
           </value>
         </block> 
 
+      <!-- 프레임그룹화 -->
+      <block type="groupby_dataFrame">
+        <value name="colName">
+          <block type="groupby_series_"></block>
+        </value>
+      </block>
+      <!-- 그룹 -->
+      <block type = "df_agg">
+        <value name = "LIST">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
       </category>
 
       
@@ -3323,7 +3357,7 @@
         
         <!-- 2020-09-09 양승국-->
       <!-- 일괄변경 -->
-      <block type="pandas_conversion">
+      <!-- <block type="pandas_conversion">
         <value name="pa_frm">
           <block type="variables_get">
             <field name="VAR">df</field>
@@ -3344,7 +3378,7 @@
             <field name="indata1">50</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
 
       <!-- 결측치삽입 -->
       <block type="fill_null_data">
@@ -3365,20 +3399,7 @@
         </value>
       </block>
 
-      <!-- 범위설정 -->
-      <block type="select_row_column_value">
-        <value name="select_data">
-          <block type="variables_get">
-            <field name="VAR">df</field>
-          </block>
-        </value>
-        <value name="select_row_locate">
-          <block type="selec_value_all"></block>
-        </value>
-        <value name="select_column_locate">
-          <block type="selec_value_all"></block>
-        </value>
-      </block>
+      
 
       <!-- 행열삭제 -->
       <block type="select_row_delete">
@@ -3389,14 +3410,7 @@
         </value>
       </block>
 
-      <!-- 행렬추출 -->
-      <block type="select_row_list">
-        <value name="list_data">
-          <block type="variables_get">
-            <field name="VAR">df</field>
-          </block>
-        </value>
-      </block>
+      
 
       <!-- 열 추가 -->
       <!-- <block type="df_add_col"></block> -->
@@ -3436,18 +3450,18 @@
         </value>
       </block>
 
-      <!-- 프레임그룹화 -->
-      <block type="groupby_dataFrame">
-        <value name="colName">
-          <block type="groupby_series_"></block>
-        </value>
-      </block>
       <!-- 2020-10-15 정지현 컬럼명 변경 -->
       <block type="df_col_rename"></block>
 
         <!-- <block type="column_count"></block> -->
         <!-- <block type="image_list"></block> -->
-
+        <block type = "df_bb">
+          <value name = "LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
           
         <label text="대기중"></label>
 
@@ -3467,13 +3481,7 @@
           </value>
         </block>
 
-        <block type = "df_bb">
-          <value name = "LIST">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
+        
 
         <block type = "df_set_index">
           <value name = "LIST">
@@ -3483,13 +3491,7 @@
           </value>
         </block>
         
-        <block type = "df_agg">
-          <value name = "LIST">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
+        
       </category>
       
       <category name="시리즈" colour="%{BKY_PANDAS_HUE}">
