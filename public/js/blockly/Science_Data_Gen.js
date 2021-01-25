@@ -655,11 +655,11 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
 
   if(DL_Gra == "graph_or_1"){//둘중 하나 
    //우진 수정 전 code =`ax_lst[${value_matplotlib_pre_graph_location1}].${matplot_graph}( `;
-    code =`ax_lst[${value_matplotlib_pre_graph_location2}].${matplot_graph}( `;  //우진 수정본
+    code =`ax[${value_matplotlib_pre_graph_location2}].${matplot_graph}( `;  //우진 수정본
   }else if(DL_Gra == "graph_both_1"){
-    code =`ax_lst.${matplot_graph}( `;  
+    code =`ax.${matplot_graph}( `;  
   }else{
-    code =`ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}(` ;  
+    code =`ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}(` ;  
   }
 
 
@@ -705,22 +705,22 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
 
 //킹우진의 수정
 if(DL_Gra == "graph_or_1"){
-  code =  code.concat(`\nax_lst[${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}") 
-ax_lst[${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax_lst[${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}") 
-ax_lst[${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`); 
+  code =  code.concat(`\nax[${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}") 
+ax[${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
+ax[${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}") 
+ax[${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`); 
   
 }else if(DL_Gra == "graph_both_1"){
-  code =  code.concat(`\nax_lst.set_title("${text_matplotlib_pre_graph_title}")
-ax_lst.set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax_lst.set_ylabel("${text_matplotlib_pre_graph_ylable}") 
-ax_lst.legend(loc='best')\n`);
+  code =  code.concat(`\nax.set_title("${text_matplotlib_pre_graph_title}")
+ax.set_xlabel("${text_matplotlib_pre_graph_xlable}")
+ax.set_ylabel("${text_matplotlib_pre_graph_ylable}") 
+ax.legend(loc='best')\n`);
   
 }else{ 
-  code =  code.concat(`\nax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}")
-ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}")
-ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`);  
+  code =  code.concat(`\nax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}")
+ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
+ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}")
+ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`);  
 }
 
   // code=code.concat(`plt.show()\n`);
