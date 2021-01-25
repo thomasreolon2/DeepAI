@@ -292,3 +292,11 @@ Blockly.JavaScript['try_except'] = function(block) {
   var code = `\n`;
   return code;
 };
+
+// 2021.01.25 except_block 남지원
+Blockly.JavaScript['except_block'] = function(block) {
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${dropdown_drop}`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

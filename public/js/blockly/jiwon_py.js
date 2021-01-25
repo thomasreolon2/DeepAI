@@ -324,3 +324,11 @@ Blockly.Python['try_except'] = function(block) {
   var code = `try:\n${statements_try}except ${value_except1} :\n${statements_except2}`;
   return code;
 };
+
+// 2021.01.25 except_block 남지원
+Blockly.Python['except_block'] = function(block) {
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble Python into code variable.
+  var code = `${dropdown_drop}`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

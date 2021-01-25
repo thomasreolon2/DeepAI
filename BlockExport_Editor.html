@@ -1130,11 +1130,10 @@
       <!-- 예외처리 -->
       <block type="try_except">
         <value name="EXCEPT1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+            <block type="except_block"></block>
         </value>
       </block>
+
     </category>
     <!-- #####################################################################################################  -->
     <!-- ******************************   반복(Repeat)                           ******************************* -->
@@ -3004,9 +3003,8 @@
           </value>
         </block>
 
-       <block type = "df_reindex">
+        <block type = "df_reindex">
           <value name = "LIST">
-
             <shadow type="indata">
               <field name="indata1"></field>
             </shadow>

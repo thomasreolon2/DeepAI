@@ -698,3 +698,16 @@ Blockly.Blocks['try_except'] = {
    this.setHelpUrl("");
     }
   };
+
+  // 2021.01.25 except_block 남지원
+  Blockly.Blocks['except_block'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["SyntaxError","SyntaxError"], ["NameError","NameError"], ["ZeroDivisionError","ZeroDivisionError"], ["IndexError","IndexError"], ["ValueError","ValueError"], ["KeyError","KeyError"], ["AttributeError","AttributeError"], ["FileNotFoundError","FileNotFoundError"], ["TypeError","TypeError"]]), "DROP");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_LOGIC_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
