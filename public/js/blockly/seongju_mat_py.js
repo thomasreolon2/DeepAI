@@ -13,6 +13,22 @@ Blockly.Python['ax_lst_plot'] = function(block) {
   return code;
 };
 
+Blockly.Python['plt_xlabel_ylabel'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'NAME2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list + '.xlabel(' + value_name +')\n' + value_list + '.ylabel(' + value_name2 +')\n' ;
+  return code;
+};
+
+Blockly.Python['plt_axis'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list + '.axis(' + value_name + ')\n';
+  return code;
+};
 
 Blockly.Python['axs_set_xlim'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);

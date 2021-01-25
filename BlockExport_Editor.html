@@ -3710,6 +3710,32 @@
             </shadow>
         </value>
       </block>
+      
+      <block type="plt_xlabel_ylabel">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+        </value>
+      </block>
+
+      <block type="plt_axis">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+        </value>
+      </block>
 
       <block type="subplots">
         <value name="VAR1">

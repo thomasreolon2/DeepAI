@@ -23,19 +23,19 @@ Blockly.Python['select_graph_option'] = function(block) {
     code = code.concat(`${value_select_graph_option_xy }, label = "${value_select_graph_option_end}" `);
   
     if(DL_Gra == "graph_or_1"){
-      code =  code.concat(`\nax_lst[${value_select_graph_option_location1}].set_title("${value_select_graph_option_title}") 
+      code =  code.concat(`\nax[${value_select_graph_option_location1}].set_title("${value_select_graph_option_title}") 
   ax[${value_select_graph_option_location1}].set_xlabel("${value_select_graph_option_x}")
   ax[${value_select_graph_option_location1}].set_ylabel("${value_select_graph_option_y}") 
   ax[${value_select_graph_option_location1}].legend(loc='best')\n`); 
        
     }else if(DL_Gra == "graph_both_1"){
-      code =  code.concat(`\nax_lst.set_title("${value_select_graph_option_title}") 
+      code =  code.concat(`\nax.set_title("${value_select_graph_option_title}") 
   ax.set_xlabel("${value_select_graph_option_x}") 
   ax.set_ylabel("${value_select_graph_option_y}")  
   ax.legend(loc='best')\n`);
       
     }else{ 
-      code =  code.concat(`\nax_lst[${value_select_graph_option_location1}][${value_select_graph_option_location2}].set_title("${value_select_graph_option_title}")
+      code =  code.concat(`\nax[${value_select_graph_option_location1}][${value_select_graph_option_location2}].set_title("${value_select_graph_option_title}")
   ax[${value_select_graph_option_location1}][${value_select_graph_option_location2}].set_xlabel("${value_select_graph_option_x}")
   ax[${value_select_graph_option_location1}][${value_select_graph_option_location2}].set_ylabel("${value_select_graph_option_y}")
   ax[${value_select_graph_option_location1}][${value_select_graph_option_location2}].legend(loc='best')\n`);  
