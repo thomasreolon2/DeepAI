@@ -1414,13 +1414,12 @@ Blockly.Blocks['np_dot'] = {
 
   Blockly.Blocks['range_len'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Repeat/R5-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-        }));
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldImage("/img/Repeat/R5-logo.png", 25, 23, {alt: "*",flipRtl: "FALSE"}))
+            .appendField(new Blockly.FieldDropdown([["길이(len)","len"], ["범위(range)","range"]]), "DROP");
         this.appendValueInput("x")
             .setCheck(null)
-            .appendField(Blockly.Msg.REPEAT_5_LENGTH);
+            //.appendField(Blockly.Msg.REPEAT_5_LENGTH);
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_LOOPS_HUE}");

@@ -1103,9 +1103,9 @@ Blockly.JavaScript['list_insert'] = function(block) {
   Blockly.JavaScript['range_len'] = function(block) {
     var x = Blockly.JavaScript.valueToCode(block, 'x', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
-    var code = '…';
+    var code = `\n`;
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.JavaScript.ORDER_NONE];
+    return [code, Blockly.JavaScript.ORDER_ATOMIC];
   };
 
   

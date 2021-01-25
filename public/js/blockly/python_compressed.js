@@ -1922,8 +1922,10 @@ Blockly.Python.create_new_list2 = function (a) {
 
 Blockly.Python['range_len'] = function(block) {
   var x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+
   // TODO: Assemble Python into code variable.
-  var code = 'len(' + x + ')';
+  var code = `${dropdown_drop}(${x})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
