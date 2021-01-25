@@ -3281,103 +3281,7 @@
 
       </category>
 
-      <category name="시리즈" colour="%{BKY_PANDAS_HUE}">
-        
-        <!-- 시리즈생성 -->
-        <block type="pandas_series">
-          <value name="ser_var">
-            <block type="variables_get">
-              <field name="VAR">ds</field>
-           </block>
-          </value>
-          <value name="ser_data">
-           <block type="pandas_series_data"></block>
-          </value>
-        </block>
       
-        <!-- 시리즈 concat -->
-        <block type="pandas_concat">
-          <value name="cat_vl">
-            <block type="variables_get">
-              <field name="VAR">ds</field>
-            </block>
-          </value>
-        </block>
-        <!-- 2020-09-17 양승국 블록추가 -->
-      
-        <!-- 시리즈 merge -->
-        <block type="pandas_merge">
-         <value name="mer_var">
-            <block type="variables_get">
-              <field name="VAR">ds</field>
-            </block>
-         </value>
-         <value name="connet_way">
-           <block type="pandas_merge_oncol"></block>
-          </value>
-        </block>
-      
-        <!-- 공통컬럼0 -->
-        <block type="pandas_merge_oncol"></block>
-        <!-- 공통컬럼x -->
-        <block type="pandas_merge_lron"></block>
-
-        <!-- 시리즈그룹화 -->
-        <block type="groupby_series">
-          <value name="colName">
-            <block type="groupby_series_"></block>
-          </value>
-        </block>
-        
-        <block type="df_series1">
-          <value name="LIST">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="df_series2">
-          <value name="LIST">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="df_series3">
-          <value name="LIST">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="df_unique"></block>
-
-        <block type="df_is_in">
-          <value name="LIST">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="df_tolist"></block>
-
-        <block type="df_name">
-          <value name="LIST">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-        
-
-
-      </category>
-
       <category name="조작&가공" colour="%{BKY_PANDAS_HUE}">
         
         <!-- <block type="pyo_lib"></block> -->
@@ -3562,10 +3466,7 @@
             </shadow>
           </value>
         </block>
-
-      </category>
-      
-      <category name="그룹(Group)" colour="%{BKY_PANDAS_HUE}">
+        
         <block type = "df_agg">
           <value name = "LIST">
             <shadow type="indata">
@@ -3573,8 +3474,105 @@
             </shadow>
           </value>
         </block>
+      </category>
+      
+      <category name="시리즈" colour="%{BKY_PANDAS_HUE}">
+        
+        <!-- 시리즈생성 -->
+        <block type="pandas_series">
+          <value name="ser_var">
+            <block type="variables_get">
+              <field name="VAR">ds</field>
+           </block>
+          </value>
+          <value name="ser_data">
+           <block type="pandas_series_data"></block>
+          </value>
+        </block>
+      
+        <!-- 시리즈 concat -->
+        <block type="pandas_concat">
+          <value name="cat_vl">
+            <block type="variables_get">
+              <field name="VAR">ds</field>
+            </block>
+          </value>
+        </block>
+        <!-- 2020-09-17 양승국 블록추가 -->
+      
+        <!-- 시리즈 merge -->
+        <block type="pandas_merge">
+         <value name="mer_var">
+            <block type="variables_get">
+              <field name="VAR">ds</field>
+            </block>
+         </value>
+         <value name="connet_way">
+           <block type="pandas_merge_oncol"></block>
+          </value>
+        </block>
+      
+        <!-- 공통컬럼0 -->
+        <block type="pandas_merge_oncol"></block>
+        <!-- 공통컬럼x -->
+        <block type="pandas_merge_lron"></block>
+
+        <!-- 시리즈그룹화 -->
+        <block type="groupby_series">
+          <value name="colName">
+            <block type="groupby_series_"></block>
+          </value>
+        </block>
+        
+        <block type="df_series1">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="df_series2">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="df_series3">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="df_unique"></block>
+
+        <block type="df_is_in">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="df_tolist"></block>
+
+        <block type="df_name">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        
+
 
       </category>
+
 
       <!-- 2020-09-20 양승국 판다스 전체수정-->
       <!-- <block type="import_lib">
