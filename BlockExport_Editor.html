@@ -2167,23 +2167,24 @@
       <label text="DB"></label>
 
             <block type="sqlite_library"></block>
+
             <block type="db_close"></block>
       
             <block type="db_conn">
               <value name="va">
                 <shadow type="indata">
-                  <field name="indata1">DB명</field>
+                  <field name="indata1">'data/DB명.db'</field>
                 </shadow>
               </value>
             </block>
       
       
-      <block type="db_cur"></block>
+            <block type="db_cur"></block>
          
             <block type="db_exec">
               <value name="va">
                 <shadow type="indata">
-                  <field name="indata1">SQL문</field>
+                  <field name="indata1">sql</field>
                 </shadow>
               </value>
             </block>
@@ -2191,7 +2192,7 @@
       <block type="db_execM">
               <value name="va">
                 <shadow type="indata">
-                  <field name="indata1">SQL문</field>
+                  <field name="indata1">sql</field>
                 </shadow>
               </value>
             </block>

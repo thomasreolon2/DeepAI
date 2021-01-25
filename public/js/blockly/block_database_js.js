@@ -58,12 +58,16 @@
   };
 
   Blockly.JavaScript['db_conn'] = function (block) {
+    var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+    var value_name = Blockly.JavaScript.valueToCode(block, 'va', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble .JavaScript into code variable.
     var code = '\n';
     return code;
   };
 
   Blockly.JavaScript['db_cur'] = function (block) {
+    var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+    var variable_list1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
     // TODO: Assemble .JavaScript into code variable.
     var code = '\n';
     return code;
@@ -76,6 +80,8 @@
   };
 
   Blockly.JavaScript['db_execM'] = function (block) {
+    var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+    var value_name = Blockly.JavaScript.valueToCode(block, 'va', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble .JavaScript into code variable.
     var code = '\n';
     return code;

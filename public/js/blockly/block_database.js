@@ -105,11 +105,16 @@
   Blockly.Blocks['db_conn'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField(Blockly.Msg.DATABASE_CONNECT_1)
+          .appendField(Blockly.Msg.DATABASE_CONNECT_1)
+          .appendField(new Blockly.FieldVariable("con"), "list1")
+          .appendField("= sqlite3.connect(");
       this.appendValueInput("va")
-        .setCheck(null)
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour("205");
       this.setTooltip("");
       this.setHelpUrl("");
@@ -120,9 +125,13 @@
     init: function () {
       this.appendDummyInput()
       .appendField(Blockly.Msg.DATABASE_CURSOR_1)
-      .appendField(new Blockly.FieldVariable("var"), "list1")
+      .appendField(new Blockly.FieldVariable("cur"), "list")
+      .appendField("=")
+      .appendField(new Blockly.FieldVariable("con"), "list1")
+      .appendField(".cursor()");
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour("205");
       this.setTooltip("");
       this.setHelpUrl("");
@@ -132,12 +141,16 @@
   Blockly.Blocks['db_exec'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField(Blockly.Msg.DATABASE_EXECUTE_1)
-      .appendField(new Blockly.FieldVariable("var"), "list");
+          .appendField(Blockly.Msg.DATABASE_EXECUTE_1)
+          .appendField(new Blockly.FieldVariable("cur"), "list")
+          .appendField(".execute(");
       this.appendValueInput("va")
-        .setCheck(null)
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");    
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour("205");
       this.setTooltip("");
       this.setHelpUrl("");
@@ -148,12 +161,16 @@
   Blockly.Blocks['db_execM'] = {
     init: function () {
       this.appendDummyInput()
-      .appendField(Blockly.Msg.DATABASE_EXECUTEMANY_1)
-      .appendField(new Blockly.FieldVariable("var"), "list");
+          .appendField(Blockly.Msg.DATABASE_EXECUTE_1)
+          .appendField(new Blockly.FieldVariable("cur"), "list")
+          .appendField(".executemany(");
       this.appendValueInput("va")
-        .setCheck(null)
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");      
       this.setInputsInline(true);
-      this.setOutput(true, null);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
       this.setColour("205");
       this.setTooltip("");
       this.setHelpUrl("");
@@ -204,6 +221,7 @@
       this.appendDummyInput()
       .appendField(Blockly.Msg.DATABASE_FETCHONE_1)
       .appendField(new Blockly.FieldVariable("var"), "list1")
+      .appendField(".close()")
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("205");
