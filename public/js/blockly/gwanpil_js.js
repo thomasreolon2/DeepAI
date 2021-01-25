@@ -220,3 +220,8 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = `\n`;
         return code;
       };
+
+      Blockly.JavaScript['pandas_csv_read'] = function(block) {
+        var code = '\n';
+        return code;
+      };

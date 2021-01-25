@@ -490,3 +490,23 @@ Blockly.Blocks['writerows'] = {
       this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['pandas_csv_read'] = {
+  init: function () {
+    this.appendDummyInput()
+    .appendField(new Blockly.FieldVariable("df"), "list");
+    this.appendDummyInput()
+      .appendField("CSV read")
+      .appendField("(");
+    this.appendValueInput("va")
+      .setCheck(null)
+    this.appendDummyInput()
+       .appendField(")");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};

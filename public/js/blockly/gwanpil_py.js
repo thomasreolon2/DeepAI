@@ -283,3 +283,12 @@ Blockly.Python['plt_subplot'] = function(block) {
         var code = variable_var + '.writerows(' + value_text + ')\n';
         return code;
       };
+
+      Blockly.Python['pandas_csv_read'] = function (block) {
+        var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+        var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble JavaScript into code variable.
+        var code = variable_list + "= pd.read_csv(" + value_name + ")" + '\n';
+        // TODO: Change ORDER_NONE to the correct strength.
+        return code;
+      };
