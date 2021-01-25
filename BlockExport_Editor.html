@@ -2172,8 +2172,6 @@
       <label text="DB"></label>
 
             <block type="sqlite_library"></block>
-
-            <block type="db_close"></block>
       
             <block type="db_conn">
               <value name="va">
@@ -2183,7 +2181,18 @@
               </value>
             </block>
       
-      
+            <block type = "db_autocommit"></block>
+
+            <block type = "db_deletedb">
+              <value name="SET0">
+                <shadow type="indata">
+                  <field name="indata1">테이블</field>
+                </shadow>
+              </value>
+            </block>
+
+            <block type="db_close"></block>
+
             <block type="db_cur"></block>
          
             <block type="db_exec">
@@ -2286,6 +2295,60 @@
         <value name="d3">
           <shadow type="indata">
             <field name="indata1">조건</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "db_select3">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "db_select4">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "db_select5">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
           </shadow>
         </value>
       </block>

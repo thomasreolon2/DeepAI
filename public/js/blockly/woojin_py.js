@@ -67,7 +67,6 @@ Blockly.Python['db_autocommit'] = function (block) {
 //DB삭제 DROP TABLE IF EXISTS (테이블)
 
 Blockly.Python['db_deletedb'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var indata1 = Blockly.Python.valueToCode(block, 'SET0', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = '"DROP TABLE IF EXISTS ' + indata1 + '"' + '\n';
