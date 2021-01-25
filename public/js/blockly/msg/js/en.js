@@ -1165,6 +1165,7 @@ Blockly.Msg['DATABASE_EXECUTEMANY_1'] = "executemany";
 Blockly.Msg['DATABASE_COMMIT_1'] = "commit";
 Blockly.Msg['DATABASE_ROLLBACK_1'] = "rollback";
 Blockly.Msg['DATABASE_FETCHALL_1'] = "fetchall";
+Blockly.Msg['DATABASE_FETCHALL_3'] = "fetchmany";
 Blockly.Msg['DATABASE_FETCHONE_1'] = "fetchone";
 Blockly.Msg['DATABASE_CREATE_1'] = "[create]";
 Blockly.Msg['DATABASE_INSERT_1'] = "[insert]";

@@ -74,6 +74,10 @@
   };
 
   Blockly.JavaScript['db_exec'] = function (block) {
+    var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+    var dropdown_name = block.getFieldValue('d1');
+    var value_name1 = Blockly.JavaScript.valueToCode(block, 'va1', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_name2 = Blockly.Python.valueToCode(block, 'va2', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble .JavaScript into code variable.
     var code = '\n';
     return code;
@@ -105,7 +109,19 @@
     return code;
   };
 
+  Blockly.JavaScript['db_fetchmany'] = function (block) {
+    var variable_list1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+    var variable_list2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
+    var value_name1 = Blockly.JavaScript.valueToCode(block, 'va', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return code;
+  };
+
   Blockly.JavaScript['db_fetchone'] = function (block) {
+    var variable_list1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+    var variable_list2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
     // TODO: Assemble .JavaScript into code variable.
     var code = '\n';
     return code;

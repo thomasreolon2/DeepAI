@@ -2189,20 +2189,19 @@
             </block>
       
       <block type="db_execM">
-              <value name="va">
+              <value name="va1">
                 <shadow type="indata">
                   <field name="indata1">sql</field>
                 </shadow>
               </value>
-            </block>
-      
-      <block type="db_commit">
-              <value name="va">
+              <value name="va2">
                 <shadow type="indata">
-                  <field name="indata1"></field>
+                  <field name="indata1">data</field>
                 </shadow>
               </value>
             </block>
+      
+            <block type="db_commit"></block>
       
             <block type="db_rollback">
               <value name="va">
@@ -2212,21 +2211,17 @@
               </value>
             </block>
       
-      <block type="db_fetchall">
-              <value name="va">
-                <shadow type="indata">
-                  <field name="indata1"></field>
-                </shadow>
-              </value>
-            </block>
-      
-            <block type="db_fetchone">
-              <value name="va">
-                <shadow type="indata">
-                  <field name="indata1"></field>
-                </shadow>
-              </value>
-            </block>
+            <block type="db_fetchone"></block>
+
+           <block type="db_fetchall"></block>
+
+           <block type="db_fetchmany">
+            <value name="va">
+              <shadow type="indata">
+                <field name="indata1">개수</field>
+              </shadow>
+            </value>
+           </block>
 
       <!-- 생성 -->
       <block type = "db_create">

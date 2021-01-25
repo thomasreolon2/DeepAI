@@ -1167,15 +1167,16 @@ Blockly.Msg['FILE_CLOSE'] = "파일닫기";
 
 // -- database  이성주
 Blockly.Msg['DATABASE_IMPORT_1'] = "[임포트]";
-Blockly.Msg['DATABASE_CLOSE_1'] = "해제";
+Blockly.Msg['DATABASE_CLOSE_1'] = "종료";
 Blockly.Msg['DATABASE_CONNECT_1'] = "연결";
 Blockly.Msg['DATABASE_CURSOR_1'] = "커서";
 Blockly.Msg['DATABASE_EXECUTE_1'] = "실행";
 Blockly.Msg['DATABASE_EXECUTEMANY_1'] = "데이터셋실행";
-Blockly.Msg['DATABASE_COMMIT_1'] = "커밋";
-Blockly.Msg['DATABASE_ROLLBACK_1'] = "롤백";
-Blockly.Msg['DATABASE_FETCHALL_1'] = "전체읽기";
-Blockly.Msg['DATABASE_FETCHONE_1'] = "하나읽기";
+Blockly.Msg['DATABASE_COMMIT_1'] = "저장";
+Blockly.Msg['DATABASE_ROLLBACK_1'] = "복구";
+Blockly.Msg['DATABASE_FETCHALL_1'] = "읽기";
+Blockly.Msg['DATABASE_FETCHALL_3'] = "읽기";
+Blockly.Msg['DATABASE_FETCHONE_1'] = "읽기";
 Blockly.Msg['DATABASE_CREATE_1'] = "[생성]";
 Blockly.Msg['DATABASE_INSERT_1'] = "[삽입]";
 Blockly.Msg['DATABASE_UPDATE_1'] = "[수정]";

@@ -84,18 +84,21 @@ Blockly.Python['db_cur'] = function (block) {
 
 Blockly.Python['db_exec'] = function (block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var dropdown_name = block.getFieldValue('d1');
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list+'.execute(' + value_name + ')' + '\n';
+  var code = variable_list+'.'+ dropdown_name + '(' + value_name + ')' + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
 
 Blockly.Python['db_execM'] = function (block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('d1');
+  var value_name1 = Blockly.Python.valueToCode(block, 'va1', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'va2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list+".executemany(" + value_name + ")" + '\n';
+  var code = variable_list+'.'+ dropdown_name + '(' + value_name1 + ', ' + value_name2 + ')' + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -103,9 +106,9 @@ Blockly.Python['db_execM'] = function (block) {
 Blockly.Python['db_commit'] = function (block) {
   var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list1 +'.commit()' + '\n';
+  var code = variable_list1 +'.commit()\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Python['db_rollback'] = function (block) {
@@ -113,23 +116,35 @@ Blockly.Python['db_rollback'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
   var code = variable_list1 +'.rollback()' + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Python['db_fetchall'] = function (block) {
   var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+  var variable_list2 = Blockly.Python.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list1 +'.fetchall()' + '\n';
+  var code = variable_list1 +  '=' + variable_list2 +'.fetchall()' + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
+};
+
+Blockly.Python['db_fetchmany'] = function (block) {
+  var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+  var variable_list2 = Blockly.Python.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
+  var value_name1 = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = variable_list1 +  '=' + variable_list2 +'.fetchmany(' + value_name1 + ')\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
 };
 
 Blockly.Python['db_fetchone'] = function (block) {
   var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+  var variable_list2 = Blockly.Python.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list1 +'.fetchone()' + '\n';
+  var code = variable_list1 +  '=' + variable_list2 +'.fetchone()' + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Python['db_close'] = function (block) {
