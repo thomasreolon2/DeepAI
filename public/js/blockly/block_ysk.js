@@ -2,47 +2,6 @@
 // 2020-12-26
 ///////////////////////////////////////////////////////
 
-//values
-Blockly.Blocks['df_values'] = {
-  init: function() { 
-    this.appendDummyInput()
-        .appendField("[값출력]")
-        .appendField(new Blockly.FieldVariable("df"), "list");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-    this.setColour(pandas_color);
- this.setTooltip(""); 
- this.setHelpUrl("");
-  }
-};
-
-//columns
-Blockly.Blocks['df_columns'] = {
-  init: function() { 
-    this.appendDummyInput()
-        .appendField("[컬럼명출력]")
-        .appendField(new Blockly.FieldVariable("df"), "list");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(pandas_color);
- this.setTooltip(""); 
- this.setHelpUrl("");
-  }
-};
-
-//T
-Blockly.Blocks['df_T'] = {
-  init: function() { 
-    this.appendDummyInput()
-        .appendField("[행열변환]")
-        .appendField(new Blockly.FieldVariable("df"), "list");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(pandas_color);
- this.setTooltip(""); 
- this.setHelpUrl("");
-  }
-};
 
 //df_pivot_table
 Blockly.Blocks['df_pivot_table'] = {

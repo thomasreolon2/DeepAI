@@ -1197,42 +1197,8 @@ Blockly.Blocks['df_sort'] = {
   }
 };
 
-// 컬럼명 조회
-Blockly.Blocks['df_columns'] = {
-  init: function () {
-    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_DF_COLUMNS);
-    this.appendValueInput("data").setCheck(null)
-    this.setColour(pandas_color);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-// 인덱스 조회
-Blockly.Blocks['df_index'] = {
-  init: function () {
-    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_DF_INDEX);
-    this.appendValueInput("data").setCheck(null)
-    this.setColour(pandas_color);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
-// 데이터 조회
-Blockly.Blocks['df_values'] = {
-  init: function () {
-    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_DF_VALUES);
-    this.appendValueInput("data").setCheck(null)
-    this.setColour(pandas_color);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
+
+
 
 // 컬럼명 변경 2020-10-15 정지현
 Blockly.Blocks['df_col_rename'] = {
@@ -1277,4 +1243,20 @@ Blockly.Blocks['csv_url'] = {
     this.setTooltip("");
     this.setHelpUrl("");
   }
+};
+
+// 2020.01.26 head() 남지원
+Blockly.Blocks['pandas_head'] = {
+  init: function() {
+    this.appendValueInput("VAR")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(".")
+        .appendField(new Blockly.FieldDropdown([["상위5개조회(head)","head()"], ["하위5개조회(tail)","tail()"], ["인덱스조회(index)","index()"], ["컬럼조회(columns)","columns()"], ["값조회(value)","value()"], ["통계정보조회(describe)","describe()"], ["행열변경조회(T))","T"]]), "DROP");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+  this.setTooltip("");
+  this.setHelpUrl("");
+}
 };

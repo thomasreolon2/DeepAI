@@ -2,32 +2,6 @@
 // // 2020-12-26
 // ////////////////////////////////////////////////////////////////////
 
-//values
-Blockly.JavaScript['df_values'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
-//columns
-Blockly.JavaScript['df_columns'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
- 
-//T
-Blockly.JavaScript['df_T'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 //df_pivot_table
 Blockly.JavaScript['df_pivot_table'] = function(block) {

@@ -295,23 +295,6 @@ Blockly.JavaScript['df_sort'] = function (block) {
   var code = '\n';
   return code;
 };
-
-// 컬럼명 조회
-Blockly.JavaScript['df_columns'] = function (block) {
-  var code = '\n';
-  return code;
-};
-// 인덱스 조회
-Blockly.JavaScript['df_index'] = function (block) {
-  var code = '\n';
-  return code;
-};
-// 데이터 조회
-Blockly.JavaScript['df_values'] = function (block) {
-  var code = '\n';
-  return code;
-};
-
 // 컬럼명 변경
 Blockly.JavaScript['df_col_rename'] = function(block) {
   var code = '\n';
@@ -326,4 +309,15 @@ Blockly.JavaScript['df_add_col'] = function(block) {
 Blockly.JavaScript['csv_url'] = function(block) {
   var code = '\n';
   return code;
+};
+
+
+// 2020.01.26 head() 남지원
+Blockly.JavaScript['pandas_head'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

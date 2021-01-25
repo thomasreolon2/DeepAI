@@ -3151,7 +3151,7 @@
     <!-- ************************************************** ************************* *************************  -->
     <!-- 2020-09-20 양승국 수정-->
     <category name="%{BKY_CATEGORY_PANDAS}" colour="%{BKY_PANDAS_HUE}"> 
-      <category name="기본" colour="%{BKY_PANDAS_HUE}">
+      <category name="조회" colour="%{BKY_PANDAS_HUE}">
 
         <!-- pandas 라이브러리 -->
         <block type="pandas_library"></block>
@@ -3166,7 +3166,9 @@
             </shadow>
           </value>
         </block>
-      
+        
+        <block type="pandas_head"></block>
+
         <!-- 전체범위 -->
         <block type="selec_value_all"></block>
         <!-- 부분범위 -->
@@ -3186,11 +3188,9 @@
 
       </category>
 
-      <category name="일반기능" colour="%{BKY_PANDAS_HUE}">
+      <category name="분석&집계" colour="%{BKY_PANDAS_HUE}">
         <block type="df_sort"></block>
-        <block type="df_columns"></block>
-        <block type="df_index"></block>
-        <block type="df_values"></block>
+
         <!-- 시리즈그룹화 -->
         <block type="groupby_series">
           <value name="colName">
@@ -3267,7 +3267,7 @@
 
       </category>
 
-      <category name="Series" colour="%{BKY_PANDAS_HUE}">
+      <category name="시리즈" colour="%{BKY_PANDAS_HUE}">
         
         <!-- 시리즈생성 -->
         <block type="pandas_series">
@@ -3364,7 +3364,7 @@
 
       </category>
 
-      <category name="DataFrame" colour="%{BKY_PANDAS_HUE}">
+      <category name="조작&가공" colour="%{BKY_PANDAS_HUE}">
         
         <!-- <block type="pyo_lib"></block> -->
         <!-- csv프레임 -->
@@ -3516,12 +3516,6 @@
         
           
         <label text="대기중"></label>
-
-        <block type = "df_values"></block>
-
-        <block type = "df_columns"></block>
-
-        <block type = "df_T"></block>
 
         <block type = "df_pivot_table">
           <value name="LIST">

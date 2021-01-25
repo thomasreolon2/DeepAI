@@ -417,28 +417,6 @@ Blockly.Python['df_sort'] = function (block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-// 컬럼명 조회
-Blockly.Python['df_columns'] = function (block) {
-  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = variable_data + ".columns" + "\n";
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-// 인덱스 조회
-Blockly.Python['df_index'] = function (block) {
-  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = variable_data + ".index";
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-// 데이터 조회
-Blockly.Python['df_values'] = function (block) {
-  var variable_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = variable_data + ".values" + "\n";
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
 // 컬럼명 변경 2020-10-15 정지현
 Blockly.Python['df_col_rename'] = function(block) {
   var value_df = Blockly.Python.valueToCode(block, 'df', Blockly.Python.ORDER_ATOMIC);
@@ -468,4 +446,14 @@ Blockly.Python['csv_url'] = function (block) {
   var code = variable_list + "= pd.read_csv(pyodide.open_url('" + value_name + "'))" + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
+};
+
+// 2020.01.26 head() 남지원
+Blockly.Python['pandas_head'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble Python into code variable.
+  var code = `${value_var}.${dropdown_drop}`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
