@@ -58,7 +58,7 @@ Blockly.Python['sr_condition[]'] = function(block) {
 Blockly.Python['db_autocommit'] = function (block) {
   var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list1 +'.isolation_level = None' + '\n';
+  var code = variable_list1 + '.isolation_level = None' + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -67,9 +67,10 @@ Blockly.Python['db_autocommit'] = function (block) {
 //DB삭제 DROP TABLE IF EXISTS (테이블)
 
 Blockly.Python['db_deletedb'] = function (block) {
+  var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var indata1 = Blockly.Python.valueToCode(block, 'SET0', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '"DROP TABLE IF EXISTS ' + indata1 + '"' + '\n';
+  var code = variable_list1 + '= "DROP TABLE IF EXISTS ' + indata1 + '"' + '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };

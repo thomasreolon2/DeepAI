@@ -126,7 +126,7 @@
     init: function () {
       this.appendDummyInput()
           .appendField(Blockly.Msg.DATABASE_CONNECT_1)
-          .appendField(new Blockly.FieldVariable("con"), "list1")
+          .appendField(new Blockly.FieldVariable("con"), "list")
           .appendField("= sqlite3.connect(");
       this.appendValueInput("va")
           .setCheck(null);
