@@ -3167,7 +3167,23 @@
           </value>
         </block>
         
-        <block type="pandas_head"></block>
+        <!-- 기초 조회 -->
+        <block type="pandas_head">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+        
+        <!-- empty, nan값 조회 -->
+        <block type="pandas_empty_nan">
+          <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">df</field>
+              </block>
+            </value>
+        </block>
 
         <!-- 전체범위 -->
         <block type="selec_value_all"></block>

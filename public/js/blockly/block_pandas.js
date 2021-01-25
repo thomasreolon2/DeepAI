@@ -1252,7 +1252,23 @@ Blockly.Blocks['pandas_head'] = {
         .setCheck(null);
     this.appendDummyInput()
         .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["상위5개조회(head)","head()"], ["하위5개조회(tail)","tail()"], ["인덱스조회(index)","index()"], ["컬럼조회(columns)","columns()"], ["값조회(value)","value()"], ["통계정보조회(describe)","describe()"], ["행열변경조회(T))","T"]]), "DROP");
+        .appendField(new Blockly.FieldDropdown([["상위5개조회(head)","head()"], ["하위5개조회(tail)","tail()"], ["인덱스조회(index)","index()"], ["컬럼조회(columns)","columns()"], ["값조회(values)","values()"], ["통계정보조회(describe)","describe()"], ["행열변경조회(T))","T"]]), "DROP");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(230);
+  this.setTooltip("");
+  this.setHelpUrl("");
+}
+};
+
+// 2020.01.26 head() 남지원
+Blockly.Blocks['pandas_empty_nan'] = {
+  init: function() {
+    this.appendValueInput("VAR")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(".")
+        .appendField(new Blockly.FieldDropdown([["비어있는지(empty)","empty"], ["nan값이있는지(isna)","isna()"], ["nan값이없는지(notna)","notna()"]]), "DROP");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(230);
