@@ -70,7 +70,7 @@ Blockly.Python['block_tail_head'] = function(block) {
 
       // 판다스 난, 널 판단
       Blockly.Python['pandas_nanull'] = function(block) {
-        var variable_name = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+        var variable_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
         var dropdown_drop = block.getFieldValue('DROP');
         var value_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
