@@ -3514,13 +3514,18 @@
 
       <!-- df. 병합 -->
       <block type = "df_bb">
-        <value name = "LIST">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="INPUT">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
       </block>
-      
+
       <!-- 2020-10-15 정지현 컬럼명 변경 -->
       <!-- <block type="df_col_rename"></block> -->
 

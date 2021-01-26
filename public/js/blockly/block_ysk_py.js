@@ -25,7 +25,7 @@ Blockly.Python['df_ap'] = function(block) {
 //df_bb 병합
 Blockly.Python['df_bb'] = function(block) {
   var variable_list = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
-  var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
   var dropdown_dic = block.getFieldValue('DROP');
   // TODO: Assemble Python into code variable.
   var code = `${variable_list}.${dropdown_dic}(${value_name})`;
