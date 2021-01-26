@@ -1259,8 +1259,8 @@
     <!-- ******************************   리스트 , 컬렉션(Collection)             ******************************* -->
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_COLLECTION}" colour="%{BKY_COLLECTION_HUE}"> 
-      
-      <!-- [C1] -->
+      <category name="조작&가공">
+        <!-- [C1] -->
       <block type ="forif">
         <value name="SET0">
           <shadow type="indata">
@@ -1397,81 +1397,82 @@
           </shadow>
         </value>
       </block>
+    </category>
+  
+    <category name="리스트&튜플">
+    <label text="리스트"></label>
 
-      <label text="리스트"></label>
-      <!-- [L1] 리스트 생성 -->
-      <block type = "create_list">
-        <value name="list">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>  
-        <value name="text">
-          <shadow type="indata">
-            <field name="indata1">1,2,3,4</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- [L1] 리스트 생성 -->
+    <block type = "create_list">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">my_list</field>
+        </block>
+      </value>  
+      <value name="text">
+        <shadow type="indata">
+          <field name="indata1">1,2,3,4</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- [L2] 리스트 삽입 -->
-      <block type="list_insert">
-        <value name="list">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>  
-        <value name="INDEX">
-          <shadow type="indata">
-            <field name="indata1">인덱스</field>
-          </shadow>
-        </value>
-        <value name="VALUE">
-          <shadow type="indata">
-            <field name="indata1">값</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- [L2] 리스트 삽입 -->
+    <block type="list_insert">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">my_list</field>
+        </block>
+      </value>  
+      <value name="INDEX">
+        <shadow type="indata">
+          <field name="indata1">인덱스</field>
+        </shadow>
+      </value>
+      <value name="VALUE">
+        <shadow type="indata">
+          <field name="indata1">값</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- [L3] 리스트 정렬,역순 -->
-      <block type="list_sort_reverse">
-        <value name="list">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>  
-      </block>
+    <!-- [L3] 리스트 정렬,역순 -->
+    <block type="list_sort_reverse">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">my_list</field>
+        </block>
+      </value>  
+    </block>
 
-      <!-- [L4] 데이터 다루기1 -->
-      <block type="create_new_list2">
-        <value name="VAR1">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-         </value>
-         <value name="DIVISOR">
-           <shadow type="indata">
-             <field name="indata1"></field>
-           </shadow>
-         </value>
-       </block>
+    <!-- [L4] 데이터 다루기1 -->
+    <block type="create_new_list2">
+      <value name="VAR1">
+        <block type="variables_get">
+          <field name="VAR">my_list</field>
+        </block>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
        
-       <!-- [L5] 데이터 다루기2 -->
-      <block type="create_new_list">
-        <value name="VAR1">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-         </value>
-         <value name="DIVISOR">
-           <shadow type="indata">
-             <field name="indata1"></field>
-           </shadow>
-         </value>
-       </block>
+    <!-- [L5] 데이터 다루기2 -->
+    <block type="create_new_list">
+      <value name="VAR1">
+        <block type="variables_get">
+          <field name="VAR">my_list</field>
+        </block>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
 
-       
-
-      <label text="튜플"></label>
+    <label text="튜플"></label>
       <!-- 튜플블록 -->
       <block type = "create_tuple">
         <value name="list">
@@ -1485,7 +1486,9 @@
           </shadow>
         </value>
       </block>
-
+    </category>
+    
+    <category name="딕셔너리&집합">
       <label text="집합"></label>
       <!-- 집합블록 -->
       <block type = "create_ziphap">
@@ -1563,7 +1566,9 @@
           </block>
         </value>  
       </block>
+    </category>
 
+    <category name="디큐(deque)">
       <!---------------------------------------------------------------------------------------deque--------->
       <label text="dequeue"></label>
       <!-- 컬렉션 라이브러리 -->
@@ -1602,6 +1607,7 @@
           </block>
         </value>
       </block>
+    </category>  
       
       <!-- 딕셔너리2 
       <block type = "dict1"></block>
@@ -1767,8 +1773,6 @@
         </value>
       </block> -->
       <!-- 2020-12-27-전우진 global -->
-
-
     </category>
 
     <!-- #####################################################################################################  -->
@@ -3343,6 +3347,7 @@
             </shadow>
           </value>
         </block> 
+
         <block type="pandas_stack">
           <value name="INPUT">
             <shadow type="indata">
@@ -3350,6 +3355,7 @@
             </shadow>
           </value>
         </block> 
+
         <block type="pandas_nanull">
           <value name="VAR">
             <block type="variables_get">
