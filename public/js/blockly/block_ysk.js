@@ -65,22 +65,6 @@ Blockly.Blocks['df_bb'] = {
   }
 };
 
-//df_set_index
-Blockly.Blocks['df_set_index'] = {
-  init: function() { 
-    this.appendDummyInput()
-        .appendField("[인덱스설정]")
-        .appendField(new Blockly.FieldVariable("df"), "list");
-        this.appendValueInput("LIST").appendField(".set_indes(").setCheck(null);
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-    this.setColour(pandas_color);
- this.setTooltip(""); 
- this.setHelpUrl("");
-  }
-};
-
 
 
 ////////////////////////////////
@@ -147,15 +131,35 @@ Blockly.Blocks['df_agg'] = {
 //df_reindex
 Blockly.Blocks['df_reindex'] = {
   init: function () {
-    this.appendDummyInput().appendField("[인덱스재설정]").appendField(new Blockly.FieldVariable("df"), "list");
-      this.appendValueInput("LIST").appendField(".reindex(").setCheck(null);
-      this.appendDummyInput().appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      //this.setOutput(true, null);
-      this.setColour(pandas_color);
-      this.setTooltip("");
-      this.setHelpUrl("");
+    this.appendValueInput("VAR")
+        .setCheck(null)
+        .appendField("[인덱스재설정]");
+    this.appendDummyInput()
+        .appendField(".")
+        .appendField(new Blockly.FieldDropdown([
+          [
+            "컬럼명변경(rename)", "rename"  
+          ],
+          [
+            "인덱스재설정(reindex)", "reindex"
+          ],
+          [
+            "인덱스초기화(reset_index)", "reset_index"
+          ],
+          [
+            "인덱스세팅(set_index)", "set_index"
+          ]
+          ]), "DROP");
+        this.appendValueInput("INPUT")
+        .setCheck(null)
+        .appendField("(");
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 

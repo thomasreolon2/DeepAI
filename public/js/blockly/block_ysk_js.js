@@ -34,15 +34,7 @@ Blockly.JavaScript['df_bb'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-//df_set_index
-Blockly.JavaScript['df_set_index'] = function(block) {
-  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
+
 
 /////////////////////////////////////////////////////
 
@@ -96,7 +88,7 @@ Blockly.JavaScript['df_reindex'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };  
 
-//df_reindex
+//df_unique
 Blockly.JavaScript['df_unique'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
@@ -105,7 +97,7 @@ Blockly.JavaScript['df_unique'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };  
 
-//df_reindex
+//df_is_in
 Blockly.JavaScript['df_is_in'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
@@ -115,7 +107,7 @@ Blockly.JavaScript['df_is_in'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };  
 
-//df_reindex
+//df_name
 Blockly.JavaScript['df_name'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
@@ -124,7 +116,7 @@ Blockly.JavaScript['df_name'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 }; 
 
-//df_reindex
+//df_tolist
 Blockly.JavaScript['df_tolist'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
