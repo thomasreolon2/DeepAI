@@ -1564,6 +1564,45 @@
         </value>  
       </block>
 
+      <!---------------------------------------------------------------------------------------deque--------->
+      <label text="dequeue"></label>
+      <!-- 컬렉션 라이브러리 -->
+      <block type="collection_library"></block>
+      <!-- deque 생성-->
+      <block type = "create_deque">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">my_deque</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>  
+      </block>
+      <!-- deque 다루기1 -->
+      <block type = "deque_menu1">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">my_deque</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <!-- deque 다루기2 -->
+      <block type = "deque_menu2">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">my_deque</field>
+          </block>
+        </value>
+      </block>
+      
       <!-- 딕셔너리2 
       <block type = "dict1"></block>
       -->

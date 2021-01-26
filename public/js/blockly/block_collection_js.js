@@ -51,7 +51,7 @@ Blockly.JavaScript['set_menu1'] = function (block) {
   var dropdown_set_menu = block.getFieldValue('set_menu');
   var value_set1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_set2 = Blockly.JavaScript.valueToCode(block, 'SET2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
@@ -61,7 +61,7 @@ Blockly.JavaScript['set_menu1_2'] = function (block) {
   var dropdown_set_menu = block.getFieldValue('set_menu');
   var value_set1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_set2 = Blockly.JavaScript.valueToCode(block, 'SET2', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
@@ -143,5 +143,43 @@ Blockly.JavaScript['va_id'] = function (block) {
   var value_dic1 = Blockly.JavaScript.valueToCode(block, 'dic1', Blockly.JavaScript.ORDER_ATOMIC);
   
   var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+
+
+// 2021.01.26 collection import 남지원
+Blockly.JavaScript['collection_library'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "\n";
+  return code;
+};
+
+// 2021.01.26 create_deque 남지원
+Blockly.JavaScript['create_deque'] = function (block) {
+  var variable_list = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return code;
+};
+
+
+// 2021.01.26 deque_menu 남지원
+Blockly.JavaScript['deque_menu1'] = function (block) {
+  var dropdown_value = block.getFieldValue('DROP');
+  var value_var = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return code;
+};
+
+// 2021.01.26 deque_menu2 남지원
+Blockly.JavaScript['deque_menu2'] = function (block) {
+  var dropdown_value = block.getFieldValue('DROP');
+  var value_var = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
