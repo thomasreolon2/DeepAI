@@ -40,21 +40,24 @@ Blockly.Blocks['df_ap'] = {
   }
 };
 
-//df_bb
+//df_bb 병합
 Blockly.Blocks['df_bb'] = {
   init: function () {
       this.appendDummyInput().appendField("[병합하기]").appendField(new Blockly.FieldVariable("df"), "list");
       this.appendDummyInput().appendField(new Blockly.FieldDropdown([
           [
-              "merge", ".merge("
+            "merge", "merge"
           ],
           [
-            "concat", ".concat("
+            "concat", "concat"
           ],
           [
-            "append", ".append("
-          ]
-      ]), "collection");
+            "join", "join"
+          ],
+          [
+            "append", "append"
+          ],
+      ]), "DROP");
       this.appendValueInput("LIST").appendField().setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);

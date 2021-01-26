@@ -22,13 +22,13 @@ Blockly.Python['df_ap'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-//df_bb
+//df_bb 병합
 Blockly.Python['df_bb'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_dic = block.getFieldValue('collection');
+  var dropdown_dic = block.getFieldValue('DROP');
   // TODO: Assemble Python into code variable.
-  var code = variable_list + dropdown_dic + value_name + ")";
+  var code = `${variable_list}.${dropdown_dic}(${value_name})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

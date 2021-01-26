@@ -23,7 +23,7 @@ Blockly.JavaScript['df_ap'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-//df_bb
+//df_bb 병합
 Blockly.JavaScript['df_bb'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
