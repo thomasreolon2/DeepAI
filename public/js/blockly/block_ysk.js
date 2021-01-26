@@ -44,7 +44,7 @@ Blockly.Blocks['df_ap'] = {
 Blockly.Blocks['df_bb'] = {
   init: function () {
       this.appendDummyInput().
-      appendField("[병합하기]");
+      appendField("[병합,복사]");
       this.appendValueInput("VAR")
           .setCheck(null);
       this.appendDummyInput().appendField(new Blockly.FieldDropdown([
