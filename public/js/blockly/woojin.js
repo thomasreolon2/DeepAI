@@ -133,6 +133,22 @@ Blockly.Blocks['sr_is_in'] = {
     }
   };
 
+  Blockly.Blocks['db_select2'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.DATABASE_SELECT_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= SELECT");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").appendField("FROM").setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(database);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
 
 
 //조회 sql = “SELECT (필드) FROM (테이블) ORDER BY (필드)”
@@ -140,10 +156,12 @@ Blockly.Blocks['sr_is_in'] = {
   Blockly.Blocks['db_select3'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField(Blockly.Msg.DATABASE_SELECT_1);
+          .appendField(Blockly.Msg.DATABASE_SELECT_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= ");
       this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
       this.appendValueInput("SET1").appendField("FROM").setCheck(null);
-      this.appendValueInput("SET2").appendField("WHERE").setCheck(null);
+      this.appendValueInput("SET2").appendField("ORDER BY").setCheck(null);
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -158,7 +176,9 @@ Blockly.Blocks['sr_is_in'] = {
   Blockly.Blocks['db_select4'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField(Blockly.Msg.DATABASE_SELECT_1);
+          .appendField(Blockly.Msg.DATABASE_SELECT_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= ");
       this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
       this.appendValueInput("SET1").appendField("FROM").setCheck(null);
       this.appendValueInput("SET2").appendField("ORDER BY").setCheck(null);
@@ -177,7 +197,9 @@ Blockly.Blocks['sr_is_in'] = {
   Blockly.Blocks['db_select5'] = {
     init: function () {
       this.appendDummyInput()
-          .appendField(Blockly.Msg.DATABASE_SELECT_1);
+          .appendField(Blockly.Msg.DATABASE_SELECT_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= ");
       this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
       this.appendValueInput("SET1").appendField("FROM").setCheck(null);
       this.appendValueInput("SET2").appendField("GROUP BY").setCheck(null);

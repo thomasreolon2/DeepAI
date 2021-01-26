@@ -79,32 +79,35 @@ Blockly.Python['db_deletedb'] = function (block) {
 //조회 sql = “SELECT (필드) FROM (테이블) ORDER BY (필드)”
 
 Blockly.Python['db_select3'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var value_SET0 = Blockly.Python.valueToCode(block, 'SET0', Blockly.Python.ORDER_ATOMIC);
   var value_SET1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
   var value_SET2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " ORDER BY " + value_SET2 + '"';
+  var code =  variable_list + ' = ' + '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " ORDER BY " + value_SET2 + '"' + '\n';
   return code;
 };
 
 //조회 sql = “SELECT (필드) FROM (테이블) ORDER BY (필드) DESC”
 
 Blockly.Python['db_select4'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var value_SET0 = Blockly.Python.valueToCode(block, 'SET0', Blockly.Python.ORDER_ATOMIC);
   var value_SET1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
   var value_SET2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " ORDER BY " + value_SET2 + ' DESC"';
+  var code = variable_list + ' = ' + '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " ORDER BY " + value_SET2 + ' DESC"' + '\n';
   return code;
 };
 
 //조회 sql = “SELECT (필드) FROM (테이블) GROUP BY (필드)”
 
 Blockly.Python['db_select5'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var value_SET0 = Blockly.Python.valueToCode(block, 'SET0', Blockly.Python.ORDER_ATOMIC);
   var value_SET1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
   var value_SET2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " GROUP BY " + value_SET2 + '"';
+  var code = variable_list + ' = ' + '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " GROUP BY " + value_SET2 + '"' + '\n';
   return code;
 };
