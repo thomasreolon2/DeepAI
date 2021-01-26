@@ -426,15 +426,6 @@ Blockly.Python['pandas_head'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-// 2020.01.26 head() 남지원
-Blockly.Python['pandas_empty_nan'] = function(block) {
-  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_drop = block.getFieldValue('DROP');
-  // TODO: Assemble Python into code variable.
-  var code = `${value_var}.${dropdown_drop}`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 // 2020.01.26 head() 남지원
 Blockly.Python['pandas_info'] = function(block) {
@@ -452,6 +443,18 @@ Blockly.Python['pandas_astype'] = function(block) {
   var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = `${value_var}.astype(${value_input})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// 2020.01.26 pandas_unique() 남지원
+Blockly.Python['pandas_unique'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+
+  // TODO: Assemble Python into code variable.
+  var code = `${value_var}.${dropdown_drop}(${value_input})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

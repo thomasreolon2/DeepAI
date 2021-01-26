@@ -302,15 +302,6 @@ Blockly.JavaScript['pandas_head'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-// 2020.01.26 head() 남지원
-Blockly.JavaScript['pandas_empty_nan'] = function(block) {
-  var value_var = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
-  var dropdown_drop = block.getFieldValue('DROP');
-  // TODO: Assemble JavaScript into code variable.
-  var code = `\n`;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
 
 // 2020.01.26 head() 남지원
 Blockly.JavaScript['pandas_info'] = function(block) {

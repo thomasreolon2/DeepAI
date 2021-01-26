@@ -1196,23 +1196,7 @@ Blockly.Blocks['pandas_head'] = {
         .setCheck(null);
     this.appendDummyInput()
         .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["상위5개조회(head)","head()"], ["하위5개조회(tail)","tail()"], ["인덱스조회(index)","index()"], ["컬럼조회(columns)","columns()"], ["값조회(values)","values()"], ["행열변경조회(T))","T"]]), "DROP");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(pandas_color);
-  this.setTooltip("");
-  this.setHelpUrl("");
-}
-};
-
-// 2020.01.26 head() 남지원
-Blockly.Blocks['pandas_empty_nan'] = {
-  init: function() {
-    this.appendValueInput("VAR")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["비어있는지(empty)","empty"], ["nan값이있는지(isna)","isna()"], ["nan값이없는지(notna)","notna()"]]), "DROP");
+        .appendField(new Blockly.FieldDropdown([["상위5개조회(head)","head()"], ["하위5개조회(tail)","tail()"], ["인덱스조회(index)","index()"], ["컬럼조회(columns)","columns()"], ["값조회(values)","values()"], ["행열변경조회(T))","T"],["데이터타입(dtype)","dtype()"]]), "DROP");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);
@@ -1255,4 +1239,22 @@ Blockly.Blocks['pandas_astype'] = {
   this.setTooltip("");
   this.setHelpUrl("");
 } 
+};
+
+// 2020.01.26 pandas_unique() 남지원
+Blockly.Blocks['pandas_unique'] = {
+  init: function() {
+    this.appendValueInput("VAR")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(".")
+        .appendField(new Blockly.FieldDropdown([["고유값리스트(unique)","unique"], ["고유값개수(nunique)","nunique"],["리스트내 값확인(isin)","isin"],["값 개수(value_counts)","value_counts"]]), "DROP");
+        this.appendValueInput("INPUT")
+        .setCheck(null);
+        this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+  this.setTooltip("");
+  this.setHelpUrl("");
+  }
 };
