@@ -224,3 +224,40 @@ Blockly.Python['va_id'] = function (block) {
   var code = "id( " + value_dic1 + " )"
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+
+
+// 2021.01.26 collection import 남지원
+Blockly.Python['collection_library'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "import collections \n";
+  return code;
+};
+
+// 2021.01.26 create_deque 남지원
+Blockly.Python['create_deque'] = function (block) {
+  var variable_list = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${variable_list} = collections.deque([${value_text}])\n`;
+  return code;
+};
+
+// 2021.01.26 deque_menu 남지원
+Blockly.Python['deque_menu1'] = function (block) {
+  var dropdown_value = block.getFieldValue('DROP');
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_var}.${dropdown_value}(${value_input})\n`;
+  return code;
+};
+
+// 2021.01.26 deque_menu2 남지원
+Blockly.Python['deque_menu2'] = function (block) {
+  var dropdown_value = block.getFieldValue('DROP');
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_var}.${dropdown_value}()`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

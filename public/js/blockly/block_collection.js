@@ -639,3 +639,105 @@ Blockly.Blocks['va_id'] = {
         this.setHelpUrl("");
     }
 };
+
+
+// 2021.01.26 collection import 남지원
+Blockly.Blocks['collection_library'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField("[임포트]collections");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(255);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+
+  
+// 2021.01.26 create_deque 남지원
+Blockly.Blocks['create_deque'] = {
+    init: function () {
+        this.appendValueInput("VAR")
+            .setCheck(null)
+            .appendField("[deque생성]");
+        this.appendDummyInput()
+            .appendField(" = ([");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField("])");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(255);
+        this.setTooltip("Create a list");
+        this.setHelpUrl("");
+    }
+  };
+  
+
+// 2021.01.26 deque 다루기
+Blockly.Blocks['deque_menu1'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[deque다루기]");
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendValueInput("INPUT")
+            .setCheck(null)
+            .appendField("에");
+        this.appendDummyInput()
+            .appendField("를")
+            .appendField(new Blockly.FieldDropdown([
+            [
+                "오른쪽삽입(append)", "append"
+            ],
+            [
+                "왼쪽삽입(appendleft)", "appendleft"
+            ],
+            [
+                "요소오른쪽삽입(extend)", "extend"
+            ],
+            [
+                "요소왼쪽삽입(extendleft)", "extendleft"
+            ],
+            [
+                "회전(rotate)", "rotate"
+            ]
+        ]), "DROP");                                                                 
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(255);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+// 2021.01.26 deque 다루기
+Blockly.Blocks['deque_menu2'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[deque다루기]");
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField("에서")
+            .appendField(new Blockly.FieldDropdown([
+            [
+                "오른쪽출력(pop)", "pop"
+            ],
+            [
+                "왼쪽출력(popleft)", "popleft"
+            ]
+        ]), "DROP");                                                                 
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(255);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
