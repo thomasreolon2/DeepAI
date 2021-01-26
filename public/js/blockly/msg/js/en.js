@@ -841,6 +841,7 @@ Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_5'] = "(sum)";
 Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_6'] = "(multiply all)";
 Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_7'] = "(minimum value)";
 Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_8'] = "(maximum value)";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_9'] = "[frame grouping] dataframe";
 Blockly.Msg['PANDAS_DF_COL_RENAME_1'] = "[change column name] frame";
 Blockly.Msg['PANDAS_DF_COL_RENAME_2'] = "(original column index";
 Blockly.Msg['PANDAS_DF_COL_RENAME_3'] = "change column";

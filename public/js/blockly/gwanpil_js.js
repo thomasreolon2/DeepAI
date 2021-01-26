@@ -225,3 +225,8 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = '\n';
         return code;
       };
+
+      Blockly.JavaScript['groupby_dataFrame_2'] = function (block) {
+        var code = '\n';
+        return [code, Blockly.JavaScript.ORDER_NONE];
+      };

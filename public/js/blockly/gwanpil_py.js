@@ -292,3 +292,13 @@ Blockly.Python['plt_subplot'] = function(block) {
         // TODO: Change ORDER_NONE to the correct strength.
         return code;
       };
+
+      Blockly.Python['groupby_dataFrame_2'] = function (block) {
+        var value_series_or_dataframe = Blockly.Python.valueToCode(block, 'Series_or_Dataframe', Blockly.Python.ORDER_ATOMIC);
+        var value_colname = Blockly.Python.valueToCode(block, 'colName', Blockly.Python.ORDER_ATOMIC);
+        var value_indexname = Blockly.Python.valueToCode(block, 'indexName', Blockly.Python.ORDER_ATOMIC);
+        var dropdown_function = block.getFieldValue('function');
+        // TODO: Assemble Python into code variable.
+        var code = value_series_or_dataframe + '.groupby(' + value_colname + ')[' + value_indexname + ']' + dropdown_function;
+        return [code, Blockly.Python.ORDER_NONE];
+      };

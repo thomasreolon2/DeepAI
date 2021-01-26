@@ -510,3 +510,27 @@ Blockly.Blocks['pandas_csv_read'] = {
     this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['groupby_dataFrame_2'] = {
+  init: function () {
+    this.appendValueInput("Series_or_Dataframe")
+      .setCheck(null)
+      .appendField(Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_1);
+    this.appendDummyInput()
+      .appendField("(");
+      this.appendValueInput("colName")
+      .setCheck(null);
+      this.appendValueInput("indexName")
+      .setCheck(null)
+      .appendField(")[");
+    this.appendDummyInput()
+      .appendField("]")
+      .appendField(Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_2)
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_3, ".mean()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_4, ".count()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_5, ".sum()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_6, ".prod()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_7, ".min()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_8, ".max()"]]), "function")
+      .appendField(")");
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};

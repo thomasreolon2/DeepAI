@@ -849,6 +849,7 @@ Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_5'] = "(총 합)";
 Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_6'] = "(전체의 곱)";
 Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_7'] = "(최소값)";
 Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_8'] = "(최대값)";
+Blockly.Msg['PANDAS_GROUPBY_DATAFRAME_9'] = "[프레임그룹화] 데이터프레임";
 Blockly.Msg['PANDAS_DF_COL_RENAME_1'] = "[컬럼명 변경] 프레임";
 Blockly.Msg['PANDAS_DF_COL_RENAME_2'] = "(원본 컬럼 인덱스";
 Blockly.Msg['PANDAS_DF_COL_RENAME_3'] = "변경 컬럼";

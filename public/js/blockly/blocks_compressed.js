@@ -708,7 +708,7 @@ Blockly.defineBlocksWithJsonArray([
         type: "field_dropdown",
         name: "OP",
         options: [
-         
+          
           ["==", "EQ"],
           ["!=", "NEQ"],
           ["<", "LT"],
@@ -719,6 +719,8 @@ Blockly.defineBlocksWithJsonArray([
           ["is not", "ISN"],
           ["in", "IN"],
           ["not in", "INN"],
+          //["|", "OR1"], // 길이 제한이 있어서 주석처리함
+          ["&", "AND1"], // 예제용 나중에 확인받기 
         ],
       },
       { type: "input_value", name: "B" },
