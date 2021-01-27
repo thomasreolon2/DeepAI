@@ -22,9 +22,9 @@ Blockly.Blocks['numpy_averages_variances_basic'] = {
 Blockly.Blocks['numpy_changing_array_shape_basic'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[np 모양변경]")
-        .appendField(new Blockly.FieldDropdown([["배열형태 변경(reshape)","np.reshape"], //["1차원변경(ravel)","np.ravel"],
-           ["1차원변경(flatten)","np.flatten"]]), "numpy_Changing_array_shape_opt");
+        .appendField("[np 차원변경]")
+        .appendField(new Blockly.FieldDropdown([["배열형태 변경(reshape)","np.reshape"], ["1차원변경(원본)(ravel)","np.ravel"],
+           ["1차원변경(복사)(flatten)","np.flatten"]]), "numpy_Changing_array_shape_opt");
     this.appendValueInput("numpy_Changing_array_shape_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -131,7 +131,8 @@ Blockly.Blocks['numpy_index_values_basic'] = {
     this.appendValueInput("numpy_index_values_val")
         .setCheck(null)
         .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_111)
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_2,"np.amax"], [Blockly.Msg.NUMPY_INDEX_VALUES_3,"np.amin"]]), "numpy_operator_Option");
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_9,"sum"],[Blockly.Msg.NUMPY_INDEX_VALUES_2,"max"],[Blockly.Msg.NUMPY_INDEX_VALUES_3,"min"], [Blockly.Msg.NUMPY_INDEX_VALUES_10,"cumsum"]]), "numpy_operator_Option")
+        .appendField("변수");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
@@ -139,6 +140,7 @@ Blockly.Blocks['numpy_index_values_basic'] = {
  this.setHelpUrl("");
   }
 };
+
 
 Blockly.Blocks['numpy_take_basic'] = {
   init: function() {

@@ -697,8 +697,10 @@ Blockly.Msg['NUMPY_CALCULATION_8'] = "array sqrt ( np.sqrt  )";
 
 Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[ index / value search ]";
 Blockly.Msg['NUMPY_INDEX_VALUES_111'] = "[ index / value search ]";
-Blockly.Msg['NUMPY_INDEX_VALUES_2'] = "maximum value of array ( np.amax)";
-Blockly.Msg['NUMPY_INDEX_VALUES_3'] = "minimum value of array ( np.amin )";
+Blockly.Msg['NUMPY_INDEX_VALUES_2'] = "maximum value of array ( max)";
+Blockly.Msg['NUMPY_INDEX_VALUES_3'] = "minimum value of array ( min )";
+Blockly.Msg['NUMPY_INDEX_VALUES_9'] = "sum value of array(sum)";
+Blockly.Msg['NUMPY_INDEX_VALUES_10'] = "accumulate sum value of array(cumsum)";
 Blockly.Msg['NUMPY_INDEX_VALUES_4'] = "maximum value of index ( np.argmax )";
 Blockly.Msg['NUMPY_INDEX_VALUES_5'] = "array sort ( np.argsort )";
 Blockly.Msg['NUMPY_INDEX_VALUES_6'] = "Return the indices of the non-zero elements ( np.nonzero )";

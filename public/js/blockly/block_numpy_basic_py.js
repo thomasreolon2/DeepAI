@@ -474,7 +474,7 @@ Blockly.Python['numpy_index_values_basic'] = function(block) {
   var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
   var value_numpy_index_values_val = Blockly.Python.valueToCode(block, 'numpy_index_values_val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code =`${dropdown_numpy_operator_option}(${value_numpy_index_values_val})`;
+  var code =`${value_numpy_index_values_val}.${dropdown_numpy_operator_option}()`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -737,7 +737,7 @@ Blockly.Python['numpy_operator_basic'] = function(block) {
   var value_numpy_operator_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
   var value_numpy_operator_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_operator_option}(${value_numpy_operator_val}${value_numpy_operator_val2})`;
+  var code = `${dropdown_numpy_operator_option}(${value_numpy_operator_val},${value_numpy_operator_val2})`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
