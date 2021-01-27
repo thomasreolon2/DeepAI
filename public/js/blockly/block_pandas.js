@@ -1434,3 +1434,21 @@ Blockly.Blocks['pandas_cat_set'] = {
     this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['pandas_sub'] = {
+  init: function () {
+    this.appendValueInput("d1")
+        .appendField(Blockly.Msg.PANDAS_SUB)
+        .setCheck(null);
+    this.appendDummyInput().appendField(".sub(");
+    this.appendValueInput("d2")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};

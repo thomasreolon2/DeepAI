@@ -562,3 +562,12 @@ Blockly.Python['pandas_cat_set'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  
+
+Blockly.Python['pandas_sub'] = function(block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_name1}.sub(${value_name2})`
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  

@@ -872,6 +872,7 @@ Blockly.Msg['PANDAS_OC'] = "[내용조회]"
 Blockly.Msg['PANDAS_ITEMS'] = "[쌍반복]"
 Blockly.Msg['PANDAS_WHERE'] = "[where]"
 Blockly.Msg['PANDAS_STACK'] = "[스택]"
+Blockly.Msg['PANDAS_SUB'] = "[서브]"
 
 // ---- 맷플롯립
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ 임포트 ] matplotlib를 plt로";

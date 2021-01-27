@@ -3247,51 +3247,6 @@
     <category name="%{BKY_CATEGORY_PANDAS}" colour="%{BKY_PANDAS_HUE}"> 
       <category name="조회" colour="%{BKY_PANDAS_HUE}">
 
-        <!-- 옮길거 -->
-        <block type = "pandas_multiIndex">
-          <value name="d1">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type = "pandas_stack1">
-          <value name="d1">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-          <value name="d2">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type = "pandas_cat">
-          <value name="d1">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-        </block>
-
-        <block type = "pandas_cat_set">
-          <value name="d1">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-          <value name="d2">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-                <!-- 옮길거 -->
-
         <!-- pandas 라이브러리 -->
         <block type="pandas_library"></block>
 
@@ -3880,12 +3835,69 @@
           </value>
         </block>
 
-        
-
 
       </category>
 
+      <category name="임시" colour="%{BKY_PANDAS_HUE}" >
 
+        
+        <block type = "pandas_multiIndex">
+          <value name="d1">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "pandas_stack1">
+          <value name="d1">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="d2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "pandas_cat">
+          <value name="d1">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+
+        <block type = "pandas_cat_set">
+          <value name="d1">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="d2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "pandas_sub">
+          <value name="d1">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="d2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+      </category>
+      
       <!-- 2020-09-20 양승국 판다스 전체수정-->
       <!-- <block type="import_lib">
           <value name="var">
