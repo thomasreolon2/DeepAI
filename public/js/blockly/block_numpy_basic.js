@@ -36,7 +36,6 @@ Blockly.Blocks['numpy_changing_array_shape_basic'] = {
 };
 
 
-
 //numpy_random_sample
 Blockly.Blocks['numpy_random_sample_basic'] = {
   init: function() {
@@ -202,7 +201,7 @@ Blockly.Blocks['numpy_ones_and_zeros_basic'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 0 & 1]")
-        .appendField(new Blockly.FieldDropdown([["초기화 x(empty)","np.empty"], ["0으로 채움(zeros)","np.zeros"], ["형태에 따른 1(ones)","np.ones"], ["해당 값으로 채움(full)","np.full"]]), "numpy_Ones and zeros_opt");
+        .appendField(new Blockly.FieldDropdown([ ["0으로 채움(zeros)","np.zeros"],["초기화 x(empty)","np.empty"], ["형태에 따른 1(ones)","np.ones"], ["해당 값으로 채움(full)","np.full"]]), "numpy_Ones and zeros_opt");
     this.appendValueInput("parameter1")
         .setCheck(null);
     this.appendValueInput("parameter2")
