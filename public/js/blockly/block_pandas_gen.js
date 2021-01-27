@@ -531,7 +531,7 @@ Blockly.Python['pandas_multiIndex'] = function(block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '${variable_list} = pd.MultiIndex.from_tuples(${value_name})'
+  var code = `${variable_list} = pd.MultiIndex.from_tuples(${value_name})`
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  
@@ -541,7 +541,7 @@ Blockly.Python['pandas_stack1'] = function(block) {
   var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
   var dropdown_drop = block.getFieldValue('DROP');
   // TODO: Assemble Python into code variable.
-  var code = '${value_name1}.${dropdown_drop}(${value_name2})'
+  var code = `${value_name1}.${dropdown_drop}(${value_name2})`
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  
@@ -549,7 +549,7 @@ Blockly.Python['pandas_stack1'] = function(block) {
 Blockly.Python['pandas_cat'] = function(block) {
   var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '${value_name1}.cat.categories'
+  var code = `${value_name1}.cat.categories`
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  
@@ -558,7 +558,7 @@ Blockly.Python['pandas_cat_set'] = function(block) {
   var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '${value_name1}.cat.set_categories(${value_name2})'
+  var code = `${value_name1}.cat.set_categories(${value_name2})`
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  

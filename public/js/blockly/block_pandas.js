@@ -1325,7 +1325,7 @@ Blockly.Blocks['groupby_dataFrame1'] = {
       .setCheck(null);
     this.appendDummyInput()
       .appendField(") 통계함수")
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_3,"mean"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_4,"count"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_5,"sum"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_6,"prod"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_7,"min"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_8,"max"]]), "DROP")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_3,"mean"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_4,"count"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_5,"sum"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_6,"prod"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_7,"min"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_8,"max"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_10,"size"]]), "DROP")
       .appendField("");
     this.setOutput(true, null);
     this.setColour(pandas_color);
