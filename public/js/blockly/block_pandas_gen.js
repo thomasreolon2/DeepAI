@@ -441,8 +441,9 @@ Blockly.Python['pandas_info'] = function(block) {
 Blockly.Python['pandas_astype'] = function(block) {
   var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
   // TODO: Assemble Python into code variable.
-  var code = `${value_var}.astype(${value_input})`;
+  var code = `${value_var}.${dropdown_drop}(${value_input})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -457,4 +458,56 @@ Blockly.Python['pandas_unique'] = function(block) {
   var code = `${value_var}.${dropdown_drop}(${value_input})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+//////////////////////////////
+/// 2021-01-27 양승국 판다스 블록 추가
+///////////////////////////////////
+
+//pandas_indexing
+Blockly.Python['pandas_indexing'] = function(block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + "[" + value_name + "]";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  
+
+//pandas_oc
+Blockly.Python['pandas_oc'] = function(block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_name = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + "." + dropdown_drop + "[" + value_name + "]";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  
+
+//pandas_items
+Blockly.Python['pandas_items'] = function(block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + ".items()";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  
+
+//pandas_where
+Blockly.Python['pandas_where'] = function(block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_name1 + ".where(" + value_name + ")";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  
+
+Blockly.Python['groupby_dataFrame1'] = function (block) {
+  var value_series_or_dataframe = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_colname = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_series_or_dataframe + '.groupby(' + value_colname + ')';
+  return [code, Blockly.Python.ORDER_NONE];
 };

@@ -854,6 +854,10 @@ Blockly.Msg['PANDAS_DF_SORT_3'] = "ascending ";
 Blockly.Msg['PANDAS_DF_COLUMNS'] = "[column name extract]";
 Blockly.Msg['PANDAS_DF_INDEX'] = "[index extract]";
 Blockly.Msg['PANDAS_DF_VALUES'] = "[data extract]";
+Blockly.Msg['PANDAS_INDEXING'] = "[indexing]";
+Blockly.Msg['PANDAS_OC'] = "[내용조회영어]"
+Blockly.Msg['PANDAS_ITEMS'] = "[items]"
+Blockly.Msg['PANDAS_WHERE'] = "[where]"
 
 // ---- 맷플롯립
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ import ] matplotlib as plt";

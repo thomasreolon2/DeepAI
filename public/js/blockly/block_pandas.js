@@ -1228,7 +1228,9 @@ Blockly.Blocks['pandas_astype'] = {
       .setCheck(null)
       .appendField("[컬럼형변환]");
     this.appendDummyInput()
-      .appendField(".astype(");
+      .appendField(".")
+      .appendField(new Blockly.FieldDropdown([["astype","astype"], ["append","append"], ["replace","replace"], ["fillna","fillna"]]), "DROP")
+      .appendField("(");
     this.appendValueInput("INPUT")
       .setCheck(null);
       this.appendDummyInput()
@@ -1256,5 +1258,90 @@ Blockly.Blocks['pandas_unique'] = {
     this.setColour(pandas_color);
   this.setTooltip("");
   this.setHelpUrl("");
+  }
+};
+
+
+//////////////////////////////
+/// 2021-01-27 양승국 판다스 블록 추가
+///////////////////////////////////
+
+//pandas_indexing
+Blockly.Blocks['pandas_indexing'] = {
+  init: function () {
+    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_INDEXING).appendField(new Blockly.FieldVariable("df"), "list");
+      this.appendValueInput("LIST").appendField("[").setCheck(null);
+      this.appendDummyInput().appendField("]");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+//iloc, loc
+Blockly.Blocks['pandas_oc'] = {
+  init: function () {
+    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_OC).appendField(new Blockly.FieldVariable("df"), "list")
+        .appendField(".")
+        .appendField(new Blockly.FieldDropdown([["iloc","iloc"], ["loc","loc"]]), "DROP");
+    this.appendValueInput("d1")
+        .setCheck(null)
+        .appendField("[");
+    this.appendDummyInput()
+      .appendField("]");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+//items
+Blockly.Blocks['pandas_items'] = {
+  init: function () {
+    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_ITEMS).appendField(new Blockly.FieldVariable("df"), "list")
+        .appendField(".items()");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+//pandas_where
+Blockly.Blocks['pandas_where'] = {
+  init: function () {
+    this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("LIST").appendField(".where(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['groupby_dataFrame1'] = {
+  init: function () {
+    this.appendValueInput("d1")
+        .setCheck(null)
+        .appendField(Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_1);
+    this.appendDummyInput()
+        .appendField(".groupby(");
+    this.appendValueInput("d2")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };

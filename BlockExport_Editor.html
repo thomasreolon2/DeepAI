@@ -3215,40 +3215,8 @@
     <!-- ************************************************** ************************* *************************  -->
     <!-- 2020-09-20 양승국 수정-->
     <category name="%{BKY_CATEGORY_PANDAS}" colour="%{BKY_PANDAS_HUE}"> 
-      <category name="조회" colour="%{BKY_PANDAS_HUE}">
 
-        <!-- pandas 라이브러리 -->
-        <block type="pandas_library"></block>
-
-        <!-- pyodide 라이브러리 -->
-        <block type="pyodide_library" ></block>
-        
-        <block type = "csv_url">
-          <value name="va">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type = "pandas_csv_read">
-          <value name="va">
-            <block type="fileopen"></block>     
-          </value>
-        </block>
-        
-        <!-- csv프레임 -->
-        <block type="csvdataframe_J">
-          <value name="input_var">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-          <value name="csv">
-            <block type="csv2"></block>
-          </value>
-        </block>
-
+      <category name = "기본" colour = "%{BKY_PANDAS_HUE}">
 
         <!-- 기초 조회 -->
         <block type="pandas_head">
@@ -3259,25 +3227,8 @@
           </value>
         </block>
 
-        <!-- 전체범위 -->
-        <block type="selec_value_all"></block>
-        <!-- 부분범위 -->
-        <block type="iloc_range"></block>
 
-        <!-- 정렬 -->
-        <block type="pandas_sort">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block> 
-        <!-- 범위설정 -->
+       <!-- 범위설정 -->
         <block type="select_row_column_value">
           <value name="select_data">
             <block type="variables_get">
@@ -3291,6 +3242,7 @@
             <block type="selec_value_all"></block>
           </value>
         </block>
+
         <!-- 행렬추출 -->
         <block type="select_row_list">
           <value name="list_data">
@@ -3299,8 +3251,160 @@
             </block>
           </value>
         </block>
+
       </category>
-      <!--------------------------------------------------------------------------------------분석&집계-->
+
+      <category name="조회" colour="%{BKY_PANDAS_HUE}">
+
+        <!-- pandas 라이브러리 -->
+        <block type="pandas_library"></block>
+
+        <!-- pyodide 라이브러리 -->
+        <block type="pyodide_library" ></block>
+
+        <!-- csv프레임 -->
+        <block type="csvdataframe_J">
+          <value name="input_var">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="csv">
+            <block type="csv2"></block>
+          </value>
+        </block>
+
+        <!-- 인덱싱 -->
+        <block type="pandas_indexing">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <!-- 기초 조회 -->
+        <block type="pandas_head">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
+
+        <!-- 데이터 내용 조회-->
+        <block type = "pandas_oc">
+          <value name="d1">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <!-- items -->
+        <block type = "pandas_items"></block>
+
+       <!-- 비어있는지 확인 -->
+       <block type = "pandas_nanull">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+       </block>   
+
+       <!-- where -->
+       <block type="pandas_where">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="LIST">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "pandas_sort">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+       <!-- 범위설정 -->
+       <!-- <block type="select_row_column_value">
+        <value name="select_data">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="select_row_locate">
+          <block type="selec_value_all"></block>
+        </value>
+        <value name="select_column_locate">
+          <block type="selec_value_all"></block>
+        </value>
+      </block> -->
+
+      <!-- 행렬추출 -->
+      <!-- <block type="select_row_list">
+        <value name="list_data">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+      </block>
+
+        <block type = "csv_url">
+          <value name="va">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "pandas_csv_read">
+          <value name="va">
+            <block type="fileopen"></block>     
+          </value>
+        </block> -->
+
+        <!-- 전체범위 -->
+        <!-- <block type="selec_value_all"></block> -->
+        <!-- 부분범위 -->
+        <!-- <block type="iloc_range"></block> -->
+
+        <!-- 정렬 -->
+        <!-- <block type="pandas_sort">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>  -->
+
+      </category>
+
+      <!----------- 분석&집계 ---------------->
       <category name="분석&집계" colour="%{BKY_PANDAS_HUE}">
         <!-- 기본 통계 -->
         <block type="pandas_info">
@@ -3325,6 +3429,19 @@
           </value>
         </block>
 
+        <block type="pandas_corr">
+          <value name="INPUT1">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="INPUT2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+
         <block type="block_sum_min">
           <value name="INPUT">
             <shadow type="indata">
@@ -3333,7 +3450,7 @@
           </value>
         </block> 
   
-        <block type="block_cumsum">
+        <!-- <block type="block_cumsum">
           <value name="INPUT">
             <shadow type="indata">
               <field name="indata1"></field>
@@ -3343,20 +3460,6 @@
   
         <block type="block_calculations">
           <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block> 
-  
-        
-        <block type="pandas_corr">
-          <value name="INPUT1">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-          <value name="INPUT2">
             <shadow type="indata">
               <field name="indata1"></field>
             </shadow>
@@ -3382,29 +3485,43 @@
               <field name="indata1"></field>
             </shadow>
           </value>
-        </block> 
+        </block>  -->
 
       <!-- 프레임그룹화 -->
-      <block type="groupby_dataFrame">
+      <!-- <block type="groupby_dataFrame">
         <value name="colName">
           <block type="groupby_series_"></block>
         </value>
-      </block>
+      </block> -->
 
-      <block type="groupby_dataFrame_2">
+      <!-- <block type="groupby_dataFrame_2">
         <value name="colName">
           <block type="groupby_series_"></block>
         </value>
-      </block>
+      </block> -->
       
       <!-- 그룹 -->
-      <block type = "df_agg">
+      <!-- <block type = "df_agg">
         <value name = "LIST">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
+      </block> -->
+
+      <block type = "groupby_dataFrame1">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="d2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
       </block>
+
       </category>
 
       

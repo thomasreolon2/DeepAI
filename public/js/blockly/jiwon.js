@@ -118,7 +118,7 @@ Blockly.Blocks['pandas_corr'] = {
           .setCheck(null);
       this.appendDummyInput()
           .appendField(".")
-          .appendField(new Blockly.FieldDropdown([["두변수간(corr)","corr"], ["모든변수간(corrwith)","corrwith"],["두변수공분산(cov)","cov"]]), "DROP");
+          .appendField(new Blockly.FieldDropdown([["두변수간(corr)","corr"], ["모든변수간(corrwith)","corrwith"],["두변수공분산(cov)","cov"],["(std)","std"]]), "DROP");
       this.appendValueInput("INPUT2")
           .setCheck(null);
       this.setInputsInline(true);
@@ -154,7 +154,7 @@ Blockly.Blocks['pandas_stack'] = {
   // 판다스 난,널 판단
   Blockly.Blocks['pandas_nanull'] = {
     init: function() {
-          this.appendValueInput('VAR')
+    this.appendValueInput('VAR')
               .setCheck(null)
               .appendField("[nan,null판단]");
       this.appendDummyInput()

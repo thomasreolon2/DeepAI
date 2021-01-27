@@ -862,6 +862,10 @@ Blockly.Msg['PANDAS_DF_SORT_3'] = "오름차순 ";
 Blockly.Msg['PANDAS_DF_COLUMNS'] = "[컬럼명 추출]";
 Blockly.Msg['PANDAS_DF_INDEX'] = "[인덱스 추출]";
 Blockly.Msg['PANDAS_DF_VALUES'] = "[데이터 추출]";
+Blockly.Msg['PANDAS_INDEXING'] = "[인덱싱]";
+Blockly.Msg['PANDAS_OC'] = "[내용조회]"
+Blockly.Msg['PANDAS_ITEMS'] = "[쌍반복]"
+Blockly.Msg['PANDAS_WHERE'] = "[where]"
 
 // ---- 맷플롯립
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ 임포트 ] matplotlib를 plt로";
