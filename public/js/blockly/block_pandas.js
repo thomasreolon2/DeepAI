@@ -834,26 +834,7 @@ Blockly.Blocks['groupby_series'] = {
   }
 };
 
-//2020-09-19 이성주
-Blockly.Blocks['groupby_dataFrame'] = {
-  init: function () {
-    this.appendValueInput("Series_or_Dataframe")
-      .setCheck(null)
-      .appendField(Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_1);
-    this.appendDummyInput()
-      .appendField("(");
-    this.appendValueInput("colName")
-      .setCheck(null);
-    this.appendDummyInput()
-      .appendField(Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_2)
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_3, ".mean()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_4, ".count()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_5, ".sum()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_6, ".prod()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_7, ".min()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_8, ".max()"]]), "function")
-      .appendField(")");
-    this.setOutput(true, null);
-    this.setColour(pandas_color);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
-};
+
 
 //2020-09-19 이성주
 Blockly.Blocks.groupby_series_ = {
@@ -1231,7 +1212,7 @@ Blockly.Blocks['pandas_astype'] = {
   init: function() {
     this.appendValueInput("VAR")
       .setCheck(null)
-      .appendField("[컬럼형변환]");
+      .appendField("[데이터변경]");
     this.appendDummyInput()
       .appendField(".")
       .appendField(new Blockly.FieldDropdown([["astype","astype"], ["append","append"], ["replace","replace"], ["fillna","fillna"]]), "DROP")
@@ -1336,14 +1317,16 @@ Blockly.Blocks['pandas_where'] = {
 Blockly.Blocks['groupby_dataFrame1'] = {
   init: function () {
     this.appendValueInput("d1")
-        .setCheck(null)
-        .appendField(Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_1);
+      .setCheck(null)
+      .appendField(Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_1);
     this.appendDummyInput()
-        .appendField(".groupby(");
+      .appendField(".groupby(");
     this.appendValueInput("d2")
-        .setCheck(null);
+      .setCheck(null);
     this.appendDummyInput()
-        .appendField(")");
+      .appendField(") 통계함수")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_3,"mean"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_4,"count"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_5,"sum"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_6,"prod"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_7,"min"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_8,"max"]]), "DROP")
+      .appendField("");
     this.setOutput(true, null);
     this.setColour(pandas_color);
     this.setTooltip("");

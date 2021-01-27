@@ -325,15 +325,6 @@ Blockly.Python['groupby_series'] = function (block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-//2020-09-19 이성주
-Blockly.Python['groupby_dataFrame'] = function (block) {
-  var value_series_or_dataframe = Blockly.Python.valueToCode(block, 'Series_or_Dataframe', Blockly.Python.ORDER_ATOMIC);
-  var value_colname = Blockly.Python.valueToCode(block, 'colName', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_function = block.getFieldValue('function');
-  // TODO: Assemble Python into code variable.
-  var code = value_series_or_dataframe + '.groupby(' + value_colname + ')' + dropdown_function;
-  return [code, Blockly.Python.ORDER_NONE];
-};
 
 //2020-09-19 이성주
 Blockly.Python['groupby_series_'] = function (a) {
@@ -508,8 +499,12 @@ Blockly.Python['pandas_where'] = function(block) {
 Blockly.Python['groupby_dataFrame1'] = function (block) {
   var value_series_or_dataframe = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var value_colname = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  var value_func = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+
   // TODO: Assemble Python into code variable.
-  var code = value_series_or_dataframe + '.groupby(' + value_colname + ')';
+  var code = `${value_series_or_dataframe}.groupby(${value_colname}).${dropdown_drop}()`;
+  // var code = value_series_or_dataframe + '.groupby(' + value_colname + ')';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
