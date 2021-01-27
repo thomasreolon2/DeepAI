@@ -256,6 +256,7 @@ Blockly.Blocks['numpy_arithmetic_operations1'] = {
                                                 ["요소별뺄셈(subtract)","np.subtract"],
                                                 ["요소별곱셈(multiply)","np.multiply"],
                                                 ["요소별나눗셈(divide)","np.divide"],
+                                                ["요소별제곱근(sqrt)","np.sqrt"],
                                                 ["요소별양수(positive)","np.positive"],
                                                 ["요소별음수(negative)","np.negative"],
                                                 ["요소별역수(reciprocal)","np.reciprocal"]]), "numpy_Arithmetic_operations_opt");

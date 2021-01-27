@@ -137,29 +137,6 @@ Blockly.Blocks['numpy_take_basic'] = {
   }
 };
 
-//numpy_arithmetic_operations1
-Blockly.Blocks['numpy_arithmetic_operations1'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("[np 기본 산술]")
-        .appendField(new Blockly.FieldDropdown([["요소별덧셈(add)","np.add"],
-                                                ["요소별뺄셈(subtract)","np.subtract"],
-                                                ["요소별곱셈(multiply)","np.multiply"],
-                                                ["요소별나눗셈(divide)","np.divide"],
-                                                ["요소별양수(positive)","np.positive"],
-                                                ["요소별음수(negative)","np.negative"],
-                                                ["요소별역수(reciprocal)","np.reciprocal"]]), "numpy_Arithmetic_operations_opt");
-    this.appendValueInput("numpy_Arithmetic_operations1_val")
-        .setCheck(null);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_NUMPY_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-
 
 
 //numpy_transpose_like_operations
