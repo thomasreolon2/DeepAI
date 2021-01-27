@@ -1366,3 +1366,71 @@ Blockly.Blocks['pandas_td'] = {
     this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['pandas_multiIndex'] = {
+  init: function () {
+    this.appendDummyInput().appendField(new Blockly.FieldVariable("df"), "list")
+        .appendField("= pd.MultiIndex.from_tuples(");
+    this.appendValueInput("d1")
+        .setCheck(null);
+    this.appendDummyInput()
+      .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pandas_stack1'] = {
+  init: function () {
+    this.appendValueInput("d1")
+        .appendField(Blockly.Msg.PANDAS_STACK)
+        .setCheck(null);
+    this.appendDummyInput().appendField(".")
+        .appendField(new Blockly.FieldDropdown([["stack","stack"], ["unstack","unstack"]]), "DROP");
+    this.appendValueInput("d2")
+        .setCheck(null)
+        .appendField("(");
+    this.appendDummyInput()
+      .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pandas_cat'] = {
+  init: function () {
+    this.appendValueInput("d1")
+        .appendField(Blockly.Msg.PANDAS_STACK)
+        .setCheck(null);
+    this.appendDummyInput().appendField(".cat.categories");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pandas_cat_set'] = {
+  init: function () {
+    this.appendValueInput("d1")
+        .appendField(Blockly.Msg.PANDAS_STACK)
+        .setCheck(null);
+    this.appendDummyInput().appendField(".cat.set_categories(");
+    this.appendValueInput("d2")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
