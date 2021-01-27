@@ -3550,6 +3550,19 @@
       <!----------------------------------------------------------------------------------조작가공-->
       <category name="조작&가공" colour="%{BKY_PANDAS_HUE}">
 
+        <block type="pandas_dataframe_2">
+          <value name="df_va">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="col_name">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
         <!-- astype -->
         <block type="pandas_astype">
           <value name="VAR">
@@ -3667,7 +3680,7 @@
       <block type="pandas_date_range">
         <value name="VAR">
           <block type="variables_get">
-            <field name="VAR">pf</field>
+            <field name="VAR">pd</field>
           </block>
         </value>
         <value name="INPUT">
@@ -3838,6 +3851,29 @@
 
         <block type="df_name">
           <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <!--예제용 삭제금지!!!!!!!!!!!!!!!!!-->
+        <block type="df_resample">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <!--예제용 삭제금지!!!!!!!!!!!!!!!!!-->
+        <block type="df_add_function">
+          <value name="LIST">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="LIST2">
             <shadow type="indata">
               <field name="indata1"></field>
             </shadow>

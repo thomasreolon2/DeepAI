@@ -778,6 +778,7 @@ Blockly.Msg['PANDAS_DATAFRAME_1'] = "[zip frame]";
 Blockly.Msg['PANDAS_DATAFRAME_2'] = "variable";
 Blockly.Msg['PANDAS_DATAFRAME_3'] = "(zip list";
 Blockly.Msg['PANDAS_DATAFRAME_4'] = "column name";
+Blockly.Msg['PANDAS_DATAFRAME_2_1'] = "[dataframe]";
 Blockly.Msg['PANDAS_CONVERSION_1'] = "[batch change] frame";
 Blockly.Msg['PANDAS_CONVERSION_2'] = "(column name";
 Blockly.Msg['PANDAS_CONVERSION_3'] = "original data";

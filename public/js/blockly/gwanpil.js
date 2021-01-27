@@ -555,3 +555,52 @@ Blockly.Blocks['pandas_date_range'] = {
   this.setHelpUrl("");
 } 
 };
+
+Blockly.Blocks['pandas_dataframe_2'] = {
+  init: function () {
+    this.appendValueInput("df_va")
+      .setCheck(null)
+      .appendField(Blockly.Msg.PANDAS_DATAFRAME_2_1)
+      .appendField(Blockly.Msg.PANDAS_DATAFRAME_2);
+    this.appendDummyInput()
+      .appendField("(")
+    this.appendValueInput("col_name")
+    .setCheck(null);
+    this.appendDummyInput() 
+      .appendField(")");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['df_resample'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[resample]").appendField(new Blockly.FieldVariable("sr"), "list");
+    this.appendValueInput("LIST").appendField("(").setCheck(null);
+    this.appendDummyInput().appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    //this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+}
+};
+
+Blockly.Blocks['df_add_function'] = {
+  init: function () {
+    this.appendDummyInput().appendField("[확장]");
+    this.appendValueInput("LIST").setCheck(null);
+    this.appendDummyInput().appendField(".");
+    this.appendValueInput("LIST2").setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    //this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+}
+};

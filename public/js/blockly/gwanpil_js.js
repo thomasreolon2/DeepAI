@@ -235,3 +235,20 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = '\n';
         return [code, Blockly.JavaScript.ORDER_NONE];
       };
+
+      Blockly.JavaScript['pandas_dataframe_2'] = function (block) {
+        var code = '\n';
+        return [code, Blockly.JavaScript.ORDER_NONE];
+      };
+
+      Blockly.JavaScript['df_resample'] = function (block) {
+        var code = '\n';
+        return [code, Blockly.JavaScript.ORDER_NONE];
+      };
+
+      Blockly.JavaScript['df_addfunction'] = function (block) {
+        var code = '\n';
+        return [code, Blockly.JavaScript.ORDER_NONE];
+      };
+
+      

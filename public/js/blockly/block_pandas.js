@@ -1182,7 +1182,7 @@ Blockly.Blocks['pandas_head'] = {
         .setCheck(null);
     this.appendDummyInput()
         .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["상위5개조회(head)","head()"], ["하위5개조회(tail)","tail()"], ["인덱스조회(index)","index"], ["컬럼조회(columns)","columns"], ["값조회(values)","values"], ["행열변경조회(T))","T"],["데이터타입(dtype)","dtype()"]]), "DROP");
+        .appendField(new Blockly.FieldDropdown([["상위5개조회(head)","head()"], ["하위5개조회(tail)","tail()"], ["인덱스조회(index)","index"], ["컬럼조회(columns)","columns"], ["값조회(values)","values"], ["행열변경조회(T))","T"],["데이터타입(dtype)","dtypes"]]), "DROP");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);

@@ -786,6 +786,7 @@ Blockly.Msg['PANDAS_DATAFRAME_1'] = "[zip프레임]";
 Blockly.Msg['PANDAS_DATAFRAME_2'] = "변수";
 Blockly.Msg['PANDAS_DATAFRAME_3'] = "(zip리스트";
 Blockly.Msg['PANDAS_DATAFRAME_4'] = "컬럼명";
+Blockly.Msg['PANDAS_DATAFRAME_2_1'] = "[데이터프레임]";
 Blockly.Msg['PANDAS_CONVERSION_1'] = "[일괄변경] 프레임";
 Blockly.Msg['PANDAS_CONVERSION_2'] = "(컬럼명";
 Blockly.Msg['PANDAS_CONVERSION_3'] = "원본데이터";

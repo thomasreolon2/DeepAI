@@ -312,3 +312,29 @@ Blockly.Python['plt_subplot'] = function(block) {
         // TODO: Change ORDER_NONE to the correct strength.
         return [code, Blockly.Python.ORDER_ATOMIC];
       };
+
+      Blockly.Python['pandas_dataframe_2'] = function (block) {
+        var value_df_va = Blockly.Python.valueToCode(block, 'df_va', Blockly.Python.ORDER_ATOMIC);
+        var text_name = Blockly.Python.valueToCode(block, 'col_name', Blockly.Python.ORDER_ATOMIC);
+        var code = `${value_df_va} = pd.DataFrame(${text_name})\n`;
+        // TODO: Change ORDER_NONE to the correct strength.
+        return code;
+      };
+
+      Blockly.Python['df_resample'] = function(block) {
+        var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+        var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        var code = variable_list + ".resample(" + value_name + ")";
+        // TODO: Change ORDER_NONE to the correct strength.
+        return [code, Blockly.Python.ORDER_ATOMIC];
+      }; 
+
+      Blockly.Python['df_add_function'] = function(block) {
+        var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+        var value_name2 = Blockly.Python.valueToCode(block, 'LIST2', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        var code = value_name + "." + value_name2;
+        // TODO: Change ORDER_NONE to the correct strength.
+        return code;
+      }; 
