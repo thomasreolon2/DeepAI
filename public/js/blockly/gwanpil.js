@@ -534,3 +534,24 @@ Blockly.Blocks['groupby_dataFrame_2'] = {
     this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['pandas_date_range'] = {
+  init: function() {
+    this.appendValueInput("VAR")
+      .setCheck(null)
+      .appendField("[날짜]");
+    this.appendDummyInput()
+      .appendField(".")
+      .appendField(new Blockly.FieldDropdown([["date_range","date_range"], ["tz_localize","tz_localize"], ["tz_convert","tz_convert"], ["to_period","to_period"], ["to_timestamp","to_timestamp"], ["period_range","period_range"]]), "DROP")
+      .appendField("(");
+    this.appendValueInput("INPUT")
+      .setCheck(null);
+      this.appendDummyInput()
+      .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+  this.setTooltip("");
+  this.setHelpUrl("");
+} 
+};

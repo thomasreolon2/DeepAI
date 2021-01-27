@@ -3632,6 +3632,19 @@
         </value>
       </block>
 
+      <block type="pandas_date_range">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">pf</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
       <!-- 행열삭제 -->
       <!-- <block type="select_row_delete">
         <value name="select_data">

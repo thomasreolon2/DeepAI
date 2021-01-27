@@ -267,7 +267,7 @@ Blockly.Python['pandas_series'] = function (block) {
 //2020-09-16 양승국 추가
 Blockly.Python['pandas_series_data'] = function (a) {
   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.Python.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";
-  return ["{" + b.join(", ") + "}", Blockly.Python.ORDER_ATOMIC]
+  return ["[" + b.join(", ") + "]", Blockly.Python.ORDER_ATOMIC]
 
 };
 

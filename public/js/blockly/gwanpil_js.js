@@ -230,3 +230,8 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = '\n';
         return [code, Blockly.JavaScript.ORDER_NONE];
       };
+
+      Blockly.JavaScript['pandas_date_range'] = function (block) {
+        var code = '\n';
+        return [code, Blockly.JavaScript.ORDER_NONE];
+      };

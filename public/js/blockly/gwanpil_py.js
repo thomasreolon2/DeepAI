@@ -302,3 +302,13 @@ Blockly.Python['plt_subplot'] = function(block) {
         var code = value_series_or_dataframe + '.groupby(' + value_colname + ')[' + value_indexname + ']' + dropdown_function;
         return [code, Blockly.Python.ORDER_NONE];
       };
+
+      Blockly.Python['pandas_date_range'] = function(block) {
+        var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+        var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+        var dropdown_drop = block.getFieldValue('DROP');
+        // TODO: Assemble Python into code variable.
+        var code = `${value_var}.${dropdown_drop}(${value_input})`;
+        // TODO: Change ORDER_NONE to the correct strength.
+        return [code, Blockly.Python.ORDER_ATOMIC];
+      };
