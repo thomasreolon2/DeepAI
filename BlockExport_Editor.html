@@ -3728,7 +3728,7 @@
       </block>
 
       <block type="val_vi"></block>
-      <!--  matplot1 시각화 틀    -->
+      <!--  그래프 출력 갯수    -->
       <block type="matplotlib_main">
         <value name="matplotlib_main_cols">
           <shadow type="math_number">
@@ -3742,7 +3742,7 @@
           </shadow>
         </value>
       </block>
-      <!--  matplot1 시각화 틀    -->
+      <!--  그래프 출력 갯수    -->
 
 
       <!--  matplot2 시각화 준비      -->
@@ -3773,8 +3773,43 @@
       <!--  matplot3 시각화 하기      -->
       <!-- <block type="matplotlib_graph_end"></block> -->
       <!--  matplot3 시각화 하기      -->
+      
+      <!--  matplot plt.show()      -->
+      <block type="matplotlib_plt_show"></block>
+      
+      <!-- 2021-01-21 그래프크기설정 양승국-->
+      <block type = "matp_Ex">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="d2">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <value name="d3">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+      </block>
 
-
+      <!-- subplots -->
+      <block type="subplots">
+        <value name="VAR1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="VAR2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      
       <!--  matplot plt.plot()      -->
       <block type="ax_lst_plot">
         <value name="list">
@@ -3789,6 +3824,21 @@
         </value>
       </block>
       
+      <!-- title -->
+      <block type = "matp_title">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="d2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+  
+      <!-- label -->
       <block type="plt_xlabel_ylabel">
         <value name="list">
           <block type="variables_get">
@@ -3820,13 +3870,13 @@
         </value>
       </block>
 
-      <block type="subplots">
-        <value name="VAR1">
-          <block type="variables_get">
-            <field name="VAR">plt</field>
-          </block>
+      <block type = "pie_subplots_1">
+        <value name="name1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
         </value>
-        <value name="VAR2">
+        <value name="name2">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
@@ -3841,59 +3891,8 @@
         </value>
       </block>
 
-      <block type = "pie_subplots_1">
-        <value name="name1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="name2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
       <!-- 2021-01-21 양승국 블럭 추가-->
-      <block type = "matp_Ex">
-        <value name="d1">
-          <block type="variables_get">
-            <field name="VAR">plt</field>
-          </block>
-        </value>
-        <value name="d2">
-          <shadow type="math_number">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-        <value name="d3">
-          <shadow type="math_number">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "matp_title">
-        <value name="d1">
-          <block type="variables_get">
-            <field name="VAR">plt</field>
-          </block>
-        </value>
-        <value name="d2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      
-      <!-- 2021-01-21 양승국 블럭 추가-->
-
       <!--  matplot plt.plot()      --> 
-
-      <!--  matplot plt.show()      -->
-      <block type="matplotlib_plt_show"></block>
-      <block type="plt_imshow"></block>
-
       <block type = "plt_ravel">
         <value name="name1">
           <shadow type="indata">
@@ -3906,7 +3905,7 @@
           </shadow>
         </value>
       </block>
-
+<!-- 
       <block type="set_axis_off">
         <value name="data">
           <shadow type="indata">
@@ -3918,13 +3917,13 @@
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!--  matplot plt.show()      -->
 
       <!--  사이킷런 시각화 하기      -->
       <!-- <block type="lrgraph"></block>
       <block type="logicgraph"></block> -->
-      <block type="vis_tree"></block>
+      <!-- <block type="vis_tree"></block> -->
       <!--  사이킷런 시각화 하기      -->
 
       </category>

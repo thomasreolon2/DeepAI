@@ -46,11 +46,3 @@ Blockly.Python['select_graph_option'] = function(block) {
    
   return code;
   };
-
-
-  // 2021.01.13 plt.imshow (남지원)
-  Blockly.Python['plt_imshow'] = function (block) {
-    var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
-    var code = `plt.imshow(${variable_list})\n`;
-    return code;
-  };

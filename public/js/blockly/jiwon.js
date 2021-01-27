@@ -704,7 +704,7 @@ Blockly.Blocks['try_except'] = {
   Blockly.Blocks['except_block'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown([["SyntaxError","SyntaxError"], ["NameError","NameError"], ["ZeroDivisionError","ZeroDivisionError"], ["IndexError","IndexError"], ["ValueError","ValueError"], ["KeyError","KeyError"], ["AttributeError","AttributeError"], ["FileNotFoundError","FileNotFoundError"], ["TypeError","TypeError"]]), "DROP");
+          .appendField(new Blockly.FieldDropdown([["EOFError","EOFError"],["SyntaxError","SyntaxError"], ["NameError","NameError"], ["ZeroDivisionError","ZeroDivisionError"], ["IndexError","IndexError"], ["ValueError","ValueError"], ["KeyError","KeyError"], ["AttributeError","AttributeError"], ["FileNotFoundError","FileNotFoundError"], ["TypeError","TypeError"]]), "DROP");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_LOGIC_HUE}");
