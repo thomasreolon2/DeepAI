@@ -8,6 +8,15 @@
     return code;
   };
 
+    // 데이터 통계
+    Blockly.JavaScript['block_sum_min'] = function(block) {
+      var variable_name = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+      var dropdown_drop = block.getFieldValue('DROP');
+      var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+      // TODO: Assemble JavaScript into code variable.
+      var code = `\n`;
+      return [code,Blockly.JavaScript.ORDER_ATOMIC];
+    };
 
   Blockly.JavaScript['block_cumsum'] = function(block) {
     var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);

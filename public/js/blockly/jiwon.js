@@ -23,11 +23,12 @@ Blockly.Blocks['block_tail_head'] = {
 // tail_head
 Blockly.Blocks['block_sum_min'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField("[데이터통계]")
-          .appendField(new Blockly.FieldVariable("df"), "VAR")
-          .appendField(".");
-      this.appendDummyInput()
+        this.appendDummyInput()
+            .appendField("[데이터통계]");
+        this.appendValueInput("VAR")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(".")
           .appendField(new Blockly.FieldDropdown([["합(sum)","sum"],["갯수(count)","count"],["평균(mean)","mean"],["곱(prod)","prod"],["중앙값(median)","median"],["최소값(min)","min"],["최대값(max)","max"],["인덱스최소값(idxmin)","idxmin"],["인덱스최대값(idxmax)","idxmax"] ]), "DROP")
           .appendField("(");
       this.appendValueInput("INPUT")

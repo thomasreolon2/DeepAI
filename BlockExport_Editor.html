@@ -2673,8 +2673,6 @@
         </value>  
       </block> 
 
-      
-
       <block type="numpy_from_existing_data">
         <value name="numpy_From_existing_data_val"> 
           <shadow type="indata">
@@ -2706,7 +2704,7 @@
       </block> 
 
       <!----------------------------------------------------------------------수학 통계-->
-      <label text="수학 & 통계"></label>
+      <label text="넘파이 기본 연산"></label>
        <!-- 넘파이 기본연산 -->
        <block type="numpy_operator_basic">
         <value name="parameter1"> 
@@ -3436,6 +3434,11 @@
         </block> 
 
         <block type="block_sum_min">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
           <value name="INPUT">
             <shadow type="indata">
               <field name="indata1"></field>
