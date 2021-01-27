@@ -659,7 +659,7 @@
       <block type="indata"></block>
 
       <block type="class_func_param"></block>
-      
+      <!--------------------------------------------------------------------------------------------OS-->
       <category name="%{BKY_CATEGORY_OS}" colour="%{BKY_OS_HUE}">
         <block type="os_library"></block>
         <label text="os & os.path & shutil"></label>
@@ -804,10 +804,10 @@
           </value>
         </block>
       </category>
-    
+      <!----------------------------------------------------------------------------------------------파일-->
       <category name="%{BKY_CATEGORY_FILE}" colour="%{BKY_FILE_HUE}">
         <block type="pickle_library"></block>
-        <block type="pandas_library"></block>
+        <block type="csv_library"></block>
         <!-- 기태 수정(로컬 파일 열기) 21.01.01 ------------------------------------> 	
         <block type = "fd_open">
           <value name="text">               
@@ -7669,7 +7669,7 @@
     <category name="%{BKY_CATEGORY_MACHINELEARNING}" colour="%{BKY_ML_HUE}"> <!--머신러닝(ML)-->
     </category>
     <category name="%{BKY_CATEGORY_DEEPLEARNING}" colour="%{BKY_DL_HUE}"> <!--딥러닝(DL)-->
-      <block type="import_skimage_morphology"></block>
+      <!-- <block type="import_skimage_morphology"></block>
         <block type="import_axes3D"></block>
 
         <block type="matplotlib_main_figure">
@@ -7735,7 +7735,7 @@
               <field name="indata1">struc</field>
             </shadow>
           </value>
-        </block>
+        </block> -->
 
       
     </category>
