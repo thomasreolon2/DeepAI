@@ -1272,7 +1272,7 @@ Blockly.Blocks['pandas_oc'] = {
   init: function () {
     this.appendDummyInput().appendField(Blockly.Msg.PANDAS_OC).appendField(new Blockly.FieldVariable("df"), "list")
         .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["iloc","iloc"], ["loc","loc"]]), "DROP");
+        .appendField(new Blockly.FieldDropdown([["iloc","iloc"], ["loc","loc"], ["iat","iat"], ["at","at"]]), "DROP");
     this.appendValueInput("d1")
         .setCheck(null)
         .appendField("[");
