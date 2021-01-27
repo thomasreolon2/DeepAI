@@ -2705,6 +2705,17 @@
 
       <!----------------------------------------------------------------------수학 통계-->
       <label text="넘파이 기본 연산"></label>
+
+      <!-- 수학 / 삼각 -->
+      <block type="numpy_mathematical_functions">
+        <value name="numpy_Mathematical functions_val"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>   
+      </block> 
+      <!-- 수학 / 삼각  -->
+
        <!-- 넘파이 기본연산 -->
        <block type="numpy_operator_basic">
         <value name="parameter1"> 
@@ -2730,6 +2741,15 @@
         </block> 
         <!-- 수학 / 반올림  -->
 
+        <!-- 수학 / 합계 & 차이 --> 
+        <block type="numpy_sums_differences">
+          <value name="numpy_Sums_differences_val"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>  
+        </block> 
+        <!-- 수학 / 합계 & 차이  -->
         <!-- 수학 / 지수 & 로그 --> 
         <!-- <block type="numpy_exponents_logarithms_basic">
           <value name="numpy_Exponents_logarithms_val"> 

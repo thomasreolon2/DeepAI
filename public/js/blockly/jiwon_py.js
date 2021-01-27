@@ -46,7 +46,11 @@ Blockly.Python['block_tail_head'] = function(block) {
         var value_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
 
         // TODO: Assemble Python into code variable.
-        var code = `${variable_name}.${dropdown_drop}(by=['${value_name}'], ascending=${dropdown_drop2})`;
+        if(dropdown_drop == "sort_index"){
+          var code = `${variable_name}.${dropdown_drop}(axis=${value_name}, ascending=${dropdown_drop2})`;
+        } else {
+          var code = `${variable_name}.${dropdown_drop}(by=['${value_name}'], ascending=${dropdown_drop2})`;
+        }
         return [code,Blockly.Python.ORDER_ATOMIC];
     };
 
