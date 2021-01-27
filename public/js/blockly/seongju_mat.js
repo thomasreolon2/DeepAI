@@ -72,6 +72,25 @@ Blockly.Blocks['plt_axis'] = {
   }
 };
 
+Blockly.Blocks['plt_figure'] = {
+    init: function() {
+      this.appendValueInput("list")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(".figure(");
+      this.appendValueInput("NAME")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
 Blockly.Blocks['axs_set_xlim'] = {
   init: function() {
     this.appendDummyInput()

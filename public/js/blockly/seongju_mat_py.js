@@ -30,6 +30,14 @@ Blockly.Python['plt_axis'] = function(block) {
   return code;
 };
 
+Blockly.Python['plt_figure'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list + '.figure(' + value_name + ')\n';
+  return code;
+};
+
 Blockly.Python['axs_set_xlim'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   var value_val = Blockly.Python.valueToCode(block, 'val', Blockly.Python.ORDER_ATOMIC);
