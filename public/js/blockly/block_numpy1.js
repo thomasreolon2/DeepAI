@@ -668,11 +668,11 @@ Blockly.Blocks['create_np_array'] = {
   init: function () {
       this.appendDummyInput()
           .appendField(new Blockly.FieldVariable("a"), "list")
-          .appendField(" = np.array([");
+          .appendField(" = np.array(");
       this.appendValueInput("text")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("])");
+          .appendField(")");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -690,11 +690,11 @@ Blockly.Blocks['create_np_array2'] = {
       this.appendValueInput("text")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField(")[");
+          .appendField("[");
       this.appendValueInput("text2")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("]");
+          .appendField("])");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);

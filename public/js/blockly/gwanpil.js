@@ -62,11 +62,11 @@ Blockly.Blocks['gp'] = {
     init: function () {
         this.appendDummyInput()
             .appendField(new Blockly.FieldVariable("harvest"), "list")
-            .appendField(" = np.array([");
+            .appendField(" = np.array(");
         this.appendValueInput("text")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField("])");
+            .appendField(")");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

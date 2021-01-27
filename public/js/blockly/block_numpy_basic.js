@@ -291,13 +291,11 @@ Blockly.Blocks['numpy_loadtxt_basic'] = {
     this.appendValueInput("text")
         .appendField("[np 파일] ")
         .appendField(new Blockly.FieldVariable("data"), "list")
-        .appendField(" = np.loadtxt( ");
-    this.appendDummyInput()
-        .appendField(")");
+        .appendField(" = np.loadtxt ");
     this.appendValueInput("delimiter")
-        .appendField("delimiter=")
+        .appendField("구분자")
     this.appendValueInput("dtype")
-        .appendField("dtype=");  
+        .appendField("dtype");  
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

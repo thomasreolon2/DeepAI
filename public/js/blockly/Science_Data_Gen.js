@@ -153,7 +153,7 @@ Blockly.Python['np_concatenate'] = function(block) {
 Blockly.Python['create_arry'] = function(block) { 
   var text_create_arry_val = block.getFieldValue('Create_arry_val'); 
   // TODO: Assemble JavaScript into code variable. 
-  var code = `[${text_create_arry_val}]`;     
+  var code = `${text_create_arry_val}`;     
   // TODO: Change ORDER_NONE to the correct strength.  
   return [code, Blockly.JavaScript.ORDER_NONE];
 }; 
@@ -248,7 +248,7 @@ Blockly.Python['np_arrange'] = function(block) {
       var value_numpy_shape_num1 = Blockly.Python.valueToCode(block, 'numpy_shape_num1', Blockly.Python.ORDER_ATOMIC);
       var value_numpy_shape_num = Blockly.Python.valueToCode(block, 'numpy_shape_num', Blockly.Python.ORDER_ATOMIC);
       // TODO: Assemble Python into code variable.
-      var code = `${value_numpy_shape_num1}.shape[${value_numpy_shape_num}]`;     
+      var code = `${value_numpy_shape_num1}.shape(${value_numpy_shape_num})`;     
       // TODO: Change ORDER_NONE to the correct strength.
       return [code, Blockly.Python.ORDER_ATOMIC];
     }; 
