@@ -215,15 +215,6 @@ Blockly.JavaScript['groupby_series'] = function (block) {
 };
 
 
-Blockly.JavaScript['groupby_dataFrame'] = function (block) {
-  var value_series_or_dataframe = Blockly.JavaScript.valueToCode(block, 'Series_or_Dataframe', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_colname = Blockly.JavaScript.valueToCode(block, 'colName', Blockly.JavaScript.ORDER_ATOMIC);
-  var dropdown_function = block.getFieldValue('function');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
 
 Blockly.JavaScript['groupby_series_'] = function (block) {
   for (var b = Array(a.itemCount_), c = 0; c < a.itemCount_; c++) b[c] = Blockly.JavaScript.valueToCode(a, "ADD" + c, Blockly.JavaScript.ORDER_COMMA) || "None";

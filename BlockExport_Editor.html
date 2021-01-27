@@ -3295,8 +3295,8 @@
         <!-- items -->
         <block type = "pandas_items"></block>
 
-       <!-- 비어있는지 확인 -->
-       <block type = "pandas_nanull">
+      <!-- 비어있는지 확인 -->
+      <block type = "pandas_nanull">
         <value name="VAR">
           <block type="variables_get">
             <field name="VAR">df</field>
@@ -3307,10 +3307,10 @@
             <field name="indata1"></field>
           </shadow>
         </value>
-       </block>   
+      </block>   
 
-       <!-- where -->
-       <block type="pandas_where">
+      <!-- where -->
+      <block type="pandas_where">
         <value name="d1">
           <block type="variables_get">
             <field name="VAR">df</field>
@@ -3336,8 +3336,8 @@
         </value>
       </block>
 
-       <!-- 범위설정 -->
-       <!-- <block type="select_row_column_value">
+      <!-- 범위설정 -->
+      <!-- <block type="select_row_column_value">
         <value name="select_data">
           <block type="variables_get">
             <field name="VAR">df</field>
@@ -3395,7 +3395,7 @@
 
       </category>
 
-      <!----------- 분석&집계 ---------------->
+      <!---------------------------------------------------------------------------------- 분석&집계 ---------------->
       <category name="분석&집계" colour="%{BKY_PANDAS_HUE}">
         <!-- 기본 통계 -->
         <block type="pandas_info">
@@ -3483,12 +3483,7 @@
           </value>
         </block>  -->
 
-      <!-- 프레임그룹화 -->
-      <!-- <block type="groupby_dataFrame">
-        <value name="colName">
-          <block type="groupby_series_"></block>
-        </value>
-      </block> -->
+  
 
       <!-- <block type="groupby_dataFrame_2">
         <value name="colName">
@@ -3504,7 +3499,7 @@
           </shadow>
         </value>
       </block> -->
-
+      <!-- 프레임 그룹화 -->
       <block type = "groupby_dataFrame1">
         <value name="d1">
           <block type="variables_get">
@@ -3538,7 +3533,7 @@
         </block>
         <!-- <block type="pyo_lib"></block> -->
         
-        <!-- 2020-09-09 양승국-->
+      <!-- 2020-09-09 양승국-->
       <!-- 일괄변경 -->
       <!-- <block type="pandas_conversion">
         <value name="pa_frm">
@@ -3721,10 +3716,10 @@
           <value name="ser_var">
             <block type="variables_get">
               <field name="VAR">sr</field>
-           </block>
+            </block>
           </value>
           <value name="ser_data">
-           <block type="pandas_series_data"></block>
+            <block type="pandas_series_data"></block>
           </value>
         </block>
       
@@ -3740,13 +3735,13 @@
       
         <!-- 시리즈 merge -->
         <block type="pandas_merge">
-         <value name="mer_var">
+          <value name="mer_var">
             <block type="variables_get">
               <field name="VAR">sr</field>
             </block>
-         </value>
-         <value name="connet_way">
-           <block type="pandas_merge_oncol"></block>
+          </value>
+          <value name="connet_way">
+            <block type="pandas_merge_oncol"></block>
           </value>
         </block>
       
