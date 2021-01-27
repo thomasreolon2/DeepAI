@@ -2682,7 +2682,7 @@
           </shadow>
         </value>  
       </block> 
-
+      <!----------------------------------------------------------------------랜덤-->
       <label text="랜덤&정렬"></label>
       <block type="numpy_random_generator_basic">
         <value name="numpy_Random_generator_val"> 
@@ -2705,23 +2705,6 @@
         </value>  
       </block> 
 
-      <block type="numpy_random_randint_basic">
-        <value name="parmeter1"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>  
-        <value name="parmeter2"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-        <value name="parmeter3"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>  
-      </block> 
       <!----------------------------------------------------------------------수학 통계-->
       <label text="수학 & 통계"></label>
        <!-- 넘파이 기본연산 -->
@@ -2796,20 +2779,7 @@
           </shadow>
         </value> 
       </block>
-      <!-- np.take -->
-      <block type="numpy_take_basic">
-        <value name="parameter1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-        <value name="parameter2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-      </block>
-      
+  
       <!-- 넘파이 인덱스/값 검색 -->
 
        <!-- 넘파이 인덱스/값 검색 인자 두개-->

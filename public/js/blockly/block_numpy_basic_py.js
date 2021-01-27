@@ -177,7 +177,9 @@ Blockly.Python['numpy_random_sample_basic'] = function(block) {
     case "numpy_Random_sample_rand": 
     code = `np.random.rand(${value_numpy_random_sample_val}${value_numpy_random_sample_val2})`;  
     break; 
-
+    case "numpy_Random_sample_randint": 
+    code = `np.random.randint(${value_numpy_random_sample_val}${value_numpy_random_sample_val2})`;  
+    break; 
     case "numpy_Random_sample_randn": 
     code = `np.random.randn(${value_numpy_random_sample_val}${value_numpy_random_sample_val2})`;  
     break;
@@ -206,19 +208,6 @@ Blockly.Python['numpy_random_sample_basic'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['numpy_random_randint_basic'] = function(block) {
-  var value_numpy_random_sample_val = Blockly.Python.valueToCode(block, 'parmeter1', Blockly.Python.ORDER_ATOMIC);
-  var value_numpy_random_sample_val2 = Blockly.Python.valueToCode(block, 'parmeter2', Blockly.Python.ORDER_ATOMIC);
-  var value_numpy_random_sample_val3 = Blockly.Python.valueToCode(block, 'parmeter3', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
- 
-  var code;
-
-  code = `np.random.randint(${value_numpy_random_sample_val}${value_numpy_random_sample_val2}${value_numpy_random_sample_val3})`;  
-
-  // TODO: Change ORDER_ATOMIC to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 //numpy_random_permutations
 Blockly.Python['numpy_random_permutations'] = function(block) {

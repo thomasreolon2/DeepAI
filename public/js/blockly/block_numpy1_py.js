@@ -726,7 +726,11 @@ Blockly.Python['create_np_array'] = function (block) {
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   var value_text2 = Blockly.Python.valueToCode(block, 'dtype', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = variable_list + ' = np.array(' + value_text + ',' + value_text2 + ')\n';
+  if(value_text2 == ""){
+    var code = variable_list + ' = np.array(' + value_text + ')\n';
+  } else {
+    var code = variable_list + ' = np.array(' + value_text + ',' + value_text2 + ')\n';
+  }
   return code;
 };
 

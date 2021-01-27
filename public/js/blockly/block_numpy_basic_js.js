@@ -55,18 +55,6 @@ Blockly.JavaScript['numpy_random_sample_basic'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
-Blockly.JavaScript['numpy_random_randint_basic'] = function(block) {
-  var value_numpy_random_sample_val = Blockly.JavaScript.valueToCode(block, 'parmeter1', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_numpy_random_sample_val2 = Blockly.JavaScript.valueToCode(block, 'parmeter2', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_numpy_random_sample_val3 = Blockly.JavaScript.valueToCode(block, 'parmeter3', Blockly.JavaScript.ORDER_ATOMIC);
-  var code;
-
-  code = `np.random.randint(${value_numpy_random_sample_val})`;  
-
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-
 
 //numpy_random_generator
 Blockly.JavaScript['numpy_random_generator_basic'] = function(block) {

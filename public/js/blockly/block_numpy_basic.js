@@ -41,7 +41,7 @@ Blockly.Blocks['numpy_random_sample_basic'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 단순 랜덤]")
-        .appendField(new Blockly.FieldDropdown([["임의 값(rand)","numpy_Random_sample_rand"], ["표준 정규분포(randn)","numpy_Random_sample_randn"], ["배열 무작위(choice)","numpy_Random_sample_choice"]]), "numpy_Random_sample_opt");
+        .appendField(new Blockly.FieldDropdown([["임의 값(rand)","numpy_Random_sample_rand"], ["임의정수(randint)","numpy_Random_sample_randint"],["표준 정규분포(randn)","numpy_Random_sample_randn"], ["배열 무작위(choice)","numpy_Random_sample_choice"]]), "numpy_Random_sample_opt");
     this.appendValueInput("parmeter1")
         .setCheck(null);
     // this.appendValueInput("parmeter2")
@@ -53,25 +53,6 @@ Blockly.Blocks['numpy_random_sample_basic'] = {
  this.setHelpUrl("");
   }
 };
-
-Blockly.Blocks['numpy_random_randint_basic'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("[np 단순 랜덤] 임의정수(randint)")
-    this.appendValueInput("parmeter1")
-        .setCheck(null);
-    // this.appendValueInput("parmeter2")
-    //     .setCheck(null);
-    // this.appendValueInput("parmeter3")
-    //     .setCheck(null);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("%{BKY_NUMPY_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
 
 
 //numpy_random_generator
@@ -84,8 +65,8 @@ Blockly.Blocks['numpy_random_generator_basic'] = {
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
