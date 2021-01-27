@@ -200,8 +200,10 @@ Blockly.Blocks['numpy_ones_and_zeros_basic'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 0 & 1]")
-        .appendField(new Blockly.FieldDropdown([["초기화 x(empty)","np.empty"], ["0으로 채움(zeros)","np.zeros"], ["형태에 따른 1(ones)","np.ones"], ["대각선 1(eye)","np.eye"], ["해당 값으로 채움(full)","np.full"]]), "numpy_Ones and zeros_opt");
+        .appendField(new Blockly.FieldDropdown([["초기화 x(empty)","np.empty"], ["0으로 채움(zeros)","np.zeros"], ["형태에 따른 1(ones)","np.ones"], ["해당 값으로 채움(full)","np.full"]]), "numpy_Ones and zeros_opt");
     this.appendValueInput("parameter1")
+        .setCheck(null);
+    this.appendValueInput("parameter2")
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
@@ -211,7 +213,20 @@ Blockly.Blocks['numpy_ones_and_zeros_basic'] = {
   }
 };
 
+Blockly.Blocks['numpy_eye_basic'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[np 0 & 1] 단위행렬(eye)")
+    this.appendValueInput("parameter1")
+        .setCheck(null);
 
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
 //numpy_numerical_ranges
 Blockly.Blocks['numpy_numerical_ranges_basic1'] = {

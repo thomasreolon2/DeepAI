@@ -690,7 +690,16 @@ Blockly.Python['numpy_ones_and_zeros_basic'] = function(block) {
   var value_numpy_ones_and_zeros_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
   var value_numpy_ones_and_zeros_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_ones_and_zeros_opt}((${value_numpy_ones_and_zeros_val}))`;
+  var code = `${dropdown_numpy_ones_and_zeros_opt}((${value_numpy_ones_and_zeros_val}),${value_numpy_ones_and_zeros_val2})`;
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+//numpy_ones_and_zeros
+Blockly.Python['numpy_eye_basic'] = function(block) {
+  var value_numpy_ones_and_zeros_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `np.eye(${value_numpy_ones_and_zeros_val})`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

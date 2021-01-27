@@ -2501,6 +2501,13 @@
               <field name="indata1">[1,2,'a','b']</field>
             </shadow>
           </value>
+
+          <value name="dtype">
+            <shadow type="indata">
+              <field name="indata1">dtype = </field>
+            </shadow>
+          </value>
+
         </block>
 
         <block type = "create_np_array2">
@@ -2532,14 +2539,23 @@
       <block type="numpy_ones_and_zeros_basic">
         <value name="parameter1"> 
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">행,열</field>
           </shadow>
         </value>
         <value name="parameter2"> 
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">dtype =</field>
           </shadow>
         </value>  
+      </block> 
+
+      <block type="numpy_eye_basic">
+        <value name="parameter1"> 
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+ 
       </block> 
       <!-- 배열생성 / 0 & 1 -->
 
@@ -2590,8 +2606,10 @@
         </value>  
       </block>
 
+
+      <block type="numpy_select"></block>
       <!-- 차원확인 -->
-      <block type="numpy_shape">
+      <!-- <block type="numpy_shape">
         <value name="numpy_shape_num1">
           <block type="variables_get">
             <field name="VAR">np</field>
@@ -2602,7 +2620,7 @@
             <field name="indata1"></field>
           </shadow>
         </value>
-      </block>
+      </block> -->
       <!-- np.shape  -->
 
       <block type="numpy_transpose_like_operations_basic">

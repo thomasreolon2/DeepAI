@@ -671,6 +671,8 @@ Blockly.Blocks['create_np_array'] = {
           .appendField(" = np.array(");
       this.appendValueInput("text")
           .setCheck(null);
+      this.appendValueInput("dtype")
+          .setCheck(null);
       this.appendDummyInput()
           .appendField(")");
       this.setInputsInline(true);

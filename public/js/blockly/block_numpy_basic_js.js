@@ -161,7 +161,14 @@ Blockly.JavaScript['numpy_ones_and_zeros_basic'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
-
+//numpy_ones_and_zeros
+Blockly.JavaScript['numpy_eye_basic'] = function(block) {
+  var value_numpy_ones_and_zeros_val = Blockly.JavaScript.valueToCode(block, 'parameter1', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `np.eye(${value_numpy_ones_and_zeros_val})`;
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
 
 //numpy_numerical_ranges
 Blockly.JavaScript['numpy_numerical_ranges_basic1'] = function(block) {
@@ -207,3 +214,13 @@ Blockly.JavaScript['numpy_loadtxt_basic'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
+
+Blockly.JavaScript['numpy_select'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_operator_val = Blockly.JavaScript.valueToCode(block, 'parameter1', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_numpy_operator_val}.${dropdown_numpy_operator_option}`;
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
