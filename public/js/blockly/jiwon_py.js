@@ -42,9 +42,11 @@ Blockly.Python['block_tail_head'] = function(block) {
     Blockly.Python['pandas_sort'] = function(block) {
       var variable_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
         var dropdown_drop = block.getFieldValue('DROP');
+        var dropdown_drop2 = block.getFieldValue('DROP2');
         var value_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+
         // TODO: Assemble Python into code variable.
-        var code = `${variable_name}.${dropdown_drop}(${value_name})`;
+        var code = `${variable_name}.${dropdown_drop}(by=['${value_name}'], ascending=${dropdown_drop2})`;
         return [code,Blockly.Python.ORDER_ATOMIC];
     };
 

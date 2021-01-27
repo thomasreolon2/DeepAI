@@ -96,18 +96,20 @@ Blockly.Blocks['pandas_sort'] = {
             .setCheck(null);
         this.appendDummyInput()
             .appendField(".")
-          .appendField(new Blockly.FieldDropdown([["인덱스정렬(sort_index)","sort_index"],["값정렬(sort_values)","sort_values"],["상위n개(nlargest))","nlargest"],["하위n개(nsmallest)","nsmallest"]]), "DROP")
-          .appendField("(");
-      this.appendValueInput("INPUT")
-          .setCheck(null);
-      this.appendDummyInput()
-          .appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour(pandas_color);
-   this.setTooltip("");
-   this.setHelpUrl("");
-   }
+            .appendField(new Blockly.FieldDropdown([["인덱스정렬(sort_index)","sort_index"],["값정렬(sort_values)","sort_values"],["상위n개(nlargest))","nlargest"],["하위n개(nsmallest)","nsmallest"]]), "DROP")
+        this.appendValueInput("INPUT")
+            .setCheck(null)
+            .appendField("( 컬럼명 ");
+        this.appendDummyInput()
+            .appendField(", ")
+            .appendField(new Blockly.FieldDropdown([["오름차순(True)","True"],["내림차순(False)","False"]]), "DROP2")
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(pandas_color);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };
 
 // 판다스 상관관계
