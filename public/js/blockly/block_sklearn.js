@@ -206,13 +206,12 @@ Blockly.Blocks['train_test_split'] = {
         // this.appendValueInput("y_test").setCheck(null).appendField("y_test");
         this.appendDummyInput().appendField('x_data').appendField(new Blockly.FieldVariable("x_data"), "x_data")
         .appendField('x_train').appendField(new Blockly.FieldVariable("x_train"), "x_train")
-        .appendField('x_test').appendField(new Blockly.FieldVariable("x_test"), "x_test");
+        .appendField('x_test').appendField(new Blockly.FieldVariable("x_test"), "x_test")
+        .appendField("test_size").appendField(new Blockly.FieldTextInput("0.2"), "test_size");
 
         this.appendDummyInput().appendField('y_data').appendField(new Blockly.FieldVariable("y_data"), "y_data")
         .appendField('y_train').appendField(new Blockly.FieldVariable("y_train"), "y_train")
-        .appendField('y_test').appendField(new Blockly.FieldVariable("y_test"), "y_test");
-
-        this.appendDummyInput().appendField("test_size").appendField(new Blockly.FieldTextInput("0.2"), "test_size")
+        .appendField('y_test').appendField(new Blockly.FieldVariable("y_test"), "y_test")
         .appendField("data_shuffle").appendField(new Blockly.FieldDropdown([
             [
                 Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_2, "True"
@@ -221,7 +220,7 @@ Blockly.Blocks['train_test_split'] = {
                 Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_3, "False"
             ]
         ]), "shuffle")
-        .appendField('seed').appendField(new Blockly.FieldTextInput("0"), "seed")
+        .appendField('seed').appendField(new Blockly.FieldTextInput("0"), "seed"); 
 
         //this.appendDummyInput().appendField("Test Size").appendField(new Blockly.FieldTextInput("0.2"), "test_size");
 
