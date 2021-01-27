@@ -3553,6 +3553,18 @@
       <!----------------------------------------------------------------------------------조작가공-->
       <category name="조작&가공" colour="%{BKY_PANDAS_HUE}">
 
+        <block type="pandas_dataframe_2">
+          <value name="df_va">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="col_name">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
         <!-- astype -->
         <block type="pandas_astype">
           <value name="VAR">

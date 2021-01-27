@@ -336,5 +336,5 @@ Blockly.Python['plt_subplot'] = function(block) {
         // TODO: Assemble Python into code variable.
         var code = value_name + "." + value_name2;
         // TODO: Change ORDER_NONE to the correct strength.
-        return code;
+        return [code, Blockly.Python.ORDER_ATOMIC];
       }; 
