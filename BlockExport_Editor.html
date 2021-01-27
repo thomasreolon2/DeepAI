@@ -3253,6 +3253,20 @@
         <!-- pyodide 라이브러리 -->
         <block type="pyodide_library" ></block>
 
+        <block type = "csv_url">
+          <value name="va">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "pandas_csv_read">
+          <value name="va">
+            <block type="fileopen"></block>     
+          </value>
+        </block> 
+
         <!-- csv프레임 -->
         <block type="csvdataframe_J">
           <value name="input_var">
@@ -3358,21 +3372,7 @@
             <field name="VAR">df</field>
           </block>
         </value>
-      </block>
-
-        <block type = "csv_url">
-          <value name="va">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type = "pandas_csv_read">
-          <value name="va">
-            <block type="fileopen"></block>     
-          </value>
-        </block> -->
+      </block> -->
 
         <!-- 전체범위 -->
         <!-- <block type="selec_value_all"></block> -->
