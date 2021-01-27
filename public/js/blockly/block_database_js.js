@@ -133,6 +133,16 @@
     return code;
   };
 
+  Blockly.JavaScript['db_fetch'] = function (block) {
+    var variable_list1 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+    var variable_list2 = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
+    var dropdown_name = block.getFieldValue('NAME');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return code;
+  };
+
   Blockly.JavaScript['db_close'] = function (block) {
     // TODO: Assemble .JavaScript into code variable.
     var code = '\n';

@@ -107,7 +107,7 @@
   };
 
 
-  // 전우잔
+  // 전우진
 
   Blockly.Blocks['sqlite_library'] = {
     init: function () {
@@ -258,6 +258,44 @@
     }
   };
 
+  
+  Blockly.Blocks['db_fetchone'] = {
+    init: function () {
+      this.appendDummyInput()
+      .appendField(Blockly.Msg.DATABASE_FETCHONE_1)
+      .appendField(new Blockly.FieldVariable("row"), "list1")
+      .appendField("=")
+      .appendField(new Blockly.FieldVariable("cur"), "list2")
+      .appendField(".fetchone()")
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("205");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['db_fetch'] = {
+    init: function () {
+      this.appendDummyInput()      
+      .appendField(Blockly.Msg.DATABASE_FETCHALL_1)
+      .appendField(new Blockly.FieldVariable("rows"), "list1")
+      .appendField("=")
+      .appendField(new Blockly.FieldVariable("cur"), "list2")
+      .appendField(".")
+      .appendField(new Blockly.FieldDropdown([["fetchone()", "fetchone()"],["fetchall()", "fetchall()"]]),"NAME")
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("205");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+  
+  
+
   Blockly.Blocks['db_fetchmany'] = {
     init: function () {
       this.appendDummyInput()
@@ -279,22 +317,6 @@
     }
   };
 
-  Blockly.Blocks['db_fetchone'] = {
-    init: function () {
-      this.appendDummyInput()
-      .appendField(Blockly.Msg.DATABASE_FETCHONE_1)
-      .appendField(new Blockly.FieldVariable("row"), "list1")
-      .appendField("=")
-      .appendField(new Blockly.FieldVariable("cur"), "list2")
-      .appendField(".fetchone()")
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("205");
-      this.setTooltip("");
-      this.setHelpUrl("");
-    }
-  };
 
   Blockly.Blocks['db_close'] = {
     init: function () {

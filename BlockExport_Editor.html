@@ -2279,9 +2279,11 @@
               </value>
             </block>
       
-            <block type="db_fetchone"></block>
+            <!-- <block type="db_fetchone"></block>
 
-           <block type="db_fetchall"></block>
+           <block type="db_fetchall"></block> -->
+
+           <block type="db_fetch"></block>
 
            <block type="db_fetchmany">
             <value name="va">
@@ -2354,8 +2356,8 @@
         </value>
       </block>
 
-      <!-- 조회1 -->
-      <block type = "db_select1">
+      <!-- 조회1 where-->
+      <!-- <block type = "db_select1">
         <value name="d1">
           <shadow type="indata">
             <field name="indata1">필드</field>
@@ -2371,9 +2373,48 @@
             <field name="indata1">조건</field>
           </shadow>
         </value>
+      </block> -->
+
+      <!-- 조회 where order group까지  -->
+      <block type = "db_select6">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <shadow type="indata">
+            <field name="indata1">조건 또는 필드</field>
+          </shadow>
+        </value>
       </block>
 
-      <block type = "db_select3">
+      <!-- 조회 where order group desc까지  -->
+      <!-- <block type = "db_select7">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">필드</field>
+          </shadow>
+        </value>
+        <value name="SET1">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="SET2">
+          <shadow type="indata">
+            <field name="indata1">조건 또는 필드</field>
+          </shadow>
+        </value>
+      </block> -->
+
+      <!-- 조회 order by -->
+      <!-- <block type = "db_select3">
         <value name="SET0">
           <shadow type="indata">
             <field name="indata1">필드</field>
@@ -2389,8 +2430,9 @@
             <field name="indata1">필드</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
 
+      <!-- desc 붙은 order by -->
       <block type = "db_select4">
         <value name="SET0">
           <shadow type="indata">
@@ -2409,7 +2451,8 @@
         </value>
       </block>
 
-      <block type = "db_select5">
+      <!-- 조회 group by -->
+      <!-- <block type = "db_select5">
         <value name="SET0">
           <shadow type="indata">
             <field name="indata1">필드</field>
@@ -2425,7 +2468,9 @@
             <field name="indata1">필드</field>
           </shadow>
         </value>
-      </block>
+      </block> -->
+
+
 
       <!-- 수정 -->
       <block type = "db_update">

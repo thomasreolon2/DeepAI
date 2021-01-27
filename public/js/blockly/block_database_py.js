@@ -134,6 +134,26 @@ Blockly.Python['db_fetchall'] = function (block) {
   return code;
 };
 
+
+Blockly.Python['db_fetchone'] = function (block) {
+  var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+  var variable_list2 = Blockly.Python.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble JavaScript into code variable.
+  var code = variable_list1 +  '=' + variable_list2 +'.fetchone()' + '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
+Blockly.Python['db_fetch'] = function (block) {
+  var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+  var variable_list2 = Blockly.Python.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
+  var dropdown_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = variable_list1 +  '=' + variable_list2 + '.' + dropdown_name + '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+
 Blockly.Python['db_fetchmany'] = function (block) {
   var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var variable_list2 = Blockly.Python.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
@@ -144,14 +164,6 @@ Blockly.Python['db_fetchmany'] = function (block) {
   return code;
 };
 
-Blockly.Python['db_fetchone'] = function (block) {
-  var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
-  var variable_list2 = Blockly.Python.variableDB_.getName(block.getFieldValue('list2'), Blockly.Variables.NAME_TYPE);
-  // TODO: Assemble JavaScript into code variable.
-  var code = variable_list1 +  '=' + variable_list2 +'.fetchone()' + '\n';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return code;
-};
 
 Blockly.Python['db_close'] = function (block) {
   var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);

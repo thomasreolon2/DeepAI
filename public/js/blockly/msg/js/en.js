@@ -1186,6 +1186,8 @@ Blockly.Msg['DATABASE_CREATE_DATA'] = "[DATA]";
 // --db 전우진
 Blockly.Msg['DATABASE_AUTOCOMMIT_1'] = "autocommit";
 Blockly.Msg['DATABASE_DELETEDB_1'] = "deleteDB";
+Blockly.Msg['DATABASE_GROUP_1'] = "GROUP BY";
+Blockly.Msg['DATABASE_ORDER_1'] = "ORDER BY";
 
 // 수학 math 이성주
 

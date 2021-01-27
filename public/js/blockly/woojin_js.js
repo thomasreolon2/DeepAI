@@ -64,3 +64,15 @@ Blockly.JavaScript['sr_tolist'] = function(block) {
     var code = '\n';
     return code;
   };
+
+  Blockly.JavaScript['db_select6'] = function (block) {
+    // TODO: Assemble .JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['db_select7'] = function (block) {
+    // TODO: Assemble .JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
