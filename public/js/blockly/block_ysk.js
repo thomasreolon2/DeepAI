@@ -77,7 +77,7 @@ Blockly.Blocks['df_bb'] = {
 //df_series1
 Blockly.Blocks['df_series1'] = {
   init: function () {
-      this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("df"), "list");
+      this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("sr"), "list");
       this.appendValueInput("LIST").appendField("(").setCheck(null);
       this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
@@ -92,7 +92,7 @@ Blockly.Blocks['df_series1'] = {
 //df_series2
 Blockly.Blocks['df_series2'] = {
   init: function () {
-    this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("df"), "list");
+    this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("sr"), "list");
       this.appendValueInput("LIST").appendField("[").setCheck(null);
       this.appendDummyInput().appendField("]");
       this.setInputsInline(true);
@@ -107,7 +107,7 @@ Blockly.Blocks['df_series2'] = {
 //df_series3
 Blockly.Blocks['df_series3'] = {
   init: function () {
-    this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("df"), "list");
+    this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("sr"), "list");
       this.appendValueInput("LIST").appendField("[").setCheck("Boolean");
       this.appendDummyInput().appendField("]");
       this.setInputsInline(true);

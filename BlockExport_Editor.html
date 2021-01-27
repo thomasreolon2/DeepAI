@@ -2662,6 +2662,7 @@
           </shadow>
         </value>  
       </block> 
+      <!----------------------------------------------------------------------수학 통계-->
       <label text="수학 & 통계"></label>
        <!-- 넘파이 기본연산 -->
        <block type="numpy_operator_basic">
@@ -2872,6 +2873,7 @@
       <!--  import sklearn  -->
 
       </category>
+      <!-------------------------------------------------------------------------------------------- 수학 & 통계-->
       <category name="수학&통계" colour="%{BKY_NUMPY_HUE}">
         <label text="수학"></label>
         <!-- 수학 / 삼각 -->
@@ -3524,7 +3526,7 @@
 
       </category>
 
-      
+      <!----------------------------------------------------------------------------------조작가공-->
       <category name="조작&가공" colour="%{BKY_PANDAS_HUE}">
         <!-- reindex -->
         <block type = "df_reindex">
@@ -3691,14 +3693,14 @@
 
         
       </category>
-      
+      <!---------------------------------------------------------------------------------시리즈-->
       <category name="시리즈" colour="%{BKY_PANDAS_HUE}">
         
         <!-- 시리즈생성 -->
         <block type="pandas_series">
           <value name="ser_var">
             <block type="variables_get">
-              <field name="VAR">ds</field>
+              <field name="VAR">sr</field>
            </block>
           </value>
           <value name="ser_data">
@@ -3710,7 +3712,7 @@
         <block type="pandas_concat">
           <value name="cat_vl">
             <block type="variables_get">
-              <field name="VAR">ds</field>
+              <field name="VAR">sr</field>
             </block>
           </value>
         </block>
@@ -3720,7 +3722,7 @@
         <block type="pandas_merge">
          <value name="mer_var">
             <block type="variables_get">
-              <field name="VAR">ds</field>
+              <field name="VAR">sr</field>
             </block>
          </value>
          <value name="connet_way">
