@@ -2494,7 +2494,7 @@
             </shadow>
           </Value>
         </block>
-
+        <label text="배열 생성"></label>
         <block type = "create_np_array">
           <value name="text">
             <shadow type="indata">
@@ -2507,13 +2507,12 @@
               <field name="indata1">dtype = int</field>
             </shadow>
           </value>
-
         </block>
 
         <block type = "create_np_array2">
           <value name="text">
             <shadow type="indata">
-              <field name="indata1">df[]</field>
+              <field name="indata1"></field>
             </shadow>
           </value>
           <value name="text2">
@@ -2533,9 +2532,7 @@
         <!-- <value name="np_array_val">
           <block type="create_arry"></block>
         </value> -->
-      <!----------------------------------------------------------------------배열-->
-      <label text="배열"></label>
-      <!-- 배열생성 / 0 & 1 --> 
+        <!-- 배열생성 / 0 & 1 --> 
       <block type="numpy_ones_and_zeros_basic">
         <value name="parameter1"> 
           <shadow type="indata">
@@ -2555,7 +2552,6 @@
             <field name="indata1"></field>
           </shadow>
         </value>
- 
       </block> 
       <!-- 배열생성 / 0 & 1 -->
 
@@ -2578,7 +2574,8 @@
         </value> 
       </block> 
       <!-- 배열생성 / 숫자 범위 -->
-
+      <!----------------------------------------------------------------------배열-->
+      <label text="배열 모양 변경"></label>
       <!-- 배열생성 / 숫자 범위2 --> 
       <!-- <block type="numpy_numerical_ranges_basic2">
         <value name="parameter1"> 
@@ -3235,45 +3232,6 @@
     <!-- ************************************************** ************************* *************************  -->
     <!-- 2020-09-20 양승국 수정-->
     <category name="%{BKY_CATEGORY_PANDAS}" colour="%{BKY_PANDAS_HUE}"> 
-
-      <category name = "기본" colour = "%{BKY_PANDAS_HUE}">
-
-        <!-- 기초 조회 -->
-        <block type="pandas_head">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-        </block>
-
-
-       <!-- 범위설정 -->
-        <block type="select_row_column_value">
-          <value name="select_data">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-          <value name="select_row_locate">
-            <block type="selec_value_all"></block>
-          </value>
-          <value name="select_column_locate">
-            <block type="selec_value_all"></block>
-          </value>
-        </block>
-
-        <!-- 행렬추출 -->
-        <block type="select_row_list">
-          <value name="list_data">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-        </block>
-
-      </category>
-
       <category name="조회" colour="%{BKY_PANDAS_HUE}">
 
         <!-- pandas 라이브러리 -->
