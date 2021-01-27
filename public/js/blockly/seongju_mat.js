@@ -806,3 +806,44 @@ Blockly.Blocks['dic_menu1_sj2'] = {
 };
 
 
+Blockly.Blocks['pandas_series_str'] = {
+    init: function() {
+      this.appendValueInput("VAR")
+        .setCheck(null)
+        .appendField("[문자열변경] 변수");
+      this.appendDummyInput()
+        .appendField(".")
+        .appendField(new Blockly.FieldDropdown([["str.lower","str.lower"], ["str.upper","str.upper"]]), "DROP")
+        .appendField("(");
+      this.appendValueInput("INPUT")
+        .setCheck(null);
+        this.appendDummyInput()
+        .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  } 
+  };
+
+
+  Blockly.Blocks['pandas_apply'] = {
+    init: function() {
+      this.appendValueInput("VAR")
+        .setCheck(null)
+        .appendField("[함수적용] " + Blockly.Msg.PANDAS_DATAFRAME_2);
+      this.appendDummyInput()
+        .appendField(".apply")
+        .appendField("(");
+      this.appendValueInput("INPUT")
+        .setCheck(null);
+        this.appendDummyInput()
+        .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  } 
+  };

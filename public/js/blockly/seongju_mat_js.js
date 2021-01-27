@@ -329,3 +329,13 @@ Blockly.JavaScript['dic_menu1_sj2'] = function (block) {
   code = '\n';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+Blockly.JavaScript['pandas_date_range'] = function (block) {
+  var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['pandas_apply'] = function (block) {
+  var code = '\n';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};

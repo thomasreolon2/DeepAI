@@ -60,6 +60,9 @@ Blockly.Blocks['df_bb'] = {
           [
             "append", "append"
           ],
+          [
+            "copy", "copy"
+          ],
       ]), "DROP");
       this.appendValueInput("INPUT").setCheck(null);
       this.setInputsInline(true);
