@@ -288,17 +288,21 @@ Blockly.Blocks['numpy_rounding_basic'] = {
 
 Blockly.Blocks['numpy_loadtxt_basic'] = {
   init: function () {
-      this.appendValueInput("text")
-          .appendField("[np 파일] ")
-          .appendField(new Blockly.FieldVariable("data"), "list")
-          .appendField(" = np.loadtxt( ");
-      this.appendDummyInput()
-          .appendField(")");
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_NUMPY_HUE}");
-      this.setTooltip("Create a list");
-      this.setHelpUrl("");
+    this.appendValueInput("text")
+        .appendField("[np 파일] ")
+        .appendField(new Blockly.FieldVariable("data"), "list")
+        .appendField(" = np.loadtxt( ");
+    this.appendDummyInput()
+        .appendField(")");
+    this.appendValueInput("delimiter")
+        .appendField("delimiter=")
+    this.appendValueInput("dtype")
+        .appendField("dtype=");  
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+    this.setTooltip("Create a list");
+    this.setHelpUrl("");
   }
 };

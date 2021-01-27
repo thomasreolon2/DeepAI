@@ -198,8 +198,10 @@ Blockly.JavaScript['numpy_numerical_ranges_basic2'] = function(block) {
 };
 
 Blockly.JavaScript['numpy_loadtxt_basic'] = function(block) {
-  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_text = Blockly.JavaScript.valueToCode(block, 'text', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_delimiter = Blockly.JavaScript.valueToCode(block, 'delimiter', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_dtype = Blockly.JavaScript.valueToCode(block, 'dtype', Blockly.JavaScript.ORDER_ATOMIC);
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble JavaScript into code variable.
   var code = '';
   // TODO: Change ORDER_NONE to the correct strength.
