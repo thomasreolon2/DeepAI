@@ -8,8 +8,8 @@ Blockly.Blocks['numpy_averages_variances_basic'] = {
         .appendField(new Blockly.FieldDropdown([["산술평균(mean)","np.mean"],["가중평균(average)","np.average"],["중앙값(median)","np.median"],  ["표준편차(std)","np.std"], ["분산(var)","np.var"]]), "numpy_Averages_variances_opt");
     this.appendValueInput("parameter1")
         .setCheck(null);
-    this.appendValueInput("parameter2")
-        .setCheck(null);
+    // this.appendValueInput("parameter2")
+    //     .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
@@ -45,8 +45,8 @@ Blockly.Blocks['numpy_random_sample_basic'] = {
         .appendField(new Blockly.FieldDropdown([["임의 값(rand)","numpy_Random_sample_rand"], ["표준 정규분포(randn)","numpy_Random_sample_randn"], ["배열 무작위(choice)","numpy_Random_sample_choice"]]), "numpy_Random_sample_opt");
     this.appendValueInput("parmeter1")
         .setCheck(null);
-    this.appendValueInput("parmeter2")
-        .setCheck(null);
+    // this.appendValueInput("parmeter2")
+    //     .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
@@ -61,10 +61,10 @@ Blockly.Blocks['numpy_random_randint_basic'] = {
         .appendField("[np 단순 랜덤] 임의정수(randint)")
     this.appendValueInput("parmeter1")
         .setCheck(null);
-    this.appendValueInput("parmeter2")
-        .setCheck(null);
-    this.appendValueInput("parmeter3")
-        .setCheck(null);
+    // this.appendValueInput("parmeter2")
+    //     .setCheck(null);
+    // this.appendValueInput("parmeter3")
+    //     .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
@@ -116,8 +116,8 @@ Blockly.Blocks['numpy_array_operator_basic'] = {
         .setCheck(null)
         .appendField(Blockly.Msg.NUMPY_ARRAY_OPERATOR_1)
         .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_ARRAY_OPERATOR_2,"np.dot"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_3,"np.subtract"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_4,"np.transpose"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_5,"np.tril"], [Blockly.Msg.NUMPY_ARRAY_OPERATOR_6,"np.triu"]]), "numpy_array_operator_Option");
-    this.appendValueInput("parameter2")
-        .setCheck(null)
+    // this.appendValueInput("parameter2")
+    //     .setCheck(null)
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
@@ -145,8 +145,8 @@ Blockly.Blocks['numpy_take_basic'] = {
     this.appendValueInput("parameter1")
         .setCheck(null)
         .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_111 + ' ' + Blockly.Msg.NUMPY_INDEX_VALUES_7)
-    this.appendValueInput("parameter2")
-        .setCheck(null)
+    // this.appendValueInput("parameter2")
+    //     .setCheck(null)
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
@@ -203,8 +203,6 @@ Blockly.Blocks['numpy_ones_and_zeros_basic'] = {
         .appendField(new Blockly.FieldDropdown([["초기화 x(empty)","np.empty"], ["0으로 채움(zeros)","np.zeros"], ["형태에 따른 1(ones)","np.ones"], ["대각선 1(eye)","np.eye"], ["해당 값으로 채움(full)","np.full"]]), "numpy_Ones and zeros_opt");
     this.appendValueInput("parameter1")
         .setCheck(null);
-    this.appendValueInput("parameter2")
-        .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
@@ -223,10 +221,10 @@ Blockly.Blocks['numpy_numerical_ranges_basic1'] = {
         .appendField(new Blockly.FieldDropdown([["균일 간격 배열(arange)","np.arange"], ["균등 간격(linspace)","np.linspace"], ["로그 균등 간격(logspace)","np.logspace"]]), "numpy_Numerical_ranges_opt");
     this.appendValueInput("parameter1")
         .setCheck(null);
-    this.appendValueInput("parameter2")
-        .setCheck(null);
-    this.appendValueInput("parameter3")
-        .setCheck(null);
+    // this.appendValueInput("parameter2")
+    //     .setCheck(null);
+    // this.appendValueInput("parameter3")
+    //     .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
@@ -243,8 +241,8 @@ Blockly.Blocks['numpy_numerical_ranges_basic2'] = {
         .appendField(new Blockly.FieldDropdown([["좌표 행렬(meshgrid)","np.meshgrid"], ["고밀도 다차원(mgrid)","np.mgrid"], ["열린 다차원(ogrid)","np.ogrid"]]), "numpy_Numerical_ranges_opt");
     this.appendValueInput("parameter1")
         .setCheck(null);
-    this.appendValueInput("parameter2")
-        .setCheck(null);
+    // this.appendValueInput("parameter2")
+    //     .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_NUMPY_HUE}");
@@ -302,5 +300,22 @@ Blockly.Blocks['numpy_loadtxt_basic'] = {
     this.setColour("%{BKY_NUMPY_HUE}");
     this.setTooltip("Create a list");
     this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['numpy_select'] = { 
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[np 배열형상]")
+        .appendField(new Blockly.FieldDropdown([["각 축의크기(shpae)","shape"], ["축의 개수(ndim)","ndim"], ["각 요소타입(dtype)","dtype"], ["각 요소타입크기(itemsize)","itemsize"], ["전체 요소개수(size)","size"]]), "numpy_operator_Option");
+    this.appendValueInput("parameter1")
+        .appendField("변수") 
+        .setCheck(null)
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+  this.setTooltip("");
+  this.setHelpUrl("");
   }
 };

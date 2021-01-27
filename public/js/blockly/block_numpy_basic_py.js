@@ -59,7 +59,7 @@ Blockly.Python['numpy_averages_variances_basic'] = function(block) {
   var value_numpy_averages_variances_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
   var value_numpy_averages_variances_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_averages_variances_opt}(${value_numpy_averages_variances_val},${value_numpy_averages_variances_val2})`;
+  var code = `${dropdown_numpy_averages_variances_opt}(${value_numpy_averages_variances_val}${value_numpy_averages_variances_val2})`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -175,27 +175,27 @@ Blockly.Python['numpy_random_sample_basic'] = function(block) {
   var code;
   switch (dropdown_numpy_random_sample_opt){
     case "numpy_Random_sample_rand": 
-    code = `np.random.rand(${value_numpy_random_sample_val},${value_numpy_random_sample_val2})`;  
+    code = `np.random.rand(${value_numpy_random_sample_val}${value_numpy_random_sample_val2})`;  
     break; 
 
     case "numpy_Random_sample_randn": 
-    code = `np.random.randn(${value_numpy_random_sample_val},${value_numpy_random_sample_val2})`;  
+    code = `np.random.randn(${value_numpy_random_sample_val}${value_numpy_random_sample_val2})`;  
     break;
 
     case "numpy_Random_sample_randint":
-    code = `np.random.randint(${value_numpy_random_sample_val}, ${value_numpy_random_sample_val2})`;  
+    code = `np.random.randint(${value_numpy_random_sample_val} ${value_numpy_random_sample_val2})`;  
     break;
 
     case "numpy_Random_sample_random":
-    code = `np.random.random(${value_numpy_random_sample_val},${value_numpy_random_sample_val2})`;  
+    code = `np.random.random(${value_numpy_random_sample_val}${value_numpy_random_sample_val2})`;  
     break;
 
     case "numpy_Random_sample_choice":
-    code = `np.random.choice(${value_numpy_random_sample_val},${value_numpy_random_sample_val2})`;  
+    code = `np.random.choice(${value_numpy_random_sample_val}${value_numpy_random_sample_val2})`;  
     break;
 
     case "numpy_Random_sample_bytes":
-    code = `np.random.bytes(${value_numpy_random_sample_val},${value_numpy_random_sample_val2})`;  
+    code = `np.random.bytes(${value_numpy_random_sample_val}${value_numpy_random_sample_val2})`;  
     break;
 
 
@@ -214,7 +214,7 @@ Blockly.Python['numpy_random_randint_basic'] = function(block) {
  
   var code;
 
-  code = `np.random.randint(${value_numpy_random_sample_val},${value_numpy_random_sample_val2},${value_numpy_random_sample_val3})`;  
+  code = `np.random.randint(${value_numpy_random_sample_val}${value_numpy_random_sample_val2}${value_numpy_random_sample_val3})`;  
 
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
@@ -465,7 +465,7 @@ Blockly.Python['numpy_array_operator_basic'] = function(block) {
   var value_numpy_array_operator_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
   var value_numpy_array_operator_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code =`${dropdown_numpy_array_operator_option}(${value_numpy_array_operator_val},${value_numpy_array_operator_val2})`;
+  var code =`${dropdown_numpy_array_operator_option}(${value_numpy_array_operator_val}${value_numpy_array_operator_val2})`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -483,7 +483,7 @@ Blockly.Python['numpy_take_basic'] = function(block) {
   var value_numpy_index_values_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
   var value_numpy_index_values_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code =`np.take(${value_numpy_index_values_val},${value_numpy_index_values_val2})`;
+  var code =`np.take(${value_numpy_index_values_val}${value_numpy_index_values_val2})`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -690,7 +690,7 @@ Blockly.Python['numpy_ones_and_zeros_basic'] = function(block) {
   var value_numpy_ones_and_zeros_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
   var value_numpy_ones_and_zeros_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_ones_and_zeros_opt}(${value_numpy_ones_and_zeros_val},${value_numpy_ones_and_zeros_val2})`;
+  var code = `${dropdown_numpy_ones_and_zeros_opt}((${value_numpy_ones_and_zeros_val}))`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -704,7 +704,7 @@ Blockly.Python['numpy_numerical_ranges_basic1'] = function(block) {
   var value_numpy_numerical_ranges_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
   var value_numpy_numerical_ranges_val3 = Blockly.Python.valueToCode(block, 'parameter3', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val},${value_numpy_numerical_ranges_val2},${value_numpy_numerical_ranges_val3})`;
+  var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val}${value_numpy_numerical_ranges_val2}${value_numpy_numerical_ranges_val3})`;
   
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
@@ -716,7 +716,7 @@ Blockly.Python['numpy_numerical_ranges_basic2'] = function(block) {
   var value_numpy_numerical_ranges_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
   var value_numpy_numerical_ranges_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val},${value_numpy_numerical_ranges_val2})`;
+  var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val}${value_numpy_numerical_ranges_val2})`;
   
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
@@ -728,7 +728,7 @@ Blockly.Python['numpy_operator_basic'] = function(block) {
   var value_numpy_operator_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
   var value_numpy_operator_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_operator_option}(${value_numpy_operator_val},${value_numpy_operator_val2})`;
+  var code = `${dropdown_numpy_operator_option}(${value_numpy_operator_val}${value_numpy_operator_val2})`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -742,4 +742,13 @@ Blockly.Python['numpy_loadtxt_basic'] = function (block) {
   // TODO: Assemble Python into code variable.
   var code = `${variable_list} = np.loadtxt(${value_text}, delimiter='${value_delimiter}', encoding='utf-8', dtype='${value_dtype}')\n`;
   return code;
+};
+
+Blockly.Python['numpy_select'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_operator_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_numpy_operator_val}.${dropdown_numpy_operator_option}`;
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };

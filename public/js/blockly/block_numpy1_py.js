@@ -661,7 +661,7 @@ Blockly.Python['numpy_ones_and_zeros'] = function(block) {
   var dropdown_numpy_ones_and_zeros_opt = block.getFieldValue('numpy_Ones and zeros_opt');
   var value_numpy_ones_and_zeros_val = Blockly.Python.valueToCode(block, 'numpy_Ones and zeros_val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_ones_and_zeros_opt}(${value_numpy_ones_and_zeros_val})`;
+  var code = `${dropdown_numpy_ones_and_zeros_opt}((${value_numpy_ones_and_zeros_val}))`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
