@@ -58,11 +58,14 @@ Blockly.JavaScript['fill_null_data'] = function (block) {
   return code;
 };
 
+//2020-09-19 양승국 수정
 Blockly.JavaScript['pandas_mis_del'] = function (block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'DATA_del', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name1 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('DEL_NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
+  var code = "\n";
+  // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
 
@@ -375,3 +378,23 @@ Blockly.JavaScript['groupby_dataFrame1'] = function (block) {
   var code = '\n';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+//pandas_transpose
+Blockly.JavaScript['pandas_transpose'] = function(block) {
+  var value_name1 = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};  
+
+Blockly.JavaScript['pandas_td'] = function(block) {
+  var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble Python into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};  

@@ -217,10 +217,11 @@ Blockly.Python['pandas_conversion'] = function (block) {
 
 //2020-09-19 양승국 수정
 Blockly.Python['pandas_mis_del'] = function (block) {
-  var value_name = Blockly.Python.valueToCode(block, 'DATA_del', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_name1 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('DEL_NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = value_name + '=' + value_name + dropdown_name;
+  var code = value_name + '=' + value_name + '.' + dropdown_name + "(" + value_name1 + ")\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -511,3 +512,22 @@ Blockly.Python['groupby_dataFrame1'] = function (block) {
   var code = value_series_or_dataframe + '.groupby(' + value_colname + ')';
   return [code, Blockly.Python.ORDER_NONE];
 };
+
+Blockly.Python['pandas_transpose'] = function(block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_name1 + ".transpose(" + value_name + ")";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  
+
+Blockly.Python['pandas_td'] = function(block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_name = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble Python into code variable.
+  var code = variable_list + "." + dropdown_drop + "(" + value_name + ")";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  

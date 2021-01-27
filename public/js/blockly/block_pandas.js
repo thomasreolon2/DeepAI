@@ -516,13 +516,18 @@ Blockly.Blocks['pandas_conversion'] = {
 //2020-09-19 양승국 
 Blockly.Blocks['pandas_mis_del'] = {
   init: function () {
-    this.appendValueInput("DATA_del")
+    this.appendValueInput("d1")
       .setCheck(null)
       .appendField(Blockly.Msg.PANDAS_MIS_DEL_1);
     this.appendDummyInput()
-      .appendField("(")
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_MIS_DEL_2, ".dropna()"], [Blockly.Msg.PANDAS_MIS_DEL_3, ".dropna(axis = 1)"]]), "DEL_NAME")
-      .appendField(")");
+      .appendField(".")
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_MIS_DEL_2, "drop"], [Blockly.Msg.PANDAS_MIS_DEL_3, "drop_duplicates"], [Blockly.Msg.PANDAS_MIS_DEL_4, "dropna"]]), "DEL_NAME")
+      .appendField("(");
+    this.appendValueInput("d2")
+      .setCheck(null);
+      // .appendField(Blockly.Msg.PANDAS_CONVERSION_4)
+    this.appendDummyInput()
+      .appendField(")");  
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(pandas_color);
@@ -1339,6 +1344,39 @@ Blockly.Blocks['groupby_dataFrame1'] = {
         .setCheck(null);
     this.appendDummyInput()
         .appendField(")");
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+//pandas_transpose
+Blockly.Blocks['pandas_transpose'] = {
+  init: function () {
+    this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("LIST").appendField(".transpose(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pandas_td'] = {
+  init: function () {
+    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_OC).appendField(new Blockly.FieldVariable("df"), "list")
+        .appendField(".")
+        .appendField(new Blockly.FieldDropdown([["pivot_table","pivot_table"], ["get_dummies","get_dummies"]]), "DROP");
+    this.appendValueInput("d1")
+        .setCheck(null)
+        .appendField("(");
+    this.appendDummyInput()
+      .appendField(")");
+    this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);
     this.setTooltip("");

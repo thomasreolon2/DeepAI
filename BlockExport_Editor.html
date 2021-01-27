@@ -3546,19 +3546,6 @@
 
       <!----------------------------------------------------------------------------------조작가공-->
       <category name="조작&가공" colour="%{BKY_PANDAS_HUE}">
-        <!-- reindex -->
-        <block type = "df_reindex">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block> 
 
         <!-- astype -->
         <block type="pandas_astype">
@@ -3601,76 +3588,30 @@
       </block> -->
 
       <!-- 결측치삽입 -->
-      <block type="fill_null_data">
+      <!-- <block type="fill_null_data">
         <value name="DATA">
           <block type="variables_get">
             <field name="VAR">df</field>
           </block>
         </value>
-      </block>
+      </block> -->
 
-      <!-- 2020-09-10 양승국-->
-      <!-- 결측치삭제 -->
+      <!-- 삭제 -->
       <block type="pandas_mis_del">
-        <value name="DATA_del">
+        <value name="d1">
           <block type="variables_get">
             <field name="VAR">df</field>
           </block>
         </value>
-      </block>
-
-      
-
-      <!-- 행열삭제 -->
-      <block type="select_row_delete">
-        <value name="select_data">
-          <block type="variables_get">
-            <field name="VAR">df</field>
-          </block>
+        <value name="d2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
         </value>
       </block>
 
-      
-
-      <!-- 열 추가 -->
-      <!-- <block type="df_add_col"></block> -->
-
-      <!-- 행렬크기 -->
-      <block type="row_count">
-        <value name="select_value">
-          <block type="variables_get">
-            <field name="VAR">df</field>
-          </block>
-        </value>
-      </block>
-
-      <!-- 2020-09-09 양승국 -->
-      <!-- zip리스트 -->
-      <block type="pandas_datalist">
-        <value name="frm_var">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>
-        <value name="data_lst">
-          <block type="createColumn"></block>
-        </value>
-      </block>
-      <!-- zip 프레임 -->
-      <block type="pandas_dataframe">
-        <value name="df_va">
-          <block type="variables_get">
-            <field name="VAR">df</field>
-          </block>
-        </value>
-        <value name="lst">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>
-      </block>
-
-      <!-- df. 병합,복사 -->
+      <!-- 결합 혹은 복사 -->
       <block type = "df_bb">
         <value name="VAR">
           <block type="variables_get">
@@ -3684,6 +3625,91 @@
         </value>
       </block>
 
+        <!-- 컬럼 및 인덱스 조작 -->
+        <block type = "df_reindex">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+
+      <!-- 데이터 프레임 자체의 형태를 변환시킴 -->  
+      <block type="pandas_transpose">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="LIST">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "pandas_td">
+        <value name="d1">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 행열삭제 -->
+      <!-- <block type="select_row_delete">
+        <value name="select_data">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+      </block> -->
+
+      
+
+      <!-- 열 추가 -->
+      <!-- <block type="df_add_col"></block> -->
+
+      <!-- 행렬크기 -->
+      <!-- <block type="row_count">
+        <value name="select_value">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+      </block> -->
+
+      <!-- 2020-09-09 양승국 -->
+      <!-- zip리스트 -->
+      <!-- <block type="pandas_datalist">
+        <value name="frm_var">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
+        <value name="data_lst">
+          <block type="createColumn"></block>
+        </value>
+      </block> -->
+      <!-- zip 프레임 -->
+      <!-- <block type="pandas_dataframe">
+        <value name="df_va">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="lst">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
+      </block> -->
+
       <!-- 2020-10-15 정지현 컬럼명 변경 -->
       <!-- <block type="df_col_rename"></block> -->
 
@@ -3691,7 +3717,7 @@
         <!-- <block type="image_list"></block> -->
         
           
-        <label text="대기중"></label>
+        <!-- <label text="대기중"></label>
 
         <block type = "df_pivot_table">
           <value name="LIST">
@@ -3707,7 +3733,7 @@
               <field name="indata1">np.average, axis=0</field>
             </shadow>
           </value>
-        </block>
+        </block> -->
 
         
       </category>
