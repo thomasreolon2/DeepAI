@@ -3367,7 +3367,7 @@
           </shadow>
         </value>
       </block>
-
+      <!-- 정렬 -->
       <block type = "pandas_sort">
         <value name="VAR">
           <block type="variables_get">
@@ -3424,20 +3424,6 @@
         <!-- 부분범위 -->
         <!-- <block type="iloc_range"></block> -->
 
-        <!-- 정렬 -->
-        <!-- <block type="pandas_sort">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>  -->
-
       </category>
 
       <!---------------------------------------------------------------------------------- 분석&집계 ---------------->
@@ -3465,6 +3451,7 @@
           </value>
         </block>
 
+        <!-- 상관관계 -->
         <block type="pandas_corr">
           <value name="INPUT1">
             <shadow type="indata">

@@ -48,6 +48,17 @@
     return code;
 };
 
+ // 데이터 상관관계
+ Blockly.JavaScript['pandas_corr'] = function(block) {
+  var value_input1 = Blockly.JavaScript.valueToCode(block, 'INPUT1', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_input2 = Blockly.JavaScript.valueToCode(block, 'INPUT2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return [code,Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+
 // 데이터 사칙연산
 Blockly.JavaScript['pandas_nanull'] = function(block) {
     var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);

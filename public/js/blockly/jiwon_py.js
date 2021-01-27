@@ -55,7 +55,7 @@ Blockly.Python['block_tail_head'] = function(block) {
         var value_input2 = Blockly.Python.valueToCode(block, 'INPUT2', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
         var code = `${value_input1}.${dropdown_drop}(${value_input2})`;
-        return code;
+        return [code,Blockly.Python.ORDER_ATOMIC];
       };
 
         // 판다스 스택
