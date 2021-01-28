@@ -4177,7 +4177,7 @@
       <!--  그래프 출력 갯수    -->
 
 
-      <!--  matplot2 시각화 준비      -->
+      <!--  matplot2 시각화 준비(출력설정)      -->
       <block type="matplotlib_pre_graph">
         <value name="matplotlib_pre_graph_location1">
           <shadow type="math_number">
@@ -4191,10 +4191,35 @@
         </value>
         <value name="xx">
           <shadow type="indata">
-            <field name="indata1"></field>
+            <field name="indata1">x_data</field>
           </shadow>
         </value>
         <value name="yy">
+          <shadow type="indata">
+            <field name="indata1">y_data</field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_graph_Title">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_graph_Xlable">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_graph_Ylable">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_legend">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_color">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
