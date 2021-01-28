@@ -139,22 +139,6 @@ Blockly.defineBlocksWithJsonArray(
   "tooltip": "",
   "helpUrl": ""
 },
- // 배열 np.arry 
- {
-  "type": "np_array",
-  "message0": "%{BKY_NUMPY_NP_ARRAY_1}",
-  "args0": [
-    {
-      "type": "input_value",
-      "name": "np_array_val"
-    }
-  ],
-  "inputsInline": true,
-  "output": null,
-  "colour": "%{BKY_NUMPY_HUE}",
-  "tooltip": "",
-  "helpUrl": ""
-},  
 //np.arange 
 {
   "type": "np_arrange",
@@ -2991,3 +2975,19 @@ Blockly.Blocks['class_func_param'] = {
 // //   },
 // //   FUNCTION_TYPES: ["procedures_defnoreturn", "procedures_defreturn"],
 // // }; 
+
+// 2021.01.28 np_array 남지원
+Blockly.Blocks['np_array'] = {
+  init: function() {
+    this.appendValueInput("INPUT")
+        .setCheck(null)
+        .appendField("[np 배열]");
+    this.appendValueInput("DTYPE")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

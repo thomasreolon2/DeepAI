@@ -2539,11 +2539,13 @@
             </shadow>
           </Value>
         </block>
+        <!-----------------------------------------------------------------------------배열생성-->
         <label text="배열 생성"></label>
+        <!-- 넘파이 배열생성 1 -->
         <block type = "create_np_array">
           <value name="text">
             <shadow type="indata">
-              <field name="indata1">[1,2,'a','b']</field>
+              <field name="indata1">[1,2,3,4]</field>
             </shadow>
           </value>
 
@@ -2553,7 +2555,7 @@
             </shadow>
           </value>
         </block>
-
+        <!-- 넘파이 배열생성 2-->
         <block type = "create_np_array2">
           <value name="text">
             <shadow type="indata">
@@ -2568,9 +2570,14 @@
         </block>
         <!-- numpy.array -->
         <block type="np_array">
-          <value name="np_array_val">
+          <value name="INPUT">
             <shadow type="indata">
-              <field name="indata1">[1,2,'a','b']</field>
+              <field name="indata1">[1,2,3,4]</field>
+            </shadow>
+          </value>
+          <value name="DTYPE">
+            <shadow type="indata">
+              <field name="indata1">dtype = int</field>
             </shadow>
           </value>
         </block>
