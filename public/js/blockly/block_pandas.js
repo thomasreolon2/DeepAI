@@ -281,7 +281,7 @@ Blockly.Blocks['row_count'] = {
       .appendField(Blockly.Msg.PANDAS_ROW_COUNT_1);
     this.appendDummyInput()
       .appendField("(")
-      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_ROW_COUNT_2, ".shape[0]"], [Blockly.Msg.PANDAS_ROW_COUNT_3, ".shape[1]"]]), "count");
+      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_ROW_COUNT_4, ".shape"],[Blockly.Msg.PANDAS_ROW_COUNT_2, ".shape[0]"], [Blockly.Msg.PANDAS_ROW_COUNT_3, ".shape[1]"]]), "count");
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);

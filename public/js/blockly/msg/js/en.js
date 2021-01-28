@@ -812,6 +812,7 @@ Blockly.Msg['PANDAS_DF_ADD_COL_3'] = " insert data";
 Blockly.Msg['PANDAS_ROW_COUNT_1'] = "[matrix size] dataframe";
 Blockly.Msg['PANDAS_ROW_COUNT_2'] = "row";
 Blockly.Msg['PANDAS_ROW_COUNT_3'] = "columns";
+Blockly.Msg['PANDAS_ROW_COUNT_4'] = "row and columns";
 Blockly.Msg['PANDAS_SERIES'] = "[create series] variable";
 Blockly.Msg['PANDAS_SERIES_2'] = "data";
 Blockly.Msg['PANDAS_CONCAT_1'] = "[series concat] variable";
