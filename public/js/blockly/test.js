@@ -1944,7 +1944,6 @@ Blockly.Blocks['csv2'] = {
   init: function () {
     var dropdown = new Blockly.FieldDropdown(this.dynamicOptions);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldImage("/img/Machine_Learning/M1-logo.png", 25, 23, { alt: "*", flipRtl: "FALSE" }))
       .appendField(new Blockly.FieldTextInput("default"), "csv_url");
     this.appendDummyInput()
       .appendField('X : ')
