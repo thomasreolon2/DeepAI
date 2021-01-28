@@ -3498,6 +3498,11 @@
         </block> 
 
         <block type="block_cumsum">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
           <value name="INPUT">
             <shadow type="indata">
               <field name="indata1"></field>
@@ -3751,6 +3756,11 @@
       </block>
 
       <block type = "pandas_td">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
         <value name="d1">
           <shadow type="indata">
             <field name="indata1"></field>

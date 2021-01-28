@@ -518,11 +518,12 @@ Blockly.Python['pandas_transpose'] = function(block) {
 };  
 
 Blockly.Python['pandas_td'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  //var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var value_name = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var dropdown_drop = block.getFieldValue('DROP');
   // TODO: Assemble Python into code variable.
-  var code = variable_list + "." + dropdown_drop + "(" + value_name + ")";
+  var code = variable_name + "." + dropdown_drop + "(" + value_name + ")";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  

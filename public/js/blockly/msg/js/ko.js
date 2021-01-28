@@ -894,7 +894,7 @@ Blockly.Msg['PANDAS_CAT'] = "[카테고리]"
 Blockly.Msg['PANDAS_CAT_SET'] = "[카테고리데이터]"
 Blockly.Msg['PANDAS_DROP'] = "[삭제]"
 Blockly.Msg['PANDAS_DROP1'] = "인덱스"
-Blockly.Msg['PANDAS_DROP2'] = "중점"
+Blockly.Msg['PANDAS_DROP2'] = "기준" //"중점" 
 Blockly.Msg['PANDAS_DROP_DUPLICATES'] = "[중복값삭제]"
 Blockly.Msg['pandas_dropna'] = "[결측치삭제]"
 

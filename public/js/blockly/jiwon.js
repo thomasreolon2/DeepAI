@@ -48,7 +48,10 @@ Blockly.Blocks['block_cumsum'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("[데이터누적통계]")
-          .appendField(new Blockly.FieldVariable("df"), "VAR")
+          //.appendField(new Blockly.FieldVariable("df"), "VAR")
+      this.appendValueInput("VAR")
+          .setCheck(null);
+      this.appendDummyInput()
           .appendField(".");
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown([["누적합(cumsum)","cumsum"],["누적곱(cumprod)","cumprod"],["누적최소값(cummin)","cummin"],["누적최대값(cummax)","cummax"]]), "DROP")

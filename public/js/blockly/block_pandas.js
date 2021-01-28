@@ -1354,7 +1354,10 @@ Blockly.Blocks['pandas_transpose'] = {
 
 Blockly.Blocks['pandas_td'] = {
   init: function () {
-    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_OC).appendField(new Blockly.FieldVariable("df"), "list")
+    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_OC)
+    this.appendValueInput("VAR")
+        .setCheck(null);
+    this.appendDummyInput()
         .appendField(".")
         .appendField(new Blockly.FieldDropdown([["pivot_table","pivot_table"], ["get_dummies","get_dummies"]]), "DROP");
     this.appendValueInput("d1")
