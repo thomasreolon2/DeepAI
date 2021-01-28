@@ -892,6 +892,11 @@ Blockly.Msg['PANDAS_REINDEX'] = "[인덱스재설정]"
 Blockly.Msg['PANDAS_DATE_RANGE'] = "[날짜]"
 Blockly.Msg['PANDAS_CAT'] = "[카테고리]"
 Blockly.Msg['PANDAS_CAT_SET'] = "[카테고리데이터]"
+Blockly.Msg['PANDAS_DROP'] = "[삭제]"
+Blockly.Msg['PANDAS_DROP1'] = "인덱스"
+Blockly.Msg['PANDAS_DROP2'] = "중점"
+Blockly.Msg['PANDAS_DROP_DUPLICATES'] = "[중복값삭제]"
+Blockly.Msg['pandas_dropna'] = "[결측치삭제]"
 
 // ---- 맷플롯립
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ 임포트 ] matplotlib를 plt로";

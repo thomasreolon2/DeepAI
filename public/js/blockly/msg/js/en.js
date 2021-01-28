@@ -884,6 +884,11 @@ Blockly.Msg['PANDAS_DATE_RANGE'] = "[date]"
 Blockly.Msg['PANDAS_SERIES_STR'] = "[string change] var"
 Blockly.Msg['PANDAS_CAT'] = "[category]"
 Blockly.Msg['PANDAS_CAT_SET'] = "[category data]"
+Blockly.Msg['PANDAS_DROP'] = "[drop]"
+Blockly.Msg['PANDAS_DROP1'] = "index"
+Blockly.Msg['PANDAS_DROP2'] = "axis"
+Blockly.Msg['PANDAS_DROP_DUPLICATES'] = "[drop_duplicates]"
+Blockly.Msg['pandas_dropna'] = "[dropna]"
 
 // ---- 맷플롯립
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ import ] matplotlib as plt";

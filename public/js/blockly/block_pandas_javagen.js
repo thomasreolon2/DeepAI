@@ -435,3 +435,34 @@ Blockly.JavaScript['pandas_sub'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };  
+
+Blockly.JavaScript['pandas_drop'] = function(block) {
+  var value_name1 = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name3 = Blockly.JavaScript.valueToCode(block, 'd3', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name4 = Blockly.JavaScript.valueToCode(block, 'd4', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code ='\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};  
+
+Blockly.JavaScript['pandas_drop_duplicates'] = function(block) {
+  var value_name1 = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name3 = Blockly.JavaScript.valueToCode(block, 'd3', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code ='\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};  
+
+Blockly.JavaScript['pandas_dropna'] = function(block) {
+  var value_name1 = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name3 = Blockly.JavaScript.valueToCode(block, 'd3', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code ='\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};  

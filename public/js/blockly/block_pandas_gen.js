@@ -571,3 +571,34 @@ Blockly.Python['pandas_sub'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  
+
+Blockly.Python['pandas_drop'] = function(block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  var value_name3 = Blockly.Python.valueToCode(block, 'd3', Blockly.Python.ORDER_ATOMIC);
+  var value_name4 = Blockly.Python.valueToCode(block, 'd4', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_name1} = ${value_name2}.drop(index = ${value_name3}, axis = ${value_name4})\n`
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};  
+
+Blockly.Python['pandas_drop_duplicates'] = function(block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  var value_name3 = Blockly.Python.valueToCode(block, 'd3', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_name1} = ${value_name2}.drop_duplicates(${value_name3})\n`
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};  
+
+Blockly.Python['pandas_dropna'] = function(block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  var value_name3 = Blockly.Python.valueToCode(block, 'd3', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_name1} = ${value_name2}.dropna(${value_name3})\n`
+  // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};  

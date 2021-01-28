@@ -3647,17 +3647,64 @@
       </block> -->
 
       <!-- 삭제 -->
-      <block type="pandas_mis_del">
+      <block type = "pandas_drop">
         <value name="d1">
           <block type="variables_get">
             <field name="VAR">df</field>
           </block>
         </value>
         <value name="d2">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="d3">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+        <value name="d4">
+          <shadow type="indata">
+            <field name="indata1">'columns'</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- 중복값삭제 -->
+      <block type = "pandas_drop_duplicates">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="d2">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="d3">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
+      </block>
+
+      <!-- 결측치삭제 -->
+      <block type = "pandas_dropna">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="d2">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="d3">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
         </value>
       </block>
 

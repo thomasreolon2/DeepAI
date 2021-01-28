@@ -1455,3 +1455,76 @@ Blockly.Blocks['pandas_sub'] = {
     this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['pandas_drop'] = {
+  init: function () {
+    this.appendValueInput("d1")
+        .appendField(Blockly.Msg.PANDAS_DROP)
+        .setCheck(null);
+    this.appendDummyInput().appendField("=");
+    this.appendValueInput("d2")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(".drop(" + Blockly.Msg.PANDAS_DROP1);
+    this.appendValueInput("d3")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.PANDAS_DROP2);  
+    this.appendValueInput("d4")
+        .setCheck(null); 
+    this.appendDummyInput()
+        .appendField(")");                  
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pandas_drop_duplicates'] = {
+  init: function () {
+    this.appendValueInput("d1")
+        .appendField(Blockly.Msg.PANDAS_DROP_DUPLICATES)
+        .setCheck(null);
+    this.appendDummyInput().appendField("=");
+    this.appendValueInput("d2")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(".drop_duplicates(");
+    this.appendValueInput("d3")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");                  
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['pandas_dropna'] = {
+  init: function () {
+    this.appendValueInput("d1")
+        .appendField(Blockly.Msg.pandas_dropna)
+        .setCheck(null);
+    this.appendDummyInput().appendField("=");
+    this.appendValueInput("d2")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(".dropna(");
+    this.appendValueInput("d3")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");                  
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
