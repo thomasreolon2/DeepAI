@@ -96,6 +96,12 @@ Blockly.Blocks['import_dataset'] = {
             [
                 Blockly.Msg.DATASET_IMPORT_DATASET_6, "load_wine"
             ],
+            [
+                Blockly.Msg.DATASET_IMPORT_DATASET_7, "load_breast_cancer"
+            ],
+            [
+                Blockly.Msg.DATASET_IMPORT_DATASET_8 , "load_linnerud"
+            ]
         ]), "dataset_name");
         this.appendValueInput("x_data").setCheck(null).appendField("x_data");
         this.appendValueInput("y_data").setCheck(null).appendField("y_data");
