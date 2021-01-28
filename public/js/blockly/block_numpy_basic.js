@@ -23,7 +23,7 @@ Blockly.Blocks['numpy_changing_array_shape_basic'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 차원변경]")
-        .appendField(new Blockly.FieldDropdown([["배열형태 변경(reshape)","np.reshape"], ["1차원변경(원본)(ravel)","np.ravel"],
+        .appendField(new Blockly.FieldDropdown([["1차원변경(원본)(ravel)","np.ravel"],
            ["1차원변경(복사)(flatten)","np.flatten"]]), "numpy_Changing_array_shape_opt");
     this.appendValueInput("numpy_Changing_array_shape_val")
         .setCheck(null);
@@ -292,4 +292,25 @@ Blockly.Blocks['numpy_select'] = {
   this.setTooltip("");
   this.setHelpUrl("");
   }
+};
+
+
+Blockly.Blocks['numpy_astype'] = {
+  init: function() {
+    this.appendValueInput("VAR")
+      .setCheck(null)
+      .appendField(Blockly.Msg.PANDAS_ASTYPE);
+    this.appendDummyInput()
+      .appendField(".astype")
+      .appendField("(");
+    this.appendValueInput("INPUT")
+      .setCheck(null);
+      this.appendDummyInput()
+      .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+  this.setTooltip("");
+  this.setHelpUrl("");
+} 
 };
