@@ -539,7 +539,7 @@ Blockly.Blocks['pandas_date_range'] = {
   init: function() {
     this.appendValueInput("VAR")
       .setCheck(null)
-      .appendField("[날짜]");
+      .appendField(Blockly.Msg.PANDAS_DATE_RANGE);
     this.appendDummyInput()
       .appendField(".")
       .appendField(new Blockly.FieldDropdown([["date_range","date_range"], ["tz_localize","tz_localize"], ["tz_convert","tz_convert"], ["to_period","to_period"], ["to_timestamp","to_timestamp"], ["period_range","period_range"]]), "DROP")

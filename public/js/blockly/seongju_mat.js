@@ -810,7 +810,7 @@ Blockly.Blocks['pandas_series_str'] = {
     init: function() {
       this.appendValueInput("VAR")
         .setCheck(null)
-        .appendField("[문자열변경] 변수");
+        .appendField(Blockly.Msg.PANDAS_SERIES_STR);
       this.appendDummyInput()
         .appendField(".")
         .appendField(new Blockly.FieldDropdown([["str.lower","str.lower"], ["str.upper","str.upper"]]), "DROP")
@@ -832,7 +832,7 @@ Blockly.Blocks['pandas_series_str'] = {
     init: function() {
       this.appendValueInput("VAR")
         .setCheck(null)
-        .appendField("[함수적용] " + Blockly.Msg.PANDAS_DATAFRAME_2);
+        .appendField(Blockly.Msg.PANDAS_APPLIY + Blockly.Msg.PANDAS_DATAFRAME_2);
       this.appendDummyInput()
         .appendField(".apply")
         .appendField("(");

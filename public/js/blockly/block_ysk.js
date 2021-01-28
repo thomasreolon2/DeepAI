@@ -43,8 +43,8 @@ Blockly.Blocks['df_ap'] = {
 //df_bb 병합
 Blockly.Blocks['df_bb'] = {
   init: function () {
-      this.appendDummyInput().
-      appendField("[병합,복사]");
+      this.appendDummyInput()
+      .appendField(Blockly.Msg.PANDAS_BB);
       this.appendValueInput("VAR")
           .setCheck(null);
       this.appendDummyInput().appendField(new Blockly.FieldDropdown([
@@ -142,7 +142,7 @@ Blockly.Blocks['df_reindex'] = {
   init: function () {
     this.appendValueInput("VAR")
         .setCheck(null)
-        .appendField("[인덱스재설정]");
+        .appendField(Blockly.Msg.PANDAS_REINDEX);
     this.appendDummyInput()
         .appendField(".")
         .appendField(new Blockly.FieldDropdown([
