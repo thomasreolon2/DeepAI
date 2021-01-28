@@ -25,7 +25,7 @@ Blockly.Python['block_tail_head'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = `${variable_name}.${dropdown_drop}(${value_name})`;
-    return code;
+    return [code,Blockly.Python.ORDER_ATOMIC];
   };
 
 // 데이터 사칙연산
