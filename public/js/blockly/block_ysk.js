@@ -47,6 +47,8 @@ Blockly.Blocks['df_bb'] = {
       .appendField(Blockly.Msg.PANDAS_BB);
       this.appendValueInput("VAR")
           .setCheck(null);
+      this.appendDummyInput()
+          .appendField(".");
       this.appendDummyInput().appendField(new Blockly.FieldDropdown([
           [
             "merge", "merge"
