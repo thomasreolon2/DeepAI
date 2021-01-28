@@ -251,4 +251,9 @@ Blockly.JavaScript['gp'] = function (block) {
         return [code, Blockly.JavaScript.ORDER_NONE];
       };
 
+      Blockly.JavaScript['create_zip'] = function (block) {
+        var code = '\n';
+        return [code, Blockly.JavaScript.ORDER_NONE];
+      };
+
       

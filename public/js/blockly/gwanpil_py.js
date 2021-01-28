@@ -338,3 +338,11 @@ Blockly.Python['plt_subplot'] = function(block) {
         // TODO: Change ORDER_NONE to the correct strength.
         return [code, Blockly.Python.ORDER_ATOMIC];
       }; 
+
+      Blockly.Python['create_zip'] = function(block) {
+        var value_data_type = Blockly.Python.valueToCode(block, 'data_type', Blockly.Python.ORDER_ATOMIC);
+        var value_input = Blockly.Python.valueToCode(block, 'input', Blockly.Python.ORDER_ATOMIC);
+        // TODO: Assemble Python into code variable.
+        //var code = ;
+        return ['zip(' + value_data_type + ')', Blockly.Python.ORDER_ATOMIC];
+      };
