@@ -3789,6 +3789,20 @@
         </value>
       </block>
 
+      <!-- 가변수 -->
+      <block type = "pandas_get_dummies">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">df</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
       <block type="pandas_date_range">
         <value name="VAR">
           <block type="variables_get">

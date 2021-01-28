@@ -1374,6 +1374,26 @@ Blockly.Blocks['pandas_pivot'] = {
   }
 };
 
+Blockly.Blocks['pandas_get_dummies'] = {
+  init: function () {
+    this.appendDummyInput()
+      .appendField("[가변수]")
+    this.appendValueInput("VAR")
+      .setCheck(null);
+    this.appendValueInput("INPUT")
+      .appendField(".가변수(get_dummies)")
+      .setCheck(null)
+      .appendField("(");
+    this.appendDummyInput()
+      .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(pandas_color);
+    this.setTooltip("");
+    this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['pandas_multiIndex'] = {
   init: function () {
     this.appendDummyInput().appendField(Blockly.Msg.PANDAS_MULTIINDEX).appendField(new Blockly.FieldVariable("df"), "list")
