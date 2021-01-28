@@ -578,7 +578,7 @@ Blockly.Blocks['pandas_dataframe_2'] = {
 
 Blockly.Blocks['df_resample'] = {
   init: function () {
-    this.appendDummyInput().appendField("[resample]").appendField(new Blockly.FieldVariable("sr"), "list");
+    this.appendValueInput("VAR").appendField("[resample]");
     this.appendValueInput("LIST").appendField("(").setCheck(null);
     this.appendDummyInput().appendField(")");
     this.setInputsInline(true);

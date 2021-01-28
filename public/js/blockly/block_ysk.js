@@ -82,7 +82,7 @@ Blockly.Blocks['df_bb'] = {
 //df_series1
 Blockly.Blocks['df_series1'] = {
   init: function () {
-      this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("sr"), "list");
+      this.appendValueInput("VAR").appendField("[Series]");
       this.appendValueInput("LIST").appendField("(").setCheck(null);
       this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
@@ -97,7 +97,7 @@ Blockly.Blocks['df_series1'] = {
 //df_series2
 Blockly.Blocks['df_series2'] = {
   init: function () {
-    this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("sr"), "list");
+    this.appendValueInput("VAR").appendField("[Series]");
       this.appendValueInput("LIST").appendField("[").setCheck(null);
       this.appendDummyInput().appendField("]");
       this.setInputsInline(true);
@@ -112,7 +112,7 @@ Blockly.Blocks['df_series2'] = {
 //df_series3
 Blockly.Blocks['df_series3'] = {
   init: function () {
-    this.appendDummyInput().appendField("[Series]").appendField(new Blockly.FieldVariable("sr"), "list");
+    this.appendValueInput("VAR").appendField("[Series]");
       this.appendValueInput("LIST").appendField("[").setCheck("Boolean");
       this.appendDummyInput().appendField("]");
       this.setInputsInline(true);
@@ -177,8 +177,10 @@ Blockly.Blocks['df_reindex'] = {
 //sr.unique()
 Blockly.Blocks['df_unique'] = {
   init: function () {
-    this.appendDummyInput().appendField("[unique]").appendField(new Blockly.FieldVariable("sr"), "list").appendField(".unique( )");
-      this.setInputsInline(true);
+    this.appendValueInput("VAR").appendField("[unique]");
+    this.appendDummyInput()
+        .appendField(".unique( )");  
+    this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
       this.setColour(pandas_color);
@@ -205,7 +207,8 @@ Blockly.Blocks['df_is_in'] = {
 //sr.tolist()
 Blockly.Blocks['df_tolist'] = {
   init: function () {
-    this.appendDummyInput().appendField("[tolist]").appendField(new Blockly.FieldVariable("sr"), "list").appendField(".tolist( )");
+    this.appendValueInput("VAR").appendField("[tolist]")
+    this.appendDummyInput().appendField(".tolist( )");
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
@@ -218,7 +221,8 @@ Blockly.Blocks['df_tolist'] = {
 //sr.name
 Blockly.Blocks['df_name'] = {
   init: function () {
-    this.appendDummyInput().appendField("[name]").appendField(new Blockly.FieldVariable("sr"), "list").appendField(".name");
+    this.appendValueInput("VAR").appendField("[name]")
+    this.appendDummyInput().appendField(".name");
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);

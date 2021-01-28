@@ -3989,6 +3989,12 @@
         </block>
         
         <block type="df_series1">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">sr</field>
+            </block>
+          </value>
+
           <value name="LIST">
             <shadow type="indata">
               <field name="indata1"></field>
@@ -3997,6 +4003,11 @@
         </block>
 
         <block type="df_series2">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">sr</field>
+            </block>
+          </value>
           <value name="LIST">
             <shadow type="indata">
               <field name="indata1"></field>
@@ -4005,6 +4016,11 @@
         </block>
 
         <block type="df_series3">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">sr</field>
+            </block>
+          </value>
           <value name="LIST">
             <shadow type="indata">
               <field name="indata1"></field>
@@ -4012,7 +4028,13 @@
           </value>
         </block>
 
-        <block type="df_unique"></block>
+        <block type="df_unique">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">sr</field>
+            </block>
+          </value>
+        </block>
 
         <block type="df_is_in">
           <value name="VAR">
@@ -4028,9 +4050,20 @@
           </value>
         </block>
 
-        <block type="df_tolist"></block>
+        <block type="df_tolist">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">sr</field>
+            </block>
+          </value>
+        </block>
 
         <block type="df_name">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">sr</field>
+            </block>
+          </value>
           <value name="LIST">
             <shadow type="indata">
               <field name="indata1"></field>
@@ -4039,6 +4072,11 @@
         </block>
 
         <block type="df_resample">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">sr</field>
+            </block>
+          </value>
           <value name="LIST">
             <shadow type="indata">
               <field name="indata1"></field>
