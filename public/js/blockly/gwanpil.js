@@ -604,3 +604,18 @@ Blockly.Blocks['df_add_function'] = {
     this.setHelpUrl("");
 }
 };
+
+Blockly.Blocks['create_zip'] = {
+  init: function() {
+    this.appendValueInput("data_type")
+        .setCheck(null)
+        .appendField("zip(");
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_LISTS_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

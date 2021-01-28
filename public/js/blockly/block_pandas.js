@@ -1275,7 +1275,7 @@ Blockly.Blocks['pandas_oc'] = {
   init: function () {
     this.appendDummyInput().appendField(Blockly.Msg.PANDAS_OC).appendField(new Blockly.FieldVariable("df"), "list")
         .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["iloc","iloc"], ["loc","loc"], ["iat","iat"], ["at","at"]]), "DROP");
+        .appendField(new Blockly.FieldDropdown([["이름으로값찾기(loc)","loc"], ["인덱스로값찾기(iloc)","iloc"], ["이름으로값찾기(at)","at"],["인덱스로값찾기(iat)","iat"], ]), "DROP");
     this.appendValueInput("d1")
         .setCheck(null)
         .appendField("[");
