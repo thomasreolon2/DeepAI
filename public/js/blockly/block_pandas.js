@@ -1179,6 +1179,7 @@ Blockly.Blocks['csv_url'] = {
 Blockly.Blocks['pandas_head'] = {
   init: function() {
     this.appendValueInput("VAR")
+        .appendField(Blockly.Msg.PANDAS_HEAD)
         .setCheck(null);
     this.appendDummyInput()
         .appendField(".")
@@ -1195,6 +1196,7 @@ Blockly.Blocks['pandas_head'] = {
 Blockly.Blocks['pandas_info'] = {
   init: function() {
     this.appendValueInput("VAR")
+        .appendField(Blockly.Msg.PANDAS_INFO)
         .setCheck(null);
     this.appendDummyInput()
         .appendField(".")
@@ -1212,7 +1214,7 @@ Blockly.Blocks['pandas_astype'] = {
   init: function() {
     this.appendValueInput("VAR")
       .setCheck(null)
-      .appendField("[데이터변경]");
+      .appendField(Blockly.Msg.PANDAS_ASTYPE);
     this.appendDummyInput()
       .appendField(".")
       .appendField(new Blockly.FieldDropdown([["astype","astype"], ["append","append"], ["replace","replace"], ["fillna","fillna"]]), "DROP")
@@ -1233,6 +1235,7 @@ Blockly.Blocks['pandas_astype'] = {
 Blockly.Blocks['pandas_unique'] = {
   init: function() {
     this.appendValueInput("VAR")
+        .appendField(Blockly.Msg.PANDAS_UNIQUE)
         .setCheck(null);
     this.appendDummyInput()
         .appendField(".")
@@ -1302,7 +1305,7 @@ Blockly.Blocks['pandas_items'] = {
 //pandas_where
 Blockly.Blocks['pandas_where'] = {
   init: function () {
-    this.appendValueInput("d1").setCheck(null);
+    this.appendValueInput("d1").appendField(Blockly.Msg.PANDAS_WHERE).setCheck(null);
       this.appendValueInput("LIST").appendField(".where(").setCheck(null);
       this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
@@ -1337,7 +1340,7 @@ Blockly.Blocks['groupby_dataFrame1'] = {
 //pandas_transpose
 Blockly.Blocks['pandas_transpose'] = {
   init: function () {
-    this.appendValueInput("d1").setCheck(null);
+    this.appendValueInput("d1").appendField(Blockly.Msg.PANDAS_TRANSPOSE).setCheck(null);
       this.appendValueInput("LIST").appendField(".transpose(").setCheck(null);
       this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
@@ -1369,7 +1372,7 @@ Blockly.Blocks['pandas_td'] = {
 
 Blockly.Blocks['pandas_multiIndex'] = {
   init: function () {
-    this.appendDummyInput().appendField(new Blockly.FieldVariable("df"), "list")
+    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_MULTIINDEX).appendField(new Blockly.FieldVariable("df"), "list")
         .appendField("= pd.MultiIndex.from_tuples(");
     this.appendValueInput("d1")
         .setCheck(null);
@@ -1406,7 +1409,7 @@ Blockly.Blocks['pandas_stack1'] = {
 Blockly.Blocks['pandas_cat'] = {
   init: function () {
     this.appendValueInput("d1")
-        .appendField(Blockly.Msg.PANDAS_STACK)
+        .appendField(Blockly.Msg.PANDAS_CAT)
         .setCheck(null);
     this.appendDummyInput().appendField(".cat.categories");
     this.setInputsInline(true);
@@ -1420,7 +1423,7 @@ Blockly.Blocks['pandas_cat'] = {
 Blockly.Blocks['pandas_cat_set'] = {
   init: function () {
     this.appendValueInput("d1")
-        .appendField(Blockly.Msg.PANDAS_STACK)
+        .appendField(Blockly.Msg.PANDAS_CAT_SET)
         .setCheck(null);
     this.appendDummyInput().appendField(".cat.set_categories(");
     this.appendValueInput("d2")

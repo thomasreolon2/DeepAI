@@ -24,7 +24,7 @@ Blockly.Blocks['block_tail_head'] = {
 Blockly.Blocks['block_sum_min'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("[데이터통계]");
+            .appendField(Blockly.Msg.PANDAS_SUM_MIN);
         this.appendValueInput("VAR")
             .setCheck(null);
         this.appendDummyInput()
@@ -91,7 +91,7 @@ Blockly.Blocks['block_calculations'] = {
 Blockly.Blocks['pandas_sort'] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("[정렬]");
+            .appendField(Blockly.Msg.PANDAS_SORT1);
         this.appendValueInput("VAR")
             .setCheck(null);
         this.appendDummyInput()
@@ -116,7 +116,7 @@ Blockly.Blocks['pandas_sort'] = {
 Blockly.Blocks['pandas_corr'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("[상관관계]");
+          .appendField(Blockly.Msg.PANDAS_CORR);
       this.appendValueInput("INPUT1")
           .setCheck(null);
       this.appendDummyInput()
@@ -158,8 +158,8 @@ Blockly.Blocks['pandas_stack'] = {
   Blockly.Blocks['pandas_nanull'] = {
     init: function() {
     this.appendValueInput('VAR')
-              .setCheck(null)
-              .appendField("[nan,null판단]");
+          .appendField(Blockly.Msg.PANDAS_NANULL)
+              .setCheck(null);
       this.appendDummyInput()
             .appendField(".")
           .appendField(new Blockly.FieldDropdown([["비어있는지(empty)","empty"],["nan인지(isna)","isna"],["nan아닌지(notna)","notna"],["nan버리기(dropna)","dropna"],["null인지(isnull)","isnull"],["null아닌지(notnull)","notnull"]]), "DROP")
