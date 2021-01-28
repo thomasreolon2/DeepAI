@@ -473,9 +473,9 @@ Blockly.defineBlocksWithJsonArray(
         "name": "numpy_reshape_val"
       },
       {
-        "type": "field_input",
+        "type": "input_value",
         "name": "numpy_reshape_struct",
-        "text": "행수,열수"
+        //"text": "행수,열수"
       }
     ],
     "inputsInline": true,

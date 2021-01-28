@@ -749,9 +749,9 @@ Blockly.Msg['NUMPY_EYE_2'] = "크기";
 
 Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )";
 
-Blockly.Msg['NUMPY_SHAPE_1'] = "[ 차원 확인 ] %1 변수  %2";
+Blockly.Msg['NUMPY_SHAPE_1'] = "[ 차원확인 ] %1 변수  %2";
 
-Blockly.Msg['NUMPY_RESHAPE_1'] = "[np 차원 변경] 배열 %1 %2 차원 %3";
+Blockly.Msg['NUMPY_RESHAPE_1'] = "[np 차원변경] %1 %2배열형태변경(reshpae)   %3";
 
 Blockly.Msg['NUMPY_FLATTEN_1'] = "[ 행렬 1차원 변경 ] 변수 %1 %2";
 

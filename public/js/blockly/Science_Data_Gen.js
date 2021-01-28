@@ -259,7 +259,7 @@ Blockly.Python['np_arrange'] = function(block) {
      // reshape 행렬 차원 변경 
     Blockly.Python['numpy_reshape'] = function(block) {
       var value_numpy_reshape_val = Blockly.Python.valueToCode(block, 'numpy_reshape_val', Blockly.Python.ORDER_ATOMIC);
-      var text_numpy_reshape_struct = block.getFieldValue('numpy_reshape_struct');
+      var text_numpy_reshape_struct = Blockly.Python.valueToCode(block, 'numpy_reshape_struct', Blockly.Python.ORDER_ATOMIC);
       // TODO: Assemble Python into code variable.
       var code = `${value_numpy_reshape_val}.reshape(${text_numpy_reshape_struct})`;    
       // TODO: Change ORDER_NONE to the correct strength.

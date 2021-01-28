@@ -743,8 +743,7 @@ Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ maximum, minimum value  ]  %1 %2 ( variable 
 
 Blockly.Msg['NUMPY_SHAPE_1'] = "[ matrix dimensions ] %1 variable  %2";
 
-Blockly.Msg['NUMPY_RESHAPE_1'] = "[ change matrix dimension ] original %1 %2 change dimension %3";
-
+Blockly.Msg['NUMPY_RESHAPE_1'] = "[ change matrix dimension ] %1 %2reshape  %2 %3";
 Blockly.Msg['NUMPY_FLATTEN_1'] = "[ change array matrix to 1 dimensional ] variable %1 %2";
 
 Blockly.Msg['NUMPY_RANDOM_RAND_1'] = "random matrix";

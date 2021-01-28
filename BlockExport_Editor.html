@@ -2654,7 +2654,13 @@
       <!-- 배열생성 / 숫자 범위2 -->
 
       <!-- np.reshape  -->
-      <block type="numpy_reshape"> </block>
+      <block type="numpy_reshape">
+        <value name="numpy_reshape_struct"> 
+          <shadow type="indata">
+            <field name="indata1">"행수,열수"</field>
+          </shadow>
+        </value>  
+      </block>
 
       <block type="numpy_changing_array_shape_basic">
         <value name="numpy_Changing_array_shape_val"> 
