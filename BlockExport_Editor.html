@@ -2655,10 +2655,10 @@
 
       <!-- astype -->
       <block type="numpy_astype">
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">a</field>
+          </block>
         </value>
         <value name="INPUT">
           <shadow type="indata">
