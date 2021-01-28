@@ -87,11 +87,7 @@ Blockly.Blocks['logicgraph'] = {
 };
 Blockly.Blocks['csv2'] = {
     init: function () {
-        this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Machine_Learning/M1-logo.png", 25, 23, {
-            alt: "*",
-            flipRtl: "FALSE"
-
-        })).appendField(Blockly.Msg.PANDAS_CSV2).appendField(new Blockly.FieldTextInput(""), "csv_url");
+        this.appendDummyInput().appendField(Blockly.Msg.PANDAS_CSV2).appendField(new Blockly.FieldTextInput(""), "csv_url");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour(20);
