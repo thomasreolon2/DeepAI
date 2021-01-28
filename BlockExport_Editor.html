@@ -3465,7 +3465,6 @@
             </shadow>
           </value>
         </block>  -->
-
       </category>
 
       <!---------------------------------------------------------------------------------- 분석&집계 ---------------->
@@ -3493,11 +3492,12 @@
           </value>
         </block>
 
+        <!-- 상관 관계 -->
         <block type="pandas_corr">
           <value name="INPUT1">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
           </value>
           <value name="INPUT2">
             <shadow type="indata">
@@ -3532,9 +3532,7 @@
           </value>
         </block> 
         
-        
         <!-- 
-  
         <block type="block_calculations">
           <value name="INPUT">
             <shadow type="indata">
@@ -3777,13 +3775,14 @@
         </value>
       </block>
 
-      <block type = "pandas_td">
+      <!-- 피봇테이블 -->
+      <block type = "pandas_pivot">
         <value name="VAR">
           <block type="variables_get">
             <field name="VAR">df</field>
           </block>
         </value>
-        <value name="d1">
+        <value name="INPUT">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>

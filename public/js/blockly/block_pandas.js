@@ -1341,7 +1341,9 @@ Blockly.Blocks['groupby_dataFrame1'] = {
 Blockly.Blocks['pandas_transpose'] = {
   init: function () {
     this.appendValueInput("d1").appendField(Blockly.Msg.PANDAS_TRANSPOSE).setCheck(null);
-      this.appendValueInput("LIST").appendField(".transpose(").setCheck(null);
+      this.appendValueInput("LIST")
+        .appendField(".transpose(")
+        .setCheck(null);
       this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
@@ -1352,17 +1354,16 @@ Blockly.Blocks['pandas_transpose'] = {
   }
 };
 
-Blockly.Blocks['pandas_td'] = {
+Blockly.Blocks['pandas_pivot'] = {
   init: function () {
-    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_OC)
-    this.appendValueInput("VAR")
-        .setCheck(null);
     this.appendDummyInput()
-        .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["pivot_table","pivot_table"], ["get_dummies","get_dummies"]]), "DROP");
-    this.appendValueInput("d1")
-        .setCheck(null)
-        .appendField("(");
+      .appendField(Blockly.Msg.PANDAS_PIVOT)
+    this.appendValueInput("VAR")
+      .setCheck(null);
+    this.appendValueInput("INPUT")
+      .appendField(".피봇테이블(pivot_table)")
+      .setCheck(null)
+      .appendField("(");
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);

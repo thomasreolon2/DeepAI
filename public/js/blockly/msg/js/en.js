@@ -861,6 +861,7 @@ Blockly.Msg['PANDAS_DF_INDEX'] = "[index extract]";
 Blockly.Msg['PANDAS_DF_VALUES'] = "[data extract]";
 Blockly.Msg['PANDAS_INDEXING'] = "[indexing]";
 Blockly.Msg['PANDAS_OC'] = "[Content inquiry]"
+Blockly.Msg['PANDAS_PIVOT'] = "[Pivot Table]"
 Blockly.Msg['PANDAS_ITEMS'] = "[items]"
 Blockly.Msg['PANDAS_WHERE'] = "[where]"
 Blockly.Msg['PANDAS_STACK'] = "[stack]"

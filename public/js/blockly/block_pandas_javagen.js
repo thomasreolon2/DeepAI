@@ -380,7 +380,7 @@ Blockly.JavaScript['pandas_transpose'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };  
 
-Blockly.JavaScript['pandas_td'] = function(block) {
+Blockly.JavaScript['pandas_pivot'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_drop = block.getFieldValue('DROP');

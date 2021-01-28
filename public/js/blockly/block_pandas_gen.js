@@ -517,13 +517,11 @@ Blockly.Python['pandas_transpose'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  
 
-Blockly.Python['pandas_td'] = function(block) {
-  //var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  var variable_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
-  var value_name = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_drop = block.getFieldValue('DROP');
+Blockly.Python['pandas_pivot'] = function(block) {
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = variable_name + "." + dropdown_drop + "(" + value_name + ")";
+  var code = `${value_var}.pivot_table(${value_input})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  

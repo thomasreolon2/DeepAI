@@ -870,6 +870,8 @@ Blockly.Msg['PANDAS_DF_INDEX'] = "[인덱스 추출]";
 Blockly.Msg['PANDAS_DF_VALUES'] = "[데이터 추출]";
 Blockly.Msg['PANDAS_INDEXING'] = "[인덱싱]";
 Blockly.Msg['PANDAS_OC'] = "[내용조회]"
+Blockly.Msg['PANDAS_PIVOT'] = "[피봇테이블]"
+
 Blockly.Msg['PANDAS_ITEMS'] = "[쌍반복]"
 Blockly.Msg['PANDAS_WHERE'] = "[where]"
 Blockly.Msg['PANDAS_STACK'] = "[스택]"
@@ -932,8 +934,6 @@ Blockly.Msg['DATASET_IMPORT_DATASET_3'] = "손글씨 데이터";
 Blockly.Msg['DATASET_IMPORT_DATASET_4'] = "당뇨병 데이터";
 Blockly.Msg['DATASET_IMPORT_DATASET_5'] = "붓꽃 데이터";
 Blockly.Msg['DATASET_IMPORT_DATASET_6'] = "와인 품질 데이터";
-Blockly.Msg['DATASET_IMPORT_DATASET_7'] = "위스콘신 유방암 데이터";
-Blockly.Msg['DATASET_IMPORT_DATASET_8'] = "multi-output 회귀 데이터";
 Blockly.Msg['DATASET_RANDOM_IMPORT_1'] = "[무작위 데이터셋 생성]  ";
 Blockly.Msg['DATASET_RANDOM_IMPORT_2'] = "샘플 수";
 Blockly.Msg['DATASET_RANDOM_IMPORT_3'] = "특성 개수";
