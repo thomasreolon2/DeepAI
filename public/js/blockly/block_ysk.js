@@ -188,7 +188,7 @@ Blockly.Blocks['df_unique'] = {
 //sr.is_in()
 Blockly.Blocks['df_is_in'] = {
   init: function () {
-    this.appendDummyInput().appendField("[is_in]").appendField(new Blockly.FieldVariable("sr"), "list");
+    this.appendValueInput("VAR").appendField("[is_in]");
       this.appendValueInput("LIST").appendField(".isin(").setCheck(null);
       this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
