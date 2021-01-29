@@ -154,3 +154,90 @@ Blockly.Blocks['skimage_util'] = {
   this.setHelpUrl("");
   }
 };
+
+
+// skimage_measure
+Blockly.Blocks['skimage_measure'] = {
+  init: function() {
+      this.appendDummyInput()
+          .appendField("measure.")
+          .appendField(new Blockly.FieldDropdown([["find_contours","find_contours"],["subdivide_polygon","subdivide_polygon"],["approximate_polygon","approximate_polygon"]]),"DROP")
+          .appendField("(");
+      this.appendValueInput("INPUT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
+  this.setTooltip("");
+  this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['skimage_filters'] = {
+  init: function () {
+      this.appendDummyInput().appendField("filters.").appendField(new Blockly.FieldDropdown([
+          [
+              "sobel", "sobel"
+          ],
+          [
+            "roberts", "roberts"
+          ]
+      ]), "collection");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['skimage_transform'] = {
+  init: function () {
+      this.appendDummyInput().appendField("transform.").appendField(new Blockly.FieldDropdown([
+          [
+              "hough_line", "hough_line"
+          ],
+          [
+            "hough_circle", "hough_circle"
+          ],
+          [
+            "hough_circle_peaks", "hough_circle_peaks"
+          ],
+          [
+            "hough_line_peaks", "hough_line_peaks"
+          ],
+          [
+            "probabilistic_hough_line", "probabilistic_hough_line"
+          ]
+      ]), "collection");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['skimage_img_as_float'] = {
+  init: function () {
+      this.appendDummyInput().appendField("img_as_float.").appendField(new Blockly.FieldDropdown([
+          [
+            "img_as_float", "img_as_float"
+          ]
+      ]), "collection");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};

@@ -530,7 +530,7 @@ Blockly.Python['pandas_get_dummies'] = function(block) {
   var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${value_var}.pivot_table(${value_input})`;
+  var code = `${value_var}.get_dummies(${value_input})`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  
@@ -679,3 +679,46 @@ Blockly.Python['pandas_nanull'] = function(block) {
   var code = `${variable_name}.${dropdown_drop}(${value_name})`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+//df_merge 병합
+Blockly.Python['df_merge'] = function(block) {
+  var variable_list = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('DROP');
+  // TODO: Assemble Python into code variable.
+  var code = `${variable_list}.${dropdown_dic}(${value_name})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+//////////////////////////////////////////////////////////////////시리즈
+//df_series1
+Blockly.Python['df_series1'] = function(block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_name1 + "(" + value_name + ")";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  
+
+//df_series2
+Blockly.Python['df_series2'] = function(block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_name1 + "[" + value_name + "]";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  
+
+//df_series3
+Blockly.Python['df_series3'] = function(block) {
+  var value_name1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_name1 + "[" + value_name + "]";
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};  

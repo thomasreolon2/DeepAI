@@ -31,3 +31,42 @@ Blockly.JavaScript['skimage_util'] = function (block) {
   var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+////////////////////////////////
+// skimage_measure
+Blockly.JavaScript['skimage_measure'] = function (block) {
+  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+
+Blockly.JavaScript['skimage_filters'] = function(block) {
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('collection');
+  // TODO: Assemble Python into code variable.
+  var code = `filters.${dropdown_dic}(${value_name2})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['skimage_transform'] = function(block) {
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('collection');
+  // TODO: Assemble Python into code variable.
+  var code = `transform.${dropdown_dic}(${value_name2})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['skimage_img_as_float'] = function(block) {
+  var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('collection');
+  // TODO: Assemble Python into code variable.
+  var code = `img_as_float.${dropdown_dic}(${value_name2})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

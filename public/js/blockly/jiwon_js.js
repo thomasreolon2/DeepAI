@@ -197,16 +197,6 @@ Blockly.JavaScript['tight_layout'] = function (block) {
 };
 
 
-////////////////////////////////
-// get_sample_data
-Blockly.JavaScript['skimage_measure'] = function (block) {
-  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
-  var dropdown_drop = block.getFieldValue('DROP');
-
-  // TODO: Assemble JavaScript into code variable.
-  var code = `\n`;
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
 
 
 //2021.01.22 try_except 남지원

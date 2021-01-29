@@ -3701,7 +3701,7 @@
       </block>
 
       <!-- 결합 혹은 복사 -->
-      <block type = "df_bb">
+      <block type = "df_merge">
         <value name="VAR">
           <block type="variables_get">
             <field name="VAR">df</field>
@@ -3895,16 +3895,6 @@
             </shadow>
           </value>
         </block>
-
-        <block type = "df_ap">
-          <value name="LIST">
-            <shadow type="indata">
-              <field name="indata1">np.average, axis=0</field>
-            </shadow>
-          </value>
-        </block> -->
-
-        
       </category>
       <!---------------------------------------------------------------------------------시리즈-->
       <category name="시리즈" colour="%{BKY_PANDAS_HUE}">

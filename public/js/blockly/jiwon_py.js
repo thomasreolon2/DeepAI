@@ -206,16 +206,6 @@ Blockly.Python['tight_layout'] = function (block) {
 
 
 
-////////////////////////////////
-// get_sample_data
-Blockly.Python['skimage_measure'] = function (block) {
-  var input_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_drop = block.getFieldValue('DROP');
-
-  // TODO: Assemble Python into code variable.
-  var code = `measure.${dropdown_drop}(${input_text})`;
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 //2021.01.22 try_except 남지원
 Blockly.Python['try_except'] = function(block) {

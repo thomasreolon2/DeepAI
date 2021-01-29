@@ -32,3 +32,42 @@ Blockly.Python['skimage_util'] = function (block) {
   var code = `util.${dropdown_drop}(${input_text})`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+////////////////////////////////
+// skimage_measure
+Blockly.Python['skimage_measure'] = function (block) {
+  var input_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+
+  // TODO: Assemble Python into code variable.
+  var code = `measure.${dropdown_drop}(${input_text})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['skimage_filters'] = function(block) {
+  var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('collection');
+  // TODO: Assemble Python into code variable.
+  var code = `filters.${dropdown_dic}(${value_name2})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['skimage_transform'] = function(block) {
+  var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('collection');
+  // TODO: Assemble Python into code variable.
+  var code = `transform.${dropdown_dic}(${value_name2})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['skimage_img_as_float'] = function(block) {
+  var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_dic = block.getFieldValue('collection');
+  // TODO: Assemble Python into code variable.
+  // var code = `img_as_float.${dropdown_dic}(${value_name2})`;
+  var code = `${dropdown_dic}(${value_name2})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

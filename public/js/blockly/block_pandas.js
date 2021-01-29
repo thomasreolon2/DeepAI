@@ -1692,3 +1692,86 @@ Blockly.Blocks['pandas_nanull'] = {
   this.setHelpUrl("");
   }
 };
+
+
+//df_merge 병합
+Blockly.Blocks['df_merge'] = {
+  init: function () {
+      this.appendDummyInput()
+      .appendField(Blockly.Msg.PANDAS_BB);
+      this.appendValueInput("VAR")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(".");
+      this.appendDummyInput().appendField(new Blockly.FieldDropdown([
+          [
+            "merge", "merge"
+          ],
+          [
+            "concat", "concat"
+          ],
+          [
+            "join", "join"
+          ],
+          [
+            "append", "append"
+          ],
+          [
+            "copy", "copy"
+          ],
+      ]), "DROP");
+      this.appendValueInput("INPUT").setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+
+//////////////////////////////////////////////////////////////////////////시리즈
+//df_series1
+Blockly.Blocks['df_series1'] = {
+  init: function () {
+      this.appendValueInput("VAR").appendField("[Series]");
+      this.appendValueInput("LIST").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+
+//df_series2
+Blockly.Blocks['df_series2'] = {
+  init: function () {
+    this.appendValueInput("VAR").appendField("[Series]");
+      this.appendValueInput("LIST").appendField("[").setCheck(null);
+      this.appendDummyInput().appendField("]");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+//df_series3
+Blockly.Blocks['df_series3'] = {
+  init: function () {
+    this.appendValueInput("VAR").appendField("[Series]");
+      this.appendValueInput("LIST").appendField("[").setCheck("Boolean");
+      this.appendDummyInput().appendField("]");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      //this.setOutput(true, null);
+      this.setColour(pandas_color);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};

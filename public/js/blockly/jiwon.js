@@ -387,28 +387,7 @@ Blockly.Blocks['tight_layout'] = {
     }
 };
 
-
-
-
-// util
-Blockly.Blocks['skimage_measure'] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("measure.")
-            .appendField(new Blockly.FieldDropdown([["find_contours","find_contours"],["subdivide_polygon","subdivide_polygon"],["approximate_polygon","approximate_polygon"]]),"DROP")
-            .appendField("(");
-        this.appendValueInput("INPUT")
-            .setCheck(null);
-        this.appendDummyInput()
-            .appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-    }
-};
-//numpy_random_sample
+//numpy_random_sample 맷플롯립용
 Blockly.Blocks['numpy_random_sample_x'] = {
     init: function() {
       this.appendDummyInput()
@@ -424,6 +403,7 @@ Blockly.Blocks['numpy_random_sample_x'] = {
     }
   };
 
+// 맷플롯립용
 Blockly.Blocks['Oper_x'] = {
     init: function () {
         this.appendDummyInput().appendField(new Blockly.FieldImage("/img/Numeric/N2-logo.png", 25, 23, {
@@ -480,24 +460,24 @@ Blockly.Blocks['try_except'] = {
             .appendField(":");
         this.appendStatementInput("EXCEPT2")
             .setCheck(null);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour("%{BKY_LOGIC_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_LOGIC_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
     }
   };
 
-  // 2021.01.25 except_block 남지원
-  Blockly.Blocks['except_block'] = {
+// 2021.01.25 except_block 남지원
+Blockly.Blocks['except_block'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown([["EOFError","EOFError"],["SyntaxError","SyntaxError"], ["NameError","NameError"], ["ZeroDivisionError","ZeroDivisionError"], ["IndexError","IndexError"], ["ValueError","ValueError"], ["KeyError","KeyError"], ["AttributeError","AttributeError"], ["FileNotFoundError","FileNotFoundError"], ["TypeError","TypeError"]]), "DROP");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_LOGIC_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([["EOFError","EOFError"],["SyntaxError","SyntaxError"], ["NameError","NameError"], ["ZeroDivisionError","ZeroDivisionError"], ["IndexError","IndexError"], ["ValueError","ValueError"], ["KeyError","KeyError"], ["AttributeError","AttributeError"], ["FileNotFoundError","FileNotFoundError"], ["TypeError","TypeError"]]), "DROP");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour("%{BKY_LOGIC_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
     }
-  };
+};
