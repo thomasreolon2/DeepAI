@@ -751,7 +751,7 @@ Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )";
 
 Blockly.Msg['NUMPY_SHAPE_1'] = "[ 차원확인 ] %1 변수  %2";
 
-Blockly.Msg['NUMPY_RESHAPE_1'] = "[np 차원변경] %1 %2배열형태변경(reshpae)   %3";
+Blockly.Msg['NUMPY_RESHAPE_1'] = "[np 차원변경] %1 %2배열형태변경(reshape)   %3";
 
 Blockly.Msg['NUMPY_FLATTEN_1'] = "[ 행렬 1차원 변경 ] 변수 %1 %2";
 
@@ -925,7 +925,7 @@ Blockly.Msg['SCIPY_QUAD'] = "[Quad] 함수";
 // --------- 사이킷런
 
 // ---- 기본
-Blockly.Msg['IMPORT_SCIKIT_LEARN'] = "[ 임포트 ] sklearn을 skl로";
+Blockly.Msg['IMPORT_SCIKIT_LEARN'] = "[ 임포트 ] sklearn";
 
 // ---- 데이터 셋
 Blockly.Msg['DATASET_IMPORT_DATASET_1'] = "[사이킷런 데이터셋]  ";
