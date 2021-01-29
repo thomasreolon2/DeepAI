@@ -830,24 +830,20 @@ Blockly.defineBlocksWithJsonArray(
         ]
       },
       {
-        "type": "field_input",
-        "name": "matplotlib_pre_graph_Title",
-        "text": ""
+        "type": "input_value",
+        "name": "matplotlib_pre_graph_Title"
       },
       {
-        "type": "field_input",
-        "name": "matplotlib_pre_graph_Xlable",
-        "text": ""
+        "type": "input_value",
+        "name": "matplotlib_pre_graph_Xlable"
       },
       {
-        "type": "field_input",
-        "name": "matplotlib_pre_graph_Ylable",
-        "text": ""
+        "type": "input_value",
+        "name": "matplotlib_pre_graph_Ylable"
       },
       {
-        "type": "field_input",
-        "name": "matplotlib_pre_legend",
-        "text": ""
+        "type": "input_value",
+        "name": "matplotlib_pre_legend"
       },
       {
         "type": "input_dummy"
