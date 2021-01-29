@@ -21,3 +21,14 @@ Blockly.Python['ski_class'] = function (block) {
   
   return code;
 };
+
+
+////////////////////////////////
+// skimage_util
+Blockly.Python['skimage_util'] = function (block) {
+  var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble Python into code variable.
+  var code = `util.${dropdown_drop}(${input_text})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

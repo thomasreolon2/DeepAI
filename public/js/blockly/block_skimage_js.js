@@ -20,3 +20,14 @@ Blockly.JavaScript['ski_class'] = function (block) {
   
   return code;
 };
+
+
+////////////////////////////////
+// skimage_util
+Blockly.JavaScript['skimage_util'] = function (block) {
+  var input_text = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};

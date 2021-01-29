@@ -3452,19 +3452,6 @@
         <!-- 부분범위 -->
         <!-- <block type="iloc_range"></block> -->
 
-        <!-- 정렬 -->
-        <!-- <block type="pandas_sort">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>  -->
       </category>
 
       <!---------------------------------------------------------------------------------- 분석&집계 ---------------->
@@ -3541,30 +3528,10 @@
           </value>
         </block> 
 
-        <block type="pandas_stack">
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block> 
-
-        <block type="pandas_nanull">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">df</field>
-            </block>
-          </value>
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>  -->
 
   
 
-      <!-- <block type="groupby_dataFrame_2">
+     <block type="groupby_dataFrame_2">
         <value name="colName">
           <block type="groupby_series_"></block>
         </value>
@@ -3838,7 +3805,7 @@
         </value>
       </block>
 
-      <block type = "pandas_stack1">
+      <block type = "pandas_stack">
         <value name="d1">
           <block type="variables_get">
             <field name="VAR">df</field>

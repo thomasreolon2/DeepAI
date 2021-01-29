@@ -409,7 +409,7 @@ Blockly.JavaScript['pandas_multiIndex'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };  
 
-Blockly.JavaScript['pandas_stack1'] = function(block) {
+Blockly.JavaScript['pandas_stack'] = function(block) {
   var value_name1 = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_name2 = Blockly.JavaScript.valueToCode(block, 'd2', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_drop = block.getFieldValue('DROP');
@@ -476,3 +476,67 @@ Blockly.JavaScript['pandas_dropna'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };  
+
+
+
+
+// 데이터 통계
+Blockly.JavaScript['block_sum_min'] = function(block) {
+  var variable_name = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return [code,Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// 데이터 누적 통계
+Blockly.JavaScript['block_cumsum'] = function(block) {
+  var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+// 데이터 사칙연산
+Blockly.JavaScript['block_calculations'] = function(block) {
+  var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+
+  return code;
+};
+
+// 데이터 정렬
+Blockly.JavaScript['pandas_sort'] = function(block) {
+  var variable_name = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return code;
+};
+
+// 데이터 상관관계
+Blockly.JavaScript['pandas_corr'] = function(block) {
+  var value_input1 = Blockly.JavaScript.valueToCode(block, 'INPUT1', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_input2 = Blockly.JavaScript.valueToCode(block, 'INPUT2', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return [code,Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// 데이터 nan,null판단
+Blockly.JavaScript['pandas_nanull'] = function(block) {
+  var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  return code;
+};

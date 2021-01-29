@@ -135,3 +135,22 @@ Blockly.Blocks['ski_class'] = {
     this.setHelpUrl("");
   }
 };
+
+// util
+Blockly.Blocks['skimage_util'] = {
+  init: function() {
+      this.appendDummyInput()
+          .appendField("util.")
+          .appendField(new Blockly.FieldDropdown([["invert","invert"],["img_as_ubyte","img_as_ubyte"],["view_as_blocks","view_as_blocks"]]),"DROP")
+          .appendField("(");
+      this.appendValueInput("INPUT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
+  this.setTooltip("");
+  this.setHelpUrl("");
+  }
+};
