@@ -1,3 +1,16 @@
+// 맷플롯립 라이브러리
+Blockly.Blocks['visualization_library'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField(Blockly.Msg.MATPLOT_VISUALIZATION_LIBRARY);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_VISUAL_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+},
 
 //그래프 출력 설정
 Blockly.Blocks['select_graph_option'] = {

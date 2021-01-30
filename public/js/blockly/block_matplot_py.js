@@ -1,3 +1,11 @@
+//라이브러리 임포트    
+Blockly.Python['visualization_library'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = "import matplotlib.pyplot as plt\n";
+  return code;
+};
+
 //그래프 출력 설정 
 Blockly.Python['select_graph_option'] = function(block) {
     var value_select_graph_option_location1 = Blockly.Python.valueToCode(block, 'select_graph_option_location1', Blockly.Python.ORDER_ATOMIC);

@@ -764,15 +764,7 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
 
       
 
-  //라이브러리 임포트    
-  Blockly.Python['visualization_library'] = function(block) {
-    var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-    var libImportIo = "import io\n";
-    var libImportBase64 = "import base64\n";
-    var code = "import matplotlib.pyplot as plt\n" + libImportIo + libImportBase64;
-    return code;
-  };
+
   
   // 성주
   Blockly.Python['visualization_library_cm'] = function(block) {

@@ -407,14 +407,6 @@ Blockly.JavaScript['matplotlib_plt_show'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['visualization_library'] = function (block) {
-  var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var libImportIo = "import io\n";
-  var libImportBase64 = "import base64\n";
-  var code = "\n";
-  return code;
-};
 
 
 //결과 출력

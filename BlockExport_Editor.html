@@ -2229,101 +2229,111 @@
       </block>
     
     </category> -->
-                  <!-- 데이터베이스 -->
+    <!-- #####################################################################################################  -->
+    <!-- ******************************  데이터베이스     //                     ******************************* -->
+    <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_DB}" colour="205">
       <label text="DB"></label>
-
-            <block type="sqlite_library"></block>
+      <!-- sqllite3 라이브러리-->
+      <block type="sqlite_library"></block>
       
-            <block type="db_conn">
-              <value name="va">
-                <shadow type="indata">
-                  <field name="indata1">'data/DB명.db'</field>
-                </shadow>
-              </value>
-            </block>
+      <!-- db연결, 생성-->
+      <block type="db_conn">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1">'DB명.db'</field>
+          </shadow>
+        </value>
+      </block>
       
-            <block type = "db_autocommit"></block>
+      <block type = "db_autocommit"></block>
 
-            <block type = "db_deletedb">
-              <value name="SET0">
-                <shadow type="indata">
-                  <field name="indata1">테이블</field>
-                </shadow>
-              </value>
-            </block>
+      <!-- db삭제 -->
+      <block type = "db_deletedb">
+        <value name="SET0">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+      </block>
 
-            <block type="db_close"></block>
+      <!-- db종료 -->
+      <block type="db_close"></block>
 
-            <block type="db_cur"></block>
-         
-            <block type="db_exec">
-              <value name="va">
-                <shadow type="indata">
-                  <field name="indata1">sql</field>
-                </shadow>
-              </value>
-            </block>
+      <!-- 커서 -->
+      <block type="db_cur"></block>
       
+      <!-- sql실행 -->
+      <block type="db_exec">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1">sql</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- sql실행-->
       <block type="db_execM">
-              <value name="va1">
-                <shadow type="indata">
-                  <field name="indata1">sql</field>
-                </shadow>
-              </value>
-              <value name="va2">
-                <shadow type="indata">
-                  <field name="indata1">data</field>
-                </shadow>
-              </value>
-            </block>
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1">sql</field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1">data</field>
+          </shadow>
+        </value>
+      </block>
       
-            <block type="db_commit"></block>
+      <!-- 저장 -->
+      <block type="db_commit"></block>
       
-            <block type="db_rollback">
-              <value name="va">
-                <shadow type="indata">
-                  <field name="indata1"></field>
-                </shadow>
-              </value>
-            </block>
-      
-            <!-- <block type="db_fetchone"></block>
+      <!-- 복구 -->
+      <block type="db_rollback">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- <block type="db_fetchone"></block>
 
            <block type="db_fetchall"></block> -->
 
-           <block type="db_fetch"></block>
+      <block type="db_fetch"></block>
 
-           <block type="db_fetchmany">
-            <value name="va">
-              <shadow type="indata">
-                <field name="indata1">개수</field>
-              </shadow>
-            </value>
-           </block>
+      <block type="db_fetchmany">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1">개수</field>
+          </shadow>
+        </value>
+      </block>
 
-           <block type = "create_data1">
-            <value name="list">
-              <block type="variables_get">
-                <field name="VAR">data</field>
-              </block>
-            </value>  
-            <value name="text">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
+      <block type = "create_data1">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">data</field>
           </block>
+        </value>  
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
 
-          <block type = "db_with">
-            <value name="set0">
-              <block type="variables_get">
-                <field name="VAR">con</field>
-              </block>
-            </value>  
+      <block type = "db_with">
+        <value name="set0">
+          <block type="variables_get">
+            <field name="VAR">con</field>
           </block>
+        </value>  
+      </block>
 
-      <!-- 생성 -->
+      <!-- 테이블 생성 -->
       <block type = "db_create">
         <value name="d1">
           <shadow type="indata">
@@ -2337,7 +2347,7 @@
         </value>
       </block>
 
-      <!-- 추가 -->
+      <!-- 행 추가 -->
       <block type = "db_insert">
         <value name="d1">
           <shadow type="indata">
@@ -2441,7 +2451,7 @@
         </value>
       </block> -->
 
-      <!-- desc 붙은 order by -->
+      <!-- desc 붙은 order by 
       <block type = "db_select4">
         <value name="SET0">
           <shadow type="indata">
@@ -2459,7 +2469,8 @@
           </shadow>
         </value>
       </block>
-
+      -->
+      
       <!-- 조회 group by -->
       <!-- <block type = "db_select5">
         <value name="SET0">
@@ -4099,21 +4110,9 @@
     <category name="%{BKY_CATEGORY_MATPLOT}" colour="%{BKY_VISUAL_HUE}"> 
       <category name="기본" colour="%{BKY_VISUAL_HUE}">
         <!-- 그래프 출력 -->
-      <block type="visualization_library">
-        <value name="lib_var">
-          <block type="variables_get">
-            <field name="VAR">plt</field>
-          </block>
-        </value>
-      </block>
+      <block type="visualization_library"></block>
 
-      <block type="visualization_library_cm">
-        <value name="lib_var">
-          <block type="variables_get">
-            <field name="VAR">plt</field>
-          </block>
-        </value>
-      </block>
+      <block type="visualization_library_cm"></block>
 
       <block type="val_vi"></block>
       <!--  그래프 출력 갯수    -->

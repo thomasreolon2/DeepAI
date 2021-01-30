@@ -1,3 +1,10 @@
+// 라이브러리
+Blockly.JavaScript['visualization_library'] = function (block) {
+  var value_name = Blockly.Python.valueToCode(block, 'lib_var', Blockly.Python.ORDER_ATOMIC);
+  var code = "\n";
+  return code;
+};
+
 
 //그래프 출력 설정
 Blockly.JavaScript['select_graph_option'] = function(block) { 
