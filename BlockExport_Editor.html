@@ -2470,7 +2470,7 @@
         </value>
       </block>
       -->
-      
+
       <!-- 조회 group by -->
       <!-- <block type = "db_select5">
         <value name="SET0">
@@ -2489,8 +2489,6 @@
           </shadow>
         </value>
       </block> -->
-
-
 
       <!-- 수정 -->
       <block type = "db_update">
@@ -2511,7 +2509,6 @@
         </value>
       </block>
 
-
       <!-- 삭제 -->
       <block type = "db_delete">
         <value name="d1">
@@ -2525,19 +2522,13 @@
           </shadow>
         </value>
       </block>
-
     </category>
     
     <sep></sep>
-
-    
     
     <!-- #####################################################################################################  -->
     <!-- ******************************   데이타 사이언스 //  2020 - 09 - 07     ******************************* -->
     <!-- #####################################################################################################  -->
-    <!-- # numpy function # -->
-
-
     <category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}"> <!--넘파이(Numpy)-->
       <category name="기본" colour="%{BKY_NUMPY_HUE}">
         <!-- import numpy as np -->
@@ -2561,232 +2552,228 @@
         </block>
         <!-----------------------------------------------------------------------------배열생성-->
         <label text="배열 생성"></label>
-        <!-- 넘파이 배열생성 1 -->
-        <block type = "create_np_array">
-          <value name="text">
-            <shadow type="indata">
-              <field name="indata1">[1,2,3,4]</field>
-            </shadow>
-          </value>
+          <!-- 넘파이 배열생성 1 -->
+          <block type = "create_np_array">
+            <value name="text">
+              <shadow type="indata">
+                <field name="indata1">[1,2,3,4]</field>
+              </shadow>
+            </value>
 
-          <value name="dtype">
-            <shadow type="indata">
-              <field name="indata1">dtype = int</field>
-            </shadow>
-          </value>
-        </block>
-        <!-- 넘파이 배열생성 2-->
-        <block type = "create_np_array2">
-          <value name="text">
+            <value name="dtype">
+              <shadow type="indata">
+                <field name="indata1">dtype = int</field>
+              </shadow>
+            </value>
+          </block>
+          <!-- 넘파이 배열생성 2-->
+          <block type = "create_np_array2">
+            <value name="text">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+            <value name="text2">
+              <shadow type="indata">
+                <field name="indata1"> : </field>
+              </shadow>
+            </value>
+          </block>
+          <!-- numpy.array -->
+          <block type="np_array">
+            <value name="INPUT">
+              <shadow type="indata">
+                <field name="indata1">[1,2,3,4]</field>
+              </shadow>
+            </value>
+            <value name="DTYPE">
+              <shadow type="indata">
+                <field name="indata1">dtype = int</field>
+              </shadow>
+            </value>
+          </block>
+          <!-- <value name="np_array_val">
+            <block type="create_arry"></block>
+          </value> -->
+          <!-- 배열생성 / 0 & 1 --> 
+          <block type="numpy_ones_and_zeros_basic">
+            <value name="parameter1"> 
+              <shadow type="indata">
+                <field name="indata1">행,열</field>
+              </shadow>
+            </value>
+            <value name="parameter2"> 
+              <shadow type="indata">
+                <field name="indata1">dtype = float</field>
+              </shadow>
+            </value>  
+          </block> 
+
+          <block type="numpy_eye_basic">
+            <value name="parameter1"> 
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block> 
+          <!-- 배열생성 / 0 & 1 -->
+
+          <!-- 배열생성 / 숫자 범위 --> 
+          <block type="numpy_numerical_ranges_basic1">
+            <value name="parameter1"> 
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+            <value name="parameter2"> 
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value> 
+            <value name="parameter3"> 
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value> 
+          </block> 
+          <!-- 배열생성 / 숫자 범위 -->
+      <!----------------------------------------------------------------------배열-->
+      <label text="배열 모양 변경"></label>
+        <!-- 배열생성 / 숫자 범위2 --> 
+        <!-- <block type="numpy_numerical_ranges_basic2">
+          <value name="parameter1"> 
             <shadow type="indata">
               <field name="indata1"></field>
             </shadow>
           </value>
-          <value name="text2">
+          <value name="parameter2"> 
             <shadow type="indata">
-              <field name="indata1"> : </field>
+              <field name="indata1"></field>
             </shadow>
+          </value> 
+        </block>  -->
+        <!-- 배열생성 / 숫자 범위2 -->
+
+        <!-- astype -->
+        <block type="numpy_astype">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">a</field>
+            </block>
           </value>
-        </block>
-        <!-- numpy.array -->
-        <block type="np_array">
           <value name="INPUT">
             <shadow type="indata">
-              <field name="indata1">[1,2,3,4]</field>
-            </shadow>
-          </value>
-          <value name="DTYPE">
-            <shadow type="indata">
-              <field name="indata1">dtype = int</field>
+              <field name="indata1"></field>
             </shadow>
           </value>
         </block>
-        <!-- <value name="np_array_val">
-          <block type="create_arry"></block>
-        </value> -->
-        <!-- 배열생성 / 0 & 1 --> 
-      <block type="numpy_ones_and_zeros_basic">
-        <value name="parameter1"> 
-          <shadow type="indata">
-            <field name="indata1">행,열</field>
-          </shadow>
-        </value>
-        <value name="parameter2"> 
-          <shadow type="indata">
-            <field name="indata1">dtype = float</field>
-          </shadow>
-        </value>  
-      </block> 
 
-      <block type="numpy_eye_basic">
-        <value name="parameter1"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-      <!-- 배열생성 / 0 & 1 -->
+        <!-- np.reshape  -->
+        <block type="numpy_changing_array_shape_basic">
+          <value name="numpy_Changing_array_shape_val"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>  
+        </block>
 
-      <!-- 배열생성 / 숫자 범위 --> 
-      <block type="numpy_numerical_ranges_basic1">
-        <value name="parameter1"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="parameter2"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-        <value name="parameter3"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-      </block> 
-      <!-- 배열생성 / 숫자 범위 -->
-      <!----------------------------------------------------------------------배열-->
-      <label text="배열 모양 변경"></label>
-      <!-- 배열생성 / 숫자 범위2 --> 
-      <!-- <block type="numpy_numerical_ranges_basic2">
-        <value name="parameter1"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="parameter2"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
+        <block type="numpy_reshape">
+          <value name="numpy_reshape_val"> 
+            <block type="variables_get">
+              <field name="VAR">a</field>
+            </block>
+          </value>  
 
-      </block>  -->
-      <!-- 배열생성 / 숫자 범위2 -->
+          <value name="numpy_reshape_struct"> 
+            <shadow type="indata">
+              <field name="indata1">행,열</field>
+            </shadow>
+          </value>  
+        </block>
 
-      <!-- astype -->
-      <block type="numpy_astype">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">a</field>
-          </block>
-        </value>
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+        <block type="numpy_select"></block>
+        <!-- 차원확인 -->
+        <!-- <block type="numpy_shape">
+          <value name="numpy_shape_num1">
+            <block type="variables_get">
+              <field name="VAR">np</field>
+            </block>
+          </value>
+          <value name="numpy_shape_num">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> -->
+        <!-- np.shape  -->
 
-      <!-- np.reshape  -->
-      <block type="numpy_changing_array_shape_basic">
-        <value name="numpy_Changing_array_shape_val"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>  
-      </block>
+        <block type="numpy_transpose_like_operations_basic">
+          <value name="numpy_Transpose_like_operations_val"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>  
+        </block> 
 
-      <block type="numpy_reshape">
-        <value name="numpy_reshape_val"> 
-          <block type="variables_get">
-            <field name="VAR">a</field>
-          </block>
-        </value>  
-
-        <value name="numpy_reshape_struct"> 
-          <shadow type="indata">
-            <field name="indata1">행,열</field>
-          </shadow>
-        </value>  
-      </block>
-
-      
-
-
-      <block type="numpy_select"></block>
-      <!-- 차원확인 -->
-      <!-- <block type="numpy_shape">
-        <value name="numpy_shape_num1">
-          <block type="variables_get">
-            <field name="VAR">np</field>
-          </block>
-        </value>
-        <value name="numpy_shape_num">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> -->
-      <!-- np.shape  -->
-
-      <block type="numpy_transpose_like_operations_basic">
-        <value name="numpy_Transpose_like_operations_val"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>  
-      </block> 
-
-      <block type="numpy_from_existing_data">
-        <value name="numpy_From_existing_data_val"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>  
-      </block> 
+        <block type="numpy_from_existing_data">
+          <value name="numpy_From_existing_data_val"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>  
+        </block> 
       <!----------------------------------------------------------------------랜덤-->
       <label text="랜덤&정렬"></label>
-      <block type="numpy_random_generator_basic">
-        <value name="numpy_Random_generator_val"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>  
-      </block> 
+        <block type="numpy_random_generator_basic">
+          <value name="numpy_Random_generator_val"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>  
+        </block> 
 
-      <block type="numpy_random_sample_basic">
-        <value name="parmeter1"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>  
-        <value name="parmeter2"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>  
-      </block> 
+        <block type="numpy_random_sample_basic">
+          <value name="parmeter1"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>  
+          <value name="parmeter2"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>  
+        </block> 
 
       <!----------------------------------------------------------------------수학 통계-->
       <label text="넘파이 기본 연산"></label>
 
-      <!-- 수학 / 삼각 -->
-      <block type="numpy_mathematical_functions">
-        <value name="numpy_Mathematical functions_val"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>   
-      </block> 
-      <!-- 수학 / 삼각  -->
+        <!-- 수학 / 삼각 -->
+        <block type="numpy_mathematical_functions">
+          <value name="numpy_Mathematical functions_val"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>   
+        </block> 
+        <!-- 수학 / 삼각  -->
 
-       <!-- 넘파이 기본연산 -->
-       <block type="numpy_operator_basic">
-        <value name="parameter1"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="parameter2"> 
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-      </block>
-      <!-- 넘파이 기본연산 -->
+        <!-- 넘파이 기본연산 -->
+        <block type="numpy_operator_basic">
+          <value name="parameter1"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="parameter2"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+        </block>
+        <!-- 넘파이 기본연산 -->
 
-      <!-- 수학 / 반올림 --> 
+        <!-- 수학 / 반올림 --> 
         <block type="numpy_rounding_basic">
           <value name="numpy_Rounding_val"> 
             <shadow type="indata">
@@ -2813,167 +2800,164 @@
             </shadow>
           </value>  
         </block>  -->
-      <!-- 행렬 연산-->
-      <block type="numpy_array_operator_basic">
-        <value name="parameter1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-        <value name="parameter2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-      </block>
-      <!-- 행렬 연산 -->
+        <!-- 행렬 연산-->
+        <block type="numpy_array_operator_basic">
+          <value name="parameter1">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+          <value name="parameter2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+        </block>
+        <!-- 행렬 연산 -->
       
-      <!-- 통계 / 평균 & 분산  -->
-      <block type="numpy_averages_variances_basic">
-        <value name="parameter1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-        <value name="parameter2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      <!-- 통계 / 평균 & 분산  -->
+        <!-- 통계 / 평균 & 분산  -->
+        <block type="numpy_averages_variances_basic">
+          <value name="parameter1">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+          <value name="parameter2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+        <!-- 통계 / 평균 & 분산  -->
       
+      <!---------------------------------------------------------------------인덱스/값검색-->
       <label text="인덱스/값 검색"></label>
-       <!-- 넘파이 인덱스/값 검색 -->
-       <block type="numpy_index_values_basic">
-        <value name="numpy_index_values_val">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-      </block>
-  
-      <!-- 넘파이 인덱스/값 검색 -->
+        <!-- 넘파이 인덱스/값 검색 -->
+        <block type="numpy_index_values_basic">
+          <value name="numpy_index_values_val">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+        </block>
+        <!-- 넘파이 인덱스/값 검색 -->
 
-       <!-- 넘파이 인덱스/값 검색 인자 두개-->
-       <block type="numpy_index_values2">
-        <value name="numpy_index_values_val">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-      </block>
-      <!-- 넘파이 인덱스/값 검색 인자 두개-->
+        <!-- 넘파이 인덱스/값 검색 인자 두개-->
+        <block type="numpy_index_values2">
+          <value name="numpy_index_values_val">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+        </block>
+        <!-- 넘파이 인덱스/값 검색 인자 두개-->
 
+        <!-- 통계 / 평균 & 분산  -->
 
-      
+        <!-- CSV 저장 -->
+        <!-- <block type="data_to_csv"></block> -->
+        <!-- CSV 저장 -->
 
-      <!-- 통계 / 평균 & 분산  -->
+        <!-- data_conversion-->
+        <!-- <block type="data_conversion"></block> -->
+        <!-- data_conversion -->
 
-      <!-- CSV 저장 -->
-      <!-- <block type="data_to_csv"></block> -->
-      <!-- CSV 저장 -->
+        <!-- numpy_concatenate -->
+        <!-- <block type="np_concatenate"></block> -->
+        <!-- numpy_concatenate -->
 
-      <!-- data_conversion-->
-      <!-- <block type="data_conversion"></block> -->
-      <!-- data_conversion -->
+        <!-- numpy.array -->
 
-      <!-- numpy_concatenate -->
-      <!-- <block type="np_concatenate"></block> -->
-      <!-- numpy_concatenate -->
+        <!-- numpy.array -->
+        <!-- <block type="np_array"></block> -->
+        <!-- numpy.array -->
 
-      <!-- numpy.array -->
-
-       <!-- numpy.array -->
-       <!-- <block type="np_array"></block> -->
-       <!-- numpy.array -->
-
-      <!-- numpy.arrage -->
-      <!-- <block type="np_arrange"></block> -->
-      <!-- numpy.arrage -->
+        <!-- numpy.arrage -->
+        <!-- <block type="np_arrange"></block> -->
+        <!-- numpy.arrage -->
 
 
-      <!-- numpy.zeros -->
-      <!-- <block type="numpy_zeros"></block> -->
-      <!-- numpy.zeros -->
+        <!-- numpy.zeros -->
+        <!-- <block type="numpy_zeros"></block> -->
+        <!-- numpy.zeros -->
 
-      <!-- numpy.full  -->
-      <!-- <block type="numpy_full"> </block> -->
-      <!-- numpy.full  -->
+        <!-- numpy.full  -->
+        <!-- <block type="numpy_full"> </block> -->
+        <!-- numpy.full  -->
 
-      <!-- np.eye   -->
-      <!-- <block type="numpy_eye"></block> -->
-      <!-- np.eye   -->
+        <!-- np.eye   -->
+        <!-- <block type="numpy_eye"></block> -->
+        <!-- np.eye   -->
 
-      <!-- np.max_min  -->
-      <!-- <block type="numpy_max_min"></block> -->
-      <!-- np.max_min  -->
-      <sep></sep>
-      <!-- np.shape  -->
-      <!-- <block type="numpy_shape"></block> -->
-      <!-- np.shape  -->
+        <!-- np.max_min  -->
+        <!-- <block type="numpy_max_min"></block> -->
+        <!-- np.max_min  -->
+        <sep></sep>
+        <!-- np.shape  -->
+        <!-- <block type="numpy_shape"></block> -->
+        <!-- np.shape  -->
 
-      <!-- np.reshape  -->
-      <!-- <block type="np_flatten"> </block> -->
-      <!-- np.reshape  -->
+        <!-- np.reshape  -->
+        <!-- <block type="np_flatten"> </block> -->
+        <!-- np.reshape  -->
 
-      <!--  random. randn or randint   -->
-      <!-- <block type="numpy_random_rand">
-        <value name="numpy_random_rand_lib_val">
-          <block type="variables_get">
-            <field name="VAR">np</field>
-          </block>
-        </value>
+        <!--  random. randn or randint   -->
+        <!-- <block type="numpy_random_rand">
+          <value name="numpy_random_rand_lib_val">
+            <block type="variables_get">
+              <field name="VAR">np</field>
+            </block>
+          </value>
 
-        <value name="numpy_random_rand_num1">
-          <shadow type="math_number">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
+          <value name="numpy_random_rand_num1">
+            <shadow type="math_number">
+              <field name="NUM">2</field>
+            </shadow>
+          </value>
 
-        <value name="numpy_random_rand_num2">
-          <shadow type="math_number">
-            <field name="NUM">2</field>
-          </shadow>
-        </value>
-      </block> -->
-      <!--  random. randn or randint   -->
+          <value name="numpy_random_rand_num2">
+            <shadow type="math_number">
+              <field name="NUM">2</field>
+            </shadow>
+          </value>
+        </block> -->
+        <!--  random. randn or randint   -->
 
-      <!--  np.exp  -->
-      <!-- <block type="numpy_exp"></block> -->
-      <!--  np.exp  -->
+        <!--  np.exp  -->
+        <!-- <block type="numpy_exp"></block> -->
+        <!--  np.exp  -->
 
-      <!--  np.mean  -->
-      <!-- <block type="np_mean"></block> -->
-      <!--  np.mean  -->
+        <!--  np.mean  -->
+        <!-- <block type="np_mean"></block> -->
+        <!--  np.mean  -->
 
-      <!--  np.diff  -->
-      <!-- <block type="np_diff_"></block> -->
-      <!--  np.diff  -->
-
-
-      <!-- np.append -->
-      <!-- <block type="np_arry_change"></block> -->
-      <!-- np.append -->
-
-      <!-- np.prod -->
-      <!-- <block type="np_prod"></block> -->
-      <!-- np.prod -->
-
-      <!-- np.fft -->
-      <!-- <block type="np_fft_fft"></block> -->
-      <!-- np.fft -->
+        <!--  np.diff  -->
+        <!-- <block type="np_diff_"></block> -->
+        <!--  np.diff  -->
 
 
-      <!-- np.abs -->
-      <!-- <block type="nump_abs"></block> -->
-      <!-- np.abs -->
+        <!-- np.append -->
+        <!-- <block type="np_arry_change"></block> -->
+        <!-- np.append -->
 
-      
+        <!-- np.prod -->
+        <!-- <block type="np_prod"></block> -->
+        <!-- np.prod -->
 
-      <!--  import sklearn  -->
-      <!-- <block type="lib_import_sklearn"></block> -->
-      <!--  import sklearn  -->
+        <!-- np.fft -->
+        <!-- <block type="np_fft_fft"></block> -->
+        <!-- np.fft -->
+
+
+        <!-- np.abs -->
+        <!-- <block type="nump_abs"></block> -->
+        <!-- np.abs -->
+
+        
+
+        <!--  import sklearn  -->
+        <!-- <block type="lib_import_sklearn"></block> -->
+        <!--  import sklearn  -->
 
       </category>
       <!-------------------------------------------------------------------------------------------- 수학 & 통계-->
