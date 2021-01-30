@@ -19,7 +19,7 @@ Blockly.Python['db_insert'] = function (block) {
   var value_SET0 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var value_SET1 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list + ' = ' + '"INSERT INTO ' + value_SET0 + " VALUES (" + value_SET1 + ')"'+"\n";
+  var code = variable_list + ' = ' + '"INSERT INTO ' + value_SET0 + " VALUES " + value_SET1 + '"'+"\n";
   return code;
 };
 
