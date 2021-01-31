@@ -459,7 +459,7 @@ Blockly.Python['pandas_unique'] = function(block) {
 
 //pandas_indexing
 Blockly.Python['pandas_indexing'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var value_name = Blockly.Python.valueToCode(block, 'LIST', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = variable_list + "[" + value_name + "]";

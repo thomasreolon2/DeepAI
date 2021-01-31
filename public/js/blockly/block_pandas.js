@@ -1258,7 +1258,7 @@ Blockly.Blocks['pandas_unique'] = {
 //pandas_indexing
 Blockly.Blocks['pandas_indexing'] = {
   init: function () {
-    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_INDEXING).appendField(new Blockly.FieldVariable("df"), "list");
+    this.appendValueInput("d1").setCheck(null).appendField(Blockly.Msg.PANDAS_INDEXING);
       this.appendValueInput("LIST").appendField("[").setCheck(null);
       this.appendDummyInput().appendField("]");
       this.setInputsInline(true);
