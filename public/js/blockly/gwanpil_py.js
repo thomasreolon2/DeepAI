@@ -358,27 +358,10 @@ Blockly.Python['plt_subplot'] = function(block) {
       };
 
       Blockly.Python['set_xyticks'] = function (block) {
-        var value_x_data = Blockly.Python.variableDB_.getName(block.getFieldValue('x_data'), Blockly.Variables.NAME_TYPE);
-        var value_y_data = Blockly.Python.variableDB_.getName(block.getFieldValue('y_data'), Blockly.Variables.NAME_TYPE);
-    
-        var value_x_train = Blockly.Python.variableDB_.getName(block.getFieldValue('x_train'), Blockly.Variables.NAME_TYPE);
-        var value_x_test = Blockly.Python.variableDB_.getName(block.getFieldValue('x_test'), Blockly.Variables.NAME_TYPE);
-    
-        var value_y_train = Blockly.Python.variableDB_.getName(block.getFieldValue('y_train'), Blockly.Variables.NAME_TYPE);
-        var value_y_test = Blockly.Python.variableDB_.getName(block.getFieldValue('y_test'), Blockly.Variables.NAME_TYPE);
-    
-        // 기존 train_test_split, 이 주석은 삭제하지 말 것
-        // var value_x_data = Blockly.Python.valueToCode(block, 'x_data', Blockly.Python.ORDER_ATOMIC);
-        // var value_y_data = Blockly.Python.valueToCode(block, 'y_data', Blockly.Python.ORDER_ATOMIC);
-        // var value_x_train = Blockly.Python.valueToCode(block, 'x_train', Blockly.Python.ORDER_ATOMIC);
-        // var value_x_test = Blockly.Python.valueToCode(block, 'x_test', Blockly.Python.ORDER_ATOMIC);
-        // var value_y_train = Blockly.Python.valueToCode(block, 'y_train', Blockly.Python.ORDER_ATOMIC);
-        // var value_y_test = Blockly.Python.valueToCode(block, 'y_test', Blockly.Python.ORDER_ATOMIC);
-    
-        var text_test_size = block.getFieldValue('test_size');
-        var dropdown_shuffle = block.getFieldValue('shuffle');
-        var text_seed = block.getFieldValue('seed');
+        var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+        var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+        var var_text3 = Blockly.Python.valueToCode(block, 'INPUT2', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
-        var code = value_x_train + ',' + value_x_test + ',' + value_y_train + ',' + value_y_test + '= sklearn.model_selection.train_test_split(' + value_x_data + ',' + value_y_data + ',' + 'test_size=' + text_test_size + ', shuffle=' + dropdown_shuffle + ', random_state=' + text_seed + ')\n';
+        var code = `${var_text1}.set_xticks(${var_text2})\n${var_text1}.set_yticks(${var_text3})\n`;
         return code;
     };

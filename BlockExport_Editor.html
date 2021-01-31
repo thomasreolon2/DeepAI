@@ -5511,6 +5511,40 @@
         </block></value>
       </block>
 
+      <block type = "set_xyticks">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <block type="numpy_numerical_ranges">
+            <value name="numpy_Numerical_ranges_val"> 
+              <block type="text_length">
+                <value name="VALUE">
+                  <shadow type="indata">
+                    <field name="indata1">farmers</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>  
+          </block> 
+        </value>
+        <value name="INPUT2">
+          <block type="numpy_numerical_ranges">
+            <value name="numpy_Numerical_ranges_val"> 
+              <block type="text_length">
+                <value name="VALUE">
+                  <shadow type="indata">
+                    <field name="indata1">vegetables</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>  
+          </block> 
+        </value>
+      </block>
+<!--
       <block type = "set_xticks">
         <value name="NUMBER"><block type="variables_get">
           <field name="VAR">ax</field>
@@ -5550,7 +5584,7 @@
           </block> 
         </value>
       </block>
-<!--
+
       <block type="set_xyticks">
         <value name="x_data">
           <block type="variables_get">
