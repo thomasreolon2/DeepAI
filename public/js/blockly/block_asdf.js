@@ -258,7 +258,7 @@ Blockly.Blocks['pie_subplots1'] = {
   init: function() { 
     this.appendValueInput("list").setCheck(null);
     this.appendDummyInput().appendField(".subplot(");
-    this.appendValueInput("d1").setCheck(null).appendField(",");
+    this.appendValueInput("d1").setCheck(null);
     this.appendDummyInput().appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
