@@ -204,7 +204,6 @@ Blockly.Python['db_with'] = function(a) {
   var d = Blockly.Python.statementToCode(a, "in");
   // d = Blockly.Python.addLoopTrap(d, a) || Blockly.Python.PASS;
   d = Blockly.Python.addLoopTrap(d, a);
-  var code = "with " + set0  + ":\n" + d;
-  // var code = `with ${set0}:\n ${d}`;
+  var code = `with ${set0}:\n${d}`;
   return code;
 };
