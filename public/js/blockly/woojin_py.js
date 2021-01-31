@@ -6,7 +6,7 @@
 Blockly.Python['db_autocommit'] = function (block) {
   var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list1 + '.isolation_level = None' + '\n';
+  var code = `${variable_list1}.isolation_level = None\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -18,7 +18,7 @@ Blockly.Python['db_deletedb'] = function (block) {
   var variable_list1 = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var indata1 = Blockly.Python.valueToCode(block, 'SET0', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list1 + '= "DROP TABLE IF EXISTS ' + indata1 + '"' + '\n';
+  var code = `${variable_list1} = "DROP TABLE IF EXISTS ${indata1}"\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -32,7 +32,7 @@ Blockly.Python['db_select3'] = function (block) {
   var value_SET1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
   var value_SET2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code =  variable_list + ' = ' + '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " ORDER BY " + value_SET2 + '"' + '\n';
+  var code =  `${variable_list} = "SELECT ${value_SET0} FROM ${value_SET1} ORDER BY ${value_SET2}"\n`;
   return code;
 };
 
@@ -44,7 +44,7 @@ Blockly.Python['db_select4'] = function (block) {
   var value_SET1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
   var value_SET2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list + ' = ' + '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " ORDER BY " + value_SET2 + ' DESC"' + '\n';
+  var code = `${variable_list} = "SELECT ${value_SET0} FROM ${value_SET1} ORDER BY ${value_SET2} DESC"\n`;
   return code;
 };
 
@@ -56,7 +56,7 @@ Blockly.Python['db_select5'] = function (block) {
   var value_SET1 = Blockly.Python.valueToCode(block, 'SET1', Blockly.Python.ORDER_ATOMIC);
   var value_SET2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list + ' = ' + '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " GROUP BY " + value_SET2 + '"' + '\n';
+  var code = `${variable_list} = "SELECT ${value_SET0} FROM ${value_SET1} GROUP BY ${value_SET2}"\n`;
   return code;
 };
 
@@ -67,7 +67,7 @@ Blockly.Python['db_select6'] = function (block) {
   var value_SET2 = Blockly.Python.valueToCode(block, 'SET2', Blockly.Python.ORDER_ATOMIC);
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list + ' = ' + '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " " + dropdown_name + " " + value_SET2 + '"' + '\n';
+  var code = `${variable_list} = "SELECT ${value_SET0} FROM ${value_SET1} ${dropdown_name} ${value_SET2}"\n`;
   return code;
 };
 
@@ -79,6 +79,6 @@ Blockly.Python['db_select7'] = function (block) {
   var dropdown_name = block.getFieldValue('NAME');
   var dropdown_name2 = block.getFieldValue('NAME2');
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list + ' = ' + '"SELECT ' + value_SET0 + " FROM " + value_SET1 + " " + dropdown_name + " " + value_SET2 + " " + dropdown_name2+'"' + '\n';
+  var code = `${variable_list} = "SELECT ${value_SET0} FROM ${value_SET1} ${dropdown_name} ${value_SET2} ${dropdown_name2}"\n`;
   return code;
 };
