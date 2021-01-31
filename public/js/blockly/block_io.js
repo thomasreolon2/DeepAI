@@ -421,7 +421,7 @@ Blockly.Blocks['fileopen'] = {
 Blockly.Blocks['fileopen2'] = {
   init: function () {
       this.appendDummyInput()
-        .appendField("이미지")
+        .appendField("미디어불러오기")
         .appendField(new Blockly.FieldTextInput("경로"), "file_path");
       //this.setInputsInline(true);
       this.setOutput(true, null);
@@ -434,7 +434,7 @@ Blockly.Blocks['fileopen2'] = {
 Blockly.Blocks['fileopen3'] = {
   init: function () {
       this.appendDummyInput()
-        .appendField(Blockly.Msg.FILE_OPEN_1)
+        .appendField("웨이브불러오기")
         .appendField(new Blockly.FieldTextInput("경로"), "file_path");
       //this.setInputsInline(true);
       this.setOutput(true, null);

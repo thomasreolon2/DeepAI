@@ -819,7 +819,7 @@
           </value>
         </block>
         <block type="fileopen2"></block>   
-        <block type="fileopen3"></block>   
+        <!-- <block type="fileopen3"></block>    -->
 	      <!-- 기태 수정 (로컬 파일 열기)---------------------------------------------> 	
 
         <!-- 파일 읽기 -->
@@ -9322,14 +9322,42 @@
       input.click();
     }
 
-    // 이미지 파일 처리하기 
+    // 미디어 파일 처리하기 
     function localFileOpen2(blockId) {
       console.log("local Image FileOpen");
       var input = document.createElement("input");
       input.type = "file";
-      input.accept = ".jpg, .png, .bmp"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+      input.accept = ".jpg, .png, .bmp, .wav"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
       input.onchange = function (e) {
-       
+      
+    
+      fileName2 =  e.target.files[0].name;
+      console.log(fileName2);
+
+      var _fileLen = fileName2.length;
+      var _lastDot = fileName2.lastIndexOf('.');
+      var _fileExt = fileName2.substring(_lastDot, _fileLen).toLowerCase();
+
+      if(_fileExt == ".wav"){
+        if (e.target.files != undefined) {
+          console.log("loadLocalFile-3")
+          var reader = new FileReader();
+        
+          reader.onload = function (e) {
+            datas = e.target.result;          
+            console.log("datas", datas);    
+            // wav 파일 처리하기 
+            fss.writeFileSync(fileName2, Buffer(new Uint8Array(datas)));
+            var block = demoWorkspace.getBlockById(blockId);
+            var bId = Blockly.mainWorkspace.getBlockById(blockId)
+            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
+          };
+
+          fileName2 =  e.target.files[0].name;
+          console.log(fileName2);
+          reader.readAsArrayBuffer(e.target.files[0]);        
+        }
+      } else {
         if (e.target.files != undefined) {
           console.log("loadLocalFile-2")
           var reader = new FileReader();
@@ -9345,13 +9373,12 @@
             block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
           };
 
-          fileName2 =  e.target.files[0].name;
-          console.log(fileName2);
+          
           reader.readAsDataURL(e.target.files[0]);        
         }
-      };
-
-      input.click();
+      }
+    };
+    input.click();
     }
 
     // 웨이브 파일 처리하기 
