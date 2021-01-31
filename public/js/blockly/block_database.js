@@ -89,6 +89,23 @@
     }
   };
 
+  Blockly.Blocks['db_update2'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.DATABASE_UPDATE_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= UPDATE");
+      this.appendValueInput("d1").setCheck(null);
+      this.appendValueInput("d2").appendField("SET").setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(database);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
   Blockly.Blocks['db_delete'] = {
     init: function () {
       this.appendDummyInput()
@@ -106,6 +123,21 @@
     }
   };
 
+  Blockly.Blocks['db_delete2'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.DATABASE_DELETE_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField("= DELETE FROM");
+      this.appendValueInput("d1").setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(database);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
 
   // 전우진
 

@@ -10,7 +10,7 @@ Blockly.Python['db_create'] = function (block) {
   var value_SET1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var value_SET2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list + '=' + '"CREATE TABLE ' + value_SET1 + '(' + value_SET2 + ')"'+"\n";
+  var code = `${variable_list} = "CREATE TABLE IF NOT EXISTS ${value_SET1}(${value_SET2})"\n`;
   return code;
 };
 
@@ -52,6 +52,15 @@ Blockly.Python['db_update'] = function (block) {
   return code;
 };
 
+Blockly.Python['db_update2'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+  var value_SET0 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  var value_SET1 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${variable_list} = "UPDATE ${value_SET0} SET ${value_SET1}"\n`;
+  return code;
+};
+
 Blockly.Python['db_delete'] = function (block) {
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
   var value_SET0 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
@@ -61,6 +70,13 @@ Blockly.Python['db_delete'] = function (block) {
   return code;
 };
 
+Blockly.Python['db_delete2'] = function (block) {
+  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+  var value_SET0 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${variable_list} = "DELETE FROM ${value_SET0}"`;
+  return code;
+};
 
 //전우진
 

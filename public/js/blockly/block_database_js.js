@@ -36,6 +36,7 @@
     return code;
   };
 
+  // update문
   Blockly.JavaScript['db_update'] = function (block) {
     var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
     var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
@@ -46,10 +47,30 @@
     return code;
   };
 
+  // update문 ( where 없음 )
+  Blockly.Python['db_update2'] = function (block) {
+    var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+    var value_SET0 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
+    var value_SET1 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = `${variable_list} = "UPDATE ${value_SET0} SET ${value_SET1}"\n`;
+    return code;
+  };
+
+  // delete문
   Blockly.JavaScript['db_delete'] = function (block) {
     var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
     var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
     var value_SET1 = Blockly.JavaScript.valueToCode(block, 'SET1', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  // delete문 (where 없음)
+  Blockly.JavaScript['db_delete2'] = function (block) {
+    var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list1'), Blockly.Variables.NAME_TYPE);
+    var value_SET0 = Blockly.JavaScript.valueToCode(block, 'SET0', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     var code = '\n';
     return code;

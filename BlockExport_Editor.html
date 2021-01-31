@@ -2233,7 +2233,6 @@
     <!-- ******************************  데이터베이스     //                     ******************************* -->
     <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_DB}" colour="205">
-      <label text="DB"></label>
       <!-- sqllite3 라이브러리-->
       <block type="sqlite_library"></block>
       
@@ -2347,7 +2346,7 @@
         </value>
       </block>
 
-      <!-- 행 추가 -->
+      <!-- 삽입 -->
       <block type = "db_insert">
         <value name="d1">
           <shadow type="indata">
@@ -2356,7 +2355,7 @@
         </value>
         <value name="d2">
           <shadow type="indata">
-            <field name="indata1">?, ?</field>
+            <field name="indata1">(?, ?)</field>
           </shadow>
         </value>
       </block>
@@ -2509,6 +2508,20 @@
         </value>
       </block>
 
+      <!-- 수정 -->
+      <block type = "db_update2">
+        <value name="d1">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+        <value name="d2">
+          <shadow type="indata">
+            <field name="indata1">수정</field>
+          </shadow>
+        </value>
+      </block>
+
       <!-- 삭제 -->
       <block type = "db_delete">
         <value name="d1">
@@ -2522,9 +2535,19 @@
           </shadow>
         </value>
       </block>
+
+      <!-- 삭제 -->
+      <block type = "db_delete2">
+        <value name="d1">
+          <shadow type="indata">
+            <field name="indata1">테이블</field>
+          </shadow>
+        </value>
+      </block>
     </category>
-    
-    <sep></sep>
+  </category>
+
+  <sep></sep>
     
     <!-- #####################################################################################################  -->
     <!-- ******************************   데이타 사이언스 //  2020 - 09 - 07     ******************************* -->
