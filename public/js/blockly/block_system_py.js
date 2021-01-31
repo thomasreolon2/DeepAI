@@ -174,7 +174,7 @@ Blockly.Python['sleep'] = function(block) {
   var value_val1 = Blockly.Python.valueToCode(block, 'val1', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = 'time.sleep(' + value_val1 + ")\n";
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  return code;
 };
 
 Blockly.Python['abspath'] = function(block) {
