@@ -847,3 +847,38 @@ Blockly.Blocks['pandas_series_str'] = {
     this.setHelpUrl("");
   } 
   };
+
+  // scatter 그래프 그리기
+  Blockly.Blocks['scatter_ex'] = {
+    init: function() {
+      this.appendValueInput("v1")
+          .setCheck(null)
+          .appendField("[출력설정]")
+          .appendField("위치");
+      this.appendValueInput("v2")
+          .setCheck(null);
+      this.appendValueInput("x1")
+          .setCheck(null);
+      this.appendValueInput("y1")
+          .setCheck(null);
+      this.appendValueInput("title")
+          .setCheck(null)
+          .appendField("산점도_그래프 ")
+          .appendField("제목");
+      this.appendValueInput("s")
+          .setCheck(null)
+          .appendField("점크기");
+      this.appendValueInput("c")
+          .setCheck(null)
+          .appendField("색");
+      this.appendValueInput("marker")
+          .setCheck(null)
+          .appendField("마커종류");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };

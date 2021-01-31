@@ -389,3 +389,18 @@ Blockly.Python['pandas_apply'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+
+Blockly.Python['scatter_ex'] = function(block) {
+  var value_v1 = Blockly.Python.valueToCode(block, 'v1', Blockly.Python.ORDER_ATOMIC);
+  var value_v2 = Blockly.Python.valueToCode(block, 'v2', Blockly.Python.ORDER_ATOMIC);
+  var value_x1 = Blockly.Python.valueToCode(block, 'x1', Blockly.Python.ORDER_ATOMIC);
+  var value_y1 = Blockly.Python.valueToCode(block, 'y1', Blockly.Python.ORDER_ATOMIC);
+  var value_title = Blockly.Python.valueToCode(block, 'title', Blockly.Python.ORDER_ATOMIC);
+  var value_s = Blockly.Python.valueToCode(block, 's', Blockly.Python.ORDER_ATOMIC);
+  var value_c = Blockly.Python.valueToCode(block, 'c', Blockly.Python.ORDER_ATOMIC);
+  var value_marker = Blockly.Python.valueToCode(block, 'marker', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `ax[${value_v1},${value_v2}].scatter(${value_x1},${value_y1}, s= ${value_s}, c = ${value_c}, marker = ${value_marker})\nax[${value_v1},${value_v2}].set_title(${value_title})`;
+  return code + '\n';
+}
