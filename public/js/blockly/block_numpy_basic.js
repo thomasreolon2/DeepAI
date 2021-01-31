@@ -267,7 +267,7 @@ Blockly.Blocks['numpy_loadtxt_basic'] = {
     this.appendValueInput("delimiter")
         .appendField("구분자")
     this.appendValueInput("dtype")
-        .appendField("dtype");  
+        .setCheck(null);
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
