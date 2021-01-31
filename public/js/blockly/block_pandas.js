@@ -1295,8 +1295,8 @@ Blockly.Blocks['pandas_oc'] = {
 //items
 Blockly.Blocks['pandas_items'] = {
   init: function () {
-    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_ITEMS).appendField(new Blockly.FieldVariable("df"), "list")
-        .appendField(".items()");
+    this.appendValueInput('VAR').appendField(Blockly.Msg.PANDAS_ITEMS).setCheck(null);
+    this.appendDummyInput().appendField(".items()");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);

@@ -3414,7 +3414,13 @@
         </block>
 
         <!-- items -->
-        <block type = "pandas_items"></block>
+        <block type = "pandas_items">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+        </block>
 
       <!-- 비어있는지 확인 -->
       <block type = "pandas_nanull">

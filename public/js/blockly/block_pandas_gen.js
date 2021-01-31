@@ -480,7 +480,7 @@ Blockly.Python['pandas_oc'] = function(block) {
 
 //pandas_items
 Blockly.Python['pandas_items'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var variable_list = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = variable_list + ".items()";
   // TODO: Change ORDER_NONE to the correct strength.
