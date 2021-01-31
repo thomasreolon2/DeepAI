@@ -18,7 +18,13 @@ Blockly.Python['plt_xlabel_ylabel'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   var value_name2 = Blockly.Python.valueToCode(block, 'NAME2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = value_list + '.xlabel(' + value_name +')\n' + value_list + '.ylabel(' + value_name2 +')\n' ;
+  if(value_name == ""){
+    var code = `${value_list}.ylabel(${value_name})\n`;
+  } else if(value_name2 == ""){
+    var code = `${value_list}.xlabel(${value_name})\n`;
+  } else {
+    var code = `${value_list}.xlabel(${value_name})\n${value_list}.ylabel(${value_name2})\n`;
+  }
   return code;
 };
 

@@ -4276,12 +4276,12 @@
         </value>
           <value name="NAME">
             <shadow type="indata">
-              <field name="indata1"></field>
+              <field name="indata1">''</field>
             </shadow>
           </value>
           <value name="NAME2">
             <shadow type="indata">
-              <field name="indata1"></field>
+              <field name="indata1">''</field>
             </shadow>
           </value>
       </block>
@@ -5529,7 +5529,69 @@
           </block> 
         </value>
       </block>
-
+<!--
+      <block type="set_xyticks">
+        <value name="x_data">
+          <block type="variables_get">
+            <field name="VAR">x_data</field>
+          </block>
+        </value>
+        <value name="y_data">
+          <block type="variables_get">
+            <field name="VAR">y_data</field>
+          </block>
+        </value>
+        <value name="x_train">
+          <block type="variables_get">
+            <field name="VAR">x_train</field>
+          </block>
+        </value>
+        <value name="x_test">
+          <block type="variables_get">
+            <field name="VAR">x_test</field>
+          </block>
+        </value>
+        <value name="y_train">
+          <block type="variables_get">
+            <field name="VAR">y_train</field>
+          </block>
+        </value>
+        <value name="y_test">
+          <block type="variables_get">
+            <field name="VAR">y_test</field>
+          </block>
+        </value>
+        <value name = "test_size">
+          <shadow type="indata">
+            <field name="indata1">0.2</field>
+          </shadow>
+        </value>
+        <value name = "seed">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
+    -->
+      <block type="set_xyticklabels">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata"><field name="indata1">farmers</field></shadow>
+        </value>
+        <value name="VAR2">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="INPUT2">
+          <shadow type="indata"><field name="indata1">vegetables</field></shadow>
+        </value>
+      </block>
+<!--
       <block type="set_xticklabels">
         <value name="VAR">
           <block type="variables_get">
@@ -5551,7 +5613,7 @@
           <shadow type="indata"><field name="indata1">vegetables</field></shadow>
         </value>
       </block>
-
+    -->
       <block type = "plt_setp">
         <value name="REAL_VALUE_0">
           <block type="variables_get">

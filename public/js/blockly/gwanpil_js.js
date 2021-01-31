@@ -256,4 +256,12 @@ Blockly.JavaScript['gp'] = function (block) {
         return [code, Blockly.JavaScript.ORDER_NONE];
       };
 
-      
+      Blockly.JavaScript['set_xyticklabels'] = function (block) {
+        var code = '\n';
+        return [code, Blockly.JavaScript.ORDER_NONE];
+      };
+
+      Blockly.JavaScript['set_xyticks'] = function (block) {
+        var code = '\n';
+        return [code, Blockly.JavaScript.ORDER_NONE];
+      };
