@@ -200,6 +200,50 @@ Blockly.Python['tight_layout'] = function (block) {
   return code;
 };
 
+Blockly.Python['numpy_random_sample_x'] = function (block) {
+  var var_text1 = Blockly.Python.valueToCode(block, 'numpy_Random_sample_val', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('numpy_Random_sample_opt');
+  // TODO: Assemble Python into code variable.
+
+  var code;
+  switch (dropdown_drop){
+    case "numpy_Random_sample_rand": 
+    code = `np.random.rand(${var_text1})`;  
+    break; 
+
+    case "numpy_Random_sample_randn": 
+    code = `np.random.randn(${var_text1})`;  
+    break;
+
+    case "numpy_Random_sample_randint":
+    code = `np.random.randint(${var_text1})`;  
+    break;
+
+    case "numpy_Random_sample_random":
+    code = `np.random.random(${var_text1})`;  
+    break;
+
+    case "numpy_Random_sample_choice":
+    code = `np.random.choice(${var_text1})`;  
+    break;
+
+    case "numpy_Random_sample_bytes":
+    code = `np.random.bytes(${var_text1})`;  
+    break;
+
+
+    default:
+    break;
+  }
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+
+
+
+
 
 
 

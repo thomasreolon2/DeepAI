@@ -196,6 +196,16 @@ Blockly.JavaScript['tight_layout'] = function (block) {
   return code;
 };
 
+Blockly.JavaScript['numpy_random_sample_x'] = function (block) {
+  var var_text1 = Blockly.JavaScript.valueToCode(block, 'numpy_Random_sample_val', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('numpy_Random_sample_opt');
+  // TODO: Assemble Python into code variable.
+
+  var code = '/n';
+
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
 
 
 

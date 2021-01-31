@@ -2754,6 +2754,7 @@
         </block> 
       <!----------------------------------------------------------------------랜덤-->
       <label text="랜덤&정렬"></label>
+
         <block type="numpy_random_generator_basic">
           <value name="numpy_Random_generator_val"> 
             <shadow type="indata">
@@ -3212,8 +3213,10 @@
       -->
         <!-- 배열조작 / 차원수 변경   -->
       </category>
+
       <category name="랜덤&정렬" colour="%{BKY_NUMPY_HUE}">
         <label text="랜덤"></label>
+        
         <!-- 랜덤 / 단순 -->
         <block type="numpy_random_sample">
           <value name="numpy_Random_sample_val"> 
@@ -6442,7 +6445,6 @@
                   <field name="VAR">mu</field>
                 </block>
               </value>
-
               <value name="B">
                 <block type="Oper_x">
                   <value name="A">
