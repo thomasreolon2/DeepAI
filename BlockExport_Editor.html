@@ -4579,6 +4579,24 @@
           </block> -->
     
           <block type="set_lim">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                </value>
+              </block>
+            </value>
+            <value name="INPUT">
+            <value name="INPUT1">
+              <shadow type="indata">
+                <field name="indata1">0,2</field>
+              </shadow>
+            </value>
+            <value name="INPUT2">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
           
           <block type="matplotlib_pre_graph">
             <value name="matplotlib_pre_graph_location1">
@@ -4629,7 +4647,7 @@
           </block>
 
 
-          <block type="set_xlim">
+          <!-- <block type="set_xlim">
             <value name="VAR">
               <block type = "va_sel">
                 <value name="list">
@@ -4654,7 +4672,7 @@
                 <field name="indata1"></field>
               </shadow>
             </value>
-          </block>
+          </block> -->
     
     
           <!-- <block type="set_xlabel">
