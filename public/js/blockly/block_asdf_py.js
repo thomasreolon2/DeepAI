@@ -5,7 +5,7 @@
 //pie_subplots
 Blockly.Python['pie_subplots'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code =  "plt.subplots()\n";
+  var code =  "plt.subplots()";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];;
 };
