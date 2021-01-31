@@ -629,9 +629,7 @@ Blockly.Blocks['set_xyticklabels'] = {
       this.appendValueInput("INPUT")
           .setCheck(null);
       this.appendDummyInput()
-          .appendField("),");
-      this.appendValueInput("VAR2")
-          .setCheck(null);
+          .appendField("), ");
       this.appendDummyInput()
           .appendField(".set_yticklabels(");
       this.appendValueInput("INPUT2")

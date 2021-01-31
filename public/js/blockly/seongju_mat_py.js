@@ -19,11 +19,26 @@ Blockly.Python['plt_xlabel_ylabel'] = function(block) {
   var value_name2 = Blockly.Python.valueToCode(block, 'NAME2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   if(value_name == ""){
-    var code = `${value_list}.ylabel(${value_name})\n`;
+    var code = `${value_list}.ylabel(${value_name2})\n`;
   } else if(value_name2 == ""){
     var code = `${value_list}.xlabel(${value_name})\n`;
   } else {
     var code = `${value_list}.xlabel(${value_name})\n${value_list}.ylabel(${value_name2})\n`;
+  }
+  return code;
+};
+
+Blockly.Python['set_xlabel_ylabel'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'NAME2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  if(value_name == ""){
+    var code = `${value_list}.set_ylabel(${value_name2})\n`;
+  } else if(value_name2 == ""){
+    var code = `${value_list}.set_xlabel(${value_name})\n`;
+  } else {
+    var code = `${value_list}.set_xlabel(${value_name})\n${value_list}.set_ylabel(${value_name2})\n`;
   }
   return code;
 };

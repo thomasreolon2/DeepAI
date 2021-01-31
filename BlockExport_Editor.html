@@ -4307,6 +4307,25 @@
           </value>
       </block>
 
+      <!-- label -->
+      <block type="set_xlabel_ylabel">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">''</field>
+            </shadow>
+          </value>
+          <value name="NAME2">
+            <shadow type="indata">
+              <field name="indata1">''</field>
+            </shadow>
+          </value>
+      </block>
+
       <block type="plt_axis">
         <value name="list">
           <block type="variables_get">
@@ -5637,11 +5656,6 @@
         <value name="INPUT">
           <shadow type="indata"><field name="indata1">farmers</field></shadow>
         </value>
-        <value name="VAR2">
-          <block type="variables_get">
-            <field name="VAR">ax</field>
-          </block>
-        </value>
         <value name="INPUT2">
           <shadow type="indata"><field name="indata1">vegetables</field></shadow>
         </value>
@@ -6098,27 +6112,21 @@
           </value>
         </block>
         
-        <block type="set_xticklabels">
+        <block type="set_xyticklabels">
           <value name="VAR">
             <block type="variables_get">
               <field name="VAR">axins</field>
             </block>
           </value>
           <value name="INPUT">
+            <shadow type="indata"><field name="indata1">''</field></shadow>
+          </value>
+          <value name="INPUT2">
             <shadow type="indata"><field name="indata1">''</field></shadow>
           </value>
         </block>
 
-        <block type="set_yticklabels">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">axins</field>
-            </block>
-          </value>
-          <value name="INPUT">
-            <shadow type="indata"><field name="indata1">''</field></shadow>
-          </value>
-        </block>
+        
 
         <block type="indicate_inset_zoom">
           <value name="VAR1">
@@ -6210,26 +6218,22 @@
       <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:red'</field></shadow></value>
     </block>
 
-    <block type="set_xlabel">
-      <value name="VAR">
+    <block type="set_xlabel_ylabel">
+      <value name="list">
         <block type="variables_get">
           <field name="VAR">ax1</field>
         </block>
       </value>
-      <value name="INPUT">
-        <shadow type="indata"><field name="indata1">'time (s)'</field></shadow>
-      </value>
-    </block>
-
-    <block type="set_ylabel">
-      <value name="VAR">
-        <block type="variables_get">
-          <field name="VAR">ax1</field>
-        </block>
-      </value>
-      <value name="INPUT">
-        <shadow type="indata"><field name="indata1">'exp', color=color</field></shadow>
-      </value>
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1">'time (s)'</field>
+          </shadow>
+        </value>
+        <value name="NAME2">
+          <shadow type="indata">
+            <field name="indata1">'exp', color=color</field>
+          </shadow>
+        </value>
     </block>
 
     <block type="ax_lst_plot">
@@ -6278,15 +6282,22 @@
       <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:blue'</field></shadow></value>
     </block>
 
-    <block type="set_ylabel">
-      <value name="VAR">
+    <block type="set_xlabel_ylabel">
+      <value name="list">
         <block type="variables_get">
           <field name="VAR">ax2</field>
         </block>
       </value>
-      <value name="INPUT">
-        <shadow type="indata"><field name="indata1">'sin', color=color</field></shadow>
-      </value>
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="NAME2">
+          <shadow type="indata">
+            <field name="indata1">'sin', color=color</field>
+          </shadow>
+        </value>
     </block>
 
     <block type="ax_lst_plot">

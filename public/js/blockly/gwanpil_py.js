@@ -350,10 +350,9 @@ Blockly.Python['plt_subplot'] = function(block) {
       Blockly.Python['set_xyticklabels'] = function (block) {
         var var_text1 = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
         var var_text2 = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
-        var var_text3 = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
         var var_text4 = Blockly.Python.valueToCode(block, 'INPUT2', Blockly.Python.ORDER_ATOMIC);
         // TODO: Assemble Python into code variable.
-        var code = `${var_text1}.set_xticklabels(${var_text2})\n${var_text3}.set_yticklabels(${var_text4})\n`;
+        var code = `${var_text1}.set_xticklabels(${var_text2})\n${var_text1}.set_yticklabels(${var_text4})\n`;
         return code;
       };
 

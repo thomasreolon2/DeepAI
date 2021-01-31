@@ -53,6 +53,29 @@ Blockly.Blocks['plt_xlabel_ylabel'] = {
   }
 };
 
+Blockly.Blocks['set_xlabel_ylabel'] = {
+  init: function() {
+    this.appendValueInput("list")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(" set_xlabel(");
+    this.appendValueInput("NAME")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField("), set_ylabel(");
+    this.appendValueInput("NAME2")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_VISUAL_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['plt_axis'] = {
   init: function() {
     this.appendValueInput("list")
