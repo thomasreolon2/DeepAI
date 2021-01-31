@@ -21,6 +21,14 @@ Blockly.JavaScript['plt_xlabel_ylabel'] = function(block) {
   return code;
 };
 
+Blockly.JavaScript['plt_title_legend'] = function(block) {
+  var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
 Blockly.JavaScript['plt_axis'] = function(block) {
   var value_list = Blockly.JavaScript.valueToCode(block, 'list', Blockly.JavaScript.ORDER_ATOMIC);
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);

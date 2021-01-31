@@ -4288,6 +4288,24 @@
         </value>
       </block>
   
+      <!-- set_title,  legend -->
+      <block type="plt_title_legend">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="NAME2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+      </block>
       <!-- label -->
       <block type="plt_xlabel_ylabel">
         <value name="list">
@@ -5392,57 +5410,42 @@
             </value>
           </block>
 
-          <block type="ax_legend">
+          <block type="plt_title_legend">
             <value name="list">
               <block type="variables_get">
                 <field name="VAR">ax</field>
               </block>
             </value>
-            <value name="loc">
-              <shadow type="indata">
-                <field name="indata1">loc='upper left'</field>
-              </shadow>
-            </value>
+              <value name="NAME">
+                <shadow type="indata">
+                  <field name="indata1">'World population'</field>
+                </shadow>
+              </value>
+              <value name="NAME2">
+                <shadow type="indata">
+                  <field name="indata1">loc='upper left'</field>
+                </shadow>
+              </value>
           </block>
 
-          <block type="set_title">
-            <value name="VAR">
+          <block type="set_xlabel_ylabel">
+            <value name="list">
               <block type="variables_get">
                 <field name="VAR">ax</field>
               </block>
             </value>
-            <value name="INPUT">
-              <shadow type="indata">
-                <field name="indata1">'World population'</field>
-              </shadow>
-            </value>
+              <value name="NAME">
+                <shadow type="indata">
+                  <field name="indata1">'Year'</field>
+                </shadow>
+              </value>
+              <value name="NAME2">
+                <shadow type="indata">
+                  <field name="indata1">'Number of people (millions)'</field>
+                </shadow>
+              </value>
           </block>
 
-          <block type="set_xlabel">
-            <value name="VAR">
-              <block type="variables_get">
-                <field name="VAR">ax</field>
-              </block>
-            </value>
-            <value name="INPUT">
-              <shadow type="indata">
-                <field name="indata1">'Year'</field>
-              </shadow>
-            </value>
-          </block>
-
-          <block type="set_ylabel">
-            <value name="VAR">
-              <block type="variables_get">
-                <field name="VAR">ax</field>
-              </block>
-            </value>
-            <value name="INPUT">
-              <shadow type="indata">
-                <field name="indata1">'Number of people (millions)'</field>
-              </shadow>
-            </value>
-          </block>
 
           <block type="matplotlib_plt_show"></block>
 

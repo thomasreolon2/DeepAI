@@ -39,7 +39,7 @@ Blockly.Blocks['plt_xlabel_ylabel'] = {
     this.appendValueInput("NAME")
         .setCheck(null);
     this.appendDummyInput()
-        .appendField(") ylabel(");
+        .appendField("), ylabel(");
     this.appendValueInput("NAME2")
         .setCheck(null);
     this.appendDummyInput()
@@ -897,6 +897,64 @@ Blockly.Blocks['pandas_series_str'] = {
       this.appendValueInput("marker")
           .setCheck(null)
           .appendField("마커종류");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  // scatter 그래프 그리기
+  Blockly.Blocks['scatter_ex'] = {
+    init: function() {
+      this.appendValueInput("v1")
+          .setCheck(null)
+          .appendField("[출력설정]")
+          .appendField("위치");
+      this.appendValueInput("v2")
+          .setCheck(null);
+      this.appendValueInput("x1")
+          .setCheck(null);
+      this.appendValueInput("y1")
+          .setCheck(null);
+      this.appendValueInput("title")
+          .setCheck(null)
+          .appendField("산점도_그래프 ")
+          .appendField("제목");
+      this.appendValueInput("s")
+          .setCheck(null)
+          .appendField("점크기");
+      this.appendValueInput("c")
+          .setCheck(null)
+          .appendField("색");
+      this.appendValueInput("marker")
+          .setCheck(null)
+          .appendField("마커종류");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['plt_title_legend'] = {
+    init: function() {
+      this.appendValueInput("list")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(" set_title(");
+      this.appendValueInput("NAME")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("), legend(");
+      this.appendValueInput("NAME2")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);

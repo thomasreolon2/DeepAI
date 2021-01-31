@@ -27,6 +27,14 @@ Blockly.Python['plt_xlabel_ylabel'] = function(block) {
   }
   return code;
 };
+Blockly.Python['plt_title_legend'] = function(block) {
+  var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  var value_name2 = Blockly.Python.valueToCode(block, 'NAME2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = value_list + '.set_title(' + value_name +')\n' + value_list + '.legend(' + value_name2 +')\n' ;
+  return code;
+};
 
 Blockly.Python['set_xlabel_ylabel'] = function(block) {
   var value_list = Blockly.Python.valueToCode(block, 'list', Blockly.Python.ORDER_ATOMIC);
