@@ -90,7 +90,7 @@ Blockly.Python['os_dir'] = function (block) {
 
   var code = dropdown_directory + "(" + value_name + ")\n";
   // TODO: Change ORDER_NONE to the correct strength.
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['os_chdir'] = function (block) {

@@ -676,11 +676,15 @@
           </value>
         </block>
         <!-- 디렉토리생성 -->
-        <block type="os_dir">
-          <value name="va">
-            <shadow type="indata">
-              <field name="indata1">'temp'</field>
-            </shadow>
+        <block type="printf">
+          <value name="content1">
+            <block type="os_dir">
+              <value name="va">
+                <shadow type="indata">
+                  <field name="indata1">'temp'</field>
+                </shadow>
+              </value>
+            </block>
           </value>
         </block>
         <!-- 파일삭제 -->
@@ -4305,9 +4309,9 @@
 
       <block type = "pie_subplots_1">
         <value name="name1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
         </value>
         <value name="name2">
           <shadow type="indata">
@@ -4318,9 +4322,9 @@
 
       <block type="shape">
         <value name="VAR1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
         </value>
       </block>
 
@@ -4328,9 +4332,9 @@
       <!--  matplot plt.plot()      --> 
       <block type = "plt_ravel">
         <value name="name1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
         </value>
         <value name="name2">
           <shadow type="indata">
@@ -5836,16 +5840,20 @@
           </value>
         </block>
         <!-- 밑에 imshow 임 -->
-        <block type = "pie_subplots_1">
-          <value name="name1">
-            <block type="variables_get">
-              <field name="VAR">ax</field>
+        <block type="itdata">
+          <value name="itdata1">
+            <block type = "pie_subplots_1">
+              <value name="name1">
+                <block type="variables_get">
+                  <field name="VAR">ax</field>
+                </block>
+              </value>
+              <value name="name2">
+                <shadow type="indata">
+                  <field name="indata1">Z2, extent=extent, origin="lower"</field>
+                </shadow>
+              </value>
             </block>
-          </value>
-          <value name="name2">
-            <shadow type="indata">
-              <field name="indata1">Z2, extent=extent, origin="lower"</field>
-            </shadow>
           </value>
         </block>
 
@@ -5867,16 +5875,20 @@
           </value>
         </block>
 
-        <block type="pie_subplots_1">
-          <value name="name1">
-            <block type="variables_get">
-              <field name="VAR">axins</field>
+        <block type="itdata">
+          <value name="itdata1">
+            <block type="pie_subplots_1">
+              <value name="name1">
+                <block type="variables_get">
+                  <field name="VAR">axins</field>
+                </block>
+              </value>
+              <value name="name2">
+                <shadow type="indata">
+                  <field name="indata1">Z2, extent=extent, origin="lower"</field>
+                </shadow>
+              </value>
             </block>
-          </value>
-          <value name="name2">
-            <shadow type="indata">
-              <field name="indata1">Z2, extent=extent, origin="lower"</field>
-            </shadow>
           </value>
         </block>
 

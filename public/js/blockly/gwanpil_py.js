@@ -56,7 +56,7 @@ Blockly.Python['create_list_1'] = function (block) {
     var value_name1 = Blockly.Python.valueToCode(block, 'name1', Blockly.Python.ORDER_ATOMIC);
     var value_name2 = Blockly.Python.valueToCode(block, 'name2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-    var code =  value_name1 + ".imshow("+ value_name2 +")\n";
+    var code =  value_name1 + ".imshow("+ value_name2 +")";
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];;
   };
