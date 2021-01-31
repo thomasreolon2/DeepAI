@@ -88,7 +88,7 @@ Blockly.Python['os_dir'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
   var dropdown_directory = block.getFieldValue('directory');
 
-  var code = dropdown_directory + "('" + value_name + "')\n";
+  var code = dropdown_directory + "(" + value_name + ")\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -96,7 +96,7 @@ Blockly.Python['os_dir'] = function (block) {
 Blockly.Python['os_chdir'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = "os.chdir"+ "('" + value_name + "')";
+  var code = "os.chdir"+ "(" + value_name + ")";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -104,7 +104,7 @@ Blockly.Python['os_chdir'] = function (block) {
 Blockly.Python['os_remove'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = "os.remove"+ "('" + value_name + "')";
+  var code = "os.remove"+ "(" + value_name + ")";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
@@ -113,7 +113,7 @@ Blockly.Python['os_rename'] = function (block) {
   var value_name1 = Blockly.Python.valueToCode(block, 'va1', Blockly.Python.ORDER_ATOMIC);
   var value_name2 = Blockly.Python.valueToCode(block, 'va2', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = "os.rename"+ "('" + value_name1 + "','" + value_name2 + "')\n";
+  var code = "os.rename"+ "(" + value_name1 + " , " + value_name2 + ")\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };

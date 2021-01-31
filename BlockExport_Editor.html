@@ -658,11 +658,12 @@
       <block type="indata"></block>
 
       <block type="class_func_param"></block>
-      <!--------------------------------------------------------------------------------------------OS-->
+      <!--------------------------------------------------------------------------------------------시스템OS-->
       <category name="%{BKY_CATEGORY_OS}" colour="%{BKY_OS_HUE}">
         <block type="os_library"></block>
+       
         <label text="os & os.path & shutil"></label>
-        
+         
         <block type="printf">
           <value name="content1">
             <block type="os_getcwd"></block>
@@ -674,32 +675,32 @@
             <block type="os_listdir"></block>
           </value>
         </block>
-        
+        <!-- 디렉토리생성 -->
         <block type="os_dir">
           <value name="va">
             <shadow type="indata">
-              <field name="indata1"></field>
+              <field name="indata1">'temp'</field>
             </shadow>
           </value>
         </block>
-  
+        <!-- 파일삭제 -->
         <block type="os_remove">
           <value name="va">
             <shadow type="indata">
-              <field name="indata1"></field>
+              <field name="indata1">'temp'</field>
             </shadow>
           </value>
         </block>
-  
+        <!-- 파일명 변경 -->
         <block type="os_rename">
           <value name="va1">
             <shadow type="indata">
-              <field name="indata1"></field>
+              <field name="indata1">'원본'</field>
             </shadow>
           </value>
           <value name="va2">
             <shadow type="indata">
-              <field name="indata1"></field>
+              <field name="indata1">'복사본'</field>
             </shadow>
           </value>
         </block>
@@ -2564,12 +2565,12 @@
           </value>
           <value name="delimiter">
             <shadow type="indata">
-              <field name="indata1">,</field>
+              <field name="indata1">','</field>
             </shadow>
           </value>
           <Value name="dtype">
             <shadow type="indata">
-              <field name="indata1">int</field>
+              <field name="indata1">dtype = int</field>
             </shadow>
           </Value>
         </block>

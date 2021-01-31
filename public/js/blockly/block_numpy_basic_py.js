@@ -738,7 +738,7 @@ Blockly.Python['numpy_loadtxt_basic'] = function (block) {
   var value_dtype = Blockly.Python.valueToCode(block, 'dtype', Blockly.Python.ORDER_ATOMIC);
   var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   // TODO: Assemble Python into code variable.
-  var code = `${variable_list} = np.loadtxt(${value_text}, delimiter='${value_delimiter}', encoding='utf-8', dtype='${value_dtype}')\n`;
+  var code = `${variable_list} = np.loadtxt(${value_text}, delimiter=${value_delimiter}, ${value_dtype}, encoding='utf-8')\n`;
   return code;
 };
 
