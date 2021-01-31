@@ -6554,27 +6554,24 @@
           </value>
         </block>
 
-        <block type="set_xlabel">
-          <value name="VAR">
+        <block type="set_xlabel_ylabel">
+          <value name="list">
             <block type="variables_get">
               <field name="VAR">ax</field>
             </block>
           </value>
-          <value name="INPUT">
-            <shadow type="indata"><field name="indata1">'Three separate samples'</field></shadow>
-          </value>
+            <value name="NAME">
+              <shadow type="indata">
+                <field name="indata1">'Three separate samples'</field>
+              </shadow>
+            </value>
+            <value name="NAME2">
+              <shadow type="indata">
+                <field name="indata1">'Observed values'</field>
+              </shadow>
+            </value>
         </block>
 
-        <block type="set_ylabel">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">ax</field>
-            </block>
-          </value>
-          <value name="INPUT">
-            <shadow type="indata"><field name="indata1">'Observed values'</field></shadow>
-          </value>
-        </block>
 
         <block type="matplotlib_plt_show"></block>
 
@@ -6729,32 +6726,24 @@
           </value>
         </block>
 
-        <block type="set_xlabel">
-          <value name="VAR">
+        <block type="set_xlabel_ylabel">
+          <value name="list">
             <block type="variables_get">
               <field name="VAR">ax</field>
             </block>
           </value>
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1">'Smart'</field>
-            </shadow>
-          </value>
+            <value name="NAME">
+              <shadow type="indata">
+                <field name="indata1">'Smart'</field>
+              </shadow>
+            </value>
+            <value name="NAME2">
+              <shadow type="indata">
+                <field name="indata1">'Probability density'</field>
+              </shadow>
+            </value>
         </block>
-  
-        <block type="set_ylabel">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">ax</field>
-            </block>
-          </value>
-          <value name="INPUT">
-            <shadow type="indata">
-              <field name="indata1">'Probability density'</field>
-            </shadow>
-          </value>
-        </block>
-        
+
         <block type="set_title">
           <value name="VAR">
             <block type="variables_get">
