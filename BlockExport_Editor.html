@@ -818,6 +818,8 @@
               <block type="fileopen"></block>     
           </value>
         </block>
+        <block type="fileopen2"></block>   
+        <block type="fileopen3"></block>   
 	      <!-- 기태 수정 (로컬 파일 열기)---------------------------------------------> 	
 
         <!-- 파일 읽기 -->
@@ -8572,6 +8574,15 @@
           console.log("파일 열기");
           localFileOpen(event.blockId);         
         }
+        if ('fileopen2' == block.type) {
+          console.log("이미지 파일 열기");
+          localFileOpen2(event.blockId);         
+        }
+
+        if ('fileopen3' == block.type) {
+          console.log("웨이브 파일 열기");
+          localFileOpen3(event.blockId);         
+        }
         // 기태 수정(로컬 파일 열기) ========================================================
 
         if ('data_csv_read' == block.type) {
@@ -9099,11 +9110,12 @@
     var rows = "";
     
     //== 기태 수정 (로컬 파일 열기 ) 21.01.01=============================================
+    // 텍스트 파일 처리하기 
     function localFileOpen(blockId) {
-      console.log("localFileOpen");
+      console.log("local Text FileOpen");
       var input = document.createElement("input");
       input.type = "file";
-      input.accept = ".jpg, .png, .txt, .csv"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+      input.accept = ".txt, .csv"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
       input.onchange = function (e) {
        
         if (e.target.files != undefined) {
@@ -9122,6 +9134,69 @@
           fileName2 =  e.target.files[0].name;
           console.log(fileName2);
           reader.readAsText(e.target.files[0]);        
+        }
+      };
+
+      input.click();
+    }
+
+    // 이미지 파일 처리하기 
+    function localFileOpen2(blockId) {
+      console.log("local Image FileOpen");
+      var input = document.createElement("input");
+      input.type = "file";
+      input.accept = ".jpg, .png, .bmp"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+      input.onchange = function (e) {
+       
+        if (e.target.files != undefined) {
+          console.log("loadLocalFile-2")
+          var reader = new FileReader();
+        
+          reader.onload = function (e) {
+            datas = e.target.result;          
+            console.log("datas", datas);    
+            var data = datas.replace(/^data:image\/\w+;base64,/, "");
+            var buf = Buffer.from(data, 'base64');        
+            fss.writeFileSync(fileName2, buf);
+            var block = demoWorkspace.getBlockById(blockId);
+            var bId = Blockly.mainWorkspace.getBlockById(blockId)
+            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
+          };
+
+          fileName2 =  e.target.files[0].name;
+          console.log(fileName2);
+          reader.readAsDataURL(e.target.files[0]);        
+        }
+      };
+
+      input.click();
+    }
+
+    // 웨이브 파일 처리하기 
+    function localFileOpen3(blockId) {
+      console.log("local Wave FileOpen");
+      var input = document.createElement("input");
+      input.type = "file";
+      input.accept = ".wav"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+      input.onchange = function (e) {
+       
+        if (e.target.files != undefined) {
+          console.log("loadLocalFile-3")
+          var reader = new FileReader();
+        
+          reader.onload = function (e) {
+            datas = e.target.result;          
+            console.log("datas", datas);    
+            // wav 파일 처리하기 
+            fss.writeFileSync(fileName2, Buffer(new Uint8Array(datas)));
+            var block = demoWorkspace.getBlockById(blockId);
+            var bId = Blockly.mainWorkspace.getBlockById(blockId)
+            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
+          };
+
+          fileName2 =  e.target.files[0].name;
+          console.log(fileName2);
+          reader.readAsArrayBuffer(e.target.files[0]);        
         }
       };
 

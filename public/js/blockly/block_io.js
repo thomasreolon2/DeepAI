@@ -405,12 +405,44 @@ Blockly.Blocks.lists_create_with_item = {
 // }
 
 // ===== 기태 수정(로컬 파일 열기) 21.01.01======================================================================
-Blockly.JavaScript['fileopen'] = function (block) {
-    var file = block.getFieldValue('csv_url');
-    
-    var code = "\n";
-    return [code, Blockly.JavaScript.ORDER_ATOMIC];
-  };
+Blockly.Blocks['fileopen'] = {
+  init: function () {
+      this.appendDummyInput()
+        .appendField(Blockly.Msg.FILE_OPEN_1)
+        .appendField(new Blockly.FieldTextInput("경로"), "file_path");
+      //this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(20);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['fileopen2'] = {
+  init: function () {
+      this.appendDummyInput()
+        .appendField("이미지")
+        .appendField(new Blockly.FieldTextInput("경로"), "file_path");
+      //this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(20);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['fileopen3'] = {
+  init: function () {
+      this.appendDummyInput()
+        .appendField(Blockly.Msg.FILE_OPEN_1)
+        .appendField(new Blockly.FieldTextInput("경로"), "file_path");
+      //this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(20);
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
   // ===== 기태 수정(로컬 파일 열기) ========================================================================================
 
 
