@@ -3346,6 +3346,11 @@
         <block type="pyodide_library" ></block>
 
         <block type = "csv_url">
+          <value name="d1">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
           <value name="va">
             <shadow type="indata">
               <field name="indata1"></field>
@@ -3354,6 +3359,11 @@
         </block>
 
         <block type = "pandas_csv_read">
+          <value name="d1">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
           <value name="va">
             <block type="fileopen"></block>     
           </value>
@@ -3391,6 +3401,11 @@
 
         <!-- 데이터 내용 조회-->
         <block type = "pandas_oc">
+          <value name="d0">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
           <value name="d1">
             <shadow type="indata">
               <field name="indata1"></field>

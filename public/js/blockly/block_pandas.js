@@ -1157,13 +1157,13 @@ Blockly.Blocks['df_col_rename'] = {
 
 Blockly.Blocks['csv_url'] = {
   init: function () {
-    this.appendDummyInput()
-    .appendField(new Blockly.FieldVariable("df"), "list");
+    this.appendValueInput("d1")
+      .setCheck(null);
     this.appendDummyInput()
       .appendField("CSV URL")
       .appendField("(");
     this.appendValueInput("va")
-      .setCheck(null)
+      .setCheck(null);
     this.appendDummyInput()
        .appendField(")");
     this.setInputsInline(true);
@@ -1273,7 +1273,10 @@ Blockly.Blocks['pandas_indexing'] = {
 //iloc, loc
 Blockly.Blocks['pandas_oc'] = {
   init: function () {
-    this.appendDummyInput().appendField(Blockly.Msg.PANDAS_OC).appendField(new Blockly.FieldVariable("df"), "list")
+    this.appendValueInput("d0")
+        .appendField(Blockly.Msg.PANDAS_OC)
+        .setCheck(null);
+    this.appendDummyInput()
         .appendField(".")
         .appendField(new Blockly.FieldDropdown([["인덱스로값찾기(iloc)","iloc"],["이름으로값찾기(loc)","loc"], ["이름으로값찾기(at)","at"],["인덱스로값찾기(iat)","iat"], ]), "DROP");
     this.appendValueInput("d1")

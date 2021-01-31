@@ -493,8 +493,8 @@ Blockly.Blocks['writerows'] = {
 
 Blockly.Blocks['pandas_csv_read'] = {
   init: function () {
-    this.appendDummyInput()
-    .appendField(new Blockly.FieldVariable("df"), "list");
+    this.appendValueInput("d1")
+      .setCheck(null);
     this.appendDummyInput()
       .appendField("CSV read")
       .appendField("(");

@@ -400,10 +400,11 @@ Blockly.Python['df_add_col'] = function(block) {
 //2020-12-29 전우진 csv url 불러오기
 
 Blockly.Python['csv_url'] = function (block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = variable_list + "= pd.read_csv(pyodide.open_url('" + value_name + "'))" + '\n';
+  `${value_name1} = pd.read_csv(pyodide.open_url('${value_name}'))\n`
+  var code =  `${value_name1} = pd.read_csv(pyodide.open_url('${value_name}'))\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };
@@ -468,11 +469,11 @@ Blockly.Python['pandas_indexing'] = function(block) {
 
 //pandas_oc
 Blockly.Python['pandas_oc'] = function(block) {
-  var variable_list = Blockly.Python.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
+  var value_name1 = Blockly.Python.valueToCode(block, 'd0', Blockly.Python.ORDER_ATOMIC);
   var value_name = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var dropdown_drop = block.getFieldValue('DROP');
   // TODO: Assemble Python into code variable.
-  var code = variable_list + "." + dropdown_drop + "[" + value_name + "]";
+  var code = `${value_name1}.${dropdown_drop}[${value_name}]\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  
