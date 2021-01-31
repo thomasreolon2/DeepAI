@@ -619,3 +619,67 @@ Blockly.Blocks['create_zip'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['set_xyticklabels'] = {
+  init: function() {
+      this.appendValueInput("VAR")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(".set_xticklabels(");
+      this.appendValueInput("INPUT")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField("),");
+      this.appendValueInput("VAR2")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(".set_yticklabels(");
+      this.appendValueInput("INPUT2")
+          .setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+  this.setTooltip("");
+  this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['set_xyticks'] = {
+  init: function () {
+    {
+      this.appendValueInput("VAR")
+      .setCheck(null);
+      this.appendDummyInput()
+      .appendField(".set_xticklabels(");
+      this.appendValueInput("INPUT")
+      .setCheck(null);
+      this.appendDummyInput()
+      .appendField("),");
+      this.setInputsInline(true);
+    }
+    
+
+      this.appendDummyInput().appendField('y_data').appendField(new Blockly.FieldVariable("y_data"), "y_data")
+      .appendField('y_train').appendField(new Blockly.FieldVariable("y_train"), "y_train")
+      .appendField('y_test').appendField(new Blockly.FieldVariable("y_test"), "y_test")
+      .appendField("data_shuffle").appendField(new Blockly.FieldDropdown([
+          [
+              Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_2, "True"
+          ],
+          [
+              Blockly.Msg.PREPROCESSING_TRAIN_TEST_SPLIT_3, "False"
+          ]
+      ]), "shuffle")
+      .appendField('seed').appendField(new Blockly.FieldTextInput("0"), "seed"); 
+
+      this.setInputsInline(false);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_VISUAL_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
