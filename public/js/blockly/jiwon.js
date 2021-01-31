@@ -74,32 +74,17 @@ Blockly.Blocks['set_xlim_ylim'] = {
 };
 */
 
-Blockly.Blocks['set_xlim'] = {
+Blockly.Blocks['set_lim'] = {
     init: function() {
         this.appendValueInput("VAR")
             .setCheck(null);
         this.appendDummyInput()
             .appendField(".set_xlim(");
-        this.appendValueInput("INPUT")
+        this.appendValueInput("INPUT1")
             .setCheck(null);
         this.appendDummyInput()
-            .appendField(")");
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour("%{BKY_VISUAL_HUE}");
-    this.setTooltip("");
-    this.setHelpUrl("");
-    },
-};
-
-Blockly.Blocks['set_ylim'] = {
-    init: function() {
-        this.appendValueInput("VAR")
-            .setCheck(null);
-        this.appendDummyInput()
-            .appendField(".set_ylim(");
-        this.appendValueInput("INPUT")
+            .appendField("), set_ylim(");
+        this.appendValueInput("INPUT2")
             .setCheck(null);
         this.appendDummyInput()
             .appendField(")");

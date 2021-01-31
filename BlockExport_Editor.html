@@ -4579,7 +4579,7 @@
           </block>
     
     
-          <block type="set_xlim">
+          <block type="set_lim">
             <value name="VAR">
               <block type = "va_sel">
                 <value name="list">
@@ -4594,9 +4594,14 @@
                 </value>
               </block>
             </value>
-            <value name="INPUT">
+            <value name="INPUT1">
               <shadow type="indata">
                 <field name="indata1">0,2</field>
+              </shadow>
+            </value>
+            <value name="INPUT2">
+              <shadow type="indata">
+                <field name="indata1"></field>
               </shadow>
             </value>
           </block>
@@ -5903,25 +5908,16 @@
           <value name="VALUE"><shadow type="indata"><field name="indata1">-1.5, -0.9, -2.5, -1.9</field></shadow></value>
         </block>
 
-        <block type="set_xlim">
+        <block type="set_lim">
           <value name="VAR">
             <block type="variables_get">
               <field name="VAR">axins</field>
             </block>
           </value>
-            
-          <value name="INPUT">
+          <value name="INPUT1">
             <shadow type="indata"><field name="indata1">x1, x2</field></shadow>
           </value>
-        </block>
-
-        <block type="set_ylim">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">axins</field>
-            </block>
-          </value>
-          <value name="INPUT">
+          <value name="INPUT2">
             <shadow type="indata"><field name="indata1">y1, y2</field></shadow>
           </value>
         </block>

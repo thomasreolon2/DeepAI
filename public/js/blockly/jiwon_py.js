@@ -57,18 +57,17 @@ Blockly.Python['set_xlim_ylim'] = function (block) {
 */
 
 // set_xlim, set_ylim
-Blockly.Python['set_xlim'] = function (block) {
+Blockly.Python['set_lim'] = function (block) {
   var var_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
-  var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  var input_text = Blockly.Python.valueToCode(block, 'INPUT1', Blockly.Python.ORDER_ATOMIC);
+  var input_text2 = Blockly.Python.valueToCode(block, 'INPUT2', Blockly.Python.ORDER_ATOMIC);
+
   // TODO: Assemble Python into code variable.
-  var code = `${var_text}.set_xlim(${input_text})\n`;
-  return code;
-};
-Blockly.Python['set_ylim'] = function (block) {
-  var var_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
-  var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${var_text}.set_ylim(${input_text})\n`;
+  if(input_text2 == ""){
+    var code = `${var_text}.set_xlim(${input_text})\n`;
+  } else {
+    var code = `${var_text}.set_xlim(${input_text})\n${var_text}.set_ylim(${input_text2})\n`;
+  }
   return code;
 };
 
