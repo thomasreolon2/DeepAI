@@ -869,14 +869,14 @@ Blockly.Msg['PANDAS_DF_COLUMNS'] = "[컬럼명 추출]";
 Blockly.Msg['PANDAS_DF_INDEX'] = "[인덱스 추출]";
 Blockly.Msg['PANDAS_DF_VALUES'] = "[데이터 추출]";
 Blockly.Msg['PANDAS_INDEXING'] = "[인덱싱]";
-Blockly.Msg['PANDAS_OC'] = "[내용조회]"
+Blockly.Msg['PANDAS_OC'] = "[조회]"
 Blockly.Msg['PANDAS_PIVOT'] = "[피봇테이블]"
 
 Blockly.Msg['PANDAS_ITEMS'] = "[쌍반복]"
 Blockly.Msg['PANDAS_WHERE'] = "[where]"
 Blockly.Msg['PANDAS_STACK'] = "[스택]"
 Blockly.Msg['PANDAS_SUB'] = "[서브]"
-Blockly.Msg['PANDAS_HEAD'] = "[기본조회]"
+Blockly.Msg['PANDAS_HEAD'] = "[조회]"
 Blockly.Msg['PANDAS_WHERE'] = "[조건바꾸기]"
 Blockly.Msg['PANDAS_INFO'] = "[통계]"
 Blockly.Msg['PANDAS_UNIQUE'] = "[값확인]"

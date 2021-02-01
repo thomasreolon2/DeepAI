@@ -1183,7 +1183,7 @@ Blockly.Blocks['pandas_head'] = {
         .setCheck(null);
     this.appendDummyInput()
         .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["상위5개조회(head)","head()"], ["하위5개조회(tail)","tail()"], ["인덱스조회(index)","index"], ["컬럼조회(columns)","columns"], ["값조회(values)","values"], ["행열변경조회(T))","T"],["데이터타입(dtype)","dtypes"]]), "DROP");
+        .appendField(new Blockly.FieldDropdown([["5개(head)","head()"], ["5개(tail)","tail()"], ["행열바꿈(T)","T"]]), "DROP");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(pandas_color);
@@ -1278,7 +1278,7 @@ Blockly.Blocks['pandas_oc'] = {
         .setCheck(null);
     this.appendDummyInput()
         .appendField(".")
-        .appendField(new Blockly.FieldDropdown([["인덱스로값찾기(iloc)","iloc"],["이름으로값찾기(loc)","loc"], ["이름으로값찾기(at)","at"],["인덱스로값찾기(iat)","iat"], ]), "DROP");
+        .appendField(new Blockly.FieldDropdown([["인덱스(iloc)","iloc"],["컬럼명(loc)","loc"], ["컬럼명(at)","at"],["인덱스(iat)","iat"], ]), "DROP");
     this.appendValueInput("d1")
         .setCheck(null)
         .appendField("[");
@@ -1638,7 +1638,7 @@ Blockly.Blocks['pandas_sort'] = {
           .setCheck(null);
       this.appendDummyInput()
           .appendField(".")
-          .appendField(new Blockly.FieldDropdown([["인덱스정렬(sort_index)","sort_index"],["값정렬(sort_values)","sort_values"],["상위n개(nlargest))","nlargest"],["하위n개(nsmallest)","nsmallest"]]), "DROP")
+          .appendField(new Blockly.FieldDropdown([["인덱스(sort_index)","sort_index"],["값(sort_values)","sort_values"],["상위n개(nlargest))","nlargest"],["하위n개(nsmallest)","nsmallest"]]), "DROP")
       this.appendValueInput("INPUT")
           .setCheck(null)
           .appendField("( 컬럼명 ");
