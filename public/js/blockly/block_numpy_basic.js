@@ -282,7 +282,7 @@ Blockly.Blocks['numpy_select'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 배열형상]")
-        .appendField(new Blockly.FieldDropdown([["각 축의크기(shpae)","shape"], ["축의 개수(ndim)","ndim"], ["각 요소타입(dtype)","dtype"], ["각 요소타입크기(itemsize)","itemsize"], ["전체 요소개수(size)","size"]]), "numpy_operator_Option");
+        .appendField(new Blockly.FieldDropdown([["각 축의크기(shape)","shape"], ["축의 개수(ndim)","ndim"], ["각 요소타입(dtype)","dtype"], ["각 요소타입크기(itemsize)","itemsize"], ["전체 요소개수(size)","size"]]), "numpy_operator_Option");
     this.appendValueInput("parameter1")
         .appendField("변수") 
         .setCheck(null)
