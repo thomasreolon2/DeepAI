@@ -473,7 +473,7 @@ Blockly.Python['pandas_oc'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var dropdown_drop = block.getFieldValue('DROP');
   // TODO: Assemble Python into code variable.
-  var code = `${value_name1}.${dropdown_drop}[${value_name}]\n`;
+  var code = `${value_name1}.${dropdown_drop}[${value_name}]`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };  
