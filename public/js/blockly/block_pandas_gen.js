@@ -400,7 +400,7 @@ Blockly.Python['df_add_col'] = function(block) {
 //2020-12-29 전우진 csv url 불러오기
 
 Blockly.Python['csv_url'] = function (block) {
-
+  var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   `${value_name1} = pd.read_csv(pyodide.open_url('${value_name}'))\n`

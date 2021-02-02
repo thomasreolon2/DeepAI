@@ -353,7 +353,7 @@ Blockly.Blocks['csvdataframe_J'] = {
       .appendField(Blockly.Msg.PANDAS_CSVDATAFRAME);
     this.appendValueInput("csv")
       .setCheck(null)
-      .appendField("(");
+      .appendField("= pd.DataFreame(");
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);
@@ -1160,7 +1160,7 @@ Blockly.Blocks['csv_url'] = {
     this.appendValueInput("d1")
       .setCheck(null);
     this.appendDummyInput()
-      .appendField("CSV URL")
+      .appendField(" = CSV URL")
       .appendField("(");
     this.appendValueInput("va")
       .setCheck(null);

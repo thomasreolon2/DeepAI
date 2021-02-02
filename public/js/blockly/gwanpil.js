@@ -496,8 +496,7 @@ Blockly.Blocks['pandas_csv_read'] = {
     this.appendValueInput("d1")
       .setCheck(null);
     this.appendDummyInput()
-      .appendField("CSV read")
-      .appendField("(");
+      .appendField(" = pd.read_csv(");
     this.appendValueInput("va")
       .setCheck(null)
     this.appendDummyInput()
