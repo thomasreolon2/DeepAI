@@ -1209,7 +1209,7 @@ Blockly.Blocks['pandas_info'] = {
 }
 };
 
-// 2020.01.26 head() 남지원
+// 2020.01.26 pandas_astype() 남지원
 Blockly.Blocks['pandas_astype'] = {
   init: function() {
     this.appendValueInput("VAR")
@@ -1217,7 +1217,7 @@ Blockly.Blocks['pandas_astype'] = {
       .appendField(Blockly.Msg.PANDAS_ASTYPE);
     this.appendDummyInput()
       .appendField(".")
-      .appendField(new Blockly.FieldDropdown([["astype","astype"], ["append","append"], ["replace","replace"], ["fillna","fillna"]]), "DROP")
+      .appendField(new Blockly.FieldDropdown([["astype","astype"], ["append","append"], ["replace","replace"]]), "DROP")
       .appendField("(");
     this.appendValueInput("INPUT")
       .setCheck(null);
