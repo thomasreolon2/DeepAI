@@ -1542,7 +1542,7 @@ Blockly.Blocks['pandas_dropna'] = {
     this.appendValueInput("d2")
         .setCheck(null);
     this.appendDummyInput()
-      .appendField(new Blockly.FieldDropdown([["행삭제(dropna)","dropna"], ["채우기(fillna)","fillna"]]), "DROP");
+      .appendField(new Blockly.FieldDropdown([["채우기(fillna)","fillna"], ["행삭제(dropna)","dropna"]]), "DROP");
     this.appendValueInput("d3")
         .setCheck(null);
     this.appendDummyInput()
