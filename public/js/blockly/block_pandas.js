@@ -353,7 +353,7 @@ Blockly.Blocks['csvdataframe_J'] = {
       .appendField(Blockly.Msg.PANDAS_CSVDATAFRAME);
     this.appendValueInput("csv")
       .setCheck(null)
-      .appendField("= pd.DataFreame(");
+      .appendField("= pd.DataFrame(");
     this.appendDummyInput()
       .appendField(")");
     this.setInputsInline(true);
