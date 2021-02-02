@@ -3337,7 +3337,7 @@
     <!-- ************************************************** ************************* *************************  -->
     <!-- 2020-09-20 양승국 수정-->
     <category name="%{BKY_CATEGORY_PANDAS}" colour="%{BKY_PANDAS_HUE}"> 
-      <category name="조회" colour="%{BKY_PANDAS_HUE}">
+      <category name="생성&조회" colour="%{BKY_PANDAS_HUE}">
 
         <!-- pandas 라이브러리 -->
         <block type="pandas_library"></block>
@@ -3378,6 +3378,20 @@
           </value>
           <value name="csv">
             <block type="csv2"></block>
+          </value>
+        </block>
+
+        <!-- 데이터프레임 직접만들기 -->
+        <block type="csvdataframe_J">
+          <value name="input_var">
+            <block type="variables_get">
+              <field name="VAR">df</field>
+            </block>
+          </value>
+          <value name="csv">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
           </value>
         </block>
 

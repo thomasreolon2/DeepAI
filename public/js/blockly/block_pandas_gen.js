@@ -606,9 +606,11 @@ Blockly.Python['pandas_drop_duplicates'] = function(block) {
 Blockly.Python['pandas_dropna'] = function(block) {
   var value_name1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+
   var value_name3 = Blockly.Python.valueToCode(block, 'd3', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${value_name1} = ${value_name2}.dropna(${value_name3})\n`
+  var code = `${value_name1} = ${value_name2}.${dropdown_drop}(${value_name3})\n`
   // TODO: Change ORDER_NONE to the correct strength.
   return code;
 };  
