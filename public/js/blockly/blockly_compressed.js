@@ -3178,9 +3178,38 @@ Blockly.Xml.domToBlockHeadless_ = function (a, b) {
 };
 Blockly.Xml.domToField_ = function (a, b, c) {
   var d = a.getField(b);
-  d
-    ? d.fromXml(c)
-    : console.warn("Ignoring non-existent field " + b + " in block " + a.type);
+  // test 성주
+  // console.log(b);
+  // console.log('ddd: ' + d);
+
+  var test = false;
+  if(a.type == 'many_variables' || a.type == 'va_id')
+    test = true;
+  else
+    test = false;
+  
+  if(d)
+    d.fromXml(c);
+  else
+  {
+    switch(test){
+      case true:
+        break;
+      
+      case false:
+        console.warn("Ignoring non-existent field " + b + " in block " + a.type);
+        break;
+    }
+    // if(test){
+    //   console.log()
+    //   continue; ?
+    // }
+    // else
+    //   console.warn("Ignoring non-existent field " + b + " in block " + a.type);
+  }
+  // d
+  //   ? d.fromXml(c)
+  //   : console.warn("Ignoring non-existent field " + b + " in block " + a.type);
 };
 Blockly.Xml.deleteNext = function (a) {
   for (var b = 0, c; (c = a.childNodes[b]); b++)
@@ -12458,11 +12487,11 @@ Blockly.Variables.flyoutCategoryBlocks = function (a) {
         k.setAttribute("gap", Blockly.Blocks.math_change ? 8 : 24);
         k.appendChild(Blockly.Variables.generateVariableFieldDom(c));
         k.appendChild(Blockly.Xml.textToDom(
-          '<value name="NUMBER"><shadow type="indata"><field name="indata1">x,y,z</field></shadow></value>'
-        ))
+          '<value name="VAR"><shadow type="indata"><field name="indata1">x,y,z</field></shadow></value>'
+        ));
         k.appendChild(Blockly.Xml.textToDom(
           '<value name="VALUE"><shadow type="indata"><field name="indata1">0,0,0</field></shadow></value>'
-        ))
+        ));
         b.push(k);
       }
 
