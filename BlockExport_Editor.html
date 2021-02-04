@@ -8826,10 +8826,14 @@
       var code2 = jsEditor.getValue();
       
       // 이 부분이 코드 싹다 잡아와서 출력
+      // plt.cla - 클리어
+      // plt.clf - figure클리어
       languagePluginLoader.then(() => {
         pyodide.runPython(`
                     import sys
                     import io
+                    plt.cla()
+                    plt.clf()
                     sys.stdout = io.StringIO()
                     `);
 
