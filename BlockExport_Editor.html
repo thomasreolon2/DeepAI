@@ -7261,7 +7261,11 @@
       <block type="curve_fit"></block>
       <block type="univariatespline"></block>
       <block type="quad"></block>
-      <block type="scipy_io_wavfile_read"></block>
+      <block type="scipy_io_wavfile_read">
+        <value name="file">
+          <block type="fileopen2"></block>   
+        </value>
+      </block>
     </category>
     <!-- # 시각화 부분 #  -->
     <category name="사이킷이미지(Skimage)" colour="%{BKY_SCIKITLEARN_IMAGE}"> <!--colour="%{BKY_SCIKITLEARN_HUE}"-->

@@ -40,7 +40,7 @@ Blockly.Python['curve_fit'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code ='curve_fit('+value_fun+', '+value_x+', '+value_y+')';
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
   
@@ -51,7 +51,7 @@ Blockly.Python['curve_fit'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = 'UnivariateSpline('+value_x+', '+value_y+', s='+text_s+')';
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.Python.ORDER_ATOMIC];
   };
   Blockly.Python['quad'] = function(block) {
     var value_x = Blockly.Python.valueToCode(block, 'x', Blockly.Python.ORDER_ATOMIC);
@@ -60,5 +60,13 @@ Blockly.Python['curve_fit'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = 'quad('+value_x+', '+text_s+', '+text_e+')';
     // TODO: Change ORDER_NONE to the correct strength.
-    return [code, Blockly.Python.ORDER_NONE];
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+
+  Blockly.Python['scipy_io_wavfile_read'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'file', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = `scipy.io.wavfile.read(${value_x})`;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
   };

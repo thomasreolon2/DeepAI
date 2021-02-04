@@ -79,9 +79,7 @@ Blockly.Blocks['quad'] = {
 
 Blockly.Blocks['scipy_io_wavfile_read'] = {
     init: function () {
-        this.appendValueInput("x").setCheck(null).appendField("io.wavfile.read");
-        this.appendDummyInput().appendField(new Blockly.FieldTextInput("0"), "s");
-        this.appendDummyInput().appendField(new Blockly.FieldTextInput("1000"), "e");
+        this.appendValueInput("file").setCheck(null).appendField("io.wavfile.read");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour("%{BKY_SCIPY_HUE}");
