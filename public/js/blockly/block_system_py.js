@@ -4,6 +4,12 @@ Blockly.Python['os_library'] = function (block) {
   return code;
 };
 
+Blockly.Python['os_data_remove'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = `import os\nprint(os.chdir("/data"))\nif os.path.exists("/data"):\n  for file in os.scandir("/data") :\n    os.remove(file.path)\nprint(os.listdir())\n`;
+  return code;
+};
+
 Blockly.Python['time_library'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
   var code = "import time \n";
@@ -88,7 +94,7 @@ Blockly.Python['os_dir'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'va', Blockly.Python.ORDER_ATOMIC);
   var dropdown_directory = block.getFieldValue('directory');
 
-  var code = dropdown_directory + "(" + value_name + ")\n";
+  var code = dropdown_directory + "(" + value_name + ")";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

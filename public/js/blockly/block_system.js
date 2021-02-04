@@ -11,6 +11,19 @@
     }
   };
 
+  Blockly.Blocks['os_data_remove'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField("data디렉토리비우기"); 
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_OS_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
   Blockly.Blocks['time_library'] = {
     init: function () {
       this.appendDummyInput()
