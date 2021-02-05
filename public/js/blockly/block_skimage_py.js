@@ -36,7 +36,7 @@ Blockly.Python['skimage_util'] = function (block) {
 ////////////////////////////////
 // skimage_measure
 Blockly.Python['skimage_measure'] = function (block) {
-  var input_text = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var input_text = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
   var dropdown_drop = block.getFieldValue('DROP');
 
   // TODO: Assemble Python into code variable.
