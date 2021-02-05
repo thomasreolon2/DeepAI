@@ -152,8 +152,8 @@ Blockly.Blocks['numpy_random_distributions_third'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 분포3]")
-        .appendField(new Blockly.FieldDropdown([["표준 감마 분포(standard_gamma)","numpy_Random_Distributions_third_standard_gamma"], ["표준 정규 분포(standard_normal)","numpy_Random_Distributions_third_standard_normal"], ["삼각 분포(triangular)","numpy_Random_Distributions_third_triangular"], ["균일 분포(uniform)","numpy_Random_Distributions_third_uniform"], ["폰 미제스 분포(vonmises)","numpy_Random_Distributions_third_vonmises"], ["역가우스 분포(wald)","numpy_Random_Distributions_third_wald"], ["Weibull 분포(weibull)","numpy_Random_Distributions_third_weibull"], ["Zipf 분포(zipf)","numpy_Random_Distributions_third_zipf"]]), "numpy_Random_Distributions_third_opt");
-    this.appendValueInput("numpy_Random_Distributions_third_val")
+        .appendField(new Blockly.FieldDropdown([["표준 감마 분포(standard_gamma)","standard_gamma"], ["표준 정규 분포(standard_normal)","standard_normal"], ["삼각 분포(triangular)","triangular"], ["균일 분포(uniform)","uniform"], ["폰 미제스 분포(vonmises)","vonmises"], ["역가우스 분포(wald)","wald"], ["Weibull 분포(weibull)","weibull"], ["Zipf 분포(zipf)","zipf"]]), "DROP");
+    this.appendValueInput("VAR")
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);

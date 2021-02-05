@@ -345,44 +345,41 @@ Blockly.Python['numpy_random_distributions_two'] = function(block) {
 
 //numpy_random_distributions_third
 Blockly.Python['numpy_random_distributions_third'] = function(block) {
-  var numpy_Random_Distributions_third_opt = block.getFieldValue('numpy_Random_Distributions_two_opt');
-  var value_numpy_random_distributions_third_val = Blockly.Python.valueToCode(block, 'numpy_Random_Distributions_third_val', Blockly.Python.ORDER_ATOMIC);
+  var value_drop = block.getFieldValue('DROP');
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code;
-  switch (numpy_Random_Distributions_third_opt){
-    case "numpy_Random_Distributions_third_standard_gamma": 
-    code = `np.random.standard_gamma(${value_numpy_random_distributions_third_val})`;  
+  switch (value_drop){
+    case "standard_gamma": 
+    code = `np.random.standard_gamma(${value_var})`;  
     break; 
 
-    case "numpy_Random_Distributions_third_standard_normal": 
-    code = `np.random.standard_normal(${value_numpy_random_distributions_third_val})`;  
+    case "standard_normal": 
+    code = `np.random.standard_normal(${value_var})`;  
     break;
 
-    case "numpy_Random_Distributions_third_triangular":
-    code = `np.random.triangular(${value_numpy_random_distributions_third_val})`;  
+    case "triangular":
+    code = `np.random.triangular(${value_var})`;  
     break;
 
-    case "numpy_Random_Distributions_third_uniform":
-    code = `np.random.uniform(${value_numpy_random_distributions_third_val})`;  
+    case "uniform":
+    code = `np.random.uniform(${value_var})`;  
     break;
 
-    case "numpy_Random_Distributions_third_vonmises":
-    code = `np.random.vonmises(${value_numpy_random_distributions_third_val})`;  
+    case "vonmises":
+    code = `np.random.vonmises(${value_var})`;  
     break;
 
-    case "numpy_Random_Distributions_third_wald":
-    code = `np.random.wald(${value_numpy_random_distributions_third_val})`;  
+    case "wald":
+    code = `np.random.wald(${value_var})`;  
     break;
 
-    case "numpy_Random_Distributions_third_weibull":
-    code = `np.random.weibull(${value_numpy_random_distributions_third_val})`;  
+    case "weibull":
+    code = `np.random.weibull(${value_var})`;  
     break;
 
-    case "numpy_Random_Distributions_third_zipf":
-      code = `np.random.zipf(${value_numpy_random_distributions_third_val})`;  
-      break;
-
-    default:
+    case "zipf":
+      code = `np.random.zipf(${value_var})`;  
     break;
   }
   // TODO: Change ORDER_ATOMIC to the correct strength.
