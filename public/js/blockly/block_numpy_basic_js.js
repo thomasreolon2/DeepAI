@@ -7,7 +7,7 @@ Blockly.JavaScript['numpy_averages_variances_basic'] = function(block) {
   var value_numpy_averages_variances_val = Blockly.JavaScript.valueToCode(block, 'parameter1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_numpy_averages_variances_val2 = Blockly.JavaScript.valueToCode(block, 'parameter2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${dropdown_numpy_averages_variances_opt}(${value_numpy_averages_variances_val},${value_numpy_averages_variances_val2})`;
+  var code = `\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -24,27 +24,27 @@ Blockly.JavaScript['numpy_random_sample_basic'] = function(block) {
   var code;
   switch (dropdown_numpy_random_sample_opt){
     case "numpy_Random_sample_rand": 
-    code = `np.random.rand(${value_numpy_random_sample_val})`;  
+    code = `\n`;
     break; 
 
     case "numpy_Random_sample_randn": 
-    code = `np.random.randn(${value_numpy_random_sample_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_sample_randint":
-    code = `np.random.randint(${value_numpy_random_sample_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_sample_random":
-    code = `np.random.random(${value_numpy_random_sample_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_sample_choice":
-    code = `np.random.choice(${value_numpy_random_sample_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_sample_bytes":
-    code = `np.random.bytes(${value_numpy_random_sample_val})`;  
+    code = `\n`;
     break;
 
 
@@ -61,7 +61,7 @@ Blockly.JavaScript['numpy_random_generator_basic'] = function(block) {
   var value_numpy_random_generator_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_generator_val', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code;
-  code = `np.random.seed(${value_numpy_random_generator_val})`;  
+  code = `\n`;
    
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -72,7 +72,7 @@ Blockly.JavaScript['numpy_rounding_basic'] = function(block) {
   var dropdown_numpy_rounding_opt = block.getFieldValue('numpy_Rounding_opt');
   var value_numpy_rounding_val = Blockly.JavaScript.valueToCode(block, 'numpy_Rounding_val', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${dropdown_numpy_rounding_opt}(${value_numpy_rounding_val})`;
+  var code = `\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -83,7 +83,7 @@ Blockly.JavaScript['numpy_exponents_logarithms_basic'] = function(block) {
   var dropdown_numpy_exponents_logarithms_opt = block.getFieldValue('numpy_Exponents_logarithms_opt');
   var value_numpy_exponents_logarithms_val = Blockly.JavaScript.valueToCode(block, 'numpy_Exponents_logarithms_val', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${dropdown_numpy_exponents_logarithms_opt}(${value_numpy_exponents_logarithms_val})`;
+  var code = `\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -122,7 +122,7 @@ Blockly.JavaScript['numpy_changing_array_shape_basic'] = function(block) {
   var dropdown_numpy_changing_array_shape_opt = block.getFieldValue('numpy_Changing_array_shape_opt');
   var value_numpy_changing_array_shape_val = Blockly.JavaScript.valueToCode(block, 'numpy_Changing_array_shape_val', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${dropdown_numpy_changing_array_shape_opt}(${value_numpy_changing_array_shape_val})`;
+  var code = `\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -131,7 +131,7 @@ Blockly.JavaScript['numpy_changing_array_shape_basic'] = function(block) {
 Blockly.JavaScript['numpy_transpose_like_operations_basic'] = function(block) {
   var value_numpy_transpose_like_operations_val = Blockly.JavaScript.valueToCode(block, 'numpy_Transpose_like_operations_val', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `np.transpose(${value_numpy_transpose_like_operations_val})`;
+  var code = `\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -144,7 +144,7 @@ Blockly.JavaScript['numpy_ones_and_zeros_basic'] = function(block) {
   var value_numpy_ones_and_zeros_val = Blockly.JavaScript.valueToCode(block, 'parameter1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_numpy_ones_and_zeros_val2 = Blockly.JavaScript.valueToCode(block, 'parameter2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${dropdown_numpy_ones_and_zeros_opt}(${value_numpy_ones_and_zeros_val},${value_numpy_ones_and_zeros_val2})`;
+  var code = `\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
@@ -153,7 +153,7 @@ Blockly.JavaScript['numpy_ones_and_zeros_basic'] = function(block) {
 Blockly.JavaScript['numpy_eye_basic'] = function(block) {
   var value_numpy_ones_and_zeros_val = Blockly.JavaScript.valueToCode(block, 'parameter1', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `np.eye(${value_numpy_ones_and_zeros_val})`;
+  var code = `\n`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
@@ -165,7 +165,7 @@ Blockly.JavaScript['numpy_numerical_ranges_basic1'] = function(block) {
   var value_numpy_numerical_ranges_val2 = Blockly.JavaScript.valueToCode(block, 'parameter2', Blockly.JavaScript.ORDER_ATOMIC);
   var value_numpy_numerical_ranges_val3 = Blockly.JavaScript.valueToCode(block, 'parameter3', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val},${value_numpy_numerical_ranges_val2},${value_numpy_numerical_ranges_val3})`;
+  var code = `\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -176,7 +176,7 @@ Blockly.JavaScript['numpy_numerical_ranges_basic2'] = function(block) {
   var value_numpy_numerical_ranges_val = Blockly.JavaScript.valueToCode(block, 'parameter1', Blockly.JavaScript.ORDER_ATOMIC);
   var value_numpy_numerical_ranges_val2 = Blockly.JavaScript.valueToCode(block, 'parameter2', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val},${value_numpy_numerical_ranges_val2})`;
+  var code = `\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -207,7 +207,7 @@ Blockly.JavaScript['numpy_select'] = function(block) {
   var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
   var value_numpy_operator_val = Blockly.JavaScript.valueToCode(block, 'parameter1', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${value_numpy_operator_val}.${dropdown_numpy_operator_option}`;
+  var code = `\n`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
@@ -216,7 +216,7 @@ Blockly.JavaScript['numpy_astype'] = function(block) {
   var value_var = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${value_var}.astype(${value_input})`;
+  var code = `\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
