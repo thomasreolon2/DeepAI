@@ -3178,36 +3178,13 @@ Blockly.Xml.domToBlockHeadless_ = function (a, b) {
 };
 Blockly.Xml.domToField_ = function (a, b, c) {
   var d = a.getField(b);
+  
   // test 성주
-  // console.log(b);
-  // console.log('ddd: ' + d);
 
-  var test = false;
-  if(a.type == 'many_variables' || a.type == 'va_id')
-    test = true;
-  else
-    test = false;
   
   if(d)
     d.fromXml(c);
-  else
-  {
-    switch(test){
-      case true:
-        break;
-      
-      case false:
-        console.warn("Ignoring non-existent field " + b + " in block " + a.type);
-        break;
-    }
-    // if(test){
-    //   console.log()
-    //   continue; ?
-    // }
-    // else
-    //   console.warn("Ignoring non-existent field " + b + " in block " + a.type);
-  }
-  // d
+    // d
   //   ? d.fromXml(c)
   //   : console.warn("Ignoring non-existent field " + b + " in block " + a.type);
 };
