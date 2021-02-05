@@ -330,7 +330,8 @@ Blockly.JavaScript.controls_if = function (a) {
         ++b
     } while (a.getInput("IF" + b));
     if (a.getInput("ELSE") || Blockly.JavaScript.STATEMENT_SUFFIX) e = Blockly.JavaScript.statementToCode(a, "ELSE"), Blockly.JavaScript.STATEMENT_SUFFIX && (e = Blockly.JavaScript.prefixLines(Blockly.JavaScript.injectId(Blockly.JavaScript.STATEMENT_SUFFIX, a), Blockly.JavaScript.INDENT) + e), c += " else {\n" + e + "}";
-    return c + "\n"
+    //return c+ "\n"
+    return "\n"
 };
 Blockly.JavaScript.controls_ifelse = Blockly.JavaScript.controls_if;
 Blockly.JavaScript.logic_compare = function (a) {

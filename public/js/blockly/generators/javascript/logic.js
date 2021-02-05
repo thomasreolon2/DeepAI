@@ -47,7 +47,7 @@ Blockly.JavaScript['controls_if'] = function(block) {
     }
     code += ' else {\n' + branchCode + '}';
   }
-  return code + '\n';
+  return '\n';
 };
 
 Blockly.JavaScript['controls_ifelse'] = Blockly.JavaScript['controls_if'];

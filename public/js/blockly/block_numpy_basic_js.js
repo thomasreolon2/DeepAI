@@ -77,6 +77,16 @@ Blockly.JavaScript['numpy_rounding_basic'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+//numpy_joining_arrays
+Blockly.JavaScript['numpy_joining_arrays_basic'] = function(block) {
+  var dropdown_numpy_joining_arrays_opt = block.getFieldValue('numpy_Joining_arrays_opt');
+  var value_numpy_joining_arrays_val = Blockly.Python.valueToCode(block, 'numpy_Joining_arrays_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `\n`;
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
 
 //numpy_exponents_logarithms
 Blockly.JavaScript['numpy_exponents_logarithms_basic'] = function(block) {
