@@ -10,6 +10,12 @@ Blockly.Python['os_data_remove'] = function (block) {
   return code;
 };
 
+Blockly.Python['os_data_listdir'] = function (block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = `import os\nprint(os.chdir('data'))\nprint(os.listdir())\n`;
+  return code;
+};
+
 Blockly.Python['time_library'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
   var code = "import time \n";

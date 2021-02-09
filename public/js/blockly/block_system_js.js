@@ -185,3 +185,15 @@
     var code = '...;\n';
     return code;
   };
+
+  Blockly.JavaScript['os_data_remove'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['os_data_listdir'] = function (block) {
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
