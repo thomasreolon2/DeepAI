@@ -18,7 +18,7 @@ Blockly.Python['os_data_listdir'] = function (block) {
 
 Blockly.Python['os_data_download'] = function (block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = `import os\nprint(os.chdir('data'))\nprint(os.listdir())\n`;
+  var code = `\n`;
   return code;
 };
 
