@@ -406,8 +406,6 @@
           <button type="button" class="btn btn-secondary mr-0" id="visibleAll">블럭+코드</button>
           <button type="button" class="btn btn-secondary mr-0" id="visibleCode">코드</button>
         </div>
-        
-        <input id="button_download_file" type="button" class="btn btn-outline-secondary btn-sm " onClick="fileDownload();" value="다운로드" /> 
 
         <!-- 데이터 셋 불러오기  -->
         <!-- <input id="datasets_load" type="button" class="" onClick="datasets_load_lms();"
@@ -9511,9 +9509,11 @@
         // name = name.concat('.',type); // 이름 + 확장자
         // console.log("name :", name); // 이름+확장자(다운로드할 파일) 출력
         var _filename = prompt("저장할 파일명을 입력해주세요(ex> hello.txt)");
-        var _fileLen = _filename.length;
-        var _lastDot = _filename.lastIndexOf('.');
-        var _fileExt = _filename.substring(_lastDot, _fileLen).toLowerCase();
+        if(_filename != null){
+          var _fileLen = _filename.length;
+          var _lastDot = _filename.lastIndexOf('.');
+          var _fileExt = _filename.substring(_lastDot, _fileLen).toLowerCase();
+        }
 
         fss.readFile(_filename, 'utf8', function(err, data) {
 
