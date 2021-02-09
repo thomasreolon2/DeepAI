@@ -407,9 +407,7 @@
           <button type="button" class="btn btn-secondary mr-0" id="visibleCode">코드</button>
         </div>
         
-        <!-- 기태 휴지통 처리 21.01.16
-        <input id="button_trashcan_clean" type="button" class="btn btn-outline-secondary btn-sm " onClick="trashcanClean();"
-        value="휴지통 지우기" /> -->
+        <input id="button_download_file" type="button" class="btn btn-outline-secondary btn-sm " onClick="fileDownload();" value="다운로드" /> 
 
         <!-- 데이터 셋 불러오기  -->
         <!-- <input id="datasets_load" type="button" class="" onClick="datasets_load_lms();"
@@ -9491,7 +9489,53 @@
             });
         });
     }, 1000);  // js 파일 다운로드를 위해 인터벌 설정 
-    </script>    
+    </script>   
+    <script>
+      function fileDownload(){
+        var downloadLink = document.createElement("a");
+        var minetype;
+        var blob;
+        var base64Image;
+
+        var type = prompt("저장할 파일 종류?(ex> txt, csv)")
+        console.log(type);
+        var name = prompt("저장할 파일명?(ex> a.txt)");
+        console.log("name :", name);
+        fss.readFile(name, 'utf8', function(err, data) {
+
+          if(err){
+            alert("해당 파일이 존재하지 않습니다.");
+            return;
+          }
+
+          if(type == 'txt'){
+            minetype = "text/plain;charset=utf-8";            
+          } else if(type == 'csv'){
+            minetype = "text/csv;charset=utf-8";
+          } else if(type == 'bmp'){            
+            minetype: 'image/bmp';
+            base64Image = new Buffer(data, 'binary').toString('base64');
+            data = `data:image/bmp;base64,${base64Image}`;   
+          } else if(type == 'jpg'){  
+            minetype: 'image/jpeg'; 
+            base64Image = new Buffer(data, 'binary').toString('base64');
+            data = `data:image/jpeg;base64,${base64Image}`;   
+            console.log("data", data);                              
+          } else if(type == 'wav'){            
+            minetype: 'audio/wav';           
+          }
+          blob = new Blob([data], { type: minetype });
+		      var url = URL.createObjectURL(blob);
+		      downloadLink.href = url;
+		      downloadLink.download = name;
+
+		      document.body.appendChild(downloadLink);
+		      downloadLink.click();
+		      document.body.removeChild(downloadLink);
+
+        });
+      }
+    </script> 
     <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
     <!-- 기태 휴지통 처리 21.01.16----------------------------------------------------------------------------->
     <!-- <script>
