@@ -37,6 +37,18 @@
     }
   };
 
+  Blockly.Blocks['os_data_download'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField("파일다운로드"); 
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour("%{BKY_OS_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
 
   Blockly.Blocks['time_library'] = {
     init: function () {
