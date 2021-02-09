@@ -8782,6 +8782,10 @@
         if ('data_csv_read' == block.type) {
           Show_csv();
         }
+
+        if ('os_data_download'  == block.type) {
+          fileDownload();
+        }
       }
     }
     demoWorkspace.addChangeListener(codeUpdate);
