@@ -39,8 +39,6 @@
   <!--numjs-->             
   <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>  
 
- 
-
   <!-- pyodide cdn변경 20.11.16 -->
   <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
   <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
@@ -74,17 +72,11 @@
   <link rel="stylesheet" href="./js/codemirror/addon/hint/show-hint.css">
   <!-- cdoemirror 자동 완성 기능 -->
 
-  
-
- 
-
   <!-- canvas -->
   <script src="./js/canvas.js"></script>
 
   <!-- 그래프 aside -->
   <script src="./js/aside.js"></script>
-
-  
 
   <!-- #####################################################################################################  -->
   <!-- ******************************   블록 import                           ******************************* -->
@@ -209,8 +201,6 @@
     <script src="/js/blockly/seongju_mat_py.js"></script>
     <script src="/js/blockly/seongju_mat_js.js"></script>
     
-  <!-- api 블록 -->
-
     <!-- 임시 데이터베이스 양승국 -->
     <script src="/js/blockly/block_database.js"></script>
     <script src="/js/blockly/block_database_py.js"></script>
@@ -330,8 +320,6 @@
     });
   </script>
 
-
-
   <!--Socket.IO --> 
   <!-- <script>  
     var socket = io.connect('http://localhost:8000');
@@ -341,10 +329,6 @@
       //  });  
   </script>       -->
   <!--Socket.IO -->   
-
-
-  
-  
 
 </head>
 
@@ -362,9 +346,9 @@
       <button id="runButton2" class="btn btn-outline-success btn-sm mr-1" onclick="runButton();"
         style="display:none;">실행</button>
       <!-- 실행 로딩 중 -->
-      <div id="loading_image2" style="display: inline-block;"><object type="image/svg+xml"
-          data="Rolling-1s-30px.svg"></object></div>
-
+      <div id="loading_image2" style="display: inline-block;">
+        <object type="image/svg+xml" data="Rolling-1s-30px.svg"></object>
+      </div>
       <button id = "button_close" class="btn btn-outline-primary btn-sm mr-1" onclick="sidebar_toggle();">닫기</button>
       <button id = "button_clear" class="btn btn-outline-danger btn-sm" onclick="csv_clear();">지우기</button>
       <button id = "button_reset" class="btn btn-outline-danger btn-sm" onclick="sidebar_clear();">전체 초기화</button>
@@ -410,11 +394,6 @@
           <button type="button" class="btn btn-secondary mr-0" id="visibleAll">블럭+코드</button>
           <button type="button" class="btn btn-secondary mr-0" id="visibleCode">코드</button>
         </div>
-
-        <!-- 데이터 셋 불러오기  -->
-        <!-- <input id="datasets_load" type="button" class="" onClick="datasets_load_lms();"
-        value="데이터셋 불러오기" /> -->
-        <!-- 데이터 셋 불러오기  -->
 
         <!-- 탭들 display -->
         <script>
@@ -479,12 +458,6 @@
           <option id = "en" value="eng">en</option>
         </select>
 
-        <!-- display 2020.12.24 지원-->
-        <!-- <select id="display_select" class="form-control col-md-2 mt-2 ml-1">
-          <option value="python">python</option>
-          <option value="javascript">javascript</option>
-        </select> -->
-
         <!-- 실행 버튼 -->
         <input id="runButton1" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;"
           onClick="runButton()" value="실행" /> <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
@@ -517,7 +490,6 @@
               <div class="modal-body">
                 <!-- canvas -->
                 <canvas id="canvas" class="canvas" width="300" height="300"></canvas>
-
               </div>
 
               <div class="modal-footer">
@@ -546,7 +518,6 @@
 
       <!-- 블럭 나오는 부분(왼쪽) -->
       <div id="blocklyDiv" class="col-md-8" style="height: 90vh;"></div>
-
 
       <!-- 오른쪽 -->
       <div id="codeDiv" class="col-md-4">
@@ -584,99 +555,97 @@
   <!-- Toolbox 정의 -->
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display:none">
     
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   변수(Variable)                           ******************************* -->
-    <!-- #####################################################################################################  -->
-    <category name="%{BKY_CATEGORY_VARIABLE}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-     
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   변수(Variable)                           ******************************* -->
+  <!-- #####################################################################################################  -->
+  <category name="%{BKY_CATEGORY_VARIABLE}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
 
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   입출력 ( I/O )                           ******************************* -->
-    <!-- #####################################################################################################  -->
-     <category name = "%{BKY_CATEGORY_INPUT_OUTPUT}" colour = "255">
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   입출력 ( I/O )                           ******************************* -->
+  <!-- #####################################################################################################  -->
+  <category name = "%{BKY_CATEGORY_INPUT_OUTPUT}" colour = "255">
+    <!-- 데이터 입력 -->
+    <block type="input1">
+      <value name="content1">
+        <shadow type="indata">
+          <field name="indata1">"메시지"</field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type="map">
+      <value name="data_type">
+        <shadow type="indata">
+          <field name="indata1">int</field>
+        </shadow>
+      </value>
+      <value name="input">
+        <shadow type="indata">
+          <field name="indata1">'메시지'</field>
+        </shadow>
+      </value>
+      <value name="split">
+        <shadow type="indata">
+          <field name="indata1">'입력시구분자'</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- 결과출력 var -->
+    <block type="printc">
+      <value name="content">
+        <block type="variables_get">
+          <field name="VAR">variable</field>
+        </block>
+      </value>
+    </block>
+
+    <!-- 결과출력 text + var -->
+    <block type="printtv">
+      <value name="content1">
+        <shadow type="indata">
+          <field name="indata1">"메시지"</field>
+        </shadow>
+      </value>
+      <value name="content2">
+        <block type="variables_get">
+          <field name="VAR">variable</field>
+        </block>
+      </value>
+    </block>
       
-      <!-- 데이터 입력 -->
-      <block type="input1">
-        <value name="content1">
-          <shadow type="indata">
-            <field name="indata1">"메시지"</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 결과출력 f-문자열 -->
+    <block type="printf">
+      <value name="content1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
 
-      <block type="map">
-        <value name="data_type">
-          <shadow type="indata">
-            <field name="indata1">int</field>
-          </shadow>
-        </value>
-        <value name="input">
-          <shadow type="indata">
-            <field name="indata1">'메시지'</field>
-          </shadow>
-        </value>
-        <value name="split">
-          <shadow type="indata">
-            <field name="indata1">'입력시구분자'</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 출력 뮤테이터 -->
+    <block type="print_mutator"></block>
+    <!-- 파이썬코드 입력 -->
+    <block type="itdata">
+      <value name="itdata1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 결과출력 var -->
-      <block type="printc">
-        <value name="content">
-          <block type="variables_get">
-            <field name="VAR">variable</field>
-          </block>
-        </value>
-      </block>
+    <!-- 파이썬 부분 코드(만능)-->
+    <block type="indata"></block>
 
-      <!-- 결과출력 text + var -->
-      <block type="printtv">
-        <value name="content1">
-          <shadow type="indata">
-            <field name="indata1">"메시지"</field>
-          </shadow>
-        </value>
-        <value name="content2">
-          <block type="variables_get">
-            <field name="VAR">variable</field>
-          </block>
-        </value>
-      </block>
-      
-      <!-- 결과출력 f-문자열 -->
-      <block type="printf">
-        <value name="content1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+    <block type="class_func_param"></block>
+    <!--------------------------------------------------------------------------------------------시스템OS-->
+    <category name="%{BKY_CATEGORY_OS}" colour="%{BKY_OS_HUE}">
+      <block type="os_library"></block>
+      <block type="os_data_remove"></block>
+      <block type="os_data_listdir"></block>
+      <block type="os_data_download"></block>
 
-      <!-- 출력 뮤테이터 -->
-      <block type="print_mutator"></block>
-      <!-- 파이썬코드 입력 -->
-      <block type="itdata">
-        <value name="itdata1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- 파이썬 부분 코드(만능)-->
-      <block type="indata"></block>
-
-      <block type="class_func_param"></block>
-      <!--------------------------------------------------------------------------------------------시스템OS-->
-      <category name="%{BKY_CATEGORY_OS}" colour="%{BKY_OS_HUE}">
-        <block type="os_library"></block>
-        <block type="os_data_remove"></block>
-        <block type="os_data_listdir"></block>
-        <block type="os_data_download"></block>
-
-        <label text="os & os.path & shutil"></label>
+      <label text="os & os.path & shutil"></label>
          
         <block type="printf">
           <value name="content1">
@@ -9192,26 +9161,6 @@
     // **************************************
     // ********  데이터셋_불러오기     **********//
     // **************************************//  
-
-    //팝업창 열기 블록 
-    function datasets_load_lms() {
-      window.open("http://localhost:8000/datasets_load_lms", "a",
-        "width=600, height=500, left=100, top=50, directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=no,resizable=no,"
-        );
-    }
-
-
-    //       <a href="www.naver.com" 
-    //           onMouseOver="window.status='';return true"; 
-    //           onclick="window.status='';return true"; 
-    //           onfocus="window.status='';return true"; 
-    // > 
-    // <img id="tab01" src="../images/main/tab_01_01.gif"> 
-    //  </a> 
-
-
-
-
     function exportToCsv(filename, rows) {
 
       console.log("fileName_check", fileName);
