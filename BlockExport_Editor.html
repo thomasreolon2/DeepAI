@@ -641,316 +641,325 @@
     <!--------------------------------------------------------------------------------------------시스템OS-->
     <category name="%{BKY_CATEGORY_OS}" colour="%{BKY_OS_HUE}">
       <block type="os_library"></block>
+
       <block type="os_data_remove"></block>
+
       <block type="os_data_listdir"></block>
+
       <block type="os_data_download"></block>
 
       <label text="os & os.path & shutil"></label>
-         
-        <block type="printf">
-          <value name="content1">
-            <block type="os_getcwd"></block>
-          </value>
-        </block>
 
-        <block type="printf">
-          <value name="content1">
-            <block type="os_listdir"></block>
-          </value>
-        </block>
-        <!-- 디렉토리생성 -->
-        <block type="printf">
-          <value name="content1">
-            <block type="os_dir">
-              <value name="va">
-                <shadow type="indata">
-                  <field name="indata1">'temp'</field>
-                </shadow>
-              </value>
-            </block>
-          </value>
-        </block>
-        <!-- 파일삭제 -->
-        <block type="os_remove">
-          <value name="va">
-            <shadow type="indata">
-              <field name="indata1">'temp'</field>
-            </shadow>
-          </value>
-        </block>
-        <!-- 파일명 변경 -->
-        <block type="os_rename">
-          <value name="va1">
-            <shadow type="indata">
-              <field name="indata1">'원본'</field>
-            </shadow>
-          </value>
-          <value name="va2">
-            <shadow type="indata">
-              <field name="indata1">'복사본'</field>
-            </shadow>
-          </value>
-        </block>
+      <block type="printf">
+        <value name="content1">
+          <block type="os_getcwd"></block>
+        </value>
+      </block>
 
-        <block type = "abspath">
-          <value name="NAME">
-            <shadow type="indata">
-              <field name="indata1">"파일 혹은 폴더"</field>
-            </shadow>
-          </value>
-        </block>
+      <block type="printf">
+        <value name="content1">
+          <block type="os_listdir"></block>
+        </value>
+      </block>
 
-        <block type = "basename">
-          <value name="NAME">
-            <shadow type="indata">
-              <field name="indata1">"절대경로"</field>
-            </shadow>
-          </value>
-        </block>
+      <!-- 디렉토리생성 -->
+      <block type="printf">
+        <value name="content1">
+          <block type="os_dir">
+            <value name="va">
+              <shadow type="indata">
+                <field name="indata1">'temp'</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
 
-        <block type = "dirname">
-          <value name="NAME">
-            <shadow type="indata">
-              <field name="indata1">'path'</field>
-            </shadow>
-          </value>
-        </block>
+      <!-- 파일삭제 -->
+      <block type="os_remove">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1">'temp'</field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 파일명 변경 -->
+      <block type="os_rename">
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1">'원본'</field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1">'복사본'</field>
+          </shadow>
+        </value>
+      </block>
 
-        <block type = "exists">
-          <value name="NAME">
-            <shadow type="indata">
-              <field name="indata1">'path'</field>
-            </shadow>
-          </value>
-        </block>
+      <block type = "abspath">
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1">"파일 혹은 폴더"</field>
+          </shadow>
+        </value>
+      </block>
 
-        <block type = "getsize">
-          <value name="NAME">
-            <shadow type="indata">
-              <field name="indata1">'path'</field>
-            </shadow>
-          </value>
-        </block>
+      <block type = "basename">
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1">"절대경로"</field>
+          </shadow>
+        </value>
+      </block>
 
-        <block type = "is_dir_file">
-          <value name="NAME">
-            <shadow type="indata">
-              <field name="indata1">'path'</field>
-            </shadow>
-          </value>
-        </block>
+      <block type = "dirname">
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1">'path'</field>
+          </shadow>
+        </value>
+      </block>
 
-        <block type = "path_split">
-          <value name="NAME">
-            <shadow type="indata">
-              <field name="indata1">'path'</field>
-            </shadow>
-          </value>
-        </block>
+      <block type = "exists">
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1">'path'</field>
+          </shadow>
+        </value>
+      </block>
 
-        <block type="shutil_file">
-          <value name="va1">
-            <shadow type="indata">
-              <field name="indata1">원본</field>
-            </shadow>
-          </value>
-          <value name="va2">
-            <shadow type="indata">
-              <field name="indata1">복사</field>
-            </shadow>
-          </value>
-        </block>
+      <block type = "getsize">
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1">'path'</field>
+          </shadow>
+        </value>
+      </block>
 
-        <label text="time & datetime"></label>
-        <!--<block type="time_library"></block>-->
-        <block type="time_"></block>
-        <block type="sleep">
-          <value name="val1">
-            <shadow type="indata">
-              <field name="indata1">초</field>
-            </shadow>
-          </value>
-        </block>
+      <block type = "is_dir_file">
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1">'path'</field>
+          </shadow>
+        </value>
+      </block>
 
-        <!--<block type="datetime_library"></block>-->
+      <block type = "path_split">
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1">'path'</field>
+          </shadow>
+        </value>
+      </block>
 
-        <!-- datetime 객체 생성 리성주-->
-        <block type = "datetime_now">
-          <value name = "variables">
-            <block type="variables_get">
-              <field name="VAR">day</field>
-            </block>
-          </value>
-        </block>
-        <!-- 년도, 년, 월, 일, 시, 분, 초 사용 -->
-        <block type = "now_method">
-          <value name = "object">
-            <block type="variables_get">
-              <field name="VAR">day</field>
-            </block>
-          </value>
-        </block>
-      </category>
-      <!----------------------------------------------------------------------------------------------파일-->
-      <category name="%{BKY_CATEGORY_FILE}" colour="%{BKY_FILE_HUE}">
-        <block type="pickle_library"></block>
-        <block type="csv_library"></block>
-        <!-- 기태 수정(로컬 파일 열기) 21.01.01 ------------------------------------> 	
-        <block type = "fd_open">
-          <value name="text">               
-              <block type="fileopen"></block>     
-          </value>
-        </block>
-        
-        <!-- <block type="fileopen3"></block>    -->
-	      <!-- 기태 수정 (로컬 파일 열기)---------------------------------------------> 	
+      <block type="shutil_file">
+        <value name="va1">
+          <shadow type="indata">
+            <field name="indata1">원본</field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1">복사</field>
+          </shadow>
+        </value>
+      </block>
 
-        <!-- 파일 읽기 -->
-        <block type = "fd_read"></block>
-        <!-- 파일 쓰기 -->
-        <block type = "fd_write">
-          <value name="text">
-            <block type="variables_get">
-              <field name="VAR">data</field>
-            </block>
-          </value>
-        </block>
-        <!-- 피클 입력 -->
-        <block type="pickle_dump">
-          <value name="va1">
-            <shadow type="indata">
-              <field name="indata1">데이터</field>
-            </shadow>
-          </value>
-          <value name="va2">
-            <shadow type="indata">
-              <field name="indata1">f</field>
-            </shadow>
-          </value>
-        </block>
-        <!-- 피클 불러오기 -->
-        <block type="pickle_load">
-          <value name="va">
-            <shadow type="indata">
-              <field name="indata1">f</field>
-            </shadow>
-          </value>
-        </block>
-        <!-- 파일 닫기 -->
-        <block type = "fd_close"></block>
+      <label text="time & datetime"></label>
+      <!--<block type="time_library"></block>-->
+      <block type="time_"></block>
+      <block type="sleep">
+        <value name="val1">
+          <shadow type="indata">
+            <field name="indata1">초</field>
+          </shadow>
+        </value>
+      </block>
 
-        <!-- with -->
-        <block type = "withs">
-          <value name="set0">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-          <value name="set1">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
-        </block>
-      
-        <block type="csv_reader_writer">
-          <value name="VAR">
-            <shadow type="indata">
-              <field name="indata1">f</field>
-            </shadow>
-          </value>
-        </block>
+      <!--<block type="datetime_library"></block>-->
 
-        <block type = "writerows">
-          <value name="VAR">
-            <block type="variables_get">
-              <field name="VAR">csvobj</field>
-            </block>
-          </value>
-          <value name="text">
-            <shadow type="indata">
-              <field name="indata1">data</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="fileopen2"></block>   
-        </category>
-      </category>
+      <!-- datetime 객체 생성 리성주-->
+      <block type = "datetime_now">
+        <value name = "variables">
+          <block type="variables_get">
+            <field name="VAR">day</field>
+          </block>
+        </value>
+      </block>
+      <!-- 년도, 년, 월, 일, 시, 분, 초 사용 -->
+      <block type = "now_method">
+        <value name = "object">
+          <block type="variables_get">
+            <field name="VAR">day</field>
+          </block>
+        </value>
+      </block>
     </category>
 
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   숫자(NUM) 문자 ( STR )                         ******************************* -->
-    <!-- #####################################################################################################  -->
-    <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> 
-      <block type="math_number">
-        <field name="NUM">0</field>
-      </block>
+    <!----------------------------------------------------------------------------------------------파일-->
+    <category name="%{BKY_CATEGORY_FILE}" colour="%{BKY_FILE_HUE}">
+      <block type="pickle_library"></block>
 
-      <!-- 연산블럭 -->
-      <block type="Oper">
-        <value name="A">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-        <value name="B">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
+      <block type="csv_library"></block>
+
+      <!-- 기태 수정(로컬 파일 열기) 21.01.01 ------------------------------------> 	
+      <block type = "fd_open">
+        <value name="text">               
+            <block type="fileopen"></block>     
         </value>
       </block>
+      <!-- 기태 수정 (로컬 파일 열기)---------------------------------------------> 	
 
-      <!-- 형변환  -->
-      <block type="convert_block">
-        <value name="A">
+      <!-- 파일 읽기 -->
+      <block type = "fd_read"></block>
+      <!-- 파일 쓰기 -->
+      <block type = "fd_write">
+        <value name="text">
+          <block type="variables_get">
+            <field name="VAR">data</field>
+          </block>
+        </value>
+      </block>
+      <!-- 피클 입력 -->
+      <block type="pickle_dump">
+        <value name="va1">
           <shadow type="indata">
-            <field name="indata1">1</field>
+            <field name="indata1">데이터</field>
+          </shadow>
+        </value>
+        <value name="va2">
+          <shadow type="indata">
+            <field name="indata1">f</field>
           </shadow>
         </value>
       </block>
+      <!-- 피클 불러오기 -->
+      <block type="pickle_load">
+        <value name="va">
+          <shadow type="indata">
+            <field name="indata1">f</field>
+          </shadow>
+        </value>
+      </block>
+      <!-- 파일 닫기 -->
+      <block type = "fd_close"></block>
 
-      <!-- 내장함수 - 숫자-->
-      <block type="built_in_function_num">
-        <value name="A">
+      <!-- with -->
+      <block type = "withs">
+        <value name="set0">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="set1">
           <shadow type="indata">
             <field name="indata1"></field>
           </shadow>
         </value>
       </block>
+    
+      <block type="csv_reader_writer">
+        <value name="VAR">
+          <shadow type="indata">
+            <field name="indata1">f</field>
+          </shadow>
+        </value>
+      </block>
 
-      <!-- text -->
-      <block type="text"></block>
-      <!-- 문자 생성 -->
-      <block type = "create_text">
+      <block type = "writerows">
         <value name="VAR">
           <block type="variables_get">
-            <field name="VAR">s</field>
+            <field name="VAR">csvobj</field>
           </block>
         </value>
         <value name="text">
           <shadow type="indata">
-            <field name="indata1">Hello, Python!</field>
+            <field name="indata1">data</field>
           </shadow>
         </value>
       </block>
-      <!-- 문자 합치기 -->
-      <block type="text_join"></block>
-      <!-- len -->
-      <block type="text_length">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">s</field>
-          </block>
-        </value>
-        <value name="VALUE">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+      <block type="fileopen2"></block>   
+      </category>
+    </category>
+  </category>
+
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   숫자(NUM) 문자 ( STR )                 ******************************* -->
+  <!-- #####################################################################################################  -->
+  <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> 
+    <block type="math_number">
+      <field name="NUM">0</field>
+    </block>
+
+    <!-- 연산블럭 -->
+    <block type="Oper">
+      <value name="A">
+        <shadow type="indata">
+          <field name="indata1">0</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="indata">
+          <field name="indata1">0</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- 형변환  -->
+    <block type="convert_block">
+      <value name="A">
+        <shadow type="indata">
+          <field name="indata1">1</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- 내장함수 - 숫자-->
+    <block type="built_in_function_num">
+      <value name="A">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- text -->
+    <block type="text"></block>
+
+    <!-- 문자 생성 -->
+    <block type = "create_text">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">s</field>
+        </block>
+      </value>
+      <value name="text">
+        <shadow type="indata">
+          <field name="indata1">Hello, Python!</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- 문자 합치기 -->
+    <block type="text_join"></block>
+
+    <!-- len -->
+    <block type="text_length">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">s</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
       
-     <!-- 문자 슬라이스 -->
-     <block type="text_slice">
+    <!-- 문자 슬라이스 -->
+    <block type="text_slice">
       <value name="VAR">
         <block type="variables_get">
           <field name="VAR">s</field>
@@ -973,164 +982,167 @@
       </value>
     </block>
 
-      <!-- 문자 편집 -->
-      <block type="text_editing">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">s</field>
-          </block>
-        </value>
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 문자 편집 -->
+    <block type="text_editing">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">s</field>
+        </block>
+      </value>
+      <value name="INPUT1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 문자 검색 -->
-      <block type="text_search">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">s</field>
-          </block>
-        </value>
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 문자 검색 -->
+    <block type="text_search">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">s</field>
+        </block>
+      </value>
+      <value name="INPUT1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 문자 대소문자 -->
-      <block type="text_up_low">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">s</field>
-          </block>
-        </value>
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 문자 대소문자 -->
+    <block type="text_up_low">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">s</field>
+        </block>
+      </value>
+      <value name="INPUT1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
 
+    
+    <!-- 문자 정렬 -->
+    <block type="text_sort">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">s</field>
+        </block>
+      </value>
+      <value name="INPUT1">
+        <shadow type="indata">
+          <field name="indata1">' '</field>
+        </shadow>
+      </value>
+      <value name="INPUT2">
+        <shadow type="indata">
+          <field name="indata1">10</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- 문자 질의 -->
+    <block type="text_query">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">s</field>
+        </block>
+      </value>
+      <value name="INPUT1">
+        <shadow type="indata">
+          <field name="indata1">10</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   논리(Logic)  조건, 판단                ******************************* -->
+  <!-- #####################################################################################################  -->
+  <category name="%{BKY_CATEGORY_LOGIC}" colour="%{BKY_LOGIC_HUE}">
       
-      <!-- 문자 정렬 -->
-      <block type="text_sort">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">s</field>
-          </block>
-        </value>
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1">' '</field>
-          </shadow>
-        </value>
-        <value name="INPUT2">
-          <shadow type="indata">
-            <field name="indata1">10</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- if -->
+    <block type="controls_if">
+      <value name="IF0">
+        <shadow type="indata">
+          <field name="indata1">True</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 문자 질의 -->
-      <block type="text_query">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">s</field>
-          </block>
-        </value>
-        <value name="INPUT1">
-          <shadow type="indata">
-            <field name="indata1">10</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- if_else --> 
+    <block type="controls_ifelse">
+      <value name="IF0">
+        <shadow type="indata">
+          <field name="indata1">True</field>
+        </shadow>
+      </value>
+    </block>
 
-      
-    </category>
+    <!-- 비교 블록 -->
+    <block type="logic_compare">
+      <value name="A">
+        <shadow type="indata">
+          <field name="indata1">0</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="indata">
+          <field name="indata1">0</field>
+        </shadow>
+      </value>
+    </block>
 
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   논리(Logic)  조건, 판단                ******************************* -->
-    <!-- #####################################################################################################  -->
-    <category name="%{BKY_CATEGORY_LOGIC}" colour="%{BKY_LOGIC_HUE}">
-      
-      <!-- if -->
-      <block type="controls_if">
-        <value name="IF0">
-          <shadow type="indata">
-            <field name="indata1">True</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- true, false -->
+    <block type="logic_operation">
+      <value name="A">
+        <shadow type="indata">
+          <field name="indata1">True</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="indata">
+          <field name="indata1">True</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- if_else --> 
-      <block type="controls_ifelse">
-        <value name="IF0">
-          <shadow type="indata">
-            <field name="indata1">True</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- 비교 블록 -->
-      <block type="logic_compare">
-        <value name="A">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-        <value name="B">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- true, false -->
-      <block type="logic_operation">
-        <value name="A">
-          <shadow type="indata">
-            <field name="indata1">True</field>
-          </shadow>
-        </value>
-        <value name="B">
-          <shadow type="indata">
-            <field name="indata1">True</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- not 블록-->
-      <block type="logic_negate">
-        <value name="BOOL">
-          <shadow type="indata">
-            <field name="indata1">True</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- 참, 거짓 -->
-      <block type="logic_boolean"></block>
-      <!-- null값 -->
-      <block type="logic_null"></block>
+    <!-- not 블록-->
+    <block type="logic_negate">
+      <value name="BOOL">
+        <shadow type="indata">
+          <field name="indata1">True</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 삼항연산자 -->
-      <block type="logic_ternary">
-        <value name="THEN">
-          <shadow type="indata">
-            <field name="indata1">True리턴</field>
-          </shadow>
-        </value>
-        <value name="IF">
-          <shadow type="indata">
-            <field name="indata1">조건</field>
-          </shadow>
-        </value>
-        <value name="ELSE">
-          <shadow type="indata">
-            <field name="indata1">False리턴</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 참, 거짓 -->
+    <block type="logic_boolean"></block>
+    
+    <!-- null값 -->
+    <block type="logic_null"></block>
+
+    <!-- 삼항연산자 -->
+    <block type="logic_ternary">
+      <value name="THEN">
+        <shadow type="indata">
+          <field name="indata1">True리턴</field>
+        </shadow>
+      </value>
+      <value name="IF">
+        <shadow type="indata">
+          <field name="indata1">조건</field>
+        </shadow>
+      </value>
+      <value name="ELSE">
+        <shadow type="indata">
+          <field name="indata1">False리턴</field>
+        </shadow>
+      </value>
+    </block>
 
       <!-- 예외처리 -->
       <block type="try_except">
@@ -1140,116 +1152,125 @@
       </block>
 
     </category>
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   반복(Repeat)                           ******************************* -->
-    <!-- #####################################################################################################  -->
-    <category name="%{BKY_CATEGORY_REPEAT}" colour="%{BKY_LOOPS_HUE}">
-      <!-- [R1] repeat1-->
-      <block type="controls_repeat">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">i</field>
-          </block>
-        </value>
-        <value name="COUNT">
-          <shadow type="indata">
-            <field name="indata1">4</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- [R2] new_while-->
-      <block type="controls_whileTorF">
-        <value name="BOOL">
-          <shadow type="indata">
-            <field name="indata1">True</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- [R3] for 문 range -->
-      <block type="py_for1">
-        <value name="item">
-          <block type="variables_get">
-            <field name="VAR">i</field>
-          </block>
-        </value>
-        <value name="list">
-          <shadow type="indata">
-            <field name="indata1">0,10,1</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- [R4] for 문 in -->
-      <block type="py_for">
-        <value name="item">
-          <shadow type="indata">
-            <field name="indata1">x, y</field>
-          </shadow>
-        </value>
-        <value name="list">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      <!-- [R5] 범위1 블록 -->
-      <block type="range_len">
-        <value name="x">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      <!-- <block type="range1">
-        <value name="VALUE1">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-        <value name="VALUE2">
-          <shadow type="indata">
-            <field name="indata1">5</field>
-          </shadow>
-        </value>
-      </block> -->
-      <!-- [R6] 범위2 블록 -->      
-      <block type="range2">
-        <value name="VALUE1">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- [R7] 범위3 블록 -->      
-      <block type="range3">
-        <value name="x">
-          <shadow type="indata">
-            <field name="indata1">0</field>
-          </shadow>
-        </value>
-        <value name="y">
-          <shadow type="indata">
-            <field name="indata1">10</field>
-          </shadow>
-        </value>
-        <value name="z">
-          <shadow type="indata">
-            <field name="indata1">1</field>
-          </shadow>
-        </value>
-      </block>
-      <!-- [R8] break 블록 -->      
-      <block type="break_block"></block>
-      <!-- [R9] continue 블록 -->      
-      <block type="continue_block"></block>
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   반복(Repeat)                           ******************************* -->
+  <!-- #####################################################################################################  -->
+  <category name="%{BKY_CATEGORY_REPEAT}" colour="%{BKY_LOOPS_HUE}">
+    <!-- [R1] repeat1-->
+    <block type="controls_repeat">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">i</field>
+        </block>
+      </value>
+      <value name="COUNT">
+        <shadow type="indata">
+          <field name="indata1">4</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- [R2] new_while-->
+    <block type="controls_whileTorF">
+      <value name="BOOL">
+        <shadow type="indata">
+          <field name="indata1">True</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- [R3] for 문 range -->
+    <block type="py_for1">
+      <value name="item">
+        <block type="variables_get">
+          <field name="VAR">i</field>
+        </block>
+      </value>
+      <value name="list">
+        <shadow type="indata">
+          <field name="indata1">0,10,1</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- [R4] for 문 in -->
+    <block type="py_for">
+      <value name="item">
+        <shadow type="indata">
+          <field name="indata1">x, y</field>
+        </shadow>
+      </value>
+      <value name="list">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- [R5] 범위1 블록 -->
+    <block type="range_len">
+      <value name="x">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- <block type="range1">
+      <value name="VALUE1">
+        <shadow type="indata">
+          <field name="indata1">0</field>
+        </shadow>
+      </value>
+      <value name="VALUE2">
+        <shadow type="indata">
+          <field name="indata1">5</field>
+        </shadow>
+      </value>
+    </block> -->
+
+    <!-- [R6] 범위2 블록 -->      
+    <block type="range2">
+      <value name="VALUE1">
+        <shadow type="indata">
+          <field name="indata1">0</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- [R7] 범위3 블록 -->      
+    <block type="range3">
+      <value name="x">
+        <shadow type="indata">
+          <field name="indata1">0</field>
+        </shadow>
+      </value>
+      <value name="y">
+        <shadow type="indata">
+          <field name="indata1">10</field>
+        </shadow>
+      </value>
+      <value name="z">
+        <shadow type="indata">
+          <field name="indata1">1</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- [R8] break 블록 -->      
+    <block type="break_block"></block>
+    
+    <!-- [R9] continue 블록 -->      
+    <block type="continue_block"></block>
     </category>
     <!-- 2020-12-26 양승국 end -->
 
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   리스트 , 컬렉션(Collection)             ******************************* -->
-    <!-- #####################################################################################################  -->
-    <category name="%{BKY_CATEGORY_COLLECTION}" colour="%{BKY_COLLECTION_HUE}"> 
-      <category name="조작&가공">
-        <!-- [C1] -->
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   리스트 , 컬렉션(Collection)             ******************************* -->
+  <!-- #####################################################################################################  -->
+  <category name="%{BKY_CATEGORY_COLLECTION}" colour="%{BKY_COLLECTION_HUE}"> 
+    <category name="조작&가공">
+      <!-- [C1] -->
       <block type ="forif">
         <value name="SET0">
           <shadow type="indata">
@@ -1312,7 +1333,6 @@
         </value>
       </block>
 
-      
       <!-- [C3] 생성변환 -->
       <block type = "change_collection">
         <value name="LIST">
@@ -1389,94 +1409,13 @@
     </category>
   
     <category name="리스트&튜플">
-    <label text="리스트"></label>
+      <label text="리스트"></label>
 
-    <!-- [L1] 리스트 생성 -->
-    <block type = "create_list">
-      <value name="list">
-        <block type="variables_get">
-          <field name="VAR">my_list</field>
-        </block>
-      </value>  
-      <value name="text">
-        <shadow type="indata">
-          <field name="indata1">1,2,3,4</field>
-        </shadow>
-      </value>
-    </block>
-
-    <!-- [L2] 리스트 삽입 -->
-    <block type="list_insert">
-      <value name="list">
-        <block type="variables_get">
-          <field name="VAR">my_list</field>
-        </block>
-      </value>  
-      <value name="INDEX">
-        <shadow type="indata">
-          <field name="indata1">인덱스</field>
-        </shadow>
-      </value>
-      <value name="VALUE">
-        <shadow type="indata">
-          <field name="indata1">값</field>
-        </shadow>
-      </value>
-    </block>
-
-    <!-- [L3] 리스트 정렬,역순 -->
-    <block type="list_sort_reverse">
-      <value name="list">
-        <block type="variables_get">
-          <field name="VAR">my_list</field>
-        </block>
-      </value>  
-    </block>
-
-    <!-- [L4] 데이터 다루기1 -->
-    <block type="create_new_list2">
-      <value name="VAR1">
-        <block type="variables_get">
-          <field name="VAR">my_list</field>
-        </block>
-      </value>
-      <value name="DIVISOR">
-        <shadow type="indata">
-          <field name="indata1"></field>
-        </shadow>
-      </value>
-    </block>
-       
-    <!-- [L5] 데이터 다루기2 -->
-    <block type="create_new_list">
-      <value name="VAR1">
-        <block type="variables_get">
-          <field name="VAR">my_list</field>
-        </block>
-      </value>
-      <value name="DIVISOR">
-        <shadow type="indata">
-          <field name="indata1"></field>
-        </shadow>
-      </value>
-    </block>
-
-    <!--zip함수-->
-    <block type="create_zip">
-      <value name="data_type">
-        <shadow type="indata">
-          <field name="indata1"></field>
-        </shadow>
-      </value>
-    </block>
-    
-
-    <label text="튜플"></label>
-      <!-- 튜플블록 -->
-      <block type = "create_tuple">
+      <!-- [L1] 리스트 생성 -->
+      <block type = "create_list">
         <value name="list">
           <block type="variables_get">
-            <field name="VAR">my_tuple</field>
+            <field name="VAR">my_list</field>
           </block>
         </value>  
         <value name="text">
@@ -1485,6 +1424,86 @@
           </shadow>
         </value>
       </block>
+
+      <!-- [L2] 리스트 삽입 -->
+      <block type="list_insert">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>  
+        <value name="INDEX">
+          <shadow type="indata">
+            <field name="indata1">인덱스</field>
+          </shadow>
+        </value>
+        <value name="VALUE">
+          <shadow type="indata">
+            <field name="indata1">값</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- [L3] 리스트 정렬,역순 -->
+      <block type="list_sort_reverse">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>  
+      </block>
+
+      <!-- [L4] 데이터 다루기1 -->
+      <block type="create_new_list2">
+        <value name="VAR1">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
+        <value name="DIVISOR">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+        
+      <!-- [L5] 데이터 다루기2 -->
+      <block type="create_new_list">
+        <value name="VAR1">
+          <block type="variables_get">
+            <field name="VAR">my_list</field>
+          </block>
+        </value>
+        <value name="DIVISOR">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <!--zip함수-->
+      <block type="create_zip">
+        <value name="data_type">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <label text="튜플"></label>
+        <!-- 튜플블록 -->
+        <block type = "create_tuple">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">my_tuple</field>
+            </block>
+          </value>  
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">1,2,3,4</field>
+            </shadow>
+          </value>
+        </block>
     </category>
     
     <category name="딕셔너리&집합">
@@ -1567,8 +1586,8 @@
       </block>
     </category>
 
+    <!---------------------------------------------------------------------------------------deque--------->
     <category name="디큐(deque)">
-      <!---------------------------------------------------------------------------------------deque--------->
       <label text="dequeue"></label>
       <!-- 컬렉션 라이브러리 -->
       <block type="collection_library"></block>
@@ -1608,940 +1627,835 @@
       </block>
     </category>  
       
-      <!-- 딕셔너리2 
-      <block type = "dict1"></block>
-      -->
-      <!-- 리스트 생성 -->
-      <!-- <block type="lists_create_with"></block> -->
-      <!-- 변수명 이렇게 하면 잘들어가지긴함
-        <value name="ADD0">
-          <shadow type="indata">
-            <field name="indata1">1</field>
-          </shadow>
-        </value>
-        <value name="ADD1">
-          <shadow type="indata">
-            <field name="indata1">2</field>
-          </shadow>
-        </value>
-        <value name="ADD2">
-          <shadow type="indata">
-            <field name="indata1">3</field>
-          </shadow>
-        </value> -->
-    
-      <!-- 같은 내용을 n번 넣어 리스트 생성 -->
-      <!-- <block type="lists_repeat">ITEM
-        <value name="ITEM">
-          <shadow type="indata">
-            <field name="indata1">1,2,3,4</field>
-          </shadow>
-        </value>
-        <value name="NUM">
-          <shadow type="indata">
-            <field name="indata1">5</field>
-          </shadow>
-        </value>
-      </block> -->
-      <!-- split -
-      <block type="lists_split">
-        <value name="INPUT">
-          <block type="variables_get">
-            <field name="VAR">my_list</field>
-          </block>
-        </value>
-        <value name="DELIM">
-          <shadow type="indata">
-            <field name="indata1">,</field>
-          </shadow>
-        </value>
-      </block>
-      -->
-      <!-- <block type="tfarraylen"></block>  -->
-
-
-      <!-- 튜플 -->
-      <!-- <block type="tuple"></block> -->
-      <!-- 새 블록  딕셔너리 -->
-      <!-- <block type="dict"></block> -->
-
-      <!-- 딕셔너리 옵션 -->
-      <!-- <block type="dic_menu">
-        <value name="dic1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="dic2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="dic3">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> -->
-      <!-- 집합 -->
-      <!-- <block type="set">
-        <value name="SET">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> -->
-      <!-- 집합선택 -->
-      
-      <!-- <block type="set_menu">
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> -->
-      <!-- 연산에 있음 <block type="sump"></block> -->
-      <!-- sort,reverse -->
-
-      <!-- 리스트에서 값 찾기 
-      <block type="list_index">
-        <value name="LIST">
-          <shadow type="indata">
-            <field name="indata1">my_list</field>
-          </shadow>
-        </value>
-        <value name="INDEX">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      -->
-
-
-      <!-- remove, pop, count, extend 
-      <block type="list_remove_pop_count_extend">
-        <value name="LIST">
-          <shadow type="indata">
-            <field name="indata1">my_list</field>
-          </shadow>
-        </value>
-        <value name="VALUE">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-
-      </block>
-      -->
-
-      <!-- 리스트 자르기 -->
-      <!-- <block type="list_dot">
-        <value name="list">
-          <shadow type="indata">
-            <field name="indata1">my_list</field>
-          </shadow>
-        </value>
-        <value name="a">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="b">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-   -->
-      <!-- return 반환
-      <block type="py_return"></block>
-      -->
-
-      <!-- 인덱스 가져오기 -->
-      <!-- <block type="array_select">
-        <value name="array_var"> 
-          <block type="variables_get">
-            <field name="VAR">array</field>
-          </block>
-        </value>
-      </block> -->
-      <!-- 2020-12-27-전우진 global -->
-    </category>
-
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   수학통계(Operation)                       ******************************* -->
-    <!-- #####################################################################################################  -->
-    <category name="%{BKY_CATEGORY_OPERATION}" colour="%{BKY_MATH_HUE}">
-      <block type = "operation_library"></block>
-      <label text="수학"></label>
-      
-      <!--<block type = "math_library"></block>-->
-      
-     
-      
-      <!--2020-12-29 전우진 math1  -->
-
-      
-      <block type = "math1">
-        <value name="va">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "math2">
-        <value name="va1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="va2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "math3"></block>
-
-      <!--2020-12-29 전우진 math1 end -->
-      <label text="통계 및 랜덤"></label>
-
-      <!--<block type = "static_library"></block>-->
-
-      <block type = "statistics1">
-        <value name="va">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "statistics2">
-        <value name="va1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="va2">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-
-      <!--<block type = "random_library"></block>-->
-      <block type = "random1_integer">
-      </block>
-
-      <block type = "random1_choice">
-        <value name="va2">
-          <shadow type="indata">
-            <field name="indata1">컬렉션</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "random1_shuffle">
-        <value name="va3">
-          <shadow type="indata">
-            <field name="indata1">컬렉션</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "random2">
-        <value name="va1">
-          <shadow type="indata">
-            <field name="indata1">시작</field>
-          </shadow>
-        </value>
-        <value name="va2">
-          <shadow type="indata">
-            <field name="indata1">끝</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "random3">
-        <value name="va1">
-          <shadow type="indata">
-            <field name="indata1">컬렉션</field>
-          </shadow>
-        </value>
-        <value name="va2">
-          <shadow type="indata">
-            <field name="indata1">갯수</field>
-          </shadow>
-        </value>
-      </block>
-    </category>
-
-    
-
-    
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   함수&클래스     //                     ******************************* -->
-    <!-- #####################################################################################################  -->
-    <!-- 커스텀 블록 -->
-    <!-- 함수 -->
-    <!-- <category name="기존함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category> -->
-
-    <category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}"> <!--함수 (Function)-->
-
-      <label text="함수"></label>
-      <!-- 함수 -->
-      <block type="webdefine">
-        <value name="1">
-          <block type="variables_get">
-            <field name="VAR">func</field>
-          </block>
-        </value>  
-        <value name="2">
-          <shadow type="indata">
-            <field name="indata1">x</field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- 생성자 -->
-      <block type="webdefine2">
-        <value name="1">
-          <block type="variables_get">
-            <field name="VAR">__init__</field>
-          </block>
-        </value>  
-        <value name="2">
-          <shadow type="indata">
-            <field name="indata1">self,</field>
-          </shadow>
-        </value>
-        <value name="DO">
-          <block type="self">
-            <value name="VAR">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value> 
-            <value name="varset">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-          </block>
-        </value>
-      </block>
-
-      <!-- return -->
-      <block type="webreturn2">
-        <value name="return">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-
-      <!-- return1 -->
-      <block type="func_return1">
-        <value name="1">
-          <block type="variables_get">
-            <field name="VAR">res</field>
-          </block>
-        </value>  
-        <value name="2">
-          <block type="variables_get">
-            <field name="VAR">func</field>
-          </block>
-        </value>  
-        <value name="3">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>  
-      </block>
-
-      <block type="func_return11">
-        <value name="1">
-          <block type="variables_get">
-            <field name="VAR">func</field>
-          </block>
-        </value>
-        <value name="3">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>   
-      </block>
-
-      <!-- return2 -->
-      <block type="func_return2">
-        <value name="1">
-          <shadow type="indata">
-            <field name="indata1">x,y</field>
-          </shadow>
-        </value>  
-        <value name="2">
-          <block type="variables_get">
-            <field name="VAR">func</field>
-          </block>
-        </value> 
-        <value name="3">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value> 
-      </block>
-      <!-- 전역변수 -->
-      <block type="global">
-        <value name="text">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      
-      
-      
-      <label text="클래스"></label>
-      <!-- 클래스 -->
-      <block type="webclass">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">MyClass</field>
-          </block>
-        </value> 
-      </block>
-      <!-- 상속 -->
-      <block type="webclass2">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">MyClass</field>
-          </block>
-        </value> 
-        <value name="INPUT">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      
-
-      <!-- self -->
-      <block type="self">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">a</field>
-          </block>
-        </value> 
-        <value name="varset">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- 클래스 self -->
-      <block type="self_block">
-        <value name="NAME">
-          <block type="variables_get">
-            <field name="VAR">result</field>
-          </block>
-        </value> 
-      </block>  
-      <!-- 객체 사용 -->
-      <block type="class_use">
-        <value name="VAR1">
-          <block type="variables_get">
-            <field name="VAR">obj</field>
-          </block>
-        </value> 
-        <value name="VAR2">
-          <block type="variables_get">
-            <field name="VAR">func</field>
-          </block>
-        </value> 
-        <value name="3">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-
-      <block type="class_use2">
-        <value name="VAR1">
-          <block type="variables_get">
-            <field name="VAR">obj</field>
-          </block>
-        </value> 
-        <value name="VAR2">
-          <block type="variables_get">
-            <field name="VAR">func</field>
-          </block>
-        </value> 
-        <value name="3">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block> 
-      <!-- 객체 생성 -->
-      <block type="class_make">
-        <value name="1">
-          <block type="variables_get">
-            <field name="VAR">obj</field>
-          </block>
-        </value> 
-        <value name="2">
-          <block type="variables_get">
-            <field name="VAR">MyClass</field>
-          </block>
-        </value> 
-        <value name="3">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-
-      
-
-      <label text=""></label>
-      <block type = "withs">
-        <value name="set0">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-        <value name="set1">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      
-    </category>
-
-
-    <!-- 클래스 준비중 -->
-    <!-- <category name="기존클래스" colour="%{BKY_CLASS_HUE}">
-    
-      클래스 
-      <block type="python_class"></block>
-      클래스 
-
-      클래스 함수 
-      
-        <value name="ADD">
-          <block type="variables_get">
-                <field name="VAR">param</field>
-              </block>
-            </value>
-           
-      <block type="class_func">
-        <value name="class_func_val">
-          <block type="class_func_param">
-            <value name="ADD0">
-              <shadow type="indata">
-                <field name="indata1">self</field>
-              </shadow>
-            </value>
-          </block>
-        </value> 
-      </block>  
-      클래스 함수 
-      
-       클래스 함수 return
-       <block type="class_func_return">
-        <value name="class_func_return_param">
-          <block type="class_func_param">
-          
-          </block>
-        </value> 
-      </block>  
-      클래스 함수 return
-
-       클래스 =
-       <block type="function__parameter">
-        <value name="function__parameter_val">
-          <block type="class_func_param"></block>
-        </value> 
-       </block>  
-      클래스 =
-
-
-       클래스 connect 
-       <block type="class_instance"></block>
-       클래스 connect
-
-      객체 
-      <block type="class_refer">
-        <value name="class_refer_val">
-          <block type="variables_get">
-            <field name="VAR">df</field>
-          </block>
-        </value>
-      </block>
-      객체 
-
-      객체 함수
-      <block type="class_instance_function">
-        <value name="class_instance_functions"> 
-          <block type="class_func_param"></block> 
-        </value> 
-      </block>  
-      객체 함수
+    <!-- 딕셔너리2 
+    <block type = "dict1"></block>
+    -->
+    <!-- 리스트 생성 -->
+    <!-- <block type="lists_create_with"></block> -->
+    <!-- 변수명 이렇게 하면 잘들어가지긴함
+      <value name="ADD0">
+        <shadow type="indata">
+          <field name="indata1">1</field>
+        </shadow>
+      </value>
+      <value name="ADD1">
+        <shadow type="indata">
+          <field name="indata1">2</field>
+        </shadow>
+      </value>
+      <value name="ADD2">
+        <shadow type="indata">
+          <field name="indata1">3</field>
+        </shadow>
+      </value> -->
   
-  </category> -->
+    <!-- 같은 내용을 n번 넣어 리스트 생성 -->
+    <!-- <block type="lists_repeat">ITEM
+      <value name="ITEM">
+        <shadow type="indata">
+          <field name="indata1">1,2,3,4</field>
+        </shadow>
+      </value>
+      <value name="NUM">
+        <shadow type="indata">
+          <field name="indata1">5</field>
+        </shadow>
+      </value>
+    </block> -->
+    <!-- split -
+    <block type="lists_split">
+      <value name="INPUT">
+        <block type="variables_get">
+          <field name="VAR">my_list</field>
+        </block>
+      </value>
+      <value name="DELIM">
+        <shadow type="indata">
+          <field name="indata1">,</field>
+        </shadow>
+      </value>
+    </block>
+    -->
+    <!-- <block type="tfarraylen"></block>  -->
 
-   <!--클래스 (Class)-->
-  <!-- <category name="%{BKY_CATEGORY_CLASS}" colour="%{BKY_CLASS_HUE}">
-      <block type="webclass">
-        <value name="class">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
-      <block type="self">
-        <value name="varset">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+
+    <!-- 튜플 -->
+    <!-- <block type="tuple"></block> -->
+    <!-- 새 블록  딕셔너리 -->
+    <!-- <block type="dict"></block> -->
+
+    <!-- 딕셔너리 옵션 -->
+    <!-- <block type="dic_menu">
+      <value name="dic1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+      <value name="dic2">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+      <value name="dic3">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block> -->
+    <!-- 집합 -->
+    <!-- <block type="set">
+      <value name="SET">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block> -->
+    <!-- 집합선택 -->
     
-    </category> -->
-    <!-- #####################################################################################################  -->
-    <!-- ******************************  데이터베이스     //                     ******************************* -->
-    <!-- #####################################################################################################  -->
-    <category name="%{BKY_CATEGORY_DB}" colour="205">
-      <!-- sqllite3 라이브러리-->
-      <block type="sqlite_library"></block>
+    <!-- <block type="set_menu">
+      <value name="SET1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+      <value name="SET2">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block> -->
+    <!-- 연산에 있음 <block type="sump"></block> -->
+    <!-- sort,reverse -->
+
+    <!-- 리스트에서 값 찾기 
+    <block type="list_index">
+      <value name="LIST">
+        <shadow type="indata">
+          <field name="indata1">my_list</field>
+        </shadow>
+      </value>
+      <value name="INDEX">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+    -->
+
+
+    <!-- remove, pop, count, extend 
+    <block type="list_remove_pop_count_extend">
+      <value name="LIST">
+        <shadow type="indata">
+          <field name="indata1">my_list</field>
+        </shadow>
+      </value>
+      <value name="VALUE">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+
+    </block>
+    -->
+
+    <!-- 리스트 자르기 -->
+    <!-- <block type="list_dot">
+      <value name="list">
+        <shadow type="indata">
+          <field name="indata1">my_list</field>
+        </shadow>
+      </value>
+      <value name="a">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+      <value name="b">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+  -->
+    <!-- return 반환
+    <block type="py_return"></block>
+    -->
+
+    <!-- 인덱스 가져오기 -->
+    <!-- <block type="array_select">
+      <value name="array_var"> 
+        <block type="variables_get">
+          <field name="VAR">array</field>
+        </block>
+      </value>
+    </block> -->
+  </category>
+
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   수학통계(Operation)                       ******************************* -->
+  <!-- #####################################################################################################  -->
+  <category name="%{BKY_CATEGORY_OPERATION}" colour="%{BKY_MATH_HUE}">
+    <block type = "operation_library"></block>
+    <label text="수학"></label>
+    
+    <!--<block type = "math_library"></block>-->
+    <!--2020-12-29 전우진 math1  -->
+    <block type = "math1">
+      <value name="va">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "math2">
+      <value name="va1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+      <value name="va2">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "math3"></block>
+
+    <!--2020-12-29 전우진 math1 end -->
+    <label text="통계 및 랜덤"></label>
+
+    <!--<block type = "static_library"></block>-->
+
+    <block type = "statistics1">
+      <value name="va">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "statistics2">
+      <value name="va1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+      <value name="va2">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <!--<block type = "random_library"></block>-->
+    <block type = "random1_integer">
+    </block>
+
+    <block type = "random1_choice">
+      <value name="va2">
+        <shadow type="indata">
+          <field name="indata1">컬렉션</field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "random1_shuffle">
+      <value name="va3">
+        <shadow type="indata">
+          <field name="indata1">컬렉션</field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "random2">
+      <value name="va1">
+        <shadow type="indata">
+          <field name="indata1">시작</field>
+        </shadow>
+      </value>
+      <value name="va2">
+        <shadow type="indata">
+          <field name="indata1">끝</field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "random3">
+      <value name="va1">
+        <shadow type="indata">
+          <field name="indata1">컬렉션</field>
+        </shadow>
+      </value>
+      <value name="va2">
+        <shadow type="indata">
+          <field name="indata1">갯수</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   함수&클래스     //                     ******************************* -->
+  <!-- #####################################################################################################  -->
+  <!-- 커스텀 블록 -->
+  <!-- <category name="기존함수(Function)" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category> -->
+  <category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}">
+
+    <label text="함수"></label>
+    <!-- 함수 -->
+    <block type="webdefine">
+      <value name="1">
+        <block type="variables_get">
+          <field name="VAR">func</field>
+        </block>
+      </value>  
+      <value name="2">
+        <shadow type="indata">
+          <field name="indata1">x</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- 생성자 -->
+    <block type="webdefine2">
+      <value name="1">
+        <block type="variables_get">
+          <field name="VAR">__init__</field>
+        </block>
+      </value>  
+      <value name="2">
+        <shadow type="indata">
+          <field name="indata1">self,</field>
+        </shadow>
+      </value>
+      <value name="DO">
+        <block type="self">
+          <value name="VAR">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+          <value name="varset">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <!-- return -->
+    <block type="webreturn2">
+      <value name="return">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block> 
+
+    <!-- return1 -->
+    <block type="func_return1">
+      <value name="1">
+        <block type="variables_get">
+          <field name="VAR">res</field>
+        </block>
+      </value>  
+      <value name="2">
+        <block type="variables_get">
+          <field name="VAR">func</field>
+        </block>
+      </value>  
+      <value name="3">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>  
+    </block>
+
+    <block type="func_return11">
+      <value name="1">
+        <block type="variables_get">
+          <field name="VAR">func</field>
+        </block>
+      </value>
+      <value name="3">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>   
+    </block>
+
+    <!-- return2 -->
+    <block type="func_return2">
+      <value name="1">
+        <shadow type="indata">
+          <field name="indata1">x,y</field>
+        </shadow>
+      </value>  
+      <value name="2">
+        <block type="variables_get">
+          <field name="VAR">func</field>
+        </block>
+      </value> 
+      <value name="3">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value> 
+    </block>
+    <!-- 전역변수 -->
+    <block type="global">
+      <value name="text">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+    
+    <label text="클래스"></label>
+    <!-- 클래스 -->
+    <block type="webclass">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">MyClass</field>
+        </block>
+      </value> 
+    </block>
+    <!-- 상속 -->
+    <block type="webclass2">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">MyClass</field>
+        </block>
+      </value> 
+      <value name="INPUT">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
       
-      <!-- db연결, 생성-->
-      <block type="db_conn">
-        <value name="va">
-          <shadow type="indata">
-            <field name="indata1">'DB명.db'</field>
-          </shadow>
-        </value>
-      </block>
+
+    <!-- self -->
+    <block type="self">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">a</field>
+        </block>
+      </value> 
+      <value name="varset">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- 클래스 self -->
+    <block type="self_block">
+      <value name="NAME">
+        <block type="variables_get">
+          <field name="VAR">result</field>
+        </block>
+      </value> 
+    </block>  
+
+    <!-- 객체 사용 -->
+    <block type="class_use">
+      <value name="VAR1">
+        <block type="variables_get">
+          <field name="VAR">obj</field>
+        </block>
+      </value> 
+      <value name="VAR2">
+        <block type="variables_get">
+          <field name="VAR">func</field>
+        </block>
+      </value> 
+      <value name="3">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block> 
+
+    <block type="class_use2">
+      <value name="VAR1">
+        <block type="variables_get">
+          <field name="VAR">obj</field>
+        </block>
+      </value> 
+      <value name="VAR2">
+        <block type="variables_get">
+          <field name="VAR">func</field>
+        </block>
+      </value> 
+      <value name="3">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block> 
+
+    <!-- 객체 생성 -->
+    <block type="class_make">
+      <value name="1">
+        <block type="variables_get">
+          <field name="VAR">obj</field>
+        </block>
+      </value> 
+      <value name="2">
+        <block type="variables_get">
+          <field name="VAR">MyClass</field>
+        </block>
+      </value> 
+      <value name="3">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <label text=""></label>
+    <block type = "withs">
+      <value name="set0">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+      <value name="set1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+    
+  </category>
+
+  <!-- #####################################################################################################  -->
+  <!-- ******************************  데이터베이스     //                     ******************************* -->
+  <!-- #####################################################################################################  -->
+  <category name="%{BKY_CATEGORY_DB}" colour="205">
+    <!-- sqllite3 라이브러리-->
+    <block type="sqlite_library"></block>
       
-      <block type = "db_autocommit"></block>
+    <!-- db연결, 생성-->
+    <block type="db_conn">
+      <value name="va">
+        <shadow type="indata">
+          <field name="indata1">'DB명.db'</field>
+        </shadow>
+      </value>
+    </block>
+    
+    <block type = "db_autocommit"></block>
 
-      <!-- db삭제 -->
-      <block type = "db_deletedb">
-        <value name="SET0">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- db삭제 -->
+    <block type = "db_deletedb">
+      <value name="SET0">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- db종료 -->
-      <block type="db_close"></block>
+    <!-- db종료 -->
+    <block type="db_close"></block>
 
-      <!-- 커서 -->
-      <block type="db_cur"></block>
+    <!-- 커서 -->
+    <block type="db_cur"></block>
+    
+    <!-- sql실행 -->
+    <block type="db_exec">
+      <value name="va">
+        <shadow type="indata">
+          <field name="indata1">sql</field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- sql실행-->
+    <block type="db_execM">
+      <value name="va1">
+        <shadow type="indata">
+          <field name="indata1">sql</field>
+        </shadow>
+      </value>
+      <value name="va2">
+        <shadow type="indata">
+          <field name="indata1">data</field>
+        </shadow>
+      </value>
+    </block>
       
-      <!-- sql실행 -->
-      <block type="db_exec">
-        <value name="va">
-          <shadow type="indata">
-            <field name="indata1">sql</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 저장 -->
+    <block type="db_commit"></block>
+    
+    <!-- 복구 -->
+    <block type="db_rollback">
+      <value name="va">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- sql실행-->
-      <block type="db_execM">
-        <value name="va1">
-          <shadow type="indata">
-            <field name="indata1">sql</field>
-          </shadow>
-        </value>
-        <value name="va2">
-          <shadow type="indata">
-            <field name="indata1">data</field>
-          </shadow>
-        </value>
-      </block>
-      
-      <!-- 저장 -->
-      <block type="db_commit"></block>
-      
-      <!-- 복구 -->
-      <block type="db_rollback">
-        <value name="va">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+    <!-- <block type="db_fetchone"></block>
 
-      <!-- <block type="db_fetchone"></block>
+    <block type="db_fetchall"></block> -->
 
-           <block type="db_fetchall"></block> -->
+    <block type="db_fetch"></block>
 
-      <block type="db_fetch"></block>
+    <block type="db_fetchmany">
+      <value name="va">
+        <shadow type="indata">
+          <field name="indata1">개수</field>
+        </shadow>
+      </value>
+    </block>
 
-      <block type="db_fetchmany">
-        <value name="va">
-          <shadow type="indata">
-            <field name="indata1">개수</field>
-          </shadow>
-        </value>
-      </block>
+    <block type = "create_data1">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">data</field>
+        </block>
+      </value>  
+      <value name="text">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
 
-      <block type = "create_data1">
-        <value name="list">
-          <block type="variables_get">
-            <field name="VAR">data</field>
-          </block>
-        </value>  
-        <value name="text">
-          <shadow type="indata">
-            <field name="indata1"></field>
-          </shadow>
-        </value>
-      </block>
+    <block type = "db_with">
+      <value name="set0">
+        <block type="variables_get">
+          <field name="VAR">con</field>
+        </block>
+      </value>  
+    </block>
 
-      <block type = "db_with">
-        <value name="set0">
-          <block type="variables_get">
-            <field name="VAR">con</field>
-          </block>
-        </value>  
-      </block>
+    <!-- 테이블 생성 -->
+    <block type = "db_create">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="d2">
+        <shadow type="indata">
+          <field name="indata1">변수 타입, 변수 타입</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 테이블 생성 -->
-      <block type = "db_create">
-        <value name="d1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="d2">
-          <shadow type="indata">
-            <field name="indata1">변수 타입, 변수 타입</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 삽입 -->
+    <block type = "db_insert">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="d2">
+        <shadow type="indata">
+          <field name="indata1">(?, ?)</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 삽입 -->
-      <block type = "db_insert">
-        <value name="d1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="d2">
-          <shadow type="indata">
-            <field name="indata1">(?, ?)</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 조회 -->
+    <block type = "db_select2">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+      <value name="d2">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 조회 -->
-      <block type = "db_select2">
-        <value name="d1">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-        <value name="d2">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 조회1 where-->
+    <!-- <block type = "db_select1">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+      <value name="d2">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="d3">
+        <shadow type="indata">
+          <field name="indata1">조건</field>
+        </shadow>
+      </value>
+    </block> -->
 
-      <!-- 조회1 where-->
-      <!-- <block type = "db_select1">
-        <value name="d1">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-        <value name="d2">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="d3">
-          <shadow type="indata">
-            <field name="indata1">조건</field>
-          </shadow>
-        </value>
-      </block> -->
+    <!-- 조회 where order group까지  -->
+    <block type = "db_select6">
+      <value name="SET0">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+      <value name="SET1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="SET2">
+        <shadow type="indata">
+          <field name="indata1">조건 또는 필드</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 조회 where order group까지  -->
-      <block type = "db_select6">
-        <value name="SET0">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <shadow type="indata">
-            <field name="indata1">조건 또는 필드</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 조회 where order group desc까지  -->
+    <!-- <block type = "db_select7">
+      <value name="SET0">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+      <value name="SET1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="SET2">
+        <shadow type="indata">
+          <field name="indata1">조건 또는 필드</field>
+        </shadow>
+      </value>
+    </block> -->
 
-      <!-- 조회 where order group desc까지  -->
-      <!-- <block type = "db_select7">
-        <value name="SET0">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <shadow type="indata">
-            <field name="indata1">조건 또는 필드</field>
-          </shadow>
-        </value>
-      </block> -->
+    <!-- 조회 order by -->
+    <!-- <block type = "db_select3">
+      <value name="SET0">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+      <value name="SET1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="SET2">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+    </block> -->
 
-      <!-- 조회 order by -->
-      <!-- <block type = "db_select3">
-        <value name="SET0">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-      </block> -->
+    <!-- desc 붙은 order by 
+    <block type = "db_select4">
+      <value name="SET0">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+      <value name="SET1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="SET2">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+    </block>
+    -->
 
-      <!-- desc 붙은 order by 
-      <block type = "db_select4">
-        <value name="SET0">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-      </block>
-      -->
+    <!-- 조회 group by -->
+    <!-- <block type = "db_select5">
+      <value name="SET0">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+      <value name="SET1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="SET2">
+        <shadow type="indata">
+          <field name="indata1">필드</field>
+        </shadow>
+      </value>
+    </block> -->
 
-      <!-- 조회 group by -->
-      <!-- <block type = "db_select5">
-        <value name="SET0">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-        <value name="SET1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="SET2">
-          <shadow type="indata">
-            <field name="indata1">필드</field>
-          </shadow>
-        </value>
-      </block> -->
+    <!-- 수정 -->
+    <block type = "db_update">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="d2">
+        <shadow type="indata">
+          <field name="indata1">수정</field>
+        </shadow>
+      </value>
+      <value name="d3">
+        <shadow type="indata">
+          <field name="indata1">조건</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 수정 -->
-      <block type = "db_update">
-        <value name="d1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="d2">
-          <shadow type="indata">
-            <field name="indata1">수정</field>
-          </shadow>
-        </value>
-        <value name="d3">
-          <shadow type="indata">
-            <field name="indata1">조건</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 수정 -->
+    <block type = "db_update2">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="d2">
+        <shadow type="indata">
+          <field name="indata1">수정</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 수정 -->
-      <block type = "db_update2">
-        <value name="d1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="d2">
-          <shadow type="indata">
-            <field name="indata1">수정</field>
-          </shadow>
-        </value>
-      </block>
+    <!-- 삭제 -->
+    <block type = "db_delete">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+      <value name="d2">
+        <shadow type="indata">
+          <field name="indata1">조건</field>
+        </shadow>
+      </value>
+    </block>
 
-      <!-- 삭제 -->
-      <block type = "db_delete">
-        <value name="d1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-        <value name="d2">
-          <shadow type="indata">
-            <field name="indata1">조건</field>
-          </shadow>
-        </value>
-      </block>
-
-      <!-- 삭제 -->
-      <block type = "db_delete2">
-        <value name="d1">
-          <shadow type="indata">
-            <field name="indata1">테이블</field>
-          </shadow>
-        </value>
-      </block>
-    </category>
+    <!-- 삭제 -->
+    <block type = "db_delete2">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1">테이블</field>
+        </shadow>
+      </value>
+    </block>
   </category>
 
   <sep></sep>
     
-    <!-- #####################################################################################################  -->
-    <!-- ******************************   데이타 사이언스 //  2020 - 09 - 07     ******************************* -->
-    <!-- #####################################################################################################  -->
+  <!-- #####################################################################################################  -->
+  <!-- ******************************   데이타 사이언스 //  2020 - 09 - 07     ******************************* -->
+  <!-- #####################################################################################################  -->
     <category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}"> <!--넘파이(Numpy)-->
       <category name="기본" colour="%{BKY_NUMPY_HUE}">
         <!-- import numpy as np -->

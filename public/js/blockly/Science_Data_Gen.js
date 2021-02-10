@@ -52,15 +52,6 @@ Blockly.Python['numpy_array_operator'] = function(block) {
 
 
 
-//클래스 선언
-Blockly.Python['python_class'] = function(block) { 
-  var text_python_class_statement_name = block.getFieldValue('Python_Class_statement_name');
-  var statements_python_class_statement = Blockly.Python.statementToCode(block, 'Python_Class_statement');
-  // TODO: Assemble Python into code variable.
-  var code = `class ${text_python_class_statement_name}:
-${statements_python_class_statement}\n`;
-  return code;  
-};
 
 //객체 
 Blockly.Python['class_refer'] = function(block) {
@@ -856,17 +847,6 @@ Blockly.Python['import_knn'] = function(block) {
 
 
 //metrics_fit_predict
-
-//클래스 함수
-Blockly.Python['class_func'] = function(block) {
-  var text_class_func_name = block.getFieldValue('class_func_name');
-  var value_class_func_val = Blockly.Python.valueToCode(block, 'class_func_val', Blockly.Python.ORDER_ATOMIC);
-  var statements_class_func_state = Blockly.Python.statementToCode(block, 'class_func_state');
-  // TODO: Assemble Python into code variable.
-  var code = `def ${text_class_func_name}(${value_class_func_val}):
-${statements_class_func_state}\n`;
-  return code;
-};
 
 //클래스 함수 return
 Blockly.Python['class_func_return'] = function(block) {
