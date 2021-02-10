@@ -9365,7 +9365,7 @@
     </script>   
     <script>
       function fileDownload(){
-        var downloadLink = document.createElement("a"); // ?
+        var downloadLink = document.createElement("a"); // url로 다운받기위해 a태그 생성
         var minetype;
         var blob;
         var base64Image;
@@ -9375,13 +9375,14 @@
         // var name = prompt("저장할 파일명?(ex> a.txt)");
         // name = name.concat('.',type); // 이름 + 확장자
         // console.log("name :", name); // 이름+확장자(다운로드할 파일) 출력
-        var _filename = prompt("저장할 파일명을 입력해주세요(ex> hello.txt)");
+        var _filename = prompt("저장할 파일명을 입력해주세요(ex> hello.txt)"); // 파일명 받음
         if(_filename != null){
-          var _fileLen = _filename.length;
-          var _lastDot = _filename.lastIndexOf('.');
-          var _fileExt = _filename.substring(_lastDot, _fileLen).toLowerCase();
+          var _fileLen = _filename.length;                                  // 파일명의 길이
+          var _lastDot = _filename.lastIndexOf('.');                        // 파일명에서 마지막에 나오는 '.'찾기 -> 확장자를 찾을수있음
+          var _fileExt = _filename.substring(_lastDot, _fileLen).toLowerCase(); // 분리된 파일 확장자
         }
 
+        console.log(_fileExt);
         fss.readFile(_filename, 'utf8', function(err, data) {
 
           if(err){
@@ -9389,23 +9390,24 @@
             return;
           }
 
-          if(_fileExt == 'txt'){
+          if(_fileExt == '.txt'){
             minetype = "text/plain;charset=utf-8";            
-          } else if(_fileExt == 'csv'){
+          } else if(_fileExt == '.csv'){
             minetype = "text/csv;charset=utf-8";
-          } else if(_fileExt == 'bmp'){            
-            minetype: 'image/bmp';
+          } else if(_fileExt == '.bmp'){            
+            minetype = 'image/bmp';
             base64Image = new Buffer(data, 'binary').toString('base64');
             data = `data:image/bmp;base64,${base64Image}`;   
-          } else if(_fileExt == 'jpg'){  
-            minetype: 'image/jpeg'; 
+          } else if(_fileExt == '.jpg'){  
+            minetype = 'image/jpeg'; 
             base64Image = new Buffer(data, 'binary').toString('base64');
             data = `data:image/jpeg;base64,${base64Image}`;   
             console.log("data", data);                              
-          } else if(_fileExt == 'wav'){            
-            minetype: 'audio/wav';           
+          } else if(_fileExt == '.wav'){            
+            minetype = 'audio/wav';           
           }
           blob = new Blob([data], { type: minetype });
+          console.log(blob);
 		      var url = URL.createObjectURL(blob);
 		      downloadLink.href = url;
 		      downloadLink.download = _filename;
