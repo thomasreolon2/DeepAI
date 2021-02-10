@@ -1024,43 +1024,7 @@ Blockly.defineBlocksWithJsonArray(
   };
 
 
-  //객체  
-  Blockly.Blocks['class_refer'] = {
-    init: function() {
-      this.appendValueInput("class_refer_className")
-          .setCheck(null)
-          .appendField("[ "+ Blockly.Msg.CLASS_6_1 +" ]");
-      this.appendDummyInput()
-          .appendField(".")
-          .appendField(new Blockly.FieldTextInput(""), "class_refer_val");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_CLASS_HUE}");
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
 
-  //객체 위아래
-  Blockly.Blocks['class_instance'] = {
-    init: function() {
-      this.appendValueInput("class_instance_val")
-          .setCheck(null)
-          .appendField("[ "+ Blockly.Msg.CLASS_5_1 +" ]");
-      this.appendDummyInput()
-          .appendField(".")
-          .appendField(new Blockly.FieldTextInput(""), "class_instance_value")
-          .appendField("=");
-      this.appendValueInput("class_instance_input")
-          .setCheck(null);
-      this.setInputsInline(true);
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(125);
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
 
   //사이킷런 데이터셋 임포트
   Blockly.Blocks['sklearn_datasets_noval'] = {
@@ -1155,47 +1119,7 @@ Blockly.Blocks['import_knn'] = {
 
 
 
-//클래스 함수 return
-Blockly.Blocks['class_func_return'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("[ "+ Blockly.Msg.CLASS_3_1 +" ]")
-        .appendField(new Blockly.FieldTextInput(Blockly.Msg.MUTATOR_ADD_ITEM), "class_func_return_className");
-    this.appendValueInput("class_func_return_param") 
-        .setCheck(null) 
-        .appendField("( "+ Blockly.Msg.CLASS_3_2); 
-    this.appendDummyInput()
-        .appendField(")");
-    this.appendStatementInput("class_func_return")
-        .setCheck(null);
-    this.appendValueInput("class_func_return_val")
-        .setCheck(null)
-        .appendField(Blockly.Msg.CLASS_3_3);
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(125);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
-//함수 호출
-Blockly.Blocks['function__parameter'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("[ "+ Blockly.Msg.CLASS_4_1 +" ]")
-        .appendField(new Blockly.FieldTextInput(""), "function__parameter_name")
-        .appendField(".");
-    this.appendValueInput("function__parameter_val")
-        .setCheck(null);
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(125);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
 
 //클래스 =
 Blockly.Blocks['class_equ'] = {
@@ -1215,26 +1139,7 @@ Blockly.Blocks['class_equ'] = {
 };
 
 
-//객체 함수 
-Blockly.Blocks['class_instance_function'] = {
-  init: function() {
-    this.appendValueInput("class_instanceVal")
-        .setCheck(null)
-        .appendField("[ "+ Blockly.Msg.CLASS_7_1 +" ]");
-    this.appendValueInput("class_instance_functions")
-        .setCheck(null)
-        .appendField(".")
-        .appendField(new Blockly.FieldTextInput(""), "class_instance_argument")
-        .appendField("(");
-    this.appendDummyInput()
-        .appendField(")");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(125);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
+
  
 // 클래스 self
 Blockly.Blocks['self_block'] = {

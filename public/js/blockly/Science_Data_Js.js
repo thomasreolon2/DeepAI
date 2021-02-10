@@ -49,44 +49,6 @@ Blockly.JavaScript['numpy_array_operator'] = function(block) {
  
 
 
-//클래스 선언 
-Blockly.JavaScript['python_class'] = function(block) {
-  var text_python_class_statement_name = block.getFieldValue('Python_Class_statement_name');
-  var statements_python_class_statement = Blockly.JavaScript.statementToCode(block, 'Python_Class_statement');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};  
-//객체 
-Blockly.JavaScript['class_refer'] = function(block) {
-  var value_class_refer_classname = Blockly.JavaScript.valueToCode(block, 'class_refer_className', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_class_refer_val = block.getFieldValue('class_refer_val');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-//객체 위아래
-Blockly.JavaScript['class_instance'] = function(block) {
-  var value_class_instance_val = Blockly.JavaScript.valueToCode(block, 'class_instance_val', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_class_instance_value = block.getFieldValue('class_instance_value');
-  var value_class_instance_input = Blockly.JavaScript.valueToCode(block, 'class_instance_input', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
-
-
-//함수 호출
-Blockly.JavaScript['function__parameter'] = function(block) {
-  var text_function__parameter_name = block.getFieldValue('function__parameter_name');
-  var value_function__parameter_val = Blockly.JavaScript.valueToCode(block, 'function__parameter_val', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
 
 //넘파이 라이브러리 
 Blockly.JavaScript['numpy_library'] = function (block) {
@@ -469,26 +431,6 @@ Blockly.JavaScript['import_knn'] = function(block) {
 
 
 
-//클래스 함수
-Blockly.JavaScript['class_func'] = function(block) {
-  var text_class_func_name = block.getFieldValue('class_func_name');
-  var value_class_func_val = Blockly.JavaScript.valueToCode(block, 'class_func_val', Blockly.JavaScript.ORDER_ATOMIC);
-  var statements_class_func_state = Blockly.JavaScript.statementToCode(block, 'class_func_state');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
-
-//클래스 함수 return
-Blockly.JavaScript['class_func_return'] = function(block) {
-  var text_class_func_return_classname = block.getFieldValue('class_func_return_className');
-  var value_class_func_return_param = Blockly.JavaScript.valueToCode(block, 'class_func_return_param', Blockly.JavaScript.ORDER_ATOMIC);
-  var statements_class_func_return = Blockly.JavaScript.statementToCode(block, 'class_func_return');
-  var value_class_func_return_val = Blockly.JavaScript.valueToCode(block, 'class_func_return_val', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '\n';
-  return code;
-};
  
 //클래스 함수 =
 Blockly.JavaScript['class_equ'] = function(block) {
@@ -497,17 +439,6 @@ Blockly.JavaScript['class_equ'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   return code;
-};
- 
-//객체 함수
-Blockly.JavaScript['class_instance_function'] = function(block) {
-  var value_class_instanceval = Blockly.JavaScript.valueToCode(block, 'class_instanceVal', Blockly.JavaScript.ORDER_ATOMIC);
-  var text_class_instance_argument = block.getFieldValue('class_instance_argument');
-  var value_class_instance_functions = Blockly.JavaScript.valueToCode(block, 'class_instance_functions', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = '';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //클래스 매개변수 
@@ -552,19 +483,3 @@ Blockly.JavaScript['parameter_one'] = function(block) {
   var code = '...;\n';
   return code;
 };
-//클래스 함수 statement 형식 
-// Blockly.JavaScript['class_func'] = function(block) {
-//   var text_class_func_name = block.getFieldValue('class_func_name');
-//   var statements_class_func_state = Blockly.JavaScript.statementToCode(block, 'class_func_state');
-//   var elements = new Array(block.itemCount_);
-//   for (var i = 0; i < block.itemCount_; i++) {
-//     elements[i] = Blockly.Python.valueToCode(block, 'ADD' + i,
-//     Blockly.Python.ORDER_NONE) || 'self';
-//   // TODO: Assemble Python into code variable.
-//   };
-//  // var code = value_name + '(' + elements.join(')[') + ']'; 
-//   var code = `${text_class_func_name} ( ${elements.join} )[] :
-// ${statements_class_func_state}\n`;
- 
-//   return code;
-// }; 

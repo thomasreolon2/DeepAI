@@ -2456,116 +2456,122 @@
   <!-- #####################################################################################################  -->
   <!-- ******************************   데이타 사이언스 //  2020 - 09 - 07     ******************************* -->
   <!-- #####################################################################################################  -->
-    <category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}"> <!--넘파이(Numpy)-->
-      <category name="기본" colour="%{BKY_NUMPY_HUE}">
-        <!-- import numpy as np -->
-        <block type="numpy_library"></block>
-      
-        <!-- loadtxt -->
-        <block type = "numpy_loadtxt_basic">
-          <value name="text">               
-              <block type="fileopen"></block>     
-          </value>
-          <value name="delimiter">
+  <category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}"> <!--넘파이(Numpy)-->
+    <category name="기본" colour="%{BKY_NUMPY_HUE}">
+      <!-- import numpy as np -->
+      <block type="numpy_library"></block>
+    
+      <!-- loadtxt -->
+      <block type = "numpy_loadtxt_basic">
+        <value name="text">               
+            <block type="fileopen"></block>     
+        </value>
+        <value name="delimiter">
+          <shadow type="indata">
+            <field name="indata1">','</field>
+          </shadow>
+        </value>
+        <Value name="dtype">
+          <shadow type="indata">
+            <field name="indata1">dtype = int</field>
+          </shadow>
+        </Value>
+      </block>
+
+      <!-----------------------------------------------------------------------------배열생성-->
+      <label text="배열 생성"></label>
+        <!-- 넘파이 배열생성 1 -->
+        <block type = "create_np_array">
+          <value name="text">
             <shadow type="indata">
-              <field name="indata1">','</field>
+              <field name="indata1">[1,2,3,4]</field>
             </shadow>
           </value>
-          <Value name="dtype">
+
+          <value name="dtype">
             <shadow type="indata">
               <field name="indata1">dtype = int</field>
             </shadow>
-          </Value>
+          </value>
         </block>
-        <!-----------------------------------------------------------------------------배열생성-->
-        <label text="배열 생성"></label>
-          <!-- 넘파이 배열생성 1 -->
-          <block type = "create_np_array">
-            <value name="text">
-              <shadow type="indata">
-                <field name="indata1">[1,2,3,4]</field>
-              </shadow>
-            </value>
+        
+        <!-- 넘파이 배열생성 2-->
+        <block type = "create_np_array2">
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="text2">
+            <shadow type="indata">
+              <field name="indata1"> : </field>
+            </shadow>
+          </value>
+        </block>
 
-            <value name="dtype">
-              <shadow type="indata">
-                <field name="indata1">dtype = int</field>
-              </shadow>
-            </value>
-          </block>
-          <!-- 넘파이 배열생성 2-->
-          <block type = "create_np_array2">
-            <value name="text">
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-            <value name="text2">
-              <shadow type="indata">
-                <field name="indata1"> : </field>
-              </shadow>
-            </value>
-          </block>
-          <!-- numpy.array -->
-          <block type="np_array">
-            <value name="INPUT">
-              <shadow type="indata">
-                <field name="indata1">[1,2,3,4]</field>
-              </shadow>
-            </value>
-            <value name="DTYPE">
-              <shadow type="indata">
-                <field name="indata1">dtype = int</field>
-              </shadow>
-            </value>
-          </block>
-          <!-- <value name="np_array_val">
-            <block type="create_arry"></block>
-          </value> -->
-          <!-- 배열생성 / 0 & 1 --> 
-          <block type="numpy_ones_and_zeros_basic">
-            <value name="parameter1"> 
-              <shadow type="indata">
-                <field name="indata1">행,열</field>
-              </shadow>
-            </value>
-            <value name="parameter2"> 
-              <shadow type="indata">
-                <field name="indata1">dtype = float</field>
-              </shadow>
-            </value>  
-          </block> 
+        <!-- numpy.array -->
+        <block type="np_array">
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1">[1,2,3,4]</field>
+            </shadow>
+          </value>
+          <value name="DTYPE">
+            <shadow type="indata">
+              <field name="indata1">dtype = int</field>
+            </shadow>
+          </value>
+        </block>
 
-          <block type="numpy_eye_basic">
-            <value name="parameter1"> 
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-          </block> 
-          <!-- 배열생성 / 0 & 1 -->
+        <!-- <value name="np_array_val">
+          <block type="create_arry"></block>
+        </value> -->
 
-          <!-- 배열생성 / 숫자 범위 --> 
-          <block type="numpy_numerical_ranges_basic1">
-            <value name="parameter1"> 
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value>
-            <value name="parameter2"> 
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value> 
-            <value name="parameter3"> 
-              <shadow type="indata">
-                <field name="indata1"></field>
-              </shadow>
-            </value> 
-          </block> 
-          <!-- 배열생성 / 숫자 범위 -->
-      <!----------------------------------------------------------------------배열-->
-      <label text="배열 모양 변경"></label>
+        <!-- 배열생성 / 0 & 1 --> 
+        <block type="numpy_ones_and_zeros_basic">
+          <value name="parameter1"> 
+            <shadow type="indata">
+              <field name="indata1">행,열</field>
+            </shadow>
+          </value>
+          <value name="parameter2"> 
+            <shadow type="indata">
+              <field name="indata1">dtype = float</field>
+            </shadow>
+          </value>  
+        </block> 
+
+        <block type="numpy_eye_basic">
+          <value name="parameter1"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block> 
+        <!-- 배열생성 / 0 & 1 -->
+
+        <!-- 배열생성 / 숫자 범위 --> 
+        <block type="numpy_numerical_ranges_basic1">
+          <value name="parameter1"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="parameter2"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+          <value name="parameter3"> 
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value> 
+        </block> 
+        <!-- 배열생성 / 숫자 범위 -->
+
+        <!----------------------------------------------------------------------배열-->
+        <label text="배열 모양 변경"></label>
         <!-- 배열생성 / 숫자 범위2 --> 
         <!-- <block type="numpy_numerical_ranges_basic2">
           <value name="parameter1"> 
@@ -2649,8 +2655,9 @@
             </shadow>
           </value>  
         </block> 
-      <!----------------------------------------------------------------------랜덤-->
-      <label text="랜덤&정렬"></label>
+
+        <!----------------------------------------------------------------------랜덤-->
+        <label text="랜덤&정렬"></label>
 
         <block type="numpy_random_generator_basic">
           <value name="numpy_Random_generator_val"> 
@@ -2863,7 +2870,6 @@
         <!-- <block type="np_diff_"></block> -->
         <!--  np.diff  -->
 
-
         <!-- np.append -->
         <!-- <block type="np_arry_change"></block> -->
         <!-- np.append -->
@@ -2876,18 +2882,15 @@
         <!-- <block type="np_fft_fft"></block> -->
         <!-- np.fft -->
 
-
         <!-- np.abs -->
         <!-- <block type="nump_abs"></block> -->
         <!-- np.abs -->
 
-        
-
         <!--  import sklearn  -->
         <!-- <block type="lib_import_sklearn"></block> -->
         <!--  import sklearn  -->
-
       </category>
+
       <!-------------------------------------------------------------------------------------------- 수학 & 통계-->
       <category name="수학&통계" colour="%{BKY_NUMPY_HUE}">
         <label text="수학"></label>
@@ -2907,7 +2910,6 @@
         </block> 
         <!-- 수학 / 쌍곡  -->
 
-
         <!-- 수학 / 반올림 --> 
         <block type="numpy_rounding">
           <value name="numpy_Rounding_val"> 
@@ -2924,7 +2926,6 @@
         </block> 
         <!-- 수학 / 지수 & 로그  -->
 
-
         <!-- 수학 / 산술1 --> 
         <block type="numpy_arithmetic_operations1">
           <value name="numpy_Arithmetic_operations1_val"> 
@@ -2932,7 +2933,6 @@
           </value>  
         </block> 
         <!-- 수학 / 산술1  -->
-
 
         <!-- 수학 / 산술2 --> 
         <block type="numpy_arithmetic_operations2">
@@ -2942,7 +2942,6 @@
         </block> 
         <!-- 수학 / 산술2  -->
 
-
         <!-- 수학 / 복소수 --> 
         <block type="numpy_handling_complex_numbers">
           <value name="numpy_Handling complex numbers_val"> 
@@ -2950,7 +2949,6 @@
           </value>  
         </block> 
         <!-- 수학 / 복소수  -->
-
 
         <!-- 수학 / 합계 & 차이 --> 
         <block type="numpy_sums_differences">
@@ -2992,7 +2990,6 @@
           </value>  
         </block> 
         <!-- 선형 / 행렬 &벡터 -->
-
 
         <!-- 선형 / 분해 --> 
         <block type="numpy_matrix_decomposition">
@@ -3189,7 +3186,6 @@
         </block> 
         <!-- 논리 / 배열  -->
 
-
         <!-- 논리 / 비교 --> 
         <block type="numpy_comparison">
           <value name="numpy_Comparison_val"> 
@@ -3206,7 +3202,6 @@
           </value>  
         </block> 
         <!-- 문자열 / 연산1  -->
-
 
         <!-- 문자열 / 연산2 --> 
         <block type="numpy_string_operations2">
