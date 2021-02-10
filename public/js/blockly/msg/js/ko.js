@@ -498,7 +498,7 @@ Blockly.Msg['NUMSTR_SORT_1'] = "[정렬]";
 Blockly.Msg['NUMSTR_SORT_2'] = "L맞춤(ljust)";
 Blockly.Msg['NUMSTR_SORT_3'] = "R맞춤(rjust)";
 Blockly.Msg['NUMSTR_SORT_4'] = "중앙(center)";
-Blockly.Msg['NUMSTR_SORT_5'] = "탭지정(extendtabs)";
+Blockly.Msg['NUMSTR_SORT_5'] = "탭지정(expandtabs)";
 
 Blockly.Msg['NUMSTR_TrueFalse_1'] = "[질의]";
 Blockly.Msg['NUMSTR_TrueFalse_2'] = "문자(isalpha)";

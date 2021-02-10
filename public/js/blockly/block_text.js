@@ -155,7 +155,7 @@ Blockly.Blocks['text_sort'] = {
         .appendField(Blockly.Msg.TEXT_14_8_CHANGE);
     this.appendDummyInput()
         .appendField(Blockly.Msg.TEXT_14_7_CHANGE)
-        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMSTR_SORT_2,"ljust"], [Blockly.Msg.NUMSTR_SORT_3,"rjust"], [Blockly.Msg.NUMSTR_SORT_4,"center"], [Blockly.Msg.NUMSTR_SORT_5,"extendtabs"]]), "FUNC");
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMSTR_SORT_2,"ljust"], [Blockly.Msg.NUMSTR_SORT_3,"rjust"], [Blockly.Msg.NUMSTR_SORT_4,"center"], [Blockly.Msg.NUMSTR_SORT_5,"expandtabs"]]), "FUNC");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_TEXTS_HUE}");
