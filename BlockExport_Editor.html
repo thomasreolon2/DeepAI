@@ -9364,58 +9364,66 @@
     }, 1000);  // js 파일 다운로드를 위해 인터벌 설정 
     </script>   
     <script>
+      // 파일 다운로드 
       function fileDownload(){
-        var downloadLink = document.createElement("a"); // url로 다운받기위해 a태그 생성
-        var minetype;
-        var blob;
-        var base64Image;
+        var downloadLink = document.createElement("a"); // url로 다운받기위해 a태그 생성 -> saveAs로 변경 후에는 필요없어진걸로 확인
+        var minetype;     // 데이터 타입 
+        var blob;         // 블롭 자리
+        var base64Image;  // base64이미지
 
-        // var type = prompt("저장할 파일 종류?(ex> txt, csv)");
-        // console.log(type);            // 확장자 출력
-        // var name = prompt("저장할 파일명?(ex> a.txt)");
-        // name = name.concat('.',type); // 이름 + 확장자
-        // console.log("name :", name); // 이름+확장자(다운로드할 파일) 출력
-        var _filename = prompt("저장할 파일명을 입력해주세요(ex> hello.txt)"); // 파일명 받음
+        var _filename = prompt("저장할 파일명을 입력해주세요(ex> hello.txt)");    // 파일명+확장자 입력
         if(_filename != null){
-          var _fileLen = _filename.length;                                  // 파일명의 길이
-          var _lastDot = _filename.lastIndexOf('.');                        // 파일명에서 마지막에 나오는 '.'찾기 -> 확장자를 찾을수있음
+          var _fileLen = _filename.length;                                      // 파일명의 길이
+          var _lastDot = _filename.lastIndexOf('.');                            // 파일명에서 마지막에 나오는 '.'찾기 -> 확장자를 찾을수있음
           var _fileExt = _filename.substring(_lastDot, _fileLen).toLowerCase(); // 분리된 파일 확장자
         }
 
-        console.log(_fileExt);
-        fss.readFile(_filename, 'utf8', function(err, data) {
-
+        // 왜 fs가아니라 fss인걸까? readFile(파일명, 인코딩, 에러시)
+        fss.readFile(_filename, 'base64', function(err, data) {
+          console.log(data); // data정보 확인
+          // 에러가 났을 때
           if(err){
             alert("해당 파일이 존재하지 않습니다.");
             return;
           }
 
+          // 확장바 비교 후 작동.
           if(_fileExt == '.txt'){
             minetype = "text/plain;charset=utf-8";            
           } else if(_fileExt == '.csv'){
             minetype = "text/csv;charset=utf-8";
           } else if(_fileExt == '.bmp'){            
-            minetype = 'image/bmp';
+            minetype : 'image/bmp';
             base64Image = new Buffer(data, 'binary').toString('base64');
             data = `data:image/bmp;base64,${base64Image}`;   
           } else if(_fileExt == '.jpg'){  
             minetype = 'image/jpeg'; 
-            base64Image = new Buffer(data, 'binary').toString('base64');
-            data = `data:image/jpeg;base64,${base64Image}`;   
-            console.log("data", data);                              
+            //base64Image2 = new Buffer(data, 'binary').toString('base64');
+            base64Image = data;
+            //data = `data:image/jpeg;base64, ${base64Image}`;   
+            //console.log("data", data);                              
           } else if(_fileExt == '.wav'){            
-            minetype = 'audio/wav';           
+            minetype : 'audio/wav';           
           }
+          //console.log(base64Image2 == base64Image);
+
+          // 블롭 생성
           blob = new Blob([data], { type: minetype });
           console.log(blob);
+          // 블롭 저장.
+          saveAs(blob, _filename);
+
+          // console.log(blob);
 		      var url = URL.createObjectURL(blob);
-		      downloadLink.href = url;
-		      downloadLink.download = _filename;
+          console.log(url);
+          console.log(_filename);
+          //saveAs(url, _filename);
 
-		      document.body.appendChild(downloadLink);
-		      downloadLink.click();
-		      document.body.removeChild(downloadLink);
-
+		      //  downloadLink.href = url;
+		      //  downloadLink.download = _filename;
+		      //  document.body.appendChild(downloadLink);
+		      //  downloadLink.click();
+		      //  document.body.removeChild(downloadLink);
         });
       }
     </script> 
