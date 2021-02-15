@@ -407,6 +407,25 @@
     }
   };
 
+  // 포맷지정 현재시각
+  Blockly.Blocks['strftime_'] = {
+    init: function() {
+      this.appendValueInput("val1")
+          .setCheck(null)
+          .appendField(Blockly.Msg.OS_STRFTIME_ + " time.strftime(");
+      this.appendValueInput("val2")
+          .setCheck(null)
+          .appendField(",");
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_OS_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
   // 프로그램 일시 정지
   Blockly.Blocks['sleep'] = {
     init: function() {

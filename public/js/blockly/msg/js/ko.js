@@ -1152,6 +1152,7 @@ Blockly.Msg['OS_SHUTIL_FILE'] = "파일복사 (copy) (";
 Blockly.Msg['OS_SHUTIL_FILE_2'] = "디렉토리복사 (copytree) (";
 Blockly.Msg['OS_SHUTIL_FILE_3'] = "파일이동 (move) (";
 Blockly.Msg['OS_TIME_'] = "현재시각 time.time()";
+Blockly.Msg['OS_STRFTIME_'] = "시간 포맷설정";
 Blockly.Msg['OS_SLEEP'] = "일시정지 (sleep)";
 Blockly.Msg['OS_DATETIME_NOW'] = "datetime 객체생성";
 Blockly.Msg['OS_NOW_METHOD_1'] = "년도";

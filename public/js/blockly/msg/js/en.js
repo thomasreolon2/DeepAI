@@ -1142,6 +1142,7 @@ Blockly.Msg['OS_SHUTIL_FILE_1'] = "file copy (copy) (";
 Blockly.Msg['OS_SHUTIL_FILE_2'] = "directory copy (copytree) (";
 Blockly.Msg['OS_SHUTIL_FILE_3'] = "move file (move) (";
 Blockly.Msg['OS_TIME_'] = "current time time.time()";
+Blockly.Msg['OS_STRFTIME_'] = "time set format";
 Blockly.Msg['OS_SLEEP'] = "sleep (sleep)";
 Blockly.Msg['OS_DATETIME_NOW'] = "create datetime fuction";
 Blockly.Msg['OS_NOW_METHOD_1'] = "year";

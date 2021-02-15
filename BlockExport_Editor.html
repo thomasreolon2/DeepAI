@@ -770,6 +770,20 @@
       <label text="time & datetime"></label>
       <!--<block type="time_library"></block>-->
       <block type="time_"></block>
+      
+      <block type="strftime_">
+        <value name="val1">
+          <shadow type="indata">
+            <field name="indata1">'포맷'</field>
+          </shadow>
+        </value>
+        <value name="val2">
+          <shadow type="indata">
+            <field name="indata1">시간객체</field>
+          </shadow>
+        </value>
+      </block>
+
       <block type="sleep">
         <value name="val1">
           <shadow type="indata">

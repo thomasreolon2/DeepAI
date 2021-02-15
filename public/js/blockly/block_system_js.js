@@ -129,6 +129,15 @@
     return code;
   };
 
+  Blockly.JavaScript['strftime_'] = function(block) {
+    var value_object = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_object2 = Blockly.JavaScript.valueToCode(block, 'val2', Blockly.JavaScript.ORDER_ATOMIC);
+
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
   Blockly.JavaScript['sleep'] = function(block) {
     var value_val1 = Blockly.JavaScript.valueToCode(block, 'val1', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
