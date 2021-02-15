@@ -19,7 +19,6 @@
   <!-- #####################################################################################################  -->
   <!-- jquery --> 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
@@ -489,8 +488,8 @@
               <h5 id="code" class="my-1 mx-1">코드</h5>
             </div>
             <div style="position:relative; " style="height: 80vh;">
-              <dive id="pyCodeEditor"></dive>
-              <dive id="jsCodeEditor"></dive>
+              <div id="pyCodeEditor"></div>
+              <div id="jsCodeEditor"></div>
             </div>
           </div>
         </div>
@@ -8594,9 +8593,6 @@
         <block type="mlp_loss"></block>
 
       </category>
-
-
-
       <!-- <block type="array_get"></block>
       <block type="csv3"></block>
        <block type="sklearn_mlp_fit"></block> 
@@ -8634,12 +8630,8 @@
       },
       //   spellcheck: true,   autocorrect: true,
     });
-  </script>
 
-  <script id="jsScript" type="application/javascript">
-    // var codeArea = document.getElementById("textArea"); // 코드 나타나는 부분 
-    var codeArea = jsEditor.getValue();
-
+    var codeArea = jsEditor.getValue();  // 코드 나타나는 부분 
     var demoWorkspace = Blockly.inject( // 블록이 나타나는 부분 
       "blocklyDiv", {
         toolbox: document.getElementById("toolbox"), // 툴박스  보이기 
@@ -8682,7 +8674,6 @@
         }*/
         renderer: "zelos"
       }
-
     );
 
     // 생성될 코드에 대해 선택하는 부분       
@@ -8699,7 +8690,7 @@
     function saveBlock() {
       var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
       var p_xml = Blockly.Xml.domToPrettyText(xml);
-      // 다른이름으로
+      // 다른이름으로 저장
       var filename = prompt("다른이름으로 저장."); 
       var fileObject = new File([p_xml], filename+".xml");
       saveAs(fileObject);
@@ -8718,7 +8709,8 @@
           var dom = Blockly.Xml.textToDom(xml);
           Blockly.Xml.appendDomToWorkspace(dom, demoWorkspace);
           fileName = file.name;
-
+          
+          // 워크스페이스에 있는 블록을 코드로 변환해 코드미러에 setValue해주는 부분
           try {
             var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
             pyEditor.setValue(pyCode);
@@ -8757,16 +8749,12 @@
           console.log('java script 코드가 매핑되어 있지 않습니다. Error : ' + e);
         }
       });
-
-
     }
 
-    // ==================================
+    //==================================
     // 결과 지우기 2020.10.04 남지원 수정 
     //===================================  
     function clear_result() {
-
-     
       //원본 document.getElementById("exeArea").value = "";
       $("#exeArea").empty();
     }
@@ -8837,10 +8825,11 @@
     demoWorkspace.addChangeListener(whenSelected);
   </script>
 
-  <!-- ==================================
-  ====== 블록 실행
-  ===================================-->
+  
   <script>
+  //==================================
+  // 블록을 실행했을 때 
+  //==================================
     //새로운 실행방법
     function runButton() {
       Blockly.Python.addReservedWords('code');
@@ -8996,8 +8985,8 @@
     function processFile(file) {
       var reader = new FileReader();
       reader.onload = function () {
-        var fileResult = reader.result;
-        var val = sessionStorage.setItem('file', fileResult);
+      var fileResult = reader.result;
+      var val = sessionStorage.setItem('file', fileResult);
       };
       reader.readAsText(file, /* optional */ "cp949");
     }
