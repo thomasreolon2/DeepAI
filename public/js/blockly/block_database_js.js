@@ -100,6 +100,28 @@
     return code;
   };
 
+  
+  //db
+
+  Blockly.JavaScript['db_autocommit'] = function (block) {
+    // TODO: Assemble .JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['db_deletedb'] = function (block) {
+    // TODO: Assemble .JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['db_select6'] = function (block) {
+    // TODO: Assemble .JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+  
+
   Blockly.JavaScript['db_exec'] = function (block) {
     var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
     var dropdown_name = block.getFieldValue('d1');

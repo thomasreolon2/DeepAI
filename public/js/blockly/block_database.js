@@ -141,6 +141,63 @@
 
   // 전우진
 
+  //db
+
+  //자동 커밋
+
+  Blockly.Blocks['db_autocommit'] = {
+    init: function () {
+      this.appendDummyInput()
+      .appendField(Blockly.Msg.DATABASE_AUTOCOMMIT_1)
+      .appendField(new Blockly.FieldVariable("con"), "list1");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(database);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+//DB삭제
+
+  Blockly.Blocks['db_deletedb'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.DATABASE_DELETEDB_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField(" = DROP TABLE IF EXISTS(");
+      this.appendValueInput("SET0").setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(database);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+
+  Blockly.Blocks['db_select6'] = {
+    init: function () {
+      this.appendDummyInput()      
+      .appendField(Blockly.Msg.DATABASE_SELECT_1)
+      .appendField(new Blockly.FieldVariable("sql"), "list1")
+      .appendField("= ");
+      this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
+      this.appendValueInput("SET1").appendField("FROM").setCheck(null);
+      this.appendValueInput("SET2").appendField(new Blockly.FieldDropdown([[Blockly.Msg.DATABASE_WHERE_1, "WHERE"],[Blockly.Msg.DATABASE_GROUP_1, "GROUP BY"],[Blockly.Msg.DATABASE_ORDER_1, "ORDER BY"]]),"NAME").setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(database);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
   Blockly.Blocks['sqlite_library'] = {
     init: function () {
       this.appendDummyInput()
