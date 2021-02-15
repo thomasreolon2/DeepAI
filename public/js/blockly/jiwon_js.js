@@ -222,7 +222,56 @@ Blockly.JavaScript['try_except'] = function(block) {
 // 2021.01.25 except_block 남지원
 Blockly.JavaScript['except_block'] = function(block) {
   var dropdown_drop = block.getFieldValue('DROP');
-  // TODO: Assemble JavaScript into code variable.
-  var code = `${dropdown_drop}`;
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// butter
+Blockly.JavaScript['scipy_butter'] = function(block) {
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// scipy_sosfilt
+Blockly.JavaScript['scipy_sosfilt'] = function(block) {
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// scipy_hilbert
+Blockly.JavaScript['scipy_hilbert'] = function(block) {
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// scipy_correlate
+Blockly.JavaScript['scipy_correlate'] = function(block) {
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// scipy_stft_istft
+Blockly.JavaScript['scipy_stft_istft'] = function(block) {
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// scipy_find_peaks
+Blockly.JavaScript['scipy_find_peaks'] = function(block) {
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
+
+// scipy_find_peaks
+Blockly.JavaScript['scipy_fft'] = function(block) {
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };

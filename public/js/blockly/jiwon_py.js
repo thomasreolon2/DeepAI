@@ -267,3 +267,61 @@ Blockly.Python['except_block'] = function(block) {
   var code = `${dropdown_drop}`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+
+// scipy_butter
+Blockly.Python['scipy_butter'] = function(block) {
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.butter(${value_input})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// scipy_sosfilt
+Blockly.Python['scipy_sosfilt'] = function(block) {
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.butter(${value_input})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// scipy_hilbert
+Blockly.Python['scipy_hilbert'] = function(block) {
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.hilbert(${value_input})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// scipy_correlate
+Blockly.Python['scipy_correlate'] = function(block) {
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.correlate(${value_input})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// scipy_stft_istft
+Blockly.Python['scipy_stft_istft'] = function(block) {
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  // TODO: Assemble Python into code variable.
+  var code = `signal.${dropdown_drop}(${value_input})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// scipy_find_peaks
+Blockly.Python['scipy_find_peaks'] = function(block) {
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.find_peaks(${value_input})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+// scipy_find_peaks
+Blockly.Python['scipy_fft'] = function(block) {
+  var value_input = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `fft.fft(${value_input})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

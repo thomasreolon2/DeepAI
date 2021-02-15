@@ -466,3 +466,141 @@ Blockly.Blocks['except_block'] = {
         this.setHelpUrl("");
     }
 };
+
+// 2021.02.15 사이파이
+Blockly.Blocks['scipy_butter'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("signal.butter(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// 2021.02.15 
+Blockly.Blocks['scipy_sosfilt'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("signal.sosfilt(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// 2021.02.15 
+Blockly.Blocks['scipy_hilbert'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("signal.hilbert(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// 2021.02.15 
+Blockly.Blocks['scipy_hilbert'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("signal.hilbert(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// 2021.02.15 
+Blockly.Blocks['scipy_correlate'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("signal.correlate(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// 2021.02.15 
+Blockly.Blocks['scipy_stft_istft'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("signal.")
+            .appendField(new Blockly.FieldDropdown([["stft","stft"],["istft","istft"]]), "DROP")
+            .appendField(")");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// 2021.02.15 
+Blockly.Blocks['scipy_find_peaks'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("signal.find_peaks(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+// 2021.02.15 
+Blockly.Blocks['scipy_fft'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("fft.fft(");
+        this.appendValueInput("INPUT")
+            .setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
