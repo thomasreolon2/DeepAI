@@ -398,3 +398,68 @@ Blockly.Python['scatter_ex'] = function(block) {
   var code = `ax[${value_v1},${value_v2}].scatter(${value_x1},${value_y1}, s= ${value_s}, c = ${value_c}, marker = ${value_marker})\nax[${value_v1},${value_v2}].set_title(${value_title})`;
   return code + '\n';
 }
+
+
+
+// scipy
+
+
+
+Blockly.Python['scipy_signal_cwt'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.cwt(${value_data})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+Blockly.Python['scipy_signal_spectrogram'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.spectrogram(${value_data})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+
+Blockly.Python['scipy_signal_gaussian'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.gaussian(${value_data})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['scipy_signal_hann'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.hann(${value_data})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['scipy_signal_flattop'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.flattop(${value_data})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['scipy_signal_blackman'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.blackman(${value_data})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['scipy_signal_exponential'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.exponential(${value_data})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['scipy_signal_hamming'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `signal.hamming(${value_data})`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

@@ -886,3 +886,136 @@ Blockly.Blocks['pandas_series_str'] = {
    this.setHelpUrl("");
     }
   };
+
+
+
+  // scipy
+
+
+
+  Blockly.Blocks['scipy_signal_cwt'] = {
+    init: function() {
+      this.appendValueInput("data")
+      .appendField("signal.cwt(")
+          .setCheck(null);    
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
+
+  Blockly.Blocks['scipy_signal_spectrogram'] = {
+    init: function() {
+      this.appendValueInput("data")
+      .appendField("signal.spectrogram(")
+          .setCheck(null);    
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
+  Blockly.Blocks['scipy_signal_gaussian'] = {
+    init: function() {
+      this.appendValueInput("data")
+      .appendField("signal.gaussian(")
+          .setCheck(null);    
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
+  Blockly.Blocks['scipy_signal_hann'] = {
+    init: function() {
+      this.appendValueInput("data")
+      .appendField("signal.hann(")
+          .setCheck(null);    
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+
+  Blockly.Blocks['scipy_signal_flattop'] = {
+    init: function() {
+      this.appendValueInput("data")
+      .appendField("signal.flattop(")
+          .setCheck(null);    
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['scipy_signal_blackman'] = {
+    init: function() {
+      this.appendValueInput("data")
+      .appendField("signal.blackman(")
+          .setCheck(null);    
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['scipy_signal_exponential'] = {
+    init: function() {
+      this.appendValueInput("data")
+      .appendField("signal.exponential(")
+          .setCheck(null);    
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Blocks['scipy_signal_hamming'] = {
+    init: function() {
+      this.appendValueInput("data")
+      .appendField("signal.hamming(")
+          .setCheck(null);    
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  
+  

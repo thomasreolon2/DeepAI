@@ -358,6 +358,74 @@ Blockly.JavaScript['scatter_ex'] = function(block) {
   var value_c = Blockly.JavaScript.valueToCode(block, 'c', Blockly.JavaScript.ORDER_ATOMIC);
   var value_marker = Blockly.JavaScript.valueToCode(block, 'marker', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '\n';
   return code;
 }
+
+
+
+
+// scipy
+
+
+Blockly.JavaScript['scipy_signal_cwt'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+
+Blockly.JavaScript['scipy_signal_spectrogram'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+Blockly.JavaScript['scipy_signal_gaussian'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+Blockly.JavaScript['scipy_signal_hann'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+
+Blockly.JavaScript['scipy_signal_flattop'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['scipy_signal_blackman'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['scipy_signal_exponential'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.JavaScript['scipy_signal_hamming'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
