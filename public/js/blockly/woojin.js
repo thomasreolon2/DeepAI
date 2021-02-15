@@ -1,4 +1,123 @@
+  //db
 
+  //자동 커밋
+
+  Blockly.Blocks['db_autocommit'] = {
+    init: function () {
+      this.appendDummyInput()
+      .appendField(Blockly.Msg.DATABASE_AUTOCOMMIT_1)
+      .appendField(new Blockly.FieldVariable("con"), "list1");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(database);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+//DB삭제
+
+  Blockly.Blocks['db_deletedb'] = {
+    init: function () {
+      this.appendDummyInput()
+          .appendField(Blockly.Msg.DATABASE_DELETEDB_1)
+          .appendField(new Blockly.FieldVariable("sql"), "list1")
+          .appendField(" = DROP TABLE IF EXISTS(");
+      this.appendValueInput("SET0").setCheck(null);
+      this.appendDummyInput()
+          .appendField(")");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(database);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+
+  Blockly.Blocks['db_select6'] = {
+    init: function () {
+      this.appendDummyInput()      
+      .appendField(Blockly.Msg.DATABASE_SELECT_1)
+      .appendField(new Blockly.FieldVariable("sql"), "list1")
+      .appendField("= ");
+      this.appendValueInput("SET0").appendField("SELECT").setCheck(null);
+      this.appendValueInput("SET1").appendField("FROM").setCheck(null);
+      this.appendValueInput("SET2").appendField(new Blockly.FieldDropdown([[Blockly.Msg.DATABASE_WHERE_1, "WHERE"],[Blockly.Msg.DATABASE_GROUP_1, "GROUP BY"],[Blockly.Msg.DATABASE_ORDER_1, "ORDER BY"]]),"NAME").setCheck(null);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(database);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
+  // 고장 진단
+
+Blockly.Blocks['scipy_bartlett'] = {
+  init: function () {
+      this.appendDummyInput().appendField("signal.bartlett");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['scipy_tsearch'] = {
+  init: function () {
+      this.appendDummyInput().appendField("spatial.tsearch");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['scipy_distance_matrix_minkowski_distance_minkowski_distance_p'] = {
+  init: function () {
+      this.appendDummyInput().appendField("spatial.").appendField(new Blockly.FieldDropdown([
+          [
+              "distance_matrix", "distance_matrix"
+          ],
+          [
+            "minkowski_distance", "minkowski_distance"
+          ],
+          [
+            "minkowski_distance_p", "minkowski_distance_p"
+          ]
+      ]), "scipy");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['scipy_procrustes'] = {
+  init: function () {
+      this.appendDummyInput().appendField("spatial.procrustes");
+      this.appendValueInput("d2").appendField("(").setCheck(null);
+      this.appendDummyInput().appendField(")");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_SCIPY_HUE}");
+      this.setTooltip("");
+      this.setHelpUrl("");
+  }
+};
 
 // 이후로는 현재 사용하지 않는 블럭
 
