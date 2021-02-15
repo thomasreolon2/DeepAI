@@ -17,32 +17,35 @@
   <!-- #####################################################################################################  -->
   <!-- ******************************               CDN                       ******************************* -->
   <!-- #####################################################################################################  -->
-
   <!-- jquery --> 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  
   <!-- tensorflow -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
+  
   <!-- blockly-->
   <script src="/js/blockly/storage.js"></script>
   <script src="/js/blockly/brython.js"></script>
   <script src="/js/blockly/brython_stdlib.js"></script>
-  
   <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+  
   <!-- plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>    
+  
   <!--numjs-->             
   <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>  
-
+  
   <!-- pyodide cdn변경 20.11.16 -->
   <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
   <!-- <script src="http://inhatc.iptime.org:4519/pyodide.js"></script>  -->
-  
+
   <!-- 기태 처리 (파일) 21.01.06------------------------------------------------------------------------->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.min.js"></script>
 
@@ -51,6 +54,7 @@
   <script src="/js/blockly/javascript_compressed.js"></script>
   <script src="/js/blockly/python_compressed.js"></script>
   <script src="/js/blockly/blocks_compressed.js"></script>
+  
   <!--미리 정의되어 있는 기본 블록에 대한 설정을 모두 담고 있음.-->
   <script src="/js/blockly/block_pyodide.js"></script>
 
@@ -72,14 +76,14 @@
   <link rel="stylesheet" href="./js/codemirror/addon/hint/show-hint.css">
   <!-- cdoemirror 자동 완성 기능 -->
 
-  <!-- canvas -->
+  <!-- 그림판자리 canvas -->
   <script src="./js/canvas.js"></script>
 
   <!-- 그래프 aside -->
   <script src="./js/aside.js"></script>
 
   <!-- #####################################################################################################  -->
-  <!-- ******************************   블록 import                           ******************************* -->
+  <!-- ******************************              블록 import                ******************************* -->
   <!-- #####################################################################################################  -->
 
   <!-- pyodide 블록 -->
@@ -111,10 +115,6 @@
   <script src="/js/blockly/block_static_js.js"></script>
   <!-- 연산(통계) 블록 -->
 
-  <!-- 테스트용 js
-  <script src="/js/blockly/test.js"></script>
-  <script src="/js/blockly/test_gen.js"></script>  -->
-
   <!-- 웹 크롤링  -->
   <script src="/socket.io/socket.io.js"></script> 
   <!-- 웹 크롤링  -->
@@ -133,7 +133,6 @@
   <script src="/js/blockly/block_system.js"></script>
   <script src="/js/blockly/block_system_py.js"></script>
   <script src="/js/blockly/block_system_js.js"></script>
-
 
   <!-- 데이타 사이언스 블록 -->
   <script src="/js/blockly/Science_Data_T.js"></script>
@@ -196,52 +195,50 @@
   <script src="/js/blockly/block_numpy_basic_js.js"></script>
   <!-- 넘파이 기본카테고리 블록 -->
 
-    <!-- 임시 블록 이성주 -->
-    <script src="/js/blockly/seongju_mat.js"></script>
-    <script src="/js/blockly/seongju_mat_py.js"></script>
-    <script src="/js/blockly/seongju_mat_js.js"></script>
-    
-    <!-- 임시 데이터베이스 양승국 -->
-    <script src="/js/blockly/block_database.js"></script>
-    <script src="/js/blockly/block_database_py.js"></script>
-    <script src="/js/blockly/block_database_js.js"></script>
-    <!-- 블록 -->
-
-    <!-- 임시 판다스 양승국 -->
-    <script src="/js/blockly/block_ysk.js"></script>
-    <script src="/js/blockly/block_ysk_py.js"></script>
-    <script src="/js/blockly/block_ysk_js.js"></script>
-    <!-- 블록 -->
-
-    <!-- 임시 판다스 전우진 -->
-    <script src="/js/blockly/woojin.js"></script>
-    <script src="/js/blockly/woojin_py.js"></script>
-    <script src="/js/blockly/woojin_js.js"></script>
+  <!-- 임시 블록 이성주 -->
+  <script src="/js/blockly/seongju_mat.js"></script>
+  <script src="/js/blockly/seongju_mat_py.js"></script>
+  <script src="/js/blockly/seongju_mat_js.js"></script>
   
-    <!--임시 판다스 남지원-->
-    <script src="/js/blockly/jiwon.js"></script>
-    <script src="/js/blockly/jiwon_py.js"></script>
-    <script src="/js/blockly/jiwon_js.js"></script>
+  <!-- 임시 데이터베이스 양승국 -->
+  <script src="/js/blockly/block_database.js"></script>
+  <script src="/js/blockly/block_database_py.js"></script>
+  <script src="/js/blockly/block_database_js.js"></script>
 
-    <!--임시 판다스 김관필-->
-    <script src="/js/blockly/gwanpil.js"></script>
-    <script src="/js/blockly/gwanpil_py.js"></script>
-    <script src="/js/blockly/gwanpil_js.js"></script>
+  <!-- 임시 양승국 -->
+  <script src="/js/blockly/block_ysk.js"></script>
+  <script src="/js/blockly/block_ysk_py.js"></script>
+  <script src="/js/blockly/block_ysk_js.js"></script>
 
-    <!-- 사이킷 이미지 -->
-    <script src="/js/blockly/block_skimage.js"></script>
-    <script src="/js/blockly/block_skimage_py.js"></script>
-    <script src="/js/blockly/block_skimage_js.js"></script>
+  <!-- 임시 전우진 -->
+  <script src="/js/blockly/woojin.js"></script>
+  <script src="/js/blockly/woojin_py.js"></script>
+  <script src="/js/blockly/woojin_js.js"></script>
 
-    <!-- 맷 파이 이미지 -->
-    <script src="/js/blockly/block_asdf.js"></script>
-    <script src="/js/blockly/block_asdf_py.js"></script>
-    <script src="/js/blockly/block_asdf_js.js"></script>
+  <!--임시 남지원-->
+  <script src="/js/blockly/jiwon.js"></script>
+  <script src="/js/blockly/jiwon_py.js"></script>
+  <script src="/js/blockly/jiwon_js.js"></script>
 
-    <!-- 사이파이 -->
-    <script src="/js/blockly/block_scipy.js"></script>
-    <script src="/js/blockly/block_scipy_py.js"></script>
-    <script src="/js/blockly/block_scipy_js.js"></script>
+  <!--임시 판다스 김관필-->
+  <script src="/js/blockly/gwanpil.js"></script>
+  <script src="/js/blockly/gwanpil_py.js"></script>
+  <script src="/js/blockly/gwanpil_js.js"></script>
+
+  <!-- 사이킷 이미지 -->
+  <script src="/js/blockly/block_skimage.js"></script>
+  <script src="/js/blockly/block_skimage_py.js"></script>
+  <script src="/js/blockly/block_skimage_js.js"></script>
+
+  <!-- 맷 파이 이미지 -->
+  <script src="/js/blockly/block_asdf.js"></script>
+  <script src="/js/blockly/block_asdf_py.js"></script>
+  <script src="/js/blockly/block_asdf_js.js"></script>
+
+  <!-- 사이파이 -->
+  <script src="/js/blockly/block_scipy.js"></script>
+  <script src="/js/blockly/block_scipy_py.js"></script>
+  <script src="/js/blockly/block_scipy_js.js"></script>
 
   <!-- #####################################################################################################  -->
   <!-- ******************************                CSS                      ******************************* -->
@@ -252,94 +249,59 @@
   
   <!-- table --> 
   <link rel="stylesheet" href="/css/table_custom.css">
+  
+  <!-- 기본 css -->
+  <link rel="stylesheet" href="/css/basic.css">
 
-  <style type="text/css">
-    /* canvas {
-      background-color: white;
-      border: 1px solid black
-    } */
-
-    .btn {
-      margin: 10px;
-    }
-
-    .file {
-      margin: 10px;
-    }
-
-    .form-control {
-      height: 50%;
-    }
-
-    div {
-      /*overflow: hidden; 이거 끄니까 코드미러 넘버링나옴 */
-      height: auto;
-    }
-
-    /* 
-    .canvas {
-      margin-left: 10px;
-    } */
-
-    #pyCodeEditor {
-      position: absolute;
-      width: 100%;
-    }
-
-    #jsCodeEditor {
-      position: relative;
-      visibility: hidden;
-    }
-  </style>
-
+  <!-- ???? -->
   <script>
     var Data_process_on = 0;
     var DL_Gra = 0;
     var testing_1 = 0;
   </script>
+  <!-- ???? -->
 
-  <!-- plotly -->
+  <!-- plotly??? -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/utils/plotly.js"></script>
+  <!-- plotly??? -->
 
+  <!-- 플러그인 로딩이 끝났을때 .then -->
   <script>
     languagePluginLoader.then(() => {
       pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image', 'micropip']).then(
     () => { // , 'scikit-learn'
 
         console.log('pyodide 라이브러리 로딩완료');
-        $("#loading_image1").hide(); // 로딩 끝나면 로딩 창 없앰 
+        $("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
         $("#runButton1").css({
           'display': "block"
         });
-        $("#loading_image2").hide(); // 로딩 끝나면 로딩 창 없앰 
+        $("#loading_image2").hide(); // 그래프 로딩 끝나면 로딩 창 없앰 
         $("#runButton2").css({
           'display': "inline"
         });
       });
     });
   </script>
-
-  <!--Socket.IO --> 
+  <!--Socket.IO 지금은 안쓰는데... --> 
   <!-- <script>  
     var socket = io.connect('http://localhost:8000');
       // socket.on('CSV_Name_error', function(data) { 
       //   if (data == "error"); 
       //   window.alert("잘못된 입력입니다.");  
       //  });  
-  </script>       -->
+  </script>     -->
   <!--Socket.IO -->   
-
 </head>
-
 <!-- onload : body가 떳을때 작동되는 js입력 -->
-
 <!-- 기태 처리 (파일) 20.12.29 - onload 추가 큰 의미는 없음 ----------------------------------------------->
-<body onload="start()">
+<body>
   <!-- 언어 패키지, 카테고리 색상 -->
   <!-- 2020-12-05 양승국 동적 변경을 위해 head -> body로 옮김-->
   <script id = "lan" src="/js/blockly/msg/js/ko.js"></script> 
-  <!-- 그래프 사이드바 -->
+
+  <!-- 그래프 사이드바 start-->
   <aside id="sidebar">
     <!-- 그래프 사이드바 닫기 버튼 -->
     <div class="sidebar">
@@ -356,22 +318,22 @@
 
     <div id=graph></div>
 
-    <div id=graph1 style="height: 500px; width: 900px;"><img id="pyplotfigure" /></div>
+    <div id=graph1 style="height:500px; width:900px;"><img id="pyplotfigure"/></div>
     <!-- <div id=graph2 style="height: 300px;"></div> 
       <div id=graph3 style="height: 300px;"></div>-->
-    <div id="csv_show">
-    </div>
+    <div id="csv_show"></div>
   </aside>
+  <!-- 그래프 사이드바 end-->
 
   <div class="container-fluid">
     <!-- nav -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #f4f6ff;">
 
       <!-- a -->
-      <a class="navbar-brand" href="#"><img src="logo2-2.png" /></a>
+      <a class="navbar-brand" href="#"><img src="logo2-2.png"/></a>
 
       <!-- 왼쪽 구역-->
-      <div class="d-flex flex-wrap text-white" style="width: 80%;">
+      <div class="d-flex flex-wrap text-white" style="width:80%;">
 
         <!-- 파일 열기 -->
         <div class="input-group col-md-3 ml-3 mt-2 btn-sm custom-file">
@@ -556,7 +518,7 @@
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display:none">
     
   <!-- #####################################################################################################  -->
-  <!-- ******************************   변수(Variable)                           ******************************* -->
+  <!-- ******************************   변수(Variable)                        ******************************* -->
   <!-- #####################################################################################################  -->
   <category name="%{BKY_CATEGORY_VARIABLE}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
 
@@ -770,20 +732,6 @@
       <label text="time & datetime"></label>
       <!--<block type="time_library"></block>-->
       <block type="time_"></block>
-      
-      <block type="strftime_">
-        <value name="val1">
-          <shadow type="indata">
-            <field name="indata1">'포맷'</field>
-          </shadow>
-        </value>
-        <value name="val2">
-          <shadow type="indata">
-            <field name="indata1">시간객체</field>
-          </shadow>
-        </value>
-      </block>
-
       <block type="sleep">
         <value name="val1">
           <shadow type="indata">
@@ -8487,7 +8435,6 @@
           </value>
         </block> -->
 
-      
     </category>
     <!-- <category name="프롤로그 (Prolog)" colour="%{BKY_PROLOG_HUE}">
       <block type="prolog_list">
@@ -8658,35 +8605,32 @@
 
   </xml>
 
-  </xml>
-
   <!-- code mirror -->
   <script>
+    // JS 코드미러
     var jsEditor = CodeMirror(document.getElementById("jsCodeEditor"), {
       mode: "javascript",
       //   value: "codemirror",
-      theme: "oceanic-next",
+      theme: "oceanic-next",  // 테마
       inputStyle: "contenteditable",
-      // readOnly: true,
-      lineNumbers: true,
+      // readOnly: true,  // 읽기 전용 설정
+      lineNumbers: true,  // 라인 넘버 설정
       lineWrapping: true, // 자동 줄바꿈 설정
-
-
       //   spellcheck: true,   autocorrect: true,
     });
 
-
+    // PY 코드미러
     var pyEditor = CodeMirror(document.getElementById("pyCodeEditor"), {
       mode: "python",
       //   value: "codemirror",
-      theme: "oceanic-next",
+      theme: "oceanic-next",          // 테마
       inputStyle: "contenteditable",
-      // readOnly: true,
-      lineNumbers: true,
-      lineWrapping: true, // 자동 줄바꿈 설정
-      // spellcheck: true,
+      // readOnly: true,              // 읽기 전용
+      lineNumbers: true,              // 라인 넘버 설정
+      lineWrapping: true,             // 자동 줄바꿈 설정
+      // spellcheck: true,            // 스펠링 체크
       extraKeys: {
-        "Ctrl-Space": "autocomplete"
+        "Ctrl-Space": "autocomplete"  // 단축키
       },
       //   spellcheck: true,   autocorrect: true,
     });
@@ -8745,11 +8689,11 @@
     var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace); // 자바 스크립트 선택 
     var pyCode = Blockly.Python.workspaceToCode(demoWorkspace); // 파이썬 선택 
 
-    var delCount = 0;
-    var fileState = 0;
-    var fileName = "";
+    var delCount = 0;   // ?
+    var fileState = 0;  // ?
+    var fileName = "";  // ?
 
-    // ==================================
+    //==================================
     // 블록 저장하기 
     //===================================  
     function saveBlock() {
@@ -9433,7 +9377,6 @@
       input.accept = ".jpg, .png, .bmp, .wav"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
       input.onchange = function (e) {
       
-    
       fileName2 =  e.target.files[0].name;
       console.log(fileName2);
 
@@ -9515,16 +9458,10 @@
       input.click();
     }
     //== 기태 수정 (로컬 파일 열기 ) ===================================================
-
-    function start(){
-      console.log("start");
-      datas = "123 test 한글 처리";            
-    }  
-
     function loadFile(sender) {
       var reader = new FileReader();
-        
-      reader.onload = function (sender) {
+      
+      reader.onload = function (sender) {      // reader가 준비되면 sender
         datas = sender.target.result;          
         console.log("datas", datas);
         fss.writeFileSync(fileName2, datas);
@@ -9592,7 +9529,7 @@
           var _fileExt = _filename.substring(_lastDot, _fileLen).toLowerCase(); // 분리된 파일 확장자
         }
 
-        // 왜 fs가아니라 fss인걸까? readFile(파일명, 인코딩, 에러시)
+        // readFile(파일명, 인코딩, 에러시)
         fss.readFile(_filename, 'base64', function(err, data) {
           console.log(data); // data정보 확인
           // 에러가 났을 때

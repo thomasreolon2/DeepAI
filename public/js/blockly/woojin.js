@@ -55,69 +55,6 @@
     }
   };
 
-  // 고장 진단
-
-Blockly.Blocks['scipy_bartlett'] = {
-  init: function () {
-      this.appendDummyInput().appendField("signal.bartlett");
-      this.appendValueInput("d2").appendField("(").setCheck(null);
-      this.appendDummyInput().appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_SCIPY_HUE}");
-      this.setTooltip("");
-      this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['scipy_tsearch'] = {
-  init: function () {
-      this.appendDummyInput().appendField("spatial.tsearch");
-      this.appendValueInput("d2").appendField("(").setCheck(null);
-      this.appendDummyInput().appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_SCIPY_HUE}");
-      this.setTooltip("");
-      this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['scipy_distance_matrix_minkowski_distance_minkowski_distance_p'] = {
-  init: function () {
-      this.appendDummyInput().appendField("spatial.").appendField(new Blockly.FieldDropdown([
-          [
-              "distance_matrix", "distance_matrix"
-          ],
-          [
-            "minkowski_distance", "minkowski_distance"
-          ],
-          [
-            "minkowski_distance_p", "minkowski_distance_p"
-          ]
-      ]), "scipy");
-      this.appendValueInput("d2").appendField("(").setCheck(null);
-      this.appendDummyInput().appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_SCIPY_HUE}");
-      this.setTooltip("");
-      this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['scipy_procrustes'] = {
-  init: function () {
-      this.appendDummyInput().appendField("spatial.procrustes");
-      this.appendValueInput("d2").appendField("(").setCheck(null);
-      this.appendDummyInput().appendField(")");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour("%{BKY_SCIPY_HUE}");
-      this.setTooltip("");
-      this.setHelpUrl("");
-  }
-};
 
 // 이후로는 현재 사용하지 않는 블럭
 
