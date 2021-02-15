@@ -194,41 +194,6 @@ Blockly.Python['ax_legend'] = function(block) {
 
 // skimage/////////////
 
-Blockly.Python['skimage_color'] = function(block) {
-  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_method = block.getFieldValue('method');
-  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${dropdown_method}(${value_para})`;
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
-Blockly.Python['skimage_feature'] = function(block) {
-  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_method = block.getFieldValue('method');
-  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${dropdown_method}(${value_para})`;
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
-Blockly.Python['skimage_morphology'] = function(block) {
-  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_method = block.getFieldValue('method');
-  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${dropdown_method}(${value_para})`;
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
-Blockly.Python['skimage_util_shape'] = function(block) {
-  var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);
-  var dropdown_method = block.getFieldValue('method');
-  var value_para = Blockly.Python.valueToCode(block, 'para', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = `${value_para}.${dropdown_method}(${value_var})`;
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
 
 Blockly.Python['img_as_float'] = function(block) {
   var value_var = Blockly.Python.valueToCode(block, 'var', Blockly.Python.ORDER_ATOMIC);

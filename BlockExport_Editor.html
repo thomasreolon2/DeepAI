@@ -9254,7 +9254,7 @@
           reader.onload = function (e) {
             datas = e.target.result;          
             console.log("datas", datas);    
-            var data = datas.replace(/^data:image\/\w+;base64,/, "");
+            var data = datas.replace(/^data:image\/\w+;base64,/, ""); // 여길 날림
             var buf = Buffer.from(data, 'base64');        
             fss.writeFileSync(fileName2, buf);
             var block = demoWorkspace.getBlockById(blockId);
@@ -9399,7 +9399,7 @@
           } else if(_fileExt == '.jpg'){  
             minetype = 'image/jpeg'; 
             //base64Image2 = new Buffer(data, 'binary').toString('base64');
-            base64Image = data;
+            //base64Image = data;
             //data = `data:image/jpeg;base64, ${base64Image}`;   
             //console.log("data", data);                              
           } else if(_fileExt == '.wav'){            
@@ -9414,9 +9414,9 @@
           saveAs(blob, _filename);
 
           // console.log(blob);
-		      var url = URL.createObjectURL(blob);
-          console.log(url);
-          console.log(_filename);
+		      // var url = URL.createObjectURL(blob);
+          //console.log(url);
+          //console.log(_filename);
           //saveAs(url, _filename);
 
 		      //  downloadLink.href = url;
