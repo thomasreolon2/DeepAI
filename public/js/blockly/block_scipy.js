@@ -88,105 +88,66 @@ Blockly.Blocks['scipy_io_wavfile_read'] = {
     }
 };
 
+// 전우진 고장 진단
 
-//////////////////////////////////////
-//// 2021-02-15 양승국
-//////////////////////////////////////
-Blockly.Blocks['scipy_write_read'] = {
+Blockly.Blocks['scipy_bartlett'] = {
     init: function () {
-      this.appendDummyInput().appendField("[wavfile읽/쓰기]wavfile.").appendField(new Blockly.FieldDropdown([
-        [
-            "쓰기(write)", "write"
-        ],
-        [
-          "읽기(read)", "read"
-        ],
-        ]), "collection");
-        this.appendValueInput("d1").appendField("(").setCheck(null);
+        this.appendDummyInput().appendField("signal.bartlett");
+        this.appendValueInput("d2").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
   };
   
-  Blockly.Blocks['scipy_cascade'] = {
+  Blockly.Blocks['scipy_tsearch'] = {
     init: function () {
-      this.appendDummyInput().appendField("[cascade]signal.cascade");
-        this.appendValueInput("d1").appendField("(").setCheck(null);
+        this.appendDummyInput().appendField("spatial.tsearch");
+        this.appendValueInput("d2").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
   };
   
-  Blockly.Blocks['scipy_daub'] = {
+  Blockly.Blocks['scipy_distance_matrix_minkowski_distance_minkowski_distance_p'] = {
     init: function () {
-      this.appendDummyInput().appendField("[daub]signal.daub");
-        this.appendValueInput("d1").appendField("(").setCheck(null);
+        this.appendDummyInput().appendField("spatial.").appendField(new Blockly.FieldDropdown([
+            [
+                "distance_matrix", "distance_matrix"
+            ],
+            [
+              "minkowski_distance", "minkowski_distance"
+            ],
+            [
+              "minkowski_distance_p", "minkowski_distance_p"
+            ]
+        ]), "scipy");
+        this.appendValueInput("d2").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
   };
   
-  Blockly.Blocks['scipy_morlet'] = {
+  Blockly.Blocks['scipy_procrustes'] = {
     init: function () {
-      this.appendDummyInput().appendField("[morlet]signal.").appendField(new Blockly.FieldDropdown([
-        [
-            "(morlet)", "morlet"
-        ],
-        [
-          "(morlet2)", "morlet2"
-        ],
-        ]), "collection");
-        this.appendValueInput("d1").appendField("(").setCheck(null);
+        this.appendDummyInput().appendField("spatial.procrustes");
+        this.appendValueInput("d2").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
   };
-  
-  Blockly.Blocks['scipy_qmf'] = {
-    init: function () {
-      this.appendDummyInput().appendField("[qmf]signal.qmf");
-        this.appendValueInput("d1").appendField("(").setCheck(null);
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        //this.setOutput(true, null);
-        this.setColour(pandas_color);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-  
-  Blockly.Blocks['scipy_ricker'] = {
-    init: function () {
-      this.appendDummyInput().appendField("[ricker]signal.ricker");
-        this.appendValueInput("d1").appendField("(").setCheck(null);
-        this.appendDummyInput().appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        //this.setOutput(true, null);
-        this.setColour(pandas_color);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-  
