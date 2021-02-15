@@ -1,0 +1,28 @@
+/* canvas {
+      background-color: white;
+      border: 1px solid black
+    } */
+
+.btn { margin: 10px; }
+.file { margin: 10px; }
+.form-control { height: 50%; }
+
+div {
+/*overflow: hidden; 이거 끄니까 코드미러 넘버링나옴 */
+height: auto;
+}
+
+/* 
+.canvas {
+margin-left: 10px;
+} */
+
+#pyCodeEditor {
+    position: absolute;
+    width: 100%;
+}
+
+#jsCodeEditor {
+    position: relative;
+    visibility: hidden;
+}
