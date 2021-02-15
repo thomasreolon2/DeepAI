@@ -564,6 +564,7 @@
   <!-- ******************************   입출력 ( I/O )                           ******************************* -->
   <!-- #####################################################################################################  -->
   <category name = "%{BKY_CATEGORY_INPUT_OUTPUT}" colour = "255">
+
     <!-- 데이터 입력 -->
     <block type="input1">
       <value name="content1">
@@ -7218,6 +7219,57 @@
         </value>
       </block>
 
+      
+    <!-- 임시 승국 -->
+    <block type = "scipy_write_read">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "scipy_cascade">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "scipy_daub">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "scipy_morlet">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "scipy_qmf">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type = "scipy_ricker">
+      <value name="d1">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <!-- 임시 승국 -->
       
     </category>
     <!-- # 시각화 부분 #  -->
