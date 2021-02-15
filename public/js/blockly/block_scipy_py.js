@@ -70,3 +70,39 @@ Blockly.Python['curve_fit'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_ATOMIC];
   };
+
+  //전우진 고장 진단
+
+Blockly.Python['scipy_bartlett'] = function(block) {
+    var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = `signal.bartlett(${value_name2})`;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+  
+  Blockly.Python['scipy_tsearch'] = function(block) {
+    var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = `spatial.tsearch(${value_name2})`;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+  
+  
+  Blockly.Python['scipy_distance_matrix_minkowski_distance_minkowski_distance_p'] = function(block) {
+    var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+    var dropdown_dic = block.getFieldValue('scipy');
+    // TODO: Assemble Python into code variable.
+    var code = `spatial.${dropdown_dic}(${value_name2})`;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };
+  
+  Blockly.Python['scipy_procrustes'] = function(block) {
+    var value_name2 = Blockly.Python.valueToCode(block, 'd2', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = `spatial.procrustes(${value_name2})`;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_ATOMIC];
+  };

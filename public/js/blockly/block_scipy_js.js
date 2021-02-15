@@ -34,3 +34,28 @@ Blockly.JavaScript['univariatespline'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
   };
+
+  // 전우진 고장 진단
+  Blockly.JavaScript['scipy_bartlett'] = function (block) {
+    // TODO: Assemble .JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['scipy_tsearch'] = function (block) {
+    // TODO: Assemble .JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['scipy_distance_matrix_minkowski_distance_minkowski_distance_p'] = function (block) {
+    // TODO: Assemble .JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
+
+  Blockly.JavaScript['scipy_procrustes'] = function (block) {
+    // TODO: Assemble .JavaScript into code variable.
+    var code = '\n';
+    return code;
+  };
