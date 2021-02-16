@@ -9416,36 +9416,6 @@
     input.click();
     }
 
-    // 웨이브 파일 처리하기 
-    function localFileOpen3(blockId) {
-      console.log("local Wave FileOpen");
-      var input = document.createElement("input");
-      input.type = "file";
-      input.accept = ".wav"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
-      input.onchange = function (e) {
-       
-        if (e.target.files != undefined) {
-          console.log("loadLocalFile-3")
-          var reader = new FileReader();
-        
-          reader.onload = function (e) {
-            datas = e.target.result;          
-            console.log("datas", datas);    
-            // wav 파일 처리하기 
-            fss.writeFileSync(fileName2, Buffer(new Uint8Array(datas)));
-            var block = demoWorkspace.getBlockById(blockId);
-            var bId = Blockly.mainWorkspace.getBlockById(blockId)
-            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
-          };
-
-          fileName2 =  e.target.files[0].name;
-          console.log(fileName2);
-          reader.readAsArrayBuffer(e.target.files[0]);        
-        }
-      };
-
-      input.click();
-    }
     //== 기태 수정 (로컬 파일 열기 ) ===================================================
     function loadFile(sender) {
       var reader = new FileReader();
