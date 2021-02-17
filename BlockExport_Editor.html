@@ -9488,8 +9488,8 @@
           var _fileExt = _filename.substring(_lastDot, _fileLen).toLowerCase(); // 분리된 파일 확장자
         }
 
-        // readFile(파일명, 인코딩, 에러시)
-        fss.readFile(_filename, 'base64', function(err, data) {
+        // readFile - 인코딩 없이 minetype으로 구분해서 처리하면 됨.
+        fss.readFile(_filename, function(err, data) {
           console.log(data); // data정보 확인
           // 에러가 났을 때
           if(err){
@@ -9503,37 +9503,19 @@
           } else if(_fileExt == '.csv'){
             minetype = "text/csv;charset=utf-8";
           } else if(_fileExt == '.bmp'){            
-            minetype : 'image/bmp';
-            base64Image = new Buffer(data, 'binary').toString('base64');
-            data = `data:image/bmp;base64,${base64Image}`;   
+            minetype : 'image/bmp';            
           } else if(_fileExt == '.jpg'){  
-            minetype = 'image/jpeg'; 
-            //base64Image2 = new Buffer(data, 'binary').toString('base64');
-            //base64Image = data;
-            //data = `data:image/jpeg;base64, ${base64Image}`;   
-            //console.log("data", data);                              
+            minetype = 'image/jpeg';             
           } else if(_fileExt == '.wav'){            
             minetype : 'audio/wav';           
           }
-          //console.log(base64Image2 == base64Image);
-
+          
           // 블롭 생성
           blob = new Blob([data], { type: minetype });
           console.log(blob);
           // 블롭 저장.
           saveAs(blob, _filename);
-
-          // console.log(blob);
-		      // var url = URL.createObjectURL(blob);
-          //console.log(url);
-          //console.log(_filename);
-          //saveAs(url, _filename);
-
-		      //  downloadLink.href = url;
-		      //  downloadLink.download = _filename;
-		      //  document.body.appendChild(downloadLink);
-		      //  downloadLink.click();
-		      //  document.body.removeChild(downloadLink);
+          
         });
       }
     </script> 
