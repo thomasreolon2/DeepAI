@@ -9442,7 +9442,7 @@
             fss.writeFileSync(fileName2, "");
             
             languagePluginLoader.then(async ()=>{            
-              pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy']).then(() => {
+              pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy', 'sympy', 'beautifulsoup4']).then(() => {
                 console.log("Module loaded.");
               })
               
