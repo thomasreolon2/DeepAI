@@ -118,7 +118,7 @@ Blockly.Blocks['ski_class'] = {
           "exposure", "exposure"
         ],
         [
-          "segmetation", "segmetation"
+          "segmentation", "segmentation"
         ],
         // [
         //   "img_as_float", "img_as_float"
