@@ -177,12 +177,12 @@ Blockly.Blocks['skimage_measure'] = {
 
 Blockly.Blocks['skimage_filters'] = {
   init: function () {
-      this.appendDummyInput().appendField("filters.").appendField(new Blockly.FieldDropdown([
+      this.appendDummyInput().appendField(Blockly.Msg.skimage_filters).appendField("filters.").appendField(new Blockly.FieldDropdown([
           [
-              "sobel", "sobel"
+            Blockly.Msg.skimage_filters_sobel, "sobel"
           ],
           [
-            "roberts", "roberts"
+            Blockly.Msg.skimage_filters_roberts, "roberts"
           ]
       ]), "collection");
       this.appendValueInput("d2").appendField("(").setCheck(null);
@@ -248,8 +248,11 @@ Blockly.Blocks['skimage_img_as_float'] = {
 Blockly.Blocks['skimage_color'] = {
   init: function() {
     this.appendDummyInput()
+        .appendField(Blockly.Msg.skimage_color)
         .appendField("color.")
-        .appendField(new Blockly.FieldDropdown([["rgb2gray","color.rgb2gray"], ["hed2rgb","color.hed2rgb"], ["gray2rgb","color.gray2rgb"], ["rgb2hsv","color.rgb2hsv"]]), "method")
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.skimage_color_rgb2gray,"color.rgb2gray"], 
+        [Blockly.Msg.skimage_color_hed2rgb,"color.hed2rgb"], [Blockly.Msg.skimage_color_gray2rgb,"color.gray2rgb"], 
+        [Blockly.Msg.skimage_color_rgb2hsv,"color.rgb2hsv"]]), "method")
         .appendField("(");
     this.appendValueInput("para")
         .setCheck(null);

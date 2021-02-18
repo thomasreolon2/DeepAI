@@ -1299,3 +1299,14 @@ Blockly.Msg['OPERATION_RANDOM2_2'] = "실수(randuniform)";
 Blockly.Msg['OPERATION_RANDOM3'] = "추출(sample)";
 
 
+//사이킷이미지
+
+Blockly.Msg['skimage_filters'] = "[이미지필터]";
+Blockly.Msg['skimage_filters_sobel'] = "이미지 가장자리 찾기(sobel)";
+Blockly.Msg['skimage_filters_roberts'] = "간선 크기 찾기(roberts)";
+Blockly.Msg['skimage_color'] = "[색상처리]";
+Blockly.Msg['skimage_color_rgb2gray'] = "RGB이미지 휘도계산(rgb2gray)";
+Blockly.Msg['skimage_color_hed2rgb'] = "RGB색공간 HED로 변환(hed2rgb)";
+Blockly.Msg['skimage_color_gray2rgb'] = "그레이 레벨 이미지의 RGB 생성(gray2rgb)";
+Blockly.Msg['skimage_color_rgb2hsv'] = "RGB를 HSV로 변환(rgb2hsv)";
+
