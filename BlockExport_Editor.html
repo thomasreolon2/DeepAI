@@ -8875,6 +8875,7 @@
                     plt.cla()
                     plt.clf()
                     sys.stdout = io.StringIO()
+                    
                     `); 
       });
       // var code = document.getElementById("pyCodeEditor");
@@ -9301,18 +9302,18 @@
   </script>
   <!-- 데이터 입력 bug fix -->
   <script>
-    function input_fixed(text) {
-        return prompt(text);
-    };
+    // function input_fixed(text) {
+    //     return prompt(text);
+    // };
     
-    languagePluginLoader.then(() => {
-      pyodide.runPythonAsync(`
-    from js import input_fixed
-    input = input_fixed
-    __builtins__.input = input_fixed
-    `);
-    });
-    </script>
+    // languagePluginLoader.then(() => {
+    //   pyodide.runPythonAsync(`
+    //     from js import input_fixed
+    //     input = input_fixed
+    //     __builtins__.input = input_fixed
+    //     `);
+    // });
+  </script>
 
     <!-- 기태 처리 (파일) 20.12.29------------------------------------------------------------------------->
     <!-- 외부 파일 입력 제거 -->
@@ -9461,7 +9462,24 @@
               pythonCode = `              
                 import sys
                 from io import StringIO
-                sys.stdout = StringIO()        
+                sys.stdout = StringIO()      
+
+                def do_work(*args):
+                  micropip.install('http://localhost:15480/js/package/chardet-4.0.0-py2.py3-none-any.whl').then(do_work2)
+
+
+                def do_work2(*args):
+                  micropip.install('http://localhost:15480/js/package/certifi-2020.12.5-py2.py3-none-any.whl').then(do_work3)
+
+                def do_work3(*args):
+                  micropip.install('http://localhost:15480/js/package/idna-3.1-py3-none-any.whl').then(do_work4)  
+
+                def do_work4(*args):
+                  micropip.install('http://localhost:15480/js/package/requests-2.25.1-py2.py3-none-any.whl')  
+                  
+                import micropip
+                micropip.install('http://localhost:15480/js/package/urllib3-1.26.3-py2.py3-none-any.whl').then(do_work)
+                
               `
 
               languagePluginLoader.then(() => {
