@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head> 
   <meta charset="utf-8" />
+  <!-- 
+    viewport(반응형 웹) :  여러 디스플레이 통해 접속 가능 
+    width=device-width : 페이지 너비를 기기의 스크린 너비로 설정
+    initial-scale=1 : 페이지 로딩 시 원래 크기를 사용 (확대, 축소 되지 않음)
+  -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>D.I.Y.</title>
   <!-- Blockly 개발자모드 코드 안보이게 막음-->
@@ -59,6 +64,7 @@
 
   <!-- codemirror 추가 -->
   <script src="/js/codemirror/lib/codemirror.js"></script>
+  <!-- rel: 현재 문서와 외부 리소스 사이의 연관 관계 명시 / stylesheet: 스타일 시트로 사용할 외부 리소스 불러옴-->
   <link rel="stylesheet" href="/js/codemirror/lib/codemirror.css">
   <script src="/js/codemirror/mode/javascript/javascript.js"></script>
   <script src="/js/codemirror/mode/python/python.js"></script>
@@ -252,25 +258,26 @@
   <!-- 기본 css -->
   <link rel="stylesheet" href="/css/basic.css">
 
-  <!-- ???? -->
+  <!-- 명성이형 파일 불러올때 필요한 변수설정 
   <script>
     var Data_process_on = 0;
     var DL_Gra = 0;
     var testing_1 = 0;
   </script>
-  <!-- ???? -->
+  명성이형 파일 불러올때 필요한 변수설정 -->
 
-  <!-- plotly??? -->
+  <!-- plotly 데이터 시각화를 위해 필요-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/utils/plotly.js"></script>
-  <!-- plotly??? -->
+  <!-- plotly -->
 
-  <!-- 플러그인 로딩이 끝났을때 .then -->
+  <!-- 이거 중복되는 거임 필요없을거같기도함. -->
+  <!-- 플러그인 로딩이 끝났을때 .then => languagePluginLoader: 비동기 객체 -->
   <script>
     languagePluginLoader.then(() => {
+      // 패키지로드 loadpackage, micropip은 pydodie에서 파이썬 wheel에 관련하여 설치함.
       pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image', 'micropip']).then(
-    () => { // , 'scikit-learn'
-
+    () => { 
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
         $("#runButton1").css({
@@ -293,8 +300,7 @@
   </script>     -->
   <!--Socket.IO -->   
 </head>
-<!-- onload : body가 떳을때 작동되는 js입력 -->
-<!-- 기태 처리 (파일) 20.12.29 - onload 추가 큰 의미는 없음 ----------------------------------------------->
+
 <body>
   <!-- 언어 패키지, 카테고리 색상 -->
   <!-- 2020-12-05 양승국 동적 변경을 위해 head -> body로 옮김-->
@@ -7760,7 +7766,6 @@
           </value>
         </block>
 
-	      <!-- <block type="csv3"></block> -->
       </category>
 
         <category name="예측" colour="%{BKY_SCIKITLEARN_HUE}">
@@ -8482,7 +8487,7 @@
         <block type="random_import"></block>
         <block type="make_circles"></block>
         <block type="fetch_openml"></block>
-        <block type="csv3"></block>
+        <block type="csv2"></block>
       </category>
 
       <category name="%{BKY_CATEGORY_PREPROCESSING}" colour="%{BKY_SCIKITLEARN_HUE}"> <!--전처리 (Preprocessing)
@@ -8594,7 +8599,7 @@
 
       </category>
       <!-- <block type="array_get"></block>
-      <block type="csv3"></block>
+      <block type="csv2"></block>
        <block type="sklearn_mlp_fit"></block> 
     </category>
   -->
@@ -8606,33 +8611,31 @@
     // JS 코드미러
     var jsEditor = CodeMirror(document.getElementById("jsCodeEditor"), {
       mode: "javascript",
-      //   value: "codemirror",
-      theme: "oceanic-next",  // 테마
-      inputStyle: "contenteditable",
-      // readOnly: true,  // 읽기 전용 설정
-      lineNumbers: true,  // 라인 넘버 설정
-      lineWrapping: true, // 자동 줄바꿈 설정
-      //   spellcheck: true,   autocorrect: true,
+      // value: "codemirror",
+      theme: "oceanic-next",          // 테마
+      inputStyle: "contenteditable",  // 입력 처리 방식
+      // readOnly: true,              // 읽기 전용 설정
+      lineNumbers: true,              // 라인 넘버 설정
+      lineWrapping: true,             // 자동 줄바꿈 설정
+      // spellcheck: true,   autocorrect: true,
     });
 
     // PY 코드미러
     var pyEditor = CodeMirror(document.getElementById("pyCodeEditor"), {
       mode: "python",
-      //   value: "codemirror",
+      // value: "codemirror",
       theme: "oceanic-next",          // 테마
-      inputStyle: "contenteditable",
+      inputStyle: "contenteditable",  // 입력 처리 방식
       // readOnly: true,              // 읽기 전용
       lineNumbers: true,              // 라인 넘버 설정
       lineWrapping: true,             // 자동 줄바꿈 설정
       // spellcheck: true,            // 스펠링 체크
-      extraKeys: {
-        "Ctrl-Space": "autocomplete"  // 단축키
-      },
+      extraKeys: { "Ctrl-Space": "autocomplete" }, // 단축키
       //   spellcheck: true,   autocorrect: true,
     });
 
-    var codeArea = jsEditor.getValue();  // 코드 나타나는 부분 
-    var demoWorkspace = Blockly.inject( // 블록이 나타나는 부분 
+    // (demoWorkspace = 블록배치하는 공간) 블록이 나타나는 부분
+    var demoWorkspace = Blockly.inject( 
       "blocklyDiv", {
         toolbox: document.getElementById("toolbox"), // 툴박스  보이기 
         grid: // 그리드 보이기 
@@ -8672,42 +8675,40 @@
             'flyoutBackgroundColour': '#D8D8D8', // toolbox color
           }
         }*/
-        renderer: "zelos"
+        renderer: "zelos" // 제로스 테마
       }
     );
 
-    // 생성될 코드에 대해 선택하는 부분       
-    var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace); // 자바 스크립트 선택 
-    var pyCode = Blockly.Python.workspaceToCode(demoWorkspace); // 파이썬 선택 
+    // 생성될 코드에 대해 선택하는 부분 -> 사용할때마다 선언해서 굳이 필요 없어보임.
+    //var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace); // 자바 스크립트 선택 
+    //var pyCode = Blockly.Python.workspaceToCode(demoWorkspace); // 파이썬 선택 
 
-    var delCount = 0;   // ?
-    var fileState = 0;  // ?
-    var fileName = "";  // ?
+
 
     //==================================
     // 블록 저장하기 
     //===================================  
     function saveBlock() {
-      var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
-      var p_xml = Blockly.Xml.domToPrettyText(xml);
-      // 다른이름으로 저장
-      var filename = prompt("다른이름으로 저장."); 
-      var fileObject = new File([p_xml], filename+".xml");
-      saveAs(fileObject);
+      let xml = Blockly.Xml.workspaceToDom(demoWorkspace);  // 워크스페이스를 돔(xml)로 만듬
+      let p_xml = Blockly.Xml.domToPrettyText(xml);         // 돔(xml)을 깔끔하게 만드는 부분
+      let filename = prompt("다른이름으로 저장.");           // 다른이름으로 저장
+      let fileObject = new File([p_xml], filename+".xml");  // 파일 객체 생성 (data,name+확장자)
+      saveAs(fileObject);                                   // 로컬 저장
     }
 
-    // ==================================
+    //===================================
     // 블록 불러오기 
     //===================================   
     function loadBlock() {
-      var reader = new FileReader();
-      var files = document.getElementById("file").files;
-      var file = files[0];
+      let reader = new FileReader();  // FileReader객체 생성
+      let files = document.getElementById("file").files; // 로컬에 있는 파일의 id값 얻기
+      let file = files[0];
+      let fileName = "";  
       if (file) {
-        reader.onload = function (e) {
-          var xml = reader.result;
-          var dom = Blockly.Xml.textToDom(xml);
-          Blockly.Xml.appendDomToWorkspace(dom, demoWorkspace);
+        reader.onload = function (e) {          // 파일읽기 성공한 경우
+          var xml = reader.result;              // 읽어들인 파일 내용
+          var dom = Blockly.Xml.textToDom(xml); // text를 돔 형태로 변환
+          Blockly.Xml.appendDomToWorkspace(dom, demoWorkspace); //  돔을 디코딩 후 워크스페이스에 블록을 만들어 냄.
           fileName = file.name;
           
           // 워크스페이스에 있는 블록을 코드로 변환해 코드미러에 setValue해주는 부분
@@ -8720,7 +8721,6 @@
           try {
             var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
             jsEditor.getValue() = jsCode;
-
           } catch (e) {
             console.log('java script 코드가 매핑되어 있지 않습니다. Error : ' + e);
           }
@@ -8735,16 +8735,17 @@
     function codeUpdate(event) {
       async function coderun() {
         try {
-          var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
-          pyEditor.setValue(pyCode);
+          var pyCode = Blockly.Python.workspaceToCode(demoWorkspace); // 워크스페이스를 코드로 변환 후 값 저장
+          pyEditor.setValue(pyCode); // 그 값을 파이썬코드미러에 값 저장
         } catch (e) {
           console.log('python 코드가 매핑되어 있지 않습니다. Error : ' + e);
         }
       }
+      // coderun이 끝나고나서 작동됨.
       coderun().then(() => {
         try {
-          var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-          jsEditor.setValue(jsCode);
+          var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace); // 워크스페이스를 js코드로 변환 후 값 저장
+          jsEditor.setValue(jsCode); // 그 값을 js코드미러에 값 저장
         } catch (e) {
           console.log('java script 코드가 매핑되어 있지 않습니다. Error : ' + e);
         }
@@ -8760,20 +8761,14 @@
     }
 
     // ==================================
-    // 파일로 저장하기
+    // 코드 파일로 저장하기
     //===================================  
-    function file_save() {
-      //var code_java = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-      //var blobObject = new Blob([code_python, code_java]);
-      //saveAs(blobObject, "download.js");
-      
-      var code_python = Blockly.Python.workspaceToCode(demoWorkspace);
-      // 이 부분 추가로 블럭뿐만 아니라 코드 쓴것도 저장됨
+    function file_save() {   
+      var code_python = Blockly.Python.workspaceToCode(demoWorkspace); // 워크스페이스를 파이썬 코드로 변환
       var code = pyEditor.getValue();
-      var blobObject = new Blob([code]);  
-      var filename = prompt("다른이름으로 저장.");
-      //window.location.href = window.URL.createObjectURL(blobObject);
-      //saveAs(blobObject, "download.py"); 
+      var blobObject = new Blob([code]);  // 코드를 블롭 객체로 만듬 => 블롭은 이미지, 사운드, 비디오와 같은 멀티미디어 데이터를 다룰 때 사용
+      // 이름을 받아서 saveAs
+      let filename = prompt("다른이름으로 저장."); 
       saveAs(blobObject, filename+".py"); 
     }
 
@@ -8782,62 +8777,52 @@
     //=================================== 
     function whenSelected(event) {
       if (event.type == Blockly.Events.CREATE) {
-        var block = demoWorkspace.getBlockById(event.blockId);
-        console.log('블록이 선택됨1');
+        var block = demoWorkspace.getBlockById(event.blockId); 
+        console.log('블록이 선택됨');
       }
 
+      // 블록을 눌렀을 때 클릭 이벤트로 각종 메소드 작동
       if (event.type == Blockly.Events.UI && event.element === "click") {
         var block = demoWorkspace.getBlockById(event.blockId);
+        // 판다스에서 쓰이는 csv불러와서 데이터 프레임 만들어주는거
         if ('csv2' == block.type) {
-          openTextFile(event.blockId);
-        }
-        if ('csv3' == block.type) {
           openTextFile(event.blockId);
         }
 
         // 기태 수정(로컬 파일 열기) 21.01.01 ==============================================
+        //판다스의 파일열기
         if ('fileopen' == block.type) {
           console.log("파일 열기");
           localFileOpen(event.blockId);         
         }
+        //사이파이의 미디어불러오기
         if ('fileopen2' == block.type) {
-          console.log("이미지 파일 열기");
+          console.log("미디어 파일 열기");
           localFileOpen2(event.blockId);         
         }
-
-        if ('fileopen3' == block.type) {
-          console.log("웨이브 파일 열기");
-          localFileOpen3(event.blockId);         
-        }
-        // 기태 수정(로컬 파일 열기) ========================================================
-
+        // 기태 수정(로컬 파일 열기) 지금은 사용되지 않음 ========================================================
         if ('data_csv_read' == block.type) {
           Show_csv();
         }
-
         // 다운로드 블록 창 열기
         if ('os_data_download'  == block.type) {
           fileDownload();
         }
       }
     }
-    demoWorkspace.addChangeListener(codeUpdate);
-    demoWorkspace.addChangeListener(whenSelected);
+    demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
+    demoWorkspace.addChangeListener(whenSelected);// 선택 되었을 때 메소드
   </script>
-
-  
   <script>
   //==================================
   // 블록을 실행했을 때 
   //==================================
     //새로운 실행방법
     function runButton() {
-      Blockly.Python.addReservedWords('code');
-      
+      //Blockly.Python.addReservedWords('code'); // 이 언어의 예약어 목록에 하나 이상의 단어를 추가한다.
       //var code1 = pyEditor.getValue();
       //var tmp = code1.indexOf(' = ')
       //var res = code1.charAt(tmp - 1)
-
       //pyodide.runPython(`
       //              del(${res})
       //              `);
@@ -8845,6 +8830,7 @@
       // 그래프 위쪽 삭제
       $("#graph1").remove();
       $("#csv_show").before("<div id='graph1' style=\"height:500px; width:900;\"><img id='pyplotfigure' /></div>");
+      // 그래프 위쪽 삭제
 
       // 그래프같은 이미지들을 싹다 잡아옴 plt.show()하면 바로 되는이유
       globalThis.iodide = {
@@ -8858,13 +8844,13 @@
         }
       };
 
-      Blockly.Python.addReservedWords('code');
-
-      var code = pyEditor.getValue();
-      Blockly.JavaScript.addReservedWords('code2');
-      var code2 = jsEditor.getValue();
+      Blockly.Python.addReservedWords('code');      // 왜 필요할까?
+      var code = pyEditor.getValue();               // py 코드미러의 값을 code로 저장
+      Blockly.JavaScript.addReservedWords('code2'); // 왜 필요할까?
+      var code2 = jsEditor.getValue();              // js 코드미러의 값을 code2로 저장
       
       // 이 부분이 코드 싹다 잡아와서 출력
+      // 실행했을때 그래프를 지우고 하기 위해
       // plt.cla - 클리어
       // plt.clf - figure클리어
       languagePluginLoader.then(() => {
@@ -8883,9 +8869,8 @@
       async function runcode() {
         console.log(code); // 파이썬코드찍는부분
         console.log("-----");
-        console.log(code2); // 자바스크립트 찍는부분
-        console.log(typeof (code));
-        var exe = document.getElementById('exeArea');
+        console.log(code2); // 자바스크립트코드 찍는부분
+        var exe = document.getElementById('exeArea'); // 콘솔 창 ID가져옴
         languagePluginLoader.then(() => {
           try {
             exe.innerHTML = pyodide.runPython(code);
@@ -8901,12 +8886,10 @@
       runcode().then(() => {
         if(eval(code2)==undefined){
           document.getElementById('exeArea').innerHTML+='\n';
-        }
-        else{
+        } else{
           console.log("error : javascript code error");
-      }
+        }
       });
-
     }
     // 기존 실행 버튼
     // function runButton() {
@@ -8927,14 +8910,14 @@
     // });
     // DL_Gra = 0;
     //   };
-
     //   runcode().then(() => {
     //     document.getElementById('exeArea').innerHTML = eval(code2);
     //   });
-
     // };
-
-
+      
+    //======================
+    // .csv를 테이블로 만들기 
+    //======================
     function openTextFile(blockId) {
       var input = document.createElement("input");
       input.type = "file";
@@ -8947,17 +8930,17 @@
         if (e.target.files != undefined) {
           var reader = new FileReader();
           reader.onload = function (e) {
-            var csvval = e.target.result.split("\n");
-            var csvvalue = csvval[0].split(",");
+            var csvval = e.target.result.split("\n"); // 개행으로 나누고
+            var csvvalue = csvval[0].split(",");      // ,로 나누고 
             var inputrad = "";
             // csv view! header 1
             for (var i = 0; i < csvvalue.length; i++) {
               var header = csvvalue[i];
               addOptions(header);
             }
-            csvval[0] = csvval[0].replace('\r', '');
+            csvval[0] = csvval[0].replace('\r', ''); // 커서가 맨 앞에 있으면 없애고
             // row
-            var cnt = (csvval.length < 2000) ? csvval.length : 2000;
+            var cnt = (csvval.length < 2000) ? csvval.length : 2000; // 갯수를 2000개까지
             for (var i = 1; i < cnt - 1; i++) {
               csvval[i] = csvval[i].replace('\r', '');
               var cols = csvval[i].split(',');
@@ -8979,32 +8962,91 @@
           reader.readAsText(e.target.files.item(0), /* optional */ "euc-kr");
         }
       };
-
       input.click();
     }
 
-    function processFile(file) {
-      var reader = new FileReader();
-      reader.onload = function () {
-      var fileResult = reader.result;
-      var val = sessionStorage.setItem('file', fileResult);
-      };
-      reader.readAsText(file, /* optional */ "cp949");
+    // **************************************
+    // ********   테이블 그리기      *********
+    // ************************************** 
+    function draw_table(Get_CSV_DATA, Get_CSV_Header) {
+
+      var NPTD_Data = Array.from(Array(Get_CSV_DATA[0].length), () => new Array(Get_CSV_DATA.length));
+
+      for (var i = 0; i < Get_CSV_DATA.length; i++) {
+        for (var j = 0; j < Get_CSV_DATA[0].length; j++) {
+          NPTD_Data[j][i] = Get_CSV_DATA[i][j];
+          // console.log(NPTD_Data[j][0]);
+        }
+      }
+
+    var NPTD_Data_Header = Array.from(Array(NPTD_Data.length), () => new Array(NPTD_Data[0].length));
+
+  //--------------------------------- data 속성 ---------------------------// 
+  var data = [{
+    type: 'table',
+
+    //--------------헤더 설정 ---------------// 
+    header: {
+      values: Get_CSV_Header,
+      line: {
+        width: 1,
+        color: 'black'
+      },
+      fill: {
+        color: "grey"
+      },
+      font: {
+        family: "Arial",
+        size: 12,
+        color: "white"
+      }
+    },
+    //--------------셀 설정 ---------------//
+    cells: {
+      values: NPTD_Data,
+      align: "center",
+      line: {
+        color: "black",
+        width: 1
+      },
+      font: {
+        family: "Arial",
+        size: 11,
+        color: ["black"]
+      }
     }
+  }]
+  var title = "테이블 확인 하기 "
+  var graph = "graph1"
+  var layout = {title: title}
+  //--------------------------------- data 속성 ---------------------------//
+  Plotly.newPlot(graph, data, layout);
+}
+    // 안쓰는 부분인거같음 
+    //
+    // function processFile(file) {
+    //   var reader = new FileReader();
+    //   reader.onload = function () {
+    //   var fileResult = reader.result;
+    //   var val = sessionStorage.setItem('file', fileResult);
+    //   };
+    //   reader.readAsText(file, /* optional */ "cp949");
+    // }
 
     /* 그래프 */
-    const metrics = ['loss', 'val_loss', 'acc', 'val_acc']
-    const container = {
-      name: 'Model Training',
-      styles: {
-        height: '1000px'
-      }
-    };
+    // const metrics = ['loss', 'val_loss', 'acc', 'val_acc']
+    // const container = {
+    //   name: 'Model Training',
+    //   styles: {
+    //     height: '1000px'
+    //   }
+    // };
 
-    async function saveModel(model) {
-      model.save('localstorage://my-model');
-      alert('완료되었습니다.');
-    }
+    // 스크래핑에서 쓰는거같은데 안쓰는거같음
+    // async function saveModel(model) {
+    //   model.save('localstorage://my-model');
+    //   alert('완료되었습니다.');
+    // }
 
     // canvas 활성화 & 비활성화
     /*function canvas_power() {
@@ -9023,45 +9065,21 @@
     */
 
     // canvas 저장하기
-    const alphaPixel = []
+    // const alphaPixel = []
 
-    function canvas_save() {
-      var download = $("#download")[0];
-      var canvas = $("#canvas")[0];
-      var c = document.getElementById("canvas");
-      var ctx = c.getContext("2d");
-      console.log(ctx);
-      var pixel = ctx.getImageData(0, 0, 28, 28).data;
-      for (i = 3, idx = 0; i < pixel.length; i += 4) {
-        alphaPixel[idx] = pixel[i];
-        idx++;
-      }
-      console.log(alphaPixel);
-    }
-
-
-
-        // $("#lan").attr("src", "/js/blockly/msg/js/ko.js");
-           
-
-    
-
-    /*
-     * 코드미러 화면 전환(python&javascript)
-     */
-    $("#display_select").change(function () {
-      var selectName = $(this).find(":selected").val();
-      var pyEditor = $("#pyCodeEditor");
-      var jsEditor = $("#jsCodeEditor");
-
-      if (selectName == "javascript") {
-        jsEditor.css("visibility", "visible");
-        pyEditor.css("visibility", "hidden");
-      } else if (selectName == "python") {
-        pyEditor.css("visibility", "visible");
-        jsEditor.css("visibility", "hidden");
-      }
-    });
+    // function canvas_save() {
+    //   var download = $("#download")[0];
+    //   var canvas = $("#canvas")[0];
+    //   var c = document.getElementById("canvas");
+    //   var ctx = c.getContext("2d");
+    //   console.log(ctx);
+    //   var pixel = ctx.getImageData(0, 0, 28, 28).data;
+    //   for (i = 3, idx = 0; i < pixel.length; i += 4) {
+    //     alphaPixel[idx] = pixel[i];
+    //     idx++;
+    //   }
+    //   console.log(alphaPixel);
+    // }
 
     // 화면에 찍기 프린트
     function printc(x) {
@@ -9070,19 +9088,15 @@
     }
 
     // **************************************
-    // ********   파일 열기     **********//
+    // ********   CSV파일열기 - 지금은 사용되지 않음     **********//
     // **************************************//   
     async function Show_csv(test) {
-
       var Show_CSV_Data_S = await Data_process();
-
 
       console.log("Show_csv : Load_csv\n", Show_CSV_Data_S);
 
       var rows = Show_CSV_Data_S.split(/\r\n|\n/);
       var cols = Show_CSV_Data_S.split(/\r\n|\n/)[0].split(/,/);
-
-
 
       var Get_CSV_DATA = Array.from(Array(cols.length), () => new Array((rows.length) - 1));
       for (var i = 0; i < (rows.length) - 1; i++) {
@@ -9098,89 +9112,11 @@
 
       return test;
     }
-    // **************************************
-    // ********   테이블 그리기      **********//
-    // **************************************//  
-    function draw_table(Get_CSV_DATA, Get_CSV_Header) {
 
-      var NPTD_Data = Array.from(Array(Get_CSV_DATA[0].length), () => new Array(Get_CSV_DATA.length));
-
-      for (var i = 0; i < Get_CSV_DATA.length; i++) {
-        for (var j = 0; j < Get_CSV_DATA[0].length; j++) {
-          NPTD_Data[j][i] = Get_CSV_DATA[i][j];
-          // console.log(NPTD_Data[j][0]);
-        }
-      }
-
-      var NPTD_Data_Header = Array.from(Array(NPTD_Data.length), () => new Array(NPTD_Data[0].length));
-
-
-      //--------------------------------- data 속성 ---------------------------// 
-      var data = [{
-        type: 'table',
-
-        //--------------헤더 설정 ---------------// 
-        header: {
-          values: Get_CSV_Header,
-          //     values: [["<b>EXPENSES</b>"], ["<b>Q1</b>"],["<b>Q2</b>"], ["<b>Q3</b>"], ["<b>Q4</b>"]], 
-
-          //     function(Table_Chart){
-          //         for (var j = 0; j < Table_Chart[0].length; j++) {   //테이블 요소만 가져오기 
-          //            [Table_Chart[j][0]] 
-          //            }
-          //   },
-
-          //     align: "center",
-          line: {
-            width: 1,
-            color: 'black'
-          },
-          fill: {
-            color: "grey"
-          },
-          font: {
-            family: "Arial",
-            size: 12,
-            color: "white"
-          }
-        },
-        //--------------헤더 설정 ---------------//
-
-        cells: {
-          values: NPTD_Data,
-          align: "center",
-          line: {
-            color: "black",
-            width: 1
-
-          },
-          font: {
-            family: "Arial",
-            size: 11,
-            color: ["black"]
-          }
-        }
-      }]
-
-
-      var title = "테이블 확인 하기 "
-      var graph = "graph1"
-
-
-
-      var layout = {
-
-        title: title
-
-      }
-      //--------------------------------- data 속성 ---------------------------//
-      Plotly.newPlot(graph, data, layout);
-    }
-
-
+    
 
     // **************************************
-    // ********   파일 열기     **********//
+    // ********   파일 열기 -- 지금은 사용되지않음     **********//
     // **************************************//
     function Data_process() {
 
@@ -9215,7 +9151,7 @@
 
 
     // **************************************
-    // ********  데이터셋_불러오기     **********//
+    // ********  데이터셋_불러오기 - 지금은 사용되지 않음     **********//
     // **************************************//  
     function exportToCsv(filename, rows) {
 
@@ -9297,7 +9233,6 @@
         document.body.appendChild(script);
       }  
     });
-
     
   </script>
   <!-- 데이터 입력 bug fix -->
@@ -9322,41 +9257,43 @@
     onchange="loadFile(this);"
     /> -->
 
+
+    <!-- 로컬 파일 오픈하기 -->
     <script>
-    var datas="";
-    let fss;
-    let fileName2="temp";      
-    var rows = "";
+    var datas="";           // 데이터 변수 초기화
+    let fss;                // FS가 BrowserFS와 겹치기 때문에 재 생성
+    let fileName2="temp";   // 파일 명   
+    var rows = "";          // ?
     
-    //== 기태 수정 (로컬 파일 열기 ) 21.01.01=============================================
+    //== 기태 수정 (로컬 파일 열기 ) 21.01.01 =============================================
     // 텍스트 파일 처리하기 
     function localFileOpen(blockId) {
       console.log("local Text FileOpen");
-      var input = document.createElement("input");
+      var input = document.createElement("input"); // input 태그를 하나 만든다.
+      // 태그 속성 정의
       input.type = "file";
       input.accept = ".txt, .csv"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
-      input.onchange = function (e) {
-       
-        if (e.target.files != undefined) {
-          console.log("loadLocalFile-1")
-          var reader = new FileReader();
+      input.onchange = function (e) { // input의 값이 변하면 => 파일을 불러오면
+        if (e.target.files != undefined) { // 이중부정을 굳이?
+          console.log("txt or csv 파일 불러옴")
+          var reader = new FileReader(); // 파일리더 객체 생성
         
-          reader.onload = function (e) {
-            datas = e.target.result;          
-            console.log("datas", datas);
-            fss.writeFileSync(fileName2, datas);
-            var block = demoWorkspace.getBlockById(blockId);
-            var bId = Blockly.mainWorkspace.getBlockById(blockId)
-            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
+          // reader가 준비되면 
+          reader.onload = function (e) { 
+            datas = e.target.result;      // 다읽어온 파일의 값을 datas에 저장      
+            console.log("datas", datas);  // datas 출력 => txt나 csv를 출력한번 해본다.
+            fss.writeFileSync(fileName2, datas); // FS에 파일명으로 datas를 저장
+            var block = demoWorkspace.getBlockById(blockId); // 블럭안의 input에 파일 경로를 적기위해 블럭 찾음
+            var bId = Blockly.mainWorkspace.getBlockById(blockId) // ???
+            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path'); // 블럭안에 input에 파일경로를 적어줌
           };
 
-          fileName2 =  e.target.files[0].name;
-          console.log(fileName2);
-          reader.readAsText(e.target.files[0]);        
+          fileName2 =  e.target.files[0].name;  // 파일명 받아옴
+          console.log(fileName2);               // 파일명 출력해봄
+          reader.readAsText(e.target.files[0]); // 리더객체가 텍스트를 읽음        
         }
       };
-
-      input.click();
+      input.click(); // 블럭이 클릭되면 실행
     }
 
     // 미디어 파일 처리하기 
@@ -9370,85 +9307,86 @@
       fileName2 =  e.target.files[0].name;
       console.log(fileName2);
 
-      var _fileLen = fileName2.length;
-      var _lastDot = fileName2.lastIndexOf('.');
-      var _fileExt = fileName2.substring(_lastDot, _fileLen).toLowerCase();
+      // 파일명, 확장자 분리작업
+      var _fileLen = fileName2.length;                                      // 파일명의 길이
+      var _lastDot = fileName2.lastIndexOf('.');                            // 파일명에서 가장 마지막에 나오는 .확인 => 확장자 체크
+      var _fileExt = fileName2.substring(_lastDot, _fileLen).toLowerCase(); // 확장자를 소문자로 변경해 저장
 
+      // 확장자가 wav일때 
       if(_fileExt == ".wav"){
         if (e.target.files != undefined) {
-          console.log("loadLocalFile-3")
+          console.log("웨이브 파일")
           var reader = new FileReader();
         
           reader.onload = function (e) {
             datas = e.target.result;          
             console.log("datas", datas);    
             // wav 파일 처리하기 
-            fss.writeFileSync(fileName2, Buffer(new Uint8Array(datas)));
+            fss.writeFileSync(fileName2, Buffer(new Uint8Array(datas))); // 버퍼 배열로 파일 저장
             var block = demoWorkspace.getBlockById(blockId);
             var bId = Blockly.mainWorkspace.getBlockById(blockId)
             block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
           };
-
           fileName2 =  e.target.files[0].name;
           console.log(fileName2);
-          reader.readAsArrayBuffer(e.target.files[0]);        
+          reader.readAsArrayBuffer(e.target.files[0]);  // 웨이브 파일은 버퍼로 읽어온다    
         }
-      } else {
+      } else { // 확장자가 wav가아니면 이미지라고 판단
         if (e.target.files != undefined) {
-          console.log("loadLocalFile-2")
+          console.log("이미지 파일")
           var reader = new FileReader();
-        
+          
+          // reader가 이미지를 다 읽었을때 실행
           reader.onload = function (e) {
-            datas = e.target.result;          
+            datas = e.target.result;  // 이미지 값을 datas에 저장
             console.log("datas", datas);    
-            var data = datas.replace(/^data:image\/\w+;base64,/, ""); // 여길 날림
-            var buf = Buffer.from(data, 'base64');        
-            fss.writeFileSync(fileName2, buf);
+            var data = datas.replace(/^data:image\/\w+;base64,/, ""); // 이 부분을 삭제함
+            var buf = Buffer.from(data, 'base64');  // base64 버퍼로 저장
+            fss.writeFileSync(fileName2, buf); 
             var block = demoWorkspace.getBlockById(blockId);
             var bId = Blockly.mainWorkspace.getBlockById(blockId)
             block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
           };
-
-          
-          reader.readAsDataURL(e.target.files[0]);        
+          reader.readAsDataURL(e.target.files[0]);  // reader가 이미지를 읽음   
         }
       }
     };
-    input.click();
+    input.click(); // input을 클릭했을 때. 
     }
 
     //== 기태 수정 (로컬 파일 열기 ) ===================================================
-    function loadFile(sender) {
-      var reader = new FileReader();
+    // function loadFile(sender) {
+    //   var reader = new FileReader();
       
-      reader.onload = function (sender) {      // reader가 준비되면 sender
-        datas = sender.target.result;          
-        console.log("datas", datas);
-        fss.writeFileSync(fileName2, datas);
-      };
+    //   reader.onload = function (sender) {      // reader가 준비되면 sender
+    //     datas = sender.target.result;          
+    //     console.log("datas", datas);
+    //     fss.writeFileSync(fileName2, datas);
+    //   };
 
-      fileName2 =  sender.files[0].name;
-      reader.readAsText(sender.files[0]);        
-    }
+    //   fileName2 =  sender.files[0].name;
+    //   reader.readAsText(sender.files[0]);        
+    // }
 
     //=====기태 처리 (파일) 21.01.06  : 파일 로딩에 대해 인터벌 적용 ================================
     setTimeout(function() {
       BrowserFS.install(window);
-      
       BrowserFS.configure({
             fs: "LocalStorage"
         }, function(e) {
-            fss = require('fs');
-            var fs = BrowserFS.BFSRequire('fs');          
-            fss.writeFileSync(fileName2, "");
+            fss = require('fs'); // [Node.JS] fs의 기능을 fss로 이동 => 브라우저 fs와 겹침방지
+            var fs = BrowserFS.BFSRequire('fs'); // [BrowserFS] 사용하려면 기본적으로 필요한 건가봄?
+            fss.writeFileSync(fileName2, ""); // temp라는 이름의 빈 파일 생성
             
-            languagePluginLoader.then(async ()=>{            
+            // [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
+            languagePluginLoader.then(async ()=>{       
+              // pyodide모듈 로드     
               pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy', 'sympy', 'beautifulsoup4']).then(() => {
-                console.log("Module loaded.");
+                console.log("모듈 로드 완료.");
               })
               
-              let FS = pyodide._module.FS;
-              let PATH = pyodide._module.PATH;
+              let FS = pyodide._module.FS; // 모듈의 파일시스템
+              let PATH = pyodide._module.PATH; // 모듈의 경로
               console.log(FS.mount);
               console.log(PATH);
 
@@ -9459,6 +9397,7 @@
               // Mount BrowserFS into Emscripten FS
               FS.mount(BFS, {root: '/'}, '/data');
 
+              // 이부분은 내부 콘솔(f12 X)에 찍어주기 위해?? 필요한 부분?? 왜 쓰는지 모르겠음
               pythonCode = `              
                 import sys
                 from io import StringIO
@@ -9466,7 +9405,6 @@
 
                 def do_work(*args):
                   micropip.install('http://localhost:15480/js/package/chardet-4.0.0-py2.py3-none-any.whl').then(do_work2)
-
 
                 def do_work2(*args):
                   micropip.install('http://localhost:15480/js/package/certifi-2020.12.5-py2.py3-none-any.whl').then(do_work3)
@@ -9481,7 +9419,7 @@
                 micropip.install('http://localhost:15480/js/package/urllib3-1.26.3-py2.py3-none-any.whl').then(do_work)
                 
               `
-
+              // 비동기 부분 다 끝나고 이거 되는거같음
               languagePluginLoader.then(() => {
                 return pyodide.loadPackage(['micropip'])
               }).then(() => {
@@ -9494,9 +9432,8 @@
     <script>
       // 파일 다운로드 
       function fileDownload(){
-        var downloadLink = document.createElement("a"); // url로 다운받기위해 a태그 생성 -> saveAs로 변경 후에는 필요없어진걸로 확인
         var minetype;     // 데이터 타입 
-        var blob;         // 블롭 자리
+        var blob;         // 블롭 변수
         var base64Image;  // base64이미지
 
         var _filename = prompt("저장할 파일명을 입력해주세요(ex> hello.txt)");    // 파일명+확장자 입력
@@ -9515,7 +9452,7 @@
             return;
           }
 
-          // 확장바 비교 후 작동.
+          // 확장자 비교 후 작동.
           if(_fileExt == '.txt'){
             minetype = "text/plain;charset=utf-8";            
           } else if(_fileExt == '.csv'){
