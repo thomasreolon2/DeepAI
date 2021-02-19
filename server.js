@@ -2,34 +2,36 @@
 // server.js가 node에서 사용하는 통상적인 app.js임
 
 // express를 활용한 서버 만들기
-var express = require('express');
+var express = require('express'); // 익스프레스 모듈 require 및 app 설정 (해당 방식은 express 에서 사용하도록 한 규약? 같은 방식)
 var fs = require('fs'); // 파일 시스템 
-var http = require('http'); // 이건 왜 주석처리 되있던 걸까?
+//var http = require('http'); // 이건 왜 주석처리 되있던 걸까?
 const ejs = require("ejs"); // ejs는 서버에서 JS로 템플릿을 만들 수 있게 도와준다.
 
 var app = express();
+
+// install cors 로 설치 하였기 때문에 cors 모듈 require
+var cors = require('cors')
+const options = {
+  key: fs.readFileSync('./keys/private.pem'),
+ cert: fs.readFileSync('./keys/public.pem')
+};
+// cors () 사용  // 모든 도메인에 대한 Request 활성화  -> 좋지 않은 방식 
+app.use(cors());
+
 var server = require('http').createServer(options, app).listen(15480, function(){
     console.log('Socket IO server listening on port 15480');
 });
 
-// CORS 해결 
-app.all('/*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next();
-});
+
 
 //크롤링 21.02.19 남지원 주석처리
-// var client = require('cheerio-httpcli');  
-// const bodyParser = require('body-parser'); 
-// var urlTpye = require('url');   
-// var request = require('request'); 
-// var fname ;
+ var client = require('cheerio-httpcli');  
+ const bodyParser = require('body-parser'); 
+ var urlTpye = require('url');   
+ var request = require('request'); 
+ var fname ;
 // //크롤링 
-// const options = {
-//     key: fs.readFileSync('./keys/private.pem'),
-//     cert: fs.readFileSync('./keys/public.pem')
-// };
+ 
 
 var io = require('socket.io')(server);// http server를 socket.io server로 upgrade 
 app.set("view engine", "ejs"); 
