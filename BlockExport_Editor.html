@@ -82,10 +82,11 @@
   <!-- cdoemirror 자동 완성 기능 -->
 
   <!-- 그림판자리 canvas -->
-  <script src="./js/canvas.js"></script>
-
+  <script src="/js/canvas.js"></script>
+  <!-- 블록, 블록+코드, 코드 변경-->
+  <script src="/js/tabDisplay.js"></script>
   <!-- 그래프 aside -->
-  <script src="./js/aside.js"></script>
+  <script src="/js/aside.js"></script>
 
   <!-- #####################################################################################################  -->
   <!-- ******************************              블록 import                ******************************* -->
@@ -277,7 +278,7 @@
     languagePluginLoader.then(() => {
       // 패키지로드 loadpackage, micropip은 pydodie에서 파이썬 wheel에 관련하여 설치함.
       pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image', 'micropip']).then(
-    () => { 
+      () => { 
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
         $("#runButton1").css({
@@ -297,8 +298,8 @@
       //   if (data == "error"); 
       //   window.alert("잘못된 입력입니다.");  
       //  });  
-  </script>     -->
-  <!--Socket.IO -->   
+  </script>    
+  -->
 </head>
 
 <body>
@@ -357,62 +358,10 @@
 
         <!-- 블록 탭 -->
         <div class="btn-group" role="group">
-          <button type="button" class="btn btn-secondary mr-0" id="visibleBlock">블럭</button>
-          <button type="button" class="btn btn-secondary mr-0" id="visibleAll">블럭+코드</button>
-          <button type="button" class="btn btn-secondary mr-0" id="visibleCode">코드</button>
+          <button type="button" class="btn btn-secondary mr-0" onclick="visibleBlock()">블럭</button>
+          <button type="button" class="btn btn-secondary mr-0" onclick="visibleAll()">블럭+코드</button>
+          <button type="button" class="btn btn-secondary mr-0" onclick="visibleCode()">코드</button>
         </div>
-
-        <!-- 탭들 display -->
-        <script>
-          // 블럭만 보이기
-          $('#visibleBlock').click(function () {
-            $('#codeDiv1').css({
-              'display': "none"
-            });
-            $('#blocklyDiv').css({
-              'display': "block",
-              'height' : "65vh"
-            });
-            $('#codeDiv2').css({
-              'width' : '100%'
-            });
-            // svg width 100%
-            $('#codeDiv').attr('class', 'col-md-12'); // 콘솔 창 12
-            $('.blocklySvg').attr('width', '100%'); // 블록 창 넓이 
-            $('#blocklyDiv').attr('class', 'col-md-12'); // 블록 창 넓이 
-            // Blockly 리사이즈
-            Blockly.svgResize(demoWorkspace);
-          });
-
-          // 전부 보이기
-          $('#visibleAll').click(function () {
-            $('#blocklyDiv').css({
-              'display': "block",
-              'height' : "90vh"
-            });
-            $('#codeDiv1').css({
-              'display': "block"
-            });
-            $('#codeDiv2').css({
-              'display': "block"
-            });
-            $('#blocklyDiv').attr('class', 'col-md-8');
-            $('#codeDiv').attr('class', 'col-md-4');
-            // Blockly 리사이즈
-            Blockly.svgResize(demoWorkspace);
-          });
-
-          // 코드만 보이기
-          $('#visibleCode').click(function () {
-            $('#blocklyDiv').css({
-              'display': "none"
-            });
-            $('#codeDiv1').css({
-              'display': "block"
-            });
-            $('#codeDiv').attr('class', 'col-md-12');
-          })
-        </script>
       </div>
 
       <!-- 오른쪽 구역 -->
@@ -9381,9 +9330,9 @@
             // [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
             languagePluginLoader.then(async ()=>{       
               // pyodide모듈 로드     
-              pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy', 'sympy', 'beautifulsoup4']).then(() => {
-                console.log("모듈 로드 완료.");
-              })
+              //pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy', 'sympy', 'beautifulsoup4']).then(() => {
+              //  console.log("모듈 로드 완료.");
+              //})
               
               let FS = pyodide._module.FS; // 모듈의 파일시스템
               let PATH = pyodide._module.PATH; // 모듈의 경로

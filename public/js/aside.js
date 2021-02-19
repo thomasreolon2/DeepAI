@@ -1,6 +1,5 @@
 // aside 열고 닫기 토글
 function sidebar_toggle() {
-        
     var duration = 300;
     var $side = $('#sidebar');
 
