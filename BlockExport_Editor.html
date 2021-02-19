@@ -9439,10 +9439,14 @@
     
     <script>
       function _requestsURL(){
+        alert('111');
         $.ajax({
-          url: "https://www.daum.net/",
-        }).done(function(data) {
-          document.write(data);
+          url: "/test2",
+          method: "GET", // HTTP 요청 메소드(GET, POST 등) 
+          dataType: "json", // 서버에서 보내줄 데이터의 타입
+          success: function(data){   
+            alert(data.data);
+          }
         });
       }
     </script>

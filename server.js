@@ -31,7 +31,10 @@ var server = require('http').createServer(options, app).listen(15480, function()
  var request = require('request'); 
  var fname ;
 // //크롤링 
- 
+
+var axios = require("axios")
+var cheerio = require("cheerio")
+
 
 var io = require('socket.io')(server);// http server를 socket.io server로 upgrade 
 app.set("view engine", "ejs"); 
@@ -82,3 +85,22 @@ io.on('connection', function (socket) {
 
     socket.emit('Scripts_Get_URL', get_html);  
 });
+
+app.get("/test2", function (req, res) { 
+  console.log("페이지 정보 가져오기");
+  // var url = 'https://www.naver.com';
+  // var url = 'http://cyber.inhatc.ac.kr/';
+  var url = 'https://www.google.co.kr';
+  var result = ""; //getHTML(); 
+  async function getForum() {
+    try {
+      var response = await axios.get(
+        url         // 검색할 URL 가져오기 
+      );
+      res.json({data: response.data}); // 클라이언트에 성공했다고 신호를 보냄.
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  result = getForum();  
+}); 
