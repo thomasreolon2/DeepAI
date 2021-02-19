@@ -251,7 +251,7 @@
   <!-- #####################################################################################################  -->
 
   <!-- 사이드 바 -->
-  <link rel="stylesheet" href="css\sidebar.css">
+  <link rel="stylesheet" href="/css/sidebar.css">
   
   <!-- table --> 
   <link rel="stylesheet" href="/css/table_custom.css">
@@ -380,13 +380,16 @@
         <!-- 실행 로딩 중 -->
         <div id="loading_image1"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div>
         <!-- 결과 버튼 -->
-        <input id="button_console_clear" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="clear_result();"
+        <input id="button_console_clear" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick=clear_result();
           value="결과 지우기" />
 
         <!-- 저장 버튼 -->
-        <input id="button_code_save" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick="file_save();"
+        <input id="button_code_save" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick=file_save();
           value="코드저장" />
 
+          <!-- 저장 버튼 -->
+        <input id="asave" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick=_requestsURL();
+        value="aa" />
         <!-- Button trigger modal -->
         <button id = "button_paint" type="button" class="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal"
           data-target="#staticBackdrop">그림판</button>
@@ -425,6 +428,8 @@
         <!-- 그래프 버튼 -->
         <input id="sidebar_button" type="button" class="btn btn-outline-primary btn-sm" value="그래프"
           onclick="sidebar_toggle()" />
+
+          
 
       </div> <!-- 오른쪽 구역 -->
     </nav>
@@ -9431,7 +9436,17 @@
       }
     </script> -->
     <!-- 기태 휴지통 처리 끝 21.01.16----------------------------------------------------------------------------->
-</body>
+    
+    <script>
+      function _requestsURL(){
+        $.ajax({
+          url: "https://www.daum.net/",
+        }).done(function(data) {
+          document.write(data);
+        });
+      }
+    </script>
+</body> 
 
 <style>
   #loading_image1 {
