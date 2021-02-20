@@ -1304,9 +1304,63 @@ Blockly.Msg['OPERATION_RANDOM3'] = "추출(sample)";
 Blockly.Msg['skimage_filters'] = "[이미지필터]";
 Blockly.Msg['skimage_filters_sobel'] = "이미지 가장자리 찾기(sobel)";
 Blockly.Msg['skimage_filters_roberts'] = "간선 크기 찾기(roberts)";
+
 Blockly.Msg['skimage_color'] = "[색상처리]";
 Blockly.Msg['skimage_color_rgb2gray'] = "RGB이미지 휘도계산(rgb2gray)";
 Blockly.Msg['skimage_color_hed2rgb'] = "RGB색공간 HED로 변환(hed2rgb)";
 Blockly.Msg['skimage_color_gray2rgb'] = "그레이 레벨 이미지의 RGB 생성(gray2rgb)";
 Blockly.Msg['skimage_color_rgb2hsv'] = "RGB를 HSV로 변환(rgb2hsv)";
+
+Blockly.Msg['skimage_transform'] = "[변환처리]";
+Blockly.Msg['skimage_transform_hough_line'] = "직선허프 변환(hough_line)";
+Blockly.Msg['skimage_transform_hough_circle'] = "원형허프 변환(hough_circle)";
+Blockly.Msg['skimage_transform_hough_circle_peaks'] = "원형허프 피크 반환(hough_circle_peaks)";
+Blockly.Msg['skimage_transform_hough_line_peaks'] = "직선허프 피크 반환(hough_line_peaks)";
+Blockly.Msg['skimage_transform_probabilistic_hough_line'] = "짐진적 확률라인 반환(probabilistic_hough_line)";
+
+Blockly.Msg['skimage_img_as_float'] = "[부동 소수점 변환]";
+Blockly.Msg['skimage_img_as_float_img_as_float'] = "이미지를 부동 소수점으로 변환(img_as_float)";
+
+Blockly.Msg['skimage_util'] = "[기능활용]";
+Blockly.Msg['skimage_util_invert'] = "이미지 반전(invert)";
+Blockly.Msg['skimage_util_img_as_ubyte'] = "이미지를 부호없는 8비트 정수로 변환(img_as_ubyte)";
+Blockly.Msg['skimage_util_view_as_blocks'] = "n차원 배열 블록보기(view_as_blocks)";
+
+Blockly.Msg['skimage_measure'] = "[치수측정]";
+Blockly.Msg['skimage_measure_find_contours'] = "배열에서 등가 등고선 찾기(find_contours)";
+Blockly.Msg['skimage_measure_subdivide_polygon'] = "다각형 곡선 세분화하기(subdivide_polygon)";
+Blockly.Msg['skimage_measure_approximate_polygon'] = "다각형 체인 근사화하기(approximate_polygon)";
+
+Blockly.Msg['skimage_feature'] = "[특징찾기]";
+Blockly.Msg['skimage_feature_canny'] = "이미지 엣지 필터링하기(canny)";
+
+
+Blockly.Msg['skimage_morphology'] = "[형태구성]";
+Blockly.Msg['skimage_morphology_convex_hull_image'] = "볼록 껍질 영상 계산하기(convex_hull_image)";
+Blockly.Msg['skimage_morphology_skeletonize'] = "골격 계산하기(skeletonize)";
+Blockly.Msg['skimage_morphology_thin'] = "형태론적 박리 진행하기(thin)";
+Blockly.Msg['skimage_morphology_reconstruction'] = "형태학적 재구성하기(reconstruction)";
+
+
+Blockly.Msg['skimage_draw'] = "[그리기]";
+Blockly.Msg['skimage_draw_bezier_curve'] = "베지어 곡선 좌표 생성하기(bezier_curve)";
+Blockly.Msg['skimage_draw_ellipse_perimeter'] = "타원 둘레 좌표 생성하기(ellipse_perimeter)";
+Blockly.Msg['skimage_draw_line_aa'] = "안티 앨리어싱 된 선 픽셀 좌표 생성하기(line_aa)";
+Blockly.Msg['skimage_draw_circle_perimeter_aa'] = "안티 앨리어싱된 원 둘레 좌표 생성하기(circle_perimeter_aa)";
+Blockly.Msg['skimage_draw_ellipse'] = "타원 내 픽셀 좌표 생성하기(ellipse)";
+Blockly.Msg['skimage_draw_random_shapes'] = "임의의 이미지 생성하기(random_shapes)";
+Blockly.Msg['skimage_draw_circle_perimeter'] = "원 둘레 좌표 생성하기(circle_perimeter)";
+Blockly.Msg['skimage_draw_line'] = "라인 픽셀 좌표 생성하기(line)";
+
+Blockly.Msg['skimage_data_immunohistochemistry'] = "[면역조직화학]";
+Blockly.Msg['skimage_segmentation'] = "[분할하기]";
+
+Blockly.Msg['skimage_util_shape'] = "[n차원배열블록보기]";
+Blockly.Msg['skimage_util_shape_reshape'] = "형태 변경하기(reshape)";
+Blockly.Msg['skimage_util_shape_shape'] = " ";
+// Blockly.Msg['ndi_zoom'] = "";
+// Blockly.Msg['img_as_float'] = "";
+// Blockly.Msg['data_camera'] = "";
+
+
 

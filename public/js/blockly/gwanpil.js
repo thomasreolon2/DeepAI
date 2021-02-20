@@ -298,31 +298,32 @@ Blockly.Blocks['plt_subplots'] = {
   Blockly.Blocks['skimage_draw'] = {
     init: function () {
       this.appendDummyInput()
+        .appendField(Blockly.Msg.skimage_draw)
         .appendField("draw.")
         .appendField(new Blockly.FieldDropdown([
           [
-            "bezier_curve", "bezier_curve"  
+            Blockly.Msg.skimage_draw_bezier_curve, "bezier_curve"  
           ],
           [
-            "ellipse_perimeter", "ellipse_perimeter"
+            Blockly.Msg.skimage_draw_ellipse, "ellipse"
           ],
           [
-            "line_aa", "line_aa"
+            Blockly.Msg.skimage_draw_ellipse_perimeter, "ellipse_perimeter"
           ],
           [
-            "circle_perimeter_aa", "circle_perimeter_aa"
+            Blockly.Msg.skimage_draw_line, "line"
           ],
           [
-            "ellipse", "ellipse"
+            Blockly.Msg.skimage_draw_line_aa, "line_aa"
           ],
           [
-            "random_shapes", "random_shapes"
+            Blockly.Msg.skimage_draw_circle_perimeter, "circle_perimeter"
           ],
           [
-            "circle_perimeter", "circle_perimeter"
+            Blockly.Msg.skimage_draw_circle_perimeter_aa, "circle_perimeter_aa"
           ],
           [
-            "line", "line"
+            Blockly.Msg.skimage_draw_random_shapes, "random_shapes"
           ],
         ]), "DATA");
       this.appendValueInput("data")
@@ -341,6 +342,7 @@ Blockly.Blocks['plt_subplots'] = {
   Blockly.Blocks['skimage_data_immunohistochemistry'] = {
     init: function () {
         this.appendDummyInput()
+          .appendField(Blockly.Msg.skimage_data_immunohistochemistry)
           .appendField("data.immunohistochemistry(");
         this.appendValueInput("data")
           .setCheck(null);
@@ -354,10 +356,11 @@ Blockly.Blocks['plt_subplots'] = {
       }
   };
 
-  Blockly.Blocks['skimage_segmetation'] = {
+  Blockly.Blocks['skimage_segmentation'] = {
     init: function () {
       this.appendDummyInput()
-        .appendField("segmetation(");
+        .appendField(Blockly.Msg.skimage_segmentation)
+        .appendField("segmentation(");
       this.appendValueInput("data")
         .setCheck(null);
       this.appendDummyInput()

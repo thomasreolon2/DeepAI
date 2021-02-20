@@ -140,8 +140,11 @@ Blockly.Blocks['ski_class'] = {
 Blockly.Blocks['skimage_util'] = {
   init: function() {
       this.appendDummyInput()
+          .appendField(Blockly.Msg.skimage_util)
           .appendField("util.")
-          .appendField(new Blockly.FieldDropdown([["invert","invert"],["img_as_ubyte","img_as_ubyte"],["view_as_blocks","view_as_blocks"]]),"DROP")
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.skimage_util_invert,"invert"],
+          [Blockly.Msg.skimage_util_img_as_ubyte,"img_as_ubyte"],
+          [Blockly.Msg.skimage_util_view_as_blocks,"view_as_blocks"]]),"DROP")
           .appendField("(");
       this.appendValueInput("INPUT")
           .setCheck(null);
@@ -160,8 +163,9 @@ Blockly.Blocks['skimage_util'] = {
 Blockly.Blocks['skimage_measure'] = {
   init: function() {
       this.appendDummyInput()
+          .appendField(Blockly.Msg.skimage_measure)
           .appendField("measure.")
-          .appendField(new Blockly.FieldDropdown([["find_contours","find_contours"],["subdivide_polygon","subdivide_polygon"],["approximate_polygon","approximate_polygon"]]),"DROP")
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.skimage_measure_find_contours,"find_contours"],[Blockly.Msg.skimage_measure_subdivide_polygon,"subdivide_polygon"],[Blockly.Msg.skimage_measure_approximate_polygon,"approximate_polygon"]]),"DROP")
           .appendField("(");
       this.appendValueInput("INPUT")
           .setCheck(null);
@@ -197,21 +201,21 @@ Blockly.Blocks['skimage_filters'] = {
 
 Blockly.Blocks['skimage_transform'] = {
   init: function () {
-      this.appendDummyInput().appendField("transform.").appendField(new Blockly.FieldDropdown([
+      this.appendDummyInput().appendField(Blockly.Msg.skimage_transform).appendField("transform.").appendField(new Blockly.FieldDropdown([
           [
-              "hough_line", "hough_line"
+            Blockly.Msg.skimage_transform_hough_line, "hough_line"
           ],
           [
-            "hough_circle", "hough_circle"
+            Blockly.Msg.skimage_transform_hough_circle, "hough_circle"
           ],
           [
-            "hough_circle_peaks", "hough_circle_peaks"
+            Blockly.Msg.skimage_transform_hough_circle_peaks, "hough_circle_peaks"
           ],
           [
-            "hough_line_peaks", "hough_line_peaks"
+            Blockly.Msg.skimage_transform_hough_line_peaks, "hough_line_peaks"
           ],
           [
-            "probabilistic_hough_line", "probabilistic_hough_line"
+            Blockly.Msg.skimage_transform_probabilistic_hough_line, "probabilistic_hough_line"
           ]
       ]), "collection");
       this.appendValueInput("d2").appendField("(").setCheck(null);
@@ -226,9 +230,9 @@ Blockly.Blocks['skimage_transform'] = {
 
 Blockly.Blocks['skimage_img_as_float'] = {
   init: function () {
-      this.appendDummyInput().appendField("img_as_float.").appendField(new Blockly.FieldDropdown([
+      this.appendDummyInput().appendField(Blockly.Msg.skimage_img_as_float).appendField("img_as_float.").appendField(new Blockly.FieldDropdown([
           [
-            "img_as_float", "img_as_float"
+            Blockly.Msg.skimage_img_as_float_img_as_float, "img_as_float"
           ]
       ]), "collection");
       this.appendValueInput("d2").appendField("(").setCheck(null);
@@ -270,8 +274,9 @@ Blockly.Blocks['skimage_color'] = {
 Blockly.Blocks['skimage_feature'] = {
   init: function() {
     this.appendDummyInput()
+        .appendField(Blockly.Msg.skimage_feature)
         .appendField("feature.")
-        .appendField(new Blockly.FieldDropdown([["canny","feature.canny"]]), "method")
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.skimage_feature_canny,"feature.canny"]]), "method")
         .appendField("(");
     this.appendValueInput("para")
         .setCheck(null);
@@ -289,8 +294,12 @@ Blockly.Blocks['skimage_feature'] = {
 Blockly.Blocks['skimage_morphology'] = {
   init: function() {
     this.appendDummyInput()
+        .appendField(Blockly.Msg.skimage_morphology)
         .appendField("morphology.")
-        .appendField(new Blockly.FieldDropdown([["convex_hull_image","morphology.convex_hull_image"],["skeletonize","morphology.skeletonize"],["thin","morphology.thin"],["reconstruction","morphology.reconstruction"]]), "method")
+        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.skimage_morphology_convex_hull_image,"morphology.convex_hull_image"],
+        [Blockly.Msg.skimage_morphology_skeletonize,"morphology.skeletonize"],
+        [Blockly.Msg.skimage_morphology_thin,"morphology.thin"],
+        [Blockly.Msg.skimage_morphology_reconstruction,"morphology.reconstruction"]]), "method")
         .appendField("(");
     this.appendValueInput("para")
         .setCheck(null);
@@ -307,10 +316,11 @@ Blockly.Blocks['skimage_morphology'] = {
 Blockly.Blocks['skimage_util_shape'] = {
   init: function() {
       this.appendValueInput("para")
+          .appendField(Blockly.Msg.skimage_util_shape)
           .appendField("util.view_as_blocks")
           .setCheck(null);
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["reshape","reshape"],["shape","shape"]]), "method")
+        .appendField(new Blockly.FieldDropdown([["reshape","reshape"],["shape","shape"]]), "method") //번역 난항..
         .appendField("(");
         this.appendValueInput("var")
         .setCheck(null);
