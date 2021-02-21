@@ -2,15 +2,15 @@
 // server.js가 node에서 사용하는 통상적인 app.js임
 
 // express를 활용한 서버 만들기
-var express = require('express'); // 익스프레스 모듈 require 및 app 설정 (해당 방식은 express 에서 사용하도록 한 규약? 같은 방식)
-var fs = require('fs'); // 파일 시스템 
+const express = require('express'); // 익스프레스 모듈 require 및 app 설정 (해당 방식은 express 에서 사용하도록 한 규약? 같은 방식)
+const fs = require('fs'); // 파일 시스템 
 //var http = require('http'); // 이건 왜 주석처리 되있던 걸까?
 const ejs = require("ejs"); // ejs는 서버에서 JS로 템플릿을 만들 수 있게 도와준다.
 
 var app = express();
 
 // install cors 로 설치 하였기 때문에 cors 모듈 require
-var cors = require('cors')
+const cors = require('cors')
 const options = {
   key: fs.readFileSync('./keys/private.pem'),
  cert: fs.readFileSync('./keys/public.pem')
@@ -25,15 +25,15 @@ var server = require('http').createServer(options, app).listen(15480, function()
 
 
 //크롤링 21.02.19 남지원 주석처리
- var client = require('cheerio-httpcli');  
- const bodyParser = require('body-parser'); 
- var urlTpye = require('url');   
- var request = require('request'); 
- var fname ;
+const client = require('cheerio-httpcli');  
+const bodyParser = require('body-parser'); 
+const url = require('url');   
+const request = require('request'); 
+var fname ;
 // //크롤링 
 
-var axios = require("axios")
-var cheerio = require("cheerio")
+const axios = require("axios")
+const cheerio = require("cheerio")
 
 
 var io = require('socket.io')(server);// http server를 socket.io server로 upgrade 
@@ -86,6 +86,7 @@ io.on('connection', function (socket) {
     socket.emit('Scripts_Get_URL', get_html);  
 });
 
+// express라우팅 : 엔드포인트(URI)의 정의, 그리고 URI가 클라잉너트 요청에 응답하는 방식
 app.get("/test2", function (req, res) { 
   console.log("페이지 정보 가져오기");
   // var url = 'https://www.naver.com';
