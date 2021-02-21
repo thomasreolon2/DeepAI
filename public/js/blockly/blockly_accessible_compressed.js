@@ -19516,6 +19516,7 @@ Blockly.Xml.domToBlockHeadless_ = function (a, b) {
           }
           if (!k) {
             console.warn("Ignoring non-existent field " + f + " in block " + d);
+  
             break;
           }
           k.setValue(n);
@@ -19525,6 +19526,7 @@ Blockly.Xml.domToBlockHeadless_ = function (a, b) {
           h = c.getInput(f);
           if (!h) {
             console.warn("Ignoring non-existent input " + f + " in block " + d);
+
             break;
           }
           n && h.connection.setShadowDom(n);

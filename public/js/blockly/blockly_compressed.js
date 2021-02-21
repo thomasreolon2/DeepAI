@@ -3124,8 +3124,11 @@ Blockly.Xml.domToBlockHeadless_ = function (a, b) {
         case "value":
         case "statement":
           k = c.getInput(l);
+
           if (!k) {
             console.warn("Ignoring non-existent input " + l + " in block " + d);
+            
+            console.log('test Node name: ' + k);
             break;
           }
           h && k.connection.setShadowDom(h);
@@ -3140,6 +3143,8 @@ Blockly.Xml.domToBlockHeadless_ = function (a, b) {
               throw TypeError(
                 "Child block does not have output or previous statement."
               );
+
+
           break;
         case "next":
           h && c.nextConnection && c.nextConnection.setShadowDom(h);
@@ -3156,6 +3161,7 @@ Blockly.Xml.domToBlockHeadless_ = function (a, b) {
           break;
         default:
           console.warn("Ignoring unknown tag: " + g.nodeName);
+        
       }
     }
   (e = a.getAttribute("inline")) && c.setInputsInline("true" == e);
@@ -3181,12 +3187,11 @@ Blockly.Xml.domToField_ = function (a, b, c) {
   
   // test 성주
 
-  
-  if(d)
-    d.fromXml(c);
-    // d
-  //   ? d.fromXml(c)
-  //   : console.warn("Ignoring non-existent field " + b + " in block " + a.type);
+  // if(d)
+  //   d.fromXml(c);
+    d
+    ? d.fromXml(c)
+    : console.warn("Ignoring non-existent field " + b + " in block " + a.type);
 };
 Blockly.Xml.deleteNext = function (a) {
   for (var b = 0, c; (c = a.childNodes[b]); b++)
@@ -12607,15 +12612,13 @@ Blockly.Variables.nameUsedWithOtherType_ = function (a, b, c) {
 Blockly.Variables.nameUsedWithAnyType_ = function (a, b) {
   b = b.getVariableMap().getAllVariables();
   //a = a.toLowerCase();
-  //console.log("test111a: " + a);
+
   
 
   //a = a.toLowerCase();
   // for (var c = 0, d; (d = b[c]); c++) if (d.name.toLowerCase() == a) return d;
                                         // a: 입력값 그대로
   for (var c = 0, d; (d = b[c]); c++){ // d: 이전에 생성된 변수들
-
-    //console.log("test111d: " + d.name);
 
     if (d.name == a){
       //d.name = d.name.toLowerCase();

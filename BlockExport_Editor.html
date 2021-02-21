@@ -868,11 +868,6 @@
 
     <!-- len -->
     <block type="text_length">
-      <value name="VAR">
-        <block type="variables_get">
-          <field name="VAR">s</field>
-        </block>
-      </value>
       <value name="VALUE">
         <shadow type="indata">
           <field name="indata1"></field>
@@ -939,11 +934,7 @@
           <field name="VAR">s</field>
         </block>
       </value>
-      <value name="INPUT1">
-        <shadow type="indata">
-          <field name="indata1"></field>
-        </shadow>
-      </value>
+
     </block>
 
     
@@ -973,11 +964,7 @@
           <field name="VAR">s</field>
         </block>
       </value>
-      <value name="INPUT1">
-        <shadow type="indata">
-          <field name="indata1">10</field>
-        </shadow>
-      </value>
+      
     </block>
   </category>
 
@@ -2117,11 +2104,6 @@
     
     <!-- 복구 -->
     <block type="db_rollback">
-      <value name="va">
-        <shadow type="indata">
-          <field name="indata1"></field>
-        </shadow>
-      </value>
     </block>
 
     <!-- <block type="db_fetchone"></block>
@@ -2479,16 +2461,6 @@
               <field name="indata1"></field>
             </shadow>
           </value>
-          <value name="parameter2"> 
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value> 
-          <value name="parameter3"> 
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value> 
         </block> 
         <!-- 배열생성 / 숫자 범위 -->
 
@@ -2595,11 +2567,7 @@
               <field name="indata1"></field>
             </shadow>
           </value>  
-          <value name="parmeter2"> 
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>  
+
         </block> 
 
       <!----------------------------------------------------------------------수학 통계-->
@@ -2664,12 +2632,13 @@
               <field name="indata1"></field>
             </shadow>
           </value> 
-          <value name="parameter2">
+        </block>
+          <!-- <value name="parameter2">
             <shadow type="indata">
               <field name="indata1"></field>
             </shadow>
-          </value> 
-        </block>
+          </value>  -->
+        
         <!-- 행렬 연산 -->
       
         <!-- 통계 / 평균 & 분산  -->
@@ -2679,12 +2648,13 @@
               <field name="indata1"></field>
             </shadow>
           </value> 
-          <value name="parameter2">
+        </block>
+          <!-- <value name="parameter2">
             <shadow type="indata">
               <field name="indata1"></field>
             </shadow>
-          </value>
-        </block>
+          </value> -->
+        
         <!-- 통계 / 평균 & 분산  -->
       
       <!---------------------------------------------------------------------인덱스/값검색-->
@@ -3888,11 +3858,6 @@
               <field name="VAR">sr</field>
             </block>
           </value>
-          <value name="LIST">
-            <shadow type="indata">
-              <field name="indata1"></field>
-            </shadow>
-          </value>
         </block>
 
         <block type="df_resample">
@@ -4257,11 +4222,7 @@
           <block type="numpy_library"></block>
   
           <block type="visualization_library">
-            <value name="lib_var">
-              <block type="variables_get">
-                <field name="VAR">plt</field>
-              </block>
-            </value>
+            
           </block>
   
           <block type="itdata">
@@ -4715,11 +4676,7 @@
           <block type="numpy_library"></block>
   
           <block type="visualization_library">
-            <value name="lib_var">
-              <block type="variables_get">
-                <field name="VAR">plt</field>
-              </block>
-            </value>
+
           </block>
   
           <block type="itdata">
@@ -5145,11 +5102,7 @@
           <block type="numpy_library"></block>
   
           <block type="visualization_library">
-            <value name="lib_var">
-              <block type="variables_get">
-                <field name="VAR">plt</field>
-              </block>
-            </value>
+
           </block>
 
           <block type = "create_list">
@@ -5191,41 +5144,11 @@
             </value>
             <value name="dic_val">
               <block type ="dic_menu1_sj2">
-                <value name="dic1">
-                    <block type="variables_get">
-                      <field name="VAR">dic</field>
-                    </block>
-                </value>
-                <value name="dic2">
-                  <shadow type="indata">
-                    <field name="indata1"></field>
-                  </shadow>
-                </value>
-                <value name="dic3">
-                  <shadow type="indata">
-                    <field name="indata1"></field>
-                  </shadow>
-                </value>
               </block>
             </value>
 
             <value name="dic_key">
               <block type ="dic_menu1_sj">
-                <value name="dic1">
-                    <block type="variables_get">
-                      <field name="VAR">dic</field>
-                    </block>
-                </value>
-                <value name="dic2">
-                  <shadow type="indata">
-                    <field name="indata1"></field>
-                  </shadow>
-                </value>
-                <value name="dic3">
-                  <shadow type="indata">
-                    <field name="indata1"></field>
-                  </shadow>
-                </value>
               </block>
             </value>
           </block>
@@ -5283,9 +5206,6 @@
       <block type="visualization_library_1"></block>
       
       <block type = "create_list_1">
-        <value name="list">
-          <field name="indata1">vegetables</field>
-        </value>
         <value name="text">
           <shadow type="indata">
             <field name="indata1">"cucumber", "tomato", "lettuce", "asparagus","potato", "wheat", "barley"</field>
@@ -5294,9 +5214,6 @@
       </block>
 
       <block type = "create_list_2">
-        <value name="list">
-          <field name="indata1">vegetables</field>
-        </value>
         <value name="text">
           <shadow type="indata">
             <field name="indata1">"Farmer Joe", "Upland Bros.", "Smith Gardening","Agrifun", "Organiculture", "BioGoods Ltd.", "Cornylee Corp."</field>
@@ -5748,11 +5665,6 @@
         <block type="cbook_import"></block>
 
         <block type="visualization_library">
-          <value name="lib_var">
-            <block type="variables_get">
-              <field name="VAR">plt</field>
-            </block>
-          </value>
         </block>
         
         <block type="webdefine">
@@ -6168,11 +6080,7 @@
 
         <block type="numpy_library"></block>
         <block type="visualization_library">
-          <value name="lib_var">
-            <block type="variables_get">
-              <field name="VAR">plt</field>
-            </block>
-          </value>
+
         </block>
         
         <block type="itdata">
@@ -6394,11 +6302,7 @@
 
         <block type="numpy_library"></block>
         <block type="visualization_library">
-          <value name="lib_var">
-            <block type="variables_get">
-              <field name="VAR">plt</field>
-            </block>
-          </value>
+
         </block>
 
         <block type="itdata">
@@ -7429,8 +7333,8 @@
         <block type="import_scikit_learn"></block>
 
         <label text="데이터 처리(핸들링)"></label>
-        <block type="train_test_split">
-          <value name="x_data">
+        <block type="train_test_split"></block>
+          <!-- <value name="x_data">
             <block type="variables_get">
               <field name="VAR">x_data</field>
             </block>
@@ -7469,8 +7373,8 @@
             <shadow type="indata">
               <field name="indata1">0</field>
             </shadow>
-          </value>
-        </block>
+          </value> -->
+        
 
         <block type="labelencoder">
           <value name="df">
@@ -7629,8 +7533,8 @@
 
         <label text="데이터 핸들링"></label>
 
-        <block type="train_test_split">
-          <value name="x_data">
+        <block type="train_test_split"></block>
+          <!-- <value name="x_data">
             <block type="variables_get">
               <field name="VAR">x_data</field>
             </block>
@@ -7670,9 +7574,9 @@
             <shadow type="indata">
               <field name="indata1">0</field>
             </shadow>
-          </value>
-        </block>
-        </value>
+          </value> -->
+        
+        
         
         <block type="kfold">
           <value name="model">
