@@ -9356,22 +9356,6 @@
                 import sys
                 from io import StringIO
                 sys.stdout = StringIO()      
-
-                def do_work(*args):
-                  micropip.install('http://localhost:15480/js/package/chardet-4.0.0-py2.py3-none-any.whl').then(do_work2)
-
-                def do_work2(*args):
-                  micropip.install('http://localhost:15480/js/package/certifi-2020.12.5-py2.py3-none-any.whl').then(do_work3)
-
-                def do_work3(*args):
-                  micropip.install('http://localhost:15480/js/package/idna-3.1-py3-none-any.whl').then(do_work4)  
-
-                def do_work4(*args):
-                  micropip.install('http://localhost:15480/js/package/requests-2.25.1-py2.py3-none-any.whl')  
-                  
-                import micropip
-                micropip.install('http://localhost:15480/js/package/urllib3-1.26.3-py2.py3-none-any.whl').then(do_work)
-                
               `
               // 비동기 부분 다 끝나고 이거 되는거같음
               languagePluginLoader.then(() => {
@@ -9439,7 +9423,7 @@
     
     <script>
       function _requestsURL(){
-        alert('111');
+        alert('_requestsURL');
         $.ajax({
           url: "/test2",
           method: "GET", // HTTP 요청 메소드(GET, POST 등) 

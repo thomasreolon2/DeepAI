@@ -90,11 +90,11 @@ app.get("/test2", function (req, res) {
   console.log("페이지 정보 가져오기");
   // var url = 'https://www.naver.com';
   // var url = 'http://cyber.inhatc.ac.kr/';
-  var url = 'https://www.google.co.kr';
-  var result = ""; //getHTML(); 
+  let url = 'https://www.google.co.kr';
+  let result = ""; //getHTML(); 
   async function getForum() {
     try {
-      var response = await axios.get(
+      let response = await axios.get(
         url         // 검색할 URL 가져오기 
       );
       res.json({data: response.data}); // 클라이언트에 성공했다고 신호를 보냄.
