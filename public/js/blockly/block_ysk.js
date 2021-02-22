@@ -157,16 +157,10 @@ Blockly.Blocks['try_except1'] = {
      * @this {Blockly.Block}
      */
     updateShape_: function () {
-      if (this.itemCount_ && this.getInput('EMPTY')) {
-        this.removeInput('EMPTY');
-      } else if (!this.itemCount_ && !this.getInput('EMPTY')) {
-        this.appendDummyInput('EMPTY')
-          .appendField(Blockly.Msg['LISTS_CREATE_EMPTY_TITLE']);
-      }
       // Add new inputs.
       for (var i = 0; i < this.itemCount_; i++) {
         if (!this.getInput('ADD' + i)) {
-          var input = this.appendDummyInput()
+          var input = this.appendDummyInput("dy" + i)
           .appendField("except ").appendField(new Blockly.FieldDropdown([["EOFError","EOFError"],["SyntaxError","SyntaxError"], ["NameError","NameError"], ["ZeroDivisionError","ZeroDivisionError"], ["IndexError","IndexError"], ["ValueError","ValueError"], ["KeyError","KeyError"], ["AttributeError","AttributeError"], ["FileNotFoundError","FileNotFoundError"], ["TypeError","TypeError"]]), "DROP" + i).appendField(":");this.appendStatementInput('ADD' + i).setCheck(null).setAlign(Blockly.ALIGN_RIGHT);
           if (i == 0) {
             // input.appendField("array"); 
@@ -176,7 +170,8 @@ Blockly.Blocks['try_except1'] = {
       }
       // Remove deleted inputs.
       while (this.getInput('ADD' + i)) {
-        this.removeInput('ADD' + i);
+        this.removeInput('ADD' + i)
+        this.removeInput("dy" + i);
         i++;
       }
     }

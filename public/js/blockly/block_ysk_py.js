@@ -56,37 +56,3 @@ Blockly.Python['try_except1'] = function(q) {
   // };
   return c;
 };
-
-//if문
-Blockly.Python.m1 = function (a) {
-  var b = 0,
-    c = "";
-  Blockly.Python.STATEMENT_PREFIX &&
-    (c += Blockly.Python.injectId(Blockly.Python.STATEMENT_PREFIX, a));
-  do {
-    var d =
-      Blockly.Python.valueToCode(a, "IF" + b, Blockly.Python.ORDER_NONE) ||
-      "False";
-    var e = Blockly.Python.statementToCode(a, "DO" + b) || Blockly.Python.PASS;
-    Blockly.Python.STATEMENT_SUFFIX &&
-      (e =
-        Blockly.Python.prefixLines(
-          Blockly.Python.injectId(Blockly.Python.STATEMENT_SUFFIX, a),
-          Blockly.Python.INDENT
-        ) + e);
-    c += (0 == b ? "if " : "elif ") + d + ":\n" + e;
-    ++b;
-  } while (a.getInput("IF" + b));
-  if (a.getInput("ELSE") || Blockly.Python.STATEMENT_SUFFIX)
-    (e = Blockly.Python.statementToCode(a, "ELSE") || Blockly.Python.PASS),
-      Blockly.Python.STATEMENT_SUFFIX &&
-        (e =
-          Blockly.Python.prefixLines(
-            Blockly.Python.injectId(Blockly.Python.STATEMENT_SUFFIX, a),
-            Blockly.Python.INDENT
-          ) + e),
-      (c += "else:\n" + e);
-  return c;
-};
-
-

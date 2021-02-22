@@ -24,3 +24,8 @@ Blockly.JavaScript['df_agg'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };  
+
+Blockly.JavaScript['try_except1'] = function(q) {
+  var code = '\n';
+  return  code;
+};
