@@ -13,7 +13,7 @@ var app = express();
 const cors = require('cors')
 const options = {
   key: fs.readFileSync('./keys/private.pem'),
- cert: fs.readFileSync('./keys/public.pem')
+  cert: fs.readFileSync('./keys/public.pem')
 };
 // cors () 사용  // 모든 도메인에 대한 Request 활성화  -> 좋지 않은 방식 
 app.use(cors());

@@ -8945,128 +8945,6 @@
       $('#exeArea').val(savetext + x + '\n');
     }
 
-    // **************************************
-    // ********   CSV파일열기 - 지금은 사용되지 않음     **********//
-    // **************************************//   
-    async function Show_csv(test) {
-      var Show_CSV_Data_S = await Data_process();
-
-      console.log("Show_csv : Load_csv\n", Show_CSV_Data_S);
-
-      var rows = Show_CSV_Data_S.split(/\r\n|\n/);
-      var cols = Show_CSV_Data_S.split(/\r\n|\n/)[0].split(/,/);
-
-      var Get_CSV_DATA = Array.from(Array(cols.length), () => new Array((rows.length) - 1));
-      for (var i = 0; i < (rows.length) - 1; i++) {
-        for (var j = 0; j < cols.length; j++) {
-          test = rows[i].split(/,/)[j];
-          Get_CSV_DATA[j][i] = test;
-        }
-      }
-      var rows_leng = rows.length;
-      var cols_leng = cols.length;
-
-      draw_table(Get_CSV_DATA, rows_leng, cols);
-
-      return test;
-    }
-
-    
-
-    // **************************************
-    // ********   파일 열기 -- 지금은 사용되지않음     **********//
-    // **************************************//
-    function Data_process() {
-
-      return new Promise(function (resolve, rejcet) {
-
-        var Show_CSV_Data = document.createElement("input");
-        Show_CSV_Data.setAttribute("id", "Data_S_read_CSV");
-        Show_CSV_Data.type = "file";
-        Show_CSV_Data.accept = ".csv"; //loadFile    
-        Show_CSV_Data.onchange = function (event) {
-
-          if (event.target.files != undefined) {
-            var file_result = event.target.files;
-            // console.log("fitle_result",file_result); 
-            testing_1 = event.target.files[0].name;
-
-            var reader = new FileReader();
-            reader.onload = function (e) { //들어오기전에 먼저 실행됨  
-              var fileResult = e.target.result;
-
-              resolve(fileResult);
-            };
-          }
-          reader.readAsText(event.target.files[0], /* optional */ "euc-kr");
-          // testing_1 = document.getElementById('Data_S_read_CSV').value;
-        }
-
-        Show_CSV_Data.click();
-
-      });
-    }
-
-
-    // **************************************
-    // ********  데이터셋_불러오기 - 지금은 사용되지 않음     **********//
-    // **************************************//  
-    function exportToCsv(filename, rows) {
-
-      console.log("fileName_check", fileName);
-      console.log("rows_check", rows);
-
-      var processRow = function (row) {
-        var finalVal = '';
-        for (var j = 0; j < row.length; j++) {
-          var innerValue = row[j] === null ? '' : row[j].toString();
-          if (row[j] instanceof Date) {
-            innerValue = row[j].toLocaleString();
-          };
-          var result = innerValue.replace(/"/g, '""');
-          if (result.search(/("|,|\n)/g) >= 0)
-            result = '"' + result + '"';
-          if (j > 0)
-            finalVal += ',';
-          finalVal += result;
-        }
-        return finalVal + '\n';
-      };
-
-      var csvFile = '';
-      for (var i = 0; i < rows.length; i++) {
-        csvFile += processRow(rows[i]);
-      }
-
-      var blob = new Blob(["\ufeff" + csvFile], {
-        type: 'text/csv;charset=utf-8;'
-      }); //utf-8  (["\ufeff"+data+], {type: 'text/csv;charset=utf-8;'}); // 기존 ([csvFile], { type: 'text/csv;charset=ANSI;' });
-      if (navigator.msSaveBlob) { // IE 10+  
-        navigator.msSaveBlob(blob, filename);
-      } else {
-        var link = document.createElement("a");
-        if (link.download !== undefined) { // feature detection
-          // Browsers that support HTML5 download attribute
-          var url = URL.createObjectURL(blob);
-          link.setAttribute("href", url);
-          link.setAttribute("download", filename);
-          link.style.visibility = 'hidden';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }
-      }
-    }
-
-    function Check_matplotlib_user_input(a, b) {
-      if (a == 1 && b == 1) {
-        DL_Gra = "graph_both_1";
-      } else if (a == 1 || b == 1) {
-        DL_Gra = "graph_or_1";
-      } else {
-        DL_Gra = 0;
-      }
-    }
   </script>
 
   <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
@@ -9095,32 +8973,24 @@
   </script>
   <!-- 데이터 입력 bug fix -->
   <script>
-    // function input_fixed(text) {
-    //     return prompt(text);
-    // };
+    function input_fixed(text) {
+        return prompt(text);
+    };
     
-    // languagePluginLoader.then(() => {
-    //   pyodide.runPythonAsync(`
-    //     from js import input_fixed
-    //     input = input_fixed
-    //     __builtins__.input = input_fixed
-    //     `);
-    // });
+    languagePluginLoader.then(() => {
+      pyodide.runPythonAsync(`
+        from js import input_fixed
+        input = input_fixed
+        __builtins__.input = input_fixed
+        `);
+    });
   </script>
-
-    <!-- 기태 처리 (파일) 20.12.29------------------------------------------------------------------------->
-    <!-- 외부 파일 입력 제거 -->
-    <!-- <input type="file" id="file_input" name="file-input"
-    accept=".jpg, .png, .txt, .csv"
-    onchange="loadFile(this);"
-    /> -->
-
 
     <!-- 로컬 파일 오픈하기 -->
     <script>
     var datas="";           // 데이터 변수 초기화
-    let fss;                // FS가 BrowserFS와 겹치기 때문에 재 생성
-    let fileName2="temp";   // 파일 명   
+    var fss;                // FS가 BrowserFS와 겹치기 때문에 재 생성
+    var fileName2="temp";   // 파일 명   
     var rows = "";          // ?
     
     //== 기태 수정 (로컬 파일 열기 ) 21.01.01 =============================================
@@ -9212,19 +9082,7 @@
     input.click(); // input을 클릭했을 때. 
     }
 
-    //== 기태 수정 (로컬 파일 열기 ) ===================================================
-    // function loadFile(sender) {
-    //   var reader = new FileReader();
-      
-    //   reader.onload = function (sender) {      // reader가 준비되면 sender
-    //     datas = sender.target.result;          
-    //     console.log("datas", datas);
-    //     fss.writeFileSync(fileName2, datas);
-    //   };
-
-    //   fileName2 =  sender.files[0].name;
-    //   reader.readAsText(sender.files[0]);        
-    // }
+    
 
     //=====기태 처리 (파일) 21.01.06  : 파일 로딩에 대해 인터벌 적용 ================================
     setTimeout(function() {
@@ -9233,15 +9091,16 @@
             fs: "LocalStorage"
         }, function(e) {
             fss = require('fs'); // [Node.JS] fs의 기능을 fss로 이동 => 브라우저 fs와 겹침방지
+            
             var fs = BrowserFS.BFSRequire('fs'); // [BrowserFS] 사용하려면 기본적으로 필요한 건가봄?
             fss.writeFileSync(fileName2, ""); // temp라는 이름의 빈 파일 생성
             
             // [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
             languagePluginLoader.then(async ()=>{       
               // pyodide모듈 로드     
-              //pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy', 'sympy', 'beautifulsoup4']).then(() => {
-              //  console.log("모듈 로드 완료.");
-              //})
+              pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy', 'sympy', 'beautifulsoup4']).then(() => {
+                console.log("모듈 로드 완료.");
+              })
               
               let FS = pyodide._module.FS; // 모듈의 파일시스템
               let PATH = pyodide._module.PATH; // 모듈의 경로
@@ -9317,15 +9176,9 @@
       }
     </script> 
     <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
-    <!-- 기태 휴지통 처리 21.01.16----------------------------------------------------------------------------->
-    <!-- <script>
-      function trashcanClean(){        
-        Blockly.mainWorkspace.trashcan.emptyContents();
-      }
-    </script> -->
-    <!-- 기태 휴지통 처리 끝 21.01.16----------------------------------------------------------------------------->
-    
+   
     <script>
+
       function _requestsURL(){
         $.ajax({
           url: "/test2", // server.js에서 URI확인
