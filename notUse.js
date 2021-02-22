@@ -124,13 +124,3 @@ function exportToCsv(filename, rows) {
         }
     }
 }
-
-function Check_matplotlib_user_input(a, b) {
-    if (a == 1 && b == 1) {
-        DL_Gra = "graph_both_1";
-    } else if (a == 1 || b == 1) {
-        DL_Gra = "graph_or_1";
-    } else {
-        DL_Gra = 0;
-    }
-}

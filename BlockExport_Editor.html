@@ -8896,6 +8896,18 @@
   //--------------------------------- data 속성 ---------------------------//
   Plotly.newPlot(graph, data, layout);
 }
+
+
+function Check_matplotlib_user_input(a, b) {
+    if (a == 1 && b == 1) {
+        DL_Gra = "graph_both_1";
+    } else if (a == 1 || b == 1) {
+        DL_Gra = "graph_or_1";
+    } else {
+        DL_Gra = 0;
+    }
+}
+
     // 안쓰는 부분인거같음 
     //
     // function processFile(file) {
