@@ -278,11 +278,11 @@ Blockly.Blocks.print_mutator = {
     this.setStyle("list_blocks");
     this.itemCount_ = 1;
     this.updateShape_();
+    this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     //this.setOutput(!0, "Array");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
     this.setColour(Blockly.Msg.TEXTS_HUE);
   }, 

@@ -866,6 +866,7 @@ Blockly.Extensions.register(
     Blockly.Constants.Logic.TOOLTIPS_BY_OP
   )
 );
+
 Blockly.Constants.Logic.CONTROLS_IF_MUTATOR_MIXIN = {
   elseifCount_: 0,
   elseCount_: 0,
