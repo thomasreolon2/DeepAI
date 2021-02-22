@@ -810,6 +810,8 @@
   <!-- ******************************   숫자(NUM) 문자 ( STR )                 ******************************* -->
   <!-- #####################################################################################################  -->
   <category name="%{BKY_CATEGORY_TEXT}" colour="%{BKY_TEXTS_HUE}"> 
+    <block type="url_load"></block>   
+
     <block type="math_number">
       <field name="NUM">0</field>
     </block>
@@ -8738,6 +8740,7 @@
       // var code = document.getElementById("pyCodeEditor");
       // 순차적 실행을 위해 놓은 코드 async, .then()
       async function runcode() {
+        "use strict";
         console.log(code); // 파이썬코드찍는부분
         console.log("-----");
         console.log(code2); // 자바스크립트코드 찍는부분
@@ -9095,8 +9098,6 @@
     input.click(); // input을 클릭했을 때. 
     }
 
-    
-
     //=====기태 처리 (파일) 21.01.06  : 파일 로딩에 대해 인터벌 적용 ================================
     setTimeout(function() {
       BrowserFS.install(window);
@@ -9189,9 +9190,8 @@
       }
     </script> 
     <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
-   
-    <script>
 
+    <script>
       function _requestsURL(){
         $.ajax({
           url: "/test2", // server.js에서 URI확인

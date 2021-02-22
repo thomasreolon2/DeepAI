@@ -91,7 +91,8 @@ app.get("/test2", function (req, res) {
   console.log("페이지 정보 가져오기");
   // var url = 'https://www.naver.com';
   // var url = 'http://cyber.inhatc.ac.kr/';
-  let url = 'https://www.google.co.kr';
+  // let url = 'https://www.google.co.kr';
+  let url = "https://www.melon.com/chart/index.htm";
   let result = ""; //getHTML(); 
   async function getForum() {
     try {
