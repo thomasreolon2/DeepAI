@@ -8681,6 +8681,11 @@
         if ('os_data_download'  == block.type) {
           fileDownload();
         }
+
+        // url_load
+        if('url_load' == block.type){
+          _requestsURL();
+        }
       }
     }
     demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
@@ -9204,13 +9209,20 @@ function Check_matplotlib_user_input(a, b) {
     <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
 
     <script>
+      var htmldata;
       function _requestsURL(){
+        //let _url = "https://www.naver.com"; // 넘겨줄 URL
+        let _url = "https://www.melon.com/chart/index.htm";
+
+        //_url = JSON.stringify(_url)
         $.ajax({
           url: "/test2", // server.js에서 URI확인
-          method: "GET", // HTTP 요청 메소드(GET, POST 등) 
-          dataType: "json", // 서버에서 보내줄 데이터의 타입
+          method: "POST", // HTTP 요청 메소드(GET, POST 등) 
+          data : {url : _url},
+          dataType: "json", // 서버에서 받아올 데이터의 타입
           success: function(data){   
-            alert(data.data);
+            htmldata = data.data;
+            console.log(htmldata);
           }
         });
       }

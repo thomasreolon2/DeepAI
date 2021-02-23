@@ -29,7 +29,6 @@ const client = require('cheerio-httpcli');
 const bodyParser = require('body-parser'); 
 const url = require('url');   
 const request = require('request'); 
-var fname ;
 // //크롤링 
 
 const axios = require("axios")
@@ -87,12 +86,13 @@ io.on('connection', function (socket) {
 });
 
 // express라우팅 : 엔드포인트(URI)의 정의, 그리고 URI가 클라잉너트 요청에 응답하는 방식
-app.get("/test2", function (req, res) { 
+app.post("/test2", function (req, res) { 
   console.log("페이지 정보 가져오기");
+  let url = req.body.url
+  console.log(req.body.url);
   // var url = 'https://www.naver.com';
   // var url = 'http://cyber.inhatc.ac.kr/';
   // let url = 'https://www.google.co.kr';
-  let url = "https://www.melon.com/chart/index.htm";
   let result = ""; //getHTML(); 
   async function getForum() {
     try {

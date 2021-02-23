@@ -1,33 +1,24 @@
 // test
 Blockly.Python['url_load'] = function (block) {
-  let _html; // html 
-  $.ajax({
-    url: "/test2", // server.js에서 URI확인
-    async : false, // 동기화를 해야 전역변수에 값 저장이 가능함.
-    method: "GET", // HTTP 요청 메소드(GET, POST 등) 
-    dataType: "json", // 서버에서 보내줄 데이터의 타입
-    success: function(data){   
-      _html = data.data;
-    }
-  });
   let file = block.getFieldValue('URL');
-
-  let code = `import js
-__html = js._html
+  let _html = htmldata;
+  let code = `
 from bs4 import BeautifulSoup
-soup = BeautifulSoup(__html, 'html.parser')
+soup = BeautifulSoup("""${_html}""", 'html.parser')
 my_titles = soup.select('div > span> a')
+for x in range(0,10):
+	print(my_titles[x].get_text())
 `;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 
-  //라이브러리 임포트    
-  Blockly.Python['cbook_import'] = function(block) {
-    // TODO: Assemble JavaScript into code variable.
-    var code = "from matplotlib import cbook\n";
-    return code;
-  };
+//라이브러리 임포트    
+Blockly.Python['cbook_import'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "from matplotlib import cbook\n";
+  return code;
+};
 
 // 연산
 Blockly.Python['Oper_x'] = function(block) {
