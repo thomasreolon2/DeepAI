@@ -8684,7 +8684,7 @@
 
         // url_load
         if('url_load' == block.type){
-          _requestsURL();
+          _requestsURL(event.blockId);
         }
       }
     }
@@ -9210,10 +9210,15 @@ function Check_matplotlib_user_input(a, b) {
 
     <script>
       var htmldata;
-      function _requestsURL(){
+      function _requestsURL(blockId){
         //let _url = "https://www.naver.com"; // 넘겨줄 URL
-        let _url = "https://www.melon.com/chart/index.htm";
+        //let _url = "https://www.melon.com/chart/index.htm";
+        let _url = prompt("크롤링할 URL을 입력해주세요 : ");
 
+        var block = demoWorkspace.getBlockById(blockId);
+        block.setFieldValue(JSON.stringify(_url), 'URL');
+
+        demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
         //_url = JSON.stringify(_url)
         $.ajax({
           url: "/test2", // server.js에서 URI확인
