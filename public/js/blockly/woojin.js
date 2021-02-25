@@ -140,3 +140,24 @@
 //       this.setHelpUrl("");
 //     }
 //   };
+
+myApplication.coloursFlyoutCallback = function(workspace) {
+  // Returns an array of hex colours, e.g. ['#4286f4', '#ef0447']
+  var colourList = myApplication.getPalette();
+  var xmlList = [];
+  if (Blockly.Blocks['colour_picker']) {
+    for (var i = 0; i < colourList.length; i++) {
+      var blockText = '<block type="colour_picker">' +
+          '<field name="COLOUR">' + colourList[i] + '</field>' +
+          '</block>';
+      var block = Blockly.Xml.textToDom(blockText);
+      xmlList.push(block);
+    }
+  }
+  return xmlList;
+};
+
+
+myWorkspace.registerToolboxCategoryCallback(
+  'COLOUR_PALETTE', myApplication.coloursFlyoutCallback);
+
