@@ -31,7 +31,7 @@ Blockly.Python['df_agg'] = function(block) {
 Blockly.Python['try_except1'] = function(q) {
   var statements_try = Blockly.Python.statementToCode(q, 'TRY');
   var value_except1 = Blockly.Python.valueToCode(q, 'EXCEPT1', Blockly.Python.ORDER_ATOMIC);
-  var statements_except2 = Blockly.Python.statementToCode(q, 'EXCEPT2') || "finally";
+  var statements_except2 = Blockly.Python.statementToCode(q, 'EXCEPT2');
   var b = 0, c = "try : \n" + statements_try + "except " + value_except1 + " :\n" + statements_except2; ;
   // var b = Array(a.itemCount_)
   Blockly.Python.STATEMENT_PREFIX &&
