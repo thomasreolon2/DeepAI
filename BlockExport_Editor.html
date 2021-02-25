@@ -8569,10 +8569,52 @@
     function saveBlock() {
       let xml = Blockly.Xml.workspaceToDom(demoWorkspace);  // 워크스페이스를 돔(xml)로 만듬
       let p_xml = Blockly.Xml.domToPrettyText(xml);         // 돔(xml)을 깔끔하게 만드는 부분
-      let filename = prompt("다른이름으로 저장.");           // 다른이름으로 저장
+
+      var checkEvent = "block"; // 파일명을 저장할 변수 생성
+      try {
+        checkEvent = getCookie("download_block"); // 쿠기이름이 download_block을 가져와 checkEvent에 저장
+        // console.log("쿠키있음 : " + checkEvent); 
+      } catch (error) {
+        setCookie("download_block","block","1"); // 저장된 쿠키가 없을 경우 download_block이름의 쿠키 생성/ 유지 기간은 1일
+        checkEvent = getCookie("download_block"); 
+        //console.log("쿠키없음" + checkEvent);
+      }
+      let filename = prompt("다른이름으로 저장.", checkEvent);           // 다른이름으로 저장
+      setCookie("download_block",filename,"1"); // 사용자가 정한 파일명을 다시 쿠키에 저장
+
       let fileObject = new File([p_xml], filename+".xml");  // 파일 객체 생성 (data,name+확장자)
       saveAs(fileObject);                                   // 로컬 저장
     }
+
+    //===================================
+    // 쿠키 
+    //===================================
+    // 쿠키 생성 함수
+    function setCookie(cName, cValue, cDay){
+    var expire = new Date();
+    expire.setDate(expire.getDate() + cDay);
+    cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
+    if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+    document.cookie = cookies;
+    }
+
+
+
+    // 쿠키 가져오기 함수
+    function getCookie(cName) {
+    cName = cName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cName);
+    var cValue = '';
+    if(start != -1){
+    start += cName.length;
+    var end = cookieData.indexOf(';', start);
+    if(end == -1)end = cookieData.length;
+    cValue = cookieData.substring(start, end);
+    }
+    return unescape(cValue);
+    }
+
 
     //===================================
     // 블록 불러오기 
