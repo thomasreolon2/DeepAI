@@ -246,6 +246,11 @@
   <script src="/js/blockly/block_scipy_py.js"></script>
   <script src="/js/blockly/block_scipy_js.js"></script>
 
+  <!-- 크롤링 -->
+  <script src="/js/blockly/block_croll.js"></script>
+  <script src="/js/blockly/block_croll_py.js"></script>
+  <script src="/js/blockly/block_croll_js.js"></script>
+
   <!-- #####################################################################################################  -->
   <!-- ******************************                CSS                      ******************************* -->
   <!-- #####################################################################################################  -->
@@ -387,12 +392,9 @@
         <input id="button_code_save" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick=file_save();
           value="코드저장" />
 
-          <!-- 저장 버튼 -->
-        <input id="asave" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick=_requestsURL();
-        value="aa" />
-        <!-- Button trigger modal -->
+        <!-- Button trigger modal 
         <button id = "button_paint" type="button" class="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal"
-          data-target="#staticBackdrop">그림판</button>
+          data-target="#staticBackdrop">그림판</button>-->
 
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -8313,6 +8315,9 @@
         </block> -->
 
     </category>
+    <category name="통계형" colour="%{BKY_VISUAL_HUE}">
+      
+    </category>
     <!-- <category name="프롤로그 (Prolog)" colour="%{BKY_PROLOG_HUE}">
       <block type="prolog_list">
         <value name="bar">
@@ -9149,6 +9154,7 @@ function Check_matplotlib_user_input(a, b) {
               pythonCode = `              
                 import sys
                 from io import StringIO
+                urlHtmlTag = ""
                 sys.stdout = StringIO()      
               `
               // 비동기 부분 다 끝나고 이거 되는거같음
@@ -9215,6 +9221,7 @@ function Check_matplotlib_user_input(a, b) {
         //let _url = "https://www.melon.com/chart/index.htm";
         let _url = prompt("크롤링할 URL을 입력해주세요 : ");
 
+        // 블록 안에 'URL' 이라는 필드에 값 추가
         var block = demoWorkspace.getBlockById(blockId);
         block.setFieldValue(JSON.stringify(_url), 'URL');
 

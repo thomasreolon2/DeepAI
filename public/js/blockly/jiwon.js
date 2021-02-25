@@ -1,16 +1,3 @@
-Blockly.Blocks['url_load'] = {
-    init: function () {
-        this.appendDummyInput()
-          .appendField("URL불러오기")
-          .appendField(new Blockly.FieldTextInput(""), "URL");
-        //this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour(20);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
-  };
-
 // 2021.01.14 맷플롯립 작업시작
 
 // get_sample_data

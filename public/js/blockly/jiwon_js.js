@@ -1,8 +1,4 @@
-Blockly.JavaScript['url_load'] = function (block) {
-  var file = block.getFieldValue('URL');
-  var code = file;
-  return [code, Blockly.JavaScript.ORDER_ATOMIC];
-};
+
 
  //라이브러리 임포트    
  Blockly.JavaScript['cbook_import'] = function(block) {

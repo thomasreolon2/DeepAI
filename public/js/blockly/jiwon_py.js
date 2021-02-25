@@ -1,18 +1,3 @@
-// test
-Blockly.Python['url_load'] = function (block) {
-  let file = block.getFieldValue('URL');
-  let _html = htmldata;
-  let code = `
-from bs4 import BeautifulSoup
-soup = BeautifulSoup("""${_html}""", 'html.parser')
-my_titles = soup.select('div > span> a')
-for x in range(0,10):
-	print(my_titles[x].get_text())
-`;
-  return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
-
 //라이브러리 임포트    
 Blockly.Python['cbook_import'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
