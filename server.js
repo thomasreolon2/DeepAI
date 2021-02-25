@@ -9,27 +9,22 @@ const ejs = require("ejs"); // ejs는 서버에서 JS로 템플릿을 만들 수
 
 var app = express();
 
-// install cors 로 설치 하였기 때문에 cors 모듈 require
-const cors = require('cors')
 const options = {
   key: fs.readFileSync('./keys/private.pem'),
   cert: fs.readFileSync('./keys/public.pem')
 };
-// cors () 사용  // 모든 도메인에 대한 Request 활성화  -> 좋지 않은 방식 
-app.use(cors());
 
 var server = require('http').createServer(options, app).listen(15480, function(){
     console.log('Socket IO server listening on port 15480');
 });
 
 
-
-//크롤링 21.02.19 남지원 주석처리
+// 명성이형이 하던 크롤링
 const client = require('cheerio-httpcli');  
 const bodyParser = require('body-parser'); 
 const url = require('url');   
 const request = require('request'); 
-// //크롤링 
+// 크롤링 
 
 const axios = require("axios")
 const cheerio = require("cheerio")
