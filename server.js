@@ -14,8 +14,8 @@ const options = {
   cert: fs.readFileSync('./keys/public.pem')
 };
 
-var server = require('http').createServer(options, app).listen(15480, function(){
-    console.log('Socket IO server listening on port 15480');
+var server = require('http').createServer(options, app).listen(50197, function(){
+    console.log('Socket IO server listening on port 50197');
 });
 
 
