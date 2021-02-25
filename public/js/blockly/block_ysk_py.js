@@ -31,7 +31,7 @@ Blockly.Python['df_agg'] = function(block) {
 Blockly.Python['try_except1'] = function(q) {
   var statements_try = Blockly.Python.statementToCode(q, 'TRY');
   var value_except1 = Blockly.Python.valueToCode(q, 'EXCEPT1', Blockly.Python.ORDER_ATOMIC);
-  var statements_except2 = Blockly.Python.statementToCode(q, 'EXCEPT2');
+  var statements_except2 = Blockly.Python.statementToCode(q, 'EXCEPT2') || "finally";
   var b = 0, c = "try : \n" + statements_try + "except " + value_except1 + " :\n" + statements_except2; ;
   // var b = Array(a.itemCount_)
   Blockly.Python.STATEMENT_PREFIX &&
@@ -44,15 +44,5 @@ Blockly.Python['try_except1'] = function(q) {
     c += "except " + d + " :\n" + e;
     ++b;
   };
-  // for (d = 0; d < q.itemCount_; d++){
-  //   var e = Blockly.Python.statementToCode(a, "ADD" + d) || Blockly.Python.PASS;
-  //   Blockly.Python.STATEMENT_SUFFIX &&
-  //     (e =
-  //       Blockly.Python.prefixLines(
-  //         Blockly.Python.injectId(Blockly.Python.STATEMENT_SUFFIX, q),
-  //         Blockly.Python.INDENT
-  //       ) + e);
-  //       c += "except " + ":\n" + e;
-  // };
   return c;
 };
