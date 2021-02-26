@@ -8580,10 +8580,13 @@
         //console.log("쿠키없음" + checkEvent);
       }
       let filename = prompt("다른이름으로 저장.", checkEvent);           // 다른이름으로 저장
-      setCookie("download_block",filename,"1"); // 사용자가 정한 파일명을 다시 쿠키에 저장
 
-      let fileObject = new File([p_xml], filename+".xml");  // 파일 객체 생성 (data,name+확장자)
-      saveAs(fileObject);                                   // 로컬 저장
+      if(filename != null){
+        setCookie("download_block",filename,"1"); // 사용자가 정한 파일명을 다시 쿠키에 저장
+        let fileObject = new File([p_xml], filename+".xml");  // 파일 객체 생성 (data,name+확장자)
+        saveAs(fileObject);                                   // 로컬 저장
+      }
+      
     }
 
     //===================================
