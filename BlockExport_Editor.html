@@ -279,10 +279,25 @@
 
   <!-- 이거 중복되는 거임 필요없을거같기도함. -->
   <!-- 플러그인 로딩이 끝났을때 .then => languagePluginLoader: 비동기 객체 -->
-  <script>
+  <!-- , 'CLAPACK', 'Jinja2', 
+                           'MarkupSafe', 'Pygments', 'asciitree', 'astropy', 'atomicwrites', 'attrs', 'autograd', 'beautifulsoup4', 
+                           'biopython', 'bleach', 'cloudpickle', 'cssselect', 'cycler', 'cytoolz', 'decorator', 'distlib', 'docutils', 
+                           'freesasa', 'future', 'glpk', 'html5lib', 'imageio', 'jedi', 'joblib', 'kiwisolver', 'libiconv', 'libxml', 
+                           'libxslt', 'lxml', 'mne', 'more-itertools', 'mpmath', 'msgpack', 'networkx', 'nlopt', 'nltk', 'nose', 
+                           'numcodecs', 'optlang', 'packaging', 'parso', 'patsy', 'pillow', 'pluggy', 'py', 'pyodide-interrupts', 
+                           'pyparsing', 'pytest', 'python-dateutil', 'python-sat', 'pytz', 'pywavelets', 'regex', 'scipy', 'setuptools', 
+                           'six', 'soupsieve', 'statsmodels', 'swiglpk', 'sympy', 'toolz', 'traits', 'uncertainties', 'webencodings', 'xlrd', 'yt', 'zarr', 'zlib'-->
+  <!-- <script>
     languagePluginLoader.then(() => {
       // 패키지로드 loadpackage, micropip은 pydodie에서 파이썬 wheel에 관련하여 설치함.
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image', 'micropip']).then(
+      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image', 'micropip', 'CLAPACK', 'Jinja2', 
+                           'MarkupSafe', 'Pygments', 'asciitree', 'astropy', 'atomicwrites', 'attrs', 'autograd', 'beautifulsoup4', 
+                           'biopython', 'bleach', 'cloudpickle', 'cssselect', 'cycler', 'cytoolz', 'decorator', 'distlib', 'docutils', 
+                           'freesasa', 'future', 'glpk', 'html5lib', 'imageio', 'jedi', 'joblib', 'kiwisolver', 'libiconv', 'libxml', 
+                           'libxslt', 'lxml', 'mne', 'more-itertools', 'mpmath', 'msgpack', 'networkx', 'nlopt', 'nltk', 'nose', 
+                           'numcodecs', 'optlang', 'packaging', 'parso', 'patsy', 'pillow', 'pluggy', 'py', 'pyodide-interrupts', 
+                           'pyparsing', 'pytest', 'python-dateutil', 'python-sat', 'pytz', 'pywavelets', 'regex', 'scipy', 'setuptools', 
+                           'six', 'soupsieve', 'statsmodels', 'swiglpk', 'sympy', 'toolz', 'traits', 'uncertainties', 'webencodings', 'xlrd', 'yt', 'zarr', 'zlib']).then(
       () => { 
         console.log('pyodide 라이브러리 로딩완료');
         $("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
@@ -295,7 +310,7 @@
         });
       });
     });
-  </script>
+  </script> -->
   <!--Socket.IO 지금은 안쓰는데... --> 
   <!-- <script>  
     var socket = io.connect('http://localhost:8000');
@@ -9177,7 +9192,13 @@ function Check_matplotlib_user_input(a, b) {
             // [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
             languagePluginLoader.then(async ()=>{       
               // pyodide모듈 로드     
-              pyodide.loadPackage(['numpy', 'pandas', 'matplotlib', 'scipy', 'sympy', 'beautifulsoup4']).then(() => {
+              pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image', 'micropip', 'Jinja2', 
+                           'MarkupSafe', 'Pygments', 'asciitree', 'astropy', 'atomicwrites', 'attrs', 'autograd', 'beautifulsoup4', 
+                           'biopython', 'bleach', 'cloudpickle', 'cssselect', 'cycler', 'cytoolz', 'decorator', 'distlib', 'docutils', 
+                           'freesasa', 'future', 'html5lib', 'imageio', 'joblib', 'kiwisolver', 'lxml', 'mne', 'more-itertools', 'mpmath', 'msgpack', 'networkx', 'nltk', 'nose', 
+                           'numcodecs', 'packaging', 'patsy', 'pillow', 'pluggy', 'py', 'pyodide-interrupts', 
+                           'pyparsing', 'pytest', 'python-dateutil', 'python-sat', 'pytz', 'pywavelets', 'regex', 'scipy', 'setuptools', 
+                           'soupsieve', 'statsmodels', 'sympy', 'toolz', 'traits', 'uncertainties', 'webencodings', 'xlrd', 'yt', 'zarr']).then(() => {
                 console.log("모듈 로드 완료.");
               })
               
@@ -9205,7 +9226,16 @@ function Check_matplotlib_user_input(a, b) {
                 return pyodide.loadPackage(['micropip'])
               }).then(() => {
                 pyodide.runPython(pythonCode);
-              })          
+              }) 
+              console.log('pyodide 라이브러리 로딩완료');
+              $("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
+              $("#runButton1").css({
+                  'display': "block"
+              });
+              $("#loading_image2").hide(); // 그래프 로딩 끝나면 로딩 창 없앰 
+              $("#runButton2").css({
+                  'display': "inline"
+              });         
             });
         });
     }, 1000);  // js 파일 다운로드를 위해 인터벌 설정 
