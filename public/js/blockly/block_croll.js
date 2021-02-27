@@ -1,4 +1,4 @@
-Blockly.Blocks['url_load'] = {
+Blockly.Blocks['croll_url_load'] = {
     init: function () {
         this.appendDummyInput()
             .appendField("URL불러오기")
@@ -11,7 +11,7 @@ Blockly.Blocks['url_load'] = {
 };
 
 // bs4_import
-Blockly.Blocks['bs4_import'] = {
+Blockly.Blocks['croll_bs4_import'] = {
     init: function() {
         this.appendDummyInput()
             .appendField("[임포트]beautifulSoup");

@@ -20,15 +20,14 @@ var server = require('http').createServer(options, app).listen(50197, function()
 
 
 // 명성이형이 하던 크롤링
+const cheerio = require("cheerio")
 const client = require('cheerio-httpcli');  
 const bodyParser = require('body-parser'); 
 const url = require('url');   
 const request = require('request'); 
+
 // 크롤링 
-
 const axios = require("axios")
-const cheerio = require("cheerio")
-
 
 var io = require('socket.io')(server);// http server를 socket.io server로 upgrade 
 app.set("view engine", "ejs"); 
@@ -83,18 +82,15 @@ io.on('connection', function (socket) {
 // express라우팅 : 엔드포인트(URI)의 정의, 그리고 URI가 클라잉너트 요청에 응답하는 방식
 app.post("/test2", function (req, res) { 
   console.log("페이지 정보 가져오기");
-  let url = req.body.url
-  console.log(req.body.url);
-  // var url = 'https://www.naver.com';
-  // var url = 'http://cyber.inhatc.ac.kr/';
-  // let url = 'https://www.google.co.kr';
+  let url = req.body.url // 클라이언트로 받은 url 정보
+  console.log(req.body.url); // url 한번 콘솔에 찍어봄
   let result = ""; //getHTML(); 
   async function getForum() {
     try {
       let response = await axios.get(
-        url         // 검색할 URL 가져오기 
+        url         // url을 가지고 axios.get을 통해 html dom을 가져옴
       );
-      res.json({data: response.data}); // 클라이언트에 성공했다고 신호를 보냄.
+      res.json({data: response.data}); // 클라이언트에 값을 보냄.
     } catch (error) {
       console.error(error);
     }

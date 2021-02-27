@@ -1,5 +1,5 @@
 // url 불러오기
-Blockly.Python['url_load'] = function (block) {
+Blockly.Python['croll_url_load'] = function (block) {
     // htmldata : ajax로 가져온 html dom
     pyodide.globals.urlHtmlTag = htmldata; // pyodide.globals.? pyodide에 선언된 변수.
     let code = `
@@ -12,7 +12,7 @@ Blockly.Python['url_load'] = function (block) {
   };
 
 // bs4 임포트    
-Blockly.Python['bs4_import'] = function(block) {
+Blockly.Python['croll_bs4_import'] = function(block) {
     var code = "from bs4 import BeautifulSoup\n";
     return code;
 };
