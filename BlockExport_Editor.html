@@ -8330,8 +8330,36 @@
 
     </category>
     <category name="크롤링" colour="%{BKY_VISUAL_HUE}">
-      <block type="croll_url_load"></block>
       <block type="croll_bs4_import"></block>
+
+      <block type="croll_url_load">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">soup</field>
+          </block>
+        </value>
+      </block>
+
+      <block type="croll_soup_select">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">my_titles</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1">'div > span> a'</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="croll_get_text">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">my_titles</field>
+          </block>
+        </value>
+      </block>
     </category>
     <!-- <category name="프롤로그 (Prolog)" colour="%{BKY_PROLOG_HUE}">
       <block type="prolog_list">
@@ -8748,8 +8776,8 @@
           fileDownload();
         }
 
-        // url_load
-        if('url_load' == block.type){
+        // croll_url_load
+        if('croll_url_load' == block.type){
           _requestsURL(event.blockId);
         }
       }
@@ -9222,6 +9250,10 @@ function Check_matplotlib_user_input(a, b) {
                 import sys
                 from io import StringIO
                 urlHtmlTag = ""
+                class requests:
+                  def get(htmldata):
+                    return htmldata
+
                 sys.stdout = StringIO()      
               `
               // 비동기 부분 다 끝나고 이거 되는거같음

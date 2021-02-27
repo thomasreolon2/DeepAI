@@ -1,18 +1,36 @@
-// url 불러오기
-Blockly.Python['croll_url_load'] = function (block) {
-    // htmldata : ajax로 가져온 html dom
-    pyodide.globals.urlHtmlTag = htmldata; // pyodide.globals.? pyodide에 선언된 변수.
-    let code = `
-  soup = BeautifulSoup(urlHtmlTag, 'html.parser')
-  my_titles = soup.select('div > span> a')
-  for x in range(0,10):
-      print(my_titles[x].get_text())
-  `;
-    return [code, Blockly.Python.ORDER_ATOMIC];
-  };
-
 // bs4 임포트    
 Blockly.Python['croll_bs4_import'] = function(block) {
-    var code = "from bs4 import BeautifulSoup\n";
-    return code;
+  var code = `
+#import requests <- 파이썬에서 사용할때는 이 주석을 삭제해 주세요
+from bs4 import BeautifulSoup\n`;
+  return code;
+};
+
+// croll_url_load
+Blockly.Python['croll_url_load'] = function (block) {
+  // htmldata : ajax로 가져온 html dom
+  pyodide.globals.urlHtmlTag = htmldata; // pyodide.globals.? pyodide에 선언된 변수.
+  let code = `
+soup = BeautifulSoup(requests.get(urlHtmlTag), 'html.parser')
+`;
+  return code;
+};
+
+// croll_soup_select
+Blockly.Python['croll_soup_select'] = function (block) {
+  var value_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  let code = `
+${value_name} = soup.select(${input_name})
+`;
+  return code;
+};
+
+// croll_get_text
+Blockly.Python['croll_get_text'] = function (block) {
+  var value_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  let code = `
+${value_name}.get_text()
+`;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
