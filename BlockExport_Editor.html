@@ -8,6 +8,9 @@
     width=device-width : 페이지 너비를 기기의 스크린 너비로 설정
     initial-scale=1 : 페이지 로딩 시 원래 크기를 사용 (확대, 축소 되지 않음)
   -->
+  <!--for messagebox-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>D.I.Y.</title>
   <!-- Blockly 개발자모드 코드 안보이게 막음-->
@@ -87,6 +90,10 @@
   <script src="/js/tabDisplay.js"></script>
   <!-- 그래프 aside -->
   <script src="/js/aside.js"></script>
+
+  <!--messageBox-->
+  <script src="./js/blockly/messagebox/messagebox.js"></script>
+  <link href="./js/blockly/messagebox/messagebox.css" rel="stylesheet" type="text/css">
 
   <!-- #####################################################################################################  -->
   <!-- ******************************              블록 import                ******************************* -->
@@ -373,7 +380,7 @@
           value="블록 지우기" />
 
         <!-- 블록 저장 -->
-        <input id="button_block_save" type="button" class="btn btn-outline-secondary btn-sm " onClick="saveBlock();"
+        <input id="button_block_save" type="button" class="btn btn-outline-secondary btn-sm " 
           value="블록 저장" />
 
         <!-- 블록 탭 -->
@@ -8622,7 +8629,7 @@
         checkEvent = getCookie("download_block"); 
         //console.log("쿠키없음" + checkEvent);
       }
-      let filename = prompt("다른이름으로 저장.", checkEvent);           // 다른이름으로 저장
+      //let filename = prompt("다른이름으로 저장.", checkEvent);           // 다른이름으로 저장
 
       if(filename != null){
         setCookie("download_block",filename,"1"); // 사용자가 정한 파일명을 다시 쿠키에 저장
@@ -8631,6 +8638,40 @@
       }
       
     }
+
+    $(document).ready(function(){
+      $( ".btn-sm" ).click(function() {
+        let checkEvent = "block"; // 파일명을 저장할 변수 생성
+        try {
+          checkEvent = getCookie("download_block"); // 쿠기이름이 download_block을 가져와 checkEvent에 저장
+          //console.log("쿠키있음 : " + checkEvent); 
+        } catch (error) {
+          setCookie("download_block","block","1"); // 저장된 쿠키가 없을 경우 download_block이름의 쿠키 생성/ 유지 기간은 1일
+          checkEvent = getCookie("download_block"); 
+          //console.log("쿠키없음" + checkEvent);
+        }
+
+        $.MessageBox({ // 커스텀 메세지 박스
+          buttonDone  : "다운로드", // 버튼
+          buttonFail  : "취소", // 버튼
+          message     : "블록 저장하기", 
+          input       : checkEvent, // 입력창, checkEvent : 기본입력 값 -> 쿠키에 저장된 값
+          speed       : 0
+      })
+      .done(function(data){
+        if($.trim(data)){
+          let xml = Blockly.Xml.workspaceToDom(demoWorkspace);  // 워크스페이스를 돔(xml)로 만듬
+          let p_xml = Blockly.Xml.domToPrettyText(xml);         // 돔(xml)을 깔끔하게 만드는 부분
+
+          setCookie("download_block",data,"1"); // 사용자가 정한 파일명을 다시 쿠키에 저장
+          let fileObject = new File([p_xml], data+".xml");  // 파일 객체 생성 (data,name+확장자)
+          saveAs(fileObject);                                   // 로컬 저장
+        }
+      }).fail(function(){
+  
+      });
+      });
+    });
 
     //===================================
     // 쿠키 
