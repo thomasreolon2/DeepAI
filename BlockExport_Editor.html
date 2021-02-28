@@ -8913,11 +8913,11 @@
             var output_err5 = "FileNotFoundError: [Errno 2] No such file or directory: "
 
             console.log('here1');
-            if (current_path == "/data"){
-              console.log('here2');
+            if (current_path.indexOf("/data") != -1){ // data 하위 디렉토리 모두 적용
+              
               let dir_index;
               let bool_;
-
+              console.log('here2' + dir_list.length);
               for(dir_index = 0; dir_index < dir_list.length; dir_index++){
                 if(dir_list[dir_index] == err_dir || err_dir.indexOf('/') != -1 || err_dir.indexOf('../') != -1){
                   bool_ = false;
@@ -8929,7 +8929,11 @@
                   bool_ = true;
                 }
               }
-            
+
+              if (dir_list.length == 0 && !(err_dir.indexOf('/') != -1 || err_dir.indexOf('../') != -1 || err_dir == '..' || err_dir == '.')){
+                bool_ = true; // 디렉토리 내부가 비어 있을 때도 적용
+                
+              }
               if(bool_ == true){
                 code = code.replace(code, '');
                 //code = code.replace(replace_str, '"' + output_err + '"');
