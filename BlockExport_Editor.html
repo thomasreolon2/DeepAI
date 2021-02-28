@@ -8828,14 +8828,78 @@
       languagePluginLoader.then(() => {
         pyodide.runPython(`
                     import sys
+                    import os
                     import io
                     import matplotlib.pyplot as plt
                     plt.cla()
                     plt.clf()
                     sys.stdout = io.StringIO()
-                    
-                    `); 
+                
+                    `);
+
+        // chdir 에러 구현
+        if(code){
+          
+          if (code.indexOf("os.chdir") != -1){
+            
+            var now_path = pyodide.runPython(`os.getcwd()`); // 현재 경로 받아옴
+            var dir_list = pyodide.runPython(`os.listdir()`);
+            var root_list = pyodide.runPython(`os.listdir('/')`);
+
+            var start_index = code.indexOf("os.chdir(");
+            var end_index = code.indexOf(")", start_index);
+
+            var replace_str = code.substr(start_index, (end_index - (start_index - 1)))
+
+            // 1. start_index부터 앞쪽으로 검색하여 개행이 어디 있는 지 확인하고, 몇번째 문자인지 변수에 저장
+            var err_index = (start_index + 10) - (code.lastIndexOf("\n", start_index + 10) - 1);
+            
+            // 2. start_index부터 앞쪽으로 검색하여 개행이 몇개인지 파악하고, 몇번째 라인인지 확인
+            var err_str = code.substr(0, start_index + 10);
+            var err_line = err_str.match(/\n/g).length + 1;
+            var err_dir = code.substr(start_index + 10, ((end_index-2) - (start_index + 10 - 1)))
+
+            var output_err = "Error: Traceback (most recent call last):"
+            var output_err2 = "File \"/lib/python3.8/site-packages/pyodide/_base.py\", line 70, in eval_code"
+            var output_err3 = "eval(compile(mod, \"<exec>\", mode=\"exec\"), ns, ns)"
+            var output_err4 = "File \"<exec>\", line" + String(err_line) +", in <module>"
+            var output_err5 = "FileNotFoundError: [Errno 2] No such file or directory: "
+
+            if (now_path == "/data"){
+              
+              let dir_index;
+              let bool_;
+
+              for(dir_index = 0; dir_index < dir_list.length; dir_index++){
+                if(dir_list[dir_index] == err_dir || err_dir.indexOf('/') != -1 || err_dir.indexOf('../') != -1){
+                  bool_ = false
+                  break;
+                }else if(err_dir == '..' || err_dir == '.'){
+                  bool_ = false
+                  break;
+                }else{
+                  bool_ = true;
+                }
+              }
+            
+              if(bool_ == true){
+                code = code.replace(code, '');
+                //code = code.replace(replace_str, '"' + output_err + '"');
+                code = "print('" + output_err + "')";
+                code = code + ("\nprint(' " + output_err2 + "')");
+                code = code + ("\nprint('  " + output_err3 + "')");
+                code = code + ("\nprint(' " + output_err4 + "')");
+                code = code + ('\nprint("' + output_err5 + "'" + err_dir + "'" + '")');
+                console.log('data폴더');
+              }
+            }
+          }
+        }
+
       });
+
+
+
       // var code = document.getElementById("pyCodeEditor");
       // 순차적 실행을 위해 놓은 코드 async, .then()
       async function runcode() {
@@ -8850,7 +8914,7 @@
             let stdout = pyodide.runPython("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
             exe.innerHTML = stdout;
           } catch (e) {
-            exe.innerHTML = e;
+            exe.innerHTML = e;  
           }
         });
       }
