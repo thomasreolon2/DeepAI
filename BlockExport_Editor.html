@@ -8884,11 +8884,11 @@
           
           if (code.indexOf("os.chdir") != -1){
             
-            var now_path = pyodide.runPython(`os.getcwd()`); // 현재 경로 받아옴
+            var current_path = pyodide.runPython(`os.getcwd()`); // 현재 경로 받아옴
             var dir_list = pyodide.runPython(`os.listdir()`); // 디렉토리 비교하기 위해
             var root_list = pyodide.runPython(`os.listdir('/')`);
 
-            var start_index = code.indexOf("os.chdir(");
+            var start_index = code.indexOf("os.chdir("); 
             var end_index = code.indexOf(")", start_index);
 
             var replace_str = code.substr(start_index, (end_index - (start_index - 1)))
@@ -8898,26 +8898,32 @@
             
             // 2. start_index부터 앞쪽으로 검색하여 개행이 몇개인지 파악하고, 몇번째 라인인지 확인
             var err_str = code.substr(0, start_index + 10);
-            var err_line = err_str.match(/\n/g).length + 1;
+            var err_line = err_str.match(/\n/g);
+            if(err_line === null) 
+              err_line = 1;
+            else
+              err_line = err_str.match(/\n/g).length + 1;
+            
             var err_dir = code.substr(start_index + 10, ((end_index-2) - (start_index + 10 - 1)))
 
             var output_err = "Error: Traceback (most recent call last):"
             var output_err2 = "File \"/lib/python3.8/site-packages/pyodide/_base.py\", line 70, in eval_code"
             var output_err3 = "eval(compile(mod, \"<exec>\", mode=\"exec\"), ns, ns)"
-            var output_err4 = "File \"<exec>\", line" + String(err_line) +", in <module>"
+            var output_err4 = "File \"<exec>\", line " + String(err_line) +", in <module>"
             var output_err5 = "FileNotFoundError: [Errno 2] No such file or directory: "
 
-            if (now_path == "/data"){
-              
+            console.log('here1');
+            if (current_path == "/data"){
+              console.log('here2');
               let dir_index;
               let bool_;
 
               for(dir_index = 0; dir_index < dir_list.length; dir_index++){
                 if(dir_list[dir_index] == err_dir || err_dir.indexOf('/') != -1 || err_dir.indexOf('../') != -1){
-                  bool_ = false
+                  bool_ = false;
                   break;
                 }else if(err_dir == '..' || err_dir == '.'){
-                  bool_ = false
+                  bool_ = false;
                   break;
                 }else{
                   bool_ = true;
