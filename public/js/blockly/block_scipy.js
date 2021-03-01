@@ -54,7 +54,7 @@ Blockly.Blocks['curve_fit'] = {
 
 Blockly.Blocks['univariatespline'] = {
     init: function () {
-        this.appendValueInput("x").setCheck(null).appendField("[UnivariateSpline] x_data");
+        this.appendValueInput("x").setCheck(null).appendField(Blockly.Msg.SCIPY_UNIVARIATESPLINE).appendField("UnivariateSpline x_data");
         this.appendValueInput("y").setCheck(null).appendField("Y_data");
         this.appendDummyInput().appendField(new Blockly.FieldTextInput("1"), "s");
         this.setInputsInline(true);
@@ -92,7 +92,9 @@ Blockly.Blocks['scipy_io_wavfile_read'] = {
 
 Blockly.Blocks['scipy_bartlett'] = {
     init: function () {
-        this.appendDummyInput().appendField("signal.bartlett");
+        this.appendDummyInput()
+        .appendField(Blockly.Msg.SCIPY_BARTLETT)
+        .appendField("signal.bartlett");
         this.appendValueInput("d2").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
@@ -105,7 +107,9 @@ Blockly.Blocks['scipy_bartlett'] = {
   
   Blockly.Blocks['scipy_tsearch'] = {
     init: function () {
-        this.appendDummyInput().appendField("spatial.tsearch");
+        this.appendDummyInput()
+        .appendField(Blockly.Msg.SCIPY_TSEARCH)
+        .appendField("spatial.tsearch");
         this.appendValueInput("d2").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
@@ -118,15 +122,17 @@ Blockly.Blocks['scipy_bartlett'] = {
   
   Blockly.Blocks['scipy_distance_matrix_minkowski_distance_minkowski_distance_p'] = {
     init: function () {
-        this.appendDummyInput().appendField("spatial.").appendField(new Blockly.FieldDropdown([
+        this.appendDummyInput().appendField(Blockly.Msg.SCIPY_DISTANCE_MATRIX_MINKOWSKI_DISTANCE_MINKOWSKI_DISTANCE_P)
+        .appendField("spatial.")
+        .appendField(new Blockly.FieldDropdown([
             [
-                "distance_matrix", "distance_matrix"
+              Blockly.Msg.SCIPY_DISTANCE_MATRIX, "distance_matrix"
             ],
             [
-              "minkowski_distance", "minkowski_distance"
+              Blockly.Msg.SCIPY_MINKOWSKI_DISTANCE, "minkowski_distance"
             ],
             [
-              "minkowski_distance_p", "minkowski_distance_p"
+              Blockly.Msg.SCIPY_MINKOWSKI_DISTANCE_P, "minkowski_distance_p"
             ]
         ]), "scipy");
         this.appendValueInput("d2").appendField("(").setCheck(null);
@@ -141,7 +147,9 @@ Blockly.Blocks['scipy_bartlett'] = {
   
   Blockly.Blocks['scipy_procrustes'] = {
     init: function () {
-        this.appendDummyInput().appendField("spatial.procrustes");
+        this.appendDummyInput()
+        .appendField(Blockly.Msg.SCIPY_PROCRUSTES)
+        .appendField("spatial.procrustes");
         this.appendValueInput("d2").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
@@ -157,7 +165,10 @@ Blockly.Blocks['scipy_bartlett'] = {
 //////////////////////////////////////
 Blockly.Blocks['scipy_write_read'] = {
     init: function () {
-      this.appendDummyInput().appendField("[wavfile읽/쓰기]wavfile.").appendField(new Blockly.FieldDropdown([
+      this.appendDummyInput()
+      .appendField(Blockly.Msg.SCIPY_WRITE_READ)
+      .appendField("wavfile.")
+      .appendField(new Blockly.FieldDropdown([
         [
             "쓰기(write)", "write"
         ],
@@ -170,7 +181,7 @@ Blockly.Blocks['scipy_write_read'] = {
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -178,13 +189,15 @@ Blockly.Blocks['scipy_write_read'] = {
   
   Blockly.Blocks['scipy_cascade'] = {
     init: function () {
-      this.appendDummyInput().appendField("[cascade]signal.cascade");
+        this.appendDummyInput()
+        .appendField(Blockly.Msg.SCIPY_CASCADE)
+        .appendField("signal.cascade");
         this.appendValueInput("d1").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -192,13 +205,15 @@ Blockly.Blocks['scipy_write_read'] = {
   
   Blockly.Blocks['scipy_daub'] = {
     init: function () {
-      this.appendDummyInput().appendField("[daub]signal.daub");
+        this.appendDummyInput()
+        .appendField(Blockly.Msg.SCIPY_DAUB)
+        .appendField("signal.daub");
         this.appendValueInput("d1").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -206,12 +221,15 @@ Blockly.Blocks['scipy_write_read'] = {
   
   Blockly.Blocks['scipy_morlet'] = {
     init: function () {
-      this.appendDummyInput().appendField("[morlet]signal.").appendField(new Blockly.FieldDropdown([
+      this.appendDummyInput()
+      .appendField(Blockly.Msg.SCIPY_MORLET)
+      .appendField("signal.")
+      .appendField(new Blockly.FieldDropdown([
         [
-            "(morlet)", "morlet"
+          Blockly.Msg.SCIPY_MORLET0, "morlet"
         ],
         [
-          "(morlet2)", "morlet2"
+          Blockly.Msg.SCIPY_MORLET2, "morlet2"
         ],
         ]), "collection");
         this.appendValueInput("d1").appendField("(").setCheck(null);
@@ -219,7 +237,7 @@ Blockly.Blocks['scipy_write_read'] = {
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -227,13 +245,15 @@ Blockly.Blocks['scipy_write_read'] = {
   
   Blockly.Blocks['scipy_qmf'] = {
     init: function () {
-      this.appendDummyInput().appendField("[qmf]signal.qmf");
+        this.appendDummyInput()
+        .appendField(Blockly.Msg.SCIPY_QMF)
+        .appendField("signal.qmf");
         this.appendValueInput("d1").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -241,13 +261,15 @@ Blockly.Blocks['scipy_write_read'] = {
   
   Blockly.Blocks['scipy_ricker'] = {
     init: function () {
-      this.appendDummyInput().appendField("[ricker]signal.ricker");
+        this.appendDummyInput()
+        .appendField(Blockly.Msg.SCIPY_RICKER)
+        .appendField("signal.ricker");
         this.appendValueInput("d1").appendField("(").setCheck(null);
         this.appendDummyInput().appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
         //this.setOutput(true, null);
-        this.setColour(pandas_color);
+        this.setColour("%{BKY_SCIPY_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }

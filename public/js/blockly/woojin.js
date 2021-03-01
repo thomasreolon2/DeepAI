@@ -10,7 +10,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -30,7 +30,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -49,7 +49,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }

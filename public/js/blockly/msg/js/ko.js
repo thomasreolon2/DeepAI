@@ -610,49 +610,7 @@ Blockly.Msg['COLLECTION_17_SPLIT'] = "리스트 자르기";
 Blockly.Msg['COLLECTION_18_GETINDEX'] = "인덱스 가져오기";
 Blockly.Msg['COLLECTION_18_ARRAY'] = "배열";
 
-// =============================
 
-
-
-// 카테고리 색 변경
-Blockly.Msg["VARIABLES_HUE"] = "4C97FF";// 변수
-Blockly.Msg["LOGIC_HUE"] = "9966FF";// 논리
-Blockly.Msg["LOOPS_HUE"] = "D65CD6"; // 반복
-
-Blockly.Msg["MATH_HUE"] = "E8754D"; // 연산
-Blockly.Msg["TEXTS_HUE"] = "FFAB19"; // 문자
-
-Blockly.Msg["COLLECTION_HUE"] = "4CBFE6"; // 컬렉션
-Blockly.Msg["LISTS_HUE"] = "40BF4A"; // 리스트
-Blockly.Msg["DICT_HUE"] = ""; // 딕셔너리
-Blockly.Msg["SET_HUE"] = "FF6680"; // 집합
-Blockly.Msg["TUPLE_HUE"] = "593AE8"; // 튜플
-Blockly.Msg["LIST_HUE"] = "#ff8c1a"; // 리스트
-Blockly.Msg["LIST2_HUE"] = "#ff8c1a";// 리스트2
-
-Blockly.Msg["FILE_HUE"] = "#FF8C1A";// 파일
-
-// 커스텀 색상
-Blockly.Msg["NUMPY_HUE"] = "472BFF"; // 넘파이
-Blockly.Msg["PANDAS_HUE"] = "FF3D98"; // 판다스
-Blockly.Msg["VISUAL_HUE"] = "E8BE38"; // 매트플롯립, 시각화
-Blockly.Msg["SCIPY_HUE"] = "5AE88A"; // 사이파이
-Blockly.Msg["CLASS_HUE"] = "5BA561"; // 클래스
-Blockly.Msg["SCIKITLEARN_HUE"] = "E85938"; // 사이킷런
-Blockly.Msg["SCIKITLEARN_IMAGE"] ="#008C8C"; // 사이킷런 이미지
-Blockly.Msg["DATA_HUE"] = "6D3A85"; // 데이터사이언스
-Blockly.Msg["ML_HUE"] = "E6675E"; // 머신러닝
-Blockly.Msg["DL_HUE"] = "E69344"; // 딥러닝
-Blockly.Msg["PROLOG_HUE"] = "8FBF36"; // 프롤로그
-Blockly.Msg["OS_HUE"] = "#55ad15"; // 시스템
-Blockly.Msg["lst_HUE"] = "#183153"; // 시스템
-
-
-
-// 안쓰는 커테고리
-Blockly.Msg["PROCEDURES_HUE"] = "41CDCD"; // ?
-Blockly.Msg["COLOUR_HUE"] = "289AFF"; // color
-Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310"; //?
 
 // ----- Operation
 Blockly.Msg['OPERATION_1_INPUT'] = "외부 입력";
@@ -919,8 +877,45 @@ Blockly.Msg['MATPLOT_VIS_TREE_3'] = "Y축 컬럼위치";
 
 // ---- 사이파이
 Blockly.Msg['SCIPY_IMPORT'] = "[임포트] 사이파이";
-Blockly.Msg['SCIPY_CURVE_FIT'] = "[Curve_Fit] 함수";
-Blockly.Msg['SCIPY_QUAD'] = "[Quad] 함수";
+Blockly.Msg['SCIPY_CURVE_FIT'] = "[비선형 최소제곱사용] 함수";
+Blockly.Msg['SCIPY_QUAD'] = "[정적분계산] 함수";
+Blockly.Msg['SCIPY_IO_WAVFILE_READ'] = "[동영상파일가져오기]";
+Blockly.Msg['SCIPY_UNIVARIATESPLINE'] = "[평활 스플라인]";
+Blockly.Msg['SCIPY_BUTTER'] = "[디지털&아날로그 필터디자인]";
+Blockly.Msg['SCIPY_SOSFILT'] = "[계단식 2차 섹션 필터링]";
+Blockly.Msg['SCIPY_HILBERT'] = "[힐베르트 변환 분석 신호계산]";
+Blockly.Msg['SCIPY_CORRELATE'] = "[N차원 배열 교차상관]";
+Blockly.Msg['SCIPY_STFT_ISTFT'] = "[단시간 푸리에 변환]";
+Blockly.Msg['SCIPY_STFT'] = "단시간 푸리에 변환(stft)";
+Blockly.Msg['SCIPY_ISTFT'] = "역단시간 푸리에 변환(istft)";
+Blockly.Msg['SCIPY_FIND_PEAKS'] = "[신호 내부의 피크 검색]";
+Blockly.Msg['SCIPY_FFT'] = "[고속 푸리에 변환]";
+
+Blockly.Msg['SCIPY_SIGNAL_CWT'] = "[연속 잔물결 변환]";
+Blockly.Msg['SCIPY_SIGNAL_SPECTROGRAM'] = "[스펙트로그램 계산]";
+Blockly.Msg['SCIPY_SIGNAL_GAUSSIAN'] = "[가우스창 반환]";
+Blockly.Msg['SCIPY_SIGNAL_HANN'] = "[hann창 반환]";
+Blockly.Msg['SCIPY_SIGNAL_FLATTOP'] = "[평평한 상단창 반환]";
+Blockly.Msg['SCIPY_SIGNAL_BLACKMAN'] = "[블랙맨 창 반환]";
+Blockly.Msg['SCIPY_SIGNAL_EXPONENTIAL'] = "[지수창 반환]";
+Blockly.Msg['SCIPY_SIGNAL_HAMMING'] = "[해밍창 반환]";
+
+Blockly.Msg['SCIPY_WRITE_READ'] = "[wavfile읽/쓰기]";
+Blockly.Msg['SCIPY_CASCADE'] = "[K/2**J필터 계수의 이원 점 값 반환]";
+Blockly.Msg['SCIPY_DAUB'] = "[FIR 저역 통과 필터 계수]";
+Blockly.Msg['SCIPY_MORLET'] = "[복합 몰릿 웨이블릿]";
+Blockly.Msg['SCIPY_MORLET0'] = "복합몰릿웨이블릿(morlet)";
+Blockly.Msg['SCIPY_MORLET2'] = "복합몰릿웨이블릿[CWT 동시 동작](morlet)";
+Blockly.Msg['SCIPY_QMF'] = "[고역 통과 qmf 필터 반환]";
+Blockly.Msg['SCIPY_RICKER'] = "[리커 웨이블릿 반환]";
+
+Blockly.Msg['SCIPY_BARTLETT'] = "[bartlett 창 반환]";
+Blockly.Msg['SCIPY_TSEARCH'] = "[점을 포함하는 단순성 찾기]";
+Blockly.Msg['SCIPY_DISTANCE_MATRIX_MINKOWSKI_DISTANCE_MINKOWSKI_DISTANCE_P'] = "[계산하기]";
+Blockly.Msg['SCIPY_DISTANCE_MATRIX'] = "거리행렬 계산(distance_matrix)";
+Blockly.Msg['SCIPY_MINKOWSKI_DISTANCE'] = "거리 계산(minkowski_distance)";
+Blockly.Msg['SCIPY_MINKOWSKI_DISTANCE_P'] = "거리의 pth 거듭 제곱 계산(minkowski_distance_p)";
+Blockly.Msg['SCIPY_PROCRUSTES'] = "[데이터 유사성 테스트]";
 
 // --------- 사이킷런
 
@@ -1361,6 +1356,10 @@ Blockly.Msg['skimage_util_shape_shape'] = " ";
 // Blockly.Msg['ndi_zoom'] = "";
 // Blockly.Msg['img_as_float'] = "";
 // Blockly.Msg['data_camera'] = "";
+
+
+
+
 
 
 

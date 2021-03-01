@@ -18,7 +18,7 @@ Blockly.Blocks['df_ap'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -33,7 +33,7 @@ Blockly.Blocks['df_agg'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }

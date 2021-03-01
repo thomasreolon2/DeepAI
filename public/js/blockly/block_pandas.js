@@ -2,7 +2,7 @@
 // 2020-09-03, Pandas Blocks 2학년 파트
 ///////////////////////////////////////////////////////
 
-var pandas_color = "%{BKY_PANDAS_HUE}";
+//var "%{BKY_PANDAS_HUE}" = "%{BKY_PANDAS_HUE}";
 
 //2020-09-19 양승국 수정 -> 2021.01.23 남지원 이름변경
 Blockly.Blocks['pandas_library'] = {
@@ -12,7 +12,7 @@ Blockly.Blocks['pandas_library'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -29,7 +29,7 @@ Blockly.Blocks['load_csv'] = {
       .appendField("csv파일 가져오기 : ");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -47,7 +47,7 @@ Blockly.Blocks['fill_null_data'] = {
       .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -60,7 +60,7 @@ Blockly.Blocks['pyo_lib'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -95,7 +95,7 @@ Blockly.Blocks['deletehead'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -117,7 +117,7 @@ Blockly.Blocks['select_row_delete'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -137,7 +137,7 @@ Blockly.Blocks['leave_row_data'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -157,7 +157,7 @@ Blockly.Blocks['leave_column_data'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -173,7 +173,7 @@ Blockly.Blocks['save_data'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -200,7 +200,7 @@ Blockly.Blocks['list'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -221,7 +221,7 @@ Blockly.Blocks['header'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -243,7 +243,7 @@ Blockly.Blocks['select_row_list'] = {
       .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -266,7 +266,7 @@ Blockly.Blocks['select_row_column_value'] = {
       .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -286,7 +286,7 @@ Blockly.Blocks['row_count'] = {
       .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -301,7 +301,7 @@ Blockly.Blocks['row_count'] = {
 //     this.appendDummyInput()
 //         .appendField("이미지 리스트");
 //     this.setInputsInline(true);
-//     this.setColour(pandas_color);
+//     this.setColour("%{BKY_PANDAS_HUE}");
 //  this.setTooltip("");
 //  this.setHelpUrl("");
 //   }
@@ -316,7 +316,7 @@ Blockly.Blocks['count_label'] = {
       .appendField("라벨 개수");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -340,7 +340,7 @@ Blockly.Blocks['pandas_dataframe'] = {
       .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -379,7 +379,7 @@ Blockly.Blocks['pandas_datalist'] = {
       .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -395,7 +395,7 @@ Blockly.Blocks.createColumn = {
     this.setOutput(!0, "Array");
     this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
   }, 
   mutationToDom: function () {
     var a = Blockly.utils.xml.createElement("mutation");
@@ -469,7 +469,7 @@ Blockly.Blocks.lists_create_with_container = {
     );
     this.appendStatementInput("STACK");
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.contextMenu = !1;
   },
 };
@@ -482,7 +482,7 @@ Blockly.Blocks.lists_create_with_item = {
     this.setPreviousStatement(!0);
     this.setNextStatement(!0);
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.contextMenu = !1;
   },
 };
@@ -507,7 +507,7 @@ Blockly.Blocks['pandas_conversion'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -530,7 +530,7 @@ Blockly.Blocks['pandas_mis_del'] = {
       .appendField(")");  
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -543,7 +543,7 @@ Blockly.Blocks['selec_value_all'] = {
       .appendField(Blockly.Msg.PANDAS_SELECT_VALUE_ALL);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -560,7 +560,7 @@ Blockly.Blocks['iloc_range'] = {
       .appendField(new Blockly.FieldTextInput("2"), "ed_range")
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -577,7 +577,7 @@ Blockly.Blocks['nm'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -597,7 +597,7 @@ Blockly.Blocks['pandas_series'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -612,7 +612,7 @@ Blockly.Blocks.pandas_series_data = {
     this.setOutput(!0, "Array");
     this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
   },
   mutationToDom: function () {
     var a = Blockly.utils.xml.createElement("mutation");
@@ -687,7 +687,7 @@ Blockly.Blocks.lists_create_with_container = {
     );
     this.appendStatementInput("STACK");
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.contextMenu = !1;
   },
 };
@@ -700,7 +700,7 @@ Blockly.Blocks.lists_create_with_item = {
     this.setPreviousStatement(!0);
     this.setNextStatement(!0);
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.contextMenu = !1;
   },
 };
@@ -726,7 +726,7 @@ Blockly.Blocks.lists_create_with_item = {
 //     this.setInputsInline(true);
 //     this.setPreviousStatement(true, null);
 //     this.setNextStatement(true, null);
-//     this.setColour(pandas_color);
+//     this.setColour("%{BKY_PANDAS_HUE}");
 //     this.setTooltip("");
 //     this.setHelpUrl("");
 //   }
@@ -749,7 +749,7 @@ Blockly.Blocks['df_add_col'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -775,7 +775,7 @@ Blockly.Blocks['pandas_merge'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -789,7 +789,7 @@ Blockly.Blocks['pandas_merge_oncol'] = {
       .appendField(new Blockly.FieldTextInput(Blockly.Msg.PANDAS_MERGE_ONCOL_2), "mer_NAME");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -806,7 +806,7 @@ Blockly.Blocks['pandas_merge_lron'] = {
       .appendField(new Blockly.FieldTextInput(Blockly.Msg.PANDAS_MERGE_IRON_2), "mer_RNAME");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -828,7 +828,7 @@ Blockly.Blocks['groupby_series'] = {
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_GROUPBY_SERIES_3, ".mean()"], [Blockly.Msg.PANDAS_GROUPBY_SERIES_4, ".count()"], [Blockly.Msg.PANDAS_GROUPBY_SERIES_5, ".sum()"], [Blockly.Msg.PANDAS_GROUPBY_SERIES_6, ".prod()"], [Blockly.Msg.PANDAS_GROUPBY_SERIES_7, ".min()"], [Blockly.Msg.PANDAS_GROUPBY_SERIES_8, ".max()"]]), "function")
       .appendField(")");
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -846,7 +846,7 @@ Blockly.Blocks.groupby_series_ = {
     this.setMutator(new Blockly.Mutator(["lists_create_with_item"]));
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_TOOLTIP);
     this.appendDummyInput();
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
   },
   mutationToDom: function () {
     var a = Blockly.utils.xml.createElement("mutation");
@@ -926,7 +926,7 @@ Blockly.Blocks.lists_create_with_container = {
     );
     this.appendStatementInput("STACK");
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TOOLTIP);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.contextMenu = !1;
   },
 };
@@ -939,7 +939,7 @@ Blockly.Blocks.lists_create_with_item = {
     this.setPreviousStatement(!0);
     this.setNextStatement(!0);
     this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.contextMenu = !1;
   },
 };
@@ -963,7 +963,7 @@ Blockly.Blocks['pandas_concat'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -983,7 +983,7 @@ Blockly.Blocks['pan_aray'] = {
       .appendField(",");
     this.appendDummyInput()
       .appendField("]");
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setTooltip("");
@@ -1147,7 +1147,7 @@ Blockly.Blocks['df_col_rename'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -1169,7 +1169,7 @@ Blockly.Blocks['csv_url'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1186,7 +1186,7 @@ Blockly.Blocks['pandas_head'] = {
         .appendField(new Blockly.FieldDropdown([["상위5개(head)","head()"], ["하위5개(tail)","tail()"], ["행열바꿈(T)","T"]]), "DROP");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
   this.setTooltip("");
   this.setHelpUrl("");
 }
@@ -1203,7 +1203,7 @@ Blockly.Blocks['pandas_info'] = {
         .appendField(new Blockly.FieldDropdown([["데이터통계(info)","info()"], ["통계정보조회(describe)","describe()"]]), "DROP");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
   this.setTooltip("");
   this.setHelpUrl("");
 }
@@ -1225,7 +1225,7 @@ Blockly.Blocks['pandas_astype'] = {
       .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
   this.setTooltip("");
   this.setHelpUrl("");
 } 
@@ -1244,7 +1244,7 @@ Blockly.Blocks['pandas_unique'] = {
         .setCheck(null);
         this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
   this.setTooltip("");
   this.setHelpUrl("");
   }
@@ -1264,7 +1264,7 @@ Blockly.Blocks['pandas_indexing'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1286,7 +1286,7 @@ Blockly.Blocks['pandas_oc'] = {
       .appendField("]");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1299,7 +1299,7 @@ Blockly.Blocks['pandas_items'] = {
     this.appendDummyInput().appendField(".items()");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1314,7 +1314,7 @@ Blockly.Blocks['pandas_where'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1334,7 +1334,7 @@ Blockly.Blocks['groupby_dataFrame1'] = {
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_3,"mean"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_4,"count"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_5,"sum"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_6,"prod"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_7,"min"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_8,"max"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_10,"size"]]), "DROP")
       .appendField("");
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1351,7 +1351,7 @@ Blockly.Blocks['pandas_transpose'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1371,7 +1371,7 @@ Blockly.Blocks['pandas_pivot'] = {
       .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1391,7 +1391,7 @@ Blockly.Blocks['pandas_get_dummies'] = {
       .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1407,7 +1407,7 @@ Blockly.Blocks['pandas_multiIndex'] = {
       .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1427,7 +1427,7 @@ Blockly.Blocks['pandas_stack'] = {
       .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1441,7 +1441,7 @@ Blockly.Blocks['pandas_cat'] = {
     this.appendDummyInput().appendField(".cat.categories");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1459,7 +1459,7 @@ Blockly.Blocks['pandas_cat_set'] = {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1477,7 +1477,7 @@ Blockly.Blocks['pandas_sub'] = {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1504,7 +1504,7 @@ Blockly.Blocks['pandas_drop'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1527,7 +1527,7 @@ Blockly.Blocks['pandas_drop_duplicates'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1550,7 +1550,7 @@ Blockly.Blocks['pandas_dropna'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1575,7 +1575,7 @@ Blockly.Blocks['block_sum_min'] = {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
  }
@@ -1601,7 +1601,7 @@ Blockly.Blocks['block_cumsum'] = {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
  }
@@ -1623,7 +1623,7 @@ Blockly.Blocks['block_calculations'] = {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
  }
@@ -1648,7 +1648,7 @@ Blockly.Blocks['pandas_sort'] = {
           .appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1668,7 +1668,7 @@ Blockly.Blocks['pandas_corr'] = {
         .setCheck(null);
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -1690,7 +1690,7 @@ Blockly.Blocks['pandas_nanull'] = {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
   this.setTooltip("");
   this.setHelpUrl("");
   }
@@ -1726,7 +1726,7 @@ Blockly.Blocks['df_merge'] = {
       this.appendValueInput("INPUT").setCheck(null);
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1762,7 +1762,7 @@ Blockly.Blocks['df_reindex'] = {
         .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -1778,7 +1778,7 @@ Blockly.Blocks['df_unique'] = {
         .appendField(".unique( )");  
     this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1792,7 +1792,7 @@ Blockly.Blocks['df_is_in'] = {
       this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1805,7 +1805,7 @@ Blockly.Blocks['df_tolist'] = {
     this.appendDummyInput().appendField(".tolist( )");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1818,7 +1818,7 @@ Blockly.Blocks['df_name'] = {
     this.appendDummyInput().appendField(".name");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1832,7 +1832,7 @@ Blockly.Blocks['df_series1'] = {
       this.appendDummyInput().appendField(")");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1848,7 +1848,7 @@ Blockly.Blocks['df_series2'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }
@@ -1863,7 +1863,7 @@ Blockly.Blocks['df_series3'] = {
       this.setInputsInline(true);
       this.setOutput(true, null);
       //this.setOutput(true, null);
-      this.setColour(pandas_color);
+      this.setColour("%{BKY_PANDAS_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
   }

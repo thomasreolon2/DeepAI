@@ -1,4 +1,4 @@
-  var database = 205;
+
   
   Blockly.Blocks['db_create'] = {
     init: function () {
@@ -13,7 +13,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -30,7 +30,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -48,7 +48,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -65,7 +65,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -83,7 +83,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -100,7 +100,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -117,7 +117,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -133,7 +133,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour(database);
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -148,7 +148,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -167,7 +167,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -184,7 +184,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -208,7 +208,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -237,7 +237,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -252,7 +252,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -267,7 +267,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -284,7 +284,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -302,7 +302,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -320,7 +320,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -343,7 +343,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -359,7 +359,7 @@
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("205");
+      this.setColour("%{BKY_DATABASE_HUE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -379,7 +379,7 @@
           this.setInputsInline(true);
           this.setPreviousStatement(true, null);
           this.setNextStatement(true, null);
-          this.setColour("205");//"%{BKY_COLLECTION_HUE}");
+          this.setColour("%{BKY_DATABASE_HUE}");//"%{BKY_COLLECTION_HUE}");
           this.setTooltip("Create a list");
           this.setHelpUrl("");
       }
@@ -398,7 +398,7 @@
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour("205");
+        this.setColour("%{BKY_DATABASE_HUE}");
      this.setTooltip("");
      this.setHelpUrl("");
       }

@@ -383,7 +383,7 @@ Blockly.Blocks['plt_subplots'] = {
       this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
-      this.setColour("%{BKY_SCIKITLEARN_HUE}");
+      this.setColour("%{BKY_SCIKITLEARN_IMAGE}");
       this.setTooltip("");
       this.setHelpUrl("");
     }
@@ -507,7 +507,7 @@ Blockly.Blocks['pandas_csv_read'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -531,7 +531,7 @@ Blockly.Blocks['groupby_dataFrame_2'] = {
       .appendField(new Blockly.FieldDropdown([[Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_3, ".mean()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_4, ".count()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_5, ".sum()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_6, ".prod()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_7, ".min()"], [Blockly.Msg.PANDAS_GROUPBY_DATAFRAME_8, ".max()"]]), "function")
       .appendField(")");
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -552,7 +552,7 @@ Blockly.Blocks['pandas_date_range'] = {
       .appendField(")");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
   this.setTooltip("");
   this.setHelpUrl("");
 } 
@@ -572,7 +572,7 @@ Blockly.Blocks['pandas_dataframe_2'] = {
       .appendField(")");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -586,7 +586,7 @@ Blockly.Blocks['df_resample'] = {
     this.setInputsInline(true);
     this.setOutput(true, null);
     //this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
 }
@@ -601,7 +601,7 @@ Blockly.Blocks['df_add_function'] = {
     this.setInputsInline(true);
     this.setOutput(true, null);
     //this.setOutput(true, null);
-    this.setColour(pandas_color);
+    this.setColour("%{BKY_PANDAS_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
 }

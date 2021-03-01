@@ -471,6 +471,7 @@ Blockly.Blocks['except_block'] = {
 Blockly.Blocks['scipy_butter'] = {
     init: function() {
         this.appendDummyInput()
+            .appendField(Blockly.Msg.SCIPY_BUTTER)
             .appendField("signal.butter(");
         this.appendValueInput("INPUT")
             .setCheck(null);
@@ -478,7 +479,7 @@ Blockly.Blocks['scipy_butter'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIPY_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
     }
@@ -488,6 +489,7 @@ Blockly.Blocks['scipy_butter'] = {
 Blockly.Blocks['scipy_sosfilt'] = {
     init: function() {
         this.appendDummyInput()
+            .appendField(Blockly.Msg.SCIPY_SOSFILT)
             .appendField("signal.sosfilt(");
         this.appendValueInput("INPUT")
             .setCheck(null);
@@ -495,7 +497,7 @@ Blockly.Blocks['scipy_sosfilt'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIPY_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
     }
@@ -505,6 +507,7 @@ Blockly.Blocks['scipy_sosfilt'] = {
 Blockly.Blocks['scipy_hilbert'] = {
     init: function() {
         this.appendDummyInput()
+            .appendField(Blockly.Msg.SCIPY_HILBERT)
             .appendField("signal.hilbert(");
         this.appendValueInput("INPUT")
             .setCheck(null);
@@ -512,33 +515,35 @@ Blockly.Blocks['scipy_hilbert'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIPY_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
     }
 };
 
 // 2021.02.15 
-Blockly.Blocks['scipy_hilbert'] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("signal.hilbert(");
-        this.appendValueInput("INPUT")
-            .setCheck(null);
-        this.appendDummyInput()
-            .appendField(")");
-        this.setInputsInline(true);
-        this.setOutput(true, null);
-        this.setColour(230);
-    this.setTooltip("");
-    this.setHelpUrl("");
-    }
-};
+// Blockly.Blocks['scipy_hilbert'] = {
+//     init: function() {
+//         this.appendDummyInput()
+//             .appendField(Blockly.Msg.SCIPY_HILBERT)
+//             .appendField("signal.hilbert(");
+//         this.appendValueInput("INPUT")
+//             .setCheck(null);
+//         this.appendDummyInput()
+//             .appendField(")");
+//         this.setInputsInline(true);
+//         this.setOutput(true, null);
+//         this.setColour("%{BKY_SCIPY_HUE}");
+//     this.setTooltip("");
+//     this.setHelpUrl("");
+//     }
+// };
 
 // 2021.02.15 
 Blockly.Blocks['scipy_correlate'] = {
     init: function() {
         this.appendDummyInput()
+            .appendField(Blockly.Msg.SCIPY_CORRELATE)
             .appendField("signal.correlate(");
         this.appendValueInput("INPUT")
             .setCheck(null);
@@ -546,7 +551,7 @@ Blockly.Blocks['scipy_correlate'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIPY_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
     }
@@ -556,8 +561,9 @@ Blockly.Blocks['scipy_correlate'] = {
 Blockly.Blocks['scipy_stft_istft'] = {
     init: function() {
         this.appendDummyInput()
+            .appendField(Blockly.Msg.SCIPY_STFT_ISTFT)
             .appendField("signal.")
-            .appendField(new Blockly.FieldDropdown([["stft","stft"],["istft","istft"]]), "DROP")
+            .appendField(new Blockly.FieldDropdown([[Blockly.Msg.SCIPY_STFT,"stft"],[Blockly.Msg.SCIPY_ISTFT,"istft"]]), "DROP")
             .appendField(")");
         this.appendValueInput("INPUT")
             .setCheck(null);
@@ -565,7 +571,7 @@ Blockly.Blocks['scipy_stft_istft'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIPY_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
     }
@@ -575,6 +581,7 @@ Blockly.Blocks['scipy_stft_istft'] = {
 Blockly.Blocks['scipy_find_peaks'] = {
     init: function() {
         this.appendDummyInput()
+            .appendField(Blockly.Msg.SCIPY_FIND_PEAKS)
             .appendField("signal.find_peaks(");
         this.appendValueInput("INPUT")
             .setCheck(null);
@@ -582,7 +589,7 @@ Blockly.Blocks['scipy_find_peaks'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIPY_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
     }
@@ -592,6 +599,7 @@ Blockly.Blocks['scipy_find_peaks'] = {
 Blockly.Blocks['scipy_fft'] = {
     init: function() {
         this.appendDummyInput()
+            .appendField(Blockly.Msg.SCIPY_FFT)
             .appendField("fft.fft(");
         this.appendValueInput("INPUT")
             .setCheck(null);
@@ -599,7 +607,7 @@ Blockly.Blocks['scipy_fft'] = {
             .appendField(")");
         this.setInputsInline(true);
         this.setOutput(true, null);
-        this.setColour(230);
+        this.setColour("%{BKY_SCIPY_HUE}");
     this.setTooltip("");
     this.setHelpUrl("");
     }
