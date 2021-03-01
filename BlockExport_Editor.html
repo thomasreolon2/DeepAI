@@ -380,8 +380,7 @@
           value="블록 지우기" />
 
         <!-- 블록 저장 -->
-        <input id="button_block_save" type="button" class="btn btn-outline-secondary btn-sm " 
-          value="블록 저장" />
+        <input id="button_block_save" type="button" class="btn btn-outline-secondary btn-sm " value="블록 저장" />
 
         <!-- 블록 탭 -->
         <div class="btn-group" role="group">
@@ -8640,7 +8639,7 @@
     }
 
     $(document).ready(function(){
-      $( ".btn-sm" ).click(function() {
+      $("#button_block_save").click(function() {
         let checkEvent = "block"; // 파일명을 저장할 변수 생성
         try {
           checkEvent = getCookie("download_block"); // 쿠기이름이 download_block을 가져와 checkEvent에 저장
