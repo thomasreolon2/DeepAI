@@ -124,3 +124,64 @@ function exportToCsv(filename, rows) {
         }
     }
 }
+
+
+
+    // 안쓰는 부분인거같음 
+    //
+    // function processFile(file) {
+    //   var reader = new FileReader();
+    //   reader.onload = function () {
+    //   var fileResult = reader.result;
+    //   var val = sessionStorage.setItem('file', fileResult);
+    //   };
+    //   reader.readAsText(file, /* optional */ "cp949");
+    // }
+
+    /* 그래프 */
+    // const metrics = ['loss', 'val_loss', 'acc', 'val_acc']
+    // const container = {
+    //   name: 'Model Training',
+    //   styles: {
+    //     height: '1000px'
+    //   }
+    // };
+
+    // 스크래핑에서 쓰는거같은데 안쓰는거같음
+    // async function saveModel(model) {
+    //   model.save('localstorage://my-model');
+    //   alert('완료되었습니다.');
+    // }
+
+    // canvas 활성화 & 비활성화
+    /*function canvas_power() {
+      var canvasState = $("#canvas")[0];
+      var btnSave = $("#btn_save")[0];
+      if (canvasState.style.display == "" || canvasState.style.display == "none") {
+        canvasState.style.display = "block";
+        $("#btn_save")[0].style.visibility = "visible";
+        $("#btn_canvas").val("그림판 비활성화");
+      } else {
+        canvasState.style.display = "none";
+        $("#btn_save")[0].style.visibility = "hidden";
+        $("#btn_canvas").val("그림판 활성화");
+      }
+    }
+    */
+
+    // canvas 저장하기
+    // const alphaPixel = []
+
+    // function canvas_save() {
+    //   var download = $("#download")[0];
+    //   var canvas = $("#canvas")[0];
+    //   var c = document.getElementById("canvas");
+    //   var ctx = c.getContext("2d");
+    //   console.log(ctx);
+    //   var pixel = ctx.getImageData(0, 0, 28, 28).data;
+    //   for (i = 3, idx = 0; i < pixel.length; i += 4) {
+    //     alphaPixel[idx] = pixel[i];
+    //     idx++;
+    //   }
+    //   console.log(alphaPixel);
+    // }
