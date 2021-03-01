@@ -20,7 +20,7 @@ Blockly.Blocks['croll_url_load'] = {
         this.appendDummyInput()
             .appendField(" = BeautifulSoup(requests.get(")
             .appendField(new Blockly.FieldTextInput(""), "URL")
-            .appendField(")");
+            .appendField("))");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

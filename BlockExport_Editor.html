@@ -9358,7 +9358,7 @@ function Check_matplotlib_user_input(a, b) {
               // Mount BrowserFS into Emscripten FS
               FS.mount(BFS, {root: '/'}, '/data');
 
-              // 이부분은 내부 콘솔(f12 X)에 찍어주기 위해?? 필요한 부분
+              // 이부분은 내부 콘솔(f12 X)에 찍어주기 위해 필요한 부분
               pythonCode = `              
                 import sys
                 from io import StringIO
@@ -9462,25 +9462,6 @@ function Check_matplotlib_user_input(a, b) {
       }
     </script>
 </body> 
-
-<style>
-  #loading_image1 {
-    position: relative;
-    padding-top: 1.5vh;
-    padding-left: 3vh;
-    padding-right: 2vh;
-    height: 30px;
-  }
-
-  #loading_image2 {
-    position: relative;
-    padding-top: 4vh;
-    padding-left: 3vh;
-    padding-right: 2vh;
-    height: 30px;
-  }
-</style>
-
 <!--camera
 <script src="/js/blockly/cam.js"></script>
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>

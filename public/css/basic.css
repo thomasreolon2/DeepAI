@@ -26,3 +26,21 @@ margin-left: 10px;
     position: relative;
     visibility: hidden;
 }
+
+/* 기본 로딩 이미지, 그래프 로딩 이미지 */
+#loading_image1 {
+    position: relative;
+    padding-top: 1.5vh;
+    padding-left: 3vh;
+    padding-right: 2vh;
+    height: 30px;
+}
+
+#loading_image2 {
+    position: relative;
+    padding-top: 4vh;
+    padding-left: 3vh;
+    padding-right: 2vh;
+    height: 30px;
+}
+/* 기본 로딩 이미지, 그래프 로딩 이미지 */
