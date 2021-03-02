@@ -9208,7 +9208,7 @@ function printc(x) {
       console.log("local Image FileOpen");
       var input = document.createElement("input");
       input.type = "file";
-      input.accept = ".jpg, .png, .bmp, .wav"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+      input.accept = ".jpg, .png, .bmp, .wav, .ttf"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
       input.onchange = function (e) {
       
       fileName2 =  e.target.files[0].name;
@@ -9219,8 +9219,8 @@ function printc(x) {
       var _lastDot = fileName2.lastIndexOf('.');                            // 파일명에서 가장 마지막에 나오는 .확인 => 확장자 체크
       var _fileExt = fileName2.substring(_lastDot, _fileLen).toLowerCase(); // 확장자를 소문자로 변경해 저장
 
-      // 확장자가 wav일때 
-      if(_fileExt == ".wav"){
+      // 확장자가 wav일때 + 폰트 처리를 위해 확장자 추가 (2021.03.03 - 기태)
+      if(_fileExt == ".wav" || _fileExt == ".ttf" ){
         if (e.target.files != undefined) {
           console.log("웨이브 파일")
           var reader = new FileReader();
@@ -9265,7 +9265,8 @@ function printc(x) {
     setTimeout(function() {
       BrowserFS.install(window);
       BrowserFS.configure({
-            fs: "LocalStorage"
+            //fs: "LocalStorage"
+            fs: "InMemory"      // 5MB 이상의 큰 파일 처리를 위해 변경(2021.03.03 - 기태)
         }, function(e) {
             fss = require('fs'); // [Node.JS] fs의 기능을 fss로 이동 => 브라우저 fs와 겹침방지
             
