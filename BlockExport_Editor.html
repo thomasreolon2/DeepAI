@@ -8336,7 +8336,7 @@
         </block> -->
 
     </category>
-    <category name="크롤링" colour="%{BKY_VISUAL_HUE}">
+    <category name="크롤링" colour="%{BKY_CROLL_HUE}">
       <block type="croll_bs4_import"></block>
 
       <block type="croll_url_load">
@@ -8367,6 +8367,33 @@
           </block>
         </value>
       </block>
+
+      <block type="croll_find_all">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">soup</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1">a</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="croll_soup">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">soup</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata">
+            <field name="indata1">title</field>
+          </shadow>
+        </value>
+      </block>
+
     </category>
     <!-- <category name="프롤로그 (Prolog)" colour="%{BKY_PROLOG_HUE}">
       <block type="prolog_list">

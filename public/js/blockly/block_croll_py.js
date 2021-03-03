@@ -34,3 +34,19 @@ ${value_name}.get_text()
 `;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+// croll_soup_select
+Blockly.Python['croll_soup'] = function (block) {
+  var value_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  let code = `${value_name}.${input_name}`;
+  return code;
+};
+
+// croll_soup_select
+Blockly.Python['croll_find_all'] = function (block) {
+  var value_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  let code = `${value_name}.find_all(${input_name})`;
+  return code;
+};
