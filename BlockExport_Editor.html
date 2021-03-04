@@ -8646,7 +8646,7 @@
       let xml = Blockly.Xml.workspaceToDom(demoWorkspace);  // 워크스페이스를 돔(xml)로 만듬
       let p_xml = Blockly.Xml.domToPrettyText(xml);         // 돔(xml)을 깔끔하게 만드는 부분
 
-      prompt2("블록 저장하기", checkCookie("download_block"), "다운로드", "취소").then((filename) => {
+      prompt2("블록 저장하기", checkCookie("download_block"), "저장", "취소").then((filename) => {
         if(filename != null){
           setCookie("download_block",filename,"1"); // 사용자가 정한 파일명을 다시 쿠키에 저장
           let fileObject = new File([p_xml], filename+".xml");  // 파일 객체 생성 (data,name+확장자)
@@ -8671,7 +8671,7 @@
         })
         .done(function(data){ // button1일때
           if($.trim(data)){
-            resolve(data);
+            resolve(checkFileName(data));
           }
         }).fail(function(){ // button2일때
           resolve(null);
@@ -8705,7 +8705,21 @@
           if(end == -1)end = cookieData.length;
           cValue = cookieData.substring(start, end);
         }
+
         return unescape(cValue);
+      }
+
+      // 파일명에 .py, .xml이 들어갔을 경우 제거
+      function checkFileName(FileName) {
+        var _cNameLen = FileName.length;                                      // 파일명의 길이
+        var _lastDot = FileName.lastIndexOf('.');                            // 파일명에서 가장 마지막에 나오는 .확인 => 확장자 체크
+        var _fileExt = FileName.substring(_lastDot, _cNameLen).toLowerCase(); // 확장자를 소문자로 변경해 저장
+
+        if(_fileExt == ".xml" || _fileExt == ".py" ){
+          FileName = FileName.substring(0,_lastDot);
+        }
+
+        return FileName;
       }
 
     // 쿠키 확인하기 함수
@@ -8794,13 +8808,16 @@
       // 이름을 받아서 saveAs
       //let filename = prompt("다른이름으로 저장."); 
 
-      prompt2("코드 저장하기", checkCookie("download_block"), "다운로드", "취소").then((filename) => {      
+      prompt2("코드 저장하기", checkCookie("download_block"), "저장", "취소").then((filename) => {      
         if(filename != null){
           setCookie("download_block",filename,"1"); // 사용자가 정한 파일명을 다시 쿠키에 저장
           saveAs(blobObject, filename+".py"); 
         }
       });
     }
+
+
+    setCookie("download_block","","1"); // 사용자가 정한 파일명을 다시 쿠키에 저장
 
     // ==================================
     // 블록을 선택했을 때 
