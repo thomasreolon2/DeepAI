@@ -1,7 +1,7 @@
 // bs4 임포트    
 Blockly.Python['croll_bs4_import'] = function(block) {
   var code = `
-#import requests <- 파이썬에서 사용할때는 이 주석을 삭제해 주세요
+#import requests <- 파이썬코드 활용시 주석삭제
 from bs4 import BeautifulSoup\n`;
   return code;
 };
