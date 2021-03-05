@@ -12882,7 +12882,8 @@ Blockly.confirm = function (a, b) {
   b(confirm(a));
 };
 Blockly.prompt = function (a, b, c) {
-  c(prompt(a, b));
+  //c(prompt(a,b)); // 기존 코드
+  prompt2(a, b,"확인", "취소").then((filename) => c(filename));
 };
 Blockly.jsonInitFactory_ = function (a) {
   return function () {

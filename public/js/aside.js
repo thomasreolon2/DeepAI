@@ -33,7 +33,86 @@ function sidebar_clear() {
     $("#graph1").after("<div id='csv_show'></div>");
 };
 
+    //===================================
+    // 커스텀 prompt
+    //===================================
 
+    const prompt2 = (title, defaultInput, button1, button2) => { return new Promise(function (resolve, reject) {
+      let tempData = null;
+
+      $.MessageBox({ // 커스텀 메세지 박스
+        buttonDone  : button1, // 버튼
+        buttonFail  : button2,
+        message     : title, 
+        input       : defaultInput, // 입력창, checkEvent : 기본입력 값 -> 쿠키에 저장된 값
+        speed       : 0
+      })
+      .done(function(data){ // button1일때
+        if($.trim(data)){
+          resolve(checkFileName(data));
+        }
+      }).fail(function(){ // button2일때
+        resolve(null);
+      });
+    })};
+
+  //===================================
+  // 쿠키 
+  //===================================
+  // 쿠키 생성 함수
+  function setCookie(cName, cValue, cDay){
+
+    var expire = new Date();
+    expire.setDate(expire.getDate() + cDay);
+    cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
+    if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+    
+    //document.cookie =   
+    document.cookie = cookies + "SameSite=Lax";
+  }
+
+
+
+  // 쿠키 가져오기 함수
+  function getCookie(cName) {
+    cName = cName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cName);
+    var cValue = '';
+    if(start != -1){
+      start += cName.length;
+      var end = cookieData.indexOf(';', start);
+      if(end == -1)end = cookieData.length;
+      cValue = cookieData.substring(start, end);
+    }
+
+    return unescape(cValue);
+  }
+
+  // 파일명에 .py, .xml이 들어갔을 경우 제거
+  function checkFileName(FileName) {
+    var _cNameLen = FileName.length;                                      // 파일명의 길이
+    var _lastDot = FileName.lastIndexOf('.');                            // 파일명에서 가장 마지막에 나오는 .확인 => 확장자 체크
+    var _fileExt = FileName.substring(_lastDot, _cNameLen).toLowerCase(); // 확장자를 소문자로 변경해 저장
+
+    if(_fileExt == ".xml" || _fileExt == ".py" ){
+      FileName = FileName.substring(0,_lastDot);
+    }
+
+    return FileName;
+  }
+
+  // 쿠키 확인하기 함수
+  function checkCookie(id) {
+    try {
+      return getCookie(id); // 쿠기이름이 download_block을 가져와 checkEvent에 저장
+      //console.log("쿠키있음 : " + checkEvent); 
+    } catch (error) {
+      setCookie(id,"block", 1); // 저장된 쿠키가 없을 경우 download_block이름의 쿠키 생성/ 유지 기간은 1일
+      return getCookie(id); 
+      //console.log("쿠키없음" + checkEvent);
+    }
+  }
 
 
 /*
