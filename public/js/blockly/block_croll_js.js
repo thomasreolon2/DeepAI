@@ -18,7 +18,7 @@ Blockly.JavaScript['croll_soup_select'] = function (block) {
 };
 
   // croll_soup
-Blockly.JavaScript['croll_soup'] = function (block) {
+Blockly.JavaScript['croll_get_text'] = function (block) {
     var value_name = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
     let code = `
     ${value_name}.get_text()

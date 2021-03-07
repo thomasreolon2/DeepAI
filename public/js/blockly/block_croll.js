@@ -12,6 +12,25 @@ Blockly.Blocks['croll_bs4_import'] = {
     },
 };
 
+Blockly.Blocks['croll_requests_get'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[request요청]")
+        this.appendValueInput("VAR").setCheck(null);
+        this.appendDummyInput()
+            .appendField(" = requests.get(")
+        this.appendValueInput("URL").setCheck(null);
+        this.appendDummyInput()
+            .appendField("))");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(20);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
 Blockly.Blocks['croll_url_load'] = {
     init: function () {
         this.appendDummyInput()
@@ -19,7 +38,8 @@ Blockly.Blocks['croll_url_load'] = {
         this.appendValueInput("VAR").setCheck(null);
         this.appendDummyInput()
             .appendField(" = BeautifulSoup(requests.get(")
-            .appendField(new Blockly.FieldTextInput(""), "URL")
+        this.appendValueInput("URL").setCheck(null);
+        this.appendDummyInput()
             .appendField("))");
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);

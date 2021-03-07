@@ -258,6 +258,7 @@
   <script src="/js/blockly/block_scipy_js.js"></script>
 
   <!-- 크롤링 -->
+  <script src="/js/croll.js"></script>
   <script src="/js/blockly/block_croll.js"></script>
   <script src="/js/blockly/block_croll_py.js"></script>
   <script src="/js/blockly/block_croll_js.js"></script>
@@ -8342,11 +8343,16 @@
     <category name="크롤링" colour="%{BKY_CROLL_HUE}">
       <block type="croll_bs4_import"></block>
 
-      <block type="croll_url_load">
+      <block type="croll_requests_get">
         <value name="VAR">
           <block type="variables_get">
-            <field name="VAR">soup</field>
+            <field name="VAR">req</field>
           </block>
+        </value>
+        <value name="URL">
+          <shadow type="indata">
+            <field name="indata1">"https://www.melon.com/chart/index.htm"</field>
+          </shadow>
         </value>
       </block>
 
@@ -8584,13 +8590,13 @@
     //=================================== 
     function whenSelected(event) {
       if (event.type == Blockly.Events.CREATE) {
-        var block = demoWorkspace.getBlockById(event.blockId); 
+        let block = demoWorkspace.getBlockById(event.blockId); 
         console.log('블록이 선택됨');
       }
 
       // 블록을 눌렀을 때 클릭 이벤트로 각종 메소드 작동
       if (event.type == Blockly.Events.UI && event.element === "click") {
-        var block = demoWorkspace.getBlockById(event.blockId);
+        let block = demoWorkspace.getBlockById(event.blockId);
         // 판다스에서 쓰이는 csv불러와서 데이터 프레임 만들어주는거
         if ('csv2' == block.type) {
           openTextFile(event.blockId);
@@ -8746,6 +8752,7 @@
         }
 
       });
+
 
       // 순차적 실행을 위해 놓은 코드 async, .then()
       async function runcode() {
@@ -8960,6 +8967,14 @@ function printc(x) {
         from js import input_fixed
         input = input_fixed
         __builtins__.input = input_fixed
+
+        from js import _requestsURL
+        requestsURL = _requestsURL
+        __builtins__.requestsURL = _requestsURL
+
+        class requests:
+          def get(htmlurl):
+            return _requestsURL(htmlurl)
         `);
     });
   </script>
@@ -9059,7 +9074,6 @@ function printc(x) {
     };
     input.click(); // input을 클릭했을 때. 
     }
-
     //=====기태 처리 (파일) 21.01.06  : 파일 로딩에 대해 인터벌 적용 ================================
     setTimeout(function() {
       BrowserFS.install(window);
@@ -9071,16 +9085,18 @@ function printc(x) {
             
             var fs = BrowserFS.BFSRequire('fs'); // [BrowserFS] 사용하려면 기본적으로 필요한 건가봄?
             fss.writeFileSync(fileName2, ""); // temp라는 이름의 빈 파일 생성
-            
+
             // [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
-            languagePluginLoader.then(async ()=>{       
+            languagePluginLoader.then(async ()=>{   
+    
               // pyodide모듈 로드     
-              pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image']).then(() => {
+              pyodide.loadPackage(['pandas', 'numpy', 'matplotlib','biopython','beautifulsoup4','scipy','sympy', 'scikit-learn', 'scikit-image']).then(() => {
                 console.log("모듈 로드 완료.");
               })
               
               let FS = pyodide._module.FS; // 모듈의 파일시스템
               let PATH = pyodide._module.PATH; // 모듈의 경로
+              
               console.log(FS.mount);
               console.log(PATH);
 
@@ -9091,14 +9107,12 @@ function printc(x) {
               // Mount BrowserFS into Emscripten FS
               FS.mount(BFS, {root: '/'}, '/data');
 
+              
               // 이부분은 내부 콘솔(f12 X)에 찍어주기 위해 필요한 부분
               pythonCode = `              
                 import sys
                 from io import StringIO
-                urlHtmlTag = ""
-                class requests:
-                  def get(htmldata):
-                    return htmldata
+                
 
                 sys.stdout = StringIO()      
               `
@@ -9168,7 +9182,13 @@ function printc(x) {
       }
     </script> 
     <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
+    <script>
+
+
+
+      </script>
 </body> 
+
 <!--camera
 <script src="/js/blockly/cam.js"></script>
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>

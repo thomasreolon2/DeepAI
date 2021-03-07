@@ -1,16 +1,16 @@
 'use strict';
 
 var htmldata; // 크롤링된 html dom
-function _requestsURL(blockId){
+function _requestsURL(_url){
   //let _url = "https://www.naver.com";
   //let _url = "https://www.melon.com/chart/index.htm";
-  let _url = prompt("크롤링할 URL을 입력해주세요 : "); // node에 전달할 URL을 입력받는 prompt 
-
+  //let _url = prompt("크롤링할 URL을 입력해주세요 : "); // node에 전달할 URL을 입력받는 prompt 
+  
   // 블록 안에 'URL' 이라는 필드에 값 추가
-  var block = demoWorkspace.getBlockById(blockId);
-  block.setFieldValue(JSON.stringify(_url), 'URL');
+  // var block = demoWorkspace.getBlockById(blockId);
+  // block.setFieldValue(JSON.stringify(_url), 'URL');
 
-  demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
+  //demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
 
   $.ajax({
     url: "/test2",        // server.js에서 URI확인
@@ -23,3 +23,4 @@ function _requestsURL(blockId){
     }
   });
 }
+
