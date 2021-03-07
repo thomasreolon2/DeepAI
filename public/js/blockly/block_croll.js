@@ -34,10 +34,10 @@ Blockly.Blocks['croll_requests_get'] = {
 Blockly.Blocks['croll_url_load'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[URL불러오기]")
+            .appendField("[bs4]")
         this.appendValueInput("VAR").setCheck(null);
         this.appendDummyInput()
-            .appendField(" = BeautifulSoup(requests.get(")
+            .appendField(" = BeautifulSoup(")
         this.appendValueInput("URL").setCheck(null);
         this.appendDummyInput()
             .appendField("))");

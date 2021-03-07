@@ -18,8 +18,7 @@ function _requestsURL(_url){
     data : {url : _url},  // json형식으로 서버에 url전송
     dataType: "json",     // 서버에서 받아올 데이터의 타입
     success: function(data){   
-      htmldata = data.data;  // node에서 받아온 데이터를 htmldata 전역변수에 넣어준다. (차후 크롤링블록에서 htmldata변수가 사용됨)
-      console.log(htmldata); // 한번 출력해봄
+      pyodide.globals.req = data.data;  // node에서 받아온 데이터를 htmldata 전역변수에 넣어준다. (차후 크롤링블록에서 htmldata변수가 사용됨)
     }
   });
 }
