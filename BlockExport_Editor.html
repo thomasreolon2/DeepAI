@@ -9075,13 +9075,7 @@ function printc(x) {
             // [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
             languagePluginLoader.then(async ()=>{       
               // pyodide모듈 로드     
-              pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image', 'Jinja2', 
-                           'MarkupSafe', 'Pygments', 'asciitree', 'astropy', 'atomicwrites', 'attrs', 'autograd', 'beautifulsoup4', 
-                           'biopython', 'bleach', 'cloudpickle', 'cssselect', 'cycler', 'cytoolz', 'decorator', 'distlib', 'docutils', 
-                           'freesasa', 'future', 'html5lib', 'imageio', 'joblib', 'kiwisolver', 'lxml', 'mne', 'more-itertools', 'mpmath', 'msgpack', 'networkx', 'nltk', 'nose', 
-                           'numcodecs', 'packaging', 'patsy', 'pillow', 'pluggy', 'py', 'pyodide-interrupts', 
-                           'pyparsing', 'pytest', 'python-dateutil', 'python-sat', 'pytz', 'pywavelets', 'regex', 'scipy', 'setuptools', 
-                           'soupsieve', 'statsmodels', 'sympy', 'toolz', 'traits', 'uncertainties', 'webencodings', 'xlrd', 'yt', 'zarr']).then(() => {
+              pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image']).then(() => {
                 console.log("모듈 로드 완료.");
               })
               
