@@ -405,6 +405,13 @@
           <option id = "en" value="eng">en</option>
         </select>
 
+        <select id="fontsize" class="form-control col-md-1 mt-2 ml-1">
+          <option id = "15" value="15">15</option>
+          <option id = "20" value="20">20</option>
+          <option id = "25" value="25">25</option>
+          <option id = "30" value="30">30</option>
+        </select>
+
         <!-- 실행 버튼 -->
         <input id="runButton1" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;"
           onClick="runButton()" value="실행" /> <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
@@ -8968,6 +8975,26 @@ function printc(x) {
     });
     
   </script>
+
+<script>
+  $("#fontsize").change(function () {
+    var selectName = $(this).find(":selected").val();
+
+    if (selectName == "15") {
+      $('.CodeMirror').css('fontSize', '15px');
+    }
+    else if (selectName == "20") {
+      $('.CodeMirror').css('fontSize', '20px');
+    }
+    else if (selectName == "25") {
+      $('.CodeMirror').css('fontSize', '25px');
+    }
+    else if (selectName == "30") {
+      $('.CodeMirror').css('fontSize', '30px');
+    } 
+  });
+</script>
+
   <!-- 데이터 입력 bug fix -->
   <script>
     function input_fixed(text) {
