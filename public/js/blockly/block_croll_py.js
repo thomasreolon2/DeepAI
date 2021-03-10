@@ -10,14 +10,14 @@ from bs4 import BeautifulSoup\n`;
 Blockly.Python['croll_requests_get'] = function (block) {
   let url_name = Blockly.Python.valueToCode(block, 'URL', Blockly.Python.ORDER_ATOMIC);
   // pyodide.globals.htmldata = htmldata; // pyodide.globals.? pyodide에 선언된 변수.
-  let code = `req = requests.get(${url_name})\n`;
+  let code = `req = requests.get(${url_name})\nhtml = req.text\n`;
   return code;
 };
 
 // croll_url_load
 Blockly.Python['croll_url_load'] = function (block) {
   let url_name = Blockly.Python.valueToCode(block, 'URL', Blockly.Python.ORDER_ATOMIC);
-  let code = `soup = BeautifulSoup(req, 'html.parser')\n`;
+  let code = `soup = BeautifulSoup(html, 'html.parser')\n`;
   return code;
 };
 

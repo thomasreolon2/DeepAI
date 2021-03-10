@@ -37,10 +37,7 @@ Blockly.Blocks['croll_url_load'] = {
             .appendField("[bs4]")
         this.appendValueInput("VAR").setCheck(null);
         this.appendDummyInput()
-            .appendField(" = BeautifulSoup(")
-        this.appendValueInput("URL").setCheck(null);
-        this.appendDummyInput()
-            .appendField("))");
+            .appendField(" = BeautifulSoup(html, 'html.parser')")
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
