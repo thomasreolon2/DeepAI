@@ -405,7 +405,9 @@
           <option id = "en" value="eng">en</option>
         </select>
 
+        <!-- 폰트크기변환 -->
         <select id="fontsize" class="form-control col-md-2 mt-2 ml-1">
+          <option id = "none" value="none" selected>Font Size</option>
           <option id = "15" value="15">15</option>
           <option id = "20" value="20">20</option>
           <option id = "25" value="25">25</option>
@@ -8971,11 +8973,13 @@ function printc(x) {
     });
     
   </script>
-
+ <!-- 전우진 폰트 크기 변경 -->
 <script>
   $("#fontsize").change(function () {
     var selectName = $(this).find(":selected").val();
 
+    if (selectName == "none") {
+    }
     if (selectName == "15") {
       $('.CodeMirror').css('fontSize', '15px');
     }
