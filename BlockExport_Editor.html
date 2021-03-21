@@ -3,7 +3,6 @@
 
 <head profile="http://www.w3.org/2005/10/profile"> 
   
-  <link rel="icon" type="image/png" href="http://example.com/myicon.png">
 
   <meta charset="utf-8" />
   <!-- 
@@ -386,6 +385,13 @@
         <!-- 블록 지우기 -->
         <input id="button_block_del" type="button" class="btn btn-outline-secondary btn-sm mr-0" onClick="demoWorkspace.clear();"
           value="블록 지우기" />
+
+        <input id="grade" type="range" min="0" max="100">
+        <br/>
+        <button type="button"  style="width: 50px; height:40px"  onClick="
+          var path = `/grade/${params.sessionID}/${grade.value}`;
+          document.location = path;
+        ">score</button>
 
         <!-- 블록 저장 -->
         <input id="button_block_save" type="button" class="btn btn-outline-secondary btn-sm " value="블록 저장" onclick="saveBlock()"/>
