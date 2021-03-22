@@ -6,7 +6,7 @@
 /// sj -> const fs = require('fs'); // 파일 시스템 
 //var http = require('http'); // 이건 왜 주석처리 되있던 걸까?
 const ejs = require("ejs"); // ejs는 서버에서 JS로 템플릿을 만들 수 있게 도와준다.
-
+var https = require('https')
 //// -> sj var app = express();
 
 /////// LTI
@@ -34,7 +34,7 @@ console.log(__dirname + "/public");
 app.use(express.static(__dirname + '/public'));
 
 app.post("*", require("body-parser").urlencoded({extended: false}));
-app.post("./BlockExport_Editor.html", (req, res) => {	
+app.post("/", (req, res) => {	
 	var moodleData = new lti.Provider("top", "secret");
 	moodleData.valid_request(req, (err, isValid) => {
 		if (!isValid) {
@@ -87,10 +87,10 @@ app.get("/grade/:sessionID/:grade", (req, res) => {
 var appEnv = cfenv.getAppEnv();
 appEnv.port = 50197   ////////////일단은 이렇게
 // start server on the specified port and binding host
-var server = app.listen(appEnv.port, '0.0.0.0', function() {
-  // print a message when the server starts listening
-  console.log("server starting on " + appEnv.port);
-});
+// var server = app.listen(appEnv.port, '0.0.0.0', function() {
+//   // print a message when the server starts listening
+//   console.log("server starting on " + appEnv.port);
+// });
 ///////
 
 const options = {
@@ -98,9 +98,9 @@ const options = {
   cert: fs.readFileSync('./keys/public.pem')
 };
 
-// var server = require('http').createServer(options, app).listen(50197, function(){
-//     console.log('Socket IO server listening on port 50197');
-// });
+var server = https.createServer(options, app).listen(50197, function(){
+    console.log('Socket IO server listening on port 50197');
+});
 
 
 
