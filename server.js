@@ -26,7 +26,12 @@ var mod3File = fs.readFileSync("BlockExport_Editor.html", "utf8");
 // create a new express server
 var app = express();
 
-app.enable('trust proxy');
+// app.set('trust proxy', function (ip) {
+//   if (ip === '127.0.0.1' || ip === '114.71.137.154') return true // trusted IPs
+//   else return false
+// })
+
+app.set('trust proxy', 'loopback, 114.71.137.154');
 
 
 var sessions = {};
