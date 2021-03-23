@@ -122,12 +122,16 @@ Blockly.Blocks['croll_find_all'] = {
             .appendField("[전부가져오기]");
         this.appendValueInput("VAR").setCheck(null);
         this.appendDummyInput()
+        .appendField("=");
+        this.appendValueInput("VAR2").setCheck(null);
+        this.appendDummyInput()
             .appendField(".find_all(");
         this.appendValueInput("INPUT").setCheck(null);
         this.appendDummyInput()
             .appendField(")");
         this.setInputsInline(true);
-        this.setOutput(true, null);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
         this.setColour("%{BKY_CROLL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");

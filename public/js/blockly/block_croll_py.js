@@ -58,8 +58,9 @@ Blockly.Python['croll_soup'] = function (block) {
 
 // croll_soup_select
 Blockly.Python['croll_find_all'] = function (block) {
-  var value_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var result = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
   var input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
-  let code = `${value_name}.find_all(${input_name})`;
+  let code = `${result} = ${value_name}.find_all(${input_name})`;
   return code;
 };

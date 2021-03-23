@@ -8387,7 +8387,7 @@
       <block type="croll_soup_select">
         <value name="VAR">
           <block type="variables_get">
-            <field name="VAR">my_titles</field>
+            <field name="VAR">result</field>
           </block>
         </value>
         <value name="INPUT">
@@ -8400,7 +8400,7 @@
       <block type="croll_get_text">
         <value name="VAR">
           <block type="variables_get">
-            <field name="VAR">my_titles</field>
+            <field name="VAR">result</field>
           </block>
         </value>
       </block>
@@ -8408,12 +8408,17 @@
       <block type="croll_find_all">
         <value name="VAR">
           <block type="variables_get">
+            <field name="VAR">result</field>
+          </block>
+        </value>
+        <value name="VAR2">
+          <block type="variables_get">
             <field name="VAR">soup</field>
           </block>
         </value>
         <value name="INPUT">
           <shadow type="indata">
-            <field name="indata1">a</field>
+            <field name="indata1"></field>
           </shadow>
         </value>
       </block>
