@@ -11,7 +11,7 @@ function _requestsURL(_url){
   // block.setFieldValue(JSON.stringify(_url), 'URL');
 
   //demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
-
+  
   $.ajax({
     url: "/test2",        // server.js에서 URI확인
     method: "POST",       // HTTP 요청 메소드(GET, POST 등) 

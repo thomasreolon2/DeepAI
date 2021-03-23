@@ -16,9 +16,8 @@ Blockly.Blocks['croll_requests_get'] = {
     init: function () {
         this.appendDummyInput()
             .appendField("[request요청]")
-        this.appendValueInput("VAR").setCheck(null);
         this.appendDummyInput()
-            .appendField(" = requests.get(")
+            .appendField("req = requests.get(")
         this.appendValueInput("URL").setCheck(null);
         this.appendDummyInput()
             .appendField("))");
@@ -31,13 +30,33 @@ Blockly.Blocks['croll_requests_get'] = {
     }
 };
 
+Blockly.Blocks['croll_req_text'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[DOM가져오기]")
+        this.appendValueInput("VAR").setCheck(null);
+        this.appendDummyInput()
+            .appendField(" = req.text")
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(20);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+
 Blockly.Blocks['croll_url_load'] = {
     init: function () {
         this.appendDummyInput()
             .appendField("[bs4]")
         this.appendValueInput("VAR").setCheck(null);
         this.appendDummyInput()
-            .appendField(" = BeautifulSoup(html, 'html.parser')")
+            .appendField(" = BeautifulSoup(")
+        this.appendValueInput("VAR2").setCheck(null);
+        this.appendDummyInput()
+            .appendField(", 'html.parser')")
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

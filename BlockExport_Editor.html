@@ -15,7 +15,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>D.I.Y1.</title>
+  <title>D.I.Y</title>
   <!-- Blockly 개발자모드 코드 안보이게 막음-->
   <!-- <script type="text/javascript">
     console = {};
@@ -8356,11 +8356,6 @@
       <block type="croll_bs4_import"></block>
 
       <block type="croll_requests_get">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">req</field>
-          </block>
-        </value>
         <value name="URL">
           <shadow type="indata">
             <field name="indata1">"https://www.melon.com/chart/index.htm"</field>
@@ -8374,7 +8369,11 @@
             <field name="VAR">soup</field>
           </block>
         </value>
-        
+        <value name="VAR2">
+          <block type="variables_get">
+            <field name="VAR">html</field>
+          </block>
+        </value>
       </block>
 
       <block type="croll_soup_select">
@@ -8387,6 +8386,14 @@
           <shadow type="indata">
             <field name="indata1">'div > span> a'</field>
           </shadow>
+        </value>
+      </block>
+
+      <block type="croll_req_text">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">html</field>
+          </block>
         </value>
       </block>
 
@@ -9149,10 +9156,10 @@ function printc(x) {
               pythonCode = `              
                 import sys
                 from io import StringIO
+                # 크롤링 하기위해 js로만든 _requestsURL 메소드 import
                 from js import _requestsURL
 
                 req = ""
-
                 class requests:
                   def get(htmlurl):
                     _requestsURL(htmlurl)
