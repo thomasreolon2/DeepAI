@@ -106,7 +106,7 @@ Blockly.Python['map3'] = function(block) {
   var value_input = Blockly.Python.valueToCode(block, 'input', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   //var code = ;
-  return ['list(map(' + value_data_type + ', ' + value_input + '))', Blockly.Python.ORDER_ATOMIC];
+  return ['map(' + value_data_type + ', ' + value_input + ')', Blockly.Python.ORDER_ATOMIC];
 };
 // Blockly.Python['qqq'] = function (block) {
 //   var file = block.getFieldValue('csv_url');
