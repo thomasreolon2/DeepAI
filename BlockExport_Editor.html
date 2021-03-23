@@ -8363,6 +8363,14 @@
         </value>
       </block>
 
+      <block type="croll_req_text">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">html</field>
+          </block>
+        </value>
+      </block>
+
       <block type="croll_url_load">
         <value name="VAR">
           <block type="variables_get">
@@ -8388,15 +8396,7 @@
           </shadow>
         </value>
       </block>
-
-      <block type="croll_req_text">
-        <value name="VAR">
-          <block type="variables_get">
-            <field name="VAR">html</field>
-          </block>
-        </value>
-      </block>
-
+      
       <block type="croll_get_text">
         <value name="VAR">
           <block type="variables_get">
@@ -8775,6 +8775,10 @@
                 console.log('data폴더');
               }
             }
+          }
+          // 크롤링 req.text부분 처리
+          if (code.indexOf("req.text") != -1){
+            code = code.replace("req.text", 'req');
           }
         }
 
@@ -9160,6 +9164,7 @@ function printc(x) {
                 from js import _requestsURL
 
                 req = ""
+
                 class requests:
                   def get(htmlurl):
                     _requestsURL(htmlurl)
