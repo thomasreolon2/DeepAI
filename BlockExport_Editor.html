@@ -430,6 +430,9 @@
         <input id="button_code_save" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick=file_save();
           value="코드저장" />
 
+        <!-- 파일 올리기 (지원)-->
+        <input id="button_file_upload" type="button" class="btn btn-outline-secondary btn-sm " value="파일 업로드" onclick="localFileOpen3()"/>
+
         <!-- Button trigger modal 
         <button id = "button_paint" type="button" class="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal"
           data-target="#staticBackdrop">그림판</button>-->
@@ -9058,6 +9061,43 @@ function printc(x) {
             fss.writeFileSync(fileName2, datas); // FS에 파일명으로 datas를 저장
             var block = demoWorkspace.getBlockById(blockId); // 블럭안의 input에 파일 경로를 적기위해 블럭 찾음
             var bId = Blockly.mainWorkspace.getBlockById(blockId) // ???
+            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path'); // 블럭안에 input에 파일경로를 적어줌
+          };
+
+          fileName2 =  e.target.files[0].name;  // 파일명 받아옴
+          console.log(fileName2);               // 파일명 출력해봄
+          reader.readAsText(e.target.files[0]); // 리더객체가 텍스트를 읽음        
+        }
+      };
+      input.click(); // 블럭이 클릭되면 실행
+    }
+
+    function localFileOpen3() {
+      console.log("local Text FileOpen3");
+      let input = document.createElement("input"); // input 태그를 하나 만든다.
+      // 태그 속성 정의
+      input.type = "file";
+      //input.accept = ".txt, .csv"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+      input.onchange = function (e) { // input의 값이 변하면 => 파일을 불러오면
+
+        fileName2 =  e.target.files[0].name;
+        console.log(fileName2);
+
+        // 파일명, 확장자 분리작업
+        let _fileLen = fileName2.length;                                      // 파일명의 길이
+        let _lastDot = fileName2.lastIndexOf('.');                            // 파일명에서 가장 마지막에 나오는 .확인 => 확장자 체크
+        let _fileExt = fileName2.substring(_lastDot, _fileLen).toLowerCase(); // 확장자를 소문자로 변경해 저장
+
+
+        if (e.target.files != undefined) { // 이중부정을 굳이?
+          console.log("txt or csv 파일 불러옴")
+          var reader = new FileReader(); // 파일리더 객체 생성
+        
+          // reader가 준비되면 
+          reader.onload = function (e) { 
+            datas = e.target.result;      // 다읽어온 파일의 값을 datas에 저장      
+            console.log("datas", datas);  // datas 출력 => txt나 csv를 출력한번 해본다.
+            fss.writeFileSync(fileName2, datas); // FS에 파일명으로 datas를 저장
             block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path'); // 블럭안에 input에 파일경로를 적어줌
           };
 
