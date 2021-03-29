@@ -53,7 +53,7 @@ Blockly.Python['croll_soup'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
   let code = `${value_name}.${input_name}`;
-  return code;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 // croll_soup_select
