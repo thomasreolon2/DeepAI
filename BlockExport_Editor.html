@@ -8448,7 +8448,7 @@
   <!-- code mirror -->
   <script>
     // JS 코드미러
-    var jsEditor = CodeMirror(document.getElementById("jsCodeEditor"), {
+    let jsEditor = CodeMirror(document.getElementById("jsCodeEditor"), {
       mode: "javascript",
       // value: "codemirror",
       theme: "oceanic-next",          // 테마
@@ -8460,7 +8460,7 @@
     });
 
     // PY 코드미러
-    var pyEditor = CodeMirror(document.getElementById("pyCodeEditor"), {
+    let pyEditor = CodeMirror(document.getElementById("pyCodeEditor"), {
       mode: "python",
       // value: "codemirror",
       theme: "oceanic-next",          // 테마
@@ -8472,6 +8472,8 @@
       extraKeys: { "Ctrl-Space": "autocomplete" }, // 단축키
       //   spellcheck: true,   autocorrect: true,
     });
+
+    // JS 코드미러 끝
 
     // (demoWorkspace = 블록배치하는 공간) 블록이 나타나는 부분
     var demoWorkspace = Blockly.inject( 
@@ -8539,8 +8541,7 @@
       });
     }
 
-    
-
+  
     //===================================
     // 블록 불러오기 
     //===================================   
@@ -8676,14 +8677,7 @@
   //==================================
     //새로운 실행방법
     function runButton() {
-      //Blockly.Python.addReservedWords('code'); // 이 언어의 예약어 목록에 하나 이상의 단어를 추가한다.
-      //var code1 = pyEditor.getValue();
-      //var tmp = code1.indexOf(' = ')
-      //var res = code1.charAt(tmp - 1)
-      //pyodide.runPython(`
-      //              del(${res})
-      //              `);
-
+      
       // 그래프 위쪽 삭제
       $("#graph1").remove();
       $("#csv_show").before("<div id='graph1' style=\"height:500px; width:900;\"><img id='pyplotfigure' /></div>");
