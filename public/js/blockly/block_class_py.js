@@ -35,7 +35,7 @@ Blockly.Python['class_use'] = function(block) {
     // TODO: Assemble Python into code variable.
     var code = var1+'.'+var2+'('+text_1+')';
     // var code = `${val1}.${val2} = ${text_1}\n`;
-    return [code, Blockly.Python.ORDER_NONE]; 
+    return [code, Blockly.Python.ORDER_ATOMIC]; 
   };
 
   // 객체 사용
@@ -44,7 +44,7 @@ Blockly.Python['class_use2'] = function(block) {
   var var2 = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
   var text_1 = Blockly.Python.valueToCode(block, '3', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = var1+'.'+var2+'('+text_1+')';
+  var code = var1+'.'+var2+'('+text_1+')'+'\n';
   // var code = `${val1}.${val2} = ${text_1}\n`;
   return code; 
 };
