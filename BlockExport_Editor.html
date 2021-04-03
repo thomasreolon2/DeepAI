@@ -8261,7 +8261,58 @@
             </block>
           </value>
         </block>
-
+        <!-- 코사인 유사성 -->
+        <block type="cosine_similarity">
+          <value name="input_x">
+            <shadow type="indata">
+              <field name="indata1">x</field>
+            </shadow>
+          </value>
+          <value name="input_y">
+            <shadow type="indata">
+              <field name="indata1">y</field>
+            </shadow>
+          </value>
+        </block>
+        <!-- 코사인 길이 -->
+        <block type="cosine_distance">
+          <value name="input_x">
+            <shadow type="indata">
+              <field name="indata1">x</field>
+            </shadow>
+          </value>
+          <value name="input_y">
+            <shadow type="indata">
+              <field name="indata1">y</field>
+            </shadow>
+          </value>
+        </block>
+        <!-- 벡터쌍 거리행렬 -->
+        <block type="euclidean_distances">
+          <value name="input_x">
+            <shadow type="indata">
+              <field name="indata1">x</field>
+            </shadow>
+          </value>
+          <value name="input_y">
+            <shadow type="indata">
+              <field name="indata1">y</field>
+            </shadow>
+          </value>
+        </block>
+        <!-- 벡터사이 L1길이 -->
+        <block type="manhattan_distances">
+          <value name="input_x">
+            <shadow type="indata">
+              <field name="indata1">x</field>
+            </shadow>
+          </value>
+          <value name="input_y">
+            <shadow type="indata">
+              <field name="indata1">y</field>
+            </shadow>
+          </value>
+        </block>
         <!-- 기존에 남은 블록들입니다. 처리하던가, 새로 추가하던가 해야할 듯. -- 2021-01-26 작성 -->
         <!-- <label text="남은 블록(Deprecated.)"></label>
         <block type="normal">

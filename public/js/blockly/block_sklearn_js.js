@@ -581,3 +581,35 @@ Blockly.JavaScript['bernoullirbm'] = function(block) {
   return code;
 };
 
+// 2021.04.03 지원 추가
+// 코사인 유사성
+Blockly.JavaScript['cosine_similarity'] = function(block) {
+  var value_input_x = Blockly.JavaScript.valueToCode(block, 'input_x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_input_y = Blockly.JavaScript.valueToCode(block, 'input_y', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
+  return code;
+};
+
+// 코사인 길이
+Blockly.JavaScript['cosine_distance'] = function(block) {
+  var value_input_x = Blockly.JavaScript.valueToCode(block, 'input_x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_input_y = Blockly.JavaScript.valueToCode(block, 'input_y', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
+  return code;
+};
+
+// 벡터쌍 거리행렬
+Blockly.JavaScript['euclidean_distances'] = function(block) {
+  var value_input_x = Blockly.JavaScript.valueToCode(block, 'input_x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_input_y = Blockly.JavaScript.valueToCode(block, 'input_y', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
+  return code;
+};
+
+// 벡터사이 L1길이
+Blockly.JavaScript['manhattan_distances'] = function(block) {
+  var value_input_x = Blockly.JavaScript.valueToCode(block, 'input_x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_input_y = Blockly.JavaScript.valueToCode(block, 'input_y', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = `\n`;
+  return code;
+};

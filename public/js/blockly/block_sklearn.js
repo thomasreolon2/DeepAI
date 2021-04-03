@@ -1347,4 +1347,75 @@ Blockly.Blocks['metrics_fit_predict'] = {
     }
 };
 
- 
+// 2021.04.03 지원 추가
+// 코사인 유사성
+Blockly.Blocks['cosine_similarity'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("[코사인 유사성] cosine_similarity");
+        this.appendValueInput("input_x")
+            .setCheck(null);
+        this.appendValueInput("input_y")
+            .setCheck(null);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+// 코사인 유사성
+Blockly.Blocks['cosine_distance'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("[코사인 거리] cosine_distance");
+        this.appendValueInput("input_x")
+            .setCheck(null);
+        this.appendValueInput("input_y")
+            .setCheck(null);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+// 벡터쌍 거리행렬
+Blockly.Blocks['euclidean_distances'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("[벡터쌍 거리행렬] euclidean_distances");
+        this.appendValueInput("input_x")
+            .setCheck(null);
+        this.appendValueInput("input_y")
+            .setCheck(null);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+// 벡터사이 L1길이
+Blockly.Blocks['manhattan_distances'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("[벡터사이 L1길이] manhattan_distances");
+        this.appendValueInput("input_x")
+            .setCheck(null);
+        this.appendValueInput("input_y")
+            .setCheck(null);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_SCIKITLEARN_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};

@@ -932,3 +932,37 @@ Blockly.Python['metrics_fit_predict'] = function(block) {
     var code = value_model + '= sklearn.neural_network.BernoulliRBM(n_components=' + text_hi + ',learning_rate=' + text_lr + ',batch_size=' + text_batch + ' ,n_iter = ' + text_epochs + ',random_state = ' + text_seed + ')\n';
     return code;
 };  
+
+/////////////////////////////////////////////////
+// 2021.04.03 지원 추가
+// 코사인 유사성
+Blockly.Python['cosine_similarity'] = function(block) {
+    var value_input_x = Blockly.Python.valueToCode(block, 'input_x', Blockly.Python.ORDER_ATOMIC);
+    var value_input_y = Blockly.Python.valueToCode(block, 'input_y', Blockly.Python.ORDER_ATOMIC);
+    var code = `sklearn.metrics.pairwise.cosine_similarity(${value_input_x}, ${value_input_y})`;
+    return code;
+};
+
+// 코사인 길이
+Blockly.Python['cosine_distance'] = function(block) {
+    var value_input_x = Blockly.Python.valueToCode(block, 'input_x', Blockly.Python.ORDER_ATOMIC);
+    var value_input_y = Blockly.Python.valueToCode(block, 'input_y', Blockly.Python.ORDER_ATOMIC);
+    var code = `sklearn.metrics.pairwise.cosine_distance(${value_input_x}, ${value_input_y})`;
+    return code;
+};
+
+// 벡터쌍 거리행렬
+Blockly.Python['euclidean_distances'] = function(block) {
+    var value_input_x = Blockly.Python.valueToCode(block, 'input_x', Blockly.Python.ORDER_ATOMIC);
+    var value_input_y = Blockly.Python.valueToCode(block, 'input_y', Blockly.Python.ORDER_ATOMIC);
+    var code = `sklearn.metrics.pairwise.euclidean_distances(${value_input_x}, ${value_input_y})`;
+    return code;
+};
+
+// 벡터사이 L1길이
+Blockly.Python['manhattan_distances'] = function(block) {
+    var value_input_x = Blockly.Python.valueToCode(block, 'input_x', Blockly.Python.ORDER_ATOMIC);
+    var value_input_y = Blockly.Python.valueToCode(block, 'input_y', Blockly.Python.ORDER_ATOMIC);
+    var code = `sklearn.metrics.pairwise.manhattan_distances(${value_input_x}, ${value_input_y})`;
+    return code;
+};
