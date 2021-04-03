@@ -617,7 +617,7 @@ Blockly.Python['numpy_joining_arrays'] = function(block) {
   var dropdown_numpy_joining_arrays_opt = block.getFieldValue('numpy_Joining_arrays_opt');
   var value_numpy_joining_arrays_val = Blockly.Python.valueToCode(block, 'numpy_Joining_arrays_val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_joining_arrays_opt}(${value_numpy_joining_arrays_val})`;
+  var code = `${dropdown_numpy_joining_arrays_opt}((${value_numpy_joining_arrays_val}))`;
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

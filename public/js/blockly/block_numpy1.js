@@ -526,7 +526,7 @@ Blockly.Blocks['numpy_joining_arrays'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 결합]")
-        .appendField(new Blockly.FieldDropdown([["기존축 배열(concatenate)","np.concatenate"], ["새축 배열(stack)","np.stack"], ["1차원->2차원(열) (column_stack)","np.column_stack"]]), "numpy_Joining_arrays_opt");
+        .appendField(new Blockly.FieldDropdown([["기존축 배열(concatenate)","np.concatenate"], ["새축 배열(stack)","np.stack"], ["1차원->2차원(열) (column_stack)","np.column_stack"],["1차원->2차원(행) (row_stack)","np.row_stack"]]), "numpy_Joining_arrays_opt");
     this.appendValueInput("numpy_Joining_arrays_val")
         .setCheck(null);
     this.setInputsInline(true);
