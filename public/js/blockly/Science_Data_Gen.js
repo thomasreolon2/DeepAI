@@ -587,8 +587,11 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
 
     var value_matplotlib_pre_color = Blockly.Python.valueToCode(block, 'matplotlib_pre_color', Blockly.Python.ORDER_ATOMIC);
     var text_matplotlib_pre_other = Blockly.Python.valueToCode(block, 'matplotlib_pre_other', Blockly.Python.ORDER_ATOMIC);
-
-    // TODO: Assemble Python into code variable.
+    
+     // 그래프 color 없을 때
+    if(value_matplotlib_pre_color == ""){
+      value_matplotlib_pre_color = "None";
+    }
     var matplot_lo ; 
     var matplot_graph; 
     var matplot_line; 
@@ -622,8 +625,10 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
       break;
     }  
   
+  // 코드를 위해 
   var code ;   
 
+  // 기존 코드내용 
   if(DL_Gra == "graph_or_1"){//둘중 하나 
    //우진 수정 전 code =`ax_lst[${value_matplotlib_pre_graph_location1}].${matplot_graph}( `;
     code =`ax[${value_matplotlib_pre_graph_location2}].${matplot_graph}( `;  //우진 수정본
@@ -634,33 +639,36 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
   }
 
 
+  // 그래프에 따른 뒷 내용 변환 concat
 
   // 에러바 그래프
-  if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){  
+  if(dropdown_matplotlib_graph_select == "matplotlib_error_bar")
+  {  
     code = code.concat(`${xx + ", " + yy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
-  
+  }
   // 산점도 그래프, 선그래프 
-  } else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line"){
+  else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line")
+  {
     // 그래프 color 있을 때 
-    if(value_matplotlib_pre_color.length > 0){
-      if(text_matplotlib_pre_other.lenth > 0){
+    if(value_matplotlib_pre_color.length > 0)
+    {
+      // 기타 부분 있을 때 
+      if(text_matplotlib_pre_other.length > 0){
         code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
-      }
-      code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
-    } else {
-      if(text_matplotlib_pre_other.lenth > 0){
-        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = None, ${text_matplotlib_pre_other} )`);  
+      } else {
+        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
       }
     }
-  
+   
+    
+  }
   // 박스 그래프
-  } else {  
-    if(dropdown_matplotlib_graph_select == "matplotlib_box" ){    
-      code = code.concat(`${xx + ", " + yy }, ${text_matplotlib_pre_other} )`);   
-    }else{ 
-      code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", ${text_matplotlib_pre_other} )`);    
-    }     
-  } 
+  else if(dropdown_matplotlib_graph_select == "matplotlib_box" )
+  {    
+    code = code.concat(`${xx + ", " + yy }, ${text_matplotlib_pre_other} )`);   
+  } else {
+    code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", ${text_matplotlib_pre_other} )`);    
+  }
 
   //킹우진의 수정
   if(DL_Gra == "graph_or_1"){
