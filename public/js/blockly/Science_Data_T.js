@@ -822,11 +822,12 @@ Blockly.defineBlocksWithJsonArray(
         "name": "matplotlib_pre_legend"
       },
       {
-        "type": "input_dummy"
+        "type": "input_value",
+        "name": "matplotlib_pre_color"
       },
       {
         "type": "input_value",
-        "name": "matplotlib_pre_color"
+        "name": "matplotlib_pre_other"
       }
     ],
     "inputsInline": true,
@@ -1351,10 +1352,6 @@ Blockly.Blocks['class_func_param'] = {
     this.setHelpUrl("");
     }
   };
-
-
-
-
 
 
 

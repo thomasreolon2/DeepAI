@@ -582,9 +582,12 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
     var text_matplotlib_pre_graph_title = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Title', Blockly.Python.ORDER_ATOMIC);
     var text_matplotlib_pre_graph_xlable = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Xlable', Blockly.Python.ORDER_ATOMIC);
     var text_matplotlib_pre_graph_ylable = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Ylable', Blockly.Python.ORDER_ATOMIC);
+
     var text_matplotlib_pre_legend = Blockly.Python.valueToCode(block, 'matplotlib_pre_legend', Blockly.Python.ORDER_ATOMIC);
 
     var value_matplotlib_pre_color = Blockly.Python.valueToCode(block, 'matplotlib_pre_color', Blockly.Python.ORDER_ATOMIC);
+    var text_matplotlib_pre_other = Blockly.Python.valueToCode(block, 'matplotlib_pre_other', Blockly.Python.ORDER_ATOMIC);
+
     // TODO: Assemble Python into code variable.
     var matplot_lo ; 
     var matplot_graph; 
@@ -632,26 +635,56 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
 
 
 
+  // 에러바 그래프
   if(dropdown_matplotlib_graph_select == "matplotlib_error_bar"){  
     code = code.concat(`${xx + ", " + yy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
-  }else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line"){
-      if(value_matplotlib_pre_color.length > 0){
-        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color} )`);  
-      }else{
-        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = None )`);  
+  
+  // 산점도 그래프, 선그래프 
+  } else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line"){
+    // 그래프 color 있을 때 
+    if(value_matplotlib_pre_color.length > 0){
+      if(text_matplotlib_pre_other.lenth > 0){
+        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
       }
-  // else if(DL_Gra == "graph_both_1" ){ //1,1
-  //    code = code.concat(`${text_matplotlib_user_xy }, label = "${text_matplotlib_pre_legend}" )`);       
-  }else{  
+      code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
+    } else {
+      if(text_matplotlib_pre_other.lenth > 0){
+        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = None, ${text_matplotlib_pre_other} )`);  
+      }
+    }
+  
+  // 박스 그래프
+  } else {  
     if(dropdown_matplotlib_graph_select == "matplotlib_box" ){    
-      code = code.concat(`${xx + ", " + yy } )`);   
+      code = code.concat(`${xx + ", " + yy }, ${text_matplotlib_pre_other} )`);   
     }else{ 
-      code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}" )`);    
-    } 
-      
+      code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", ${text_matplotlib_pre_other} )`);    
+    }     
   } 
 
+  //킹우진의 수정
+  if(DL_Gra == "graph_or_1"){
+    code =  code.concat(`\nax[${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}") 
+  ax[${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
+  ax[${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}") 
+  ax[${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`); 
+    
+  }else if(DL_Gra == "graph_both_1"){
+    code =  code.concat(`\nax.set_title("${text_matplotlib_pre_graph_title}")
+  ax.set_xlabel("${text_matplotlib_pre_graph_xlable}")
+  ax.set_ylabel("${text_matplotlib_pre_graph_ylable}") 
+  ax.legend(loc='best')\n`);
+    
+  }else{ 
+    code =  code.concat(`\nax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}")
+  ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
+  ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}")
+  ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`);  
+  }
 
+  return code;
+};
+  
 // if(DL_Gra == "graph_or_1"){
 //   code =  code.concat(`\nax_lst[${value_matplotlib_pre_graph_location1}].set_title("${text_matplotlib_pre_graph_title}") 
 // ax_lst[${value_matplotlib_pre_graph_location1}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
@@ -671,30 +704,6 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
 // ax_lst[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`);  
 // }
 
-//킹우진의 수정
-if(DL_Gra == "graph_or_1"){
-  code =  code.concat(`\nax[${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}") 
-ax[${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax[${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}") 
-ax[${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`); 
-  
-}else if(DL_Gra == "graph_both_1"){
-  code =  code.concat(`\nax.set_title("${text_matplotlib_pre_graph_title}")
-ax.set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax.set_ylabel("${text_matplotlib_pre_graph_ylable}") 
-ax.legend(loc='best')\n`);
-  
-}else{ 
-  code =  code.concat(`\nax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_title("${text_matplotlib_pre_graph_title}")
-ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
-ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].set_ylabel("${text_matplotlib_pre_graph_ylable}")
-ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].legend(loc='best')\n`);  
-}
-
-  // code=code.concat(`plt.show()\n`);
- return code;
-};
-  
   //matplot3 
   Blockly.Python['matplotlib_graph_end'] = function(block) {
     // TODO: Assemble Python into code variable.
