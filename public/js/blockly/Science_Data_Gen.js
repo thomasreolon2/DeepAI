@@ -648,7 +648,7 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
     code = code.concat(`${xx + ", " + yy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
   }
   // 산점도 그래프, 선그래프 
-  else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram")
+  else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram" || dropdown_matplotlib_graph_select=="matplotlib_bar")
   {
     // 그래프 color 있을 때 
     if(value_matplotlib_pre_color.length > 0)
