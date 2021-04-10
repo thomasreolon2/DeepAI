@@ -7,7 +7,7 @@
     "@tensorflow/tfjs-vis": "^1.4.3",
     "audit": "0.0.6",
     "axios": "^0.21.1",
-    "cheerio": "^1.0.0-rc.5",
+    "cheerio": "^1.0.0-rc.6",
     "cheerio-httpcli": "^0.8.1",
     "cors": "^2.8.5",
     "ejs": "^3.1.3",
