@@ -5,6 +5,8 @@ document.write("<script src='/js/blockly/block_pyodide_gen.js'></script>");
 document.write("<script src='/js/blockly/block_pyodide_gen_javascript.js'></script>");
 // <!-- pyodide 블록 -->
 
+
+
 // <!-- Pandas 블록 -->
 document.write("<script src='/js/blockly/block_pandas.js'></script>");
 document.write("<script src='/js/blockly/block_pandas_gen.js'></script>");
@@ -159,3 +161,6 @@ document.write("<script src='/js/croll.js'></script>");
 document.write("<script src='/js/blockly/block_croll.js'></script>");
 document.write("<script src='/js/blockly/block_croll_py.js'></script>");
 document.write("<script src='/js/blockly/block_croll_js.js'></script>");
+
+document.write("<script src='/js/Io(wj).js'></script>");
+document.write("<script src='/js/woojinTest.js'></script>");
