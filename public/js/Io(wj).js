@@ -68,26 +68,24 @@ IO +='</block>' ;
 IO +='<block type="indata"></block>' ;
 IO +='<block type="class_func_param"></block>' ;
 //시스템 os
-
 IO +='<category name="%{BKY_CATEGORY_OS}" colour="%{BKY_OS_HUE}">' ;
 IO +='  <block type="os_library"></block>' ;
 IO +='  <block type="os_data_remove"></block>' ;
 IO +='  <block type="os_data_listdir"></block>' ;
 IO +='  <block type="os_data_download"></block>' ;
-IO +='  <label text="os & os.path & shutil"></label>';
 
+// IO +=document.write("<label text='os & os.path & shutil'></label>");
+IO +='<label></label>';
 IO +='  <block type="printf">' ;
 IO +='      <value name="content1">' ;
 IO +='          <block type="os_getcwd"></block>' ;
 IO +='       </value>' ;
 IO +='  </block>' ;
-
 IO +='  <block type="printf">' ;
 IO +='      <value name="content1">' ;
 IO +='          <block type="os_listdir"></block>' ;
 IO +='      </value>' ;
 IO +='  </block>' ;
-
 //디렉토리 생성
 IO +='  <block type="printf">' ;
 IO +='      <value name="content1">' ;
@@ -123,7 +121,6 @@ IO +='              <field name="indata1">"복사본"</field>' ;
 IO +='          </shadow>' ;
 IO +='      </value>' ;
 IO +='  </block>' ;
-
 
 IO +='  <block type = "abspath">' ;
 IO +='      <value name="NAME">' ;
@@ -194,7 +191,9 @@ IO +='          </shadow>' ;
 IO +='      </value>' ;
 IO +='  </block>' ;
 
-IO +='  <label text="time & datetime"></label>' ;
+// IO +='  <label text="time & datetime"></label>' ;
+IO +='<label></label>';
+
 IO +='  <!--<block type="time_library"></block>-->' ;
 IO +='  <block type="time_"></block>' ;
 IO +='  <block type="sleep">' ;
@@ -224,155 +223,92 @@ IO +='              <field name="VAR">day</field>' ;
 IO +='          </block>' ;
 IO +='      </value>' ;
 IO +='  </block>' ;
-IO +='</category>' ;
+IO += '</category>';
 
 //--------------------------------------파일 
 IO +='<category name="%{BKY_CATEGORY_FILE}" colour="%{BKY_FILE_HUE}">' ;
-IO +='  <block type="pickle_library"></block>' ;
-
+IO+='  <block type="pickle_library"></block>' ;
 IO +='  <block type="csv_library"></block>' ;
 
 // 기태 수정(로컬 파일 열기)
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
-IO +='  ' ;
+IO +='  <block type = "fd_open">' ;
+IO +='      <value name="text">' ;
+IO +='          <block type="fileopen"></block>' ;
+IO +='      </value>' ;
+IO +='  </block>' ;
+// 기태 수정(로컬 파일 열기)
+// 파일 읽기
+IO +='  <block type = "fd_read"></block>' ;
 
-IO += '</category>';
+//파일 쓰기
+IO +='  <block type = "fd_write">' ;
+IO +='      <value name="text">' ;
+IO +='          <block type="variables_get">' ;
+IO +='              <field name="VAR">data</field>' ;
+IO +='          </block>' ;
+IO +='      </value>' ;
+IO +='  </block>' ;
+
+//피클 입력
+IO +='  <block type="pickle_dump">' ;
+IO +='      <value name="va1">' ;
+IO +='          <shadow type="indata">' ;
+IO +='              <field name="indata1">데이터</field>' ;
+IO +='          </shadow>' ;
+IO +='      </value>' ;
+IO +='      <value name="va2">' ;
+IO +='          <shadow type="indata">' ;
+IO +='              <field name="indata1">f</field>' ;
+IO +='          </shadow>' ;
+IO +='      </value>' ;
+IO +='  </block>' ;
+
+//피클 불러오기
+IO +='  <block type="pickle_load">';
+IO +='      <value name="va">' ;
+IO +='          <shadow type="indata">' ;
+IO +='              <field name="indata1">f</field>' ;
+IO +='          </shadow>' ;
+IO +='      </value>' ;
+IO +='  </block>' ;
+//  파일 닫기 
+IO +='      <block type = "fd_close"></block>' ;
+
+//  with 
+IO +='      <block type = "withs">' ;
+IO +='        <value name="set0">' ;
+IO +='          <shadow type="indata">' ;
+IO +='            <field name="indata1"></field>' ;
+IO +='          </shadow>' ;
+IO +='        </value>' ;
+IO +='        <value name="set1">' ;
+IO +='          <shadow type="indata">' ;
+IO +='            <field name="indata1"></field>' ;
+IO +='          </shadow>' ;
+IO +='        </value>' ;
+IO +='      </block>' ;
+
+IO +='      <block type="csv_reader_writer">' ;
+IO +='        <value name="VAR">' ;
+IO +='          <shadow type="indata">' ;
+IO +='            <field name="indata1">f</field>' ;
+IO +='          </shadow>' ;
+IO +='        </value>' ;
+IO +='      </block>' ;
+
+IO +='      <block type = "writerows">' ;
+IO +='        <value name="VAR">' ;
+IO +='          <block type="variables_get">' ;
+IO +='            <field name="VAR">csvobj</field>' ;
+IO +='          </block>' ;
+IO +='        </value>' ;
+IO +='        <value name="text">' ;
+IO +='          <shadow type="indata">' ;
+IO +='            <field name="indata1">data</field>' ;
+IO +='          </shadow>' ;
+IO +='        </value>' ;
+IO +='      </block>' ;
+IO +='      <block type="fileopen2"></block>   ' ;
+
+IO +='      </category>' ;
+IO +='    </category>' ;
