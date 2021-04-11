@@ -33,3 +33,40 @@ Blockly.Msg["OS_HUE"] = "#55ad15"; // 시스템
 Blockly.Msg["lst_HUE"] = "#183153"; // 시스템
 Blockly.Msg["PROCEDURES_HUE"] = "41CDCD";
 Blockly.Msg["CROLL_HUE"] = "41CACD";
+
+//컬렉션
+Blockly.Msg["OPER_PRO"] = "조작&가공";
+Blockly.Msg["LIST_TUPLE"] = "리스트&튜플";
+Blockly.Msg["DIC_SET"] = "딕셔너리&집합";
+Blockly.Msg["DEQUE"] = "디큐(deque)";
+
+//넘파이
+Blockly.Msg["NUM_BASIC"] = "기본";
+Blockly.Msg["NUM_MATH"] = "수학&통계";
+Blockly.Msg["NUM_ARRAY"] = "배열";
+Blockly.Msg["NUM_RANDOM"] = "랜덤&정렬";
+Blockly.Msg["NUM_LOGIC"] = "논리&문자열";
+//판다스
+Blockly.Msg["PAN_PRODUCE"] = "생성&조회";
+Blockly.Msg["PAN_ANALYSIS"] = "분석&집계";
+Blockly.Msg["PAN_OPER"] = "조작&가공";
+Blockly.Msg["PAN_SERIES"] = "시리즈";
+//맷플롯립
+
+
+Blockly.Msg["MAT_BASIC"] = "기본";
+Blockly.Msg["MAT_LINE"] = "라인,바&마커형";
+Blockly.Msg["MAT_IMAGE"] = "이미지,필드형";
+Blockly.Msg["MAT_SUB"] = "서브플롯형";
+Blockly.Msg["MAT_STAT"] = "통계형";
+Blockly.Msg["MAT_PIE"] = "파이형";
+
+
+//사이킷런
+Blockly.Msg["SKI_BASIC"] = "기본";
+Blockly.Msg["SKI_DATA"] = "데이터";
+Blockly.Msg["SKI_PRE"] = "예측";
+Blockly.Msg["SKI_CLASSIF"] = "분류";
+Blockly.Msg["SKI_CLUSTER"] = "군집화";
+Blockly.Msg["SKI_EVA"] = "평가지표";
+Blockly.Msg["SKI_NEURAL"] = "신경망";

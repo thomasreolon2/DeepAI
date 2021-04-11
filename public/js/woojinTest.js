@@ -5,11 +5,11 @@ toolbox += NUM;
 toolbox += LOG;
 toolbox += REP;
 toolbox += COLL;
-// toolbox += 
-// toolbox += 
-// toolbox += 
-// toolbox += 
-// toolbox += 
+toolbox += MATH;
+toolbox += DEF;
+toolbox += DB;
+toolbox += NUMPY;
+toolbox += PANDAS;
 // toolbox += 
 toolbox += '</xml>';
 
