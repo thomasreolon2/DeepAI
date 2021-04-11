@@ -162,5 +162,24 @@ document.write("<script src='/js/blockly/block_croll.js'></script>");
 document.write("<script src='/js/blockly/block_croll_py.js'></script>");
 document.write("<script src='/js/blockly/block_croll_js.js'></script>");
 
-document.write("<script src='/js/Io(wj).js'></script>");
+// 리팩토링
+document.write("<script src='/js/Category/Io(wj).js'></script>");
+document.write("<script src='/js/Category/Num&Str(WJ).js'></script>");
+document.write("<script src='/js/Category/Logic(WJ).js'></script>");
+document.write("<script src='/js/Category/Repeat(WJ).js'></script>");
+document.write("<script src='/js/Category/Collection(WJ).js'></script>");
+document.write("<script src='/js/Category/Math(WJ).js'></script>");
+document.write("<script src='/js/Category/Def&Class(WJ).js'></script>");
+document.write("<script src='/js/Category/DB(WJ).js'></script>");
+document.write("<script src='/js/Category/Numpy(WJ).js'></script>");
+document.write("<script src='/js/Category/Pandas(WJ).js'></script>");
+document.write("<script src='/js/Category/Matplotlib(WJ).js'></script>");
+document.write("<script src='/js/Category/Scipy(WJ).js'></script>");
+document.write("<script src='/js/Category/Skimage(WJ).js'></script>");
+document.write("<script src='/js/Category/Sklearn(WJ).js'></script>");
+document.write("<script src='/js/Category/DS(WJ).js'></script>");
+document.write("<script src='/js/Category/ML(WJ).js'></script>");
+document.write("<script src='/js/Category/DL(WJ).js'></script>");
+document.write("<script src='/js/Category/Crawling(WJ).js'></script>");
+
 document.write("<script src='/js/woojinTest.js'></script>");
