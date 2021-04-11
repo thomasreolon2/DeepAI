@@ -1,4 +1,4 @@
-NUMPY = '<category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}">';
+var NUMPY = '<category name="%{BKY_CATEGORY_NUMPY}" colour="%{BKY_NUMPY_HUE}">';
 
 NUMPY += '<category name="%{BKY_NUM_BASIC}" colour="%{BKY_NUMPY_HUE}">';
 //<!-- import numpy as np -->';

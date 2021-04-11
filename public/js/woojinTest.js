@@ -10,6 +10,13 @@ toolbox += DEF;
 toolbox += DB;
 toolbox += NUMPY;
 toolbox += PANDAS;
-// toolbox += 
+// toolbox += MAT; too many trouble
+toolbox += SCIPY;
+toolbox += SKI;
+// toolbox += SKL;
+toolbox += DS;
+toolbox += ML;
+toolbox += DL;
+toolbox += CRAW;
 toolbox += '</xml>';
 
