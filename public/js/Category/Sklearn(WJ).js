@@ -3,9 +3,12 @@ var SKL = '<category name="%{BKY_CATEGORY_SCIKIT}" colour="%{BKY_SCIKITLEARN_HUE
 //<!-- 기본 - 자주쓰는 블록, 모델 학습, 예측, 평가, 임포트 등 -->';
 SKL += '<category name="%{BKY_SKI_BASIC}" colour="%{BKY_SCIKITLEARN_HUE}">';
 //<label text="라이브러리 임포트"></label>';
+SKL += '<label text="%{BKY_SKL_LIBRARY}"></label>';
+
 SKL += '<block type="import_scikit_learn"></block>';
 
 //<label text="데이터 처리(핸들링)"></label>';
+SKL += '<label text="%{BKY_SKL_DATA}"></label>';
 SKL += '<block type="train_test_split"></block>';
 //<!-- SKL += '<value name="x_data">';
 //   SKL += '<block type="variables_get">';
@@ -71,6 +74,8 @@ SKL += '</value>';
 SKL += '</block>';
 
 //<label text="모델 학습 및 평가"></label>';
+SKL += '<label text="%{BKY_SKL_TRAIN_EVA}"></label>';
+
 SKL += '<block type="model_fit">';
 SKL += '<value name="model">';
 SKL += '<block type="variables_get">';
@@ -120,6 +125,8 @@ SKL += '</value>';
 SKL += '</block>';
 
 //<label text="속성 추출"></label>';
+SKL += '<label text="%{BKY_SKL_ATTRI_EXT}"></label>';
+
 SKL += '<block type="coef">';
 SKL += '<value name="coef">';
 SKL += '<block type="variables_get">';
@@ -139,6 +146,7 @@ SKL += '</category>';
 
 SKL += '<category name="%{BKY_SKI_DATA}" colour="%{BKY_SCIKITLEARN_HUE}">';
 //<label text="데이터셋"></label>';
+SKL += '<label text="%{BKY_SKL_DATA_SET}"></label>';
 
 SKL += '<block type="import_dataset">';
 SKL += '<value name="x_data">';
@@ -205,6 +213,7 @@ SKL += '</value>';
 SKL += '</block>';
 
 //<label text="데이터 핸들링"></label>';
+SKL += '<label text="%{BKY_SKL_DATA_HANDLING}"></label>';
 
 SKL += '<block type="train_test_split"></block>';
 //<!-- SKL += '<value name="x_data">';
@@ -611,6 +620,7 @@ SKL += '</value>';
 SKL += '</block>';
 
 //<label text="K-Means 속성 추출"></label>';
+SKL += '<label text="%{BKY_SKL_K_MEANS}"></label>';
 
 SKL += '<block type="k_means_inertia">';
 SKL += '<value name="model">';
@@ -631,7 +641,10 @@ SKL += '</block>';
 SKL += '</category>';
 
 SKL += '<category name="%{BKY_SKI_EVA}" colour="%{BKY_SCIKITLEARN_HUE}">';
+
 //<label text="기본 평가 지표"></label>';
+SKL += '<label text="%{BKY_SKL_BASIC_EVA}"></label>';
+
 SKL += '<block type="acc_score">';
 SKL += '<value name="yt">';
 SKL += '<block type="variables_get">';
@@ -670,6 +683,7 @@ SKL += '</value>';
 SKL += '</block>';
 
 //<label text="고급 평가 지표"></label>';
+SKL += '<label text="%{BKY_SKL_ADV}"></label>';
 //<!-- SKL += '<block type="AUC">';
 //   SKL += '<value name="yt">';
 //     SKL += '<block type="variables_get">';

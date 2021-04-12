@@ -2,7 +2,7 @@ MATH = '<category name="%{BKY_CATEGORY_OPERATION}" colour="%{BKY_MATH_HUE}">';
 MATH +='<block type = "operation_library"></block>';
 
 // MATH +='<label text="수학"></label>';
-MATH +='<label></label>';
+MATH +='<label text="%{BKY_MATH_MATH}"></label>';
 
 //<!--<block type = "math_library"></block>';-->';
 //<!--2020-12-29 전우진 math1  -->';
@@ -31,7 +31,7 @@ MATH +='<block type = "math3"></block>';
 
 //<!--2020-12-29 전우진 math1 end -->';
 // MATH +='<label text="통계 및 랜덤"></label>';
-MATH +='<label></label>';
+MATH +='<label text="%{BKY_MATH_STAT_RAN}"></label>';
 //<!--<block type = "static_library"></block>';-->';
 
 MATH +='<block type = "statistics1">';

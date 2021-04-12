@@ -23,7 +23,7 @@ NUMPY += '</block>';
 
 //<!-----------------------------------------------------------------------------배열생성-->';
 //NUMPY += '<label text="배열 생성"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_CREATE_ARRAY}"></label>';
 //<!-- 넘파이 배열생성 1 -->';
 NUMPY += ' <block type = "create_np_array">';
 NUMPY += '  <value name="text">';
@@ -106,7 +106,7 @@ NUMPY += '</block>';
 
 //<!----------------------------------------------------------------------배열-->';
 //<label text="배열 모양 변경"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_CHANGE_SHAPE}"></label>';
 //<!-- 배열생성 / 숫자 범위2 -->'; 
 //<!-- NUMPY += ' <block type="numpy_numerical_ranges_basic2">';
 //     NUMPY += ' <value name="parameter1">'; 
@@ -193,7 +193,7 @@ NUMPY += '</block>';
 
 //<!----------------------------------------------------------------------랜덤-->';
 //NUMPY += '<label text="랜덤&정렬"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_RAN_SORT}"></label>';
 NUMPY += ' <block type="numpy_random_generator_basic">';
 NUMPY += '  <value name="numpy_Random_generator_val">';
 NUMPY += '      <shadow type="indata">';
@@ -212,7 +212,7 @@ NUMPY += '</block>';
 
 //<!----------------------------------------------------------------------수학 통계-->';
 //NUMPY += '<label text="넘파이 기본 연산"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_BASIC_OPER}"></label>';
 //<!-- 수학 / 삼각 -->';
 NUMPY += ' <block type="numpy_mathematical_functions">';
 NUMPY += '  <value name="numpy_Mathematical functions_val">';
@@ -299,7 +299,7 @@ NUMPY += ' </block>';
 
 //<!---------------------------------------------------------------------인덱스/값검색-->';
 //NUMPY += '<label text="인덱스/값 검색"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_SEARCH_INDEX}"></label>';
 //<!-- 넘파이 인덱스/값 검색 -->';
 NUMPY += ' <block type="numpy_index_values_basic">';
 NUMPY += '  <value name="numpy_index_values_val">';
@@ -425,9 +425,9 @@ NUMPY += ' <sep></sep>';
 NUMPY += '</category>';
 
 //<!-------------------------------------------------------------------------------------------- 수학 & 통계-->';
-NUMPY += '<category name="%{BKY_NUM_MATH}" colour="%{BKY_NUMPY_HUE}">';
+NUMPY += '<category name="%{BKY_NUM_MATH_STAT}" colour="%{BKY_NUMPY_HUE}">';
 //NUMPY += '<label text="수학"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_MATH}"></label>';
 //<!-- 수학 / 삼각 -->';
 NUMPY += ' <block type="numpy_mathematical_functions">';
 NUMPY += '  <value name="numpy_Mathematical functions_val">';
@@ -493,7 +493,7 @@ NUMPY += '</block>';
 //<!-- 수학 / 합계 & 차이  -->';
 
 //NUMPY += '<label text="통계"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_STAT}"></label>';
 NUMPY += ' <block type="numpy_order_static">';
 NUMPY += '  <value name="numpy_order_static_val">';
 NUMPY += '      <block type="class_func_param"></block>';
@@ -518,7 +518,7 @@ NUMPY += '</block>';
 //<!-- 통계 / 상관 -->';
 
 //NUMPY += '<label text="선형대수"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_LINEAR}"></label>';
 //<!-- 선형 / 행렬 &벡터 -->';
 NUMPY += ' <block type="numpy_matrix_vector_products">';
 NUMPY += '  <value name="numpy_Matrix_vector_products_val">';
@@ -538,7 +538,7 @@ NUMPY += '</category>';
 //<!------------------------------------------------------------------------------------------------배열-->';
 NUMPY += '<category name="%{BKY_NUM_ARRAY}" colour="%{BKY_NUMPY_HUE}">';
 //NUMPY += '<label text="배열"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_ARR}"></label>';
 //<!-- 배열생성 / 기존데이터 -->'; 
 NUMPY += ' <block type="numpy_from_existing_data">';
 NUMPY += '  <value name="numpy_From_existing_data_val">';
@@ -647,7 +647,7 @@ NUMPY += '</category>';
 
 NUMPY += '<category name="%{BKY_NUM_RANDOM}" colour="%{BKY_NUMPY_HUE}">';
 //NUMPY += '<label text="랜덤"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_RAN}"></label>';
 
 //<!-- 랜덤 / 단순 -->';
 NUMPY += ' <block type="numpy_random_sample">';
@@ -698,7 +698,7 @@ NUMPY += '</block>';
 //<!-- 랜덤 / 생성기  -->';
 
 //NUMPY += '<label text="정렬&검색"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_SORT_SEARCH}"></label>';
 //<!-- 정렬 -->';
 NUMPY += ' <block type="numpy_sorting">';
 NUMPY += '  <value name="numpy_Sorting_val">';
@@ -718,7 +718,7 @@ NUMPY += '</category>';
 
 NUMPY += '<category name="%{BKY_NUM_LOGIC}" colour="%{BKY_NUMPY_HUE}">';
 //<label text="논리"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_LO}"></label>';
 
 //<!-- 논리 / 배열 -->'; 
 NUMPY += ' <block type="numpy_array_contents">';
@@ -737,7 +737,7 @@ NUMPY += '</block>';
 //<!-- 논리 / 비교  -->';
 
 //   NUMPY += '<label text="문자열"></label>';
-NUMPY += '<label></label>';
+NUMPY += '<label text="%{BKY_NUM_STR}"></label>';
 //<!-- 문자열 / 연산1 -->'; 
 NUMPY += ' <block type="numpy_string_operations">';
 NUMPY += '  <value name="numpy_String_operations_val">';

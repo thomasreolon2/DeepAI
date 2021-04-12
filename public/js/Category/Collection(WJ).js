@@ -141,7 +141,8 @@ COLL +='<category name="%{BKY_OPER_PRO}" >';
 
   COLL +='<category name="%{BKY_LIST_TUPLE}">';
 //    COLL +='<label text="리스트"></label>';
-  COLL +='<label></label>';
+  COLL +='<label text="%{BKY_COLL_LIST}"></label>';
+  
 //   [L1] 리스트 생성 
   COLL +='<block type = "create_list">';
   COLL +='  <value name="list">';
@@ -222,7 +223,7 @@ COLL +='<category name="%{BKY_OPER_PRO}" >';
   COLL +='</block>';
 
 //    COLL +='<label text="튜플"></label>';
-  COLL +='<label></label>';
+  COLL +='<label text="%{BKY_COLL_TUPLE}"></label>';
  //    튜플블록 
   COLL +='  <block type = "create_tuple">';
   COLL +='    <value name="list">';
@@ -240,7 +241,7 @@ COLL +='<category name="%{BKY_OPER_PRO}" >';
 
   COLL +='<category name="%{BKY_DIC_SET}">';
 //    COLL +='<label text="집합"></label>';
-  COLL +='<label></label>';
+  COLL +='<label text="%{BKY_COLL_SET}"></label>';
  //  집합블록 
   COLL +='<block type = "create_ziphap">';
   COLL +='  <value name="list">';
@@ -283,7 +284,7 @@ COLL +='<category name="%{BKY_OPER_PRO}" >';
   COLL +='</block>';
 
 //   COLL +='<label text="딕셔너리"></label>';
-  COLL +='<label></label>';
+  COLL +='<label text="%{BKY_COLL_DICT}"></label>';
 //   딕셔너리1 
   COLL +='<block type = "create_dict">';
   COLL +='  <value name="list">';
@@ -323,7 +324,7 @@ COLL +='<category name="%{BKY_OPER_PRO}" >';
  // -------------------------------------------------------------------------------------deque-------
   COLL +='<category name="%{BKY_DEQUE}">';
 //    COLL +='<label text="dequeue"></label>';
-  COLL +='<label></label>';
+  COLL +='<label text="%{BKY_COLL_DEQUEUE}"></label>';
 //   컬렉션 라이브러리 
   COLL +='<block type="collection_library"></block>';
 //   deque 생성

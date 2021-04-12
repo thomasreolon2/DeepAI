@@ -19,7 +19,7 @@ LOG += '  </value>';
 LOG += '</block>';
 
 // 비교 블록 -->
-LOG += '<block type="LOGic_compare">';
+LOG += '<block type="logic_compare">';
 LOG += '  <value name="A">';
 LOG += '    <shadow type="indata">';
 LOG += '      <field name="indata1">0</field>';
@@ -33,7 +33,7 @@ LOG += '  </value>';
 LOG += '</block>';
 
 // true, false -->
-LOG += '<block type="LOGic_operation">';
+LOG += '<block type="logic_operation">';
 LOG += '  <value name="A">';
 LOG += '    <shadow type="indata">';
 LOG += '      <field name="indata1">True</field>';
@@ -47,7 +47,7 @@ LOG += '  </value>';
 LOG += '</block>';
 
 // not 블록-->
-LOG += '<block type="LOGic_negate">';
+LOG += '<block type="logic_negate">';
 LOG += '  <value name="BOOL">';
 LOG += '    <shadow type="indata">';
 LOG += '      <field name="indata1">True</field>';
@@ -56,13 +56,13 @@ LOG += '  </value>';
 LOG += '</block>';
 
 // 참, 거짓 -->
-LOG += '<block type="LOGic_boolean"></block>';
+LOG += '<block type="logic_boolean"></block>';
 
 // null값 -->
-LOG += '<block type="LOGic_null"></block>';
+LOG += '<block type="logic_null"></block>';
 
 // 삼항연산자 -->
-LOG += '<block type="LOGic_ternary">';
+LOG += '<block type="logic_ternary">';
 LOG += '  <value name="THEN">';
 LOG += '    <shadow type="indata">';
 LOG += '      <field name="indata1">True리턴</field>';

@@ -75,7 +75,7 @@ IO +='  <block type="os_data_listdir"></block>' ;
 IO +='  <block type="os_data_download"></block>' ;
 
 // IO +=document.write("<label text='os & os.path & shutil'></label>");
-IO +='<label></label>';
+IO +='<label text="%{BKY_IO_OS_PATH_SHUTIL}"></label>';
 IO +='  <block type="printf">' ;
 IO +='      <value name="content1">' ;
 IO +='          <block type="os_getcwd"></block>' ;
@@ -192,7 +192,7 @@ IO +='      </value>' ;
 IO +='  </block>' ;
 
 // IO +='  <label text="time & datetime"></label>' ;
-IO +='<label></label>';
+IO +='<label text="%{BKY_IO_TIME_DATETIME}"></label>';
 
 IO +='  <!--<block type="time_library"></block>-->' ;
 IO +='  <block type="time_"></block>' ;

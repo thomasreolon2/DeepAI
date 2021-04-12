@@ -1,7 +1,7 @@
 DEF ='<category name="%{BKY_CATEGORY_FUNCTION}" colour="%{BKY_PROCEDURES_HUE}">';
 
 // DEF +='<label text="함수"></label>';
-DEF +='<label></label>';
+DEF +='<label text ="%{BKY_DEF_CLASS_FUNC}"></label>';
 DEF +='//<!-- 함수 -->';
 DEF +='<block type="webdefine">';
 DEF +='  <value name="1">';
@@ -113,7 +113,7 @@ DEF +='  </value>';
 DEF +='</block>';
 
 // DEF +='<label text="클래스"></label>';
-DEF +='<label></label>';
+DEF +='<label text ="%{BKY_DEF_CLASS_CLASS}"></label>';
 //<!-- 클래스 -->';
 DEF +='<block type="webclass">';
 DEF +='  <value name="VAR">';
