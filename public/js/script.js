@@ -163,6 +163,7 @@ document.write("<script src='/js/blockly/block_croll_py.js'></script>");
 document.write("<script src='/js/blockly/block_croll_js.js'></script>");
 
 // 리팩토링
+document.write("<script src='/js/Label.js'></script>");
 document.write("<script src='/js/Category/Io(wj).js'></script>");
 document.write("<script src='/js/Category/Num&Str(WJ).js'></script>");
 document.write("<script src='/js/Category/Logic(WJ).js'></script>");
@@ -182,4 +183,4 @@ document.write("<script src='/js/Category/ML(WJ).js'></script>");
 document.write("<script src='/js/Category/DL(WJ).js'></script>");
 document.write("<script src='/js/Category/Crawling(WJ).js'></script>");
 
-document.write("<script src='/js/woojinTest.js'></script>");
+document.write("<script src='/js/Category(WJ).js'></script>");
