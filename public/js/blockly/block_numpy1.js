@@ -557,7 +557,8 @@ Blockly.Blocks['numpy_adding_removing_elements'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 추가&제거]")
-        .appendField(new Blockly.FieldDropdown([["배열 끝 삽입(append)","np.append"], ["인덱스 앞 삽입(insert)","np.insert"],   ["하위배열 삭제(delete)","np.delete"],["고유요소 찾기(unique)","np.unique"],["지정 모양(resize)","np.resize"],["배열x가 배열y의 원소를 포함(in1d)","np.in1d"]]), "numpy_Adding_removing_elements_opt");
+        .appendField(new Blockly.FieldDropdown([["배열 끝 삽입(append)","np.append"], ["인덱스 앞 삽입(insert)","np.insert"],   ["하위배열 삭제(delete)","np.delete"],["고유요소 찾기(unique)","np.unique"],["지정 모양(resize)","np.resize"],["배열x가 배열y의 원소를 포함(in1d)","np.in1d"],
+        ["횟수만큼 반복 배열구성(tile)","np.tile"],["축에 따라 배열 요소 가져옴(take)","np.take"],["배열 요소 값 변경(put)","np.put"],["배열요소반환(repeat)","np.repeat"],["배열의 한 축에 ufunc를 적용 차원 1줄임(reduce)","np.reduce"],["배열을 여러 하위 배열로 분리(array_split)","np.array_split"]]), "numpy_Adding_removing_elements_opt");
     this.appendValueInput("numpy_Adding_removing_elements_val")
         .setCheck(null);
     this.setInputsInline(true);
