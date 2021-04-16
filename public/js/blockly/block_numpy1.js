@@ -462,7 +462,7 @@ Blockly.Blocks['numpy_changing_array_shape'] = {
     this.appendDummyInput()
         .appendField("[np 차원변경]")
         .appendField(new Blockly.FieldDropdown([["배열형태 변경(reshape)","np.reshape"], //["1차원변경(ravel)","np.ravel"],
-           ["1차원변경(flatten)","np.flatten"], ["1차원씩 항목제거(squeeze)","np.squeeze"]]), "numpy_Changing_array_shape_opt");
+           ["1차원변경(flatten)","np.flatten"]]), "numpy_Changing_array_shape_opt");
     this.appendValueInput("numpy_Changing_array_shape_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -478,7 +478,7 @@ Blockly.Blocks['numpy_transpose_like_operations'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 전치]")
-        .appendField(new Blockly.FieldDropdown([ ["행렬 전치 (np.transpose)","np.transpose"],["새 위치 이동 (np.moveaxis)","np.moveaxis"], ["배열 축 교환 (np.swapaxes)","np.swapaxes"]]), "numpy_Transpose_like_operations_opt");
+        .appendField(new Blockly.FieldDropdown([["배열 축 교환 (np.swapaxes)","np.swapaxes"]]), "numpy_Transpose_like_operations_opt");
     this.appendValueInput("numpy_Transpose_like_operations_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -526,7 +526,7 @@ Blockly.Blocks['numpy_joining_arrays'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 결합]")
-        .appendField(new Blockly.FieldDropdown([["기존축 배열(concatenate)","np.concatenate"], ["새축 배열(stack)","np.stack"], ["1차원->2차원(열) (column_stack)","np.column_stack"],["1차원->2차원(행) (row_stack)","np.row_stack"]]), "numpy_Joining_arrays_opt");
+        .appendField(new Blockly.FieldDropdown([["기존축 배열(concatenate)","np.concatenate"]]), "numpy_Joining_arrays_opt");
     this.appendValueInput("numpy_Joining_arrays_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -590,7 +590,7 @@ Blockly.Blocks['numpy_ones_and_zeros'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 0 & 1]")
-        .appendField(new Blockly.FieldDropdown([["0으로 채움(zeros)","np.zeros"],["초기화 x(empty)","np.empty"],  ["형태에 따른 1(ones)","np.ones"], ["대각선 1(eye)","np.eye"], ["식별 배열(identity)","np.identity"], ["해당 값으로 채움(full)","np.full"]]), "numpy_Ones and zeros_opt");
+        .appendField(new Blockly.FieldDropdown([["0으로 채움(zeros)","np.zeros"],  ["형태에 따른 1(ones)","np.ones"], ["대각선 1(eye)","np.eye"]]), "numpy_Ones and zeros_opt");
     this.appendValueInput("numpy_Ones and zeros_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -638,7 +638,7 @@ Blockly.Blocks['numpy_numerical_ranges'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 숫자 범위]")
-        .appendField(new Blockly.FieldDropdown([["균일 간격 배열(arange)","np.arange"], ["균등 간격(linspace)","np.linspace"], ["로그 균등 간격(logspace)","np.logspace"], ["좌표 행렬(meshgrid)","np.meshgrid"], ["고밀도 다차원(mgrid)","np.mgrid"], ["열린 다차원(ogrid)","np.ogrid"]]), "numpy_Numerical_ranges_opt");
+        .appendField(new Blockly.FieldDropdown([["균일 간격 배열(arange)","np.arange"], ["균등 간격(linspace)","np.linspace"], ["좌표 행렬(meshgrid)","np.meshgrid"]]), "numpy_Numerical_ranges_opt");
     this.appendValueInput("numpy_Numerical_ranges_val")
         .setCheck(null);
     this.setInputsInline(true);

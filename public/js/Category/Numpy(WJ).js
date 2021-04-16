@@ -540,11 +540,11 @@ NUMPY += '<category name="%{BKY_NUM_ARRAY}" colour="%{BKY_NUMPY_HUE}">';
 //NUMPY += '<label text="배열"></label>';
 NUMPY += '<label text="%{BKY_NUM_ARR}"></label>';
 //<!-- 배열생성 / 기존데이터 -->'; 
-NUMPY += ' <block type="numpy_from_existing_data">';
-NUMPY += '  <value name="numpy_From_existing_data_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_from_existing_data">';
+// NUMPY += '  <value name="numpy_From_existing_data_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 배열생성 / 기존데이터 -->';
 
 //<!-- 배열조작 / 모양 변경 -->'; 
@@ -556,11 +556,11 @@ NUMPY += '</block>';
 //<!-- 배열조작 / 모양 변경  -->';
 
 //<!-- 배열조작 / 종류 변경 -->'; 
-NUMPY += ' <block type="numpy_changing_kind_array">';
-NUMPY += '  <value name="numpy_Changing_kind_array_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_changing_kind_array">';
+// NUMPY += '  <value name="numpy_Changing_kind_array_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 배열조작 / 종류 변경   -->';
 
 //<!-- 배열조작 / 추가 & 제거 -->'; 
@@ -588,11 +588,11 @@ NUMPY += '</block>';
 //<!-- 배열생성 / 0 & 1 -->';
 
 //<!-- 배열생성 / 행렬 -->'; 
-NUMPY += ' <block type="numpy_building_matrices">';
-NUMPY += '  <value name="numpy_Building_matrices_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_building_matrices">';
+// NUMPY += '  <value name="numpy_Building_matrices_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 배열생성 / 행렬 -->';
 
 //<!-- 배열조작 / 전치 -->'; 
@@ -612,27 +612,27 @@ NUMPY += '</block>';
 //<!-- 배열조작 / 결합   -->';
 
 //<!-- 배열조작 / 분할 -->'; 
-NUMPY += ' <block type="numpy_splitting_arrays">';
-NUMPY += '  <value name="numpy_Splitting_arrays_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_splitting_arrays">';
+// NUMPY += '  <value name="numpy_Splitting_arrays_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 배열조작 / 분할 -->';
 
 //<!-- 배열조작 / 재정렬 -->'; 
-NUMPY += ' <block type="numpy_rearranging_elements">';
-NUMPY += '  <value name="numpy_Rearranging_elements_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_rearranging_elements">';
+// NUMPY += '  <value name="numpy_Rearranging_elements_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 배열조작 / 재정렬 -->';
 
 //<!-- 배열생성 / 레코드 -->'; 
-NUMPY += ' <block type="numpy_creating_record_arrays">';
-NUMPY += '  <value name="numpy_Creating_record_arrays_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_creating_record_arrays">';
+// NUMPY += '  <value name="numpy_Creating_record_arrays_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 배열생성 / 레코드 -->';
 
 //<!-- 배열조작 / 차원수 변경  
