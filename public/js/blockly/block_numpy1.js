@@ -604,7 +604,7 @@ Blockly.Blocks['numpy_from_existing_data'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 기존 데이터]")
-        .appendField(new Blockly.FieldDropdown([["복사(copy)","np.copy"], ["배열생성(array)","np.array"], ["입력된 배열(asarray)","np.asarray"], ["입력을 행렬(asmatrix)","np.asmatrix"],  ["버퍼를 1차원(frombuffer)","np.frombuffer"], ["텍스트 파일로드(loadtxt)","np.loadtxt"]]), "numpy_From_existing_data_opt");
+        .appendField(new Blockly.FieldDropdown([["복사(copy)","np.copy"], ["배열생성(array)","np.array"], ["입력된 배열(asarray)","np.asarray"], ["입력을 행렬(asmatrix)","np.asmatrix"], ["텍스트 파일로드(loadtxt)","np.loadtxt"]]), "numpy_From_existing_data_opt");
     this.appendValueInput("numpy_From_existing_data_val")
         .setCheck(null);
     this.setInputsInline(true);

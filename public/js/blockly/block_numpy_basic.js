@@ -247,7 +247,7 @@ Blockly.Blocks['numpy_rounding_basic'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 반올림]")
-        .appendField(new Blockly.FieldDropdown([["내림(floor)","np.floor"],["소수자릿수(around)","np.around"], ["가까운배열정수(rint)","np.rint"], ["0인접정수(fix)","np.fix"],["올림(ceil)","np.ceil"], ["소수점제외(trunc)","np.trunc"]]), "numpy_Rounding_opt");
+        .appendField(new Blockly.FieldDropdown([["0인접정수(fix)","np.fix"],["올림(ceil)","np.ceil"], ["소수점제외(trunc)","np.trunc"]]), "numpy_Rounding_opt");
     this.appendValueInput("numpy_Rounding_val")
         .setCheck(null);
     this.setInputsInline(true);
