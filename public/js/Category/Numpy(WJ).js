@@ -665,13 +665,13 @@ NUMPY += '  </value>';
 NUMPY += '</block>';
 //<!-- 랜덤 / 순열  -->';
 
-//<!-- 랜덤 / 분포1  -->';
-NUMPY += ' <block type="numpy_random_distributions">';
-NUMPY += '  <value name="numpy_Random_Distributions_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
-//<!-- 랜덤 / 분포1  -->';
+// //<!-- 랜덤 / 분포1  -->';
+// NUMPY += ' <block type="numpy_random_distributions">';
+// NUMPY += '  <value name="numpy_Random_Distributions_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
+// //<!-- 랜덤 / 분포1  -->';
 
 //<!-- 랜덤 / 분포2  -->';
 NUMPY += ' <block type="numpy_random_distributions_two">';
@@ -681,13 +681,13 @@ NUMPY += '  </value>';
 NUMPY += '</block>';
 //<!-- 랜덤 / 분포2  -->';
 
-//<!-- 랜덤 / 분포3 -->';
-NUMPY += ' <block type="numpy_random_distributions_third">';
-NUMPY += '  <value name="VAR">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
-//<!-- 랜덤 / 분포3  -->';
+// //<!-- 랜덤 / 분포3 -->';
+// NUMPY += ' <block type="numpy_random_distributions_third">';
+// NUMPY += '  <value name="VAR">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
+// //<!-- 랜덤 / 분포3  -->';
 
 //<!-- 랜덤 / 생성기 -->';
 NUMPY += ' <block type="numpy_random_generator">';

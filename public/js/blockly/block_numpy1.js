@@ -53,7 +53,7 @@ Blockly.Blocks['numpy_sorting'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 정렬]")
-        .appendField(new Blockly.FieldDropdown([["정렬(sort)","numpy_Sorting_sort"],["배열정렬(argsort)","numpy_Sorting_argsort"], ["간접 정렬(lexsort)","numpy_Sorting_lexsort"], ["분할(partition)","numpy_Sorting_partition"],["데이터분할(quantile)","numpy_Sorting_quantile"], ["간접 분할(argpartition)","numpy_Sorting_argpartition"]]), "numpy_Sorting_opt");
+        .appendField(new Blockly.FieldDropdown([["정렬(sort)","numpy_Sorting_sort"], ["간접 정렬(lexsort)","numpy_Sorting_lexsort"], ["분할(partition)","numpy_Sorting_partition"],["간접 분할(argpartition)","numpy_Sorting_argpartition"]]), "numpy_Sorting_opt");
     this.appendValueInput("numpy_Sorting_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -69,7 +69,7 @@ Blockly.Blocks['numpy_searching'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 검색]")
-        .appendField(new Blockly.FieldDropdown([["최대값 인덱스(argmax)","numpy_argmax"], ["최소값 인덱스(argmin)","numpy_Sorting_argmin"], ["0 아닌 인덱스(nonzero)","numpy_Searching_nonzero"], ["조건 요소(where)","numpy_Searching_where"], ["조건 만족(extract)","numpy_Searching_extract"]]), "numpy_Searching_opt");
+        .appendField(new Blockly.FieldDropdown([["최대값 인덱스(argmax)","numpy_argmax"], ["최소값 인덱스(argmin)","numpy_Sorting_argmin"], ["조건 요소(where)","numpy_Searching_where"]]), "numpy_Searching_opt");
     this.appendValueInput("numpy_Searching")
         .setCheck(null);
     this.setInputsInline(true);
@@ -85,7 +85,7 @@ Blockly.Blocks['numpy_random_sample'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 단순 랜덤]")
-        .appendField(new Blockly.FieldDropdown([["임의 값(rand)","numpy_Random_sample_rand"], ["표준 정규분포(randn)","numpy_Random_sample_randn"], ["임의 정수(randint)","numpy_Random_sample_randint"], ["0~1 부동 소수점(random)","numpy_Random_sample_random"], ["배열 무작위(choice)","numpy_Random_sample_choice"], ["임의 바이트(bytes)","numpy_Random_sample_bytes"]]), "numpy_Random_sample_opt");
+        .appendField(new Blockly.FieldDropdown([["임의 값(rand)","numpy_Random_sample_rand"], ["표준 정규분포(randn)","numpy_Random_sample_randn"], ["임의 정수(randint)","numpy_Random_sample_randint"], ["0~1 부동 소수점(random)","numpy_Random_sample_random"], ["배열 무작위(choice)","numpy_Random_sample_choice"]]), "numpy_Random_sample_opt");
     this.appendValueInput("numpy_Random_sample_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -135,7 +135,7 @@ Blockly.Blocks['numpy_random_distributions_two'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 분포2]")
-        .appendField(new Blockly.FieldDropdown([["로그 정규 분포(lognormal)","numpy_Random_Distributions_two_lognormal"], ["대수 계열 분포(logseries)","numpy_Random_Distributions_two_logseries"], ["다항 분포(multinomial)","numpy_Random_Distributions_two_multinomial"], ["다변량 정규 분포(multivariate_normal)","numpy_Random_Distributions_two_multivariate_normal"], ["음 이항 분포(negative_binomial)","numpy_Random_Distributions_two_negative_binomial"], ["비중심 카이제곱 분포(noncentral_chisquare)","numpy_Random_Distributions_two_noncentral_chisquare"], ["비 중심 F분포(noncentral_f)","numpy_Random_Distributions_two_noncentral_f"], ["가우스 분포(normal)","numpy_Random_Distributions_two_normal"], ["포아송 분포(poisson)","numpy_Random_Distributions_two_poisson"], ["Rayleigh 분포(rayleigh)","numpy_Random_Distributions_two_rayleigh"], ["표본 지수 분포(standard_exponential)","numpy_Random_Distributions_two_standard_exponential"]]), "numpy_Random_Distributions_two_opt");
+        .appendField(new Blockly.FieldDropdown([ ["다변량 정규 분포(multivariate_normal)","numpy_Random_Distributions_two_multivariate_normal"], ["가우스 분포(normal)","numpy_Random_Distributions_two_normal"] ]), "numpy_Random_Distributions_two_opt");
     this.appendValueInput("numpy_Random_Distributions_two_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -169,7 +169,7 @@ Blockly.Blocks['numpy_random_generator'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 생성기]")
-        .appendField(new Blockly.FieldDropdown([["규칙 난수(seed)","numpy_Random_generator_seed"], ["생성기 내부 상태(get_state)","numpy_Random_generator_get_state"], ["튜플 내부상태 설정(set_state)","numpy_Random_generator_set_state"]]), "numpy_Random_generator_opt");
+        .appendField(new Blockly.FieldDropdown([["규칙 난수(seed)","numpy_Random_generator_seed"] ]), "numpy_Random_generator_opt");
     this.appendValueInput("numpy_Random_generator_val")
         .setCheck(null);
     this.setInputsInline(true);
