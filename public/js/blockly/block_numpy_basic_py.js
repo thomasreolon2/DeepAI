@@ -290,62 +290,69 @@ Blockly.Python['numpy_random_distributions'] = function(block) {
 };
 
 //numpy_random_distributions_two
-Blockly.Python['numpy_random_distributions_two'] = function(block) {
+Blockly.JavaScript['numpy_random_distributions_two'] = function(block) {
   var dropdown_numpy_random_distributions_two_opt = block.getFieldValue('numpy_Random_Distributions_two_opt');
-  var value_numpy_random_distributions_two_val = Blockly.Python.valueToCode(block, 'numpy_Random_Distributions_two_val', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  var value_numpy_random_distributions_two_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_Distributions_two_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
   var code;
   switch (dropdown_numpy_random_distributions_two_opt){
     case "numpy_Random_Distributions_two_lognormal": 
-    code = `np.random.lognormal(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break; 
 
     case "numpy_Random_Distributions_two_logseries": 
-    code = `np.random.logseries(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_Distributions_two_multinomial":
-    code = `np.random.multinomial(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_Distributions_two_multivariate_normal":
-    code = `np.random.multivariate_normal(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_Distributions_two_negative_binomial":
-    code = `np.random.negative_binomial(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_Distributions_two_noncentral_chisquare":
-    code = `np.random.noncentral_chisquare(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_Distributions_two_noncentral_f":
-    code = `np.random.noncentral_f(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_Distributions_two_normal":
-    code = `np.random.normal(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_Distributions_two_poisson":
-    code = `np.random.poisson(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break;
 
     case "numpy_Random_Distributions_two_rayleigh":
-    code = `np.random.rayleigh(${value_numpy_random_distributions_two_val})`;    
+    code = `\n`;
     break;
 
     case "numpy_Random_Distributions_two_standard_exponential":
-    code = `np.random.standard_exponential(${value_numpy_random_distributions_two_val})`;  
+    code = `\n`;
     break;
 
+    case "numpy_Random_Distributions_binomial":
+    code = `\n`;
+    break;
 
+    case "standard_normal":
+    code = `\n`;
+    break;
+    
     default:
     break;
   }
-  // TODO: Change ORDER_ATOMIC to the correct strength.
-  return [code, Blockly.Python.ORDER_ATOMIC];
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
 //numpy_random_distributions_third

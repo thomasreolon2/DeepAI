@@ -134,8 +134,8 @@ Blockly.Blocks['numpy_random_distributions'] = {
 Blockly.Blocks['numpy_random_distributions_two'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[np 분포2]")
-        .appendField(new Blockly.FieldDropdown([ ["다변량 정규 분포(multivariate_normal)","numpy_Random_Distributions_two_multivariate_normal"], ["가우스 분포(normal)","numpy_Random_Distributions_two_normal"] ]), "numpy_Random_Distributions_two_opt");
+        .appendField("[np 분포]")
+        .appendField(new Blockly.FieldDropdown([["이항 분포(binomial)","numpy_Random_Distributions_binomial"], ["표준 정규 분포(standard_normal)","standard_normal"], ["다변량 정규 분포(multivariate_normal)","numpy_Random_Distributions_two_multivariate_normal"], ["가우스 분포(normal)","numpy_Random_Distributions_two_normal"] ]), "numpy_Random_Distributions_two_opt");
     this.appendValueInput("numpy_Random_Distributions_two_val")
         .setCheck(null);
     this.setInputsInline(true);

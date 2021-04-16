@@ -290,6 +290,7 @@ Blockly.Python['numpy_random_distributions_two'] = function(block) {
   var value_numpy_random_distributions_two_val = Blockly.Python.valueToCode(block, 'numpy_Random_Distributions_two_val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code;
+
   switch (dropdown_numpy_random_distributions_two_opt){
     case "numpy_Random_Distributions_two_lognormal": 
     code = `np.random.lognormal(${value_numpy_random_distributions_two_val})`;  
@@ -335,6 +336,13 @@ Blockly.Python['numpy_random_distributions_two'] = function(block) {
     code = `np.random.standard_exponential(${value_numpy_random_distributions_two_val})`;  
     break;
 
+    case "numpy_Random_Distributions_binomial":
+    code = `np.random.binomial(${value_numpy_random_distributions_two_val})`;
+    break;
+
+    case "standard_normal":
+    code = `np.random.standard_normal(${value_numpy_random_distributions_two_val})`;  
+    break;
 
     default:
     break;

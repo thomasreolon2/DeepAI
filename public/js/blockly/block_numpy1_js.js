@@ -327,6 +327,13 @@ Blockly.JavaScript['numpy_random_distributions_two'] = function(block) {
     code = `\n`;
     break;
 
+    case "numpy_Random_Distributions_binomial":
+    code = `\n`;
+    break;
+
+    case "standard_normal":
+    code = `\n`;
+    break;
 
     default:
     break;
