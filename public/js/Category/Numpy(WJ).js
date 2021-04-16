@@ -588,11 +588,11 @@ NUMPY += '</block>';
 //<!-- 배열생성 / 0 & 1 -->';
 
 //<!-- 배열생성 / 행렬 -->'; 
-// NUMPY += ' <block type="numpy_building_matrices">';
-// NUMPY += '  <value name="numpy_Building_matrices_val">';
-// NUMPY += '      <block type="class_func_param"></block>';
-// NUMPY += '  </value>';
-// NUMPY += '</block>';
+NUMPY += ' <block type="numpy_building_matrices">';
+NUMPY += '  <value name="numpy_Building_matrices_val">';
+NUMPY += '      <block type="class_func_param"></block>';
+NUMPY += '  </value>';
+NUMPY += '</block>';
 //<!-- 배열생성 / 행렬 -->';
 
 //<!-- 배열조작 / 전치 -->'; 
@@ -620,11 +620,11 @@ NUMPY += '</block>';
 //<!-- 배열조작 / 분할 -->';
 
 //<!-- 배열조작 / 재정렬 -->'; 
-// NUMPY += ' <block type="numpy_rearranging_elements">';
-// NUMPY += '  <value name="numpy_Rearranging_elements_val">';
-// NUMPY += '      <block type="class_func_param"></block>';
-// NUMPY += '  </value>';
-// NUMPY += '</block>';
+NUMPY += ' <block type="numpy_rearranging_elements">';
+NUMPY += '  <value name="numpy_Rearranging_elements_val">';
+NUMPY += '      <block type="class_func_param"></block>';
+NUMPY += '  </value>';
+NUMPY += '</block>';
 //<!-- 배열조작 / 재정렬 -->';
 
 //<!-- 배열생성 / 레코드 -->'; 

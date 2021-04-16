@@ -69,7 +69,7 @@ Blockly.Blocks['numpy_searching'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 검색]")
-        .appendField(new Blockly.FieldDropdown([["최대값 인덱스(argmax)","numpy_argmax"], ["최소값 인덱스(argmin)","numpy_Sorting_argmin"], ["조건 요소(where)","numpy_Searching_where"]]), "numpy_Searching_opt");
+        .appendField(new Blockly.FieldDropdown([["최대값 인덱스(argmax)","numpy_argmax"], ["최소값 인덱스(argmin)","numpy_Sorting_argmin"], ["조건 요소(where)","numpy_Searching_where"], ["균등분포 표본 추출(random.RandomStat().uniform)","random.RandomStat().uniform"], [" Pareto II 또는 Lomax 분포에서 샘플 그리기(random.pareto)","random.pareto"],["정규 분포의 무작위 표본 추출(random.normal)", "random.normal"]]), "numpy_Searching_opt");
     this.appendValueInput("numpy_Searching")
         .setCheck(null);
     this.setInputsInline(true);
@@ -477,7 +477,7 @@ Blockly.Blocks['numpy_transpose_like_operations'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 전치]")
-        .appendField(new Blockly.FieldDropdown([["배열 축 교환 (np.swapaxes)","np.swapaxes"]]), "numpy_Transpose_like_operations_opt");
+        .appendField(new Blockly.FieldDropdown([["행렬 전치 (np.transpose)","np.transpose"], ["배열 축 교환 (np.swapaxes)","np.swapaxes"]]), "numpy_Transpose_like_operations_opt");
     this.appendValueInput("numpy_Transpose_like_operations_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -525,7 +525,7 @@ Blockly.Blocks['numpy_joining_arrays'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 결합]")
-        .appendField(new Blockly.FieldDropdown([["기존축 배열(concatenate)","np.concatenate"]]), "numpy_Joining_arrays_opt");
+        .appendField(new Blockly.FieldDropdown([["기존축 배열(concatenate)","np.concatenate"],["새축 배열(stack)","np.stack"], ["1차원->2차원(열) (column_stack)","np.column_stack"],["1차원->2차원(행) (row_stack)","np.row_stack"],["가로이어붙이기 (hstack)","np.hstack"],["세로이어붙이기 (vstack)","np.vstack"]]), "numpy_Joining_arrays_opt");
     this.appendValueInput("numpy_Joining_arrays_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -589,7 +589,7 @@ Blockly.Blocks['numpy_ones_and_zeros'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 0 & 1]")
-        .appendField(new Blockly.FieldDropdown([["0으로 채움(zeros)","np.zeros"],  ["형태에 따른 1(ones)","np.ones"], ["대각선 1(eye)","np.eye"]]), "numpy_Ones and zeros_opt");
+        .appendField(new Blockly.FieldDropdown([["0으로 채움(zeros)","np.zeros"],  ["형태에 따른 1(ones)","np.ones"], ["대각선 1(eye)","np.eye"],["식별 배열(identity)","np.identity"], ["해당 값으로 채움(full)","np.full"]]), "numpy_Ones and zeros_opt");
     this.appendValueInput("numpy_Ones and zeros_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -653,7 +653,7 @@ Blockly.Blocks['numpy_building_matrices'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 행렬]")
-        .appendField(new Blockly.FieldDropdown([["대각선 배열(diag)","np.diag"], ["평면 2차원 대각선(diagflat)","np.diagflat"], ["대각선1 나머지0(tri)","np.tri"], ["아래쪽 삼각형(tril)","np.tril"], ["위쪽 삼각형(triu)","np.triu"], ["Vandermonde 행렬(vander)","np.vander"]]), "numpy_Building_matrices_opt");
+        .appendField(new Blockly.FieldDropdown([["대각선 배열(diag)","np.diag"],  ["대각선1 나머지0(tri)","np.tri"], ["아래쪽 삼각형(tril)","np.tril"], ["위쪽 삼각형(triu)","np.triu"], ["Vandermonde 행렬(vander)","np.vander"]]), "numpy_Building_matrices_opt");
     this.appendValueInput("numpy_Building_matrices_val")
         .setCheck(null);
     this.setInputsInline(true);

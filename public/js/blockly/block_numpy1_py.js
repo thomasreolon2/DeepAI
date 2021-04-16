@@ -160,8 +160,16 @@ Blockly.Python['numpy_searching'] = function(block) {
     code = `np.where(${value_numpy_searching})`;  
     break;
 
-    case "numpy_Searching_extract":
-    code = `np.extract(${value_numpy_searching})`;  
+    case "random.RandomStat().uniform":
+    code = `np.random.RandomStat().uniform(${value_numpy_searching})`;  
+    break;
+
+    case "random.pareto":
+    code = `np.random.pareto(${value_numpy_searching})`;  
+    break;
+
+    case "random.normal":
+    code = `np.random.normal(${value_numpy_searching})`;  
     break;
 
     default:
@@ -633,7 +641,12 @@ Blockly.Python['numpy_joining_arrays'] = function(block) {
   var dropdown_numpy_joining_arrays_opt = block.getFieldValue('numpy_Joining_arrays_opt');
   var value_numpy_joining_arrays_val = Blockly.Python.valueToCode(block, 'numpy_Joining_arrays_val', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = `${dropdown_numpy_joining_arrays_opt}((${value_numpy_joining_arrays_val}))`;
+  if(dropdown_numpy_joining_arrays_opt == "np.concatenate"){
+    var code = `${dropdown_numpy_joining_arrays_opt}((${value_numpy_joining_arrays_val}))`;
+  }
+  else{
+    var code = `${dropdown_numpy_joining_arrays_opt}(${value_numpy_joining_arrays_val})`;
+  }
   // TODO: Change ORDER_ATOMIC to the correct strength.
   return [code, Blockly.Python.ORDER_ATOMIC];
 };

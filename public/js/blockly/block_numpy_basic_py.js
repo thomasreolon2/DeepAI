@@ -165,6 +165,18 @@ Blockly.Python['numpy_searching'] = function(block) {
     code = `np.extract(${value_numpy_searching})`;  
     break;
 
+    case "random.RandomStat().uniform":
+    code = `np.random.RandomStat().uniform(${value_numpy_searching})`;  
+    break;
+
+    case "random.pareto":
+    code = `np.random.pareto(${value_numpy_searching})`;  
+    break;
+
+    case "random.normal":
+    code = `np.random.normal(${value_numpy_searching})`;  
+    break;
+    
     default:
     break;
   }
@@ -355,7 +367,7 @@ Blockly.JavaScript['numpy_random_distributions_two'] = function(block) {
     case "standard_normal":
     code = `\n`;
     break;
-    
+
     default:
     break;
   }
