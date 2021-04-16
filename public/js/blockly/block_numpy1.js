@@ -341,7 +341,8 @@ Blockly.Blocks['numpy_matrix_decomposition'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 분해]")
-        .appendField(new Blockly.FieldDropdown([["특이값분해(linalg.svd)","np.linalg.svd"]]), "numpy_Matrix_Decomposition_opt");
+        .appendField(new Blockly.FieldDropdown([["특이값분해(linalg.svd)","np.linalg.svd"], ["최소자승해(lstsq)","np.lstsq"], ["행렬or백터의norm(norm)","np.norm"]
+          ,["배열 행렬식 계산(det)","np.det"], ["ㅠ(원주율/pi)","np.pi"], ["의사 역행렬(pinv)","np.pinv"], ["고유값(eig)","np.eig"], ["행렬의 역행렬 계산(inv)","np.inv"], ["절대값(abs)","np.abs"]]), "numpy_Matrix_Decomposition_opt");
     this.appendValueInput("numpy_Matrix_Decomposition_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -556,7 +557,7 @@ Blockly.Blocks['numpy_adding_removing_elements'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 추가&제거]")
-        .appendField(new Blockly.FieldDropdown([["배열 끝 삽입(append)","np.append"], ["인덱스 앞 삽입(insert)","np.insert"],   ["하위배열 삭제(delete)","np.delete"],["고유요소 찾기(unique)","np.unique"],["지정 모양(resize)","np.resize"]]), "numpy_Adding_removing_elements_opt");
+        .appendField(new Blockly.FieldDropdown([["배열 끝 삽입(append)","np.append"], ["인덱스 앞 삽입(insert)","np.insert"],   ["하위배열 삭제(delete)","np.delete"],["고유요소 찾기(unique)","np.unique"],["지정 모양(resize)","np.resize"],["배열x가 배열y의 원소를 포함(in1d)","np.in1d"]]), "numpy_Adding_removing_elements_opt");
     this.appendValueInput("numpy_Adding_removing_elements_val")
         .setCheck(null);
     this.setInputsInline(true);

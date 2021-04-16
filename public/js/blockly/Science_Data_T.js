@@ -972,7 +972,7 @@ Blockly.defineBlocksWithJsonArray(
       this.appendValueInput("numpy_index_values_val")
           .setCheck(null)
           .appendField(Blockly.Msg.NUMPY_INDEX_VALUES_11)
-          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_4,"np.argmax"], [Blockly.Msg.NUMPY_INDEX_VALUES_5,"np.argsort"], [Blockly.Msg.NUMPY_INDEX_VALUES_8,"np.where"]]), "numpy_operator_Option");
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_INDEX_VALUES_4,"np.argmax"], [Blockly.Msg.NUMPY_INDEX_VALUES_5,"np.argsort"], [Blockly.Msg.NUMPY_INDEX_VALUES_8,"np.where"], ["모든 데이터 조건(all)", "np.all"], ["조건과 맞는 데이터(any)", "np.any"]]), "numpy_operator_Option");
       this.setInputsInline(true);
       this.setOutput(true, null);
       this.setColour("%{BKY_NUMPY_HUE}");
