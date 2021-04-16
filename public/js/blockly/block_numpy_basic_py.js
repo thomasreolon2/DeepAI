@@ -32,6 +32,10 @@ Blockly.Python['numpy_order_static'] = function(block) {
     code = `np.percentile(${value_numpy_order_static_val})`;  
     break;
 
+    case "numpy_order_static_bincount":
+    code = `np.bincount(${value_numpy_order_static_val})`;  
+    break;
+
     case "numpy_order_static_nanpercentile":
     code = `np.nanpercentile(${value_numpy_order_static_val})`;  
     break;
@@ -44,13 +48,17 @@ Blockly.Python['numpy_order_static'] = function(block) {
     code = `np.nanquantile(${value_numpy_order_static_val})`;  
     break;
 
+    case "numpy_order_static_maximum":
+    code = `np.maximum(${value_numpy_order_static_val})`;  
+    break;
+
     default:
     break;
   }
   // TODO: Change ORDER_ATOMIC to the correct strength. 
   return [code, Blockly.Python.ORDER_ATOMIC]; 
 };
- 
+
 
 
 //numpy_averages_variances

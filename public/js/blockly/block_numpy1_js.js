@@ -32,6 +32,10 @@ Blockly.JavaScript['numpy_order_static'] = function(block) {
     code = `\n`;
     break;
 
+    case "numpy_order_static_bincount":
+    code = `\n`;
+    break;
+
     case "numpy_order_static_nanpercentile":
     code = `\n`;
     break;
@@ -44,6 +48,10 @@ Blockly.JavaScript['numpy_order_static'] = function(block) {
     code = `\n`;
     break;
 
+    case "numpy_order_static_maximum":
+    code = `\n`;
+    break;
+
     default:
     break;
   }
@@ -51,7 +59,6 @@ Blockly.JavaScript['numpy_order_static'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE]; 
 };
  
-
 
 //numpy_averages_variances
 Blockly.JavaScript['numpy_averages_variances'] = function(block) {

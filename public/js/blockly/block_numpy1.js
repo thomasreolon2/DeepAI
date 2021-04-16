@@ -4,7 +4,7 @@ Blockly.Blocks['numpy_order_static'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 순서]")
-        .appendField(new Blockly.FieldDropdown([["배열최소값(amin)","numpy_order_static_amin"], ["배열최대값(amax)","numpy_order_static_amax"], ["Nan제외최소값(nanmin)","numpy_order_static_nMin"], ["Nan제외최대값(nanmax)","numpy_order_static_nMax"], ["축에따른범위(ptp)","numpy_order_static_ptp"], ["백분위수(percentile)","numpy_order_static_percentile"], ["Nan제외백분위수(nanpercentile)","numpy_order_static_nanpercentile"], ["분위수(quantile)","numpy_order_static_quantile"], ["Nan백분위수(nanquantile)","numpy_order_static_nanquantile"]]), "numpy_order_static_opt");
+        .appendField(new Blockly.FieldDropdown([["배열최소값(amin)","numpy_order_static_amin"], ["배열최대값(amax)","numpy_order_static_amax"], ["Nan제외최소값(nanmin)","numpy_order_static_nMin"], ["Nan제외최대값(nanmax)","numpy_order_static_nMax"], ["축에따른범위(ptp)","numpy_order_static_ptp"], ["백분위수(percentile)","numpy_order_static_percentile"], ["빈도수(bincount)","numpy_order_static_bincount"], ["Nan제외백분위수(nanpercentile)","numpy_order_static_nanpercentile"], ["분위수(quantile)","numpy_order_static_quantile"], ["Nan백분위수(nanquantile)","numpy_order_static_nanquantile"], ["두배열중최대값(maximum)","numpy_order_static_maximum"]]), "numpy_order_static_opt");
     this.appendValueInput("numpy_order_static_val")
         .setCheck(null);
     this.setInputsInline(true);
