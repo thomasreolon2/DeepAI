@@ -186,7 +186,7 @@ Blockly.Blocks['numpy_mathematical_functions'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 삼각]")
-        .appendField(new Blockly.FieldDropdown([["사인(sin)","np.sin"], ["코사인(cos)","np.cos"], ["탄젠트(tan)","np.tan"], ["역 사인(arcsin)","np.arcsin"], ["역 코사인(arccos)","np.arccos"], ["역 탄젠트(arctan)","np.arctan"], ["라디안->도(degrees)","np.degrees"], ["도->라디안(radians)","np.radians"]]), "numpy_Mathematical functions_opt");
+        .appendField(new Blockly.FieldDropdown([["사인(sin)","np.sin"], ["코사인(cos)","np.cos"], ["탄젠트(tan)","np.tan"]]), "numpy_Mathematical functions_opt");
     this.appendValueInput("numpy_Mathematical functions_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -202,7 +202,7 @@ Blockly.Blocks['numpy_hyperbolic_functions'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 쌍곡선]")
-        .appendField(new Blockly.FieldDropdown([["쌍곡사인(signh)","np.signh"], ["쌍곡코사인(cosh)","np.cosh"], ["쌍곡탄젠트(tanh)","np.tanh"], ["역쌍곡사인(arcsinh)","np.arcsinh"], ["역쌍곡코사인(arccosh)","np.arccosh"], ["역쌍곡탄젠트(arctanh)","np.arctanh"]]), "numpy_Hyperbolic functions_opt");
+        .appendField(new Blockly.FieldDropdown([["쌍곡사인(signh)","np.signh"], ["쌍곡코사인(cosh)","np.cosh"], ["쌍곡탄젠트(tanh)","np.tanh"]]), "numpy_Hyperbolic functions_opt");
     this.appendValueInput("numpy_Hyperbolic functions_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -219,7 +219,7 @@ Blockly.Blocks['numpy_rounding'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 반올림]")
-        .appendField(new Blockly.FieldDropdown([["소수자릿수(around)","np.around"], ["배열소수자릿수(round_)","np.round_"], ["가까운배열정수(rint)","np.rint"], ["0인접정수(fix)","np.fix"],["올림(ceil)","np.ceil"],["내림(floor)","np.floor"], ["소수점제외(trunc)","np.trunc"]]), "numpy_Rounding_opt");
+        .appendField(new Blockly.FieldDropdown([["소수자릿수(around)","np.around"], ["배열소수자릿수(round_)","np.round_"],["올림(ceil)","np.ceil"],["내림(floor)","np.floor"], ["소수점제외(trunc)","np.trunc"]]), "numpy_Rounding_opt");
     this.appendValueInput("numpy_Rounding_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -235,7 +235,7 @@ Blockly.Blocks['numpy_exponents_logarithms'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 지수&로그]")
-        .appendField(new Blockly.FieldDropdown([["요소별지수(exp)","np.exp"], ["요소별지수2(exp2)","np.exp2"], ["요소별자연로그(log)","np.log"], ["요소별로그10(log10)","np.log10"], ["요소별로그2(log2)","np.log2"]]), "numpy_Exponents_logarithms_opt");
+        .appendField(new Blockly.FieldDropdown([["요소별지수(exp)","np.exp"], ["요소별자연로그(log)","np.log"], ["요소별로그10(log10)","np.log10"], ["요소별로그2(log2)","np.log2"]]), "numpy_Exponents_logarithms_opt");
     this.appendValueInput("numpy_Exponents_logarithms_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -256,10 +256,8 @@ Blockly.Blocks['numpy_arithmetic_operations1'] = {
                                                 ["요소별뺄셈(subtract)","np.subtract"],
                                                 ["요소별곱셈(multiply)","np.multiply"],
                                                 ["요소별나눗셈(divide)","np.divide"],
-                                                ["요소별제곱근(sqrt)","np.sqrt"],
-                                                ["요소별양수(positive)","np.positive"],
-                                                ["요소별음수(negative)","np.negative"],
-                                                ["요소별역수(reciprocal)","np.reciprocal"]]), "numpy_Arithmetic_operations_opt");
+                                                ["요소별제곱근(sqrt)","np.sqrt"]
+                                                ]), "numpy_Arithmetic_operations_opt");
     this.appendValueInput("numpy_Arithmetic_operations1_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -308,7 +306,7 @@ Blockly.Blocks['numpy_sums_differences'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 합계&차이]")
-        .appendField(new Blockly.FieldDropdown([ ["배열합계(sum)","np.sum"],["배열곱(prod)","np.prod"], ["누적곱(cumprod)","np.cumprod"], ["누적합계(cumsum)","np.cumsum"], ["이산차이(diff)","np.diff"], ["N차원배열기울기(gradient)","np.gradient"], ["두배열의외적(cross)","np.cross"], ["적분(trapz)","np.trapz"]]), "numpy_Sums_differences_opt");
+        .appendField(new Blockly.FieldDropdown([ ["배열합계(sum)","np.sum"],["배열곱(prod)","np.prod"], ["누적곱(cumprod)","np.cumprod"], ["누적합계(cumsum)","np.cumsum"], ["이산차이(diff)","np.diff"]]), "numpy_Sums_differences_opt");
     this.appendValueInput("numpy_Sums_differences_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -325,7 +323,7 @@ Blockly.Blocks['numpy_matrix_vector_products'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 행렬&벡터]")
-        .appendField(new Blockly.FieldDropdown([["두배열내적(dot)","np.dot"], ["두벡터내적(vdot)","np.vdot"], ["두벡터외적(outer)","np.outer"], ["두배열행렬곱(matmul)","np.matmul"], ["두배열크로네커곱(kron)","np.kron"]]), "numpy_Matrix_vector_products_opt");
+        .appendField(new Blockly.FieldDropdown([["두배열내적(dot)","np.dot"]]), "numpy_Matrix_vector_products_opt");
     this.appendValueInput("numpy_Matrix_vector_products_val")
         .setCheck(null);
     this.setInputsInline(true);
@@ -343,7 +341,7 @@ Blockly.Blocks['numpy_matrix_decomposition'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 분해]")
-        .appendField(new Blockly.FieldDropdown([["qr분해(linalg.qr)","np.linalg.qr"], ["특이값분해(linalg.svd)","np.linalg.svd"], ["촐레스키(linalg.cholesky)","np.linalg.cholesky"]]), "numpy_Matrix_Decomposition_opt");
+        .appendField(new Blockly.FieldDropdown([["특이값분해(linalg.svd)","np.linalg.svd"]]), "numpy_Matrix_Decomposition_opt");
     this.appendValueInput("numpy_Matrix_Decomposition_val")
         .setCheck(null);
     this.setInputsInline(true);
