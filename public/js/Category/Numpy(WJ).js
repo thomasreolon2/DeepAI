@@ -716,53 +716,53 @@ NUMPY += '</block>';
 //<!-- 검색 -->';
 NUMPY += '</category>';
 
-NUMPY += '<category name="%{BKY_NUM_LOGIC}" colour="%{BKY_NUMPY_HUE}">';
+// NUMPY += '<category name="%{BKY_NUM_LOGIC}" colour="%{BKY_NUMPY_HUE}">';
 //<label text="논리"></label>';
-NUMPY += '<label text="%{BKY_NUM_LO}"></label>';
+// NUMPY += '<label text="%{BKY_NUM_LO}"></label>';
 
 //<!-- 논리 / 배열 -->'; 
-NUMPY += ' <block type="numpy_array_contents">';
-NUMPY += '  <value name="numpy_Array_contents_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_array_contents">';
+// NUMPY += '  <value name="numpy_Array_contents_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 논리 / 배열  -->';
 
 //<!-- 논리 / 비교 -->'; 
-NUMPY += ' <block type="numpy_comparison">';
-NUMPY += '  <value name="numpy_Comparison_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_comparison">';
+// NUMPY += '  <value name="numpy_Comparison_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 논리 / 비교  -->';
 
 //   NUMPY += '<label text="문자열"></label>';
-NUMPY += '<label text="%{BKY_NUM_STR}"></label>';
+// NUMPY += '<label text="%{BKY_NUM_STR}"></label>';
 //<!-- 문자열 / 연산1 -->'; 
-NUMPY += ' <block type="numpy_string_operations">';
-NUMPY += '  <value name="numpy_String_operations_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_string_operations">';
+// NUMPY += '  <value name="numpy_String_operations_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 문자열 / 연산1  -->';
 
 //<!-- 문자열 / 연산2 -->'; 
-NUMPY += ' <block type="numpy_string_operations2">';
-NUMPY += '  <value name="numpy_String_operations2_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpy_string_operations2">';
+// NUMPY += '  <value name="numpy_String_operations2_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 문자열 / 연산2  -->';
 
 //<!-- 문자열 / 정보 -->'; 
-NUMPY += ' <block type="numpystring_information">';
-NUMPY += '  <value name="numpyString_information_val">';
-NUMPY += '      <block type="class_func_param"></block>';
-NUMPY += '  </value>';
-NUMPY += '</block>';
+// NUMPY += ' <block type="numpystring_information">';
+// NUMPY += '  <value name="numpyString_information_val">';
+// NUMPY += '      <block type="class_func_param"></block>';
+// NUMPY += '  </value>';
+// NUMPY += '</block>';
 //<!-- 문자열 / 정보  -->';
 
-NUMPY += '</category>';
+// NUMPY += '</category>';
 //<!-- import numpy as np -->';
 
 NUMPY += '</category>';
