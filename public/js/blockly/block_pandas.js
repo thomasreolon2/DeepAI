@@ -1874,3 +1874,27 @@ Blockly.Blocks['df_series3'] = {
       this.setHelpUrl("");
   }
 };
+
+////////////////////////////
+////// 2021-04-21
+///////////////////////////
+
+// 판다스 난,널 판단
+Blockly.Blocks['pandas_numpy'] = {
+  init: function() {
+    this.appendValueInput('VAR')
+        .appendField(Blockly.Msg.PANDAS_NUMPY)
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(".to_numpy(");
+    this.appendValueInput("INPUT")
+        .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_PANDAS_HUE}");
+  this.setTooltip("");
+  this.setHelpUrl("");
+  }
+};

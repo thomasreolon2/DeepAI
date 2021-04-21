@@ -857,6 +857,7 @@ Blockly.Msg['PANDAS_DROP1'] = "인덱스"
 Blockly.Msg['PANDAS_DROP2'] = "기준" //"중점" 
 Blockly.Msg['PANDAS_DROP_DUPLICATES'] = "[중복값삭제]"
 Blockly.Msg['pandas_dropna'] = "[결측치처리]"
+Blockly.Msg['PANDAS_NUMPY'] = "[넘파이배열]"
 
 // ---- 맷플롯립
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ 임포트 ] matplotlib를 plt로";

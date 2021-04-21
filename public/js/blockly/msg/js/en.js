@@ -855,6 +855,7 @@ Blockly.Msg['PANDAS_DROP1'] = "index"
 Blockly.Msg['PANDAS_DROP2'] = "axis"
 Blockly.Msg['PANDAS_DROP_DUPLICATES'] = "[drop_duplicates]"
 Blockly.Msg['pandas_dropna'] = "[dropna]"
+Blockly.Msg['PANDAS_NUMPY'] = "[to_numpy]"
 
 // ---- 맷플롯립
 Blockly.Msg['MATPLOT_VISUALIZATION_LIBRARY'] = "[ import ] matplotlib as plt";

@@ -156,6 +156,18 @@ PANDAS += '</block>';
 PANDAS += '</value>';
 PANDAS += '</block>';
 
+PANDAS += '<block type="pandas_numpy">';
+PANDAS += '<value name="VAR">';
+PANDAS += '<block type="variables_get">';
+PANDAS += '<field name="VAR">df</field>';
+PANDAS += '</block>';
+PANDAS += '</value>';
+PANDAS += '<value name="INPUT">';
+PANDAS += '<shadow type="indata">';
+PANDAS += '<field name="indata1"></field>';
+PANDAS += '</shadow>';
+PANDAS += '</value>';
+PANDAS += '</block>';
 //<!-- 범위설정 -->';
 //<!-- PANDAS += '<block type="select_row_column_value">';
 // PANDAS += '<value name="select_data">';
