@@ -416,6 +416,7 @@ MAT += '</category >';
 // //<!-- ************************************************** ************************* *************************  -->';
 // //<!-- ***************************************  데이터 시각화 (Matplotlib)  ******************************************  -->';
 // //<!-- ************************************************** ************************* *************************  -->';
+//<!--  matplot pie    -->
 MAT += '<category name="%{BKY_MAT_VISUAL}" colour="%{BKY_VISUAL_HUE}">';
 MAT +=      '<block type="matplotlib_pie">';
 MAT +=          '<value name="data">';
@@ -445,6 +446,50 @@ MAT +=          '</value>';
 MAT +=          '<value name="explode">';
 MAT +=              '<shadow type="indata">';
 MAT +=                  '<field name="indata1">(0,0.1,0,0)</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="other">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1"></field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+//<!--  matplot bubble    -->
+MAT +=      '<block type="matplotlib_bubble">';
+MAT +=          '<value name="data_x">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">y</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="data_y">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">x</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="data_z">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">z</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="color">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">\'violet\'</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="title">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">\'Bubble Chart\'</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="legend">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">\'(x,y,z)\'</field>';
 MAT +=              '</shadow>';
 MAT +=          '</value>';
 

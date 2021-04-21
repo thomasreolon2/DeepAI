@@ -614,7 +614,7 @@ Blockly.Blocks['scipy_fft'] = {
 };
 
 Blockly.defineBlocksWithJsonArray([
-    // 출력설정 plt 버전
+    // 출력설정 pie 차트
     {
         "type": "matplotlib_pie",
         "message0": "%{BKY_MATPLOT_PIE}",
@@ -650,5 +650,48 @@ Blockly.defineBlocksWithJsonArray([
         "colour": "%{BKY_VISUAL_HUE}",
         "tooltip": "",
         "helpUrl": ""
+    },
+
+    // 출력설정 pie 차트
+    {
+        "type": "matplotlib_bubble",
+        "message0": "%{BKY_MATPLOT_BUBBLE}",
+        "args0": [
+        {
+            "type": "input_value",
+            "name": "data_x"
+        },
+        {
+            "type": "input_value",
+            "name": "data_y"
+        },
+        {
+            "type": "input_value",
+            "name": "data_z"
+        },
+        {
+            "type": "input_value",
+            "name": "color"
+        },
+        {
+            "type": "input_value",
+            "name": "title"
+        },
+        {
+            "type": "input_value",
+            "name": "legend"
+        },
+        {
+            "type": "input_value",
+            "name": "other"
+        }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_VISUAL_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
     }
+
 ]);

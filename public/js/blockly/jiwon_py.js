@@ -332,11 +332,37 @@ Blockly.Python['matplotlib_pie'] = function(block) {
 
   if(value_other==""){
     var code = `plt.pie(${value_data}, labels=${value_labels}, autopct=${value_autopct}, explode=${value_explode})
-plt.title=${value_title}
+plt.title=(${value_title})
 plt.show()`;
   } else {
     var code = `plt.pie(${value_data}, labels=${value_labels}, autopct=${value_autopct}, explode=${value_explode}, ${value_other})
 plt.title=(${value_title})
+plt.show()`;
+  }
+  
+  return code;
+};
+
+// 맷플롯립 버블 만들기
+Blockly.Python['matplotlib_bubble'] = function(block) {
+  var value_data_x = Blockly.Python.valueToCode(block, 'data_x', Blockly.Python.ORDER_ATOMIC);
+  var value_data_y = Blockly.Python.valueToCode(block, 'data_y', Blockly.Python.ORDER_ATOMIC);
+  var value_data_z = Blockly.Python.valueToCode(block, 'data_z', Blockly.Python.ORDER_ATOMIC);
+  var value_color = Blockly.Python.valueToCode(block, 'color', Blockly.Python.ORDER_ATOMIC);
+  var value_title = Blockly.Python.valueToCode(block, 'title', Blockly.Python.ORDER_ATOMIC);
+  var value_legend = Blockly.Python.valueToCode(block, 'legend', Blockly.Python.ORDER_ATOMIC);
+  var value_other = Blockly.Python.valueToCode(block, 'other', Blockly.Python.ORDER_ATOMIC);
+
+
+  if(value_other==""){
+    var code = `plt.scatter(${value_data_x}, ${value_data_y}, ${value_data_z}, color=${value_color})
+plt.title=(${value_title})
+plt.legend=([${value_legend}])
+plt.show()`;
+  } else {
+    var code = `plt.scatter(${value_data_x}, ${value_data_y}, ${value_data_z}, color=${value_color}, ${value_other})
+plt.title=(${value_title})
+plt.legend([${value_legend}])
 plt.show()`;
   }
   

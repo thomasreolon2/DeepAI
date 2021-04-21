@@ -872,6 +872,7 @@ Blockly.Msg['MATPLOT_PRE_GRAPH_1'] = "[출력 설정] 위치 %1 %2 %3 %4 %5 %6 �
 Blockly.Msg['MATPLOT_PRE_GRAPH_2_PLT'] = "[출력 설정] plt. %1  %2 %3 범례  %4 색 %5 기타설정 %6  ";
 Blockly.Msg['MATPLOT_PRE_GRAPH_1_PLT'] = "[출력 설정] plt. %1  %2 %3 제목    %4 X축  %5 Y축  %6 범례  %7 색 %8 기타설정 %9  ";
 Blockly.Msg['MATPLOT_PIE'] = "[파이형] plt.pie 데이터 %1 라벨 %2 출력설정 %3 제목 %4 분리표현 %5 기타설정 %6  ";
+Blockly.Msg['MATPLOT_BUBBLE'] = "[버블형] plt.scatter x %1 y %2 z %3 색상 %4 제목 %5 범례 %6 기타설정 %7  ";
 Blockly.Msg['MATPLOT_PRE_GRAPH_2'] = "선(plot)";
 Blockly.Msg['MATPLOT_PRE_GRAPH_3'] = "산점도(scatter)";
 Blockly.Msg['MATPLOT_PRE_GRAPH_4'] = "막대(bar)";
