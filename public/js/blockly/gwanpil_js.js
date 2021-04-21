@@ -275,3 +275,8 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = "\n";
         return code;
       };
+
+      Blockly.JavaScript['matplotlib_axes3d_bubble_plt'] = function (block) {
+        var code = "\n";
+        return code;
+      };

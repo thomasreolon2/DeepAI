@@ -572,6 +572,52 @@ MAT += '</value>';
 MAT += '</block >';
 //<!--  matplot 3차원 scatter(버블)    -->
 
+//<!--  matplot 3차원 plot_surface(서페이스)    -->
+MAT += '<block type="matplotlib_axes3d_graph_plt">';
+MAT += '<value name="xx">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">np.arange(-5, 5, 0.25)</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="yy">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">np.arange(-5, 5, 0.25)</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="zz">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">np.sin(np.sqrt(x**2 + y**2))</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_graph_Title">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">Test</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+
+MAT += '<value name="xlabel">';
+MAT += '<shadow type="indata">';
+MAT += "<field name='indata1'>X values</field>";
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="ylabel">';
+MAT += '<shadow type="indata">';
+MAT += "<field name='indata1'>Y values</field>";
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="zlabel">';
+MAT += '<shadow type="indata">';
+MAT += "<field name='indata1'>Z values</field>";
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="other">';
+MAT += '<shadow type="indata">';
+MAT += "<field name='indata1'>cmap='hot'</field>";
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '</block >';
+//<!--  matplot 3차원 plot_surface(서페이스)    -->
+
 
 //박스 그래프 2차원 
 

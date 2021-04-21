@@ -884,6 +884,7 @@ Blockly.Msg['MATPLOT_VIS_TREE_2'] = "X축 컬럼위치";
 Blockly.Msg['MATPLOT_VIS_TREE_3'] = "Y축 컬럼위치";
 Blockly.Msg['MATPLOT_HISTO_GRAPH_1_PLT'] = "[출력 설정] plt.히스토그램(hist) %1  제목    %2 X축  %3  Y축  %4  기타설정 %5  ";
 Blockly.Msg['MATPLOT_BUBBLE_GRAPH_1_PLT'] = "[출력 설정] plt.버블(scatter) %1 %2 %3 제목    %4  범례  %5  기타설정 %6  ";
+Blockly.Msg['MATPLOT_AXES3D_GRAPH_1_PLT'] = "[출력 설정] plt.서페이스(plot_surface) %1 %2 %3 제목    %4  X축  %5 Y축  %6 Z축  %7  기타설정 %8  ";
 
 // ---- 사이파이
 Blockly.Msg['SCIPY_IMPORT'] = "[임포트] 사이파이";

@@ -403,3 +403,22 @@ Blockly.Python['plt_subplot'] = function(block) {
     
       return code;
     };
+
+    Blockly.Python['matplotlib_axes3d_graph_plt'] = function(block) {
+      var xx = Blockly.Python.valueToCode(block, 'xx', Blockly.Python.ORDER_ATOMIC);
+      var yy = Blockly.Python.valueToCode(block, 'yy', Blockly.Python.ORDER_ATOMIC);
+      var zz = Blockly.Python.valueToCode(block, 'zz', Blockly.Python.ORDER_ATOMIC);
+      var title = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Title', Blockly.Python.ORDER_ATOMIC);
+      var xlabel = Blockly.Python.valueToCode(block, 'xlabel', Blockly.Python.ORDER_ATOMIC);
+      var ylabel = Blockly.Python.valueToCode(block, 'ylabel', Blockly.Python.ORDER_ATOMIC);
+      var zlabel = Blockly.Python.valueToCode(block, 'zlabel', Blockly.Python.ORDER_ATOMIC);
+      var other = Blockly.Python.valueToCode(block, 'other', Blockly.Python.ORDER_ATOMIC);
+
+      if(other != ""){
+        other = ', ' + other;
+      }
+
+      var code = `from mpl_toolkits.mplot3d import Axes3D\nx = ${xx}\ny = ${yy}\nz = ${zz}\nx,y = np.meshgrid(x, y)\nz = np.sin(np.sqrt(x**2 + y**2))\n\nfig = plt.figure()\nax = Axes3D(fig)\nax.plot_surface(x, y, z${other})\n\nax.set_xlabel('${xlabel}')\nax.set_ylabel('${ylabel}')\nax.set_zlabel('${zlabel}')\nplt.title('${title}')\n`;
+    
+      return code;
+    };

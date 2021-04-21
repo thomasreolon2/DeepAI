@@ -734,4 +734,48 @@ Blockly.defineBlocksWithJsonArray(
       "tooltip": "",
       "helpUrl": ""
     },
+    {
+      "type": "matplotlib_axes3d_graph_plt",
+      "message0": "%{BKY_MATPLOT_AXES3D_GRAPH_1_PLT}",
+      "args0": [  
+        {
+          "type": "input_value",
+          "name": "xx"
+        },
+        {
+          "type": "input_value",
+          "name": "yy"
+        },
+        {
+          "type": "input_value",
+          "name": "zz"
+        },
+        {
+          "type": "input_value",
+          "name": "matplotlib_pre_graph_Title"
+        },
+        {
+          "type": "input_value",
+          "name": "xlabel"
+        },
+        {
+          "type": "input_value",
+          "name": "ylabel"
+        },
+        {
+          "type": "input_value",
+          "name": "zlabel"
+        },
+        {
+          "type": "input_value",
+          "name": "other"
+        },
+      ],
+      "inputsInline": true,
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": "%{BKY_VISUAL_HUE}",
+      "tooltip": "",
+      "helpUrl": ""
+    },
   ]);
