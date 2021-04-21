@@ -697,6 +697,135 @@ ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_locatio
   return code;
 };
   
+
+
+//matplot2 _updated_final 
+Blockly.Python['matplotlib_pre_graph_plt'] = function(block) {
+  var value_matplotlib_pre_graph_location1 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location1', Blockly.Python.ORDER_ATOMIC);
+  var value_matplotlib_pre_graph_location2 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location2', Blockly.Python.ORDER_ATOMIC);
+
+
+  var xx = Blockly.Python.valueToCode(block, 'xx', Blockly.Python.ORDER_ATOMIC);
+  var yy = Blockly.Python.valueToCode(block, 'yy', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_matplotlib_graph_select = block.getFieldValue('matplotlib_graph_select');
+  var text_matplotlib_pre_graph_title = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Title', Blockly.Python.ORDER_ATOMIC);
+  var text_matplotlib_pre_graph_xlable = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Xlable', Blockly.Python.ORDER_ATOMIC);
+  var text_matplotlib_pre_graph_ylable = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Ylable', Blockly.Python.ORDER_ATOMIC);
+
+  var text_matplotlib_pre_legend = Blockly.Python.valueToCode(block, 'matplotlib_pre_legend', Blockly.Python.ORDER_ATOMIC);
+
+  var value_matplotlib_pre_color = Blockly.Python.valueToCode(block, 'matplotlib_pre_color', Blockly.Python.ORDER_ATOMIC);
+  var text_matplotlib_pre_other = Blockly.Python.valueToCode(block, 'matplotlib_pre_other', Blockly.Python.ORDER_ATOMIC);
+  
+   // 그래프 color 없을 때
+  if(value_matplotlib_pre_color == ""){
+    value_matplotlib_pre_color = "None";
+  }
+
+  var matplot_lo ; 
+  var matplot_graph; 
+  var matplot_line; 
+
+  switch(dropdown_matplotlib_graph_select){   
+    case "matplotlib_line" : 
+    matplot_graph =  "plot"; 
+    break;
+
+    case "matplotlib_scatter" :
+    matplot_graph =  "scatter";  
+    break; 
+ 
+    case "matplotlib_bar" :
+    matplot_graph = "bar";  
+    break;  
+
+    case "matplotlib_error_bar" :   
+    matplot_graph =  "errorbar";   
+    break;
+
+    case "matplotlib_box" :  
+    matplot_graph =  "boxplot";   
+    break;
+
+    case "matplotlib_histogram" :  
+    matplot_graph =  "hist";    
+    break;  
+
+    default:  
+    break;
+  }  
+
+// 코드를 위해 
+var code ;   
+
+// 기존 코드내용 
+if(DL_Gra == "graph_or_1"){//둘중 하나 
+ //우진 수정 전 code =`ax_lst[${value_matplotlib_pre_graph_location1}].${matplot_graph}( `;
+  code =`plt.${matplot_graph}( `;  //우진 수정본
+}else if(DL_Gra == "graph_both_1"){
+  code =`plt.${matplot_graph}( `;  
+}else{
+  code =`plt.${matplot_graph}(` ;  
+}
+
+
+// 그래프에 따른 뒷 내용 변환 concat
+
+// 에러바 그래프
+if(dropdown_matplotlib_graph_select == "matplotlib_error_bar")
+{  
+  code = code.concat(`${xx + ", " + yy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
+}
+// 산점도 그래프, 선그래프 
+else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram" || dropdown_matplotlib_graph_select=="matplotlib_bar")
+{
+  // 그래프 color 있을 때 
+  if(value_matplotlib_pre_color.length > 0)
+  {
+    // 기타 부분 있을 때 
+    if(text_matplotlib_pre_other.length > 0){
+      code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
+    } else {
+      code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
+    }
+  }
+ 
+  
+}
+// 박스 그래프
+else if(dropdown_matplotlib_graph_select == "matplotlib_box" )
+{    
+    
+  if(text_matplotlib_pre_other.length > 0){
+    code = code.concat(`${xx + ", " + yy }, ${text_matplotlib_pre_other} )`);    
+  } else {
+    code = code.concat(`${xx + ", " + yy })`);   
+  }
+} 
+
+//킹우진의 수정
+if(DL_Gra == "graph_or_1"){
+  code =  code.concat(`\nplttitle("${text_matplotlib_pre_graph_title}") 
+plt.xlabel("${text_matplotlib_pre_graph_xlable}")
+plt.ylabel("${text_matplotlib_pre_graph_ylable}") 
+plt.legend(loc='best')\n`); 
+  
+}else if(DL_Gra == "graph_both_1"){
+  code =  code.concat(`\nplt.title("${text_matplotlib_pre_graph_title}")
+plt.xlabel("${text_matplotlib_pre_graph_xlable}")
+plt.ylabel("${text_matplotlib_pre_graph_ylable}") 
+plt..legend(loc='best')\n`);
+  
+}else{ 
+  code =  code.concat(`\nplt.title("${text_matplotlib_pre_graph_title}")
+plt.xlabel("${text_matplotlib_pre_graph_xlable}")
+plt.ylabel("${text_matplotlib_pre_graph_ylable}")
+plt.legend(loc='best')\n`);  
+}
+
+return code;
+};
+
 // if(DL_Gra == "graph_or_1"){
 //   code =  code.concat(`\nax_lst[${value_matplotlib_pre_graph_location1}].set_title("${text_matplotlib_pre_graph_title}") 
 // ax_lst[${value_matplotlib_pre_graph_location1}].set_xlabel("${text_matplotlib_pre_graph_xlable}")
