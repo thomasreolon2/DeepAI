@@ -360,6 +360,23 @@ Blockly.JavaScript['matplotlib_pre_graph_plt'] = function (block) {
   return code;
 };
 
+
+Blockly.JavaScript['matplotlib_pre_graph_plt_2'] = function (block) {
+  var value_matplotlib_pre_graph_location1 = Blockly.JavaScript.valueToCode(block, 'matplotlib_pre_graph_location1', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_matplotlib_pre_graph_location2 = Blockly.JavaScript.valueToCode(block, 'matplotlib_pre_graph_location2', Blockly.JavaScript.ORDER_ATOMIC);
+  var xx= Blockly.JavaScript.valueToCode(block, 'xx', Blockly.JavaScript.ORDER_ATOMIC);
+  var yy= Blockly.JavaScript.valueToCode(block, 'yy', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_matplotlib_graph_select = block.getFieldValue('matplotlib_graph_select');
+  var text_matplotlib_pre_graph_title = block.getFieldValue('matplotlib_pre_graph_Title');
+  var text_matplotlib_pre_graph_xlable = block.getFieldValue('matplotlib_pre_graph_Xlable');
+  var text_matplotlib_pre_graph_ylable = block.getFieldValue('matplotlib_pre_graph_Ylable');
+  var text_matplotlib_pre_legend = block.getFieldValue('matplotlib_pre_legend');
+  var value_matplotlib_pre_color = Blockly.JavaScript.valueToCode(block, 'matplotlib_pre_color', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = "\n";
+  return code;
+};
+
 //matplot3
 Blockly.JavaScript['matplotlib_graph_end'] = function (block) {
   // TODO: Assemble JavaScript into code variable.

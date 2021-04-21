@@ -865,6 +865,7 @@ Blockly.Msg['MATPLOT_VAL_VI'] = "[ 테이블 형식 출력 ]   %1 변수  %2 ";
 Blockly.Msg['MATPLOT_MAIN'] = "[ 그래프 개수 설정 ]  %1 ( %2 , %3  )";
 Blockly.Msg['MATPLOT_MAIN_1'] = "[ 그래프 사이즈 설정 ]  %1 ( %2 , %3  )"; // 
 Blockly.Msg['MATPLOT_PRE_GRAPH_1'] = "[출력 설정] 위치 %1 %2 %3 %4 %5 %6 제목  %7 X축  %8 Y축  %9 범례  %10 색 %11 기타설정 %12  ";
+Blockly.Msg['MATPLOT_PRE_GRAPH_2_PLT'] = "[출력 설정] plt. %1  %2 %3 범례  %4 색 %5 기타설정 %6  ";
 Blockly.Msg['MATPLOT_PRE_GRAPH_1_PLT'] = "[출력 설정] plt. %1  %2 %3 제목    %4 X축  %5 Y축  %6 범례  %7 색 %8 기타설정 %9  ";
 Blockly.Msg['MATPLOT_PRE_GRAPH_2'] = "선(plot)";
 Blockly.Msg['MATPLOT_PRE_GRAPH_3'] = "산점도(scatter)";

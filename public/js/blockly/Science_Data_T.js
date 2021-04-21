@@ -927,6 +927,74 @@ Blockly.defineBlocksWithJsonArray(
   },
 
 
+
+  // 출력설정 2
+  {
+    "type": "matplotlib_pre_graph_plt_2",
+    "message0": "%{BKY_MATPLOT_PRE_GRAPH_2_PLT}",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "matplotlib_graph_select",
+        "options": [
+          [
+            "%{BKY_MATPLOT_PRE_GRAPH_2}",
+            "matplotlib_line"
+          ],
+          [
+            "%{BKY_MATPLOT_PRE_GRAPH_3}",
+            "matplotlib_scatter"
+          ],
+          [
+            "%{BKY_MATPLOT_PRE_GRAPH_4}",
+            "matplotlib_bar"
+          ],
+          [
+            "%{BKY_MATPLOT_PRE_GRAPH_5}",
+            "matplotlib_error_bar"
+          ],
+          [
+            "%{BKY_MATPLOT_PRE_GRAPH_6}",
+            "matplotlib_box"
+          ],
+          [
+            "%{BKY_MATPLOT_PRE_GRAPH_7}",
+            "matplotlib_histogram"
+          ]
+        ]
+      },
+      {
+        "type": "input_value",
+        "name": "xx"
+      },
+      {
+        "type": "input_value",
+        "name": "yy"
+      },
+    
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_legend"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_color"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_other"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_VISUAL_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+
+
   //matplot3 
   {
     "type": "matplotlib_graph_end",
