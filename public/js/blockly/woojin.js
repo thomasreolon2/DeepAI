@@ -129,7 +129,68 @@
     "colour": "%{BKY_VISUAL_HUE}",
     "tooltip": "",
     "helpUrl": ""
-  }]);
+  },
+
+  {
+    "type": "line_plot",
+    "message0": "%{BKY_MATPLOT_LINE_GRAPH}",
+    "args0": [
+      // {
+      //   "type": "input_value",
+      //   "name": "matplotlib_pre_graph_location1"
+      // },
+      // {
+      //   "type": "input_dummy"
+      // },
+      // {
+      //   "type": "input_value",
+      //   "name": "matplotlib_pre_graph_location2"
+      // },
+      
+      {
+        "type": "input_value",
+        "name": "xx"
+      },
+      {
+        "type": "input_value",
+        "name": "yy"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_graph_Title"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_graph_Xlable"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_graph_Ylable"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_legend"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_color"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_pre_other"
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_VISUAL_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  }
+
+
+
+]);
 // 이후로는 현재 사용하지 않는 블럭
 
 //조회 sql = “SELECT (필드) FROM (테이블) ORDER BY (필드)”

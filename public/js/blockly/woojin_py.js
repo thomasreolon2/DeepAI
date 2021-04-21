@@ -187,3 +187,41 @@ plt.legend(loc='best')\n`);
 return code;
 };
 
+
+
+Blockly.Python['line_plot'] = function(block) {
+  
+  var xx = Blockly.Python.valueToCode(block, 'xx', Blockly.Python.ORDER_ATOMIC);
+  var yy = Blockly.Python.valueToCode(block, 'yy', Blockly.Python.ORDER_ATOMIC);
+ 
+  var text_matplotlib_pre_graph_title = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Title', Blockly.Python.ORDER_ATOMIC);
+  var text_matplotlib_pre_graph_xlable = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Xlable', Blockly.Python.ORDER_ATOMIC);
+  var text_matplotlib_pre_graph_ylable = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Ylable', Blockly.Python.ORDER_ATOMIC);
+
+  var text_matplotlib_pre_legend = Blockly.Python.valueToCode(block, 'matplotlib_pre_legend', Blockly.Python.ORDER_ATOMIC);
+
+  var value_matplotlib_pre_color = Blockly.Python.valueToCode(block, 'matplotlib_pre_color', Blockly.Python.ORDER_ATOMIC);
+  var text_matplotlib_pre_other = Blockly.Python.valueToCode(block, 'matplotlib_pre_other', Blockly.Python.ORDER_ATOMIC);
+  
+   // 그래프 color 없을 때
+  if(value_matplotlib_pre_color == ""){
+    value_matplotlib_pre_color = "None";
+  }
+
+  
+
+  
+// 코드를 위해 
+if(text_matplotlib_pre_other.length > 0){
+  var code = `plt.plot(${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", color = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )
+plt.title("${text_matplotlib_pre_graph_title}")\nplt.xlabel("${text_matplotlib_pre_graph_xlable}")\nplt.ylabel("${text_matplotlib_pre_graph_ylable}")\nplt.legend(loc='best')\n`;
+} else {
+  var code = `plt.plot(${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", color = ${value_matplotlib_pre_color} )
+plt.title("${text_matplotlib_pre_graph_title}")\nplt.xlabel("${text_matplotlib_pre_graph_xlable}")\nplt.ylabel("${text_matplotlib_pre_graph_ylable}")\nplt.legend(loc='best')\n`;
+}
+
+
+ 
+return code;
+};
+
