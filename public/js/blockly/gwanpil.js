@@ -663,3 +663,75 @@ Blockly.Blocks['set_xyticks'] = {
       this.setHelpUrl("");
   }
 };
+
+Blockly.defineBlocksWithJsonArray(
+  [
+    {
+      "type": "matplotlib_histo_graph_plt",
+      "message0": "%{BKY_MATPLOT_HISTO_GRAPH_1_PLT}",
+      "args0": [  
+        {
+          "type": "input_value",
+          "name": "xx"
+        },
+        {
+          "type": "input_value",
+          "name": "matplotlib_pre_graph_Title"
+        },
+        {
+          "type": "input_value",
+          "name": "matplotlib_pre_graph_Xlable"
+        },
+        {
+          "type": "input_value",
+          "name": "matplotlib_pre_graph_Ylable"
+        },
+        {
+          "type": "input_value",
+          "name": "matplotlib_pre_other"
+        }
+      ],
+      "inputsInline": true,
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": "%{BKY_VISUAL_HUE}",
+      "tooltip": "",
+      "helpUrl": ""
+    },
+    {
+      "type": "matplotlib_bubble_graph_plt",
+      "message0": "%{BKY_MATPLOT_BUBBLE_GRAPH_1_PLT}",
+      "args0": [  
+        {
+          "type": "input_value",
+          "name": "xx"
+        },
+        {
+          "type": "input_value",
+          "name": "yy"
+        },
+        {
+          "type": "input_value",
+          "name": "zz"
+        },
+        {
+          "type": "input_value",
+          "name": "matplotlib_pre_graph_Title"
+        },
+        {
+          "type": "input_value",
+          "name": "legend"
+        },
+        {
+          "type": "input_value",
+          "name": "matplotlib_pre_other"
+        }
+      ],
+      "inputsInline": true,
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": "%{BKY_VISUAL_HUE}",
+      "tooltip": "",
+      "helpUrl": ""
+    },
+  ]);

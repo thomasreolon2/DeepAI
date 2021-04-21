@@ -265,3 +265,13 @@ Blockly.JavaScript['gp'] = function (block) {
         var code = '\n';
         return [code, Blockly.JavaScript.ORDER_NONE];
       };
+
+      Blockly.JavaScript['matplotlib_histo_graph_plt'] = function (block) {
+        var code = "\n";
+        return code;
+      };
+
+      Blockly.JavaScript['matplotlib_histo_bubble_plt'] = function (block) {
+        var code = "\n";
+        return code;
+      };

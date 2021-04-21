@@ -364,3 +364,42 @@ Blockly.Python['plt_subplot'] = function(block) {
         var code = `${var_text1}.set_xticks(${var_text2})\n${var_text1}.set_yticks(${var_text3})\n`;
         return code;
     };
+
+
+    //matplot2 _updated_final 
+    Blockly.Python['matplotlib_histo_graph_plt'] = function(block) {
+      var xx = Blockly.Python.valueToCode(block, 'xx', Blockly.Python.ORDER_ATOMIC);
+      var title = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Title', Blockly.Python.ORDER_ATOMIC);
+      var xlable = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Xlable', Blockly.Python.ORDER_ATOMIC);
+      var ylable = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Ylable', Blockly.Python.ORDER_ATOMIC);
+    
+      var value_matplotlib_pre_color = Blockly.Python.valueToCode(block, 'matplotlib_pre_color', Blockly.Python.ORDER_ATOMIC);
+      var other = Blockly.Python.valueToCode(block, 'matplotlib_pre_other', Blockly.Python.ORDER_ATOMIC);
+      
+       // 그래프 color 없을 때
+      if(value_matplotlib_pre_color == ""){
+        value_matplotlib_pre_color = "None";
+      }
+    
+      var code = `x = ${xx}\nplt.hist(x, ${other})\nplt.title("${title}")\nplt.xlabel("${xlable}")\nplt.ylabel("${ylable}")\n`;
+    
+      return code;
+    };
+
+    Blockly.Python['matplotlib_bubble_graph_plt'] = function(block) {
+      var xx = Blockly.Python.valueToCode(block, 'xx', Blockly.Python.ORDER_ATOMIC);
+      var yy = Blockly.Python.valueToCode(block, 'yy', Blockly.Python.ORDER_ATOMIC);
+      var zz = Blockly.Python.valueToCode(block, 'zz', Blockly.Python.ORDER_ATOMIC);
+      var title = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_Title', Blockly.Python.ORDER_ATOMIC);
+      var legend = Blockly.Python.valueToCode(block, 'legend', Blockly.Python.ORDER_ATOMIC);
+    
+      var other = Blockly.Python.valueToCode(block, 'matplotlib_pre_other', Blockly.Python.ORDER_ATOMIC);
+
+      if(other != ""){
+        other = ', ' + other;
+      }
+
+      var code = `x = ${xx}\ny = ${yy}\nz = ${zz}\nplt.scatter(x,y,z${other})\nplt.title("${title}")\nplt.legend([${legend}])\n`;
+    
+      return code;
+    };

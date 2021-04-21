@@ -418,6 +418,77 @@ MAT += '</category >';
 MAT += '<category name="%{BKY_MAT_VISUAL}" colour="%{BKY_VISUAL_HUE}">';
 
 
+//<!--  matplot 1차원 히스토그램    -->
+MAT += '<block type="matplotlib_histo_graph_plt">';
+MAT += '<value name="xx">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">np.random.uniform(size = 1000)</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_graph_Title">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">Test</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+
+MAT += '<value name="matplotlib_pre_graph_Xlable">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">X</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_graph_Ylable">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">Y</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_legend">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">test</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_other">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1"></field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '</block >';
+//<!--  matplot 1차원 히스토그램    -->
+
+//<!--  matplot 3차원 scatter(버블)    -->
+MAT += '<block type="matplotlib_bubble_graph_plt">';
+MAT += '<value name="xx">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">np.random.normal(size=100)</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="yy">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">np.random.normal(size=100)</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="zz">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">np.random.normal(size=100)*100</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_graph_Title">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">Test</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+
+MAT += '<value name="legend">';
+MAT += '<shadow type="indata">';
+MAT += "<field name='indata1'>'(x,y,z)'</field>";
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_other">';
+MAT += '<shadow type="indata">';
+MAT += "<field name='indata1'>c='violet'</field>";
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '</block >';
+//<!--  matplot 3차원 scatter(버블)    -->
 
 MAT += '</category >';
 
