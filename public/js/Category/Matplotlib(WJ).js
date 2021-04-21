@@ -8,19 +8,19 @@ MAT += '<category name="%{BKY_MAT_BASIC}" colour="%{BKY_VISUAL_HUE}">';
 
 // MAT += '<block type="val_vi"></block >';
 // //<!--  그래프 출력 갯수    -->';
-// MAT += '<block type="matplotlib_main">';
-// MAT += '<value name="matplotlib_main_cols">';
-// MAT += '<shadow type="math_number">';
-// MAT += '<field name="NUM">2</field>';
-// MAT += '</shadow>';
-// MAT += '</value>';
+MAT += '<block type="matplotlib_main">';
+MAT += '<value name="matplotlib_main_cols">';
+MAT += '<shadow type="math_number">';
+MAT += '<field name="NUM">2</field>';
+MAT += '</shadow>';
+MAT += '</value>';
 
-// MAT += '<value name="matplotlib_main_rows">';
-// MAT += '<shadow type="math_number">';
-// MAT += '<field name="NUM">2</field>';
-// MAT += '</shadow>';
-// MAT += '</value>';
-// MAT += '</block >';
+MAT += '<value name="matplotlib_main_rows">';
+MAT += '<shadow type="math_number">';
+MAT += '<field name="NUM">2</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '</block >';
 // //<!--  그래프 출력 갯수    -->';
 
 
