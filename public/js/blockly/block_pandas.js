@@ -1240,9 +1240,12 @@ Blockly.Blocks['pandas_unique'] = {
     this.appendDummyInput()
         .appendField(".")
         .appendField(new Blockly.FieldDropdown([["고유값리스트(unique)","unique"], ["고유값개수(nunique)","nunique"],["리스트내 값확인(isin)","isin"],["값 개수(value_counts)","value_counts"]]), "DROP");
-        this.appendValueInput("INPUT")
+    this.appendValueInput("INPUT")
+        .appendField("(")
         .setCheck(null);
-        this.setInputsInline(true);
+    this.appendDummyInput()
+        .appendField(")");    
+    this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_PANDAS_HUE}");
   this.setTooltip("");
@@ -1665,7 +1668,10 @@ Blockly.Blocks['pandas_corr'] = {
         .appendField(".")
         .appendField(new Blockly.FieldDropdown([["두변수간(corr)","corr"], ["모든변수간(corrwith)","corrwith"],["두변수공분산(cov)","cov"],["(std)","std"]]), "DROP");
     this.appendValueInput("INPUT2")
+        .appendField("(")
         .setCheck(null);
+    this.appendDummyInput()
+        .appendField(")");        
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("%{BKY_PANDAS_HUE}");
