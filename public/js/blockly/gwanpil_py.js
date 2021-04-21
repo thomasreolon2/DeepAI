@@ -377,11 +377,15 @@ Blockly.Python['plt_subplot'] = function(block) {
       var other = Blockly.Python.valueToCode(block, 'matplotlib_pre_other', Blockly.Python.ORDER_ATOMIC);
       
        // 그래프 color 없을 때
-      if(value_matplotlib_pre_color == ""){
+       if(value_matplotlib_pre_color == ""){
         value_matplotlib_pre_color = "None";
       }
+
+      if(other != ""){
+        other = ", " + other;
+      }
     
-      var code = `x = ${xx}\nplt.hist(x, ${other})\nplt.title("${title}")\nplt.xlabel("${xlable}")\nplt.ylabel("${ylable}")\n`;
+      var code = `x = ${xx}\nplt.hist(x${other})\nplt.title("${title}")\nplt.xlabel("${xlable}")\nplt.ylabel("${ylable}")\n`;
     
       return code;
     };
