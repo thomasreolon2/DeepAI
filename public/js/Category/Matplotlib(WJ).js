@@ -500,6 +500,22 @@ MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=      '</block>';
 
+//<!--  matplot 컬러맵    -->
+MAT +=      '<block type="matplotlib_colormap">';
+MAT +=          '<value name="data_x">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">x</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="title">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">\'Colormap\'</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+
 //<!--  matplot 1차원 히스토그램    -->
 MAT += '<block type="matplotlib_histo_graph_plt">';
 MAT += '<value name="xx">';

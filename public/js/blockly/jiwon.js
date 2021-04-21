@@ -692,6 +692,28 @@ Blockly.defineBlocksWithJsonArray([
         "colour": "%{BKY_VISUAL_HUE}",
         "tooltip": "",
         "helpUrl": ""
+    },
+
+    // 출력설정 color map
+    {
+        "type": "matplotlib_colormap",
+        "message0": "%{BKY_MATPLOT_COLORMAP}",
+        "args0": [
+        {
+            "type": "input_value",
+            "name": "data_x"
+        },
+        {
+            "type": "input_value",
+            "name": "title"
+        }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_VISUAL_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
     }
 
 ]);

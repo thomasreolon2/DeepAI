@@ -305,3 +305,12 @@ Blockly.JavaScript['matplotlib_bubble'] = function(block) {
   let code = "\n";
   return code;
 };
+
+// 맷플롯립 컬러맵
+Blockly.JavaScript['matplotlib_colormap'] = function(block) {
+  var value_data_x = Blockly.JavaScript.valueToCode(block, 'data_x', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_title = Blockly.JavaScript.valueToCode(block, 'title', Blockly.JavaScript.ORDER_ATOMIC);
+
+  var code = `\n`;
+  return code;
+};
