@@ -75,6 +75,24 @@ Blockly.Python['axs_set_xlim'] = function(block) {
   return code;
 };
 
+Blockly.Python['set_xlim_ylim_'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val_x = Blockly.Python.valueToCode(block, 'val_x', Blockly.Python.ORDER_ATOMIC);
+  var value_val_y = Blockly.Python.valueToCode(block, 'val_y', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${value_name}.xlim(${value_val_x})\n${value_name}.ylim(${value_val_y})\n`
+  return code;
+};
+
+Blockly.Python['set_xticks_yticks'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_val_x = Blockly.Python.valueToCode(block, 'val_x', Blockly.Python.ORDER_ATOMIC);
+  var value_val_y = Blockly.Python.valueToCode(block, 'val_y', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${value_name}.xticks(${value_val_x})\n${value_name}.yticks(${value_val_y})\n`
+  return code;
+};
+
 Blockly.Python['axs_set_xlabel'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   var value_val = Blockly.Python.valueToCode(block, 'val', Blockly.Python.ORDER_ATOMIC);

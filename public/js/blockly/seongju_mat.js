@@ -114,15 +114,41 @@ Blockly.Blocks['plt_figure'] = {
     }
   };
 
-Blockly.Blocks['axs_set_xlim'] = {
+Blockly.Blocks['set_xlim_ylim_'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("[ax[].set_xlim]");
+        .appendField("[축범위] ");
     this.appendValueInput("NAME")
         .setCheck(null)
-        .appendField("좌표");
-        this.appendValueInput("val")
+        
+    this.appendValueInput("val_x")
+        .setCheck(null) 
+        .appendField("xlim");
+    this.appendValueInput("val_y")
         .setCheck(null)
+        .appendField("ylim");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour("%{BKY_VISUAL_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['set_xticks_yticks'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[축눈금] ");
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        
+    this.appendValueInput("val_x")
+        .setCheck(null) 
+        .appendField("xticks");
+    this.appendValueInput("val_y")
+        .setCheck(null)
+        .appendField("yticks");
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

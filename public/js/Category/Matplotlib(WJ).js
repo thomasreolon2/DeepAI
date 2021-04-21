@@ -289,19 +289,58 @@ MAT += '<block type="matplotlib_plt_show"></block >';
 // MAT += '</value>';
 // MAT += '</block >';
 
-// MAT += '<block type="plt_axis">';
-// MAT += '<value name="list">';
-// MAT += '<block type="variables_get">';
-// MAT += '<field name="VAR">plt</field>';
-// MAT += '</block >';
-// MAT += '</value>';
-// MAT += '<value name="NAME">';
-// MAT += '<shadow type="indata">';
-// MAT += '<field name="indata1"></field>';
-// MAT += '</shadow>';
-// MAT += '</value>';
-// MAT += '</block >';
+MAT += '<block type="plt_axis">';
+MAT += '<value name="list">';
+MAT += '<block type="variables_get">';
+MAT += '<field name="VAR">plt</field>';
+MAT += '</block >';
+MAT += '</value>';
+MAT += '<value name="NAME">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1"></field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '</block >';
 
+
+
+
+MAT += '<block type="set_xlim_ylim_">';
+MAT += '<value name="NAME">';
+MAT += '<block type="variables_get">';
+MAT += '<field name="VAR">plt</field>';
+MAT += '</block >';
+MAT += '</value>';
+MAT += '<value name="val_x">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1"></field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="val_y">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1"></field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '</block >';
+
+
+MAT += '<block type="set_xticks_yticks">';
+MAT += '<value name="NAME">';
+MAT += '<block type="variables_get">';
+MAT += '<field name="VAR">plt</field>';
+MAT += '</block >';
+MAT += '</value>';
+MAT += '<value name="val_x">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1"></field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="val_y">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1"></field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '</block >';
 // MAT += '<block type="plt_figure">';
 // MAT += '<value name="list">';
 // MAT += '<block type="variables_get">';
@@ -315,18 +354,19 @@ MAT += '<block type="matplotlib_plt_show"></block >';
 // MAT += '</value>';
 // MAT += '</block >';
 
-// MAT += '<block type = "pie_subplots_1">';
-// MAT += '<value name="name1">';
-// MAT += '<block type="variables_get">';
-// MAT += '<field name="VAR">plt</field>';
-// MAT += '</block >';
-// MAT += '</value>';
-// MAT += '<value name="name2">';
-// MAT += '<shadow type="indata">';
-// MAT += '<field name="indata1"></field>';
-// MAT += '</shadow>';
-// MAT += '</value>';
-// MAT += '</block >';
+// imshow()
+MAT += '<block type = "pie_subplots_1">';
+MAT += '<value name="name1">';
+MAT += '<block type="variables_get">';
+MAT += '<field name="VAR">plt</field>';
+MAT += '</block >';
+MAT += '</value>';
+MAT += '<value name="name2">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1"></field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '</block >';
 
 // MAT += '<block type="shape">';
 // MAT += '<value name="VAR1">';

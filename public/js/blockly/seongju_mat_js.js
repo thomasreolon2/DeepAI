@@ -52,6 +52,19 @@ Blockly.JavaScript['axs_set_xlim'] = function(block) {
   return code;
 };
 
+Blockly.JavaScript['set_xlim_ylim_'] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
+
+Blockly.JavaScript['set_xticks_yticks'] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  return code;
+};
 
 Blockly.JavaScript['axs_set_xlabel'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
