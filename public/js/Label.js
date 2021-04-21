@@ -18,6 +18,8 @@ Blockly.Msg["PAN_SERIES"] = "시리즈";
 //맷플롯립
 
 
+
+
 Blockly.Msg["MAT_BASIC"] = "기본";
 Blockly.Msg["MAT_VISUAL"] = "데이터시각화";
 

@@ -110,6 +110,7 @@ MAT += '</block >';
 // //<!--  matplot2 시각화 plt 버전   -->';
 
 
+
 // //<!--  matplot2 시각화 준비(출력설정)      -->';
 MAT += '<block type="matplotlib_pre_graph">';
 MAT += '<value name="matplotlib_pre_graph_location1">';
@@ -525,6 +526,64 @@ MAT += '</shadow>';
 MAT += '</value>';
 MAT += '</block >';
 //<!--  matplot 3차원 scatter(버블)    -->
+
+
+//박스 그래프 2차원 
+
+MAT += '<block type="bar_char">';
+// MAT += '<value name="matplotlib_pre_graph_location1">';
+// MAT += '<shadow type="math_number">';
+// MAT += '<field name="NUM">0</field>';
+// MAT += '</shadow>'; 
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_graph_location2">';
+// MAT += '<shadow type="math_number">';
+// MAT += '<field name="NUM">0</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+MAT += '<value name="xx">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">x_data</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="yy">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">y_data</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_graph_Title">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">Test</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+
+MAT += '<value name="matplotlib_pre_graph_Xlable">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">X</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_graph_Ylable">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">Y</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_legend">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">test</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_color">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">"blue"</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '<value name="matplotlib_pre_other">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1"></field>';
+MAT += '</shadow>';
+MAT += '</value>';
+MAT += '</block >';
+
 
 MAT += '</category >';
 
