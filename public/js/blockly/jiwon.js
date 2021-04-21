@@ -612,3 +612,43 @@ Blockly.Blocks['scipy_fft'] = {
     this.setHelpUrl("");
     }
 };
+
+Blockly.defineBlocksWithJsonArray([
+    // 출력설정 plt 버전
+    {
+        "type": "matplotlib_pie",
+        "message0": "%{BKY_MATPLOT_PIE}",
+        "args0": [
+        {
+            "type": "input_value",
+            "name": "data"
+        },
+        {
+            "type": "input_value",
+            "name": "labels"
+        },
+        {
+            "type": "input_value",
+            "name": "autopct"
+        },
+        {
+            "type": "input_value",
+            "name": "title"
+        },
+        {
+            "type": "input_value",
+            "name": "explode"
+        },
+        {
+            "type": "input_value",
+            "name": "other"
+        }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_VISUAL_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+    }
+]);

@@ -413,10 +413,46 @@ MAT += '</block >';
 
 MAT += '</category >';
 // //<!-- ************************************************** ************************* *************************  -->';
-// //<!-- ***************************************  라인, 바 마커(Matplotlib)  ******************************************  -->';
+// //<!-- ***************************************  데이터 시각화 (Matplotlib)  ******************************************  -->';
 // //<!-- ************************************************** ************************* *************************  -->';
 MAT += '<category name="%{BKY_MAT_VISUAL}" colour="%{BKY_VISUAL_HUE}">';
+MAT +=      '<block type="matplotlib_pie">';
+MAT +=          '<value name="data">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">y</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
 
+MAT +=          '<value name="labels">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">x</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="autopct">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">\'%.2f%%\'</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="title">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">\'Bar Chart\'</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="explode">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">(0,0.1,0,0)</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+
+MAT +=          '<value name="other">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1"></field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
 
 //<!--  matplot 1차원 히스토그램    -->
 MAT += '<block type="matplotlib_histo_graph_plt">';

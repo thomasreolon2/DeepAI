@@ -276,3 +276,17 @@ Blockly.JavaScript['scipy_fft'] = function(block) {
   var code = `\n`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
+
+
+// 맷플롯립 파이 만들기
+Blockly.JavaScript['matplotlib_pie'] = function(block) {
+  var value_data = Blockly.JavaScript.valueToCode(block, 'data', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_labels = Blockly.JavaScript.valueToCode(block, 'labels', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_autopct = Blockly.JavaScript.valueToCode(block, 'autopct', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_title = Blockly.JavaScript.valueToCode(block, 'title', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_explode = Blockly.JavaScript.valueToCode(block, 'explode', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_other = Blockly.JavaScript.valueToCode(block, 'other', Blockly.JavaScript.ORDER_ATOMIC);
+
+  let code = "\n";
+  return code;
+};

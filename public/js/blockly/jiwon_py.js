@@ -319,3 +319,26 @@ Blockly.Python['scipy_fft'] = function(block) {
   var code = `fft.fft(${value_input})`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+// 맷플롯립 파이 만들기
+Blockly.Python['matplotlib_pie'] = function(block) {
+  var value_data = Blockly.Python.valueToCode(block, 'data', Blockly.Python.ORDER_ATOMIC);
+  var value_labels = Blockly.Python.valueToCode(block, 'labels', Blockly.Python.ORDER_ATOMIC);
+  var value_autopct = Blockly.Python.valueToCode(block, 'autopct', Blockly.Python.ORDER_ATOMIC);
+  var value_title = Blockly.Python.valueToCode(block, 'title', Blockly.Python.ORDER_ATOMIC);
+  var value_explode = Blockly.Python.valueToCode(block, 'explode', Blockly.Python.ORDER_ATOMIC);
+  var value_other = Blockly.Python.valueToCode(block, 'other', Blockly.Python.ORDER_ATOMIC);
+
+
+  if(value_other==""){
+    var code = `plt.pie(${value_data}, labels=${value_labels}, autopct=${value_autopct}, explode=${value_explode})
+plt.title=${value_title}
+plt.show()`;
+  } else {
+    var code = `plt.pie(${value_data}, labels=${value_labels}, autopct=${value_autopct}, explode=${value_explode}, ${value_other})
+plt.title=(${value_title})
+plt.show()`;
+  }
+  
+  return code;
+};
