@@ -815,4 +815,91 @@ PANDAS += '</category>';
 // PANDAS += '</block>';
 // PANDAS += '</value>';
 // PANDAS += '</block>'; -->
+
+PANDAS += '<category name="크롤링" colour="%{BKY_CROLL_HUE}">';
+PANDAS += '<block type="croll_bs4_import"></block>';
+
+PANDAS += '<block type="croll_requests_get">';
+PANDAS += '<value name="URL">';
+PANDAS += '<shadow type="indata">';
+PANDAS += '<field name="indata1">"https://www.melon.com/chart/index.htm"</field>';
+PANDAS += '</shadow>';
+PANDAS += '</value>';
+PANDAS += '</block>';
+
+PANDAS += '<block type="croll_req_text">';
+PANDAS += '<value name="VAR">';
+PANDAS += '<block type="variables_get">';
+PANDAS += '<field name="VAR">html</field>';
+PANDAS += '</block>';
+PANDAS += '</value>';
+PANDAS += '</block>';
+
+PANDAS += '<block type="croll_url_load">';
+PANDAS += '<value name="VAR">';
+PANDAS += '<block type="variables_get">';
+PANDAS += '<field name="VAR">soup</field>';
+PANDAS += '</block>';
+PANDAS += '</value>';
+PANDAS += '<value name="VAR2">';
+PANDAS += '<block type="variables_get">';
+PANDAS += '<field name="VAR">html</field>';
+PANDAS += '</block>';
+PANDAS += '</value>';
+PANDAS += '</block>';
+
+PANDAS += '<block type="croll_soup_select">';
+PANDAS += '<value name="VAR">';
+PANDAS += '<block type="variables_get">';
+PANDAS += '<field name="VAR">result</field>';
+PANDAS += '</block>';
+PANDAS += '</value>';
+PANDAS += '<value name="INPUT">';
+PANDAS += '<shadow type="indata">';
+PANDAS += '<field name="indata1">"div >span>a"</field>';
+PANDAS += '</shadow>';
+PANDAS += '</value>';
+PANDAS += '</block>';
+
+PANDAS += '<block type="croll_get_text">';
+PANDAS += '<value name="VAR">';
+PANDAS += '<block type="variables_get">';
+PANDAS += '<field name="VAR">result</field>';
+PANDAS += '</block>';
+PANDAS += '</value>';
+PANDAS += '</block>';
+
+PANDAS += '<block type="croll_find_all">';
+PANDAS += '<value name="VAR">';
+PANDAS += '<block type="variables_get">';
+PANDAS += '<field name="VAR">result</field>';
+PANDAS += '</block>';
+PANDAS += '</value>';
+PANDAS += '<value name="VAR2">';
+PANDAS += '<block type="variables_get">';
+PANDAS += '<field name="VAR">soup</field>';
+PANDAS += '</block>';
+PANDAS += '</value>';
+PANDAS += '<value name="INPUT">';
+PANDAS += '<shadow type="indata">';
+PANDAS += '<field name="indata1"></field>';
+PANDAS += '</shadow>';
+PANDAS += '</value>';
+PANDAS += '</block>';
+
+PANDAS += '<block type="croll_soup">';
+PANDAS += '<value name="VAR">';
+PANDAS += '<block type="variables_get">';
+PANDAS += '<field name="VAR">soup</field>';
+PANDAS += '</block>';
+PANDAS += '</value>';
+PANDAS += '<value name="INPUT">';
+PANDAS += '<shadow type="indata">';
+PANDAS += '<field name="indata1">title</field>';
+PANDAS += '</shadow>';
+PANDAS += '</value>';
+PANDAS += '</block>';
+
+PANDAS += '</category>';
+
 PANDAS += '</category>';
