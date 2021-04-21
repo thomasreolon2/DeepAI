@@ -19,11 +19,8 @@ Blockly.Msg["PAN_SERIES"] = "시리즈";
 
 
 Blockly.Msg["MAT_BASIC"] = "기본";
-Blockly.Msg["MAT_LINE"] = "라인,바&마커형";
-Blockly.Msg["MAT_IMAGE"] = "이미지,필드형";
-Blockly.Msg["MAT_SUB"] = "서브플롯형";
-Blockly.Msg["MAT_STAT"] = "통계형";
-Blockly.Msg["MAT_PIE"] = "파이형";
+Blockly.Msg["MAT_VISUAL"] = "데이터시각화";
+
 
 
 //사이킷런
