@@ -361,7 +361,3046 @@
   </div> <!-- container -->
 
   <!-- Toolbox 정의 -->
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" class="toolbox" style="display:none">
   
+    <category name="%{BKY_CATEGORY_MATPLOT}" colour="%{BKY_VISUAL_HUE}"> 
+      <category name="기본" colour="%{BKY_VISUAL_HUE}">
+        <!-- 그래프 출력 -->
+      <block type="visualization_library"></block>
+
+      <block type="visualization_library_cm"></block>
+
+      <block type="val_vi"></block>
+      <!--  그래프 출력 갯수    -->
+      <block type="matplotlib_main">
+        <value name="matplotlib_main_cols">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+
+        <value name="matplotlib_main_rows">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+      </block>
+      <!--  그래프 출력 갯수    -->
+
+
+      <!--  matplot2 시각화 준비(출력설정)      -->
+      <block type="matplotlib_pre_graph">
+        <value name="matplotlib_pre_graph_location1">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow> 
+        </value>
+        <value name="matplotlib_pre_graph_location2">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="xx">
+          <shadow type="indata">
+            <field name="indata1">x_data</field>
+          </shadow>
+        </value>
+        <value name="yy">
+          <shadow type="indata">
+            <field name="indata1">y_data</field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_graph_Title">
+          <shadow type="indata">
+            <field name="indata1">Test</field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_graph_Xlable">
+          <shadow type="indata">
+            <field name="indata1">X</field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_graph_Ylable">
+          <shadow type="indata">
+            <field name="indata1">Y</field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_legend">
+          <shadow type="indata">
+            <field name="indata1">test</field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_color">
+          <shadow type="indata">
+            <field name="indata1">'blue'</field>
+          </shadow>
+        </value>
+        <value name="matplotlib_pre_other">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      <!--  matplot2 시각화 준비      -->
+
+      <!--  matplot3 시각화 하기      -->
+      <!-- <block type="matplotlib_graph_end"></block> -->
+      <!--  matplot3 시각화 하기      -->
+      
+      <!--  matplot plt.show()      -->
+      <block type="matplotlib_plt_show"></block>
+      
+      <!-- 2021-01-21 그래프크기설정 양승국-->
+      <block type = "matp_Ex">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="d2">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+        <value name="d3">
+          <shadow type="math_number">
+            <field name="NUM">2</field>
+          </shadow>
+        </value>
+      </block>
+
+      <!-- subplots -->
+      <block type="subplots">
+        <value name="VAR1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="VAR2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+      
+      <!--  matplot plt.plot()      -->
+      <block type="ax_lst_plot">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+        </value>
+      </block>
+      
+      <!-- title -->
+      <block type = "matp_title">
+        <value name="d1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="d2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+  
+      <!-- set_title,  legend -->
+      <block type="plt_title_legend">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+          <value name="NAME2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+      </block>
+      <!-- label -->
+      <block type="plt_xlabel_ylabel">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">''</field>
+            </shadow>
+          </value>
+          <value name="NAME2">
+            <shadow type="indata">
+              <field name="indata1">''</field>
+            </shadow>
+          </value>
+      </block>
+
+      <!-- label -->
+      <block type="set_xlabel_ylabel">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1">''</field>
+            </shadow>
+          </value>
+          <value name="NAME2">
+            <shadow type="indata">
+              <field name="indata1">''</field>
+            </shadow>
+          </value>
+      </block>
+
+      <block type="plt_axis">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+        </value>
+      </block>
+
+      <block type="plt_figure">
+        <value name="list">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+          <value name="NAME">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+        </value>
+      </block>
+
+      <block type = "pie_subplots_1">
+        <value name="name1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="name2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type="shape">
+        <value name="VAR1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+      </block>
+
+      <!-- 2021-01-21 양승국 블럭 추가-->
+      <!--  matplot plt.plot()      --> 
+      <block type = "plt_ravel">
+        <value name="name1">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="name2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block>
+<!-- 
+      <block type="set_axis_off">
+        <value name="data">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="data2">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+      </block> -->
+      <!--  matplot plt.show()      -->
+
+      <!--  사이킷런 시각화 하기      -->
+      <!-- <block type="lrgraph"></block>
+      <block type="logicgraph"></block> -->
+      <!-- <block type="vis_tree"></block> -->
+      <!--  사이킷런 시각화 하기      -->
+
+      </category>
+    <!-- ************************************************** ************************* *************************  -->
+    <!-- ***************************************  라인, 바 마커(Matplotlib)  ******************************************  -->
+    <!-- ************************************************** ************************* *************************  -->
+      <category name="라인,바&마커형" colour="%{BKY_VISUAL_HUE}">
+
+        <label text="Plotting the coherence of two signals"></label>
+        
+          <block type="numpy_library"></block>
+  
+          <block type="visualization_library">
+            
+          </block>
+  
+          <block type="itdata">
+            <value name="itdata1">
+              <shadow type="numpy_random_generator">
+                <value name="numpy_Random_generator_val">
+                  <shadow type="indata">
+                    <field name="indata1">19680801</field>
+                </shadow>
+              </value>
+              </shadow>
+            </value>
+          </block>
+          
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">dt</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <shadow type="indata">
+                <field name="indata1">0.01</field>
+              </shadow>
+            </value>
+          </block>
+  
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">t</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <shadow type="numpy_numerical_ranges">
+                <value name="numpy_Numerical_ranges_val">
+                  <shadow type="indata">
+                    <field name="indata1">0,30,dt</field>
+                  </shadow>
+                </value>
+              </shadow>
+            </value>
+          </block>
+  
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">nse1</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="numpy_random_sample__">
+                <value name="numpy_Random_sample_val"> 
+                  <block type="text_length">
+                    <value name="VALUE">
+                      <shadow type="indata">
+                        <field name="indata1">t</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>  
+              </block> 
+            </value>
+          </block>
+  
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">nse2</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="numpy_random_sample__">
+                <value name="numpy_Random_sample_val"> 
+                  <block type="text_length">
+                    <value name="VALUE">
+                      <shadow type="indata">
+                        <field name="indata1">t</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>  
+              </block> 
+            </value>
+          </block>
+  <!-- nse1, nse2 만들기 -->
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">s1</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="Oper">
+                <value name="A">
+                  <block type="numpy_mathematical_functions">
+                    <value name="numpy_Mathematical functions_val"> 
+                      <block type="Oper_garbage">
+                        <value name="A">
+                          <block type="np_pi"></block>
+                        </value>
+                        <value name="B">
+                          <block type="indata">
+                            <field name="indata1">2*10*t</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>   
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="indata">
+                    <field name="indata1">nse1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+  
+  
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">s2</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="Oper">
+                <value name="A">
+                  <block type="numpy_mathematical_functions">
+                    <value name="numpy_Mathematical functions_val"> 
+                      <block type="Oper_garbage">
+                        <value name="A">
+                          <block type="np_pi"></block>
+                        </value>
+                        <value name="B">
+                          <block type="indata">
+                            <field name="indata1">2*10*t</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>   
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="indata">
+                    <field name="indata1">nse2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+  
+  
+          <block type="matplotlib_main">
+            <value name="matplotlib_main_cols">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+            <value name="matplotlib_main_rows">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+          </block>
+  
+  
+          <!-- <block type="ax_lst_plot">
+            <value name="list">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
+          </value>
+            <value name="NAME">
+              <shadow type="indata">
+                <field name="indata1">t,s1,t,s2</field>
+              </shadow>
+            </value>
+          </block> -->
+    
+          <block type="set_lim">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <value name="INPUT1">
+              <shadow type="indata">
+                <field name="indata1">0,2</field>
+              </shadow>
+            </value>
+            <value name="INPUT2">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
+          
+          <block type="matplotlib_pre_graph">
+            <value name="matplotlib_pre_graph_location1">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow> 
+            </value>
+            <value name="matplotlib_pre_graph_location2">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="xx">
+              <shadow type="indata">
+                <field name="indata1">t,s1</field>
+              </shadow>
+            </value>
+            <value name="yy">
+              <shadow type="indata">
+                <field name="indata1">t,s2</field>
+              </shadow>
+            </value>
+            <value name="matplotlib_pre_graph_Title">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+            <value name="matplotlib_pre_graph_Xlable">
+              <shadow type="indata">
+                <field name="indata1">time</field>
+              </shadow>
+            </value>
+            <value name="matplotlib_pre_graph_Ylable">
+              <shadow type="indata">
+                <field name="indata1">s1 and s2</field>
+              </shadow>
+            </value>
+            <value name="matplotlib_pre_legend">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+            <value name="matplotlib_pre_color">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
+
+
+          <!-- <block type="set_xlim">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <value name="INPUT1">
+              <shadow type="indata">
+                <field name="indata1">0,2</field>
+              </shadow>
+            </value>
+            <value name="INPUT2">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block> -->
+    
+    
+          <!-- <block type="set_xlabel">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <value name="INPUT">
+              <shadow type="indata">
+                <field name="indata1">'time'</field>
+              </shadow>
+            </value>
+          </block>
+    
+    
+          <block type="set_ylabel">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <value name="INPUT">
+              <shadow type="indata">
+                <field name="indata1">'s1 and s2'</field>
+              </shadow>
+            </value>
+          </block> -->
+    
+    
+          <block type="axs_grid">
+            <value name="NAME">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">0</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <value name="val">
+              <block type="logic_boolean"></block>
+            </value>
+          </block>
+    
+    
+  
+          <block type="many_variables">
+
+            <value name="NUMBER">
+              <shadow type="indata">
+                <field name="indata1">cxy, f</field>
+              </shadow>
+            </value>
+
+            <value name="VALUE">
+              <block type="cohere">
+                <value name="VAR">
+                  <block type = "va_sel">
+                    <value name="list">
+                      <block type="variables_get">
+                        <field name="VAR">ax</field>
+                      </block>
+                    </value>
+                    <value name="dic1">
+                      <shadow type="indata">
+                        <field name="indata1">1</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+                <value name="INPUT">
+                  <block type="Oper_garbage2">
+                    <value name="A">
+                      <block type="indata">
+                        <field name="indata1">s1, s2, 256, 1.</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="indata">
+                        <field name="indata1">dt</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+  
+  
+          <block type="set_ylabel">
+            <value name="VAR">
+              <block type = "va_sel">
+                <value name="list">
+                  <block type="variables_get">
+                    <field name="VAR">ax</field>
+                  </block>
+                </value>
+                <value name="dic1">
+                  <shadow type="indata">
+                    <field name="indata1">1</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            
+            <value name="INPUT">
+              <shadow type="indata">
+                <field name="indata1">'coherence'</field>
+              </shadow>
+            </value>
+          </block>
+  
+  
+          <block type="tight_layout">
+            <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">fig</field>
+              </block>
+            </value>
+            <value name="INPUT">
+              <shadow type="indata">
+                <field name="indata1"></field>
+              </shadow>
+            </value>
+          </block>
+  
+          <block type="matplotlib_plt_show"></block>
+          
+          <label text="Marker examples"></label>
+
+          <block type="numpy_library"></block>
+  
+          <block type="visualization_library">
+
+          </block>
+  
+          <block type="itdata">
+            <value name="itdata1">
+              <shadow type="numpy_random_generator">
+                <value name="numpy_Random_generator_val">
+                  <shadow type="indata">
+                    <field name="indata1">19680801</field>
+                </shadow>
+              </value>
+              </shadow>
+            </value>
+          </block>
+
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">x</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="numpy_random_sample">
+                <value name="numpy_Random_sample_val"> 
+                  <shadow type="math_number">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>  
+              </block> 
+            </value>
+          </block>
+
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">y</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="numpy_random_sample">
+                <value name="numpy_Random_sample_val"> 
+                  <shadow type="math_number">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>  
+              </block> 
+            </value>
+          </block>
+
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">z</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="np_sqrt">
+                <value name = "val1">
+                  <block type="Oper">
+                    <value name="A">
+                      <block type="Oper_garbage3">
+                        <value name="A">
+                          <block type="indata">
+                            <field name="indata1">x</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="indata">
+                            <field name="indata1">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="Oper_garbage3">
+                        <value name="A">
+                          <block type="indata">
+                            <field name="indata1">y</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="indata">
+                            <field name="indata1">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+
+          <block type="many_variables">
+            <value name="NUMBER">
+              <block type="indata">
+                <field name="indata1">fig, ax</field>
+              </block>
+            </value>
+            <value name="VALUE">
+              <block type="subplots">
+                <value name="VAR1">
+                  <block type="variables_get">
+                    <field name="VAR">plt</field>
+                  </block>
+                </value>
+                <value name="VAR2">
+                  <shadow type="indata">
+                    <field name="indata1">2, 3, sharex=True, sharey=True</field>
+                  </shadow>
+                </value>
+              </block>
+              </value> 
+            </block>
+
+
+          <!-- 0,0 그래프 -->
+
+          <block type="scatter_ex">
+            <value name = "v1">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name = "v2">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+
+            <value name = "x1">
+              <shadow type="indata">
+                <field name="indata1">x</field>
+              </shadow>
+            </value>
+
+            <value name = "y1">
+              <shadow type="indata">
+                <field name="indata1">y</field>
+              </shadow>
+            </value>
+            <value name = "title">
+              <shadow type="indata">
+                <field name="indata1">"marker='>'"</field>
+              </shadow>
+            </value>
+            <value name = "s">
+              <shadow type="indata">
+                <field name="indata1">80</field>
+              </shadow>
+            </value>
+            <value name = "c">
+              <shadow type="indata">
+                <field name="indata1">z</field>
+              </shadow>
+            </value>
+            <value name = "marker">
+              <shadow type="indata">
+                <field name="indata1">">"</field>
+              </shadow>
+            </value>
+          </block>
+          
+          <!-- 0,1 그래프 -->
+          <block type="scatter_ex">
+            <value name = "v1">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name = "v2">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+
+            <value name = "x1">
+              <shadow type="indata">
+                <field name="indata1">x</field>
+              </shadow>
+            </value>
+
+            <value name = "y1">
+              <shadow type="indata">
+                <field name="indata1">y</field>
+              </shadow>
+            </value>
+            <value name = "title">
+              <shadow type="indata">
+                <field name="indata1">r"marker=r'\$\alpha\$'"</field>
+              </shadow>
+            </value>
+            <value name = "s">
+              <shadow type="indata">
+                <field name="indata1">80</field>
+              </shadow>
+            </value>
+            <value name = "c">
+              <shadow type="indata">
+                <field name="indata1">z</field>
+              </shadow>
+            </value>
+            <value name = "marker">
+              <shadow type="indata">
+                <field name="indata1">r'$\alpha$'</field>
+              </shadow>
+            </value>
+          </block>
+
+          <block type = "create_list">
+            <value name="list">
+              <block type="variables_get">
+                <field name="VAR">verts</field>
+              </block>
+            </value>
+            <value name="text">
+              <shadow type="indata">
+                <field name="indata1">[-1, -1], [1, -1], [1, 1], [-1, -1]</field>
+              </shadow>
+            </value>
+          </block>
+
+          <!-- 0,2 그래프 -->
+          <block type="scatter_ex">
+            <value name = "v1">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name = "v2">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+
+            <value name = "x1">
+              <shadow type="indata">
+                <field name="indata1">x</field>
+              </shadow>
+            </value>
+
+            <value name = "y1">
+              <shadow type="indata">
+                <field name="indata1">y</field>
+              </shadow>
+            </value>
+            <value name = "title">
+              <shadow type="indata">
+                <field name="indata1">"marker=verts"</field>
+              </shadow>
+            </value>
+            <value name = "s">
+              <shadow type="indata">
+                <field name="indata1">80</field>
+              </shadow>
+            </value>
+            <value name = "c">
+              <shadow type="indata">
+                <field name="indata1">z</field>
+              </shadow>
+            </value>
+            <value name = "marker">
+              <shadow type="indata">
+                <field name="indata1">verts</field>
+              </shadow>
+            </value>
+          </block>
+
+          <!-- 1,0 그래프 -->
+          <block type="scatter_ex">
+            <value name = "v1">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name = "v2">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+
+            <value name = "x1">
+              <shadow type="indata">
+                <field name="indata1">x</field>
+              </shadow>
+            </value>
+
+            <value name = "y1">
+              <shadow type="indata">
+                <field name="indata1">y</field>
+              </shadow>
+            </value>
+            <value name = "title">
+              <shadow type="indata">
+                <field name="indata1">"marker=(5, 0)"</field>
+              </shadow>
+            </value>
+            <value name = "s">
+              <shadow type="indata">
+                <field name="indata1">80</field>
+              </shadow>
+            </value>
+            <value name = "c">
+              <shadow type="indata">
+                <field name="indata1">z</field>
+              </shadow>
+            </value>
+            <value name = "marker">
+              <shadow type="indata">
+                <field name="indata1">(5, 0)</field>
+              </shadow>
+            </value>
+          </block>
+
+          <!-- 1,1 그래프 -->
+          <block type="scatter_ex">
+            <value name = "v1">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name = "v2">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+
+            <value name = "x1">
+              <shadow type="indata">
+                <field name="indata1">x</field>
+              </shadow>
+            </value>
+
+            <value name = "y1">
+              <shadow type="indata">
+                <field name="indata1">y</field>
+              </shadow>
+            </value>
+            <value name = "title">
+              <shadow type="indata">
+                <field name="indata1">"marker=(5, 1)"</field>
+              </shadow>
+            </value>
+            <value name = "s">
+              <shadow type="indata">
+                <field name="indata1">80</field>
+              </shadow>
+            </value>
+            <value name = "c">
+              <shadow type="indata">
+                <field name="indata1">z</field>
+              </shadow>
+            </value>
+            <value name = "marker">
+              <shadow type="indata">
+                <field name="indata1">(5, 1)</field>
+              </shadow>
+            </value>
+          </block>
+
+          <!-- 1,2 그래프 -->
+          <block type="scatter_ex">
+            <value name = "v1">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name = "v2">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+
+            <value name = "x1">
+              <shadow type="indata">
+                <field name="indata1">x</field>
+              </shadow>
+            </value>
+
+            <value name = "y1">
+              <shadow type="indata">
+                <field name="indata1">y</field>
+              </shadow>
+            </value>
+            <value name = "title">
+              <shadow type="indata">
+                <field name="indata1">"marker=(5, 2)"</field>
+              </shadow>
+            </value>
+            <value name = "s">
+              <shadow type="indata">
+                <field name="indata1">80</field>
+              </shadow>
+            </value>
+            <value name = "c">
+              <shadow type="indata">
+                <field name="indata1">z</field>
+              </shadow>
+            </value>
+            <value name = "marker">
+              <shadow type="indata">
+                <field name="indata1">(5, 2)</field>
+              </shadow>
+            </value>
+          </block>
+        
+          <block type="tight_layout">
+            <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">plt</field>
+              </block>
+            </value>
+            <value name="INPUT">
+              <block type="indata">
+                <field name="indata1"></field>
+              </block>
+            </value>
+          </block>
+  
+          <block type="matplotlib_plt_show"></block>
+
+          <label text="Stackplots"></label>
+
+          <block type="numpy_library"></block>
+  
+          <block type="visualization_library">
+
+          </block>
+
+          <block type = "create_list">
+            <value name="list">
+              <block type="variables_get">
+                <field name="VAR">year</field>
+              </block>
+            </value>
+            <value name="text">
+              <shadow type="indata">
+                <field name="indata1">1950, 1960, 1970, 1980, 1990, 2000, 2010, 2018</field>
+              </shadow>
+            </value>
+          </block>
+
+          <block type = "create_dict">
+            <value name="list">
+              <block type="variables_get">
+                <field name="VAR">population_by_continent</field>
+              </block>
+            </value>
+            <value name="text">
+              <shadow type="indata">
+                <field name="indata1">'africa': [228, 284, 365, 477, 631, 814, 1044, 1275], 'americas': [340, 425, 519, 619, 727, 840, 943, 1006], 'asia': [1394, 1686, 2120, 2625, 3202, 3714, 4169, 4560], 'europe': [220, 253, 276, 295, 310, 303, 294, 293], 'oceania': [12, 15, 19, 22, 26, 31, 36, 39],</field>
+              </shadow>
+            </value>
+          </block>
+
+          <block type = "many_variables">
+            <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax</field></shadow></value>
+            <value name="VALUE"><block type = "pie_subplots"></block></value>
+          </block>
+
+          <block type="ax_stackplot">
+            <value name="list_val">
+              <block type="variables_get">
+                <field name="VAR">year</field>
+              </block>
+            </value>
+            <value name="dic_val">
+              <block type ="dic_menu1_sj2">
+              </block>
+            </value>
+
+            <value name="dic_key">
+              <block type ="dic_menu1_sj">
+              </block>
+            </value>
+          </block>
+
+          <block type="plt_title_legend">
+            <value name="list">
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+              </block>
+            </value>
+              <value name="NAME">
+                <shadow type="indata">
+                  <field name="indata1">'World population'</field>
+                </shadow>
+              </value>
+              <value name="NAME2">
+                <shadow type="indata">
+                  <field name="indata1">loc='upper left'</field>
+                </shadow>
+              </value>
+          </block>
+
+          <block type="set_xlabel_ylabel">
+            <value name="list">
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+              </block>
+            </value>
+              <value name="NAME">
+                <shadow type="indata">
+                  <field name="indata1">'Year'</field>
+                </shadow>
+              </value>
+              <value name="NAME2">
+                <shadow type="indata">
+                  <field name="indata1">'Number of people (millions)'</field>
+                </shadow>
+              </value>
+          </block>
+
+
+          <block type="matplotlib_plt_show"></block>
+
+      </category>
+      <!-- ************************************************** ************************* *************************  -->
+    <!-- ***************************************  이미지 필드(Matplotlib)  ******************************************  -->
+    <!-- ************************************************** ************************* *************************  -->
+    <category name="이미지,필드형" colour="%{BKY_VISUAL_HUE}">
+
+      <!--Creating annotated heatmaps-->
+      <label text="Creating annotated heatmaps"></label>
+      
+      <!--라이브러리-->
+      <block type="numpy_library"></block>
+      <block type="visualization_library_1"></block>
+      
+      <block type = "create_list_1">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">"cucumber", "tomato", "lettuce", "asparagus","potato", "wheat", "barley"</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "create_list_2">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">"Farmer Joe", "Upland Bros.", "Smith Gardening","Agrifun", "Organiculture", "BioGoods Ltd.", "Cornylee Corp."</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "create_np_array_1">
+        <value name="text">
+          <shadow type="indata">
+            <field name="indata1">[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0],
+              [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0],
+              [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0],
+              [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0],
+              [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0],
+              [1.3, 1.2, 0.0, 0.0, 0.0, 3.2, 5.1],
+              [0.1, 2.0, 0.0, 1.4, 0.0, 1.9, 6.3]</field>
+          </shadow>
+        </value>
+      </block>
+
+      <block type = "many_variables">
+        <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax</field></shadow></value>
+        <value name="VALUE">
+          <block type = "plt_subplots">
+            <value name="name">
+              <block type="variables_get">
+                <field name="VAR">plt</field>
+              </block>
+            </value>
+            <value name="name2"><shadow type="indata"><field name="indata1"> </field></shadow></value>
+          </block>
+        </value>
+      </block>
+
+
+      <block type = "many_variables">
+        <value name="NUMBER">
+          <block type="variables_get">
+            <field name="VAR">im</field>
+          </block>
+        </value>
+        <value name="VALUE"><block type = "pie_subplots_1">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">harvest</field>
+            </shadow>
+          </value>
+        </block></value>
+      </block>
+
+      <block type = "set_xyticks">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <block type="numpy_numerical_ranges">
+            <value name="numpy_Numerical_ranges_val"> 
+              <block type="text_length">
+                <value name="VALUE">
+                  <shadow type="indata">
+                    <field name="indata1">farmers</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>  
+          </block> 
+        </value>
+        <value name="INPUT2">
+          <block type="numpy_numerical_ranges">
+            <value name="numpy_Numerical_ranges_val"> 
+              <block type="text_length">
+                <value name="VALUE">
+                  <shadow type="indata">
+                    <field name="indata1">vegetables</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>  
+          </block> 
+        </value>
+      </block>
+<!--
+      <block type = "set_xticks">
+        <value name="NUMBER"><block type="variables_get">
+          <field name="VAR">ax</field>
+        </block></value>
+        <value name="REAL_VALUE">
+          <block type="numpy_numerical_ranges">
+            <value name="numpy_Numerical_ranges_val"> 
+              <block type="text_length">
+                <value name="VALUE">
+                  <shadow type="indata">
+                    <field name="indata1">farmers</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>  
+          </block> 
+        </value>
+      </block>
+
+      <block type = "set_yticks">
+        <value name="NUMBER">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="REAL_VALUE">
+          <block type="numpy_numerical_ranges">
+            <value name="numpy_Numerical_ranges_val"> 
+              <block type="text_length">
+                <value name="VALUE">
+                  <shadow type="indata">
+                    <field name="indata1">vegetables</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>  
+          </block> 
+        </value>
+      </block>
+
+      <block type="set_xyticks">
+        <value name="x_data">
+          <block type="variables_get">
+            <field name="VAR">x_data</field>
+          </block>
+        </value>
+        <value name="y_data">
+          <block type="variables_get">
+            <field name="VAR">y_data</field>
+          </block>
+        </value>
+        <value name="x_train">
+          <block type="variables_get">
+            <field name="VAR">x_train</field>
+          </block>
+        </value>
+        <value name="x_test">
+          <block type="variables_get">
+            <field name="VAR">x_test</field>
+          </block>
+        </value>
+        <value name="y_train">
+          <block type="variables_get">
+            <field name="VAR">y_train</field>
+          </block>
+        </value>
+        <value name="y_test">
+          <block type="variables_get">
+            <field name="VAR">y_test</field>
+          </block>
+        </value>
+        <value name = "test_size">
+          <shadow type="indata">
+            <field name="indata1">0.2</field>
+          </shadow>
+        </value>
+        <value name = "seed">
+          <shadow type="indata">
+            <field name="indata1">0</field>
+          </shadow>
+        </value>
+      </block>
+    -->
+      <block type="set_xyticklabels">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata"><field name="indata1">farmers</field></shadow>
+        </value>
+        <value name="INPUT2">
+          <shadow type="indata"><field name="indata1">vegetables</field></shadow>
+        </value>
+      </block>
+<!--
+      <block type="set_xticklabels">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata"><field name="indata1">farmers</field></shadow>
+        </value>
+      </block>
+
+      <block type="set_yticklabels">
+        <value name="VAR">
+          <block type="variables_get">
+            <field name="VAR">ax</field>
+          </block>
+        </value>
+        <value name="INPUT">
+          <shadow type="indata"><field name="indata1">vegetables</field></shadow>
+        </value>
+      </block>
+    -->
+      <block type = "plt_setp">
+        <value name="REAL_VALUE_0">
+          <block type="variables_get">
+            <field name="VAR">plt</field>
+          </block>
+        </value>
+        <value name="REAL_VALUE">
+          <block type = "pie_subplots_2">
+            <value name="name1">
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="REAL_VALUE_2"><shadow type="indata"><field name="indata1">rotation=45, ha="right", rotation_mode="anchor"</field></shadow></value>
+      </block>
+
+      <!-- for 문 1 -->
+    <block type="py_for1">
+      <value name="item">
+        <block type="variables_get">
+          <field name="VAR">i</field>
+        </block>
+      </value>
+      <value name="list">
+        <block type="text_length">
+          <value name="VALUE">
+            <shadow type="indata">
+              <field name="indata1">vegetables</field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+     <!-- for 문 1 -->
+     <block type="py_for1">
+      <value name="item">
+        <block type="variables_get">
+          <field name="VAR">j</field>
+        </block>
+      </value>
+      <value name="list">
+        <block type="text_length">
+          <value name="VALUE">
+            <shadow type="indata">
+              <field name="indata1">farmers</field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">text</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type = "plt_text">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">j, i, harvest[i, j], ha="center", va="center", color="w"</field>
+            </shadow>
+          </value>  
+        </block>
+      </value>
+    </block>
+
+    <block type="set_title">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">"Harvest of local farmers (in tons/year)"</field></shadow>
+      </value>
+    </block>
+
+    <block type="tight_layout">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">fig</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type="matplotlib_plt_show"></block>
+    
+
+     
+
+
+    <label text="Pcolor Demo"></label>
+
+    <block type="numpy_library"></block>
+    <block type="visualization_library_2"></block>
+
+    <block type="numpy_random_generator_1">
+      <value name="numpy_Random_generator_val"> 
+        <shadow type="indata">
+          <field name="indata1">19680801</field>
+        </shadow>
+      </value>  
+    </block> 
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">z</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_random_sample">
+          <value name="numpy_Random_sample_val"> 
+            <shadow type="indata">
+              <field name="indata1">6, 10</field>
+            </shadow>
+          </value>  
+        </block> 
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, (ax0, ax1)</field></shadow></value>
+      <value name="VALUE">
+        <block type = "plt_subplots">
+          <value name="name">
+            <block type="variables_get">
+              <field name="VAR">plt</field>
+            </block>
+          </value>
+          <value name="name2"><shadow type="indata"><field name="indata1">2, 1</field></shadow></value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">c</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type = "pie_pcolor">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax0</field>
+            </block>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">z</field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type="set_title">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax0</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'default: no edges'</field></shadow>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">c</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type = "pie_pcolor">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+          <value name="name2">
+            <shadow type="indata">
+              <field name="indata1">z, edgecolors='k', linewidths=4</field>
+            </shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type="set_title">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata"><field name="indata1">'thick edges'</field></shadow>
+      </value>
+    </block>
+
+    <block type="tight_layout">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">fig</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type="matplotlib_plt_show"></block>
+
+    </category>
+    <!-- ************************************************** ************************* *************************  -->
+    <!-- ***************************************  서브플롯형(Matplotlib)  ******************************************  -->
+    <!-- ************************************************** ************************* *************************  -->
+      <category name="서브플롯형" colour="%{BKY_VISUAL_HUE}">
+        <label text="Zoom region inset axes"></label>
+        <!-- Zoom region inset axes -->
+        <block type="numpy_library"></block>
+        <block type="cbook_import"></block>
+
+        <block type="visualization_library">
+        </block>
+        
+        <block type="webdefine">
+          <value name="1">
+            <block type="variables_get">
+              <field name="VAR">get_demo_img</field>
+            </block>
+          </value>  
+          <value name="2">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">z</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="get_sample_data">
+              <value name="INPUT">
+                <shadow type="indata">
+                  <field name="indata1">axes_grid/bivariate_normal.npy</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+        
+        <block type="webreturn2">
+        <value name="return">
+          <shadow type="indata">
+            <field name="indata1">z, (-3,4,-4,3)</field>
+          </shadow>
+        </value>
+        </block> 
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">fig,ax</field></shadow></value>
+          <value name="VALUE">
+            <block type="subplots">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="VAR2">
+                <shadow type="indata">
+                  <field name="indata1">figsize=[5, 4]</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">Z,extent</field></shadow></value>
+          <value name="VALUE">
+            <block type="func_return11">
+            <value name="1">
+              <block type="variables_get">
+                <field name="VAR">get_demo_img</field>
+              </block>
+            </value> 
+            </block>
+          </value>
+        </block>
+        <!-- 지원 -->
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">Z2</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="numpy_ones_and_zeros">
+              <value name="numpy_Ones and zeros_val"> 
+                <shadow type="indata">
+                  <field name="indata1">(150,150)</field>
+                </shadow>
+              </value>  
+            </block> 
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">ny, nx</field></shadow></value>
+          <value name="VALUE">
+            <block type="shape">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">Z</field>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">Z2[30:30+ny, 30:30+nx]</field></shadow></value>
+          <value name="VALUE">
+            <block type="variables_get">
+              <field name="VAR">Z</field>
+            </block>
+          </value>
+        </block>
+        <!-- 밑에 imshow 임 -->
+        <block type="itdata">
+          <value name="itdata1">
+            <block type = "pie_subplots_1">
+              <value name="name1">
+                <block type="variables_get">
+                  <field name="VAR">ax</field>
+                </block>
+              </value>
+              <value name="name2">
+                <shadow type="indata">
+                  <field name="indata1">Z2, extent=extent, origin="lower"</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="set_inset_axes">
+            <value name="VAR">
+              <block type="variables_get">
+                <field name="VAR">ax</field>
+              </block>
+            </value>
+            <value name="INPUT"><shadow type="indata"><field name="indata1">[0.5, 0.5, 0.47, 0.47]</field></shadow></value>
+          </block>
+          </value>
+        </block>
+
+        <block type="itdata">
+          <value name="itdata1">
+            <block type="pie_subplots_1">
+              <value name="name1">
+                <block type="variables_get">
+                  <field name="VAR">axins</field>
+                </block>
+              </value>
+              <value name="name2">
+                <shadow type="indata">
+                  <field name="indata1">Z2, extent=extent, origin="lower"</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <!-- imshow 들어가야됨 -->
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">x1, x2, y1, y2</field></shadow></value>
+          <value name="VALUE"><shadow type="indata"><field name="indata1">-1.5, -0.9, -2.5, -1.9</field></shadow></value>
+        </block>
+
+        <block type="set_lim">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
+          </value>
+          <value name="INPUT1">
+            <shadow type="indata"><field name="indata1">x1, x2</field></shadow>
+          </value>
+          <value name="INPUT2">
+            <shadow type="indata"><field name="indata1">y1, y2</field></shadow>
+          </value>
+        </block>
+        
+        <block type="set_xyticklabels">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">''</field></shadow>
+          </value>
+          <value name="INPUT2">
+            <shadow type="indata"><field name="indata1">''</field></shadow>
+          </value>
+        </block>
+
+        
+
+        <block type="indicate_inset_zoom">
+          <value name="VAR1">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="VAR2">
+            <block type="variables_get">
+              <field name="VAR">axins</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="matplotlib_plt_show"></block>
+
+
+
+        <!--Plots with different scales-->
+    <label text="Plots with different scales"></label>
+    <block type="numpy_library"></block>
+    <block type="visualization_library_1"></block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">t</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_numerical_ranges">
+          <value name="numpy_Numerical_ranges_val"> 
+            <shadow type="indata"><field name="indata1">0.01, 10.0, 0.01</field></shadow>
+          </value>  
+        </block> 
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">data1</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_exp">
+          <value name="numpy_exp_num"> 
+            <shadow type="indata"><field name="indata1">t</field></shadow>
+          </value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">data2</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type="numpy_mathematical_functions">
+          <value name="numpy_Mathematical functions_val"> 
+            <shadow type="indata"><field name="indata1">2 * np.pi * t</field></shadow>
+          </value>   
+        </block> 
+      </value>
+    </block>
+    
+    <block type = "many_variables">
+      <value name="NUMBER"><shadow type="indata"><field name="indata1">fig, ax1</field></shadow></value>
+      <value name="VALUE">
+        <block type = "plt_subplots">
+          <value name="name">
+            <block type="variables_get">
+              <field name="VAR">plt</field>
+            </block>
+          </value>
+          <value name="name2"><shadow type="indata"><field name="indata1"> </field></shadow></value>
+        </block>
+      </value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">color</field>
+        </block>
+      </value>
+      <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:red'</field></shadow></value>
+    </block>
+
+    <block type="set_xlabel_ylabel">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1">'time (s)'</field>
+          </shadow>
+        </value>
+        <value name="NAME2">
+          <shadow type="indata">
+            <field name="indata1">'exp', color=color</field>
+          </shadow>
+        </value>
+    </block>
+
+    <block type="ax_lst_plot">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+    </value>
+      <value name="NAME">
+        <shadow type="indata"><field name="indata1">t, data1, color=color</field></shadow>
+      </value>
+    </block>
+
+    <block type = "tick_params">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">ax1</field>
+        </block>
+      </value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
+    </block>
+
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+      </value>
+      <value name="VALUE">
+        <block type = "twinx">
+          <value name="name1">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    
+    <block type = "many_variables">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">color</field>
+        </block>
+      </value>
+      <value name="VALUE"><shadow type="indata"><field name="indata1">'tab:blue'</field></shadow></value>
+    </block>
+
+    <block type="set_xlabel_ylabel">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+      </value>
+        <value name="NAME">
+          <shadow type="indata">
+            <field name="indata1"></field>
+          </shadow>
+        </value>
+        <value name="NAME2">
+          <shadow type="indata">
+            <field name="indata1">'sin', color=color</field>
+          </shadow>
+        </value>
+    </block>
+
+    <block type="ax_lst_plot">
+      <value name="list">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+    </value>
+      <value name="NAME">
+        <shadow type="indata"><field name="indata1">t, data2, color=color</field></shadow>
+      </value>
+    </block>
+
+    <block type = "tick_params">
+      <value name="NUMBER">
+        <block type="variables_get">
+          <field name="VAR">ax2</field>
+        </block>
+      </value>
+      <value name="REAL_VALUE"><shadow type="indata"><field name="indata1">axis='y', labelcolor=color</field></shadow></value>
+    </block>
+
+    <block type="tight_layout">
+      <value name="VAR">
+        <block type="variables_get">
+          <field name="VAR">fig</field>
+        </block>
+      </value>
+      <value name="INPUT">
+        <shadow type="indata">
+          <field name="indata1"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type="matplotlib_plt_show"></block>
+
+      </category>
+
+  <!-- ************************************************** ************************* *************************  -->
+  <!-- ***************************************  통계형 (Matplotlib)  ******************************************  -->
+  <!-- ************************************************** ************************* *************************  -->
+      <category name="통계형" colour="%{BKY_VISUAL_HUE}">
+        <label text="Box plots with custom fill colors"></label>
+
+        <block type="numpy_library"></block>
+        <block type="visualization_library">
+
+        </block>
+        
+        <block type="itdata">
+          <value name="itdata1">
+            <block type="numpy_random_generator">
+              <value name="numpy_Random_generator_val"> 
+                <shadow type="indata">
+                  <field name="indata1">19680801</field>
+                </shadow>
+              </value>  
+            </block> 
+          </value>
+        </block>
+        
+        <block type="many_variables">
+          <value name="NUMBER">
+              <block type="variables_get">
+                <field name="VAR">all_data</field>
+              </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">[np.random.normal(0, std, size=100) for std in range(1, 4)]</field></shadow>
+          </value>
+        </block>
+        
+        <block type = "create_list">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">labels</field>
+            </block>
+          </value>  
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">'x1', 'x2', 'x3'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <shadow type="indata"><field name="indata1">fig, (ax1, ax2)</field></shadow>
+          </value>
+          <value name="VALUE">
+            <block type="subplots">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="VAR2">
+                <shadow type="indata">
+                  <field name="indata1">nrows=1, ncols=2, figsize=(9, 4)</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">bplot1</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="boxplot">
+              <value name="VAR">
+                <block type="variables_get">
+                  <field name="VAR">ax1</field>
+                </block>
+              </value>
+              <value name="INPUT">
+                <shadow type="indata"><field name="indata1">all_data, vert=True, patch_artist=True, labels=labels</field></shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type="set_title">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">'Rectangular box plot'</field></shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">bplot2</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="boxplot">
+              <value name="VAR">
+                <block type="variables_get">
+                  <field name="VAR">ax2</field>
+                </block>
+              </value>
+              <value name="INPUT">
+                <shadow type="indata"><field name="indata1">all_data,notch=True,vert=True,patch_artist=True,labels=labels</field></shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type="set_title">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax2</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">'Notched box plot'</field></shadow>
+          </value>
+        </block>
+
+        <block type = "create_list">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">colors</field>
+            </block>
+          </value>  
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">'pink', 'lightblue', 'lightgreen'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="py_for">
+          <value name="item">
+            <shadow type="indata">
+              <field name="indata1">bplot</field>
+            </shadow>
+          </value>
+          <value name="list">
+            <shadow type="indata">
+              <field name="indata1">(bplot1, bplot2)</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="py_for">
+          <value name="item">
+            <shadow type="indata">
+              <field name="indata1">patch, color</field>
+            </shadow>
+          </value>
+          <value name="list">
+            <shadow type="indata">
+              <field name="indata1">zip(bplot['boxes'], colors)</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="set_facecolor">
+          <value name="VAR1">
+            <block type="variables_get">
+              <field name="VAR">patch</field>
+            </block>
+          </value>
+          <value name="VAR2">
+            <block type="variables_get">
+              <field name="VAR">color</field>
+            </block>
+          </value>
+        </block>
+
+        <block type="py_for">
+          <value name="item">
+            <shadow type="indata">
+              <field name="indata1">ax</field>
+            </shadow>
+          </value>
+          <value name="list">
+            <shadow type="indata">
+              <field name="indata1">[ax1, ax2]</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="yaxis_grid">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata"><field name="indata1">True</field></shadow>
+          </value>
+        </block>
+
+        <block type="set_xlabel_ylabel">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+            <value name="NAME">
+              <shadow type="indata">
+                <field name="indata1">'Three separate samples'</field>
+              </shadow>
+            </value>
+            <value name="NAME2">
+              <shadow type="indata">
+                <field name="indata1">'Observed values'</field>
+              </shadow>
+            </value>
+        </block>
+
+
+        <block type="matplotlib_plt_show"></block>
+
+        <label text="Some features of the histogram (hist) function"> </label>
+
+        <block type="numpy_library"></block>
+        <block type="visualization_library">
+
+        </block>
+
+        <block type="itdata">
+          <value name="itdata1">
+            <block type="numpy_random_generator">
+              <value name="numpy_Random_generator_val"> 
+                <shadow type="indata">
+                  <field name="indata1">19680801</field>
+                </shadow>
+              </value>  
+            </block> 
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">mu</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">100</field></shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">sigma</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">15</field></shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">x</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="Oper">
+              <value name="A">
+                <block type="variables_get">
+                  <field name="VAR">mu</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="Oper_x">
+                  <value name="A">
+                    <block type="variables_get">
+                      <field name="VAR">sigma</field>
+                    </block>
+                  </value>
+                  <value name="B">
+                    <block type="numpy_random_sample_x">
+                      <value name="numpy_Random_sample_val">
+                        <shadow type="indata"><field name="indata1">437</field></shadow>
+                      </value>
+                    </block>
+                  </value>
+                </block>
+              </value>
+
+            </block>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">num_bins</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">50</field></shadow>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <shadow type="indata"><field name="indata1">fig, ax</field></shadow>
+          </value>
+          <value name="VALUE">
+            <block type="subplots">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="VAR2">
+                <shadow type="indata">
+                  <field name="indata1"></field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <shadow type="indata"><field name="indata1">n, bins, patches</field></shadow>
+          </value>
+          <value name="VALUE">
+            <block type="hist">
+              <value name="VAR">
+                <block type="variables_get">
+                  <field name="VAR">ax</field>
+                </block>
+              </value>
+              <value name="INPUT">
+                <shadow type="indata"><field name="indata1">x, num_bins, density=True</field></shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type="many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">y</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata"><field name="indata1">((1 / (np.sqrt(2 * np.pi) * sigma)) *
+              np.exp(-0.5 * (1 / sigma * (bins - mu))**2))</field></shadow>
+          </value>
+        </block>
+
+        <block type="ax_lst_plot">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="NAME">
+            <shadow type="indata"><field name="indata1">bins, y, '--'</field></shadow>
+          </value>
+        </block>
+
+        <block type="set_xlabel_ylabel">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+            <value name="NAME">
+              <shadow type="indata">
+                <field name="indata1">'Smart'</field>
+              </shadow>
+            </value>
+            <value name="NAME2">
+              <shadow type="indata">
+                <field name="indata1">'Probability density'</field>
+              </shadow>
+            </value>
+        </block>
+
+        <block type="set_title">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1">'Histogram of IQ: $\mu=100$, $\sigma=15$'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="tight_layout">
+          <value name="VAR">
+            <block type="variables_get">
+              <field name="VAR">fig</field>
+            </block>
+          </value>
+          <value name="INPUT">
+            <shadow type="indata">
+              <field name="indata1"></field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="matplotlib_plt_show"></block>
+
+
+      </category>
+       <!-- ************************************************** ************************* *************************  -->
+    <!-- ***************************************  파이형(Matplotlib)  ******************************************  -->
+    <!-- ************************************************** ************************* *************************  -->
+      <category name="파이형" colour="%{BKY_VISUAL_HUE}">
+
+        <label text="Basic pie chart"></label>
+
+        <block type="visualization_library"></block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">labels</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <shadow type="indata">
+              <field name="indata1">'Frogs', 'Hogs', 'Dogs', 'Logs'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "create_list">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">sizes</field>
+            </block>
+          </value> 
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">15, 30, 45, 10</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "create_tuple">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">explode</field>
+            </block>
+          </value>  
+          <value name="text">
+            <shadow type="indata">
+              <field name="indata1">0, 0.1, 0, 0</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER"><shadow type="indata"><field name="indata1">fig1, ax1</field></shadow></value>
+          <value name="VALUE">
+            <block type="subplots">
+              <value name="VAR1">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="VAR2">
+                <shadow type="indata">
+                  <field name="indata1"></field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "pie_pie1">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+          <value name="d1">
+            <shadow type="indata">
+              <field name="indata1">sizes, explode = explode, labels = labels, autopct = '%1.1f%%', shadow = True, startangle = 90</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type = "pie_axis">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax1</field>
+            </block>
+          </value>
+          <value name="d1">
+            <shadow type="indata">
+              <field name="indata1">'equal'</field>
+            </shadow>
+          </value>
+        </block>
+
+        <block type="matplotlib_plt_show"></block>
+
+        <label text="Scatter plot on polar axis"></label>
+        
+        <block type="numpy_library"></block>
+
+        <block type="visualization_library"></block>
+
+        <block type="numpy_random_generator1">
+          <value name="numpy_Random_generator_val"> 
+            <block type="math_number">
+              <field name="NUM">19680801</field>
+            </block>
+          </value>  
+        </block> 
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">N</field>
+            </block>
+          </value>
+          <value name="VALUE"><shadow type="indata"><field name="indata1">150</field></shadow></value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">r</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="Oper1">
+              <value name="A">
+                <shadow type="indata">
+                  <field name="indata1">2</field>
+                </shadow>
+              </value>
+              <value name="B">
+                <block type="numpy_random_sample">
+                  <value name="numpy_Random_sample_val"> 
+                    <block type="variables_get">
+                      <field name="VAR">N</field>
+                    </block>
+                  </value>  
+                </block> 
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">theta</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="Oper1">
+              <value name="A">
+                <shadow type="indata">
+                  <field name="indata1">2</field>
+                </shadow>
+              </value>
+              <value name="B">
+                <block type="Oper1">
+                  <value name="A">
+                    <block type = "np_pi"></block>
+                  </value>
+                  <value name="B">
+                    <block type="numpy_random_sample">
+                      <value name="numpy_Random_sample_val"> 
+                        <block type="variables_get">
+                          <field name="VAR">N</field>
+                        </block>
+                      </value>  
+                    </block> 
+                  </value>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">area</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="Oper1">
+              <value name="A">
+                <shadow type="indata">
+                  <field name="indata1">200</field>
+                </shadow>
+              </value>
+              <value name="B">
+                <block type="Oper2">
+                  <value name="A">
+                    <block type="variables_get">
+                      <field name="VAR">r</field>
+                    </block>
+                  </value>
+                  <value name="B">
+                    <shadow type="indata">
+                      <field name="indata1">2</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">colors</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="variables_get">
+              <field name="VAR">theta</field>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">fig</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type = "pie_figure">
+              <value name="list">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="d1">
+                <shadow type="indata">
+                  <field name="indata1"></field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type = "pie_add_subplot">
+              <value name="list">
+                <block type="variables_get">
+                  <field name="VAR">fig</field>
+                </block>
+              </value>
+              <value name="d1">
+                <shadow type="indata">
+                  <field name="indata1">111, projection = 'polar'</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">c</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type = "pie_ax_scatter">
+              <value name="list">
+                <block type="variables_get">
+                  <field name="VAR">ax</field>
+                </block>
+              </value>
+              <value name="d1">
+                <shadow type="indata">
+                  <field name="indata1">theta, r, c = colors, s = area, cmap = 'hsv', alpha = 0.75</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type="matplotlib_plt_show"></block>
+        
+        <!-- ysk -->
+        <label text="Bar chart on polar axis"></label>
+
+        <block type="numpy_library"></block>
+
+        <block type="visualization_library"></block>
+
+        <block type="numpy_random_generator1">
+          <value name="numpy_Random_generator_val"> 
+            <block type="math_number">
+              <field name="NUM">19680801</field>
+            </block>
+          </value>  
+        </block> 
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">N</field>
+            </block>
+          </value>
+          <value name="VALUE"><shadow type="indata"><field name="indata1">20</field></shadow></value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">theta</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="pie_linspace">
+              <value name="d1">
+                <shadow type="indata"><field name="indata1">0.0, 2 * np.pi, N, endpoint = False</field></shadow>
+              </value>
+            </block>
+            </value>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">radii</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="Oper1">
+              <value name="A">
+                <shadow type="indata">
+                  <field name="indata1">10</field>
+                </shadow>
+              </value>
+              <value name="B">
+                <block type="numpy_random_sample">
+                  <value name="numpy_Random_sample_val"> 
+                    <block type="variables_get">
+                      <field name="VAR">N</field>
+                    </block>
+                  </value>  
+                </block> 
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">width</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type="Oper3">
+              <value name="A">
+                <block type = "np_pi"></block>
+              </value>
+              <value name="B">
+                <block type="Oper1">
+                  <value name="A">
+                    <shadow type="indata">
+                      <field name="indata1">4</field>
+                    </shadow>
+                  </value>
+                  <value name="B">
+                    <block type="numpy_random_sample">
+                      <value name="numpy_Random_sample_val"> 
+                        <block type="variables_get">
+                          <field name="VAR">N</field>
+                        </block>
+                      </value>  
+                    </block> 
+                  </value>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">colors</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type = "pie_cm_viridis">
+              <value name="d1">
+                <block type="Oper3">
+                  <value name="A">
+                    <block type="variables_get">
+                      <field name="VAR">radii</field>
+                    </block>
+                  </value>
+                  <value name="B">
+                    <shadow type="indata">
+                      <field name="indata1">10</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "many_variables">
+          <value name="NUMBER">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="VALUE">
+            <block type = "pie_subplots1">
+              <value name="list">
+                <block type="variables_get">
+                  <field name="VAR">plt</field>
+                </block>
+              </value>
+              <value name="d1">
+                <shadow type="indata">
+                  <field name="indata1">111, projection='polar'</field>
+                </shadow>
+              </value>
+            </block>
+          </value>
+        </block>
+
+        <block type = "pie_bar">
+          <value name="list">
+            <block type="variables_get">
+              <field name="VAR">ax</field>
+            </block>
+          </value>
+          <value name="d1">
+              <shadow type="indata">
+                <field name="indata1">theta, radii, width = width, bottom = 0.0, color = colors, alpha = 0.5</field>
+              </shadow>
+          </value>
+        </block>
+
+        <block type="matplotlib_plt_show"></block>
+
+      </category>
+
+      <!-- 그래프 출력 -->
+      <!-- <block type="select_graph_option">
+        <value name="select_graph_option_location1">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow> 
+        </value>
+        <value name="select_graph_option_location2">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block> -->      
+      
+    </category>
+  
+  </xml>
+
 
   <!-- code mirror -->
   <script>
