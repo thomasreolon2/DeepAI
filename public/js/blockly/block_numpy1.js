@@ -69,7 +69,7 @@ Blockly.Blocks['numpy_searching'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("[np 검색]")
-        .appendField(new Blockly.FieldDropdown([["최대값 인덱스(argmax)","numpy_argmax"], ["최소값 인덱스(argmin)","numpy_Sorting_argmin"], ["조건 요소(where)","numpy_Searching_where"], ["균등분포 표본 추출(random.RandomStat().uniform)","random.RandomStat().uniform"], [" Pareto II 또는 Lomax 분포에서 샘플 그리기(random.pareto)","random.pareto"],["정규 분포의 무작위 표본 추출(random.normal)", "random.normal"]]), "numpy_Searching_opt");
+        .appendField(new Blockly.FieldDropdown([["정규 분포의 무작위 표본 추출(random.normal)", "random.normal"],["최대값 인덱스(argmax)","numpy_argmax"], ["최소값 인덱스(argmin)","numpy_Sorting_argmin"], ["조건 요소(where)","numpy_Searching_where"], ["균등분포 표본 추출(random.RandomStat().uniform)","random.RandomStat().uniform"], [" Pareto II 또는 Lomax 분포에서 샘플 그리기(random.pareto)","random.pareto"]]), "numpy_Searching_opt");
     this.appendValueInput("numpy_Searching")
         .setCheck(null);
     this.setInputsInline(true);

@@ -454,7 +454,7 @@ Blockly.Python['logistic_regression'] = function (block) {
 
     // TODO: Assemble Python into code variable.
     var importLib = "from sklearn.linear_model import LogisticRegression" + "\n";
-    var code = value_model + " = sklearn.linear_model.LogisticRegression(random_state = " + text_numSeed + ")\n";
+    var code = value_model + " = sklearn.linear_model.LogisticRegression(random_state = " + text_numSeed + ", solver='liblinear')\n";
     return code;
 };
 

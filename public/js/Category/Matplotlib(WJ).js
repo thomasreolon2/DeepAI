@@ -416,8 +416,38 @@ MAT += '</category >';
 // //<!-- ************************************************** ************************* *************************  -->';
 // //<!-- ***************************************  데이터 시각화 (Matplotlib)  ******************************************  -->';
 // //<!-- ************************************************** ************************* *************************  -->';
-//<!--  matplot pie    -->
+
 MAT += '<category name="%{BKY_MAT_VISUAL}" colour="%{BKY_VISUAL_HUE}">';
+
+//x 
+MAT +=      '<block type="create_list">';
+MAT +=          '<value name="list">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="text">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">"item1", "item2", "item3", "item4"</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+// y
+MAT +=      '<block type="create_list">';
+MAT +=          '<value name="list">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">y</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="text">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">32, 123, 53, 11</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+// 파이 블록
 MAT +=      '<block type="matplotlib_pie">';
 MAT +=          '<value name="data">';
 MAT +=              '<shadow type="indata">';
@@ -456,6 +486,21 @@ MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=      '</block>';
 //<!--  matplot bubble    -->
+
+// x
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<shadow type="numpy_searching">';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+
 MAT +=      '<block type="matplotlib_bubble">';
 MAT +=          '<value name="data_x">';
 MAT +=              '<shadow type="indata">';
