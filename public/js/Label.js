@@ -73,3 +73,9 @@ Blockly.Msg["SKL_DATA_HANDLING"] = "데이터 핸들링";
 Blockly.Msg["SKL_K_MEANS"] = "K-Means 속성 추출";
 Blockly.Msg["SKL_BASIC_EVA"] = "기본 평가 지표";
 Blockly.Msg["SKL_ADV"] = "고급 평가 지표";
+
+
+Blockly.Msg["MAT_PIE_LABEL"] = "파이형 그래프";
+Blockly.Msg["MAT_BUBBLE_LABEL"] = "버블형 그래프";
+Blockly.Msg["MAT_COLORMAP_LABEL"] = "컬러맵";
+

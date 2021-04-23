@@ -419,6 +419,9 @@ MAT += '</category >';
 
 MAT += '<category name="%{BKY_MAT_VISUAL}" colour="%{BKY_VISUAL_HUE}">';
 
+// 파이형 그래프
+MAT += '<label text="%{BKY_MAT_PIE_LABEL}"></label>';
+
 //x 
 MAT +=      '<block type="create_list">';
 MAT +=          '<value name="list">';
@@ -485,7 +488,10 @@ MAT +=                  '<field name="indata1"></field>';
 MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=      '</block>';
+
+// 버블형 그래프
 //<!--  matplot bubble    -->
+MAT += '<label text="%{BKY_MAT_BUBBLE_LABEL}"></label>';
 
 // x
 MAT +=      '<block type="many_variables">';
@@ -550,7 +556,7 @@ MAT +=              '</block>';
 MAT +=          '</value>';
 MAT +=      '</block>';
 
-
+// 버블그래프 
 MAT +=      '<block type="matplotlib_bubble">';
 MAT +=          '<value name="data_x">';
 MAT +=              '<shadow type="indata">';
@@ -596,6 +602,8 @@ MAT +=          '</value>';
 MAT +=      '</block>';
 
 //<!--  matplot 컬러맵    -->
+// 컬러맵 
+MAT += '<label text="%{BKY_MAT_COLORMAP_LABEL}"></label>';
 
 // x
 MAT +=      '<block type="many_variables">';
