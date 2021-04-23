@@ -682,6 +682,22 @@ Blockly.Blocks['numpy_numerical_ranges'] = {
   }
 };
 
+//numpy_numerical_ranges
+Blockly.Blocks['numpy_numerical_ranges2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[숫자 범위]")
+        .appendField(new Blockly.FieldDropdown([ ["좌표 행렬(meshgrid)","np.meshgrid"], ["균일 간격 배열(arange)","np.arange"], ["균등 간격(linspace)","np.linspace"]]), "numpy_Numerical_ranges_opt");
+    this.appendValueInput("numpy_Numerical_ranges_val")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 //numpy_building_matrices
 Blockly.Blocks['numpy_building_matrices'] = {
   init: function() {

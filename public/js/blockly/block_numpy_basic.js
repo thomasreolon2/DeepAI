@@ -242,6 +242,23 @@ Blockly.Blocks['numpy_operator_basic'] = {
   }
 };
 
+  //넘파이 연산 
+  Blockly.Blocks['numpy_operator_basic2'] = { 
+    init: function() {
+      this.appendValueInput("parameter1")
+          .setCheck(null) 
+          .appendField(Blockly.Msg.NUMPY_CALCULATION_1)
+          .appendField(new Blockly.FieldDropdown([[Blockly.Msg.NUMPY_CALCULATION_8,"np.sqrt"], [Blockly.Msg.NUMPY_CALCULATION_2,"np.add"], [Blockly.Msg.NUMPY_CALCULATION_3,"np.subtract"], [Blockly.Msg.NUMPY_CALCULATION_4,"np.multiply"], [Blockly.Msg.NUMPY_CALCULATION_5,"np.divide"], [Blockly.Msg.NUMPY_CALCULATION_6,"np.remainder"]]), "numpy_operator_Option");
+      this.appendValueInput("parameter2")
+          .setCheck(null)
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour("%{BKY_NUMPY_HUE}");
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+  };
+
   //numpy_rounding
 Blockly.Blocks['numpy_rounding_basic'] = {
   init: function() {

@@ -407,11 +407,11 @@ MAT += '</block >';
 // // MAT += '</block >'; -->';
 // //<!--  matplot plt.show()      -->';
 
-// //<!--  사이킷런 시각화 하기      -->';
-// //<!-- MAT += '<block type="lrgraph"></block>';
-// // MAT += '<block type="logicgraph"></block >'; -->';
-// //<!-- MAT += '<block type="vis_tree"></block>'; -->';
-// //<!--  사이킷런 시각화 하기      -->';
+// <!--  사이킷런 시각화 하기      -->';
+// <!-- MAT += '<block type="lrgraph"></block>';
+// MAT += '<block type="logicgraph"></block >'; -->';
+// <!-- MAT += '<block type="vis_tree"></block>'; -->';
+// <!--  사이킷런 시각화 하기      -->';
 
 MAT += '</category >';
 // //<!-- ************************************************** ************************* *************************  -->';
@@ -815,6 +815,7 @@ MAT +=      '</block >';
 
 //<!--  matplot 3차원 plot_surface(서페이스)    -->
 // x
+
 MAT +=      '<block type="many_variables">';
 MAT +=          '<value name="NUMBER">';
 MAT +=              '<block type="variables_get">';
@@ -822,9 +823,13 @@ MAT +=                  '<field name="VAR">x</field>';
 MAT +=              '</block >';
 MAT +=          '</value>';
 MAT +=          '<value name="VALUE">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">np.arange(-5, 5, 0.25)</field>';
-MAT +=              '</shadow>';
+MAT +=              '<block type="numpy_numerical_ranges">';
+MAT +=                  '<value name="numpy_Numerical_ranges_val">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">-5, 5, 0.25</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
 MAT +=          '</value>';
 MAT +=      '</block>';
 
@@ -836,9 +841,13 @@ MAT +=                  '<field name="VAR">y</field>';
 MAT +=              '</block >';
 MAT +=          '</value>';
 MAT +=          '<value name="VALUE">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">np.arange(-5, 5, 0.25)</field>';
-MAT +=              '</shadow>';
+MAT +=              '<block type="numpy_numerical_ranges">';
+MAT +=                  '<value name="numpy_Numerical_ranges_val">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">-5, 5, 0.25</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
 MAT +=          '</value>';
 MAT +=      '</block>';
 
@@ -850,9 +859,13 @@ MAT +=                  '<field name="indata1">x, y</field>';
 MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=          '<value name="VALUE">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">np.meshgrid(x, y)</field>';
-MAT +=              '</shadow>';
+MAT +=              '<block type="numpy_numerical_ranges2">';
+MAT +=                  '<value name="numpy_Numerical_ranges_val">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">x, y</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
 MAT +=          '</value>';
 MAT +=      '</block>';
 
@@ -864,11 +877,29 @@ MAT +=                  '<field name="VAR">z</field>';
 MAT +=              '</block >';
 MAT +=          '</value>';
 MAT +=          '<value name="VALUE">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">np.sin(np.sqrt(x**2 + y**2))</field>';
-MAT +=              '</shadow>';
+MAT +=              '<block type="numpy_mathematical_functions">';
+MAT +=                  '<value name="numpy_Mathematical functions_val">';
+MAT +=                      '<block type="numpy_operator_basic2">';
+MAT +=                          '<value name="parameter1">';
+MAT +=                              '<shadow type="indata">';
+MAT +=                                  '<field name="indata1">x**2</field>';
+MAT +=                              '</shadow>';
+MAT +=                          '</value>';
+MAT +=                          '<value name="parameter2">';
+MAT +=                              '<shadow type="indata">';
+MAT +=                                  '<field name="indata1">y**2</field>';
+MAT +=                              '</shadow>';
+MAT +=                          '</value>';
+MAT +=                      '</block>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
 MAT +=          '</value>';
 MAT +=      '</block>';
+// MAT +=                      '<shadow type="indata">';
+// MAT +=                          '<field name="indata1">np.sin(np.sqrt(x**2 + y**2))</field>';
+// MAT +=                      '</shadow>';
+
+
 
 
 MAT +=      '<block type="matplotlib_axes3d_graph_plt">';

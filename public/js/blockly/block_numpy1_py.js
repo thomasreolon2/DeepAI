@@ -778,6 +778,20 @@ Blockly.Python['numpy_numerical_ranges'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+//numpy_numerical_ranges
+Blockly.Python['numpy_numerical_ranges2'] = function(block) {
+  var dropdown_numpy_numerical_ranges_opt = block.getFieldValue('numpy_Numerical_ranges_opt');
+  var value_numpy_numerical_ranges_val = Blockly.Python.valueToCode(block, 'numpy_Numerical_ranges_val', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  if(dropdown_numpy_numerical_ranges_opt == "np.ogrid"){
+    var code = `${dropdown_numpy_numerical_ranges_opt}[${value_numpy_numerical_ranges_val}]`;
+  } else {
+    var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val})`;
+  }
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
 //numpy_building_matrices
 Blockly.Python['numpy_building_matrices'] = function(block) {
   var dropdown_numpy_building_matrices_opt = block.getFieldValue('numpy_Building_matrices_opt');

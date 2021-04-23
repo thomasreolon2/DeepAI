@@ -584,6 +584,16 @@ Blockly.Python['numpy_operator_basic'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+// 넘파이 기본 연산
+Blockly.Python['numpy_operator_basic2'] = function(block) {
+  var dropdown_numpy_operator_option = block.getFieldValue('numpy_operator_Option');
+  var value_numpy_operator_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
+  var value_numpy_operator_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${dropdown_numpy_operator_option}(${value_numpy_operator_val} + ${value_numpy_operator_val2})`;
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
 
 Blockly.Python['numpy_loadtxt_basic'] = function (block) {
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);

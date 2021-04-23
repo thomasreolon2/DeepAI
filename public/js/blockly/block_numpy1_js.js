@@ -757,6 +757,16 @@ Blockly.JavaScript['numpy_numerical_ranges'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+//numpy_numerical_ranges
+Blockly.JavaScript['numpy_numerical_ranges2'] = function(block) {
+  var dropdown_numpy_numerical_ranges_opt = block.getFieldValue('numpy_Numerical_ranges_opt');
+  var value_numpy_numerical_ranges_val = Blockly.JavaScript.valueToCode(block, 'numpy_Numerical_ranges_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `\n`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 //numpy_building_matrices
 Blockly.JavaScript['numpy_building_matrices'] = function(block) {
   var dropdown_numpy_building_matrices_opt = block.getFieldValue('numpy_Building_matrices_opt');
