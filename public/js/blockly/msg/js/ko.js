@@ -649,9 +649,9 @@ Blockly.Msg['CLASS_8_1'] = "전역변수(global)";
 Blockly.Msg['MUTATOR_ADD_ITEM'] = "항목추가";
 
 // ---- 넘파이
-Blockly.Msg['NUMPY_IMPORT_1'] = "[ 임포트 ] numpy를 np로";
+Blockly.Msg['NUMPY_IMPORT_1'] = "[임포트] numpy를 np로";
 
-Blockly.Msg['NUMPY_CALCULATION_1'] = "[np 산술]";
+Blockly.Msg['NUMPY_CALCULATION_1'] = "[산술]";
 Blockly.Msg['NUMPY_CALCULATION_2'] = "요소별덧셈(add)";
 Blockly.Msg['NUMPY_CALCULATION_3'] = "요소별뺄셈(subtract)";
 Blockly.Msg['NUMPY_CALCULATION_4'] = "요소별곱(multiply)";
@@ -660,9 +660,9 @@ Blockly.Msg['NUMPY_CALCULATION_6'] = "요소별나머지 반환(remainder)";
 Blockly.Msg['NUMPY_CALCULATION_7'] = "배열 역수(reciprocal)";
 Blockly.Msg['NUMPY_CALCULATION_8'] = "요소별제곱근(sqrt)";
 
-Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[np 순서]";
-Blockly.Msg['NUMPY_INDEX_VALUES_11'] = "[np 인덱스 검색]";
-Blockly.Msg['NUMPY_INDEX_VALUES_111'] = "[np 값 검색]";
+Blockly.Msg['NUMPY_INDEX_VALUES_1'] = "[순서]";
+Blockly.Msg['NUMPY_INDEX_VALUES_11'] = "[인덱스 검색]";
+Blockly.Msg['NUMPY_INDEX_VALUES_111'] = "[값 검색]";
 Blockly.Msg['NUMPY_INDEX_VALUES_2'] = "배열최대값(max)";
 Blockly.Msg['NUMPY_INDEX_VALUES_3'] = "배열최소값(min)";
 Blockly.Msg['NUMPY_INDEX_VALUES_9'] = "모든요소합(sum)";
@@ -673,7 +673,7 @@ Blockly.Msg['NUMPY_INDEX_VALUES_6'] = "배열 아닌 인덱스(nonzero)"; // 0�
 Blockly.Msg['NUMPY_INDEX_VALUES_7'] = "배열요소 가져오기(take)";
 Blockly.Msg['NUMPY_INDEX_VALUES_8'] = "해당 조건 인덱스(where)";
 
-Blockly.Msg['NUMPY_ARRAY_OPERATOR_1'] = "[np 행렬&벡터]";
+Blockly.Msg['NUMPY_ARRAY_OPERATOR_1'] = "[행렬&벡터]";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_2'] = "두배열내적(dot)";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_3'] = "두배열 행렬곱(matmul)";
 Blockly.Msg['NUMPY_ARRAY_OPERATOR_4'] = "전치 행렬(transpose)";
@@ -689,7 +689,7 @@ Blockly.Msg['NUMPY_DATA_CONVERSION_1'] = "[ 리스트 변환 ] 변수  %1 데이
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_1'] = "[ 배열 연결 ] ((   %1 , %2 ))"; 
 Blockly.Msg['NUMPY_NP_CONCATENATEARRAY_2'] = "값"; 
 
-Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[np 배열] %1"; 
+Blockly.Msg['NUMPY_NP_ARRAY_1'] = "[배열] %1"; 
 
 Blockly.Msg['NUMPY_CREATE_ARR_1'] = "[ 배열 값 ] %1"; 
 
@@ -699,17 +699,17 @@ Blockly.Msg['NUMPY_ZEROS_1'] = "[ 0 배열 ] ( %1 , %2 ) %3";
 Blockly.Msg['NUMPY_ZEROS_2'] = "행";
 Blockly.Msg['NUMPY_ZEROS_3'] = "열";
 
-Blockly.Msg['NUMPY_FULL_1'] = "[ 배열동일 값 생성 ] (( %1 , %2 ) 값 %3 )";
+Blockly.Msg['NUMPY_FULL_1'] = "[배열동일 값 생성] (( %1 , %2 ) 값 %3 )";
 //Blockly.Msg['NUMPY_FULL_2'] = "값";
 
-Blockly.Msg['NUMPY_EYE_1'] = "[ 대각선 1로 배열 ] ( %1 )";
+Blockly.Msg['NUMPY_EYE_1'] = "[대각선 1로 배열] ( %1 )";
 Blockly.Msg['NUMPY_EYE_2'] = "크기";
 
-Blockly.Msg['NUMPY_MAX_MIN_1'] = "[ 최대,최소 값  ]  %1 %2 ( 변수  %3 )";
+Blockly.Msg['NUMPY_MAX_MIN_1'] = "[최대,최소 값]  %1 %2 ( 변수  %3 )";
 
-Blockly.Msg['NUMPY_SHAPE_1'] = "[ 차원확인 ] %1 변수  %2";
+Blockly.Msg['NUMPY_SHAPE_1'] = "[차원확인] %1 변수  %2";
 
-Blockly.Msg['NUMPY_RESHAPE_1'] = "[np 차원변경] %1 %2배열형태변경(reshape)   %3";
+Blockly.Msg['NUMPY_RESHAPE_1'] = "[차원변경] %1 %2배열형태변경(reshape)   %3";
 
 Blockly.Msg['NUMPY_FLATTEN_1'] = "[ 행렬 1차원 변경 ] 변수 %1 %2";
 
@@ -1114,7 +1114,7 @@ Blockly.Msg['CATEGORY_REPEAT'] = "반복(Repeat)";
 Blockly.Msg['CATEGORY_OPERATION'] = "수학통계(Math)";
 Blockly.Msg['CATEGORY_TEXT'] = "숫자(Num)/문자(Str)";
 Blockly.Msg['CATEGORY_COLLECTION'] = "컬렉션(Collection)";
-Blockly.Msg['CATEGORY_FUNCTION'] = "함수(Def)/클래스(Class)";
+Blockly.Msg['CATEGORY_FUNCTION'] = "함수(Def)/클래스";
 Blockly.Msg['CATEGORY_CLASS'] = "클래스(Class)";
 Blockly.Msg['CATEGORY_NUMPY'] = "넘파이(Numpy)";
 Blockly.Msg['CATEGORY_DB'] = "데이터베이스(DB)";
