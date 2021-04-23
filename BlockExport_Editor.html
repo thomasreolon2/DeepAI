@@ -36,7 +36,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <!-- tensorflow -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"> </script>
@@ -177,6 +178,17 @@
       //  });  
   </script>    
   -->
+
+  <style>
+    #pyCodeEditor {
+      position: absolute;
+      width: 100%;
+    }
+    #asyncCodeEditor {
+      position: relative;
+      width: hidden;
+    }
+  </style>
 </head>
 
 <body>
@@ -332,11 +344,36 @@
         <div id="codeDiv1">
           <div class="card shadow-sm">
             <div class="text-white bg-dark">
-              <h5 id="code" class="my-1 mx-1">코드</h5>
+              <h6 id="code" class="my-1 mx-1">코드
+                <input type="checkbox" checked id="toggle-two"/>
+            </h6>
+             <script>
+              var global_var = true;
+              $(function() {
+                $('#toggle-two').bootstrapToggle({
+                  off: '블록코드OFF',
+                  on: '블록코드ON',
+                  size: 'small',
+                  onstyle:'primary',
+                  offstyle:'default',
+                  height: 5,
+                  width: 135
+                });
+              })
+              $(document).ready(function(){
+                $("#toggle-two").change(function(){
+                  separate_editor();
+                  global_var = false;
+                });
+                
+            });
+              console.log('toggle: ' + $('#toggle-two').prop('checked'));
+            </script>
             </div>
             <div style="position:relative; " style="height: 80vh;">
               <div id="pyCodeEditor"></div>
-              <div id="jsCodeEditor"></div>
+              <div id="jsCodeEditor" style="display: none"></div>
+              <div id="asyncCodeEditor"></div>
             </div>
           </div>
         </div>
@@ -391,7 +428,17 @@
       //   spellcheck: true,   autocorrect: true,
     });
 
-    // JS 코드미러 끝
+     // async 코드미러
+     let asyncEditor = CodeMirror(document.getElementById("asyncCodeEditor"), {
+      mode: "python",
+      // value: "codemirror",
+      theme: "oceanic-next",          // 테마
+      inputStyle: "contenteditable",  // 입력 처리 방식
+      // readOnly: true,              // 읽기 전용 설정
+      lineNumbers: true,              // 라인 넘버 설정
+      lineWrapping: true,             // 자동 줄바꿈 설정
+      // spellcheck: true,   autocorrect: true,
+    });
 
     // (demoWorkspace = 블록배치하는 공간) 블록이 나타나는 부분
     var demoWorkspace = Blockly.inject( 
@@ -493,6 +540,31 @@
       }
     }
 
+    function separate_editor(){
+
+      var pyEditor = $("#pyCodeEditor");
+      var asyncEditor = $("#asyncCodeEditor");
+
+
+
+      if ($('#toggle-two').prop('checked') === false) {
+        
+        //pyEditor.css("position", "relative");
+        //pyEditor.slideUp("400");
+        //asyncEditor.slideDown("400");
+        asyncEditor.css("visibility", "visible");
+        pyEditor.css("visibility", "hidden");
+      } else if ($('#toggle-two').prop('checked') === true) {
+
+        //pyEditor.css("position", "relative");
+        //pyEditor.slideDown("400");
+        //asyncEditor.slideUp("400");
+        pyEditor.css("visibility", "visible");
+        asyncEditor.css("visibility", "hidden");
+      }
+
+    }
+
     // ==================================
     // 코드 갱신하기 
     //===================================  
@@ -500,7 +572,7 @@
       async function coderun() {
         try {
           var pyCode = Blockly.Python.workspaceToCode(demoWorkspace); // 워크스페이스를 코드로 변환 후 값 저장
-          console.log("pycode : " + escape(pyCode));
+          // console.log("pycode : " + escape(pyCode));
           pyEditor.setValue(pyCode); // 그 값을 파이썬코드미러에 값 저장
         } catch (e) {
           console.log('python 코드가 매핑되어 있지 않습니다. Error : ' + e);
@@ -528,9 +600,9 @@
     // ==================================
     // 코드 파일로 저장하기
     //===================================  
-    function file_save() {   
+    function file_save_2(editor){
       var code_python = Blockly.Python.workspaceToCode(demoWorkspace); // 워크스페이스를 파이썬 코드로 변환
-      var code = pyEditor.getValue();
+      var code = editor.getValue();
       var blobObject = new Blob([code]);  // 코드를 블롭 객체로 만듬 => 블롭은 이미지, 사운드, 비디오와 같은 멀티미디어 데이터를 다룰 때 사용
       // 이름을 받아서 saveAs
       //let filename = prompt("다른이름으로 저장."); 
@@ -541,6 +613,18 @@
           saveAs(blobObject, filename+".py"); 
         }
       });
+    }
+
+    function file_save() {   
+      console.log('test toggle-two: ' + $('#toggle-two').prop('checked'));
+
+      if($('#toggle-two').prop('checked'))
+        file_save_2(pyEditor);
+      else
+        file_save_2(asyncEditor);
+      
+
+      
     }
 
     // ==================================
@@ -589,6 +673,25 @@
     demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
     demoWorkspace.addChangeListener(whenSelected);// 선택 되었을 때 메소드
   </script>
+
+  <script>
+    function runcode_2(code, code2){
+      console.log(code); // 파이썬코드찍는부분
+      console.log("-----");
+      console.log(code2); // 자바스크립트코드 찍는부분
+      var exe = document.getElementById('exeArea'); // 콘솔 창 ID가져옴
+      languagePluginLoader.then(() => {
+        try {
+          exe.innerHTML = pyodide.runPython(code);
+          let stdout = pyodide.runPython("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
+          exe.innerHTML = stdout;
+        } catch (e) {
+          exe.innerHTML = e;  
+        }
+      });
+    }
+  </script>
+
   <script>
   //==================================
   // 블록을 실행했을 때 
@@ -618,6 +721,8 @@
       Blockly.JavaScript.addReservedWords('code2'); // // 이 언어의 예약어 목록에 하나 이상의 단어를 추가한다.
       var code2 = jsEditor.getValue();              // js 코드미러의 값을 code2로 저장
       
+      Blockly.Python.addReservedWords('code_async');
+      var code_async = asyncEditor.getValue();
       // 이 부분이 코드 싹다 잡아와서 출력
       // 실행했을때 그래프를 지우고 하기 위해
       // plt.cla - 클리어
@@ -708,32 +813,27 @@
       });
 
 
+
       // 순차적 실행을 위해 놓은 코드 async, .then()
       async function runcode() {
+
         "use strict";
-        console.log(code); // 파이썬코드찍는부분
-        console.log("-----");
-        console.log(code2); // 자바스크립트코드 찍는부분
-        var exe = document.getElementById('exeArea'); // 콘솔 창 ID가져옴
-        languagePluginLoader.then(() => {
-          try {
-            exe.innerHTML = pyodide.runPython(code);
-            let stdout = pyodide.runPython("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
-            exe.innerHTML = stdout;
-          } catch (e) {
-            exe.innerHTML = e;  
-          }
-        });
-      }
-      
-      // runcode끝내고 또 돌림, 테이블 형식 블록을위해 이걸 넣어줌
-      runcode().then(() => {
-        if(eval(code2)==undefined){
-          document.getElementById('exeArea').innerHTML+='\n';
-        } else{
-          console.log("error : javascript code error");
+        if($('#toggle-two').prop('checked'))
+          runcode_2(code, code2);
+        else
+          runcode_2(code_async, code2);
+          
         }
-      });
+        // runcode끝내고 또 돌림, 테이블 형식 블록을위해 이걸 넣어줌
+        runcode().then(() => {
+          if(eval(code2)==undefined){
+            document.getElementById('exeArea').innerHTML+='\n';
+          } else{
+            console.log("error : javascript code error");
+          }
+        })
+
+     
     }
     // 기존 실행 버튼
     // function runButton() {
