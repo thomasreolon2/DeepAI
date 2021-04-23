@@ -517,122 +517,120 @@ MAT +=      '</block>';
 
 
 //<!--  matplot 1차원 히스토그램    -->
-MAT += '<block type="matplotlib_histo_graph_plt">';
-MAT += '<value name="xx">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">np.random.uniform(size = 1000)</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_graph_Title">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">Test</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-
-MAT += '<value name="matplotlib_pre_graph_Xlable">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">X</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_graph_Ylable">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">Y</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_legend">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">test</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_other">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1"></field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '</block >';
+MAT +=      '<block type="matplotlib_histo_graph_plt">';
+MAT +=          '<value name="xx">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>'; // np.random.uniform(size = 1000)
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="matplotlib_pre_graph_Title">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">Test</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="matplotlib_pre_graph_Xlable">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">X</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="matplotlib_pre_graph_Ylable">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">Y</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="matplotlib_pre_legend">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">test</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="matplotlib_pre_other">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1"></field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block >';
 //<!--  matplot 1차원 히스토그램    -->
 
 //<!--  matplot 3차원 scatter(버블)    -->
-MAT += '<block type="matplotlib_bubble_graph_plt">';
-MAT += '<value name="xx">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">np.random.normal(size=100)</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="yy">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">np.random.normal(size=100)</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="zz">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">np.random.normal(size=100)*100</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_graph_Title">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">Test</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-
-MAT += '<value name="legend">';
-MAT += '<shadow type="indata">';
-MAT += "<field name='indata1'>'(x,y,z)'</field>";
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_other">';
-MAT += '<shadow type="indata">';
-MAT += "<field name='indata1'>c='violet'</field>";
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '</block >';
+MAT +=      '<block type="matplotlib_bubble_graph_plt">';
+MAT +=          '<value name="xx">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>'; // np.random.normal(size=100)
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="yy">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">y</field>'; // np.random.normal(size=100)
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="zz">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">z</field>'; // np.random.normal(size=100)*100
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="matplotlib_pre_graph_Title">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">Test</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="legend">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  "<field name='indata1'>'(x,y,z)'</field>";
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="matplotlib_pre_other">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  "<field name='indata1'>c='violet'</field>";
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block >';
 //<!--  matplot 3차원 scatter(버블)    -->
 
 //<!--  matplot 3차원 plot_surface(서페이스)    -->
-MAT += '<block type="matplotlib_axes3d_graph_plt">';
-MAT += '<value name="xx">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">np.arange(-5, 5, 0.25)</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="yy">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">np.arange(-5, 5, 0.25)</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="zz">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">np.sin(np.sqrt(x**2 + y**2))</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_graph_Title">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">Test</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-
-MAT += '<value name="xlabel">';
-MAT += '<shadow type="indata">';
-MAT += "<field name='indata1'>X values</field>";
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="ylabel">';
-MAT += '<shadow type="indata">';
-MAT += "<field name='indata1'>Y values</field>";
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="zlabel">';
-MAT += '<shadow type="indata">';
-MAT += "<field name='indata1'>Z values</field>";
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="other">';
-MAT += '<shadow type="indata">';
-MAT += "<field name='indata1'>cmap='hot'</field>";
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '</block >';
+MAT +=      '<block type="matplotlib_axes3d_graph_plt">';
+MAT +=          '<value name="xx">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>'; // np.arange(-5, 5, 0.25)
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="yy">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">y</field>'; // np.arange(-5, 5, 0.25)
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="zz">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">z</field>'; // np.sin(np.sqrt(x**2 + y**2))
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="matplotlib_pre_graph_Title">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">Test</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="xlabel">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  "<field name='indata1'>X values</field>";
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="ylabel">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  "<field name='indata1'>Y values</field>";
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="zlabel">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  "<field name='indata1'>Z values</field>";
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="other">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  "<field name='indata1'>cmap='hot'</field>";
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block >';
 //<!--  matplot 3차원 plot_surface(서페이스)    -->
+
 
 
 //박스 그래프 2차원 
