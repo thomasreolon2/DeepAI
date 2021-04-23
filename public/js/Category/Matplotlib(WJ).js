@@ -495,8 +495,58 @@ MAT +=                  '<field name="VAR">x</field>';
 MAT +=              '</block >';
 MAT +=          '</value>';
 MAT +=          '<value name="VALUE">';
-MAT +=              '<shadow type="numpy_searching">';
-MAT +=              '</shadow>';
+MAT +=              '<block type="numpy_searching">';
+MAT +=                  '<value name="numpy_Searching">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">size=100</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+// y
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">y</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<block type="numpy_searching">';
+MAT +=                  '<value name="numpy_Searching">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">size=100</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+// z
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">z</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<block type="Oper1">';
+MAT +=                  '<value name="A">';
+MAT +=                      '<block type="numpy_searching">';
+MAT +=                          '<value name="numpy_Searching">';
+MAT +=                              '<shadow type="indata">';
+MAT +=                                  '<field name="indata1">size=100</field>';
+MAT +=                              '</shadow>';
+MAT +=                          '</value>';
+MAT +=                      '</block >';
+MAT +=                   '</value>';
+MAT +=                  '<value name="B">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">100</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
 MAT +=          '</value>';
 MAT +=      '</block>';
 
@@ -504,13 +554,13 @@ MAT +=      '</block>';
 MAT +=      '<block type="matplotlib_bubble">';
 MAT +=          '<value name="data_x">';
 MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">y</field>';
+MAT +=                  '<field name="indata1">x</field>';
 MAT +=              '</shadow>';
 MAT +=          '</value>';
 
 MAT +=          '<value name="data_y">';
 MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">x</field>';
+MAT +=                  '<field name="indata1">y</field>';
 MAT +=              '</shadow>';
 MAT +=          '</value>';
 
@@ -546,6 +596,46 @@ MAT +=          '</value>';
 MAT +=      '</block>';
 
 //<!--  matplot 컬러맵    -->
+
+// x
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<block type="Oper1">';
+MAT +=                  '<value name="A">';
+MAT +=                      '<block type="numpy_reshape">';
+MAT +=                          '<value name="numpy_reshape_val">';
+MAT +=                              '<block type="numpy_searching">';
+MAT +=                                  '<value name="numpy_Searching">';
+MAT +=                                      '<shadow type="indata">';
+MAT +=                                          '<field name="indata1">size=100</field>';
+MAT +=                                      '</shadow>';
+MAT +=                                  '</value>';
+MAT +=                              '</block >';
+MAT +=                          '</value>';
+
+MAT +=                          '<value name="numpy_reshape_struct">';
+MAT +=                              '<shadow type="indata">';
+MAT +=                                  '<field name="indata1">10,10</field>';
+MAT +=                              '</shadow>';
+MAT +=                          '</value>';
+MAT +=                      '</block>';
+MAT +=                  '</value>';
+
+MAT +=                  '<value name="B">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">100</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+
 MAT +=      '<block type="matplotlib_colormap">';
 MAT +=          '<value name="data_x">';
 MAT +=              '<shadow type="indata">';
