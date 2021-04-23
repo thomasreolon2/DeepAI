@@ -395,7 +395,51 @@ Blockly.JavaScript['numpy_random_distributions_third'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+//numpy_random_distributions_third
+Blockly.JavaScript['numpy_random_distributions_third2'] = function(block) {
+  var numpy_Random_Distributions_third_opt = block.getFieldValue('numpy_Random_Distributions_two_opt');
+  var value_numpy_random_distributions_third_val = Blockly.JavaScript.valueToCode(block, 'numpy_Random_Distributions_third_val', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code;
+  switch (numpy_Random_Distributions_third_opt){
+    case "numpy_Random_Distributions_third_standard_gamma": 
+    code = `\n`;
+    break; 
 
+    case "numpy_Random_Distributions_third_standard_normal": 
+    code = `\n`;
+    break;
+
+    case "numpy_Random_Distributions_third_triangular":
+    code = `\n`;
+    break;
+
+    case "numpy_Random_Distributions_third_uniform":
+    code = `\n`;
+    break;
+
+    case "numpy_Random_Distributions_third_vonmises":
+    code = `\n`;
+    break;
+
+    case "numpy_Random_Distributions_third_wald":
+    code = `\n`;
+    break;
+
+    case "numpy_Random_Distributions_third_weibull":
+    code = `\n`;
+    break;
+
+    case "numpy_Random_Distributions_third_zipf":
+      code = `\n`;
+      break;
+
+    default:
+    break;
+  }
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
 
 //numpy_random_generator
 Blockly.JavaScript['numpy_random_generator'] = function(block) {

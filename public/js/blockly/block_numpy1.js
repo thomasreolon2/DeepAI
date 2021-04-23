@@ -163,6 +163,22 @@ Blockly.Blocks['numpy_random_distributions_third'] = {
   }
 };
 
+//numpy_random_distributions_third
+Blockly.Blocks['numpy_random_distributions_third2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[분포3]")
+        .appendField(new Blockly.FieldDropdown([["균일 분포(uniform)","uniform"], ["표준 감마 분포(standard_gamma)","standard_gamma"], ["표준 정규 분포(standard_normal)","standard_normal"], ["삼각 분포(triangular)","triangular"], ["폰 미제스 분포(vonmises)","vonmises"], ["역가우스 분포(wald)","wald"], ["Weibull 분포(weibull)","weibull"], ["Zipf 분포(zipf)","zipf"]]), "DROP");
+    this.appendValueInput("VAR")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 
 //numpy_random_generator
 Blockly.Blocks['numpy_random_generator'] = {
@@ -558,6 +574,23 @@ Blockly.Blocks['numpy_adding_removing_elements'] = {
     this.appendDummyInput()
         .appendField("[추가&제거]")
         .appendField(new Blockly.FieldDropdown([["배열 끝 삽입(append)","np.append"], ["인덱스 앞 삽입(insert)","np.insert"],   ["하위배열 삭제(delete)","np.delete"],["고유요소 찾기(unique)","np.unique"],["지정 모양(resize)","np.resize"],["배열x가 배열y의 원소를 포함(in1d)","np.in1d"],
+        ["횟수만큼 반복 배열구성(tile)","np.tile"],["축에 따라 배열 요소 가져옴(take)","np.take"],["배열 요소 값 변경(put)","np.put"],["배열요소반환(repeat)","np.repeat"],["배열의 한 축에 ufunc를 적용 차원 1줄임(reduce)","np.reduce"],["배열을 여러 하위 배열로 분리(array_split)","np.array_split"]]), "numpy_Adding_removing_elements_opt");
+    this.appendValueInput("numpy_Adding_removing_elements_val")
+        .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+//numpy_adding_removing_elements
+Blockly.Blocks['numpy_adding_removing_elements2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[np 추가&제거]")
+        .appendField(new Blockly.FieldDropdown([["고유요소 찾기(unique)","np.unique"],["배열 끝 삽입(append)","np.append"], ["인덱스 앞 삽입(insert)","np.insert"],   ["하위배열 삭제(delete)","np.delete"],["지정 모양(resize)","np.resize"],["배열x가 배열y의 원소를 포함(in1d)","np.in1d"],
         ["횟수만큼 반복 배열구성(tile)","np.tile"],["축에 따라 배열 요소 가져옴(take)","np.take"],["배열 요소 값 변경(put)","np.put"],["배열요소반환(repeat)","np.repeat"],["배열의 한 축에 ufunc를 적용 차원 1줄임(reduce)","np.reduce"],["배열을 여러 하위 배열로 분리(array_split)","np.array_split"]]), "numpy_Adding_removing_elements_opt");
     this.appendValueInput("numpy_Adding_removing_elements_val")
         .setCheck(null);

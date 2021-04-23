@@ -109,6 +109,17 @@ Blockly.JavaScript['Oper3'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+// 기초연산
+Blockly.JavaScript['Oper4'] = function(block) {
+  var value_a = Blockly.JavaScript.valueToCode(block, 'A', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_b = Blockly.JavaScript.valueToCode(block, 'B', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
 Blockly.JavaScript['pie_linspace'] = function(block) {
   var value_a1 = Blockly.JavaScript.valueToCode(block, 'd1', Blockly.JavaScript.ORDER_ATOMIC);
 

@@ -385,7 +385,7 @@ Blockly.Python['plt_subplot'] = function(block) {
         other = ", " + other;
       }
     
-      var code = `plt.hist(${xx}${other})\nplt.title("${title}")\nplt.xlabel("${xlable}")\nplt.ylabel("${ylable}")\n`;
+      var code = `plt.hist(${xx}${other})\nplt.title("${title}")\nplt.xlabel("${xlable}")\nplt.ylabel("${ylable}")\nplt.show()\n`;
     
       return code;
     };
@@ -403,7 +403,7 @@ Blockly.Python['plt_subplot'] = function(block) {
         other = ', ' + other;
       }
 
-      var code = `plt.scatter(${xx},${yy},${zz}${other})\nplt.title("${title}")\nplt.legend([${legend}])\n`;
+      var code = `plt.scatter(${xx},${yy},${zz}${other})\nplt.title("${title}")\nplt.legend([${legend}])\nplt.show()\n`;
     
       return code;
     };
@@ -422,7 +422,7 @@ Blockly.Python['plt_subplot'] = function(block) {
         other = ', ' + other;
       }
 
-      var code = `from mpl_toolkits.mplot3d import Axes3D\n\nfig = plt.figure()\nax = Axes3D(fig)\nax.plot_surface(${xx},${yy},${zz}${other})\n\nax.set_xlabel('${xlabel}')\nax.set_ylabel('${ylabel}')\nax.set_zlabel('${zlabel}')\nplt.title('${title}')\n`;
+      var code = `from mpl_toolkits.mplot3d import Axes3D\n\nfig = plt.figure()\nax = Axes3D(fig)\nax.plot_surface(${xx},${yy},${zz}${other})\n\nax.set_xlabel('${xlabel}')\nax.set_ylabel('${ylabel}')\nax.set_zlabel('${zlabel}')\nplt.title('${title}')\nplt.show()\n`;
       // x,y = np.meshgrid(x, y)\nz = np.sin(np.sqrt(x**2 + y**2))\n
       return code;
     };

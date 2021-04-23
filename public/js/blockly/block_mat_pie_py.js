@@ -121,6 +121,17 @@ Blockly.Python['Oper3'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+// 연산
+Blockly.Python['Oper4'] = function(block) {
+  var value_a = Blockly.Python.valueToCode(block, 'A', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_b = Blockly.Python.valueToCode(block, 'B', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${value_a} ${dropdown_name} ${value_b}`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
 Blockly.Python['pie_linspace'] = function(block) {
   var value_a1 = Blockly.Python.valueToCode(block, 'd1', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.

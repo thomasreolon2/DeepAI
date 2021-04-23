@@ -410,7 +410,48 @@ Blockly.Python['numpy_random_distributions_third'] = function(block) {
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+//numpy_random_distributions_third
+Blockly.Python['numpy_random_distributions_third2'] = function(block) {
+  var value_drop = block.getFieldValue('DROP');
+  var value_var = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code;
+  switch (value_drop){
+    case "standard_gamma": 
+    code = `np.random.standard_gamma(${value_var})`;  
+    break; 
 
+    case "standard_normal": 
+    code = `np.random.standard_normal(${value_var})`;  
+    break;
+
+    case "triangular":
+    code = `np.random.triangular(${value_var})`;  
+    break;
+
+    case "uniform":
+    code = `np.random.uniform(${value_var})`;  
+    break;
+
+    case "vonmises":
+    code = `np.random.vonmises(${value_var})`;  
+    break;
+
+    case "wald":
+    code = `np.random.wald(${value_var})`;  
+    break;
+
+    case "weibull":
+    code = `np.random.weibull(${value_var})`;  
+    break;
+
+    case "zipf":
+      code = `np.random.zipf(${value_var})`;  
+    break;
+  }
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
 
 //numpy_random_generator
 Blockly.Python['numpy_random_generator'] = function(block) {

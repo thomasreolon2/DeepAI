@@ -661,11 +661,30 @@ MAT +=      '</block>';
 
 
 //<!--  matplot 1차원 히스토그램    -->
+// x
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=            '<block type="numpy_random_distributions_third2">';
+MAT +=                '<value name="VAR">';
+MAT +=                  '<shadow type="indata">';
+MAT +=                      '<field name="indata1">size = 1000</field>';
+MAT +=                  '</shadow>';
+MAT +=                '</value>';
+MAT +=            '</block>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+
 MAT +=      '<block type="matplotlib_histo_graph_plt">';
 MAT +=          '<value name="xx">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">x</field>'; // np.random.uniform(size = 1000)
-MAT +=              '</block >';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">x</field>';
+MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=          '<value name="matplotlib_pre_graph_Title">';
 MAT +=              '<shadow type="indata">';
@@ -696,21 +715,85 @@ MAT +=      '</block >';
 //<!--  matplot 1차원 히스토그램    -->
 
 //<!--  matplot 3차원 scatter(버블)    -->
+// x
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<block type="numpy_searching">';
+MAT +=                  '<value name="numpy_Searching">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">size=100</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+// y
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">y</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<block type="numpy_searching">';
+MAT +=                  '<value name="numpy_Searching">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">size=100</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+// z
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">z</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<block type="Oper4">';
+MAT +=                  '<value name="A">';
+MAT +=                      '<block type="numpy_searching">';
+MAT +=                          '<value name="numpy_Searching">';
+MAT +=                              '<shadow type="indata">';
+MAT +=                                  '<field name="indata1">size=100</field>';
+MAT +=                              '</shadow>';
+MAT +=                          '</value>';
+MAT +=                      '</block>';
+MAT +=                  '</value>';
+MAT +=                  '<value name="B">';
+MAT +=                  '  <shadow type="indata">';
+MAT +=                  '    <field name="indata1">100</field>';
+MAT +=                  '  </shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+
 MAT +=      '<block type="matplotlib_bubble_graph_plt">';
 MAT +=          '<value name="xx">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">x</field>'; // np.random.normal(size=100)
-MAT +=              '</block >';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">x</field>';
+MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=          '<value name="yy">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">y</field>'; // np.random.normal(size=100)
-MAT +=              '</block >';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">y</field>';
+MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=          '<value name="zz">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">z</field>'; // np.random.normal(size=100)*100
-MAT +=              '</block >';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">z</field>';
+MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=          '<value name="matplotlib_pre_graph_Title">';
 MAT +=              '<shadow type="indata">';
@@ -731,21 +814,78 @@ MAT +=      '</block >';
 //<!--  matplot 3차원 scatter(버블)    -->
 
 //<!--  matplot 3차원 plot_surface(서페이스)    -->
+// x
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">np.arange(-5, 5, 0.25)</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+// y
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">y</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">np.arange(-5, 5, 0.25)</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+// x,y
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">x, y</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">np.meshgrid(x, y)</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+// z
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">z</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">np.sin(np.sqrt(x**2 + y**2))</field>';
+MAT +=              '</shadow>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+
 MAT +=      '<block type="matplotlib_axes3d_graph_plt">';
 MAT +=          '<value name="xx">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">x</field>'; // np.arange(-5, 5, 0.25)
-MAT +=              '</block >';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">x</field>';
+MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=          '<value name="yy">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">y</field>'; // np.arange(-5, 5, 0.25)
-MAT +=              '</block >';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">y</field>';
+MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=          '<value name="zz">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">z</field>'; // np.sin(np.sqrt(x**2 + y**2))
-MAT +=              '</block >';
+MAT +=              '<shadow type="indata">';
+MAT +=                  '<field name="indata1">z</field>';
+MAT +=              '</shadow>';
 MAT +=          '</value>';
 MAT +=          '<value name="matplotlib_pre_graph_Title">';
 MAT +=              '<shadow type="indata">';
