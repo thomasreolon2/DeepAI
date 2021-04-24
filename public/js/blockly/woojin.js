@@ -191,6 +191,26 @@
 
 
 ]);
+
+Blockly.Blocks['numpy_numerical_ranges_basic1(WJ)'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("[숫자 범위]")
+        .appendField(new Blockly.FieldDropdown([["균등 간격(linspace)","np.linspace"],["균일 간격 배열(arange)","np.arange"], ["로그 균등 간격(logspace)","np.logspace"]]), "numpy_Numerical_ranges_opt");
+    this.appendValueInput("parameter1")
+        .setCheck(null);
+    // this.appendValueInput("parameter2")
+    //     .setCheck(null);
+    // this.appendValueInput("parameter3")
+    //     .setCheck(null);
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("%{BKY_NUMPY_HUE}");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 // 이후로는 현재 사용하지 않는 블럭
 
 //조회 sql = “SELECT (필드) FROM (테이블) ORDER BY (필드)”

@@ -79,3 +79,6 @@ Blockly.Msg["MAT_PIE_LABEL"] = "파이형 그래프";
 Blockly.Msg["MAT_BUBBLE_LABEL"] = "버블형 그래프";
 Blockly.Msg["MAT_COLORMAP_LABEL"] = "컬러맵";
 
+Blockly.Msg["MAT_BAR_LABEL"] = "막대형 그래프";
+Blockly.Msg["MAT_LINE_LABEL"] = "라인형 그래프";
+

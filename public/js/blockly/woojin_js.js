@@ -76,6 +76,17 @@
     return code;
   };
 
+//멧플롯립 예제를 위한 커스텀
+  Blockly.JavaScript['numpy_numerical_ranges_basic1(WJ)'] = function(block) {
+    var dropdown_numpy_numerical_ranges_opt = block.getFieldValue('numpy_Numerical_ranges_opt');
+    var value_numpy_numerical_ranges_val = Blockly.JavaScript.valueToCode(block, 'parameter1', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_numpy_numerical_ranges_val2 = Blockly.JavaScript.valueToCode(block, 'parameter2', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_numpy_numerical_ranges_val3 = Blockly.JavaScript.valueToCode(block, 'parameter3', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code = `\n`;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+  };
 
   // 현재 사용하지 않는 블럭
   

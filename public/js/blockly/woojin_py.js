@@ -87,6 +87,8 @@ Blockly.Python['db_select6'] = function (block) {
 //   return code;
 // };
 
+//바 그래프
+
 Blockly.Python['bar_char'] = function(block) {
   var value_matplotlib_pre_graph_location1 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location1', Blockly.Python.ORDER_ATOMIC);
   var value_matplotlib_pre_graph_location2 = Blockly.Python.valueToCode(block, 'matplotlib_pre_graph_location2', Blockly.Python.ORDER_ATOMIC);
@@ -131,14 +133,9 @@ Blockly.Python['bar_char'] = function(block) {
 var code ;   
 
 // 기존 코드내용 
-if(DL_Gra == "graph_or_1"){//둘중 하나 
- //우진 수정 전 code =`ax_lst[${value_matplotlib_pre_graph_location1}].${matplot_graph}( `;
-  code =`plt.${matplot_graph}( `;  //우진 수정본
-}else if(DL_Gra == "graph_both_1"){
-  code =`plt.${matplot_graph}( `;  
-}else{
+
   code =`plt.${matplot_graph}(` ;  
-}
+
 
 
 // 그래프에 따른 뒷 내용 변환 concat
@@ -165,30 +162,17 @@ if(dropdown_matplotlib_graph_select=="matplotlib_bar" || dropdown_matplotlib_gra
 
 
 //킹우진의 수정
-if(DL_Gra == "graph_or_1"){
-  code =  code.concat(`\nplttitle("${text_matplotlib_pre_graph_title}") 
-plt.xlabel("${text_matplotlib_pre_graph_xlable}")
-plt.ylabel("${text_matplotlib_pre_graph_ylable}") 
-plt.legend(loc='best')\n`); 
-  
-}else if(DL_Gra == "graph_both_1"){
-  code =  code.concat(`\nplt.title("${text_matplotlib_pre_graph_title}")
-plt.xlabel("${text_matplotlib_pre_graph_xlable}")
-plt.ylabel("${text_matplotlib_pre_graph_ylable}") 
-plt..legend(loc='best')\n`);
-  
-}else{ 
-  code =  code.concat(`\nplt.title("${text_matplotlib_pre_graph_title}")
+code =  code.concat(`\nplt.title("${text_matplotlib_pre_graph_title}")
 plt.xlabel("${text_matplotlib_pre_graph_xlable}")
 plt.ylabel("${text_matplotlib_pre_graph_ylable}")
-plt.legend(loc='best')\n`);  
-}
+plt.legend(loc='best')
+plt.show()\n`);  
 
 return code;
 };
 
 
-
+//라인 그래프
 Blockly.Python['line_plot'] = function(block) {
   
   var xx = Blockly.Python.valueToCode(block, 'xx', Blockly.Python.ORDER_ATOMIC);
@@ -214,10 +198,10 @@ Blockly.Python['line_plot'] = function(block) {
 // 코드를 위해 
 if(text_matplotlib_pre_other.length > 0){
   var code = `plt.plot(${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", color = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )
-plt.title("${text_matplotlib_pre_graph_title}")\nplt.xlabel("${text_matplotlib_pre_graph_xlable}")\nplt.ylabel("${text_matplotlib_pre_graph_ylable}")\nplt.legend(loc='best')\n`;
+plt.title("${text_matplotlib_pre_graph_title}")\nplt.xlabel("${text_matplotlib_pre_graph_xlable}")\nplt.ylabel("${text_matplotlib_pre_graph_ylable}")\nplt.legend(loc='best')\nplt.show()\n`;
 } else {
   var code = `plt.plot(${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", color = ${value_matplotlib_pre_color} )
-plt.title("${text_matplotlib_pre_graph_title}")\nplt.xlabel("${text_matplotlib_pre_graph_xlable}")\nplt.ylabel("${text_matplotlib_pre_graph_ylable}")\nplt.legend(loc='best')\n`;
+plt.title("${text_matplotlib_pre_graph_title}")\nplt.xlabel("${text_matplotlib_pre_graph_xlable}")\nplt.ylabel("${text_matplotlib_pre_graph_ylable}")\nplt.legend(loc='best')\nplt.show()\n`;
 }
 
 
@@ -225,3 +209,15 @@ plt.title("${text_matplotlib_pre_graph_title}")\nplt.xlabel("${text_matplotlib_p
 return code;
 };
 
+//멧플롯립 예제를 위한 커스텀
+Blockly.Python['numpy_numerical_ranges_basic1(WJ)'] = function(block) {
+  var dropdown_numpy_numerical_ranges_opt = block.getFieldValue('numpy_Numerical_ranges_opt');
+  var value_numpy_numerical_ranges_val = Blockly.Python.valueToCode(block, 'parameter1', Blockly.Python.ORDER_ATOMIC);
+  var value_numpy_numerical_ranges_val2 = Blockly.Python.valueToCode(block, 'parameter2', Blockly.Python.ORDER_ATOMIC);
+  var value_numpy_numerical_ranges_val3 = Blockly.Python.valueToCode(block, 'parameter3', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = `${dropdown_numpy_numerical_ranges_opt}(${value_numpy_numerical_ranges_val}${value_numpy_numerical_ranges_val2}${value_numpy_numerical_ranges_val3})`;
+  
+  // TODO: Change ORDER_ATOMIC to the correct strength.
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};

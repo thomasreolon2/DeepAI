@@ -948,7 +948,34 @@ MAT +=      '</block >';
 
 
 
-//박스 그래프 2차원 
+//바 그래프 2차원 
+MAT += '<label text="%{BKY_MAT_BAR_LABEL}"></label>';
+
+MAT +='<block type = "create_list">';
+MAT +='  <value name="list">';
+MAT +='    <block type="variables_get">';
+MAT +='      <field name="VAR">x</field>';
+MAT +='    </block>';
+MAT +='  </value>';  
+MAT +='  <value name="text">';
+MAT +='    <shadow type="indata">';
+MAT +='      <field name="indata1">"item1", "item2", "item3", "item4"</field>';
+MAT +='    </shadow>';
+MAT +='  </value>';
+MAT +='</block>';
+
+MAT +='<block type = "create_list">';
+MAT +='  <value name="list">';
+MAT +='    <block type="variables_get">';
+MAT +='      <field name="VAR">y</field>';
+MAT +='    </block>';
+MAT +='  </value>';  
+MAT +='  <value name="text">';
+MAT +='    <shadow type="indata">';
+MAT +='      <field name="indata1">32, 123, 53, 11</field>';
+MAT +='    </shadow>';
+MAT +='  </value>';
+MAT +='</block>';
 
 MAT += '<block type="bar_char">';
 // MAT += '<value name="matplotlib_pre_graph_location1">';
@@ -963,12 +990,12 @@ MAT += '<block type="bar_char">';
 // MAT += '</value>';
 MAT += '<value name="xx">';
 MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">x_data</field>';
+MAT += '<field name="indata1">x</field>';
 MAT += '</shadow>';
 MAT += '</value>';
 MAT += '<value name="yy">';
 MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">y_data</field>';
+MAT += '<field name="indata1">y</field>';
 MAT += '</shadow>';
 MAT += '</value>';
 MAT += '<value name="matplotlib_pre_graph_Title">';
@@ -1006,16 +1033,58 @@ MAT += '</block >';
 
 
 //라인 
+
+
+
+MAT += '<label text="%{BKY_MAT_LINE_LABEL}"></label>';
+
+
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">x</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<block type="numpy_numerical_ranges_basic1(WJ)">';
+MAT +=                  '<value name="parameter1">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">0, 2*np.pi, 50</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+//y
+MAT +=      '<block type="many_variables">';
+MAT +=          '<value name="NUMBER">';
+MAT +=              '<block type="variables_get">';
+MAT +=                  '<field name="VAR">y</field>';
+MAT +=              '</block >';
+MAT +=          '</value>';
+MAT +=          '<value name="VALUE">';
+MAT +=              '<block type="numpy_mathematical_functions">';
+MAT +=                  '<value name="numpy_Mathematical functions_val">';
+MAT +=                      '<shadow type="indata">';
+MAT +=                          '<field name="indata1">x</field>';
+MAT +=                      '</shadow>';
+MAT +=                  '</value>';
+MAT +=              '</block>';
+MAT +=          '</value>';
+MAT +=      '</block>';
+
+
 MAT += '<block type="line_plot">';
 
 MAT += '<value name="xx">';
 MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">x_data</field>';
+MAT += '<field name="indata1">x</field>';
 MAT += '</shadow>';
 MAT += '</value>';
 MAT += '<value name="yy">';
 MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">y_data</field>';
+MAT += '<field name="indata1">y</field>';
 MAT += '</shadow>';
 MAT += '</value>';
 MAT += '<value name="matplotlib_pre_graph_Title">';
