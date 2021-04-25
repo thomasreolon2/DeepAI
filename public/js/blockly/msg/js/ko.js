@@ -997,7 +997,7 @@ Blockly.Msg['LINEAR_LOGISTIC_REGRESSION_CV_1'] = "[로지스틱 회귀 CV 모델
 Blockly.Msg['LINEAR_LOGISTIC_REGRESSION_CV_2'] = "교차검증 횟수";
 Blockly.Msg['LINEAR_RIDGE_CLASSIFIER'] = "[Ridge 분류기]";
 Blockly.Msg['LINEAR_SGD_CLASSIFIER'] = "[SGD 분류기]";
-Blockly.Msg['LINEAR_PERCEPTRON'] = "[퍼셉트론 모델]";
+Blockly.Msg['LINEAR_PERCEPTRON'] = "[퍼셉트론 모델-Perceptron]";
 Blockly.Msg['LINEAR_COEF'] = "[계수 추출-coef_] 모델";
 Blockly.Msg['LINEAR_INTERCEPT'] = "[절편 추출-intercept_] 모델";
 
