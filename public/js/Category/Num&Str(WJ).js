@@ -5,7 +5,7 @@ NUM += '<field name="NUM">0</field>';
 NUM += '</block>';
 
 //연산블럭
-NUM += '<block type="Oper">';
+NUM += '<block type="math_arithmetic">';
 NUM += '<value name="A">';
 NUM += '  <shadow type="indata">';
 NUM += '    <field name="indata1">0</field>';
