@@ -6,7 +6,7 @@ MAT += '<block type="visualization_library"></block >';
 
 // MAT += '<block type="visualization_library_cm"></block >';
 
-// MAT += '<block type="val_vi"></block >';
+
 
 
 // MAT += '<block type="matplotlib_pre_graph_plt_2">';
@@ -170,6 +170,9 @@ MAT += '</block >';
 // //<!--  matplot3 시각화 하기      -->';
 // //<!-- MAT += '<block type="matplotlib_graph_end"></block>'; -->';
 // //<!--  matplot3 시각화 하기      -->';
+
+// 테이블 형식 출력
+MAT += '<block type="val_vi"></block >';
 
 // //<!--  matplot plt.show()      -->';
 MAT += '<block type="matplotlib_plt_show"></block >';
