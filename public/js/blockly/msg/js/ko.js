@@ -959,11 +959,11 @@ Blockly.Msg['DATASET_CSV3_3'] = "선택하세요";
 
 // ---- 전처리
 Blockly.Msg['PREPROCESSING_SKLEARN'] = "[임포트] 전처리 ";
-Blockly.Msg['PREPROCESSING_LABELENCODER_1'] = "[데이터 라벨 인코딩] ";
+Blockly.Msg['PREPROCESSING_LABELENCODER_1'] = "[데이터 라벨 인코딩] LabelEncoder ";
 Blockly.Msg['PREPROCESSING_LABELENCODER_2'] = "데이터";
 Blockly.Msg['PREPROCESSING_LABELENCODER_3'] = "컬럼설정";
 Blockly.Msg['PREPROCESSING_LABELENCODER_4'] = "컬럼명";
-Blockly.Msg['PREPROCESSING_TRAIN_TEST_SPLIT_1'] = "[데이터 분리] ";
+Blockly.Msg['PREPROCESSING_TRAIN_TEST_SPLIT_1'] = "[데이터 분리] train_test_split ";
 Blockly.Msg['PREPROCESSING_TRAIN_TEST_SPLIT_2'] = "예";
 Blockly.Msg['PREPROCESSING_TRAIN_TEST_SPLIT_3'] = "아니오";
 Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_1'] = "[다항 Features] ";
@@ -971,7 +971,7 @@ Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_2'] = "모델";
 Blockly.Msg['PREPROCESSING_POLYNOMIALFEATURES_3'] = "상호작용";
 Blockly.Msg['PREPROCESSING_NORMAL_1'] = "[표준스케일] 프레임";
 Blockly.Msg['PREPROCESSING_NORMAL_2'] = "컬럼명";
-Blockly.Msg['PREPROCESSING_ONEHOTENCODER_1'] = "[데이터 원-핫인코딩] ";
+Blockly.Msg['PREPROCESSING_ONEHOTENCODER_1'] = "[데이터 원-핫인코딩] OneHotEncoder ";
 Blockly.Msg['PREPROCESSING_ONEHOTENCODER_2'] = "데이터";
 Blockly.Msg['PREPROCESSING_ONEHOTENCODER_3'] = "컬럼설정";
 Blockly.Msg['PREPROCESSING_ONEHOTENCODER_4'] = "컬럼명";
@@ -998,8 +998,8 @@ Blockly.Msg['LINEAR_LOGISTIC_REGRESSION_CV_2'] = "교차검증 횟수";
 Blockly.Msg['LINEAR_RIDGE_CLASSIFIER'] = "[Ridge 분류기]";
 Blockly.Msg['LINEAR_SGD_CLASSIFIER'] = "[SGD 분류기]";
 Blockly.Msg['LINEAR_PERCEPTRON'] = "[퍼셉트론 모델]";
-Blockly.Msg['LINEAR_COEF'] = "[계수 추출] 모델";
-Blockly.Msg['LINEAR_INTERCEPT'] = "[절편 추출] 모델";
+Blockly.Msg['LINEAR_COEF'] = "[계수 추출] coef_ 모델";
+Blockly.Msg['LINEAR_INTERCEPT'] = "[절편 추출] intercept_ 모델";
 
 // ---- KNN
 Blockly.Msg['KNN_IMPORT'] = "[임포트] KNN";
@@ -1054,9 +1054,9 @@ Blockly.Msg['ESEMBLE_ISOLATION_FOREST'] = "이상치 비율";
 // ---- 메트릭스(Metrics)
 Blockly.Msg['METRICS_IMPORT_SCIKIT_1'] = "[임포트] 메트릭스 ";
 Blockly.Msg['METRICS_IMPORT_SCIKIT_2'] = "정확도";
-Blockly.Msg['METRICS_MODEL_FIT'] = "[모델 학습] 모델";
-Blockly.Msg['METRICS_MODEL_SCORE'] = "[모델 평가]  모델";
-Blockly.Msg['METRICS_MODEL_PREDICT_1'] = "[모델 예측] 모델";
+Blockly.Msg['METRICS_MODEL_FIT'] = "[모델 학습] fit 모델";
+Blockly.Msg['METRICS_MODEL_SCORE'] = "[모델 평가] score 모델";
+Blockly.Msg['METRICS_MODEL_PREDICT_1'] = "[모델 예측] predict 모델";
 Blockly.Msg['METRICS_MODEL_PREDICT_2'] = "예측 값";
 Blockly.Msg['METRICS_ACC_SCORE'] = "[분류 정확도] ";
 Blockly.Msg['METRICS_AUC_1'] = "[AUC 계산] ";
