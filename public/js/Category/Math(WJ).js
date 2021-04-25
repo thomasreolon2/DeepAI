@@ -29,6 +29,14 @@ MATH +='</block>';
 
 MATH +='<block type = "math3"></block>';
 
+MATH += '<block type="math_single">';
+MATH += '<value name="NUM">';
+MATH += '  <shadow type="indata">';
+MATH += '    <field name="indata1"></field>';
+MATH += '  </shadow>';
+MATH += '</value>';
+MATH += '</block>';
+
 //<!--2020-12-29 전우진 math1 end -->';
 // MATH +='<label text="통계 및 랜덤"></label>';
 MATH +='<label text="%{BKY_MATH_STAT_RAN}"></label>';

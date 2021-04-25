@@ -1411,10 +1411,8 @@ Blockly.defineBlocksWithJsonArray([
   },
   {
     type: "math_single",
-    message0: "%1 %2 %3",
+    message0: "수학 %1 %2",
     args0: [
-      {"type": "field_image","src": "/img/Operation/O3-logo.png","width": 25,"height": 22,"alt": "*","flipRtl": false},
-
       {
         type: "field_dropdown",
         name: "OP",

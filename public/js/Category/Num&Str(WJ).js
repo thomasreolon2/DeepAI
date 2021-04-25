@@ -36,6 +36,9 @@ NUM += '  </shadow>';
 NUM += '</value>';
 NUM += '</block>';
 
+
+
+
 // text
 NUM += '<block type="text"></block>';
 
