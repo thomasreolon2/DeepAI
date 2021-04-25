@@ -1,4 +1,4 @@
-var SKI = '<category name="사이킷이미지(Skimage)" colour="%{BKY_SCIKITLEARN_IMAGE}">';
+var SKI = '<category name="사이킷이미지(Skimg)" colour="%{BKY_SCIKITLEARN_IMAGE}">';
 
 SKI += '<block type="import_skimage"></block>';
 SKI += '<block type="import_skimage_morphology"></block>';

@@ -316,7 +316,7 @@ Blockly.Blocks['kfold'] = {
 Blockly.Blocks['polynomialfeatures'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("[PolynomialFeatures] ")
+            .appendField("[다항특성] ")
             .appendField("PolynomialFeatures(");
         //this.appendValueInput("NAME")
         this.appendValueInput("NAME").appendField("").setCheck(null);
