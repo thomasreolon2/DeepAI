@@ -997,7 +997,7 @@ Blockly.Msg['LINEAR_LOGISTIC_REGRESSION_CV_1'] = "[로지스틱 회귀 CV 모델
 Blockly.Msg['LINEAR_LOGISTIC_REGRESSION_CV_2'] = "교차검증 횟수";
 Blockly.Msg['LINEAR_RIDGE_CLASSIFIER'] = "[Ridge 분류기]";
 Blockly.Msg['LINEAR_SGD_CLASSIFIER'] = "[SGD 분류기]";
-Blockly.Msg['LINEAR_PERCEPTRON'] = "[퍼셉트론 모델]";
+Blockly.Msg['LINEAR_PERCEPTRON'] = "[퍼셉트론 모델-Perceptron]";
 Blockly.Msg['LINEAR_COEF'] = "[계수 추출] coef_ 모델";
 Blockly.Msg['LINEAR_INTERCEPT'] = "[절편 추출] intercept_ 모델";
 
@@ -1058,7 +1058,7 @@ Blockly.Msg['METRICS_MODEL_FIT'] = "[모델 학습] fit 모델";
 Blockly.Msg['METRICS_MODEL_SCORE'] = "[모델 평가] score 모델";
 Blockly.Msg['METRICS_MODEL_PREDICT_1'] = "[모델 예측] predict 모델";
 Blockly.Msg['METRICS_MODEL_PREDICT_2'] = "예측 값";
-Blockly.Msg['METRICS_ACC_SCORE'] = "[분류 정확도] ";
+Blockly.Msg['METRICS_ACC_SCORE'] = "[분류 정확도-accuracy_score] ";
 Blockly.Msg['METRICS_AUC_1'] = "[AUC 계산] ";
 Blockly.Msg['METRICS_AUC_2'] = "X 축";
 Blockly.Msg['METRICS_AUC_3'] = "Y 축";
@@ -1094,15 +1094,15 @@ Blockly.Msg['SELECTION_SIVALIDATION_9'] = "모델"
 // ---- 신경망(Neuralnetwork)
 Blockly.Msg['NEURALNETWORK_IMPORT_MLP_1'] = "[임포트] 신경망 ";
 Blockly.Msg['NEURALNETWORK_IMPORT_MLP_2'] = "MLP분류기";
-Blockly.Msg['NEURALNETWORK_IMPORT_MLP_3'] = "MLP예측기";
-Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_1'] = "[MLP 분류기] ";
+Blockly.Msg['NEURALNETWORK_IMPORT_MLP_3'] = "MLP예측기-MLPRegressor";
+Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_1'] = "[MLP 분류기-MLPClassifier] ";
 Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_2'] = "모델"; // 중복 사용되는 것
 Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_3'] = "은닉층 개수"; // 중복 사용되는 것
 Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_4'] = "학습률"; // 중복 사용되는 것
-Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_REGRESSOR'] = "[MLP 예측기] ";
+Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_REGRESSOR'] = "[MLP 예측기-MLPRegressor] ";
 Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_1'] = "[BernoulliRBM] 모델";
 Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_2'] = "배치사이즈";
-Blockly.Msg['NEURALNETWORK_MLP_LOSS'] = "[MLP 손실값 추출 ] 모델";
+Blockly.Msg['NEURALNETWORK_MLP_LOSS'] = "[MLP 손실값 추출-loss] 모델";
 
 // 카테고리
 Blockly.Msg['CATEGORY_VARIABLE'] = "변수(Variable)";

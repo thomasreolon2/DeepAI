@@ -1050,7 +1050,7 @@ Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_4'] = "learning rate"; // 중�
 Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_REGRESSOR'] = "[MLP predictor] ";
 Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_1'] = "[BernoulliRBM] model";
 Blockly.Msg['NEURALNETWORK_BERNOULLIRBM_2'] = "batch siz";
-Blockly.Msg['NEURALNETWORK_MLP_LOSS'] = "[MLP loss value extraction ] model";
+Blockly.Msg['NEURALNETWORK_MLP_LOSS'] = "[MLP loss value extraction-loss] model";
 
 // 카테고리
 Blockly.Msg['CATEGORY_VARIABLE'] = "Variable";

@@ -981,7 +981,7 @@ Blockly.Blocks['import_scikit'] = {
 // //////////////////////////// 신경망 //////////////////////////////
 Blockly.Blocks['mlp_classifier'] = {
     init: function () {
-        this.appendDummyInput().appendField("[MLP 분류기]");
+        this.appendDummyInput().appendField("[MLP 분류기-MLPClassifier]");
         this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg['NEURALNETWORK_SKLEARN_MLP_CLASSIFIER_2']);
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("1"), "numSeed").appendField("Epochs").appendField(new Blockly.FieldTextInput("300"), "numEpochs");
         this.setInputsInline(true);
@@ -995,7 +995,7 @@ Blockly.Blocks['mlp_classifier'] = {
 
 Blockly.Blocks['mlp_regressor'] = {
     init: function () {
-        this.appendDummyInput().appendField("[MLP 예측기]");
+        this.appendDummyInput().appendField("[MLP 예측기-MLPRegressor]");
         this.appendValueInput("model").setCheck(null).appendField(Blockly.Msg.LINEAR_LINEAR_REGRESSION_2);
         this.appendDummyInput().appendField("Seed").appendField(new Blockly.FieldTextInput("1"), "numSeed").appendField("Epochs").appendField(new Blockly.FieldTextInput("500"), "numEpochs");
         this.setInputsInline(true);
