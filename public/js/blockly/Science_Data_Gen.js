@@ -125,10 +125,13 @@ Blockly.Python['np_array'] = function(block) {
   var value_np_array_val = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
   var value_np_dtype = Blockly.Python.valueToCode(block, 'DTYPE', Blockly.Python.ORDER_ATOMIC);
 
-  // TODO: Assemble Python into code variable.
-  var code = `np.array(${value_np_array_val}, ${value_np_dtype})`;
+  if(value_np_dtype.length == 0){
+    var code = `np.array(${value_np_array_val})`;
 
-  // TODO: Change ORDER_NONE to the correct strength. 
+  } else {
+    var code = `np.array(${value_np_array_val}, ${value_np_dtype})`;
+  }
+  
   return [code, Blockly.Python.ORDER_NONE];   
 };
   
