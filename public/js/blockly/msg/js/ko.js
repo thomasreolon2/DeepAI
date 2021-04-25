@@ -1016,8 +1016,8 @@ Blockly.Msg['KNN_KNEIGHBORS_GRAPH_FUNCTION_2'] = "포함시키기";
 Blockly.Msg['CLUSTER_IMPORT'] = "[ 임포트 ]";
 Blockly.Msg['CLUSTER_K_MEANS_1'] = "[KMeans 모델 생성] 모델 ";
 Blockly.Msg['CLUSTER_K_MEANS_2'] = "그룹 개수 ";
-Blockly.Msg['CLUSTER_K_MEANS_INERTIA'] = "[K-Means 응집도 추출 - inertia_] 모델 ";
-Blockly.Msg['CLUSTER_K_MEANS_CENTROID'] = "[K-Means Centroid 추출 - cluster_centers_] 모델 ";
+Blockly.Msg['CLUSTER_K_MEANS_INERTIA'] = "[K-Means 응집도 추출-inertia_] 모델 ";
+Blockly.Msg['CLUSTER_K_MEANS_CENTROID'] = "[K-Means Centroid 추출-cluster_centers_] 모델 ";
 
 // ---- 결정트리(Decisiontree)
 Blockly.Msg['DECISIONTREE_IMPORT'] = "[임포트] 결정트리";
