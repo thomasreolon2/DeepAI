@@ -572,14 +572,14 @@ Blockly.Python['linearsvc'] = function (block) {
 // MLP Classifier
 Blockly.Python['sklearn_mlp_classifier'] = function (block) {
     var value_sklearn_mlp_lib_val = Blockly.Python.valueToCode(block, 'sklearn_mlp_lib_val', Blockly.Python.ORDER_ATOMIC);
-    var text_sklearn_mlp_hidden_layer_sizes_ = block.getFieldValue('sklearn_mlp_hidden_layer_sizes ');
+    var text_sklearn_mlp_hidden_layer_sizes_ = Blockly.Python.valueToCode(block, 'sklearn_mlp_hidden_layer_sizes', Blockly.Python.ORDER_ATOMIC);
     var dropdown_sklearn_mlp_activation_option = block.getFieldValue('sklearn_mlp_activation_Option');
     var dropdown_sklearn_mlp_optimizer_option = block.getFieldValue('sklearn_MLP_Optimizer_Option');
     var dropdown_sklearn_mlp_warm_start_option = block.getFieldValue('sklearn_MLP_Warm_Start_Option');
-    var text_sklearn_mlp_learning_rate = block.getFieldValue('sklearn_MLP_learning_rate');
+    var text_sklearn_mlp_learning_rate = Blockly.Python.valueToCode(block, 'sklearn_MLP_learning_rate', Blockly.Python.ORDER_ATOMIC);
     var text_sklearn_mlp_max_iter = Blockly.Python.valueToCode(block, 'sklearn_MLP_Max_iter', Blockly.Python.ORDER_ATOMIC);
-    var text_sklearn_mlp_random_state = block.getFieldValue('sklearn_MLP_random_state');
-    var text_sklearn_mlp_batch_size = block.getFieldValue('sklearn_MLP_batch_size');
+    var text_sklearn_mlp_random_state = Blockly.Python.valueToCode(block, 'sklearn_MLP_random_state', Blockly.Python.ORDER_ATOMIC);
+    var text_sklearn_mlp_batch_size = Blockly.Python.valueToCode(block, 'sklearn_MLP_batch_size', Blockly.Python.ORDER_ATOMIC);
     // var value_sklearn_mlp_fit_x = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_X', Blockly.Python.ORDER_ATOMIC);
     // var value_sklearn_mlp_fit_y = Blockly.Python.valueToCode(block, 'sklearn_mlp_fit_Y', Blockly.Python.ORDER_ATOMIC);
 
