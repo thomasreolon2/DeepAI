@@ -1519,7 +1519,7 @@ Blockly.Blocks['np_array'] = {
   init: function() {
     this.appendValueInput("INPUT")
         .setCheck(null)
-        .appendField("[np 배열]");
+        .appendField("[배열생성]");
     this.appendValueInput("DTYPE")
         .setCheck(null);
     this.setInputsInline(true);
