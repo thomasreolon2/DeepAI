@@ -292,10 +292,9 @@ Blockly.JavaScript['matplotlib_pie'] = function(block) {
 };
 
 // 맷플롯립 버블 만들기
-Blockly.JavaScript['matplotlib_bubble'] = function(block) {
+Blockly.JavaScript['matplotlib_scatter'] = function(block) {
   var value_data_x = Blockly.JavaScript.valueToCode(block, 'data_x', Blockly.JavaScript.ORDER_ATOMIC);
   var value_data_y = Blockly.JavaScript.valueToCode(block, 'data_y', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_data_z = Blockly.JavaScript.valueToCode(block, 'data_z', Blockly.JavaScript.ORDER_ATOMIC);
   var value_color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_ATOMIC);
   var value_title = Blockly.JavaScript.valueToCode(block, 'title', Blockly.JavaScript.ORDER_ATOMIC);
   var value_legend = Blockly.JavaScript.valueToCode(block, 'legend', Blockly.JavaScript.ORDER_ATOMIC);

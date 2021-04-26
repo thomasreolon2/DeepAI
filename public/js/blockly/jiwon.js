@@ -654,8 +654,8 @@ Blockly.defineBlocksWithJsonArray([
 
     // 출력설정 pie 차트
     {
-        "type": "matplotlib_bubble",
-        "message0": "%{BKY_MATPLOT_BUBBLE}",
+        "type": "matplotlib_scatter",
+        "message0": "%{BKY_MATPLOT_SCATTER}",
         "args0": [
         {
             "type": "input_value",
@@ -664,10 +664,6 @@ Blockly.defineBlocksWithJsonArray([
         {
             "type": "input_value",
             "name": "data_y"
-        },
-        {
-            "type": "input_value",
-            "name": "data_z"
         },
         {
             "type": "input_value",

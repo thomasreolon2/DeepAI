@@ -23,6 +23,7 @@ Blockly.Msg["MAT_VISUAL"] = "데이터시각화";
 
 
 Blockly.Msg["MAT_PIE_LABEL"] = "파이형 그래프";
+Blockly.Msg["MAT_SCATTER_LABEL"] = "산포 그래프";
 Blockly.Msg["MAT_BUBBLE_LABEL"] = "버블형 그래프";
 Blockly.Msg["MAT_COLORMAP_LABEL"] = "컬러맵";
 Blockly.Msg["MAT_HISTO_LABEL"] = "히스토그램";

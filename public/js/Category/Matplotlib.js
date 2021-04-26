@@ -495,7 +495,7 @@ MAT +=      '</block>';
 
 // 버블형 그래프
 //<!--  matplot bubble    -->
-MAT += '<label text="%{BKY_MAT_BUBBLE_LABEL}"></label>';
+MAT += '<label text="%{BKY_MAT_SCATTER_LABEL}"></label>';
 
 // x
 MAT +=      '<block type="many_variables">';
@@ -533,35 +533,9 @@ MAT +=              '</block >';
 MAT +=          '</value>';
 MAT +=      '</block>';
 
-// z
-MAT +=      '<block type="many_variables">';
-MAT +=          '<value name="NUMBER">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">z</field>';
-MAT +=              '</block >';
-MAT +=          '</value>';
-MAT +=          '<value name="VALUE">';
-MAT +=              '<block type="Oper1">';
-MAT +=                  '<value name="A">';
-MAT +=                      '<block type="numpy_searching">';
-MAT +=                          '<value name="numpy_Searching">';
-MAT +=                              '<shadow type="indata">';
-MAT +=                                  '<field name="indata1">size=100</field>';
-MAT +=                              '</shadow>';
-MAT +=                          '</value>';
-MAT +=                      '</block >';
-MAT +=                   '</value>';
-MAT +=                  '<value name="B">';
-MAT +=                      '<shadow type="indata">';
-MAT +=                          '<field name="indata1">100</field>';
-MAT +=                      '</shadow>';
-MAT +=                  '</value>';
-MAT +=              '</block>';
-MAT +=          '</value>';
-MAT +=      '</block>';
 
-// 버블그래프 
-MAT +=      '<block type="matplotlib_bubble">';
+// 산포도 그래프 
+MAT +=      '<block type="matplotlib_scatter">';
 MAT +=          '<value name="data_x">';
 MAT +=              '<shadow type="indata">';
 MAT +=                  '<field name="indata1">x</field>';
@@ -574,27 +548,21 @@ MAT +=                  '<field name="indata1">y</field>';
 MAT +=              '</shadow>';
 MAT +=          '</value>';
 
-MAT +=          '<value name="data_z">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">z</field>';
-MAT +=              '</shadow>';
-MAT +=          '</value>';
-
 MAT +=          '<value name="color">';
 MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">\'violet\'</field>';
+MAT +=                  '<field name="indata1">\'r\'</field>';
 MAT +=              '</shadow>';
 MAT +=          '</value>';
 
 MAT +=          '<value name="title">';
 MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">\'Bubble Chart\'</field>';
+MAT +=                  '<field name="indata1">\'Scatter Chart\'</field>';
 MAT +=              '</shadow>';
 MAT +=          '</value>';
 
 MAT +=          '<value name="legend">';
 MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">\'(x,y,z)\'</field>';
+MAT +=                  '<field name="indata1">\'(x,y)\'</field>';
 MAT +=              '</shadow>';
 MAT +=          '</value>';
 
