@@ -18,11 +18,17 @@ Blockly.Msg["PAN_SERIES"] = "시리즈";
 //맷플롯립
 
 
-
-
 Blockly.Msg["MAT_BASIC"] = "기본";
 Blockly.Msg["MAT_VISUAL"] = "데이터시각화";
 
+
+Blockly.Msg["MAT_PIE_LABEL"] = "파이형 그래프";
+Blockly.Msg["MAT_BUBBLE_LABEL"] = "버블형 그래프";
+Blockly.Msg["MAT_COLORMAP_LABEL"] = "컬러맵";
+Blockly.Msg["MAT_HISTO_LABEL"] = "히스토그램";
+Blockly.Msg["MAT_SURFACE_LABEL"] = "서페이스";
+Blockly.Msg["MAT_BAR_LABEL"] = "막대형 그래프";
+Blockly.Msg["MAT_LINE_LABEL"] = "라인형 그래프";
 
 
 //사이킷런
@@ -75,10 +81,4 @@ Blockly.Msg["SKL_BASIC_EVA"] = "기본 평가 지표";
 Blockly.Msg["SKL_ADV"] = "고급 평가 지표";
 
 
-Blockly.Msg["MAT_PIE_LABEL"] = "파이형 그래프";
-Blockly.Msg["MAT_BUBBLE_LABEL"] = "버블형 그래프";
-Blockly.Msg["MAT_COLORMAP_LABEL"] = "컬러맵";
-
-Blockly.Msg["MAT_BAR_LABEL"] = "막대형 그래프";
-Blockly.Msg["MAT_LINE_LABEL"] = "라인형 그래프";
 

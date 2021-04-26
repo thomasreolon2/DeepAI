@@ -663,8 +663,10 @@ MAT +=          '</value>';
 MAT +=      '</block>';
 
 
-//<!--  matplot 1차원 히스토그램    -->
+//<!--  matplot 1차원 히스토그램    -->HISTO
+MAT += '<label text="%{BKY_MAT_HISTO_LABEL}"></label>';
 // x
+
 MAT +=      '<block type="many_variables">';
 MAT +=          '<value name="NUMBER">';
 MAT +=              '<block type="variables_get">';
@@ -818,7 +820,7 @@ MAT +=      '</block >';
 
 //<!--  matplot 3차원 plot_surface(서페이스)    -->
 // x
-
+MAT += '<label text="%{BKY_MAT_SURFACE_LABEL}"></label>';
 MAT +=      '<block type="many_variables">';
 MAT +=          '<value name="NUMBER">';
 MAT +=              '<block type="variables_get">';
