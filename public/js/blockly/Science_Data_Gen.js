@@ -642,16 +642,21 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
     code =`ax[${value_matplotlib_pre_graph_location1}][${value_matplotlib_pre_graph_location2}].${matplot_graph}(` ;  
   }
 
-  if(yy != ""){
-    yy = ", " + yy;
-  }
+  // 만약 xy값중 비어있는 값이 있다면 처리
+  xyValue = `${xx}, ${yy}`;
+  if(xx==""){
+    xyValue = `${yy}`;
+  } else if(yy==""){
+    xyValue = `${xx}`;
+  } 
+
 
   // 그래프에 따른 뒷 내용 변환 concat
 
   // 에러바 그래프
   if(dropdown_matplotlib_graph_select == "matplotlib_error_bar")
   {  
-    code = code.concat(`${xx + "" + yy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
+    code = code.concat(`${xyValue} ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
   }
   // 산점도 그래프, 선그래프 
   else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram" || dropdown_matplotlib_graph_select=="matplotlib_bar")
@@ -661,9 +666,9 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
     {
       // 기타 부분 있을 때 
       if(text_matplotlib_pre_other.length > 0){
-        code = code.concat(`${xx + "" + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
+        code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
       } else {
-        code = code.concat(`${xx + "" + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
+        code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
       }
     }
    
@@ -674,9 +679,9 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
   {    
       
     if(text_matplotlib_pre_other.length > 0){
-      code = code.concat(`${xx + "" + yy }, ${text_matplotlib_pre_other} )`);    
+      code = code.concat(`${xyValue}, ${text_matplotlib_pre_other} )`);    
     } else {
-      code = code.concat(`${xx + "" + yy })`);   
+      code = code.concat(`${xyValue})`);   
     }
   } 
 
@@ -774,16 +779,20 @@ if(DL_Gra == "graph_or_1"){//둘중 하나
   code =`plt.${matplot_graph}(` ;  
 }
 
+// 만약 xy값중 비어있는 값이 있다면 처리
+xyValue = `${xx}, ${yy}`;
+if(xx==""){
+  xyValue = `${yy}`;
+} else if(yy==""){
+  xyValue = `${xx}`;
+} 
 
-if(yy != ""){
-  yy = ", " + yy;
-}
 // 그래프에 따른 뒷 내용 변환 concat
 
 // 에러바 그래프
 if(dropdown_matplotlib_graph_select == "matplotlib_error_bar")
 {  
-  code = code.concat(`${xx + "" + yy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
+  code = code.concat(`${xyValue} ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
 }
 // 산점도 그래프, 선그래프 
 else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram" || dropdown_matplotlib_graph_select=="matplotlib_bar")
@@ -793,9 +802,9 @@ else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_ma
   {
     // 기타 부분 있을 때 
     if(text_matplotlib_pre_other.length > 0){
-      code = code.concat(`${xx + "" + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
+      code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
     } else {
-      code = code.concat(`${xx + "" + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
+      code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
     }
   }
  
@@ -806,9 +815,9 @@ else if(dropdown_matplotlib_graph_select == "matplotlib_box" )
 {    
     
   if(text_matplotlib_pre_other.length > 0){
-    code = code.concat(`${xx + "" + yy }, ${text_matplotlib_pre_other} )`);    
+    code = code.concat(`${xyValue}, ${text_matplotlib_pre_other} )`);    
   } else {
-    code = code.concat(`${xx + "" + yy })`);   
+    code = code.concat(`${xyValue})`);   
   }
 } 
 
