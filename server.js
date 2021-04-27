@@ -20,11 +20,11 @@ var server = require('http').createServer(options, app).listen(50197, function()
 
 
 // 명성이형이 하던 크롤링
-const cheerio = require("cheerio")
-const client = require('cheerio-httpcli');  
+// const cheerio = require("cheerio")
+// const client = require('cheerio-httpcli');  
 const bodyParser = require('body-parser'); 
 const url = require('url');   
-const request = require('request'); 
+// const request = require('request'); 
 
 // 크롤링 
 const axios = require("axios")
