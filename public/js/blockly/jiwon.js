@@ -619,6 +619,14 @@ Blockly.defineBlocksWithJsonArray([
         "type": "matplotlib_pie",
         "message0": "%{BKY_MATPLOT_PIE}",
         "args0": [
+        { 
+            "type" : "field_image",
+            "src" : "/img/Graph/PIE-logo.png",
+            "width" : 25,
+            "height" : 23,
+            "alt" : "LINE",
+            "flipRtl" : false
+        },
         {
             "type": "input_value",
             "name": "data"
@@ -657,6 +665,14 @@ Blockly.defineBlocksWithJsonArray([
         "type": "matplotlib_scatter",
         "message0": "%{BKY_MATPLOT_SCATTER}",
         "args0": [
+        { 
+            "type" : "field_image",
+            "src" : "/img/Graph/SCATTER-logo.png",
+            "width" : 25,
+            "height" : 23,
+            "alt" : "LINE",
+            "flipRtl" : false
+        },
         {
             "type": "input_value",
             "name": "data_x"
@@ -695,6 +711,14 @@ Blockly.defineBlocksWithJsonArray([
         "type": "matplotlib_colormap",
         "message0": "%{BKY_MATPLOT_COLORMAP}",
         "args0": [
+        { 
+            "type" : "field_image",
+            "src" : "/img/Graph/COLORMAP-logo.png",
+            "width" : 25,
+            "height" : 23,
+            "alt" : "LINE",
+            "flipRtl" : false
+        },
         {
             "type": "input_value",
             "name": "data_x"

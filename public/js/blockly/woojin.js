@@ -58,7 +58,7 @@
   Blockly.defineBlocksWithJsonArray([
 
   {
-    "type": "bar_char",
+    "type": "bar_char",    
     "message0": "%{BKY_MATPLOT_BAR_GRAPH}",
     "args0": [
       // {
@@ -72,7 +72,14 @@
       //   "type": "input_value",
       //   "name": "matplotlib_pre_graph_location2"
       // },
-      
+      { 
+        "type" : "field_image",
+        "src" : "/img/Graph/BAR-logo.png",
+        "width" : 25,
+        "height" : 23,
+        "alt" : "LINE",
+        "flipRtl" : false
+      },
       {
         "type": "field_dropdown",
         "name": "matplotlib_graph_select",
@@ -146,7 +153,14 @@
       //   "type": "input_value",
       //   "name": "matplotlib_pre_graph_location2"
       // },
-      
+      { 
+        "type" : "field_image",
+        "src" : "/img/Graph/LINE-logo.png",
+        "width" : 25,
+        "height" : 23,
+        "alt" : "LINE",
+        "flipRtl" : false
+      },
       {
         "type": "input_value",
         "name": "xx"

@@ -670,6 +670,14 @@ Blockly.defineBlocksWithJsonArray(
       "type": "matplotlib_histo_graph_plt",
       "message0": "%{BKY_MATPLOT_HISTO_GRAPH_1_PLT}",
       "args0": [  
+        { 
+          "type" : "field_image",
+          "src" : "/img/Graph/HIST-logo.png",
+          "width" : 25,
+          "height" : 23,
+          "alt" : "LINE",
+          "flipRtl" : false
+        },
         {
           "type": "input_value",
           "name": "xx"
@@ -702,6 +710,14 @@ Blockly.defineBlocksWithJsonArray(
       "type": "matplotlib_bubble_graph_plt",
       "message0": "%{BKY_MATPLOT_BUBBLE_GRAPH_1_PLT}",
       "args0": [  
+        { 
+          "type" : "field_image",
+          "src" : "/img/Graph/BUBBLE-logo.png",
+          "width" : 25,
+          "height" : 23,
+          "alt" : "LINE",
+          "flipRtl" : false
+        },
         {
           "type": "input_value",
           "name": "xx"
@@ -738,6 +754,14 @@ Blockly.defineBlocksWithJsonArray(
       "type": "matplotlib_axes3d_graph_plt",
       "message0": "%{BKY_MATPLOT_AXES3D_GRAPH_1_PLT}",
       "args0": [  
+        { 
+          "type" : "field_image",
+          "src" : "/img/Graph/SURFACE-logo.png",
+          "width" : 25,
+          "height" : 23,
+          "alt" : "LINE",
+          "flipRtl" : false
+        },
         {
           "type": "input_value",
           "name": "xx"
