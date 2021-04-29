@@ -24,7 +24,7 @@ Blockly.Blocks['croll_requests_get'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(20);
+        this.setColour("%{BKY_CROLL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -40,7 +40,7 @@ Blockly.Blocks['croll_req_text'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(20);
+        this.setColour("%{BKY_CROLL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
@@ -60,7 +60,7 @@ Blockly.Blocks['croll_url_load'] = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(20);
+        this.setColour("%{BKY_CROLL_HUE}");
         this.setTooltip("");
         this.setHelpUrl("");
     }
