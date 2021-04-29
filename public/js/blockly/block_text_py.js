@@ -80,13 +80,13 @@ Blockly.Python['text_editing'] = function(block) {
       var code = `${variable_var}.${dropdown_func}(${text_input})`;
     break;
     case 'lstrip':
-      var code = `${variable_var}.${dropdown_func}()`;
+      var code = `${variable_var}.${dropdown_func}(${text_input})`;
     break;
     case 'rstrip':
-      var code = `${variable_var}.${dropdown_func}()`;
+      var code = `${variable_var}.${dropdown_func}(${text_input})`;
     break;
     case 'strip':
-      var code = `${variable_var}.${dropdown_func}()`;
+      var code = `${variable_var}.${dropdown_func}(${text_input})`;
     break;
   }
   return [code, Blockly.Python.ORDER_ATOMIC];
