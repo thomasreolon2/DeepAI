@@ -84,6 +84,6 @@ Blockly.Python['croll_find_one'] = function (block) {
   var result = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
   var value_name = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
   var input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
-  let code = `${result} = ${value_name}.find_all(${input_name})`;
+  let code = `${result} = ${value_name}.find(${input_name})\n`;
   return code;
 };
