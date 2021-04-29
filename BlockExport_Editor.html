@@ -812,6 +812,8 @@
           if (code.indexOf("req.text") != -1){
             code = code.replace("req.text", 'req');
           }
+
+          
         }
 
 
@@ -821,8 +823,10 @@
       async function runcode() {
 
         "use strict";
-        if($('#toggle-two').prop('checked'))
+        if($('#toggle-two').prop('checked')){
           runcode_2(code, code2);
+
+        }
         else
           runcode_2(code_async, code2);
           
@@ -1227,7 +1231,7 @@ function printc(x) {
             languagePluginLoader.then(async ()=>{   
     
               // pyodide모듈 로드     
-              pyodide.loadPackage(['pandas', 'numpy', 'matplotlib','biopython','beautifulsoup4','scipy','sympy', 'scikit-learn', 'scikit-image']).then(() => {
+              pyodide.loadPackage([ 'numpy', 'matplotlib','beautifulsoup4',]).then(() => {
                 console.log("모듈 로드 완료.");
               })
               
