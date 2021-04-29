@@ -34,9 +34,21 @@ Blockly.Python['croll_url_load'] = function (block) {
 // croll_soup_select
 Blockly.Python['croll_soup_select'] = function (block) {
   let value_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  let value_name2 = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
   let input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
   let code = `
-${value_name} = soup.select(${input_name})
+${value_name} = ${value_name2}.select(${input_name})
+`;
+  return code;
+};
+
+// croll_soup_select_one
+Blockly.Python['croll_soup_select_one'] = function (block) {
+  let value_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  let value_name2 = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
+  let input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  let code = `
+${value_name} = ${value_name2}.select_one(${input_name})
 `;
   return code;
 };
@@ -44,7 +56,8 @@ ${value_name} = soup.select(${input_name})
 // croll_get_text
 Blockly.Python['croll_get_text'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
-  let code = `${value_name}.get_text()`;
+  var index = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
+  let code = `${value_name}[${index}].get_text()`;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -62,5 +75,15 @@ Blockly.Python['croll_find_all'] = function (block) {
   var value_name = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
   var input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
   let code = `${result} = ${value_name}.find_all(${input_name})\n`;
+  return code;
+};
+
+
+// croll_soup_select
+Blockly.Python['croll_find_one'] = function (block) {
+  var result = Blockly.Python.valueToCode(block, 'VAR', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'VAR2', Blockly.Python.ORDER_ATOMIC);
+  var input_name = Blockly.Python.valueToCode(block, 'INPUT', Blockly.Python.ORDER_ATOMIC);
+  let code = `${result} = ${value_name}.find_all(${input_name})`;
   return code;
 };

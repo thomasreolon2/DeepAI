@@ -72,7 +72,32 @@ Blockly.Blocks['croll_soup_select'] = {
             .appendField("[CSS선택자]");
         this.appendValueInput("VAR").setCheck(null);
         this.appendDummyInput()
-            .appendField(" = soup.select(")
+            .appendField(" = ")
+        this.appendValueInput("VAR2").setCheck(null);
+        this.appendDummyInput()
+            .appendField(" .select(")
+            this.appendValueInput("INPUT").setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_CROLL_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['croll_soup_select_one'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[CSS선택자]");
+        this.appendValueInput("VAR").setCheck(null);
+        this.appendDummyInput()
+            .appendField(" = ")
+        this.appendValueInput("VAR2").setCheck(null);
+        this.appendDummyInput()
+            .appendField(" .select_one(")
         this.appendValueInput("INPUT").setCheck(null);
         this.appendDummyInput()
             .appendField(")");
@@ -90,6 +115,11 @@ Blockly.Blocks['croll_get_text'] = {
         this.appendDummyInput()
             .appendField("[text가져오기]");
         this.appendValueInput("VAR").setCheck(null);
+        this.appendDummyInput()
+        .appendField("[");
+        this.appendValueInput("VAR2").setCheck(null);
+        this.appendDummyInput()
+        .appendField("]");
         this.appendDummyInput()
             .appendField(".get_text()");
         this.setInputsInline(true);
@@ -126,6 +156,28 @@ Blockly.Blocks['croll_find_all'] = {
         this.appendValueInput("VAR2").setCheck(null);
         this.appendDummyInput()
             .appendField(".find_all(");
+        this.appendValueInput("INPUT").setCheck(null);
+        this.appendDummyInput()
+            .appendField(")");
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour("%{BKY_CROLL_HUE}");
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['croll_find_one'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("[하나가져오기]");
+        this.appendValueInput("VAR").setCheck(null);
+        this.appendDummyInput()
+        .appendField("=");
+        this.appendValueInput("VAR2").setCheck(null);
+        this.appendDummyInput()
+            .appendField(".find(");
         this.appendValueInput("INPUT").setCheck(null);
         this.appendDummyInput()
             .appendField(")");
