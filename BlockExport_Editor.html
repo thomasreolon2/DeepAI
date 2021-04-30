@@ -1231,7 +1231,7 @@ function printc(x) {
             languagePluginLoader.then(async ()=>{   
     
               // pyodide모듈 로드     
-              pyodide.loadPackage(['pandas', 'numpy', 'matplotlib','biopython','beautifulsoup4','scipy','sympy', 'scikit-learn', 'scikit-image']).then(() => {
+              pyodide.loadPackage(['numpy','matplotlib','beautifulsoup4']).then(() => {
                 console.log("모듈 로드 완료.");
               })
               
