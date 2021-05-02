@@ -1,77 +1,77 @@
-window.onload = function () {
-    var canvas = document.getElementById("canvas");
-    draw(canvas);
-}
-function draw(canvas) {
-    var ctx = canvas.getContext("2d");
-    ctx.moveTo(30, 100);
-    ctx.lineTo(80, 100);
-    ctx.stroke();
-}
-
-var pos = {
-    drawable: false,
-    x: -1,
-    y: -1
-};
-var canvas, ctx;
-
-window.onload = function () {
-    canvas = document.getElementById("canvas");
-    ctx = canvas.getContext("2d");
-
-    ctx.lineWidth = 15;
-    ctx.stroke();
-
-    canvas.addEventListener("mousedown", listener);
-    canvas.addEventListener("mousemove", listener);
-    canvas.addEventListener("mouseup", listener);
-    canvas.addEventListener("mouseout", listener);
-}
-
-function listener(event) {
-    switch (event.type) {
-        case "mousedown":
-            initDraw(event);
-            break;
-
-        case "mousemove":
-            if (pos.drawable)
-                draw(event);
-            break;
-
-        case "mouseout":
-        case "mouseup":
-            finishDraw();
-            break;
+class Signature {
+    constructor() {
+      this.color = "#000000";
+      this.sign = false;
+      this.begin_sign = false;
+      this.width_line = 5;
+      this.canvas = document.getElementById('canvas');
+      this.offsetLeft = this.canvas.offsetLeft;
+      this.offsetTop = this.canvas.offsetTop;
+      this.context = canvas.getContext('2d');
+      this.context.lineJoin = 'round';
+      this.context.lineCap = 'round';
+      this.whenMouseDown();
+      this.whenMouseUp();
+      this.whenMouseMove();
+      this.createSignature();
+      this.clearCanvas();
+      this.resetCanvas();
     }
-}
-
-function initDraw(event) {
-    ctx.beginPath();
-    pos.drawable = true;
-    var coors = getPosition(event);
-    pos.X = coors.X;
-    pos.Y = coors.Y;
-    ctx.moveTo(pos.X, pos.Y);
-}
-
-function draw(event) {
-    var coors = getPosition(event);
-    ctx.lineTo(coors.X, coors.Y);
-    pos.X = coors.X;
-    pos.Y = coors.Y;
-    ctx.stroke();
-}
-
-function finishDraw() {
-    pos.drawable = false;
-    pos.X = -1;
-    pos.Y = -1;
-}
-
-function getPosition(event) {
-    var x = event.pageX - canvas.offsetLeft;
-    var y = event.pageY - canvas.offsetTop;
-    return { X: x, Y: y };
-}
+    updateMousePosition(mX, mY) {
+      let rect = this.canvas.getBoundingClientRect();
+      let scaleX = this.canvas.width / rect.width;
+      let scaleY = this.canvas.height / rect.height;
+      this.cursorX = (mX - rect.left) * scaleX;
+      this.cursorY = (mY - rect.top) * scaleY;
+    }
+    
+    whenMouseDown() {
+      document.addEventListener("mousedown", ({
+        pageX,
+        pageY
+      }) => {
+        this.sign = true;
+        this.updateMousePosition(pageX, pageY);
+      })
+    }
+    whenMouseUp() {
+      document.addEventListener("mouseup", () => {
+        this.sign = false;
+        this.begin_sign = false;
+      })
+    }
+    whenMouseMove() {
+      this.canvas.addEventListener('mousemove', ({
+        pageX,
+        pageY
+      }) => {
+        if (this.sign) {
+          this.updateMousePosition(pageX, pageY);
+          this.createSignature();
+        }
+      })
+    }
+    createSignature() {
+      if (!this.begin_sign) {
+        this.context.beginPath();
+        this.context.moveTo(this.cursorX, this.cursorY);
+        this.begin_sign = true;
+      } else {
+        this.context.lineTo(this.cursorX, this.cursorY);
+        this.context.strokeStyle = this.color;
+        this.context.lineWidth = this.width_line;
+        this.context.stroke();
+      }
+    }
+    clearCanvas() {
+      this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+    resetCanvas() {
+      document.getElementById("reset").addEventListener("click", () => {
+        this.clearCanvas();
+      })
+    }
+  }
+  document.addEventListener("DOMContentLoaded", event => {
+    new Signature();
+  });

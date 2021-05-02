@@ -29,7 +29,15 @@
       await loadPyodide({ indexURL : 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/' });
       // 라이브러리 import
       await pyodide.loadPackage(['matplotlib','numpy']);
-
+      await pyodide.runPythonAsync(`
+                    import sys
+                    import os 
+                    import io
+                    import matplotlib.pyplot as plt
+                    plt.cla()
+                    plt.clf()
+                    sys.stdout = io.StringIO()
+                    `);
       output.value += 'Ready!\n';
     }
     let pyodideReadyPromise = main();
