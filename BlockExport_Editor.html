@@ -488,11 +488,6 @@
         renderer: "zelos" // 제로스 테마
       }
     );
-
-    // 생성될 코드에 대해 선택하는 부분 -> 사용할때마다 선언해서 굳이 필요 없어보임.
-    //var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace); // 자바 스크립트 선택 
-    //var pyCode = Blockly.Python.workspaceToCode(demoWorkspace); // 파이썬 선택 
-
     
     //==================================
     // 블록 저장하기 
@@ -545,21 +540,15 @@
     }
 
     function separate_editor(){
-
       var pyEditor = $("#pyCodeEditor");
       var asyncEditor = $("#asyncCodeEditor");
-
-
-
       if ($('#toggle-two').prop('checked') === false) {
-        
         //pyEditor.css("position", "relative");
         //pyEditor.slideUp("400");
         //asyncEditor.slideDown("400");
         asyncEditor.css("visibility", "visible");
         pyEditor.css("visibility", "hidden");
       } else if ($('#toggle-two').prop('checked') === true) {
-
         //pyEditor.css("position", "relative");
         //pyEditor.slideDown("400");
         //asyncEditor.slideUp("400");
