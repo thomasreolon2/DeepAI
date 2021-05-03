@@ -138,49 +138,6 @@
 
   <!-- plotly -->
 
-  <!-- 이거 중복되는 거임 필요없을거같기도함. -->
-  <!-- 플러그인 로딩이 끝났을때 .then => languagePluginLoader: 비동기 객체 -->
-  <!-- , 'CLAPACK', 'Jinja2', 
-                           'MarkupSafe', 'Pygments', 'asciitree', 'astropy', 'atomicwrites', 'attrs', 'autograd', 'beautifulsoup4', 
-                           'biopython', 'bleach', 'cloudpickle', 'cssselect', 'cycler', 'cytoolz', 'decorator', 'distlib', 'docutils', 
-                           'freesasa', 'future', 'glpk', 'html5lib', 'imageio', 'jedi', 'joblib', 'kiwisolver', 'libiconv', 'libxml', 
-                           'libxslt', 'lxml', 'mne', 'more-itertools', 'mpmath', 'msgpack', 'networkx', 'nlopt', 'nltk', 'nose', 
-                           'numcodecs', 'optlang', 'packaging', 'parso', 'patsy', 'pillow', 'pluggy', 'py', 'pyodide-interrupts', 
-                           'pyparsing', 'pytest', 'python-dateutil', 'python-sat', 'pytz', 'pywavelets', 'regex', 'scipy', 'setuptools', 
-                           'six', 'soupsieve', 'statsmodels', 'swiglpk', 'sympy', 'toolz', 'traits', 'uncertainties', 'webencodings', 'xlrd', 'yt', 'zarr', 'zlib'-->
-  <!-- <script>
-    languagePluginLoader.then(() => {
-      // 패키지로드 loadpackage, micropip은 pydodie에서 파이썬 wheel에 관련하여 설치함.
-      pyodide.loadPackage(['pandas', 'numpy', 'matplotlib', 'scikit-learn', 'scikit-image', 'micropip', 'CLAPACK', 'Jinja2', 
-                           'MarkupSafe', 'Pygments', 'asciitree', 'astropy', 'atomicwrites', 'attrs', 'autograd', 'beautifulsoup4', 
-                           'biopython', 'bleach', 'cloudpickle', 'cssselect', 'cycler', 'cytoolz', 'decorator', 'distlib', 'docutils', 
-                           'freesasa', 'future', 'glpk', 'html5lib', 'imageio', 'jedi', 'joblib', 'kiwisolver', 'libiconv', 'libxml', 
-                           'libxslt', 'lxml', 'mne', 'more-itertools', 'mpmath', 'msgpack', 'networkx', 'nlopt', 'nltk', 'nose', 
-                           'numcodecs', 'optlang', 'packaging', 'parso', 'patsy', 'pillow', 'pluggy', 'py', 'pyodide-interrupts', 
-                           'pyparsing', 'pytest', 'python-dateutil', 'python-sat', 'pytz', 'pywavelets', 'regex', 'scipy', 'setuptools', 
-                           'six', 'soupsieve', 'statsmodels', 'swiglpk', 'sympy', 'toolz', 'traits', 'uncertainties', 'webencodings', 'xlrd', 'yt', 'zarr', 'zlib']).then(
-      () => { 
-        console.log('pyodide 라이브러리 로딩완료');
-        $("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
-        $("#runButton1").css({
-          'display': "block"
-        });
-        $("#loading_image2").hide(); // 그래프 로딩 끝나면 로딩 창 없앰 
-        $("#runButton2").css({
-          'display': "inline"
-        });
-      });
-    });
-  </script> -->
-  <!--Socket.IO 지금은 안쓰는데... --> 
-  <!-- <script>  
-    var socket = io.connect('http://localhost:8000');
-      // socket.on('CSV_Name_error', function(data) { 
-      //   if (data == "error"); 
-      //   window.alert("잘못된 입력입니다.");  
-      //  });  
-  </script>    
-  -->
 
   <style>
     #pyCodeEditor {
@@ -197,7 +154,7 @@
 <body>
   <!-- 언어 패키지, 카테고리 색상 -->
   <!-- 2020-12-05 양승국 동적 변경을 위해 head -> body로 옮김-->
-  <script id = "lan" src="/js/blockly/msg/js/ko.js"></script> 
+  <script id="lan" src="/js/blockly/msg/js/ko.js"></script> 
 
   <!-- 그래프 사이드바 start-->
   <aside id="sidebar">
@@ -209,9 +166,9 @@
       <div id="loading_image2" style="display: inline-block;">
         <object type="image/svg+xml" data="Rolling-1s-30px.svg"></object>
       </div>
-      <button id = "button_close" class="btn btn-outline-primary btn-sm mr-1" onclick="sidebar_toggle();">닫기</button>
-      <button id = "button_clear" class="btn btn-outline-danger btn-sm" onclick="csv_clear();">지우기</button>
-      <button id = "button_reset" class="btn btn-outline-danger btn-sm" onclick="sidebar_clear();">전체 초기화</button>
+      <button id="button_close" class="btn btn-outline-primary btn-sm mr-1" onclick="sidebar_toggle();">닫기</button>
+      <button id="button_clear" class="btn btn-outline-danger btn-sm" onclick="csv_clear();">지우기</button>
+      <button id="button_reset" class="btn btn-outline-danger btn-sm" onclick="sidebar_clear();">전체 초기화</button>
     </div>
 
     <div id=graph></div>
