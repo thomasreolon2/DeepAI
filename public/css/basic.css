@@ -3,9 +3,22 @@
       border: 1px solid black
     } */
 
+/* blockly 메인 bg 색상 */
+
+.blocklyWorkspace {
+    background-color: #ffffff !important;
+}
+
+.blocklyMainBackground {
+    stroke: none;
+}
+
 .btn { margin: 10px; }
 .file { margin: 10px; }
 .form-control { height: 50%; }
+
+
+
 
 div {
 /*overflow: hidden; 이거 끄니까 코드미러 넘버링나옴 */

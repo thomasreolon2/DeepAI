@@ -123,6 +123,11 @@
   <!-- 기본 css -->
   <link rel="stylesheet" href="/css/basic.css">
 
+  <!-- -->
+  <script src="/js/utils/themeChange.js">
+
+  </script>
+
   <!-- 명성이형 파일 불러올때 필요한 변수설정 
   <script>
     var Data_process_on = 0;
@@ -151,7 +156,7 @@
   </style>
 </head>
 
-<body>
+<body id="bg" class="bg-light">
   <!-- 언어 패키지, 카테고리 색상 -->
   <!-- 2020-12-05 양승국 동적 변경을 위해 head -> body로 옮김-->
   <script id="lan" src="/js/blockly/msg/js/ko.js"></script> 
@@ -182,7 +187,7 @@
 
   <div class="container-fluid">
     <!-- nav -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #f4f6ff;">
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
 
       <!-- a -->
       <a class="navbar-brand" href="#"><img src="logo2-2.png"/></a>
@@ -210,6 +215,8 @@
           <button type="button" class="btn btn-secondary mr-0" onclick="visibleAll()">블럭+코드</button>
           <button type="button" class="btn btn-secondary mr-0" onclick="visibleCode()">코드</button>
         </div>
+
+        <button id="" class="btn btn-outline-success btn-sm" onclick="themeChange()">테마변경</button>
       </div>
 
       <!-- 오른쪽 구역 -->
@@ -340,11 +347,11 @@
         <!-- console -->
         <div id="codeDiv2">
           <div class="card mb-6 mt-6 shadow-sm">
-            <div class="text-white bg-dark">
-              <h5 id="console" class="my-1 mx-1">콘솔</h5>
+            <div id="console" class="text-white bg-dark">
+              <h5 class="my-1 mx-1">콘솔</h5>
             </div>
             </textarea>
-            <textarea id="exeArea" class="form-control" readonly style="height: 20vh;"></textarea>
+            <textarea id="exeArea" class="form-control bg-light" readonly style="height: 18vh;"></textarea>
           </div>
         </div>
       </div> <!-- 오른쪽 -->
