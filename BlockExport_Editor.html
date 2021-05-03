@@ -832,29 +832,6 @@
 
      
     }
-    // 기존 실행 버튼
-    // function runButton() {
-    //   Blockly.Python.addReservedWords('code');
-    //   var code = pyEditor.getValue();
-
-    //   Blockly.JavaScript.addReservedWords('code2');
-    //   var code2 = jsEditor.getValue();
-
-    //   async function runcode() {
-    //     languagePluginLoader.then(() => {
-    //       try { pyodide.runPython(code); }
-    //       catch (e) { document.getElementById('exeArea').innerHTML = e; }
-    //     });
-    // 명성이형 그래프 추가(일단 주석처리)
-    // languagePluginLoader.then(await function () {
-    //   if (DL_Gra == "chcked") { document.getElementById("pyplotfigure").src = pyodide.globals.img_str;}
-    // });
-    // DL_Gra = 0;
-    //   };
-    //   runcode().then(() => {
-    //     document.getElementById('exeArea').innerHTML = eval(code2);
-    //   });
-    // };
       
     //======================
     // .csv를 테이블로 만들기 
@@ -982,8 +959,6 @@ function printc(x) {
 }
 
 </script>
-
-  <!-- <script src="/js/utils/canvas.js"></script> 그림판 -->
 
   <!-- 2020-12-05 양승국 언어변경 -->
   <script>
@@ -1205,6 +1180,7 @@ function printc(x) {
     };
     input.click(); // input을 클릭했을 때. 
     }
+
     //=====기태 처리 (파일) 21.01.06  : 파일 로딩에 대해 인터벌 적용 ================================
     setTimeout(function() {
       BrowserFS.install(window);
