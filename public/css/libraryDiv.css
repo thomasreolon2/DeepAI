@@ -1,0 +1,81 @@
+.libraryDiv{
+    padding-right: 0;
+    padding-left:17px;
+ background-color: transparent;
+ box-shadow: none !important;
+ color: #fff;
+ overflow-x: hidden;
+ overflow-y: auto;
+ max-width: 100%;
+ width: 1000px;
+ position: absolute;
+ display: none;
+ z-index: 1001;
+ text-align: left;
+ border: none;
+ border-radius: .28571429rem;
+ user-select: text;
+ will-change: top,left,margin,transform,opacity;
+ z-index: 1200 !important;
+ height: 650px;
+ margin: auto !important;
+ top: 0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ outline: 0;
+ }
+ .libraryGrid{
+    display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ height: 400px;
+ }
+ .libraryGrid .column{
+    width: 300px;
+ background: #fff;
+ margin: 11px;
+ border-radius: .28571429rem .28571429rem .28571429rem .28571429rem;
+ }
+ .content {
+    color:black;
+    text-align: center;
+    padding: 25px;
+    padding-bottom: 0px;
+    padding-top: 40px;
+    }
+    .content .description{
+       color: black;
+       font-size: 15px;
+    }
+    .content .header{
+       font-size: 20px;
+    }
+    
+    .libraryimage{
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom : 0px;
+    height: 174px;
+    }
+    
+    .ui .importBtn{
+       cursor: pointer;
+       width: 60px;
+    background-color: #2e07a7;
+    color: #fff;
+    text-shadow: none;
+    text-align: center;
+    margin: auto;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 30px;
+    }
+ #modal_close_btn{
+    width: 20px;
+    height: 20px;
+    opacity:1;
+    margin-top: 13px;
+ }

@@ -123,6 +123,8 @@
   <!-- 기본 css -->
   <link rel="stylesheet" href="/css/basic.css">
 
+  <link rel="stylesheet" href="/css/libraryDiv.css">
+
   <!-- -->
   <script src="/js/utils/themeChange.js">
 
@@ -136,7 +138,8 @@
   </script>
   명성이형 파일 불러올때 필요한 변수설정 -->
   <!-- 하단 변수가 없는 경우 맷플롯립에서 문제가 발생함 삭제 및 주석 금지 -->
-  <script>var DL_Gra = 0;</script>
+  
+  <script>var DL_Gra = 0; var flagMatplotlibImport = 0;</script>
   <!-- plotly 데이터 시각화를 위해 필요-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./js/utils/plotly.js"></script>
@@ -154,12 +157,84 @@
       width: hidden;
     }
   </style>
+
+
+
 </head>
 
 <body id="bg" class="bg-light">
   <!-- 언어 패키지, 카테고리 색상 -->
   <!-- 2020-12-05 양승국 동적 변경을 위해 head -> body로 옮김-->
   <script id="lan" src="/js/blockly/msg/js/ko.js"></script> 
+
+  <!-- 라이브러리 추가를 위한 modal -->
+  <div class="libraryDiv">
+    <div class="header" style="width:96%">
+      <img src="Library_Title.png" style="margin: 5px;">
+      <hr style="border: solid 1px white;
+    width: 72%;
+    display: inline-block;
+    margin-bottom: -5px;">
+      <img id="modal_close_btn" class="large close icon" src="close.png">
+    </div>
+    <!-- 카드 -->
+    <div class="libraryGrid">
+      <!-- 컬럼 -->
+      <div class="column">
+        <!-- 카드 상세 -->
+        <div class="ui fluid">
+          <div class="libraryimage">
+            <img src="data_science.png">
+          </div>
+          <div class="content">
+            <a class="header">데이터 사이언스</a>
+            <div class="description">
+              데이터 분석을 위한 Pandas, 시각화를 위한 Matplotlib, 수치 계산을 위한 Numpy가 포함된 라이브러리입니다.
+            </div>
+          </div>
+          <div id="ds_import_btn" data-id="1" class="importBtn">
+            추가
+          </div>
+        </div>
+
+      </div>
+      <!-- 컬럼 -->
+      <div class="column">
+        <!-- 카드 상세 -->
+        <div class="ui fluid">
+          <div class="libraryimage">
+            <img src="scikit-learn.png">
+          </div>
+          <div class="content">
+            <a class="header">머신러닝</a>
+            <div class="description">
+              데이터 전처리와 머신러닝 모델을 만들 수 있는 Scikit-Learn가 포함된 라이브러리입니다.<br>
+            </div>
+          </div>
+          <div id="ml_import_btn" data-id="2" class="importBtn">추가</div>
+        </div>
+      </div>
+
+      <!-- 컬럼 -->
+      <div class="column">
+        <!-- 카드 상세 -->
+        <div class="ui fluid">
+          <div class="libraryimage">
+            <img src="scikit-image.png">
+          </div>
+          <div class="content">
+            <a class="header">이미지 프로세싱</a>
+            <div class="description">
+              다양한 이미지를 처리할 수 있는 Scikit-Image가 포함된 라이브러리입니다.<br>
+            </div>
+          </div>
+          <div id="image_processing_import_btn" data-id="3" class="importBtn">
+            추가
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- 그래프 사이드바 start-->
   <aside id="sidebar">
@@ -256,6 +331,8 @@
         <!-- 파일 올리기 (지원)-->
         <input id="button_file_upload" type="button" class="btn btn-outline-secondary btn-sm " value="파일 업로드" onclick="localFileOpen3()"/>
 
+        <!-- 라이브러리 추가 (우진) -->
+        <input id="sidebar_add_libs" type="button" class="btn btn-outline-secondary btn-sm" value="라이브러리 추가"/>
         <!-- Button trigger modal 
         <button id = "button_paint" type="button" class="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal"
           data-target="#staticBackdrop">그림판</button>-->
@@ -647,6 +724,18 @@
         }
       });
     }
+
+    // 라이브러리 모달창 열기 0505 전우진
+    $("#sidebar_add_libs").on("click", function () {
+                  $('.libraryDiv').modal("show");
+                })
+                // 라이브러리 모달창 닫기
+                $("#modal_close_btn").on("click", function () {
+                  $(".libraryDiv").modal("hide");
+                })
+
+    demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
+    demoWorkspace.addChangeListener(whenSelected);// 선택 되었을 때 메소드
   </script>
 
   <script>
@@ -685,6 +774,7 @@
       // plt.cla - 클리어
       // plt.clf - figure클리어
       // os는 data폴더 mount 에러 임시로 해결하기 위해
+      if (flagMatplotlibImport != 0) {
       languagePluginLoader.then(() => {
         pyodide.runPython(`
                     import sys
@@ -695,7 +785,7 @@
                     plt.clf()
                     sys.stdout = io.StringIO()
                     `);
-        });
+        
 
         // chdir 에러 구현
         if(code){
@@ -766,9 +856,19 @@
           if (code.indexOf("req.text") != -1){
             code = code.replace("req.text", 'req');
           }
-
-          
         }
+
+      });
+    } else {
+                      languagePluginLoader.then(() => {
+                        pyodide.runPython(`
+                      import sys
+                      import os
+                      import io
+                      sys.stdout = io.StringIO()
+                      `);
+                      })
+                    }
 
 
 
@@ -968,6 +1068,108 @@ function printc(x) {
   });
 </script>
 
+<!-- 라이브러리 임포트 기능 테스트 -->
+<script>
+  // 각 카테고리 ID
+ 
+  $('div[aria-posinset="13"]').hide(); //  num
+  $('div[aria-posinset="14"]').hide(); // pan
+  $('div[aria-posinset="15"]').hide() //  mat
+  $('div[aria-posinset="16"]').hide(); // Scipy
+  $('div[aria-posinset="17"]').hide();  //Scikit-Image
+  $('div[aria-posinset="18"]').hide();  //Scikit-learn
+  // 로딩창 생성
+  function showLibLoading() {
+    $("#loading_image1").show();
+    $("#runButton1").css({
+      'display': "none"
+    });
+    $("#loading_image2").show(); // 로딩 끝나면 로딩 창 없앰 
+    $("#runButton2").css({
+      'display': "none"
+    });
+  }
+
+  // 로딩창 제거
+  function hideLibLoading() {
+    $("#loading_image1").hide(); // 로딩 끝나면 로딩 창 없앰 
+    $("#runButton1").css({
+      'display': "block"
+    });
+    $("#loading_image2").hide(); // 로딩 끝나면 로딩 창 없앰 
+    $("#runButton2").css({
+      'display': "inline"
+    });
+  }
+
+  /////////////////////////////////
+  // 라이브러리 추가 버튼 동작
+  /////////////////////////////////
+
+  // 데이터 사이언스
+
+
+  // $("#block_type_btn").on("click", function () {
+  //   visibleAll();
+  //   $(".btn-group .codebBtn").eq(2).remove()
+  //   if (projectType == 0) {
+  //     projectType = 1
+  //   }
+  //   $(".ui.modal").modal("hide");
+  // })
+  // $("#code_type_btn").on("click", function () {
+  //   visibleCode();
+  //   $(".btn-group").remove()
+  //   if (projectType == 0) {
+  //     projectType = 2
+  //   }
+  //   $(".ui.modal").modal("hide");
+  // })
+
+  $("#ds_import_btn").on("click", function () {
+    showLibLoading();
+
+    $("#ds_import_btn").removeClass("blue").addClass("green");
+    $("#ds_import_btn").text("추가됨");
+
+    pyodide.loadPackage(['pandas', 'matplotlib', 'numpy']).then(() => {
+      flagMatplotlibImport = 1;
+      $('div[aria-posinset="13"]').show();
+      $('div[aria-posinset="14"]').show();
+      $('div[aria-posinset="15"]').show();
+      hideLibLoading();
+    })
+  })
+
+  // 머신러닝
+  $("#ml_import_btn").on("click", function () {
+    showLibLoading();
+
+    $("#ml_import_btn").removeClass("blue").addClass("green");
+    $("#ml_import_btn").text("추가됨");
+
+    pyodide.loadPackage(['scipy', 'scikit-learn']).then(() => {
+      $('div[aria-posinset="16"]').show();
+      $('div[aria-posinset="18"]').show();
+      hideLibLoading();
+    })
+  })
+
+  // 이미지 프로세싱
+  $("#image_processing_import_btn").on("click", function () {
+    showLibLoading();
+
+    $("#image_processing_import_btn").removeClass("blue").addClass("green");
+    $("#image_processing_import_btn").text("추가됨");
+
+    pyodide.loadPackage(['scikit-image']).then(() => {
+      $('div[aria-posinset="17"]').show();
+      hideLibLoading();
+    })
+  })
+</script>
+ 
+
   <!-- 데이터 입력 bug fix -->
   <script>
     function input_fixed(text) {
@@ -1160,8 +1362,13 @@ function printc(x) {
             // [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
             languagePluginLoader.then(async ()=>{   
     
-              // pyodide모듈 로드     
-              pyodide.loadPackage(['pandas', 'numpy', 'matplotlib','biopython','beautifulsoup4','scipy','sympy', 'scikit-learn', 'scikit-image']).then(() => {
+              // pyodide모듈 로드 기존    
+              // pyodide.loadPackage(['pandas', 'numpy', 'matplotlib','biopython','beautifulsoup4','scipy','sympy', 'scikit-learn', 'scikit-image']).then(() => {
+              //   console.log("모듈 로드 완료.");
+              // })
+
+              //  pyodide모듈 로드 우진
+              pyodide.loadPackage(['biopython','beautifulsoup4','sympy']).then(() => {
                 console.log("모듈 로드 완료.");
               })
               
