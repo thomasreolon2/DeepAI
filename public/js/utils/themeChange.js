@@ -11,13 +11,18 @@ function themeChange(){
         $("#button_block_save").attr("class", "btn btn-secondary btn-sm");
         $("#runButton1").attr("class", "btn btn-success btn-sm mr-1");
         $("#button_console_clear").attr("class", "btn btn-secondary btn-sm mr-1");
+        $("#button_code_save").attr("class", "btn btn-secondary btn-sm mr-1");
+        $("#button_file_upload").attr("class", "btn btn-secondary btn-sm mr-1");
+        $("#sidebar_add_libs").attr("class", "btn btn-secondary btn-sm mr-1");
+        $("#sidebar_button").attr("class", "btn btn-primary btn-sm mr-1");
 
-
+        
         // blockly bg 색상
         $(".blocklySvg").css('background-color', "#1e1e1e");
         $(".blocklyToolboxDiv").css("background-color", "#292929");
         $(".blocklyTreeLabel").css("color", "#ffffff");
-            
+        $(".blocklyFlyoutBackground").css("fill", "#494949");
+
     
         // 콘솔창 색상
         $("#console").attr("class", "text-white bg-dark");
@@ -35,6 +40,11 @@ function themeChange(){
         $("#button_block_save").attr("class", "btn btn-outline-secondary btn-sm");
         $("#runButton1").attr("class", "btn btn-outline-success btn-sm");
         $("#button_console_clear").attr("class", "btn btn-outline-secondary btn-sm mr-1");
+        $("#button_code_save").attr("class", "btn btn-outline-secondary btn-sm mr-1");
+        $("#button_file_upload").attr("class", "btn btn-outline-secondary btn-sm mr-1");
+        $("#sidebar_add_libs").attr("class", "btn btn-outline-secondary btn-sm mr-1");
+        $("#sidebar_button").attr("class", "btn btn-outline-primary btn-sm mr-1");
+        $(".blocklyFlyoutBackground").css("fill", "#e3e3e3");
 
         // 
         $(".blocklySvg").css('background-color', "#ffffff");

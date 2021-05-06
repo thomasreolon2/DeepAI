@@ -307,3 +307,4 @@ DB +='  </value>';
 DB +='</block>';
 DB +='</category>';
 
+DB +='<sep></sep>';

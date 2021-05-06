@@ -85,4 +85,3 @@ FILE +='      <block type="fileopen2"></block>   ' ;
 
 FILE +='</category>'
 
-FILE +='<sep></sep>';
