@@ -16,7 +16,6 @@ function themeChange(){
         $("#sidebar_add_libs").attr("class", "btn btn-secondary btn-sm mr-1");
         $("#sidebar_button").attr("class", "btn btn-primary btn-sm mr-1");
 
-        
         // blockly bg 색상
         $(".blocklySvg").css('background-color', "#1e1e1e");
         $(".blocklyToolboxDiv").css("background-color", "#292929");
@@ -28,6 +27,14 @@ function themeChange(){
         $("#console").attr("class", "text-white bg-dark");
         $("#exeArea").attr('class', "form-control bg-dark");
         
+        // aside
+        $("#sidebar").css("background", "#343A40");
+        $("#runButton2").attr("class", "btn btn-success btn-sm mr-1");
+        $("#button_close").attr("class", "btn btn-primary btn-sm mr-1");
+        $("#button_clear").attr("class", "btn btn-danger btn-sm mr-1");
+        $("#button_reset").attr("class", "btn btn-danger btn-sm mr-1");
+
+
         theme = "dark";
     
     // 다크 모드
@@ -53,6 +60,13 @@ function themeChange(){
         // 콘솔창 색상
         $("#console").attr("class", "text-white bg-dark");
         $("#exeArea").attr('class', "form-control bg-light");
+
+        // aside
+        $("#sidebar").css("background", "#ffffff");
+        $("#runButton2").attr("class", "btn btn-outline-success btn-sm mr-1");
+        $("#button_close").attr("class", "btn btn-outline-primary btn-sm mr-1");
+        $("#button_clear").attr("class", "btn btn-outline-danger btn-sm mr-1");
+        $("#button_reset").attr("class", "btn btn-outline-danger btn-sm mr-1");
 
         theme = "light";
     }
