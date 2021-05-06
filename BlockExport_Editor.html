@@ -179,7 +179,6 @@
             추가
           </div>
         </div>
-
       </div>
       <!-- 컬럼 -->
       <div class="column">
@@ -214,6 +213,39 @@
           <div id="image_processing_import_btn" data-id="3" class="importBtn">
             추가
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 기타 설정 모달 -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">기타 설정</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 폰트 크기 변환 -->
+          <select id="fontsize" class="form-control col-md-2 mt-2 ml-1">
+            <option id = "none" value="none" selected>Font Size</option>
+            <option id = "15" value="15">15</option>
+            <option id = "20" value="20">20</option>
+            <option id = "25" value="25">25</option>
+            <option id = "30" value="30">30</option>
+          </select>
+
+          <!-- 테마 변경 버튼-->
+          <button id="" class="btn btn-outline-success btn-sm" onclick="themeChange()">테마변경</button>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -272,7 +304,6 @@
           <button type="button" class="btn btn-secondary mr-0" onclick="visibleCode()">코드</button>
         </div>
 
-        <button id="" class="btn btn-outline-success btn-sm" onclick="themeChange()">테마변경</button>
       </div>
 
       <!-- 오른쪽 구역 -->
@@ -287,20 +318,14 @@
             <option id = "en" value="eng">en</option>
           </select>
         -->
-        <!-- 폰트크기변환 -->
-        <select id="fontsize" class="form-control col-md-2 mt-2 ml-1">
-          <option id = "none" value="none" selected>Font Size</option>
-          <option id = "15" value="15">15</option>
-          <option id = "20" value="20">20</option>
-          <option id = "25" value="25">25</option>
-          <option id = "30" value="30">30</option>
-        </select>
-
+      
         <!-- 실행 버튼 -->
         <input id="runButton1" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;"
           onClick="runButton()" value="실행" /> <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
-        <!-- 실행 로딩 중 -->
+        
+          <!-- 실행 로딩 중 -->
         <div id="loading_image1"><object type="image/svg+xml" data="Rolling-1s-30px.svg"></object></div>
+        
         <!-- 결과 버튼 -->
         <input id="button_console_clear" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick=clear_result();
           value="결과 지우기" />
@@ -313,46 +338,15 @@
         <input id="button_file_upload" type="button" class="btn btn-outline-secondary btn-sm " value="파일 업로드" onclick="localFileOpen3()"/>
 
         <!-- 라이브러리 추가 (우진) -->
-        <input id="sidebar_add_libs" type="button" class="btn btn-outline-secondary btn-sm" value="라이브러리 추가"/>
-        <!-- Button trigger modal 
-        <button id = "button_paint" type="button" class="btn btn-outline-secondary btn-sm mr-1" data-toggle="modal"
-          data-target="#staticBackdrop">그림판</button>-->
-
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-          aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">그림판</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-
-              <div class="modal-body">
-                <!-- canvas -->
-                <canvas id="canvas" class="canvas" width="300" height="300"></canvas>
-              </div>
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary mr-1" data-dismiss="modal">취소</button>
-                <!-- reset button -->
-                <form>
-                  <input type="button" id="reset" class="btn btn-danger mr-1" value="다시 그리기">
-                </form>
-                <a id="download" download="image.png"><button type="button" class="btn btn-primary"
-                    onClick="canvas_save()">그림 저장</button></a>
-                <input type="file" id="btn_upload" name="btn_upload" style="display: none;" />
-              </div>
-            </div>
-          </div>
-        </div> <!-- 모달 -->
-
+        <input id="sidebar_add_libs" type="button" class="btn btn-outline-secondary btn-sm" value="라이브러리"/>
+        
         <!-- 그래프 버튼 -->
         <input id="sidebar_button" type="button" class="btn btn-outline-primary btn-sm" value="그래프"
           onclick="sidebar_toggle()" />
 
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          기타
+        </button>
           
 
       </div> <!-- 오른쪽 구역 -->
@@ -372,7 +366,7 @@
               <h6 id="code" class="my-1 mx-1">코드
                 <input type="checkbox" checked id="toggle-two"/>
             </h6>
-             <script>
+            <script>
               var global_var = true;
               $(function() {
                 $('#toggle-two').bootstrapToggle({
@@ -408,7 +402,6 @@
             <div id="console" class="text-white bg-dark">
               <h5 class="my-1 mx-1">콘솔</h5>
             </div>
-            </textarea>
             <textarea id="exeArea" class="form-control bg-light" readonly style="height: 18vh;"></textarea>
           </div>
         </div>
