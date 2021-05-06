@@ -9,6 +9,7 @@ function themeChange(){
         // 버튼 색 변경
         $("#button_block_del").attr("class", "btn btn-secondary btn-sm mr-0");
         $("#button_block_save").attr("class", "btn btn-secondary btn-sm");
+
         $("#runButton1").attr("class", "btn btn-success btn-sm mr-1");
         $("#button_console_clear").attr("class", "btn btn-secondary btn-sm mr-1");
         $("#button_code_save").attr("class", "btn btn-secondary btn-sm mr-1");
@@ -45,7 +46,8 @@ function themeChange(){
         // 버튼 색 변경
         $("#button_block_del").attr("class", "btn btn-outline-secondary btn-sm mr-0");
         $("#button_block_save").attr("class", "btn btn-outline-secondary btn-sm");
-        $("#runButton1").attr("class", "btn btn-outline-success btn-sm");
+
+        $("#runButton1").attr("class", "btn btn-outline-success btn-sm mr-1");
         $("#button_console_clear").attr("class", "btn btn-outline-secondary btn-sm mr-1");
         $("#button_code_save").attr("class", "btn btn-outline-secondary btn-sm mr-1");
         $("#button_file_upload").attr("class", "btn btn-outline-secondary btn-sm mr-1");

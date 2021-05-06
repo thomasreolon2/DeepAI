@@ -229,6 +229,13 @@
           </button>
         </div>
         <div class="modal-body">
+          
+          <!-- 테마 변경 버튼-->
+          <button id="" class="btn btn-outline-success btn-sm" onclick="themeChange()">테마변경</button>
+
+          <!-- 파일 올리기 (지원)-->
+          <input id="button_file_upload" type="button" class="btn btn-outline-secondary btn-sm " value="파일 업로드" onclick="localFileOpen3()"/>
+
           <!-- 폰트 크기 변환 -->
           <select id="fontsize" class="form-control col-md-2 mt-2 ml-1">
             <option id = "none" value="none" selected>Font Size</option>
@@ -238,14 +245,9 @@
             <option id = "30" value="30">30</option>
           </select>
 
-          <!-- 테마 변경 버튼-->
-          <button id="" class="btn btn-outline-success btn-sm" onclick="themeChange()">테마변경</button>
-
-
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
         </div>
       </div>
     </div>
@@ -284,7 +286,7 @@
       <div class="d-flex flex-wrap text-white" style="width:80%;">
 
         <!-- 파일 열기 -->
-        <div class="input-group col-md-3 ml-3 mt-2 btn-sm custom-file">
+        <div class="input-group col-md-2 ml-3 mt-2 btn-sm custom-file">
           <input type="file" id="file" class="custom-file-input" accept="text/xml"
             onchange="loadBlock(); this.value=null;return false;">
           <label class="custom-file-label mr-1" for="file">파일열기</label>
@@ -307,7 +309,7 @@
       </div>
 
       <!-- 오른쪽 구역 -->
-      <div class="d-flex flex-wrap text-white" style="width: 60%;">
+      <div class="d-flex flex-wrap text-white" style="width: 45%;">
 
         <!-- 2020-12-05 양승국 언어변경을 위해 생성-->
         <!--언어변환 -->
@@ -334,9 +336,7 @@
         <input id="button_code_save" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick=file_save();
           value="코드저장" />
 
-        <!-- 파일 올리기 (지원)-->
-        <input id="button_file_upload" type="button" class="btn btn-outline-secondary btn-sm " value="파일 업로드" onclick="localFileOpen3()"/>
-
+        
         <!-- 라이브러리 추가 (우진) -->
         <input id="sidebar_add_libs" type="button" class="btn btn-outline-secondary btn-sm" value="라이브러리"/>
         
