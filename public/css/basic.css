@@ -56,3 +56,13 @@ margin-left: 10px;
     height: 30px;
 }
 /* 기본 로딩 이미지, 그래프 로딩 이미지 */
+
+/* 코드미러 블록코드 on,off */
+#pyCodeEditor {
+    position: absolute;
+    width: 100%;
+}
+#asyncCodeEditor {
+    position: relative;
+    width: hidden;
+}
