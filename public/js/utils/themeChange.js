@@ -14,7 +14,7 @@ function themeChange(){
         $("#button_console_clear").attr("class", "btn btn-secondary btn-sm mr-1");
         $("#button_code_save").attr("class", "btn btn-secondary btn-sm mr-1");
         $("#button_file_upload").attr("class", "btn btn-secondary btn-sm mr-1");
-        $("#sidebar_add_libs").attr("class", "btn btn-secondary btn-sm mr-1");
+        $("#sidebar_add_libs").attr("class", "btn btn-warning btn-sm mr-1");
         $("#sidebar_button").attr("class", "btn btn-primary btn-sm mr-1");
 
         // blockly bg 색상
@@ -51,7 +51,7 @@ function themeChange(){
         $("#button_console_clear").attr("class", "btn btn-outline-secondary btn-sm mr-1");
         $("#button_code_save").attr("class", "btn btn-outline-secondary btn-sm mr-1");
         $("#button_file_upload").attr("class", "btn btn-outline-secondary btn-sm mr-1");
-        $("#sidebar_add_libs").attr("class", "btn btn-outline-secondary btn-sm mr-1");
+        $("#sidebar_add_libs").attr("class", "btn btn-outline-warning btn-sm mr-1");
         $("#sidebar_button").attr("class", "btn btn-outline-primary btn-sm mr-1");
         $(".blocklyFlyoutBackground").css("fill", "#e3e3e3");
 

@@ -6,9 +6,6 @@ MAT += '<block type="visualization_library"></block >';
 
 // MAT += '<block type="visualization_library_cm"></block >';
 
-
-
-
 // MAT += '<block type="matplotlib_pre_graph_plt_2">';
 // MAT += '<value name="xx">';
 // MAT += '<shadow type="indata">';

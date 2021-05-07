@@ -92,9 +92,11 @@
   <!-- cdoemirror 자동 완성 기능 -->
 
   <!-- 그림판자리 canvas -->
-  <script src="/js/utils/canvas.js"></script>
+  <!-- <script src="/js/utils/canvas.js"></script> -->
+
   <!-- 블록, 블록+코드, 코드 변경-->
   <script src="/js/utils/tabDisplay.js"></script>
+
   <!-- 그래프 aside -->
   <script src="/js/utils/aside.js"></script>
 
@@ -237,7 +239,7 @@
           <input id="button_file_upload" type="button" class="btn btn-outline-secondary btn-sm " value="파일 업로드" onclick="localFileOpen3()"/>
 
           <!-- 폰트 크기 변환 -->
-          <select id="fontsize" class="form-control col-md-2 mt-2 ml-1">
+          <select id="fontsize">
             <option id = "none" value="none" selected>Font Size</option>
             <option id = "15" value="15">15</option>
             <option id = "20" value="20">20</option>
@@ -338,18 +340,18 @@
 
         
         <!-- 라이브러리 추가 (우진) -->
-        <input id="sidebar_add_libs" type="button" class="btn btn-outline-secondary btn-sm" value="라이브러리"/>
+        <input id="sidebar_add_libs" type="button" class="btn btn-outline-warning btn-sm" value="라이브러리 추가"/>
         
         <!-- 그래프 버튼 -->
         <input id="sidebar_button" type="button" class="btn btn-outline-primary btn-sm" value="그래프"
           onclick="sidebar_toggle()" />
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <!-- 기타 버튼 -->
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
           기타
         </button>
-          
-
-      </div> <!-- 오른쪽 구역 -->
+      </div>
+      <!-- 오른쪽 구역 -->
     </nav>
 
     <!-- 하단 내용 -->
