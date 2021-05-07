@@ -850,7 +850,7 @@ else if(dropdown_matplotlib_graph_select == "matplotlib_box" )
 
 //킹우진의 수정
 if(DL_Gra == "graph_or_1"){
-  code =  code.concat(`\nplttitle("${text_matplotlib_pre_graph_title}") 
+  code =  code.concat(`\nplt.title("${text_matplotlib_pre_graph_title}") 
 plt.xlabel("${text_matplotlib_pre_graph_xlable}")
 plt.ylabel("${text_matplotlib_pre_graph_ylable}") 
 plt.legend(loc='best')\n`); 
