@@ -736,7 +736,7 @@ Blockly.Msg['NUMPY_ABS_1'] = "[ 절대 값 ]";
 
 // ---- 판다스
 Blockly.Msg['PANDAS_LIBRARY'] = "[ 임포트 ] pandas를 pd로";
-Blockly.Msg['PANDAS_CSVDATAFRAME'] = "[CSV프레임]";
+Blockly.Msg['PANDAS_CSVDATAFRAME'] = "[데이터프레임]";
 Blockly.Msg['PANDAS_CSV2'] = "csv 불러오기";
 Blockly.Msg['PANDAS_DATALIST'] = "[zip리스트] 변수";
 Blockly.Msg['PANDAS_DATALIST_2'] = "배열변수";
