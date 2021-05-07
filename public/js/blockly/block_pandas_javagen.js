@@ -546,7 +546,7 @@ Blockly.JavaScript['df_merge'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
   var dropdown_dic = block.getFieldValue('collection');
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -557,7 +557,7 @@ Blockly.JavaScript['df_merge'] = function(block) {
 Blockly.JavaScript['df_reindex'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -567,7 +567,7 @@ Blockly.JavaScript['df_reindex'] = function(block) {
 //df_unique
 Blockly.JavaScript['df_unique'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -577,7 +577,7 @@ Blockly.JavaScript['df_unique'] = function(block) {
 Blockly.JavaScript['df_is_in'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -586,7 +586,7 @@ Blockly.JavaScript['df_is_in'] = function(block) {
 //df_name
 Blockly.JavaScript['df_name'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -595,7 +595,7 @@ Blockly.JavaScript['df_name'] = function(block) {
 //df_tolist
 Blockly.JavaScript['df_tolist'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -606,7 +606,7 @@ Blockly.JavaScript['df_tolist'] = function(block) {
 Blockly.JavaScript['df_series1'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code ='\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -616,7 +616,7 @@ Blockly.JavaScript['df_series1'] = function(block) {
 Blockly.JavaScript['df_series2'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -626,7 +626,7 @@ Blockly.JavaScript['df_series2'] = function(block) {
 Blockly.JavaScript['df_series3'] = function(block) {
   var variable_list = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('list'), Blockly.Variables.NAME_TYPE);
   var value_name = Blockly.JavaScript.valueToCode(block, 'LIST', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
@@ -636,8 +636,20 @@ Blockly.JavaScript['df_series3'] = function(block) {
 Blockly.JavaScript['pandas_numpy'] = function(block) {
   var value_name1 = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
   var value_name = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
+  // TODO: Assemble JavaScript into code variable.
   var code = '\n';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };  
+
+// 2020.01.26 pandas_unique() 남지원
+Blockly.JavaScript['pandas_unique'] = function(block) {
+  var value_var = Blockly.JavaScript.valueToCode(block, 'VAR', Blockly.JavaScript.ORDER_ATOMIC);
+  var dropdown_drop = block.getFieldValue('DROP');
+  var value_input = Blockly.JavaScript.valueToCode(block, 'INPUT', Blockly.JavaScript.ORDER_ATOMIC);
+
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${value_var}.${dropdown_drop}(${value_input})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_ATOMIC];
+};
