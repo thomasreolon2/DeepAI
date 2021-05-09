@@ -1,17 +1,17 @@
 // aside 열고 닫기 토글
 function sidebar_toggle() {
     var duration = 300;
-    var $side = $('#sidebar');
+    var side = $('#sidebar');
 
     // side의 클래스를 open으로 토글함
-    $side.toggleClass('open');
+    side.toggleClass('open');
 
-    if ($side.hasClass('open')) {
-      $side.stop(true).animate({
+    if (side.hasClass('open')) {
+      side.stop(true).animate({
         right: '0px'
       }, duration);
     } else {
-      $side.stop(true).animate({
+      side.stop(true).animate({
         right: '-900px'
       }, duration);
     };
@@ -56,38 +56,7 @@ function sidebar_clear() {
       });
     })};
 
-  //===================================
-  // 쿠키 
-  //===================================
-  // 쿠키 생성 함수
-  function setCookie(cName, cValue, cDay){
 
-    var expire = new Date();
-    expire.setDate(expire.getDate() + cDay);
-    cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
-    if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
-    
-    //document.cookie =   
-    document.cookie = cookies + "SameSite=Lax";
-  }
-
-
-
-  // 쿠키 가져오기 함수
-  function getCookie(cName) {
-    cName = cName + '=';
-    var cookieData = document.cookie;
-    var start = cookieData.indexOf(cName);
-    var cValue = '';
-    if(start != -1){
-      start += cName.length;
-      var end = cookieData.indexOf(';', start);
-      if(end == -1)end = cookieData.length;
-      cValue = cookieData.substring(start, end);
-    }
-
-    return unescape(cValue);
-  }
 
   // 파일명에 .py, .xml이 들어갔을 경우 제거
   function checkFileName(FileName) {
@@ -100,16 +69,4 @@ function sidebar_clear() {
     }
 
     return FileName;
-  }
-
-  // 쿠키 확인하기 함수
-  function checkCookie(id) {
-    try {
-      return getCookie(id); // 쿠기이름이 download_block을 가져와 checkEvent에 저장
-      //console.log("쿠키있음 : " + checkEvent); 
-    } catch (error) {
-      setCookie(id,"block", 1); // 저장된 쿠키가 없을 경우 download_block이름의 쿠키 생성/ 유지 기간은 1일
-      return getCookie(id); 
-      //console.log("쿠키없음" + checkEvent);
-    }
   }

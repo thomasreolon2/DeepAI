@@ -100,6 +100,9 @@
   <!-- 그래프 aside -->
   <script src="/js/utils/aside.js"></script>
 
+  <!-- 쿠키 -->
+  <script src="/js/utils/cookie.js"></script>
+
   <!--messageBox-->
   <script src="./js/blockly/messagebox/messagebox.js"></script>
   <link href="./js/blockly/messagebox/messagebox.css" rel="stylesheet" type="text/css">
@@ -124,11 +127,12 @@
   
   <!-- 기본 css -->
   <link rel="stylesheet" href="/css/basic.css">
-
   <link rel="stylesheet" href="/css/libraryDiv.css">
 
   <!-- 테마 변경-->
   <script src="/js/utils/themeChange.js"></script>
+
+
 
   <!-- 명성이형 파일 불러올때 필요한 변수설정 
   <script>
@@ -138,7 +142,6 @@
   </script>
   명성이형 파일 불러올때 필요한 변수설정 -->
   <!-- 하단 변수가 없는 경우 맷플롯립에서 문제가 발생함 삭제 및 주석 금지 -->
-  
   <script>var DL_Gra = 0; var flagMatplotlibImport = 0;</script>
   <!-- plotly 데이터 시각화를 위해 필요-->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -255,16 +258,18 @@
     </div>
   </div>
 
-  <!-- 그래프 사이드바 start-->
+  <!-- 그래프 사이드바 start -->
   <aside id="sidebar">
     <!-- 그래프 사이드바 닫기 버튼 -->
     <div class="sidebar">
       <button id="runButton2" class="btn btn-outline-success btn-sm mr-1" onclick="runButton();"
         style="display:none;">실행</button>
+
       <!-- 실행 로딩 중 -->
       <div id="loading_image2" style="display: inline-block;">
         <object type="image/svg+xml" data="Rolling-2s-30px.svg"></object>
       </div>
+
       <button id="button_close" class="btn btn-outline-primary btn-sm mr-1" onclick="sidebar_toggle();">닫기</button>
       <button id="button_clear" class="btn btn-outline-danger btn-sm" onclick="csv_clear();">지우기</button>
       <button id="button_reset" class="btn btn-outline-danger btn-sm" onclick="sidebar_clear();">전체 초기화</button>
@@ -275,16 +280,16 @@
     <div id=graph1 style="height:500px; width:900px;"><img id="pyplotfigure"/></div>
     <div id="csv_show"></div>
   </aside>
-  <!-- 그래프 사이드바 end-->
+  <!-- 그래프 사이드바 end -->
 
   <div class="container-fluid">
     <!-- nav -->
     <nav id="nav" class="navbar navbar-expand-lg bg-light">
 
-      <!-- a -->
+      <!-- logo -->
       <a class="navbar-brand" href="#"><img src="logo2-2.png"/></a>
 
-      <!-- 왼쪽 구역-->
+      <!-- 왼쪽 구역 start-->
       <div class="d-flex flex-wrap text-white" style="width:80%;">
 
         <!-- 파일 열기 -->
@@ -309,8 +314,9 @@
         </div>
 
       </div>
+      <!-- 왼쪽 구역 end -->
 
-      <!-- 오른쪽 구역 -->
+      <!-- 오른쪽 구역 start -->
       <div class="d-flex flex-wrap text-white" style="width: 55%;">
 
         <!-- 2020-12-05 양승국 언어변경을 위해 생성-->
@@ -338,7 +344,6 @@
         <input id="button_code_save" type="button" class="btn btn-outline-secondary btn-sm mr-1" onClick=file_save();
           value="코드저장" />
 
-        
         <!-- 라이브러리 추가 (우진) -->
         <input id="sidebar_add_libs" type="button" class="btn btn-outline-warning btn-sm" value="라이브러리 추가"/>
         
@@ -351,8 +356,9 @@
           기타
         </button>
       </div>
-      <!-- 오른쪽 구역 -->
+      <!-- 오른쪽 구역 end -->
     </nav>
+    <!-- nav end -->
 
     <!-- 하단 내용 -->
     <div class="row" style="height: 90vh;">
@@ -415,51 +421,12 @@
     <video id="gum-local" autoplay playsinline></video>
     <button id="showVideo">Open camera</button>
     -->
-  </div> <!-- container -->
-
-  <!-- Toolbox 정의 -->
-
+  </div> <!-- container end -->
 
   <!-- code mirror -->
-  <script>
-    // JS 코드미러
-    let jsEditor = CodeMirror(document.getElementById("jsCodeEditor"), {
-      mode: "javascript",
-      // value: "codemirror",
-      theme: "oceanic-next",          // 테마
-      inputStyle: "contenteditable",  // 입력 처리 방식
-      // readOnly: true,              // 읽기 전용 설정
-      lineNumbers: true,              // 라인 넘버 설정
-      lineWrapping: true,             // 자동 줄바꿈 설정
-      // spellcheck: true,   autocorrect: true,
-    });
-
-    // PY 코드미러
-    let pyEditor = CodeMirror(document.getElementById("pyCodeEditor"), {
-      mode: "python",
-      // value: "codemirror",
-      theme: "oceanic-next",          // 테마
-      inputStyle: "contenteditable",  // 입력 처리 방식
-      // readOnly: true,              // 읽기 전용
-      lineNumbers: true,              // 라인 넘버 설정
-      lineWrapping: true,             // 자동 줄바꿈 설정
-      // spellcheck: true,            // 스펠링 체크
-      extraKeys: { "Ctrl-Space": "autocomplete" }, // 단축키
-      //   spellcheck: true,   autocorrect: true,
-    });
-
-     // async 코드미러
-     let asyncEditor = CodeMirror(document.getElementById("asyncCodeEditor"), {
-      mode: "python",
-      // value: "codemirror",
-      theme: "oceanic-next",          // 테마
-      inputStyle: "contenteditable",  // 입력 처리 방식
-      // readOnly: true,              // 읽기 전용 설정
-      lineNumbers: true,              // 라인 넘버 설정
-      lineWrapping: true,             // 자동 줄바꿈 설정
-      extraKeys: { "Ctrl-Space": "autocomplete" }, // 단축키
-      // spellcheck: true,   autocorrect: true,
-    });
+  <script src="/js/utils/codeMirror.js"></script>
+<script>
+    
 
     // (demoWorkspace = 블록배치하는 공간) 블록이 나타나는 부분
     var demoWorkspace = Blockly.inject( 
@@ -556,6 +523,7 @@
       }
     }
 
+    // 블록코드 on,off
     function separate_editor(){
       var pyEditor = $("#pyCodeEditor");
       var asyncEditor = $("#asyncCodeEditor");
@@ -1163,166 +1131,12 @@ function printc(x) {
     });
   </script>
 
-    <!-- 로컬 파일 오픈하기 -->
-    <script>
-    var datas="";           // 데이터 변수 초기화
-    var fss;                // FS가 BrowserFS와 겹치기 때문에 재 생성
-    var fileName2="temp";   // 파일 명   
-    var rows = "";          // ?
-    
-    //== 기태 수정 (로컬 파일 열기 ) 21.01.01 =============================================
-    // 텍스트 파일 처리하기 
-    function localFileOpen(blockId) {
-      console.log("local Text FileOpen");
-      var input = document.createElement("input"); // input 태그를 하나 만든다.
-      // 태그 속성 정의
-      input.type = "file";
-      input.accept = ".txt, .csv"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
-      input.onchange = function (e) { // input의 값이 변하면 => 파일을 불러오면
-        if (e.target.files != undefined) { // 이중부정을 굳이?
-          console.log("txt or csv 파일 불러옴")
-          var reader = new FileReader(); // 파일리더 객체 생성
-        
-          // reader가 준비되면 
-          reader.onload = function (e) { 
-            datas = e.target.result;      // 다읽어온 파일의 값을 datas에 저장      
-            console.log("datas", datas);  // datas 출력 => txt나 csv를 출력한번 해본다.
-            fss.writeFileSync(fileName2, datas); // FS에 파일명으로 datas를 저장
-            var block = demoWorkspace.getBlockById(blockId); // 블럭안의 input에 파일 경로를 적기위해 블럭 찾음
-            var bId = Blockly.mainWorkspace.getBlockById(blockId) // ???
-            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path'); // 블럭안에 input에 파일경로를 적어줌
-          };
+  <!-- 로컬 파일 오픈하기 -->
+  <script src="/js/utils/localFileOpen.js"></script>
+  <!-- 로컬로 파일 다운로드-->
+  <script src="/js/utils/fileDownload.js"></script>
 
-          fileName2 =  e.target.files[0].name;  // 파일명 받아옴
-          console.log(fileName2);               // 파일명 출력해봄
-          reader.readAsText(e.target.files[0]); // 리더객체가 텍스트를 읽음        
-        }
-      };
-      input.click(); // 블럭이 클릭되면 실행
-    }
-
-    function localFileOpen3() {
-      console.log("local Text FileOpen3");
-      let input = document.createElement("input"); // input 태그를 하나 만든다.
-      // 태그 속성 정의
-      input.type = "file";
-      input.onchange = function (e) { // input의 값이 변하면 => 파일을 불러오면
-        fileName2 =  e.target.files[0].name;
-        console.log(fileName2);
-        // 파일명, 확장자 분리작업
-        let _fileLen = fileName2.length;                                      // 파일명의 길이
-        let _lastDot = fileName2.lastIndexOf('.');                            // 파일명에서 가장 마지막에 나오는 .확인 => 확장자 체크
-        let _fileExt = fileName2.substring(_lastDot, _fileLen).toLowerCase(); // 확장자를 소문자로 변경해 저장
-
-        // 확장자가 wav일때 + 폰트 처리를 위해 확장자 추가 (2021.03.03 - 기태)
-        if(_fileExt == ".wav" || _fileExt == ".ttf" ){
-          if (e.target.files != undefined) {
-            console.log("웨이브 파일")
-            var reader = new FileReader();
-          
-            reader.onload = function (e) {
-              datas = e.target.result;          
-              console.log("datas", datas);    
-              // wav 파일 처리하기 
-              fss.writeFileSync(fileName2, Buffer(new Uint8Array(datas))); // 버퍼 배열로 파일 저장
-            };
-            fileName2 =  e.target.files[0].name;
-            console.log(fileName2);
-            reader.readAsArrayBuffer(e.target.files[0]);  // 웨이브 파일은 버퍼로 읽어온다    
-          }
-        } else if(_fileExt == ".jpg" || _fileExt == ".png" || _fileExt == ".bmp" ) { // 확장자가 wav가아니면 이미지라고 판단
-          if (e.target.files != undefined) {
-            console.log("이미지 파일")
-            var reader = new FileReader();
-            
-            // reader가 이미지를 다 읽었을때 실행
-            reader.onload = function (e) {
-              datas = e.target.result;  // 이미지 값을 datas에 저장
-              console.log("datas", datas);    
-              var data = datas.replace(/^data:image\/\w+;base64,/, ""); // 이 부분을 삭제함
-              var buf = Buffer.from(data, 'base64');  // base64 버퍼로 저장
-              fss.writeFileSync(fileName2, buf); 
-            };
-            reader.readAsDataURL(e.target.files[0]);  // reader가 이미지를 읽음   
-          }
-        } else {
-          if (e.target.files != undefined) { // 이중부정을 굳이?
-            var reader = new FileReader(); // 파일리더 객체 생성
-          
-            // reader가 준비되면 
-            reader.onload = function (e) { 
-              datas = e.target.result;      // 다읽어온 파일의 값을 datas에 저장      
-              console.log("datas : ", datas);  // datas 출력 => txt나 csv를 출력한번 해본다.
-              fss.writeFileSync(fileName2, datas); // FS에 파일명으로 datas를 저장
-            };
-
-            fileName2 =  e.target.files[0].name;  // 파일명 받아옴
-            console.log(fileName2);               // 파일명 출력해봄
-            reader.readAsText(e.target.files[0]); // 리더객체가 텍스트를 읽음        
-          }
-        };
-      }
-      input.click(); // input을 클릭했을 때. 
-    }
-
-    // 미디어 파일 처리하기 
-    function localFileOpen2(blockId) {
-      console.log("local Image FileOpen");
-      var input = document.createElement("input");
-      input.type = "file";
-      input.accept = ".jpg, .png, .bmp, .wav, .ttf"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
-      input.onchange = function (e) {
-      
-      fileName2 =  e.target.files[0].name;
-      console.log(fileName2);
-
-      // 파일명, 확장자 분리작업
-      var _fileLen = fileName2.length;                                      // 파일명의 길이
-      var _lastDot = fileName2.lastIndexOf('.');                            // 파일명에서 가장 마지막에 나오는 .확인 => 확장자 체크
-      var _fileExt = fileName2.substring(_lastDot, _fileLen).toLowerCase(); // 확장자를 소문자로 변경해 저장
-
-      // 확장자가 wav일때 + 폰트 처리를 위해 확장자 추가 (2021.03.03 - 기태)
-      if(_fileExt == ".wav" || _fileExt == ".ttf" ){
-        if (e.target.files != undefined) {
-          console.log("웨이브 파일")
-          var reader = new FileReader();
-        
-          reader.onload = function (e) {
-            datas = e.target.result;          
-            console.log("datas", datas);    
-            // wav 파일 처리하기 
-            fss.writeFileSync(fileName2, Buffer(new Uint8Array(datas))); // 버퍼 배열로 파일 저장
-            var block = demoWorkspace.getBlockById(blockId);
-            var bId = Blockly.mainWorkspace.getBlockById(blockId)
-            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
-          };
-          fileName2 =  e.target.files[0].name;
-          console.log(fileName2);
-          reader.readAsArrayBuffer(e.target.files[0]);  // 웨이브 파일은 버퍼로 읽어온다    
-        }
-      } else { // 확장자가 wav가아니면 이미지라고 판단
-        if (e.target.files != undefined) {
-          console.log("이미지 파일")
-          var reader = new FileReader();
-          
-          // reader가 이미지를 다 읽었을때 실행
-          reader.onload = function (e) {
-            datas = e.target.result;  // 이미지 값을 datas에 저장
-            console.log("datas", datas);    
-            var data = datas.replace(/^data:image\/\w+;base64,/, ""); // 이 부분을 삭제함
-            var buf = Buffer.from(data, 'base64');  // base64 버퍼로 저장
-            fss.writeFileSync(fileName2, buf); 
-            var block = demoWorkspace.getBlockById(blockId);
-            var bId = Blockly.mainWorkspace.getBlockById(blockId)
-            block.setFieldValue(JSON.stringify("data/" + fileName2), 'file_path');
-          };
-          reader.readAsDataURL(e.target.files[0]);  // reader가 이미지를 읽음   
-        }
-      }
-    };
-    input.click(); // input을 클릭했을 때. 
-    }
-
+  <script>
     //=====기태 처리 (파일) 21.01.06  : 파일 로딩에 대해 인터벌 적용 ================================
     setTimeout(function() {
       BrowserFS.install(window);
@@ -1400,49 +1214,7 @@ function printc(x) {
     }, 1000);  // js 파일 다운로드를 위해 인터벌 설정 
     </script>   
     <script>
-      // 파일 다운로드 
-      function fileDownload(){
-        var minetype;     // 데이터 타입 
-        var blob;         // 블롭 변수
-        var base64Image;  // base64이미지
-
-        var _filename = prompt("저장할 파일명을 입력해주세요(ex> hello.txt)");    // 파일명+확장자 입력
-        if(_filename != null){
-          var _fileLen = _filename.length;                                      // 파일명의 길이
-          var _lastDot = _filename.lastIndexOf('.');                            // 파일명에서 마지막에 나오는 '.'찾기 -> 확장자를 찾을수있음
-          var _fileExt = _filename.substring(_lastDot, _fileLen).toLowerCase(); // 분리된 파일 확장자
-        }
-
-        // readFile - 인코딩 없이 minetype으로 구분해서 처리하면 됨.
-        fss.readFile(_filename, function(err, data) {
-          console.log(data); // data정보 확인
-          // 에러가 났을 때
-          if(err){
-            alert("해당 파일이 존재하지 않습니다.");
-            return;
-          }
-
-          // 확장자 비교 후 작동.
-          if(_fileExt == '.txt'){
-            minetype = "text/plain;charset=utf-8";            
-          } else if(_fileExt == '.csv'){
-            minetype = "text/csv;charset=utf-8";
-          } else if(_fileExt == '.bmp'){            
-            minetype : 'image/bmp';            
-          } else if(_fileExt == '.jpg'){  
-            minetype = 'image/jpeg';             
-          } else if(_fileExt == '.wav'){            
-            minetype : 'audio/wav';           
-          }
-          
-          // 블롭 생성
-          blob = new Blob([data], { type: minetype });
-          console.log(blob);
-          // 블롭 저장.
-          saveAs(blob, _filename);
-          
-        });
-      }
+      
     </script> 
     <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
 </body> 
