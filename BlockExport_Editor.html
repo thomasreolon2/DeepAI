@@ -579,9 +579,9 @@
     // 코드 파일로 저장하기
     //===================================  
     function file_save_2(editor){
-      var code_python = Blockly.Python.workspaceToCode(demoWorkspace); // 워크스페이스를 파이썬 코드로 변환
-      var code = editor.getValue();
-      var blobObject = new Blob([code]);  // 코드를 블롭 객체로 만듬 => 블롭은 이미지, 사운드, 비디오와 같은 멀티미디어 데이터를 다룰 때 사용
+      let code_python = Blockly.Python.workspaceToCode(demoWorkspace); // 워크스페이스를 파이썬 코드로 변환
+      let code = editor.getValue();
+      let blobObject = new Blob([code]);  // 코드를 블롭 객체로 만듬 => 블롭은 이미지, 사운드, 비디오와 같은 멀티미디어 데이터를 다룰 때 사용
       // 이름을 받아서 saveAs
       //let filename = prompt("다른이름으로 저장."); 
 
@@ -641,7 +641,6 @@
         if ('os_data_download'  == block.type) {
           fileDownload();
         }
-
         // croll_url_load
         if('croll_url_load' == block.type){
           _requestsURL(event.blockId);
