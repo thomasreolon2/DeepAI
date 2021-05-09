@@ -1150,12 +1150,6 @@ function printc(x) {
 
             // [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
             languagePluginLoader.then(async ()=>{   
-    
-              // pyodide모듈 로드 기존    
-              // pyodide.loadPackage(['pandas', 'numpy', 'matplotlib','biopython','beautifulsoup4','scipy','sympy', 'scikit-learn', 'scikit-image']).then(() => {
-              //   console.log("모듈 로드 완료.");
-              // })
-
               //  pyodide모듈 로드 우진
               pyodide.loadPackage(['biopython','beautifulsoup4','sympy']).then(() => {
                 console.log("모듈 로드 완료.");
