@@ -4,7 +4,6 @@
 // express를 활용한 서버 만들기
 const express = require('express'); // 익스프레스 모듈 require 및 app 설정 (해당 방식은 express 에서 사용하도록 한 규약? 같은 방식)
 const fs = require('fs'); // 파일 시스템 
-//var http = require('http'); // 이건 왜 주석처리 되있던 걸까?
 const ejs = require("ejs"); // ejs는 서버에서 JS로 템플릿을 만들 수 있게 도와준다.
 
 var app = express();

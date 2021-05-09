@@ -1,4 +1,3 @@
-
 // 블럭만 보이기
 function visibleBlock(){
     $('#codeDiv1').css({
@@ -19,26 +18,26 @@ function visibleBlock(){
     Blockly.svgResize(demoWorkspace);
 }
 
+// 블럭 + 코드 보이기
 function visibleAll(){
-    // 전부 보이기
-        $('#blocklyDiv').css({
-            'display': "block",
-            'height' : "90vh"
-        });
-        $('#codeDiv1').css({
-            'display': "block"
-        });
-        $('#codeDiv2').css({
-            'display': "block"
-        });
-        $('#blocklyDiv').attr('class', 'col-md-8');
-        $('#codeDiv').attr('class', 'col-md-4');
-        // Blockly 리사이즈
-        Blockly.svgResize(demoWorkspace);
+    $('#blocklyDiv').css({
+        'display': "block",
+        'height' : "90vh"
+    });
+    $('#codeDiv1').css({
+        'display': "block"
+    });
+    $('#codeDiv2').css({
+        'display': "block"
+    });
+    $('#blocklyDiv').attr('class', 'col-md-8');
+    $('#codeDiv').attr('class', 'col-md-4');
+    // Blockly 리사이즈
+    Blockly.svgResize(demoWorkspace);
 }
 
+// 코드만 보이기
 function visibleCode(){
-    // 코드만 보이기
         $('#blocklyDiv').css({
             'display': "none"
         });
