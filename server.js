@@ -13,8 +13,8 @@ const options = {
   cert: fs.readFileSync('./keys/public.pem')
 };
 
-var server = require('http').createServer(options, app).listen(50197, function(){
-    console.log('Socket IO server listening on port 50197');
+var server = require('http').createServer(options, app).listen(60823, function(){
+    console.log('Socket IO server listening on port 60823');
 });
 
 
