@@ -424,230 +424,230 @@ MAT += '<category name="%{BKY_MAT_VISUAL}" colour="%{BKY_VISUAL_HUE}">';
 
 
 
-MAT += '<label text="%{BKY_MAT_LINE_LABEL}"></label>';
+// MAT += '<label text="%{BKY_MAT_LINE_LABEL}"></label>';
 
 
-MAT +=      '<block type="many_variables">';
-MAT +=          '<value name="NUMBER">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">x</field>';
-MAT +=              '</block >';
-MAT +=          '</value>';
-MAT +=          '<value name="VALUE">';
-MAT +=              '<block type="numpy_numerical_ranges_basic1(WJ)">';
-MAT +=                  '<value name="parameter1">';
-MAT +=                      '<shadow type="indata">';
-MAT +=                          '<field name="indata1">0, 2*np.pi, 50</field>';
-MAT +=                      '</shadow>';
-MAT +=                  '</value>';
-MAT +=              '</block>';
-MAT +=          '</value>';
-MAT +=      '</block>';
+// MAT +=      '<block type="many_variables">';
+// MAT +=          '<value name="NUMBER">';
+// MAT +=              '<block type="variables_get">';
+// MAT +=                  '<field name="VAR">x</field>';
+// MAT +=              '</block >';
+// MAT +=          '</value>';
+// MAT +=          '<value name="VALUE">';
+// MAT +=              '<block type="numpy_numerical_ranges_basic1(WJ)">';
+// MAT +=                  '<value name="parameter1">';
+// MAT +=                      '<shadow type="indata">';
+// MAT +=                          '<field name="indata1">0, 2*np.pi, 50</field>';
+// MAT +=                      '</shadow>';
+// MAT +=                  '</value>';
+// MAT +=              '</block>';
+// MAT +=          '</value>';
+// MAT +=      '</block>';
 
-//y
-MAT +=      '<block type="many_variables">';
-MAT +=          '<value name="NUMBER">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">y</field>';
-MAT +=              '</block >';
-MAT +=          '</value>';
-MAT +=          '<value name="VALUE">';
-MAT +=              '<block type="numpy_mathematical_functions">';
-MAT +=                  '<value name="numpy_Mathematical functions_val">';
-MAT +=                      '<shadow type="indata">';
-MAT +=                          '<field name="indata1">x</field>';
-MAT +=                      '</shadow>';
-MAT +=                  '</value>';
-MAT +=              '</block>';
-MAT +=          '</value>';
-MAT +=      '</block>';
-
-
-MAT += '<block type="line_plot">';
-
-MAT += '<value name="xx">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">x</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="yy">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">y</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_graph_Title">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">Test</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-
-MAT += '<value name="matplotlib_pre_graph_Xlable">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">X</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_graph_Ylable">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">Y</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_legend">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">test</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_color">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">"blue"</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_other">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1"></field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '</block >';
+// //y
+// MAT +=      '<block type="many_variables">';
+// MAT +=          '<value name="NUMBER">';
+// MAT +=              '<block type="variables_get">';
+// MAT +=                  '<field name="VAR">y</field>';
+// MAT +=              '</block >';
+// MAT +=          '</value>';
+// MAT +=          '<value name="VALUE">';
+// MAT +=              '<block type="numpy_mathematical_functions">';
+// MAT +=                  '<value name="numpy_Mathematical functions_val">';
+// MAT +=                      '<shadow type="indata">';
+// MAT +=                          '<field name="indata1">x</field>';
+// MAT +=                      '</shadow>';
+// MAT +=                  '</value>';
+// MAT +=              '</block>';
+// MAT +=          '</value>';
+// MAT +=      '</block>';
 
 
+// MAT += '<block type="line_plot">';
 
-//<!--  matplot 1차원 히스토그램    -->HISTO
-MAT += '<label text="%{BKY_MAT_HISTO_LABEL}"></label>';
-// x
-
-MAT +=      '<block type="many_variables">';
-MAT +=          '<value name="NUMBER">';
-MAT +=              '<block type="variables_get">';
-MAT +=                  '<field name="VAR">x</field>';
-MAT +=              '</block >';
-MAT +=          '</value>';
-MAT +=          '<value name="VALUE">';
-MAT +=            '<block type="numpy_random_distributions_third2">';
-MAT +=                '<value name="VAR">';
-MAT +=                  '<shadow type="indata">';
-MAT +=                      '<field name="indata1">size = 1000</field>';
-MAT +=                  '</shadow>';
-MAT +=                '</value>';
-MAT +=            '</block>';
-MAT +=          '</value>';
-MAT +=      '</block>';
-
-
-MAT +=      '<block type="matplotlib_histo_graph_plt">';
-MAT +=          '<value name="xx">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">x</field>';
-MAT +=              '</shadow>';
-MAT +=          '</value>';
-MAT +=          '<value name="matplotlib_pre_graph_Title">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">Test</field>';
-MAT +=              '</shadow>';
-MAT +=          '</value>';
-MAT +=          '<value name="matplotlib_pre_graph_Xlable">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">X</field>';
-MAT +=              '</shadow>';
-MAT +=          '</value>';
-MAT +=          '<value name="matplotlib_pre_graph_Ylable">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">Y</field>';
-MAT +=              '</shadow>';
-MAT +=          '</value>';
-MAT +=          '<value name="matplotlib_pre_legend">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1">test</field>';
-MAT +=              '</shadow>';
-MAT +=          '</value>';
-MAT +=          '<value name="matplotlib_pre_other">';
-MAT +=              '<shadow type="indata">';
-MAT +=                  '<field name="indata1"></field>';
-MAT +=              '</shadow>';
-MAT +=          '</value>';
-MAT +=      '</block >';
-//<!--  matplot 1차원 히스토그램    -->
-
-//바 그래프 2차원 
-MAT += '<label text="%{BKY_MAT_BAR_LABEL}"></label>';
-
-MAT +='<block type = "create_list">';
-MAT +='  <value name="list">';
-MAT +='    <block type="variables_get">';
-MAT +='      <field name="VAR">x</field>';
-MAT +='    </block>';
-MAT +='  </value>';  
-MAT +='  <value name="text">';
-MAT +='    <shadow type="indata">';
-MAT +='      <field name="indata1">"item1", "item2", "item3", "item4"</field>';
-MAT +='    </shadow>';
-MAT +='  </value>';
-MAT +='</block>';
-
-MAT +='<block type = "create_list">';
-MAT +='  <value name="list">';
-MAT +='    <block type="variables_get">';
-MAT +='      <field name="VAR">y</field>';
-MAT +='    </block>';
-MAT +='  </value>';  
-MAT +='  <value name="text">';
-MAT +='    <shadow type="indata">';
-MAT +='      <field name="indata1">32, 123, 53, 11</field>';
-MAT +='    </shadow>';
-MAT +='  </value>';
-MAT +='</block>';
-
-MAT += '<block type="bar_char">';
-// MAT += '<value name="matplotlib_pre_graph_location1">';
-// MAT += '<shadow type="math_number">';
-// MAT += '<field name="NUM">0</field>';
-// MAT += '</shadow>'; 
-// MAT += '</value>';
-// MAT += '<value name="matplotlib_pre_graph_location2">';
-// MAT += '<shadow type="math_number">';
-// MAT += '<field name="NUM">0</field>';
+// MAT += '<value name="xx">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">x</field>';
 // MAT += '</shadow>';
 // MAT += '</value>';
-MAT += '<value name="xx">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">x</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="yy">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">y</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_graph_Title">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">Test</field>';
-MAT += '</shadow>';
-MAT += '</value>';
+// MAT += '<value name="yy">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">y</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_graph_Title">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">Test</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
 
-MAT += '<value name="matplotlib_pre_graph_Xlable">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">X</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_graph_Ylable">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">Y</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_legend">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">test</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_color">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1">"blue"</field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '<value name="matplotlib_pre_other">';
-MAT += '<shadow type="indata">';
-MAT += '<field name="indata1"></field>';
-MAT += '</shadow>';
-MAT += '</value>';
-MAT += '</block >';
+// MAT += '<value name="matplotlib_pre_graph_Xlable">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">X</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_graph_Ylable">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">Y</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_legend">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">test</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_color">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">"blue"</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_other">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1"></field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '</block >';
+
+
+
+// //<!--  matplot 1차원 히스토그램    -->HISTO
+// MAT += '<label text="%{BKY_MAT_HISTO_LABEL}"></label>';
+// // x
+
+// MAT +=      '<block type="many_variables">';
+// MAT +=          '<value name="NUMBER">';
+// MAT +=              '<block type="variables_get">';
+// MAT +=                  '<field name="VAR">x</field>';
+// MAT +=              '</block >';
+// MAT +=          '</value>';
+// MAT +=          '<value name="VALUE">';
+// MAT +=            '<block type="numpy_random_distributions_third2">';
+// MAT +=                '<value name="VAR">';
+// MAT +=                  '<shadow type="indata">';
+// MAT +=                      '<field name="indata1">size = 1000</field>';
+// MAT +=                  '</shadow>';
+// MAT +=                '</value>';
+// MAT +=            '</block>';
+// MAT +=          '</value>';
+// MAT +=      '</block>';
+
+
+// MAT +=      '<block type="matplotlib_histo_graph_plt">';
+// MAT +=          '<value name="xx">';
+// MAT +=              '<shadow type="indata">';
+// MAT +=                  '<field name="indata1">x</field>';
+// MAT +=              '</shadow>';
+// MAT +=          '</value>';
+// MAT +=          '<value name="matplotlib_pre_graph_Title">';
+// MAT +=              '<shadow type="indata">';
+// MAT +=                  '<field name="indata1">Test</field>';
+// MAT +=              '</shadow>';
+// MAT +=          '</value>';
+// MAT +=          '<value name="matplotlib_pre_graph_Xlable">';
+// MAT +=              '<shadow type="indata">';
+// MAT +=                  '<field name="indata1">X</field>';
+// MAT +=              '</shadow>';
+// MAT +=          '</value>';
+// MAT +=          '<value name="matplotlib_pre_graph_Ylable">';
+// MAT +=              '<shadow type="indata">';
+// MAT +=                  '<field name="indata1">Y</field>';
+// MAT +=              '</shadow>';
+// MAT +=          '</value>';
+// MAT +=          '<value name="matplotlib_pre_legend">';
+// MAT +=              '<shadow type="indata">';
+// MAT +=                  '<field name="indata1">test</field>';
+// MAT +=              '</shadow>';
+// MAT +=          '</value>';
+// MAT +=          '<value name="matplotlib_pre_other">';
+// MAT +=              '<shadow type="indata">';
+// MAT +=                  '<field name="indata1"></field>';
+// MAT +=              '</shadow>';
+// MAT +=          '</value>';
+// MAT +=      '</block >';
+// //<!--  matplot 1차원 히스토그램    -->
+
+// //바 그래프 2차원 
+// MAT += '<label text="%{BKY_MAT_BAR_LABEL}"></label>';
+
+// MAT +='<block type = "create_list">';
+// MAT +='  <value name="list">';
+// MAT +='    <block type="variables_get">';
+// MAT +='      <field name="VAR">x</field>';
+// MAT +='    </block>';
+// MAT +='  </value>';  
+// MAT +='  <value name="text">';
+// MAT +='    <shadow type="indata">';
+// MAT +='      <field name="indata1">"item1", "item2", "item3", "item4"</field>';
+// MAT +='    </shadow>';
+// MAT +='  </value>';
+// MAT +='</block>';
+
+// MAT +='<block type = "create_list">';
+// MAT +='  <value name="list">';
+// MAT +='    <block type="variables_get">';
+// MAT +='      <field name="VAR">y</field>';
+// MAT +='    </block>';
+// MAT +='  </value>';  
+// MAT +='  <value name="text">';
+// MAT +='    <shadow type="indata">';
+// MAT +='      <field name="indata1">32, 123, 53, 11</field>';
+// MAT +='    </shadow>';
+// MAT +='  </value>';
+// MAT +='</block>';
+
+// MAT += '<block type="bar_char">';
+// // MAT += '<value name="matplotlib_pre_graph_location1">';
+// // MAT += '<shadow type="math_number">';
+// // MAT += '<field name="NUM">0</field>';
+// // MAT += '</shadow>'; 
+// // MAT += '</value>';
+// // MAT += '<value name="matplotlib_pre_graph_location2">';
+// // MAT += '<shadow type="math_number">';
+// // MAT += '<field name="NUM">0</field>';
+// // MAT += '</shadow>';
+// // MAT += '</value>';
+// MAT += '<value name="xx">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">x</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="yy">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">y</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_graph_Title">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">Test</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+
+// MAT += '<value name="matplotlib_pre_graph_Xlable">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">X</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_graph_Ylable">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">Y</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_legend">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">test</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_color">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1">"blue"</field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '<value name="matplotlib_pre_other">';
+// MAT += '<shadow type="indata">';
+// MAT += '<field name="indata1"></field>';
+// MAT += '</shadow>';
+// MAT += '</value>';
+// MAT += '</block >';
 
 
 // 파이형 그래프
