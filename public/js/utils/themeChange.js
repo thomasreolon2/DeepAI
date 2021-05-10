@@ -17,16 +17,12 @@ function themeChange(){
         $("#button_file_upload").attr("class", "btn btn-secondary btn-sm mr-1");
         $("#sidebar_add_libs").attr("class", "btn btn-warning btn-sm mr-1");
         $("#sidebar_button").attr("class", "btn btn-primary btn-sm mr-1");
-
+        
         // blockly bg 색상
+        $(".blocklyFlyoutBackground").css("fill", "#494949");
         $(".blocklySvg").css('background-color', "#1e1e1e");
         $(".blocklyToolboxDiv").css("background-color", "#292929");
-        $(".blocklyTreeLabel").css("color", "#ffffff");
-        //$(".blocklyTreeRow").css("color", "#ffffff");
-        //$(".blocklyTreeRow").attr('style', " padding-left: 19px; border-left: 8px solid rgb(221, 221, 221); color:#ffffff");
-
-        $(".blocklyFlyoutBackground").css("fill", "#494949");
-        
+        $(".blocklyTreeRow").next().attr('style', "color:#ffffff");
     
         // 콘솔창 색상
         $("#console").attr("class", "text-white bg-dark");
@@ -39,7 +35,6 @@ function themeChange(){
         $("#button_close").attr("class", "btn btn-primary btn-sm mr-1");
         $("#button_clear").attr("class", "btn btn-danger btn-sm mr-1");
         $("#button_reset").attr("class", "btn btn-danger btn-sm mr-1");
-
 
         theme = "dark";
     
@@ -58,15 +53,13 @@ function themeChange(){
         $("#button_file_upload").attr("class", "btn btn-outline-secondary btn-sm mr-1");
         $("#sidebar_add_libs").attr("class", "btn btn-outline-warning btn-sm mr-1");
         $("#sidebar_button").attr("class", "btn btn-outline-primary btn-sm mr-1");
+        
+        // blockly bg 색상
         $(".blocklyFlyoutBackground").css("fill", "#e3e3e3");
-
-        // 
         $(".blocklySvg").css('background-color', "#ffffff");
         $(".blocklyToolboxDiv").css("background-color", "#DDDDDD")
-        $(".blocklyTreeLabel").css("color", "#323232");
-        //$(".blocklyTreeRow").css("color", "#323232");
-        //$(".blocklyTreeRow").attr('style', " padding-left: 19px; border-left: 8px solid rgb(221, 221, 221); color:#323232");
-       
+        $(".blocklyTreeRow").next().attr('style', "color:#323232");
+        
         // 콘솔창 색상
         $("#console").attr("class", "text-white bg-dark");
         $("#exeArea").attr('class', "form-control bg-light");
