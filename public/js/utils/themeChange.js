@@ -1,5 +1,6 @@
 let theme = "light";
 
+
 function themeChange(){
     // 라이트 모드
     if(theme == "light"){
@@ -21,8 +22,11 @@ function themeChange(){
         $(".blocklySvg").css('background-color', "#1e1e1e");
         $(".blocklyToolboxDiv").css("background-color", "#292929");
         $(".blocklyTreeLabel").css("color", "#ffffff");
-        $(".blocklyFlyoutBackground").css("fill", "#494949");
+        //$(".blocklyTreeRow").css("color", "#ffffff");
+        //$(".blocklyTreeRow").attr('style', " padding-left: 19px; border-left: 8px solid rgb(221, 221, 221); color:#ffffff");
 
+        $(".blocklyFlyoutBackground").css("fill", "#494949");
+        
     
         // 콘솔창 색상
         $("#console").attr("class", "text-white bg-dark");
@@ -60,6 +64,9 @@ function themeChange(){
         $(".blocklySvg").css('background-color', "#ffffff");
         $(".blocklyToolboxDiv").css("background-color", "#DDDDDD")
         $(".blocklyTreeLabel").css("color", "#323232");
+        //$(".blocklyTreeRow").css("color", "#323232");
+        //$(".blocklyTreeRow").attr('style', " padding-left: 19px; border-left: 8px solid rgb(221, 221, 221); color:#323232");
+       
         // 콘솔창 색상
         $("#console").attr("class", "text-white bg-dark");
         $("#exeArea").attr('class', "form-control bg-light");
