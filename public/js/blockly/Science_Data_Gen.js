@@ -554,6 +554,9 @@ Blockly.Python['val_vi'] = function(block) {
     Blockly.Python['matplotlib_main'] = function(block) {
       var value_matplotlib_main_cols = Blockly.Python.valueToCode(block, 'matplotlib_main_cols', Blockly.Python.ORDER_ATOMIC);
       var value_matplotlib_main_rows = Blockly.Python.valueToCode(block, 'matplotlib_main_rows', Blockly.Python.ORDER_ATOMIC);
+      var value_matplotlib_figsize_row = Blockly.Python.valueToCode(block, 'matplotlib_figsize_row', Blockly.Python.ORDER_ATOMIC);
+      var value_matplotlib_figsize_col = Blockly.Python.valueToCode(block, 'matplotlib_figsize_col', Blockly.Python.ORDER_ATOMIC);
+
       var value_matplotlib_main_screen_size_width = Blockly.Python.valueToCode(block, 'matplotlib_main_screen_size_width', Blockly.Python.ORDER_ATOMIC);
       var value_matplotlib_main_screen_size_height = Blockly.Python.valueToCode(block, 'matplotlib_main_screen_size_height', Blockly.Python.ORDER_ATOMIC);
       // TODO: Assemble Python into code variable.
@@ -569,7 +572,7 @@ Blockly.Python['val_vi'] = function(block) {
 
 
       var code =`fig = plt.figure()     
-fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_rows}, figsize=(8,4) , constrained_layout=True)\n`; 
+fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_rows}, figsize=(${value_matplotlib_figsize_row},${value_matplotlib_figsize_col}) , constrained_layout=True)\n`; 
        return code;   
     };   
     

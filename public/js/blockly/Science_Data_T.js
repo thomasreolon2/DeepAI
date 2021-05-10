@@ -743,6 +743,14 @@ Blockly.defineBlocksWithJsonArray(
         "type": "input_value",
         "name": "matplotlib_main_rows"
       },
+      {
+        "type": "input_value",
+        "name": "matplotlib_figsize_row"
+      },
+      {
+        "type": "input_value",
+        "name": "matplotlib_figsize_col"
+      },
     ],
     "inputsInline": true,
     "previousStatement": null,

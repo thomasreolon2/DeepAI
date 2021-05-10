@@ -106,6 +106,19 @@ MAT += '<shadow type="indata">';
 MAT += '<field name="indata1">2</field>';
 MAT += '</shadow>';
 MAT += '</value>';
+
+MAT += '<value name="matplotlib_figsize_row">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">8</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+
+MAT += '<value name="matplotlib_figsize_col">';
+MAT += '<shadow type="indata">';
+MAT += '<field name="indata1">4</field>';
+MAT += '</shadow>';
+MAT += '</value>';
+
 MAT += '</block >';
 // //<!--  그래프 출력 갯수    -->';
 
