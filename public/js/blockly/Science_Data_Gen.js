@@ -989,9 +989,9 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
     {
       // 기타 부분 있을 때 
       if(text_matplotlib_pre_other.length > 0){
-        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
+        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", color = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
       } else {
-        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
+        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", color = ${value_matplotlib_pre_color})`);  
       }
     }
    
