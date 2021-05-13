@@ -423,13 +423,15 @@ margin-bottom: -5px;">
 <video id="gum-local" autoplay playsinline></video>
 <button id="showVideo">Open camera</button>
 -->
-</div> <!-- container end -->
+</div> 
+<!-- container end -->
 
 <!-- code mirror -->
 <script src="/js/utils/codeMirror.js"></script>
+<script src="/js/utils/basicFunction.js"></script>
+<script src="/js/utils/blockFunction.js"></script>
+
 <script>
-
-
 // (demoWorkspace = 블록배치하는 공간) 블록이 나타나는 부분
 var demoWorkspace = Blockly.inject( 
 	"blocklyDiv", {
@@ -475,175 +477,6 @@ var demoWorkspace = Blockly.inject(
 	}
 );
 
-//==================================
-// 블록 저장하기 
-//===================================  
-function saveBlock() {
-	let xml = Blockly.Xml.workspaceToDom(demoWorkspace);  // 워크스페이스를 돔(xml)로 만듬
-	let p_xml = Blockly.Xml.domToPrettyText(xml);         // 돔(xml)을 깔끔하게 만드는 부분
-
-	// 커스텀 프롬프트 사용
-	prompt2("블록 저장하기", checkCookie("download_block"), "저장", "취소").then((filename) => {
-	if(filename != null){
-		setCookie("download_block",filename,"1"); // 사용자가 정한 파일명을 다시 쿠키에 저장
-		let fileObject = new File([p_xml], filename+".xml");  // 파일 객체 생성 (data,name+확장자)
-		saveAs(fileObject);                                   // 로컬 저장
-	}
-	});
-}
-
-
-//===================================
-// 블록 불러오기 
-//===================================   
-function loadBlock() {
-	let reader = new FileReader();  // FileReader객체 생성
-	let files = document.getElementById("file").files; // 로컬에 있는 파일의 id값 얻기
-	let file = files[0];
-	let fileName = "";  
-	if (file) {
-	reader.onload = function (e) {          // 파일읽기 성공한 경우
-		var xml = reader.result;              // 읽어들인 파일 내용
-		var dom = Blockly.Xml.textToDom(xml); // text를 돔 형태로 변환
-		Blockly.Xml.appendDomToWorkspace(dom, demoWorkspace); //  돔을 디코딩 후 워크스페이스에 블록을 만들어 냄.
-		fileName = file.name;
-		
-		// 워크스페이스에 있는 블록을 코드로 변환해 코드미러에 setValue해주는 부분
-		try {
-		var pyCode = Blockly.Python.workspaceToCode(demoWorkspace);
-		pyEditor.setValue(pyCode);
-		} catch (e) {
-		console.log('python 코드가 매핑되어 있지 않습니다. Error : ' + e);
-		}
-		try {
-		var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-		jsEditor.getValue() = jsCode;
-		} catch (e) {
-		console.log('java script 코드가 매핑되어 있지 않습니다. Error : ' + e);
-		}
-	};
-	reader.readAsText(file);
-	}
-}
-
-// 블록코드 on,off
-function separate_editor(){
-	var pyEditor = $("#pyCodeEditor");
-	var asyncEditor = $("#asyncCodeEditor");
-	if ($('#toggle-two').prop('checked') === false) {
-	//pyEditor.css("position", "relative");
-	//pyEditor.slideUp("400");
-	//asyncEditor.slideDown("400");
-	asyncEditor.css("visibility", "visible");
-	pyEditor.css("visibility", "hidden");
-	} else if ($('#toggle-two').prop('checked') === true) {
-	//pyEditor.css("position", "relative");
-	//pyEditor.slideDown("400");
-	//asyncEditor.slideUp("400");
-	pyEditor.css("visibility", "visible");
-	asyncEditor.css("visibility", "hidden");
-	}
-
-}
-
-// ==================================
-// 코드 갱신하기 
-//===================================  
-function codeUpdate(event) {
-	async function coderun() {
-	try {
-		var pyCode = Blockly.Python.workspaceToCode(demoWorkspace); // 워크스페이스를 코드로 변환 후 값 저장
-		// console.log("pycode : " + escape(pyCode));
-		pyEditor.setValue(pyCode); // 그 값을 파이썬코드미러에 값 저장
-	} catch (e) {
-		console.log('python 코드가 매핑되어 있지 않습니다. Error : ' + e);
-	}
-	}
-	// coderun이 끝나고나서 작동됨.
-	coderun().then(() => {
-	try {
-		var jsCode = Blockly.JavaScript.workspaceToCode(demoWorkspace); // 워크스페이스를 js코드로 변환 후 값 저장
-		jsEditor.setValue(jsCode); // 그 값을 js코드미러에 값 저장
-	} catch (e) {
-		console.log('java script 코드가 매핑되어 있지 않습니다. Error : ' + e);
-	}
-	});
-}
-
-//==================================
-// 결과 지우기 2020.10.04 남지원 수정 
-//===================================  
-function clear_result() {
-	$("#exeArea").empty();
-}
-
-// ==================================
-// 코드 파일로 저장하기
-//===================================  
-function file_save_2(editor){
-	let code_python = Blockly.Python.workspaceToCode(demoWorkspace); // 워크스페이스를 파이썬 코드로 변환
-	let code = editor.getValue();
-	let blobObject = new Blob([code]);  // 코드를 블롭 객체로 만듬 => 블롭은 이미지, 사운드, 비디오와 같은 멀티미디어 데이터를 다룰 때 사용
-
-	prompt2("코드 저장하기", checkCookie("download_block"), "저장", "취소").then((filename) => {      
-	if(filename != null){
-		setCookie("download_block",filename, 1); // 사용자가 정한 파일명을 다시 쿠키에 저장
-		saveAs(blobObject, filename+".py"); 
-	}
-	});
-}
-
-function file_save() {   
-	console.log('test toggle-two: ' + $('#toggle-two').prop('checked'));
-
-	if($('#toggle-two').prop('checked'))
-	file_save_2(pyEditor);
-	else
-	file_save_2(asyncEditor);
-}
-
-// ==================================
-// 블록을 선택했을 때 
-//=================================== 
-function whenSelected(event) {
-	if (event.type == Blockly.Events.CREATE) {
-		let block = demoWorkspace.getBlockById(event.blockId); 
-		console.log('블록이 선택됨');
-	}
-
-	// 블록을 눌렀을 때 클릭 이벤트로 각종 메소드 작동
-	if (event.type == Blockly.Events.UI && event.element === "click") {
-		let block = demoWorkspace.getBlockById(event.blockId);
-		// 판다스에서 쓰이는 csv불러와서 데이터 프레임 만들어주는거
-		if ('csv2' == block.type) {
-			openTextFile(event.blockId);
-		}
-
-		// 기태 수정(로컬 파일 열기) 21.01.01 ==============================================
-		//판다스의 파일열기
-		if ('fileopen' == block.type) {
-			console.log("파일 열기");
-			localFileOpen(event.blockId);         
-		}
-		//사이파이의 미디어불러오기
-		if ('fileopen2' == block.type) {
-			console.log("미디어 파일 열기");
-			localFileOpen2(event.blockId);         
-		}
-		// 기태 수정(로컬 파일 열기) 지금은 사용되지 않음 ========================================================
-		if ('data_csv_read' == block.type) {
-			Show_csv();
-		}
-		// 다운로드 블록 창 열기
-		if ('os_data_download'  == block.type) {
-			fileDownload();
-		}
-		// croll_url_load
-		if('croll_url_load' == block.type){
-			_requestsURL(event.blockId);
-		}
-	}
-}
 demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
 demoWorkspace.addChangeListener(whenSelected);// 선택 되었을 때 메소드
 </script>
@@ -653,29 +486,17 @@ function runcode_2(code, code2){
 	console.log(code); // 파이썬코드찍는부분
 	console.log("-----");
 	console.log(code2); // 자바스크립트코드 찍는부분
-	var exe = document.getElementById('exeArea'); // 콘솔 창 ID가져옴
+	let exe = document.getElementById('exeArea'); // 콘솔 창 ID가져옴
 	languagePluginLoader.then(() => {
-	try {
-		exe.innerHTML = pyodide.runPython(code);
-		let stdout = pyodide.runPython("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
-		exe.innerHTML = stdout;
-	} catch (e) {
-		exe.innerHTML = e;  
-	}
+		try {
+			exe.innerHTML = pyodide.runPython(code);
+			let stdout = pyodide.runPython("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
+			exe.innerHTML = stdout;
+		} catch (e) {
+			exe.innerHTML = e;  
+		}
 	});
-}
-
-// 라이브러리 모달창 열기 0505 전우진
-$("#sidebar_add_libs").on("click", function () {
-				$('.libraryDiv').modal("show");
-			})
-			// 라이브러리 모달창 닫기
-			$("#modal_close_btn").on("click", function () {
-				$(".libraryDiv").modal("hide");
-			})
-
-demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
-demoWorkspace.addChangeListener(whenSelected);// 선택 되었을 때 메소드
+};
 </script>
 
 <script>
@@ -716,61 +537,62 @@ function runButton() {
 	// os는 data폴더 mount 에러 임시로 해결하기 위해
 	languagePluginLoader.then(() => {
 		pyodide.runPython(`
-					import sys
-					import os 
-					import io
-					import matplotlib.pyplot as plt
-					plt.cla()
-					plt.clf()
-					sys.stdout = io.StringIO()
-					`);
-				});
-		// chdir 에러 구현
-		if(code){
-			if (code.indexOf("os.chdir") != -1){
-	
-			var current_path = pyodide.runPython(`os.getcwd()`); // 현재 경로 받아옴
-			var dir_list = pyodide.runPython(`os.listdir()`); // 디렉토리 비교하기 위해
-			var root_list = pyodide.runPython(`os.listdir('/')`);
+			import sys
+			import os 
+			import io
+			import matplotlib.pyplot as plt
+			plt.cla()
+			plt.clf()
+			sys.stdout = io.StringIO()
+		`);
+	});
 
-			var start_index = code.indexOf("os.chdir("); 
-			var end_index = code.indexOf(")", start_index);
 
-			var replace_str = code.substr(start_index, (end_index - (start_index - 1)))
+	// 코드상 에러 구현
+	if(code){
+		if (code.indexOf("os.chdir") != -1){
+			let current_path = pyodide.runPython(`os.getcwd()`); // 현재 경로 받아옴
+			let dir_list = pyodide.runPython(`os.listdir()`); // 디렉토리 비교하기 위해
+			let root_list = pyodide.runPython(`os.listdir('/')`);
+
+			let start_index = code.indexOf("os.chdir("); 
+			let end_index = code.indexOf(")", start_index);
+
+			let replace_str = code.substr(start_index, (end_index - (start_index - 1)))
 
 			// 1. start_index부터 앞쪽으로 검색하여 개행이 어디 있는 지 확인하고, 몇번째 문자인지 변수에 저장
-			var err_index = (start_index + 10) - (code.lastIndexOf("\n", start_index + 10) - 1);
+			let err_index = (start_index + 10) - (code.lastIndexOf("\n", start_index + 10) - 1);
 			
 			// 2. start_index부터 앞쪽으로 검색하여 개행이 몇개인지 파악하고, 몇번째 라인인지 확인
-			var err_str = code.substr(0, start_index + 10);
-			var err_line = err_str.match(/\n/g);
+			let err_str = code.substr(0, start_index + 10);
+			let err_line = err_str.match(/\n/g);
 			if(err_line === null) 
 				err_line = 1;
 			else
 				err_line = err_str.match(/\n/g).length + 1;
 			
-			var err_dir = code.substr(start_index + 10, ((end_index-2) - (start_index + 10 - 1)))
+			let err_dir = code.substr(start_index + 10, ((end_index-2) - (start_index + 10 - 1)))
 
-			var output_err = "Error: Traceback (most recent call last):"
-			var output_err2 = "File \"/lib/python3.8/site-packages/pyodide/_base.py\", line 70, in eval_code"
-			var output_err3 = "eval(compile(mod, \"<exec>\", mode=\"exec\"), ns, ns)"
-			var output_err4 = "File \"<exec>\", line " + String(err_line) +", in <module>"
-			var output_err5 = "FileNotFoundError: [Errno 2] No such file or directory: "
-
+			let output_err = "Error: Traceback (most recent call last):"
+			let output_err2 = "File \"/lib/python3.8/site-packages/pyodide/_base.py\", line 70, in eval_code"
+			let output_err3 = "eval(compile(mod, \"<exec>\", mode=\"exec\"), ns, ns)"
+			let output_err4 = "File \"<exec>\", line " + String(err_line) +", in <module>"
+			let output_err5 = "FileNotFoundError: [Errno 2] No such file or directory: "
+			
 			if (current_path.indexOf("/data") != -1){ // data 하위 디렉토리 모두 적용
 				
 				let dir_index;
 				let bool_;
 
 				for(dir_index = 0; dir_index < dir_list.length; dir_index++){
-				if(dir_list[dir_index] == err_dir || err_dir.indexOf('/') != -1 || err_dir.indexOf('../') != -1){
-					bool_ = false;
-					break;
-				}else if(err_dir == '..' || err_dir == '.'){
-					bool_ = false;
-					break;
-				}else
-					bool_ = true;
+					if(dir_list[dir_index] == err_dir || err_dir.indexOf('/') != -1 || err_dir.indexOf('../') != -1){
+						bool_ = false;
+						break;
+					} else if(err_dir == '..' || err_dir == '.'){
+						bool_ = false;
+						break;
+					} else
+						bool_ = true;
 				}
 
 				if (dir_list.length == 0 && !(err_dir.indexOf('/') != -1 || err_dir.indexOf('../') != -1 || err_dir == '..' || err_dir == '.'))
@@ -785,103 +607,62 @@ function runButton() {
 					code = code + ("\nprint(' " + output_err4 + "')");
 					code = code + ('\nprint("' + output_err5 + "'" + err_dir + "'" + '")');
 					console.log('data폴더');
-				}
-				}
-			}
+				};
+			};
+		};
 
-			// 크롤링 req.text부분 처리
-			if (code.indexOf("req.text") != -1){
-				code = code.replace("req.text", 'req');
-			}
-		}
+		// 크롤링 req.text부분 처리
+		if (code.indexOf("req.text") != -1){
+			code = code.replace("req.text", 'req');
+		};
+	};
 
 	// 순차적 실행을 위해 놓은 코드 async, .then()
-async function runcode() {
-	if($('#toggle-two').prop('checked')){
-		runcode_2(code, code2);
-	} else {
-		runcode_2(code_async, code2);
+	async function runcode() {
+		if($('#toggle-two').prop('checked')){
+			runcode_2(code, code2);
+		} else {
+			runcode_2(code_async, code2);
+		}
 	}
-	}
-	// runcode끝내고 또 돌림, 테이블 형식 블록을위해 이걸 넣어줌
+	// runcode끝낸 뒤, 테이블 형식 블록을위해 이걸 넣어줌
 	runcode().then(() => {
-	if(eval(code2) == undefined){
-		document.getElementById('exeArea').innerHTML+='\n';
-	} else {
-		console.log("error : javascript code error");
-	}
-	})
+		if(eval(code2) == undefined){
+			document.getElementById('exeArea').innerHTML+='\n';
+		} else {
+			console.log("error : javascript code error");
+		}
+	});
 };
+// runbutton end
 	
-
-
 function Check_matplotlib_user_input(a, b) {
-if (a == 1 && b == 1) {
-	DL_Gra = "graph_both_1";
-} else if (a == 1 || b == 1) {
-	DL_Gra = "graph_or_1";
-} else {
-	DL_Gra = 0;
-}
+	if (a == 1 && b == 1) {
+		DL_Gra = "graph_both_1";
+	} else if (a == 1 || b == 1) {
+		DL_Gra = "graph_or_1";
+	} else {
+		DL_Gra = 0;
+	}
 }
 
 // 화면에 찍기 프린트
 function printc(x) {
-var savetext = $('#exeArea').val();
-$('#exeArea').val(savetext + x + '\n');
+	var savetext = $('#exeArea').val();
+	$('#exeArea').val(savetext + x + '\n');
 }
-
 </script>
+
 <!-- csv를 테이블로 출력-->
 <script src="/js/utils/csvTablePrint.js"></script>
 
 <!-- 2020-12-05 양승국 언어변경 -->
 <script>
-$("#language").change(function () {
-	var selectName = $(this).find(":selected").val();
 
-	if (selectName == "kor") {
-	$("#lan").remove();
-	var script = document.createElement('script');
-	script.id = 'lan';
-	script.src = '/js/blockly/msg/js/ko.js'; // script url.
-	document.body.appendChild(script);
-	}
-	else if (selectName == "eng") {
-	$("#lan").remove();
-	var script = document.createElement('script');
-	script.id = 'lan';
-	script.src = '/js/blockly/msg/js/en.js'; // script url.
-	document.body.appendChild(script);
-	}  
-});
 
 </script>
-<!-- 전우진 폰트 크기 변경 -->
-<script>
-$("#fontsize").change(function () {
-var selectName = $(this).find(":selected").val();
-
-if (selectName == "none") {
-}
-if (selectName == "15") {
-	$('.CodeMirror').css('fontSize', '15px');
-}
-else if (selectName == "20") {
-	$('.CodeMirror').css('fontSize', '20px');
-}
-else if (selectName == "25") {
-	$('.CodeMirror').css('fontSize', '25px');
-}
-else if (selectName == "30") {
-	$('.CodeMirror').css('fontSize', '30px');
-} 
-});
-</script>
-
 <!-- 라이브러리 임포트 기능 테스트 -->
 <script src="/js/utils/libraryAdd.js"></script>
-
 <!-- prompt 설정 -->
 <script src="/js/utils/prompt.js"></script>
 <!-- 로컬 파일 오픈하기 -->

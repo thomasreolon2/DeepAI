@@ -95,3 +95,13 @@ $("#image_processing_import_btn").on("click", function () {
 		hideLibLoading();
 	})
 });
+
+
+// 라이브러리 모달창 열기 0505 전우진
+$("#sidebar_add_libs").on("click", function () {
+	$('.libraryDiv').modal("show");
+});
+// 라이브러리 모달창 닫기
+$("#modal_close_btn").on("click", function () {
+	$(".libraryDiv").modal("hide");
+});
