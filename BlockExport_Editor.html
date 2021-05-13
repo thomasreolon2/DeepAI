@@ -134,8 +134,6 @@ console.info = function(){};
 <!-- 테마 변경-->
 <script src="/js/utils/themeChange.js"></script>
 
-<script src="/js/utils/blockCode.js"></script>
-
 
 <!-- 명성이형 파일 불러올때 필요한 변수설정 
 <script>
@@ -648,8 +646,6 @@ function Check_matplotlib_user_input(a, b) {
 		DL_Gra = 0;
 	}
 }
-
-
 </script>
 
 <!-- csv를 테이블로 출력-->
@@ -675,12 +671,13 @@ setTimeout(function() {
 		
 		var fs = BrowserFS.BFSRequire('fs'); // [BrowserFS] 사용하려면 기본적으로 필요한 건가봄?
 		fss.writeFileSync(fileName2, ""); // temp라는 이름의 빈 파일 생성
-
+		
 		// [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
 		languagePluginLoader.then(async ()=>{   
 			//  pyodide모듈 로드 우진
-			pyodide.loadPackage(['biopython','beautifulsoup4','sympy']).then(() => {
-			console.log("모듈 로드 완료.");
+			pyodide.loadPackage(['biopython','beautifulsoup4','sympy'])
+			.then(() => {
+				console.log("모듈 로드 완료.");
 			})
 			
 			let FS = pyodide._module.FS; // 모듈의 파일시스템
@@ -716,20 +713,20 @@ setTimeout(function() {
 			`
 			// 비동기 부분 다 끝나고 이거 되는거같음
 			languagePluginLoader.then(() => {
-			return pyodide.loadPackage(['micropip'])
-			}).then(() => {
-			pyodide.runPython(pythonCode);
-			console.log('pyodide 라이브러리 로딩완료');
-			$("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
-			$("#runButton1").css({
-				'display': "block"
+				return pyodide.loadPackage(['micropip'])
+			})
+			.then(() => {
+				pyodide.runPython(pythonCode);
+				console.log('pyodide 라이브러리 로딩완료');
+				$("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
+				$("#runButton1").css({
+					'display': "block"
+				});
+				$("#loading_image2").hide(); // 그래프 로딩 끝나면 로딩 창 없앰 
+				$("#runButton2").css({
+					'display': "inline"
+				});       
 			});
-			$("#loading_image2").hide(); // 그래프 로딩 끝나면 로딩 창 없앰 
-			$("#runButton2").css({
-				'display': "inline"
-			});       
-			}) 
-			
 		});
 	});
 }, 1000);  // js 파일 다운로드를 위해 인터벌 설정 
