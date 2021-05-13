@@ -134,6 +134,7 @@ console.info = function(){};
 <!-- 테마 변경-->
 <script src="/js/utils/themeChange.js"></script>
 
+<script src="/js/utils/blockCode.js"></script>
 
 
 <!-- 명성이형 파일 불러올때 필요한 변수설정 
@@ -376,6 +377,8 @@ margin-bottom: -5px;">
 			<h6 id="code" class="my-1 mx-1">코드
 			<input type="checkbox" checked id="toggle-two"/>
 		</h6>
+		<!-- 테마 변경-->
+		<script src="/js/utils/blockCode.js"></script>
 		<script>
 			var global_var = true;
 			$(function() {
@@ -646,21 +649,11 @@ function Check_matplotlib_user_input(a, b) {
 	}
 }
 
-// 화면에 찍기 프린트
-function printc(x) {
-	var savetext = $('#exeArea').val();
-	$('#exeArea').val(savetext + x + '\n');
-}
+
 </script>
 
 <!-- csv를 테이블로 출력-->
 <script src="/js/utils/csvTablePrint.js"></script>
-
-<!-- 2020-12-05 양승국 언어변경 -->
-<script>
-
-
-</script>
 <!-- 라이브러리 임포트 기능 테스트 -->
 <script src="/js/utils/libraryAdd.js"></script>
 <!-- prompt 설정 -->
