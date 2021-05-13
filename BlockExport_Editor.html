@@ -538,6 +538,7 @@ function runButton() {
 	// plt.clf - figure클리어
 	// os는 data폴더 mount 에러 임시로 해결하기 위해
 	languagePluginLoader.then(() => {
+		
 		pyodide.runPython(`
 			import sys
 			import os 
@@ -714,7 +715,7 @@ setTimeout(function() {
 			`
 			// 비동기 부분 다 끝나고 이거 되는거같음
 			languagePluginLoader.then(() => {
-				return pyodide.loadPackage(['micropip'])
+				return pyodide.loadPackage(['micropip', 'matplotlib'])
 			})
 			.then(() => {
 				pyodide.runPython(pythonCode);
