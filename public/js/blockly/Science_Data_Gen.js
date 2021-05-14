@@ -662,7 +662,7 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
     code = code.concat(`${xyValue} ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
   }
   // 산점도 그래프, 선그래프 
-  else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram" )
+  else if( dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram" )
   {
     // 그래프 color 있을 때 
     if(value_matplotlib_pre_color.length > 0)
@@ -674,8 +674,20 @@ fig, ax = plt.subplots(${value_matplotlib_main_cols}, ${value_matplotlib_main_ro
         code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", color = ${value_matplotlib_pre_color})`);  
       }
     }
-   
-    
+  }
+  // 산점도 그래프
+  else if(dropdown_matplotlib_graph_select == "matplotlib_scatter")
+  {
+    // 그래프 color 있을 때 
+    if(value_matplotlib_pre_color.length > 0)
+    {
+      // 기타 부분 있을 때 
+      if(text_matplotlib_pre_other.length > 0){
+        code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
+      } else {
+        code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
+      }
+    }
   }
   else if(dropdown_matplotlib_graph_select=="matplotlib_bar"){
     // 그래프 color 있을 때 
@@ -811,7 +823,7 @@ if(dropdown_matplotlib_graph_select == "matplotlib_error_bar")
   code = code.concat(`${xyValue} ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
 }
 // 산점도 그래프, 선그래프 
-else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram")
+else if(dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram")
 {
   // 그래프 color 있을 때 
   if(value_matplotlib_pre_color.length > 0)
@@ -823,8 +835,20 @@ else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_ma
       code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", color = ${value_matplotlib_pre_color})`);  
     }
   }
- 
-  
+}
+else if(dropdown_matplotlib_graph_select == "matplotlib_scatter")
+{
+  // 그래프 color 있을 때 
+  if(value_matplotlib_pre_color.length > 0)
+  {
+    // 기타 부분 있을 때 
+    if(text_matplotlib_pre_other.length > 0){
+      code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
+    } else {
+      code = code.concat(`${xyValue}, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
+    }
+  }
+
 }
 
 else if(dropdown_matplotlib_graph_select=="matplotlib_bar"){
@@ -981,8 +1005,8 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
   {  
     code = code.concat(`${xx + ", " + yy } ,fmt = "o--" ,capsize= 3, label = "${text_matplotlib_pre_legend}" )`);  
   }
-  // 산점도 그래프, 선그래프 
-  else if(dropdown_matplotlib_graph_select == "matplotlib_scatter" ||  dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram" || dropdown_matplotlib_graph_select=="matplotlib_bar")
+  // 선그래프 
+  else if(dropdown_matplotlib_graph_select == "matplotlib_line" || dropdown_matplotlib_graph_select =="matplotlib_histogram" || dropdown_matplotlib_graph_select=="matplotlib_bar")
   {
     // 그래프 color 있을 때 
     if(value_matplotlib_pre_color.length > 0)
@@ -996,6 +1020,20 @@ img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8'
     }
    
     
+  }
+  // 산점도 그래프
+  else if(dropdown_matplotlib_graph_select == "matplotlib_scatter")
+  {
+    // 그래프 color 있을 때 
+    if(value_matplotlib_pre_color.length > 0)
+    {
+      // 기타 부분 있을 때 
+      if(text_matplotlib_pre_other.length > 0){
+        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color}, ${text_matplotlib_pre_other} )`);  
+      } else {
+        code = code.concat(`${xx + ", " + yy }, label = "${text_matplotlib_pre_legend}", c = ${value_matplotlib_pre_color})`);  
+      }
+    }
   }
   // 박스 그래프
   else if(dropdown_matplotlib_graph_select == "matplotlib_box" )

@@ -340,7 +340,7 @@ plt.title(${value_title})
 plt.show()`;
   }
   
-  return code;
+  return code + '\n';
 };
 
 // 맷플롯립 버블 만들기
@@ -354,18 +354,18 @@ Blockly.Python['matplotlib_scatter'] = function(block) {
 
 
   if(value_other==""){
-    var code = `plt.scatter(${value_data_x}, ${value_data_y}, color=${value_color})
+    var code = `plt.scatter(${value_data_x}, ${value_data_y}, c=${value_color})
 plt.title(${value_title})
 plt.legend([${value_legend}])
 plt.show()`;
   } else {
-    var code = `plt.scatter(${value_data_x}, ${value_data_y}, color=${value_color}, ${value_other})
+    var code = `plt.scatter(${value_data_x}, ${value_data_y}, c=${value_color}, ${value_other})
 plt.title(${value_title})
 plt.legend([${value_legend}])
 plt.show()`;
   }
   
-  return code;
+  return code + '\n';
 };
 
 // 맷플롯립 컬러맵 만들기
@@ -377,5 +377,5 @@ Blockly.Python['matplotlib_colormap'] = function(block) {
 plt.colorbar()
 plt.title(${value_title})
 plt.show()`;
-  return code;
+  return code + '\n';
 };
