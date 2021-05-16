@@ -332,7 +332,7 @@ margin-bottom: -5px;">
 	
 	<!-- 실행 버튼 -->
 	<input id="runButton1" type="button" class="btn btn-outline-success btn-sm mr-1" style="display:none;"
-		onClick="runButton()" value="실행" /> <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
+		onClick="evaluatePython()" value="실행" /> <!-- 다시 원상 복귀 style="display:none;" [on click 전] -->
 	
 		<!-- 실행 로딩 중 -->
 	<div id="loading_image1"><object type="image/svg+xml" data="Rolling-2s-30px.svg"></object></div>
@@ -372,7 +372,7 @@ margin-bottom: -5px;">
 	<div id="codeDiv1">
 		<div class="card shadow-sm">
 		<div class="text-white bg-dark">
-			<h6 id="code" class="my-1 mx-1">코드
+			<h6 id="codeDi" class="my-1 mx-1">코드
 			<input type="checkbox" checked id="toggle-two"/>
 		</h6>
 		<!-- 테마 변경-->
@@ -485,38 +485,11 @@ demoWorkspace.addChangeListener(whenSelected);// 선택 되었을 때 메소드
 
 <script>
 
-async function main(){
-      await loadPyodide({ indexURL : 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/' });
-      // 라이브러리 import
-      await pyodide.loadPackage(['matplotlib','numpy']);
-    }
-    let pyodideReadyPromise = main();
-
-    async function evaluatePython() {
-      await pyodideReadyPromise;
-      try {
-        exe.innerHTML = await pyodide.runPythonAsync(code);
-		let stdout = pyodide.runPythonAsync("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
-		exe.innerHTML = stdout;
-      } catch(err) {
-        exe.innerHTML = err;
-      }
-    }
-	
 async function runcode_2(code, code2){
 	console.log(code); // 파이썬코드찍는부분
 	console.log("-----");
 	console.log(code2); // 자바스크립트코드 찍는부분
 	let exe = document.getElementById('exeArea'); // 콘솔 창 ID가져옴
-
-	await pyodideReadyPromise;
-	try {
-		exe.innerHTML = await pyodide.runPythonAsync(code);
-		let stdout = await pyodide.runPythonAsync("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
-		exe.innerHTML = stdout;
-	} catch(err) {
-		exe.innerHTML = err;
-	}
 
 	/*
 	languagePluginLoader.then(() => {
@@ -557,7 +530,7 @@ function runButton() {
 	};
 
 	Blockly.Python.addReservedWords('code');      // // 이 언어의 예약어 목록에 하나 이상의 단어를 추가한다.
-	var code = pyEditor.getValue();               // py 코드미러의 값을 code로 저장
+	let code = pyEditor.getValue();               // py 코드미러의 값을 code로 저장
 	Blockly.JavaScript.addReservedWords('code2'); // // 이 언어의 예약어 목록에 하나 이상의 단어를 추가한다.
 	var code2 = jsEditor.getValue();              // js 코드미러의 값을 code2로 저장
 	
@@ -568,18 +541,7 @@ function runButton() {
 	// plt.cla - 클리어
 	// plt.clf - figure클리어
 	// os는 data폴더 mount 에러 임시로 해결하기 위해
-	
-	pyodideReadyPromise.then(() => {
-		pyodide.runPythonAsync(`
-			import sys
-			import os 
-			import io
-			
-			plt.cla()
-			plt.clf()
-			sys.stdout = io.StringIO()
-		`);
-	});
+
 
 
 	// 코드상 에러 구현
@@ -652,24 +614,23 @@ function runButton() {
 	};
 
 	
+	// // 순차적 실행을 위해 놓은 코드 async, .then()
+	// async function runcode() {
+	// 	if($('#toggle-two').prop('checked')){
+	// 		runcode_2(code, code2);
+	// 	} else {
+	// 		runcode_2(code_async, code2);
+	// 	}
+	// }
 
-	// 순차적 실행을 위해 놓은 코드 async, .then()
-	async function runcode() {
-		if($('#toggle-two').prop('checked')){
-			runcode_2(code, code2);
-		} else {
-			runcode_2(code_async, code2);
-		}
-	}
-
-	// runcode끝낸 뒤, 테이블 형식 블록을위해 이걸 넣어줌
-	runcode().then(() => {
-		if(eval(code2) == undefined){
-			document.getElementById('exeArea').innerHTML+='\n';
-		} else {
-			console.log("error : javascript code error");
-		}
-	});
+	// // runcode끝낸 뒤, 테이블 형식 블록을위해 이걸 넣어줌
+	// runcode().then(() => {
+	// 	if(eval(code2) == undefined){
+	// 		document.getElementById('exeArea').innerHTML+='\n';
+	// 	} else {
+	// 		console.log("error : javascript code error");
+	// 	}
+	// });
 };
 // runbutton end
 	
@@ -695,72 +656,25 @@ function Check_matplotlib_user_input(a, b) {
 <!-- 로컬로 파일 다운로드-->
 <script src="/js/utils/fileDownload.js"></script>
 
+
 <script>
-//=====기태 처리 (파일) 21.01.06  : 파일 로딩에 대해 인터벌 적용 ================================
-setTimeout(function() {
-	BrowserFS.install(window);
-	BrowserFS.configure({
-		//fs: "LocalStorage"
-		fs: "InMemory"      // 5MB 이상의 큰 파일 처리를 위해 변경(2021.03.03 - 기태)
-	}, function(e) {
-		fss = require('fs'); // [Node.JS] fs의 기능을 fss로 이동 => 브라우저 fs와 겹침방지
+	const exeArea = document.getElementById("exeArea");
+
+	// init Pyodide
+	async function main(){
+		await loadPyodide({ indexURL : 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/' });
+		await pyodide.runPythonAsync(`
+			import sys
+			import os 
+			import io
+			sys.stdout = io.StringIO()
+		`);
 		
-		var fs = BrowserFS.BFSRequire('fs'); // [BrowserFS] 사용하려면 기본적으로 필요한 건가봄?
-		fss.writeFileSync(fileName2, ""); // temp라는 이름의 빈 파일 생성
-		
-		console.log("-----------");
-		console.log(fs);
-		console.log("-----------");
-		
-		// [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
-		pyodideReadyPromise.then(async ()=>{   
-			//  pyodide모듈 로드 우진
-			// pyodide.loadPackage(['biopython','beautifulsoup4','sympy'])
-			// .then(() => {
-			// 	console.log("모듈 로드 완료.");
-			// })
-			console.log("3");
-			let FS = pyodide._module.FS; // 모듈의 파일시스템
-			let PATH = pyodide._module.PATH; // 모듈의 경로
-			
-			console.log("============");
-			console.log(FS.mount);
-			console.log(PATH);
-			console.log("============");
-
-			// Create an Emscripten interface for the BrowserFS
-			var BFS = new BrowserFS.EmscriptenFS(FS, PATH);
-			// Create mount point in Emscripten FS
-			//FS.createFolder(FS.root, 'data', true, true);
-			// Mount BrowserFS into Emscripten FS
-			//FS.mount(BFS, {root: '/'}, '/data');
-
-			
-			// 이부분은 내부 콘솔(f12 X)에 찍어주기 위해 필요한 부분
-			// requests class 임의로 만들어줌. 
-			pythonCode = `              
-				import sys
-				from io import StringIO
-				# 그래프 삭제를 위한 맷플롯립 추가
-				import matplotlib.pyplot as plt
-				# 크롤링 하기위해 js로만든 _requestsURL 메소드 import
-				from js import _requestsURL
-
-				req = ""
-
-				class requests:
-					def get(htmlurl):
-						_requestsURL(htmlurl)
-						return req
-
-				sys.stdout = StringIO()      
-			`
-			// 비동기 부분 다 끝나고 이거 되는거같음
-			pyodideReadyPromise.then(() => {
-				return pyodide.loadPackage(['micropip', 'matplotlib'])
-			})
-			.then(() => {
-				pyodide.runPythonAsync(pythonCode);
+		// 라이브러리 import
+		await pyodide.loadPackage(['matplotlib','numpy']);
+	}
+	let pyodideReadyPromise = main();
+	pyodideReadyPromise.then(() => {
 				console.log('pyodide 라이브러리 로딩완료');
 				$("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
 				$("#runButton1").css({
@@ -771,9 +685,24 @@ setTimeout(function() {
 					'display': "inline"
 				});       
 			});
-		});
-	});
-}, 1000);  // js 파일 다운로드를 위해 인터벌 설정 
+
+	async function evaluatePython() {
+		await pyodideReadyPromise;
+		const code = pyEditor.getValue();               // py 코드미러의 값을 code로 저장
+
+		try {
+			console.log(code);
+			
+			exeArea.innerHTML = await pyodide.runPythonAsync(code);
+			let stdout = await pyodide.runPythonAsync("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
+			exeArea.innerHTML = stdout;
+		} catch(err) {
+		//addToOutput(err);
+		exeArea.innerHTML = err;
+
+		}
+	}
+
 </script>   
 <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
 </body> 

@@ -5,13 +5,13 @@ function input_fixed(text) {
     return prompt(text);
 };
 
-languagePluginLoader.then(() => {
-    pyodide.runPythonAsync(`
-    from js import input_fixed
-    input = input_fixed
-    __builtins__.input = input_fixed
-    `);
-});
+// languagePluginLoader.then(() => {
+//     pyodide.runPythonAsync(`
+//     from js import input_fixed
+//     input = input_fixed
+//     __builtins__.input = input_fixed
+//     `);
+// });
 
 
 //===================================

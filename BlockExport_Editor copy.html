@@ -511,6 +511,8 @@ async function runcode_2(code, code2){
 
 	await pyodideReadyPromise;
 	try {
+		let abcd = await pyodide.runPythonAsync(code);
+		console.log(abcd);
 		exe.innerHTML = await pyodide.runPythonAsync(code);
 		let stdout = await pyodide.runPythonAsync("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
 		exe.innerHTML = stdout;
@@ -574,7 +576,7 @@ function runButton() {
 			import sys
 			import os 
 			import io
-			
+			import matplotlib.pyplot as plt
 			plt.cla()
 			plt.clf()
 			sys.stdout = io.StringIO()
@@ -696,6 +698,10 @@ function Check_matplotlib_user_input(a, b) {
 <script src="/js/utils/fileDownload.js"></script>
 
 <script>
+
+</script>
+
+<script>
 //=====기태 처리 (파일) 21.01.06  : 파일 로딩에 대해 인터벌 적용 ================================
 setTimeout(function() {
 	BrowserFS.install(window);
@@ -741,8 +747,6 @@ setTimeout(function() {
 			pythonCode = `              
 				import sys
 				from io import StringIO
-				# 그래프 삭제를 위한 맷플롯립 추가
-				import matplotlib.pyplot as plt
 				# 크롤링 하기위해 js로만든 _requestsURL 메소드 import
 				from js import _requestsURL
 
