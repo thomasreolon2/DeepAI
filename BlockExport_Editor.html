@@ -482,27 +482,9 @@ var demoWorkspace = Blockly.inject(
 demoWorkspace.addChangeListener(codeUpdate);  // 코드 갱신하기 메소드
 demoWorkspace.addChangeListener(whenSelected);// 선택 되었을 때 메소드
 </script>
+<script src="/js/utils/pyodide.js"></script>
 
 <script>
-
-async function main(){
-      await loadPyodide({ indexURL : 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/' });
-      // 라이브러리 import
-      await pyodide.loadPackage(['matplotlib','numpy']);
-    }
-    let pyodideReadyPromise = main();
-
-    async function evaluatePython() {
-      await pyodideReadyPromise;
-      try {
-        exe.innerHTML = await pyodide.runPythonAsync(code);
-		let stdout = pyodide.runPythonAsync("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
-		exe.innerHTML = stdout;
-      } catch(err) {
-        exe.innerHTML = err;
-      }
-    }
-	
 async function runcode_2(code, code2){
 	console.log(code); // 파이썬코드찍는부분
 	console.log("-----");
@@ -517,18 +499,6 @@ async function runcode_2(code, code2){
 	} catch(err) {
 		exe.innerHTML = err;
 	}
-
-	/*
-	languagePluginLoader.then(() => {
-		try {
-			exe.innerHTML = pyodide.runPython(code);
-			let stdout = pyodide.runPython("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
-			exe.innerHTML = stdout;
-		} catch (e) {
-			exe.innerHTML = e;  
-		}
-	});
-	*/
 };
 </script>
 
@@ -720,6 +690,7 @@ setTimeout(function() {
 			// 	console.log("모듈 로드 완료.");
 			// })
 			console.log("3");
+			/*
 			let FS = pyodide._module.FS; // 모듈의 파일시스템
 			let PATH = pyodide._module.PATH; // 모듈의 경로
 			
@@ -727,9 +698,9 @@ setTimeout(function() {
 			console.log(FS.mount);
 			console.log(PATH);
 			console.log("============");
-
+*/
 			// Create an Emscripten interface for the BrowserFS
-			var BFS = new BrowserFS.EmscriptenFS(FS, PATH);
+			//var BFS = new BrowserFS.EmscriptenFS(FS, PATH);
 			// Create mount point in Emscripten FS
 			//FS.createFolder(FS.root, 'data', true, true);
 			// Mount BrowserFS into Emscripten FS
