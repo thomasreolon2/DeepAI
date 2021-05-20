@@ -667,12 +667,20 @@ function Check_matplotlib_user_input(a, b) {
 
 <script>
 //=====기태 처리 (파일) 21.01.06  : 파일 로딩에 대해 인터벌 적용 ================================
-setTimeout(function() {
+(async function() { // async function 표현식을 IIFE로 사용
+	BrowserFS.install(window);
+	BrowserFS.configure({
+		//fs: "LocalStorage"
+		fs: "InMemory"
+	}).then();  // 2초 뒤에 60 출력
+});
+
+(async function() {
 	BrowserFS.install(window);
 	BrowserFS.configure({
 		//fs: "LocalStorage"
 		fs: "InMemory"      // 5MB 이상의 큰 파일 처리를 위해 변경(2021.03.03 - 기태)
-	}, function(e) {
+	}, await function(e) {
 		fss = require('fs'); // [Node.JS] fs의 기능을 fss로 이동 => 브라우저 fs와 겹침방지
 		
 		var fs = BrowserFS.BFSRequire('fs'); // [BrowserFS] 사용하려면 기본적으로 필요한 건가봄?
@@ -695,56 +703,24 @@ setTimeout(function() {
 			let PATH = pyodide._module.PATH; // 모듈의 경로
 			
 			console.log("============");
+			console.log(FS);
 			console.log(FS.mount);
 			console.log(PATH);
 			console.log("============");
 
 			// Create an Emscripten interface for the BrowserFS
-			//var BFS = new BrowserFS.EmscriptenFS(FS, PATH);
+			var BFS = new BrowserFS.EmscriptenFS(FS, PATH);
 			// Create mount point in Emscripten FS
-			//FS.createFolder(FS.root, 'data', true, true);
+			FS.createFolder(FS.root, 'data', true, true);
 			// Mount BrowserFS into Emscripten FS
-			//FS.mount(BFS, {root: '/'}, '/data');
+			FS.mount(BFS, {root: '/'}, '/data');
 
 			
-			// 이부분은 내부 콘솔(f12 X)에 찍어주기 위해 필요한 부분
-			// requests class 임의로 만들어줌. 
-			pythonCode = `              
-				import sys
-				from io import StringIO
-				# 그래프 삭제를 위한 맷플롯립 추가
-				import matplotlib.pyplot as plt
-				# 크롤링 하기위해 js로만든 _requestsURL 메소드 import
-				from js import _requestsURL
-
-				req = ""
-
-				class requests:
-					def get(htmlurl):
-						_requestsURL(htmlurl)
-						return req
-
-				sys.stdout = StringIO()      
-			`
-			// 비동기 부분 다 끝나고 이거 되는거같음
-			pyodideReadyPromise.then(() => {
-				return pyodide.loadPackage(['micropip', 'matplotlib'])
-			})
-			.then(() => {
-				pyodide.runPythonAsync(pythonCode);
-				console.log('pyodide 라이브러리 로딩완료');
-				$("#loading_image1").hide(); // 홈페이지 로딩 끝나면 로딩 이미지 없앰 
-				$("#runButton1").css({
-					'display': "block"
-				});
-				$("#loading_image2").hide(); // 그래프 로딩 끝나면 로딩 창 없앰 
-				$("#runButton2").css({
-					'display': "inline"
-				});       
-			});
+			
+			
 		});
 	});
-}, 1000);  // js 파일 다운로드를 위해 인터벌 설정 
+});  // js 파일 다운로드를 위해 인터벌 설정 
 </script>   
 <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
 </body> 
