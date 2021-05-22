@@ -75,12 +75,13 @@ $("#ml_import_btn").on("click", function () {
 
 	$("#ml_import_btn").removeClass("blue").addClass("green");
 	$("#ml_import_btn").text("추가됨");
-
+	console.time("시간 측정");
 	pyodide.loadPackage(['scipy', 'scikit-learn']).then(() => {
 		$('div[aria-posinset="16"]').show();
 		$('div[aria-posinset="18"]').show();
 		hideLibLoading();
 	})
+	console.timeEnd("시간 측정");
 });
 
 // 이미지 프로세싱
