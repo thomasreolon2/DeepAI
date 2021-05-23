@@ -80,8 +80,9 @@ $("#ml_import_btn").on("click", function () {
 		$('div[aria-posinset="16"]').show();
 		$('div[aria-posinset="18"]').show();
 		hideLibLoading();
+		console.timeEnd("시간 측정");
 	})
-	console.timeEnd("시간 측정");
+	
 });
 
 // 이미지 프로세싱

@@ -3,14 +3,14 @@
 
 // express를 활용한 서버 만들기
 const express = require('express'); // 익스프레스 모듈 require 및 app 설정 (해당 방식은 express 에서 사용하도록 한 규약? 같은 방식)
-const fs = require('fs'); // 파일 시스템 
+const FS = require('fs'); // 파일 시스템 
 const ejs = require("ejs"); // ejs는 서버에서 JS로 템플릿을 만들 수 있게 도와준다.
 
 var app = express();
 
 const options = {
-	key: fs.readFileSync('./keys/private.pem'),
-	cert: fs.readFileSync('./keys/public.pem')
+	key: FS.readFileSync('./keys/private.pem'),
+	cert: FS.readFileSync('./keys/public.pem')
 };
 
 var server = require('http').createServer(options, app).listen(60823, function(){
