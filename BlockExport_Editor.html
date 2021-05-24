@@ -680,76 +680,27 @@ setTimeout(function() { // async function 표현식을 IIFE로 사용
 		fss = require('fs'); // [Node.JS] fs의 기능을 fss로 이동 => 브라우저 fs와 겹침방지
 		
 		var fs = BrowserFS.BFSRequire('fs'); // [BrowserFS] 사용하려면 기본적으로 필요한 건가봄?
-		fss.writeFileSync(fileName2, ""); // temp라는 이름의 빈 파일 생성
-		
 		pyodideReadyPromise.then(()=>{   
-				//  pyodide모듈 로드 우진
-				// pyodide.loadPackage(['biopython','beautifulsoup4','sympy'])
-				// .then(() => {
-				// 	console.log("모듈 로드 완료.");
-				// })
-				console.log("3");
 				let FS = globalThis.pyodide._module.FS; // 모듈의 파일시스템
 				let PATH = globalThis.pyodide._module.PATH; // 모듈의 경로
 				console.log(FS);
-				console.log("============");
+				
 				//console.log(FS.mount);
 				//console.log(PATH);
-				console.log("============");
-
+				
+				// BFS 왜 사용하는지 모르겠는 부분
 				// Create an Emscripten interface for the BrowserFS
 				var BFS = new BrowserFS.EmscriptenFS(FS, PATH);
 				// Create mount point in Emscripten FS
 				FS.mkdir('data');
 				// Mount BrowserFS into Emscripten FS
-				FS.mount(BFS, {root: '/'}, '/data');
+				//FS.mount(BFS, {root: '/'}, '/data');
 				console.log("BFS완료");
 		});
   	}); 
 }, 1000);
 
 
-/*
-(async function() {
-	BrowserFS.install(window);
-	BrowserFS.configure({
-		//fs: "LocalStorage"
-		fs: "InMemory"      // 5MB 이상의 큰 파일 처리를 위해 변경(2021.03.03 - 기태)
-	}, await function(e) {
-		fss = require('fs'); // [Node.JS] fs의 기능을 fss로 이동 => 브라우저 fs와 겹침방지
-		
-		var fs = BrowserFS.BFSRequire('fs'); // [BrowserFS] 사용하려면 기본적으로 필요한 건가봄?
-		fss.writeFileSync(fileName2, ""); // temp라는 이름의 빈 파일 생성
-		
-		console.log("-----------");
-		console.log(fs);
-		console.log("-----------");
-		
-		// [Pyodide] languagePluginLoader : pyodide초기화? 시작할때 무조건 필요 
-		pyodideReadyPromise.then(()=>{   
-			
-			console.log("3");
-			
-			let FS = pyodide._module.FS; // 모듈의 파일시스템
-			let PATH = pyodide._module.PATH; // 모듈의 경로
-			
-			console.log("============");
-			console.log(FS);
-			console.log(FS.mount);
-			console.log(PATH);
-			console.log("============");
-
-			// Create an Emscripten interface for the BrowserFS
-			var BFS = new BrowserFS.EmscriptenFS(FS, PATH);
-			console.log(BFS);
-			// Create mount point in Emscripten FS
-			FS.createFolder(FS.root, 'data', true, true);
-			// Mount BrowserFS into Emscripten FS
-			FS.mount(BFS, {root: '/'}, '/data');
-		});
-	});
-});  // js 파일 다운로드를 위해 인터벌 설정 
-*/
 </script>   
 <!-- 기태 처리 (파일) 끝 20.12.29 ------------------------------------------------------------------------->
 </body> 
