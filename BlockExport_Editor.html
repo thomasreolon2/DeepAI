@@ -486,16 +486,21 @@ demoWorkspace.addChangeListener(whenSelected);// 선택 되었을 때 메소드
 
 <script>
 async function runcode_2(code, code2){
-	console.log(code); // 파이썬코드찍는부분
+	console.log("python code : "+code); // 파이썬코드찍는부분
 	console.log("-----");
-	console.log(code2); // 자바스크립트코드 찍는부분
+	console.log("JS code : "+code2); // 자바스크립트코드 찍는부분
 	let exe = document.getElementById('exeArea'); // 콘솔 창 ID가져옴
 
 	await pyodideReadyPromise;
 	try {
-		exe.innerHTML = await pyodide.runPythonAsync(code);
-		let stdout = await pyodide.runPythonAsync("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
+		exe.innerHTML = await pyodide.runPython(code);
+		let stdout = await pyodide.runPython("sys.stdout.getvalue()"); // 결과값을 싹 받아줌
 		exe.innerHTML = stdout;
+
+		console.log("==========");
+		console.log(stdout);
+		
+
 	} catch(err) {
 		exe.innerHTML = err;
 	}
@@ -514,17 +519,24 @@ function runButton() {
 	$("#csv_show").before("<div id='graph1' style=\"height:500px; width:900;\"><img id='pyplotfigure' /></div>");
 	// 그래프 위쪽 삭제
 
+	console.log("런버튼 클릭");
 	// 그래프같은 이미지들을 싹다 잡아옴 plt.show()하면 바로 되는이유
+	// globalThis : JS 모듈임. 전역 객체를 반환한다.
 	globalThis.iodide = {
-	output: {
-		element: (tagName) => {
-		let outputPane = document.createElement(tagName);
-		document.querySelector("#graph1").appendChild(outputPane);
-		console.log(outputPane)
-		return outputPane;
+		output: {
+			element: (tagName) => {
+			console.log("엘리먼트 태그네임");
+			console.log("--------------");
+			let outputPane = document.createElement(tagName);
+			document.querySelector("#graph1").appendChild(outputPane);
+			console.log(outputPane)
+			return outputPane;
+			}
 		}
-	}
 	};
+	console.log("------");
+	console.log(globalThis.iodide.output);
+	console.log("------");
 
 	Blockly.Python.addReservedWords('code');      // // 이 언어의 예약어 목록에 하나 이상의 단어를 추가한다.
 	var code = pyEditor.getValue();               // py 코드미러의 값을 code로 저장
@@ -540,14 +552,35 @@ function runButton() {
 	// os는 data폴더 mount 에러 임시로 해결하기 위해
 	
 	pyodideReadyPromise.then(() => {
+		pyodide.runPython(`
+		def plot_init():
+			plt.cla()
+			plt.clf()
+
+		plot_init()
+		`)
 		pyodide.runPythonAsync(`
 			import sys
 			import os 
 			import io
-			
-			plt.cla()
-			plt.clf()
 			sys.stdout = io.StringIO()
+
+			# 그래프 그리려면 필요한 부분
+			from matplotlib.backends import backend_agg
+			if "pyodide" in sys.modules:
+				from js import document, ImageData
+
+			def create_root_element1(self):
+				div = document.createElement('div')
+				document.querySelector("#graph1").appendChild(div)
+				return div
+
+			f = plt.gcf()
+
+			#override create_root_element method of canvas by one of the functions above
+			f.canvas.create_root_element = create_root_element1.__get__(f.canvas, f.canvas.__class__)
+			f.canvas.show()
+			
 		`);
 	});
 

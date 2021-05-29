@@ -18,7 +18,7 @@
     Output:
   </div>
   <textarea id='output' style='width: 100%;' rows='6' disabled></textarea>
-
+  <div id="pyplotdiv"><img id="pyplotfigure"/></div>
   <script>
     const output = document.getElementById("output");
     const code = document.getElementById("code");
@@ -34,9 +34,23 @@
       // 라이브러리 import
       await pyodide.loadPackage(['matplotlib','numpy']);
       output.value += 'Ready!\n';
+      
+      
     }
     let pyodideReadyPromise = main();
-
+    pyodideReadyPromise.then(() => {
+      pyodide.runPython(`
+import matplotlib.pyplot as plt
+import io, base64
+fig, ax = plt.subplots()
+ax.plot([1,3,2])
+buf = io.BytesIO()
+fig.savefig(buf, format='png')
+buf.seek(0)
+img_str = 'data:image/png;base64,' + base64.b64encode(buf.read()).decode('UTF-8')
+		  `);
+      document.getElementById("pyplotfigure").src=pyodide.globals.img_str
+    });
     async function evaluatePython() {
       await pyodideReadyPromise;
       try {

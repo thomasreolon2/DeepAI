@@ -2,7 +2,7 @@ async function main(){
 	await loadPyodide({ indexURL : 'https://cdn.jsdelivr.net/pyodide/v0.17.0/full/' });
 
 	// 라이브러리 import
-	await pyodide.loadPackage(['matplotlib','numpy']);
+	//await pyodide.loadPackage(['matplotlib','numpy']);
 }
 
 // main() 메소드를 작동하고 promise를 받아옴
@@ -36,7 +36,9 @@ pythonCode = `
 			_requestsURL(htmlurl)
 			return req
 
-	sys.stdout = StringIO()      
+	sys.stdout = StringIO()
+	
+	
 `
 
 // pyodide준비 끝 실행
